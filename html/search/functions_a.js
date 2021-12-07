@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numbergrouping_138',['NumberGrouping',['../namespacestr.html#a5247d873952449905ce03aca93e5661d',1,'str']]]
+  ['numbergrouping_134',['NumberGrouping',['../namespacestr.html#a5247d873952449905ce03aca93e5661d',1,'str']]]
 ];
