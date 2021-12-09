@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['strutility_5fhpp_188',['STRUTILITY_HPP',['../strutility_8hpp.html#ae5dbc7250f60f16965fa67f6ee80f51b',1,'strutility.hpp']]]
+  ['env_5fdefault_5freturn_5ftype_1403',['ENV_DEFAULT_RETURN_TYPE',['../env_8hpp.html#a510f766a796ee27683bfe0335bfc085c',1,'env.hpp']]]
 ];

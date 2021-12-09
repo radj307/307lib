@@ -1,0 +1,25 @@
+var setcolor_functions_8hpp =
+[
+    [ "setcolor", "structcolor_1_1foreground_1_1setcolor.html", "structcolor_1_1foreground_1_1setcolor" ],
+    [ "setcolor", "structcolor_1_1background_1_1setcolor.html", "structcolor_1_1background_1_1setcolor" ],
+    [ "black", "setcolor-functions_8hpp.html#a3dee28c1a838c5afcfd083307de986b1", null ],
+    [ "black", "setcolor-functions_8hpp.html#a9faf2255484295c826612f6e8378a483", null ],
+    [ "blue", "setcolor-functions_8hpp.html#a83cae8a1557bc2cac97096954aaac0dc", null ],
+    [ "blue", "setcolor-functions_8hpp.html#ae65d20b9650edbfbf4c3e3fb8cab1d76", null ],
+    [ "cyan", "setcolor-functions_8hpp.html#a6813569583c6200a48574218e5b53aef", null ],
+    [ "cyan", "setcolor-functions_8hpp.html#a69a61995175724d3540a7bc74c743bed", null ],
+    [ "gray", "setcolor-functions_8hpp.html#ad84bafb262caa2252e5c9a82bd193af6", null ],
+    [ "gray", "setcolor-functions_8hpp.html#a55c651ee5df704aff18087b79c72e7aa", null ],
+    [ "green", "setcolor-functions_8hpp.html#a66c9b96372f3ce405191d33bf2b8d48f", null ],
+    [ "green", "setcolor-functions_8hpp.html#a749208a9408b0c00bfecba7772dc57bd", null ],
+    [ "magenta", "setcolor-functions_8hpp.html#afa4d1d8493a8b324d2ea2777d3821c89", null ],
+    [ "magenta", "setcolor-functions_8hpp.html#acae4420c94c6a77279eefa98210a7fee", null ],
+    [ "orange", "setcolor-functions_8hpp.html#aaf21fef90e205ad8bbbcc4e334099f6b", null ],
+    [ "orange", "setcolor-functions_8hpp.html#a61c9ae04747691bf872f9151f792b918", null ],
+    [ "red", "setcolor-functions_8hpp.html#aab4809206cc67eea82daf30bad72a161", null ],
+    [ "red", "setcolor-functions_8hpp.html#aa79899a6c73dc2923cd7c39a07624b39", null ],
+    [ "white", "setcolor-functions_8hpp.html#aad18b2236cb0275d17205c2ea92d0e10", null ],
+    [ "white", "setcolor-functions_8hpp.html#a514951d8bc561bba6ea48d22643da150", null ],
+    [ "yellow", "setcolor-functions_8hpp.html#ad38e3b64a25bc3f0d6157ac04cad45be", null ],
+    [ "yellow", "setcolor-functions_8hpp.html#aa60a01ac0fc6b3604ff631062ae65420", null ]
+];

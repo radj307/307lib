@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['to_5fstring_76',['to_string',['../namespacestr.html#aa24c21e682b76356086bb5e306b09806',1,'str']]],
-  ['tolower_77',['tolower',['../namespacestr.html#a3fdf8a3ec9b115bcd8e8e4695c279b58',1,'str::tolower(const char &amp;c) noexcept'],['../namespacestr.html#a913ce30227f12946e232734f73ded7e6',1,'str::tolower(std::string str) noexcept'],['../namespacestr.html#af92909ccb4e0084cbb0bc92c5cd1dc59',1,'str::tolower(const std::pair&lt; First, Second &gt; &amp;pr) noexcept']]],
-  ['tomap_78',['toMap',['../namespacestr.html#a88947ca78984e05f41dd36fb221d32d6',1,'str']]],
-  ['toupper_79',['toupper',['../namespacestr.html#a218400b9bcf5473a62ce0a8b6b383b44',1,'str::toupper(const char &amp;c) noexcept'],['../namespacestr.html#affdc41eaf21b8103c7ebd95350127b51',1,'str::toupper(std::string str) noexcept'],['../namespacestr.html#a5ee30c2da1bf6e8e0ff5d4a7885dc16d',1,'str::toupper(const std::pair&lt; First, Second &gt; &amp;pr) noexcept']]],
-  ['tovector_80',['toVector',['../namespacestr.html#a9f9a7cdc58ff315c0dbdb4793171918f',1,'str']]]
+  ['quote_5fchar_453',['quote_char',['../namespaceopt.html#aed4bb1fd09af1fecb79401708e096a6f',1,'opt']]],
+  ['quote_5fdouble_454',['QUOTE_DOUBLE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea82e4480814328a7f679b86165942d02d',1,'token']]],
+  ['quote_5fsingle_455',['QUOTE_SINGLE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea53334ac5d6f3b0f182e817626c3a40f3',1,'token']]]
 ];

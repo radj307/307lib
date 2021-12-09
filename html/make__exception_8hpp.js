@@ -1,5 +1,5 @@
 var make__exception_8hpp =
 [
     [ "except", "classexcept.html", "classexcept" ],
-    [ "make_exception", "make__exception_8hpp.html#a3a7dcb961d149655d4f9ea32d8a83999", null ]
+    [ "make_exception", "make__exception_8hpp.html#a1d79b247cfb8b097635edd1cc7ae6b57", null ]
 ];

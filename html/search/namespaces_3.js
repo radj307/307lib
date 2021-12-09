@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['concepts_102',['concepts',['../namespacestr_1_1concepts.html',1,'str']]],
-  ['facet_103',['facet',['../namespacestr_1_1facet.html',1,'str']]],
-  ['op_104',['op',['../namespacestr_1_1op.html',1,'str']]],
-  ['str_105',['str',['../namespacestr.html',1,'']]]
+  ['background_736',['background',['../namespacecolor_1_1background.html',1,'color']]],
+  ['color_737',['color',['../namespacecolor.html',1,'']]],
+  ['foreground_738',['foreground',['../namespacecolor_1_1foreground.html',1,'color']]]
 ];

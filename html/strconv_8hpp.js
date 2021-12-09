@@ -1,7 +1,6 @@
 var strconv_8hpp =
 [
     [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
-    [ "_CONSTEXPR", "strconv_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d", null ],
     [ "bool_to_string", "strconv_8hpp.html#a11fa2dd079f3b6ebd63eaffb030e980c", null ],
     [ "string_to_bool", "strconv_8hpp.html#a29b3be3bdfe64e47f3652175fa46e0d5", null ],
     [ "to_string", "strconv_8hpp.html#aa24c21e682b76356086bb5e306b09806", null ],

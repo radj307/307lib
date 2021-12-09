@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: shared/make_exception.hpp Source File</title>
+<title>307Lib: shared/include/make_exception.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,6 @@
   <td id="projectlogo"><img alt="Logo" src="gear-2.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">307Lib
-   &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">C++ Libraries made by radj307</div>
   </td>
@@ -91,32 +90,32 @@ $(document).ready(function(){initNavTree('make__exception_8hpp_source.html','');
 </div><!--header-->
 <div class="contents">
 <a href="make__exception_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sysarch</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">exception</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">str</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classexcept.html">    6</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classexcept.html">except</a> : <span class="keyword">public</span> std::exception {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">const</span> std::string _message;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classexcept.html#aad6d1cb65b53bc4f76527ec34ac1f275">   10</a></span>&#160;    <a class="code" href="classexcept.html#aad6d1cb65b53bc4f76527ec34ac1f275">except</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classexcept.html#a5d20580a6f1d4574450da8c44d10c5f7">   11</a></span>&#160;    <a class="code" href="classexcept.html#a5d20580a6f1d4574450da8c44d10c5f7">except</a>(std::string message) : _message{ message } {}</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classexcept.html#aed6361f00a9ee3451132ccc726467e01">   12</a></span>&#160;    <a class="code" href="classexcept.html#aed6361f00a9ee3451132ccc726467e01">except</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* message) : _message{ message } {}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classexcept.html#a51f221c6069106f1968f6e3800a29d34">   14</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classexcept.html#a51f221c6069106f1968f6e3800a29d34">what</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> { <span class="keywordflow">return</span> _message.c_str(); }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... VT&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a3a7dcb961d149655d4f9ea32d8a83999">   18</a></span>&#160;<a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a3a7dcb961d149655d4f9ea32d8a83999">make_exception</a>(VT&amp;&amp;... message)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> except{ str::stringify(std::forward&lt;VT&gt;(message)...).c_str() };</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">exception</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sstream</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">var</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classexcept.html">    8</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classexcept.html">except</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">const</span> std::string _message;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">   12</a></span>&#160;    <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">except</a>(<span class="keyword">auto</span>&amp;&amp; message) : <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">_message</a>{ <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">std</a>::<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">forward</a>&lt;<span class="keyword">decltype</span>(<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">message</a>)&gt;(<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">message</a>) } {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classexcept.html#a7e84202545430f826b235e475632e8d6">what</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a1d79b247cfb8b097635edd1cc7ae6b57">   16</a></span>&#160;<span class="keyword">template</span>&lt;var::Streamable... VT&gt; <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a1d79b247cfb8b097635edd1cc7ae6b57">make_exception</a>(VT <span class="keyword">const</span>&amp;... message)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::stringstream ss;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    (ss &lt;&lt; ... &lt;&lt; message);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> ss.str().c_str();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="make__exception_8hpp.html">make_exception.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="dir_f017f8d1aea2530cee9690020bbdf1df.html">include</a></li><li class="navelem"><a class="el" href="make__exception_8hpp.html">make_exception.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

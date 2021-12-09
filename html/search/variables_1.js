@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['b_169',['b',['../structstr_1_1_my_type.html#a4c2424a271cc02579e062a309d806d85',1,'str::MyType']]]
+  ['allow_5fwhitespace_5fin_5fkeyname_1180',['allow_whitespace_in_keyname',['../structtoken_1_1_tokenizer_i_n_i.html#a694fd0c507dd8ce65b56d486b0bde3f5',1,'token::TokenizerINI']]]
 ];

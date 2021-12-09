@@ -25,14 +25,29 @@
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "307lib", "md__r_e_a_d_m_e.html", null ],
+    [ "307Lib", "index.html#autotoc_md0", [
+      [ "Index", "index.html#autotoc_md1", null ],
+      [ "Shared Headers", "index.html#autotoc_md2", null ]
+    ] ],
+    [ "TermAPI", "page1.html", [
+      [ "Usage", "page1.html#autotoc_md3", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md4", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md5", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md6", null ]
+      ] ],
+      [ "Color Library", "page1.html#autotoc_md7", [
+        [ "ColorPalette", "page1.html#autotoc_md8", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md9", null ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -40,9 +55,11 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -51,6 +68,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -59,7 +77,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"_a_n_s_i_defs_8h.html",
+"_term_a_p_i_query_8hpp.html#a55f1031356504dadcabf87f97210f025",
+"color-values_8h.html#ab878b1c61db9fd6d93486884f2db8620",
+"namespacemembers_r.html",
+"namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6865d19576ae60f95fd4e61333404352",
+"structfile_1_1ini_1_1_container_i_n_i.html#af70edde10cafb21be02ad96386d3d38a",
+"structtoken_1_1_tokenizer_base_functions.html#ae3be0b89e092d22b087570ca4e155f82"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

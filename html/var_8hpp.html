@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: shared/var.hpp File Reference</title>
+<title>307Lib: shared/include/var.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,6 @@
   <td id="projectlogo"><img alt="Logo" src="gear-2.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">307Lib
-   &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">C++ Libraries made by radj307</div>
   </td>
@@ -86,37 +85,124 @@ $(document).ready(function(){initNavTree('var_8hpp.html',''); initResizable(); }
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">var.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains helper methods for variadic templated functions.  
+<p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for var.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="var_8hpp__incl.png" border="0" usemap="#ashared_2var_8hpp" alt=""/></div>
-<map name="ashared_2var_8hpp" id="ashared_2var_8hpp">
-<area shape="rect" title="Contains helper methods for variadic templated functions." alt="" coords="5,5,112,32"/>
-<area shape="rect" href="sysarch_8h.html" title="Contains preprocessor definitions useful for determining properties of the host system." alt="" coords="19,80,98,107"/>
+<div class="center"><img src="var_8hpp__incl.png" border="0" usemap="#ashared_2include_2var_8hpp" alt=""/></div>
+<map name="ashared_2include_2var_8hpp" id="ashared_2include_2var_8hpp">
+<area shape="rect" title="Contains helper methods for variadic templates &amp; tuples, as well as general&#45;use concepts." alt="" coords="141,5,292,32"/>
+<area shape="rect" href="sysarch_8h.html" title="Contains preprocessor definitions useful for determining properties of the host system." alt="" coords="5,80,84,107"/>
+<area shape="rect" title=" " alt="" coords="109,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="189,80,244,107"/>
+<area shape="rect" title=" " alt="" coords="269,80,319,107"/>
+<area shape="rect" title=" " alt="" coords="343,80,426,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="var_8hpp__dep__incl.png" border="0" usemap="#ashared_2var_8hppdep" alt=""/></div>
-<map name="ashared_2var_8hppdep" id="ashared_2var_8hppdep">
-<area shape="rect" title="Contains helper methods for variadic templated functions." alt="" coords="45,5,151,32"/>
-<area shape="rect" href="str_8hpp.html" title="Includes all of the str namespace extension headers, and additional functions related to string manip..." alt="" coords="49,80,147,107"/>
-<area shape="rect" href="make__exception_8hpp.html" title=" " alt="" coords="5,155,191,181"/>
+<div class="center"><img src="var_8hpp__dep__incl.png" border="0" usemap="#ashared_2include_2var_8hppdep" alt=""/></div>
+<map name="ashared_2include_2var_8hppdep" id="ashared_2include_2var_8hppdep">
+<area shape="rect" title="Contains helper methods for variadic templates &amp; tuples, as well as general&#45;use concepts." alt="" coords="1110,5,1261,32"/>
+<area shape="rect" href="fileutil_8hpp.html" title=" " alt="" coords="19,169,181,196"/>
+<area shape="rect" href="env_8hpp.html" title="Contains the env namespace &amp; all of its functions. &#160;&#160;Features &#160;&#160;&#45; env::getvar(&lt;var_name&gt;) &#160;&#160;Wrapper f..." alt="" coords="169,251,319,278"/>
+<area shape="rect" href="make__exception_8hpp.html" title=" " alt="" coords="590,80,733,121"/>
+<area shape="rect" href="var_8cpp.html" title=" " alt="" coords="1972,87,2100,114"/>
+<area shape="rect" href="_container_i_n_i_8hpp.html" title="Contains the ContainerINI struct, an INI Data Storage Container used to interact with previously pars..." alt="" coords="407,80,566,121"/>
+<area shape="rect" href="_token_8hpp.html" title="Contains enums LEXEME &amp; TokenType, as well as the Token struct used by the TokenizerBase class and de..." alt="" coords="1922,169,2086,196"/>
+<area shape="rect" href="_arg_container_8hpp.html" title=" " alt="" coords="1618,341,1825,367"/>
+<area shape="rect" href="_arg_parser_8hpp.html" title=" " alt="" coords="1492,430,1681,457"/>
+<area shape="rect" href="_variant_argument_type_8hpp.html" title="Contains the VariantArgumentType type definition, as well as the Index struct &amp; the get functions for..." alt="" coords="1644,244,1847,285"/>
+<area shape="rect" href="str_8hpp.html" title="Includes all of the str namespace extension headers, and additional functions related to string manip..." alt="" coords="1114,87,1257,114"/>
+<area shape="rect" href="_format_flag_8hpp.html" title="Contains the FormatFlag struct, a pseudo&#45;enum used to pass formatting information to the setcolor fun..." alt="" coords="618,341,830,367"/>
+<area shape="rect" href="fileutil_8cpp.html" title=" " alt="" coords="5,251,144,278"/>
+<area shape="rect" href="env_8cpp.html" title=" " alt="" coords="181,341,307,367"/>
+<area shape="rect" href="_i_n_i_8hpp.html" title=" " alt="" coords="488,169,632,196"/>
+<area shape="rect" href="make__exception_8cpp.html" title=" " alt="" coords="257,169,463,196"/>
+<area shape="rect" href="_color_palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro..." alt="" coords="419,519,637,546"/>
+<area shape="rect" href="_i_n_i_8cpp.html" title=" " alt="" coords="499,251,621,278"/>
+<area shape="rect" href="_message_8hpp.html" title=" " alt="" coords="429,601,627,628"/>
+<area shape="rect" href="xlog_8hpp.html" title="Contains the xlog namespace, a framework for implementing debug logs into programs." alt="" coords="375,676,534,703"/>
+<area shape="rect" href="_tokenizer_base_8hpp.html" title="Contains the TokenizerBase class; a generic virtual tokenizer. &#160;&#160;## Description # &#160;&#160;The tokenization ..." alt="" coords="2161,244,2321,285"/>
+<area shape="rect" href="_tokenized_container_8hpp.html" title=" " alt="" coords="2160,333,2323,375"/>
+<area shape="rect" href="_tokenizer_i_n_i_8hpp.html" title="Contains the TokenizerINI struct, a TokenizerBase specialization for the INI file format." alt="" coords="1975,333,2135,375"/>
+<area shape="rect" href="_tokenizer_j_s_o_n_8hpp.html" title=" " alt="" coords="2347,333,2507,375"/>
+<area shape="rect" href="_tokenizer_r_e_8hpp.html" title=" " alt="" coords="2531,333,2691,375"/>
+<area shape="rect" href="_i_n_i_parser_8hpp.html" title="Contains the INIParser struct for parsing INIContainer objects." alt="" coords="2101,519,2283,546"/>
+<area shape="rect" href="_i_n_i_parser_mono_type_8hpp.html" title="Contains the INIParserMonoType struct." alt="" coords="1765,512,1923,553"/>
+<area shape="rect" href="_r_e_container_8hpp.html" title=" " alt="" coords="2371,430,2573,457"/>
+<area shape="rect" href="_r_e_parser_8hpp.html" title=" " alt="" coords="2449,519,2634,546"/>
+<area shape="rect" href="_i_n_i_container_8hpp.html" title="Contains the INIContainer object and its variant types." alt="" coords="1955,430,2154,457"/>
+<area shape="rect" href="_i_n_i_container_mono_type_8hpp.html" title="Contains the INIContainerMonoType object and its single templated type." alt="" coords="1757,423,1931,464"/>
+<area shape="rect" href="_params_a_p_i2_8hpp.html" title=" " alt="" coords="1493,519,1697,546"/>
+<area shape="rect" href="_params_a_p_i2_8cpp.html" title=" " alt="" coords="1504,601,1685,628"/>
+<area shape="rect" href="_arg_8hpp.html" title=" " alt="" coords="1506,169,1657,196"/>
+<area shape="rect" href="_a_n_s_i_defs_8h.html" title="Contains all of the macros for ANSI escape sequences." alt="" coords="1005,169,1193,196"/>
+<area shape="rect" href="_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position...." alt="" coords="1237,251,1467,278"/>
+<area shape="rect" href="format-functions_8hpp.html" title=" " alt="" coords="1057,333,1215,375"/>
+<area shape="rect" href="_term_a_p_i_8hpp.html" title="This header&#45;only library contains cross&#45;platform ANSI escape sequence helper functions designed to be..." alt="" coords="1054,601,1250,628"/>
+<area shape="rect" href="_layer_8hpp.html" title="Contains the Layer struct, a pseudo&#45;enum used to define a target layer (foreground/background) for th..." alt="" coords="855,341,1033,367"/>
+<area shape="rect" href="_sequence_8hpp.html" title=" " alt="" coords="957,251,1161,278"/>
+<area shape="rect" href="setcolor_8hpp.html" title="Contains the setcolor struct, which can be used inline with ostream&#39;s operator&lt;&lt; to set text/backgrou..." alt="" coords="803,430,995,457"/>
+<area shape="rect" href="setcolor_8cpp.html" title=" " alt="" coords="814,519,983,546"/>
+<area shape="rect" href="setcolor-functions_8hpp.html" title=" " alt="" coords="1007,512,1174,553"/>
+<area shape="rect" href="_term_a_p_i_win_8hpp.html" title="Provides windows&#45;only functionality to the TermAPI.hpp header&#45;only&#45;library, such as enabling ANSI esc..." alt="" coords="1043,676,1261,703"/>
+<area shape="rect" href="_sequence_definitions_8hpp.html" title="Contains ANSI escape sequence functors derived from Sequence. &#160;&#160;Covers most/all of the virtual sequen..." alt="" coords="1239,333,1417,375"/>
 </map>
 </div>
 </div>
 <p><a href="var_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacevar"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevar.html">var</a></td></tr>
+<tr class="memdesc:namespacevar"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains helper methods for variadic templated functions, as well as std::tuple. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aab48ef63e82c6fbb650f1b7af64c951a"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:aab48ef63e82c6fbb650f1b7af64c951a"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a">var::variadic_or</a> (const T... booleans)</td></tr>
+<tr class="memdesc:aab48ef63e82c6fbb650f1b7af64c951a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-templated std::disjunction that accepts any number of boolean <br  />
+ conditions and returns true when any of the conditions are true.  <a href="namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a">More...</a><br /></td></tr>
+<tr class="separator:aab48ef63e82c6fbb650f1b7af64c951a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4adc200dff50fed630c357d3b5fd16"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:acd4adc200dff50fed630c357d3b5fd16"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#acd4adc200dff50fed630c357d3b5fd16">var::variadic_and</a> (const T... booleans)</td></tr>
+<tr class="memdesc:acd4adc200dff50fed630c357d3b5fd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean AND comparison that accepts any number of variadic boolean arguments.  <a href="namespacevar.html#acd4adc200dff50fed630c357d3b5fd16">More...</a><br /></td></tr>
+<tr class="separator:acd4adc200dff50fed630c357d3b5fd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplParams" colspan="2">template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </td></tr>
+<tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">var::requires</a> (std::equality_comparable_with&lt; CompareType, TupleTypes &gt; &amp;&amp;...) const expr bool tuple_or(const std</td></tr>
+<tr class="memdesc:a3c51dee573904e0882f2fb72103dddea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare each element in a tuple against a given variable.  <a href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">More...</a><br /></td></tr>
+<tr class="separator:a3c51dee573904e0882f2fb72103dddea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc45aca25e4f1c6b9b62bb7e3f8d15e"><td class="memTemplParams" colspan="2">template&lt;typename... CompareTypes, typename... TupleTypes&gt; </td></tr>
+<tr class="memitem:a8dc45aca25e4f1c6b9b62bb7e3f8d15e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e">var::requires</a> (sizeof...(CompareTypes) &gt; 0) const expr bool tuple_or(const std</td></tr>
+<tr class="memdesc:a8dc45aca25e4f1c6b9b62bb7e3f8d15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare a variadic tuple against at least one comparable type.  <a href="namespacevar.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e">More...</a><br /></td></tr>
+<tr class="separator:a8dc45aca25e4f1c6b9b62bb7e3f8d15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a060dae79f908e9ec94f42175a42c45b1"><td class="memTemplParams" colspan="2">template&lt;size_t i = 0ull, typename... TupleTypesLeft, typename... TupleTypesRight&gt; </td></tr>
+<tr class="memitem:a060dae79f908e9ec94f42175a42c45b1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">var::tuple_or</a> (const std::tuple&lt; TupleTypesLeft... &gt; &amp;left, const std::tuple&lt; TupleTypesRight... &gt; &amp;right)</td></tr>
+<tr class="separator:a060dae79f908e9ec94f42175a42c45b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memTemplParams" colspan="2">template&lt;size_t i = 0ull, typename... Types&gt; </td></tr>
+<tr class="memitem:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">var::tuple_and</a> (const std::tuple&lt; Types... &gt; &amp;l, const std::tuple&lt; Types... &gt; &amp;r)</td></tr>
+<tr class="memdesc:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two tuples containing the same element types are equivalent.  <a href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">More...</a><br /></td></tr>
+<tr class="separator:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains helper methods for variadic templated functions. </p>
+<div class="textblock"><p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
@@ -125,7 +211,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="var_8hpp.html">var.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="dir_f017f8d1aea2530cee9690020bbdf1df.html">include</a></li><li class="navelem"><a class="el" href="var_8hpp.html">var.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['name_36',['name',['../structstr_1_1_my_type.html#a6ba0ce1ebaf702ea1de81e9c84591d08',1,'str::MyType']]],
-  ['num_37',['num',['../structstr_1_1_my_type.html#a78081ebbdfe92a11e1012c5b76c8127e',1,'str::MyType']]],
-  ['numbergrouping_38',['NumberGrouping',['../namespacestr.html#a5247d873952449905ce03aca93e5661d',1,'str::NumberGrouping()'],['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet::NumberGrouping']]]
+  ['lastpos_332',['lastPos',['../structtoken_1_1_tokenizer_base_functions.html#afbd6e4527f66d3a455629270d2aa6918',1,'token::TokenizerBaseFunctions']]],
+  ['layer_333',['Layer',['../structcolor_1_1_layer.html',1,'color::Layer'],['../structcolor_1_1_layer.html#adb940c7ec0144d28c11dff839cd80d41',1,'color::Layer::Layer()'],['../_layer_8hpp.html#acb277586dd6b752ace561a19997d59b1',1,'Layer():&#160;Layer.hpp']]],
+  ['layer_2ehpp_334',['Layer.hpp',['../_layer_8hpp.html',1,'']]],
+  ['letter_5flowercase_335',['LETTER_LOWERCASE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea2ef79ee1deef2a3563748a2b70fa06d3',1,'token']]],
+  ['letter_5fuppercase_336',['LETTER_UPPERCASE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea1ee09ab960822ee667ea204df4839b22',1,'token']]],
+  ['level_5fall_337',['LEVEL_ALL',['../namespacexlog.html#a3b30f59069aeab4b44beb416626c5338',1,'xlog']]],
+  ['level_5fall_5fno_5fdebug_338',['LEVEL_ALL_NO_DEBUG',['../namespacexlog.html#a1971f2f07b8fd4213cd30f9240acab2f',1,'xlog']]],
+  ['level_5fnegative_339',['LEVEL_NEGATIVE',['../namespacexlog.html#a6b4fd32b860b380569cbd0e7e7e2f9d4',1,'xlog']]],
+  ['lexeme_340',['LEXEME',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e',1,'token']]],
+  ['lexeme_2eh_341',['LEXEME.h',['../_l_e_x_e_m_e_8h.html',1,'']]],
+  ['light_5fblue_342',['light_blue',['../namespacecolor.html#a4b657969ac14460c813064667a9f1107',1,'color']]],
+  ['light_5fgray_343',['light_gray',['../namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1',1,'color']]],
+  ['light_5fpurple_344',['light_purple',['../namespacecolor.html#a893c727634f7edadf42286d273113d64',1,'color']]],
+  ['line_5fhorizontal_345',['LINE_HORIZONTAL',['../structsys_1_1term_1_1_line_character.html#a4064ac63c776900f35924b59353ced27',1,'sys::term::LineCharacter']]],
+  ['line_5fvertical_346',['LINE_VERTICAL',['../structsys_1_1term_1_1_line_character.html#a23fbcdf77fdec739e648e11ebe6fc509',1,'sys::term::LineCharacter']]],
+  ['linecharacter_347',['LineCharacter',['../structsys_1_1term_1_1_line_character.html',1,'sys::term']]],
+  ['linecharacter_2ehpp_348',['LineCharacter.hpp',['../_line_character_8hpp.html',1,'']]],
+  ['load_349',['load',['../structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567',1,'sys::term::Cursor']]],
+  ['loadcursor_350',['LoadCursor',['../namespacesys_1_1term.html#afa63d679a59a416433fa2802bc50e2e2',1,'sys::term']]],
+  ['log_351',['LOG',['../structxlog_1_1_log_level.html#a568973d8c32b0cd941d5d454be3d7f48',1,'xlog::LogLevel']]],
+  ['log_352',['log',['../classxlog_1_1x_log.html#adf8da1d6501fc9e5450cd8d207646af9',1,'xlog::xLog::log()'],['../namespacesys_1_1term.html#a4256e5fc99d3a84b002f7bb6deee6854',1,'sys::term::log()']]],
+  ['loglevel_353',['LogLevel',['../struct_log_level.html',1,'LogLevel'],['../structxlog_1_1_log_level.html#abe84a691d2a4f7b8dc44ce4ecd6b6d35',1,'xlog::LogLevel::LogLevel()'],['../structxlog_1_1_log_level.html',1,'xlog::LogLevel']]],
+  ['longestlength_354',['longestLength',['../namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9',1,'str::longestLength(const std::vector&lt; std::string &gt; &amp;vec) noexcept'],['../namespacestr.html#a1e68ca74959c47dae8d126c8a9db5717',1,'str::longestLength(const cont_type&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;container) noexcept']]]
 ];
