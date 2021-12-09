@@ -1,6 +1,3 @@
 # 307lib
-Collection of my C++ libraries.
-
-There are no dependencies beyond C++ version.
-
+A compilation of my C++ libraries for use with CMake.  
 [Documentation](https://radj307.github.io/307lib/html/index.html)
