@@ -1,5 +1,5 @@
 # file-lib
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -11,19 +11,19 @@ endif()
 
 project("file-lib")
 
-option(FILELIB_ENABLE_EXTENSIONS "Enable extensions of the file-lib library, including tokenization/parsing capabilities & more. If this is disabled, only fileio & fileutil will be available." OFF)
+option(FILELIB_ENABLE_EXTENSIONS "Enable extensions of the file-lib library, including tokenization/parsing capabilities & more. If this is disabled, only fileio & fileutil will be available." ON)
 
 set(HEADERS
-	"include/fileio.hpp"
-	"include/fileutil.hpp"
+	"./include/fileio.hpp"
+	"./include/fileutil.hpp"
 )
 set(SOURCE
-	"src/fileio.cpp"
-	"src/fileutil.cpp"
+	"./src/fileio.cpp"
+	"./src/fileutil.cpp"
 )
 if(FILELIB_ENABLE_EXTENSIONS)
-	set(HEADERS ${HEADERS} "include/")
-	set(SOURCE ${SOURCE} "src/")
+	list(APPEND HEADERS "./include/token/" "./include/container/" "./include/parser/")
+	list(APPEND SOURCE "./src/")
 endif()
 
 add_library(file-lib STATIC ${HEADERS} ${SOURCE})

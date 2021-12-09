@@ -12,14 +12,14 @@ endif()
 project("str-lib")
 
 set(HEADERS
-	"include/strutility.hpp"
-	"include/strconv.hpp"
-	"include/strmanip.hpp"
-	"include/strlocale.hpp"
-	"include/str.hpp"
+	"./include/strutility.hpp"
+	"./include/strconv.hpp"
+	"./include/strmanip.hpp"
+	"./include/strlocale.hpp"
+	"./include/str.hpp"
 )
 set(SOURCE
-	"src/strutility.cpp"
+	"./src/strutility.cpp"
 )
 
 add_library(str-lib STATIC ${HEADERS} ${SOURCE})

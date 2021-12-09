@@ -12,16 +12,16 @@ endif()
 project("opt-lib")
 
 set(HEADERS
-	"include/Arg.hpp"
-	"include/ArgContainer.hpp"
-	"include/ArgParser.hpp"
-	"include/VariantArgumentType.hpp"
-	"include/env.hpp"
-	"include/ParamsAPI2.hpp"
+	"./include/Arg.hpp"
+	"./include/ArgContainer.hpp"
+	"./include/ArgParser.hpp"
+	"./include/VariantArgumentType.hpp"
+	"./include/env.hpp"
+	"./include/ParamsAPI2.hpp"
 )
 set(SOURCE
-	"src/env.cpp"
-	"src/ParamsAPI2.cpp"
+	"./src/env.cpp"
+	"./src/ParamsAPI2.cpp"
 )
 
 add_library(opt-lib STATIC ${HEADERS} ${SOURCE})

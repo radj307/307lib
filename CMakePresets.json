@@ -1,5 +1,10 @@
 ﻿{
-  "version": 2,
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 13,
+    "patch": 0
+  },
   "configurePresets": [
     {
       "name": "linux-default",
@@ -33,7 +38,7 @@
     },
     {
       "name": "windows-default",
-      "displayName": "Windows x64 Debug",
+      "displayName": "Windows x64",
       "description": "Target Windows with the Visual Studio development environment.",
       "generator": "Visual Studio 17 2022",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
@@ -42,26 +47,52 @@
         "strategy": "external"
       },
       "cacheVariables": {
+        "ENABLE_TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
+        "ENABLE_UNITTESTS": {
+          "type": "BOOL",
+          "value": "ON"
+        },
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
-      "vendor": { "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Windows" ] } }
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [ "Windows" ],
+          "autoFormat": true
+        }
+      }
     },
     {
       "name": "windows-release",
+      "hidden": true,
+      "inherits": "windows-default",
       "displayName": "Windows x64 Release",
       "description": "Target Windows with the Visual Studio development environment.",
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "architecture": {
-        "value": "x64",
-        "strategy": "external"
-      },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "MinSizeRel",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
-      "vendor": { "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Windows" ] } }
+        "ENABLE_TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "ENABLE_UNITTESTS": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "windows-default"
+    },
+    {
+      "name": "Release",
+      "configurePreset": "windows-default",
+      "configuration": "windows-release"
     }
   ]
 }

@@ -1,11 +1,11 @@
 #pragma once
-#include <FILE_PARSER_LIB.h>
 #include <sysarch.h>
-#include <file.h>
+#include <fileio.hpp>
+#include <fileutil.hpp>
 #include <str.hpp>
 #include <make_exception.hpp>
 #ifndef INI_USE_EXPERIMENTAL
-#include <ContainerINI.hpp>
+#include <container/ContainerINI.hpp>
 
 #include <unordered_map>
 #include <variant>
@@ -93,13 +93,13 @@ namespace file::ini {
 		 * @param header_name	- The header name of the section this key belongs to.
 		 * @param key_name		- The name of the key associated with this setting.
 		 */
-		_WINCONSTEXPR KeyHelper(std::string header_name, std::string key_name) : header{ std::move(header_name) }, key{ std::move(key_name) } {}
+		_CONSTEXPR KeyHelper(std::string header_name, std::string key_name) : header{ std::move(header_name) }, key{ std::move(key_name) } {}
 
 		/**
 		 * @brief Return this setting as a header_key_pair, this is implicitly called when passed to ContainerINI functions.
 		 * @returns std::pair<std::string, std::string>
 		 */
-		_WINCONSTEXPR operator std::pair<std::string, std::string>() const { return { header, key }; }
+		_CONSTEXPR operator std::pair<std::string, std::string>() const { return { header, key }; }
 	};
 
 	/**
@@ -162,7 +162,7 @@ namespace file::ini {
 	};
 }
 #else
-#include <INIParser.hpp>
+#include <parser/INIParser.hpp>
 
 namespace file::ini {
 	/**

@@ -3,8 +3,10 @@
 #include <ColorPalette.hpp>
 
 namespace sys::term {
+#ifndef TERMAPI_ENABLE_OLD_FUNCTIONS
 	namespace message_settings {
-		bool useColorSequencesInMessages{ true };
+		static bool useColorSequencesInMessages{ true };
+		static size_t maxMessageSizeIndent{ 8ull };
 	}
 
 	/**
@@ -33,8 +35,12 @@ namespace sys::term {
 		std::string as_string() const
 		{
 			if (message_settings::useColorSequencesInMessages)
-				return str::stringify(_color, _message, color::reset(), _use_indent ? str::VIndent(8ull, _message.size()) : str::VIndent(0ull));
+				return str::stringify(_color, _message, color::reset(), _use_indent ? str::VIndent(message_settings::maxMessageSizeIndent, _message.size()) : str::VIndent(0ull));
 			return _message;
+		}
+		std::string as_string_no_color() const
+		{
+			return str::stringify(_message, _use_indent ? str::VIndent(message_settings::maxMessageSizeIndent, _message.size()) : str::VIndent(0ull));
 		}
 
 		friend std::ostream& operator<<(std::ostream& os, const Message& msg)
@@ -46,9 +52,10 @@ namespace sys::term {
 	const Message
 		info{ "[INFO]", color::setcolor{ color::light_gray } },
 		log{ "[LOG]", color::setcolor{ color::white } },
-		debug{ "[DEBUG]", color::setcolor{color::magenta } },
+		debug{ "[DEBUG]", color::setcolor{color::light_purple } },
 		msg{ "[MSG]",color::setcolor{color::green } },
 		warn{ "[WARN]",color::setcolor{color::orange} },
 		error{ "[ERROR]", color::setcolor{color::red } },
 		crit{ "[CRIT]",color::setcolor{color::dark_red, color::FormatFlag::BOLD } };
+#endif
 }

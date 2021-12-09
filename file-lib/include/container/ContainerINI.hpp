@@ -9,10 +9,12 @@
  *\n	Value		- Refers to the value of a key. All values are stored in type std::string, any conversions must be done externally.
  */
 #pragma once
+#include <sysarch.h>
 #ifndef INI_USE_EXPERIMENTAL
+#include <var.hpp>
+
 #include <unordered_map>
 #include <vector>
-#include <var.hpp>
 
 namespace file::ini {
 	/**

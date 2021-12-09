@@ -1,5 +1,5 @@
 # TermAPI
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -12,31 +12,37 @@ endif()
 project("TermAPI")
 
 set(HEADERS
-	"include/ANSIDefs.h"
-	"include/color-values.h"
+	"./include/ANSIDefs.h"
+	"./include/color-values.h"
 	
-	"include/format-functions.hpp"
-	"include/FormatFlag.hpp"
-	"include/Layer.hpp"
-	"include/setcolor.hpp"
-	"include/setcolor-functions.hpp"
-	"include/ColorPalette.hpp"
+	"./include/format-functions.hpp"
+	"./include/FormatFlag.hpp"
+	"./include/Layer.hpp"
+	"./include/setcolor.hpp"
+	"./include/setcolor-functions.hpp"
+	"./include/ColorPalette.hpp"
 
-	"include/Message.hpp"
-	"include/Sequence.hpp"
-	"include/SequenceDefinitions.hpp"
-	"include/TermAPIQuery.hpp"
-	"include/TermAPI.hpp"
-	"include/CursorOrigin.h"
+	"./include/Message.hpp"
+	"./include/Sequence.hpp"
+	"./include/SequenceDefinitions.hpp"
+	"./include/TermAPIQuery.hpp"
+	"./include/TermAPI.hpp"
+	"./include/CursorOrigin.h"
 
-	"include/LineCharacter.hpp"
+	"./include/LineCharacter.hpp"
 )
 if(WIN32) # Add windows-specific functionality if target is windows
-	set(HEADERS ${HEADERS} "include/TermAPIWin.hpp")
+	list(APPEND HEADERS "./include/TermAPIWin.hpp")
+endif()
+
+
+option(TERMAPI_ENABLE_XLOG "Enable the xLog.hpp header." ON)
+if (TERMAPI_ENABLE_XLOG)
+	list(APPEND HEADERS "./include/xLog.hpp")
 endif()
 
 set(SOURCE
-	"src/setcolor.cpp"
+	"./src/setcolor.cpp"
 )
 
 add_library(TermAPI STATIC ${HEADERS} ${SOURCE})
