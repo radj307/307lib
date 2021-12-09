@@ -152,3 +152,11 @@
 #endif
 
 #endif // SYSARCH
+
+#ifndef _CONSTEXPR
+#if CPP >= 20
+#define _CONSTEXPR constexpr
+#else
+#define _CONSTEXPR
+#endif
+#endif
