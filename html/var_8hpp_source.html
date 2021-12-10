@@ -321,96 +321,126 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> ((booleans) &amp;&amp; ...);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#abbdfa8f54b7fc7761d12ecc473f87bc4">CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">     * @brief           Variadic templated helper function that returns a vector of templated element types.</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">     *\n                All types must be convertible to the specified output type.</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">     *\n                The function can also be overloaded to return any container type with a matching ctor.</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">     * @tparam T        Return / Cast type</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">     * @tparam RT       Return Type, must have a constructor that can receive variadic input.</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">     * @tparam ...VT    Variadic Templated Types</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">     * @param ...vars   The variables to accumulate.</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">     * @returns         std::vector&lt;T&gt;</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> RT = std::vector&lt;T&gt;, <span class="keyword">typename</span>... VT&gt;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> RT variadic_accumulate(VT... vars)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">return</span> RT{ <span class="keyword">static_cast</span>&lt;T&gt;(vars)... };</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">template</span>&lt;valid_char Out, valid_char In&gt;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> Out convert_char_t(<span class="keyword">const</span> In&amp; ch)</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(In) &lt;= <span class="keyword">sizeof</span>(Out))</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">return</span>{ ch };</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(In) &gt; <span class="keyword">sizeof</span>(Out))</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Out&gt;(ch);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> { <span class="stringliteral">&#39;\0&#39;</span> }; <span class="comment">// this should never be reached, but it quiets the compiler</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">     * @brief           Variadic templated helper function that returns a string from a variadic pack of characters.</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">     * @tparam StrT     The type of string to return.</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">     * @tparam T        Templated Char Types.</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">     * @param ch        Characters.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">     * @returns         StrT</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">template</span>&lt;valid_string StrT, valid_char... T&gt;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> StrT string_accumulate(<span class="keyword">const</span> T&amp;... ch)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> StrT{ <span class="keyword">static_cast</span>&lt;StrT::value_type&gt;(ch)... };</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">variadic</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">tuple</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">     * @brief                   Compare each element in a tuple against a given variable.</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">     * @tparam CompareType      Type that can be compared to all elements in the tuple.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">     * @tparam ...TupleTypes    Types in the given tuple.</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">     * @param tuple             A tuple containing elements which can be compared for equality with the given comparison type.</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">     * @param compare           A variable to compare to each element in the tuple.</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">     * @returns                 bool</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">  284</a></span>&#160;    <span class="keyword">template</span>&lt;<a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">size_t</a> <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">i</a> = 0, <span class="keyword">typename</span> <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">CompareType</a>, <span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">TupleTypes</a>&gt; <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> (std::equality_comparable_with&lt;CompareType, TupleTypes&gt; &amp;&amp; ...)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> tuple_or(<span class="keyword">const</span> std::tuple&lt;TupleTypes...&gt;&amp; tuple, <span class="keyword">const</span> CompareType&amp; compare)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">return</span> std::get&lt;i&gt;(tuple) == compare || (<span class="keyword">sizeof</span>...(TupleTypes) &gt; i + 1ull) &amp;&amp; tuple_or&lt;i + 1ull&gt;(tuple, compare);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">     * @brief           Retrieve the largest value in a variadic pack.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">     * @tparam T        First value type, all additional values are casted to this type before comparison.</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">     * @tparam ...vT    Additional Value Type(s).</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">     * @param n         First value. All additional values are casted to the same type before comparison.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">     * @param ...rest   At least one additional value.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">     * @returns         T</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... vT&gt;</div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130">  242</a></span>&#160;    [[<a class="code" href="namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130">nodiscard</a>]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> T <a class="code" href="namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130">largest</a>(<span class="keyword">const</span> T&amp; n, <span class="keyword">const</span> vT&amp;... rest) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> larger{ [] &lt;<span class="keyword">typename</span> T&gt;(<span class="keyword">const</span> T &amp; n, <span class="keyword">const</span> T &amp; bound) -&gt; T { <span class="keywordflow">return</span> n &gt; bound ? n : bound; } };</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> (larger&lt;T&gt;(n, larger&lt;T&gt;(<span class="keyword">static_cast</span>&lt;T&gt;(rest), <span class="keyword">static_cast</span>&lt;T&gt;(0))));</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">     * @brief           Retrieve the smallest value in a variadic pack.</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">     * @tparam T        First value type, all additional values are casted to this type before comparison.</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">     * @tparam ...vT    Additional Value Type(s).</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">     * @param n         First value. All additional values are casted to the same type before comparison.</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">     * @param ...rest   At least one additional value.</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">     * @returns         T</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... vT&gt;</div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="namespacevar.html#a0b4b05c88cdf5b8c5db50f9af196e890">  257</a></span>&#160;    [[<a class="code" href="namespacevar.html#a0b4b05c88cdf5b8c5db50f9af196e890">nodiscard</a>]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> T <a class="code" href="namespacevar.html#a0b4b05c88cdf5b8c5db50f9af196e890">smallest</a>(<span class="keyword">const</span> T&amp; n, <span class="keyword">const</span> vT&amp;... rest) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> smaller{ [] &lt;<span class="keyword">typename</span> T&gt;(<span class="keyword">const</span> T &amp; n, <span class="keyword">const</span> T &amp; bound) -&gt; T { <span class="keywordflow">return</span> n &lt; bound ? n : bound; } };</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> (smaller&lt;T&gt;(n, smaller(<span class="keyword">static_cast</span>&lt;T&gt;(rest), <span class="keyword">static_cast</span>&lt;T&gt;(0))));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#abbdfa8f54b7fc7761d12ecc473f87bc4">CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">     * @brief           Variadic templated helper function that returns a vector of templated element types.</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">     *\n                All types must be convertible to the specified output type.</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">     *\n                The function can also be overloaded to return any container type with a matching ctor.</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">     * @tparam T        Return / Cast type</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">     * @tparam RT       Return Type, must have a constructor that can receive variadic input.</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">     * @tparam ...VT    Variadic Templated Types</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">     * @param ...vars   The variables to accumulate.</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">     * @returns         std::vector&lt;T&gt;</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> RT = std::vector&lt;T&gt;, <span class="keyword">typename</span>... VT&gt;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> RT variadic_accumulate(VT... vars)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">return</span> RT{ <span class="keyword">static_cast</span>&lt;T&gt;(vars)... };</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keyword">template</span>&lt;valid_char Out, valid_char In&gt;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> Out convert_char_t(<span class="keyword">const</span> In&amp; ch)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(In) &lt;= <span class="keyword">sizeof</span>(Out))</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">return</span>{ ch };</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(In) &gt; <span class="keyword">sizeof</span>(Out))</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;Out&gt;(ch);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">return</span> { <span class="stringliteral">&#39;\0&#39;</span> }; <span class="comment">// this should never be reached, but it quiets the compiler</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">     * @brief                   Compare a variadic tuple against at least one comparable type.</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">     * @tparam ...CompareTypes  Variadic templated types</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">     * @tparam ...TupleTypes    Variadic templated tuple types</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">     * @param tuple             Tuple of values to compare</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">     * @param ...compare        Values to compare</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">     * @returns                 bool</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">     * @brief           Variadic templated helper function that returns a string from a variadic pack of characters.</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">     * @tparam StrT     The type of string to return.</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">     * @tparam T        Templated Char Types.</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">     * @param ch        Characters.</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">     * @returns         StrT</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="namespacevar.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e">  297</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">CompareTypes</a>, <span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">TupleTypes</a>&gt; <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> (<span class="keyword">sizeof</span>...(CompareTypes) &gt; 0)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> tuple_or(<span class="keyword">const</span> std::tuple&lt;TupleTypes...&gt;&amp; tuple, <span class="keyword">const</span> CompareTypes&amp;... compare)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keyword">template</span>&lt;valid_string StrT, valid_char... T&gt;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> StrT string_accumulate(<span class="keyword">const</span> T&amp;... ch)</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> (tuple_or(tuple, compare) || ...);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> StrT{ <span class="keyword">static_cast</span>&lt;StrT::value_type&gt;(ch)... };</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">template</span>&lt;size_t i = 0ull, <span class="keyword">typename</span>... TupleTypesLeft, <span class="keyword">typename</span>... TupleTypesRight&gt;</div>
-<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">  303</a></span>&#160;    [[<a class="code" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">tuple_or</a>(<span class="keyword">const</span> std::tuple&lt;TupleTypesLeft...&gt;&amp; left, <span class="keyword">const</span> std::tuple&lt;TupleTypesRight...&gt;&amp; right)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">return</span> tuple_or(left, std::get&lt;i&gt;(right)) || (<span class="keyword">sizeof</span>...(TupleTypesRight) &gt; i + 1) &amp;&amp; tuple_or&lt;i + 1&gt;(left, right);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">     * @brief           Check if two tuples containing the same element types are equivalent.</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">     * @tparam ...Types Variadic Templated Types. Both tuples must contain the same types in the same order.</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">     * @param l         First tuple to compare.</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">     * @param r         Second tuple to compare.</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">     * @returns         bool</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">template</span>&lt;size_t i = 0ull, <span class="keyword">typename</span>... Types&gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">  316</a></span>&#160;    [[<a class="code" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">tuple_and</a>(<span class="keyword">const</span> std::tuple&lt;Types...&gt;&amp; l, <span class="keyword">const</span> std::tuple&lt;Types...&gt;&amp; r)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">return</span> std::get&lt;i&gt;(l) == std::get&lt;i&gt;(r)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            &amp;&amp; (<span class="keyword">sizeof</span>...(Types) == i || tuple_and&lt;i + 1ull&gt;(l, r)); <span class="comment">// if this is the last element, short circuit and stop recursing</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    }</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">tuple</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">variadic</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">tuple</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">     * @brief                   Compare each element in a tuple against a given variable.</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">     * @tparam CompareType      Type that can be compared to all elements in the tuple.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">     * @tparam ...TupleTypes    Types in the given tuple.</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">     * @param tuple             A tuple containing elements which can be compared for equality with the given comparison type.</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">     * @param compare           A variable to compare to each element in the tuple.</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">     * @returns                 bool</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">  314</a></span>&#160;    <span class="keyword">template</span>&lt;<a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">size_t</a> <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">i</a> = 0, <span class="keyword">typename</span> <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">CompareType</a>, <span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">TupleTypes</a>&gt; <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> (std::equality_comparable_with&lt;CompareType, TupleTypes&gt; &amp;&amp; ...)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> tuple_or(<span class="keyword">const</span> std::tuple&lt;TupleTypes...&gt;&amp; tuple, <span class="keyword">const</span> CompareType&amp; compare)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">return</span> std::get&lt;i&gt;(tuple) == compare || (<span class="keyword">sizeof</span>...(TupleTypes) &gt; i + 1ull) &amp;&amp; tuple_or&lt;i + 1ull&gt;(tuple, compare);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">     * @brief                   Compare a variadic tuple against at least one comparable type.</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">     * @tparam ...CompareTypes  Variadic templated types</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">     * @tparam ...TupleTypes    Variadic templated tuple types</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">     * @param tuple             Tuple of values to compare</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">     * @param ...compare        Values to compare</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">     * @returns                 bool</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="namespacevar.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e">  327</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">CompareTypes</a>, <span class="keyword">typename</span>... <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">TupleTypes</a>&gt; <a class="code" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> (<span class="keyword">sizeof</span>...(CompareTypes) &gt; 0)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> tuple_or(<span class="keyword">const</span> std::tuple&lt;TupleTypes...&gt;&amp; tuple, <span class="keyword">const</span> CompareTypes&amp;... compare)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">return</span> (tuple_or(tuple, compare) || ...);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">template</span>&lt;size_t i = 0ull, <span class="keyword">typename</span>... TupleTypesLeft, <span class="keyword">typename</span>... TupleTypesRight&gt;</div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">  333</a></span>&#160;    [[<a class="code" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">tuple_or</a>(<span class="keyword">const</span> std::tuple&lt;TupleTypesLeft...&gt;&amp; left, <span class="keyword">const</span> std::tuple&lt;TupleTypesRight...&gt;&amp; right)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">return</span> tuple_or(left, std::get&lt;i&gt;(right)) || (<span class="keyword">sizeof</span>...(TupleTypesRight) &gt; i + 1) &amp;&amp; tuple_or&lt;i + 1&gt;(left, right);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">     * @brief           Check if two tuples containing the same element types are equivalent.</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">     * @tparam ...Types Variadic Templated Types. Both tuples must contain the same types in the same order.</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">     * @param l         First tuple to compare.</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">     * @param r         Second tuple to compare.</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">     * @returns         bool</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keyword">template</span>&lt;size_t i = 0ull, <span class="keyword">typename</span>... Types&gt;</div>
+<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">  346</a></span>&#160;    [[<a class="code" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">tuple_and</a>(<span class="keyword">const</span> std::tuple&lt;Types...&gt;&amp; l, <span class="keyword">const</span> std::tuple&lt;Types...&gt;&amp; r)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">return</span> std::get&lt;i&gt;(l) == std::get&lt;i&gt;(r)</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            &amp;&amp; (<span class="keyword">sizeof</span>...(Types) == i || tuple_and&lt;i + 1ull&gt;(l, r)); <span class="comment">// if this is the last element, short circuit and stop recursing</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">tuple</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

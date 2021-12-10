@@ -44,7 +44,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -79,11 +79,11 @@ var NAVTREEINDEX =
 [
 "_a_n_s_i_defs_8h.html",
 "_term_a_p_i_query_8hpp.html#a4aba5f7abf46999b265faedca76c9dbb",
-"color-values_8h.html#a4d9a8dfa7552ebe5422d8ddeb562588d",
-"namespacemembers_d.html",
-"namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac14369ef03743b996b987053bfb9368a",
-"structfile_1_1ini_1_1_container_i_n_i.html#a5a5bb75fa023dc4e9f1a41480a35f09b",
-"structtoken_1_1_tokenizer_base_functions.html#a6f0f8d39c3ce68a6ba62ed44699cd636"
+"color-values_8h.html#a30c667606a0a43af09ffceb9177ee8bd",
+"namespacefile_1_1ini_1_1__internal.html#a2c168e661cee8d51bfaab65be9fadc8a",
+"namespacesys_1_1term.html#aefbd5ba7b6ff9e49ade09efc36747eda",
+"structcolor_1_1background_1_1setcolor.html#ad3e2873995adeeedee9799b4622eea71",
+"structtoken_1_1_token_base.html#ab7447626919155f3e5f89f4dcf727d17"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,6 +1,7 @@
 var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
 [
     [ "ANSIDefs.h", "_a_n_s_i_defs_8h.html", "_a_n_s_i_defs_8h" ],
+    [ "color-transform.hpp", "color-transform_8hpp.html", "color-transform_8hpp" ],
     [ "color-values.h", "color-values_8h.html", "color-values_8h" ],
     [ "ColorPalette.hpp", "_color_palette_8hpp.html", [
       [ "ColorPalette", "classcolor_1_1_color_palette.html", "classcolor_1_1_color_palette" ]

@@ -108,8 +108,7 @@ Include dependency graph for var.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="var_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="var_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="var_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -131,6 +130,14 @@ Functions</h2></td></tr>
 <tr class="memitem:acd4adc200dff50fed630c357d3b5fd16"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#acd4adc200dff50fed630c357d3b5fd16">var::variadic_and</a> (const T... booleans)</td></tr>
 <tr class="memdesc:acd4adc200dff50fed630c357d3b5fd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean AND comparison that accepts any number of variadic boolean arguments.  <a href="namespacevar.html#acd4adc200dff50fed630c357d3b5fd16">More...</a><br /></td></tr>
 <tr class="separator:acd4adc200dff50fed630c357d3b5fd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb54dc8ab4667e3d3e02ba5472918130"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... vT&gt; </td></tr>
+<tr class="memitem:afb54dc8ab4667e3d3e02ba5472918130"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130">var::largest</a> (const T &amp;n, const vT &amp;... rest) noexcept</td></tr>
+<tr class="memdesc:afb54dc8ab4667e3d3e02ba5472918130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the largest value in a variadic pack.  <a href="namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130">More...</a><br /></td></tr>
+<tr class="separator:afb54dc8ab4667e3d3e02ba5472918130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4b05c88cdf5b8c5db50f9af196e890"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... vT&gt; </td></tr>
+<tr class="memitem:a0b4b05c88cdf5b8c5db50f9af196e890"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a0b4b05c88cdf5b8c5db50f9af196e890">var::smallest</a> (const T &amp;n, const vT &amp;... rest) noexcept</td></tr>
+<tr class="memdesc:a0b4b05c88cdf5b8c5db50f9af196e890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the smallest value in a variadic pack.  <a href="namespacevar.html#a0b4b05c88cdf5b8c5db50f9af196e890">More...</a><br /></td></tr>
+<tr class="separator:a0b4b05c88cdf5b8c5db50f9af196e890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplParams" colspan="2">template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </td></tr>
 <tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">var::requires</a> (std::equality_comparable_with&lt; CompareType, TupleTypes &gt; &amp;&amp;...) const expr bool tuple_or(const std</td></tr>
 <tr class="memdesc:a3c51dee573904e0882f2fb72103dddea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare each element in a tuple against a given variable.  <a href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">More...</a><br /></td></tr>

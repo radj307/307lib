@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['red_1318',['red',['../namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color']]],
-  ['reset_5fbold_1319',['RESET_BOLD',['../structcolor_1_1_format_flag.html#a28fcb98202afb047a744f65d20933149',1,'color::FormatFlag']]],
-  ['reset_5finvert_1320',['RESET_INVERT',['../structcolor_1_1_format_flag.html#a3b3184e8da936902c85d4d29eb8172da',1,'color::FormatFlag']]],
-  ['reset_5funderline_1321',['RESET_UNDERLINE',['../structcolor_1_1_format_flag.html#acaf3f5e03730f7f6473c76ecf70d48ef',1,'color::FormatFlag']]]
+  ['red_1327',['red',['../namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color']]],
+  ['reset_5fbold_1328',['RESET_BOLD',['../structcolor_1_1_format_flag.html#a28fcb98202afb047a744f65d20933149',1,'color::FormatFlag']]],
+  ['reset_5finvert_1329',['RESET_INVERT',['../structcolor_1_1_format_flag.html#a3b3184e8da936902c85d4d29eb8172da',1,'color::FormatFlag']]],
+  ['reset_5funderline_1330',['RESET_UNDERLINE',['../structcolor_1_1_format_flag.html#acaf3f5e03730f7f6473c76ecf70d48ef',1,'color::FormatFlag']]]
 ];
