@@ -11,5 +11,5 @@ You can find the github pages site [here.](https://radj307.github.io/307lib/html
 `doxygen ./Doxyfile`
 
 
-To execute all of the above steps, you can use this one-liner:
+To execute all of the above steps, you can use this one-liner:  
 `git clone https://github.com/radj307/307lib && cd 307lib && git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages && git submodule init && git submodule update && doxygen ./Doxyfile`  
