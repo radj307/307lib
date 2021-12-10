@@ -4,11 +4,11 @@ var namespacestr =
     [ "op", "namespacestr_1_1op.html", [
       [ "operator<<", "namespacestr_1_1op.html#a76a33af138db3cf1368d172e8c26cda7", null ]
     ] ],
-    [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
-    [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ],
-    [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
     [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
     [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ],
+    [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
+    [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
+    [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ],
     [ "VIndent", "namespacestr.html#a576148d382d024fc11d46dc0ef839cec", null ],
     [ "align_center", "namespacestr.html#a61c9108691e6d984499341518c993787", null ],
     [ "apply_to_each", "namespacestr.html#a82f6e6378f1869b65cce94f28f31d665", null ],

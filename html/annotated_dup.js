@@ -46,11 +46,11 @@ var annotated_dup =
       [ "facet", "namespacestr_1_1facet.html", [
         [ "NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", "classstr_1_1facet_1_1_number_grouping" ]
       ] ],
-      [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
-      [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ],
-      [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
       [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
-      [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ]
+      [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ],
+      [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
+      [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
+      [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ]
     ] ],
     [ "sys", "namespacesys.html", [
       [ "term", "namespacesys_1_1term.html", [
@@ -80,10 +80,10 @@ var annotated_dup =
     [ "xlog", "namespacexlog.html", [
       [ "level", "structxlog_1_1level.html", "structxlog_1_1level" ],
       [ "OutputTarget", "structxlog_1_1_output_target.html", "structxlog_1_1_output_target" ],
-      [ "xLog", "classxlog_1_1x_log.html", "classxlog_1_1x_log" ]
+      [ "xLog", "classxlog_1_1x_log.html", "classxlog_1_1x_log" ],
+      [ "xLogs", "classxlog_1_1x_logs.html", "classxlog_1_1x_logs" ]
     ] ],
     [ "CharacterSet", "struct_character_set.html", null ],
     [ "except", "classexcept.html", "classexcept" ],
-    [ "flagset", "structflagset.html", "structflagset" ],
     [ "set", "structset.html", null ]
 ];

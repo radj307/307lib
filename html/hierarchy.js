@@ -15,7 +15,6 @@ var hierarchy =
     [ "std::exception", null, [
       [ "except", "classexcept.html", null ]
     ] ],
-    [ "flagset< size >", "structflagset.html", null ],
     [ "color::FormatFlag", "structcolor_1_1_format_flag.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "token::parse::INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", null ],
@@ -70,5 +69,8 @@ var hierarchy =
     ] ],
     [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],
     [ "opt::VirtualArgument", "structopt_1_1_virtual_argument.html", null ],
-    [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ]
+    [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
+    [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [
+      [ "xlog::xLogs< StreamType >", "classxlog_1_1x_logs.html", null ]
+    ] ]
 ];
