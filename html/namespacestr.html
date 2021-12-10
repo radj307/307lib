@@ -108,19 +108,19 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_printable.html">Printable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic wrapper for any number of any types. Allows functions to return an inline-printable value so the function can be used in an output stream operator&lt;&lt; statement.  <a href="structstr_1_1_printable.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_variable_indentation.html">VariableIndentation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the std::setw() function to create a variable amount of indentation in an output stream.  <a href="structstr_1_1_variable_indentation.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_my_type.html">MyType</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_set_locale.html">SetLocale</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the locale of a stream. If you want to apply a locale Facet, use struct SetLocaleFacet&lt;&gt; instead.  <a href="structstr_1_1_set_locale.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_set_locale_facet.html">SetLocaleFacet</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the locale of an iostream, and set a Facet at the same time.  <a href="structstr_1_1_set_locale_facet.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_my_type.html">MyType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_printable.html">Printable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic wrapper for any number of any types. Allows functions to return an inline-printable value so the function can be used in an output stream operator&lt;&lt; statement.  <a href="structstr_1_1_printable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_variable_indentation.html">VariableIndentation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the std::setw() function to create a variable amount of indentation in an output stream.  <a href="structstr_1_1_variable_indentation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -138,6 +138,42 @@ Functions</h2></td></tr>
 <tr class="memitem:ac833e4f5138a5dd64fb8985361215835"><td class="memTemplItemLeft" align="right" valign="top">RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">get_longest_string</a> (const Cont&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;cont, RT offset=static_cast&lt; RT &gt;(0))</td></tr>
 <tr class="memdesc:ac833e4f5138a5dd64fb8985361215835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the length of the longest string in a given STL container.  <a href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">More...</a><br /></td></tr>
 <tr class="separator:ac833e4f5138a5dd64fb8985361215835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26bde2717215ef2e746a382003a8fc58"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a26bde2717215ef2e746a382003a8fc58">Placeholder</a> (std::ostream &amp;os)</td></tr>
+<tr class="memdesc:a26bde2717215ef2e746a382003a8fc58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder function that does nothing. Intended for use in ternary expressions.  <a href="namespacestr.html#a26bde2717215ef2e746a382003a8fc58">More...</a><br /></td></tr>
+<tr class="separator:a26bde2717215ef2e746a382003a8fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5247d873952449905ce03aca93e5661d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5247d873952449905ce03aca93e5661d">NumberGrouping</a> (std::ostream &amp;os)</td></tr>
+<tr class="memdesc:a5247d873952449905ce03aca93e5661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically insert commas between thousands when printing numbers. <br  />
+ Example: "1000000" =&gt; "1,000,000".  <a href="namespacestr.html#a5247d873952449905ce03aca93e5661d">More...</a><br /></td></tr>
+<tr class="separator:a5247d873952449905ce03aca93e5661d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3fdf8a3ec9b115bcd8e8e4695c279b58">tolower</a> (const char &amp;c) noexcept</td></tr>
+<tr class="memdesc:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a3fdf8a3ec9b115bcd8e8e4695c279b58">More...</a><br /></td></tr>
+<tr class="separator:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913ce30227f12946e232734f73ded7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a913ce30227f12946e232734f73ded7e6">tolower</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:a913ce30227f12946e232734f73ded7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a913ce30227f12946e232734f73ded7e6">More...</a><br /></td></tr>
+<tr class="separator:a913ce30227f12946e232734f73ded7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memTemplParams" colspan="2">template&lt;typename First , typename Second &gt; </td></tr>
+<tr class="memitem:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::pair&lt; First, Second &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#af92909ccb4e0084cbb0bc92c5cd1dc59">tolower</a> (const std::pair&lt; First, Second &gt; &amp;pr) noexcept</td></tr>
+<tr class="separator:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218400b9bcf5473a62ce0a8b6b383b44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a218400b9bcf5473a62ce0a8b6b383b44">toupper</a> (const char &amp;c) noexcept</td></tr>
+<tr class="memdesc:a218400b9bcf5473a62ce0a8b6b383b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to uppercase.  <a href="namespacestr.html#a218400b9bcf5473a62ce0a8b6b383b44">More...</a><br /></td></tr>
+<tr class="separator:a218400b9bcf5473a62ce0a8b6b383b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdc41eaf21b8103c7ebd95350127b51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#affdc41eaf21b8103c7ebd95350127b51">toupper</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:affdc41eaf21b8103c7ebd95350127b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to uppercase.  <a href="namespacestr.html#affdc41eaf21b8103c7ebd95350127b51">More...</a><br /></td></tr>
+<tr class="separator:affdc41eaf21b8103c7ebd95350127b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memTemplParams" colspan="2">template&lt;typename First , typename Second &gt; </td></tr>
+<tr class="memitem:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::pair&lt; First, Second &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5ee30c2da1bf6e8e0ff5d4a7885dc16d">toupper</a> (const std::pair&lt; First, Second &gt; &amp;pr) noexcept</td></tr>
+<tr class="separator:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24c21e682b76356086bb5e306b09806"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa24c21e682b76356086bb5e306b09806"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::floating_point&lt; T &gt; <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa24c21e682b76356086bb5e306b09806">to_string</a> (const T &amp;val, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
+<tr class="memdesc:aa24c21e682b76356086bb5e306b09806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point to a string in standard notation, with a specified amount of precision.  <a href="namespacestr.html#aa24c21e682b76356086bb5e306b09806">More...</a><br /></td></tr>
+<tr class="separator:aa24c21e682b76356086bb5e306b09806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">bool_to_string</a> (const bool &amp;val, const bool &amp;first_upper=false)</td></tr>
+<tr class="memdesc:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a boolean to a string.  <a href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">More...</a><br /></td></tr>
+<tr class="separator:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
+<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">string_to_bool</a> (std::string str)</td></tr>
+<tr class="memdesc:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">More...</a><br /></td></tr>
+<tr class="separator:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a991544f9c8b8f65720a0c7994b216bd4"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... VT&gt; </td></tr>
 <tr class="memitem:a991544f9c8b8f65720a0c7994b216bd4"><td class="memTemplItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a991544f9c8b8f65720a0c7994b216bd4">streamify</a> (VT... args)</td></tr>
 <tr class="memdesc:a991544f9c8b8f65720a0c7994b216bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.  <a href="namespacestr.html#a991544f9c8b8f65720a0c7994b216bd4">More...</a><br /></td></tr>
@@ -177,42 +213,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a28b64545b20e75933729d6a9f6ccbdc0"><td class="memItemLeft" align="right" valign="top">constexpr const std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a28b64545b20e75933729d6a9f6ccbdc0">rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
 <tr class="memdesc:a28b64545b20e75933729d6a9f6ccbdc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a28b64545b20e75933729d6a9f6ccbdc0">More...</a><br /></td></tr>
 <tr class="separator:a28b64545b20e75933729d6a9f6ccbdc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3fdf8a3ec9b115bcd8e8e4695c279b58">tolower</a> (const char &amp;c) noexcept</td></tr>
-<tr class="memdesc:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a3fdf8a3ec9b115bcd8e8e4695c279b58">More...</a><br /></td></tr>
-<tr class="separator:a3fdf8a3ec9b115bcd8e8e4695c279b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a913ce30227f12946e232734f73ded7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a913ce30227f12946e232734f73ded7e6">tolower</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:a913ce30227f12946e232734f73ded7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a913ce30227f12946e232734f73ded7e6">More...</a><br /></td></tr>
-<tr class="separator:a913ce30227f12946e232734f73ded7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memTemplParams" colspan="2">template&lt;typename First , typename Second &gt; </td></tr>
-<tr class="memitem:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::pair&lt; First, Second &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#af92909ccb4e0084cbb0bc92c5cd1dc59">tolower</a> (const std::pair&lt; First, Second &gt; &amp;pr) noexcept</td></tr>
-<tr class="separator:af92909ccb4e0084cbb0bc92c5cd1dc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a218400b9bcf5473a62ce0a8b6b383b44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a218400b9bcf5473a62ce0a8b6b383b44">toupper</a> (const char &amp;c) noexcept</td></tr>
-<tr class="memdesc:a218400b9bcf5473a62ce0a8b6b383b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to uppercase.  <a href="namespacestr.html#a218400b9bcf5473a62ce0a8b6b383b44">More...</a><br /></td></tr>
-<tr class="separator:a218400b9bcf5473a62ce0a8b6b383b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affdc41eaf21b8103c7ebd95350127b51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#affdc41eaf21b8103c7ebd95350127b51">toupper</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:affdc41eaf21b8103c7ebd95350127b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to uppercase.  <a href="namespacestr.html#affdc41eaf21b8103c7ebd95350127b51">More...</a><br /></td></tr>
-<tr class="separator:affdc41eaf21b8103c7ebd95350127b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memTemplParams" colspan="2">template&lt;typename First , typename Second &gt; </td></tr>
-<tr class="memitem:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::pair&lt; First, Second &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5ee30c2da1bf6e8e0ff5d4a7885dc16d">toupper</a> (const std::pair&lt; First, Second &gt; &amp;pr) noexcept</td></tr>
-<tr class="separator:a5ee30c2da1bf6e8e0ff5d4a7885dc16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa24c21e682b76356086bb5e306b09806"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:aa24c21e682b76356086bb5e306b09806"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::floating_point&lt; T &gt; <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa24c21e682b76356086bb5e306b09806">to_string</a> (const T &amp;val, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
-<tr class="memdesc:aa24c21e682b76356086bb5e306b09806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point to a string in standard notation, with a specified amount of precision.  <a href="namespacestr.html#aa24c21e682b76356086bb5e306b09806">More...</a><br /></td></tr>
-<tr class="separator:aa24c21e682b76356086bb5e306b09806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">bool_to_string</a> (const bool &amp;val, const bool &amp;first_upper=false)</td></tr>
-<tr class="memdesc:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a boolean to a string.  <a href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">More...</a><br /></td></tr>
-<tr class="separator:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
-<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">string_to_bool</a> (std::string str)</td></tr>
-<tr class="memdesc:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">More...</a><br /></td></tr>
-<tr class="separator:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26bde2717215ef2e746a382003a8fc58"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a26bde2717215ef2e746a382003a8fc58">Placeholder</a> (std::ostream &amp;os)</td></tr>
-<tr class="memdesc:a26bde2717215ef2e746a382003a8fc58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder function that does nothing. Intended for use in ternary expressions.  <a href="namespacestr.html#a26bde2717215ef2e746a382003a8fc58">More...</a><br /></td></tr>
-<tr class="separator:a26bde2717215ef2e746a382003a8fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5247d873952449905ce03aca93e5661d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5247d873952449905ce03aca93e5661d">NumberGrouping</a> (std::ostream &amp;os)</td></tr>
-<tr class="memdesc:a5247d873952449905ce03aca93e5661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically insert commas between thousands when printing numbers. <br  />
- Example: "1000000" =&gt; "1,000,000".  <a href="namespacestr.html#a5247d873952449905ce03aca93e5661d">More...</a><br /></td></tr>
-<tr class="separator:a5247d873952449905ce03aca93e5661d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14c6dc2d1ec575eb4f211b202f1baec0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a14c6dc2d1ec575eb4f211b202f1baec0">reverse</a> (const std::string &amp;str)</td></tr>
 <tr class="separator:a14c6dc2d1ec575eb4f211b202f1baec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bac9088e59d818dfcb958ca9fc1c673"><td class="memTemplParams" colspan="2">template&lt;typename CharT , typename Traits &gt; </td></tr>
@@ -998,14 +998,12 @@ template&lt;typename... T&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd8f258dcf725866036392dc253eb48d_cgraph.svg" width="104" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd8f258dcf725866036392dc253eb48d_cgraph.svg" width="104" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd8f258dcf725866036392dc253eb48d_icgraph.svg" width="104" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd8f258dcf725866036392dc253eb48d_icgraph.svg" width="104" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1065,8 +1063,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93d96ab238bb0666c844c65b60303dbd_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93d96ab238bb0666c844c65b60303dbd_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1234,8 +1231,7 @@ template&lt;class Ch , class Tr , class A , class Pred &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea95d9955d4eaf233668351a309059db_icgraph.svg" width="304" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea95d9955d4eaf233668351a309059db_icgraph.svg" width="304" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1628,8 +1624,7 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a957f74a6ebde6e7607a147e5a66e277a_icgraph.svg" width="478" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a957f74a6ebde6e7607a147e5a66e277a_icgraph.svg" width="478" height="315"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1883,8 +1878,7 @@ template&lt;typename... VT&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a28b64545b20e75933729d6a9f6ccbdc0_cgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a28b64545b20e75933729d6a9f6ccbdc0_cgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1999,8 +1993,7 @@ template&lt;typename F &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea590984a3074c9eb9af7112dfc5a4ad_cgraph.svg" width="227" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea590984a3074c9eb9af7112dfc5a4ad_cgraph.svg" width="227" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2097,8 +2090,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa4bf5f1b14b776ed8c1225f5c2870a92_cgraph.svg" width="304" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa4bf5f1b14b776ed8c1225f5c2870a92_cgraph.svg" width="304" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2603,8 +2595,7 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a3fdf8a3ec9b115bcd8e8e4695c279b58_icgraph.svg" width="232" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a3fdf8a3ec9b115bcd8e8e4695c279b58_icgraph.svg" width="603" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2689,8 +2680,12 @@ template&lt;typename First , typename Second &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a913ce30227f12946e232734f73ded7e6_cgraph.svg" width="232" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a913ce30227f12946e232734f73ded7e6_cgraph.svg" width="232" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a913ce30227f12946e232734f73ded7e6_icgraph.svg" width="468" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2794,8 +2789,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a218400b9bcf5473a62ce0a8b6b383b44_icgraph.svg" width="235" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a218400b9bcf5473a62ce0a8b6b383b44_icgraph.svg" width="235" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2880,8 +2874,7 @@ template&lt;typename First , typename Second &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_affdc41eaf21b8103c7ebd95350127b51_cgraph.svg" width="235" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_affdc41eaf21b8103c7ebd95350127b51_cgraph.svg" width="235" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

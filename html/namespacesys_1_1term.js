@@ -5,6 +5,7 @@ var namespacesys_1_1term =
       [ "CURSOR_MIN_AXIS", "namespacesys_1_1term_1_1__internal.html#a98af26a3e67a6497adb8756823f179b1", null ]
     ] ],
     [ "message_settings", "namespacesys_1_1term_1_1message__settings.html", [
+      [ "maxMessageSizeIndent", "namespacesys_1_1term_1_1message__settings.html#a7d4898f22f03db2ab2c0f85da5b5e314", null ],
       [ "useColorSequencesInMessages", "namespacesys_1_1term_1_1message__settings.html#a76bcdea14541786dd63f5ffd17cfa424", null ]
     ] ],
     [ "win", "namespacesys_1_1term_1_1win.html", [

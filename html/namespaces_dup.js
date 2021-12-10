@@ -10,6 +10,7 @@ var namespaces_dup =
     [ "foreground", "namespaceforeground.html", null ],
     [ "op", "namespaceop.html", null ],
     [ "opt", "namespaceopt.html", "namespaceopt" ],
+    [ "perf", "namespaceperf.html", null ],
     [ "rng", "namespacerng.html", "namespacerng" ],
     [ "str", "namespacestr.html", "namespacestr" ],
     [ "sys", "namespacesys.html", "namespacesys" ],

@@ -15,6 +15,7 @@ var hierarchy =
     [ "std::exception", null, [
       [ "except", "classexcept.html", null ]
     ] ],
+    [ "flagset< size >", "structflagset.html", null ],
     [ "color::FormatFlag", "structcolor_1_1_format_flag.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "token::parse::INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", null ],
@@ -22,9 +23,9 @@ var hierarchy =
     [ "opt::InputWrapper", "structopt_1_1_input_wrapper.html", null ],
     [ "file::ini::KeyHelper", "structfile_1_1ini_1_1_key_helper.html", null ],
     [ "color::Layer", "structcolor_1_1_layer.html", null ],
+    [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "sys::term::LineCharacter", "structsys_1_1term_1_1_line_character.html", null ],
-    [ "LogLevel", "struct_log_level.html", null ],
-    [ "xlog::LogLevel", "structxlog_1_1_log_level.html", null ],
+    [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
     [ "sys::term::Message", "classsys_1_1term_1_1_message.html", null ],
     [ "str::MyType", "structstr_1_1_my_type.html", null ],
     [ "std::numpunct", null, [
@@ -69,6 +70,5 @@ var hierarchy =
     ] ],
     [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],
     [ "opt::VirtualArgument", "structopt_1_1_virtual_argument.html", null ],
-    [ "xLog", "classx_log.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ]
 ];

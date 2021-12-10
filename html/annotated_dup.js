@@ -46,11 +46,11 @@ var annotated_dup =
       [ "facet", "namespacestr_1_1facet.html", [
         [ "NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", "classstr_1_1facet_1_1_number_grouping" ]
       ] ],
-      [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
-      [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ],
-      [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
       [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
-      [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ]
+      [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ],
+      [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
+      [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
+      [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ]
     ] ],
     [ "sys", "namespacesys.html", [
       [ "term", "namespacesys_1_1term.html", [
@@ -63,11 +63,11 @@ var annotated_dup =
       [ "parse", "namespacetoken_1_1parse.html", [
         [ "INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", "classtoken_1_1parse_1_1_i_n_i_container" ],
         [ "INIContainerMonoType", "classtoken_1_1parse_1_1_i_n_i_container_mono_type.html", "classtoken_1_1parse_1_1_i_n_i_container_mono_type" ],
-        [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
-        [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ],
         [ "REElement", "structtoken_1_1parse_1_1_r_e_element.html", "structtoken_1_1parse_1_1_r_e_element" ],
         [ "REContainer", "structtoken_1_1parse_1_1_r_e_container.html", "structtoken_1_1parse_1_1_r_e_container" ],
-        [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ]
+        [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ],
+        [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
+        [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ]
       ] ],
       [ "TokenBase", "structtoken_1_1_token_base.html", "structtoken_1_1_token_base" ],
       [ "Token", "structtoken_1_1_token.html", "structtoken_1_1_token" ],
@@ -78,13 +78,12 @@ var annotated_dup =
       [ "TokenizerRE", "classtoken_1_1_tokenizer_r_e.html", "classtoken_1_1_tokenizer_r_e" ]
     ] ],
     [ "xlog", "namespacexlog.html", [
-      [ "LogLevel", "structxlog_1_1_log_level.html", "structxlog_1_1_log_level" ],
+      [ "level", "structxlog_1_1level.html", "structxlog_1_1level" ],
       [ "OutputTarget", "structxlog_1_1_output_target.html", "structxlog_1_1_output_target" ],
       [ "xLog", "classxlog_1_1x_log.html", "classxlog_1_1x_log" ]
     ] ],
     [ "CharacterSet", "struct_character_set.html", null ],
     [ "except", "classexcept.html", "classexcept" ],
-    [ "LogLevel", "struct_log_level.html", null ],
-    [ "set", "structset.html", null ],
-    [ "xLog", "classx_log.html", null ]
+    [ "flagset", "structflagset.html", "structflagset" ],
+    [ "set", "structset.html", null ]
 ];

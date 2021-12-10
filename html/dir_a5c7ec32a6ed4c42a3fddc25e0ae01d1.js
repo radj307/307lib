@@ -21,5 +21,6 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
     [ "setcolor.hpp", "setcolor_8hpp.html", "setcolor_8hpp" ],
     [ "TermAPI.hpp", "_term_a_p_i_8hpp.html", "_term_a_p_i_8hpp" ],
     [ "TermAPIQuery.hpp", "_term_a_p_i_query_8hpp.html", "_term_a_p_i_query_8hpp" ],
-    [ "TermAPIWin.hpp", "_term_a_p_i_win_8hpp.html", "_term_a_p_i_win_8hpp" ]
+    [ "TermAPIWin.hpp", "_term_a_p_i_win_8hpp.html", "_term_a_p_i_win_8hpp" ],
+    [ "xlog.hpp", "xlog_8hpp.html", "xlog_8hpp" ]
 ];

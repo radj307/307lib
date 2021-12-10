@@ -87,6 +87,8 @@ $(document).ready(function(){initNavTree('classxlog_1_1x_log.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classxlog_1_1x_log-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -95,20 +97,51 @@ $(document).ready(function(){initNavTree('classxlog_1_1x_log.html',''); initResi
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for xlog::xLog&lt; StreamType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classxlog_1_1x_log__coll__graph.svg" width="187" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a84952d968fcf2548aae2940517de1ad2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a84952d968fcf2548aae2940517de1ad2">xLog</a> (const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;log_level, const <a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt; &amp;out=<a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt;{ std::cerr })</td></tr>
-<tr class="separator:a84952d968fcf2548aae2940517de1ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a372a9524a76736f3e392de65a1eb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#ac2a372a9524a76736f3e392de65a1eb4">setIncludePrefix</a> (const bool &amp;enabled)</td></tr>
-<tr class="separator:ac2a372a9524a76736f3e392de65a1eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaaf1a18110cf3e4f65e766b480b3f1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#afaaf1a18110cf3e4f65e766b480b3f1a">setLevel</a> (const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;level)</td></tr>
-<tr class="separator:afaaf1a18110cf3e4f65e766b480b3f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10216e8c700fd78ac4368bf7cdc9df66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a10216e8c700fd78ac4368bf7cdc9df66">getLevel</a> () const</td></tr>
-<tr class="separator:a10216e8c700fd78ac4368bf7cdc9df66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8da1d6501fc9e5450cd8d207646af9"><td class="memTemplParams" colspan="2">template&lt;typename... Message&gt; </td></tr>
-<tr class="memitem:adf8da1d6501fc9e5450cd8d207646af9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#adf8da1d6501fc9e5450cd8d207646af9">log</a> (const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;level, const Message &amp;... msg) const</td></tr>
-<tr class="separator:adf8da1d6501fc9e5450cd8d207646af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4251f28cde58f0f097fd3a68aa0ea7bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a4251f28cde58f0f097fd3a68aa0ea7bb">xLog</a> (const <a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt; &amp;out=<a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt;{ std::cerr }, const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;log_level=<a class="el" href="structxlog_1_1level.html#a85c6c191186524f096908e9063b309fa">level::Default</a>, const bool &amp;add_prefix=true)</td></tr>
+<tr class="separator:a4251f28cde58f0f097fd3a68aa0ea7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41948bd8833a7e02e42f4fe801a60a5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a41948bd8833a7e02e42f4fe801a60a5c">setPrefixEnabled</a> (const bool &amp;enable)</td></tr>
+<tr class="memdesc:a41948bd8833a7e02e42f4fe801a60a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether messages should automatically be given a colorized prefix such as "[ERROR]".  <a href="classxlog_1_1x_log.html#a41948bd8833a7e02e42f4fe801a60a5c">More...</a><br /></td></tr>
+<tr class="separator:a41948bd8833a7e02e42f4fe801a60a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951c90a9e341206a7b83806ac0b19c40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a951c90a9e341206a7b83806ac0b19c40">setLevel</a> (const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;<a class="el" href="structxlog_1_1level.html">level</a>)</td></tr>
+<tr class="memdesc:a951c90a9e341206a7b83806ac0b19c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current whitelist level.  <a href="classxlog_1_1x_log.html#a951c90a9e341206a7b83806ac0b19c40">More...</a><br /></td></tr>
+<tr class="separator:a951c90a9e341206a7b83806ac0b19c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526e3713167b11334ce2f4d807ada8b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a526e3713167b11334ce2f4d807ada8b4">getLevel</a> () const</td></tr>
+<tr class="memdesc:a526e3713167b11334ce2f4d807ada8b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current level whitelist setting.  <a href="classxlog_1_1x_log.html#a526e3713167b11334ce2f4d807ada8b4">More...</a><br /></td></tr>
+<tr class="separator:a526e3713167b11334ce2f4d807ada8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137451e28bf6ae7641d9a44e131abcb0"><td class="memTemplParams" colspan="2">template&lt;typename... Message&gt; </td></tr>
+<tr class="memitem:a137451e28bf6ae7641d9a44e131abcb0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a137451e28bf6ae7641d9a44e131abcb0">log</a> (const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;<a class="el" href="structxlog_1_1level.html">level</a>, const Message &amp;... msg) const</td></tr>
+<tr class="memdesc:a137451e28bf6ae7641d9a44e131abcb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a message and send it to the current output target.  <a href="classxlog_1_1x_log.html#a137451e28bf6ae7641d9a44e131abcb0">More...</a><br /></td></tr>
+<tr class="separator:a137451e28bf6ae7641d9a44e131abcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4057bcab03a14b1f300f90762d106125"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125">format</a> (const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;<a class="el" href="structxlog_1_1level.html">level</a>, const std::string &amp;message) const</td></tr>
+<tr class="separator:a4057bcab03a14b1f300f90762d106125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c767783e790e165b6610b45227e477"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#ad8c767783e790e165b6610b45227e477">currentLevelContains</a> (const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;<a class="el" href="structxlog_1_1level.html">level</a>) const</td></tr>
+<tr class="separator:ad8c767783e790e165b6610b45227e477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a92e818044e57cfa60c7e0eb462c40fce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a92e818044e57cfa60c7e0eb462c40fce">_target</a></td></tr>
+<tr class="separator:a92e818044e57cfa60c7e0eb462c40fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bec37d62ae2239506c6051df501d058"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a3bec37d62ae2239506c6051df501d058">_level</a></td></tr>
+<tr class="separator:a3bec37d62ae2239506c6051df501d058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d8617389511a850351345b44994cd7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a41d8617389511a850351345b44994cd7">_last</a> { nullptr }</td></tr>
+<tr class="separator:a41d8617389511a850351345b44994cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eba9c8c75e32f0c6a0f26a416ec721e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a2eba9c8c75e32f0c6a0f26a416ec721e">_buffer</a></td></tr>
+<tr class="separator:a2eba9c8c75e32f0c6a0f26a416ec721e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa411f0dfaa95eefb1d71796d2afab045"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#aa411f0dfaa95eefb1d71796d2afab045">_add_prefix</a></td></tr>
+<tr class="separator:aa411f0dfaa95eefb1d71796d2afab045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a112933d8089d181eb9b4aefa93b844f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a112933d8089d181eb9b4aefa93b844f6">_log_self</a> { false }</td></tr>
+<tr class="separator:a112933d8089d181eb9b4aefa93b844f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -116,16 +149,19 @@ Friends</h2></td></tr>
 <tr class="separator:a77d523d16879b78e14dc2da02ae68ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0c78646bd02c91f163febf5580c0f25"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#ad0c78646bd02c91f163febf5580c0f25">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classxlog_1_1x_log.html">xLog</a>&lt; StreamType &gt; &amp;x)</td></tr>
 <tr class="separator:ad0c78646bd02c91f163febf5580c0f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709d7373037c99a1244b0608dcaea091"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a709d7373037c99a1244b0608dcaea091"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxlog_1_1x_log.html">xLog</a>&lt; StreamType &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxlog_1_1x_log.html#a709d7373037c99a1244b0608dcaea091">operator&lt;&lt;</a> (<a class="el" href="classxlog_1_1x_log.html">xLog</a>&lt; StreamType &gt; &amp;oxl, const T &amp;m)</td></tr>
+<tr class="separator:a709d7373037c99a1244b0608dcaea091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class StreamType = std::ostream&gt;<br />
 class xlog::xLog&lt; StreamType &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00095">95</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00168">168</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a84952d968fcf2548aae2940517de1ad2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84952d968fcf2548aae2940517de1ad2">&#9670;&nbsp;</a></span>xLog()</h2>
+<a id="a4251f28cde58f0f097fd3a68aa0ea7bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4251f28cde58f0f097fd3a68aa0ea7bb">&#9670;&nbsp;</a></span>xLog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,14 +174,20 @@ template&lt;class StreamType  = std::ostream&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::<a class="el" href="classxlog_1_1x_log.html">xLog</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;&#160;</td>
-          <td class="paramname"><em>log_level</em>, </td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>out</em> = <code><a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt;StreamType&gt;{&#160;std::cerr&#160;}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt; StreamType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>out</em> = <code><a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt;StreamType&gt;{&#160;std::cerr&#160;}</code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;&#160;</td>
+          <td class="paramname"><em>log_level</em> = <code><a class="el" href="structxlog_1_1level.html#a85c6c191186524f096908e9063b309fa">level::Default</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>add_prefix</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,13 +202,13 @@ template&lt;class StreamType  = std::ostream&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00123">123</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00222">222</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a10216e8c700fd78ac4368bf7cdc9df66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10216e8c700fd78ac4368bf7cdc9df66">&#9670;&nbsp;</a></span>getLevel()</h2>
+<a id="ad8c767783e790e165b6610b45227e477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c767783e790e165b6610b45227e477">&#9670;&nbsp;</a></span>currentLevelContains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +219,77 @@ template&lt;class StreamType  = std::ostream&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::getLevel </td>
+          <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::currentLevelContains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00214">214</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4057bcab03a14b1f300f90762d106125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4057bcab03a14b1f300f90762d106125">&#9670;&nbsp;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00175">175</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a526e3713167b11334ce2f4d807ada8b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526e3713167b11334ce2f4d807ada8b4">&#9670;&nbsp;</a></span>getLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::getLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -190,12 +302,14 @@ template&lt;class StreamType  = std::ostream&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00140">140</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p>Retrieve the current level whitelist setting. </p>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00267">267</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
-<a id="adf8da1d6501fc9e5450cd8d207646af9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf8da1d6501fc9e5450cd8d207646af9">&#9670;&nbsp;</a></span>log()</h2>
+<a id="a137451e28bf6ae7641d9a44e131abcb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137451e28bf6ae7641d9a44e131abcb0">&#9670;&nbsp;</a></span>log()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +324,7 @@ template&lt;typename... Message&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::log </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;&#160;</td>
           <td class="paramname"><em>level</em>, </td>
         </tr>
         <tr>
@@ -232,12 +346,28 @@ template&lt;typename... Message&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00143">143</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p>Create a message and send it to the current output target. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">...Message</td><td>Any number of types that can be inserted into a stream with operator&lt;&lt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>This message's level. </td></tr>
+    <tr><td class="paramname">...msg</td><td>The contents of this message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00277">277</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac2a372a9524a76736f3e392de65a1eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2a372a9524a76736f3e392de65a1eb4">&#9670;&nbsp;</a></span>setIncludePrefix()</h2>
+<a id="a951c90a9e341206a7b83806ac0b19c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951c90a9e341206a7b83806ac0b19c40">&#9670;&nbsp;</a></span>setLevel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,39 +378,9 @@ template&lt;class StreamType  = std::ostream&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::setIncludePrefix </td>
+          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::setLevel </td>
           <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00128">128</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
-
-</div>
-</div>
-<a id="afaaf1a18110cf3e4f65e766b480b3f1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaaf1a18110cf3e4f65e766b480b3f1a">&#9670;&nbsp;</a></span>setLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class StreamType  = std::ostream&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::setLevel </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxlog_1_1_log_level.html">LogLevel</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> &amp;&#160;</td>
           <td class="paramname"><em>level</em></td><td>)</td>
           <td></td>
         </tr>
@@ -292,13 +392,61 @@ template&lt;class StreamType  = std::ostream&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00134">134</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p>Set the current whitelist level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>This level will overwrite the previous one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LogLevel The previous whitelist level. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00260">260</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a41948bd8833a7e02e42f4fe801a60a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41948bd8833a7e02e42f4fe801a60a5c">&#9670;&nbsp;</a></span>setPrefixEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::setPrefixEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set whether messages should automatically be given a colorized prefix such as "[ERROR]". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>When true, messages include a colorized prefix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool The previous prefix state. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00249">249</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="ad0c78646bd02c91f163febf5580c0f25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0c78646bd02c91f163febf5580c0f25">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c78646bd02c91f163febf5580c0f25">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +481,49 @@ template&lt;class StreamType  = std::ostream&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00126">126</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00225">225</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a709d7373037c99a1244b0608dcaea091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709d7373037c99a1244b0608dcaea091">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxlog_1_1x_log.html">xLog</a>&lt;StreamType&gt;&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxlog_1_1x_log.html">xLog</a>&lt; StreamType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oxl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00228">228</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,12 +563,169 @@ template&lt;class StreamType  = std::ostream&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00125">125</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00224">224</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa411f0dfaa95eefb1d71796d2afab045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa411f0dfaa95eefb1d71796d2afab045">&#9670;&nbsp;</a></span>_add_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_add_prefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00173">173</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2eba9c8c75e32f0c6a0f26a416ec721e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eba9c8c75e32f0c6a0f26a416ec721e">&#9670;&nbsp;</a></span>_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00172">172</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a41d8617389511a850351345b44994cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d8617389511a850351345b44994cd7">&#9670;&nbsp;</a></span>_last</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&gt; <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_last { nullptr }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00171">171</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3bec37d62ae2239506c6051df501d058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bec37d62ae2239506c6051df501d058">&#9670;&nbsp;</a></span>_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&gt; <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_level</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00171">171</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a112933d8089d181eb9b4aefa93b844f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112933d8089d181eb9b4aefa93b844f6">&#9670;&nbsp;</a></span>_log_self</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_log_self { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00173">173</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a92e818044e57cfa60c7e0eb462c40fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e818044e57cfa60c7e0eb462c40fce">&#9670;&nbsp;</a></span>_target</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StreamType  = std::ostream&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxlog_1_1_output_target.html">OutputTarget</a>&lt;StreamType&gt; <a class="el" href="classxlog_1_1x_log.html">xlog::xLog</a>&lt; StreamType &gt;::_target</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00170">170</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>shared/include/<a class="el" href="xlog_8hpp_source.html">xlog.hpp</a></li>
+<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/include/<a class="el" href="xlog_8hpp_source.html">xlog.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

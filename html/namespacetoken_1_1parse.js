@@ -2,11 +2,11 @@ var namespacetoken_1_1parse =
 [
     [ "INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", "classtoken_1_1parse_1_1_i_n_i_container" ],
     [ "INIContainerMonoType", "classtoken_1_1parse_1_1_i_n_i_container_mono_type.html", "classtoken_1_1parse_1_1_i_n_i_container_mono_type" ],
-    [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
-    [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ],
     [ "REElement", "structtoken_1_1parse_1_1_r_e_element.html", "structtoken_1_1parse_1_1_r_e_element" ],
     [ "REContainer", "structtoken_1_1parse_1_1_r_e_container.html", "structtoken_1_1parse_1_1_r_e_container" ],
     [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ],
+    [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
+    [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ],
     [ "Boolean", "namespacetoken_1_1parse.html#a7b592064560353ab54338ba2eb42b976", null ],
     [ "Float", "namespacetoken_1_1parse.html#a6c6c3644f6212ab5acee5350b567ef7a", null ],
     [ "Integer", "namespacetoken_1_1parse.html#abf9d2407584f97bc54ba38b14b8a88de", null ],

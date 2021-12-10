@@ -25,19 +25,19 @@
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "307Lib", "index.html#autotoc_md0", [
-      [ "Index", "index.html#autotoc_md1", null ],
-      [ "Shared Headers", "index.html#autotoc_md2", null ]
+    [ "307Lib", "index.html#autotoc_md2", [
+      [ "Index", "index.html#autotoc_md3", null ],
+      [ "Shared Headers", "index.html#autotoc_md4", null ]
     ] ],
     [ "TermAPI", "page1.html", [
-      [ "Usage", "page1.html#autotoc_md3", [
-        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md4", null ],
-        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md5", null ],
-        [ "A Note on Cursor Positioning", "page1.html#autotoc_md6", null ]
+      [ "Usage", "page1.html#autotoc_md5", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md6", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md7", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md8", null ]
       ] ],
-      [ "Color Library", "page1.html#autotoc_md7", [
-        [ "ColorPalette", "page1.html#autotoc_md8", null ],
-        [ "DEC Line Drawings", "page1.html#autotoc_md9", null ]
+      [ "Color Library", "page1.html#autotoc_md9", [
+        [ "ColorPalette", "page1.html#autotoc_md10", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md11", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
@@ -78,12 +78,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_n_s_i_defs_8h.html",
-"_term_a_p_i_query_8hpp.html#a55f1031356504dadcabf87f97210f025",
-"color-values_8h.html#ab878b1c61db9fd6d93486884f2db8620",
-"namespacemembers_r.html",
-"namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6865d19576ae60f95fd4e61333404352",
-"structfile_1_1ini_1_1_container_i_n_i.html#af70edde10cafb21be02ad96386d3d38a",
-"structtoken_1_1_tokenizer_base_functions.html#ae3be0b89e092d22b087570ca4e155f82"
+"_term_a_p_i_query_8hpp.html#a4aba5f7abf46999b265faedca76c9dbb",
+"color-values_8h.html#a7882dcee4c1ebf89810583e8f42d7615",
+"namespaceforeground.html",
+"namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a63b588d5559f64f89a416e656880b949",
+"structfile_1_1ini_1_1_container_i_n_i.html#a2fb943052582f6da018e40e3524e0e22",
+"structtoken_1_1_tokenized_container.html#abd5b561ca28d77a68f0afa45a08378e4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

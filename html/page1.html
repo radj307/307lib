@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('page1.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>A C++20 Library designed for using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences inline with std iostreams, or independently.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Usage</h1>
 <p>Include the &lt;<a class="el" href="_term_a_p_i_8hpp.html" title="This header-only library contains cross-platform ANSI escape sequence helper functions designed to be...">TermAPI.hpp</a>&gt; header in the file you want to use it. <br  />
  All functions are contained within the <a class="el" href="namespacesys_1_1term.html" title="&lt;">sys::term</a> namespace(s).</p>
@@ -99,14 +99,15 @@ Usage</h1>
  This function is available for all operating systems, however it does nothing on all operating systems other than Windows. <br  />
  Using preprocessor statements, the underlying code to enable virtual sequence support is automatic and does not require input from the programmer. <br  />
  </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt;</span></div>
-<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a>()</div>
 <div class="line">{</div>
 <div class="line">    std::cout &lt;&lt; <a class="code" href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="a_term_a_p_i_8hpp_html"><div class="ttname"><a href="_term_a_p_i_8hpp.html">TermAPI.hpp</a></div><div class="ttdoc">This header-only library contains cross-platform ANSI escape sequence helper functions designed to be...</div></div>
+<div class="ttc" id="amain_8cpp_html_aa06f5fbe915d0bf149dcf793acea47a1"><div class="ttname"><a href="main_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a></div><div class="ttdeci">int main(const int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00019">main.cpp:19</a></div></div>
 <div class="ttc" id="anamespacesys_1_1term_html_ac00a411b0ea4bcc1d677c011c86f3bfe"><div class="ttname"><a href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a></div><div class="ttdeci">std::istream &amp; EnableANSI(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_8hpp_source.html#l00422">TermAPI.hpp:422</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
 Version 2.0.0 Sequences</h2>
 <p>As of TermAPI 2.0.0, the old functions have been completely replaced with a new Sequence object. <br  />
  By default, these functions are used instead of the version 1.0.0 functions. <br  />
@@ -125,18 +126,18 @@ Version 2.0.0 Sequences</h2>
 </div><!-- fragment --> Not all functions can be used inline, specifically functions that require multiple parameters for input or functions from <a class="el" href="_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position....">TermAPIQuery.hpp</a> that require reading responses from STDIN, such as getCursorPosition. <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Using Version 1.0.0 Functions</h2>
 <p>To use the functions from v1: </p><div class="fragment"><div class="line"><span class="preprocessor">#define TERMAPI_ENABLE_OLD_FUNCTIONS</span></div>
 <div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
 </div><!-- fragment --><p>These functions cannot be used inline for the most part, except for a few specific functions.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 A Note on Cursor Positioning</h2>
 <p>By default, the screen buffer origin point is (1,1); <em>not (0,0) as one might expect.</em> TermAPI provides a function that allows you to change the origin point from (1,1) to (0,0) by automatically translating coordinates in all functions that accept or return cursor coordinates. </p><div class="fragment"><div class="line"><span class="comment">// Set the cursor origin point to (0,0):</span></div>
 <div class="line">sys::term::SetOriginPos(0);</div>
 <div class="line"><span class="comment">// Set the cursor origin point to (1,1):</span></div>
 <div class="line">sys::term::SetOriginPos(1);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Color Library</h1>
 <p>TermAPI uses the xterm-256color palette by default. <br  />
 </p>
@@ -150,7 +151,7 @@ Color Library</h1>
 </div><!-- fragment --><p> You can also make bold, inverted, or underlined text by using the FormatFlags object. <br  />
  To make bold text with an underline, you could use: </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a>, FormatFlag::BOLD | FormatFlag::UNDERLINE) &lt;&lt; <span class="stringliteral">&quot;This is bold!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="ttc" id="anamespacecolor_html_ab878b1c61db9fd6d93486884f2db8620"><div class="ttname"><a href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a></div><div class="ttdeci">static constexpr const short green</div><div class="ttdoc">Green color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00010">color-values.h:10</a></div></div>
-</div><!-- fragment --><p>Since setcolor is an object, you can also instantiate it and use it whenever you want: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div>
+</div><!-- fragment --><p>Since setcolor is an object, you can also instantiate it and use it whenever you want: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a>()</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a> myColor{ <a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>, <a class="code" href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">Layer::BACKGROUND</a>, FormatFlag::BOLD };</div>
 <div class="line">    std::cout &lt;&lt; myColor &lt;&lt; <span class="stringliteral">&quot;This text is bold, with a red background!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
@@ -159,7 +160,7 @@ Color Library</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p> This is especially useful as a member of another object, when you want it to be printed with the same color all the time. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 ColorPalette</h2>
 <p>When using the color library, you may come across a situation where you want to be able to quickly set the same color for similar characters, and be able to disable all color sequences from being printed out in certain operation modes. <br  />
  To accomplish this, you can use the ColorPalette object from the <a class="el" href="_color_palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">ColorPalette.hpp</a> header to quickly &amp; easily set consistent colors, as well as disable/enable all sequences without changing your code. All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.</p>
@@ -194,7 +195,7 @@ ColorPalette</h2>
 <div class="line">        &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a>()</div>
 <div class="line">{</div>
 <div class="line"><span class="preprocessor">#ifdef OS_WIN</span></div>
 <div class="line">    std::cout &lt;&lt; <a class="code" href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a>;</div>
@@ -215,7 +216,7 @@ ColorPalette</h2>
 <div class="ttc" id="astructcolor_1_1_format_flag_html_abc2d3f01bb2740aa1a3f7906ba355ac0"><div class="ttname"><a href="structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0">color::FormatFlag::BOLD</a></div><div class="ttdeci">static const FormatFlag BOLD</div><div class="ttdoc">Bolt text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00038">FormatFlag.hpp:38</a></div></div>
 <div class="ttc" id="astructcolor_1_1_format_flag_html_aefe4a985b694a5122577988b16df5a5a"><div class="ttname"><a href="structcolor_1_1_format_flag.html#aefe4a985b694a5122577988b16df5a5a">color::FormatFlag::INVERT</a></div><div class="ttdeci">static const FormatFlag INVERT</div><div class="ttdoc">Invert foreground &amp; background colors of printed text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00040">FormatFlag.hpp:40</a></div></div>
 <div class="ttc" id="astructcolor_1_1_layer_html_a24bb448623eb5018aecfb1638153d772"><div class="ttname"><a href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a></div><div class="ttdeci">static const Layer FOREGROUND</div><div class="ttdoc">Foreground/text color layer.</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp_source.html#l00037">Layer.hpp:37</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 DEC Line Drawings</h2>
 <div class="fragment"><div class="line"><span class="comment">// Enable Line Drawing Mode:</span></div>
 <div class="line"><a class="code" href="namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5">sys::term::setCharacterSet</a>(<a class="code" href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67">sys::term::CharacterSet::DEC_LINE_DRAWING</a>)();</div>
