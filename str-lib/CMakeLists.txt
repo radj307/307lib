@@ -1,7 +1,7 @@
-﻿cmake_minimum_required (VERSION 3.13)
+﻿# str-lib
+cmake_minimum_required (VERSION 3.13)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
@@ -9,6 +9,19 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-add_library(str-lib STATIC "strconv.hpp" "strmanip.hpp" "strutility.hpp" "strlocale.hpp" "strconcepts.hpp" "str.hpp")
+project("str-lib")
+
+set(HEADERS
+	"./include/strutility.hpp"
+	"./include/strconv.hpp"
+	"./include/strmanip.hpp"
+	"./include/strlocale.hpp"
+	"./include/str.hpp"
+)
+set(SOURCE
+	"./src/strutility.cpp"
+)
+
+add_library(str-lib STATIC ${HEADERS} ${SOURCE})
+target_include_directories(str-lib PUBLIC ./include ./src)
 set_target_properties(str-lib PROPERTIES LINKER_LANGUAGE CXX)
-#target_include_directories(str-lib INTERFACE .)

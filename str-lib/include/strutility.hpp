@@ -1,9 +1,7 @@
 #pragma once
 #include <ostream>
 #include <string>
-#include <vector>
-
-#define STRUTILITY_HPP
+#include <concepts>
 
 namespace str {
 	/**
@@ -21,14 +19,7 @@ namespace str {
 		 * @returns ostream&
 		 */
 		template<template<class, class> class ContType, class T>
-		static std::ostream& operator<<(std::ostream& os, const ContType<T, std::allocator<T>>& cont) noexcept
-		{
-			try {
-				for ( const auto& i : cont )
-					os << i << ' ';
-			} catch ( ... ) {}
-			return os;
-		}
+		static std::ostream& operator<<(std::ostream& os, const ContType<T, std::allocator<T>>& cont) noexcept;
 	}
 
 	/**
@@ -39,10 +30,7 @@ namespace str {
 	 *\n		true	- The given position is NOT equal to std::string::npos
 	 *\n		false	- The given position is equal to std::string::npos, and is invalid.
 	 */
-	template<class T> [[nodiscard]] constexpr auto pos_valid(const T pos) -> bool
-	{
-		return static_cast<size_t>( pos ) != std::string::npos;
-	}
+	template<class T> [[nodiscard]] constexpr bool pos_valid(const T pos);
 
 	/**
 	 * @brief Retrieve the length of the longest string in a given STL container.
@@ -51,12 +39,6 @@ namespace str {
 	 * @param offset	- Add this number to the returned value. Including this allows template auto-deduction.
 	 * @returns RT
 	 */
-	template<class RT, template<class, class> class Cont> [[nodiscard]] std::enable_if_t<std::is_integral_v<RT>, RT> get_longest_string(const Cont<std::string, std::allocator<std::string>>& cont, RT offset = static_cast<RT>(0))
-	{
-		size_t longest{ 0llu };
-		for ( auto& it : cont )
-			if ( const auto sz{ it.size() }; sz > longest )
-				longest = sz;
-		return offset + static_cast<RT>(longest);
-	}
+	template<std::integral RT, template<class, class> class Cont>
+	[[nodiscard]] RT get_longest_string(const Cont<std::string, std::allocator<std::string>>& cont, RT offset = static_cast<RT>(0));
 }

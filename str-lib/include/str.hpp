@@ -9,10 +9,6 @@
 #include <strlocale.hpp>		// str library component that includes <locale>-based string functions.
 #include <var.hpp>
 
-#if __cplusplus > 201703L
-
-#endif
-
 #include <iomanip>				// for std::setw & other std::iostream manipulation functions.
 
  /// Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.
@@ -49,11 +45,7 @@ inline constexpr bool isquote(const char c)
 	}
 }
 
-#include <strconcepts.hpp>
-
 namespace str {
-	using namespace str::concepts;
-
 	/**
 	 *	disable "use of a moved from object 'buffer'", speed comparison testing shows a major performance
 	 *	increase when using return-move() for these functions. (~300000ns)
@@ -65,7 +57,7 @@ namespace str {
 	  * @param ...args	- Arguments to insert into the stream, in order.
 	  * @returns std::stringstream
 	  */
-	template<class... VT>
+	template<var::Streamable... VT>
 	[[nodiscard]] static std::stringstream streamify(VT... args)
 	{
 		std::stringstream buffer;
@@ -79,11 +71,13 @@ namespace str {
 	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
 	 * @returns std::string
 	 */
-	template<class... VT> requires (sizeof...(VT) > 0)
-		[[nodiscard]] constexpr static const std::string stringify(const VT&... args)
+	template<var::Streamable... VT>
+	[[nodiscard]] constexpr static const std::string stringify(const VT&... args)
 	{
+		if constexpr (var::none<VT...>)
+			return{};
 		std::stringstream buffer;	// init stringstream
-		(buffer << ... << std::move(args));	// insert variadic arguments in order
+		(buffer << ... << args);	// insert variadic arguments in order
 		return std::move(buffer.str());		// return as string
 	}
 
@@ -96,7 +90,7 @@ namespace str {
 	 * @param ...separators	- Any number of separators. These are inserted in order between every element. This can be used to apply formatting, insert spaces, or anything else. Note that separators are only inserted BETWEEN elements, and will never be trailing!
 	 * @returns std::string
 	 */
-	template<template<class, class> class ContainerT, class ElemT, class... VT> requires std::convertible_to<ElemT, std::string>
+	template<template<class, class> class ContainerT, class ElemT, var::Streamable... VT> requires std::convertible_to<ElemT, std::string>
 	[[nodiscard]] constexpr static const std::string stringify_container(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
 	{
 		std::stringstream buffer;
@@ -116,8 +110,8 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<class DelimType, class... VT> requires (sizeof...(VT) > 0) && (std::is_same_v<std::remove_cv_t<DelimType>, char> || std::is_same_v<std::remove_cv_t<DelimType>, std::string>)
-		[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, VT... args)
+	template<class DelimType, var::Streamable... VT>
+	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, VT... args)
 	{
 		std::stringstream buffer;
 		(buffer << ... << args) << delimiter;
@@ -240,8 +234,9 @@ namespace str {
 		// Insert the indentation into the given output stream
 		friend std::ostream& operator<<(std::ostream& os, const VariableIndentation& indent)
 		{
-			os << std::setfill(indent._fill) << std::setw(indent.operator std::streamsize()) << indent._fill;
-			return os;
+			if (indent._max_width == 0ull)
+				return os;
+			return os << std::setfill(indent._fill) << std::setw(indent.operator std::streamsize()) << indent._fill;
 		}
 	};
 	using VIndent = VariableIndentation;

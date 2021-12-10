@@ -4,16 +4,11 @@
  * @author radj307
  */
 #pragma once
+#include <sysarch.h>
 #include <string>
 #include <sstream>
 #include <optional>
 #include <iomanip>
-
-#if !defined(_CONSTEXPR) && __cplusplus >= 201703L
-#define _CONSTEXPR constexpr
-#else
-#define _CONSTEXPR
-#endif
 
  /**
   * @namespace str
