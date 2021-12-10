@@ -241,7 +241,7 @@ namespace var {
 	 * @param ...vars	The variables to accumulate.
 	 * @returns			std::vector<T>
 	 */
-	template<class T, class RT = std::vector<T>, all_convertible_to<T>... VT>
+	template<class T, class RT = std::vector<T>, typename... VT>
 	[[nodiscard]] inline static constexpr const RT variadic_accumulate(VT... vars)
 	{
 		return RT{ static_cast<T>(vars)... };

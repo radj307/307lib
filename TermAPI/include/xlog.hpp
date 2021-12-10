@@ -119,7 +119,7 @@ namespace xlog {
 		/// @brief	Show everything except for CRITICAL, ERROR, & WARNING level messages.
 		static const LogLevel NoErrorsOrWarningsDebug;
 	};
-	inline constexpr const level::LogLevel
+	constexpr const level::LogLevel
 		level::NONE{ 0 },
 		level::CRITICAL{ 1 },
 		level::ERROR{ 2 },
@@ -161,17 +161,24 @@ namespace xlog {
 		}
 	};
 
-	using msg_break_t = nullptr_t;
-	inline constexpr const msg_break_t msg_break = nullptr;
-
+	/**
+	 * @class				xLog
+	 * @brief				Logging object.
+	 * @tparam StreamType	The type of stream to use as the output target.
+	 */
 	template<class StreamType = std::ostream>
 	class xLog {
 	protected:
 		OutputTarget<StreamType> _target;
-		std::unique_ptr<level::LogLevel> _level, _last{ nullptr };
-		std::string _buffer;
+		std::unique_ptr<level::LogLevel> _level;
 		bool _add_prefix, _log_self{ false };
 
+		/**
+		 * @brief			Format a given message using the current settings.
+		 * @param level		The log level associated with this message.
+		 * @param message	The message string.
+		 * @returns			std::string
+		 */
 		std::string format(const level::LogLevel& level, const std::string& message) const
 		{
 			if (!_add_prefix)
@@ -211,6 +218,11 @@ namespace xlog {
 			return str::stringify(str::VIndent(sys::term::message_settings::maxMessageSizeIndent), message);
 		}
 
+		/**
+		 * @brief			Check if the current log level allows a given level.
+		 * @param level		Check if the current log level contains this level.
+		 * @returns bool
+		 */
 		bool currentLevelContains(const level::LogLevel& level) const
 		{
 			if (_level.get() != nullptr)
@@ -218,28 +230,22 @@ namespace xlog {
 			return false;
 		}
 
+		/**
+		 * @brief				Internal-use-only function that checks if self-logging is enabled, and if so, writes the given message with the DEBUG level.
+		 * @param ...message	The message to write to the log.
+		 * @returns				bool
+		 */
+		template<var::Streamable... VT>
+		bool self_log(const VT&... message) const
+		{
+			return _log_self && currentLevelContains(level::DEBUG) && log(level::DEBUG, message...);
+		}
+
 	public:
 		xLog(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::cerr }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : _target{ out }, _level{ std::make_unique<level::LogLevel>(log_level) }, _add_prefix{ add_prefix } {}
 
 		friend std::istream& operator>>(std::istream& is, const xLog<StreamType>& x) { return is >> x._target; }
 		friend std::ostream& operator<<(std::ostream& os, const xLog<StreamType>& x) { return os << x._target; }
-
-		template<typename T>
-		friend xLog<StreamType>& operator<<(xLog<StreamType>& oxl, const T& m)
-		{
-			if constexpr (std::same_as<T, level::LogLevel>)
-				oxl._last = std::make_unique<level::LogLevel>(m);
-			else if constexpr (std::same_as<T, msg_break_t>) {
-				if (oxl._last.get() == nullptr)
-					oxl.log(level::NONE, oxl._buffer);
-				else
-					oxl.log(*oxl._last.get(), oxl._buffer);
-				oxl._buffer.clear();
-			}
-			else if (oxl._last.get() != nullptr)
-				oxl._buffer += str::stringify(m);
-			return oxl;
-		}
 
 		/**
 		 * @brief			Set whether messages should automatically be given a colorized prefix such as "[ERROR]".
@@ -252,6 +258,7 @@ namespace xlog {
 			_add_prefix = enable;
 			return copy;
 		}
+
 		/**
 		 * @brief				Set the current whitelist level.
 		 * @param level			This level will overwrite the previous one.
@@ -261,10 +268,12 @@ namespace xlog {
 		{
 			const auto copy{ *_level.release() };
 			_level = std::make_unique<level::LogLevel>(level);
+
 			return copy;
 		}
+
 		/// @brief	Retrieve the current level whitelist setting.
-		level::LogLevel getLevel() const { return *_level.get(); }
+		[[nodiscard]] level::LogLevel getLevel() const { return *_level.get(); }
 
 		/**
 		 * @brief				Create a message and send it to the current output target.
@@ -279,9 +288,68 @@ namespace xlog {
 			const auto allowed{ currentLevelContains(level) };
 			if (allowed)
 				_target.write(format(level, str::stringify(msg...)));
-			else if (_log_self && currentLevelContains(level::DEBUG))
-				_target.write(format(level::DEBUG, "Refused a message because the log level did not include it."s));
+			else
+				self_log("Refused a message because the current log level does not allow messages of that type.");
 			return allowed;
+		}
+	};
+
+	using msg_break_t = nullptr_t;
+	constexpr const msg_break_t endm = nullptr;
+
+	/**
+	 * @class				xLogs
+	 * @brief				Extends the xLog object with operator<< stream capabilities.
+	 * @tparam StreamType	The type of stream to use as the output target.
+	 */
+	template<class StreamType = std::ostream>
+	class xLogs : public xLog<StreamType> {
+		std::unique_ptr<level::LogLevel> _last{ nullptr };
+		std::stringstream _buffer;
+
+	public:
+		/**
+		 * @brief				Constructor
+		 * @param out			The output target for logs.
+		 * @param log_level		The log level whitelist.
+		 * @param add_prefix	When true, log messages are prefixed with their level.
+		 */
+		xLogs(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::cerr }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
+
+		/**
+		 * @brief		Stream insertion operator for the xLogs class.
+		 *\n			Allows using xLogs in the same way as a std::ostream, with some important changes:
+		 *\n			- A message level must be specified before messages can be inserted, unless prefixes are disabled.
+		 *\n			- Messages are terminated with `endm` / nullptr.
+		 *\n			- Messages are only sent to the output target once endm has been received.
+		 * @tparam T	Input Type
+		 * @param oxl	(implicit) xLogs instance.
+		 * @param m		(implicit) Message type.
+		 */
+		template<var::Streamable T>
+		friend xLogs<StreamType>& operator<<(xLogs<StreamType>& oxl, const T& m)
+		{
+			if constexpr (std::same_as<T, level::LogLevel>)
+				oxl._last = std::make_unique<level::LogLevel>(m);
+			else if constexpr (std::same_as<T, msg_break_t>) {
+				if (!oxl._add_prefix || oxl._last.get() == nullptr)
+					oxl.log(level::NONE, oxl._buffer.str());
+				else
+					oxl.log(*oxl._last.get(), oxl._buffer.str());
+				oxl._buffer = {};
+			}
+			else if (!oxl._add_prefix || oxl._last.get() != nullptr)
+				oxl._buffer << m;
+			return oxl;
+		}
+		/**
+		 * @brief		Allows inserting an entire output stream into the xLogs instance.
+		 * @param oxl	(implicit) xLogs instance.
+		 * @param os	(implicit) Output Stream.
+		 */
+		friend xLogs<StreamType>& operator<<(xLogs<StreamType>& oxl, std::ostream& os)
+		{
+			oxl << os.rdbuf();
 		}
 	};
 }

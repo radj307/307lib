@@ -29,7 +29,6 @@ include(CMakeDependentOption)
 
 # require C++20
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
@@ -73,3 +72,9 @@ cmake_dependent_option(ENABLE_TESTING "Enable building an executable used for te
 if (ENABLE_TESTING)
 	add_subdirectory("testing")
 endif()
+
+#include(CTest)
+#if (BUILD_TESTING)
+#	enable_testing()
+#	add_subdirectory("unit-tests")
+#endif()

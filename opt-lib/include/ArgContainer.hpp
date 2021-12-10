@@ -1,7 +1,12 @@
 #pragma once
+#include <sysarch.h>
 #include <VariantArgumentType.hpp>
 #include <str.hpp>
 #include <var.hpp>
+
+#include <utility>
+#include <string>
+#include <optional>
 #include <variant>
 #include <vector>
 
@@ -16,14 +21,18 @@ namespace opt {
 	 */
 	struct InputWrapper {
 		const std::string _input;
-		constexpr InputWrapper(std::string input) : _input{ std::move(input) } {}
-		constexpr InputWrapper(char input) : _input{ std::move(std::string(1u, input)) } {}
-		constexpr InputWrapper(const InputWrapper& o) = default;
-		constexpr InputWrapper(InputWrapper&& o) noexcept = default;
-		constexpr operator const std::string() const { return _input; }
-		constexpr bool operator==(const std::string& o) const { return _input == o; }
-		constexpr bool operator==(const char& o) const { return _input.size() == 1ull && _input.front() == o; }
-		constexpr bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
+		_CONSTEXPR InputWrapper(const std::string& input) : _input{ input } {}
+		_CONSTEXPR InputWrapper(char input) : _input{ std::move(std::string(1u, input)) } {}
+		_CONSTEXPR InputWrapper(const InputWrapper& o) = default;
+		_CONSTEXPR InputWrapper(InputWrapper&& o) noexcept = default;
+	#ifdef OS_WIN
+		_CONSTEXPR operator const std::string() const { return _input; }
+	#else
+		operator const std::string() const { return _input; }
+	#endif
+		_CONSTEXPR bool operator==(const std::string& o) const { return _input == o; }
+		_CONSTEXPR bool operator==(const char& o) const { return _input.size() == 1ull && _input.front() == o; }
+		_CONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 	};
 
 	/**
@@ -47,29 +56,29 @@ namespace opt {
 		ArgContainer() = default;
 		ArgContainer(ArgContainerType&& args, std::optional<std::string> arg0 = std::nullopt) : _arg0{ std::move(arg0) }, _args{ std::move(args) } {}
 		template<ValidArg... VT> requires var::at_least_one<VT...>
-		explicit ArgContainer(VT... args) : _arg0{ std::nullopt }, _args{ std::move(var::variadic_accumulate<VariantArgumentType>(std::move(args)...)) } {}
+		explicit ArgContainer(const VT&... args) : _arg0{ std::nullopt }, _args{ var::variadic_accumulate<VariantArgumentType>(args...) } {}
 
-		constexpr bool operator==(const ArgContainer& o) const { return _args.size() == o._args.size() && _args == o._args; }
-		constexpr bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
+		_CONSTEXPR bool operator==(const ArgContainer& o) const { return _args.size() == o._args.size() && _args == o._args; }
+		_CONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
-		constexpr operator const ArgContainerType() const { return _args; }
+		_CONSTEXPR operator const ArgContainerType() const { return _args; }
 
 	#pragma region ForwardVectorFunctions
-		constexpr auto begin() const { return _args.begin(); }
-		constexpr auto end() const { return _args.end(); }
-		constexpr auto rbegin() const { return _args.rbegin(); }
-		constexpr auto rend() const { return _args.rend(); }
-		constexpr const auto at(auto&& pos) const { return _args.at(std::forward<decltype(pos)>(pos)); }
-		constexpr bool empty() const noexcept { return _args.empty(); }
-		constexpr auto size() const { return _args.size(); }
-		constexpr auto max_size() const { return _args.max_size(); }
-		constexpr auto capacity() const { return _args.capacity(); }
-		constexpr void reserve(const size_t& new_size) { _args.reserve(new_size); }
+		_CONSTEXPR auto begin() const { return _args.begin(); }
+		_CONSTEXPR auto end() const { return _args.end(); }
+		_CONSTEXPR auto rbegin() const { return _args.rbegin(); }
+		_CONSTEXPR auto rend() const { return _args.rend(); }
+		_CONSTEXPR const auto at(auto&& pos) const { return _args.at(std::forward<decltype(pos)>(pos)); }
+		_CONSTEXPR bool empty() const noexcept { return _args.empty(); }
+		_CONSTEXPR auto size() const { return _args.size(); }
+		_CONSTEXPR auto max_size() const { return _args.max_size(); }
+		_CONSTEXPR auto capacity() const { return _args.capacity(); }
+		_CONSTEXPR void reserve(const size_t& new_size) { _args.reserve(new_size); }
 		/// @brief Shrink the capacity of the argument container to fit the current number of elements. Returns the number of elements the container was shrunk by. @returns size_t
-		constexpr const auto shrink_to_fit() { const auto capacity{ _args.capacity() }; _args.shrink_to_fit(); return _args.capacity() - capacity; }
+		_CONSTEXPR const auto shrink_to_fit() { const auto capacity{ _args.capacity() }; _args.shrink_to_fit(); return _args.capacity() - capacity; }
 		/// @brief Insert an argument into the back of the container. @returns VariantArgumentType&	- The reference of the argument in the container.
-		constexpr auto emplace_back(auto&& argument) noexcept(false) { return _args.emplace_back(std::forward<decltype(argument)>(argument)); }
-		constexpr auto push_back(auto&& argument) noexcept(false) { return _args.push_back(std::forward<decltype(argument)>(argument)); }
+		_CONSTEXPR auto emplace_back(auto&& argument) noexcept(false) { return _args.emplace_back(std::forward<decltype(argument)>(argument)); }
+		_CONSTEXPR auto push_back(auto&& argument) noexcept(false) { return _args.push_back(std::forward<decltype(argument)>(argument)); }
 		/// @brief Remove & return the element at the back of the container. @returns VariantArgumentType
 		auto pop_back() noexcept(false) { const auto back{ _args.back() }; _args.pop_back(); return back; }
 		/// @brief Remove & return the element at the front of the container. @returns VariantArgumentType
@@ -100,9 +109,9 @@ namespace opt {
 		 * @returns			ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr ArgContainerIteratorType find(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		_CONSTEXPR ArgContainerIteratorType find(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
-			constexpr const bool match_any_type{ sizeof...(Types) == 0 };
+			_CONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 };
 			for (auto it{ off.value_or(_args.begin()) }; it != end.value_or(_args.end()); ++it)
 				if ((match_any_type || var::variadic_or(it->index() == get_index<Types>()...)) && get_name(*it) == InputWrapper(name))
 					return it;
@@ -120,7 +129,7 @@ namespace opt {
 		 * @returns			ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr ArgContainerIteratorType find_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		_CONSTEXPR ArgContainerIteratorType find_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			return find<Types...>(name, off, end);
 		}
@@ -136,9 +145,9 @@ namespace opt {
 		 * @returns			ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		constexpr ArgContainerIteratorType find_any(const Names&... names) const
+		_CONSTEXPR ArgContainerIteratorType find_any(const Names&... names) const
 		{
-			constexpr const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
+			_CONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			for (auto it{ begin() }; it != end(); ++it)
 				if (match_any_type || var::variadic_or(is_type<Types>(*it)...)) {
 					if (match_any_name)
@@ -160,9 +169,9 @@ namespace opt {
 		 * @returns			ArgContainerIteratorContainerType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		constexpr const ArgContainerIteratorContainerType find_all(const Names&... names) const
+		_CONSTEXPR const ArgContainerIteratorContainerType find_all(const Names&... names) const
 		{
-			constexpr const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
+			_CONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			ArgContainerIteratorContainerType vec;
 			vec.reserve(_args.size());
 			for (auto it{ begin() }; it != end(); ++it)
@@ -188,7 +197,7 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr const bool check(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		_CONSTEXPR const bool check(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			return find<Types...>(name, off, end) != _args.end();
 		}
@@ -202,14 +211,14 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr const bool check_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const { return check<Types...>(name, off, end); }
+		_CONSTEXPR const bool check_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const { return check<Types...>(name, off, end); }
 		/**
 		 * @brief			Check if any arguments of a given type were included on the commandline.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching. Leaving this blank is the equivalent of calling !empty().
 		 * @returns			bool
 		 */
 		template<ValidArg... Types>
-		constexpr const bool check() const
+		_CONSTEXPR const bool check() const
 		{
 			return find_any<Types...>() != _args.end();
 		}
@@ -221,7 +230,7 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		constexpr const bool check_any(const Names&... names) const
+		_CONSTEXPR const bool check_any(const Names&... names) const
 		{
 			return find_any<Types...>(names...) != _args.end();
 		}
@@ -232,7 +241,7 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidInputType... Names>
-		constexpr const bool check_all(const Names&... names) const
+		_CONSTEXPR const bool check_all(const Names&... names) const
 		{
 			return var::variadic_and(find(names) != _args.end()...);
 		}
@@ -249,7 +258,7 @@ namespace opt {
 		 * @returns			std::optional<VariantArgumentType>
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr const std::optional<VariantArgumentType> get(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
+		_CONSTEXPR const std::optional<VariantArgumentType> get(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
 		{
 			if (const auto target{ find<Types...>(name, off, end) }; target != _args.end())
 				return *target;
@@ -266,7 +275,7 @@ namespace opt {
 		 * @returns			std::optional<VariantArgumentType>
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		constexpr const std::optional<VariantArgumentType> get_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
+		_CONSTEXPR const std::optional<VariantArgumentType> get_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
 		{
 			return get<Types...>(name, off, end);
 		}
@@ -279,7 +288,7 @@ namespace opt {
 		 * @returns			std::optional<VariantArgumentType>
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		constexpr const std::optional<VariantArgumentType> get_any(const Names&... names) const noexcept
+		_CONSTEXPR const std::optional<VariantArgumentType> get_any(const Names&... names) const noexcept
 		{
 			if (const auto target{ find_any<Types...>(names...) }; target != _args.end())
 				return *target;
@@ -294,7 +303,7 @@ namespace opt {
 		 * @returns			ArgContainerType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		constexpr const ArgContainerType get_all(const Names&... names) const noexcept
+		_CONSTEXPR const ArgContainerType get_all(const Names&... names) const noexcept
 		{
 			if (const auto targets{ find_all<Types...>(names...) }; !targets.empty()) {
 				std::vector<VariantArgumentType> vec;
@@ -317,7 +326,7 @@ namespace opt {
 		 * @param pred			An optional predicate function that accepts a VariantArgumentType and returns a boolean.
 		 * @returns				ArgContainerType
 		 */
-		constexpr const ArgContainerType get_range(ArgContainerIteratorType from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const noexcept(false)
+		_CONSTEXPR const ArgContainerType get_range(ArgContainerIteratorType from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const noexcept(false)
 		{
 			if (empty())
 				throw std::exception("ArgContainer::get_range() failed because the container is empty!");
@@ -341,7 +350,7 @@ namespace opt {
 		 * @param pred			An optional predicate function that accepts a VariantArgumentType and returns a boolean.
 		 * @returns				ArgContainerType
 		 */
-		constexpr const ArgContainerType get_range(const size_t& from, const std::optional<size_t>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const noexcept(false)
+		_CONSTEXPR const ArgContainerType get_range(const size_t& from, const std::optional<size_t>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const noexcept(false)
 		{
 			// if from is less than the size of the list, and to doesn't have a value, or if to is less than the list size AND greater or equal to from
 			if (from < _args.size() && (!to.has_value() || (to.value() < _args.size() && to.value() >= from)))

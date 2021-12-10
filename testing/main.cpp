@@ -3,7 +3,6 @@
 #include <strconv.hpp>
 #include <str.hpp>
 #include <var.hpp>
-#include <TermAPI.hpp>
 #include <LineCharacter.hpp>
 #include <fileio.hpp>
 #include <fileutil.hpp>
@@ -13,7 +12,7 @@
 #include "performance.hpp"
 using namespace perf;
 
-#define XLOG_INCLUDE_SELF
+#include <TermAPI.hpp>
 #include <xlog.hpp>
 
 int main(const int argc, char** argv)
@@ -21,15 +20,13 @@ int main(const int argc, char** argv)
 	try {
 		std::cout << sys::term::EnableANSI;
 		using namespace xlog;
-		//std::ofstream ofs{ "testing.log" };
-		//xLog<std::ofstream> logger{ ofs };
-		xLog logger;
+		xLogs logger;
 		logger.setLevel(level::ERROR | level::INFO | level::CRITICAL);
 		logger.log(level::INFO, "Hello", ' ', "World!");
 
-		logger << level::ERROR << "nothing " << "went wrong!" << msg_break;
+		logger << level::ERROR << "nothing " << "went wrong!" << endm;
 		logger << level::CRITICAL << "Something ";
-		logger << "may have happened..." << msg_break;
+		logger << "may have happened..." << endm;
 
 		logger.setLevel(level::AllDebug);
 		logger.log(level::DEBUG, "Initialize cheese scenario");

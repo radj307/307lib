@@ -47,15 +47,7 @@
         "strategy": "external"
       },
       "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "ENABLE_UNITTESTS": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
       "vendor": {
@@ -66,28 +58,29 @@
       }
     },
     {
-      "name": "windows-release",
+      "name": "windows-debug",
       "hidden": true,
       "inherits": "windows-default",
-      "displayName": "Windows x64 Release",
+      "displayName": "Windows x64",
       "description": "Target Windows with the Visual Studio development environment.",
       "cacheVariables": {
         "ENABLE_TESTING": {
           "type": "BOOL",
-          "value": "OFF"
+          "value": "ON"
         },
-        "ENABLE_UNITTESTS": {
+        "BUILD_TESTING": {
           "type": "BOOL",
-          "value": "OFF"
+          "value": "ON"
         },
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     }
   ],
   "buildPresets": [
     {
       "name": "Debug",
-      "configurePreset": "windows-default"
+      "configurePreset": "windows-default",
+      "configuration": "windows-default"
     },
     {
       "name": "Release",

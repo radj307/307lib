@@ -151,7 +151,7 @@ namespace opt {
 			return vec;
 		}
 	};
-	inline constexpr const std::vector<std::string> paramVecToStrVec(const std::vector<opt::Parameter>& param_vec)
+	inline _CONSTEXPR const std::vector<std::string> paramVecToStrVec(const std::vector<opt::Parameter>& param_vec)
 	{
 		std::vector<std::string> strvec;
 		strvec.reserve(param_vec.size());

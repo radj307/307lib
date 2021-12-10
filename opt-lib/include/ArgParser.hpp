@@ -3,6 +3,9 @@
 #include <str.hpp>
 #include <var.hpp>
 
+#include <vector>
+#include <concepts>
+
 namespace opt {
 	using StrVec = std::vector<std::string>;
 
@@ -33,7 +36,7 @@ namespace opt {
 		const bool is_negative{ str.front() == '-' }, has_hex_prefix{ str.find("0x") == (is_negative ? 1ull : 0ull) };
 		return (
 			(has_hex_prefix
-				&& std::all_of(str.begin() + 2ull + !!is_negative, str.end(), [](auto&& ch) { return isdigit(ch) || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f'; }))
+			&& std::all_of(str.begin() + 2ull + !!is_negative, str.end(), [](auto&& ch) { return isdigit(ch) || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f'; }))
 			) // check if number is hexadecimal, short circuit the all_of check if a hex prefix wasn't found.
 			|| (std::all_of(str.begin() + !!is_negative, str.end(), [](auto&& ch) {  return isdigit(ch) || ch == '.'; })); // decimal number
 	}
@@ -96,7 +99,7 @@ namespace opt {
 		 * @tparam VT...					Variadic Templated Types.
 		 * @param ...capturing_arguments	Arguments that should be allowed to capture additional arguments. Names should not contain prefix delimiters, but if they do, they are removed.
 		 */
-		template<ValidInputType... VT> constexpr CaptureList(VT... capturing_arguments) : vec{ var::variadic_accumulate<InputWrapper>(str::strip_line(InputWrapper{ capturing_arguments }, "", "-")...) } {}
+		template<ValidInputType... VT> constexpr CaptureList(const VT&... capturing_arguments) : vec{ var::variadic_accumulate<InputWrapper>(str::strip_line(InputWrapper{ capturing_arguments }, "", "-")...) } {}
 		constexpr operator const std::vector<InputWrapper>() const { return vec; }
 		/**
 		 * @brief				Check if a given argument appears in the capture list. Names are case-sensitive.
@@ -140,7 +143,7 @@ namespace opt {
 			auto [arg, d_count] { strip_prefix(*it, 2ull) };
 			switch (d_count) {
 			case 2ull: // Option
-				if (const auto eqPos{ arg.find('=') }; str::pos_valid(eqPos)) {// argument contains an equals sign
+				if (const auto eqPos{ arg.find('=') }; eqPos == std::string::npos) {// argument contains an equals sign
 					auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
 					if (captures.is_present(opt))
 						cont.emplace_back(opt::Option(std::make_pair(std::move(opt), std::move(cap))));
@@ -161,7 +164,7 @@ namespace opt {
 				if (!is_number(arg)) { // single-dash prefix is not a number
 					std::optional<opt::Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
 					std::string invCap{}; // for invalid captures that should be treated as parameters
-					if (const auto eqPos{ arg.find('=') }; str::pos_valid(eqPos)) {
+					if (const auto eqPos{ arg.find('=') }; eqPos == std::string::npos) {
 						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
 						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; captures.is_present(flag)) {
 							capt = opt::Flag(flag.front(), invCap); // push the capturing flag to capt, insert into vector once all other flags in this chain are parsed

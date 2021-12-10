@@ -1,4 +1,5 @@
 #include <xRand.hpp>
+#include <TermAPI.hpp>
 
 #include <bitset>
 #include <vector>
