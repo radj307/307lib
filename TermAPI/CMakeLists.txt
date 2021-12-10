@@ -14,7 +14,7 @@ project("TermAPI")
 set(HEADERS
 	"./include/ANSIDefs.h"
 	"./include/color-values.h"
-	"./include/string_color.hpp"
+	"./include/color-transform.hpp"
 
 	"./include/format-functions.hpp"
 	"./include/FormatFlag.hpp"

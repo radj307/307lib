@@ -14,11 +14,17 @@ using namespace perf;
 
 #include <TermAPI.hpp>
 #include <xlog.hpp>
+#include <color-transform.hpp>
 
 int main(const int argc, char** argv)
 {
 	try {
 		std::cout << sys::term::EnableANSI;
+
+		std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset() << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset() << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset() << '\n';
+
 		using namespace xlog;
 		xLogs logger;
 		logger.setLevel(level::ERROR | level::INFO | level::CRITICAL);

@@ -230,6 +230,36 @@ namespace var {
 		return ((booleans) && ...);
 	}
 
+	/**
+	 * @brief			Retrieve the largest value in a variadic pack.
+	 * @tparam T		First value type, all additional values are casted to this type before comparison.
+	 * @tparam ...vT	Additional Value Type(s).
+	 * @param n			First value. All additional values are casted to the same type before comparison.
+	 * @param ...rest	At least one additional value.
+	 * @returns			T
+	 */
+	template<typename T, typename... vT>
+	[[nodiscard]] inline static constexpr T largest(const T& n, const vT&... rest) noexcept
+	{
+		const auto larger{ [] <typename T>(const T & n, const T & bound) -> T { return n > bound ? n : bound; } };
+		return (larger<T>(n, larger<T>(static_cast<T>(rest), static_cast<T>(0))));
+	}
+
+	/**
+	 * @brief			Retrieve the smallest value in a variadic pack.
+	 * @tparam T		First value type, all additional values are casted to this type before comparison.
+	 * @tparam ...vT	Additional Value Type(s).
+	 * @param n			First value. All additional values are casted to the same type before comparison.
+	 * @param ...rest	At least one additional value.
+	 * @returns			T
+	 */
+	template<typename T, typename... vT>
+	[[nodiscard]] inline static constexpr T smallest(const T& n, const vT&... rest) noexcept
+	{
+		const auto smaller{ [] <typename T>(const T & n, const T & bound) -> T { return n < bound ? n : bound; } };
+		return (smaller<T>(n, smaller(static_cast<T>(rest), static_cast<T>(0))));
+	}
+
 #if CPP >= 20
 	/**
 	 * @brief			Variadic templated helper function that returns a vector of templated element types.

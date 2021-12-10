@@ -13,7 +13,7 @@ public:
 	const char* what() const noexcept override;
 };
 
-template<var::Streamable... VT> inline constexpr except make_exception(VT const&... message)
+template<var::Streamable... VT> inline _CONSTEXPR except make_exception(VT const&... message)
 {
 	std::stringstream ss;
 	(ss << ... << message);
