@@ -1,7 +1,7 @@
 /**
  * @file	term.hpp
  * @author	radj307
- * @brief	Contains ANSI escape sequence functors derived from Sequence.
+ * @brief	Contains ANSI escape sequence functors derived from the Sequence type.
  *\n		Covers most/all of the virtual sequences documented by microsoft here:
  *\n		https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences
  */
@@ -16,23 +16,28 @@
 #include <chrono>
 #include <thread>
 
+ /**
+  * @namespace	term
+  * @brief		Contains pre-made ANSI sequences & helper functions for making sequences.
+  */
 namespace term {
 #ifdef OS_WIN
 #include <conio.h>
+#endif
 	using namespace std::chrono_literals;
 	using namespace ::ANSI;
 	/**
-	 * @namespace _internal
-	 * @brief Contains functions used internally by the sys::term namespace.
+	 * @namespace	Query
+	 * @brief		Contains query functions used internally by some term functions.
 	 */
-	namespace _internal {
+	namespace query {
 		/**
-		 * @brief Receive a query response from STDIN, and return it as a string.
-		 *\n	  It is ___highly discouraged___ to call this function from outside of TermAPIQuery.hpp!
-		 * @param timeout	- Maximum amount of wait cycles before breaking and returning nothing.
-		 * @returns std::string
+		 * @brief			Receive a query response from STDIN, and return it as a string.
+		 *\n				It is ___highly discouraged___ to call this function from outside of the term namespace.
+		 * @param timeout	If this many milliseconds pass without receiving any data, the function will break and return nothing.
+		 * @returns			std::string
 		 */
-		inline std::string get_query_response(const int& timeout = 256, const bool flush_output_stream = false) noexcept
+		inline std::string getResponse(const int& timeout = 256, const bool flush_output_stream = false) noexcept
 		{
 			if (flush_output_stream)
 				fflush(stdout);
@@ -52,30 +57,22 @@ namespace term {
 		}
 	}
 
-	/**
-	 * @brief	Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread-safe when multiple threads are printing/reading from STDOUT/STDIN.
-	 *\n		Emits "ESC[<ROW>;<COLUMN>R" to STDIN.
-	 * @returns	Sequence
-	 */
-	inline void ReportCursorPosition() noexcept
-	{
-		fflush(stdin);
-		std::cout << CSI << "6n";
-	}
+	/// @brief	Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.
+	inline static const Sequence ReportCursorPosition{ make_sequence(CSI, "6n") };
 
 	/**
-	 * @brief Retrieve the current position of the cursor, measured in characters of the screen buffer.
-	 * @tparam RT	- Templated Return Type (Integral)
-	 * @returns std::pair<RT, RT>
+	 * @brief		Retrieve the current position of the cursor, measured in characters of the screen buffer.
+	 * @tparam RT	Return Type.
+	 * @returns		std::pair<RT, RT>
 	 */
-	template<std::integral RT = unsigned short>
+	template<std::integral RT = size_t>
 	inline std::pair<RT, RT> getCursorPosition() noexcept(false)
 	{
 		const auto stoull{ [](auto&& str) { try { return std::stoull(std::forward<decltype(str)>(str)); } catch (...) { return 0ull; } } };
-		ReportCursorPosition();
+		std::cout << ReportCursorPosition;
 		std::string row, col;
 		bool select_col{ false }; ///< @brief when true, appends digits to column; else, appends to row.
-		for (auto& c : _internal::get_query_response()) {
+		for (auto& c : query::getResponse()) {
 			using namespace ANSI;
 			switch (c) {
 			case '0': [[fallthrough]];
@@ -111,97 +108,98 @@ namespace term {
 		throw make_exception("getCursorPosition()\tDidn't receive expected escape sequence! No ending character found!");
 	}
 
+	/// @brief	Report device attributes to STDIN.
+	inline static const Sequence ReportDeviceAttributes{ make_sequence(CSI, "0c") };
+
 	/**
-	 * @brief This causes the device's attributes to be emitted to STDIN.
-	 *\n	  Emits to STDIN (windows): "\x1b[?1;0c" (Indicates "VT101 with No Options")
-	 */
-	inline void ReportDeviceAttributes() noexcept
-	{
-		std::cout << CSI << "0c";
-	}
-
-
+	 * @brief	Get device attributes by calling ReportDeviceAttributes & retrieving the response from STDIN.
+	 * @returns	std::string
+	*/
 	inline std::string getDeviceAttributes() noexcept
 	{
-		ReportDeviceAttributes();
-		return _internal::get_query_response();
+		std::cout << ReportDeviceAttributes;
+		return query::getResponse();
 	}
-#else
-	// TODO: Non-windows query sequence implementation
-#endif
 
-#pragma region Cursor
 	/**
 	 * @brief	Move the cursor up in the screen buffer.
 	 * @param n	Number of characters to move by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorUp(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorUp(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'A'));
+		return make_sequence(CSI, n, 'A');
 	}
 	/**
 	 * @brief	Move the cursor down in the screen buffer.
 	 * @param n	Number of characters to move by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorDown(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorDown(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'B'));
+		return make_sequence(CSI, n, 'B');
 	}
 	/**
 	 * @brief	Move the cursor forwards on the current line.
 	 * @param n	Number of characters to move by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorForward(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorForward(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'C'));
+		return make_sequence(CSI, n, 'C');
 	}
 	/**
 	 * @brief	Move the cursor backwards on the current line.
 	 * @param n	Number of characters to move by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorBackward(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorBackward(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'D'));
+		return make_sequence(CSI, n, 'D');
 	}
 	/**
 	 * @brief	Move the cursor to the beginning of one of the next lines.
 	 * @param n	Number of lines to move the cursor.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorNextLine(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorNextLine(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'E'));
+		return make_sequence(CSI, n, 'E');
 	}
 	/**
 	 * @brief	Move the cursor to the beginning of a previous line.
 	 * @param n	Number of lines to move the cursor.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorPrevLine(const unsigned& n = 1u)
+	template<std::integral T = unsigned>
+	[[nodiscard]] inline Sequence CursorPrevLine(const T& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'F'));
+		return make_sequence(CSI, n, 'F');
 	}
 	/**
 	 * @brief			Set the cursor's horizontal position to a specific column.
 	 * @param column	The character number to move the cursor to. The cursor will stay on the current line.
 	 * @returns			Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorHorizontalAbs(const unsigned& column)
+	template<std::integral T>
+	[[nodiscard]] inline Sequence CursorHorizontalAbs(const T& column)
 	{
-		return Sequence(make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + column, 'G'));
+		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + column, 'G');
 	}
 	/**
 	 * @brief			Set the cursor's vertical position to a specific row/line.
 	 * @param row		The line number to move the cursor to. The cursor will stay in the current column.
 	 * @returns			Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorVerticalAbs(const unsigned& row)
+	template<std::integral T>
+	[[nodiscard]] inline Sequence CursorVerticalAbs(const T& row)
 	{
-		return Sequence(make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + row, 'd'));
+		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + row, 'd');
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -209,9 +207,10 @@ namespace term {
 	 * @param y_row		- Vertical position / the target line.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence setCursorPosition(const unsigned& x_column, const unsigned& y_row)
+	template<std::integral T>
+	[[nodiscard]] inline Sequence setCursorPosition(const T& x_column, const T& y_row)
 	{
-		return Sequence(make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + y_row, ';', !!_internal::CURSOR_MIN_AXIS + x_column, 'H'));
+		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + y_row, ';', !!_internal::CURSOR_MIN_AXIS + x_column, 'H');
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -219,50 +218,45 @@ namespace term {
 	 * @returns Sequence
 	 */
 	[[nodiscard]] inline Sequence setCursorPosition(const std::pair<unsigned, unsigned>& pos) { return setCursorPosition(pos.first, pos.second); }
-	/**
-	 * @brief Save the cursor position. Can be recalled later with LoadCursor.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence SaveCursor()
-	{
-		return Sequence(make_sequence(ESC, '7'));
-	}
-	/**
-	 * @brief Set the cursor's position to the last saved position with SaveCursor.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence LoadCursor()
-	{
-		return Sequence(make_sequence(ESC, '8'));
-	}
+
+	/// @brief	Save the cursor position. Can be recalled later with LoadCursor.
+	inline static const Sequence SaveCursor{ make_sequence(ESC, '7') };
+	/// @brief	Set the cursor's position to the last saved position with SaveCursor.
+	inline static const Sequence LoadCursor{ make_sequence(ESC, '8') };
+
+	/// @brief	Enable (Show) the cursor.
+	inline static const Sequence EnableCursor{ make_sequence(CSI, "?25", ENABLE) };
+	/// @brief	Disable (Hide) the cursor.
+	inline static const Sequence DisableCursor{ make_sequence(CSI, "?25", DISABLE) };
+
 	/**
 	 * @brief			Set whether the cursor is visible or not.
 	 * @param visible	When true, the cursor is visible.
 	 * @returns			Sequence
 	 */
-	[[nodiscard]] inline Sequence setCursorVisible(const bool& visible)
+	[[nodiscard]] inline Sequence CursorVisible(const bool& visible)
 	{
-		return Sequence(make_sequence(CSI, "?25", (visible ? ENABLE : DISABLE)));
+		return visible ? EnableCursor : DisableCursor;
 	}
-	/// @brief Hides the cursor.
-	[[nodiscard]] inline Sequence HideCursor() { return setCursorVisible(false); }
-	/// @brief Shows the cursor.
-	[[nodiscard]] inline Sequence ShowCursor() { return setCursorVisible(true); }
+
+	/// @brief	Enable cursor blinking
+	inline static const Sequence EnableCursorBlink{ make_sequence(CSI, "?12", ENABLE) };
+	/// @brief	Disable cursor blinking
+	inline static const Sequence DisableCursorBlink{ make_sequence(CSI, "?12", DISABLE) };
+
 	/**
 	 * @brief			Set whether the cursor is blinking or not.
 	 * @param blinking	When true, the cursor is blinking.
 	 * @returns			Sequence
 	 */
-	[[nodiscard]] inline Sequence setCursorBlink(const bool& blinking)
+	[[nodiscard]] inline Sequence CursorBlink(const bool& blinking)
 	{
-		return Sequence(make_sequence(CSI, "?12", (blinking ? ENABLE : DISABLE)));
+		return blinking ? EnableCursorBlink : DisableCursorBlink;
 	}
 	/// @brief Enables the cursor blink effect.
-	[[nodiscard]] inline Sequence EnableCursorBlink() { return setCursorBlink(true); }
 	/// @brief Disables the cursor blink effect.
-	[[nodiscard]] inline Sequence DisableCursorBlink() { return setCursorBlink(false); }
 
-	struct Cursor {
+	static struct Cursor {
 		static auto getPos() { return getCursorPosition(); }
 		static auto setPos(const std::pair<unsigned, unsigned>& pos) { std::cout << setCursorPosition(pos); }
 		static auto setPos(const unsigned& x_column, const unsigned& y_row) { std::cout << setCursorPosition(x_column, y_row); }
@@ -270,33 +264,33 @@ namespace term {
 		static auto down(const unsigned& n = 1u) { std::cout << CursorDown(n); }
 		static auto forward(const unsigned& n = 1u) { std::cout << CursorForward(n); }
 		static auto backward(const unsigned& n = 1u) { std::cout << CursorBackward(n); }
-		static auto save() { std::cout << SaveCursor(); }
-		static auto load() { std::cout << LoadCursor(); }
-		static auto hide() { std::cout << HideCursor(); }
-		static auto show() { std::cout << ShowCursor(); }
-		static auto start_blinking() { std::cout << EnableCursorBlink(); }
-		static auto stop_blinking() { std::cout << DisableCursorBlink(); }
+		static auto save() { std::cout << SaveCursor; }
+		static auto load() { std::cout << LoadCursor; }
+		static auto hide() { std::cout << DisableCursor; }
+		static auto show() { std::cout << EnableCursor; }
+		static auto start_blinking() { std::cout << EnableCursorBlink; }
+		static auto stop_blinking() { std::cout << DisableCursorBlink; }
 	};
-#pragma endregion Cursor
 
-#pragma region Viewport
 	/**
-	 * @brief			Scroll the viewport up or down by a given number of lines.
-	 * @param upNotDown	When true, scrolls up. When false, scrolls down.
-	 * @param n			Number of lines to scroll.
-	 * @returns			Sequence
+	 * @brief		Scroll the viewport up or down by a given number of lines.
+	 * @param dir	A boolean value that selects which direction to scroll in.
+	 *				| Value | Direction |
+	 *				| ----- | --------- |
+	 *				| false | Down      |
+	 *				| true	| Up        |
+	 * @param n		Number of lines to scroll.
+	 * @returns		Sequence
 	 */
-	[[nodiscard]] inline Sequence ScrollBuffer(const bool& upNotDown, const unsigned& n)
+	[[nodiscard]] inline Sequence Scroll(const bool& dir, const unsigned& n)
 	{
-		return Sequence(make_sequence(CSI, n, (upNotDown ? 'S' : 'T')));
+		return make_sequence(CSI, n, (dir ? 'S' : 'T'));
 	}
 	/// @brief Scroll the viewport up by inserting lines from the bottom.
-	[[nodiscard]] inline Sequence ScrollUp(const unsigned& n) { return ScrollBuffer(true, n); }
+	[[nodiscard]] inline Sequence ScrollUp(const unsigned& n = 1u) { return Scroll(true, n); }
 	/// @brief Scroll the viewport down by inserting lines from the top.
-	[[nodiscard]] inline Sequence ScrollDown(const unsigned& n) { return ScrollBuffer(false, n); }
-#pragma endregion Viewport
+	[[nodiscard]] inline Sequence ScrollDown(const unsigned& n = 1u) { return Scroll(false, n); }
 
-#pragma region TextModification
 	/**
 	 * @brief	Inserts space characters at the current cursor position, shifting any existing text to the right.
 	 * @param n	Number of space characters to insert.
@@ -304,7 +298,7 @@ namespace term {
 	 */
 	[[nodiscard]] inline Sequence InsertChar(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, '@'));
+		return make_sequence(CSI, n, '@');
 	}
 	/**
 	 * @brief	Deletes characters at the current cursor position, shifting any existing text from the right towards the cursor.
@@ -313,7 +307,7 @@ namespace term {
 	 */
 	[[nodiscard]] inline Sequence DeleteChar(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'P'));
+		return make_sequence(CSI, n, 'P');
 	}
 	/**
 	 * @brief	Erases a given number of characters starting at the current cursor position by overwriting them with a space character. Any existing text is not shifted.
@@ -322,7 +316,7 @@ namespace term {
 	 */
 	[[nodiscard]] inline Sequence EraseChar(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'X'));
+		return make_sequence(CSI, n, 'X');
 	}
 	/**
 	 * @brief	Inserts empty lines above the current cursor position, shifting the cursor down.
@@ -331,7 +325,7 @@ namespace term {
 	 */
 	[[nodiscard]] inline Sequence InsertLine(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'L'));
+		return make_sequence(CSI, n, 'L');
 	}
 	/**
 	 * @brief	Deletes lines from the screen buffer, starting with the row the cursor is on, shifting any lines below the cursor upwards.
@@ -340,237 +334,129 @@ namespace term {
 	 */
 	[[nodiscard]] inline Sequence DeleteLine(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'M'));
+		return make_sequence(CSI, n, 'M');
 	}
+
+	/// @brief	Erases all characters in the current viewport. (similar to `clear`|`cls`)
+	inline static const Sequence clear{ make_sequence(CSI, 2,'J') };
+
 	/**
-	 * @enum EraseScope
-	 * @brief Modes available to the TextModification EraseIn... functions.
-	 */
-	enum class EraseScope : unsigned char {
-		/// @brief Starts at the cursor position (inclusive), continues until the end of the line/display.
-		CURSOR_TO_END = 0u,
-		/// @brief Starts at the beginning of the line/display, continues until the cursor position (inclusive).
-		BEGIN_TO_CURSOR = 1u,
-		/// @brief All text on the line / in the display.
-		ALL_TEXT = 2u,
-	};
-	template<typename T>
-	concept EraseInType = std::same_as<T, EraseScope> || std::integral<T>;
-	/**
-	 * @brief		Replaces all text in the current viewport specified by the given mode with space characters.
-	 * @param mode	Operation Mode.
-	 *				- _0_ / _CURSOR_TO_END_		Erases all text from the current cursor position until the end of the viewport.
-	 *				- _1_ / _BEGIN_TO_CURSOR_	Erases all text from the beginning of the viewport until & including the current cursor position.
-	 *				- _2_ / _ALL_TEXT_			Erases all text in the entire viewport.
+	 * @brief		Replaces text within the viewport with spaces. The area of text cleared is defined by the given operation mode.
+	 * @param mode	Operation Mode Value. (Range: 0 - 2)
+	 *\n			__SOVP__ = Start Of ViewPort
+	 *\n			__EOVP__ = End Of ViewPort
+	 *				| Value | Begin  | End    | Description                                                                |
+	 *				| ----- | ------ | ------ | -------------------------------------------------------------------------- |
+	 *				| `0`   | Cursor | EOVP   | Erases all text from the cursor to the end of the viewport.                |
+	 *				| `1`   | SOVP   | Cursor | Erases all text from the start of the viewport to the cursor.              |
+	 *				| `2`   | SOVP   | EOVP   | Erases all text from the start of the viewport to the end of the viewport. |
 	 * @returns		Sequence
 	 */
-	template<EraseInType T>
-	[[nodiscard]] inline Sequence EraseInDisplay(const T& erase_scope) noexcept(false)
+	template<typename T>
+	[[nodiscard]] inline Sequence EraseInDisplay(const T& erase_scope)
 	{
-		if constexpr (!std::same_as<T, EraseScope>)
-			if (erase_scope < 0 || erase_scope > 2)
-				throw make_exception("EraseInDisplay()\tInvalid erase_scope specifier: \'", erase_scope, "\'! Valid Modes: [0/CURSOR_TO_END|1/BEGIN_TO_CURSOR|2/ALL_TEXT]");
-		return Sequence(make_sequence(CSI, erase_scope, 'J'));
+		return make_sequence(CSI, erase_scope, 'J');
 	}
+
+
 	/**
 	 * @brief		Replaces all text within the current line as specified by the given mode with space characters.
-	 * @param mode	Operation Mode.
-	 *				- _0_ / _CURSOR_TO_END_		Erases all text from the current cursor position (inclusive) to EOL.
-	 *				- _1_ / _BEGIN_TO_CURSOR_	Erases all text from the SOL to the current cursor position (inclusive).
-	 *				- _2_ / _ALL_TEXT_			Erases all text on the current line.
+	 * @param mode	Operation Mode Value. (Range: 0 - 2)
+	 *\n			__SOL__ = Start Of Line
+	 *\n			__EOL__ = End Of Line
+	 *				| Value | Begin  | End    |
+	 *				| ----- | ------ | ------ |
+	 *				| `0`   | Cursor | EOL    |
+	 *				| `1`   | SOL    | Cursor |
+	 *				| `2`   | SOL    | EOL    |
 	 * @returns		Sequence
 	 */
-	template<EraseInType T>
+	template<typename T>
 	[[nodiscard]] inline Sequence EraseInLine(const T& erase_scope) noexcept(false)
 	{
-		if constexpr (!std::same_as<T, EraseScope>)
-			if (erase_scope < 0 || erase_scope > 2)
-				throw make_exception("EraseInLine()\tInvalid mode specifier: \'", erase_scope, "\'! Valid Modes: [0/CURSOR_TO_END|1/BEGIN_TO_CURSOR|2/ALL_TEXT]");
-		return Sequence(make_sequence(CSI, erase_scope, 'K'));
-	}
-#pragma endregion TextModification
-
-#pragma region TextFormatting
-	/**
-	 * @brief		Set the format of the screen and text as specified by the given mode.
-	 * @param mode	All possible modes: https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
-	 * @returns		Sequence
-	 */
-	template<std::integral T>
-	[[nodiscard]] inline Sequence SetGraphicsRendition(const T& mode)
-	{
-		return Sequence(make_sequence(CSI, mode, 'm'));
-	}
-	/**
-	 * @brief		Set the format of the screen and text as specified by the given mode.
-	 * @param mode	All possible modes: https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
-	 * @returns		Sequence
-	 */
-	template<var::same_or_convertible<std::string> T>
-	[[nodiscard]] inline Sequence SetGraphicsRendition(const T& subsequence)
-	{
-		return Sequence(make_sequence(CSI, subsequence, 'm'));
-	}
-#pragma endregion TextFormatting
-
-#pragma region ModeChanges
-	/**
-	 * @enum	KeyMode
-	 * @brief	Mode selector for the setKeyMode function.
-	 */
-	enum class KeyMode : unsigned char {
-		/// @brief	The default mode for either key set. ( KEYPAD: Numeric, CURSOR_KEYS: Normal )
-		DEFAULT,
-		///	@brief	"Application mode".
-		APPLICATION,
-	};
-	/**
-	 * @enum	KeyModeTarget
-	 * @brief	Target selector for the setKeyMode function.
-	 */
-	enum class KeyModeTarget : unsigned char {
-		/// @brief	Tenkey numberpad keys.
-		KEYPAD,
-		/// @brief	Arrow Keys, Home, and End keys.
-		CURSOR_KEYS,
-	};
-	/**
-	 * @brief			Set the operation mode for the numberpad/cursor keys.
-	 * @param target	Select the target keys to change the operation mode of.
-	 * @param mode		Select the mode to apply.
-	 * @returns			Sequence
-	 */
-	inline Sequence setKeyMode(const KeyModeTarget& target, const KeyMode& mode)
-	{
-		switch (target) {
-		case KeyModeTarget::KEYPAD:
-			return Sequence(make_sequence(ESC, (mode == KeyMode::APPLICATION ? '=' : '>')));
-		case KeyModeTarget::CURSOR_KEYS:
-			return Sequence(make_sequence(CSI, "?1", (mode == KeyMode::APPLICATION ? ENABLE : DISABLE)));
-		}
-	}
-	/// @brief	Enable application mode for the specified keys.
-	inline Sequence EnableApplicationMode(const KeyModeTarget& target)
-	{
-		return setKeyMode(target, KeyMode::APPLICATION);
-	}
-	/// @brief	Disable application mode for the specified keys.
-	inline Sequence DisableApplicationMode(const KeyModeTarget& target)
-	{
-		return setKeyMode(target, KeyMode::DEFAULT);
+		return make_sequence(CSI, erase_scope, 'K');
 	}
 
-#pragma endregion ModeChanges
-
-#pragma region Tabs
-	/**
-	 * @brief	Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence SetTabStop()
+	template<var::Streamable... vT>
+	[[nodiscard]] inline static Sequence SGR(const vT&... modes)
 	{
-		return Sequence(make_sequence(ESC, 'H'));
+	#ifdef OS_WIN
+		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
+	#else
+		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
+	#endif
 	}
+
+	template<var::Streamable... vT>
+	[[nodiscard]] inline static Sequence SetGraphicsRendition(const vT&... modes)
+	{
+		return SGR(modes...);
+	}
+
+	/// @brief	Enables Application Mode for the number pad keys.
+	inline static const Sequence EnableKeypadApplicationMode{ make_sequence(ESC, '=') };
+	/// @brief	Disables Application Mode for the number pad keys.
+	inline static const Sequence DisableKeypadApplicationMode{ make_sequence(ESC, '>') };
+	/// @brief	Enables Cursor Keys mode for the home, end, & arrow keys.
+	inline static const Sequence EnableCursorKeysMode{ make_sequence(CSI, "?1", ENABLE) };
+	/// @brief	Disables Cursor Keys mode for the home, end, & arrow keys.
+	inline static const Sequence DisableCursorKeysMode{ make_sequence(CSI, "?1", DISABLE) };
+
+	/// @brief	Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column.
+	inline static const Sequence SetTabStop{ make_sequence(ESC, 'H') };
+
 	/**
 	 * @brief	Move the cursor to the next column with a tab stop.
 	 *\n		If there are no more tab stops, move to the last column in the row.
 	 *\n		If the cursor is in the last column, move to the first column of the next row.
-	 * @param n	Number of tab stops to advance the cursor by.
+	 * @param n	Number of tab stops to jump forward by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorTabForward(const unsigned& n = 1u)
+	[[nodiscard]] inline static Sequence NextTabStop(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'I'));
+		return make_sequence(CSI, n, 'I');
 	}
+
 	/**
 	 * @brief	Move the cursor to the previous column with a tab stop.
 	 *\n		If there are no more tab stops, moves the cursor to the first column.
 	 *\n		If the cursor is in the first column, doesn’t move the cursor.
-	 * @param n
+	 * @param n	Number of tab stops to jump backwards by.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence CursorTabBackward(const unsigned& n = 1u)
+	[[nodiscard]] inline static Sequence PrevTabStop(const unsigned& n = 1u)
 	{
-		return Sequence(make_sequence(CSI, n, 'Z'));
-	}
-	/**
-	 * @brief		Removes tab stops from the current column, if there is one.
-	 * @returns		Sequence
-	 */
-	[[nodiscard]] inline Sequence ClearTabStop()
-	{
-		return Sequence(make_sequence(CSI, "0g"));
-	}
-	/**
-	 * @brief	Clear all currently set tab stops.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence ClearAllTabStops()
-	{
-		return Sequence(make_sequence(CSI, "3g"));
-	}
-#pragma endregion Tabs
-
-#pragma region DesignateCharacterSet
-	/**
-	 * @struct	CharacterSet
-	 * @brief	Used to determine which character set to apply in the setCharacterSet() function.
-	 */
-	enum class CharacterSet : unsigned char {
-		/// @brief U.S. ASCII mode
-		ASCII = 'B',
-		/// @brief VT100 DEC Line Drawing mode (https://vt100.net/docs/vt220-rm/table2-4.html)
-		DEC_LINE_DRAWING = '0',
-	};
-	/**
-	 * @brief		Change the active character set mapping to ASCII or DEC Line Drawing Mode.
-	 *\n			MS Docs:		https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#designate-character-set
-	 *\n			DEC Characters: https://vt100.net/docs/vt220-rm/table2-4.html
-	 * @param chset	Character set to enable.
-	 * @returns		Sequence
-	 */
-	[[nodiscard]] inline Sequence setCharacterSet(const CharacterSet& chset = CharacterSet::ASCII) noexcept(false)
-	{
-		if (const auto chset_ch{ static_cast<char>(chset) }; chset_ch != static_cast<char>(CharacterSet::ASCII) && chset_ch != static_cast<char>(CharacterSet::DEC_LINE_DRAWING))
-			throw make_exception("setCharacterSet()\tReceived invalid chset value: \'", chset_ch, "\'");
-		return Sequence(make_sequence(ESC, '(', static_cast<unsigned char>(chset)));
-	}
-	/**
-	 * @brief	Set the character set to DEC Line Drawing.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence setLineDrawingMode()
-	{
-		return setCharacterSet(CharacterSet::DEC_LINE_DRAWING);
-	}
-	/**
-	 * @brief	Set the character set to ASCII.
-	 * @returns Sequence
-	 */
-	[[nodiscard]] inline Sequence unsetLineDrawingMode()
-	{
-		return setCharacterSet(CharacterSet::ASCII);
+		return make_sequence(CSI, n, 'Z');
 	}
 
-#pragma endregion DesignateCharacterSet
+	/// @brief	Unsets any tab stops in the current column from the SetTabStop command.
+	inline static const Sequence UnsetTabStop{ make_sequence(CSI, "0g") };
 
-#pragma region WindowTitle
+	/// @brief	Clear all currently set tab stops.
+	inline static const Sequence ClearTabStops{ make_sequence(CSI, "3g") };
+
+	/// @brief	Enable DEC Line Drawing mode.
+	inline static const Sequence EnableLineDrawing{ make_sequence(OSC, '0') };
+
+	/// @brief	Disable DEC Line Drawing mode.
+	inline static const Sequence DisableLineDrawing{ make_sequence(OSC, 'B') };
+
+#ifdef OS_WIN
 	/**
 	 * @brief		Set the console window title to a given string.
 	 * @param title	A string shorter than 254 characters. If the string is longer, it will be truncated.
 	 * @returns		Sequence
 	 */
-	[[nodiscard]] inline Sequence setWindowTitle(std::string title)
+	[[nodiscard]] inline Sequence WindowTitle(std::string title)
 	{
 		if (title.size() >= 255ull)
 			title = title.substr(0ull, 254ull);
-		return Sequence(make_sequence(ESC, OSC, "0;", title.c_str(), ANSI::NULL_TERM));
+		return make_sequence(OSC, "0;", title.c_str(), NULL_TERM);
 	}
-#pragma endregion WindowTitle
+#endif
 
-#pragma region SoftReset
 	/**
-	 * @brief	Sets the following terminal properties:
+	 * @brief	Resets the following terminal properties:
 	 *			| Property				| Default Value	Applied |
 	 *			|----------:------------|-----------:-----------|
 	 *			| Cursor Visibility		| Visible				|
@@ -581,63 +467,19 @@ namespace term {
 	 *			| Character Set			| US ASCII				|
 	 *			| Graphics Rendition	| Off					|
 	 *			| Saved Cursor Pos		| Origin Position		|
-	 * @returns	Sequence
 	 */
-	[[nodiscard]] inline Sequence SoftReset()
-	{
-		return Sequence(make_sequence(CSI, "!p"));
-	}
-#pragma endregion SoftReset
+	inline static const Sequence Reset{ make_sequence(CSI, "!p") };
+	/// @brief	Resets foreground (text) colors.
+	inline static const Sequence ResetTextColor{ make_sequence(CSI, SGR_DEFAULT_FORE, END) };
+	/// @brief	Resets background colors.
+	inline static const Sequence ResetBackColor{ make_sequence(CSI, SGR_DEFAULT_BACK, END) };
+	/// @brief	Resets foreground (text) color & background color to their defaults.
+	inline static const Sequence ResetColor{ make_sequence(ResetTextColor, ResetBackColor) };
 
 #pragma region AlternateScreenBuffer
-	/**
-	 * @brief				Enable or disable the alternate screen buffer.
-	 * @param main_buffer	When true, the alternate screen buffer is enabled. When false, the screen buffer is set back to main.
-	 * @returns				Sequence
-	 */
-	[[nodiscard]] inline Sequence setScreenBuffer(const bool& enable_alternate)
-	{
-		return Sequence(make_sequence(CSI, "?1049", (enable_alternate ? ENABLE : DISABLE)));
-	}
-	/// @brief Enable the alternate screen buffer.
-	[[nodiscard]] inline Sequence setAlternateScreenBuffer() { return std::move(setScreenBuffer(true)); }
-	/// @brief Disable the alternate screen buffer.
-	[[nodiscard]] inline Sequence setMainScreenBuffer() { return setScreenBuffer(false); }
+	/// @brief	Enables the alternate screen buffer.
+	inline static const Sequence EnableAltScreenBuffer{ make_sequence(CSI, "?1049", ENABLE) };
+	/// @brief	Disables the alternate screen buffer.
+	inline static const Sequence DisableAltScreenBuffer{ make_sequence(CSI, "?1049", DISABLE) };
 #pragma endregion AlternateScreenBuffer
-
-#pragma region Wrappers_ostream
-	/* Cursor */
-	[[nodiscard]] inline std::ostream& HideCursor(std::ostream& os) { return os << HideCursor(); }
-	[[nodiscard]] inline std::ostream& ShowCursor(std::ostream& os) { return os << ShowCursor(); }
-
-	/* Viewport */
-
-	/* Tabs */
-	/// @brief	Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column.
-	[[nodiscard]] inline std::ostream& SetTabStop(std::ostream& os) { return os << SetTabStop(); }
-	/// @brief	Move the cursor to the next column with a tab stop.\n If there are no more tab stops, move to the last column in the row.\n If the cursor is in the last column, move to the first column of the next row.
-	[[nodiscard]] inline std::ostream& CursorTabForward(std::ostream& os) { return os << CursorTabForward(); }
-	/// @brief	Move the cursor to the previous column with a tab stop.\n If there are no more tab stops, moves the cursor to the first column.\n If the cursor is in the first column, doesn’t move the cursor.
-	[[nodiscard]] inline std::ostream& CursorTabBackward(std::ostream& os) { return os << CursorTabBackward(); }
-	/// @brief	Removes tab stops from the current column, if there is one.
-	[[nodiscard]] inline std::ostream& ClearTabStop(std::ostream& os) { return os << ClearTabStop(); }
-	/// @brief	Clear all currently set tab stops.
-	[[nodiscard]] inline std::ostream& ClearAllTabStops(std::ostream& os) { return os << ClearAllTabStops(); }
-
-	/* DesignateCharacterSet */
-	/// @brief	Set the character set to DEC Line Drawing.
-	[[nodiscard]] inline std::ostream& setLineDrawingMode(std::ostream& os) { return os << setLineDrawingMode(); }
-	/// @brief	Set the character set to ASCII.
-	[[nodiscard]] inline std::ostream& unsetLineDrawingMode(std::ostream& os) { return os << unsetLineDrawingMode(); }
-
-	/* AlternateScreenBuffer */
-	/// @brief	Enable the alternate screen buffer.
-	[[nodiscard]] inline std::ostream& setAlternateScreenBuffer(std::ostream& os) { return os << setAlternateScreenBuffer(); }
-	/// @brief	Disable the alternate screen buffer.
-	[[nodiscard]] inline std::ostream& setMainScreenBuffer(std::ostream& os) { return os << setMainScreenBuffer(); }
-
-	/* Soft Reset */
-	/// @brief	Resets the following properties: cursor visibility, keypad mode, cursor keys mode, top margin, bottom margin, character-set, graphics rendition, and saved cursor position.
-	[[nodiscard]] inline std::ostream& SoftReset(std::ostream& os) { return os << SoftReset(); }
-#pragma endregion Wrappers_ostream
 }
