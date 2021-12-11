@@ -256,7 +256,7 @@ namespace term {
 	/// @brief Enables the cursor blink effect.
 	/// @brief Disables the cursor blink effect.
 
-	static struct Cursor {
+	struct Cursor {
 		static auto getPos() { return getCursorPosition(); }
 		static auto setPos(const std::pair<unsigned, unsigned>& pos) { std::cout << setCursorPosition(pos); }
 		static auto setPos(const unsigned& x_column, const unsigned& y_row) { std::cout << setCursorPosition(x_column, y_row); }
