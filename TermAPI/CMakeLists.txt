@@ -42,13 +42,14 @@ if (TERMAPI_ENABLE_XLOG)
 	list(APPEND HEADERS "./include/xLog.hpp")
 endif()
 
-set(SOURCE
+set(SRC
 	"./src/setcolor.cpp"
 )
 
-add_library(TermAPI STATIC ${HEADERS} ${SOURCE})
+add_library(TermAPI STATIC ${HEADERS} ${SRC})
 
 target_link_libraries(TermAPI PUBLIC shared str-lib)
 
 target_include_directories(TermAPI PUBLIC "./include" "./src")
+target_link_directories(TermAPI PUBLIC "./src")
 

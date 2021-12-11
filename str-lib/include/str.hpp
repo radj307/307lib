@@ -122,6 +122,80 @@ namespace str {
 		return std::move(vec);
 	}
 
+	template<var::valid_string T, var::valid_string... vT>
+	static T longest(const T& fst, const vT&... strings)
+	{
+		const auto longer{ [](const T& str, const T& longest) {
+			return str.size() > longest.size() ? str : longest;
+		} };
+		return longer(fst, longer(strings, ""s));
+	}
+	template<var::valid_string T, var::valid_string... vT>
+	static T shortest(const T& fst, const vT&... strings)
+	{
+		const auto shorter{ [](const T& str, const T& longest) {
+			return str.size() < longest.size() ? str : longest;
+		} };
+		return shorter(fst, shorter(strings, ""s));
+	}
+
+	template<var::valid_string T, template<class, class> class Cont>
+	static Cont<T, std::allocator<T>>::const_iterator longest(const Cont<T, std::allocator<T>>& strings)
+	{
+		auto longest{ strings.end() };
+		for (auto str{ strings.begin() }; str != strings.end(); ++str)
+			if (longest == strings.end() || str->size() > longest->size())
+				longest = str;
+		return longest;
+	}
+	template<var::valid_string T, template<class, class> class Cont>
+	static Cont<T, std::allocator<T>>::const_iterator shortest(const Cont<T, std::allocator<T>>& strings)
+	{
+		auto shortest{ strings.end() };
+		for (auto str{ strings.begin() }; str != strings.end(); ++str)
+			if (shortest == strings.end() || str->size() < shortest->size())
+				shortest = str;
+		return shortest;
+	}
+
+	template<bool index, var::valid_string T, template<class, class> class Cont>
+	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator longest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
+	{
+		auto longest{ strings.end() };
+		for (auto strpr{ strings.begin() }; strpr != strings.end(); ++strpr)
+			if (longest == strings.end() || (!index ? strpr->first.size() : strpr->second.size()) > (!index ? longest->first.size() : longest->second.size()))
+				longest = strpr;
+		return longest;
+	}
+	template<bool index, var::valid_string T, template<class, class> class Cont>
+	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator shortest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
+	{
+		auto shortest{ strings.end() };
+		for (auto strpr{ strings.begin() }; strpr != strings.end(); ++strpr)
+			if (shortest == strings.end() || (!index ? strpr->first.size() : strpr->second.size()) < (!index ? shortest->first.size() : shortest->second.size()))
+				shortest = strpr;
+		return shortest;
+	}
+
+	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator longest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
+	{
+		auto longest{ strings.end() };
+		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
+			if (longest == strings.end() || std::get<index>(*strtpl).size() > std::get<index>(*longest).size())
+				longest = strtpl;
+		return longest;
+	}
+	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator shortest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
+	{
+		auto shortest{ strings.end() };
+		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
+			if (shortest == strings.end() || std::get<index>(*strtpl).size() < std::get<index>(*shortest).size())
+				shortest = strtpl;
+		return shortest;
+	}
+
 	/**
 	 * @brief Convert a given integral to its hexadecimal equivalent as a std::string.
 	 * @tparam T			- Input Type

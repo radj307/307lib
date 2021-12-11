@@ -12,16 +12,18 @@ endif()
 project("str-lib")
 
 set(HEADERS
-	"./include/strutility.hpp"
 	"./include/strconv.hpp"
 	"./include/strmanip.hpp"
 	"./include/strlocale.hpp"
 	"./include/str.hpp"
+	"./include/strutility.hpp"
 )
-set(SOURCE
-	"./src/strutility.cpp"
+set(SRC
+	"./src/str.cpp"
 )
 
-add_library(str-lib STATIC ${HEADERS} ${SOURCE})
-target_include_directories(str-lib PUBLIC ./include ./src)
-set_target_properties(str-lib PROPERTIES LINKER_LANGUAGE CXX)
+add_library(str-lib STATIC ${HEADERS} ${SRC})
+target_link_libraries(str-lib PUBLIC shared)
+target_include_directories(str-lib PUBLIC "./include" "./src")
+target_link_directories(str-lib PUBLIC "./src")
+#set_target_properties(str-lib PROPERTIES LINKER_LANGUAGE CXX)

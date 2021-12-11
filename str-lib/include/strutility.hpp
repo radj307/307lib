@@ -19,7 +19,15 @@ namespace str {
 		 * @returns ostream&
 		 */
 		template<template<class, class> class ContType, class T>
-		static std::ostream& operator<<(std::ostream& os, const ContType<T, std::allocator<T>>& cont) noexcept;
+		static std::ostream& operator<<(std::ostream& os, const ContType<T, std::allocator<T>>& cont) noexcept
+		{
+			try {
+				for (const auto& i : cont)
+					os << i << ' ';
+			} catch (...) {}
+			return os;
+		}
+
 	}
 
 	/**
@@ -30,7 +38,11 @@ namespace str {
 	 *\n		true	- The given position is NOT equal to std::string::npos
 	 *\n		false	- The given position is equal to std::string::npos, and is invalid.
 	 */
-	template<class T> [[nodiscard]] constexpr bool pos_valid(const T pos);
+	template<class T> [[nodiscard]] constexpr bool pos_valid(const T& pos) noexcept
+	{
+		return static_cast<size_t>(pos) != std::string::npos;
+	}
+
 
 	/**
 	 * @brief Retrieve the length of the longest string in a given STL container.
@@ -40,5 +52,12 @@ namespace str {
 	 * @returns RT
 	 */
 	template<std::integral RT, template<class, class> class Cont>
-	[[nodiscard]] RT get_longest_string(const Cont<std::string, std::allocator<std::string>>& cont, RT offset = static_cast<RT>(0));
+	[[nodiscard]] RT get_longest_string(const Cont<std::string, std::allocator<std::string>>& cont, RT offset = static_cast<RT>(0))
+	{
+		size_t longest{ 0llu };
+		for (auto& it : cont)
+			if (const auto sz{ it.size() }; sz > longest)
+				longest = sz;
+		return offset + static_cast<RT>(longest);
+	}
 }

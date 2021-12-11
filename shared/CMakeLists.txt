@@ -28,12 +28,13 @@ if (SHARED_ENABLE_XRAND)
 	list(APPEND HEADERS "./include/xRand.hpp")
 endif()
 
-set(SOURCE
+set(SRC
 	"./src/var.cpp"
 	"./src/make_exception.cpp"
 )
 
-add_library(shared STATIC ${HEADERS} ${SOURCE})
+add_library(shared STATIC ${HEADERS} ${SRC})
 
 target_include_directories(shared PUBLIC "./include" "./src")
+target_link_directories(shared PUBLIC "./src")
 

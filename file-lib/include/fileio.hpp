@@ -45,14 +45,25 @@ namespace file {
 	 * @param data	Data to write to file. Must have a std::ostream& operator<<
 	 * @returns		bool
 	 */
-	inline bool write(std::ofstream& ofs, auto&& data);
+	template<typename T>
+	inline bool write(std::ofstream& ofs, const T& data)
+	{
+		return ofs.is_open() && ofs << data;
+	}
 	/**
 	 * @brief		Write a stringstream to the given output filestream.
 	 * @param ofs	An open filestream.
 	 * @param ss	A stringstream to write.
 	 * @returns		bool
 	*/
-	inline bool write(std::ofstream& ofs, std::stringstream&& ss);
+	inline bool write(std::ofstream& ofs, std::stringstream&& ss)
+	{
+		return ofs.is_open() && ofs << ss.rdbuf();
+	}
+	inline bool write(std::ofstream& ofs, const std::stringbuf* rdbuf)
+	{
+		return ofs.is_open() && ofs << rdbuf;
+	}
 
 	/**
 	 * @brief Write data to a file.
@@ -61,6 +72,15 @@ namespace file {
 	 * @param append	- When true, appends the given data to the end of the file if it exists, rather than overwriting it.
 	 * @returns bool
 	 */
-	inline bool write(const std::string& path, auto&& data, const bool append = true);
+	inline bool write(const std::string& path, auto&& data, const bool append = true)
+	{
+		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, std::forward<decltype(data)>(data));
+	}
+	inline bool write(const std::string& path, const std::stringbuf* rdbuf, const bool append = true)
+	{
+		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
+		return write(ofs, rdbuf);
+	}
 #pragma endregion WRITE
 }

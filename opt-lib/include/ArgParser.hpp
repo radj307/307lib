@@ -143,7 +143,7 @@ namespace opt {
 			auto [arg, d_count] { strip_prefix(*it, 2ull) };
 			switch (d_count) {
 			case 2ull: // Option
-				if (const auto eqPos{ arg.find('=') }; eqPos == std::string::npos) {// argument contains an equals sign
+				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign
 					auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
 					if (captures.is_present(opt))
 						cont.emplace_back(opt::Option(std::make_pair(std::move(opt), std::move(cap))));
@@ -164,7 +164,7 @@ namespace opt {
 				if (!is_number(arg)) { // single-dash prefix is not a number
 					std::optional<opt::Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
 					std::string invCap{}; // for invalid captures that should be treated as parameters
-					if (const auto eqPos{ arg.find('=') }; eqPos == std::string::npos) {
+					if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
 						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
 						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; captures.is_present(flag)) {
 							capt = opt::Flag(flag.front(), invCap); // push the capturing flag to capt, insert into vector once all other flags in this chain are parsed

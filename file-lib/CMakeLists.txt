@@ -16,18 +16,21 @@ option(FILELIB_ENABLE_EXTENSIONS "Enable extensions of the file-lib library, inc
 set(HEADERS
 	"./include/fileio.hpp"
 	"./include/fileutil.hpp"
+	"./include/env.hpp"
 )
-set(SOURCE
-	"./src/fileio.cpp"
+set(SRC
+	
 	"./src/fileutil.cpp"
+	"./src/env.cpp"
 )
 if(FILELIB_ENABLE_EXTENSIONS)
 	list(APPEND HEADERS "./include/token/" "./include/container/" "./include/parser/")
-	list(APPEND SOURCE "./src/")
+	list(APPEND SRC "./src/")
 endif()
 
-add_library(file-lib STATIC ${HEADERS} ${SOURCE})
+add_library(file-lib STATIC ${HEADERS} ${SRC})
+
+target_include_directories(file-lib PUBLIC "./include" "./src") # include "./src" here so source files can add headers directly
+target_link_directories(file-lib PUBLIC "./src")
 
 target_link_libraries(file-lib PUBLIC shared str-lib)
-
-target_include_directories(file-lib PUBLIC "./include" "./src")

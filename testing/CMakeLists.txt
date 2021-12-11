@@ -16,10 +16,10 @@ set(HEADERS
 	"performance.hpp"
 )
 
-set(SOURCE
+set(SRC
 	"main.cpp"
 )
 
-add_executable(testing ${HEADERS} ${SOURCE})
+add_executable(testing ${HEADERS} ${SRC})
 target_link_libraries(testing PUBLIC shared str-lib TermAPI opt-lib file-lib)
 

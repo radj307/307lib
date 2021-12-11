@@ -25,6 +25,9 @@ int main(const int argc, char** argv)
 		std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset() << '\n';
 		std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset() << '\n';
 
+		if (str::pos_valid(std::string::npos)) {
+			std::cout << "Impossible!" << std::endl;
+		}
 		using namespace xlog;
 		xLogs logger;
 		logger.setLevel(level::ERROR | level::INFO | level::CRITICAL);

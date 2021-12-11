@@ -24,8 +24,7 @@
 # | TermAPI  | TERMAPI_ENABLE_XLOG        | ON       | Enables the <xLog.hpp> header.                                                   |
 # | file-lib | FILELIB_ENABLE_EXTENSIONS  | ON       | Includes all file-lib components, including tokenization/parsing.                |
 #
-cmake_minimum_required (VERSION 3.13)
-include(CMakeDependentOption)
+cmake_minimum_required (VERSION 3.15)
 
 # require C++20
 set(CMAKE_CXX_STANDARD 20)
@@ -36,6 +35,7 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
+include(CMakeDependentOption)
 
 # create project
 project("307lib")

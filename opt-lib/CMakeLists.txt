@@ -16,17 +16,16 @@ set(HEADERS
 	"./include/ArgContainer.hpp"
 	"./include/ArgParser.hpp"
 	"./include/VariantArgumentType.hpp"
-	"./include/env.hpp"
 	"./include/ParamsAPI2.hpp"
 )
-set(SOURCE
-	"./src/env.cpp"
+set(SRC
 	"./src/ParamsAPI2.cpp"
 )
 
-add_library(opt-lib STATIC ${HEADERS} ${SOURCE})
+add_library(opt-lib STATIC ${HEADERS} ${SRC})
 # link dependencies
-target_link_libraries(opt-lib PUBLIC shared str-lib file-lib)
+target_link_libraries(opt-lib PUBLIC shared str-lib)
 # include directories
 target_include_directories(opt-lib PUBLIC "./include" "./src")
+target_link_directories(opt-lib PUBLIC "./src")
 
