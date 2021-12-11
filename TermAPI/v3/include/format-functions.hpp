@@ -71,11 +71,11 @@ namespace color {
 	inline std::ostream& placeholder(std::ostream& os) { return os; }
 
 	/**
-	 * @brief		Reset all formatting & colors in the terminal.
+	 * @brief		Reset terminal colors to their defaults.
 	 * @returns		Sequence
 	 */
-	inline constexpr Sequence reset()
+	inline constexpr Sequence reset(const Sequence& seq)
 	{
-		return Sequence{ make_sequence(ESC, CSI, '0', END) };
+		return Sequence{ make_sequence(ESC, CSI, "39;47", END) };
 	}
 }

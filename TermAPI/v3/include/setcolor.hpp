@@ -4,9 +4,9 @@
  * @brief Contains the setcolor struct, which can be used inline with ostream's operator<< to set text/background color, as well as apply formatting like bold, invert, and underline.
  */
 #pragma once
-#include <Layer.hpp>
-#include <FormatFlag.hpp>
 #include <format-functions.hpp>
+#include <FormatFlag.hpp>
+#include <Layer.hpp>
 #include <sstream>
 namespace color {
 	/**
@@ -18,7 +18,8 @@ namespace color {
 	inline std::string makeColorSequence(const short& color, const Layer& layer)
 	{
 		std::stringstream ss;
-		ss << ANSI::ESC << ANSI::CSI << layer << ';' << color << ANSI::END;
+		using namespace ANSI;
+		ss << ESC << CSI << layer << ';' << color << END;
 		return ss.str();
 	}
 

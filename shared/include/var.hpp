@@ -28,7 +28,11 @@ namespace var {
 	 */
 	template<typename T> concept Streamable = requires(T obj)
 	{
-		std::stringstream{} << obj;
+		std::declval<std::stringstream&>() << obj;
+	};
+	template<typename T> concept wStreamable = requires(T obj)
+	{
+		std::declval<std::wstringstream&>() << obj;
 	};
 	/**
 	 * @brief			Check if a variadic templated type has the same number of arguments as a given value.

@@ -19,11 +19,13 @@ using namespace perf;
 int main(const int argc, char** argv)
 {
 	try {
-		std::cout << sys::term::EnableANSI;
+		std::cout << term::EnableANSI;
 
-		std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset() << '\n';
-		std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset() << '\n';
-		std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset() << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset << '\n';
+		std::cout << color::setcolor(color::rgb_to_sgr(3, 0, 5)) << "magenta" << color::reset << '\n';
+		std::cout << color::setcolor(3, 2, 5) << "purple" << color::reset << '\n';
 
 		if (str::pos_valid(std::string::npos)) {
 			std::cout << "Impossible!" << std::endl;
@@ -50,10 +52,10 @@ int main(const int argc, char** argv)
 
 		return 0;
 	} catch (const std::exception& ex) {
-		std::cerr << sys::term::error << ex.what() << std::endl;
+		std::cerr << term::error << ex.what() << std::endl;
 		return -1;
 	} catch (...) {
-		std::cerr << sys::term::error << "An unknown exception occurred!" << std::endl;
+		std::cerr << term::error << "An unknown exception occurred!" << std::endl;
 		return -2;
 	}
 }

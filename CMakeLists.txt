@@ -7,22 +7,22 @@
 # OPTION_VALUE = <ON|OFF>
 #
 #### Options ####
-# | Option Name			| Default | Dependencies            | Description                                           |
-# | ------------------- | ------- | ----------------------- | ----------------------------------------------------- |
-# | ENABLE_STRLIB		| ON	  | shared                  | Enable the string library.							|
-# | ENABLE_TERMAPI		| ON	  | shared str-lib          | Enable the TermAPI library.							|
-# | ENABLE_FILELIB		| ON	  | shared str-lib          | Enable the file/filesystem library.					|
-# | ENABLE_OPTLIB		| ON	  | shared str-lib file-lib | Enable the commandline/environment library.			|
-# | ENABLE_TESTING		| OFF	  | all                     | Enable the debugging/testing executable.			    |
-# | ENABLE_UNITTESTS	| OFF	  | variable                | Enable unit tests using the googletest framework.		|
+# | Option Name			| Default | Lib Dependencies | Description                                            |
+# | ------------------- | ------- | ---------------- | ------------------------------------------------------ |
+# | ENABLE_STRLIB		| ON	  | shared           | Enable the string library.							    |
+# | ENABLE_TERMAPI		| ON	  | shared           | Enable the TermAPI library.							|
+# | ENABLE_FILELIB		| ON	  | shared str-lib   | Enable the file/filesystem library.					|
+# | ENABLE_OPTLIB		| ON	  | shared str-lib   | Enable the commandline/environment library.			|
+# | ENABLE_TESTING		| OFF	  | all              | Enable the debugging/testing executable.			    |
+# | ENABLE_UNITTESTS	| OFF	  | variable         | Enable unit tests using the googletest framework.		|
 #
 #### Sub-Options ####
-# | Project  | Option Name                | Default  | Description                                                                      |
-# | -------- | -------------------------- | -------- | -------------------------------------------------------------------------------- |
-# | shared   | SHARED_DISABLE_WINDOWS_HPP | Variable | Only available when building on windows, this disables the <Windows.hpp> header. |
-# | shared   | SHARED_ENABLE_XRAND        | ON       | Enables the <xRand.hpp> header.                                                  |
-# | TermAPI  | TERMAPI_ENABLE_XLOG        | ON       | Enables the <xLog.hpp> header.                                                   |
-# | file-lib | FILELIB_ENABLE_EXTENSIONS  | ON       | Includes all file-lib components, including tokenization/parsing.                |
+# | Project    | Option Name                | Default  | Description                                                                      |
+# | ---------- | -------------------------- | -------- | -------------------------------------------------------------------------------- |
+# | shared     | SHARED_DISABLE_WINDOWS_HPP | Variable | Only available when building on windows, this disables the <Windows.hpp> header. |
+# | shared     | SHARED_ENABLE_XRAND        | ON       | Enables the <xRand.hpp> header.                                                  |
+# | TermAPI v3 | TERMAPI_ENABLE_XLOG        | ON       | Enables the <xLog.hpp> header.                                                   |
+# | file-lib   | FILELIB_ENABLE_EXTENSIONS  | ON       | Includes all file-lib components, including tokenization/parsing.                |
 #
 cmake_minimum_required (VERSION 3.15)
 
@@ -47,24 +47,29 @@ add_subdirectory("shared")
 option(ENABLE_STRLIB "Enable the string library." ON)
 if (ENABLE_STRLIB)
 	add_subdirectory("str-lib")
+	# Requires shared
 endif()
 
 # Add TermAPI
-cmake_dependent_option(ENABLE_TERMAPI "Enable the TermAPI library." ON "ENABLE_STRLIB" OFF)
+option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
 if(ENABLE_TERMAPI)
 	add_subdirectory("TermAPI")
+	# (v3) Requires shared & str-lib
+	# (v4) Requires shared
 endif()
 
 # Add file library
 cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
 if (ENABLE_FILELIB)
 	add_subdirectory("file-lib")
+	# Requires shared & str-lib
 endif()
 
 # Add opt library
 cmake_dependent_option(ENABLE_OPTLIB "Enable the commandline option library." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
 if(ENABLE_OPTLIB)
 	add_subdirectory("opt-lib")
+	# Requires shared & str-lib
 endif()
 
 # Add testing executable

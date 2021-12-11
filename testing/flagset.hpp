@@ -1,5 +1,7 @@
+#pragma once
 #include <xRand.hpp>
 #include <TermAPI.hpp>
+#include <LineCharacter.hpp>
 
 #include <bitset>
 #include <vector>
@@ -40,7 +42,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const flagset<size>& set)
 	{
-		using namespace sys::term;
+		using namespace term;
 		os << setCharacterSet(CharacterSet::DEC_LINE_DRAWING);
 
 		os << LineCharacter::CORNER_TOP_LEFT;
