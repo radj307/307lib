@@ -35,7 +35,7 @@ namespace sys::term {
 		std::string as_string() const
 		{
 			if (message_settings::useColorSequencesInMessages)
-				return str::stringify(_color, _message, color::reset(), _use_indent ? str::VIndent(message_settings::maxMessageSizeIndent, _message.size()) : str::VIndent(0ull));
+				return str::stringify(_color, _message, color::reset, _use_indent ? str::VIndent(message_settings::maxMessageSizeIndent, _message.size()) : str::VIndent(0ull));
 			return _message;
 		}
 		std::string as_string_no_color() const

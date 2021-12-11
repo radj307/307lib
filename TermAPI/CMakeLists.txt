@@ -9,23 +9,28 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("TermAPI")
+option(TERMAPI_VERSION_3 "Use TermAPI version 3 instead of v4." OFF)
+if (TERMAPI_VERSION_3)
+	add_subdirectory("v3")
+else()
+	project("TermAPI")
 
-# Add sequence library
-add_subdirectory("ANSI")
+	# Add sequence library
+	add_subdirectory("ANSI")
 		
-set(HEADERS
-	"./include/TermAPI.hpp"
-)
-set(SRC
-	"./src/TermAPI.cpp"
-)
+	set(HEADERS
+		"./include/TermAPI.hpp"
+	)
+	set(SRC
+		"./src/TermAPI.cpp"
+	)
 
-add_library(TermAPI STATIC ${HEADERS} ${SRC})
-target_include_directories(TermAPI PUBLIC "./include" "./src")
-target_link_directories(TermAPI PUBLIC "./src")
+	add_library(TermAPI STATIC ${HEADERS} ${SRC})
+	target_include_directories(TermAPI PUBLIC "./include" "./src")
+	target_link_directories(TermAPI PUBLIC "./src")
 
-add_subdirectory("color")
-add_subdirectory("term")
+	add_subdirectory("color")
+	add_subdirectory("term")
 
-target_link_libraries(TermAPI PUBLIC ANSI color term)
+	target_link_libraries(TermAPI PUBLIC ANSI color term)
+endif()

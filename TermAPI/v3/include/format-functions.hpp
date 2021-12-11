@@ -74,8 +74,14 @@ namespace color {
 	 * @brief		Reset terminal colors to their defaults.
 	 * @returns		Sequence
 	 */
-	inline constexpr Sequence reset(const Sequence& seq)
+	inline static const Sequence reset{ make_sequence(ESC, CSI, "38;5;7", END, ESC, CSI, "48;5;0", END) };
+
+	/**
+	 * @brief		Reset terminal colors to their defaults.
+	 * @returns		Sequence
+	 */
+	inline constexpr Sequence reset_all()
 	{
-		return Sequence{ make_sequence(ESC, CSI, "39;47", END) };
+		return Sequence{ make_sequence(ESC, CSI, '0', END) };
 	}
 }
