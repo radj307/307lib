@@ -8,13 +8,13 @@ _(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing el
 Most of the options are dependent options, but I can't guarantee that everything will work as expected when disabling libraries as I am still new to using CMake.  
 
 ## Index
-| Library | Dependencies              | Purpose                                                                    | Minimum Version |
-| ------- | ------------------------- | -------------------------------------------------------------------------- | --------------- |
-| shared  |                           | Functions used by all other libraries.                                     | C++17 / C++20   |
-| str-lib | shared                    | String-related functions.                                                  | C++17 / C++20   |
-| TermAPI | shared, str-lib           | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
-| file-lib| shared, str-lib           | File I/O & Utility functions.                                              | C++14 / C++17   |
-| opt-lib | shared, str-lib, file-lib | Commandline-argument objects & functions, as well as environment variables | C++20           |
+| Library | Dependencies    | Purpose                                                                    | Minimum Version |
+| ------- | --------------- | -------------------------------------------------------------------------- | --------------- |
+| shared  |                 | Functions used by all other libraries.                                     | C++17 / C++20   |
+| str-lib | shared          | String-related functions.                                                  | C++17 / C++20   |
+| TermAPI | shared, str-lib | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
+| file-lib| shared, str-lib | File I/O & Utility functions.                                              | C++14 / C++17   |
+| opt-lib | shared, str-lib | Commandline-argument objects & functions, as well as environment variables | C++20           |
 
 
 ## Shared Headers
