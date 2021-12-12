@@ -5,6 +5,12 @@
 #include <sstream>
 
 namespace file {
+#ifdef read
+#undef read
+#endif
+#ifdef write
+#undef write
+#endif
 #pragma region READ
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
 	read(const std::string& path)
