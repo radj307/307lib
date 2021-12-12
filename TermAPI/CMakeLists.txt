@@ -11,8 +11,10 @@ endif()
 
 option(TERMAPI_VERSION_3 "Use TermAPI version 3 instead of v4." OFF)
 if (TERMAPI_VERSION_3)
+	message(STATUS "Using TermAPI v3")
 	add_subdirectory("v3")
 else()
+	message(STATUS "Using TermAPI v4")
 	project("TermAPI")
 
 	# Add sequence library

@@ -1,6 +1,8 @@
 #pragma once
 #include <ArgParser.hpp>
 
+#include <utility>
+
 namespace opt {
 	class ParamsAPI2 : public ArgContainer {
 
@@ -63,7 +65,9 @@ namespace opt {
 		template<ValidArg Type, ValidInputType... Names>
 		constexpr const std::optional<Type> typeget_any(const Names&... names) const noexcept
 		{
-			return std::get<Type>(get_any<Type>(names...));
+			if (const auto t{ get_any<Type>(names...) }; t.has_value())
+				return std::get<Type>(t.value());
+			return std::nullopt;
 		}
 		/**
 		 * @brief			Retrieve all arguments of a specified type, as their actual type; not as a variant.

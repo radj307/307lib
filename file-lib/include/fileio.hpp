@@ -45,7 +45,7 @@ namespace file {
 	 * @param data	Data to write to file. Must have a std::ostream& operator<<
 	 * @returns		bool
 	 */
-	template<typename T>
+	template<var::Streamable T>
 	inline bool write(std::ofstream& ofs, const T& data)
 	{
 		return ofs.is_open() && ofs << data;
@@ -72,10 +72,16 @@ namespace file {
 	 * @param append	- When true, appends the given data to the end of the file if it exists, rather than overwriting it.
 	 * @returns bool
 	 */
-	inline bool write(const std::string& path, auto&& data, const bool append = true)
+	template<var::Streamable T>
+	inline bool write(const std::string& path, T&& data, const bool append = true)
 	{
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
-		return file::write(ofs, std::forward<decltype(data)>(data));
+		return file::write(ofs, std::forward<T>(data));
+	}
+	inline bool write(const std::string& path, std::stringstream& ss, const bool append = true)
+	{
+		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, ss.rdbuf());
 	}
 	inline bool write(const std::string& path, const std::stringbuf* rdbuf, const bool append = true)
 	{
