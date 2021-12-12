@@ -24,7 +24,7 @@ namespace file {
 	#pragma warning(disable: 26800) // suppress "Use of a moved from object (Lifetime.1)" warning as no move operations are performed here
 		std::stringstream buff;
 		if (ifs.is_open())
-			ifs >> buff.rdbuf();
+			buff << ifs.rdbuf();
 		else
 			buff.setstate(std::ios::failbit);
 		return std::move(buff);
@@ -41,7 +41,7 @@ namespace file {
 	}
 	inline std::stringstream read(const std::string& path)
 	{
-		return std::move(read<std::stringstream>(path));
+		return read<std::stringstream>(path);
 	}
 #pragma endregion READ
 #pragma region WRITE

@@ -212,7 +212,7 @@ namespace file::ini {
 		}
 		bool write(const std::string& filename, const bool append = false) const
 		{
-			return file::write(filename, str::streamify(*this), append);
+			return file::write(filename, str::streamify(*this).rdbuf(), append);
 		}
 	};
 }

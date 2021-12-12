@@ -81,6 +81,7 @@ namespace var {
 	 * @tparam VT...	Variadic Templated Input Types.
 	 */
 	template<typename T, typename... VT> concept any_same = (std::same_as<T, VT> || ...);
+	//template<typename Here, typename Next, typename... Rest> concept any_same = ((std::same_as<Here, Rest> || ...) || any_same<Next, Rest..., Here>);
 	/**
 	 * @concept			all_convertible_to
 	 * @brief			Check if all variadic templated types are able to be converted to a single specified type.

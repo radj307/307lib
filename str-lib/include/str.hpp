@@ -158,7 +158,7 @@ namespace str {
 		return shortest;
 	}
 
-	template<bool index, var::valid_string T, template<class, class> class Cont>
+	template<bool index, var::valid_string T, template<class...> class Cont>
 	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator longest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto longest{ strings.end() };
@@ -167,7 +167,7 @@ namespace str {
 				longest = strpr;
 		return longest;
 	}
-	template<bool index, var::valid_string T, template<class, class> class Cont>
+	template<bool index, var::valid_string T, template<class...> class Cont>
 	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator shortest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto shortest{ strings.end() };
@@ -177,18 +177,36 @@ namespace str {
 		return shortest;
 	}
 
-	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	/**
+	 * @brief			Get the longest string in a container of string tuples.
+	 * @tparam index	Which index to call std::get on each time. Ex: 0 will compare the first string in each tuple.
+	 * @tparam ...vT	Variadic type contained by the tuple.
+	 * @tparam Cont		Container type containing std::tuples.
+	 * @param strings	Container
+	 * @returns			Cont::const_iterator
+	 */
+	template<size_t index, var::valid_string... vT, template<class...> class Cont>
 	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator longest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
 	{
+		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
 		auto longest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (longest == strings.end() || std::get<index>(*strtpl).size() > std::get<index>(*longest).size())
 				longest = strtpl;
 		return longest;
 	}
-	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	/**
+	 * @brief			Get the shortest string in a container of string tuples.
+	 * @tparam index	Which index to call std::get on each time. Ex: 0 will compare the first string in each tuple.
+	 * @tparam ...vT	Variadic type contained by the tuple.
+	 * @tparam Cont		Container type containing std::tuples.
+	 * @param strings	Container
+	 * @returns			Cont::const_iterator
+	 */
+	template<size_t index, var::valid_string... vT, template<class...> class Cont>
 	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator shortest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
 	{
+		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
 		auto shortest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (shortest == strings.end() || std::get<index>(*strtpl).size() < std::get<index>(*shortest).size())

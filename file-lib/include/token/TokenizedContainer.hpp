@@ -1,5 +1,5 @@
 #pragma once
-#include <TokenizerBase.hpp>
+#include <token/TokenizerBase.hpp>
 
 namespace token {
 	/**
@@ -30,8 +30,8 @@ namespace token {
 		 * @tparam ...VT	- Variadic TokenType.
 		 * @param ...types	- One or more TokenTypes to remove.
 		 */
-		template<class... VT> requires std::conjunction_v<std::is_same<VT, TokenType>...> && (sizeof...(VT) > 0)
-			void strip_types(VT... types)
+		template<class... VT>
+		void strip_types(VT... types)
 		{
 			tokens.erase(std::remove_if(tokens.begin(), tokens.end(), [&types...](auto&& pr) {
 				return var::variadic_or(pr.second == types...);

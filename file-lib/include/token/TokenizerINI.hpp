@@ -4,7 +4,7 @@
  * @brief Contains the TokenizerINI struct, a __TokenizerBase__ specialization for the INI file format.
  */
 #pragma once
-#include <TokenizerBase.hpp>
+#include <token/TokenizerBase.hpp>
 
 namespace token {
 	/// @brief INI tokenizer
