@@ -1,24 +1,11 @@
 var searchData=
 [
-  ['validarg_662',['ValidArg',['../namespaceopt.html#af5a63481366bb7bf0406ff735e6b592f',1,'opt']]],
-  ['validargtype_663',['ValidArgType',['../namespaceopt.html#a5186e11563094f28ac3182224bfbc6d0',1,'opt']]],
-  ['validinputtype_664',['ValidInputType',['../namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1',1,'opt']]],
-  ['validvaluet_665',['ValidValueT',['../namespacetoken_1_1parse.html#af99a8a5611c9417d0a1bc5bad11daa74',1,'token::parse']]],
-  ['value_666',['value',['../structtoken_1_1parse_1_1_r_e_element.html#ae7598fbc11aa4ce97fdb2d60dd41b295',1,'token::parse::REElement']]],
-  ['value_667',['VALUE',['../structtoken_1_1parse_1_1_r_e_element.html#ae590bfd32104084421d0c31a05ce3d83aecc2e9c313faddb07e7da223c1dc5c3f',1,'token::parse::REElement']]],
-  ['valuet_668',['ValueT',['../structtoken_1_1parse_1_1_r_e_element.html#a83dbeaab4ac10145fc3363320a5fc4ba',1,'token::parse::REElement']]],
-  ['var_669',['var',['../namespacevar.html',1,'']]],
-  ['var_2ecpp_670',['var.cpp',['../var_8cpp.html',1,'']]],
-  ['var_2ehpp_671',['var.hpp',['../var_8hpp.html',1,'']]],
-  ['variableindentation_672',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str::VariableIndentation'],['../structstr_1_1_variable_indentation.html#a0b7ed36241b97b1ff080384c0e1ba4d3',1,'str::VariableIndentation::VariableIndentation()']]],
-  ['variablet_673',['VariableT',['../namespacetoken_1_1parse.html#ad5406e0ccc45a6f8315660ad79426a10',1,'token::parse']]],
-  ['variadic_5fand_674',['variadic_and',['../namespacevar.html#acd4adc200dff50fed630c357d3b5fd16',1,'var']]],
-  ['variadic_5for_675',['variadic_or',['../namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a',1,'var']]],
-  ['variantargumenttype_676',['VariantArgumentType',['../namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]],
-  ['variantargumenttype_2ehpp_677',['VariantArgumentType.hpp',['../_variant_argument_type_8hpp.html',1,'']]],
-  ['variantt_678',['VariantT',['../structtoken_1_1parse_1_1_r_e_element.html#a764daf71f14ce70ee7f3d83438343c36',1,'token::parse::REElement']]],
-  ['vec_679',['vec',['../structopt_1_1_capture_list.html#ab3975dce15bf28ed21536c9f098625cc',1,'opt::CaptureList']]],
-  ['vectorize_680',['vectorize',['../namespaceopt.html#ad4af6b73cdba4c9f27bf3fcd9b747e57',1,'opt']]],
-  ['vindent_681',['VIndent',['../namespacestr.html#a576148d382d024fc11d46dc0ef839cec',1,'str']]],
-  ['virtualargument_682',['VirtualArgument',['../structopt_1_1_virtual_argument.html',1,'opt::VirtualArgument'],['../structopt_1_1_virtual_argument.html#abe716209d169dceacb7475fce4d711f1',1,'opt::VirtualArgument::VirtualArgument()']]]
+  ['underline_759',['UNDERLINE',['../structcolor_1_1_format_flag.html#a2f28fa9dd967599eea92139c708deeb9',1,'color::FormatFlag']]],
+  ['underline_760',['underline',['../namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9',1,'color']]],
+  ['underline_761',['UNDERLINE',['../namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff',1,'color']]],
+  ['unknown_762',['UNKNOWN',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea696b031073e74bf2cb98e5ef201d4aa3',1,'token::UNKNOWN()'],['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a696b031073e74bf2cb98e5ef201d4aa3',1,'token::UNKNOWN()']]],
+  ['unsetlinedrawingmode_763',['unsetLineDrawingMode',['../namespacesys_1_1term.html#a6c84bc8e31e95cb1df8448cd1a872752',1,'sys::term::unsetLineDrawingMode()'],['../namespacesys_1_1term.html#ad459603ed520b46905af9eed84e349db',1,'sys::term::unsetLineDrawingMode(std::ostream &amp;os)']]],
+  ['unsettabstop_764',['UnsetTabStop',['../namespaceterm.html#a811b5f940751a85357cd1336163dce2c',1,'term']]],
+  ['up_765',['up',['../structterm_1_1_cursor.html#ab4379e7827ebc4639dfd59ee36827554',1,'term::Cursor::up()'],['../structsys_1_1term_1_1_cursor.html#a98765341a012e7746b21454cd9aa7694',1,'sys::term::Cursor::up()']]],
+  ['usecolorsequencesinmessages_766',['useColorSequencesInMessages',['../namespaceterm_1_1message__settings.html#a36b88892377bb86d8a70a644d72ec1f3',1,'term::message_settings::useColorSequencesInMessages()'],['../namespacesys_1_1term_1_1message__settings.html#a76bcdea14541786dd63f5ffd17cfa424',1,'sys::term::message_settings::useColorSequencesInMessages()']]]
 ];

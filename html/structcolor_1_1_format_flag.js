@@ -1,9 +1,14 @@
 var structcolor_1_1_format_flag =
 [
     [ "FormatFlag", "structcolor_1_1_format_flag.html#a4ddc903b33d98747b2d568d4dcef28f1", null ],
+    [ "FormatFlag", "structcolor_1_1_format_flag.html#a4ddc903b33d98747b2d568d4dcef28f1", null ],
+    [ "operator const unsigned char", "structcolor_1_1_format_flag.html#a8539f3f82d1dbce6d646e4f21f069654", null ],
     [ "operator const unsigned char", "structcolor_1_1_format_flag.html#a8539f3f82d1dbce6d646e4f21f069654", null ],
     [ "operator&", "structcolor_1_1_format_flag.html#ad428ab4ea99c2e360125f9460ea287a7", null ],
+    [ "operator&", "structcolor_1_1_format_flag.html#ad428ab4ea99c2e360125f9460ea287a7", null ],
     [ "operator^", "structcolor_1_1_format_flag.html#a69c4828cf14797b1b703f69fe29d24ae", null ],
+    [ "operator^", "structcolor_1_1_format_flag.html#a69c4828cf14797b1b703f69fe29d24ae", null ],
+    [ "operator|", "structcolor_1_1_format_flag.html#af44eb2287451be6bf3b8abfebcd2a0af", null ],
     [ "operator|", "structcolor_1_1_format_flag.html#af44eb2287451be6bf3b8abfebcd2a0af", null ],
     [ "BOLD", "structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0", null ],
     [ "INVERT", "structcolor_1_1_format_flag.html#aefe4a985b694a5122577988b16df5a5a", null ],

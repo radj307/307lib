@@ -102,7 +102,8 @@ $(document).ready(function(){initNavTree('structtoken_1_1_tokenized_container.ht
 <div class="dynheader">
 Inheritance diagram for token::TokenizedContainer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structtoken_1_1_tokenized_container__inherit__graph.svg" width="376" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structtoken_1_1_tokenized_container__inherit__graph.svg" width="422" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -114,9 +115,9 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a22dac3519ef50d8073b2b917e0eb385b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a22dac3519ef50d8073b2b917e0eb385b">TokenizedContainer</a> (<a class="el" href="structtoken_1_1_tokenized_container.html#ac0fcc44bad0cf3244fea04cf4fe4a8c1">ContainerT</a> <a class="el" href="structtoken_1_1_tokenized_container.html#abd5b561ca28d77a68f0afa45a08378e4">tokens</a>)</td></tr>
 <tr class="separator:a22dac3519ef50d8073b2b917e0eb385b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eabf1783860a012cd6b7092d4dfb4ad"><td class="memTemplParams" colspan="2">template&lt;class TokenizerType &gt; </td></tr>
-<tr class="memitem:a9eabf1783860a012cd6b7092d4dfb4ad"><td class="memTemplItemLeft" align="right" valign="top">requires std::derived_from&lt; TokenizerType, <a class="el" href="classtoken_1_1_tokenizer_base.html">TokenizerBase</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a9eabf1783860a012cd6b7092d4dfb4ad">TokenizedContainer</a> (TokenizerType &amp;tkiz, const size_t &amp;reserve_size=0ull)</td></tr>
-<tr class="separator:a9eabf1783860a012cd6b7092d4dfb4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdc2f091c797e3fefaec7e543e74cbf"><td class="memTemplParams" colspan="2">template&lt;class TokenizerType &gt; </td></tr>
+<tr class="memitem:a1bdc2f091c797e3fefaec7e543e74cbf"><td class="memTemplItemLeft" align="right" valign="top">requires std::derived_from&lt; TokenizerType, <a class="el" href="classtoken_1_1_tokenizer_base.html">TokenizerBase</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a1bdc2f091c797e3fefaec7e543e74cbf">TokenizedContainer</a> (TokenizerType &amp;&amp;tkiz, const size_t &amp;reserve_size=0ull)</td></tr>
+<tr class="separator:a1bdc2f091c797e3fefaec7e543e74cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2e4be0d6a2791899757045eb7c8b34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a6f2e4be0d6a2791899757045eb7c8b34">operator ContainerT</a> () const</td></tr>
 <tr class="separator:a6f2e4be0d6a2791899757045eb7c8b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a503793bbe05c00453bbfcb81570c9d98"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a503793bbe05c00453bbfcb81570c9d98">begin</a> () const</td></tr>
@@ -135,10 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a83b6352b0843032c7e18f4422c00617d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd87c5e02cc8785e13262cd4249be3b"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a9dd87c5e02cc8785e13262cd4249be3b">shrink_to_fit</a> ()</td></tr>
 <tr class="separator:a9dd87c5e02cc8785e13262cd4249be3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ea2c9db1b5440175f59f908d1c49e81"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
-<tr class="memitem:a5ea2c9db1b5440175f59f908d1c49e81"><td class="memTemplItemLeft" align="right" valign="top">requires std::conjunction_v&lt; std::is_same&lt; VT, <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074">TokenType</a> &gt;... &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a5ea2c9db1b5440175f59f908d1c49e81">sizeof</a> (VT) &gt; 0) void strip_types(VT... types)</td></tr>
-<tr class="memdesc:a5ea2c9db1b5440175f59f908d1c49e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all tokens with any of the given types using the erase-remove idiom.  <a href="structtoken_1_1_tokenized_container.html#a5ea2c9db1b5440175f59f908d1c49e81">More...</a><br /></td></tr>
-<tr class="separator:a5ea2c9db1b5440175f59f908d1c49e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6d0588ffcdee5dd378026b5e6c4c26"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
+<tr class="memitem:a9f6d0588ffcdee5dd378026b5e6c4c26"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html#a9f6d0588ffcdee5dd378026b5e6c4c26">strip_types</a> (VT... types)</td></tr>
+<tr class="memdesc:a9f6d0588ffcdee5dd378026b5e6c4c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all tokens with any of the given types using the erase-remove idiom.  <a href="structtoken_1_1_tokenized_container.html#a9f6d0588ffcdee5dd378026b5e6c4c26">More...</a><br /></td></tr>
+<tr class="separator:a9f6d0588ffcdee5dd378026b5e6c4c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -195,8 +196,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9eabf1783860a012cd6b7092d4dfb4ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9eabf1783860a012cd6b7092d4dfb4ad">&#9670;&nbsp;</a></span>TokenizedContainer() <span class="overload">[2/2]</span></h2>
+<a id="a1bdc2f091c797e3fefaec7e543e74cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bdc2f091c797e3fefaec7e543e74cbf">&#9670;&nbsp;</a></span>TokenizedContainer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +210,7 @@ template&lt;class TokenizerType &gt; </div>
         <tr>
           <td class="memname">requires std::derived_from&lt;TokenizerType, <a class="el" href="classtoken_1_1_tokenizer_base.html">TokenizerBase</a>&gt; token::TokenizedContainer::TokenizedContainer </td>
           <td>(</td>
-          <td class="paramtype">TokenizerType &amp;&#160;</td>
+          <td class="paramtype">TokenizerType &amp;&amp;&#160;</td>
           <td class="paramname"><em>tkiz</em>, </td>
         </tr>
         <tr>
@@ -481,8 +482,8 @@ template&lt;class TokenizerType &gt; </div>
 
 </div>
 </div>
-<a id="a5ea2c9db1b5440175f59f908d1c49e81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ea2c9db1b5440175f59f908d1c49e81">&#9670;&nbsp;</a></span>sizeof()</h2>
+<a id="a9f6d0588ffcdee5dd378026b5e6c4c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6d0588ffcdee5dd378026b5e6c4c26">&#9670;&nbsp;</a></span>strip_types()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -493,10 +494,10 @@ template&lt;class... VT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires std::conjunction_v&lt;std::is_same&lt;VT, <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074">TokenType</a>&gt;...&gt;&amp;&amp; token::TokenizedContainer::sizeof </td>
+          <td class="memname">void token::TokenizedContainer::strip_types </td>
           <td>(</td>
-          <td class="paramtype">VT&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">VT...&#160;</td>
+          <td class="paramname"><em>types</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -521,7 +522,7 @@ template&lt;class... VT&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenized_container_8hpp_source.html#l00033">33</a> of file <a class="el" href="_tokenized_container_8hpp_source.html">TokenizedContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenized_container_8hpp_source.html#l00034">34</a> of file <a class="el" href="_tokenized_container_8hpp_source.html">TokenizedContainer.hpp</a>.</p>
 
 </div>
 </div>

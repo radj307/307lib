@@ -1,0 +1,25 @@
+var color_format_8hpp =
+[
+    [ "FormatFlag", "structcolor_1_1_format_flag.html", "structcolor_1_1_format_flag" ],
+    [ "ColorFormat", "structcolor_1_1_color_format.html", "structcolor_1_1_color_format" ],
+    [ "Format", "color-format_8hpp.html#ac8156ab8938a726d829e91247e77d5ce", null ],
+    [ "bitmerge", "color-format_8hpp.html#a6146070634aacdf38f56ae5a00545303", null ],
+    [ "BOLD", "color-format_8hpp.html#a9c93b36269e286563ec3adfd42a8d3b0", null ],
+    [ "bold", "color-format_8hpp.html#a8bf50b1527722d38df665073cb7a49de", null ],
+    [ "INVERT", "color-format_8hpp.html#a72e8697832de85a8164a12b06268657f", null ],
+    [ "invert", "color-format_8hpp.html#a5a7f65a2c5a8b212c16f6ccb559f89c8", null ],
+    [ "NO_BOLD", "color-format_8hpp.html#a73d18df7584aa1e215de13117d543160", null ],
+    [ "no_bold", "color-format_8hpp.html#a7d0b38cd4b23408a7a6a0cf0f9339938", null ],
+    [ "NO_INVERT", "color-format_8hpp.html#a8d8af71b552c1a8c93fefcea502f8462", null ],
+    [ "no_invert", "color-format_8hpp.html#a88c1e3de58c5174da532ef80c93536d1", null ],
+    [ "NO_UNDERLINE", "color-format_8hpp.html#a4503e7f2026de8b1da4df839d1a8eca6", null ],
+    [ "no_underline", "color-format_8hpp.html#a35d0d0c265b0fcd9af095f0ea017fb67", null ],
+    [ "NONE", "color-format_8hpp.html#a967d50a0df8290637e8e75b1558fccc1", null ],
+    [ "RESET", "color-format_8hpp.html#aa723ff8ac3e9d7ad2b565976e97c1116", null ],
+    [ "reset", "color-format_8hpp.html#ab505233a6f26bec737e27a8efd713db5", null ],
+    [ "reset_all", "color-format_8hpp.html#a15d0dc293806a43fccae35d614d6ce22", null ],
+    [ "reset_b", "color-format_8hpp.html#a7e3fccce20699c20489657918d1b918b", null ],
+    [ "reset_f", "color-format_8hpp.html#ac23eccfe66e28b988112483f8dcdbec4", null ],
+    [ "UNDERLINE", "color-format_8hpp.html#abac5f50ee78aee1a7bdc1a680b7962ff", null ],
+    [ "underline", "color-format_8hpp.html#aecbbaf451a13126290a5bf25f57aa7e9", null ]
+];

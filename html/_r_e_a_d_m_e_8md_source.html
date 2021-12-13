@@ -89,8 +89,23 @@ $(document).ready(function(){initNavTree('_r_e_a_d_m_e_8md.html',''); initResiza
 <div class="title">README.md</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_r_e_a_d_m_e_8md.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# 307lib</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;Collection of my C++ libraries</div>
+<a href="_r_e_a_d_m_e_8md.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# 307lib Documentation</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;You can find the github pages site [here.](https://radj307.github.io/307lib/html/index.html)</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;## Generating Documentation</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;1. Clone the repository &amp; `cd` to it.  </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;`git clone https://github.com/radj307/307lib &amp;&amp; cd 307lib`</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;2. Clone the `gh-pages` branch as a subdirectory of the main repository &amp; `cd` to it.  </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;`git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages &amp;&amp; cd gh-pages`</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;3. Initialize &amp; clone submodules.  </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;`git submodule init &amp;&amp; git submodule update`</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;4. Run doxygen.  </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;`doxygen ./Doxyfile`</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;To execute all of the above steps, you can use this one-liner:  </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;`git clone https://github.com/radj307/307lib &amp;&amp; cd 307lib &amp;&amp; git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages &amp;&amp; cd gh-pages &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; doxygen ./Doxyfile`  </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

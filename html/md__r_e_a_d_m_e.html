@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: 307lib</title>
+<title>307Lib: 307lib Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,10 +86,25 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">307lib </div>  </div>
+<div class="title">307lib Documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Collection of my C++ libraries </p>
+<div class="textblock"><p>You can find the github pages site <a href="https://radj307.github.io/307lib/html/index.html">here.</a></p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Generating Documentation</h1>
+<ol type="1">
+<li>Clone the repository &amp; <code>cd</code> to it. <br  />
+ <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib</code></li>
+<li>Clone the <code>gh-pages</code> branch as a subdirectory of the main repository &amp; <code>cd</code> to it. <br  />
+ <code>git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages</code></li>
+<li>Initialize &amp; clone submodules. <br  />
+ <code>git submodule init &amp;&amp; git submodule update</code></li>
+<li>Run doxygen. <br  />
+ <code>doxygen ./Doxyfile</code></li>
+</ol>
+<p>To execute all of the above steps, you can use this one-liner: <br  />
+ <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib &amp;&amp; git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; doxygen ./Doxyfile</code> <br  />
+ </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

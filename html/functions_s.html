@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>save()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#a218f38fac7c22605e2a7d6c0d793f592">sys::term::Cursor</a>
+, <a class="el" href="structterm_1_1_cursor.html#a5d6191f4ecdf67311263f20a1fed92a0">term::Cursor</a>
 </li>
 <li>SectionContent
 : <a class="el" href="classtoken_1_1parse_1_1_i_n_i_container.html#a79b26ce36451db64639992eb2728c82e">token::parse::INIContainer</a>
@@ -115,20 +116,30 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>Sequence()
 : <a class="el" href="struct_a_n_s_i_1_1_sequence.html#a9b4c8107ecf315a661eea63d91c03809">ANSI::Sequence</a>
+, <a class="el" href="structcolor_1_1_color_format.html#ac0c97ecc5f593bc2c1f35cbe228035e9">color::ColorFormat</a>
 </li>
 <li>set()
 : <a class="el" href="classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9">color::ColorPalette&lt; KeyType &gt;</a>
-, <a class="el" href="structfile_1_1ini_1_1_container_i_n_i.html#a1cb6c197144d624668642290d16156ec">file::ini::ContainerINI</a>
+, <a class="el" href="classcolor_1_1_config.html#ac5652b2c4bcc82e4603af84161b1cc9f">color::Config</a>
+, <a class="el" href="classcolor_1_1palette.html#ada7f383b644a49c75de3ec33d50eab86">color::palette&lt; KeyType &gt;</a>
+, <a class="el" href="structfile_1_1ini_1_1_container_i_n_i.html#a30accb99ae286560bea64cc73270527d">file::ini::ContainerINI</a>
 , <a class="el" href="classtoken_1_1parse_1_1_i_n_i_container.html#a66744c380520eafb3845ef6fb631993c">token::parse::INIContainer</a>
 , <a class="el" href="classtoken_1_1parse_1_1_i_n_i_container_mono_type.html#a2615f4197ca4dc643569055065c26567">token::parse::INIContainerMonoType&lt; T &gt;</a>
 </li>
 <li>setActive()
 : <a class="el" href="classcolor_1_1_color_palette.html#a51eedebade04a1fec397bb99f127555b">color::ColorPalette&lt; KeyType &gt;</a>
+, <a class="el" href="classcolor_1_1palette.html#ae45070c30a2da4836a7bc28d6f4955f0">color::palette&lt; KeyType &gt;</a>
 </li>
 <li>setcolor()
 : <a class="el" href="structcolor_1_1background_1_1setcolor.html#ad3e2873995adeeedee9799b4622eea71">color::background::setcolor</a>
 , <a class="el" href="structcolor_1_1foreground_1_1setcolor.html#ace4364c4f07e658bd6bdfde44fc3c928">color::foreground::setcolor</a>
-, <a class="el" href="structcolor_1_1setcolor.html#ab41af4c230d82e1ff80d3d7368fd71c4">color::setcolor</a>
+, <a class="el" href="structcolor_1_1setcolor.html#abef336a7234867ac4a0cae61d0667325">color::setcolor</a>
+</li>
+<li>setcolor_seq()
+: <a class="el" href="structcolor_1_1setcolor__seq.html#aae724eecbf1e70f12228ece35195bd70">color::setcolor_seq&lt; SeqT &gt;</a>
+</li>
+<li>setEnabled()
+: <a class="el" href="classcolor_1_1_config.html#acbe4bf86028d18aafe4465dc4a1ebc7b">color::Config</a>
 </li>
 <li>setFormat()
 : <a class="el" href="structcolor_1_1setcolor.html#a18d08494231db24bdfda1247a9645c90">color::setcolor</a>
@@ -150,12 +161,14 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>setPos()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#a8b06907a4dfc63096938ab39ea42adf4">sys::term::Cursor</a>
+, <a class="el" href="structterm_1_1_cursor.html#ada792de05a7506bc1553df54b38bb98f">term::Cursor</a>
 </li>
 <li>setPrefixEnabled()
 : <a class="el" href="classxlog_1_1x_log.html#a41948bd8833a7e02e42f4fe801a60a5c">xlog::xLog&lt; StreamType &gt;</a>
 </li>
 <li>show()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#aee60485bd38da3ff4d608138ddf46943">sys::term::Cursor</a>
+, <a class="el" href="structterm_1_1_cursor.html#a2f876f140a431a5794113f45f4e0c9c9">term::Cursor</a>
 </li>
 <li>shrink_to_fit()
 : <a class="el" href="structopt_1_1_arg_container.html#ad16051eef16aff7affd8ee43c8eca55c">opt::ArgContainer</a>
@@ -166,23 +179,27 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 , <a class="el" href="structopt_1_1_arg_container.html#a238b537f0cc14979b770900a6921b3c0">opt::ArgContainer</a>
 </li>
 <li>sizeof()
-: <a class="el" href="structtoken_1_1_tokenized_container.html#a5ea2c9db1b5440175f59f908d1c49e81">token::TokenizedContainer</a>
-, <a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a771ff6cd23b1e516494326d8647ec600">token::TokenizerBaseFunctions&lt; TokenT &gt;</a>
+: <a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a771ff6cd23b1e516494326d8647ec600">token::TokenizerBaseFunctions&lt; TokenT &gt;</a>
 </li>
 <li>ss
 : <a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a779c795a0323244a5614c25b6dc7de34">token::TokenizerBaseFunctions&lt; TokenT &gt;</a>
 </li>
 <li>start_blinking()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#ade1302ce0b237c05276f7baab17f387e">sys::term::Cursor</a>
+, <a class="el" href="structterm_1_1_cursor.html#a4e0313c84c9bcdca765ded5a7c3985b9">term::Cursor</a>
 </li>
 <li>stop_blinking()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#ab24ebb4dca74fef8cb697185c176bd06">sys::term::Cursor</a>
+, <a class="el" href="structterm_1_1_cursor.html#a8b177b81c5a4c3ea53a91a1838930d72">term::Cursor</a>
 </li>
 <li>str()
 : <a class="el" href="structtoken_1_1_token.html#a2ac13f6e9fb8147d0e0c3a535b4e9f6a">token::Token</a>
 </li>
 <li>StringPair
 : <a class="el" href="structfile_1_1ini_1_1_container_i_n_i.html#a5f617383688935a9d456c34db003001d">file::ini::ContainerINI</a>
+</li>
+<li>strip_types()
+: <a class="el" href="structtoken_1_1_tokenized_container.html#a9f6d0588ffcdee5dd378026b5e6c4c26">token::TokenizedContainer</a>
 </li>
 </ul>
 </div><!-- contents -->

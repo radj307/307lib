@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['win32_5flean_5fand_5fmean_1469',['WIN32_LEAN_AND_MEAN',['../_windows_8hpp.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'Windows.hpp']]],
-  ['windows_5fhpp_1470',['WINDOWS_HPP',['../_windows_8hpp.html#aba68d956c198b0f59335a5f96a5d58a6',1,'Windows.hpp']]]
+  ['termapiwin_5fhpp_1700',['TERMAPIWIN_HPP',['../_term_a_p_i_win_8hpp.html#a78c05524b460cf751777f4041f183042',1,'TermAPIWin.hpp']]]
 ];

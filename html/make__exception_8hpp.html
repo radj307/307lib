@@ -105,7 +105,8 @@ Include dependency graph for make_exception.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="make__exception_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -113,28 +114,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexcept.html">except</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception object with a custom message stored as a member variable.  <a href="classexcept.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8f1839a845571eefe9d9b470db9fac5f"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... VT&gt; </td></tr>
-<tr class="memitem:a8f1839a845571eefe9d9b470db9fac5f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> <a class="el" href="classexcept.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="make__exception_8hpp.html#a8f1839a845571eefe9d9b470db9fac5f">make_exception</a> (VT const &amp;... message)</td></tr>
-<tr class="separator:a8f1839a845571eefe9d9b470db9fac5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a7a9c7b25380e6f2845b18821eaca0"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; std::exception &gt; ReturnT = except, var::Streamable... VT&gt; </td></tr>
+<tr class="memitem:ad0a7a9c7b25380e6f2845b18821eaca0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="make__exception_8hpp.html#ad0a7a9c7b25380e6f2845b18821eaca0">make_exception</a> (VT const &amp;... message)</td></tr>
+<tr class="memdesc:ad0a7a9c7b25380e6f2845b18821eaca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="make__exception_8hpp.html#ad0a7a9c7b25380e6f2845b18821eaca0">More...</a><br /></td></tr>
+<tr class="separator:ad0a7a9c7b25380e6f2845b18821eaca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8f1839a845571eefe9d9b470db9fac5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f1839a845571eefe9d9b470db9fac5f">&#9670;&nbsp;</a></span>make_exception()</h2>
+<a id="ad0a7a9c7b25380e6f2845b18821eaca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a7a9c7b25380e6f2845b18821eaca0">&#9670;&nbsp;</a></span>make_exception()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable... VT&gt; </div>
+template&lt;std::derived_from&lt; std::exception &gt; ReturnT = except, var::Streamable... VT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> <a class="el" href="classexcept.html">except</a> make_exception </td>
+          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnT make_exception </td>
           <td>(</td>
           <td class="paramtype">VT const &amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -148,7 +151,23 @@ template&lt;var::Streamable... VT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00016">16</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p>Create an exception with a given message. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ReturnT</td><td>The type of exception to return. </td></tr>
+    <tr><td class="paramname">...VT</td><td>Variadic Templated Types. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...message</td><td>The message shown when calling the what() function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ReturnT </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00028">28</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 
 </div>
 </div>

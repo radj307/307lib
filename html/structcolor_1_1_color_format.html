@@ -96,10 +96,23 @@ $(document).ready(function(){initNavTree('structcolor_1_1_color_format.html','')
 <p>A mutable format flag instance. Used by the setcolor struct to maintain any number of independent <a class="el" href="structcolor_1_1_format_flag.html" title="Used by the ColorFormat &amp; setcolor objects to maintain flag types. Does not have any direct compariso...">FormatFlag</a> instances.  
  <a href="structcolor_1_1_color_format.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_format_flag_8hpp_source.html">FormatFlag.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae5cd9ba201b082b2ddc43ee1ad53c016"><td class="memTemplParams" colspan="2">template&lt;typename... VT&gt; </td></tr>
+<tr class="memitem:ae5cd9ba201b082b2ddc43ee1ad53c016"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#ae5cd9ba201b082b2ddc43ee1ad53c016">ColorFormat</a> (const VT &amp;... flags)</td></tr>
+<tr class="memdesc:ae5cd9ba201b082b2ddc43ee1ad53c016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variadic bitmerge constructor.  <a href="structcolor_1_1_color_format.html#ae5cd9ba201b082b2ddc43ee1ad53c016">More...</a><br /></td></tr>
+<tr class="separator:ae5cd9ba201b082b2ddc43ee1ad53c016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15fb403248da9dbcce68d241b6c8515f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#a15fb403248da9dbcce68d241b6c8515f">operator unsigned char</a> () const</td></tr>
+<tr class="memdesc:a15fb403248da9dbcce68d241b6c8515f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current value of this flag.  <a href="structcolor_1_1_color_format.html#a15fb403248da9dbcce68d241b6c8515f">More...</a><br /></td></tr>
+<tr class="separator:a15fb403248da9dbcce68d241b6c8515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f47c6dd7255cc3d52be1231d87fd3b1"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#a5f47c6dd7255cc3d52be1231d87fd3b1">contains</a> (const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> &amp;flag) const</td></tr>
+<tr class="separator:a5f47c6dd7255cc3d52be1231d87fd3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c97ecc5f593bc2c1f35cbe228035e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#ac0c97ecc5f593bc2c1f35cbe228035e9">Sequence</a> () const</td></tr>
+<tr class="separator:ac0c97ecc5f593bc2c1f35cbe228035e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d5aab80f56c02a49606fc7e78eade0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#a85d5aab80f56c02a49606fc7e78eade0">wSequence</a> () const</td></tr>
+<tr class="separator:a85d5aab80f56c02a49606fc7e78eade0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84af8569e16194b5e5622229935554c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html#a84af8569e16194b5e5622229935554c4">ColorFormat</a> (const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> &amp;flag)</td></tr>
 <tr class="memdesc:a84af8569e16194b5e5622229935554c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single-flag constructor.  <a href="structcolor_1_1_color_format.html#a84af8569e16194b5e5622229935554c4">More...</a><br /></td></tr>
 <tr class="separator:a84af8569e16194b5e5622229935554c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,10 +151,54 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A mutable format flag instance. Used by the setcolor struct to maintain any number of independent <a class="el" href="structcolor_1_1_format_flag.html" title="Used by the ColorFormat &amp; setcolor objects to maintain flag types. Does not have any direct compariso...">FormatFlag</a> instances. </p>
 
-<p class="definition">Definition at line <a class="el" href="_format_flag_8hpp_source.html#l00082">82</a> of file <a class="el" href="_format_flag_8hpp_source.html">FormatFlag.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00090">90</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae5cd9ba201b082b2ddc43ee1ad53c016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5cd9ba201b082b2ddc43ee1ad53c016">&#9670;&nbsp;</a></span>ColorFormat() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">color::ColorFormat::ColorFormat </td>
+          <td>(</td>
+          <td class="paramtype">const VT &amp;...&#160;</td>
+          <td class="paramname"><em>flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variadic bitmerge constructor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">...VT</td><td>- Variadic Templated Type (<a class="el" href="structcolor_1_1_format_flag.html" title="Used by the ColorFormat &amp; setcolor objects to maintain flag types. Does not have any direct compariso...">FormatFlag</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...flags</td><td>- At least two format flag instances that will be merged together with a bitwise OR operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00100">100</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a84af8569e16194b5e5622229935554c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84af8569e16194b5e5622229935554c4">&#9670;&nbsp;</a></span>ColorFormat()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a84af8569e16194b5e5622229935554c4">&#9670;&nbsp;</a></span>ColorFormat() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,8 +239,71 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5f47c6dd7255cc3d52be1231d87fd3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f47c6dd7255cc3d52be1231d87fd3b1">&#9670;&nbsp;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool color::ColorFormat::contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> &amp;&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00105">105</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structcolor_1_1_color_format_a5f47c6dd7255cc3d52be1231d87fd3b1_icgraph.svg" width="318" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a15fb403248da9dbcce68d241b6c8515f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15fb403248da9dbcce68d241b6c8515f">&#9670;&nbsp;</a></span>operator unsigned char()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a15fb403248da9dbcce68d241b6c8515f">&#9670;&nbsp;</a></span>operator unsigned char() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr color::ColorFormat::operator unsigned char </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the current value of this flag. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00103">103</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a15fb403248da9dbcce68d241b6c8515f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15fb403248da9dbcce68d241b6c8515f">&#9670;&nbsp;</a></span>operator unsigned char() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,8 +632,69 @@ template&lt;typename... VT&gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/include/<a class="el" href="_format_flag_8hpp_source.html">FormatFlag.hpp</a></li>
+<a id="ac0c97ecc5f593bc2c1f35cbe228035e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c97ecc5f593bc2c1f35cbe228035e9">&#9670;&nbsp;</a></span>Sequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::ColorFormat::Sequence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00110">110</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structcolor_1_1_color_format_ac0c97ecc5f593bc2c1f35cbe228035e9_cgraph.svg" width="318" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a85d5aab80f56c02a49606fc7e78eade0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d5aab80f56c02a49606fc7e78eade0">&#9670;&nbsp;</a></span>wSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a> color::ColorFormat::wSequence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00138">138</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/color/include/<a class="el" href="color-format_8hpp_source.html">color-format.hpp</a></li>
+<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/v3/include/<a class="el" href="_format_flag_8hpp_source.html">FormatFlag.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

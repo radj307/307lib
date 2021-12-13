@@ -107,13 +107,13 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1parse_1_1_r_e_container.html">REContainer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1parse_1_1_r_e_parser.html">REParser</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1parse_1_1_i_n_i_parser.html">INIParser</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized INI file into an <a class="el" href="classtoken_1_1parse_1_1_i_n_i_container.html#a75ffa6bc39899eb87474372b6eca6328" title="Contains all headers and associated SectionContent containers, where pairs = { header,...">INIContainer::Map</a> (implicit), or a legacy container type (explicit).  <a href="structtoken_1_1parse_1_1_i_n_i_parser.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html">INIParserMonoType</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized INI file into an <a class="el" href="classtoken_1_1parse_1_1_i_n_i_container.html#a75ffa6bc39899eb87474372b6eca6328" title="Contains all headers and associated SectionContent containers, where pairs = { header,...">INIContainer::Map</a> (implicit), or a legacy container type (explicit).  <a href="structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1parse_1_1_r_e_parser.html">REParser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -178,6 +178,8 @@ Variables</h2></td></tr>
 <tr class="memitem:af99a8a5611c9417d0a1bc5bad11daa74"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1parse.html#af99a8a5611c9417d0a1bc5bad11daa74">ValidValueT</a> = std::same_as&lt;T, <a class="el" href="namespacetoken_1_1parse.html#a98ac9ce1a600cf23bbb2e41547753d61">String</a>&gt; || std::same_as&lt;T, <a class="el" href="namespacetoken_1_1parse.html#a6c6c3644f6212ab5acee5350b567ef7a">Float</a>&gt; || std::same_as&lt;T, <a class="el" href="namespacetoken_1_1parse.html#abf9d2407584f97bc54ba38b14b8a88de">Integer</a>&gt; || std::same_as&lt;T, <a class="el" href="namespacetoken_1_1parse.html#a7b592064560353ab54338ba2eb42b976">Boolean</a>&gt;</td></tr>
 <tr class="memdesc:af99a8a5611c9417d0a1bc5bad11daa74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept that tests whether a given template type is a valid String, Float, Integer, or Boolean.  <a href="namespacetoken_1_1parse.html#af99a8a5611c9417d0a1bc5bad11daa74">More...</a><br /></td></tr>
 <tr class="separator:af99a8a5611c9417d0a1bc5bad11daa74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601e1e0939498a291d5720936c75f4d3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1parse.html#a601e1e0939498a291d5720936c75f4d3">INIParser_AllowBlankValue</a> { true }</td></tr>
+<tr class="separator:a601e1e0939498a291d5720936c75f4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a7b592064560353ab54338ba2eb42b976"></a>
@@ -465,6 +467,30 @@ template&lt;ValidValueT T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a601e1e0939498a291d5720936c75f4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601e1e0939498a291d5720936c75f4d3">&#9670;&nbsp;</a></span>INIParser_AllowBlankValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool token::parse::INIParser_AllowBlankValue { true }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_n_i_parser_8hpp_source.html#l00018">18</a> of file <a class="el" href="_i_n_i_parser_8hpp_source.html">INIParser.hpp</a>.</p>
+
+</div>
+</div>
 <a id="af99a8a5611c9417d0a1bc5bad11daa74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af99a8a5611c9417d0a1bc5bad11daa74">&#9670;&nbsp;</a></span>ValidValueT</h2>
 

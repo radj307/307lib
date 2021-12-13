@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['termapiwin_5fhpp_1468',['TERMAPIWIN_HPP',['../_term_a_p_i_win_8hpp.html#a78c05524b460cf751777f4041f183042',1,'TermAPIWin.hpp']]]
+  ['sequence_5fdefinitions_1699',['SEQUENCE_DEFINITIONS',['../_sequence_definitions_8hpp.html#ac6b07d3395b57125302c32e0614e03ac',1,'SequenceDefinitions.hpp']]]
 ];

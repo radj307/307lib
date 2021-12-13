@@ -8,8 +8,5 @@ var dir_11de765753b9543b574d24fa07b7105e =
     [ "REContainer.hpp", "_r_e_container_8hpp.html", [
       [ "REElement", "structtoken_1_1parse_1_1_r_e_element.html", "structtoken_1_1parse_1_1_r_e_element" ],
       [ "REContainer", "structtoken_1_1parse_1_1_r_e_container.html", "structtoken_1_1parse_1_1_r_e_container" ]
-    ] ],
-    [ "REParser.hpp", "_r_e_parser_8hpp.html", [
-      [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ]
     ] ]
 ];

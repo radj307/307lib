@@ -7,15 +7,22 @@ var annotated_dup =
       [ "background", "namespacecolor_1_1background.html", [
         [ "setcolor", "structcolor_1_1background_1_1setcolor.html", "structcolor_1_1background_1_1setcolor" ]
       ] ],
+      [ "fileext", "namespacecolor_1_1fileext.html", [
+        [ "ConfigTokenizer", "classcolor_1_1fileext_1_1_config_tokenizer.html", "classcolor_1_1fileext_1_1_config_tokenizer" ],
+        [ "ConfigParser", "classcolor_1_1fileext_1_1_config_parser.html", "classcolor_1_1fileext_1_1_config_parser" ]
+      ] ],
       [ "foreground", "namespacecolor_1_1foreground.html", [
         [ "setcolor", "structcolor_1_1foreground_1_1setcolor.html", "structcolor_1_1foreground_1_1setcolor" ]
       ] ],
-      [ "setcolor", "structcolor_1_1setcolor.html", "structcolor_1_1setcolor" ],
-      [ "textcolor", "structcolor_1_1textcolor.html", "structcolor_1_1textcolor" ],
-      [ "ColorPalette", "classcolor_1_1_color_palette.html", "classcolor_1_1_color_palette" ],
+      [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ],
+      [ "Config", "classcolor_1_1_config.html", "classcolor_1_1_config" ],
       [ "FormatFlag", "structcolor_1_1_format_flag.html", "structcolor_1_1_format_flag" ],
       [ "ColorFormat", "structcolor_1_1_color_format.html", "structcolor_1_1_color_format" ],
-      [ "Layer", "structcolor_1_1_layer.html", "structcolor_1_1_layer" ]
+      [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ],
+      [ "ColorPalette", "classcolor_1_1_color_palette.html", "classcolor_1_1_color_palette" ],
+      [ "Layer", "structcolor_1_1_layer.html", "structcolor_1_1_layer" ],
+      [ "setcolor", "structcolor_1_1setcolor.html", "structcolor_1_1setcolor" ],
+      [ "textcolor", "structcolor_1_1textcolor.html", "structcolor_1_1textcolor" ]
     ] ],
     [ "env", "namespaceenv.html", [
       [ "PATH", "classenv_1_1_p_a_t_h.html", "classenv_1_1_p_a_t_h" ]
@@ -59,15 +66,20 @@ var annotated_dup =
         [ "Cursor", "structsys_1_1term_1_1_cursor.html", "structsys_1_1term_1_1_cursor" ]
       ] ]
     ] ],
+    [ "term", "namespaceterm.html", [
+      [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
+      [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
+      [ "Message", "classterm_1_1_message.html", "classterm_1_1_message" ]
+    ] ],
     [ "token", "namespacetoken.html", [
       [ "parse", "namespacetoken_1_1parse.html", [
         [ "INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", "classtoken_1_1parse_1_1_i_n_i_container" ],
         [ "INIContainerMonoType", "classtoken_1_1parse_1_1_i_n_i_container_mono_type.html", "classtoken_1_1parse_1_1_i_n_i_container_mono_type" ],
         [ "REElement", "structtoken_1_1parse_1_1_r_e_element.html", "structtoken_1_1parse_1_1_r_e_element" ],
         [ "REContainer", "structtoken_1_1parse_1_1_r_e_container.html", "structtoken_1_1parse_1_1_r_e_container" ],
-        [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ],
         [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
-        [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ]
+        [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ],
+        [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ]
       ] ],
       [ "TokenBase", "structtoken_1_1_token_base.html", "structtoken_1_1_token_base" ],
       [ "Token", "structtoken_1_1_token.html", "structtoken_1_1_token" ],

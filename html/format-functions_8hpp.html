@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/include/format-functions.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/v3/include/format-functions.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,26 +87,29 @@ $(document).ready(function(){initNavTree('format-functions_8hpp.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">format-functions.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains Sequence functions for making bold, underlined, and inverted text, as well as resetting them. Also contains the <a class="el" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e" title="Reset all formatting &amp; colors in the terminal.">reset()</a> function.  
+<p>Contains Sequence functions for making bold, underlined, and inverted text, as well as resetting them. Also contains the <a class="el" href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62" title="Reset terminal colors to their defaults.">reset()</a> function.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="v3_2include_2_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for format-functions.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="format-functions_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="format-functions_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="format-functions_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="format-functions_8hpp__dep__incl.svg" width="495" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="format-functions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -118,33 +121,39 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8bf50b1527722d38df665073cb7a49de"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">color::bold</a> ()</td></tr>
-<tr class="memdesc:a8bf50b1527722d38df665073cb7a49de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">More...</a><br /></td></tr>
-<tr class="separator:a8bf50b1527722d38df665073cb7a49de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa96f6b68764d10ab553a743551ccecaa"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aa96f6b68764d10ab553a743551ccecaa">color::reset_bold</a> ()</td></tr>
 <tr class="memdesc:aa96f6b68764d10ab553a743551ccecaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only bold formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aa96f6b68764d10ab553a743551ccecaa">More...</a><br /></td></tr>
 <tr class="separator:aa96f6b68764d10ab553a743551ccecaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">color::underline</a> ()</td></tr>
-<tr class="memdesc:aecbbaf451a13126290a5bf25f57aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">More...</a><br /></td></tr>
-<tr class="separator:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a558ad452106d91ded5703b6605fa397d"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a558ad452106d91ded5703b6605fa397d">color::reset_underline</a> ()</td></tr>
 <tr class="memdesc:a558ad452106d91ded5703b6605fa397d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only underline formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a558ad452106d91ded5703b6605fa397d">More...</a><br /></td></tr>
 <tr class="separator:a558ad452106d91ded5703b6605fa397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">color::invert</a> ()</td></tr>
-<tr class="memdesc:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">More...</a><br /></td></tr>
-<tr class="separator:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a53d61efc55cd51ce3af80a5f25a9ab2b">color::reset_invert</a> ()</td></tr>
 <tr class="memdesc:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only invert formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a53d61efc55cd51ce3af80a5f25a9ab2b">More...</a><br /></td></tr>
 <tr class="separator:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee17ba11443f63705852a2dd9c010fba"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aee17ba11443f63705852a2dd9c010fba">color::placeholder</a> (std::ostream &amp;os)</td></tr>
 <tr class="memdesc:aee17ba11443f63705852a2dd9c010fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple output stream placeholder, does not insert anything into an output stream. For use with ternary expressions.  <a href="namespacecolor.html#aee17ba11443f63705852a2dd9c010fba">More...</a><br /></td></tr>
 <tr class="separator:aee17ba11443f63705852a2dd9c010fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee8667364e47f328162ba47d5a8a52e"><td class="memItemLeft" align="right" valign="top">constexpr Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">color::reset</a> ()</td></tr>
-<tr class="memdesc:adee8667364e47f328162ba47d5a8a52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all formatting &amp; colors in the terminal.  <a href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">More...</a><br /></td></tr>
-<tr class="separator:adee8667364e47f328162ba47d5a8a52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62">color::reset</a> { make_sequence(ESC, CSI, &quot;38;5;7&quot;, END, ESC, CSI, &quot;48;5;0&quot;, END) }</td></tr>
+<tr class="memdesc:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset terminal colors to their defaults.  <a href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62">More...</a><br /></td></tr>
+<tr class="separator:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf50b1527722d38df665073cb7a49de"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">color::bold</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a5f033a85adc48ccf24df22d68c20b8e0">ANSI::SGR_BOLD</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a8bf50b1527722d38df665073cb7a49de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">More...</a><br /></td></tr>
+<tr class="separator:a8bf50b1527722d38df665073cb7a49de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">color::underline</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afe5c5d6c6840af35d8f4e83f79fa5524">ANSI::SGR_UNDERLINE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:aecbbaf451a13126290a5bf25f57aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">More...</a><br /></td></tr>
+<tr class="separator:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">color::invert</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#ad527dafbd86a4c61633be26dba7ed45d">ANSI::SGR_NEGATIVE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">More...</a><br /></td></tr>
+<tr class="separator:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d0dc293806a43fccae35d614d6ce22"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a15d0dc293806a43fccae35d614d6ce22">color::reset_all</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a63b718e34115fc0ad40565216b7bcaf3">ANSI::SGR_RESET</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a15d0dc293806a43fccae35d614d6ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset terminal colors to their defaults.  <a href="namespacecolor.html#a15d0dc293806a43fccae35d614d6ce22">More...</a><br /></td></tr>
+<tr class="separator:a15d0dc293806a43fccae35d614d6ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains Sequence functions for making bold, underlined, and inverted text, as well as resetting them. Also contains the <a class="el" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e" title="Reset all formatting &amp; colors in the terminal.">reset()</a> function. </p>
+<div class="textblock"><p>Contains Sequence functions for making bold, underlined, and inverted text, as well as resetting them. Also contains the <a class="el" href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62" title="Reset terminal colors to their defaults.">reset()</a> function. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
@@ -153,7 +162,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1.html">include</a></li><li class="navelem"><a class="el" href="format-functions_8hpp.html">format-functions.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_75a7af29e99bb07a63a0c5b111f18541.html">v3</a></li><li class="navelem"><a class="el" href="dir_224d974d9f51c5c23a080e0337abee5b.html">include</a></li><li class="navelem"><a class="el" href="format-functions_8hpp.html">format-functions.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

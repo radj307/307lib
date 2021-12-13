@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['key_336',['key',['../structfile_1_1ini_1_1_key_helper.html#a3fd4bcfb732228cade38a069f8a624ee',1,'file::ini::KeyHelper']]],
-  ['key_337',['KEY',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a3b5949e0c26b87767a4752a276de9570',1,'token']]],
-  ['key_5fexists_338',['key_exists',['../classcolor_1_1_color_palette.html#aaaed9e2365a982e8b61952be42c1cfd2',1,'color::ColorPalette']]],
-  ['keyhelper_339',['KeyHelper',['../structfile_1_1ini_1_1_key_helper.html',1,'file::ini::KeyHelper'],['../structfile_1_1ini_1_1_key_helper.html#a9c1372e21387e3e344954f0d80d73f1c',1,'file::ini::KeyHelper::KeyHelper()']]],
-  ['keymode_340',['KeyMode',['../namespacesys_1_1term.html#a118097cc454175d5e9043aa7ff11a2d3',1,'sys::term']]],
-  ['keymodetarget_341',['KeyModeTarget',['../namespacesys_1_1term.html#a87bf27bfe5091904b80cf9f5c9e54b33',1,'sys::term']]],
-  ['keypad_342',['KEYPAD',['../namespacesys_1_1term.html#a87bf27bfe5091904b80cf9f5c9e54b33a69e21b84cee5eb7e9707ebfaa2372b4d',1,'sys::term']]],
-  ['keypair_343',['KeyPair',['../classtoken_1_1parse_1_1_i_n_i_container.html#a0b7ebd3f789d98f50a2428a91b64eda2',1,'token::parse::INIContainer::KeyPair()'],['../classtoken_1_1parse_1_1_i_n_i_container_mono_type.html#a7e8070ba6d9ee5fd23c46a0fd539c711',1,'token::parse::INIContainerMonoType::KeyPair()']]]
+  ['junction_5f3_5fway_5fbottom_372',['JUNCTION_3_WAY_BOTTOM',['../structterm_1_1_line_character.html#ab190d4341b282d86c18e1ba9c8d7485c',1,'term::LineCharacter::JUNCTION_3_WAY_BOTTOM()'],['../structsys_1_1term_1_1_line_character.html#a67ca12712496db15e686ce2170238db9',1,'sys::term::LineCharacter::JUNCTION_3_WAY_BOTTOM()']]],
+  ['junction_5f3_5fway_5fleft_373',['JUNCTION_3_WAY_LEFT',['../structterm_1_1_line_character.html#a80a99d42c3023167b6bd50b48ce99e06',1,'term::LineCharacter::JUNCTION_3_WAY_LEFT()'],['../structsys_1_1term_1_1_line_character.html#a0a23841c86113ff2fc7baad920636f68',1,'sys::term::LineCharacter::JUNCTION_3_WAY_LEFT()']]],
+  ['junction_5f3_5fway_5fright_374',['JUNCTION_3_WAY_RIGHT',['../structterm_1_1_line_character.html#acbed94cd4ea03a25913994ace10df747',1,'term::LineCharacter::JUNCTION_3_WAY_RIGHT()'],['../structsys_1_1term_1_1_line_character.html#a2404ad7e905ecb44251efa4b8c12f0ec',1,'sys::term::LineCharacter::JUNCTION_3_WAY_RIGHT()']]],
+  ['junction_5f3_5fway_5ftop_375',['JUNCTION_3_WAY_TOP',['../structterm_1_1_line_character.html#a3e97e08e21bb3b2f2eb797e965bd0417',1,'term::LineCharacter::JUNCTION_3_WAY_TOP()'],['../structsys_1_1term_1_1_line_character.html#a8cec35c72ad196142164cfb388b0f092',1,'sys::term::LineCharacter::JUNCTION_3_WAY_TOP()']]],
+  ['junction_5f4_5fway_376',['JUNCTION_4_WAY',['../structterm_1_1_line_character.html#af4963809c521a430a413fb70d9ef1493',1,'term::LineCharacter::JUNCTION_4_WAY()'],['../structsys_1_1term_1_1_line_character.html#a588f12249b59d161c7cbd96648ea549b',1,'sys::term::LineCharacter::JUNCTION_4_WAY()']]]
 ];

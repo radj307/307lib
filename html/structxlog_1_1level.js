@@ -2,6 +2,7 @@ var structxlog_1_1level =
 [
     [ "LogLevel", "structxlog_1_1level_1_1_log_level.html", "structxlog_1_1level_1_1_log_level" ],
     [ "level", "structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee", null ],
+    [ "level", "structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee", null ],
     [ "All", "structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7", null ],
     [ "AllDebug", "structxlog_1_1level.html#a00290bb7e21a1d0cb0f0e4ce3eebefd5", null ],
     [ "CRITICAL", "structxlog_1_1level.html#a9ff200bbeb8431595aaf1d79152435d8", null ],

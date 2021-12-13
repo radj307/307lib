@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/include/ColorPalette.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/v3/include/ColorPalette.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,18 +95,20 @@ $(document).ready(function(){initNavTree('_color_palette_8hpp.html',''); initRes
 
 <p>Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="v3_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ColorPalette.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_color_palette_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_color_palette_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_color_palette_8hpp__dep__incl.svg" width="178" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_color_palette_8hpp__dep__incl.svg" width="194" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="_color_palette_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -125,12 +127,12 @@ Namespaces</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307</dd></dl>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Example Implementation:</h1>
 <p>enum class MyKeyType { TYPE1, TYPE2, TYPE3, }</p>
 <p>using Palette = color::ColorPalette&lt;MyKeyType&gt;;</p>
-<p>Palette myPalette{ { { MyKeyType::TYPE1, <a class="el" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332" title="Red color.">color::red</a> }, { MyKeyType::TYPE2, { <a class="el" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620" title="Green color.">color::green</a>, <a class="el" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772" title="Foreground/text color layer.">color::Layer::FOREGROUND</a>, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE } }, { MyKeyType::TYPE3, <a class="el" href="namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86" title="Blue color.">color::blue</a> }, } };</p>
-<p>void example() { std::cout &lt;&lt; myPalette(MyKeyType::TYPE1) &lt;&lt; "red text" &lt;&lt; <a class="el" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e" title="Reset all formatting &amp; colors in the terminal.">color::reset</a>; } </p>
+<p>Palette myPalette{ { { MyKeyType::TYPE1, <a class="el" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332" title="Red color.">color::red</a> }, { MyKeyType::TYPE2, { <a class="el" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620" title="Green color.">color::green</a>, <a class="el" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a>, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE } }, { MyKeyType::TYPE3, <a class="el" href="namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86" title="Blue color.">color::blue</a> }, } };</p>
+<p>void example() { std::cout &lt;&lt; myPalette(MyKeyType::TYPE1) &lt;&lt; "red text" &lt;&lt; <a class="el" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>; } </p>
 
 <p class="definition">Definition in file <a class="el" href="_color_palette_8hpp_source.html">ColorPalette.hpp</a>.</p>
 </div></div><!-- contents -->
@@ -138,7 +140,7 @@ Example Implementation:</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1.html">include</a></li><li class="navelem"><a class="el" href="_color_palette_8hpp.html">ColorPalette.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_75a7af29e99bb07a63a0c5b111f18541.html">v3</a></li><li class="navelem"><a class="el" href="dir_224d974d9f51c5c23a080e0337abee5b.html">include</a></li><li class="navelem"><a class="el" href="_color_palette_8hpp.html">ColorPalette.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

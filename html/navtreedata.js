@@ -25,20 +25,23 @@
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "307Lib", "index.html#autotoc_md0", [
-      [ "Index", "index.html#autotoc_md1", null ],
-      [ "Shared Headers", "index.html#autotoc_md2", null ]
+    [ "307Lib", "index.html#autotoc_md1", [
+      [ "Index", "index.html#autotoc_md2", null ],
+      [ "Shared Headers", "index.html#autotoc_md3", null ]
     ] ],
     [ "TermAPI", "page1.html", [
-      [ "Usage", "page1.html#autotoc_md3", [
-        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md4", null ],
-        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md5", null ],
-        [ "A Note on Cursor Positioning", "page1.html#autotoc_md6", null ]
+      [ "Usage", "page1.html#autotoc_md4", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md5", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md6", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md7", null ]
       ] ],
-      [ "Color Library", "page1.html#autotoc_md7", [
-        [ "ColorPalette", "page1.html#autotoc_md8", null ],
-        [ "DEC Line Drawings", "page1.html#autotoc_md9", null ]
+      [ "Color Library", "page1.html#autotoc_md8", [
+        [ "ColorPalette", "page1.html#autotoc_md9", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md10", null ]
       ] ]
+    ] ],
+    [ "307lib Documentation", "md__r_e_a_d_m_e.html", [
+      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md12", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -77,13 +80,15 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_n_s_i_defs_8h.html",
-"_term_a_p_i_query_8hpp.html#a4aba5f7abf46999b265faedca76c9dbb",
-"color-values_8h.html#a30c667606a0a43af09ffceb9177ee8bd",
-"namespacefile_1_1ini_1_1__internal.html#a2c168e661cee8d51bfaab65be9fadc8a",
-"namespacesys_1_1term.html#aefbd5ba7b6ff9e49ade09efc36747eda",
-"structcolor_1_1background_1_1setcolor.html#ad3e2873995adeeedee9799b4622eea71",
-"structtoken_1_1_token_base.html#ab7447626919155f3e5f89f4dcf727d17"
+"_a_n_s_i_2include_2_line_character_8hpp.html",
+"_term_a_p_i_query_8hpp.html#a55f1031356504dadcabf87f97210f025",
+"classtoken_1_1parse_1_1_i_n_i_container_mono_type.html#aa8ad06f63d719e59847b85651bae0d43",
+"functions_r.html",
+"namespacemembers_func_u.html",
+"namespaceterm.html#a205b4446d1631997e0bbecc767fe8877",
+"strmanip_8hpp.html#a93d96ab238bb0666c844c65b60303dbd",
+"structstr_1_1_my_type.html#a4c2424a271cc02579e062a309d806d85",
+"term_2include_2_cursor_origin_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

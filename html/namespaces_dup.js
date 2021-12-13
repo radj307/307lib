@@ -8,11 +8,17 @@ var namespaces_dup =
     [ "facet", "namespacefacet.html", null ],
     [ "file", "namespacefile.html", "namespacefile" ],
     [ "foreground", "namespaceforeground.html", null ],
+    [ "math", "namespacemath.html", [
+      [ "mod", "namespacemath.html#a012f2c1454c32185597ab209c509aaed", null ],
+      [ "normalize", "namespacemath.html#a0661d2c31d7a02c650d267191087059a", null ]
+    ] ],
     [ "op", "namespaceop.html", null ],
     [ "opt", "namespaceopt.html", "namespaceopt" ],
+    [ "Query", "namespace_query.html", null ],
     [ "rng", "namespacerng.html", "namespacerng" ],
     [ "str", "namespacestr.html", "namespacestr" ],
     [ "sys", "namespacesys.html", "namespacesys" ],
+    [ "term", "namespaceterm.html", "namespaceterm" ],
     [ "token", "namespacetoken.html", "namespacetoken" ],
     [ "var", "namespacevar.html", [
       [ "largest", "namespacevar.html#afb54dc8ab4667e3d3e02ba5472918130", null ],

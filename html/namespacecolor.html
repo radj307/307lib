@@ -88,6 +88,8 @@ $(document).ready(function(){initNavTree('namespacecolor.html',''); initResizabl
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -99,17 +101,17 @@ $(document).ready(function(){initNavTree('namespacecolor.html',''); initResizabl
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecolor_1_1background"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor_1_1background.html">background</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecolor_1_1fileext"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor_1_1fileext.html">fileext</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecolor_1_1foreground"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor_1_1foreground.html">foreground</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor.html">setcolor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1palette.html">palette</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a key-color map and functions to set terminal colors inline.  <a href="classcolor_1_1palette.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1textcolor.html">textcolor</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_color_palette.html">ColorPalette</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a key-color map and functions to set terminal colors inline.  <a href="classcolor_1_1_color_palette.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_config.html">Config</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by the <a class="el" href="structcolor_1_1_color_format.html" title="A mutable format flag instance. Used by the setcolor struct to maintain any number of independent For...">ColorFormat</a> &amp; setcolor objects to maintain flag types. Does not have any direct comparison operators, as a <a class="el" href="structcolor_1_1_format_flag.html" title="Used by the ColorFormat &amp; setcolor objects to maintain flag types. Does not have any direct compariso...">FormatFlag</a> should never contain multiple flags. (See the <a class="el" href="structcolor_1_1_color_format.html" title="A mutable format flag instance. Used by the setcolor struct to maintain any number of independent For...">ColorFormat</a> struct)  <a href="structcolor_1_1_format_flag.html#details">More...</a><br /></td></tr>
@@ -117,15 +119,92 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_color_format.html">ColorFormat</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutable format flag instance. Used by the setcolor struct to maintain any number of independent <a class="el" href="structcolor_1_1_format_flag.html" title="Used by the ColorFormat &amp; setcolor objects to maintain flag types. Does not have any direct compariso...">FormatFlag</a> instances.  <a href="structcolor_1_1_color_format.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_color_palette.html">ColorPalette</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a key-color map and functions to set terminal colors inline.  <a href="classcolor_1_1_color_palette.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_layer.html">Layer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines which layer to apply colors to.  <a href="structcolor_1_1_layer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor.html">setcolor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1textcolor.html">textcolor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af2826c17236b522b3dc49be41cfb294e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#af2826c17236b522b3dc49be41cfb294e">ColorT</a> = short</td></tr>
+<tr class="separator:af2826c17236b522b3dc49be41cfb294e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785ee587c76fb3198cdf2da23d19de99"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a785ee587c76fb3198cdf2da23d19de99"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a> = ::std::tuple&lt; T, T, T &gt;</td></tr>
+<tr class="separator:a785ee587c76fb3198cdf2da23d19de99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a9060bb07f1fa2bad8de6d718282a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">setcolor</a> = <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> &gt;</td></tr>
+<tr class="separator:ad6a9060bb07f1fa2bad8de6d718282a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661329f1ca1cec17890ea4eef3da37fa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a661329f1ca1cec17890ea4eef3da37fa">wsetcolor</a> = <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a> &gt;</td></tr>
+<tr class="separator:a661329f1ca1cec17890ea4eef3da37fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7a090e7139f762b631ad1d98b4451a10"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10">Layer</a> : bool { <a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a800618943025315f869e4e1f09471012">F</a> = false
+, <a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a9d5ed678fe57bcca610140957afab571">B</a> = true
+ }</td></tr>
+<tr class="separator:a7a090e7139f762b631ad1d98b4451a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afb722f27f1974608161e7e033f063037"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#afb722f27f1974608161e7e033f063037">makeColorSequence</a> (const short &amp;color, const <a class="el" href="structcolor_1_1_layer.html">Layer</a> &amp;layer)</td></tr>
-<tr class="memdesc:afb722f27f1974608161e7e033f063037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the escape sequence needed to change console colors.  <a href="namespacecolor.html#afb722f27f1974608161e7e033f063037">More...</a><br /></td></tr>
-<tr class="separator:afb722f27f1974608161e7e033f063037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6146070634aacdf38f56ae5a00545303"><td class="memTemplParams" colspan="2">template&lt;typename... VT&gt; </td></tr>
+<tr class="memitem:a6146070634aacdf38f56ae5a00545303"><td class="memTemplItemLeft" align="right" valign="top">static constexpr unsigned char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a6146070634aacdf38f56ae5a00545303">bitmerge</a> (const VT &amp;... numbers) noexcept</td></tr>
+<tr class="memdesc:a6146070634aacdf38f56ae5a00545303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts any number of integrals, and returns the result of calling bitwise OR on each of them.  <a href="namespacecolor.html#a6146070634aacdf38f56ae5a00545303">More...</a><br /></td></tr>
+<tr class="separator:a6146070634aacdf38f56ae5a00545303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d7715de0fceda58f66743bfeeb68f2"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:ae8d7715de0fceda58f66743bfeeb68f2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ae8d7715de0fceda58f66743bfeeb68f2">rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b)</td></tr>
+<tr class="memdesc:ae8d7715de0fceda58f66743bfeeb68f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value. <br  />
+ <a href="https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces">https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces</a>.  <a href="namespacecolor.html#ae8d7715de0fceda58f66743bfeeb68f2">More...</a><br /></td></tr>
+<tr class="separator:ae8d7715de0fceda58f66743bfeeb68f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8917bfdb639d1bd7202412c0ecbe6223"><td class="memTemplParams" colspan="2">template&lt;::std::floating_point T&gt; </td></tr>
+<tr class="memitem:a8917bfdb639d1bd7202412c0ecbe6223"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const <a class="el" href="namespacecolor.html#af2826c17236b522b3dc49be41cfb294e">ColorT</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8917bfdb639d1bd7202412c0ecbe6223">rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b) noexcept</td></tr>
+<tr class="memdesc:a8917bfdb639d1bd7202412c0ecbe6223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value.  <a href="namespacecolor.html#a8917bfdb639d1bd7202412c0ecbe6223">More...</a><br /></td></tr>
+<tr class="separator:a8917bfdb639d1bd7202412c0ecbe6223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0798436f6c6ea91ffe376f9b2b616a03"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a0798436f6c6ea91ffe376f9b2b616a03"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a0798436f6c6ea91ffe376f9b2b616a03">rgb_to_sgr</a> (const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt; &amp;rgb_color) noexcept</td></tr>
+<tr class="memdesc:a0798436f6c6ea91ffe376f9b2b616a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to an SGR value.  <a href="namespacecolor.html#a0798436f6c6ea91ffe376f9b2b616a03">More...</a><br /></td></tr>
+<tr class="separator:a0798436f6c6ea91ffe376f9b2b616a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90142a8261b86245d7b42f5e0810aadf"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a90142a8261b86245d7b42f5e0810aadf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a90142a8261b86245d7b42f5e0810aadf">sgr_to_rgb</a> (const T &amp;sgr_color)</td></tr>
+<tr class="memdesc:a90142a8261b86245d7b42f5e0810aadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value into an RGB color value.  <a href="namespacecolor.html#a90142a8261b86245d7b42f5e0810aadf">More...</a><br /></td></tr>
+<tr class="separator:a90142a8261b86245d7b42f5e0810aadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5cc88e5878477bd74a2f21e6898b73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a0d5cc88e5878477bd74a2f21e6898b73">ishexnum</a> (const char &amp;ch)</td></tr>
+<tr class="memdesc:a0d5cc88e5878477bd74a2f21e6898b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid hexadecimal value. (Range: 0 - 9 | a - f | A - F)  <a href="namespacecolor.html#a0d5cc88e5878477bd74a2f21e6898b73">More...</a><br /></td></tr>
+<tr class="separator:a0d5cc88e5878477bd74a2f21e6898b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c7a3ce32b9bc81b729f242f0d8079c"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:a39c7a3ce32b9bc81b729f242f0d8079c"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a39c7a3ce32b9bc81b729f242f0d8079c">hex_to_int</a> (const char &amp;ch)</td></tr>
+<tr class="memdesc:a39c7a3ce32b9bc81b729f242f0d8079c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal character to an integral value.  <a href="namespacecolor.html#a39c7a3ce32b9bc81b729f242f0d8079c">More...</a><br /></td></tr>
+<tr class="separator:a39c7a3ce32b9bc81b729f242f0d8079c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b4313970f8fd6b74deaa70a8ce3856"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:aa4b4313970f8fd6b74deaa70a8ce3856"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aa4b4313970f8fd6b74deaa70a8ce3856">hex_to_int</a> (const std::string &amp;hex_str) noexcept</td></tr>
+<tr class="memdesc:aa4b4313970f8fd6b74deaa70a8ce3856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal value to an integral.  <a href="namespacecolor.html#aa4b4313970f8fd6b74deaa70a8ce3856">More...</a><br /></td></tr>
+<tr class="separator:aa4b4313970f8fd6b74deaa70a8ce3856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd30f68bac59674322268f2b97c9cb5"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:aebd30f68bac59674322268f2b97c9cb5"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aebd30f68bac59674322268f2b97c9cb5">hex_to_rgb</a> (const ::std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:aebd30f68bac59674322268f2b97c9cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value to an RGB color value.  <a href="namespacecolor.html#aebd30f68bac59674322268f2b97c9cb5">More...</a><br /></td></tr>
+<tr class="separator:aebd30f68bac59674322268f2b97c9cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1ba5a18ec95e3c4fdccfa45df505cc"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a7b1ba5a18ec95e3c4fdccfa45df505cc"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7b1ba5a18ec95e3c4fdccfa45df505cc">hex_to_sgr</a> (const ::std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:a7b1ba5a18ec95e3c4fdccfa45df505cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal string to an SGR color value.  <a href="namespacecolor.html#a7b1ba5a18ec95e3c4fdccfa45df505cc">More...</a><br /></td></tr>
+<tr class="separator:a7b1ba5a18ec95e3c4fdccfa45df505cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a31844abff93283d5e4c632cb829d931d">int_to_hex</a> (const T &amp;v, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:a31844abff93283d5e4c632cb829d931d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer value to hexadecimal.  <a href="namespacecolor.html#a31844abff93283d5e4c632cb829d931d">More...</a><br /></td></tr>
+<tr class="separator:a31844abff93283d5e4c632cb829d931d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ae3a2d5ea64178e79d236c1e5d133b1ed">rgb_to_hex</a> (const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt; &amp;rgb, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB color value to hexadecimal.  <a href="namespacecolor.html#ae3a2d5ea64178e79d236c1e5d133b1ed">More...</a><br /></td></tr>
+<tr class="separator:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ac7b6e5fac8b837a753114c11a37b77a6">sgr_to_hex</a> (const T &amp;sgr, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:ac7b6e5fac8b837a753114c11a37b77a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value to hexadecimal.  <a href="namespacecolor.html#ac7b6e5fac8b837a753114c11a37b77a6">More...</a><br /></td></tr>
+<tr class="separator:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::enable_if_t&lt; std::is_integral_v&lt; T &gt;, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a72dd871eedae7ec4b7e4ee519b8583ad">rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b)</td></tr>
 <tr class="memdesc:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value. <br  />
@@ -138,40 +217,76 @@ Functions</h2></td></tr>
 <tr class="memitem:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::enable_if_t&lt; std::is_integral_v&lt; T &gt;, std::tuple&lt; T, T, T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#afa2ad926302f6a42b2ab2eb96ebeca92">sgr_to_rgb</a> (const T &amp;sgr_color)</td></tr>
 <tr class="separator:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bf50b1527722d38df665073cb7a49de"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">bold</a> ()</td></tr>
-<tr class="memdesc:a8bf50b1527722d38df665073cb7a49de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">More...</a><br /></td></tr>
-<tr class="separator:a8bf50b1527722d38df665073cb7a49de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa96f6b68764d10ab553a743551ccecaa"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aa96f6b68764d10ab553a743551ccecaa">reset_bold</a> ()</td></tr>
 <tr class="memdesc:aa96f6b68764d10ab553a743551ccecaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only bold formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aa96f6b68764d10ab553a743551ccecaa">More...</a><br /></td></tr>
 <tr class="separator:aa96f6b68764d10ab553a743551ccecaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">underline</a> ()</td></tr>
-<tr class="memdesc:aecbbaf451a13126290a5bf25f57aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">More...</a><br /></td></tr>
-<tr class="separator:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a558ad452106d91ded5703b6605fa397d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a558ad452106d91ded5703b6605fa397d">reset_underline</a> ()</td></tr>
 <tr class="memdesc:a558ad452106d91ded5703b6605fa397d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only underline formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a558ad452106d91ded5703b6605fa397d">More...</a><br /></td></tr>
 <tr class="separator:a558ad452106d91ded5703b6605fa397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">invert</a> ()</td></tr>
-<tr class="memdesc:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">More...</a><br /></td></tr>
-<tr class="separator:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a53d61efc55cd51ce3af80a5f25a9ab2b">reset_invert</a> ()</td></tr>
 <tr class="memdesc:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes only invert formatting for all future characters printed to an output stream using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a53d61efc55cd51ce3af80a5f25a9ab2b">More...</a><br /></td></tr>
 <tr class="separator:a53d61efc55cd51ce3af80a5f25a9ab2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee17ba11443f63705852a2dd9c010fba"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aee17ba11443f63705852a2dd9c010fba">placeholder</a> (std::ostream &amp;os)</td></tr>
 <tr class="memdesc:aee17ba11443f63705852a2dd9c010fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple output stream placeholder, does not insert anything into an output stream. For use with ternary expressions.  <a href="namespacecolor.html#aee17ba11443f63705852a2dd9c010fba">More...</a><br /></td></tr>
 <tr class="separator:aee17ba11443f63705852a2dd9c010fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee8667364e47f328162ba47d5a8a52e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">reset</a> ()</td></tr>
-<tr class="memdesc:adee8667364e47f328162ba47d5a8a52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all formatting &amp; colors in the terminal.  <a href="namespacecolor.html#adee8667364e47f328162ba47d5a8a52e">More...</a><br /></td></tr>
-<tr class="separator:adee8667364e47f328162ba47d5a8a52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52c9b6fb6f94142cc939d19244b6f969"><td class="memTemplParams" colspan="2">template&lt;typename... VT&gt; </td></tr>
 <tr class="memitem:a52c9b6fb6f94142cc939d19244b6f969"><td class="memTemplItemLeft" align="right" valign="top">requires static constexpr std::conjunction_v&lt; std::is_integral&lt; VT &gt;... &gt; unsigned char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a52c9b6fb6f94142cc939d19244b6f969">bitmerge</a> (const VT &amp;... numbers) noexcept</td></tr>
 <tr class="memdesc:a52c9b6fb6f94142cc939d19244b6f969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts any number of integrals, and returns the result of calling bitwise OR on each of them.  <a href="namespacecolor.html#a52c9b6fb6f94142cc939d19244b6f969">More...</a><br /></td></tr>
 <tr class="separator:a52c9b6fb6f94142cc939d19244b6f969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb722f27f1974608161e7e033f063037"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#afb722f27f1974608161e7e033f063037">makeColorSequence</a> (const short &amp;color, const <a class="el" href="structcolor_1_1_layer.html">Layer</a> &amp;layer)</td></tr>
+<tr class="memdesc:afb722f27f1974608161e7e033f063037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the escape sequence needed to change console colors.  <a href="namespacecolor.html#afb722f27f1974608161e7e033f063037">More...</a><br /></td></tr>
+<tr class="separator:afb722f27f1974608161e7e033f063037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structcolor_1_1setcolor.html">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a6a1f450cb0752eb5cbfd0bb882f14795">setcolor_placeholder</a> { std::string(&quot;&quot;), <a class="el" href="structcolor_1_1_format_flag.html#ab8a3458291745b0d00b7bdf61b44400c">FormatFlag::NONE</a> }</td></tr>
-<tr class="memdesc:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="mdescLeft">&#160;</td><td class="mdescRight">This setcolor instance can be used as a placeholder, when operator&lt;&lt; is called, nothing will be inserted. (Note that operator&lt;&lt; will still cause certain stream flags/facets to be reset!)  <a href="namespacecolor.html#a6a1f450cb0752eb5cbfd0bb882f14795">More...</a><br /></td></tr>
-<tr class="separator:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967d50a0df8290637e8e75b1558fccc1"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">NONE</a> { 0u }</td></tr>
+<tr class="memdesc:a967d50a0df8290637e8e75b1558fccc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">No special formatting.  <a href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">More...</a><br /></td></tr>
+<tr class="separator:a967d50a0df8290637e8e75b1558fccc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa723ff8ac3e9d7ad2b565976e97c1116"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aa723ff8ac3e9d7ad2b565976e97c1116">RESET</a> { 1u }</td></tr>
+<tr class="memdesc:aa723ff8ac3e9d7ad2b565976e97c1116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets colors only.  <a href="namespacecolor.html#aa723ff8ac3e9d7ad2b565976e97c1116">More...</a><br /></td></tr>
+<tr class="separator:aa723ff8ac3e9d7ad2b565976e97c1116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c93b36269e286563ec3adfd42a8d3b0"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">BOLD</a> { 2u }</td></tr>
+<tr class="memdesc:a9c93b36269e286563ec3adfd42a8d3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold printed text.  <a href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">More...</a><br /></td></tr>
+<tr class="separator:a9c93b36269e286563ec3adfd42a8d3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d18df7584aa1e215de13117d543160"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a73d18df7584aa1e215de13117d543160">NO_BOLD</a> { 4u }</td></tr>
+<tr class="memdesc:a73d18df7584aa1e215de13117d543160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset the bold flag specifically.  <a href="namespacecolor.html#a73d18df7584aa1e215de13117d543160">More...</a><br /></td></tr>
+<tr class="separator:a73d18df7584aa1e215de13117d543160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac5f50ee78aee1a7bdc1a680b7962ff"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff">UNDERLINE</a> { 8u }</td></tr>
+<tr class="memdesc:abac5f50ee78aee1a7bdc1a680b7962ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underline printed text.  <a href="namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff">More...</a><br /></td></tr>
+<tr class="separator:abac5f50ee78aee1a7bdc1a680b7962ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4503e7f2026de8b1da4df839d1a8eca6"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a4503e7f2026de8b1da4df839d1a8eca6">NO_UNDERLINE</a> { 16u }</td></tr>
+<tr class="memdesc:a4503e7f2026de8b1da4df839d1a8eca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset the underline flag specifically.  <a href="namespacecolor.html#a4503e7f2026de8b1da4df839d1a8eca6">More...</a><br /></td></tr>
+<tr class="separator:a4503e7f2026de8b1da4df839d1a8eca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e8697832de85a8164a12b06268657f"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a72e8697832de85a8164a12b06268657f">INVERT</a> { 32u }</td></tr>
+<tr class="memdesc:a72e8697832de85a8164a12b06268657f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert foreground &amp; background colors of printed text.  <a href="namespacecolor.html#a72e8697832de85a8164a12b06268657f">More...</a><br /></td></tr>
+<tr class="separator:a72e8697832de85a8164a12b06268657f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8af71b552c1a8c93fefcea502f8462"><td class="memItemLeft" align="right" valign="top">static constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8d8af71b552c1a8c93fefcea502f8462">NO_INVERT</a> { 64u }</td></tr>
+<tr class="memdesc:a8d8af71b552c1a8c93fefcea502f8462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset the invert flag specifically.  <a href="namespacecolor.html#a8d8af71b552c1a8c93fefcea502f8462">More...</a><br /></td></tr>
+<tr class="separator:a8d8af71b552c1a8c93fefcea502f8462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf50b1527722d38df665073cb7a49de"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">bold</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a5f033a85adc48ccf24df22d68c20b8e0">ANSI::SGR_BOLD</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a8bf50b1527722d38df665073cb7a49de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a8bf50b1527722d38df665073cb7a49de">More...</a><br /></td></tr>
+<tr class="separator:a8bf50b1527722d38df665073cb7a49de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0b38cd4b23408a7a6a0cf0f9339938"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7d0b38cd4b23408a7a6a0cf0f9339938">no_bold</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a72cca1682d396a024556f5f867e4913b">ANSI::SGR_NO_BOLD</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:a7d0b38cd4b23408a7a6a0cf0f9339938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">underline</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afe5c5d6c6840af35d8f4e83f79fa5524">ANSI::SGR_UNDERLINE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:aecbbaf451a13126290a5bf25f57aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9">More...</a><br /></td></tr>
+<tr class="separator:aecbbaf451a13126290a5bf25f57aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d0d0c265b0fcd9af095f0ea017fb67"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a35d0d0c265b0fcd9af095f0ea017fb67">no_underline</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a77baf92e40e25db1742a5d8aab9dba9b">ANSI::SGR_NO_UNDERLINE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:a35d0d0c265b0fcd9af095f0ea017fb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">invert</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#ad527dafbd86a4c61633be26dba7ed45d">ANSI::SGR_NEGATIVE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences.  <a href="namespacecolor.html#a5a7f65a2c5a8b212c16f6ccb559f89c8">More...</a><br /></td></tr>
+<tr class="separator:a5a7f65a2c5a8b212c16f6ccb559f89c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c1e3de58c5174da532ef80c93536d1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a88c1e3de58c5174da532ef80c93536d1">no_invert</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a67bd050f308ba46b8ff46fe9cf635c84">ANSI::SGR_POSITIVE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:a88c1e3de58c5174da532ef80c93536d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23eccfe66e28b988112483f8dcdbec4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ac23eccfe66e28b988112483f8dcdbec4">reset_f</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afa712200199ba61d8ea7cf3129657362">ANSI::SGR_DEFAULT_FORE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:ac23eccfe66e28b988112483f8dcdbec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3fccce20699c20489657918d1b918b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7e3fccce20699c20489657918d1b918b">reset_b</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a8df880440200b4c91ce0b36bcca5cfcd">ANSI::SGR_DEFAULT_BACK</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:a7e3fccce20699c20489657918d1b918b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab505233a6f26bec737e27a8efd713db5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">reset</a> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afa712200199ba61d8ea7cf3129657362">ANSI::SGR_DEFAULT_FORE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>, <a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a8df880440200b4c91ce0b36bcca5cfcd">ANSI::SGR_DEFAULT_BACK</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="separator:ab505233a6f26bec737e27a8efd713db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d0dc293806a43fccae35d614d6ce22"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a15d0dc293806a43fccae35d614d6ce22">reset_all</a> () { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a63b718e34115fc0ad40565216b7bcaf3">ANSI::SGR_RESET</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td></tr>
+<tr class="memdesc:a15d0dc293806a43fccae35d614d6ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset terminal colors to their defaults.  <a href="namespacecolor.html#a15d0dc293806a43fccae35d614d6ce22">More...</a><br /></td></tr>
+<tr class="separator:a15d0dc293806a43fccae35d614d6ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8cf093e96967abc35d1d201ceb4b332"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">red</a> { 0x01 }</td></tr>
 <tr class="memdesc:ac8cf093e96967abc35d1d201ceb4b332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red color.  <a href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">More...</a><br /></td></tr>
 <tr class="separator:ac8cf093e96967abc35d1d201ceb4b332"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,10 +362,234 @@ Variables</h2></td></tr>
 <tr class="separator:af257902aa0646fc35aed9e09b1170805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893c727634f7edadf42286d273113d64"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a893c727634f7edadf42286d273113d64">light_purple</a> { 99 }</td></tr>
 <tr class="separator:a893c727634f7edadf42286d273113d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22170a9f43abdf8a478cf9b4e17df2c5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcolor_1_1setcolor.html">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a22170a9f43abdf8a478cf9b4e17df2c5">setcolor_placeholder</a> { <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>{}, <a class="el" href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">NONE</a> }</td></tr>
+<tr class="memdesc:a22170a9f43abdf8a478cf9b4e17df2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This setcolor instance can be used as a placeholder, when operator&lt;&lt; is called, nothing will be inserted. (Note that operator&lt;&lt; will still cause certain stream flags/facets to be reset!)  <a href="namespacecolor.html#a22170a9f43abdf8a478cf9b4e17df2c5">More...</a><br /></td></tr>
+<tr class="separator:a22170a9f43abdf8a478cf9b4e17df2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8427e0abdba26374e98d3fc1c2f650d2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacecolor.html#a661329f1ca1cec17890ea4eef3da37fa">wsetcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8427e0abdba26374e98d3fc1c2f650d2">wsetcolor_placeholder</a> { <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>{}, <a class="el" href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">NONE</a> }</td></tr>
+<tr class="separator:a8427e0abdba26374e98d3fc1c2f650d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8cf093e96967abc35d1d201ceb4b332"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">red</a> { 0x01 }</td></tr>
+<tr class="memdesc:ac8cf093e96967abc35d1d201ceb4b332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red color.  <a href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">More...</a><br /></td></tr>
+<tr class="separator:ac8cf093e96967abc35d1d201ceb4b332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab878b1c61db9fd6d93486884f2db8620"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">green</a> { 0x02 }</td></tr>
+<tr class="memdesc:ab878b1c61db9fd6d93486884f2db8620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green color.  <a href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">More...</a><br /></td></tr>
+<tr class="separator:ab878b1c61db9fd6d93486884f2db8620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf50ccb468d6565488cfda5b60cdd86"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86">blue</a> { 0x04 }</td></tr>
+<tr class="memdesc:abcf50ccb468d6565488cfda5b60cdd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue color.  <a href="namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86">More...</a><br /></td></tr>
+<tr class="separator:abcf50ccb468d6565488cfda5b60cdd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32611a40f96545beb9cbebdf974b8fec"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a32611a40f96545beb9cbebdf974b8fec">yellow</a> { 0x03 }</td></tr>
+<tr class="memdesc:a32611a40f96545beb9cbebdf974b8fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow color.  <a href="namespacecolor.html#a32611a40f96545beb9cbebdf974b8fec">More...</a><br /></td></tr>
+<tr class="separator:a32611a40f96545beb9cbebdf974b8fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9a8dfa7552ebe5422d8ddeb562588d"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a4d9a8dfa7552ebe5422d8ddeb562588d">magenta</a> { 0x05 }</td></tr>
+<tr class="memdesc:a4d9a8dfa7552ebe5422d8ddeb562588d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magenta color.  <a href="namespacecolor.html#a4d9a8dfa7552ebe5422d8ddeb562588d">More...</a><br /></td></tr>
+<tr class="separator:a4d9a8dfa7552ebe5422d8ddeb562588d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3054056a3f586375ba838bc838dfa85"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ad3054056a3f586375ba838bc838dfa85">purple</a> { 0x5C }</td></tr>
+<tr class="memdesc:ad3054056a3f586375ba838bc838dfa85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Purple color.  <a href="namespacecolor.html#ad3054056a3f586375ba838bc838dfa85">More...</a><br /></td></tr>
+<tr class="separator:ad3054056a3f586375ba838bc838dfa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad18f4e059ed1a4a1d23cf0441dc1385f"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ad18f4e059ed1a4a1d23cf0441dc1385f">cyan</a> { 0x06 }</td></tr>
+<tr class="memdesc:ad18f4e059ed1a4a1d23cf0441dc1385f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan color.  <a href="namespacecolor.html#ad18f4e059ed1a4a1d23cf0441dc1385f">More...</a><br /></td></tr>
+<tr class="separator:ad18f4e059ed1a4a1d23cf0441dc1385f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84e5ca1ca60a23294347ec0c3a34c373"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">white</a> { 0x07 }</td></tr>
+<tr class="memdesc:a84e5ca1ca60a23294347ec0c3a34c373"><td class="mdescLeft">&#160;</td><td class="mdescRight">White color.  <a href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">More...</a><br /></td></tr>
+<tr class="separator:a84e5ca1ca60a23294347ec0c3a34c373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7882dcee4c1ebf89810583e8f42d7615"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615">gray</a> { 0x08 }</td></tr>
+<tr class="memdesc:a7882dcee4c1ebf89810583e8f42d7615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gray color.  <a href="namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615">More...</a><br /></td></tr>
+<tr class="separator:a7882dcee4c1ebf89810583e8f42d7615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8021362dc29dd9c36b2c4b51e20374b1"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1">light_gray</a> { 0xF6 }</td></tr>
+<tr class="memdesc:a8021362dc29dd9c36b2c4b51e20374b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Light Gray color.  <a href="namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1">More...</a><br /></td></tr>
+<tr class="separator:a8021362dc29dd9c36b2c4b51e20374b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95da3b84ca9ce74003a135dde7942463"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a95da3b84ca9ce74003a135dde7942463">black</a> { 0x16 }</td></tr>
+<tr class="memdesc:a95da3b84ca9ce74003a135dde7942463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Black color.  <a href="namespacecolor.html#a95da3b84ca9ce74003a135dde7942463">More...</a><br /></td></tr>
+<tr class="separator:a95da3b84ca9ce74003a135dde7942463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c37f8f01788456dd7a8d3596b19773"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">intense_red</a> { 0x09 }</td></tr>
+<tr class="memdesc:a54c37f8f01788456dd7a8d3596b19773"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Red color.  <a href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">More...</a><br /></td></tr>
+<tr class="separator:a54c37f8f01788456dd7a8d3596b19773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab196f0985b3a5da3b3065dabf0747e45"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab196f0985b3a5da3b3065dabf0747e45">intense_green</a> { 0x0A }</td></tr>
+<tr class="memdesc:ab196f0985b3a5da3b3065dabf0747e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Green color.  <a href="namespacecolor.html#ab196f0985b3a5da3b3065dabf0747e45">More...</a><br /></td></tr>
+<tr class="separator:ab196f0985b3a5da3b3065dabf0747e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b69e578748a245f307eeb03ddc12ef"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab4b69e578748a245f307eeb03ddc12ef">intense_blue</a> { 0x0C }</td></tr>
+<tr class="memdesc:ab4b69e578748a245f307eeb03ddc12ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Blue color.  <a href="namespacecolor.html#ab4b69e578748a245f307eeb03ddc12ef">More...</a><br /></td></tr>
+<tr class="separator:ab4b69e578748a245f307eeb03ddc12ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a7a84e61742d594070a9cd7607903b"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aa0a7a84e61742d594070a9cd7607903b">intense_yellow</a> { 0x0B }</td></tr>
+<tr class="memdesc:aa0a7a84e61742d594070a9cd7607903b"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Yellow color.  <a href="namespacecolor.html#aa0a7a84e61742d594070a9cd7607903b">More...</a><br /></td></tr>
+<tr class="separator:aa0a7a84e61742d594070a9cd7607903b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca2cc6ffd2243391fdceb2e731761f0"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7ca2cc6ffd2243391fdceb2e731761f0">intense_magenta</a> { 0x0D }</td></tr>
+<tr class="memdesc:a7ca2cc6ffd2243391fdceb2e731761f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Magenta color.  <a href="namespacecolor.html#a7ca2cc6ffd2243391fdceb2e731761f0">More...</a><br /></td></tr>
+<tr class="separator:a7ca2cc6ffd2243391fdceb2e731761f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d4ad30347d37c4d3d162f492a8c374"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a41d4ad30347d37c4d3d162f492a8c374">intense_cyan</a> { 0x0E }</td></tr>
+<tr class="memdesc:a41d4ad30347d37c4d3d162f492a8c374"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity Cyan color.  <a href="namespacecolor.html#a41d4ad30347d37c4d3d162f492a8c374">More...</a><br /></td></tr>
+<tr class="separator:a41d4ad30347d37c4d3d162f492a8c374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c667606a0a43af09ffceb9177ee8bd"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a30c667606a0a43af09ffceb9177ee8bd">intense_white</a> { 0x0F }</td></tr>
+<tr class="memdesc:a30c667606a0a43af09ffceb9177ee8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">High Intensity White color.  <a href="namespacecolor.html#a30c667606a0a43af09ffceb9177ee8bd">More...</a><br /></td></tr>
+<tr class="separator:a30c667606a0a43af09ffceb9177ee8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9095944dc7740f26c9ca43cdb125397d"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">orange</a> { 208 }</td></tr>
+<tr class="memdesc:a9095944dc7740f26c9ca43cdb125397d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orange color.  <a href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">More...</a><br /></td></tr>
+<tr class="separator:a9095944dc7740f26c9ca43cdb125397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7e03226bd0a7057932833ea7229706"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#afb7e03226bd0a7057932833ea7229706">dark_blue</a> { 18 }</td></tr>
+<tr class="separator:afb7e03226bd0a7057932833ea7229706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b657969ac14460c813064667a9f1107"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a4b657969ac14460c813064667a9f1107">light_blue</a> { 26 }</td></tr>
+<tr class="separator:a4b657969ac14460c813064667a9f1107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3176a9fe9736aa1305fa2050eabab92"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">dark_red</a> { 88 }</td></tr>
+<tr class="separator:ad3176a9fe9736aa1305fa2050eabab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a8d83fbac16b7f77a12b18d10348cb"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a41a8d83fbac16b7f77a12b18d10348cb">dark_green</a> { 22 }</td></tr>
+<tr class="separator:a41a8d83fbac16b7f77a12b18d10348cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accbfeb445f249c35ac7d3f8a9feb4d68"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#accbfeb445f249c35ac7d3f8a9feb4d68">dark_cyan</a> { 33 }</td></tr>
+<tr class="separator:accbfeb445f249c35ac7d3f8a9feb4d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29cbe2978573ef4f0d776d920564f427"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a29cbe2978573ef4f0d776d920564f427">dark_purple</a> { 54 }</td></tr>
+<tr class="separator:a29cbe2978573ef4f0d776d920564f427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9a7f5e243195f8bcd8c9b223800606"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606">gold</a> { 178 }</td></tr>
+<tr class="separator:aeb9a7f5e243195f8bcd8c9b223800606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af257902aa0646fc35aed9e09b1170805"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#af257902aa0646fc35aed9e09b1170805">dark_gray</a> { 235 }</td></tr>
+<tr class="separator:af257902aa0646fc35aed9e09b1170805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893c727634f7edadf42286d273113d64"><td class="memItemLeft" align="right" valign="top">static constexpr const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a893c727634f7edadf42286d273113d64">light_purple</a> { 99 }</td></tr>
+<tr class="separator:a893c727634f7edadf42286d273113d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62">reset</a> { make_sequence(ESC, CSI, &quot;38;5;7&quot;, END, ESC, CSI, &quot;48;5;0&quot;, END) }</td></tr>
+<tr class="memdesc:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset terminal colors to their defaults.  <a href="namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62">More...</a><br /></td></tr>
+<tr class="separator:ab0116b5ba859fc9f7a8d6b7a5423dd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="af2826c17236b522b3dc49be41cfb294e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2826c17236b522b3dc49be41cfb294e">&#9670;&nbsp;</a></span>ColorT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecolor.html#af2826c17236b522b3dc49be41cfb294e">color::ColorT</a> = typedef short</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00018">18</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a785ee587c76fb3198cdf2da23d19de99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785ee587c76fb3198cdf2da23d19de99">&#9670;&nbsp;</a></span>RGB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">color::RGB</a> = typedef ::std::tuple&lt;T, T, T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00020">20</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad6a9060bb07f1fa2bad8de6d718282a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a9060bb07f1fa2bad8de6d718282a8">&#9670;&nbsp;</a></span>setcolor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structcolor_1_1setcolor.html">color::setcolor</a> = typedef <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;<a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2setcolor_8hpp_source.html#l00084">84</a> of file <a class="el" href="color_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a661329f1ca1cec17890ea4eef3da37fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661329f1ca1cec17890ea4eef3da37fa">&#9670;&nbsp;</a></span>wsetcolor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecolor.html#a661329f1ca1cec17890ea4eef3da37fa">color::wsetcolor</a> = typedef <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;<a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2setcolor_8hpp_source.html#l00087">87</a> of file <a class="el" href="color_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a7a090e7139f762b631ad1d98b4451a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a090e7139f762b631ad1d98b4451a10">&#9670;&nbsp;</a></span>Layer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="structcolor_1_1_layer.html">color::Layer</a> : bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7a090e7139f762b631ad1d98b4451a10a800618943025315f869e4e1f09471012"></a>F&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7a090e7139f762b631ad1d98b4451a10a9d5ed678fe57bcca610140957afab571"></a>B&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2setcolor_8hpp_source.html#l00014">14</a> of file <a class="el" href="color_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a6146070634aacdf38f56ae5a00545303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6146070634aacdf38f56ae5a00545303">&#9670;&nbsp;</a></span>bitmerge() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr unsigned char color::bitmerge </td>
+          <td>(</td>
+          <td class="paramtype">const VT &amp;...&#160;</td>
+          <td class="paramname"><em>numbers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accepts any number of integrals, and returns the result of calling bitwise OR on each of them. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">...VT</td><td>- Variadic Templated Type (Integral) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...numbers</td><td>- Numbers to bitwise-merge </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned char </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00065">65</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a52c9b6fb6f94142cc939d19244b6f969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52c9b6fb6f94142cc939d19244b6f969">&#9670;&nbsp;</a></span>bitmerge()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c9b6fb6f94142cc939d19244b6f969">&#9670;&nbsp;</a></span>bitmerge() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,8 +633,255 @@ template&lt;typename... VT&gt; </div>
 
 </div>
 </div>
-<a id="a8bf50b1527722d38df665073cb7a49de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bf50b1527722d38df665073cb7a49de">&#9670;&nbsp;</a></span>bold()</h2>
+<a id="a39c7a3ce32b9bc81b729f242f0d8079c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c7a3ce32b9bc81b729f242f0d8079c">&#9670;&nbsp;</a></span>hex_to_int() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral ReturnType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnType color::hex_to_int </td>
+          <td>(</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a single hexadecimal character to an integral value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ReturnType</td><td>Type of integral to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>A single valid hexadecimal character. (Range: 0 - F) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ReturnType </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00131">131</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa4b4313970f8fd6b74deaa70a8ce3856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b4313970f8fd6b74deaa70a8ce3856">&#9670;&nbsp;</a></span>hex_to_int() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral ReturnType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> ReturnType color::hex_to_int </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hex_str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a single hexadecimal value to an integral. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ReturnType</td><td>Type of integral to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hex_str</td><td>Hexadecimal value as a string. <br  />
+ Note that this CANNOT contain prefix characters like '#' or "0x" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ReturnType </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00150">150</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aebd30f68bac59674322268f2b97c9cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd30f68bac59674322268f2b97c9cb5">&#9670;&nbsp;</a></span>hex_to_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt;T&gt; color::hex_to_rgb </td>
+          <td>(</td>
+          <td class="paramtype">const ::std::string &amp;&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a hexadecimal value to an RGB color value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hex</td><td>A hexadecimal value as a string. <br  />
+ Note that this CANNOT contain prefix characters like '#' or "0x" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>RGB&lt;T&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00173">173</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7b1ba5a18ec95e3c4fdccfa45df505cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1ba5a18ec95e3c4fdccfa45df505cc">&#9670;&nbsp;</a></span>hex_to_sgr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> T color::hex_to_sgr </td>
+          <td>(</td>
+          <td class="paramtype">const ::std::string &amp;&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a hexadecimal string to an SGR color value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hex</td><td>A hexadecimal value as a string. <br  />
+ Note that this CANNOT contain prefix characters like '#' or "0x" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">Invalid Input    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0-255   </td><td class="markdownTableBodyNone">Output Value   </td></tr>
+</table>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00194">194</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a31844abff93283d5e4c632cb829d931d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31844abff93283d5e4c632cb829d931d">&#9670;&nbsp;</a></span>int_to_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::std::string color::int_to_hex </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>uppercase</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an integer value to hexadecimal. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Input Value. </td></tr>
+    <tr><td class="paramname">uppercase</td><td>When true, the returned hexadecimal string will use uppercase letters rather than lowercase. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00209">209</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d5cc88e5878477bd74a2f21e6898b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5cc88e5878477bd74a2f21e6898b73">&#9670;&nbsp;</a></span>ishexnum()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,53 +890,30 @@ template&lt;typename... VT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::bold </td>
+          <td class="memname">static <a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> bool color::ishexnum </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
-<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+<p>Check if the given character is a valid hexadecimal value. (Range: 0 - 9 | a - f | A - F) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>Input Character. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00016">16</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5a7f65a2c5a8b212c16f6ccb559f89c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a7f65a2c5a8b212c16f6ccb559f89c8">&#9670;&nbsp;</a></span>invert()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::invert </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
-<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00052">52</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00093">93</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -398,11 +961,12 @@ template&lt;typename... VT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00018">18</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="v3_2include_2setcolor_8hpp_source.html#l00018">18</a> of file <a class="el" href="v3_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecolor_afb722f27f1974608161e7e033f063037_icgraph.svg" width="611" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecolor_afb722f27f1974608161e7e033f063037_icgraph.svg" width="611" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -441,36 +1005,6 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00071">71</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="adee8667364e47f328162ba47d5a8a52e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adee8667364e47f328162ba47d5a8a52e">&#9670;&nbsp;</a></span>reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::reset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reset all formatting &amp; colors in the terminal. </p>
-<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00077">77</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
 
 </div>
 </div>
@@ -564,8 +1098,173 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="ae3a2d5ea64178e79d236c1e5d133b1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a2d5ea64178e79d236c1e5d133b1ed">&#9670;&nbsp;</a></span>rgb_to_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::std::string color::rgb_to_hex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>uppercase</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an RGB color value to hexadecimal. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td>Input RGB Color Value. </td></tr>
+    <tr><td class="paramname">uppercase</td><td>When true, the returned hexadecimal string will use uppercase letters rather than lowercase. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00224">224</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0798436f6c6ea91ffe376f9b2b616a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0798436f6c6ea91ffe376f9b2b616a03">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const T color::rgb_to_sgr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rgb_color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an RGB value to an SGR value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb_color</td><td>Input RGB color value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00062">62</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae8d7715de0fceda58f66743bfeeb68f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d7715de0fceda58f66743bfeeb68f2">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const T color::rgb_to_sgr </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an RGB value to a SGR color value. <br  />
+ <a href="https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces">https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any integral type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Red value. (Range: 0 - 5) </td></tr>
+    <tr><td class="paramname">g</td><td>Green value. (Range: 0 - 5) </td></tr>
+    <tr><td class="paramname">b</td><td>Blue value. (Range: 0 - 5) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00032">32</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a72dd871eedae7ec4b7e4ee519b8583ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72dd871eedae7ec4b7e4ee519b8583ad">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72dd871eedae7ec4b7e4ee519b8583ad">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,12 +1323,75 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00025">25</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-transform_8hpp_source.html#l00025">25</a> of file <a class="el" href="v3_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8917bfdb639d1bd7202412c0ecbe6223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8917bfdb639d1bd7202412c0ecbe6223">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::floating_point T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const <a class="el" href="namespacecolor.html#af2826c17236b522b3dc49be41cfb294e">ColorT</a> color::rgb_to_sgr </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an RGB value to a SGR color value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any floating-point type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Red value. (Range: 0.0 - 1.0) </td></tr>
+    <tr><td class="paramname">g</td><td>Green value. (Range: 0.0 - 1.0) </td></tr>
+    <tr><td class="paramname">b</td><td>Blue value. (Range: 0.0 - 1.0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ColorT </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00046">46</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
 <a id="af8c0cb635b5a83dbbfb7dbc1cd298c36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c0cb635b5a83dbbfb7dbc1cd298c36">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c0cb635b5a83dbbfb7dbc1cd298c36">&#9670;&nbsp;</a></span>rgb_to_sgr() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -687,12 +1449,113 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>short </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00039">39</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-transform_8hpp_source.html#l00039">39</a> of file <a class="el" href="v3_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac7b6e5fac8b837a753114c11a37b77a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b6e5fac8b837a753114c11a37b77a6">&#9670;&nbsp;</a></span>sgr_to_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">::std::string color::sgr_to_hex </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>sgr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>uppercase</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an SGR color value to hexadecimal. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Integral Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sgr</td><td>Input SGR color value. </td></tr>
+    <tr><td class="paramname">uppercase</td><td>When true, the returned hexadecimal string will use uppercase letters rather than lowercase. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00238">238</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a90142a8261b86245d7b42f5e0810aadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90142a8261b86245d7b42f5e0810aadf">&#9670;&nbsp;</a></span>sgr_to_rgb() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;::std::integral T = ColorT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const <a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">RGB</a>&lt;T&gt; color::sgr_to_rgb </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>sgr_color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an SGR color value into an RGB color value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any integral type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sgr_color</td><td>An SGR color value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>::std::tuple&lt;T, T, T&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-transform_8hpp_source.html#l00074">74</a> of file <a class="el" href="color_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
 <a id="afa2ad926302f6a42b2ab2eb96ebeca92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa2ad926302f6a42b2ab2eb96ebeca92">&#9670;&nbsp;</a></span>sgr_to_rgb()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2ad926302f6a42b2ab2eb96ebeca92">&#9670;&nbsp;</a></span>sgr_to_rgb() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -730,43 +1593,13 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00055">55</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aecbbaf451a13126290a5bf25f57aa7e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecbbaf451a13126290a5bf25f57aa7e9">&#9670;&nbsp;</a></span>underline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::underline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
-<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00034">34</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-transform_8hpp_source.html#l00055">55</a> of file <a class="el" href="v3_2include_2color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a95da3b84ca9ce74003a135dde7942463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95da3b84ca9ce74003a135dde7942463">&#9670;&nbsp;</a></span>black</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a95da3b84ca9ce74003a135dde7942463">&#9670;&nbsp;</a></span>black <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -787,12 +1620,38 @@ template&lt;typename T &gt; </div>
 
 <p>Black color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00019">19</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00019">19</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a95da3b84ca9ce74003a135dde7942463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95da3b84ca9ce74003a135dde7942463">&#9670;&nbsp;</a></span>black <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::black { 0x16 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Black color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00019">19</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="abcf50ccb468d6565488cfda5b60cdd86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf50ccb468d6565488cfda5b60cdd86">&#9670;&nbsp;</a></span>blue</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf50ccb468d6565488cfda5b60cdd86">&#9670;&nbsp;</a></span>blue <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -813,12 +1672,94 @@ template&lt;typename T &gt; </div>
 
 <p>Blue color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00011">11</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00011">11</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="abcf50ccb468d6565488cfda5b60cdd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf50ccb468d6565488cfda5b60cdd86">&#9670;&nbsp;</a></span>blue <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::blue { 0x04 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Blue color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00011">11</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c93b36269e286563ec3adfd42a8d3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c93b36269e286563ec3adfd42a8d3b0">&#9670;&nbsp;</a></span>BOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::BOLD { 2u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bold printed text. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00045">45</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8bf50b1527722d38df665073cb7a49de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf50b1527722d38df665073cb7a49de">&#9670;&nbsp;</a></span>bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::bold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a5f033a85adc48ccf24df22d68c20b8e0">ANSI::SGR_BOLD</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets all future characters printed to an output stream as bold using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
+<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00074">74</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ad18f4e059ed1a4a1d23cf0441dc1385f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad18f4e059ed1a4a1d23cf0441dc1385f">&#9670;&nbsp;</a></span>cyan</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18f4e059ed1a4a1d23cf0441dc1385f">&#9670;&nbsp;</a></span>cyan <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -839,12 +1780,38 @@ template&lt;typename T &gt; </div>
 
 <p>Cyan color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00015">15</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00015">15</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ad18f4e059ed1a4a1d23cf0441dc1385f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18f4e059ed1a4a1d23cf0441dc1385f">&#9670;&nbsp;</a></span>cyan <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::cyan { 0x06 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cyan color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00015">15</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="afb7e03226bd0a7057932833ea7229706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb7e03226bd0a7057932833ea7229706">&#9670;&nbsp;</a></span>dark_blue</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7e03226bd0a7057932833ea7229706">&#9670;&nbsp;</a></span>dark_blue <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -863,12 +1830,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00028">28</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00028">28</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="afb7e03226bd0a7057932833ea7229706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7e03226bd0a7057932833ea7229706">&#9670;&nbsp;</a></span>dark_blue <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_blue { 18 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00028">28</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="accbfeb445f249c35ac7d3f8a9feb4d68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accbfeb445f249c35ac7d3f8a9feb4d68">&#9670;&nbsp;</a></span>dark_cyan</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#accbfeb445f249c35ac7d3f8a9feb4d68">&#9670;&nbsp;</a></span>dark_cyan <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -887,12 +1878,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00032">32</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00032">32</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="accbfeb445f249c35ac7d3f8a9feb4d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accbfeb445f249c35ac7d3f8a9feb4d68">&#9670;&nbsp;</a></span>dark_cyan <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_cyan { 33 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00032">32</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="af257902aa0646fc35aed9e09b1170805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af257902aa0646fc35aed9e09b1170805">&#9670;&nbsp;</a></span>dark_gray</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af257902aa0646fc35aed9e09b1170805">&#9670;&nbsp;</a></span>dark_gray <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,12 +1926,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00035">35</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00035">35</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="af257902aa0646fc35aed9e09b1170805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af257902aa0646fc35aed9e09b1170805">&#9670;&nbsp;</a></span>dark_gray <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_gray { 235 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00035">35</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a41a8d83fbac16b7f77a12b18d10348cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41a8d83fbac16b7f77a12b18d10348cb">&#9670;&nbsp;</a></span>dark_green</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a8d83fbac16b7f77a12b18d10348cb">&#9670;&nbsp;</a></span>dark_green <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -935,12 +1974,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00031">31</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00031">31</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a41a8d83fbac16b7f77a12b18d10348cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a8d83fbac16b7f77a12b18d10348cb">&#9670;&nbsp;</a></span>dark_green <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_green { 22 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00031">31</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a29cbe2978573ef4f0d776d920564f427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29cbe2978573ef4f0d776d920564f427">&#9670;&nbsp;</a></span>dark_purple</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a29cbe2978573ef4f0d776d920564f427">&#9670;&nbsp;</a></span>dark_purple <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -959,12 +2022,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00033">33</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00033">33</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a29cbe2978573ef4f0d776d920564f427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29cbe2978573ef4f0d776d920564f427">&#9670;&nbsp;</a></span>dark_purple <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_purple { 54 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00033">33</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ad3176a9fe9736aa1305fa2050eabab92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3176a9fe9736aa1305fa2050eabab92">&#9670;&nbsp;</a></span>dark_red</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3176a9fe9736aa1305fa2050eabab92">&#9670;&nbsp;</a></span>dark_red <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -983,12 +2070,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00030">30</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00030">30</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3176a9fe9736aa1305fa2050eabab92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3176a9fe9736aa1305fa2050eabab92">&#9670;&nbsp;</a></span>dark_red <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::dark_red { 88 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00030">30</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="aeb9a7f5e243195f8bcd8c9b223800606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb9a7f5e243195f8bcd8c9b223800606">&#9670;&nbsp;</a></span>gold</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9a7f5e243195f8bcd8c9b223800606">&#9670;&nbsp;</a></span>gold <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1007,12 +2118,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00034">34</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00034">34</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb9a7f5e243195f8bcd8c9b223800606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9a7f5e243195f8bcd8c9b223800606">&#9670;&nbsp;</a></span>gold <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::gold { 178 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00034">34</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a7882dcee4c1ebf89810583e8f42d7615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7882dcee4c1ebf89810583e8f42d7615">&#9670;&nbsp;</a></span>gray</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7882dcee4c1ebf89810583e8f42d7615">&#9670;&nbsp;</a></span>gray <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1033,12 +2168,38 @@ template&lt;typename T &gt; </div>
 
 <p>Gray color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00017">17</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00017">17</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a7882dcee4c1ebf89810583e8f42d7615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7882dcee4c1ebf89810583e8f42d7615">&#9670;&nbsp;</a></span>gray <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::gray { 0x08 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gray color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00017">17</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ab878b1c61db9fd6d93486884f2db8620"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab878b1c61db9fd6d93486884f2db8620">&#9670;&nbsp;</a></span>green</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab878b1c61db9fd6d93486884f2db8620">&#9670;&nbsp;</a></span>green <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,12 +2220,38 @@ template&lt;typename T &gt; </div>
 
 <p>Green color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00010">10</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00010">10</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ab878b1c61db9fd6d93486884f2db8620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab878b1c61db9fd6d93486884f2db8620">&#9670;&nbsp;</a></span>green <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::green { 0x02 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Green color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00010">10</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ab4b69e578748a245f307eeb03ddc12ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4b69e578748a245f307eeb03ddc12ef">&#9670;&nbsp;</a></span>intense_blue</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b69e578748a245f307eeb03ddc12ef">&#9670;&nbsp;</a></span>intense_blue <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1085,12 +2272,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Blue color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00022">22</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00022">22</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4b69e578748a245f307eeb03ddc12ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b69e578748a245f307eeb03ddc12ef">&#9670;&nbsp;</a></span>intense_blue <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_blue { 0x0C }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Blue color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00022">22</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a41d4ad30347d37c4d3d162f492a8c374"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41d4ad30347d37c4d3d162f492a8c374">&#9670;&nbsp;</a></span>intense_cyan</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d4ad30347d37c4d3d162f492a8c374">&#9670;&nbsp;</a></span>intense_cyan <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1111,12 +2324,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Cyan color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00025">25</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00025">25</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a41d4ad30347d37c4d3d162f492a8c374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d4ad30347d37c4d3d162f492a8c374">&#9670;&nbsp;</a></span>intense_cyan <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_cyan { 0x0E }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Cyan color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00025">25</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ab196f0985b3a5da3b3065dabf0747e45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab196f0985b3a5da3b3065dabf0747e45">&#9670;&nbsp;</a></span>intense_green</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab196f0985b3a5da3b3065dabf0747e45">&#9670;&nbsp;</a></span>intense_green <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1137,12 +2376,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Green color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00021">21</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00021">21</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ab196f0985b3a5da3b3065dabf0747e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab196f0985b3a5da3b3065dabf0747e45">&#9670;&nbsp;</a></span>intense_green <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_green { 0x0A }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Green color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00021">21</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a7ca2cc6ffd2243391fdceb2e731761f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ca2cc6ffd2243391fdceb2e731761f0">&#9670;&nbsp;</a></span>intense_magenta</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca2cc6ffd2243391fdceb2e731761f0">&#9670;&nbsp;</a></span>intense_magenta <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1163,12 +2428,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Magenta color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00024">24</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00024">24</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ca2cc6ffd2243391fdceb2e731761f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca2cc6ffd2243391fdceb2e731761f0">&#9670;&nbsp;</a></span>intense_magenta <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_magenta { 0x0D }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Magenta color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00024">24</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a54c37f8f01788456dd7a8d3596b19773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54c37f8f01788456dd7a8d3596b19773">&#9670;&nbsp;</a></span>intense_red</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c37f8f01788456dd7a8d3596b19773">&#9670;&nbsp;</a></span>intense_red <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1189,12 +2480,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Red color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00020">20</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00020">20</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a54c37f8f01788456dd7a8d3596b19773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c37f8f01788456dd7a8d3596b19773">&#9670;&nbsp;</a></span>intense_red <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_red { 0x09 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Red color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00020">20</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a30c667606a0a43af09ffceb9177ee8bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c667606a0a43af09ffceb9177ee8bd">&#9670;&nbsp;</a></span>intense_white</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c667606a0a43af09ffceb9177ee8bd">&#9670;&nbsp;</a></span>intense_white <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1215,12 +2532,38 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity White color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00026">26</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00026">26</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a30c667606a0a43af09ffceb9177ee8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c667606a0a43af09ffceb9177ee8bd">&#9670;&nbsp;</a></span>intense_white <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_white { 0x0F }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity White color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00026">26</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="aa0a7a84e61742d594070a9cd7607903b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a7a84e61742d594070a9cd7607903b">&#9670;&nbsp;</a></span>intense_yellow</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a7a84e61742d594070a9cd7607903b">&#9670;&nbsp;</a></span>intense_yellow <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1241,12 +2584,94 @@ template&lt;typename T &gt; </div>
 
 <p>High Intensity Yellow color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00023">23</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00023">23</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0a7a84e61742d594070a9cd7607903b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a7a84e61742d594070a9cd7607903b">&#9670;&nbsp;</a></span>intense_yellow <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::intense_yellow { 0x0B }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High Intensity Yellow color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00023">23</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a72e8697832de85a8164a12b06268657f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e8697832de85a8164a12b06268657f">&#9670;&nbsp;</a></span>INVERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::INVERT { 32u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invert foreground &amp; background colors of printed text. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00053">53</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a7f65a2c5a8b212c16f6ccb559f89c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7f65a2c5a8b212c16f6ccb559f89c8">&#9670;&nbsp;</a></span>invert</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::invert </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#ad527dafbd86a4c61633be26dba7ed45d">ANSI::SGR_NEGATIVE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets all future characters printed to an output stream as inverted using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
+<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00078">78</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a4b657969ac14460c813064667a9f1107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b657969ac14460c813064667a9f1107">&#9670;&nbsp;</a></span>light_blue</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b657969ac14460c813064667a9f1107">&#9670;&nbsp;</a></span>light_blue <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1265,12 +2690,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00029">29</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00029">29</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b657969ac14460c813064667a9f1107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b657969ac14460c813064667a9f1107">&#9670;&nbsp;</a></span>light_blue <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::light_blue { 26 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00029">29</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a8021362dc29dd9c36b2c4b51e20374b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8021362dc29dd9c36b2c4b51e20374b1">&#9670;&nbsp;</a></span>light_gray</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8021362dc29dd9c36b2c4b51e20374b1">&#9670;&nbsp;</a></span>light_gray <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1291,12 +2740,38 @@ template&lt;typename T &gt; </div>
 
 <p>Light Gray color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00018">18</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00018">18</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a8021362dc29dd9c36b2c4b51e20374b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8021362dc29dd9c36b2c4b51e20374b1">&#9670;&nbsp;</a></span>light_gray <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::light_gray { 0xF6 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Light Gray color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00018">18</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a893c727634f7edadf42286d273113d64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a893c727634f7edadf42286d273113d64">&#9670;&nbsp;</a></span>light_purple</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a893c727634f7edadf42286d273113d64">&#9670;&nbsp;</a></span>light_purple <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1315,12 +2790,36 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00036">36</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00036">36</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a893c727634f7edadf42286d273113d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a893c727634f7edadf42286d273113d64">&#9670;&nbsp;</a></span>light_purple <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::light_purple { 99 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00036">36</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="a4d9a8dfa7552ebe5422d8ddeb562588d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d9a8dfa7552ebe5422d8ddeb562588d">&#9670;&nbsp;</a></span>magenta</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9a8dfa7552ebe5422d8ddeb562588d">&#9670;&nbsp;</a></span>magenta <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1341,12 +2840,214 @@ template&lt;typename T &gt; </div>
 
 <p>Magenta color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00013">13</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00013">13</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d9a8dfa7552ebe5422d8ddeb562588d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9a8dfa7552ebe5422d8ddeb562588d">&#9670;&nbsp;</a></span>magenta <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::magenta { 0x05 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Magenta color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00013">13</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a73d18df7584aa1e215de13117d543160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d18df7584aa1e215de13117d543160">&#9670;&nbsp;</a></span>NO_BOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::NO_BOLD { 4u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unset the bold flag specifically. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00047">47</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7d0b38cd4b23408a7a6a0cf0f9339938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0b38cd4b23408a7a6a0cf0f9339938">&#9670;&nbsp;</a></span>no_bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::no_bold { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a72cca1682d396a024556f5f867e4913b">ANSI::SGR_NO_BOLD</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00075">75</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8d8af71b552c1a8c93fefcea502f8462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8af71b552c1a8c93fefcea502f8462">&#9670;&nbsp;</a></span>NO_INVERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::NO_INVERT { 64u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unset the invert flag specifically. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00055">55</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a88c1e3de58c5174da532ef80c93536d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c1e3de58c5174da532ef80c93536d1">&#9670;&nbsp;</a></span>no_invert</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::no_invert { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a67bd050f308ba46b8ff46fe9cf635c84">ANSI::SGR_POSITIVE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00079">79</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4503e7f2026de8b1da4df839d1a8eca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4503e7f2026de8b1da4df839d1a8eca6">&#9670;&nbsp;</a></span>NO_UNDERLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::NO_UNDERLINE { 16u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unset the underline flag specifically. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00051">51</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a35d0d0c265b0fcd9af095f0ea017fb67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d0d0c265b0fcd9af095f0ea017fb67">&#9670;&nbsp;</a></span>no_underline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::no_underline { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a77baf92e40e25db1742a5d8aab9dba9b">ANSI::SGR_NO_UNDERLINE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00077">77</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a967d50a0df8290637e8e75b1558fccc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967d50a0df8290637e8e75b1558fccc1">&#9670;&nbsp;</a></span>NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::NONE { 0u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No special formatting. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00041">41</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a9095944dc7740f26c9ca43cdb125397d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9095944dc7740f26c9ca43cdb125397d">&#9670;&nbsp;</a></span>orange</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9095944dc7740f26c9ca43cdb125397d">&#9670;&nbsp;</a></span>orange <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1367,12 +3068,38 @@ template&lt;typename T &gt; </div>
 
 <p>Orange color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00027">27</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00027">27</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a9095944dc7740f26c9ca43cdb125397d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9095944dc7740f26c9ca43cdb125397d">&#9670;&nbsp;</a></span>orange <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::orange { 208 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Orange color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00027">27</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ad3054056a3f586375ba838bc838dfa85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3054056a3f586375ba838bc838dfa85">&#9670;&nbsp;</a></span>purple</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3054056a3f586375ba838bc838dfa85">&#9670;&nbsp;</a></span>purple <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1393,12 +3120,38 @@ template&lt;typename T &gt; </div>
 
 <p>Purple color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00014">14</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00014">14</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3054056a3f586375ba838bc838dfa85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3054056a3f586375ba838bc838dfa85">&#9670;&nbsp;</a></span>purple <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::purple { 0x5C }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Purple color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00014">14</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
 <a id="ac8cf093e96967abc35d1d201ceb4b332"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8cf093e96967abc35d1d201ceb4b332">&#9670;&nbsp;</a></span>red</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8cf093e96967abc35d1d201ceb4b332">&#9670;&nbsp;</a></span>red <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1419,12 +3172,12 @@ template&lt;typename T &gt; </div>
 
 <p>Red color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00009">9</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00009">9</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>
-<a id="a6a1f450cb0752eb5cbfd0bb882f14795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a1f450cb0752eb5cbfd0bb882f14795">&#9670;&nbsp;</a></span>setcolor_placeholder</h2>
+<a id="ac8cf093e96967abc35d1d201ceb4b332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8cf093e96967abc35d1d201ceb4b332">&#9670;&nbsp;</a></span>red <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1433,7 +3186,59 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structcolor_1_1setcolor.html">setcolor</a> color::setcolor_placeholder { std::string(&quot;&quot;), <a class="el" href="structcolor_1_1_format_flag.html#ab8a3458291745b0d00b7bdf61b44400c">FormatFlag::NONE</a> }</td>
+          <td class="memname">constexpr const short color::red { 0x01 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Red color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00009">9</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="aa723ff8ac3e9d7ad2b565976e97c1116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa723ff8ac3e9d7ad2b565976e97c1116">&#9670;&nbsp;</a></span>RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::RESET { 1u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets colors only. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00043">43</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab505233a6f26bec737e27a8efd713db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab505233a6f26bec737e27a8efd713db5">&#9670;&nbsp;</a></span>reset <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::reset { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afa712200199ba61d8ea7cf3129657362">ANSI::SGR_DEFAULT_FORE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>, <a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a8df880440200b4c91ce0b36bcca5cfcd">ANSI::SGR_DEFAULT_BACK</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
         </tr>
       </table>
   </td>
@@ -1443,14 +3248,191 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00082">82</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab0116b5ba859fc9f7a8d6b7a5423dd62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0116b5ba859fc9f7a8d6b7a5423dd62">&#9670;&nbsp;</a></span>reset <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::reset { make_sequence(ESC, CSI, &quot;38;5;7&quot;, END, ESC, CSI, &quot;48;5;0&quot;, END) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset terminal colors to their defaults. </p>
+<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="format-functions_8hpp_source.html#l00077">77</a> of file <a class="el" href="format-functions_8hpp_source.html">format-functions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a15d0dc293806a43fccae35d614d6ce22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d0dc293806a43fccae35d614d6ce22">&#9670;&nbsp;</a></span>reset_all</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::reset_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a63b718e34115fc0ad40565216b7bcaf3">ANSI::SGR_RESET</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset terminal colors to their defaults. </p>
+<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00083">83</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7e3fccce20699c20489657918d1b918b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3fccce20699c20489657918d1b918b">&#9670;&nbsp;</a></span>reset_b</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::reset_b { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#a8df880440200b4c91ce0b36bcca5cfcd">ANSI::SGR_DEFAULT_BACK</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00081">81</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac23eccfe66e28b988112483f8dcdbec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23eccfe66e28b988112483f8dcdbec4">&#9670;&nbsp;</a></span>reset_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> color::reset_f { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afa712200199ba61d8ea7cf3129657362">ANSI::SGR_DEFAULT_FORE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00080">80</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a22170a9f43abdf8a478cf9b4e17df2c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22170a9f43abdf8a478cf9b4e17df2c5">&#9670;&nbsp;</a></span>setcolor_placeholder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const <a class="el" href="structcolor_1_1setcolor.html">setcolor</a> color::setcolor_placeholder { <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a>{}, <a class="el" href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">NONE</a> }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>This setcolor instance can be used as a placeholder, when operator&lt;&lt; is called, nothing will be inserted. (Note that operator&lt;&lt; will still cause certain stream flags/facets to be reset!) </p>
 
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00103">103</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2setcolor_8hpp_source.html#l00085">85</a> of file <a class="el" href="color_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abac5f50ee78aee1a7bdc1a680b7962ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac5f50ee78aee1a7bdc1a680b7962ff">&#9670;&nbsp;</a></span>UNDERLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="structcolor_1_1_format_flag.html">FormatFlag</a> color::UNDERLINE { 8u }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Underline printed text. </p>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00049">49</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aecbbaf451a13126290a5bf25f57aa7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecbbaf451a13126290a5bf25f57aa7e9">&#9670;&nbsp;</a></span>underline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a> color::underline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> { <a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">ANSI::make_sequence</a>(<a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a>, <a class="el" href="namespace_a_n_s_i.html#afe5c5d6c6840af35d8f4e83f79fa5524">ANSI::SGR_UNDERLINE</a>, <a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">ANSI::END</a>) }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets all future characters printed to an output stream as underlined using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. </p>
+<dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-format_8hpp_source.html#l00076">76</a> of file <a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a84e5ca1ca60a23294347ec0c3a34c373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84e5ca1ca60a23294347ec0c3a34c373">&#9670;&nbsp;</a></span>white</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e5ca1ca60a23294347ec0c3a34c373">&#9670;&nbsp;</a></span>white <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1471,12 +3453,54 @@ template&lt;typename T &gt; </div>
 
 <p>White color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00016">16</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00016">16</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a84e5ca1ca60a23294347ec0c3a34c373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e5ca1ca60a23294347ec0c3a34c373">&#9670;&nbsp;</a></span>white <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::white { 0x07 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>White color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00016">16</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a8427e0abdba26374e98d3fc1c2f650d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8427e0abdba26374e98d3fc1c2f650d2">&#9670;&nbsp;</a></span>wsetcolor_placeholder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacecolor.html#a661329f1ca1cec17890ea4eef3da37fa">wsetcolor</a> color::wsetcolor_placeholder { <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>{}, <a class="el" href="namespacecolor.html#a967d50a0df8290637e8e75b1558fccc1">NONE</a> }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="color_2include_2setcolor_8hpp_source.html#l00088">88</a> of file <a class="el" href="color_2include_2setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a32611a40f96545beb9cbebdf974b8fec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32611a40f96545beb9cbebdf974b8fec">&#9670;&nbsp;</a></span>yellow</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32611a40f96545beb9cbebdf974b8fec">&#9670;&nbsp;</a></span>yellow <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1497,7 +3521,33 @@ template&lt;typename T &gt; </div>
 
 <p>Yellow color. </p>
 
-<p class="definition">Definition at line <a class="el" href="color-values_8h_source.html#l00012">12</a> of file <a class="el" href="color-values_8h_source.html">color-values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color_2include_2color-values_8h_source.html#l00012">12</a> of file <a class="el" href="color_2include_2color-values_8h_source.html">color-values.h</a>.</p>
+
+</div>
+</div>
+<a id="a32611a40f96545beb9cbebdf974b8fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32611a40f96545beb9cbebdf974b8fec">&#9670;&nbsp;</a></span>yellow <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const short color::yellow { 0x03 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Yellow color. </p>
+
+<p class="definition">Definition at line <a class="el" href="v3_2include_2color-values_8h_source.html#l00012">12</a> of file <a class="el" href="v3_2include_2color-values_8h_source.html">color-values.h</a>.</p>
 
 </div>
 </div>

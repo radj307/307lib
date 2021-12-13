@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['parenthesis_5fclose_1434',['PARENTHESIS_CLOSE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea459697561df348fd7420e66ef9a339bf',1,'token']]],
-  ['parenthesis_5fopen_1435',['PARENTHESIS_OPEN',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eacc3fdb5e3acc094388e75f45ada1a935',1,'token']]],
-  ['percent_1436',['PERCENT',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6865d19576ae60f95fd4e61333404352',1,'token']]],
-  ['period_1437',['PERIOD',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eade58a28573783fe95304a260ccd90362',1,'token']]],
-  ['pound_1438',['POUND',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f',1,'token']]]
+  ['open_5farray_1663',['OPEN_ARRAY',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074acad76732f05f48d11662f07169a473a9',1,'token']]],
+  ['open_5fsection_1664',['OPEN_SECTION',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5efb5e8e14933944971b07e0fca3bde2',1,'token']]]
 ];
