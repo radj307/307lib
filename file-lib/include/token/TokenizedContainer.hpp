@@ -12,7 +12,7 @@ namespace token {
 
 		TokenizedContainer(ContainerT tokens) : tokens{ std::move(tokens) } {}
 		template<class TokenizerType> requires std::derived_from<TokenizerType, TokenizerBase>
-		TokenizedContainer(TokenizerType& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
+		TokenizedContainer(TokenizerType&& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
 
 		operator ContainerT() const { return tokens; }
 

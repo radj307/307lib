@@ -15,6 +15,7 @@ project("shared")
 set(HEADERS
 	"./include/sysarch.h"
 	"./include/var.hpp"
+	"./include/math.hpp"
 	"./include/make_exception.hpp"
 )
 

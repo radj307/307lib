@@ -23,7 +23,7 @@ namespace file {
 		auto ifs{ read<std::ifstream>(path) };
 	#pragma warning(disable: 26800) // suppress "Use of a moved from object (Lifetime.1)" warning as no move operations are performed here
 		std::stringstream buff;
-		if (ifs.is_open())
+		if (ifs.is_open() && ifs.good())
 			buff << ifs.rdbuf();
 		else
 			buff.setstate(std::ios::failbit);
@@ -35,7 +35,7 @@ namespace file {
 	{
 		auto ifs{ read<std::ifstream>(std::forward<decltype(path)>(path)) };
 		std::string buffer;
-		if (ifs.is_open())
+		if (ifs.is_open() && ifs.good())
 			ifs >> buffer;
 		return std::move(buffer);
 	}
