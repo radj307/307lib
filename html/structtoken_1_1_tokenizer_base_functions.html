@@ -144,21 +144,27 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a81da79eb75d2c217ceaeb55b5d622075"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a81da79eb75d2c217ceaeb55b5d622075">getch</a> (const bool allow_whitespace=false)</td></tr>
 <tr class="memdesc:a81da79eb75d2c217ceaeb55b5d622075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next character from the stream, and move the getter position forward by one.  <a href="structtoken_1_1_tokenizer_base_functions.html#a81da79eb75d2c217ceaeb55b5d622075">More...</a><br /></td></tr>
 <tr class="separator:a81da79eb75d2c217ceaeb55b5d622075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f0f8d39c3ce68a6ba62ed44699cd636"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a6f0f8d39c3ce68a6ba62ed44699cd636">peekNext</a> ()</td></tr>
-<tr class="separator:a6f0f8d39c3ce68a6ba62ed44699cd636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7069199acee342ebfdf2c7ca19b90367"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a7069199acee342ebfdf2c7ca19b90367">peek</a> ()</td></tr>
+<tr class="separator:a7069199acee342ebfdf2c7ca19b90367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1db69d4f3230402386b318edd15d3fda"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a1db69d4f3230402386b318edd15d3fda">getline</a> (const char &amp;delim='\n', const bool no_rollback=true)</td></tr>
 <tr class="memdesc:a1db69d4f3230402386b318edd15d3fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string containing everything from the current stream getter position until a given delimiter.  <a href="structtoken_1_1_tokenizer_base_functions.html#a1db69d4f3230402386b318edd15d3fda">More...</a><br /></td></tr>
 <tr class="separator:a1db69d4f3230402386b318edd15d3fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b13da35e3b11672db50675b56c0318"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a81b13da35e3b11672db50675b56c0318">getline</a> (const size_t &amp;count)</td></tr>
 <tr class="memdesc:a81b13da35e3b11672db50675b56c0318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string containing a given number of characters from the current stream getter position.  <a href="structtoken_1_1_tokenizer_base_functions.html#a81b13da35e3b11672db50675b56c0318">More...</a><br /></td></tr>
 <tr class="separator:a81b13da35e3b11672db50675b56c0318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771ff6cd23b1e516494326d8647ec600"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
-<tr class="memitem:a771ff6cd23b1e516494326d8647ec600"><td class="memTemplItemLeft" align="right" valign="top">requires std::conjunction_v&lt; std::is_same&lt; VT, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e">LEXEME</a> &gt;... &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a771ff6cd23b1e516494326d8647ec600">sizeof</a> (VT) &gt; 0) std</td></tr>
-<tr class="memdesc:a771ff6cd23b1e516494326d8647ec600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue reading ahead until a character with an unspecified type is reached, and return it as a string.  <a href="structtoken_1_1_tokenizer_base_functions.html#a771ff6cd23b1e516494326d8647ec600">More...</a><br /></td></tr>
-<tr class="separator:a771ff6cd23b1e516494326d8647ec600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771ff6cd23b1e516494326d8647ec600"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
-<tr class="memitem:a771ff6cd23b1e516494326d8647ec600"><td class="memTemplItemLeft" align="right" valign="top">requires std::conjunction_v&lt; std::is_same&lt; VT, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e">LEXEME</a> &gt;... &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a771ff6cd23b1e516494326d8647ec600">sizeof</a> (VT) &gt; 0) std</td></tr>
-<tr class="separator:a771ff6cd23b1e516494326d8647ec600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c5c95f95cbee02f51465950d7dfbc5"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; LEXEME &gt;... VT&gt; </td></tr>
+<tr class="memitem:af1c5c95f95cbee02f51465950d7dfbc5"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#af1c5c95f95cbee02f51465950d7dfbc5">getsimilar</a> (const VT &amp;... type)</td></tr>
+<tr class="memdesc:af1c5c95f95cbee02f51465950d7dfbc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed.  <a href="structtoken_1_1_tokenizer_base_functions.html#af1c5c95f95cbee02f51465950d7dfbc5">More...</a><br /></td></tr>
+<tr class="separator:af1c5c95f95cbee02f51465950d7dfbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba84c094e57bf0d4c2806c05ddbefe27"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; LEXEME &gt;... VT&gt; </td></tr>
+<tr class="memitem:aba84c094e57bf0d4c2806c05ddbefe27"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#aba84c094e57bf0d4c2806c05ddbefe27">getnotsimilar</a> (const VT &amp;... type)</td></tr>
+<tr class="separator:aba84c094e57bf0d4c2806c05ddbefe27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41438e0a8b00f5940bbe7a7a590585d"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:ae41438e0a8b00f5940bbe7a7a590585d"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#ae41438e0a8b00f5940bbe7a7a590585d">getsimilar</a> (const Pred &amp;predicate)</td></tr>
+<tr class="separator:ae41438e0a8b00f5940bbe7a7a590585d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08299bcb01cdd50e47e16a7732968d43"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... vT&gt; </td></tr>
+<tr class="memitem:a08299bcb01cdd50e47e16a7732968d43"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a08299bcb01cdd50e47e16a7732968d43">getsimilar_ch</a> (const vT &amp;... character)</td></tr>
+<tr class="separator:a08299bcb01cdd50e47e16a7732968d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2916cf44e1a6f1ef8b788b910f764d81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html#a2916cf44e1a6f1ef8b788b910f764d81">clear</a> ()</td></tr>
 <tr class="memdesc:a2916cf44e1a6f1ef8b788b910f764d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears/Resets the internal stream buffer's <em>error state flags</em>.  <a href="structtoken_1_1_tokenizer_base_functions.html#a2916cf44e1a6f1ef8b788b910f764d81">More...</a><br /></td></tr>
 <tr class="separator:a2916cf44e1a6f1ef8b788b910f764d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +229,7 @@ template&lt;typename TokenT &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00233">233</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00254">254</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,8 +301,7 @@ template&lt;typename TokenT &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structtoken_1_1_tokenizer_base_functions_a217db539316e5899b2c9fc7bca816172_icgraph.svg" width="652" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structtoken_1_1_tokenizer_base_functions_a217db539316e5899b2c9fc7bca816172_icgraph.svg" width="652" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -387,7 +392,7 @@ template&lt;typename TokenT &gt; </div>
 
 <p>Clears/Resets the internal stream buffer's <em>error state flags</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00157">157</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00178">178</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -634,7 +639,7 @@ template&lt;typename TokenT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00207">207</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00228">228</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -668,6 +673,149 @@ template&lt;typename TokenT &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
 <p>Implemented in <a class="el" href="classcolor_1_1fileext_1_1_config_tokenizer.html#adf33991126d3f47d07d58974599ddb3d">color::fileext::ConfigTokenizer</a>, <a class="el" href="classtoken_1_1_tokenizer_r_e.html#a763ea27d39faa3c05442125aa109fb98">token::TokenizerRE</a>, and <a class="el" href="structtoken_1_1_tokenizer_i_n_i.html#a79eb6f947071698b1f8078456e316f80">token::TokenizerINI</a>.</p>
+
+</div>
+</div>
+<a id="aba84c094e57bf0d4c2806c05ddbefe27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba84c094e57bf0d4c2806c05ddbefe27">&#9670;&nbsp;</a></span>getnotsimilar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TokenT &gt; </div>
+<div class="memtemplate">
+template&lt;std::same_as&lt; LEXEME &gt;... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::getnotsimilar </td>
+          <td>(</td>
+          <td class="paramtype">const VT &amp;...&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00146">146</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae41438e0a8b00f5940bbe7a7a590585d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41438e0a8b00f5940bbe7a7a590585d">&#9670;&nbsp;</a></span>getsimilar() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TokenT &gt; </div>
+<div class="memtemplate">
+template&lt;class Pred &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::getsimilar </td>
+          <td>(</td>
+          <td class="paramtype">const Pred &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00156">156</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af1c5c95f95cbee02f51465950d7dfbc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c5c95f95cbee02f51465950d7dfbc5">&#9670;&nbsp;</a></span>getsimilar() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TokenT &gt; </div>
+<div class="memtemplate">
+template&lt;std::same_as&lt; LEXEME &gt;... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::getsimilar </td>
+          <td>(</td>
+          <td class="paramtype">const VT &amp;...&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">...VT</td><td>- Variadic Template. (LEXEME) (n &gt; 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...type</td><td>- At least one character type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00137">137</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a08299bcb01cdd50e47e16a7732968d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08299bcb01cdd50e47e16a7732968d43">&#9670;&nbsp;</a></span>getsimilar_ch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TokenT &gt; </div>
+<div class="memtemplate">
+template&lt;std::same_as&lt; char &gt;... vT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::getsimilar_ch </td>
+          <td>(</td>
+          <td class="paramtype">const vT &amp;...&#160;</td>
+          <td class="paramname"><em>character</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00166">166</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -766,8 +914,8 @@ template&lt;typename TokenT &gt; </div>
 
 </div>
 </div>
-<a id="a6f0f8d39c3ce68a6ba62ed44699cd636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f0f8d39c3ce68a6ba62ed44699cd636">&#9670;&nbsp;</a></span>peekNext()</h2>
+<a id="a7069199acee342ebfdf2c7ca19b90367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7069199acee342ebfdf2c7ca19b90367">&#9670;&nbsp;</a></span>peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -778,7 +926,7 @@ template&lt;typename TokenT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::peekNext </td>
+          <td class="memname">auto <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::peek </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -823,7 +971,7 @@ template&lt;typename TokenT &gt; </div>
 <p>Set the getter position to lastPos. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00165">165</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00186">186</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -855,7 +1003,7 @@ template&lt;typename TokenT &gt; </div>
 <p>Set the getter position to the beginning of the stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00176">176</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00197">197</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -894,7 +1042,7 @@ template&lt;typename TokenT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00189">189</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00210">210</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -925,86 +1073,7 @@ template&lt;typename TokenT &gt; </div>
 
 <p>Set the last position to the current position. </p>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00196">196</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a771ff6cd23b1e516494326d8647ec600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a771ff6cd23b1e516494326d8647ec600">&#9670;&nbsp;</a></span>sizeof() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TokenT &gt; </div>
-<div class="memtemplate">
-template&lt;class... VT&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">requires std::conjunction_v&lt;std::is_same&lt;VT, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e">LEXEME</a>&gt;...&gt;&amp;&amp; <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::sizeof </td>
-          <td>(</td>
-          <td class="paramtype">VT&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Continue reading ahead until a character with an unspecified type is reached, and return it as a string. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">...VT</td><td>- Variadic Template. (LEXEME) (n &gt; 0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">...type</td><td>- At least one character type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00136">136</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a771ff6cd23b1e516494326d8647ec600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a771ff6cd23b1e516494326d8647ec600">&#9670;&nbsp;</a></span>sizeof() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TokenT &gt; </div>
-<div class="memtemplate">
-template&lt;class... VT&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">requires std::conjunction_v&lt;std::is_same&lt;VT, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e">LEXEME</a>&gt;...&gt;&amp;&amp; <a class="el" href="structtoken_1_1_tokenizer_base_functions.html">token::TokenizerBaseFunctions</a>&lt; TokenT &gt;::sizeof </td>
-          <td>(</td>
-          <td class="paramtype">VT&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00145">145</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00217">217</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1120,7 @@ template&lt;class RT  = AccessibleTokenCont&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>AccessibleTokenCont </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00242">242</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00263">263</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1167,7 @@ template&lt;class RT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>AccessibleTokenCont </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00259">259</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00280">280</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +1197,7 @@ template&lt;typename TokenT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00220">220</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tokenizer_base_8hpp_source.html#l00241">241</a> of file <a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>.</p>
 
 </div>
 </div>

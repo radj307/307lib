@@ -146,10 +146,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ae44a61b1fed1e226ac26abe03d69adab"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae44a61b1fed1e226ac26abe03d69adab">stringify_split</a> (const DelimType &amp;delimiter, VT... args)</td></tr>
 <tr class="memdesc:ae44a61b1fed1e226ac26abe03d69adab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ae44a61b1fed1e226ac26abe03d69adab">More...</a><br /></td></tr>
 <tr class="separator:ae44a61b1fed1e226ac26abe03d69adab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a802a7f5eadf01d0ec26752bd6e6499c4"><td class="memTemplParams" colspan="2">template&lt;var::valid_string T, var::valid_string... vT&gt; </td></tr>
+<tr class="memitem:ab68f4c5a4e1811d5dc2c63a7a861957c"><td class="memTemplParams" colspan="2">template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_or_convertible... vT&gt; </td></tr>
+<tr class="memitem:ab68f4c5a4e1811d5dc2c63a7a861957c"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab68f4c5a4e1811d5dc2c63a7a861957c">compare</a> (const Pred &amp;predicate, const T &amp;fst, const vT &amp;... strings)</td></tr>
+<tr class="separator:ab68f4c5a4e1811d5dc2c63a7a861957c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802a7f5eadf01d0ec26752bd6e6499c4"><td class="memTemplParams" colspan="2">template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... vT&gt; </td></tr>
 <tr class="memitem:a802a7f5eadf01d0ec26752bd6e6499c4"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a802a7f5eadf01d0ec26752bd6e6499c4">longest</a> (const T &amp;fst, const vT &amp;... strings)</td></tr>
 <tr class="separator:a802a7f5eadf01d0ec26752bd6e6499c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2856fdd3500f6da597f8f52124f4d3a"><td class="memTemplParams" colspan="2">template&lt;var::valid_string T, var::valid_string... vT&gt; </td></tr>
+<tr class="memitem:aa2856fdd3500f6da597f8f52124f4d3a"><td class="memTemplParams" colspan="2">template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... vT&gt; </td></tr>
 <tr class="memitem:aa2856fdd3500f6da597f8f52124f4d3a"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa2856fdd3500f6da597f8f52124f4d3a">shortest</a> (const T &amp;fst, const vT &amp;... strings)</td></tr>
 <tr class="separator:aa2856fdd3500f6da597f8f52124f4d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab273e18c3896683954b42ea222129f4"><td class="memTemplParams" colspan="2">template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; </td></tr>
@@ -350,7 +353,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00326">326</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00322">322</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -498,8 +501,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ab68f4c5a4e1811d5dc2c63a7a861957c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68f4c5a4e1811d5dc2c63a7a861957c">&#9670;&nbsp;</a></span>compare() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_or_convertible... vT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T str::compare </td>
+          <td>(</td>
+          <td class="paramtype">const Pred &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>fst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vT &amp;...&#160;</td>
+          <td class="paramname"><em>strings</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00131">131</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+
+</div>
+</div>
 <a id="acd4ee543bc885f863faf20217f7142fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd4ee543bc885f863faf20217f7142fe">&#9670;&nbsp;</a></span>compare()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4ee543bc885f863faf20217f7142fe">&#9670;&nbsp;</a></span>compare() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -558,7 +607,7 @@ template&lt;class T1 , class T2 &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00234">234</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00230">230</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1085,8 +1134,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93d96ab238bb0666c844c65b60303dbd_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93d96ab238bb0666c844c65b60303dbd_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1322,7 +1370,7 @@ template&lt;bool index, var::valid_string T, template&lt; class... &gt; class Co
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00168">168</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00164">164</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1369,7 +1417,7 @@ template&lt;size_t index, var::valid_string... vT, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cont::const_iterator </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00195">195</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00191">191</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1399,7 +1447,7 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00149">149</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00145">145</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1409,7 +1457,7 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::valid_string T, var::valid_string... vT&gt; </div>
+template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... vT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1439,7 +1487,7 @@ template&lt;var::valid_string T, var::valid_string... vT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00132">132</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00140">140</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1592,7 +1640,7 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;size_t&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00283">283</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00279">279</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1737,8 +1785,7 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="478" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="478" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1906,7 +1953,7 @@ template&lt;typename... VT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00290">290</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00286">286</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1988,12 +2035,11 @@ template&lt;typename... VT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00361">361</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00357">357</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a28b64545b20e75933729d6a9f6ccbdc0_cgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a28b64545b20e75933729d6a9f6ccbdc0_cgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2080,7 +2126,7 @@ template&lt;bool index, var::valid_string T, template&lt; class... &gt; class Co
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00177">177</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00173">173</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2127,7 +2173,7 @@ template&lt;size_t index, var::valid_string... vT, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cont::const_iterator </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00213">213</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00209">209</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2157,7 +2203,7 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00158">158</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00154">154</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2167,7 +2213,7 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::valid_string T, var::valid_string... vT&gt; </div>
+template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... vT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2197,7 +2243,7 @@ template&lt;var::valid_string T, var::valid_string... vT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00140">140</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00142">142</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2251,12 +2297,11 @@ template&lt;var::valid_string T, var::valid_string... vT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00346">346</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00342">342</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea590984a3074c9eb9af7112dfc5a4ad_cgraph.svg" width="227" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aea590984a3074c9eb9af7112dfc5a4ad_cgraph.svg" width="227" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -2312,7 +2357,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00335">335</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00331">331</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2703,8 +2748,7 @@ template&lt;class DelimType , var::Streamable... VT&gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7346dfeb6d8d2d04a563649f4bf3cbca_icgraph.svg" width="599" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7346dfeb6d8d2d04a563649f4bf3cbca_icgraph.svg" width="599" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -3219,7 +3263,7 @@ template&lt;class... T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00246">246</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00242">242</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>

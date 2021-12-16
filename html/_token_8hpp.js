@@ -16,6 +16,7 @@ var _token_8hpp =
       [ "BOOLEAN", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac48d5da12d702e73d6966069f2687376", null ],
       [ "NUMBER", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a34f55eca38e0605a84f169ff61a2a396", null ],
       [ "NUMBER_INT", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac14369ef03743b996b987053bfb9368a", null ],
+      [ "NUMBER_HEX", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a67d184c604aa5f11b6841ed01c6566d0", null ],
       [ "HEADER", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a7ad4905b4543ab4a1637dd23c50e36ce", null ],
       [ "SETTER", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5c54b9a77f06d588600778ec8f06d7b1", null ],
       [ "OPEN_SECTION", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5efb5e8e14933944971b07e0fca3bde2", null ],
@@ -23,6 +24,5 @@ var _token_8hpp =
       [ "OPEN_ARRAY", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074acad76732f05f48d11662f07169a473a9", null ],
       [ "CLOSE_ARRAY", "_token_8hpp.html#a5a65fe57c80eec8fe264dc4d4f0bf074a06cf574c3df37f163252af8c93232269", null ]
     ] ],
-    [ "get_tokentype_plaintext", "_token_8hpp.html#a7b115ed8bcc93171ab1b8f5ee478afa7", null ],
-    [ "temp", "_token_8hpp.html#a6dd8ff257cfcb6ba1eb2a0defd8c5e95", null ]
+    [ "get_tokentype_plaintext", "_token_8hpp.html#a7b115ed8bcc93171ab1b8f5ee478afa7", null ]
 ];

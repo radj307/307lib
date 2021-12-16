@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['temp_1318',['temp',['../namespacetoken.html#a6dd8ff257cfcb6ba1eb2a0defd8c5e95',1,'token']]],
   ['textcolor_1319',['textcolor',['../structcolor_1_1textcolor.html#aaa0a73a239656d1f80168184b266dc2e',1,'color::textcolor']]],
   ['to_5fstring_1320',['to_string',['../namespacetoken_1_1parse.html#ab3c3b30406ae00c866fc8b5c1ffe7aab',1,'token::parse::to_string(const VariableT &amp;var, const bool use_quotes_for_string=true)'],['../namespacetoken_1_1parse.html#aa1ba25d825e57a91cb53fd964c9224d0',1,'token::parse::to_string(const T &amp;var, const bool use_quotes_for_string=true)'],['../namespacestr.html#aa24c21e682b76356086bb5e306b09806',1,'str::to_string()']]],
   ['token_1321',['Token',['../structtoken_1_1_token.html#ad2d6fe2b3feda1711c518c1de6fb0c00',1,'token::Token::Token(std::string str, TokenType type)'],['../structtoken_1_1_token.html#a43ccdc6d0d58287d597e23bf3ee1fb25',1,'token::Token::Token(char ch, TokenType type)'],['../structtoken_1_1_token.html#a3057e919d8383852321724372afb09b3',1,'token::Token::Token(TokenType type)'],['../structtoken_1_1_token.html#a16e27852ca69a681c3023f19ca68433f',1,'token::Token::Token(std::pair&lt; std::string, TokenType &gt; pr)'],['../structtoken_1_1_token.html#a2e57f48378fd585acea06f5f965ae104',1,'token::Token::Token(std::pair&lt; char, TokenType &gt; pr)']]],

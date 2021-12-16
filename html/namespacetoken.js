@@ -52,6 +52,7 @@ var namespacetoken =
       [ "BOOLEAN", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac48d5da12d702e73d6966069f2687376", null ],
       [ "NUMBER", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a34f55eca38e0605a84f169ff61a2a396", null ],
       [ "NUMBER_INT", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac14369ef03743b996b987053bfb9368a", null ],
+      [ "NUMBER_HEX", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a67d184c604aa5f11b6841ed01c6566d0", null ],
       [ "HEADER", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a7ad4905b4543ab4a1637dd23c50e36ce", null ],
       [ "SETTER", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5c54b9a77f06d588600778ec8f06d7b1", null ],
       [ "OPEN_SECTION", "namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5efb5e8e14933944971b07e0fca3bde2", null ],
@@ -61,6 +62,6 @@ var namespacetoken =
     ] ],
     [ "get_lexeme", "namespacetoken.html#abec86d45637b7fdeb6cff870d0d9dc73", null ],
     [ "get_tokentype_plaintext", "namespacetoken.html#a7b115ed8bcc93171ab1b8f5ee478afa7", null ],
-    [ "temp", "namespacetoken.html#a6dd8ff257cfcb6ba1eb2a0defd8c5e95", null ],
+    [ "ishexnum", "namespacetoken.html#a6cfa746d284d37170046a6c0bb503924", null ],
     [ "ESCAPE_CHARACTER", "namespacetoken.html#a9bdcd5949f1aa78fc19e3b6ce3b60872", null ]
 ];

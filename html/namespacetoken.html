@@ -189,12 +189,13 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a34f55eca38e0605a84f169ff61a2a396">NUMBER</a>
 , <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac14369ef03743b996b987053bfb9368a">NUMBER_INT</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a7ad4905b4543ab4a1637dd23c50e36ce">HEADER</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a67d184c604aa5f11b6841ed01c6566d0">NUMBER_HEX</a>
+, <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a7ad4905b4543ab4a1637dd23c50e36ce">HEADER</a>
 , <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5c54b9a77f06d588600778ec8f06d7b1">SETTER</a>
 , <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5efb5e8e14933944971b07e0fca3bde2">OPEN_SECTION</a>
-, <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a2d470293fc76479eec43b5bf400ec795">CLOSE_SECTION</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074acad76732f05f48d11662f07169a473a9">OPEN_ARRAY</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a2d470293fc76479eec43b5bf400ec795">CLOSE_SECTION</a>
+, <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074acad76732f05f48d11662f07169a473a9">OPEN_ARRAY</a>
 , <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a06cf574c3df37f163252af8c93232269">CLOSE_ARRAY</a>
 <br />
  }</td></tr>
@@ -203,12 +204,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6cfa746d284d37170046a6c0bb503924"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken.html#a6cfa746d284d37170046a6c0bb503924">ishexnum</a> (const char &amp;ch)</td></tr>
+<tr class="separator:a6cfa746d284d37170046a6c0bb503924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abec86d45637b7fdeb6cff870d0d9dc73"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abec86d45637b7fdeb6cff870d0d9dc73"><td class="memTemplItemLeft" align="right" valign="top">requires std::is_same_v&lt; T, char &gt; std::is_same_v&lt; T, wchar_t &gt; static constexpr std::is_same_v&lt; T, unsigned char &gt; <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e">LEXEME</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoken.html#abec86d45637b7fdeb6cff870d0d9dc73">get_lexeme</a> (const T &amp;ch)</td></tr>
 <tr class="memdesc:abec86d45637b7fdeb6cff870d0d9dc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a single given character to a LEXEME, used during the scanning stage.  <a href="namespacetoken.html#abec86d45637b7fdeb6cff870d0d9dc73">More...</a><br /></td></tr>
 <tr class="separator:abec86d45637b7fdeb6cff870d0d9dc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd8ff257cfcb6ba1eb2a0defd8c5e95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken.html#a6dd8ff257cfcb6ba1eb2a0defd8c5e95">temp</a> ()</td></tr>
-<tr class="separator:a6dd8ff257cfcb6ba1eb2a0defd8c5e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b115ed8bcc93171ab1b8f5ee478afa7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken.html#a7b115ed8bcc93171ab1b8f5ee478afa7">get_tokentype_plaintext</a> (const <a class="el" href="namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074">TokenType</a> &amp;type)</td></tr>
 <tr class="memdesc:a7b115ed8bcc93171ab1b8f5ee478afa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a TokenType to a user-friendly string.  <a href="namespacetoken.html#a7b115ed8bcc93171ab1b8f5ee478afa7">More...</a><br /></td></tr>
 <tr class="separator:a7b115ed8bcc93171ab1b8f5ee478afa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +234,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00098">98</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00095">95</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
 
 </div>
 </div>
@@ -370,6 +371,8 @@ Variables</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a5a65fe57c80eec8fe264dc4d4f0bf074ac14369ef03743b996b987053bfb9368a"></a>NUMBER_INT&#160;</td><td class="fielddoc"><p>Integer type, used by some file formats (INI) to differentiate between floating-points and integrals. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a5a65fe57c80eec8fe264dc4d4f0bf074a67d184c604aa5f11b6841ed01c6566d0"></a>NUMBER_HEX&#160;</td><td class="fielddoc"><p>Hexadecimal number type, used by some file formats. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a5a65fe57c80eec8fe264dc4d4f0bf074a7ad4905b4543ab4a1637dd23c50e36ce"></a>HEADER&#160;</td><td class="fielddoc"><p>Header type, used by some file formats (INI "[]") similarly to a key, but with special syntax. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5a65fe57c80eec8fe264dc4d4f0bf074a5c54b9a77f06d588600778ec8f06d7b1"></a>SETTER&#160;</td><td class="fielddoc"><p>Setter type, used by some file formats (INI '=', JSON ':') to indicate a variable being defined. </p>
@@ -430,7 +433,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LEXEME </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00049">49</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00080">80</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -477,26 +480,35 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00054">54</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00049">49</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a6dd8ff257cfcb6ba1eb2a0defd8c5e95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dd8ff257cfcb6ba1eb2a0defd8c5e95">&#9670;&nbsp;</a></span>temp()</h2>
+<a id="a6cfa746d284d37170046a6c0bb503924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cfa746d284d37170046a6c0bb503924">&#9670;&nbsp;</a></span>ishexnum()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void token::temp </td>
+          <td class="memname">constexpr bool token::ishexnum </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00043">43</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00042">42</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
 
 </div>
 </div>

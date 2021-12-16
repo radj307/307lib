@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"sysarch_8h.html#ac4cf4b2ab929bd23951a8676eeac086b":[5,0,3,0,2,2],
+"sysarch_8h_source.html":[5,0,3,0,2],
 "term_2include_2_cursor_origin_8h.html":[5,0,5,5,0,0],
 "term_2include_2_cursor_origin_8h.html#ac4c421f241bde884ca3cdf0748d11439":[5,0,5,5,0,0,0],
 "term_2include_2_cursor_origin_8h.html#afce05dc82de9f9c074c9ca8cb10a7736":[5,0,5,5,0,0,1],

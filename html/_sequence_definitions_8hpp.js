@@ -49,8 +49,6 @@ var _sequence_definitions_8hpp =
     [ "InsertChar", "_sequence_definitions_8hpp.html#aea032bd32093487fbbc66819c5f4fd05", null ],
     [ "InsertLine", "_sequence_definitions_8hpp.html#a6d88ca1228d59af360716a87f9d429c4", null ],
     [ "LoadCursor", "_sequence_definitions_8hpp.html#afa63d679a59a416433fa2802bc50e2e2", null ],
-    [ "ModifyScreenColors", "_sequence_definitions_8hpp.html#a58d5a6838c3c9e9f34bcad9f9c0b5eda", null ],
-    [ "ModifyScreenColors", "_sequence_definitions_8hpp.html#a8d72fa695b0be5c2fd75217f974a8a47", null ],
     [ "SaveCursor", "_sequence_definitions_8hpp.html#ad9de54bcb761d49cbd132b322534a423", null ],
     [ "ScrollBuffer", "_sequence_definitions_8hpp.html#a8e2f86c192b50fcee9c7338d9a68e3e9", null ],
     [ "ScrollDown", "_sequence_definitions_8hpp.html#aa666a07c811cb8ebe7bb865624930d7a", null ],

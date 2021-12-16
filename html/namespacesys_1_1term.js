@@ -70,8 +70,6 @@ var namespacesys_1_1term =
     [ "InsertChar", "namespacesys_1_1term.html#aea032bd32093487fbbc66819c5f4fd05", null ],
     [ "InsertLine", "namespacesys_1_1term.html#a6d88ca1228d59af360716a87f9d429c4", null ],
     [ "LoadCursor", "namespacesys_1_1term.html#afa63d679a59a416433fa2802bc50e2e2", null ],
-    [ "ModifyScreenColors", "namespacesys_1_1term.html#a58d5a6838c3c9e9f34bcad9f9c0b5eda", null ],
-    [ "ModifyScreenColors", "namespacesys_1_1term.html#a8d72fa695b0be5c2fd75217f974a8a47", null ],
     [ "ReportCursorPosition", "namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb", null ],
     [ "ReportDeviceAttributes", "namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d", null ],
     [ "SaveCursor", "namespacesys_1_1term.html#ad9de54bcb761d49cbd132b322534a423", null ],

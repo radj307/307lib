@@ -13,6 +13,7 @@ var namespacestr =
     [ "align_center", "namespacestr.html#a61c9108691e6d984499341518c993787", null ],
     [ "apply_to_each", "namespacestr.html#a82f6e6378f1869b65cce94f28f31d665", null ],
     [ "bool_to_string", "namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c", null ],
+    [ "compare", "namespacestr.html#ab68f4c5a4e1811d5dc2c63a7a861957c", null ],
     [ "compare", "namespacestr.html#acd4ee543bc885f863faf20217f7142fe", null ],
     [ "concat", "namespacestr.html#a38d0037316e84612973026c052ec0616", null ],
     [ "contains", "namespacestr.html#a0f7141b95490d6fff216bb4dc520831d", null ],

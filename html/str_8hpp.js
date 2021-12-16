@@ -4,6 +4,7 @@ var str_8hpp =
     [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ],
     [ "DISABLE_STR_LITERALS", "str_8hpp.html#a65bc2f112d723a2d6e8492077a63318c", null ],
     [ "VIndent", "str_8hpp.html#a576148d382d024fc11d46dc0ef839cec", null ],
+    [ "compare", "str_8hpp.html#ab68f4c5a4e1811d5dc2c63a7a861957c", null ],
     [ "compare", "str_8hpp.html#acd4ee543bc885f863faf20217f7142fe", null ],
     [ "ishexnum", "str_8hpp.html#a9dea0e9b46c42a30922ce893c17d88a8", null ],
     [ "isquote", "str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f", null ],

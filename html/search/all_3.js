@@ -12,12 +12,11 @@ var searchData=
   ['bitmerge_78',['bitmerge',['../namespacecolor.html#a52c9b6fb6f94142cc939d19244b6f969',1,'color::bitmerge(const VT &amp;... numbers) noexcept'],['../namespacecolor.html#a6146070634aacdf38f56ae5a00545303',1,'color::bitmerge(const VT &amp;... numbers) noexcept']]],
   ['black_79',['black',['../namespacecolor.html#a95da3b84ca9ce74003a135dde7942463',1,'color::black()'],['../namespacecolor.html#a95da3b84ca9ce74003a135dde7942463',1,'color::black()'],['../namespacecolor_1_1foreground.html#a3dee28c1a838c5afcfd083307de986b1',1,'color::foreground::black()'],['../namespacecolor_1_1background.html#a9faf2255484295c826612f6e8378a483',1,'color::background::black()']]],
   ['blue_80',['blue',['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()'],['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()'],['../namespacecolor_1_1foreground.html#a83cae8a1557bc2cac97096954aaac0dc',1,'color::foreground::blue()'],['../namespacecolor_1_1background.html#ae65d20b9650edbfbf4c3e3fb8cab1d76',1,'color::background::blue()']]],
-  ['bold_81',['BOLD',['../structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0',1,'color::FormatFlag']]],
+  ['bold_81',['BOLD',['../structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0',1,'color::FormatFlag::BOLD()'],['../namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0',1,'color::BOLD()']]],
   ['bold_82',['bold',['../namespacecolor.html#a8bf50b1527722d38df665073cb7a49de',1,'color']]],
-  ['bold_83',['BOLD',['../namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0',1,'color']]],
-  ['bool_5fto_5fstring_84',['bool_to_string',['../namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c',1,'str']]],
-  ['boolean_85',['Boolean',['../namespacetoken_1_1parse.html#a7b592064560353ab54338ba2eb42b976',1,'token::parse']]],
-  ['boolean_86',['BOOLEAN',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac48d5da12d702e73d6966069f2687376',1,'token']]],
-  ['bracket_5fclose_87',['BRACKET_CLOSE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea24f34bfbbd1bf4bcf427fd459df7b776',1,'token']]],
-  ['bracket_5fopen_88',['BRACKET_OPEN',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6',1,'token']]]
+  ['bool_5fto_5fstring_83',['bool_to_string',['../namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c',1,'str']]],
+  ['boolean_84',['Boolean',['../namespacetoken_1_1parse.html#a7b592064560353ab54338ba2eb42b976',1,'token::parse']]],
+  ['boolean_85',['BOOLEAN',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074ac48d5da12d702e73d6966069f2687376',1,'token']]],
+  ['bracket_5fclose_86',['BRACKET_CLOSE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea24f34bfbbd1bf4bcf427fd459df7b776',1,'token']]],
+  ['bracket_5fopen_87',['BRACKET_OPEN',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6',1,'token']]]
 ];

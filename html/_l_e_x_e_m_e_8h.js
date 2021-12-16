@@ -31,5 +31,6 @@ var _l_e_x_e_m_e_8h =
       [ "_EOF", "_l_e_x_e_m_e_8h.html#a6881fced0c9273e26f7ff9717bd6639eaeb7076becd9b9973e6b08024597db564", null ]
     ] ],
     [ "get_lexeme", "_l_e_x_e_m_e_8h.html#abec86d45637b7fdeb6cff870d0d9dc73", null ],
+    [ "ishexnum", "_l_e_x_e_m_e_8h.html#a6cfa746d284d37170046a6c0bb503924", null ],
     [ "ESCAPE_CHARACTER", "_l_e_x_e_m_e_8h.html#a9bdcd5949f1aa78fc19e3b6ce3b60872", null ]
 ];
