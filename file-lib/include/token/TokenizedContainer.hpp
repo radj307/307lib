@@ -1,5 +1,5 @@
 #pragma once
-#include <TokenizerBase.hpp>
+#include <token/TokenizerBase.hpp>
 
 namespace token {
 	/**
@@ -12,7 +12,7 @@ namespace token {
 
 		TokenizedContainer(ContainerT tokens) : tokens{ std::move(tokens) } {}
 		template<class TokenizerType> requires std::derived_from<TokenizerType, TokenizerBase>
-		TokenizedContainer(TokenizerType& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
+		TokenizedContainer(TokenizerType&& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
 
 		operator ContainerT() const { return tokens; }
 
@@ -30,8 +30,8 @@ namespace token {
 		 * @tparam ...VT	- Variadic TokenType.
 		 * @param ...types	- One or more TokenTypes to remove.
 		 */
-		template<class... VT> requires std::conjunction_v<std::is_same<VT, TokenType>...> && (sizeof...(VT) > 0)
-			void strip_types(VT... types)
+		template<class... VT>
+		void strip_types(VT... types)
 		{
 			tokens.erase(std::remove_if(tokens.begin(), tokens.end(), [&types...](auto&& pr) {
 				return var::variadic_or(pr.second == types...);

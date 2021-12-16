@@ -30,13 +30,31 @@ namespace file::ini {
 		 * @param off	- Position in line to begin searching for delim.
 		 * @returns optional<pair<string, string>>
 		 */
-		inline std::optional<std::pair<std::string, std::string>> split_and_strip_line(std::string line, const char delim, const size_t off = 0u)
+		inline std::pair<std::string, std::string> split_and_strip_line(std::string line, const char delim, const size_t off = 0u)
 		{
-			line.erase(std::remove_if(line.begin(), line.end(), isquote), line.end()); // remove all quotation marks
 			const auto pos{ line.find(delim, off) };
 			if (str::pos_valid(pos))
 				return std::make_pair(str::strip_line(line.substr(0u, pos)), str::strip_line(line.substr(pos + 1u)));
-			return std::nullopt;
+			return{ line, {} };
+		}
+
+		/**
+		 * @brief					Strips quotation marks from a string.
+		 * @param str				Input String
+		 * @param strip_all_quotes	When true, all quotation marks appearing in the string are removed rather than only enclosing quotes.
+		 * @returns					std::string
+		 */
+		inline std::string strip_quotes(std::string str, const bool& strip_all_quotes = false)
+		{
+			if (!str.empty()) {
+				if (strip_all_quotes) {
+					str.erase(std::remove_if(str.begin(), str.end(), isquote), str.end());
+					return str;
+				}
+				else
+					return str::strip_line(str, "", "\"\'");
+			}
+			return str;
 		}
 
 		/**
@@ -64,12 +82,12 @@ namespace file::ini {
 			} };
 
 			// parse the stringstream
-			for (std::string line{}; std::getline(buffer, line, lineDelim); ) // iterate through file by line
-				if (const auto ln{ str::strip_line(line, "#;") }; !ln.empty() && !getAndSetHeader(ln)) // strip each line, check if empty, and set header if applicable
-					if (const auto pr{ _internal::split_and_strip_line(ln, '=') }; pr.has_value()) // split & strip line by '='
-						if (const auto [current, success] { cont[header].insert(pr.value()) }; !success) // insert parsed line into container
-							current->second = pr.value().second; // if key-value pair already existed, overwrite its value with the new one
-
+			for (std::string line{}; std::getline(buffer, line, lineDelim); ) { // iterate through file by line
+				if (const auto ln{ str::strip_line(line, "#;") }; !ln.empty() && !getAndSetHeader(ln)) {// strip each line, check if empty, and set header if applicable
+					if (const auto& [key, val] { _internal::split_and_strip_line(ln, '=') }; !val.empty())// split & strip line by '='
+						cont[header].insert_or_assign(key, strip_quotes(val));
+				}
+			}
 			return cont; // return container
 		}
 	}
@@ -203,7 +221,7 @@ namespace file::ini {
 		}
 		bool write(const std::string& filename, const bool append = false) const
 		{
-			return file::write(filename, str::streamify(*this), append);
+			return file::write(filename, str::streamify(*this).rdbuf(), append);
 		}
 	};
 }

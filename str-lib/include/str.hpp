@@ -12,7 +12,13 @@
 #include <iomanip>				// for std::setw & other std::iostream manipulation functions.
 
  /// Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.
+/**
+ * @def		DISABLE_STR_LITERALS
+ * @brief	Disables the "using namespace std::string_literals;" from being declared in the global namespace.
+ */
 #ifndef DISABLE_STR_LITERALS
+#define DISABLE_STR_LITERALS // for doxygen to see the definition
+#undef DISABLE_STR_LITERALS
 using namespace std::string_literals;
 #endif
 
@@ -154,7 +160,7 @@ namespace str {
 		return shortest;
 	}
 
-	template<bool index, var::valid_string T, template<class, class> class Cont>
+	template<bool index, var::valid_string T, template<class...> class Cont>
 	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator longest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto longest{ strings.end() };
@@ -163,7 +169,7 @@ namespace str {
 				longest = strpr;
 		return longest;
 	}
-	template<bool index, var::valid_string T, template<class, class> class Cont>
+	template<bool index, var::valid_string T, template<class...> class Cont>
 	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator shortest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto shortest{ strings.end() };
@@ -173,37 +179,41 @@ namespace str {
 		return shortest;
 	}
 
-	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	/**
+	 * @brief			Get the longest string in a container of string tuples.
+	 * @tparam index	Which index to call std::get on each time. Ex: 0 will compare the first string in each tuple.
+	 * @tparam ...vT	Variadic type contained by the tuple.
+	 * @tparam Cont		Container type containing std::tuples.
+	 * @param strings	Container
+	 * @returns			Cont::const_iterator
+	 */
+	template<size_t index, var::valid_string... vT, template<class...> class Cont>
 	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator longest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
 	{
+		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
 		auto longest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (longest == strings.end() || std::get<index>(*strtpl).size() > std::get<index>(*longest).size())
 				longest = strtpl;
 		return longest;
 	}
-	template<size_t index, var::valid_string... vT, template<class, class> class Cont>
+	/**
+	 * @brief			Get the shortest string in a container of string tuples.
+	 * @tparam index	Which index to call std::get on each time. Ex: 0 will compare the first string in each tuple.
+	 * @tparam ...vT	Variadic type contained by the tuple.
+	 * @tparam Cont		Container type containing std::tuples.
+	 * @param strings	Container
+	 * @returns			Cont::const_iterator
+	 */
+	template<size_t index, var::valid_string... vT, template<class...> class Cont>
 	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator shortest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
 	{
+		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
 		auto shortest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (shortest == strings.end() || std::get<index>(*strtpl).size() < std::get<index>(*shortest).size())
 				shortest = strtpl;
 		return shortest;
-	}
-
-	/**
-	 * @brief Convert a given integral to its hexadecimal equivalent as a std::string.
-	 * @tparam T			- Input Type
-	 * @tparam ...VT		- Variadic Templated Types
-	 * @param val			- Input Value
-	 * @param ...prefixes	- Optional prefixes in sequential order. These are inserted into the stringify function.
-	 * @returns const std::string
-	 */
-	template<typename T, class... VT> requires std::is_integral_v<T>
-	[[nodiscard]] constexpr static const std::string hex(T val, VT... prefixes)
-	{
-		return std::move(stringify(std::setfill('0'), prefixes..., std::hex, (val | static_cast<T>(0))));
 	}
 #pragma warning (default: 26800) // re-enable moved-from-object warning
 

@@ -22,9 +22,11 @@
  *\n	- Derived objects _should_ be members of the token namespace, or a sub-namespace.
  */
 #pragma once
+#include <token/LEXEME.h>	// LEXEME, TokenType, & Token
+#include <token/Token.hpp>	// TokenType, & Token
+
 #include <string>		// std::string
 #include <sstream>		// std::stringstream
-#include <Token.hpp>	// LEXEME, TokenType, & Token
 
 namespace token {
 	template<typename TokenT>
@@ -263,7 +265,7 @@ namespace token {
 	class TokenizerBase : public TokenizerBaseFunctions<Token> {
 	public:
 		explicit TokenizerBase() = default;
-		explicit TokenizerBase(std::stringstream&& buffer) : TokenizerBaseFunctions(std::move(buffer), ss.tellg()) {}
+		explicit TokenizerBase(std::stringstream&& buffer) : TokenizerBaseFunctions(std::move(buffer), 0ull) {}
 		virtual ~TokenizerBase() = default;
 	};
 

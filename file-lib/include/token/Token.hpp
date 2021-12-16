@@ -8,7 +8,7 @@
 #include <utility>
 #include <str.hpp>
 #include <var.hpp>
-#include <LEXEME.h>
+#include <token/LEXEME.h>
 
  /**
   * @namespace token

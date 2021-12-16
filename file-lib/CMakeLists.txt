@@ -24,8 +24,24 @@ set(SRC
 	"./src/env.cpp"
 )
 if(FILELIB_ENABLE_EXTENSIONS)
-	list(APPEND HEADERS "./include/token/" "./include/container/" "./include/parser/")
-	list(APPEND SRC "./src/")
+	list(APPEND HEADERS 
+		"./include/token/LEXEME.h"
+		"./include/token/Token.hpp"
+		"./include/token/TokenizedContainer.hpp"
+		"./include/token/TokenizerBase.hpp"
+		"./include/token/TokenizerINI.hpp"
+		"./include/token/TokenizerJSON.hpp"
+		"./include/token/TokenizerRE.hpp"
+
+		"./include/container/ContainerINI.hpp"
+		"./include/container/INIContainer.hpp"
+		"./include/container/INIContainerMonoType.hpp"
+		"./include/container/REContainer.hpp"
+
+		"./include/parser/INIParser.hpp"
+		"./include/parser/INIParserMonoType.hpp"
+		"./include/parser/REParser.hpp"
+	)
 endif()
 
 add_library(file-lib STATIC ${HEADERS} ${SRC})

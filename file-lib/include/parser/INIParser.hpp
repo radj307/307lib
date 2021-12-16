@@ -4,16 +4,19 @@
  * @brief Contains the INIParser struct for parsing INIContainer objects.
  */
 #pragma once
-#include <TokenizedContainer.hpp>
-#include <TokenizerINI.hpp>
+#include <token/TokenizedContainer.hpp>
+#include <token/TokenizerINI.hpp>
+#include <token/Token.hpp>
 #ifdef USE_DEPRECATED_INI
 #include <ContainerINI.hpp> // legacy
 #endif
-#include <INIContainer.hpp> // new
+#include <container/INIContainer.hpp> // new
 #include <fileio.hpp>
 #include <variant>
 
 namespace token::parse {
+	inline static bool INIParser_AllowBlankValue{ true };
+
 	/**
 	 * @struct INIParser
 	 * @brief Parse a tokenized INI file into an INIContainer::Map (implicit), or a legacy container type (explicit).
@@ -32,7 +35,7 @@ namespace token::parse {
 		 * @brief Stream Constructor
 		 * @param file	- rvalue reference to a std::stringstream containing the contents of an INI-formatted file.
 		 */
-		INIParser(const std::string& filename, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::move(file)).tokenize())), filename{ filename } {}
+		INIParser(const std::string& filename, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ filename } {}
 		/**
 		 * @brief Filename Constructor
 		 * @param filename	- The name/path to an INI file.
@@ -62,8 +65,12 @@ namespace token::parse {
 			const auto insert{ [this, &ln, &map, &header, &key, &value, &setter]() {
 				if (!key.has_value())
 					throwEx(ln, "Missing Key Declaration");
-				if (!value.has_value())
-					throwEx(ln, "Missing Value Declaration");
+				if (!value.has_value()) {
+					if (INIParser_AllowBlankValue)
+						value = std::string{};
+					else
+						throwEx(ln, "Missing Value Declaration");
+				}
 				map[header].insert_or_assign(key.value(), value.value());
 			} };
 			/// @brief Lambda that returns true if any temp variable is defined. This is used to detect whether a NEWLINE occurrance is valid or not
@@ -98,19 +105,23 @@ namespace token::parse {
 				case NUMBER: // set the temp value to a long double
 					if (!setter)
 						throwEx(ln, "Missing Setter");
-					value = str::stold(str);
+					if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count <= 1; }))
+						value = str::stold(str);
+					else value = str;
 					break;
 				case NUMBER_INT: // set the temp value to an integer
 					if (!setter)
 						throwEx(ln, "Missing Setter");
-					value = str::stoll(str);
+					if (std::all_of(str.begin(), str.end(), isdigit))
+						value = str::stoll(str);
+					else value = str;
 					break;
 				case BOOLEAN: { // set the temp value to a boolean
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					auto b{ str::string_to_bool(str) };
 					if (!b.has_value())
-						throwEx(ln, "Invalid Boolean");
+						value = str;
 					value = std::move(b);
 					break;
 				}
@@ -136,71 +147,5 @@ namespace token::parse {
 			throwEx(ln, "Missing Token: END / EOF");
 			return{}; // this will never be reached, but it prevents compiler warning
 		}
-
-	#ifdef USE_DEPRECATED_INI
-		/// @brief Legacy INI container type
-		explicit operator file::ini::ContainerINI::SectionMap()
-		{
-			using Optstr = std::optional<std::string>;
-
-			Optstr header, key, value;
-			bool setter{ false };
-			size_t ln{ 1ull };
-
-			file::ini::ContainerINI::SectionMap map{};
-
-			using enum TokenType;
-			strip_types(COMMENT);
-
-			const auto throwEx{ [&ln](const std::optional<std::string>& msg = std::nullopt) {
-				throw std::exception(str::stringify("Invalid INI: ", msg.value_or("Syntax Error"), " at Line: ", ln).c_str());
-			} };
-
-			const auto insert{ [&map, &header, &key, &value, &setter, &throwEx]() {
-				if (!header.has_value())
-					throwEx("Missing Header Declaration");
-				if (!key.has_value())
-					throwEx("Missing Key Declaration");
-				if (!value.has_value())
-					throwEx("Missing Value Declaration");
-				map[header.value()].insert_or_assign(key.value(), value.value());
-			} };
-
-			for (auto& [str, type] : tokens) {
-				switch (type) {
-				case HEADER:
-					header = str;
-					break;
-				case KEY:
-					key = str;
-					break;
-				case SETTER:
-					if (!setter)
-						setter = true;
-					else throwEx("Duplicate Setters");
-					break;
-				case STRING: [[fallthrough]];
-				case NUMBER: [[fallthrough]];
-				case BOOLEAN:
-					value = str;
-					break;
-				case NEWLINE:
-					if (setter)
-						insert();
-					key = std::nullopt;
-					value = std::nullopt;
-					setter = false;
-					++ln;
-					break;
-				case END:
-					if (setter)
-						insert();
-					return map;
-				}
-			}
-			throwEx("Missing Token: END / EOF");
-			return{}; // this will never be reached, but it prevents compiler warning
-		}
-	#endif
 	};
 }

@@ -65,9 +65,15 @@ namespace color {
 		SeqT as_sequence_with_format() const { return as_sequence(true); }
 
 		operator std::string() const { return as_sequence(true); }
+		operator bool() const { return !_seq.empty(); }
 
-		bool operator==(const setcolor_seq& o) const { return _seq == o._seq && _fmt == o._fmt; }
+		bool operator==(const setcolor_seq<SeqT>& o) const { return _seq == o._seq && _fmt == o._fmt; }
 		bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
+
+		setcolor_seq<SeqT> operator+(const setcolor_seq<SeqT>& o) const
+		{
+			return setcolor_seq<SeqT>{ _seq + o._seq, _fmt | o._fmt };
+		}
 
 		friend std::ostream& operator<<(std::ostream& os, const setcolor_seq<SeqT>& color)
 		{

@@ -9,6 +9,12 @@
 #endif
 
 namespace file {
+#ifdef read
+#undef read
+#endif
+#ifdef write
+#undef write
+#endif
 #pragma region READ
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
 	read(const std::string& path)
@@ -21,8 +27,8 @@ namespace file {
 		auto ifs{ read<std::ifstream>(path) };
 	#pragma warning(disable: 26800) // suppress "Use of a moved from object (Lifetime.1)" warning as no move operations are performed here
 		std::stringstream buff;
-		if (ifs.is_open())
-			ifs >> buff.rdbuf();
+		if (ifs.is_open() && ifs.good())
+			buff << ifs.rdbuf();
 		else
 			buff.setstate(std::ios::failbit);
 		return std::move(buff);
@@ -33,13 +39,13 @@ namespace file {
 	{
 		auto ifs{ read<std::ifstream>(std::forward<decltype(path)>(path)) };
 		std::string buffer;
-		if (ifs.is_open())
+		if (ifs.is_open() && ifs.good())
 			ifs >> buffer;
 		return std::move(buffer);
 	}
 	inline std::stringstream read(const std::string& path)
 	{
-		return std::move(read<std::stringstream>(path));
+		return read<std::stringstream>(path);
 	}
 #if CPP >= 17 // include std::filesystem::path support
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
@@ -82,7 +88,7 @@ namespace file {
 	 * @param data	Data to write to file. Must have a std::ostream& operator<<
 	 * @returns		bool
 	 */
-	template<typename T>
+	template<var::Streamable T>
 	inline bool write(std::ofstream& ofs, const T& data)
 	{
 		return ofs.is_open() && ofs << data;
@@ -109,10 +115,16 @@ namespace file {
 	 * @param append	- When true, appends the given data to the end of the file if it exists, rather than overwriting it.
 	 * @returns bool
 	 */
-	inline bool write(const std::string& path, auto&& data, const bool append = true)
+	template<var::Streamable T>
+	inline bool write(const std::string& path, T&& data, const bool append = true)
 	{
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
-		return file::write(ofs, std::forward<decltype(data)>(data));
+		return file::write(ofs, std::forward<T>(data));
+	}
+	inline bool write(const std::string& path, std::stringstream& ss, const bool append = true)
+	{
+		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, ss.rdbuf());
 	}
 	inline bool write(const std::string& path, const std::stringbuf* rdbuf, const bool append = true)
 	{
