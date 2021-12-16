@@ -39,6 +39,37 @@ namespace token {
 
 	inline constexpr const char ESCAPE_CHARACTER{ '\\' };
 
+	inline constexpr bool ishexnum(const char& ch)
+	{
+		switch (ch) {
+		case '0': [[fallthrough]];
+		case '1': [[fallthrough]];
+		case '2': [[fallthrough]];
+		case '3': [[fallthrough]];
+		case '4': [[fallthrough]];
+		case '5': [[fallthrough]];
+		case '6': [[fallthrough]];
+		case '7': [[fallthrough]];
+		case '8': [[fallthrough]];
+		case '9': [[fallthrough]];
+		case 'a': [[fallthrough]];
+		case 'b': [[fallthrough]];
+		case 'c': [[fallthrough]];
+		case 'd': [[fallthrough]];
+		case 'e': [[fallthrough]];
+		case 'f': [[fallthrough]];
+		case 'A': [[fallthrough]];
+		case 'B': [[fallthrough]];
+		case 'C': [[fallthrough]];
+		case 'D': [[fallthrough]];
+		case 'E': [[fallthrough]];
+		case 'F':
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	/**
 	 * @brief Resolve a single given character to a LEXEME, used during the scanning stage.
 	 * @tparam T	- Valid Character Type. (char, wchar_t, unsigned char)

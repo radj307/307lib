@@ -136,7 +136,7 @@ namespace token::parse {
 						for (auto& [keyname, _] : section)
 							if (const auto sz{ keyname.size() }; sz > longest)
 								longest = sz;
-						static_cast<std::streamsize>(longest);
+						return static_cast<std::streamsize>(longest);
 					}() };
 					for (auto& [key, val] : section)
 						os << key << str::VIndent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';

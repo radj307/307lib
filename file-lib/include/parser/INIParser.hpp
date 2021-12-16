@@ -11,6 +11,7 @@
 #include <ContainerINI.hpp> // legacy
 #endif
 #include <container/INIContainer.hpp> // new
+#include <make_exception.hpp>
 #include <fileio.hpp>
 #include <variant>
 
@@ -27,7 +28,7 @@ namespace token::parse {
 
 		void throwEx(const size_t line, const std::string& msg)
 		{
-			throw std::exception(str::stringify("Syntax Error: ", msg, " at line ", line, " in file: ", filename).c_str());
+			throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: ", filename);
 		}
 
 	public:
@@ -105,7 +106,7 @@ namespace token::parse {
 				case NUMBER: // set the temp value to a long double
 					if (!setter)
 						throwEx(ln, "Missing Setter");
-					if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count <= 1; }))
+					if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count == 1; }))
 						value = str::stold(str);
 					else value = str;
 					break;
@@ -114,6 +115,13 @@ namespace token::parse {
 						throwEx(ln, "Missing Setter");
 					if (std::all_of(str.begin(), str.end(), isdigit))
 						value = str::stoll(str);
+					else value = str;
+					break;
+				case NUMBER_HEX:
+					if (!setter)
+						throwEx(ln, "Missing Setter");
+					if (value.has_value() && std::holds_alternative<String>(value.value()))
+						value = (std::get<String>(value.value()) + ' ' + str);
 					else value = str;
 					break;
 				case BOOLEAN: { // set the temp value to a boolean
