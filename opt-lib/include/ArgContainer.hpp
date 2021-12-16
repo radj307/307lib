@@ -357,6 +357,14 @@ namespace opt {
 				return get_range(_args.begin() + from, (to.has_value() ? _args.begin() + to.value() : _args.end()), inclusive, pred);
 			throw std::exception(str::stringify("ArgContainer::get_range()\tInvalid indexes where from == ", from, " && to == ", to.value_or(_args.size()), ". (Argument list size is ", _args.size(), ')').c_str());
 		}
+
+		virtual const ArgContainer get_range_copy(const ArgContainerIteratorType& from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const
+		{
+			ArgContainerType cont;
+			for (auto& it : get_range(from, to, inclusive, pred))
+				cont.emplace_back(std::move(it));
+			return decltype(*this){ std::move(cont), _arg0 };
+		}
 	#pragma endregion GetRangeFunction
 	};
 }

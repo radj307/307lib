@@ -1,4 +1,5 @@
-# TermAPI/v4
+# TermAPI
+# (version selector)
 cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -9,39 +10,26 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
+project("TermAPI")
 
-option(TERMAPI_VERSION_3 "Use TermAPI version 3 instead of v4." OFF)
+# Enable deprecation warning if it wasn't already set
+set(CMAKE_WARN_DEPRECATED ON)
+
+# Set default version if it isn't already set
 if (TERMAPI_VERSION_3)
+	message(DEPRECATION "The set(TERMAPI_VERSION_3 ON) option has been deprecated. Use set(TERMAPI_VERSION <version>) instead!")
+	set(TERMAPI_VERSION 3)
+else()
+	set(TERMAPI_VERSION 4)
+endif()
+
+
+if (TERMAPI_VERSION EQUAL 4)			# v4
+	message(STATUS "Using TermAPI v4")
+	add_subdirectory("v4")
+elseif(TERMAPI_VERSION LESS_EQUAL 3)	# v3
 	message(STATUS "Using TermAPI v3")
 	add_subdirectory("v3")
 else()
-	message(STATUS "Using TermAPI v4")
-	
-	project("TermAPI")
-
-	# Add sequence library
-	add_subdirectory("ANSI")
-		
-	set(HEADERS
-		"./include/TermAPI.hpp"
-	)
-	set(SRC
-		"./src/TermAPI.cpp"
-	)
-
-	add_library(TermAPI STATIC ${HEADERS} ${SRC})
-	target_include_directories(TermAPI PUBLIC "./include" "./src")
-	target_link_directories(TermAPI PUBLIC "./src")
-
-	add_subdirectory("color")
-	add_subdirectory("term")
-
-	target_link_libraries(TermAPI PUBLIC ANSI color term)
-
-	include(CMakeDependentOption)
-	cmake_dependent_option(TERMAPI_ENABLE_EXTENSIONS "Enable the TermAPI extensions library" ON "ENABLE_FILELIB" OFF)
-	if(TERMAPI_ENABLE_EXTENSIONS)
-		add_subdirectory("extensions")
-		target_link_libraries(TermAPI PUBLIC file-lib extensions)
-	endif()
+	message(WARNING "TERMAPI_VERSION is invalid; Version ${TERMAPI_VERSION} doesn't exist.")
 endif()

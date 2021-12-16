@@ -16,6 +16,7 @@ set(HEADERS
 	"./include/sysarch.h"
 	"./include/var.hpp"
 	"./include/math.hpp"
+	"./include/iter.hpp"
 	"./include/make_exception.hpp"
 )
 
