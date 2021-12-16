@@ -93,24 +93,27 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 307Lib</h1>
 <p>This is my personal collection of libraries for C++. <br  />
 </p>
-<p>These were all converted to build with CMake using the "Visual Studio 17 2022" generator, and changing CMake options is not yet guaranteed to work without issue. _(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing else depends on it.)_ <br  />
+<p>These were all converted to build with CMake using the "Visual Studio 17 2022" generator, and changing CMake options is not yet guaranteed to work without issue. <br  />
+ _(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing else depends on it.)_ <br  />
  Most of the options are dependent options, but I can't guarantee that everything will work as expected when disabling libraries as I am still new to using CMake. <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Index</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Dependencies   </th><th class="markdownTableHeadNone">Purpose   </th><th class="markdownTableHeadNone">Minimum Version    </th></tr>
+<th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Version   </th><th class="markdownTableHeadNone">Dependencies   </th><th class="markdownTableHeadNone">Purpose   </th><th class="markdownTableHeadNone">Minimum Version    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">Functions used by all other libraries.   </td><td class="markdownTableBodyNone">C++17 / C++20    </td></tr>
+<td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">Functions used by all other libraries.   </td><td class="markdownTableBodyNone">C++17 / C++20    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">str-lib   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone">String-related functions.   </td><td class="markdownTableBodyNone">C++17 / C++20    </td></tr>
+<td class="markdownTableBodyNone">str-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone">String-related functions.   </td><td class="markdownTableBodyNone">C++17 / C++20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
+<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">file-lib   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">File I/O &amp; Utility functions.   </td><td class="markdownTableBodyNone">C++14 / C++17    </td></tr>
+<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">opt-lib   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">Commandline-argument objects &amp; functions, as well as environment variables   </td><td class="markdownTableBodyNone">C++20   </td></tr>
+<td class="markdownTableBodyNone">file-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">File I/O &amp; Utility functions.   </td><td class="markdownTableBodyNone">C++14 / C++17    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">opt-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">Commandline-argument objects &amp; functions, as well as environment variables   </td><td class="markdownTableBodyNone">C++20   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Shared Headers</h2>
@@ -122,6 +125,10 @@ Shared Headers</h2>
 <li><a class="el" href="var_8hpp.html" title="Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts.">var.hpp</a> <br  />
  Contains some generic functions &amp; concepts for working with variadic functions and tuples. <br  />
 </li>
+<li>iter.hpp <br  />
+ Contains some generic functions related to iterators.</li>
+<li><a class="el" href="math_8hpp.html">math.hpp</a> <br  />
+ Contains generic math &amp; algorithm functions.</li>
 <li><a class="el" href="make__exception_8hpp.html">make_exception.hpp</a> <br  />
  This is a wrapper based on Microsoft's non-standard implementation of std::exception to allow throwing generic exceptions with a message. <br  />
  It accepts any number of arguments so long as they can be inserted into a std::ostream, and returns an <em>except</em> struct, which is a child of std::exception. <br  />

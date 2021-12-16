@@ -94,39 +94,46 @@ $(document).ready(function(){initNavTree('mainpage_8md.html',''); initResizable(
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;# 307Lib</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;This is my personal collection of libraries for C++.  </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;These were all converted to build with CMake using the &quot;Visual Studio 17 2022&quot; generator, and changing CMake options is not yet guaranteed to work without issue. </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;_(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing else depends on it.)_  </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;These were all converted to build with CMake using the &quot;Visual Studio 17 2022&quot; generator, and changing CMake options is not yet guaranteed to work without issue.  </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;_(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing else depends on it.)_    </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;Most of the options are dependent options, but I can&#39;t guarantee that everything will work as expected when disabling libraries as I am still new to using CMake.  </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;## Index</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;| Library | Dependencies    | Purpose                                                                    | Minimum Version |</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;| ------- | --------------- | -------------------------------------------------------------------------- | --------------- |</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;| shared  |                 | Functions used by all other libraries.                                     | C++17 / C++20   |</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;| str-lib | shared          | String-related functions.                                                  | C++17 / C++20   |</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;| TermAPI | shared, str-lib | ANSI Escape Sequences, &amp; various utilities for controlling the terminal.   | C++20           |</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;| file-lib| shared, str-lib | File I/O &amp; Utility functions.                                              | C++14 / C++17   |</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;| opt-lib | shared, str-lib | Commandline-argument objects &amp; functions, as well as environment variables | C++20           |</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;| Library | Version | Dependencies    | Purpose                                                                    | Minimum Version |</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;| ------- | ------- | --------------- | -------------------------------------------------------------------------- | --------------- |</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;| shared  | &lt;all&gt; |                 | Functions used by all other libraries.                                     | C++17 / C++20   |</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;| str-lib | &lt;all&gt; | shared          | String-related functions.                                                  | C++17 / C++20   |</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;| TermAPI | 3       | shared, str-lib | ANSI Escape Sequences, &amp; various utilities for controlling the terminal.   | C++20           |</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;| TermAPI | 4       | shared          | ANSI Escape Sequences, &amp; various utilities for controlling the terminal.   | C++20           |</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;| file-lib| &lt;all&gt; | shared, str-lib | File I/O &amp; Utility functions.                                              | C++14 / C++17   |</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;| opt-lib | &lt;all&gt; | shared, str-lib | Commandline-argument objects &amp; functions, as well as environment variables | C++20           |</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;## Shared Headers</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;These are some of the shared lib&#39;s headers:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- sysarch.h  </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Used as a basic wrapper for certain preprocessor macros that can determine which C/C++ version the compiler is using, which compiler is being used, which operating system the compiler is running on, which architecture the compiler is set to, and more.  </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;- var.hpp  </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Contains some generic functions &amp; concepts for working with variadic functions and tuples.  </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;- make_exception.hpp  </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    This is a wrapper based on Microsoft&#39;s non-standard implementation of std::exception to allow throwing generic exceptions with a message.  </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    It accepts any number of arguments so long as they can be inserted into a std::ostream, and returns an _except_ struct, which is a child of std::exception.  </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    To catch exceptions thrown with this method, any `catch(const std::exception&amp; ex)` block will work.  </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;- Windows.hpp  </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Somewhat obviously, this is only relevant for Windows.  </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Experimental wrapper for the &lt;Windows.h&gt; header that includes it within a namespace to avoid polluting global.  </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Unfortunately, since most/all other libraries just include &lt;Windows.h&gt; in the global namespace this often will not work correctly.  </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    It also undefines many of the &lt;Windows.h&gt; macros.</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;## Shared Headers</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;These are some of the shared lib&#39;s headers:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;- sysarch.h  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Used as a basic wrapper for certain preprocessor macros that can determine which C/C++ version the compiler is using, which compiler is being used, which operating system the compiler is running on, which architecture the compiler is set to, and more.  </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;- var.hpp  </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Contains some generic functions &amp; concepts for working with variadic functions and tuples.  </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;- iter.hpp  </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Contains some generic functions related to iterators.</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;- math.hpp  </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Contains generic math &amp; algorithm functions.</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;- make_exception.hpp  </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    This is a wrapper based on Microsoft&#39;s non-standard implementation of std::exception to allow throwing generic exceptions with a message.  </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    It accepts any number of arguments so long as they can be inserted into a std::ostream, and returns an _except_ struct, which is a child of std::exception.  </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    To catch exceptions thrown with this method, any `catch(const std::exception&amp; ex)` block will work.  </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;- Windows.hpp  </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Somewhat obviously, this is only relevant for Windows.  </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Experimental wrapper for the &lt;Windows.h&gt; header that includes it within a namespace to avoid polluting global.  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Unfortunately, since most/all other libraries just include &lt;Windows.h&gt; in the global namespace this often will not work correctly.  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    It also undefines many of the &lt;Windows.h&gt; macros.</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
