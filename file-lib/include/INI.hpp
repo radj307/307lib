@@ -9,6 +9,9 @@
 
 #include <unordered_map>
 #include <variant>
+#if CPP >= 17
+#include <filesystem>
+#endif
 
 /**
  * @namespace file::ini
@@ -120,6 +123,12 @@ namespace file::ini {
 		 * @brief Constructor that accepts the name of a file, reads it, and initializes with the parsed values.
 		 */
 		explicit INI(const std::string& filename) : ContainerINI(std::move(_internal::parseINI(std::move(file::read(filename))))) {}
+	#if CPP >= 17
+		/**
+		 * @brief Constructor that accepts a filepath, reads it, and initializes with the parsed values.
+		 */
+		explicit INI(const std::filesystem::path& filename) : ContainerINI(std::move(_internal::parseINI(std::move(file::read(filename))))) {}
+	#endif
 		/**
 		 * @brief Constructor that accepts the contents of a file as a stringstream, and initializes with the parsed values.
 		 */

@@ -4,6 +4,10 @@
 #include <fstream>
 #include <sstream>
 
+#if CPP >= 17
+#include <filesystem>
+#endif
+
 namespace file {
 #pragma region READ
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
@@ -37,6 +41,39 @@ namespace file {
 	{
 		return std::move(read<std::stringstream>(path));
 	}
+#if CPP >= 17 // include std::filesystem::path support
+	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
+	read(const std::filesystem::path& path)
+	{
+		return std::move(std::ifstream(path));
+	}
+	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::stringstream>, std::stringstream>
+	read(const std::filesystem::path& path)
+	{
+		auto ifs{ read<std::ifstream>(path) };
+	#pragma warning(disable: 26800) // suppress "Use of a moved from object (Lifetime.1)" warning as no move operations are performed here
+		std::stringstream buff;
+		if (ifs.is_open())
+			ifs >> buff.rdbuf();
+		else
+			buff.setstate(std::ios::failbit);
+		return std::move(buff);
+	#pragma warning(default: 26800)
+	}
+	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::string>, std::string>
+	read(const std::filesystem::path& path)
+	{
+		auto ifs{ read<std::ifstream>(std::forward<decltype(path)>(path)) };
+		std::string buffer;
+		if (ifs.is_open())
+			ifs >> buffer;
+		return std::move(buffer);
+	}
+	inline std::stringstream read(const std::filesystem::path& path)
+	{
+		return std::move(read<std::stringstream>(path));
+	}
+#endif
 #pragma endregion READ
 #pragma region WRITE
 	/**
@@ -82,5 +119,12 @@ namespace file {
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
 		return write(ofs, rdbuf);
 	}
+#if CPP >= 17
+	inline bool write(const std::filesystem::path& path, auto&& data, const bool append = true)
+	{
+		std::ofstream ofs{ path.c_str(), append ? std::ios_base::app : std::ios_base::out };
+		return write(ofs, std::forward<decltype(data)>(data));
+	}
+#endif
 #pragma endregion WRITE
 }

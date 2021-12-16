@@ -162,6 +162,7 @@ namespace var {
 		|| std::same_as<T, std::u8string>
 		|| std::same_as<T, std::u16string>
 		|| std::same_as<T, std::u32string>;
+	template<class T> concept valid_string_or_convertible = valid_string<T> || std::convertible_to<T, std::string> || std::convertible_to<T, std::wstring> || std::convertible_to<T, std::u8string> || std::convertible_to<T, std::u16string> || std::convertible_to<T, std::u32string>;
 	/**
 	 * @concept		valid_string_view
 	 * @brief		Allows standard string_view types, including narrow/wide, UTF-8, UTF-16, & UTF-32 types.
