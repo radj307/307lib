@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: TermAPI</title>
+<title>307Lib: TermAPI v3</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,11 +86,14 @@ $(document).ready(function(){initNavTree('page1.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">TermAPI </div>  </div>
+<div class="title">TermAPI v3 </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>A C++20 Library designed for using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences inline with std iostreams, or independently.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
+EDIT | How to use TermAPI Version 3</h1>
+<p>Add the following line to your <code>CMakeLists.txt</code> file before <code>add_subdirectory("307lib")</code>: </p><div class="fragment"><div class="line">set(TERMAPI_VERSION 3)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
 Usage</h1>
 <p>Include the &lt;TermAPI.hpp&gt; header in the file you want to use it. <br  />
  All functions are contained within the <a class="el" href="namespacesys_1_1term.html" title="&lt;">sys::term</a> namespace(s).</p>
@@ -105,7 +108,7 @@ Usage</h1>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="anamespacesys_1_1term_html_ac00a411b0ea4bcc1d677c011c86f3bfe"><div class="ttname"><a href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a></div><div class="ttdeci">std::istream &amp; EnableANSI(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> <a href="v3_2include_2_term_a_p_i_8hpp_source.html#l00422">TermAPI.hpp:422</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
 Version 2.0.0 Sequences</h2>
 <p>As of TermAPI 2.0.0, the old functions have been completely replaced with a new Sequence object. <br  />
  By default, these functions are used instead of the version 1.0.0 functions. <br  />
@@ -124,18 +127,18 @@ Version 2.0.0 Sequences</h2>
 </div><!-- fragment --> Not all functions can be used inline, specifically functions that require multiple parameters for input or functions from <a class="el" href="_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position....">TermAPIQuery.hpp</a> that require reading responses from STDIN, such as getCursorPosition. <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Using Version 1.0.0 Functions</h2>
 <p>To use the functions from v1: </p><div class="fragment"><div class="line"><span class="preprocessor">#define TERMAPI_ENABLE_OLD_FUNCTIONS</span></div>
 <div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
 </div><!-- fragment --><p>These functions cannot be used inline for the most part, except for a few specific functions.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 A Note on Cursor Positioning</h2>
 <p>By default, the screen buffer origin point is (1,1); <em>not (0,0) as one might expect.</em> TermAPI provides a function that allows you to change the origin point from (1,1) to (0,0) by automatically translating coordinates in all functions that accept or return cursor coordinates. </p><div class="fragment"><div class="line"><span class="comment">// Set the cursor origin point to (0,0):</span></div>
 <div class="line">sys::term::SetOriginPos(0);</div>
 <div class="line"><span class="comment">// Set the cursor origin point to (1,1):</span></div>
 <div class="line">sys::term::SetOriginPos(1);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Color Library</h1>
 <p>TermAPI uses the xterm-256color palette by default. <br  />
 </p>
@@ -161,7 +164,7 @@ Color Library</h1>
 <div class="ttc" id="astructcolor_1_1setcolor_html"><div class="ttname"><a href="structcolor_1_1setcolor.html">color::setcolor</a></div><div class="ttdef"><b>Definition:</b> <a href="v3_2include_2setcolor_8hpp_source.html#l00032">setcolor.hpp:32</a></div></div>
 </div><!-- fragment --><p> This is especially useful as a member of another object, when you want it to be printed with the same color all the time. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 ColorPalette</h2>
 <p>When using the color library, you may come across a situation where you want to be able to quickly set the same color for similar characters, and be able to disable all color sequences from being printed out in certain operation modes. <br  />
  To accomplish this, you can use the ColorPalette object from the <a class="el" href="_color_palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">ColorPalette.hpp</a> header to quickly &amp; easily set consistent colors, as well as disable/enable all sequences without changing your code. All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.</p>
@@ -217,7 +220,7 @@ ColorPalette</h2>
 <div class="ttc" id="astructcolor_1_1_format_flag_html_abc2d3f01bb2740aa1a3f7906ba355ac0"><div class="ttname"><a href="structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0">color::FormatFlag::BOLD</a></div><div class="ttdeci">static const FormatFlag BOLD</div><div class="ttdoc">Bolt text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00038">FormatFlag.hpp:38</a></div></div>
 <div class="ttc" id="astructcolor_1_1_format_flag_html_aefe4a985b694a5122577988b16df5a5a"><div class="ttname"><a href="structcolor_1_1_format_flag.html#aefe4a985b694a5122577988b16df5a5a">color::FormatFlag::INVERT</a></div><div class="ttdeci">static const FormatFlag INVERT</div><div class="ttdoc">Invert foreground &amp; background colors of printed text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00040">FormatFlag.hpp:40</a></div></div>
 <div class="ttc" id="astructcolor_1_1_layer_html_a24bb448623eb5018aecfb1638153d772"><div class="ttname"><a href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a></div><div class="ttdeci">static const Layer FOREGROUND</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp_source.html#l00037">Layer.hpp:37</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 DEC Line Drawings</h2>
 <div class="fragment"><div class="line"><span class="comment">// Enable Line Drawing Mode:</span></div>
 <div class="line"><a class="code" href="namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5">sys::term::setCharacterSet</a>(<a class="code" href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67">sys::term::CharacterSet::DEC_LINE_DRAWING</a>)();</div>

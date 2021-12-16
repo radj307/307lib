@@ -29,19 +29,25 @@ var NAVTREE =
       [ "Index", "index.html#autotoc_md2", null ],
       [ "Shared Headers", "index.html#autotoc_md3", null ]
     ] ],
-    [ "TermAPI", "page1.html", [
-      [ "Usage", "page1.html#autotoc_md4", [
-        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md5", null ],
-        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md6", null ],
-        [ "A Note on Cursor Positioning", "page1.html#autotoc_md7", null ]
+    [ "TermAPI v3", "page1.html", [
+      [ "EDIT | How to use TermAPI Version 3", "page1.html#autotoc_md4", null ],
+      [ "Usage", "page1.html#autotoc_md5", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md6", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md7", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md8", null ]
       ] ],
-      [ "Color Library", "page1.html#autotoc_md8", [
-        [ "ColorPalette", "page1.html#autotoc_md9", null ],
-        [ "DEC Line Drawings", "page1.html#autotoc_md10", null ]
+      [ "Color Library", "page1.html#autotoc_md9", [
+        [ "ColorPalette", "page1.html#autotoc_md10", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md11", null ]
       ] ]
     ] ],
+    [ "TermAPI v4", "page2.html", [
+      [ "How to use Version 3", "page2.html#autotoc_md12", null ],
+      [ "Changes in Version 4", "page2.html#autotoc_md13", null ],
+      [ "color", "page2.html#autotoc_md14", null ]
+    ] ],
     [ "307lib Documentation", "md__r_e_a_d_m_e.html", [
-      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md12", null ]
+      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md16", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -86,9 +92,9 @@ var NAVTREEINDEX =
 "functions_rela.html",
 "namespacemembers_func_v.html",
 "namespaceterm.html#a27fec72318fb53cde2b49a52faa6d93f",
-"strmanip_8hpp.html#a93d96ab238bb0666c844c65b60303dbd",
-"structstr_1_1_my_type.html#a4c2424a271cc02579e062a309d806d85",
-"sysarch_8h.html#ac4cf4b2ab929bd23951a8676eeac086b"
+"strmanip_8hpp.html#a61c9108691e6d984499341518c993787",
+"structrng_1_1s_rand.html#afffb48b4af7f1277e217cdfbc331e332",
+"sysarch_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

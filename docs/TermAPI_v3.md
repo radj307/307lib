@@ -1,7 +1,12 @@
-@page page1 TermAPI
+@page page1 TermAPI v3
 
 A C++20 Library designed for using ANSI escape sequences inline with std iostreams, or independently.
 
+# EDIT | How to use TermAPI Version 3
+Add the following line to your `CMakeLists.txt` file before `add_subdirectory("307lib")`:
+```cmake
+set(TERMAPI_VERSION 3)
+```
 
 # Usage
 Include the \<TermAPI.hpp\> header in the file you want to use it.  
