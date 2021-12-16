@@ -127,23 +127,19 @@ namespace str {
 		vec.shrink_to_fit();
 		return std::move(vec);
 	}
-
-	template<var::valid_string T, var::valid_string... vT>
-	static T longest(const T& fst, const vT&... strings)
+	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... vT>
+	static T compare(const Pred& predicate, const T& fst, const vT&... strings)
 	{
-		const auto longer{ [](const T& str, const T& longest) {
-			return str.size() > longest.size() ? str : longest;
-		} };
-		return longer(fst, longer(strings, ""s));
+		std::unique_ptr<T> ptr{ nullptr };
+		for (auto& it : var::variadic_accumulate<T>(fst, strings...))
+			if (ptr.get() == nullptr || predicate(*ptr.get(), it))
+				ptr = std::make_unique<T>(it);
+		return { ptr != nullptr ? *ptr.get() : T{} };
 	}
-	template<var::valid_string T, var::valid_string... vT>
-	static T shortest(const T& fst, const vT&... strings)
-	{
-		const auto shorter{ [](const T& str, const T& longest) {
-			return str.size() < longest.size() ? str : longest;
-		} };
-		return shorter(fst, shorter(strings, ""s));
-	}
+	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... vT>
+	static T longest(const T& fst, const vT&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() < r.size(); }, fst, strings...); }
+	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... vT>
+	static T shortest(const T& fst, const vT&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() > r.size(); }, fst, strings...); }
 
 	template<var::valid_string T, template<class, class> class Cont>
 	static Cont<T, std::allocator<T>>::const_iterator longest(const Cont<T, std::allocator<T>>& strings)

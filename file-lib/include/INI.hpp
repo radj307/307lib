@@ -9,6 +9,9 @@
 
 #include <unordered_map>
 #include <variant>
+#if CPP >= 17
+#include <filesystem>
+#endif
 
 /**
  * @namespace file::ini
@@ -121,32 +124,38 @@ namespace file::ini {
 	};
 
 	/**
-	 * @struct INI
-	 * @brief Simple wrapper/child of ContainerINI that introduces file parsing capability. This is simply a wrapper object for the _internal::parseINI() function that allows multiple files to be parsed & merged into a single configuration structure.
+	 * @struct	INI
+	 * @brief	Simple wrapper/child of ContainerINI that introduces file parsing capability. This is simply a wrapper object for the _internal::parseINI() function that allows multiple files to be parsed & merged into a single configuration structure.
 	 */
 	struct INI final : ContainerINI {
 		/**
-		 * @brief Default Constructor.
+		 * @brief	Default Constructor.
 		 */
 		INI() = default;
 		/**
-		 * @brief Constructor that accepts an INI container with default values.
-		 * @param cont	- INI Container.
+		 * @brief		Constructor that accepts an INI container with default values.
+		 * @param cont	INI Container.
 		 */
 		explicit INI(ContainerINI::SectionMap cont) : ContainerINI(std::move(cont)) {}
 		/**
-		 * @brief Constructor that accepts the name of a file, reads it, and initializes with the parsed values.
+		 * @brief	Constructor that accepts the name of a file, reads it, and initializes with the parsed values.
 		 */
 		explicit INI(const std::string& filename) : ContainerINI(std::move(_internal::parseINI(std::move(file::read(filename))))) {}
+	#if CPP >= 17
 		/**
-		 * @brief Constructor that accepts the contents of a file as a stringstream, and initializes with the parsed values.
+		 * @brief	Constructor that accepts a filepath, reads it, and initializes with the parsed values.
+		 */
+		explicit INI(const std::filesystem::path& filename) : ContainerINI(std::move(_internal::parseINI(std::move(file::read(filename))))) {}
+	#endif
+		/**
+		 * @brief	Constructor that accepts the contents of a file as a stringstream, and initializes with the parsed values.
 		 */
 		explicit INI(std::stringstream fileContent) : ContainerINI(std::move(_internal::parseINI(std::move(fileContent)))) {}
 
 		/**
-		 * @brief Read the given file, parse it, and merge it into the local setting map.
-		 * @param filename				- Target INI config filename.
-		 * @param overwrite_existing	- When true, overwrites the value of any settings that already exist.
+		 * @brief						Read the given file, parse it, and merge it into the local setting map.
+		 * @param filename				Target INI config filename.
+		 * @param overwrite_existing	When true, overwrites the value of any settings that already exist.
 		 */
 		void read(std::string filename, const bool overwrite_existing = true)
 		{
@@ -154,8 +163,8 @@ namespace file::ini {
 		}
 
 		/**
-		 * @brief Merge a given INI container into the local settings map.
-		 * @param cont	- rvalue reference of an INI container.
+		 * @brief		Merge a given INI container into the local settings map.
+		 * @param cont	rvalue reference of an INI container.
 		 */
 		void merge(ContainerINI::SectionMap&& cont, const bool overwrite_existing = true)
 		{
@@ -163,10 +172,10 @@ namespace file::ini {
 		}
 
 		/**
-		 * @brief Parse, and merge the contents of an input stream into the local map.
-		 * @param is	- (implicit) Target Input Stream ref.
-		 * @param obj	- (implicit) INI instance ref.
-		 * @returns std::istream&
+		 * @brief		Parse, and merge the contents of an input stream into the local map.
+		 * @param is	(implicit) Target Input Stream ref.
+		 * @param obj	(implicit) INI instance ref.
+		 * @returns		std::istream&
 		 */
 		friend std::istream& operator>>(std::istream& is, INI& obj)
 		{
