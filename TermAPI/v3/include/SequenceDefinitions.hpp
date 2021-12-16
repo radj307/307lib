@@ -295,31 +295,6 @@ namespace sys::term {
 	{
 		return Sequence(make_sequence(ESC, CSI, subsequence, 'm'));
 	}
-	/**
-	 * @brief		Modify the color value of a specified color palette index.
-	 * @param index	Color Palette Index to modify.
-	 * @param red	Red Color Value. Must be a hexadecimal number from 0 to FF
-	 * @param green	Green Color Value. Must be a hexadecimal number from 0 to FF
-	 * @param blue	Blue Color Value. Must be a hexadecimal number from 0 to FF
-	 * @returns		Sequence
-	 */
-	[[nodiscard]] inline Sequence ModifyScreenColors(const unsigned& index, const std::string& red, const std::string& green, const std::string& blue) noexcept(false)
-	{
-		if (index > 255)
-			throw std::exception("ModifyScreenColors()\tReceived invalid index; Must be an integer between 0 and 255.");
-		if ((red.size() <= 2ull && std::all_of(red.begin(), red.end(), ishexnum)) && (green.size() <= 2ull && std::all_of(green.begin(), green.end(), ishexnum)) && (blue.size() <= 2ull && std::all_of(blue.begin(), blue.end(), ishexnum)))
-			return Sequence(make_sequence(ESC, OSC, "4;", index, ";rgb:", red, '/', green, '/', blue, STRING_TERMINATOR));
-		throw std::exception("ModifyScreenColors()\tReceived invalid color; RGB input must be a hexadecimal number within range: 0-FF");
-	}
-	/**
-	 * @brief		Modify the color value of a specified color palette index.
-	 * @param index	Color Palette Index to modify.
-	 * @param red	Red Color Value to convert to hexadecimal. Must be in the range 0-255.
-	 * @param green	Green Color Value to convert to hexadecimal. Must be in the range 0-255.
-	 * @param blue	Blue Color Value to convert to hexadecimal. Must be in the range 0-255.
-	 * @returns		Sequence
-	 */
-	[[nodiscard]] inline Sequence ModifyScreenColors(const unsigned& index, const unsigned& red, const unsigned& green, const unsigned& blue) noexcept(false) { return ModifyScreenColors(index, str::hex(red), str::hex(green), str::hex(blue)); }
 #pragma endregion TextFormatting
 
 #pragma region ModeChanges

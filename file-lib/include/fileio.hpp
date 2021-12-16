@@ -1,5 +1,7 @@
 #pragma once
 #include <sysarch.h>
+#include <var.hpp>
+
 #include <utility>
 #include <fstream>
 #include <sstream>
