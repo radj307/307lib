@@ -179,7 +179,9 @@ namespace var {
 	 * @brief		Allows standard stringbuf types, including narrow/wide types.
 	 * @tparam T	Input Type.
 	 */
-	template<class T> concept valid_stringbuf = std::same_as<T, std::stringbuf> || std::same_as<T, std::wstringbuf>;
+	template<class T> concept valid_stringbuf =
+		std::same_as<T, std::stringbuf>
+		|| std::same_as<T, std::wstringbuf>;
 	/**
 	 * @concept		valid_stringstream
 	 * @brief		Allows standard stringstream types, including i/o, narrow/wide types.
@@ -215,7 +217,7 @@ namespace var {
 #pragma region variadic
 	/**
 	 * @brief			Non-templated std::disjunction that accepts any number of boolean
-	 *\n 				conditions and returns true when any of the conditions are true.
+	 *\n 				conditions and returns true when at least one of them evaluates to true.
 	 * @tparam ...T		Variadic Template Parameter Pack.
 	 * @param booleans	Any number of boolean values to compare.
 	 * @returns			bool
@@ -225,7 +227,8 @@ namespace var {
 		return ((booleans) || ...);
 	}
 	/**
-	 * @brief			Boolean AND comparison that accepts any number of variadic boolean arguments.
+	 * @brief			Non-templated std::conjunction that accepts any number of boolean
+	 *\n				conditions, and returns true when all of them evaluate to true.
 	 * @tparam ...T		Variadic Template Parameter Pack.
 	 * @param booleans	Any number of boolean values to compare.
 	 * @returns			bool

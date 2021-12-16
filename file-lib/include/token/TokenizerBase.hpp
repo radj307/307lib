@@ -95,9 +95,9 @@ namespace token {
 			return c;
 		}
 
-		[[nodiscard]] auto peekNext()
+		[[nodiscard]] auto peek()
 		{
-
+			return static_cast<char>(ss.peek());
 		}
 
 		/**
@@ -128,13 +128,13 @@ namespace token {
 			return line;
 		}
 		/**
-		 * @brief Continue reading ahead until a character with an unspecified type is reached, and return it as a string.
+		 * @brief Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed.
 		 * @tparam ...VT	- Variadic Template. (LEXEME) (n > 0)
 		 * @param ...type	- At least one character type.
 		 * @returns std::string
 		 */
-		template<class... VT> requires std::conjunction_v<std::is_same<VT, LEXEME>...> && (sizeof...(VT) > 0)
-			[[nodiscard]] std::string getsimilar(const VT&... type)
+		template<std::same_as<LEXEME>... VT>
+		[[nodiscard]] std::string getsimilar(const VT&... type)
 		{
 			std::string str{};
 			for (char c{ getch(true) }; var::variadic_or((get_lexeme(c) == type)...) && hasMore(); c = getch(true))
@@ -142,15 +142,36 @@ namespace token {
 			ss.seekg(ss.tellg() - 1ll); // rollback by 1 to exclude delimiter
 			return str;
 		}
-		template<class... VT> requires std::conjunction_v<std::is_same<VT, LEXEME>...> && (sizeof...(VT) > 0)
-			[[nodiscard]] std::string getnotsimilar(const VT&... type)
+		template<std::same_as<LEXEME>... VT>
+		[[nodiscard]] std::string getnotsimilar(const VT&... type)
 		{
 			std::string str{};
 			for (char c{ getch(true) }; var::variadic_and(get_lexeme(c) != type...) && hasMore(); c = getch(true))
 				str += c;
+			ss.seekg(ss.tellg() - 1ll); // rollback by 1 to exclude delimiter
+			return str;
+		}
+
+		template<class Pred>
+		[[nodiscard]] std::string getsimilar(const Pred& predicate)
+		{
+			std::string str{};
+			for (char c{ getch(true) }; predicate(c) && hasMore(); c = getch(true))
+				str += c;
 			ss.seekg(ss.tellg() - 1ll);
 			return str;
 		}
+
+		template<std::same_as<char>... vT>
+		[[nodiscard]] std::string getsimilar_ch(const vT&... character)
+		{
+			std::string str{};
+			for (char c{ getch(true) }; var::variadic_or((c == character)...) && hasMore(); c = getch(true))
+				str += c;
+			ss.seekg(ss.tellg() - 1ll);
+			return str;
+		}
+
 		/**
 		 * @brief Clears/Resets the internal stream buffer's _error state flags_.
 		 */

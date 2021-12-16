@@ -27,6 +27,8 @@ namespace token {
 			switch (get_lexeme(ch)) {
 			case SEMICOLON: [[fallthrough]]; // Comment Start
 			case POUND:
+				if (const auto next{ peek() }; ishexnum(next)) // distinguish between hex numbers & comments
+					return Token{ getsimilar(ishexnum), TokenType::NUMBER_HEX };
 				return Token{ getline('\n', false), TokenType::COMMENT };
 			case EQUALS: // Setter Start
 				return Token{ ch, TokenType::SETTER };
@@ -37,7 +39,7 @@ namespace token {
 			case SQUAREBRACKET_OPEN:
 				return Token{ getline(']'), TokenType::HEADER };
 			case LETTER_LOWERCASE: [[fallthrough]]; // if text appears without an enclosing quote, parse it as a key
-			case LETTER_UPPERCASE: {
+			case LETTER_UPPERCASE: { // the case of unenclosed string variables is handled by the parser, not the tokenizer
 				const auto pos{ rollback() };
 				std::string str;
 				if (const auto lc{ str::tolower(ch) }; lc == 't' && getline_and_match(4u, "true", str))
@@ -53,7 +55,7 @@ namespace token {
 			case DIGIT: {
 				rollback();
 				const auto str{ getsimilar(SUBTRACT, DIGIT, PERIOD) };
-				return (str::pos_valid(str.find('.')) ? Token{ str, TokenType::NUMBER } : Token{ str, TokenType::NUMBER_INT });
+				return (str::pos_valid(str.find('.') || (str.back() == 'f' || str.back() == 'F')) ? Token{ str, TokenType::NUMBER } : Token{ str, TokenType::NUMBER_INT });
 			}
 			case NEWLINE:
 				return Token{ ch, TokenType::NEWLINE };

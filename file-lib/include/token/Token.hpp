@@ -32,6 +32,7 @@ namespace token {
 		BOOLEAN,		///< @brief Boolean type, should only ever match "true" or "false" (implementation-defined-case-sensitivity)
 		NUMBER,			///< @brief Number type.
 		NUMBER_INT,		///< @brief Integer type, used by some file formats (INI) to differentiate between floating-points and integrals.
+		NUMBER_HEX,		///< @brief Hexadecimal number type, used by some file formats.
 		HEADER,			///< @brief Header type, used by some file formats (INI "[]") similarly to a key, but with special syntax.
 		SETTER,			///< @brief Setter type, used by some file formats (INI '=', JSON ':') to indicate a variable being defined.
 		OPEN_SECTION,	///< @brief Section open type, used by JSON & similar formats. Must have a matching CLOSE_SECTION.
@@ -39,12 +40,6 @@ namespace token {
 		OPEN_ARRAY,		///< @brief Array open type, used by JSON & similar formats. Must have a matching CLOSE_ARRAY.
 		CLOSE_ARRAY,	///< @brief Array close type, used by JSON & similar formats. Must have a matching OPEN_ARRAY.
 	};
-
-	void temp()
-	{
-		sizeof(char);
-		sizeof(wchar_t);
-	}
 
 	/**
 	 * @brief Convert a TokenType to a user-friendly string.
@@ -75,6 +70,8 @@ namespace token {
 			return "Number";
 		case NUMBER_INT:
 			return "Integer";
+		case NUMBER_HEX:
+			return "Hexadecimal";
 		case HEADER:
 			return "Header";
 		case SETTER:
