@@ -110,10 +110,9 @@ namespace token {
 		{
 			std::string line{};
 			str::getline(ss, line, delim);
-			if (no_rollback)
-				return line;
-			ss.seekg(ss.tellg() - 1ll);
-			return line.substr(0u, line.size() - 1ull);
+			if (!no_rollback)
+				ss.seekg(ss.tellg() - 1ll);
+			return line;
 		}
 		/**
 		 * @brief Get a string containing a given number of characters from the current stream getter position.

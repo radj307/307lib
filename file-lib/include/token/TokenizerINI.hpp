@@ -25,11 +25,13 @@ namespace token {
 			const auto ch{ getch() };
 			using enum LEXEME;
 			switch (get_lexeme(ch)) {
-			case SEMICOLON: [[fallthrough]]; // Comment Start
 			case POUND:
+				// Check Hex Number
 				if (const auto next{ peek() }; ishexnum(next)) // distinguish between hex numbers & comments
 					return Token{ getsimilar(ishexnum), TokenType::NUMBER_HEX };
-				return Token{ getline('\n', false), TokenType::COMMENT };
+				[[fallthrough]];
+			case SEMICOLON:// Comment
+				return Token{ std::string(1ull, ch) += getline('\n', false), TokenType::COMMENT };
 			case EQUALS: // Setter Start
 				return Token{ ch, TokenType::SETTER };
 			case QUOTE_SINGLE: // String (single) start
@@ -49,7 +51,7 @@ namespace token {
 				else
 					ss.seekg(pos - 1ll);
 				// getsimilar
-				return allow_whitespace_in_keyname ? Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, DIGIT, WHITESPACE), TokenType::KEY } : Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, DIGIT), TokenType::KEY };
+				return allow_whitespace_in_keyname ? Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, UNDERSCORE, DIGIT, WHITESPACE), TokenType::KEY } : Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, UNDERSCORE, DIGIT), TokenType::KEY };
 			}
 			case SUBTRACT: [[fallthrough]]; // number start
 			case DIGIT: {

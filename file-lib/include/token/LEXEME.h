@@ -13,6 +13,7 @@ namespace token {
 		EQUALS,							///< @brief '='
 		ADDITION,						///< @brief '+'
 		SUBTRACT,						///< @brief '-'
+		UNDERSCORE,						///< @brief '_'
 		COLON,							///< @brief ':'
 		SEMICOLON,						///< @brief ';'
 		POUND,							///< @brief '#'
@@ -87,6 +88,7 @@ namespace token {
 		case '=':				return EQUALS;
 		case '+':				return ADDITION;
 		case '-':				return SUBTRACT;
+		case '_':				return UNDERSCORE;
 		case ':':				return COLON;
 		case ';':				return SEMICOLON;
 		case '#':				return POUND;

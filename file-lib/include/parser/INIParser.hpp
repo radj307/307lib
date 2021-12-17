@@ -4,16 +4,18 @@
  * @brief Contains the INIParser struct for parsing INIContainer objects.
  */
 #pragma once
+#include <sysarch.h>
 #include <token/TokenizedContainer.hpp>
 #include <token/TokenizerINI.hpp>
 #include <token/Token.hpp>
-#ifdef USE_DEPRECATED_INI
-#include <ContainerINI.hpp> // legacy
-#endif
 #include <container/INIContainer.hpp> // new
 #include <make_exception.hpp>
 #include <fileio.hpp>
+
 #include <variant>
+#if CPP >= 17
+#include <filesystem>
+#endif
 
 namespace token::parse {
 	inline static bool INIParser_AllowBlankValue{ true };
@@ -37,11 +39,15 @@ namespace token::parse {
 		 * @param file	- rvalue reference to a std::stringstream containing the contents of an INI-formatted file.
 		 */
 		INIParser(const std::string& filename, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ filename } {}
+		INIParser(const std::string& filename) : INIParser(filename, std::move(file::read(filename))) {}
+	#if CPP >= 17
+		INIParser(const std::filesystem::path& path, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ path.generic_string() } {}
 		/**
 		 * @brief Filename Constructor
 		 * @param filename	- The name/path to an INI file.
 		 */
-		INIParser(const std::string& filename) : INIParser(filename, std::move(file::read(filename))) {}
+		INIParser(const std::filesystem::path& path) : INIParser(path, std::move(file::read(path))) {}
+	#endif
 
 		/// @brief Revised INI container type
 		operator INIContainer::Map()
@@ -79,7 +85,7 @@ namespace token::parse {
 
 			size_t i{ 0ull };
 			for (auto& [str, type] : tokens) {
-				++i; // increment index by one
+				++i; // increment index by one (used to add _EOL)
 				switch (type) {
 				case HEADER: // set the header
 					header = str;
@@ -98,8 +104,11 @@ namespace token::parse {
 				case STRING: // set the temp value to a string
 					if (!setter)
 						throwEx(ln, "Missing Setter");
-					if (value.has_value() && std::holds_alternative<String>(value.value()))
-						value = (std::get<String>(value.value()) + ' ' + str); // allow fallthrough keys to be appended
+					if (value.has_value()) {
+						if (std::holds_alternative<String>(value.value()))
+							value = (std::get<String>(value.value()) + ' ' + str); // allow fallthrough keys to be appended
+						else throwEx(ln, "Duplicate Value");
+					}
 					else
 						value = str;
 					break;

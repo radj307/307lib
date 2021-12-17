@@ -11,9 +11,11 @@ endif()
 project("TermAPI Extensions")
 
 set(HEADERS
+	"./include/xlog.hpp"
 	"./include/color-config.hpp"
 )
 set(SRC
+	"./src/xlog.cpp"
 	"./src/color-config.cpp"
 )
 
@@ -21,4 +23,4 @@ add_library(extensions OBJECT ${HEADERS} ${SRC})
 target_include_directories(extensions PUBLIC "./include" "./src")
 target_link_directories(extensions PUBLIC "./src")
 
-target_link_libraries(extensions PUBLIC ANSI color file-lib)
+target_link_libraries(extensions PUBLIC ANSI color term str-lib file-lib)

@@ -1,6 +1,7 @@
 #pragma once
 #include <Sequence.hpp>
-#include <palette.hpp>
+#include <color-values.h>
+#include <setcolor.hpp>
 
 #include <iomanip>
 

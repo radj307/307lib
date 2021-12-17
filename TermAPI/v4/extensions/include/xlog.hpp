@@ -79,6 +79,10 @@ namespace xlog {
 			constexpr LogLevel(const unsigned char& level) : _level{ level } {}
 			constexpr operator const unsigned char() const { return _level; }
 			constexpr bool contains(const unsigned char& l) const { return (_level & l) != 0; }
+			std::string as_string_id() const
+			{
+				return std::to_string(static_cast<short>(_level));
+			}
 		};
 		/// @brief	Base: Don't show any messages.
 		static const LogLevel NONE;
@@ -125,10 +129,10 @@ namespace xlog {
 		level::CRITICAL{ 1 },
 		level::ERROR{ 2 },
 		level::WARNING{ 4 },
-		level::LOG{ 8 },
-		level::INFO{ 16 },
-		level::DEBUG{ 32 },
-		level::MESSAGE{ 64 },
+		level::MESSAGE{ 8 },
+		level::LOG{ 16 },
+		level::INFO{ 32 },
+		level::DEBUG{ 64 },
 		level::OnlyErrors{ CRITICAL | ERROR },
 		level::OnlyErrorsAndWarnings{ CRITICAL | ERROR | WARNING },
 		level::OnlyErrorsDebug{ DEBUG | CRITICAL | ERROR },
@@ -140,6 +144,72 @@ namespace xlog {
 		level::NoErrorsOrWarnings{ LOG | INFO | MESSAGE },
 		level::NoErrorsDebug{ DEBUG | NoErrors },
 		level::NoErrorsOrWarningsDebug{ DEBUG | NoErrorsOrWarnings };
+
+	/**
+	 * @brief		Convert a Message instance to its equivalent xlog level. This is hardcoded.
+	 * @param msg	Input Message Type.
+	 * @returns		level::LogLevel
+	 */
+	inline level::LogLevel message_to_level(const term::Message& msg)
+	{
+		const auto str{ msg.as_string_no_color() };
+		const auto contains{ [&str](const auto& substr) { return str.find(substr) != std::string::npos; } };
+		if (contains("INFO"))
+			return level::INFO;
+		else if (contains("LOG"))
+			return level::LOG;
+		else if (contains("DEBUG"))
+			return level::DEBUG;
+		else if (contains("MSG"))
+			return level::MESSAGE;
+		else if (contains("WARN"))
+			return level::WARNING;
+		else if (contains("ERROR"))
+			return level::ERROR;
+		else if (contains("CRIT"))
+			return level::CRITICAL;
+		return level::NONE;
+	}
+
+	inline level::LogLevel string_to_level(const std::string& str)
+	{
+		if (std::all_of(str.begin(), str.end(), isdigit))
+			return { str::stouc(str) };
+		else {
+			const auto lc{ str::tolower(str) };
+			const auto contains{ [&lc](const auto& substr) { return lc.find(substr) != std::string::npos; } };
+			if (contains("critical"))
+				return level::CRITICAL;
+			else if (contains("error"))
+				return level::ERROR;
+			else if (contains("warn"))
+				return level::WARNING;
+			else if (contains("log"))
+				return level::LOG;
+			else if (contains("info"))
+				return level::INFO;
+			else if (contains("debug"))
+				return level::DEBUG;
+			else if (contains("message") || contains("msg"))
+				return level::MESSAGE;
+			return level::NONE;
+		}
+	}
+
+	/**
+	 * @brief		Uses the bitwise OR operation to merge the given level with all levels below it.
+	 * @param lvl	Input Log Level. Must be equal to 1, or a multiple of 2 to be valid.
+	 * @returns		level::LogLevel
+	 */
+	inline level::LogLevel include_all_below(level::LogLevel lvl)
+	{
+		if (lvl != 1 && lvl % 2 != 0)
+			return lvl;
+		unsigned char out_lvl{ lvl };
+		for (unsigned char i{ out_lvl }; i > 0; i /= 2)
+			out_lvl |= i;
+		return{ out_lvl };
+	}
 
 	/**
 	 * @struct				OutputTarget
@@ -332,6 +402,8 @@ namespace xlog {
 		{
 			if constexpr (std::same_as<T, level::LogLevel>)
 				oxl._last = std::make_unique<level::LogLevel>(m);
+			else if constexpr (std::same_as<T, term::Message>)
+				oxl._last = std::make_unique<level::LogLevel>(message_to_level(m));
 			else if constexpr (std::same_as<T, msg_break_t>) {
 				if (!oxl._add_prefix || oxl._last.get() == nullptr)
 					oxl.log(level::NONE, oxl._buffer.str());

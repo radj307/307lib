@@ -42,7 +42,7 @@ namespace token::parse {
 	 * @returns std::string
 	 * @throws bad_variant_access when the given VariableT instance is null/std::monostate.
 	 */
-	std::string to_string(const VariableT& var, const bool use_quotes_for_string = true)
+	std::string to_string(const VariableT& var, const bool use_quotes_for_string = false)
 	{
 		if (std::holds_alternative<String>(var)) { // String
 			const auto str{ std::get<String>(var) };
@@ -283,12 +283,6 @@ namespace token::parse {
 		{
 			return var::variadic_and((check(header.value_or(""), keys))...);
 		}
-
-		template<var::same_or_convertible<String> T>
-		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const T& value, const bool& case_sensitive = true) const
-		{
-			return check(header, key) && !case_sensitive ? str::tolower(to_string(_cont.at(header).at(key)) == str::tolower(value)) : to_string(_cont.at(header).at(key)) == value;
-		}
 		/**
 		 * @brief Check the value of a key located in a given section.
 		 * @param header	- The section name where the target key is located.
@@ -296,11 +290,12 @@ namespace token::parse {
 		 * @param value		- The value to compare against the key value.
 		 * @returns bool
 		 */
-		template<ValidValueT T> requires std::negation_v<std::is_same<T, String>>
-		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const T& value) const
+		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const std::string& value, const bool& case_sensitive = true) const
 		{
-			return check(header, key) && _cont.at(header).at(key) == VariableT{ value };
+			const auto comp{ [&case_sensitive](const auto& l, const auto& r) {return l == r || !case_sensitive && str::tolower(l) == str::tolower(r); } };
+			return check(header, key) && comp(to_string(_cont.at(header).at(key)), value);
 		}
+
 		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const VariableT& value) const
 		{
 			return check(header, key) && _cont.at(header).at(key) == value;

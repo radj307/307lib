@@ -50,19 +50,19 @@ if (ENABLE_STRLIB)
 	# Requires shared
 endif()
 
+# Add file library
+cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
+if (ENABLE_FILELIB)
+	add_subdirectory("file-lib")
+	# Requires shared & str-lib
+endif()
+
 # Add TermAPI
 option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
 if(ENABLE_TERMAPI)
 	add_subdirectory("TermAPI")
 	# (v3) Requires shared & str-lib
 	# (v4) Requires shared
-endif()
-
-# Add file library
-cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
-if (ENABLE_FILELIB)
-	add_subdirectory("file-lib")
-	# Requires shared & str-lib
 endif()
 
 # Add opt library

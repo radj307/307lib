@@ -18,12 +18,6 @@ set(SRC
 	"./src/term.cpp"
 )
 option(TERMAPI_ENABLE_MESSAGE "Enable the Message.hpp header." ON)
-include(CMakeDependentOption)
-cmake_dependent_option(TERMAPI_ENABLE_XLOG "Enable the xlog.hpp header." ON "ENABLE_STRLIB" OFF)
-
-if (TERMAPI_ENABLE_XLOG)
-	list(APPEND HEADERS "./include/xlog.hpp")
-endif()
 
 if (TERMAPI_ENABLE_MESSAGE)
 	list(APPEND HEADERS "./include/Message.hpp")
