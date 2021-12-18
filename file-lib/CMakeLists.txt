@@ -48,7 +48,13 @@ add_library(307lib::file-lib ALIAS file-lib)
 
 target_include_directories(file-lib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/token>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/container>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/parser>"
 	"$<INSTALL_INTERFACE:include>"
+	"$<INSTALL_INTERFACE:token>"
+	"$<INSTALL_INTERFACE:container>"
+	"$<INSTALL_INTERFACE:parser>"
 )
 target_link_directories(file-lib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
