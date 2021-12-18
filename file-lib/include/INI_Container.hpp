@@ -1,21 +1,22 @@
 /**
- * @file INIContainerMonoType.hpp
+ * @file INIContainer.hpp
  * @author radj307
- * @brief Contains the INIContainerMonoType object and its single templated type.
+ * @brief Contains the INIContainer object and its variant types.
  */
 #pragma once
-#include <TokenizerINI.hpp>
+#include <INI_Tokenizer.hpp>
 #include <variant>
 #include <concepts>
 
-#define INI_CONT_MONO
+#define INI_CONT
 
 namespace token::parse {
-#ifndef INI_CONT
+#ifndef INI_CONT_MONO
 	using String = std::string;	///< @brief Represents an ini variable of type TokenType::STRING
 	using Float = long double;	///< @brief Represents an ini variable of type TokenType::NUMBER
 	using Integer = long long;	///< @brief Represents an ini variable of type TokenType::NUMBER_INT
 	using Boolean = bool;		///< @brief Represents an ini variable of type TokenType::BOOLEAN
+	using VariableT = std::variant<std::monostate, String, Float, Integer, Boolean>;
 
 	/**
 	 * @brief Concept that tests whether a given template type is a valid String, Float, Integer, or Boolean.
@@ -35,35 +36,39 @@ namespace token::parse {
 #endif
 
 	/**
-	 * @brief Convert a T to a std::string
+	 * @brief Convert a VariableT to a std::string
 	 * @param var					- Input variable
 	 * @param use_quotes_for_string	- When true, variables with String type are returned with enclosing double quotation marks for file/human-readable output.
 	 * @returns std::string
-	 * @throws bad_variant_access when the given T instance is null/std::monostate.
+	 * @throws bad_variant_access when the given VariableT instance is null/std::monostate.
 	 */
-	template<ValidValueT T>
-	std::string to_string(const T& var, const bool use_quotes_for_string = true)
+	std::string to_string(const VariableT& var, const bool use_quotes_for_string = false)
 	{
-		if constexpr (std::same_as<T, String>) // String
-			return (use_quotes_for_string ? "\"" + var + "\"" : var);
-		else if constexpr (std::same_as<T, Boolean>) // Boolean
-			return str::bool_to_string(var);
-		return std::to_string(var); // other
+		if (std::holds_alternative<String>(var)) { // String
+			const auto str{ std::get<String>(var) };
+			return (use_quotes_for_string ? "\"" + str + "\"" : str);
+		}
+		else if (std::holds_alternative<Float>(var)) // Float
+			return std::to_string(std::get<Float>(var));
+		else if (std::holds_alternative<Integer>(var)) // Integer
+			return std::to_string(std::get<Integer>(var));
+		else if (std::holds_alternative<Boolean>(var)) // Boolean
+			return str::bool_to_string(std::get<Boolean>(var));
+		throw std::bad_variant_access();
 	}
 
 	/**
 	 * @class INIContainer
 	 * @brief Storage container for ini variables, stored in unordered_maps that reflect file structure.
 	 */
-	template<ValidValueT T>
-	class INIContainerMonoType {
+	class INIContainer {
 	public:
 		/// @brief Contains the keys and associated values located in a header, where pairs = { key, value }.
-		using SectionContent = std::unordered_map<std::string, T>;
+		using SectionContent = std::unordered_map<std::string, VariableT>;
 		/// @brief Contains all headers and associated SectionContent containers, where pairs = { header, SectionContent }
 		using Map = std::unordered_map<std::string, SectionContent>;
 		/// @brief Alternative input type for some functions that allows operator-type-deduction, where pair = { key, value }
-		using KeyPair = std::pair<std::string, T>;
+		using KeyPair = std::pair<std::string, VariableT>;
 		/// @brief Alternative input type for some functions that allows operator-type-deduction, where pair = { header, key }
 		using HeaderKeyPair = std::pair<std::string, std::string>;
 
@@ -73,12 +78,12 @@ namespace token::parse {
 
 	public:
 		/// @brief Default Constructor
-		INIContainerMonoType(const AlignType& align_output = AlignType::SECTION) : _align_output{ align_output } {}
+		INIContainer(const AlignType& align_output = AlignType::SECTION) : _align_output{ align_output } {}
 		/**
 		 * @brief Move-Constructor
 		 * @param map	- rvalue reference of a pre-constructed Map instance.
 		 */
-		INIContainerMonoType(Map&& map, const AlignType& align_output = AlignType::SECTION) : _cont{ std::move(map) }, _align_output{ align_output } {}
+		INIContainer(Map&& map, const AlignType& align_output = AlignType::SECTION) : _cont{ std::move(map) }, _align_output{ align_output } {}
 
 		/// @brief Returns local container.
 		explicit operator Map() const { return _cont; }
@@ -98,7 +103,7 @@ namespace token::parse {
 		[[nodiscard]] auto at(const HeaderKeyPair& hkpr) const { return at(hkpr.first, hkpr.second); }
 
 		/// @brief Equality-comparison operator, checks if the local container matches the container of another INIContainer instance.
-		bool operator==(const INIContainerMonoType& o) const { return _cont == o._cont; }
+		bool operator==(const INIContainer& o) const { return _cont == o._cont; }
 		/// @brief Inverse Equality-comparison operator.
 		bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
@@ -117,38 +122,37 @@ namespace token::parse {
 		 * @param obj	- (implicit) Target INIContainer instance.
 		 * @returns std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const INIContainerMonoType& obj)
+		friend std::ostream& operator<<(std::ostream& os, const INIContainer& obj)
 		{
-			using enum AlignType;
 			std::streamsize align_width{ 0ll };
 			switch (obj._align_output) {
-			case SECTION:
+			case AlignType::SECTION:
 				for (const auto& [header, section] : obj._cont) {
 					if (!header.empty())
 						os << '[' << header << ']' << '\n';
 					const auto align_width{ [&section]() -> std::streamsize {
-						std::streamsize longest{ 0ll };
+						size_t longest{ 0ll };
 						for (auto& [keyname, _] : section)
 							if (const auto sz{ keyname.size() }; sz > longest)
 								longest = sz;
-						return longest;
+						return static_cast<std::streamsize>(longest);
 					}() };
 					for (auto& [key, val] : section)
 						os << key << str::VIndent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';
 					os << '\n';
 				}
 				break;
-			case ALL:
+			case AlignType::ALL:
 				align_width = [&obj]() -> std::streamsize {
-					std::streamsize longest{ 0ll };
+					size_t longest{ 0ll };
 					for (auto& [_, section] : obj._cont)
 						for (auto& [keyname, __] : section)
 							if (const auto sz{ keyname.size() }; sz > longest)
 								longest = sz;
-					return longest;
+					return static_cast<std::streamsize>(longest);
 				}();
 				[[fallthrough]];
-			case NONE:
+			case AlignType::NONE:
 				for (auto& [header, section] : obj._cont) {
 					os << '[' << header << ']' << '\n';
 					for (auto& [key, value] : section)
@@ -167,11 +171,13 @@ namespace token::parse {
 			return _cont[header].insert(std::move(kvpr));
 		}
 		/// @brief Insert a new Value into the map, at the specified key in the specified header.
+		template<ValidValueT T>
 		auto insert(const std::string& header, std::string key, T value)
 		{
-			return insert(header, std::move(std::make_pair(std::move(key), std::move(T{ std::move(value) }))));
+			return insert(header, std::move(std::make_pair(std::move(key), std::move(VariableT{ std::move(value) }))));
 		}
 		/// @brief Insert a new value at the specified Header-Key pair.
+		template<ValidValueT T>
 		auto insert(const HeaderKeyPair& hkpr, T value)
 		{
 			return insert(hkpr.first, hkpr.second, std::move(value));
@@ -182,11 +188,13 @@ namespace token::parse {
 			return _cont[header].insert_or_assign(std::move(kvpr.first), std::move(kvpr.second));
 		}
 		/// @brief Insert or assign an existing value at the specified key in the specified header.
+		template<ValidValueT T>
 		auto insert_or_assign(const std::string& header, std::string key, T value)
 		{
-			return _cont[header].insert_or_assign(std::move(key), std::move(T{ std::move(value) }));
+			return _cont[header].insert_or_assign(std::move(key), std::move(VariableT{ std::move(value) }));
 		}
 		/// @brief Insert or assign an existing value at the specified Header-Key pair.
+		template<ValidValueT T>
 		auto insert_or_assign(const HeaderKeyPair& hkpr, T value)
 		{
 			return insert_or_assign(hkpr.first, hkpr.second, std::move(value));
@@ -257,8 +265,8 @@ namespace token::parse {
 		 * @param ...keys	- More than 1 key names to check.
 		 * @returns bool
 		 */
-		template<var::all_same<std::string>... VT>
-		[[nodiscard]] bool check_any(const std::optional<std::string>& header, const VT&... keys) const
+		template<class... VT> requires std::conjunction_v<std::is_same<VT, std::string>...> && (sizeof...(VT) > 1)
+			[[nodiscard]] bool check_any(const std::optional<std::string>& header, const VT&... keys) const
 		{
 			return var::variadic_or((check(header.value_or(""), keys))...);
 		}
@@ -269,8 +277,8 @@ namespace token::parse {
 		 * @param ...keys	- More than 1 key names to check.
 		 * @returns bool
 		 */
-		template<var::all_same<std::string>... VT>
-		[[nodiscard]] bool check_all(const std::optional<std::string>& header, const VT&... keys) const
+		template<class... VT> requires std::conjunction_v<std::is_same<VT, std::string>...> && (sizeof...(VT) > 1)
+			[[nodiscard]] bool check_all(const std::optional<std::string>& header, const VT&... keys) const
 		{
 			return var::variadic_and((check(header.value_or(""), keys))...);
 		}
@@ -281,7 +289,13 @@ namespace token::parse {
 		 * @param value		- The value to compare against the key value.
 		 * @returns bool
 		 */
-		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const T& value) const
+		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const std::string& value, const bool& case_sensitive = true) const
+		{
+			const auto comp{ [&case_sensitive](const auto& l, const auto& r) {return l == r || !case_sensitive && str::tolower(l) == str::tolower(r); } };
+			return check(header, key) && comp(to_string(_cont.at(header).at(key)), value);
+		}
+
+		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const VariableT& value) const
 		{
 			return check(header, key) && _cont.at(header).at(key) == value;
 		}
@@ -291,7 +305,7 @@ namespace token::parse {
 		 * @param value	- The value to compare against the key value.
 		 * @returns bool
 		 */
-		[[nodiscard]] bool checkv(const std::string& key, const T& value) const
+		[[nodiscard]] bool checkv(const std::string& key, const VariableT& value) const
 		{
 			return check("", key) && _cont.at("").at(key) == value;
 		}
@@ -300,7 +314,7 @@ namespace token::parse {
 		/// @brief Extends checkv function to allow Key-Value pairs as input.
 		[[nodiscard]] bool checkv(const KeyPair& kvpr) const { return checkv(kvpr.first, kvpr.second); }
 		/// @brief Extends checkv function to allow Header-Key pairs as input.
-		[[nodiscard]] bool checkv(const HeaderKeyPair& hkpr, const T& value) const { return checkv(hkpr.first, hkpr.second, value); }
+		[[nodiscard]] bool checkv(const HeaderKeyPair& hkpr, const VariableT& value) const { return checkv(hkpr.first, hkpr.second, value); }
 	#pragma endregion Functions_Check
 	#pragma region Functions_Getters
 		/**
@@ -309,11 +323,11 @@ namespace token::parse {
 		 * @param key		- The name of the target key.
 		 * @returns std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<T> getv(const std::string& header, const std::string& key) const
+		[[nodiscard]] std::optional<VariableT> getv(const std::string& header, const std::string& key) const
 		{
 			return check(header, key)
 				? _cont.at(header).at(key)
-				: static_cast<std::optional<T>>(std::nullopt);
+				: static_cast<std::optional<VariableT>>(std::nullopt);
 		}
 		/**
 		 * @brief Get the value of a specified key.
@@ -321,11 +335,11 @@ namespace token::parse {
 		 * @param key		- The name of the target key.
 		 * @returns std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<T> getv(const std::string& key) const
+		[[nodiscard]] std::optional<VariableT> getv(const std::string& key) const
 		{
 			return check("", key)
 				? _cont.at("").at(key)
-				: static_cast<std::optional<T>>(std::nullopt);
+				: static_cast<std::optional<VariableT>>(std::nullopt);
 		}
 
 		/**
@@ -333,10 +347,49 @@ namespace token::parse {
 		 * @param header_key_pair	- First element is the target header name, second element is the target key name.
 		 * @returns std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<T> getv(const std::pair<std::string, std::string>& header_key_pair) const
+		[[nodiscard]] std::optional<VariableT> getv(const std::pair<std::string, std::string>& header_key_pair) const
 		{
 			return getv(header_key_pair.first, header_key_pair.second);
 		}
+		/**
+		 * @brief Retrieve & cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead.
+		 * @tparam RT		- Return Type, must be compliant with ValidValueT test.
+		 * @param header	- The name of the header where the target key is located.
+		 * @param key		- The name of the key to retrieve the value of.
+		 * @returns std::optional<RT>
+		 */
+		template<ValidValueT RT>
+		[[nodiscard]] std::optional<RT> getv(const std::string& header, const std::string& key) const
+		{
+			if (const auto target{ getv(header, key) }; target.has_value())
+				if (auto v = std::get_if<RT>(&target.value()))
+					return *v;
+			return std::nullopt;
+		}
+		/**
+		 * @brief Retrieve & cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead.
+		 * @tparam RT		- Return Type, must be compliant with ValidValueT test.
+		 * @param header	- The name of the header where the target key is located.
+		 * @param key		- The name of the key to retrieve the value of.
+		 * @returns std::optional<RT>
+		 */
+		template<ValidValueT RT>
+		[[nodiscard]] std::optional<RT> getv(const std::string& key) const
+		{
+			return getv<RT>("", key);
+		}
+		/**
+		 * @brief Retrieve & cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead.
+		 * @tparam RT	- Return Type, must be compliant with ValidValueT test.
+		 * @param hkpr	- Header-Key pair specifying the target value.
+		 * @returns std::optional<RT>
+		 */
+		template<ValidValueT RT>
+		[[nodiscard]] std::optional<RT> getv(const HeaderKeyPair& hkpr) const
+		{
+			return getv<RT>(hkpr.first, hkpr.second);
+		}
+
 
 		/**
 		 * @brief Retrieve a copy of a specified section.
@@ -349,8 +402,27 @@ namespace token::parse {
 				return _cont.at(header.value_or(""));
 			return{};
 		}
-
 	#pragma endregion Functions_Getters
+	#pragma region Functions_StringVariants
+		[[nodiscard]] std::optional<std::string> getvs(auto&& p1, auto&& p2, auto&& p3) const
+		{
+			if (const auto v{ getv(std::forward<decltype(p1)>(p1), std::forward<decltype(p2)>(p2), std::forward<decltype(p3)>(p3)) }; v.has_value())
+				return to_string(v.value());
+			return std::nullopt;
+		}
+		[[nodiscard]] std::optional<std::string> getvs(auto&& p1, auto&& p2) const
+		{
+			if (const auto v{ getv(std::forward<decltype(p1)>(p1), std::forward<decltype(p2)>(p2)) }; v.has_value())
+				return to_string(v.value());
+			return std::nullopt;
+		}
+		[[nodiscard]] std::optional<std::string> getvs(auto&& p1) const
+		{
+			if (const auto v{ getv(std::forward<decltype(p1)>(p1)) })
+				return to_string(v.value());
+			return std::nullopt;
+		}
+	#pragma endregion Functions_StringVariants
 	};
 
 }

@@ -5,12 +5,13 @@
  */
 #pragma once
 #include <sysarch.h>
-#include <token/TokenizedContainer.hpp>
-#include <token/TokenizerINI.hpp>
-#include <token/Token.hpp>
-#include <container/INIContainer.hpp> // new
-#include <make_exception.hpp>
 #include <fileio.hpp>
+#include <Token.hpp>
+#include <TokenParserBase.hpp>
+#include <INI_Tokenizer.hpp>
+#include <INI_Container.hpp>
+
+#include <make_exception.hpp>
 
 #include <variant>
 #if LANG_CPP >= 17
@@ -24,7 +25,7 @@ namespace token::parse {
 	 * @struct INIParser
 	 * @brief Parse a tokenized INI file into an INIContainer::Map (implicit), or a legacy container type (explicit).
 	 */
-	struct INIParser final : public TokenizedContainer {
+	struct INIParser final : public TokenParserBase {
 	private:
 		const std::string& filename;
 
@@ -38,10 +39,10 @@ namespace token::parse {
 		 * @brief Stream Constructor
 		 * @param file	- rvalue reference to a std::stringstream containing the contents of an INI-formatted file.
 		 */
-		INIParser(const std::string& filename, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ filename } {}
+		INIParser(const std::string& filename, std::stringstream&& file) : TokenParserBase(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ filename } {}
 		INIParser(const std::string& filename) : INIParser(filename, std::move(file::read(filename))) {}
 	#if LANG_CPP >= 17
-		INIParser(const std::filesystem::path& path, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ path.generic_string() } {}
+		INIParser(const std::filesystem::path& path, std::stringstream&& file) : TokenParserBase(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ path.generic_string() } {}
 		/**
 		 * @brief Filename Constructor
 		 * @param filename	- The name/path to an INI file.
@@ -61,8 +62,7 @@ namespace token::parse {
 			// Init map:
 			INIContainer::Map map{};
 
-			using enum TokenType;
-			strip_types(COMMENT); // remove all comments
+			strip_types(TokenType::COMMENT); // remove all comments
 
 			/// @brief Lambda for throwing exceptions with consistent naming conventions.
 			//const auto throwEx{ [&ln](const std::optional<std::string>& msg = std::nullopt) {
@@ -87,21 +87,21 @@ namespace token::parse {
 			for (auto& [str, type] : tokens) {
 				++i; // increment index by one (used to add _EOL)
 				switch (type) {
-				case HEADER: // set the header
+				case TokenType::HEADER: // set the header
 					header = str;
 					break;
-				case SETTER: // set the temp setter variable to true if it isn't already
+				case TokenType::SETTER: // set the temp setter variable to true if it isn't already
 					if (!setter)
 						setter = true;
 					else throwEx(ln, "Duplicate Setters"); // throw duplicate exception if setter was already true
 					break;
-				case KEY: // set the temp key
+				case TokenType::KEY: // set the temp key
 					if (!key.has_value()) {
 						key = str;
 						break;
 					}
 					else [[fallthrough]]; // if the key is already set, parse as a string value
-				case STRING: // set the temp value to a string
+				case TokenType::STRING: // set the temp value to a string
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					if (value.has_value()) {
@@ -112,28 +112,28 @@ namespace token::parse {
 					else
 						value = str;
 					break;
-				case NUMBER: // set the temp value to a long double
+				case TokenType::NUMBER: // set the temp value to a long double
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count == 1; }))
 						value = str::stold(str);
 					else value = str;
 					break;
-				case NUMBER_INT: // set the temp value to an integer
+				case TokenType::NUMBER_INT: // set the temp value to an integer
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					if (std::all_of(str.begin(), str.end(), isdigit))
 						value = str::stoll(str);
 					else value = str;
 					break;
-				case NUMBER_HEX:
+				case TokenType::NUMBER_HEX:
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					if (value.has_value() && std::holds_alternative<String>(value.value()))
 						value = (std::get<String>(value.value()) + ' ' + str);
 					else value = str;
 					break;
-				case BOOLEAN: { // set the temp value to a boolean
+				case TokenType::BOOLEAN: { // set the temp value to a boolean
 					if (!setter)
 						throwEx(ln, "Missing Setter");
 					auto b{ str::string_to_bool(str) };
@@ -142,7 +142,7 @@ namespace token::parse {
 					value = std::move(b);
 					break;
 				}
-				case NEWLINE: // insert & reset temp variables
+				case TokenType::NEWLINE: // insert & reset temp variables
 					if (any_defined())
 						insert();
 					key = std::nullopt;
@@ -150,7 +150,7 @@ namespace token::parse {
 					setter = false;
 					++ln;
 					break;
-				case END: // insert temp variables and return successfully.
+				case TokenType::END: // insert temp variables and return successfully.
 					if (any_defined())
 						insert();
 					if (i == tokens.size()) // if this EOF is the last element in the tokens vec.

@@ -1,18 +1,18 @@
 #pragma once
-#include <token/TokenizerBase.hpp>
+#include <TokenizerBase.hpp>
 
 namespace token {
 	/**
-	 * @struct TokenizedContainer
+	 * @struct TokenParserBase
 	 * @brief A container for storing sequences of tokens, as pairs where the first element is the string & the second is the type of token.
 	 */
-	struct TokenizedContainer {
+	struct TokenParserBase {
 		using ContainerT = std::vector<AccessibleToken>;
 		ContainerT tokens;
 
-		TokenizedContainer(ContainerT tokens) : tokens{ std::move(tokens) } {}
+		TokenParserBase(ContainerT tokens) : tokens{ std::move(tokens) } {}
 		template<class TokenizerType> requires std::derived_from<TokenizerType, TokenizerBase>
-		TokenizedContainer(TokenizerType&& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
+		TokenParserBase(TokenizerType&& tkiz, const size_t& reserve_size = 0ull) : tokens{ std::move(tkiz.tokenize(reserve_size)) } {}
 
 		operator ContainerT() const { return tokens; }
 

@@ -12,49 +12,34 @@ endif()
 project("file-lib")
 
 set(HEADERS
+	# Base File Lib
 	"include/fileio.hpp"
 	"include/fileutil.hpp"
 	"include/env.hpp"
-	"include/token/LEXEME.h"
-	"include/token/Token.hpp"
-	"include/token/TokenizedContainer.hpp"
-	"include/token/TokenizerBase.hpp"
-	"include/token/TokenizerINI.hpp"
-	"include/token/TokenizerJSON.hpp"
-	"include/token/TokenizerRE.hpp"
-
-	"include/container/ContainerINI.hpp"
-	"include/container/INIContainer.hpp"
-	"include/container/INIContainerMonoType.hpp"
-	"include/container/REContainer.hpp"
-
-	"include/parser/INIParser.hpp"
-	"include/parser/INIParserMonoType.hpp"
-	"include/parser/REParser.hpp"
-
+	# Tokenizer Extensions
+	"include/LEXEME.h"
+	"include/Token.hpp"
+	"include/TokenizerBase.hpp"
+	"include/TokenParserBase.hpp"
+	# INI File Format
+	"include/INI_Tokenizer.hpp"
+	"include/INI_Container.hpp"
+	"include/INI_Parser.hpp"
 	"include/INI.hpp"
 )
 set(SRC	
+	"src/fileio.cpp"
 	"src/fileutil.cpp"
 	"src/env.cpp"
+	"src/INI.cpp"
 )
-if(FILELIB_ENABLE_EXTENSIONS)
-	list(APPEND HEADERS 
-	)
-endif()
 
 add_library(file-lib STATIC ${HEADERS} ${SRC})
 add_library(307lib::file-lib ALIAS file-lib)
 
 target_include_directories(file-lib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/token>"
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/container>"
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/parser>"
 	"$<INSTALL_INTERFACE:include>"
-	"$<INSTALL_INTERFACE:token>"
-	"$<INSTALL_INTERFACE:container>"
-	"$<INSTALL_INTERFACE:parser>"
 )
 target_link_directories(file-lib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"

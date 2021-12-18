@@ -164,9 +164,9 @@ namespace file {
 	}
 #if LANG_CPP >= 20
 	template<typename... VT> requires var::more_than<1ull, VT...>
-	inline bool exists(const VT&... paths) noexcept(false)
+	inline bool exists_any(VT&&... paths) noexcept(false)
 	{
-
+		return (exists(std::forward<VT>(paths)) || ...);
 	}
 #endif
 #endif

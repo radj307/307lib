@@ -4,7 +4,9 @@
  * @brief Contains the TokenizerINI struct, a __TokenizerBase__ specialization for the INI file format.
  */
 #pragma once
-#include <token/TokenizerBase.hpp>
+#include <TokenizerBase.hpp>
+
+#include <make_exception.hpp>
 
 namespace token {
 	/// @brief INI tokenizer
@@ -23,25 +25,24 @@ namespace token {
 		Token getNext() override
 		{
 			const auto ch{ getch() };
-			using enum LEXEME;
 			switch (get_lexeme(ch)) {
-			case POUND:
+			case token::LEXEME::POUND:
 				// Check Hex Number
 				if (const auto next{ peek() }; ishexnum(next)) // distinguish between hex numbers & comments
 					return Token{ getsimilar(ishexnum), TokenType::NUMBER_HEX };
 				[[fallthrough]];
-			case SEMICOLON:// Comment
+			case LEXEME::SEMICOLON:// Comment
 				return Token{ std::string(1ull, ch) += getline('\n', false), TokenType::COMMENT };
-			case EQUALS: // Setter Start
+			case LEXEME::EQUALS: // Setter Start
 				return Token{ ch, TokenType::SETTER };
-			case QUOTE_SINGLE: // String (single) start
+			case LEXEME::QUOTE_SINGLE: // String (single) start
 				return Token{ getline('\''), TokenType::STRING };
-			case QUOTE_DOUBLE: // String (double) start
+			case LEXEME::QUOTE_DOUBLE: // String (double) start
 				return Token{ getline('\"'), TokenType::STRING };
-			case SQUAREBRACKET_OPEN:
+			case LEXEME::SQUAREBRACKET_OPEN:
 				return Token{ getline(']'), TokenType::HEADER };
-			case LETTER_LOWERCASE: [[fallthrough]]; // if text appears without an enclosing quote, parse it as a key
-			case LETTER_UPPERCASE: { // the case of unenclosed string variables is handled by the parser, not the tokenizer
+			case LEXEME::LETTER_LOWERCASE: [[fallthrough]]; // if text appears without an enclosing quote, parse it as a key
+			case LEXEME::LETTER_UPPERCASE: { // the case of unenclosed string variables is handled by the parser, not the tokenizer
 				const auto pos{ rollback() };
 				std::string str;
 				if (const auto lc{ str::tolower(ch) }; lc == 't' && getline_and_match(4u, "true", str))
@@ -51,21 +52,21 @@ namespace token {
 				else
 					ss.seekg(pos - 1ll);
 				// getsimilar
-				return allow_whitespace_in_keyname ? Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, UNDERSCORE, DIGIT, WHITESPACE), TokenType::KEY } : Token{ getsimilar(LETTER_LOWERCASE, LETTER_UPPERCASE, UNDERSCORE, DIGIT), TokenType::KEY };
+				return allow_whitespace_in_keyname ? Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY } : Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::DIGIT), TokenType::KEY };
 			}
-			case SUBTRACT: [[fallthrough]]; // number start
-			case DIGIT: {
+			case LEXEME::SUBTRACT: [[fallthrough]]; // number start
+			case LEXEME::DIGIT: {
 				rollback();
-				const auto str{ getsimilar(SUBTRACT, DIGIT, PERIOD) };
+				const auto str{ getsimilar(LEXEME::SUBTRACT, LEXEME::DIGIT, LEXEME::PERIOD) };
 				return (str::pos_valid(str.find('.') || (str.back() == 'f' || str.back() == 'F')) ? Token{ str, TokenType::NUMBER } : Token{ str, TokenType::NUMBER_INT });
 			}
-			case NEWLINE:
+			case LEXEME::NEWLINE:
 				return Token{ ch, TokenType::NEWLINE };
-			case WHITESPACE:
-				throw std::exception("TokenizerINI::getNext()\tReceived unexpected whitespace character as input!");
-			case ESCAPE:
+			case LEXEME::WHITESPACE:
+				throw make_exception("TokenizerINI::getNext()\tReceived unexpected whitespace character as input!");
+			case LEXEME::ESCAPE:
 				return Token{ std::string(1u, ch) += getch(true), TokenType::ESCAPED };
-			case _EOF:
+			case LEXEME::_EOF:
 				return Token{ TokenType::END };
 			default:
 				return Token{ ch, TokenType::NULL_TYPE };

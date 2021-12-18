@@ -4,11 +4,13 @@
  * @brief Contains enums __LEXEME__ & __TokenType__, as well as the Token struct used by the TokenizerBase class and derivatives.
  */
 #pragma once
-#include <string>
-#include <utility>
+#include <LEXEME.h>
+
 #include <str.hpp>
 #include <var.hpp>
-#include <token/LEXEME.h>
+
+#include <string>
+#include <utility>
 
  /**
   * @namespace token

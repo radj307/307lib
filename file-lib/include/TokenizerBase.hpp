@@ -22,8 +22,8 @@
  *\n	- Derived objects _should_ be members of the token namespace, or a sub-namespace.
  */
 #pragma once
-#include <token/LEXEME.h>	// LEXEME, TokenType, & Token
-#include <token/Token.hpp>	// TokenType, & Token
+#include <LEXEME.h>	// LEXEME, TokenType, & Token
+#include <Token.hpp>	// TokenType, & Token
 
 #include <string>		// std::string
 #include <sstream>		// std::stringstream
