@@ -45,8 +45,23 @@ if(FILELIB_ENABLE_EXTENSIONS)
 endif()
 
 add_library(file-lib STATIC ${HEADERS} ${SRC})
+add_library(307lib::file-lib ALIAS file-lib)
 
-target_include_directories(file-lib PUBLIC "./include" "./src") # include "./src" here so source files can add headers directly
-target_link_directories(file-lib PUBLIC "./src")
+target_include_directories(file-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(file-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 
 target_link_libraries(file-lib PUBLIC shared str-lib)
+
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(file-lib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()

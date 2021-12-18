@@ -36,7 +36,23 @@ set(SRC
 )
 
 add_library(shared STATIC ${HEADERS} ${SRC})
+add_library(307lib::shared ALIAS shared)
 
-target_include_directories(shared PUBLIC "./include" "./src")
-target_link_directories(shared PUBLIC "./src")
+target_include_directories(shared PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"	# absolute path used during build operation
+	"$<INSTALL_INTERFACE:include>"								# relative path used during install operation
+)
+target_link_directories(shared PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"		# absolute path used during build operation
+	"$<INSTALL_INTERFACE:src>"									# relative path used during install operation
+)
+
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(shared EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+# Include packaging by default if this is the top-level directory
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()
 

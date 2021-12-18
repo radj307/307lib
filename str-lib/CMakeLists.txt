@@ -24,6 +24,22 @@ set(SRC
 
 add_library(str-lib STATIC ${HEADERS} ${SRC})
 target_link_libraries(str-lib PUBLIC shared)
-target_include_directories(str-lib PUBLIC "./include" "./src")
-target_link_directories(str-lib PUBLIC "./src")
+target_include_directories(str-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(str-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 #set_target_properties(str-lib PROPERTIES LINKER_LANGUAGE CXX)
+
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(str-lib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+# Include packaging by default if this is the top-level directory
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()
+

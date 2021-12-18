@@ -35,7 +35,12 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-include(CMakeDependentOption)
+# Setup packaging
+string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
+option(307lib_ENABLE_PACKAGING "Enable library packaging" "${TOP_LEVEL}")
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()
 
 # create project
 project("307lib")
@@ -78,8 +83,4 @@ if (ENABLE_TESTING)
 	add_subdirectory("testing")
 endif()
 
-#include(CTest)
-#if (BUILD_TESTING)
-#	enable_testing()
-#	add_subdirectory("unit-tests")
-#endif()
+

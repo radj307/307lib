@@ -1,5 +1,4 @@
 # TermAPI
-# (version selector)
 cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -12,24 +11,64 @@ endif()
 
 project("TermAPI")
 
-# Enable deprecation warning if it wasn't already set
-set(CMAKE_WARN_DEPRECATED ON)
+# Add sequence library
+add_subdirectory("ANSI")
+		
+set(HEADERS
+	"./include/TermAPI.hpp"
+)
+set(SRC
+	"./src/TermAPI.cpp"
+)
 
-# Set default version if it isn't already set
-if (TERMAPI_VERSION_3)
-	message(DEPRECATION "The set(TERMAPI_VERSION_3 ON) option has been deprecated. Use set(TERMAPI_VERSION <version>) instead!")
-	set(TERMAPI_VERSION 3)
-else()
-	set(TERMAPI_VERSION 4)
+add_library(TermAPI STATIC ${HEADERS} ${SRC})
+add_library(307lib::TermAPI ALIAS TermAPI)
+target_include_directories(TermAPI PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(TermAPI PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
+
+set(LINKS
+	"ANSI"
+)
+
+# Add color
+option(TERMAPI_ENABLE_COLOR "Enable the color object library." ON)
+if (TERMAPI_ENABLE_COLOR)
+	add_subdirectory("color")
+	list(APPEND LINKS
+		"color"
+	)
 endif()
 
+# Add term
+option(TERMAPI_ENABLE_TERM "Enable the term object library." ON)
+if (TERMAPI_ENABLE_TERM)
+	add_subdirectory("term")
+	list(APPEND LINKS
+		"term"
+	)
+endif()
 
-if (TERMAPI_VERSION EQUAL 4)			# v4
-	message(STATUS "Using TermAPI v4")
-	add_subdirectory("v4")
-elseif(TERMAPI_VERSION LESS_EQUAL 3)	# v3
-	message(STATUS "Using TermAPI v3")
-	add_subdirectory("v3")
-else()
-	message(WARNING "TERMAPI_VERSION is invalid; Version ${TERMAPI_VERSION} doesn't exist.")
+target_link_libraries(TermAPI PUBLIC ${LINKS})
+
+include(CMakeDependentOption)
+cmake_dependent_option(TERMAPI_ENABLE_EXTENSIONS "Enable the TermAPI extensions library" ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
+if(TERMAPI_ENABLE_EXTENSIONS)
+	message(STATUS "TermAPI Extensions Enabled")
+	add_subdirectory("extensions")
+	target_link_libraries(TermAPI PUBLIC file-lib extensions)
+endif()
+
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(TermAPI EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+# Include packaging by default if this is the top-level directory
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
 endif()
