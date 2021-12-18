@@ -8,9 +8,6 @@
 #include <fileutil.hpp>
 #include <INI.hpp>
 
-#include "performance.hpp"
-using namespace perf;
-
 #include <TermAPI.hpp>
 #include <xlog.hpp>
 #include <color-transform.hpp>

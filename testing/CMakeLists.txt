@@ -19,7 +19,6 @@ set(HEADERS_MASS
 )
 set(HEADERS
 	"flagset.hpp"
-	"performance.hpp"
 )
 set(SRC
 	"main.cpp"
@@ -32,5 +31,14 @@ if(TESTING_ENABLE_MASS_INCLUDES)
 endif()
 
 add_executable(testing ${HEADERS} ${SRC})
+target_include_directories(testing PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+	"$<INSTALL_INTERFACE:>"
+)
+target_link_directories(testing PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+	"$<INSTALL_INTERFACE:>"
+)
+
 target_link_libraries(testing PUBLIC shared str-lib TermAPI opt-lib file-lib)
 
