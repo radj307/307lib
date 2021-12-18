@@ -1,11 +1,12 @@
 #pragma once
 #include <color-format.hpp>
 #include <color-transform.hpp>
+#include <setcolor.hpp>
+
 #include <fileio.hpp>
 #include <fileutil.hpp>
-#include <token/TokenizerBase.hpp>
-#include <token/TokenizedContainer.hpp>
-#include <setcolor.hpp>
+#include <TokenizerBase.hpp>
+#include <TokenParserBase.hpp>
 
 #include <string>
 #include <unordered_map>
@@ -42,9 +43,9 @@ namespace color {
 			}
 		};
 
-		class ConfigParser : public TokenizedContainer {
+		class ConfigParser : public TokenParserBase {
 		public:
-			ConfigParser(ConfigTokenizer&& tkiz) : TokenizedContainer(std::forward<ConfigTokenizer>(tkiz), 256ull) {}
+			ConfigParser(ConfigTokenizer&& tkiz) : TokenParserBase(std::forward<ConfigTokenizer>(tkiz), 256ull) {}
 
 			operator std::unordered_map<std::string, RGB<short>>() const
 			{

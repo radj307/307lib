@@ -13,6 +13,9 @@ project("testing")
 
 set(HEADERS_MASS
 	"file-lib.h"
+	"opt-lib.h"
+	"str-lib.h"
+	"TermAPI.h"
 )
 set(HEADERS
 	"flagset.hpp"

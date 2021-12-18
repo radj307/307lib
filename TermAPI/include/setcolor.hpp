@@ -72,7 +72,7 @@ namespace color {
 
 		setcolor_seq<SeqT> operator+(const setcolor_seq<SeqT>& o) const
 		{
-			return setcolor_seq<SeqT>{ _seq + o._seq, _fmt | o._fmt };
+			return setcolor_seq<SeqT>{ _seq + o._seq, static_cast<unsigned char>(_fmt | o._fmt) };
 		}
 
 		friend std::ostream& operator<<(std::ostream& os, const setcolor_seq<SeqT>& color)

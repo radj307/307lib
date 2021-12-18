@@ -6,9 +6,7 @@
 
 #include <LEXEME.h>
 #include <Token.hpp>
-#include <TokenizedContainer.hpp>
-#include <TokenizedBase.hpp>
-#include <TokenizedINI.hpp>
-#include <TokenizedJSON.hpp>
-#include <TokenizedRE.hpp>
+#include <TokenParserBase.hpp>
+#include <TokenizerBase.hpp>
+#include <INI_Tokenizer.hpp>
 #include <INI.hpp>

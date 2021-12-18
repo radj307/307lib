@@ -17,6 +17,9 @@ using namespace perf;
 #include <color-config.hpp>
 
 #include "file-lib.h"
+#include "opt-lib.h"
+#include "str-lib.h"
+#include "TermAPI.h"
 
 inline void test_xlog()
 {
