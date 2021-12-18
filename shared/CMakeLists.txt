@@ -18,6 +18,7 @@ set(HEADERS
 	"./include/math.hpp"
 	"./include/iter.hpp"
 	"./include/make_exception.hpp"
+	"./include/unit.hpp"
 )
 
 cmake_dependent_option(SHARED_DISABLE_WINDOWS_HPP "Disable building the shared project with the Windows.hpp header." OFF WIN32 ON)
@@ -31,6 +32,7 @@ if (SHARED_ENABLE_XRAND)
 endif()
 
 set(SRC
+	"./src/unit.cpp"
 	"./src/var.cpp"
 	"./src/make_exception.cpp"
 )
