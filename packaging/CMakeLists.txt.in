@@ -1,0 +1,46 @@
+# @PACKAGING_TARGET_NAME@/packaging
+# src: https://alexreinking.com/blog/building-a-dual-shared-and-static-library-with-cmake.html
+cmake_minimum_required(VERSION 3.12)
+
+##### Packaging
+include(GNUInstallDirs)				# Adds variables to control the install command. (Platform independant, despite the name)
+include(CMakePackageConfigHelpers)	# Adds versioning assistance
+
+# Define install directory
+if (NOT DEFINED @PACKAGING_TARGET_NAME@_INSTALL_DIR)
+	set(@PACKAGING_TARGET_NAME@_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/@PACKAGING_TARGET_NAME@" CACHE STRING "Path to @PACKAGING_TARGET_NAME@ CMake files")
+endif()
+
+##### Install
+
+# Install target library headers
+install(
+	TARGETS @PACKAGING_TARGETS@
+	EXPORT @PACKAGING_TARGET_NAME@_Targets
+	RUNTIME COMPONENT @PACKAGING_TARGET_NAME@_Runtime
+	LIBRARY COMPONENT @PACKAGING_TARGET_NAME@_Runtime
+	NAMELINK_COMPONENT @PACKAGING_TARGET_NAME@_Development
+	ARCHIVE COMPONENT @PACKAGING_TARGET_NAME@_Development
+	INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+install(
+	DIRECTORY "${@PACKAGING_TARGET_NAME@_SOURCE_DIR}/include/" "${@PACKAGING_TARGET_NAME@_BINARY_DIR}/include/"
+	TYPE INCLUDE
+	COMPONENT @PACKAGING_TARGET_NAME@_Development
+)
+
+# Export the target library
+install(
+	EXPORT @PACKAGING_TARGET_NAME@_Targets
+	DESTINATION "${@PACKAGING_TARGET_NAME@_INSTALL_DIR}"
+	NAMESPACE 307lib::
+	FILE @PACKAGING_TARGET_NAME@-targets.cmake
+	COMPONENT @PACKAGING_TARGET_NAME@_Development
+)
+
+# Export the TargetLibConfig.cmake file so find_package can locate the libraries
+install(
+	FILES "${CMAKE_CURRENT_SOURCE_DIR}/@PACKAGING_TARGET_NAME@-config.cmake"
+	DESTINATION "${@PACKAGING_TARGET_NAME@_INSTALL_DIR}"
+	COMPONENT @PACKAGING_TARGET_NAME@_Development
+)

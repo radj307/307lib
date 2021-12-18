@@ -60,7 +60,7 @@ namespace opt {
 		return var::variadic_or(is_type<Type>(arg)...);
 	}
 
-	constexpr const std::string get_name(const VariantArgumentType& arg)
+	WINCONSTEXPR const std::string get_name(const VariantArgumentType& arg)
 	{
 		switch (arg.index()) {
 		case Index::PARAMETER:

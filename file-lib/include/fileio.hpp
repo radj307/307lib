@@ -6,7 +6,7 @@
 #include <fstream>
 #include <sstream>
 
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #endif
 
@@ -49,7 +49,7 @@ namespace file {
 	{
 		return read<std::stringstream>(path);
 	}
-#if CPP >= 17 // include std::filesystem::path support
+#if LANG_CPP >= 17 // include std::filesystem::path support
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
 	read(const std::filesystem::path& path)
 	{
@@ -128,16 +128,16 @@ namespace file {
 		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
 		return file::write(ofs, ss.rdbuf());
 	}
-	inline bool write(const std::string& path, const std::stringbuf* rdbuf, const bool append = true)
+	inline bool write(const std::string& path, std::stringbuf* rdbuf, const bool append = true)
 	{
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
 		return write(ofs, rdbuf);
 	}
-#if CPP >= 17
-	inline bool write(const std::filesystem::path& path, auto&& data, const bool append = true)
+#if LANG_CPP >= 17
+	template<typename T>
+	inline bool write(const std::filesystem::path& path, T&& data, const bool append = true)
 	{
-		std::ofstream ofs{ path.c_str(), append ? std::ios_base::app : std::ios_base::out };
-		return write(ofs, std::forward<decltype(data)>(data));
+		return write(path.generic_string(), std::forward<T>(data), append);
 	}
 #endif
 #pragma endregion WRITE

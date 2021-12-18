@@ -17,6 +17,7 @@
  */
 #pragma once
 #include <sysarch.h>
+#include <make_exception.hpp>
 #include <var.hpp>
 
 #include <str.hpp>
@@ -60,11 +61,11 @@ namespace env {
 	 * @returns		RT
 	 */
 	template<var::any_same<std::filesystem::path, std::string> RT = ENV_DEFAULT_RETURN_TYPE>
-	inline static constexpr const RT getvar(auto&& name) noexcept
+	inline static constexpr const std::optional<RT> getvar(auto&& name) noexcept
 	{
 	#pragma warning (disable: 4996) // disable deprecation warning, don't require defining "_CRT_SECURE_NO_WARNINGS" in every single project that may use this file somewhere
 		const auto v{ std::getenv(std::forward<decltype(name)>(name)) };
-		return(v == nullptr ? RT{} : RT{ v });
+		return(v == nullptr ? static_cast<std::optional<RT>>(std::nullopt) : RT{ v });
 	#pragma warning (default: 4996)
 	}
 #endif
@@ -93,7 +94,7 @@ namespace env {
 			path.shrink_to_fit();
 			return path;
 		}
-		throw std::exception("Failed to retrieve PATH variable!");
+		throw make_exception("Failed to retrieve PATH variable!");
 	}
 	/**
 	 * @brief	Retrieve the value of the PATH environment variable as a vector of strings.
@@ -111,7 +112,7 @@ namespace env {
 			path.shrink_to_fit();
 			return path;
 		}
-		throw std::exception("Failed to retrieve PATH variable!");
+		throw make_exception("Failed to retrieve PATH variable!");
 	}
 
 #ifndef USE_DEPRECATED_PATH_ALGORITHM

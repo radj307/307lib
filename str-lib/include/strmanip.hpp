@@ -152,9 +152,9 @@ namespace str {
 	 */
 	inline std::string remove_whitespace(std::string str) noexcept
 	{
-	#if defined(OS_LINUX) || CPP <= 17
+	#if defined(OS_LINUX) || LANG_CPP <= 17
 		str.erase(std::remove_if(str.begin(), str.end(), isspace), str.end());
-	#elif CPP >= 20
+	#elif LANG_CPP >= 20
 		str.erase(std::ranges::remove_if(str, isspace).begin(), str.end());
 	#endif
 		return str;
@@ -284,9 +284,9 @@ namespace str {
 	 */
 	inline std::string remove_all(std::string str, const std::string& delims)
 	{
-	#if defined(OS_LINUX) || CPP <= 17
+	#if defined(OS_LINUX) || LANG_CPP <= 17
 		str.erase(std::remove_if(str.begin(), str.end(), [&delims](const char c) -> bool { return delims.find(c) != std::string::npos; }), str.end());
-	#elif CPP >= 20
+	#elif LANG_CPP >= 20
 		str.erase(std::ranges::remove_if(str, [&delims](const char c) -> bool { return delims.find(c) != std::string::npos; }).begin(), str.end());
 	#endif
 		return str;
@@ -524,4 +524,4 @@ namespace str {
 		return std::move(longest);
 	}
 #pragma endregion longestLength
-	}
+}

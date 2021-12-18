@@ -1,4 +1,4 @@
-# opt-lib
+# 307lib/opt-lib
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -23,9 +23,23 @@ set(SRC
 )
 
 add_library(opt-lib STATIC ${HEADERS} ${SRC})
+add_library(307lib::opt-lib ALIAS opt-lib)
 # link dependencies
 target_link_libraries(opt-lib PUBLIC shared str-lib)
 # include directories
-target_include_directories(opt-lib PUBLIC "./include" "./src")
-target_link_directories(opt-lib PUBLIC "./src")
+target_include_directories(opt-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(opt-lib PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(opt-lib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()

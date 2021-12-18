@@ -14,14 +14,18 @@ namespace math {
 	 * @returns			T
 	 */
 	template<std::floating_point T>
-	_CONSTEXPR static T mod(const T& value, const T& modulo)
+	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
+	#ifdef OS_WIN
 		if constexpr (std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
 		else if constexpr (std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
+	#else
+		return std::fmod(value, modulo);
+	#endif
 	}
 
 	/**
@@ -32,7 +36,7 @@ namespace math {
 	 * @returns			T
 	 */
 	template<std::integral T>
-	_CONSTEXPR static T mod(const T& value, const T& modulo)
+	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
 		return value % modulo;
 	}
@@ -46,8 +50,15 @@ namespace math {
 	 * @returns				T
 	 */
 	template<typename T, typename RT = T>
-	_CONSTEXPR static RT normalize(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
+	[[nodiscard]] static CONSTEXPR RT normalize(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
 	{
 		return static_cast<RT>(new_range.first) + (static_cast<RT>(value) - static_cast<RT>(old_range.first)) * static_cast<RT>(static_cast<RT>(new_range.second) - static_cast<RT>(new_range.first)) / (static_cast<RT>(old_range.second) - static_cast<RT>(old_range.first));
+	}
+
+	template<typename T> [[nodiscard]] static CONSTEXPR T max_value()
+	{
+		if constexpr (std::unsigned_integral<T>)
+			return{ 255 * sizeof(T) };
+		else return { 128 * sizeof(T) };
 	}
 }

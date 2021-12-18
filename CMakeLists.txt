@@ -1,30 +1,27 @@
-﻿#### 307lib ####
-# To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
-# To set options in an inheriting CMakeLists.txt, use this line:
-#
-# set(OPTION_NAME OPTION_VALUE CACHE BOOL OPTION_DESCRIPTION)
-#
-# OPTION_VALUE = <ON|OFF>
-#
-#### Options ####
-# | Option Name			| Default | Lib Dependencies | Description                                            |
-# | ------------------- | ------- | ---------------- | ------------------------------------------------------ |
-# | ENABLE_STRLIB		| ON	  | shared           | Enable the string library.							    |
-# | ENABLE_TERMAPI		| ON	  | shared           | Enable the TermAPI library.							|
-# | ENABLE_FILELIB		| ON	  | shared str-lib   | Enable the file/filesystem library.					|
-# | ENABLE_OPTLIB		| ON	  | shared str-lib   | Enable the commandline/environment library.			|
-# | ENABLE_TESTING		| OFF	  | all              | Enable the debugging/testing executable.			    |
-# | ENABLE_UNITTESTS	| OFF	  | variable         | Enable unit tests using the googletest framework.		|
-#
-#### Sub-Options ####
-# | Project    | Option Name                | Default  | Description                                                                      |
-# | ---------- | -------------------------- | -------- | -------------------------------------------------------------------------------- |
-# | shared     | SHARED_DISABLE_WINDOWS_HPP | Variable | Only available when building on windows, this disables the <Windows.hpp> header. |
-# | shared     | SHARED_ENABLE_XRAND        | ON       | Enables the <xRand.hpp> header.                                                  |
-# | TermAPI v3 | TERMAPI_ENABLE_XLOG        | ON       | Enables the <xLog.hpp> header.                                                   |
-# | file-lib   | FILELIB_ENABLE_EXTENSIONS  | ON       | Includes all file-lib components, including tokenization/parsing.                |
-#
+﻿# 307lib
 cmake_minimum_required (VERSION 3.15)
+#[[
+To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
+ To set options in an inheriting CMakeLists.txt, use this line:
+
+ set(OPTION_NAME OPTION_VALUE CACHE BOOL OPTION_DESCRIPTION)
+
+| Option Name         | Default | Lib Dependencies | Description                                            |
+| ------------------- | ------- | ---------------- | ------------------------------------------------------ |
+| ENABLE_STRLIB       | ON      | shared           | Enable the string library.							    |
+| ENABLE_TERMAPI      | ON      | shared           | Enable the TermAPI library.							|
+| ENABLE_FILELIB      | ON      | shared str-lib   | Enable the file/filesystem library.					|
+| ENABLE_OPTLIB       | ON      | shared str-lib   | Enable the commandline/environment library.			|
+| ENABLE_TESTING      | OFF     | all              | Enable the debugging/testing executable.			    |
+| ENABLE_UNITTESTS    | OFF     | variable         | Enable unit tests using the googletest framework.		|
+
+| Sub-Option Name            | Project    | Default   | Description                                                                      |
+| -------------------------- | ---------- | --------- | -------------------------------------------------------------------------------- |
+| SHARED_DISABLE_WINDOWS_HPP | shared     | Dependent | Only available when building on windows, this disables the <Windows.hpp> header. |
+| SHARED_ENABLE_XRAND        | shared     | ON        | Enables the <xRand.hpp> header.                                                  |
+| TERMAPI_ENABLE_XLOG        | TermAPI v3 | ON        | Enables the <xLog.hpp> header.                                                   |
+| FILELIB_ENABLE_EXTENSIONS  | file-lib   | ON        | Includes all file-lib components, including tokenization/parsing.                |
+]]
 
 # require C++20
 set(CMAKE_CXX_STANDARD 20)
@@ -33,9 +30,16 @@ if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 	# Fix MSVC __cplusplus macro
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
+else()
+	set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
 
-include(CMakeDependentOption)
+# Setup packaging
+string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
+option(307lib_ENABLE_PACKAGING "Enable library packaging" "${TOP_LEVEL}")
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()
 
 # create project
 project("307lib")
@@ -50,19 +54,19 @@ if (ENABLE_STRLIB)
 	# Requires shared
 endif()
 
+# Add file library
+cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
+if (ENABLE_FILELIB)
+	add_subdirectory("file-lib")
+	# Requires shared & str-lib
+endif()
+
 # Add TermAPI
 option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
 if(ENABLE_TERMAPI)
 	add_subdirectory("TermAPI")
 	# (v3) Requires shared & str-lib
 	# (v4) Requires shared
-endif()
-
-# Add file library
-cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
-if (ENABLE_FILELIB)
-	add_subdirectory("file-lib")
-	# Requires shared & str-lib
 endif()
 
 # Add opt library
@@ -78,8 +82,4 @@ if (ENABLE_TESTING)
 	add_subdirectory("testing")
 endif()
 
-#include(CTest)
-#if (BUILD_TESTING)
-#	enable_testing()
-#	add_subdirectory("unit-tests")
-#endif()
+

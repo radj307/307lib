@@ -1,4 +1,5 @@
 #pragma once
+#include <sysarch.h>
 #include <ArgParser.hpp>
 
 #include <utility>
@@ -155,7 +156,7 @@ namespace opt {
 			return vec;
 		}
 	};
-	inline _CONSTEXPR const std::vector<std::string> paramVecToStrVec(const std::vector<opt::Parameter>& param_vec)
+	inline WINCONSTEXPR const std::vector<std::string> paramVecToStrVec(const std::vector<opt::Parameter>& param_vec)
 	{
 		std::vector<std::string> strvec;
 		strvec.reserve(param_vec.size());

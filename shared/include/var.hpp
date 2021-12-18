@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 #include <tuple>
-#if CPP >= 20
+#if LANG_CPP >= 20
 #include <concepts> // also includes <type_traits>
 #else
 #include <type_traits>
@@ -19,7 +19,7 @@
   * @brief Contains helper methods for variadic templated functions, as well as std::tuple.
   */
 namespace var {
-#if CPP >= 20
+#if LANG_CPP >= 20
 #pragma region Concepts
 	/**
 	 * @concept		Streamable
@@ -239,37 +239,29 @@ namespace var {
 		return ((booleans) && ...);
 	}
 
-	/**
-	 * @brief			Retrieve the largest value in a variadic pack.
-	 * @tparam T		First value type, all additional values are casted to this type before comparison.
-	 * @tparam ...vT	Additional Value Type(s).
-	 * @param n			First value. All additional values are casted to the same type before comparison.
-	 * @param ...rest	At least one additional value.
-	 * @returns			T
-	 */
-	template<typename T, typename... vT>
-	[[nodiscard]] inline static constexpr T largest(const T& n, const vT&... rest) noexcept
+	template<typename T, same_or_convertible<T>... Ts>
+	[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
 	{
-		const auto larger{ [] <typename T>(const T & n, const T & bound) -> T { return n > bound ? n : bound; } };
-		return (larger<T>(n, larger<T>(static_cast<T>(rest), static_cast<T>(0))));
+		constexpr const auto max{ sizeof...(Ts) };
+		T largest{ base };
+		for (size_t i{ 0ull }; i < max; ++i)
+			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
+				largest = v;
+		return largest;
 	}
 
-	/**
-	 * @brief			Retrieve the smallest value in a variadic pack.
-	 * @tparam T		First value type, all additional values are casted to this type before comparison.
-	 * @tparam ...vT	Additional Value Type(s).
-	 * @param n			First value. All additional values are casted to the same type before comparison.
-	 * @param ...rest	At least one additional value.
-	 * @returns			T
-	 */
-	template<typename T, typename... vT>
-	[[nodiscard]] inline static constexpr T smallest(const T& n, const vT&... rest) noexcept
+	template<typename T, same_or_convertible<T>... Ts>
+	[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
 	{
-		const auto smaller{ [] <typename T>(const T & n, const T & bound) -> T { return n < bound ? n : bound; } };
-		return (smaller<T>(n, smaller(static_cast<T>(rest), static_cast<T>(0))));
+		constexpr const auto max{ sizeof...(Ts) };
+		T smallest{ static_cast<T>(0) };
+		for (size_t i{ 0ull }; i < max; ++i)
+			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
+				smallest = v;
+		return smallest;
 	}
 
-#if CPP >= 20
+#if LANG_CPP >= 20
 	/**
 	 * @brief			Variadic templated helper function that returns a vector of templated element types.
 	 *\n				All types must be convertible to the specified output type.
