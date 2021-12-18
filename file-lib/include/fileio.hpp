@@ -6,7 +6,7 @@
 #include <fstream>
 #include <sstream>
 
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #endif
 
@@ -49,7 +49,7 @@ namespace file {
 	{
 		return read<std::stringstream>(path);
 	}
-#if CPP >= 17 // include std::filesystem::path support
+#if LANG_CPP >= 17 // include std::filesystem::path support
 	template<class RT> static std::enable_if_t<std::is_same_v<RT, std::ifstream>, std::ifstream>
 	read(const std::filesystem::path& path)
 	{
@@ -133,7 +133,7 @@ namespace file {
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
 		return write(ofs, rdbuf);
 	}
-#if CPP >= 17
+#if LANG_CPP >= 17
 	template<typename T>
 	inline bool write(const std::filesystem::path& path, T&& data, const bool append = true)
 	{

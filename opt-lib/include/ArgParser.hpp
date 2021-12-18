@@ -19,7 +19,7 @@ namespace opt {
 	 * @param c		Input Character
 	 * @returns		bool
 	 */
-	inline constexpr const bool is_delimiter(const char& c)
+	inline WINCONSTEXPR const bool is_delimiter(const char& c)
 	{
 		return std::any_of(Settings_ArgParser.delimiters.begin(), Settings_ArgParser.delimiters.end(), [&c](auto&& delim) { return delim == c; });
 	}
@@ -100,7 +100,7 @@ namespace opt {
 		 * @param ...capturing_arguments	Arguments that should be allowed to capture additional arguments. Names should not contain prefix delimiters, but if they do, they are removed.
 		 */
 		template<ValidInputType... VT> constexpr CaptureList(const VT&... capturing_arguments) : vec{ var::variadic_accumulate<InputWrapper>(str::strip_line(InputWrapper{ capturing_arguments }, "", "-")...) } {}
-		constexpr operator const std::vector<InputWrapper>() const { return vec; }
+		WINCONSTEXPR operator const std::vector<InputWrapper>() const { return vec; }
 		/**
 		 * @brief				Check if a given argument appears in the capture list. Names are case-sensitive.
 		 * @tparam				Variadic Templated Type. (char)
@@ -217,7 +217,7 @@ namespace opt {
 	 * @param off	The index to start at. Any elements that are skipped are ignored.
 	 * @returns		StrVec
 	 */
-	constexpr inline static StrVec vectorize(const int& sz, char** arr, const int& off = 0)
+	inline WINCONSTEXPR static StrVec vectorize(const int& sz, char** arr, const int& off = 0)
 	{
 		StrVec vec;
 		vec.reserve(sz);

@@ -3,7 +3,7 @@
 #include <str.hpp>
 #include <var.hpp>
 
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #else
 #include <fstream>
@@ -13,11 +13,11 @@
 #include <algorithm>
 
 
-#ifndef _CONSTEXPR
-#if CPP >= 17
-#define _CONSTEXPR constexpr
+#ifndef CONSTEXPR
+#if LANG_CPP >= 17
+#define CONSTEXPR constexpr
 #else
-#define _CONSTEXPR
+#define CONSTEXPR
 #endif
 #endif
 
@@ -27,7 +27,7 @@ namespace file {
 	 * @param ifs	Input Stream
 	 * @returns		std::streamoff
 	 */
-	inline _CONSTEXPR std::streamoff count(auto&& is, const char& character) noexcept(false)
+	inline CONSTEXPR std::streamoff count(auto&& is, const char& character) noexcept(false)
 	{
 		const auto count{ std::count(std::istreambuf_iterator<char>(std::forward<decltype(is)>(is)), std::istreambuf_iterator<char>(), character) };
 		is.seekg(std::ios::beg);
@@ -38,18 +38,18 @@ namespace file {
 	 * @param ifs	Input Stream
 	 * @returns		std::streamoff
 	 */
-	inline _CONSTEXPR std::streamoff getLineCount(auto&& is) noexcept(false)
+	inline CONSTEXPR std::streamoff getLineCount(auto&& is) noexcept(false)
 	{
 		return count(std::forward<decltype(is)>(is), '\n');
 	}
 
-	inline _CONSTEXPR bool isPathSeparator(const char& ch)
+	inline CONSTEXPR bool isPathSeparator(const char& ch)
 	{
 		return ch == '/' || ch == '\\';
 	}
 }
 
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 
 namespace file {
@@ -150,19 +150,19 @@ namespace file {
 
 	inline bool exists(const std::string& filepath) noexcept(false)
 	{
-	#if CPP >= 17
+	#if LANG_CPP >= 17
 		return std::filesystem::exists(filepath);
 	#else
 		return std::ofstream(filepath).is_open();
 	#endif
 	}
 
-#if CPP >= 17
+#if LANG_CPP >= 17
 	inline bool exists(const std::filesystem::path& path) noexcept(false)
 	{
 		return std::filesystem::exists(path);
 	}
-#if CPP >= 20
+#if LANG_CPP >= 20
 	template<typename... VT> requires var::more_than<1ull, VT...>
 	inline bool exists(const VT&... paths) noexcept(false)
 	{

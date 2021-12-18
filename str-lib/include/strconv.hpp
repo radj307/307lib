@@ -21,7 +21,7 @@ namespace str {
 	 * @param c	- Char to convert. If the character is not an uppercase letter, it will be returned unmodified.
 	 * @returns char
 	 */
-	[[nodiscard]] inline _CONSTEXPR char tolower(const char& c) noexcept
+	[[nodiscard]] inline CONSTEXPR char tolower(const char& c) noexcept
 	{
 		if (c >= 'A' && c <= 'Z')
 			return c + static_cast<char>(32);
@@ -34,15 +34,15 @@ namespace str {
 	 * @param c		- Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
 	 * @returns char
 	 */
-#if CPP >= 20 // v >= C++20
+#if LANG_CPP >= 20 // v >= C++20
 	template<typename T> requires std::convertible_to<T, char>
-	[[nodiscard]] inline static _CONSTEXPR char tolower(const T& c) noexcept
+	[[nodiscard]] inline static CONSTEXPR char tolower(const T& c) noexcept
 	{
 		return tolower(std::move(static_cast<char>(c)));
 	}
-#elif CPP >= 11 // C++11 <= v < C++20
+#elif LANG_CPP >= 11 // C++11 <= v < C++20
 	template<typename T>
-	[[nodiscard]] static _CONSTEXPR std::enable_if_t<std::is_same_v<T, char> || std::is_convertible_v<T, char>, char> tolower(const T& c) noexcept
+	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, char> || std::is_convertible_v<T, char>, char> tolower(const T& c) noexcept
 	{
 		return tolower(std::move(static_cast<char>(c)));
 	}
@@ -53,7 +53,7 @@ namespace str {
 	 * @param str	- String to convert.
 	 * @returns std::string
 	 */
-	[[nodiscard]] inline _CONSTEXPR const std::string tolower(std::string str) noexcept
+	[[nodiscard]] inline WINCONSTEXPR const std::string tolower(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(tolower(ch));
@@ -66,7 +66,7 @@ namespace str {
 	 * @param c	- Char to convert. If the character is not a lowercase letter, it will be returned unmodified.
 	 * @returns char
 	 */
-	[[nodiscard]] inline _CONSTEXPR char toupper(const char& c) noexcept
+	[[nodiscard]] inline CONSTEXPR char toupper(const char& c) noexcept
 	{
 		if (c >= 'a' && c <= 'z')
 			return c - static_cast<char>(32);
@@ -79,15 +79,15 @@ namespace str {
 	 * @param c		- Value to convert. If the value does not resolve to a lowercase letter, it will be returned as a character.
 	 * @returns char
 	 */
-#if CPP >= 20 // v >= C++20
+#if LANG_CPP >= 20 // v >= C++20
 	template<typename T> requires std::convertible_to<T, char>
-	[[nodiscard]] inline static _CONSTEXPR char toupper(const T& c) noexcept
+	[[nodiscard]] inline static CONSTEXPR char toupper(const T& c) noexcept
 	{
 		return toupper(std::move(static_cast<char>(c)));
 	}
-#elif CPP >= 11 // C++11 <= v < C++20
+#elif LANG_CPP >= 11 // C++11 <= v < C++20
 	template<typename T>
-	[[nodiscard]] static _CONSTEXPR std::enable_if_t<std::is_convertible_v<T, char>, char> toupper(const T& c)
+	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_convertible_v<T, char>, char> toupper(const T& c)
 	{
 		return toupper(std::move(static_cast<char>(c)));
 	}
@@ -98,12 +98,12 @@ namespace str {
 	 * @param str	- String to convert.
 	 * @returns std::string
 	 */
-	[[nodiscard]] inline _CONSTEXPR const std::string toupper(std::string str) noexcept
+	[[nodiscard]] inline WINCONSTEXPR const std::string toupper(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(toupper(ch));
 		return str;
-}
+	}
 
 #pragma endregion ChangeCase_Upper
 
@@ -116,7 +116,7 @@ namespace str {
 	 * @returns				std::string
 	 */
 	template<class T> requires std::floating_point<T>
-	[[nodiscard]] inline _CONSTEXPR const std::string to_string(const T& val, const std::streamsize& precision = 8, const bool force_decimal = false)
+	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& val, const std::streamsize& precision = 8, const bool force_decimal = false)
 	{
 		std::stringstream tmp;
 		tmp << std::setprecision(precision) << std::fixed << val;
@@ -176,7 +176,7 @@ namespace str {
 	 * @returns string
 	 */
 	template<typename CharType> requires (sizeof(CharType) <= sizeof(wchar_t) && sizeof(CharType) >= 0ull && !std::is_same_v<CharType, bool> && !std::is_same_v<CharType, short>)
-		inline _CONSTEXPR const std::string ctos(CharType c) noexcept
+		inline CONSTEXPR const std::string ctos(CharType c) noexcept
 	{
 		return std::string(1ull, std::move(c));
 	}

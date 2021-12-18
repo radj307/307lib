@@ -16,14 +16,14 @@ namespace token {
 
 		operator ContainerT() const { return tokens; }
 
-		[[nodiscard]] constexpr auto begin() const { return tokens.begin(); }
-		[[nodiscard]] constexpr auto end() const { return tokens.end(); }
-		[[nodiscard]] constexpr auto rbegin() const { return tokens.rbegin(); }
-		[[nodiscard]] constexpr auto rend() const { return tokens.rend(); }
-		[[nodiscard]] constexpr auto empty() const { return tokens.empty(); }
-		[[nodiscard]] constexpr auto at(auto&& pos) const { return tokens.at(std::forward<decltype(pos)>(pos)); }
-		constexpr void reserve(auto&& size) { tokens.reserve(std::forward<decltype(size)>(size)); }
-		constexpr void shrink_to_fit() { tokens.shrink_to_fit(); }
+		[[nodiscard]] WINCONSTEXPR auto begin() const { return tokens.begin(); }
+		[[nodiscard]] WINCONSTEXPR auto end() const { return tokens.end(); }
+		[[nodiscard]] WINCONSTEXPR auto rbegin() const { return tokens.rbegin(); }
+		[[nodiscard]] WINCONSTEXPR auto rend() const { return tokens.rend(); }
+		[[nodiscard]] WINCONSTEXPR auto empty() const { return tokens.empty(); }
+		[[nodiscard]] WINCONSTEXPR auto at(auto&& pos) const { return tokens.at(std::forward<decltype(pos)>(pos)); }
+		WINCONSTEXPR void reserve(auto&& size) { tokens.reserve(std::forward<decltype(size)>(size)); }
+		WINCONSTEXPR void shrink_to_fit() { tokens.shrink_to_fit(); }
 
 		/**
 		 * @brief Remove all tokens with any of the given types using the erase-remove idiom.

@@ -161,8 +161,8 @@ namespace token {
 			return str;
 		}
 
-		template<std::same_as<char>... vT>
-		[[nodiscard]] std::string getsimilar_ch(const vT&... character)
+		template<std::same_as<char>... Ts>
+		[[nodiscard]] std::string getsimilar_ch(const Ts&... character)
 		{
 			std::string str{};
 			for (char c{ getch(true) }; var::variadic_or((c == character)...) && hasMore(); c = getch(true))

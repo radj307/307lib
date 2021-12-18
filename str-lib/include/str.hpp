@@ -127,8 +127,8 @@ namespace str {
 		vec.shrink_to_fit();
 		return std::move(vec);
 	}
-	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... vT>
-	static T compare(const Pred& predicate, const T& fst, const vT&... strings)
+	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... Ts>
+	static T compare(const Pred& predicate, const T& fst, const Ts&... strings)
 	{
 		std::unique_ptr<T> ptr{ nullptr };
 		for (auto& it : var::variadic_accumulate<T>(fst, strings...))
@@ -136,10 +136,10 @@ namespace str {
 				ptr = std::make_unique<T>(it);
 		return { ptr != nullptr ? *ptr.get() : T{} };
 	}
-	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... vT>
-	static T longest(const T& fst, const vT&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() < r.size(); }, fst, strings...); }
-	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... vT>
-	static T shortest(const T& fst, const vT&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() > r.size(); }, fst, strings...); }
+	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... Ts>
+	static T longest(const T& fst, const Ts&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() < r.size(); }, fst, strings...); }
+	template<var::valid_string_or_convertible T, var::valid_string_or_convertible... Ts>
+	static T shortest(const T& fst, const Ts&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() > r.size(); }, fst, strings...); }
 
 	template<var::valid_string T, template<class, class> class Cont>
 	static Cont<T, std::allocator<T>>::const_iterator longest(const Cont<T, std::allocator<T>>& strings)
@@ -187,10 +187,10 @@ namespace str {
 	 * @param strings	Container
 	 * @returns			Cont::const_iterator
 	 */
-	template<size_t index, var::valid_string... vT, template<class...> class Cont>
-	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator longest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
+	template<size_t index, var::valid_string... Ts, template<class...> class Cont>
+	static Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator longest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
 	{
-		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
+		static_assert(index < sizeof...(Ts), "str::longest()\tCannot specify out-of-bounds index!");
 		auto longest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (longest == strings.end() || std::get<index>(*strtpl).size() > std::get<index>(*longest).size())
@@ -205,10 +205,10 @@ namespace str {
 	 * @param strings	Container
 	 * @returns			Cont::const_iterator
 	 */
-	template<size_t index, var::valid_string... vT, template<class...> class Cont>
-	static Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>::const_iterator shortest(const Cont<std::tuple<vT...>, std::allocator<std::tuple<vT...>>>& strings)
+	template<size_t index, var::valid_string... Ts, template<class...> class Cont>
+	static Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator shortest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
 	{
-		static_assert(index < sizeof...(vT), "str::longest()\tCannot specify out-of-bounds index!");
+		static_assert(index < sizeof...(Ts), "str::longest()\tCannot specify out-of-bounds index!");
 		auto shortest{ strings.end() };
 		for (auto strtpl{ strings.begin() }; strtpl != strings.end(); ++strtpl)
 			if (shortest == strings.end() || std::get<index>(*strtpl).size() < std::get<index>(*shortest).size())
@@ -256,7 +256,7 @@ namespace str {
 		 * @param divider	- This string will be inserted between each value, excluding before the first, and after the last, value.
 		 * @param ...values	- Arguments to print out, in order.
 		 */
-		constexpr Printable(std::string divider, const VT&... values) : _div{ std::move(divider) }, _values{ std::move(values) } {}
+		constexpr Printable(std::string divider, const VT&... values) : _div{ std::move(divider) }, _values{ values... } {}
 		constexpr operator const std::tuple<VT...>() const { return _values; }
 		friend std::ostream& operator<<(std::ostream& os, const Printable<VT...>& obj)
 		{
@@ -328,7 +328,7 @@ namespace str {
 	 * @param discard_pos	When true, the character at the given position is discarded, otherwise the character is the first character of the second return value.
 	 * @returns				std::pair<std::string, std::string>
 	 */
-	inline constexpr const std::pair<std::string, std::string> split(const std::string& str, const size_t& pos, const bool& discard_pos = false)
+	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const size_t& pos, const bool& discard_pos = false)
 	{
 		return{ str.substr(0ull, pos), str.substr(pos + !!discard_pos) };
 	}
@@ -339,7 +339,7 @@ namespace str {
 	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
 	 * @returns		std::pair<std::string, std::string>
 	 */
-	inline constexpr const std::pair<std::string, std::string> split(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
 	{
 		unsigned matched{ 0u };
 		for (size_t pos{ str.find(delim) }; pos_valid(pos); pos = str.find(delim, pos + 1ull))
@@ -354,7 +354,7 @@ namespace str {
 	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
 	 * @returns		std::pair<std::string, std::string>
 	 */
-	inline constexpr const std::pair<std::string, std::string> rsplit(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	inline WINCONSTEXPR const std::pair<std::string, std::string> rsplit(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
 	{
 		unsigned matched{ 0u };
 		for (size_t pos{ str.rfind(delim) }; pos_valid(pos); pos = str.rfind(delim, pos + 1ull))

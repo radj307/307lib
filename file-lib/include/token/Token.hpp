@@ -48,45 +48,44 @@ namespace token {
 	 */
 	inline std::string get_tokentype_plaintext(const TokenType& type)
 	{
-		using enum TokenType;
 		switch (type) {
-		case NULL_TYPE:
+		case TokenType::NULL_TYPE:
 			return "NULL";
-		case NEWLINE:
+		case TokenType::NEWLINE:
 			return "New Line";
-		case END:
+		case TokenType::END:
 			return "End of File";
-		case DIVIDER:
+		case TokenType::DIVIDER:
 			return "Divider";
-		case COMMENT:
+		case TokenType::COMMENT:
 			return "Comment";
-		case STRING:
+		case TokenType::STRING:
 			return "String";
-		case KEY:
+		case TokenType::KEY:
 			return "Key";
-		case BOOLEAN:
+		case TokenType::BOOLEAN:
 			return "Boolean";
-		case NUMBER:
+		case TokenType::NUMBER:
 			return "Number";
-		case NUMBER_INT:
+		case TokenType::NUMBER_INT:
 			return "Integer";
-		case NUMBER_HEX:
+		case TokenType::NUMBER_HEX:
 			return "Hexadecimal";
-		case HEADER:
+		case TokenType::HEADER:
 			return "Header";
-		case SETTER:
+		case TokenType::SETTER:
 			return "Setter";
-		case ESCAPED:
+		case TokenType::ESCAPED:
 			return "Escaped Character";
-		case OPEN_ARRAY:
+		case TokenType::OPEN_ARRAY:
 			return "Open Array";
-		case CLOSE_ARRAY:
+		case TokenType::CLOSE_ARRAY:
 			return "Close Array";
-		case OPEN_SECTION:
+		case TokenType::OPEN_SECTION:
 			return "Open Section";
-		case CLOSE_SECTION:
+		case TokenType::CLOSE_SECTION:
 			return "Close Section";
-		case UNKNOWN: [[fallthrough]];
+		case TokenType::UNKNOWN: [[fallthrough]];
 		default:
 			return "Unknown";
 		}
@@ -127,7 +126,6 @@ namespace token {
 		 * @param pr	- Single character in the file that has a single type. This is converted to a std::string during initialization, and this token's type.
 		 */
 		TokenBase(std::pair<char, TokenT> pr) : TokenBase(std::move(pr.first), std::move(pr.second)) {}
-
 	};
 
 	/**

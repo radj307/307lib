@@ -80,37 +80,36 @@ namespace token {
 	template<typename T> requires std::is_same_v<T, char> || std::is_same_v<T, wchar_t> || std::is_same_v<T, unsigned char>
 	inline static constexpr LEXEME get_lexeme(const T & ch)
 	{
-		using enum LEXEME;
 		switch (ch) {
-		case -1:				return _EOF;
+		case -1:				return LEXEME::_EOF;
 		case '\033': [[fallthrough]];
-		case ESCAPE_CHARACTER:	return ESCAPE;
-		case '=':				return EQUALS;
-		case '+':				return ADDITION;
-		case '-':				return SUBTRACT;
-		case '_':				return UNDERSCORE;
-		case ':':				return COLON;
-		case ';':				return SEMICOLON;
-		case '#':				return POUND;
-		case '%':				return PERCENT;
-		case '\'':				return QUOTE_SINGLE;
-		case '\"':				return QUOTE_DOUBLE;
-		case '{':				return BRACKET_OPEN;
-		case '}':				return BRACKET_CLOSE;
-		case '(':				return PARENTHESIS_OPEN;
-		case ')':				return PARENTHESIS_CLOSE;
-		case '[':				return SQUAREBRACKET_OPEN;
-		case ']':				return SQUAREBRACKET_CLOSE;
-		case '<':				return ANGLEBRACKET_OPEN;
-		case '>':				return ANGLEBRACKET_CLOSE;
-		case '.':				return PERIOD;
-		case ',':				return COMMA;
-		case '\n':				return NEWLINE;
+		case ESCAPE_CHARACTER:	return LEXEME::ESCAPE;
+		case '=':				return LEXEME::EQUALS;
+		case '+':				return LEXEME::ADDITION;
+		case '-':				return LEXEME::SUBTRACT;
+		case '_':				return LEXEME::UNDERSCORE;
+		case ':':				return LEXEME::COLON;
+		case ';':				return LEXEME::SEMICOLON;
+		case '#':				return LEXEME::POUND;
+		case '%':				return LEXEME::PERCENT;
+		case '\'':				return LEXEME::QUOTE_SINGLE;
+		case '\"':				return LEXEME::QUOTE_DOUBLE;
+		case '{':				return LEXEME::BRACKET_OPEN;
+		case '}':				return LEXEME::BRACKET_CLOSE;
+		case '(':				return LEXEME::PARENTHESIS_OPEN;
+		case ')':				return LEXEME::PARENTHESIS_CLOSE;
+		case '[':				return LEXEME::SQUAREBRACKET_OPEN;
+		case ']':				return LEXEME::SQUAREBRACKET_CLOSE;
+		case '<':				return LEXEME::ANGLEBRACKET_OPEN;
+		case '>':				return LEXEME::ANGLEBRACKET_CLOSE;
+		case '.':				return LEXEME::PERIOD;
+		case ',':				return LEXEME::COMMA;
+		case '\n':				return LEXEME::NEWLINE;
 		case ' ': [[fallthrough]]; // Misc Whitespace
 		case '\t': [[fallthrough]];
 		case '\v': [[fallthrough]];
 		case '\r':
-			return WHITESPACE;
+			return LEXEME::WHITESPACE;
 		case '0': [[fallthrough]]; // Digits
 		case '1': [[fallthrough]];
 		case '2': [[fallthrough]];
@@ -121,7 +120,7 @@ namespace token {
 		case '7': [[fallthrough]];
 		case '8': [[fallthrough]];
 		case '9':
-			return DIGIT;
+			return LEXEME::DIGIT;
 		case 'a': [[fallthrough]]; // LOWERCASE Alpha
 		case 'b': [[fallthrough]];
 		case 'c': [[fallthrough]];
@@ -148,7 +147,7 @@ namespace token {
 		case 'x': [[fallthrough]];
 		case 'y': [[fallthrough]];
 		case 'z':
-			return LETTER_LOWERCASE;
+			return LEXEME::LETTER_LOWERCASE;
 		case 'A': [[fallthrough]]; // UPPERCASE Alpha
 		case 'B': [[fallthrough]];
 		case 'C': [[fallthrough]];
@@ -175,9 +174,9 @@ namespace token {
 		case 'X': [[fallthrough]];
 		case 'Y': [[fallthrough]];
 		case 'Z':
-			return LETTER_UPPERCASE;
+			return LEXEME::LETTER_UPPERCASE;
 		default:
-			return UNKNOWN;
+			return LEXEME::UNKNOWN;
 		}
 	}
 

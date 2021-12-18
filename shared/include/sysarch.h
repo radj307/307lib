@@ -55,13 +55,13 @@
 #endif // OS
 
  /**
-  * @def	CPPCLI
+  * @def	LANG_CPPCLI
   * @brief	When defined, C++/CLI Language extension is present.
   */
-#define CPPCLI
-#undef CPPCLI
+#define LANG_CPPCLI
+#undef LANG_CPPCLI
   /**
-  * @def	CPP
+  * @def	LANG_CPP
   * @brief	Defines the version of C++ being used by the compiler.
   * | Value		| Description |
   * |-----:-----|-----:-------|
@@ -73,10 +73,10 @@
   * | 20		| At least partially implemented C++20. |
   * | 23		| C++23 _(Or newer if this file hasn't been updated)_ |
  */
-#define CPP
-#undef CPP
+#define LANG_CPP
+#undef LANG_CPP
  /**
-  * @def	C
+  * @def	LANG_C
   * @brief	Defines the version of C being used by the compiler.
   * | Value		| Description |
   * |-----:-----|-----:-------|
@@ -86,53 +86,53 @@
   * | 99		| C99		  |
   * | 11		| C11		  |
   * | 18		| C18		  |
-  * | 20		| Any version of C newer than C18 |
+  * | 20		| >C18        |
   */
-#define C
-#undef C
+#define LANG_C
+#undef LANG_C
 
 #ifdef __cplusplus_cli
-#define CPPCLI
+#define LANG_CPPCLI
 #endif
 #if defined(__cplusplus)
 
   // Check C++ version
 #if __cplusplus > 202002L
-#define CPP 23			///< C++23
+#define LANG_CPP 23			///< C++23
 #elif __cplusplus > 201703L
-#define CPP 20			///< C++20
+#define LANG_CPP 20			///< C++20
 #elif __cplusplus > 201402L
-#define CPP 17			///< C++17
+#define LANG_CPP 17			///< C++17
 #elif __cplusplus > 201102L
-#define CPP 14			///< C++14
+#define LANG_CPP 14			///< C++14
 #elif __cplusplus > 199711L
-#define CPP 11			///< C++11
+#define LANG_CPP 11			///< C++11
 #elif __cplusplus == 199711L
-#define CPP 98			///< C++98
+#define LANG_CPP 98			///< C++98
 #ifdef _MSC_VER
 #pragma message(R"(MSVC detected, but "/Zc:__cplusplus" wasn't set in the compiler arguments! Cannot determine C++ version.)")
 #endif
 #else 
-#define CPP	NULL		///< Unknown
+#define LANG_CPP	NULL		///< Unknown
 #endif
 
 #elif defined(__STDC_VERSION__) || defined(__STDC__)
 
   // Check C version
 #if defined(__STDC__) && !defined(__STDC_VERSION__)
-#define C 90			///< C89 or C90
+#define LANG_C 90			///< C89 or C90
 #elif __STDC_VERSION__ > 201710L
-#define C 20			///< newer than C18
+#define LANG_C 20			///< newer than C18
 #elif __STDC_VERSION__ > 201112L
-#define C 18			///< C18
+#define LANG_C 18			///< C18
 #elif __STDC_VERSION__ > 199901L
-#define C 11			///< C11
+#define LANG_C 11			///< C11
 #elif __STDC_VERSION__ > 199409L
-#define C 99			///< C99
+#define LANG_C 99			///< C99
 #elif __STDC_VERSION__ == 199409L
-#define C 95			///< C95
+#define LANG_C 95			///< C95
 #else
-#define C NULL
+#define LANG_C NULL
 #endif
 
 #else
@@ -153,10 +153,18 @@
 
 #endif // SYSARCH
 
-#ifndef _CONSTEXPR
-#if CPP >= 20
-#define _CONSTEXPR constexpr
+  /** @def CONSTEXPR @brief Macro for C++17 constexpr. */
+#ifndef CONSTEXPR
+#if LANG_CPP >= 17
+#define CONSTEXPR constexpr
 #else
-#define _CONSTEXPR
+#define CONSTEXPR
 #endif
+#endif
+
+   /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
+#ifdef COMPILER_MSVC
+#define WINCONSTEXPR CONSTEXPR
+#else
+#define WINCONSTEXPR
 #endif

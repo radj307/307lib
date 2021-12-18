@@ -1,5 +1,5 @@
-# packaging
-# This file uses the configure_file command to generate packaging files for all subdirectories
+# 307lib/packaging
+# Uses configure_file() to create packaging files for libraries
 cmake_minimum_required(VERSION 3.15)
 
 if (POLICY CMP0074)
@@ -31,7 +31,7 @@ if (ENABLE_FILELIB)
 endif()
 
 if (ENABLE_TERMAPI)
-	setup_packaging("TermAPI" "ANSI color term extensions TermAPI")
+	setup_packaging("TermAPI" "TermAPI")
 endif()
 
 if (ENABLE_OPTLIB)

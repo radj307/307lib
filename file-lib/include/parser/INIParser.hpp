@@ -13,7 +13,7 @@
 #include <fileio.hpp>
 
 #include <variant>
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #endif
 
@@ -40,7 +40,7 @@ namespace token::parse {
 		 */
 		INIParser(const std::string& filename, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ filename } {}
 		INIParser(const std::string& filename) : INIParser(filename, std::move(file::read(filename))) {}
-	#if CPP >= 17
+	#if LANG_CPP >= 17
 		INIParser(const std::filesystem::path& path, std::stringstream&& file) : TokenizedContainer(std::move(TokenizerINI(std::forward<std::stringstream>(file)).tokenize())), filename{ path.generic_string() } {}
 		/**
 		 * @brief Filename Constructor

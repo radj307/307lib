@@ -9,7 +9,7 @@
 
 #include <unordered_map>
 #include <variant>
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #endif
 
@@ -114,13 +114,13 @@ namespace file::ini {
 		 * @param header_name	- The header name of the section this key belongs to.
 		 * @param key_name		- The name of the key associated with this setting.
 		 */
-		_CONSTEXPR KeyHelper(std::string header_name, std::string key_name) : header{ std::move(header_name) }, key{ std::move(key_name) } {}
+		WINCONSTEXPR KeyHelper(std::string header_name, std::string key_name) : header{ std::move(header_name) }, key{ std::move(key_name) } {}
 
 		/**
 		 * @brief Return this setting as a header_key_pair, this is implicitly called when passed to ContainerINI functions.
 		 * @returns std::pair<std::string, std::string>
 		 */
-		_CONSTEXPR operator std::pair<std::string, std::string>() const { return { header, key }; }
+		WINCONSTEXPR operator std::pair<std::string, std::string>() const { return { header, key }; }
 	};
 
 	/**
@@ -141,7 +141,7 @@ namespace file::ini {
 		 * @brief	Constructor that accepts the name of a file, reads it, and initializes with the parsed values.
 		 */
 		explicit INI(const std::string& filename) : ContainerINI(std::move(_internal::parseINI(std::move(file::read(filename))))) {}
-	#if CPP >= 17
+	#if LANG_CPP >= 17
 		/**
 		 * @brief	Constructor that accepts a filepath, reads it, and initializes with the parsed values.
 		 */
@@ -190,7 +190,7 @@ namespace file::ini {
 }
 #else
 #include <parser/INIParser.hpp>
-#if CPP >= 17
+#if LANG_CPP >= 17
 #include <filesystem>
 #endif
 
@@ -205,14 +205,14 @@ namespace file::ini {
 		 * @param map	- rvalue reference of a pre-constructed INIContainer::Map.
 		 */
 		INI(INIContainer::Map&& map) : INIContainer(std::move(map)) {}
-	#if CPP >= 17
+	#if LANG_CPP >= 17
 		INI(const std::filesystem::path& path) : INI(std::move(token::parse::INIParser(path.generic_string(), file::read(path)).operator token::parse::INIContainer::Map())) {}
 	#else
 		INI(const std::string& filename) : INI(std::move(token::parse::INIParser(filename, file::read(filename)).operator token::parse::INIContainer::Map())) {}
 	#endif
 		INI() = default;
 
-	#if CPP >= 17
+	#if LANG_CPP >= 17
 	#define IN_TYPE std::filesystem::path
 	#else
 	#define IN_TYPE std::string

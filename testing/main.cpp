@@ -18,8 +18,6 @@ using namespace perf;
 
 inline void test_xlog()
 {
-	std::cout << term::EnableANSI;
-
 	std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset << '\n';
 	std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset << '\n';
 	std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset << '\n';
@@ -52,8 +50,9 @@ inline void test_xlog()
 int main(const int argc, char** argv)
 {
 	try {
+	#ifdef OS_WIN
 		std::cout << term::EnableANSI;
-
+	#endif
 		color::Config cfg{ "test.txt" };
 		std::cout << cfg.set("c1", "c2", "c4") << "Hello" << cfg.reset() << '\n';
 
