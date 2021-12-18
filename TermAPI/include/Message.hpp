@@ -33,7 +33,7 @@ namespace term {
 		const color::setcolor _color;
 		const bool _use_indent;
 	public:
-		constexpr Message(const std::string& message_prefix, const color::setcolor& color, const bool& use_indent = true) : _message{ message_prefix }, _color{ color }, _use_indent{ use_indent } {}
+		WINCONSTEXPR Message(const std::string& message_prefix, const color::setcolor& color, const bool& use_indent = true) : _message{ message_prefix }, _color{ color }, _use_indent{ use_indent } {}
 
 		std::string as_string() const
 		{

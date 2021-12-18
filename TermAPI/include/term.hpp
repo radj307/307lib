@@ -377,8 +377,8 @@ namespace term {
 		return make_sequence(CSI, erase_scope, 'K');
 	}
 
-	template<var::Streamable... vT>
-	[[nodiscard]] inline static Sequence SGR(const vT&... modes)
+	template<var::Streamable... Ts>
+	[[nodiscard]] inline static Sequence SGR(const Ts&... modes)
 	{
 	#ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
@@ -387,8 +387,8 @@ namespace term {
 	#endif
 	}
 
-	template<var::Streamable... vT>
-	[[nodiscard]] inline static Sequence SetGraphicsRendition(const vT&... modes)
+	template<var::Streamable... Ts>
+	[[nodiscard]] inline static Sequence SetGraphicsRendition(const Ts&... modes)
 	{
 		return SGR(modes...);
 	}

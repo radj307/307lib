@@ -1,4 +1,4 @@
-# TermAPI
+# 307lib/TermAPI
 cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -11,58 +11,70 @@ endif()
 
 project("TermAPI")
 
-# Add sequence library
-add_subdirectory("ANSI")
-		
 set(HEADERS
-	"./include/TermAPI.hpp"
+	# ANSI
+	"include/Segments.h"
+	"include/Sequence.hpp"
+	"include/winEnableANSI.hpp"
+	"include/LineCharacter.hpp"
+	# color
+	"include/color-values.h"
+	"include/color-transform.hpp"
+	"include/color-format.hpp"
+	"include/setcolor.hpp"
+	"include/palette.hpp"
+	# term
+	"include/CursorOrigin.h"
+	"include/term.hpp"
+	# TermAPI
+	"include/TermAPI.hpp"
 )
 set(SRC
-	"./src/TermAPI.cpp"
+	# ANSI
+	"src/Sequence.cpp"
+	# color
+	"src/setcolor.cpp"
+	"src/palette.cpp"
+	# term
+	"src/term.cpp"
+	# TermAPI
+	"src/TermAPI.cpp"
 )
+
+include(CMakeDependentOption)
+
+cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_XLOG "Enable the xlog header." ON "ENABLE_STRLIB" OFF)
+if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
+	list(APPEND HEADERS "include/xlog.hpp")
+	list(APPEND SRC "src/xlog.cpp")
+endif()
+
+cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG "Enable the color-config header." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
+if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
+	list(APPEND HEADERS "include/color-config.hpp")
+	list(APPEND SRC "src/color-config.cpp")
+endif()
 
 add_library(TermAPI STATIC ${HEADERS} ${SRC})
 add_library(307lib::TermAPI ALIAS TermAPI)
+
+if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
+	target_link_libraries(TermAPI PUBLIC str-lib)
+endif()
+if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
+	target_link_libraries(TermAPI PUBLIC str-lib file-lib)
+endif()
+
 target_include_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-	"$<INSTALL_INTERFACE:include>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/ANSI/include>"
+	"$<INSTALL_INTERFACE:ANSI/include;color/include;term/include;extensions/include>"
 )
 target_link_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
-	"$<INSTALL_INTERFACE:src>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src;${CMAKE_CURRENT_SOURCE_DIR}/ANSI/src>"
+	"$<INSTALL_INTERFACE:ANSI/src;color/src;term/src;extensions/src;src>"
 )
-
-set(LINKS
-	"ANSI"
-)
-
-# Add color
-option(TERMAPI_ENABLE_COLOR "Enable the color object library." ON)
-if (TERMAPI_ENABLE_COLOR)
-	add_subdirectory("color")
-	list(APPEND LINKS
-		"color"
-	)
-endif()
-
-# Add term
-option(TERMAPI_ENABLE_TERM "Enable the term object library." ON)
-if (TERMAPI_ENABLE_TERM)
-	add_subdirectory("term")
-	list(APPEND LINKS
-		"term"
-	)
-endif()
 
 target_link_libraries(TermAPI PUBLIC ${LINKS})
-
-include(CMakeDependentOption)
-cmake_dependent_option(TERMAPI_ENABLE_EXTENSIONS "Enable the TermAPI extensions library" ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
-if(TERMAPI_ENABLE_EXTENSIONS)
-	message(STATUS "TermAPI Extensions Enabled")
-	add_subdirectory("extensions")
-	target_link_libraries(TermAPI PUBLIC file-lib extensions)
-endif()
 
 # Packaging
 include(GenerateExportHeader)

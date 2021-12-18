@@ -15,7 +15,7 @@ endif()
 
 # Install target library headers
 install(
-	TARGETS ANSI color term extensions TermAPI
+	TARGETS TermAPI
 	EXPORT TermAPI_Targets
 	RUNTIME COMPONENT TermAPI_Runtime
 	LIBRARY COMPONENT TermAPI_Runtime

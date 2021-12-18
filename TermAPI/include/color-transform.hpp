@@ -29,7 +29,7 @@ namespace color {
 	 * @returns		T
 	 */
 	template<::std::integral T = ColorT>
-	inline _CONSTEXPR const T rgb_to_sgr(const T& r, const T& g, const T& b)
+	inline CONSTEXPR const T rgb_to_sgr(const T& r, const T& g, const T& b)
 	{
 		return { r * static_cast<T>(36) + g * static_cast<T>(6) + (b + static_cast<T>(16)) };
 	}
@@ -43,7 +43,7 @@ namespace color {
 	 * @returns		ColorT
 	 */
 	template<::std::floating_point T>
-	inline _CONSTEXPR const ColorT rgb_to_sgr(const T& r, const T& g, const T& b) noexcept
+	inline CONSTEXPR const ColorT rgb_to_sgr(const T& r, const T& g, const T& b) noexcept
 	{
 		T max{ var::largest(r, g, b) };
 		const auto translatef{ [&max](const auto& fp) -> ColorT {
@@ -59,7 +59,7 @@ namespace color {
 	 * @returns				T
 	 */
 	template<::std::integral T = ColorT>
-	inline _CONSTEXPR const T rgb_to_sgr(const RGB<T>& rgb_color) noexcept
+	inline CONSTEXPR const T rgb_to_sgr(const RGB<T>& rgb_color) noexcept
 	{
 		return rgb_to_sgr<T>(::std::get<0>(rgb_color), ::std::get<1>(rgb_color), ::std::get<2>(rgb_color));
 	}
@@ -71,7 +71,7 @@ namespace color {
 	 * @returns				::std::tuple<T, T, T>
 	 */
 	template<::std::integral T = ColorT>
-	inline _CONSTEXPR const RGB<T> sgr_to_rgb(const T& sgr_color)
+	inline CONSTEXPR const RGB<T> sgr_to_rgb(const T& sgr_color)
 	{
 		T tmp{ sgr_color - static_cast<T>(16) };
 
@@ -90,7 +90,7 @@ namespace color {
 	 * @param ch	Input Character.
 	 * @returns		bool
 	 */
-	inline static _CONSTEXPR bool ishexnum(const char& ch)
+	inline static CONSTEXPR bool ishexnum(const char& ch)
 	{
 		switch (ch) {
 		case '0': [[fallthrough]];
@@ -128,7 +128,7 @@ namespace color {
 	 * @returns				ReturnType
 	 */
 	template<::std::integral ReturnType>
-	inline static _CONSTEXPR ReturnType hex_to_int(const char& ch)
+	inline static CONSTEXPR ReturnType hex_to_int(const char& ch)
 	{
 		if (isdigit(ch))
 			return static_cast<ReturnType>(ch - '0');
@@ -147,7 +147,7 @@ namespace color {
 	 * @returns				ReturnType
 	 */
 	template<::std::integral ReturnType>
-	inline static _CONSTEXPR ReturnType hex_to_int(const std::string& hex_str) noexcept
+	inline static CONSTEXPR ReturnType hex_to_int(const std::string& hex_str) noexcept
 	{
 		if (hex_str.empty())
 			return static_cast<ReturnType>(0);
@@ -170,7 +170,7 @@ namespace color {
 	 * @returns		RGB<T>
 	 */
 	template<::std::integral T = ColorT>
-	inline static _CONSTEXPR RGB<T> hex_to_rgb(const ::std::string& hex) noexcept
+	inline static CONSTEXPR RGB<T> hex_to_rgb(const ::std::string& hex) noexcept
 	{
 		return{
 			math::normalize(hex_to_int<T>(hex.substr(0ull, 2ull)), { 0, 255 }, {0, 5}),
@@ -191,7 +191,7 @@ namespace color {
 	 *				| 0-255 | Output Value  |
 	 */
 	template<::std::integral T = ColorT>
-	inline static _CONSTEXPR T hex_to_sgr(const ::std::string& hex) noexcept
+	inline static CONSTEXPR T hex_to_sgr(const ::std::string& hex) noexcept
 	{
 		if (!hex.empty() && ::std::all_of(hex.begin(), hex.end(), ishexnum))
 			return rgb_to_sgr(hex_to_rgb(hex));

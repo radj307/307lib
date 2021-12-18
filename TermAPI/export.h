@@ -22,7 +22,7 @@
 #endif
 
 #ifndef TERMAPI_DEPRECATED
-#  define TERMAPI_DEPRECATED __declspec(deprecated)
+#  define TERMAPI_DEPRECATED __attribute__ ((__deprecated__))
 #endif
 
 #ifndef TERMAPI_DEPRECATED_EXPORT

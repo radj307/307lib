@@ -23,19 +23,18 @@ namespace color {
 			ConfigTokenizer(std::stringstream&& buffer) : TokenizerBase(std::forward<std::stringstream>(buffer)) {}
 			Token getNext() override
 			{
-				using enum LEXEME;
 				const auto ch{ getch() };
 				switch (get_lexeme(ch)) {
-				case POUND: // Beginning of a hex color value
-					return Token{ getsimilar(DIGIT, LETTER_UPPERCASE, LETTER_LOWERCASE), TokenType::NUMBER };
-				case LETTER_UPPERCASE: [[fallthrough]];
-				case LETTER_LOWERCASE: // Key name
-					return Token{ std::string(1ull, ch) + getsimilar(LETTER_UPPERCASE, LETTER_LOWERCASE, DIGIT), TokenType::KEY };
-				case EQUALS: // Setter
+				case LEXEME::POUND: // Beginning of a hex color value
+					return Token{ getsimilar(LEXEME::DIGIT, LEXEME::LETTER_UPPERCASE, LEXEME::LETTER_LOWERCASE), TokenType::NUMBER };
+				case LEXEME::LETTER_UPPERCASE: [[fallthrough]];
+				case LEXEME::LETTER_LOWERCASE: // Key name
+					return Token{ std::string(1ull, ch) + getsimilar(LEXEME::LETTER_UPPERCASE, LEXEME::LETTER_LOWERCASE, LEXEME::DIGIT), TokenType::KEY };
+				case LEXEME::EQUALS: // Setter
 					return Token{ ch, TokenType::SETTER };
-				case NEWLINE: // Newline
+				case LEXEME::NEWLINE: // Newline
 					return Token{ ch, TokenType::NEWLINE };
-				case _EOF: // End of File
+				case LEXEME::_EOF: // End of File
 					return Token{ ch, TokenType::END };
 				default:
 					return Token{ ch, TokenType::NULL_TYPE };
@@ -61,24 +60,23 @@ namespace color {
 				} };
 
 				for (auto& t : tokens) {
-					using enum TokenType;
 					switch (t.second) {
-					case KEY:
+					case TokenType::KEY:
 						key = t.first;
 						break;
-					case SETTER:
+					case TokenType::SETTER:
 						setter = true;
 						break;
-					case NUMBER:
+					case TokenType::NUMBER:
 						val = t.first;
 						break;
-					case NEWLINE:
+					case TokenType::NEWLINE:
 						insert();
 						key = {};
 						setter = false;
 						val = {};
 						break;
-					case END:
+					case TokenType::END:
 						insert();
 						break;
 					}
@@ -95,22 +93,22 @@ namespace color {
 	}
 	class Config {
 	public:
-		using RGB = RGB<short>;
-		using Map = std::unordered_map<std::string, RGB>;
+		using sRGB = RGB<short>;
+		using Map = std::unordered_map<std::string, sRGB>;
 
 	protected:
 		Map _map;
 		bool _enabled{ true };
 
-		template<size_t i = 0ull, typename... vT>
-		setcolor set(const std::tuple<vT...>& tpl) const
+		template<size_t i = 0ull, typename... Ts>
+		setcolor set(const std::tuple<Ts...>& tpl) const
 		{
 			if (_enabled) {
 				if (const auto here{ std::get<i>(tpl) }; _map.contains(here)) {
 					if (auto ret{ _map.at(here) }; ret != setcolor_placeholder)
 						return ret;
 				}
-				if constexpr (i + 1ull < sizeof...(vT))
+				if constexpr (i + 1ull < sizeof...(Ts))
 					return set<i + 1ull>(tpl);
 			}
 			return setcolor_placeholder;
@@ -148,8 +146,8 @@ namespace color {
 		 * @param key...	The names of the target keys. The first existing keyname will be used.
 		 * @returns			setcolor
 		 */
-		template<typename... vT>
-		setcolor set(const vT&... keys) const
+		template<typename... Ts>
+		setcolor set(const Ts&... keys) const
 		{
 			if (_enabled)
 				return set<0ull>(std::make_tuple(keys...));
@@ -197,8 +195,8 @@ namespace color {
 		 * @param keys...	Target keyname.
 		 * @returns			setcolor
 		 */
-		template<typename... vT>
-		setcolor reset(const vT&... keys) const
+		template<typename... Ts>
+		setcolor reset(const Ts&... keys) const
 		{
 			if (_enabled)
 				return reset() + set<0ull>(std::make_tuple(keys...));
