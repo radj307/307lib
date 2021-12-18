@@ -24,8 +24,14 @@ if (TERMAPI_ENABLE_MESSAGE)
 endif()
 
 add_library(term OBJECT ${HEADERS} ${SRC})
-target_include_directories(term PUBLIC "./include" "./src")
-target_link_directories(term PUBLIC "./src")
+target_include_directories(term PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(term PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 
 target_link_libraries(term PUBLIC ANSI)
 

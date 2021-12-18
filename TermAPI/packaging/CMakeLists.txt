@@ -1,0 +1,41 @@
+# TermAPI/packaging
+# src: https://alexreinking.com/blog/building-a-dual-shared-and-static-library-with-cmake.html
+cmake_minimum_required(VERSION 3.8)
+
+set(TARGET_NAME "TermAPI")
+
+##### Packaging
+include(GNUInstallDirs)				# Adds variables to control the install command. (Platform independant, despite the name)
+include(CMakePackageConfigHelpers)	# Adds versioning assistance
+
+# Define install directory
+if (NOT DEFINED ${TARGET_NAME}_INSTALL_DIR)
+	set(${TARGET_NAME}_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/${TARGET_NAME}" CACHE STRING "Path to ${TARGET_NAME} CMake files")
+endif()
+
+##### Install
+
+# Install target library headers
+install(
+	TARGETS ANSI color term extensions TermAPI
+	EXPORT ${TARGET_NAME}_Targets
+	RUNTIME COMPONENT ${TARGET_NAME}_Runtime
+	LIBRARY COMPONENT ${TARGET_NAME}_Runtime
+	NAMELINK_COMPONENT ${TARGET_NAME}_Development
+	ARCHIVE COMPONENT ${TARGET_NAME}_Development
+	INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+install(
+	DIRECTORY "${${TARGET_NAME}_SOURCE_DIR}/include/" "${${TARGET_NAME}_BINARY_DIR}/include/"
+	TYPE INCLUDE
+	COMPONENT ${TARGET_NAME}_Development
+)
+
+# Export ${TARGET_NAME} library
+install(
+	EXPORT ${TARGET_NAME}_Targets
+	DESTINATION "${${TARGET_NAME}_INSTALL_DIR}"
+	NAMESPACE 307lib::
+	FILE ${TARGET_NAME}-targets.cmake
+	COMPONENT ${TARGET_NAME}_Development
+)

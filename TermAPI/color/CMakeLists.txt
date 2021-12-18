@@ -25,7 +25,13 @@ set(SRC
 )
 
 add_library(color OBJECT ${HEADERS} ${SRC})
-target_include_directories(color PUBLIC "./include" "./src")
-target_link_directories(color PUBLIC "./src")
+target_include_directories(color PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(color PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 
 target_link_libraries(color PUBLIC ANSI)

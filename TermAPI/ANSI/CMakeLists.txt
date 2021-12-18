@@ -21,8 +21,14 @@ set(SRC
 )
 
 add_library(ANSI OBJECT ${HEADERS} ${SRC})
-target_include_directories(ANSI PUBLIC "./include" "./src")
-target_link_directories(ANSI PUBLIC "./src")
+target_include_directories(ANSI PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
+)
+target_link_directories(ANSI PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:src>"
+)
 
 target_link_libraries(ANSI PUBLIC shared)
 
