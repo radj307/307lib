@@ -20,20 +20,29 @@ function(setup_packaging _name _targets)
 	set(${_name}_DIR "${CMAKE_SOURCE_DIR}/${_name}/packaging" CACHE STRING "Set the search directory for find_package" FORCE)
 endfunction()
 
+# Setup packaging for shared
 setup_packaging("shared" "shared")
 
+# Setup packaging for str-lib
 if (ENABLE_STRLIB)
 	setup_packaging("str-lib" "str-lib")
 endif()
 
+# Setup packaging for file-lib
 if (ENABLE_FILELIB)
 	setup_packaging("file-lib" "file-lib")
 endif()
 
+# Setup packaging for TermAPI
 if (ENABLE_TERMAPI)
 	setup_packaging("TermAPI" "TermAPI")
 endif()
 
+# Setup packaging for opt-lib
 if (ENABLE_OPTLIB)
 	setup_packaging("opt-lib" "opt-lib")
 endif()
+
+# Cleanup
+unset(PACKAGING_TARGETS CACHE)
+unset(PACKAGING_TARGET_NAME CACHE)
