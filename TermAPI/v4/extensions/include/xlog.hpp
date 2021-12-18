@@ -92,14 +92,14 @@ namespace xlog {
 		static const LogLevel ERROR;
 		/// @brief	Base: Show warning messages.
 		static const LogLevel WARNING;
+		/// @brief	Base: Show program messages.
+		static const LogLevel MESSAGE;
 		/// @brief	Base: Show log messages.
 		static const LogLevel LOG;
 		/// @brief	Base: Show informational messages.
 		static const LogLevel INFO;
 		/// @brief	Base: Show debugging messages.
 		static const LogLevel DEBUG;
-		/// @brief	Base: Show program messages.
-		static const LogLevel MESSAGE;
 
 		/// @brief	Only show CRITICAL & ERROR level messages.
 		static const LogLevel OnlyErrors;
@@ -354,7 +354,7 @@ namespace xlog {
 		 * @returns				bool
 		 */
 		template<typename... Message>
-		inline bool log(const level::LogLevel& level, const Message&... msg) const
+		inline bool write(const level::LogLevel& level, const Message&... msg) const
 		{
 			const auto allowed{ currentLevelContains(level) };
 			if (allowed)
@@ -363,6 +363,14 @@ namespace xlog {
 				self_log("Refused a message because the current log level does not allow messages of that type.");
 			return allowed;
 		}
+
+		template<typename... Message> inline bool debug(Message&&... msg) const { return write(level::DEBUG, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool info(Message&&... msg) const { return write(level::INFO, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool log(Message&&... msg) const { return write(level::LOG, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool msg(Message&&... msg) const { return write(level::MESSAGE, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool warn(Message&&... msg) const { return write(level::WARNING, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool error(Message&&... msg) const { return write(level::ERROR, std::forward<Message>(msg)...); }
+		template<typename... Message> inline bool crit(Message&&... msg) const { return write(level::CRITICAL, std::forward<Message>(msg)...); }
 	};
 
 	using msg_break_t = nullptr_t;
@@ -406,9 +414,9 @@ namespace xlog {
 				oxl._last = std::make_unique<level::LogLevel>(message_to_level(m));
 			else if constexpr (std::same_as<T, msg_break_t>) {
 				if (!oxl._add_prefix || oxl._last.get() == nullptr)
-					oxl.log(level::NONE, oxl._buffer.str());
+					oxl.write(level::NONE, oxl._buffer.str());
 				else
-					oxl.log(*oxl._last.get(), oxl._buffer.str());
+					oxl.write(*oxl._last.get(), oxl._buffer.str());
 				oxl._buffer = {};
 			}
 			else if (!oxl._add_prefix || oxl._last.get() != nullptr)
