@@ -359,7 +359,7 @@ namespace opt {
 			throw make_exception("ArgContainer::get_range()\tInvalid indexes where from == ", from, " && to == ", to.value_or(_args.size()), ". (Argument list size is ", _args.size(), ')');
 		}
 
-		virtual const ArgContainer get_range_copy(const ArgContainerIteratorType& from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const
+		virtual ArgContainer duplicate_range(const ArgContainerIteratorType& from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const
 		{
 			ArgContainerType cont;
 			for (auto& it : get_range(from, to, inclusive, pred))

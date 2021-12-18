@@ -16,6 +16,8 @@ using namespace perf;
 #include <color-transform.hpp>
 #include <color-config.hpp>
 
+#include "file-lib.h"
+
 inline void test_xlog()
 {
 	std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset << '\n';

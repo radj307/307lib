@@ -11,14 +11,22 @@ endif()
 
 project("testing")
 
+set(HEADERS_MASS
+	"file-lib.h"
+)
 set(HEADERS
 	"flagset.hpp"
 	"performance.hpp"
 )
-
 set(SRC
 	"main.cpp"
 )
+
+
+option(TESTING_ENABLE_MASS_INCLUDES "Includes nearly all headers from all libraries." ON)
+if(TESTING_ENABLE_MASS_INCLUDES)
+	list(APPEND HEADERS ${HEADERS_MASS})
+endif()
 
 add_executable(testing ${HEADERS} ${SRC})
 target_link_libraries(testing PUBLIC shared str-lib TermAPI opt-lib file-lib)
