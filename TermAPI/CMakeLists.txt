@@ -43,13 +43,13 @@ set(SRC
 
 include(CMakeDependentOption)
 
-cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_XLOG "Enable the xlog header." ON "ENABLE_STRLIB" OFF)
+cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_XLOG "Enable the xlog header." ON "ENABLE_TERMAPI;ENABLE_STRLIB" OFF)
 if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
 	list(APPEND HEADERS "include/xlog.hpp")
 	list(APPEND SRC "src/xlog.cpp")
 endif()
 
-cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG "Enable the color-config header." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
+cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG "Enable the color-config header." ON "ENABLE_TERMAPI;ENABLE_STRLIB;ENABLE_FILELIB" OFF)
 if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
 	list(APPEND HEADERS "include/color-config.hpp")
 	list(APPEND SRC "src/color-config.cpp")

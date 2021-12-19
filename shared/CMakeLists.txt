@@ -13,29 +13,37 @@ endif()
 project("shared")
 
 set(HEADERS
-	"./include/sysarch.h"
-	"./include/var.hpp"
-	"./include/math.hpp"
-	"./include/iter.hpp"
-	"./include/make_exception.hpp"
-	"./include/unit.hpp"
+	"include/sysarch.h"
+	"include/var.hpp"
+	"include/math.hpp"
+	"include/iter.hpp"
+	"include/make_exception.hpp"
 )
-
-cmake_dependent_option(SHARED_DISABLE_WINDOWS_HPP "Disable building the shared project with the Windows.hpp header." OFF WIN32 ON)
-if (WIN32 AND NOT SHARED_DISABLE_WINDOWS_HPP)
-	list(APPEND HEADERS "./include/Windows.hpp")
-endif()
-
-option(SHARED_ENABLE_XRAND "Enable the xRand.hpp randomization wrapper header." ON)
-if (SHARED_ENABLE_XRAND)
-	list(APPEND HEADERS "./include/xRand.hpp")
-endif()
 
 set(SRC
-	"./src/unit.cpp"
-	"./src/var.cpp"
-	"./src/make_exception.cpp"
+	"src/var.cpp"
+	"src/make_exception.cpp"
 )
+
+
+option(SHARED_ENABLE_UNIT "Enable the unit.hpp header." OFF)
+if (SHARED_ENABLE_UNIT)
+	message(STATUS "unit.hpp is enabled.")
+	list(APPEND HEADERS "include/unit.hpp")
+	list(APPEND SRC "src/unit.cpp")
+endif()
+
+cmake_dependent_option(SHARED_ENABLE_WINDOWS_HPP "Disable building the shared project with the Windows.hpp header." ON "NOT WIN32" OFF)
+if (SHARED_ENABLE_WINDOWS_HPP)
+	message(STATUS "Windows.hpp is enabled.")
+	list(APPEND HEADERS "include/Windows.hpp")
+endif()
+
+option(SHARED_ENABLE_XRAND "Enable the xRand.hpp randomization wrapper header." OFF)
+if (SHARED_ENABLE_XRAND)
+	message(STATUS "xRand.hpp is enabled.")
+	list(APPEND HEADERS "include/xRand.hpp")
+endif()
 
 add_library(shared STATIC ${HEADERS} ${SRC})
 add_library(307lib::shared ALIAS shared)

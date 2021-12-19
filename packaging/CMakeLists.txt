@@ -6,10 +6,10 @@ if (POLICY CMP0074)
 	cmake_policy(SET CMP0074 NEW)
 endif()
 
-function(setup_packaging _name _targets)
+function(setup_packaging _name)
+	unset(PACKAGING_TARGET_NAME CACHE)
 	# Set the cache variable that will be replaced in the copied file
 	set(PACKAGING_TARGET_NAME "${_name}" CACHE STRING "Cache variable used by the packaging handler to determine the current target" FORCE)
-	set(PACKAGING_TARGETS "${_targets}" CACHE STRING "Cache variable used by the packaging handler to determine the current target" FORCE)
 	# create the packaging directory if it doesn't exist
 	file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/${_name}/packaging")
 	# copy the packaging file to the target
@@ -21,26 +21,31 @@ function(setup_packaging _name _targets)
 endfunction()
 
 # Setup packaging for shared
-setup_packaging("shared" "shared")
+message(STATUS "Generating packaging information for shared")
+setup_packaging("shared")
 
 # Setup packaging for str-lib
 if (ENABLE_STRLIB)
-	setup_packaging("str-lib" "str-lib")
+	message(STATUS "Generating packaging information for str-lib")
+	setup_packaging("str-lib")
 endif()
 
 # Setup packaging for file-lib
 if (ENABLE_FILELIB)
-	setup_packaging("file-lib" "file-lib")
+	message(STATUS "Generating packaging information for file-lib")
+	setup_packaging("file-lib")
 endif()
 
 # Setup packaging for TermAPI
 if (ENABLE_TERMAPI)
-	setup_packaging("TermAPI" "TermAPI")
+	message(STATUS "Generating packaging information for TermAPI")
+	setup_packaging("TermAPI")
 endif()
 
 # Setup packaging for opt-lib
 if (ENABLE_OPTLIB)
-	setup_packaging("opt-lib" "opt-lib")
+	message(STATUS "Generating packaging information for opt-lib")
+	setup_packaging("opt-lib")
 endif()
 
 # Cleanup

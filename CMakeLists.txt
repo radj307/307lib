@@ -38,7 +38,9 @@ endif()
 string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
 option(307lib_ENABLE_PACKAGING "Enable library packaging" "${TOP_LEVEL}")
 if (307lib_ENABLE_PACKAGING)
+	message(STATUS "Generating packaging information...")
 	add_subdirectory("packaging")
+	message(STATUS "Packaging information generated.")
 endif()
 
 # create project
@@ -51,29 +53,24 @@ add_subdirectory("shared")
 option(ENABLE_STRLIB "Enable the string library." ON)
 if (ENABLE_STRLIB)
 	add_subdirectory("str-lib")
-	# Requires shared
 endif()
 
 # Add file library
 cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
 if (ENABLE_FILELIB)
 	add_subdirectory("file-lib")
-	# Requires shared & str-lib
 endif()
 
 # Add TermAPI
 option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
 if(ENABLE_TERMAPI)
 	add_subdirectory("TermAPI")
-	# (v3) Requires shared & str-lib
-	# (v4) Requires shared
 endif()
 
 # Add opt library
 cmake_dependent_option(ENABLE_OPTLIB "Enable the commandline option library." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
 if(ENABLE_OPTLIB)
 	add_subdirectory("opt-lib")
-	# Requires shared & str-lib
 endif()
 
 # Add testing executable
