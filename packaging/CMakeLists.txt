@@ -2,7 +2,7 @@
 # Uses configure_file() to create packaging files for libraries
 cmake_minimum_required(VERSION 3.15)
 
-if (POLICY CMP0074)
+if (POLICY CMP0074) # Set find_package() behavior to check the value of {<PACKAGE>_ROOT} variable.
 	cmake_policy(SET CMP0074 NEW)
 endif()
 
@@ -16,7 +16,6 @@ function(setup_lib_packaging _name)
 	file(MAKE_DIRECTORY ${PACKAGING_TARGET_DIR}) # Re-Create the packaging directory
 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/CMakeLists.txt" @ONLY) # copy the packaging/CMakeLists.txt file to the target
 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/${_name}-config.cmake" @ONLY) # copy the packaging/<name>-config.cmake file to the target
-	set(${_name}_ROOT "${CMAKE_SOURCE_DIR}/${_name}" CACHE STRING "Set the search directory for find_package" FORCE) # Set the find_package search directory
 endfunction()
 
 # Setup packaging for shared

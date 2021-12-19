@@ -9,7 +9,12 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("file-lib")
+set(filelib_VERSION_MAJOR 4)
+set(filelib_VERSION_MINOR 0)
+set(filelib_VERSION_PATCH 0)
+set(filelib_VERSION ${filelib_VERSION_MAJOR}.${filelib_VERSION_MINOR}.${filelib_VERSION_PATCH})
+
+project("filelib" VERSION ${filelib_VERSION})
 
 set(HEADERS
 	# Base File Lib

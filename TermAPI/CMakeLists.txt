@@ -9,7 +9,12 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("TermAPI")
+set(TermAPI_VERSION_MAJOR 4)
+set(TermAPI_VERSION_MINOR 0)
+set(TermAPI_VERSION_PATCH 0)
+set(TermAPI_VERSION ${TermAPI_VERSION_MAJOR}.${TermAPI_VERSION_MINOR}.${TermAPI_VERSION_PATCH})
+
+project("TermAPI" VERSION ${TermAPI_VERSION})
 
 set(HEADERS
 	# ANSI

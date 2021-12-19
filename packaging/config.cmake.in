@@ -1,5 +1,5 @@
 # @PACKAGING_TARGET_NAME@/@PACKAGING_TARGET_NAME@-config.cmake
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.19)
 
 set(@PACKAGING_TARGET_NAME@_known_comps static)
 set(@PACKAGING_TARGET_NAME@_comp_static ON)
@@ -16,4 +16,4 @@ foreach(@PACKAGING_TARGET_NAME@_comp IN LISTS ${CMAKE_FIND_PACKAGE_NAME}_FIND_CO
 endforeach()
 
 message(STATUS ${CMAKE_CURRENT_LIST_DIR})
-include("${CMAKE_INSTALL_LIBDIR}/cmake/@PACKAGING_TARGET_NAME@/shared-targets.cmake")
+include("${CMAKE_INSTALL_LIBDIR}/cmake/@PACKAGING_TARGET_NAME@/@PACKAGING_TARGET_NAME@-targets.cmake")

@@ -10,7 +10,12 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("shared")
+set(shared_VERSION_MAJOR 1)
+set(shared_VERSION_MINOR 0)
+set(shared_VERSION_PATCH 0)
+set(shared_VERSION ${shared_VERSION_MAJOR}.${shared_VERSION_MINOR}.${shared_VERSION_PATCH})
+
+project("shared" VERSION ${shared_VERSION})
 
 set(HEADERS
 	"include/sysarch.h"
