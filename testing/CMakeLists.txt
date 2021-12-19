@@ -12,9 +12,9 @@ endif()
 project("testing")
 
 set(HEADERS_MASS
-	"file-lib.h"
-	"opt-lib.h"
-	"str-lib.h"
+	"filelib.h"
+	"optlib.h"
+	"strlib.h"
 	"TermAPI.h"
 )
 set(HEADERS
@@ -33,12 +33,8 @@ endif()
 add_executable(testing ${HEADERS} ${SRC})
 target_include_directories(testing PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-	"$<INSTALL_INTERFACE:>"
-)
-target_link_directories(testing PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-	"$<INSTALL_INTERFACE:>"
+	"$<INSTALL_INTERFACE:include>"
 )
 
-target_link_libraries(testing PUBLIC shared str-lib TermAPI opt-lib file-lib)
+target_link_libraries(testing PUBLIC shared strlib TermAPI optlib filelib)
 

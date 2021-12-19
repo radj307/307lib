@@ -10,8 +10,8 @@ To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
 | ------------------- | ------- | ---------------- | ------------------------------------------------------ |
 | ENABLE_STRLIB       | ON      | shared           | Enable the string library.							    |
 | ENABLE_TERMAPI      | ON      | shared           | Enable the TermAPI library.							|
-| ENABLE_FILELIB      | ON      | shared str-lib   | Enable the file/filesystem library.					|
-| ENABLE_OPTLIB       | ON      | shared str-lib   | Enable the commandline/environment library.			|
+| ENABLE_FILELIB      | ON      | shared strlib   | Enable the file/filesystem library.					|
+| ENABLE_OPTLIB       | ON      | shared strlib   | Enable the commandline/environment library.			|
 | ENABLE_TESTING      | OFF     | all              | Enable the debugging/testing executable.			    |
 | ENABLE_UNITTESTS    | OFF     | variable         | Enable unit tests using the googletest framework.		|
 
@@ -20,7 +20,7 @@ To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
 | SHARED_DISABLE_WINDOWS_HPP | shared     | Dependent | Only available when building on windows, this disables the <Windows.hpp> header. |
 | SHARED_ENABLE_XRAND        | shared     | ON        | Enables the <xRand.hpp> header.                                                  |
 | TERMAPI_ENABLE_XLOG        | TermAPI v3 | ON        | Enables the <xLog.hpp> header.                                                   |
-| FILELIB_ENABLE_EXTENSIONS  | file-lib   | ON        | Includes all file-lib components, including tokenization/parsing.                |
+| FILELIB_ENABLE_EXTENSIONS  | filelib   | ON        | Includes all filelib components, including tokenization/parsing.                |
 ]]
 
 # require C++20
@@ -52,13 +52,13 @@ add_subdirectory("shared")
 # Add string library
 option(ENABLE_STRLIB "Enable the string library." ON)
 if (ENABLE_STRLIB)
-	add_subdirectory("str-lib")
+	add_subdirectory("strlib")
 endif()
 
 # Add file library
 cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
 if (ENABLE_FILELIB)
-	add_subdirectory("file-lib")
+	add_subdirectory("filelib")
 endif()
 
 # Add TermAPI
@@ -70,7 +70,7 @@ endif()
 # Add opt library
 cmake_dependent_option(ENABLE_OPTLIB "Enable the commandline option library." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
 if(ENABLE_OPTLIB)
-	add_subdirectory("opt-lib")
+	add_subdirectory("optlib")
 endif()
 
 # Add testing executable

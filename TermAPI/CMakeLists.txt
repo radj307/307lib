@@ -59,10 +59,10 @@ add_library(TermAPI STATIC ${HEADERS} ${SRC})
 add_library(307lib::TermAPI ALIAS TermAPI)
 
 if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
-	target_link_libraries(TermAPI PUBLIC str-lib)
+	target_link_libraries(TermAPI PUBLIC strlib)
 endif()
 if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
-	target_link_libraries(TermAPI PUBLIC str-lib file-lib)
+	target_link_libraries(TermAPI PUBLIC strlib filelib)
 endif()
 
 target_include_directories(TermAPI PUBLIC 

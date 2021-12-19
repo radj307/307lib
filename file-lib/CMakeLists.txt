@@ -1,4 +1,4 @@
-# 307lib/file-lib
+# 307lib/filelib
 cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -34,23 +34,23 @@ set(SRC
 	"src/INI.cpp"
 )
 
-add_library(file-lib STATIC ${HEADERS} ${SRC})
-add_library(307lib::file-lib ALIAS file-lib)
+add_library(filelib STATIC ${HEADERS} ${SRC})
+add_library(307lib::filelib ALIAS filelib)
 
-target_include_directories(file-lib PUBLIC 
+target_include_directories(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:include>"
 )
-target_link_directories(file-lib PUBLIC 
+target_link_directories(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
 	"$<INSTALL_INTERFACE:src>"
 )
 
-target_link_libraries(file-lib PUBLIC shared str-lib)
+target_link_libraries(filelib PUBLIC shared strlib)
 
 # Packaging
 include(GenerateExportHeader)
-generate_export_header(file-lib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+generate_export_header(filelib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
 
 if (307lib_ENABLE_PACKAGING)
 	add_subdirectory("packaging")

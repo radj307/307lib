@@ -6,46 +6,45 @@ if (POLICY CMP0074)
 	cmake_policy(SET CMP0074 NEW)
 endif()
 
-function(setup_packaging _name)
+function(setup_lib_packaging _name)
 	unset(PACKAGING_TARGET_NAME CACHE)
 	# Set the cache variable that will be replaced in the copied file
 	set(PACKAGING_TARGET_NAME "${_name}" CACHE STRING "Cache variable used by the packaging handler to determine the current target" FORCE)
-	# create the packaging directory if it doesn't exist
-	file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/${_name}/packaging")
-	# copy the packaging file to the target
-	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/CMakeLists.txt" @ONLY)
-	# copy the Config.cmake file to the target
-	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/${_name}-config.cmake" @ONLY)
-	# Set the find_package search directory
-	set(${_name}_DIR "${CMAKE_SOURCE_DIR}/${_name}/packaging" CACHE STRING "Set the search directory for find_package" FORCE)
+
+	set(PACKAGING_TARGET_DIR "${CMAKE_SOURCE_DIR}/${_name}/packaging")
+	file(REMOVE_RECURSE ${PACKAGING_TARGET_DIR}) # Delete the packaging directory recursively
+	file(MAKE_DIRECTORY ${PACKAGING_TARGET_DIR}) # Re-Create the packaging directory
+	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/CMakeLists.txt" @ONLY) # copy the packaging/CMakeLists.txt file to the target
+	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.in" "${CMAKE_SOURCE_DIR}/${_name}/packaging/${_name}-config.cmake" @ONLY) # copy the packaging/<name>-config.cmake file to the target
+	set(${_name}_ROOT "${CMAKE_SOURCE_DIR}/${_name}" CACHE STRING "Set the search directory for find_package" FORCE) # Set the find_package search directory
 endfunction()
 
 # Setup packaging for shared
 message(STATUS "Generating packaging information for shared")
-setup_packaging("shared")
+setup_lib_packaging("shared")
 
-# Setup packaging for str-lib
+# Setup packaging for strlib
 if (ENABLE_STRLIB)
-	message(STATUS "Generating packaging information for str-lib")
-	setup_packaging("str-lib")
+	message(STATUS "Generating packaging information for strlib")
+	setup_lib_packaging("strlib")
 endif()
 
-# Setup packaging for file-lib
+# Setup packaging for filelib
 if (ENABLE_FILELIB)
-	message(STATUS "Generating packaging information for file-lib")
-	setup_packaging("file-lib")
+	message(STATUS "Generating packaging information for filelib")
+	setup_lib_packaging("filelib")
 endif()
 
 # Setup packaging for TermAPI
 if (ENABLE_TERMAPI)
 	message(STATUS "Generating packaging information for TermAPI")
-	setup_packaging("TermAPI")
+	setup_lib_packaging("TermAPI")
 endif()
 
-# Setup packaging for opt-lib
+# Setup packaging for optlib
 if (ENABLE_OPTLIB)
-	message(STATUS "Generating packaging information for opt-lib")
-	setup_packaging("opt-lib")
+	message(STATUS "Generating packaging information for optlib")
+	setup_lib_packaging("optlib")
 endif()
 
 # Cleanup

@@ -13,9 +13,9 @@
 #include <color-transform.hpp>
 #include <color-config.hpp>
 
-#include "file-lib.h"
-#include "opt-lib.h"
-#include "str-lib.h"
+#include "filelib.h"
+#include "optlib.h"
+#include "strlib.h"
 #include "TermAPI.h"
 
 inline void test_xlog()

@@ -5,7 +5,7 @@
  */
 #pragma once
 #include <Message.hpp>	// TermAPI
-#include <str.hpp>		// str-lib
+#include <str.hpp>		// strlib
 
 #include <iostream>
 #include <string>
