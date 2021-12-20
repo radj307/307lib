@@ -388,7 +388,7 @@ namespace term {
 	}
 
 	template<var::Streamable... Ts>
-	[[nodiscard]] inline static Sequence SetGraphicsRendition(const Ts&... modes)
+	[[nodiscard]] inline static Sequence SelectGraphicsRendition(const Ts&... modes)
 	{
 		return SGR(modes...);
 	}
