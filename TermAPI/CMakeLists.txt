@@ -14,7 +14,7 @@ set(TermAPI_VERSION_MINOR 0)
 set(TermAPI_VERSION_PATCH 0)
 set(TermAPI_VERSION ${TermAPI_VERSION_MAJOR}.${TermAPI_VERSION_MINOR}.${TermAPI_VERSION_PATCH})
 
-project("TermAPI" VERSION ${TermAPI_VERSION})
+project("TermAPI" VERSION ${TermAPI_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	# ANSI
@@ -48,38 +48,34 @@ set(SRC
 
 include(CMakeDependentOption)
 
-cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_XLOG "Enable the xlog header." ON "ENABLE_TERMAPI;ENABLE_STRLIB" OFF)
-if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
-	list(APPEND HEADERS "include/xlog.hpp")
-	list(APPEND SRC "src/xlog.cpp")
-endif()
-
-cmake_dependent_option(TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG "Enable the color-config header." ON "ENABLE_TERMAPI;ENABLE_STRLIB;ENABLE_FILELIB" OFF)
-if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
-	list(APPEND HEADERS "include/color-config.hpp")
-	list(APPEND SRC "src/color-config.cpp")
+# extensions
+set(ADDITIONAL_DEPENDENCIES)
+cmake_dependent_option(TERMAPI_EXTENSIONS "Enable TermAPI extension headers that require additional dependencies." ON "ENABLE_TERMAPI" OFF)
+if (TERMAPI_EXTENSIONS)
+	# xlog
+	cmake_dependent_option(TERMAPI_EXTENSIONS_XLOG "Enable the xLog TermAPI extension." ON "ENABLE_TERMAPI;TERMAPI_EXTENSIONS;ENABLE_STRLIB" OFF)
+	if (TERMAPI_EXTENSIONS_XLOG)
+		list(APPEND HEADERS "include/xlog.hpp")
+		list(APPEND SRC "src/xlog.cpp")
+		list(APPEND ADDITIONAL_DEPENDENCIES strlib)
+	endif()
+	# color-config
+	cmake_dependent_option(TERMAPI_EXTENSIONS_COLORCONFIG "Enable the color-config TermAPI extension." ON "ENABLE_TERMAPI;TERMAPI_EXTENSIONS;ENABLE_STRLIB;ENABLE_FILELIB" OFF)
+	if (TERMAPI_EXTENSIONS_COLORCONFIG)
+		list(APPEND HEADERS "include/color-config.hpp")
+		list(APPEND SRC "src/color-config.cpp")
+		list(APPEND ADDITIONAL_DEPENDENCIES filelib) # filelib already requires strlib
+	endif()
 endif()
 
 add_library(TermAPI STATIC ${HEADERS} ${SRC})
 add_library(307lib::TermAPI ALIAS TermAPI)
-
-if (TERMAPI_EXTENSIONS_ENABLE_XLOG)
-	target_link_libraries(TermAPI PUBLIC strlib)
-endif()
-if (TERMAPI_EXTENSIONS_ENABLE_COLORCONFIG)
-	target_link_libraries(TermAPI PUBLIC strlib filelib)
-endif()
-
 target_include_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/ANSI/include>"
-	"$<INSTALL_INTERFACE:ANSI/include;color/include;term/include;extensions/include>"
-)
-target_link_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src;${CMAKE_CURRENT_SOURCE_DIR}/ANSI/src>"
-	"$<INSTALL_INTERFACE:ANSI/src;color/src;term/src;extensions/src;src>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+	"$<INSTALL_INTERFACE:include>"
 )
 
-target_link_libraries(TermAPI PUBLIC ${LINKS})
+target_link_libraries(TermAPI PUBLIC shared ${ADDITIONAL_DEPENDENCIES})
 
 # Packaging
 if (307lib_ENABLE_PACKAGING) # Include packaging
