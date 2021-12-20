@@ -43,6 +43,8 @@ if (307lib_ENABLE_PACKAGING)
 	message(STATUS "Generating packaging information...")
 	add_subdirectory("packaging")
 	message(STATUS "Packaging information generated.")
+	list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/pkg")
+	include(PackageInstaller)
 endif()
 
 # create project
