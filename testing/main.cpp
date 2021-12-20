@@ -55,9 +55,6 @@ int main(const int argc, char** argv)
 	#ifdef OS_WIN
 		std::cout << term::EnableANSI;
 	#endif
-		//std::cout << cfg.set("c1", "c2", "c4") << "Hello" << cfg.reset() << '\n';
-		std::cout << color::setcolor::red << strlib_VERSION << color::reset_f << std::endl;
-		std::cout << color::setcolor(color::red) << strlib_VERSION << color::reset_f << std::endl;
 
 		return 0;
 	} catch (const std::exception& ex) {
