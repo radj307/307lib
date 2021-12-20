@@ -1,4 +1,4 @@
-# 307lib/pkg/PackageInstaller.cmake
+# 307lib/cmake/modules/PackageInstaller.cmake
 # Contains functions for creating packaging files & installing libraries.
 cmake_minimum_required(VERSION 3.19)
 
