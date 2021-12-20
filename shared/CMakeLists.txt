@@ -62,11 +62,9 @@ target_link_directories(shared PUBLIC
 )
 
 # Packaging
-include(GenerateExportHeader)
-generate_export_header(shared EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
-
-# Include packaging by default if this is the top-level directory
-if (307lib_ENABLE_PACKAGING)
-	add_subdirectory("packaging")
+if (307lib_ENABLE_PACKAGING) # Include packaging
+	GENERATE_PACKAGING(shared)
+	WRITE_VERSION_FILE(shared SameMajorVersion)
+	INSTALL_PACKAGE(shared)
 endif()
 

@@ -42,9 +42,9 @@ target_link_directories(optlib PUBLIC
 )
 
 # Packaging
-include(GenerateExportHeader)
-generate_export_header(optlib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
 
-if (307lib_ENABLE_PACKAGING)
-	add_subdirectory("packaging")
+if (307lib_ENABLE_PACKAGING) # Include packaging
+	GENERATE_PACKAGING(optlib)
+	WRITE_VERSION_FILE(optlib SameMajorVersion)
+	INSTALL_PACKAGE(optlib)
 endif()

@@ -82,10 +82,8 @@ target_link_directories(TermAPI PUBLIC
 target_link_libraries(TermAPI PUBLIC ${LINKS})
 
 # Packaging
-include(GenerateExportHeader)
-generate_export_header(TermAPI EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
-
-# Include packaging by default if this is the top-level directory
-if (307lib_ENABLE_PACKAGING)
-	add_subdirectory("packaging")
+if (307lib_ENABLE_PACKAGING) # Include packaging
+	GENERATE_PACKAGING(TermAPI)
+	WRITE_VERSION_FILE(TermAPI SameMajorVersion)
+	INSTALL_PACKAGE(TermAPI)
 endif()

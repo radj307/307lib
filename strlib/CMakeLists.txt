@@ -39,11 +39,8 @@ target_link_directories(strlib PUBLIC
 )
 
 # Packaging
-include(GenerateExportHeader)
-generate_export_header(strlib EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
-
-# Include packaging by default if this is the top-level directory
-if (307lib_ENABLE_PACKAGING)
-	add_subdirectory("packaging")
+if (307lib_ENABLE_PACKAGING) # Include packaging
+	GENERATE_PACKAGING(strlib)
+	WRITE_VERSION_FILE(strlib SameMajorVersion)
+	INSTALL_PACKAGE(strlib)
 endif()
-

@@ -21,6 +21,7 @@ function(generate_packaging _name)
 endfunction()
 
 #### WRITE_VERSION_FILE ####
+# @brief				Creates a ConfigVersion file for the given library name.
 # @param _name			The name of the target library. This must be a direct subdirectory of CMAKE_SOURCE_DIR, and the name of the library target.
 # @param _compat_mode	The compatibility mode to use in the version file.
 function(write_version_file _name _compat_mode)
