@@ -1,7 +1,7 @@
 /**
- * @file FormatFlag.hpp
- * @author radj307
- * @brief Contains the FormatFlag struct, a pseudo-enum used to pass formatting information to the setcolor functor.
+ * @file	FormatFlag.hpp
+ * @author	radj307
+ * @brief	Contains the FormatFlag struct, a pseudo-enum used to pass formatting information to the setcolor functor.
  */
 #pragma once
 #include <Segments.h>
@@ -12,18 +12,19 @@
 namespace color {
 #pragma region DECLARATION
 	/**
-	 * @struct FormatFlag
-	 * @brief Used by the ColorFormat & setcolor objects to maintain flag types. Does not have any direct comparison operators, as a FormatFlag should never contain multiple flags. (See the ColorFormat struct)
+	 * @struct	FormatFlag
+	 * @brief	Used by the ColorFormat & setcolor objects to maintain flag types.
+	 *\n		This object is immutable, for a mutable variant see ColorFormat.
 	 */
 	struct FormatFlag {
 	private:
 		const unsigned char _format;
 	public:
 		/**
-		 * @brief Default Constructor.
-		 * @param format	- Index value. Must follow the bitwise flag format where each value is double the previous one.
+		 * @brief			Default Constructor.
+		 * @param format	Index value. Must follow the bitwise flag format where each value is double the previous one.
 		 */
-		constexpr FormatFlag(unsigned char format) : _format{ std::move(format) } {}
+		constexpr FormatFlag(const unsigned char& format) : _format{ format } {}
 
 		/** @brief Return this instance's flag value */
 		constexpr operator const unsigned char() const { return _format; }
@@ -43,23 +44,26 @@ namespace color {
 	static constexpr const FormatFlag RESET{ 1u };
 	/** @brief Bold printed text. */
 	static constexpr const FormatFlag BOLD{ 2u };
-	/** @brief Unset the bold flag specifically. */
-	static constexpr const FormatFlag NO_BOLD{ 4u };
+	static constexpr const FormatFlag BRIGHT{ BOLD };
 	/** @brief Underline printed text. */
-	static constexpr const FormatFlag UNDERLINE{ 8u };
-	/** @brief Unset the underline flag specifically. */
-	static constexpr const FormatFlag NO_UNDERLINE{ 16u };
+	static constexpr const FormatFlag UNDERLINE{ 4u };
 	/** @brief Invert foreground & background colors of printed text. */
-	static constexpr const FormatFlag INVERT{ 32u };
+	static constexpr const FormatFlag INVERT{ 8u };
+
+	/** @brief Unset the bold flag specifically. */
+	static constexpr const FormatFlag NO_BOLD{ RESET | BOLD };
+	static constexpr const FormatFlag DIM{ NO_BOLD };
+	/** @brief Unset the underline flag specifically. */
+	static constexpr const FormatFlag NO_UNDERLINE{ RESET | UNDERLINE };
 	/** @brief Unset the invert flag specifically. */
-	static constexpr const FormatFlag NO_INVERT{ 64u };
+	static constexpr const FormatFlag NO_INVERT{ RESET | INVERT };
 #pragma endregion DEFINITIONS
 
 	/**
-	 * @brief Accepts any number of integrals, and returns the result of calling bitwise OR on each of them.
-	 * @tparam ...VT		- Variadic Templated Type (Integral)
-	 * @param ...numbers	- Numbers to bitwise-merge
-	 * @returns unsigned char
+	 * @brief				Accepts any number of integrals, and returns the result of calling bitwise OR on each of them.
+	 * @tparam ...VT		Variadic Templated Type (Integral)
+	 * @param ...numbers	Numbers to bitwise-merge
+	 * @returns				unsigned char
 	 */
 	template<typename... VT>
 	inline static constexpr unsigned char bitmerge(const VT&... numbers) noexcept
@@ -79,7 +83,7 @@ namespace color {
 		no_invert{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_POSITIVE, ANSI::END) },
 		reset_f{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_FORE, ANSI::END) },
 		reset_b{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_BACK, ANSI::END) },
-		reset{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_FORE, ANSI::END, ANSI::CSI, ANSI::SGR_DEFAULT_BACK, ANSI::END) },
+		reset{ ANSI::make_sequence(reset_f, reset_b) },
 		reset_all{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_RESET, ANSI::END) };
 
 
@@ -122,14 +126,15 @@ namespace color {
 				append(reset);
 			if (contains(BOLD))
 				append(bold);
-			if (contains(NO_BOLD))
-				append(no_bold);
 			if (contains(UNDERLINE))
 				append(underline);
-			if (contains(NO_UNDERLINE))
-				append(no_underline);
 			if (contains(INVERT))
 				append(invert);
+
+			if (contains(NO_BOLD))
+				append(no_bold);
+			if (contains(NO_UNDERLINE))
+				append(no_underline);
 			if (contains(NO_INVERT))
 				append(no_invert);
 
