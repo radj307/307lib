@@ -17,7 +17,7 @@ function(generate_packaging _name)
 	set(PACKAGING_TARGET_NAME "${_name}" CACHE STRING "Temporary variable used by the GENERATE_PACKAGING function." FORCE)
 	set(PACKAGING_TARGET_CONF "${CMAKE_CURRENT_BINARY_DIR}/${_name}Config.cmake")
 	file(REMOVE ${PACKAGING_TARGET_CONF}) # remove any existing package config
-	configure_file("${CMAKE_SOURCE_DIR}/pkg/config.cmake.in" "${PACKAGING_TARGET_CONF}" @ONLY)
+	configure_file("${CMAKE_SOURCE_DIR}/cmake/input/config.cmake.in" "${PACKAGING_TARGET_CONF}" @ONLY)
 	message(STATUS "Successfully generated ${PACKAGING_TARGET_CONF}")
 	unset(PACKAGING_TARGET_NAME CACHE)
 endfunction()

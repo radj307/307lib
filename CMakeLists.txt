@@ -40,7 +40,7 @@ endif()
 string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
 option(307lib_ENABLE_PACKAGING "Enable library packaging" "${TOP_LEVEL}")
 if (307lib_ENABLE_PACKAGING)
-	list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/pkg")
+	list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 	include(PackageInstaller)
 endif()
 
