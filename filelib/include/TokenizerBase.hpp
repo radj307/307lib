@@ -243,7 +243,7 @@ namespace token {
 			tokens.reserve(reserve);
 			while (ss)
 				tokens.emplace_back(std::move(getNext()));
-			if (!tokens.back().is_eof()) // append an EOF token if there isn't one already.
+			if (!tokens.empty() && !tokens.back().is_eof()) // append an EOF token if there isn't one already.
 				tokens.emplace_back(TokenT{ TokenType::END });
 			tokens.shrink_to_fit();
 			return tokens;
