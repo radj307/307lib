@@ -14,7 +14,7 @@ set(filelib_VERSION_MINOR 0)
 set(filelib_VERSION_PATCH 0)
 set(filelib_VERSION ${filelib_VERSION_MAJOR}.${filelib_VERSION_MINOR}.${filelib_VERSION_PATCH})
 
-project("filelib" VERSION ${filelib_VERSION})
+project("filelib" VERSION ${filelib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	# Base File Lib

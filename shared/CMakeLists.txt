@@ -15,7 +15,7 @@ set(shared_VERSION_MINOR 0)
 set(shared_VERSION_PATCH 0)
 set(shared_VERSION ${shared_VERSION_MAJOR}.${shared_VERSION_MINOR}.${shared_VERSION_PATCH})
 
-project("shared" VERSION ${shared_VERSION})
+project("shared" VERSION ${shared_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	"include/sysarch.h"
@@ -29,7 +29,6 @@ set(SRC
 	"src/var.cpp"
 	"src/make_exception.cpp"
 )
-
 
 option(SHARED_ENABLE_UNIT "Enable the unit.hpp header." OFF)
 if (SHARED_ENABLE_UNIT)

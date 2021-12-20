@@ -15,9 +15,9 @@ endif()
 
 ##### Install
 
-message(STATUS "Installing @PACKAGING_TARGET_NAME@")
-message(STATUS "  INSTALL_DIR: \"${@PACKAGING_TARGET_NAME@_INSTALL_DIR}\"")
-message(STATUS "  BINARY_DIR:  \"${@PACKAGING_TARGET_NAME@_BINARY_DIR}\"")
+message(STATUS "Packaging @PACKAGING_TARGET_NAME@ for installation.")
+#message(STATUS "  INSTALL_DIR: \"${@PACKAGING_TARGET_NAME@_INSTALL_DIR}\"")
+#message(STATUS "  BINARY_DIR:  \"${@PACKAGING_TARGET_NAME@_BINARY_DIR}\"")
 
 # Install export targets
 install(

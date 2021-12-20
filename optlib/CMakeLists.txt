@@ -14,7 +14,7 @@ set(optlib_VERSION_MINOR 0)
 set(optlib_VERSION_PATCH 0)
 set(optlib_VERSION ${optlib_VERSION_MAJOR}.${optlib_VERSION_MINOR}.${optlib_VERSION_PATCH})
 
-project("optlib" VERSION ${optlib_VERSION})
+project("optlib" VERSION ${optlib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	"./include/Arg.hpp"

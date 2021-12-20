@@ -14,7 +14,7 @@ set(strlib_VERSION_MINOR 0)
 set(strlib_VERSION_PATCH 0)
 set(strlib_VERSION ${strlib_VERSION_MAJOR}.${strlib_VERSION_MINOR}.${strlib_VERSION_PATCH})
 
-project("strlib" VERSION ${strlib_VERSION})
+project("strlib" VERSION ${strlib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	"./include/strconv.hpp"
