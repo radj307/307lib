@@ -1,6 +1,7 @@
 #pragma once
 #include <sysarch.h>
 #include <color-format.hpp>
+#include <color-values.h>
 #include <Sequence.hpp>
 #include <Segments.h>
 #ifdef OS_WIN
@@ -31,11 +32,11 @@ namespace color {
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
 		{
 			using namespace ANSI;
-		#ifdef SETCOLOR_NO_RGB
+			#ifdef SETCOLOR_NO_RGB
 			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", rgb_to_sgr(r, g, b), END);
-		#else
+			#else
 			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;2;", r, ';', g, ';', b, END);
-		#endif
+			#endif
 		}
 		virtual SeqT makeColorSequence(const Layer& lyr, const std::tuple<short, short, short>& rgb_color) const
 		{
@@ -74,16 +75,36 @@ namespace color {
 		{
 			return setcolor_seq<SeqT>{ _seq + o._seq, static_cast<unsigned char>(_fmt | o._fmt) };
 		}
+		setcolor_seq<SeqT>& operator+=(const setcolor_seq<SeqT>& o) const
+		{
+			_seq += o._seq;
+			_fmt |= o._fmt;
+			return *this;
+		}
 
 		friend std::ostream& operator<<(std::ostream& os, const setcolor_seq<SeqT>& color)
 		{
 			return os << color.as_sequence(true);
 		}
+
+		/// Declare static constant colors for the basic 8-bit color palette.
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white;
 	};
 
+	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
 	using setcolor = setcolor_seq<ANSI::Sequence>;
-	const setcolor setcolor_placeholder{ ANSI::Sequence{}, NONE };
+	/// @brief	A setcolor instance that does nothing, for use with ternary expressions.
+	static const setcolor setcolor_placeholder{ ANSI::Sequence{}, NONE };
 
+	/// Define static constant colors for the basic 8-bit color palette.
+	inline const setcolor setcolor::red{ color::red }, setcolor::green{ color::green }, setcolor::blue{ color::blue }, setcolor::yellow{ color::yellow }, setcolor::magenta{ color::magenta }, setcolor::cyan{ color::cyan }, setcolor::black{ color::black }, setcolor::white{ color::white };
+
+
+	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
 	using wsetcolor = setcolor_seq<ANSI::wSequence>;
-	const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, NONE };
+	/// @brief	A setcolor instance that does nothing, for use with ternary expressions.
+	static const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, NONE };
+
+	/// Define static constant colors for the basic 8-bit color palette.
+	inline const wsetcolor wsetcolor::red{ color::red }, wsetcolor::green{ color::green }, wsetcolor::blue{ color::blue }, wsetcolor::yellow{ color::yellow }, wsetcolor::magenta{ color::magenta }, wsetcolor::cyan{ color::cyan }, wsetcolor::black{ color::black }, wsetcolor::white{ color::white };
 }
