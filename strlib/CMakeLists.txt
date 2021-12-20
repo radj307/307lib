@@ -17,14 +17,14 @@ set(strlib_VERSION ${strlib_VERSION_MAJOR}.${strlib_VERSION_MINOR}.${strlib_VERS
 project("strlib" VERSION ${strlib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
-	"./include/strconv.hpp"
-	"./include/strmanip.hpp"
-	"./include/strlocale.hpp"
-	"./include/str.hpp"
-	"./include/strutility.hpp"
+	"include/strconv.hpp"
+	"include/strmanip.hpp"
+	"include/strlocale.hpp"
+	"include/str.hpp"
+	"include/strutility.hpp"
 )
 set(SRC
-	"./src/str.cpp"
+	"src/str.cpp"
 )
 
 add_library(strlib STATIC ${HEADERS} ${SRC})

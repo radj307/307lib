@@ -17,14 +17,14 @@ set(optlib_VERSION ${optlib_VERSION_MAJOR}.${optlib_VERSION_MINOR}.${optlib_VERS
 project("optlib" VERSION ${optlib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
-	"./include/Arg.hpp"
-	"./include/ArgContainer.hpp"
-	"./include/ArgParser.hpp"
-	"./include/VariantArgumentType.hpp"
-	"./include/ParamsAPI2.hpp"
+	"include/Arg.hpp"
+	"include/ArgContainer.hpp"
+	"include/ArgParser.hpp"
+	"include/VariantArgumentType.hpp"
+	"include/ParamsAPI2.hpp"
 )
 set(SRC
-	"./src/ParamsAPI2.cpp"
+	"src/ParamsAPI2.cpp"
 )
 
 add_library(optlib STATIC ${HEADERS} ${SRC})
