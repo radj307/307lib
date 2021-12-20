@@ -44,8 +44,15 @@ if (307lib_ENABLE_PACKAGING)
 	include(PackageInstaller)
 endif()
 
+set(ENABLE_GIT_AUTOVERSION TRUE CACHE BOOL "Enable auto-versioning using git tags.")
+if (ENABLE_GIT_AUTOVERSION)
+	include(AutoVersion)
+	PARSE_VERSION_STRING(${CMAKE_SOURCE_DIR} 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH 307lib_VERSION_EXTRA)
+endif()
+
+set(307lib_VERSION ${307lib_VERSION_MAJOR}.${307lib_VERSION_MINOR}.${307lib_VERSION_PATCH})
 # create project
-project("307lib")
+project("307lib" VERSION ${307lib_VERSION})
 
 # Add shared lib
 add_subdirectory("shared")
