@@ -52,6 +52,17 @@ function(parse_version_string _working_dir _out_major _out_minor _out_patch _out
 	unset(_EXTRA CACHE)
 endfunction()
 
+#### CONCAT_VERSION_STRING ####
+# @brief			Concatenate version strings into a single version string in the format "${MAJOR}.${MINOR}.${PATCH}${EXTRA}"
+# @param _out_ver	Name of the variable to use for output.
+# @param _major		Major version number
+# @param _minor		Minor version number
+# @param _patch		Patch version number
+# @param _extra		Extra portions of the version string.
+function(concat_version_string _out_ver _major _minor _patch)
+	set(${_out_ver} "${_major}.${_minor}.${_patch}" CACHE STRING "Full version string." FORCE)
+endfunction()
+
 #### CREATE_VERSION_HEADER ####
 # @brief			Creates a copy of the version.h.in header in the caller's source directory.
 # @param _name		The name of the library
