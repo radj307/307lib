@@ -59,12 +59,13 @@ function(install_package _name)
 		ARCHIVE COMPONENT "${_name}_Development"
 		INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 	)
-	
-	install( # Install package config files
+
+	# Install package config files
+	install(
 		FILES
 			"$<IF:$<BOOL:EXISTS ${CMAKE_CURRENT_BINARY_DIR}/${_name}ConfigVersion.cmake>,${CMAKE_CURRENT_BINARY_DIR}/${_name}Config.cmake;${CMAKE_CURRENT_BINARY_DIR}/${_name}ConfigVersion.cmake,${CMAKE_CURRENT_BINARY_DIR}/${_name}Config.cmake>"
 			${CFG_FILES}
-		DESTINATION "${${_name}_INSTALL_DIR}"
+		DESTINATION "${${_name}_CONFIG_INSTALL_DIR}"
 		COMPONENT "${_name}_Development"
 	)
 	
