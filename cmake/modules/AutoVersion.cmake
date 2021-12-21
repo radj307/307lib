@@ -19,8 +19,12 @@ function(parse_version_string _working_dir _out_major _out_minor _out_patch _out
 			"--tags"
 		WORKING_DIRECTORY ${_working_dir}
 		OUTPUT_VARIABLE VERSION_TAG
-		COMMAND_ERROR_IS_FATAL ANY
 	)
+
+	if (${VERSION_TAG} STREQUAL "")
+		message(STATUS "No git tags found, skipping AutoVersioning.")
+		return()
+	endif()
 
 	# Parse the version string using the provided regular expression
 	string(REGEX REPLACE ${AUTOVERSION_FIND_REGEX} "\\1" _MAJOR ${VERSION_TAG}) # get Major
