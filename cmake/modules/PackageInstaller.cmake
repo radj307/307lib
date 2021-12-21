@@ -31,12 +31,12 @@ function(write_version_file _name _compat_mode)
 endfunction()
 
 #### CREATE_PACKAGE ####
-# @brief				Calls the GENERATE_PACKAGING function, then generates the ConfigVersion file using the provided compatiblity mode.
+# @brief				Calls the GENERATE_PACKAGING & WRITE_VERSION_FILE functions.
 # @param _name			The name of the target library. This must be a direct subdirectory of CMAKE_SOURCE_DIR, and the name of the library target.
 # @param _compat_mode	The compatibility mode to use in the version file.
 function(create_package _name _compat_mode)
 	GENERATE_PACKAGING(${_name})
-	write_basic_package_version_file("${CMAKE_CURRENT_SOURCE_DIR}/${_name}ConfigVersion.cmake" COMPATIBILITY ${_compat_mode})
+	WRITE_VERSION_FILE(${_name} ${_compat_mode})
 endfunction()
 
 #### INSTALL_PACKAGE ####
@@ -48,7 +48,7 @@ function(install_package _name)
 		set("${_name}_CONFIG_INSTALL_DIR" "${CMAKE_INSTALL_LIBDIR}/cmake/${_name}" CACHE STRING "Path to ${_name} packaging configs.")
 	endif()
 
-	message(STATUS "Creating packaging requirements for ${_name}")
+	message(STATUS "Installing ${_name}")
 		
 	install( # Install targets to CMAKE_INSTALL_INCLUDEDIR
 		TARGETS ${_name}
