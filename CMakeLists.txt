@@ -41,6 +41,10 @@ string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEV
 option(307lib_ENABLE_PACKAGING "Enable library packaging" "${TOP_LEVEL}")
 if (307lib_ENABLE_PACKAGING)
 	list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+	set(ENABLE_INSTALL_MODULES FALSE CACHE BOOL "When true the library's cmake modules are included in the install directory.")
+	if (ENABLE_INSTALL_MODULES)
+		# TODO
+	endif()
 	include(PackageInstaller)
 endif()
 
@@ -48,13 +52,14 @@ set(ENABLE_GIT_AUTOVERSION FALSE CACHE BOOL "Enable auto-versioning using git ta
 if (ENABLE_GIT_AUTOVERSION)
 	include(AutoVersion)
 	PARSE_VERSION_STRING(${CMAKE_SOURCE_DIR} 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH 307lib_VERSION_EXTRA)
+	CONCAT_VERSION_STRING(307lib_VERSION ${307lib_VERSION_MAJOR} ${307lib_VERSION_MINOR} ${307lib_VERSION_PATCH})
 	set(307lib_VERSION ${307lib_VERSION_MAJOR}.${307lib_VERSION_MINOR}.${307lib_VERSION_PATCH})
 else()
 	set(307lib_VERSION "0.0.0")
 endif()
 
 # create project
-project("307lib" VERSION ${307lib_VERSION})
+project("307lib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 # Add shared lib
 add_subdirectory("shared")
@@ -88,5 +93,3 @@ cmake_dependent_option(ENABLE_TESTING "Enable building an executable used for te
 if (ENABLE_TESTING)
 	add_subdirectory("testing")
 endif()
-
-
