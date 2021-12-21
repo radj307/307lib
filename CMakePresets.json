@@ -80,11 +80,6 @@
         "strategy": "external"
       },
       "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
       "vendor": {
@@ -95,14 +90,30 @@
       }
     },
     {
-      "name": "windows-rel",
-      "displayName": "Windows x64 Release",
+      "name": "windows-dev",
+      "displayName": "Windows x64 Development",
       "inherits": "windows-default",
       "cacheVariables": {
         "ENABLE_TESTING": {
           "type": "BOOL",
-          "value": "OFF"
+          "value": "ON"
         },
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-debug",
+      "displayName": "Windows x64 Debug",
+      "inherits": "windows-default",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-release",
+      "displayName": "Windows x64 Release",
+      "inherits": "windows-default",
+      "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
     }
