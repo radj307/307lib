@@ -44,7 +44,7 @@ if (307lib_ENABLE_PACKAGING)
 	include(PackageInstaller)
 endif()
 
-set(ENABLE_GIT_AUTOVERSION TRUE CACHE BOOL "Enable auto-versioning using git tags.")
+set(ENABLE_GIT_AUTOVERSION FALSE CACHE BOOL "Enable auto-versioning using git tags.")
 if (ENABLE_GIT_AUTOVERSION)
 	include(AutoVersion)
 	PARSE_VERSION_STRING(${CMAKE_SOURCE_DIR} 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH 307lib_VERSION_EXTRA)
