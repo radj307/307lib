@@ -198,7 +198,7 @@ namespace str {
 	 * @param str	String to convert
 	 * @returns		wchar_t
 	 */
-	[[nodiscard]] inline char stowc(const std::string& str) noexcept { try { return static_cast<wchar_t>(std::stoi(str)); } catch (...) { return static_cast<short>(0); } }
+	[[nodiscard]] inline wchar_t stowc(const std::string& str) noexcept { try { return static_cast<wchar_t>(std::stoi(str)); } catch (...) { return static_cast<short>(0); } }
 	/**
 	 * @brief		Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 	 * @param str	String to convert
