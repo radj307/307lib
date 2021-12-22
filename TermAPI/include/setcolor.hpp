@@ -26,7 +26,7 @@ namespace color {
 	struct setcolor_seq {
 	protected:
 		SeqT _seq;
-		ColorFormat _fmt;
+		format::MutableFlag _fmt;
 		/**
 		 * @brief		Build a color escape sequence from an SGR (color) code. 
 		 *\n			If using Windows or if SETCOLOR_NO_RGB is defined, this function is automatically always used instead.
@@ -68,14 +68,14 @@ namespace color {
 		}
 
 	public:
-		setcolor_seq(const SeqT& seq, const FormatFlag& format = NONE) : _seq{ seq }, _fmt{ format } {}
-		setcolor_seq(const short& sgr_color, const FormatFlag& format = NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, sgr_color) }, _fmt{ format } {}
-		setcolor_seq(const short& r, const short& g, const short& b, const FormatFlag& format = NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) }, _fmt{ format } {}
-		setcolor_seq(const std::tuple<short, short, short>& rgb_color, const FormatFlag& format = NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) }, _fmt{ format } {}
+		setcolor_seq(const SeqT& seq, const FormatFlag& format = format::NONE) : _seq{ seq }, _fmt{ format } {}
+		setcolor_seq(const short& sgr_color, const FormatFlag& format = format::NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, sgr_color) }, _fmt{ format } {}
+		setcolor_seq(const short& r, const short& g, const short& b, const FormatFlag& format = format::NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) }, _fmt{ format } {}
+		setcolor_seq(const std::tuple<short, short, short>& rgb_color, const FormatFlag& format = format::NONE, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) }, _fmt{ format } {}
 
-		setcolor_seq(const short& sgr_color, const Layer& layer, const FormatFlag& format = NONE) : _seq{ makeColorSequence(layer, sgr_color) }, _fmt{ format } {}
-		setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer, const FormatFlag& format = NONE) : _seq{ makeColorSequence(layer, r, g, b) }, _fmt{ format } {}
-		setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer, const FormatFlag& format = NONE) : _seq{ makeColorSequence(layer, rgb_color) }, _fmt{ format } {}
+		setcolor_seq(const short& sgr_color, const Layer& layer, const FormatFlag& format = format::NONE) : _seq{ makeColorSequence(layer, sgr_color) }, _fmt{ format } {}
+		setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer, const FormatFlag& format = format::NONE) : _seq{ makeColorSequence(layer, r, g, b) }, _fmt{ format } {}
+		setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer, const FormatFlag& format = format::NONE) : _seq{ makeColorSequence(layer, rgb_color) }, _fmt{ format } {}
 
 		/**
 		 * @brief			Retrieve the sequence associated with this setcolor instance, and optionally include format sequences.
@@ -107,7 +107,7 @@ namespace color {
 		 * @brief	Returns true if the sequence is not empty.
 		 * @returns	bool
 		 */
-		operator bool() const { return !_seq.empty() && _fmt == FormatFlag::NONE; }
+		operator bool() const { return !_seq.empty() && _fmt == format::NONE; }
 
 		/**
 		 * @brief	Equality comparison operator between two setcolor instances.
@@ -160,7 +160,7 @@ namespace color {
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
 	using setcolor = setcolor_seq<ANSI::Sequence>;
 	/// @brief	A setcolor instance that does nothing, for use with ternary expressions.
-	static const setcolor setcolor_placeholder{ ANSI::Sequence{}, NONE };
+	static const setcolor setcolor_placeholder{ ANSI::Sequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
 	inline const setcolor setcolor::red{ color::red }, setcolor::green{ color::green }, setcolor::blue{ color::blue }, setcolor::yellow{ color::yellow }, setcolor::magenta{ color::magenta }, setcolor::cyan{ color::cyan }, setcolor::black{ color::black }, setcolor::white{ color::white };
@@ -169,7 +169,7 @@ namespace color {
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
 	using wsetcolor = setcolor_seq<ANSI::wSequence>;
 	/// @brief	A setcolor instance that does nothing, for use with ternary expressions.
-	static const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, NONE };
+	static const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
 	inline const wsetcolor wsetcolor::red{ color::red }, wsetcolor::green{ color::green }, wsetcolor::blue{ color::blue }, wsetcolor::yellow{ color::yellow }, wsetcolor::magenta{ color::magenta }, wsetcolor::cyan{ color::cyan }, wsetcolor::black{ color::black }, wsetcolor::white{ color::white };

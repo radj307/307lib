@@ -68,6 +68,6 @@ namespace term {
 		msg{ "[MSG]",color::setcolor{color::green } },
 		warn{ "[WARN]",color::setcolor{color::orange} },
 		error{ "[ERROR]", color::setcolor{color::red } },
-		crit{ "[CRIT]",color::setcolor{color::dark_red, color::BOLD } };
+		crit{ "[CRIT]",color::setcolor{color::dark_red, color::format::BOLD } };
 #endif
 }
