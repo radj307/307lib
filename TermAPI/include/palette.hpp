@@ -41,7 +41,9 @@ namespace color {
 	 */
 	template<typename KeyType>
 	class palette {
+	public:
 		using PaletteType = std::unordered_map<KeyType, setcolor>;
+	private:
 		PaletteType _palette;
 		bool _isActive{ false }; ///< @brief When false, a blank setcolor placeholder will always be returned from the set() function. This can be used to programmatically enable/disable output colors depending on need.
 
@@ -124,7 +126,7 @@ namespace color {
 		virtual setcolor reset() const noexcept(false)
 		{
 			using namespace ANSI;
-			return _isActive ? setcolor{ reset } : setcolor_placeholder;
+			return _isActive ? setcolor{ color::reset } : setcolor_placeholder;
 		}
 		/**
 		 * @brief	Reset the current terminal color, then set it to a new value.
@@ -133,7 +135,7 @@ namespace color {
 		virtual setcolor reset(const KeyType& key) const noexcept(false)
 		{
 			using namespace ANSI;
-			return _isActive ? setcolor{ reset + _palette.at(key).operator std::string() } : setcolor_placeholder;
+			return _isActive ? setcolor{ color::reset + _palette.at(key).operator std::string() } : setcolor_placeholder;
 		}
 
 		/**
