@@ -229,12 +229,3 @@
 #else
 #define WINCONSTEXPR
 #endif
-
-/// Preprocessor Functions ///
-
-/**
- * @def		STRINGIZE
- * @brief	Used to stringify a non-quote-enclosed preprocessor definition, which can be used inline in other preprocessor statements.
- * @param n	Input Value Macro
- */
-#define STRINGIZE(n) #n
