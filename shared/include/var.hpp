@@ -21,6 +21,7 @@
 namespace var {
 #if LANG_CPP >= 20
 #pragma region Concepts
+
 	/**
 	 * @concept		Streamable
 	 * @brief		Check if the given type can be inserted into an output stream.
@@ -30,6 +31,11 @@ namespace var {
 	{
 		std::declval<std::stringstream&>() << obj;
 	};
+	/**
+	 * @concept		wStreamable
+	 * @brief		Check if the given type can be inserted into a wide char output stream.
+	 * @tparam T	A type to attempt to insert into the stream.
+	 */
 	template<typename T> concept wStreamable = requires(T obj)
 	{
 		std::declval<std::wstringstream&>() << obj;
@@ -41,7 +47,7 @@ namespace var {
 	 * @returns			bool
 	 */
 	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool same_size = (sizeof...(VT) == compsize);
+	inline static constexpr const bool is_same_size = (sizeof...(VT) == compsize);
 	/**
 	 * @brief			Check if a variadic templated type has more arguments than a given number.
 	 * @tparam compsize	One before the number of arguments VT must contain before returning true.
@@ -49,7 +55,7 @@ namespace var {
 	 * @returns			bool
 	 */
 	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool more_than = (sizeof...(VT) > compsize);
+	inline static constexpr const bool is_more_than = (sizeof...(VT) > compsize);
 	/**
 	 * @brief			Check if a variadic templated type has less arguments than a given number.
 	 * @tparam compsize	One after the number of arguments VT must contain before returning false.
@@ -57,9 +63,44 @@ namespace var {
 	 * @returns			bool
 	 */
 	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool less_than = (sizeof...(VT) < compsize);
+	inline static constexpr const bool is_less_than = (sizeof...(VT) < compsize);
 	template<class... VT>
-	inline static constexpr const bool more_than_one = more_than<1, VT...>;
+	inline static constexpr const bool is_more_than_one = more_than<1, VT...>;
+	/**
+	 * @concept		same_size
+	 * @brief		Checks if the given types are the same size in bytes.
+	 * @tparam L	Input Type 1
+	 * @tparam R	Input Type 2
+	 */
+	template<typename L, typename R> concept same_size = (sizeof(L) == sizeof(R));
+	/**
+	 * @concept		smaller_size
+	 * @brief		Checks if type 1 is smaller than type 2 in bytes.
+	 * @tparam L	Input Type 1
+	 * @tparam R	Input Type 2
+	 */
+	template<typename L, typename R> concept smaller_size = (sizeof(L) < sizeof(R));
+	/**
+	 * @concept		smaller_size
+	 * @brief		Checks if type 1 is larger than type 2 in bytes.
+	 * @tparam L	Input Type 1
+	 * @tparam R	Input Type 2
+	 */
+	template<typename L, typename R> concept larger_size = (sizeof(L) > sizeof(R));
+	/**
+	 * @concept		smaller_size
+	 * @brief		Checks if type 1 is smaller or equal than type 2 in bytes.
+	 * @tparam L	Input Type 1
+	 * @tparam R	Input Type 2
+	 */
+	template<typename L, typename R> concept smaller_equal_size = (sizeof(L) <= sizeof(R));
+	/**
+	 * @concept		smaller_size
+	 * @brief		Checks if type 1 is larger or equal than type 2 in bytes.
+	 * @tparam L	Input Type 1
+	 * @tparam R	Input Type 2
+	 */
+	template<typename L, typename R> concept larger_equal_size = (sizeof(L) >= sizeof(R));
 	/**
 	 * @concept			at_least_one
 	 * @brief			Check if a variadic templated type has at least one included argument.
