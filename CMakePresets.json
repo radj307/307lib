@@ -116,6 +116,22 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
+    },
+    {
+      "name": "windows-release-min-size",
+      "displayName": "Windows x64 MinSizeRel",
+      "inherits": "windows-default",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    },
+    {
+      "name": "windows-release-with-symbols",
+      "displayName": "Windows x64 RelWithDebInfo",
+      "inherits": "windows-default",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
     }
   ]
 }
