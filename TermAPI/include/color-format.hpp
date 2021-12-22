@@ -4,76 +4,167 @@
  * @brief	Contains the FormatFlag struct, a pseudo-enum used to pass formatting information to the setcolor functor.
  */
 #pragma once
+#include <sysarch.h>
 #include <Segments.h>
 #include <Sequence.hpp>
 #include <var.hpp>
 
 #include <utility>
 namespace color {
-#pragma region DECLARATION
-	/**
-	 * @struct	FormatFlag
-	 * @brief	Used by the ColorFormat & setcolor objects to maintain flag types.
-	 *\n		This object is immutable, for a mutable variant see ColorFormat.
-	 */
-	struct FormatFlag {
-	private:
-		const unsigned char _format;
-	public:
+
+	struct format {
 		/**
-		 * @brief			Default Constructor.
-		 * @param format	Index value. Must follow the bitwise flag format where each value is double the previous one.
+		 * @class		FlagBase
+		 * @brief		Base Formatting "flag" object, uses bit fields to store various types of formatting data.
+		 * @tparam T	Variable type to use. This essentially defines the maximum number of individual flags. Default is char (1 byte, max value 256)
 		 */
-		constexpr FormatFlag(const unsigned char& format) : _format{ format } {}
+		template<typename T>
+		class FlagBase {
+			T _v;
+		public:
+			/**
+			 * @brief	Value Constructor
+			 * @param v	Input Value
+			 */
+			CONSTEXPR FlagBase(const T& v) : _v{ v } {}
+			CONSTEXPR FlagBase(const FlagBase<T>&) = default; // copy ctor
+			CONSTEXPR FlagBase(FlagBase<T>&&) noexcept = default; // move ctor
+			CONSTEXPR virtual ~FlagBase() noexcept = default; // virtual destructor
 
-		/** @brief Return this instance's flag value */
-		constexpr operator const unsigned char() const { return _format; }
+			CONSTEXPR FlagBase<T>& operator=(const FlagBase<T>&) = default; // copy operator
+			CONSTEXPR FlagBase<T>& operator=(FlagBase<T>&&) noexcept = default; // move operator
 
-		/** @brief Bitwise AND */
-		constexpr const unsigned char operator&(const unsigned char& o) const { return static_cast<unsigned char>(!!_format & !!o); }
-		/** @brief Bitwise OR  */
-		constexpr const unsigned char operator|(const unsigned char& o) const { return static_cast<unsigned char>(!!_format | !!o); }
-		/** @brief Bitwise XOR */
-		constexpr const unsigned char operator^(const unsigned char& o) const { return static_cast<unsigned char>(!!_format ^ !!o); }
+			/**
+			 * @brief	Retrieve the flag's stored value. This operator is implicitly called when possible.
+			 * @returns	T 
+			 */
+			CONSTEXPR operator T() const { return _v; }
+			/**
+			 * @brief		Check if this flag's bitfield contains a given flag.
+			 * @tparam U	Any type with the same size as T
+			 * @param o		Other FlagBase-derived object.
+			 * @returns		bool
+			 */
+			template<var::same_size<T> U> CONSTEXPR bool contains(const FlagBase<U>& o) const { return (_v & static_cast<T>(o)) != 0; }
+			/**
+			 * @brief		Check if this flag's bitfield contains a given flag.
+			 * @tparam U	Any type with the same size as T
+			 * @param v		Other value.
+			 * @returns		bool
+			 */
+			template<var::same_size<T> U> CONSTEXPR bool contains(const U& v) const { return (_v & v) != 0; }
+
+			// Bitwise operators
+			CONSTEXPR FlagBase<T> operator|(const T& v) const { return FlagBase<T>{ static_cast<T>(_v | v) }; }
+			CONSTEXPR FlagBase<T> operator&(const T& v) const { return FlagBase<T>{ static_cast<T>(_v & v) }; }
+			CONSTEXPR FlagBase<T> operator^(const T& v) const { return FlagBase<T>{ static_cast<T>(_v ^ v) }; }
+
+			// Bitwise setter operators
+			CONSTEXPR FlagBase<T>& operator|=(const T& v) const { _v |= v; return *this; }
+			CONSTEXPR FlagBase<T>& operator&=(const T& v) const { _v &= v; return *this; }
+			CONSTEXPR FlagBase<T>& operator^=(const T& v) const { _v ^= v; return *this; }
+
+			/**
+			 * @brief		Set the flag to a new value.
+			 * @param v		Another FlagBase-derived type with the same size.
+			 * @returns		FlagBase<T>&
+			 */
+			template<var::same_size<T> U>
+			FlagBase<T>& set(const FlagBase<U>& v)
+			{
+				_v = v;
+				return *this;
+			}
+			/**
+			 * @brief		Set the flag to a new value.
+			 * @param v		A value with a.
+			 * @returns		FlagBase<T>&
+			 */
+			template<var::same_size<T> U> 
+			FlagBase<T>& set(const U& v)
+			{
+				_v = v;
+				return *this;
+			}
+			template<std::integral U> requires (!var::same_size<T, U>)
+			FlagBase<T>& set(const U& v) // resulting type of bitwise operations is int
+			{
+				_v = static_cast<T>(v);
+				return *this;
+			}
+			/**
+			 * @brief	Retrieve the escape sequence to apply this flag's value(s).
+			 * @returns	ANSI::Sequence
+			 */
+			ANSI::Sequence Sequence() const
+			{
+				ANSI::Sequence seq{};
+				if (contains(RESET)) { // unset format
+					if (contains(BOLD))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_NO_BOLD, ANSI::END);
+					if (contains(UNDERLINE))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_NO_UNDERLINE, ANSI::END);
+					if (contains(INVERT))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_POSITIVE, ANSI::END);
+				}
+				else { // set format
+					if (contains(BOLD))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_BOLD, ANSI::END);
+					if (contains(UNDERLINE))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_UNDERLINE, ANSI::END);
+					if (contains(INVERT))
+						seq += ANSI::make_sequence(ANSI::CSI, ANSI::SGR_NEGATIVE, ANSI::END);
+				}
+				return seq;
+			}
+			/**
+			 * @brief	Retrieve the escape sequence to apply this flag's value(s).
+			 * @returns	ANSI::wSequence
+			 */
+			ANSI::wSequence wSequence() const
+			{
+				ANSI::wSequence seq{};
+				if (contains(RESET)) { // unset format
+					if (contains(BOLD))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NO_BOLD, ANSI::END);
+					if (contains(UNDERLINE))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NO_UNDERLINE, ANSI::END);
+					if (contains(INVERT))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_POSITIVE, ANSI::END);
+				}
+				else { // set format
+					if (contains(BOLD))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_BOLD, ANSI::END);
+					if (contains(UNDERLINE))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_UNDERLINE, ANSI::END);
+					if (contains(INVERT))
+						seq += ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NEGATIVE, ANSI::END);
+				}
+				return seq;
+			}
+		};
+		/// @brief	FlagBase derivative with an immutable (constant) value.
+		using Flag = const FlagBase<unsigned char>;
+
+		#pragma region DefineFlags
+		// Base Utility Types
+		inline static const Flag NONE{ 0u };
+		inline static const Flag RESET{ 1u };
+		// Base Format Types
+		inline static const Flag BOLD{ 2u };
+		inline static const Flag UNDERLINE{ 4u };
+		inline static const Flag INVERT{ 8u };
+		// Complex Types
+		inline static const Flag NO_BOLD{ RESET | BOLD };
+		inline static const Flag NO_UNDERLINE{ RESET | UNDERLINE };
+		inline static const Flag NO_INVERT{ RESET | INVERT };
+		#pragma endregion DefineFlags
+
+		/// @brief	FlagBase derivative with a mutable value.
+		using MutableFlag = FlagBase<unsigned char>;
 	};
-#pragma endregion DECLARATION
-#pragma region DEFINITIONS
-	/** @brief No special formatting */
-	static constexpr const FormatFlag NONE{ 0u };
-	/** @brief Resets colors only */
-	static constexpr const FormatFlag RESET{ 1u };
-	/** @brief Bold printed text. */
-	static constexpr const FormatFlag BOLD{ 2u };
-	static constexpr const FormatFlag BRIGHT{ BOLD };
-	/** @brief Underline printed text. */
-	static constexpr const FormatFlag UNDERLINE{ 4u };
-	/** @brief Invert foreground & background colors of printed text. */
-	static constexpr const FormatFlag INVERT{ 8u };
 
-	/** @brief Unset the bold flag specifically. */
-	static constexpr const FormatFlag NO_BOLD{ RESET | BOLD };
-	static constexpr const FormatFlag DIM{ NO_BOLD };
-	/** @brief Unset the underline flag specifically. */
-	static constexpr const FormatFlag NO_UNDERLINE{ RESET | UNDERLINE };
-	/** @brief Unset the invert flag specifically. */
-	static constexpr const FormatFlag NO_INVERT{ RESET | INVERT };
-#pragma endregion DEFINITIONS
-
-	/**
-	 * @brief				Accepts any number of integrals, and returns the result of calling bitwise OR on each of them.
-	 * @tparam ...VT		Variadic Templated Type (Integral)
-	 * @param ...numbers	Numbers to bitwise-merge
-	 * @returns				unsigned char
-	 */
-	template<typename... VT>
-	inline static constexpr unsigned char bitmerge(const VT&... numbers) noexcept
-	{
-		unsigned char flag{ 0u };
-		for (auto& i : var::variadic_accumulate<unsigned long long>(numbers...))
-			flag |= static_cast<unsigned char>(i);
-		return flag;
-	}
-
+	// SGR formatting sequences
 	inline static const ANSI::Sequence
 		bold{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_BOLD, ANSI::END) },
 		no_bold{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_NO_BOLD, ANSI::END) },
@@ -83,74 +174,14 @@ namespace color {
 		no_invert{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_POSITIVE, ANSI::END) },
 		reset_f{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_FORE, ANSI::END) },
 		reset_b{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_BACK, ANSI::END) },
-		reset{ ANSI::make_sequence(reset_f, reset_b) },
+		reset_fmt{ ANSI::make_sequence(no_bold, no_underline, no_invert) },
+		reset{ ANSI::make_sequence(reset_f, reset_b, reset_fmt) },
 		reset_all{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_RESET, ANSI::END) };
 
-
-	/**
-	 * @struct ColorFormat
-	 * @brief A mutable format flag instance. Used by the setcolor struct to maintain any number of independent FormatFlag instances.
-	 */
-	struct ColorFormat {
-	private:
-		unsigned char _fmt; ///< @brief Current flag value
-	public:
-		/**
-		 * @brief Variadic bitmerge constructor.
-		 * @tparam ...VT	- Variadic Templated Type (FormatFlag)
-		 * @param ...flags	- At least two format flag instances that will be merged together with a bitwise OR operation.
-		 */
-		template<typename... VT>
-		ColorFormat(const VT&... flags) : _fmt{ bitmerge(flags...) } {}
-
-		/** @brief Retrieve the current value of this flag */
-		constexpr operator unsigned char() const { return _fmt; }
-
-		constexpr bool contains(const FormatFlag& flag) const
-		{
-			return (_fmt & flag) != 0;
-		}
-
-		ANSI::Sequence Sequence() const
-		{
-			// TODO: Fix this function, add functions for quickly sending sequences to terminal
-			// ISSUE: ANSI::END characters are being dumped even when the sequence is empty
-			// ISSUE: Chaining SGR operators doesn't work on windows.
-
-			using namespace ANSI;
-			ANSI::Sequence seq;
-
-			const auto append{ [&seq](auto&& s) { if (!seq.empty()) seq += ';'; return seq += s; } };
-
-			if (contains(RESET))
-				append(reset);
-			if (contains(BOLD))
-				append(bold);
-			if (contains(UNDERLINE))
-				append(underline);
-			if (contains(INVERT))
-				append(invert);
-
-			if (contains(NO_BOLD))
-				append(no_bold);
-			if (contains(NO_UNDERLINE))
-				append(no_underline);
-			if (contains(NO_INVERT))
-				append(no_invert);
-
-			return seq;
-		}
-		ANSI::wSequence wSequence() const
-		{
-			ANSI::wSequence wseq;
-			for (auto& ch : Sequence())
-				wseq += static_cast<wchar_t>(ch);
-			return wseq;
-		}
-	};
-
+	// backwards compatibility using statements
+	using FormatFlag = format::Flag;
 }
 #ifndef COLOR_NO_GLOBALS
 /// @brief Allows specifying the color::FormatFlag object with a shorter syntax. Define "COLOR_NO_GLOBALS" to disable.
-using Format = color::FormatFlag;
+using Format = color::format;
 #endif
