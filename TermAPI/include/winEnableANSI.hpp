@@ -9,13 +9,11 @@
 #include <optional>
 #include <functional>
 
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+
 namespace term {
-#ifdef OS_WIN
-	namespace win {
-	#define WIN32_LEAN_AND_MEAN
-	#include <Windows.h>
-	#define DWORD win::DWORD
-	}
+	#ifdef OS_WIN
 	/**
 	 * @struct	TargetHandle
 	 * @brief	Pseudo-flag object that allows targetting any or all of STDIN, STDOUT, & STDERR
@@ -39,12 +37,12 @@ namespace term {
 	const constexpr TargetHandle TargetHandle::NONE{ 0u }, TargetHandle::STDIN{ 1u }, TargetHandle::STDOUT{ 2u }, TargetHandle::STDERR{ 4u };
 	static struct {
 	private:
-		std::unique_ptr<win::HANDLE> _STDIN{
-			std::make_unique<win::HANDLE>(win::GetStdHandle(STD_INPUT_HANDLE))
+		std::unique_ptr<HANDLE> _STDIN{
+			std::make_unique<HANDLE>(GetStdHandle(STD_INPUT_HANDLE))
 		}, _STDOUT{
-			std::make_unique<win::HANDLE>(win::GetStdHandle(STD_OUTPUT_HANDLE))
+			std::make_unique<HANDLE>(GetStdHandle(STD_OUTPUT_HANDLE))
 		}, _STDERR{
-			std::make_unique<win::HANDLE>(win::GetStdHandle(STD_ERROR_HANDLE))
+			std::make_unique<HANDLE>(GetStdHandle(STD_ERROR_HANDLE))
 		};
 
 		/**
@@ -54,7 +52,7 @@ namespace term {
 		DWORD getInputMode() const noexcept
 		{
 			DWORD mode{ NULL };
-			win::GetConsoleMode(*_STDIN.get(), &mode);
+			GetConsoleMode(*_STDIN.get(), &mode);
 			return mode;
 		}
 		/**
@@ -64,7 +62,7 @@ namespace term {
 		 */
 		bool setInputMode(const DWORD& dwMode) const
 		{
-			return win::SetConsoleMode(_STDIN.get(), dwMode);
+			return SetConsoleMode(_STDIN.get(), dwMode);
 		}
 		/**
 		 * @brief Modify the console mode for the STDOUT handle by adding the given mode.
@@ -83,7 +81,7 @@ namespace term {
 		DWORD getOutputMode() const noexcept
 		{
 			DWORD mode{ NULL };
-			win::GetConsoleMode(*_STDOUT.get(), &mode);
+			GetConsoleMode(*_STDOUT.get(), &mode);
 			return mode;
 		}
 		/**
@@ -93,7 +91,7 @@ namespace term {
 		 */
 		bool setOutputMode(const DWORD& dwMode) const
 		{
-			return win::SetConsoleMode(_STDOUT.get(), dwMode);
+			return SetConsoleMode(_STDOUT.get(), dwMode);
 		}
 		/**
 		 * @brief Modify the console mode for the STDOUT handle by adding the given mode.
@@ -157,6 +155,6 @@ namespace term {
 			false
 		);
 	}
-#endif
+	#endif
 }
 #undef DWORD
