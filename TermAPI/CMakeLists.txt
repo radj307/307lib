@@ -34,17 +34,8 @@ set(HEADERS
 	# TermAPI
 	"include/TermAPI.hpp"
 )
-set(SRC
-	# ANSI
-	"src/Sequence.cpp"
-	# color
-	"src/setcolor.cpp"
-	"src/palette.cpp"
-	# term
-	"src/term.cpp"
-	# TermAPI
-	"src/TermAPI.cpp"
-)
+
+file(GLOB SRC "src/*.cpp")
 
 include(CMakeDependentOption)
 
