@@ -52,9 +52,21 @@ inline void test_xlog()
 int main(const int argc, char** argv)
 {
 	try {
-	#ifdef OS_WIN
+		#ifdef OS_WIN
 		std::cout << term::EnableANSI;
-	#endif
+		#endif
+
+		const auto text{ "Hello World!"s };
+		bool toggle{ true };
+		for (auto& ch : text) {
+			if (toggle = !toggle; toggle)
+				std::cout << color::setcolor(static_cast<short>(ch), color::format::BOLD | color::format::UNDERLINE);
+			else
+				std::cout << color::setcolor(static_cast<short>(ch));
+			std::cout << ch << color::reset_fmt;
+		}
+
+		std::cout << color::reset << std::endl;
 
 		return 0;
 	} catch (const std::exception& ex) {
