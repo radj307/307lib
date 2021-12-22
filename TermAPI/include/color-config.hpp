@@ -1,8 +1,17 @@
+/**
+ * @file	color-config.hpp
+ * @author	radj307
+ * @brief	Color config is a relatively simple alternative to palette.hpp that uses files to store & read color values.
+ *\n		Configs have many of the same functionality as a palette, but keys are always the std::string type.
+ *\n		Configs have built-in conversion functions to create a palette from a config, and vice-versa.
+ */
 #pragma once
 #include <color-format.hpp>
 #include <color-transform.hpp>
 #include <setcolor.hpp>
+#include <palette.hpp>
 
+#include <make_exception.hpp>
 #include <fileio.hpp>
 #include <fileutil.hpp>
 #include <TokenizerBase.hpp>
@@ -10,6 +19,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <functional>
 #include <tuple>
 #include <ostream>
 
@@ -17,8 +27,13 @@ namespace color {
 
 	class Config;
 
-	namespace fileext {
+	/**
+	 * @namespace	fileext
+	 * @brief		Namespace containing file library extensions.
+	 */
+	namespace fileext { // Overload filelib's tokenizer objects for the color config file format
 		using namespace token;
+		// Tokenizes the given stringstream rvalue
 		class ConfigTokenizer : public TokenizerBase {
 		public:
 			ConfigTokenizer(std::stringstream&& buffer) : TokenizerBase(std::forward<std::stringstream>(buffer)) {}
@@ -37,12 +52,12 @@ namespace color {
 					return Token{ ch, TokenType::NEWLINE };
 				case LEXEME::_EOF: // End of File
 					return Token{ ch, TokenType::END };
-				default:
+				default: // any other character is null
 					return Token{ ch, TokenType::NULL_TYPE };
 				}
 			}
 		};
-
+		// Parses the token container returned from ConfigTokenizer
 		class ConfigParser : public TokenParserBase {
 		public:
 			ConfigParser(ConfigTokenizer&& tkiz) : TokenParserBase(std::forward<ConfigTokenizer>(tkiz), 256ull) {}
@@ -55,9 +70,11 @@ namespace color {
 				bool setter{ false };
 
 				const auto insert{ [&map, &key, &val, &setter]() {
-					if (!key.empty() && setter && !val.empty()) {
+					if (!key.empty() && setter && !val.empty())
 						map.insert_or_assign(key, hex_to_rgb(val));
-					}
+					key = {};
+					setter = false;
+					val = {};
 				} };
 
 				for (auto& t : tokens) {
@@ -68,17 +85,15 @@ namespace color {
 					case TokenType::SETTER:
 						setter = true;
 						break;
+					case TokenType::NUMBER_HEX: [[fallthrough]];
 					case TokenType::NUMBER:
 						val = t.first;
 						break;
-					case TokenType::NEWLINE:
-						insert();
-						key = {};
-						setter = false;
-						val = {};
-						break;
+					case TokenType::NEWLINE: [[fallthrough]];
 					case TokenType::END:
 						insert();
+						break;
+					default: // any other token type
 						break;
 					}
 				}
@@ -92,6 +107,18 @@ namespace color {
 			return ConfigParser(std::move(ConfigTokenizer{ file::read(filename) })).operator std::unordered_map<std::string, RGB<short>>();
 		}
 	}
+
+	struct ConfigDefaults {
+		using sRGB = RGB<short>;
+		using Map = std::unordered_map<std::string, sRGB>;
+
+		Map _map;
+
+		ConfigDefaults(Map&& defaults) : _map{ std::move(defaults) } {}
+
+		operator Map() const { return _map; }
+	};
+
 	class Config {
 	public:
 		using sRGB = RGB<short>;
@@ -118,6 +145,20 @@ namespace color {
 		Config() = default;
 		Config(Map&& map) : _map{ std::move(map) } {}
 		Config(const std::string& filename) : _map{ fileext::read_config(filename) } {}
+		Config(const palette<std::string>& p) : _map{ [&p]() {
+			Map map;
+			for (const auto& [key, sgr] : p.operator std::unordered_map<std::string, color::setcolor, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<const std::string, color::setcolor>>>())
+				map.insert_or_assign(key, sgr_to_rgb<short>(sgr));
+			return std::move(map); // who needs copy ellision? not this lambda!					DISCLAIMER: this lambda may need copy ellision
+		}() }{}
+		template<typename KeyType>
+		Config(const palette<KeyType>& p, const std::function<std::string(KeyType)>& conv) : _map{
+			[](){
+				Map map;
+				for (const auto& [key, sgr] : p.operator palette<KeyType>::PaletteType())
+					map.insert_or_assign(conv(key), sgr_to_rgb<short>(sgr));
+				return std::move(map); // who needs copy ellision? not this lambda either!		DISCLAIMER: this lambda may need copy ellision
+		}()} {}
 
 		/**
 		 * @brief			Enable or disable this instance's set functions from actually returning anything.
@@ -209,6 +250,36 @@ namespace color {
 			for (auto& [key, val] : cfg._map)
 				os << key << " = #" << color::rgb_to_hex(val) << '\n';
 			return os;
+		}
+
+		/**
+		 * @brief	Convert this color config instance to a color palette using std::string as the key type.
+		 * @returns	palette<std::string>
+		 */
+		palette<std::string> to_palette() const
+		{
+			palette<std::string>::PaletteType p;
+			p.reserve(_map.size());
+			for (const auto& [key, color] : _map)
+				p.insert_or_assign(key, rgb_to_sgr(color));
+			return palette<std::string>{ std::move(p) };
+		}
+
+		/**
+		 * @brief				Convert this color config instance to a color palette using a custom key type.
+		 * @tparam KeyType		The palette's desired key type.
+		 * @param conv			Function to convert from std::string to KeyType.
+		 * @returns				palette<KeyType>
+		 */
+		template<typename KeyType>
+		palette<KeyType> to_palette(const std::function<KeyType(std::string)>& conv) const
+		{
+			using PaletteType = palette<KeyType>::PaletteType;
+			PaletteType p;
+			p.reserve(_map.size());
+			for (const auto& [key, color] : _map)
+				p.insert_or_assign(conv(key), rgb_to_sgr(color));
+			return palette<KeyType>{ std::move(p) };
 		}
 	};
 }
