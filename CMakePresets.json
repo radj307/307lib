@@ -102,7 +102,7 @@
       }
     },
     {
-      "name": "windows-debug",
+      "name": "Debug",
       "displayName": "Windows x64 Debug",
       "inherits": "windows-default",
       "cacheVariables": {
@@ -110,7 +110,7 @@
       }
     },
     {
-      "name": "windows-release",
+      "name": "Release",
       "displayName": "Windows x64 Release",
       "inherits": "windows-default",
       "cacheVariables": {
@@ -118,7 +118,7 @@
       }
     },
     {
-      "name": "windows-release-min-size",
+      "name": "MinSizeRel",
       "displayName": "Windows x64 MinSizeRel",
       "inherits": "windows-default",
       "cacheVariables": {
@@ -126,7 +126,7 @@
       }
     },
     {
-      "name": "windows-release-with-symbols",
+      "name": "RelWithDebInfo",
       "displayName": "Windows x64 RelWithDebInfo",
       "inherits": "windows-default",
       "cacheVariables": {
