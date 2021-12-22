@@ -23,7 +23,7 @@ To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
 | FILELIB_ENABLE_EXTENSIONS  | filelib   | ON        | Includes all filelib components, including tokenization/parsing.                |
 ]]
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON) # Enable position independent code for all subprojects
+set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE) # Enable position independent code for all subprojects
 
 # require C++20
 set(CMAKE_CXX_STANDARD 20)
