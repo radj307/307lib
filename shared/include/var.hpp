@@ -358,6 +358,23 @@ namespace var {
 	{
 		return std::get<i>(tuple) == compare || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, compare);
 	}
+
+	/**
+	 * @brief					Compare each element in a tuple against a given variable using a predicate.
+	 * @tparam CompareType		Type that can be compared to all elements in the tuple.
+	 * @tparam ...TupleTypes	Types in the given tuple.
+	 * @tparam Comparator		Predicate function that returns a bool and accepts CompareType on the left, and TupleType on the right.
+	 * @param tuple				A tuple containing elements which can be compared for equality with the given comparison type.
+	 * @param val				A variable to compare to each element in the tuple.
+	 * @param predicate			A predicate function to perform the comparsion.
+	 * @returns					bool
+	 */
+	template<size_t i = 0, typename CompareType, typename... TupleTypes, class Pred>
+	[[nodiscard]] CONSTEXPR bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareType& val, const Pred& predicate)
+	{
+		return predicate(val, std::get<i>(tuple)) || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, val, predicate);
+	}
+
 	/**
 	 * @brief					Compare a variadic tuple against at least one comparable type.
 	 * @tparam ...CompareTypes	Variadic templated types
