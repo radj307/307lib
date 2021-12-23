@@ -26,11 +26,10 @@ namespace opt {
 		WINCONSTEXPR InputWrapper(char input) : _input{ std::move(std::string(1u, input)) } {}
 		WINCONSTEXPR InputWrapper(const InputWrapper& o) = default;
 		WINCONSTEXPR InputWrapper(InputWrapper&& o) noexcept = default;
-	#ifdef OS_WIN
+		WINCONSTEXPR std::string to_string() const { return _input; }
+		WINCONSTEXPR std::string to_lower() const { return str::tolower(_input); }
+		WINCONSTEXPR std::string to_upper() const { return str::toupper(_input); }
 		WINCONSTEXPR operator const std::string() const { return _input; }
-	#else
-		operator const std::string() const { return _input; }
-	#endif
 		WINCONSTEXPR bool operator==(const std::string& o) const { return _input == o; }
 		WINCONSTEXPR bool operator==(const char& o) const { return _input.size() == 1ull && _input.front() == o; }
 		WINCONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
@@ -160,6 +159,30 @@ namespace opt {
 		}
 
 		/**
+		 * @brief				Find any argument with at least one matching criteria, within the specified range.
+		 * @tparam Types...		Type whitelist. If left empty, all types can match.
+		 * @tparam Names...		Name whitelist. If left empty, all names can match.
+		 * @param names			A tuple containing valid names.
+		 * @param first			Start searching here.	(Inclusive)
+		 * @param last			End searching here.		(Exclusive)
+		 * @returns				ArgContainerIteratorType
+		 */
+		template<ValidArg... Types, ValidInputType... Names>
+		WINCONSTEXPR ArgContainerIteratorType find_any(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
+		{
+			WINCONSTEXPR const bool match_any_type{ var::none<Types...> }, match_any_name{ var::none<Names...> };
+			for (auto it{ first }; it != last; ++it) {
+				if (match_any_type || var::variadic_or(is_type<Types>(*it)...)) {
+					if (match_any_name)
+						return it;
+					else if (const auto name{ get_name(*it) }; var::tuple_or(names, name, [](auto&& nm, auto&& search_name) { return nm == InputWrapper(search_name); }))
+						return it;
+				}
+			}
+			return end();
+		}
+
+		/**
 		 * @brief			Find all arguments with matching criteria.
 		 *\n				To be considered a valid match, an argument must have a matching type AND a matching name.
 		 *\n				If at least one type is included, arguments must have (any) of the specified types to be considered a match. If no types are specified, any type may be considered a match.
@@ -180,6 +203,32 @@ namespace opt {
 					if (match_any_name)
 						vec.emplace_back(it);
 					else if (const auto name{ get_name(*it) }; var::variadic_or(InputWrapper(names) == name...))
+						vec.emplace_back(it);
+				}
+			vec.shrink_to_fit();
+			return vec;
+		}
+
+		/**
+		 * @brief			Find all arguments with matching criteria within the specified range.
+		 * @tparam Types...	Zero or more argument type(s) to consider as matching.
+		 * @tparam Names...	Zero or more argument name(s) to consider as matching.
+		 * @param ...names	Argument name(s) to search for. If left empty, any argument name will be considered a match, so long as it has a matching type.
+		 * @param first		Start searching here.	(Inclusive)
+		 * @param last		Stop searching here.	(Exclusive)
+		 * @returns			ArgContainerIteratorContainerType
+		 */
+		template<ValidArg... Types, ValidInputType... Names>
+		WINCONSTEXPR const ArgContainerIteratorContainerType find_all(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
+		{
+			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
+			ArgContainerIteratorContainerType vec;
+			vec.reserve(_args.size());
+			for (auto it{ first }; it != last; ++it)
+				if (match_any_type || var::variadic_or(is_type<Types>(*it)...)) {
+					if (match_any_name)
+						vec.emplace_back(it);
+					else if (const auto name{ get_name(*it) }; var::tuple_or(names, name, [](auto&& nm, auto&& search_name) { return nm == InputWrapper(search_name); }))
 						vec.emplace_back(it);
 				}
 			vec.shrink_to_fit();
@@ -358,12 +407,19 @@ namespace opt {
 				return get_range(_args.begin() + from, (to.has_value() ? _args.begin() + to.value() : _args.end()), inclusive, pred);
 			throw make_exception("ArgContainer::get_range()\tInvalid indexes where from == ", from, " && to == ", to.value_or(_args.size()), ". (Argument list size is ", _args.size(), ')');
 		}
-
+		/**
+		 * @brief				Retrieve a range of arguments from the list, with an optional predicate function for filtering. Returns an ArgContainer instance.
+		 * @param from			The beginning index in the list.
+		 * @param to			The ending index in the list.
+		 * @param inclusive		When true, includes the element at the "to" iterator in the container.
+		 * @param pred			An optional predicate function that accepts a VariantArgumentType and returns a boolean.
+		 * @returns				ArgContainer
+		*/
 		virtual ArgContainer duplicate_range(const ArgContainerIteratorType& from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const
 		{
 			ArgContainerType cont;
 			for (auto& it : get_range(from, to, inclusive, pred))
-				cont.emplace_back(std::move(it));
+				cont.emplace_back(it);
 			return decltype(*this){ std::move(cont), _arg0 };
 		}
 	#pragma endregion GetRangeFunction
