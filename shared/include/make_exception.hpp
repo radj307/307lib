@@ -15,7 +15,7 @@ class except : public std::exception {
 public:
 	except() = default;
 	except(auto&& message) : _message{ std::forward<decltype(message)>(message) } {}
-	const char* what() const noexcept override;
+	const char* what() const noexcept override { return _message.c_str(); }
 };
 
 /**
