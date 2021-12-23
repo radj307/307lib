@@ -18,37 +18,6 @@
 #include "strlib.h"
 #include "TermAPI.h"
 
-inline void test_xlog()
-{
-	std::cout << color::setcolor(color::rgb_to_sgr(5, 0, 0)) << "red" << color::reset << '\n';
-	std::cout << color::setcolor(color::rgb_to_sgr(0, 5, 0)) << "green" << color::reset << '\n';
-	std::cout << color::setcolor(color::rgb_to_sgr(0, 0, 5)) << "blue" << color::reset << '\n';
-	std::cout << color::setcolor(color::rgb_to_sgr(3, 0, 5)) << "magenta" << color::reset << '\n';
-	std::cout << color::setcolor(3, 2, 5) << "purple" << color::reset << '\n';
-
-	if (str::pos_valid(std::string::npos)) {
-		std::cout << "Impossible!" << std::endl;
-	}
-	using namespace xlog;
-	xLogs logger;
-	logger.setLevel(level::ERROR | level::INFO | level::CRITICAL);
-	logger.log(level::INFO, "Hello", ' ', "World!");
-
-	logger << level::ERROR << "nothing " << "went wrong!" << endm;
-	logger << level::CRITICAL << "Something ";
-	logger << "may have happened..." << endm;
-
-	logger.setLevel(level::AllDebug);
-	logger.log(level::DEBUG, "Initialize cheese scenario");
-
-	logger.log(level::LOG, "The cheese is here!");
-	logger.log(level::WARNING, "The cheese is on fire!");
-	logger.log(level::ERROR, "The cheese is combustable and may explode!");
-	logger.log(level::CRITICAL, "The cheese has exploded!");
-
-	logger.log(level::DEBUG, "Cheese scenario ended, catastrophic failure!");
-}
-
 int main(const int argc, char** argv)
 {
 	try {
@@ -56,15 +25,13 @@ int main(const int argc, char** argv)
 		std::cout << term::EnableANSI;
 		#endif
 
-		const auto text{ "Hello World!"s };
-		bool toggle{ true };
-		for (auto& ch : text) {
-			if (toggle = !toggle; toggle)
-				std::cout << color::setcolor(static_cast<short>(ch), color::format::BOLD | color::format::UNDERLINE);
-			else
-				std::cout << color::setcolor(static_cast<short>(ch));
-			std::cout << ch << color::reset_fmt;
+		opt::ParamsAPI2 args{ argc, argv };
+		for (auto pos{ args.find_any<opt::Flag>(std::make_tuple('a', 'b', 'c', 'd'), args.begin(), args.end())}, last{pos}; pos != args.end(); last = pos + 1, pos = args.find_any<opt::Flag>(std::make_tuple('a', 'b', 'c', 'd'), pos + 1ull, args.end())) {
+			for (auto& it : args.get_range(last, pos)) {
+				std::cout << it << '\n';
+			}
 		}
+		
 
 		std::cout << color::reset << std::endl;
 
