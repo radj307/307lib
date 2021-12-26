@@ -23,6 +23,7 @@ set(HEADERS
 	"include/math.hpp"
 	"include/iter.hpp"
 	"include/make_exception.hpp"
+	"include/procstream.hpp"
 )
 
 set(SRC
