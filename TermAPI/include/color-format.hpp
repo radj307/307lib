@@ -178,10 +178,19 @@ namespace color {
 		reset{ ANSI::make_sequence(reset_f, reset_b, reset_fmt) },
 		reset_all{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_RESET, ANSI::END) };
 
+	inline static const ANSI::wSequence
+		wbold{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_BOLD, ANSI::END) },
+		wno_bold{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NO_BOLD, ANSI::END) },
+		wunderline{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_UNDERLINE, ANSI::END) },
+		wno_underline{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NO_UNDERLINE, ANSI::END) },
+		winvert{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_NEGATIVE, ANSI::END) },
+		wno_invert{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_POSITIVE, ANSI::END) },
+		wreset_f{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_DEFAULT_FORE, ANSI::END) },
+		wreset_b{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_DEFAULT_BACK, ANSI::END) },
+		wreset_fmt{ ANSI::make_sequence<ANSI::wSequence>(wno_bold, wno_underline, wno_invert) },
+		wreset{ ANSI::make_sequence<ANSI::wSequence>(wreset_f, wreset_b, wreset_fmt) },
+		wreset_all{ ANSI::make_sequence<ANSI::wSequence>(ANSI::CSI, ANSI::SGR_RESET, ANSI::END) };
+
 	// backwards compatibility using statements
 	using FormatFlag = format::Flag;
 }
-#ifndef COLOR_NO_GLOBALS
-/// @brief Allows specifying the color::FormatFlag object with a shorter syntax. Define "COLOR_NO_GLOBALS" to disable.
-using Format = color::format;
-#endif
