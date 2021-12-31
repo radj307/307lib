@@ -154,7 +154,7 @@ namespace color {
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.
-		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white;
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset;
 	};
 
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
@@ -163,7 +163,7 @@ namespace color {
 	static const setcolor setcolor_placeholder{ ANSI::Sequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
-	inline const setcolor setcolor::red{ color::red }, setcolor::green{ color::green }, setcolor::blue{ color::blue }, setcolor::yellow{ color::yellow }, setcolor::magenta{ color::magenta }, setcolor::cyan{ color::cyan }, setcolor::black{ color::black }, setcolor::white{ color::white };
+	inline const setcolor setcolor::red{ color::red }, setcolor::green{ color::green }, setcolor::blue{ color::blue }, setcolor::yellow{ color::yellow }, setcolor::magenta{ color::magenta }, setcolor::cyan{ color::cyan }, setcolor::black{ color::black }, setcolor::white{ color::white }, setcolor::reset{ color::reset };
 
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
@@ -172,5 +172,5 @@ namespace color {
 	static const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
-	inline const wsetcolor wsetcolor::red{ color::red }, wsetcolor::green{ color::green }, wsetcolor::blue{ color::blue }, wsetcolor::yellow{ color::yellow }, wsetcolor::magenta{ color::magenta }, wsetcolor::cyan{ color::cyan }, wsetcolor::black{ color::black }, wsetcolor::white{ color::white };
+	inline const wsetcolor wsetcolor::red{ color::red }, wsetcolor::green{ color::green }, wsetcolor::blue{ color::blue }, wsetcolor::yellow{ color::yellow }, wsetcolor::magenta{ color::magenta }, wsetcolor::cyan{ color::cyan }, wsetcolor::black{ color::black }, wsetcolor::white{ color::white }, wsetcolor::reset{ color::wreset };
 }
