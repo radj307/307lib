@@ -254,7 +254,7 @@ namespace var {
 		|| std::same_as<T, std::u16streampos>
 		|| std::same_as<T, std::u32streampos>;
 #pragma endregion StringConcepts
-#endif
+#endif // CPP >= 20
 
 #pragma region variadic
 	/**
@@ -290,7 +290,16 @@ namespace var {
 				largest = v;
 		return largest;
 	}
+	template<typename T, same_or_convertible<T>... Ts>
+	[[nodiscard]] inline static constexpr T largest(const Ts&... elements) { return largest<T>(std::make_tuple(elements...)); }
 
+	/**
+	 * @brief			Retrieve the smallest number in a tuple of arbitrary size.
+	 * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
+	 * @tparam Ts...	(implicit) Types stored in the tuple.
+	 * @param tpl		The tuple to operate on.
+	 * @returns			T
+	 */
 	template<typename T, same_or_convertible<T>... Ts>
 	[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
 	{
@@ -301,6 +310,8 @@ namespace var {
 				smallest = v;
 		return smallest;
 	}
+	template<typename T, same_or_convertible<T>... Ts>
+	[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
 
 #if LANG_CPP >= 20
 	/**
