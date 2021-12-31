@@ -7,16 +7,17 @@
 #include <fileio.hpp>
 #include <fileutil.hpp>
 #include <INI.hpp>
+#include <process.hpp>
 
 #include <TermAPI.hpp>
 #include <xlog.hpp>
 #include <color-transform.hpp>
 #include <color-config.hpp>
+#include <Argument.hpp>
 
 #include "filelib.h"
 #include "optlib.h"
 #include "strlib.h"
-#include "TermAPI.h"
 
 int main(const int argc, char** argv)
 {
@@ -25,15 +26,21 @@ int main(const int argc, char** argv)
 		std::cout << term::EnableANSI;
 		#endif
 
-		opt::ParamsAPI2 args{ argc, argv };
-		for (auto pos{ args.find_any<opt::Flag>(std::make_tuple('a', 'b', 'c', 'd'), args.begin(), args.end())}, last{pos}; pos != args.end(); last = pos + 1, pos = args.find_any<opt::Flag>(std::make_tuple('a', 'b', 'c', 'd'), pos + 1ull, args.end())) {
-			for (auto& it : args.get_range(last, pos)) {
-				std::cout << it << '\n';
+		if (argc > 1) {
+			opt::Argument arg{ argv[1] };
+
+			opt::ParamsAPI2 args{ argc, argv, 'c', "capture" };
+			for (auto& arg : args) {
+				std::cout << "  " << arg << '\n';
 			}
 		}
-		
 
-		std::cout << color::reset << std::endl;
+		using namespace process;
+
+		std::stringstream buffer;
+		const std::string command{ "ls -lAg" };
+		const auto rc{ exec(&buffer, command) };
+		std::cout << '\"' << command << "\" returned " << rc << "\n\nCaptured STDOUT/STDERR:\n" << buffer.rdbuf() << '\n';
 
 		return 0;
 	} catch (const std::exception& ex) {
