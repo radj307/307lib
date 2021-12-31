@@ -219,8 +219,10 @@
 #ifndef CONSTEXPR /** @def CONSTEXPR @brief Macro for C++17 constexpr. */
 #if LANG_CPP >= 17
 #define CONSTEXPR constexpr
+#define INLINE inline
 #else
 #define CONSTEXPR
+#define INLINE
 #endif
 #endif
 
