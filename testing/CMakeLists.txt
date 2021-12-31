@@ -11,30 +11,15 @@ endif()
 
 project("testing")
 
-set(HEADERS_MASS
-	"filelib.h"
-	"optlib.h"
-	"strlib.h"
-	"TermAPI.h"
-)
-set(HEADERS
-	"flagset.hpp"
-)
-set(SRC
-	"main.cpp"
-)
-
-
-option(TESTING_ENABLE_MASS_INCLUDES "Includes nearly all headers from all libraries." ON)
-if(TESTING_ENABLE_MASS_INCLUDES)
-	list(APPEND HEADERS ${HEADERS_MASS})
-endif()
+file(GLOB HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.h*")
+file(GLOB SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 add_executable(testing ${HEADERS} ${SRC})
+target_sources(testing PUBLIC ${HEADERS} ${SRC})
 target_include_directories(testing PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
 	"$<INSTALL_INTERFACE:include>"
 )
 
-target_link_libraries(testing PUBLIC shared strlib TermAPI optlib filelib)
+target_link_libraries(testing PUBLIC strlib optlib filelib TermAPI)
 

@@ -23,20 +23,16 @@ set(HEADERS
 	"include/str.hpp"
 	"include/strutility.hpp"
 )
-set(SRC
-	"src/str.cpp"
-)
+file(GLOB SRC "src/*.cpp")
 
 add_library(strlib STATIC ${HEADERS} ${SRC})
-target_link_libraries(strlib PUBLIC shared)
+
 target_include_directories(strlib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:include>"
 )
-target_link_directories(strlib PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
-	"$<INSTALL_INTERFACE:src>"
-)
+
+target_link_libraries(strlib PUBLIC shared)
 
 # Packaging
 if (307lib_ENABLE_PACKAGING) # Include packaging

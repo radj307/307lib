@@ -60,10 +60,10 @@ if (TERMAPI_EXTENSIONS)
 endif()
 
 add_library(TermAPI STATIC ${HEADERS} ${SRC})
-add_library(307lib::TermAPI ALIAS TermAPI)
+
 target_include_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-	"$<INSTALL_INTERFACE:include>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:include;src>"
 )
 
 target_link_libraries(TermAPI PUBLIC shared ${ADDITIONAL_DEPENDENCIES})

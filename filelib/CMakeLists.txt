@@ -32,23 +32,15 @@ set(HEADERS
 	"include/INI_Parser.hpp"
 	"include/INI.hpp"
 )
-set(SRC	
-	"src/fileio.cpp"
-	"src/fileutil.cpp"
-	"src/env.cpp"
-	"src/INI.cpp"
-)
+
+file(GLOB SRC "src/*.cpp")
 
 add_library(filelib STATIC ${HEADERS} ${SRC})
-add_library(307lib::filelib ALIAS filelib)
+
 
 target_include_directories(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:include>"
-)
-target_link_directories(filelib PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
-	"$<INSTALL_INTERFACE:src>"
 )
 
 target_link_libraries(filelib PUBLIC shared strlib)
