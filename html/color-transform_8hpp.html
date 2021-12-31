@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('color-transform_8hpp.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">color-transform.hpp File Reference</div>  </div>
@@ -97,14 +98,23 @@ $(document).ready(function(){initNavTree('color-transform_8hpp.html',''); initRe
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="math_8hpp_source.html">math.hpp</a>&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for color-transform.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="color-transform_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="color-transform_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="color-transform_8hpp__dep__incl.svg" width="344" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="color-transform_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -114,20 +124,64 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacecolor"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html">color</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af2826c17236b522b3dc49be41cfb294e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#af2826c17236b522b3dc49be41cfb294e">color::ColorT</a> = short</td></tr>
+<tr class="separator:af2826c17236b522b3dc49be41cfb294e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785ee587c76fb3198cdf2da23d19de99"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a785ee587c76fb3198cdf2da23d19de99"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a785ee587c76fb3198cdf2da23d19de99">color::RGB</a> = ::std::tuple&lt; T, T, T &gt;</td></tr>
+<tr class="separator:a785ee587c76fb3198cdf2da23d19de99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::enable_if_t&lt; std::is_integral_v&lt; T &gt;, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a72dd871eedae7ec4b7e4ee519b8583ad">color::rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b)</td></tr>
-<tr class="memdesc:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value. <br  />
- <a href="https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces">https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces</a>.  <a href="namespacecolor.html#a72dd871eedae7ec4b7e4ee519b8583ad">More...</a><br /></td></tr>
-<tr class="separator:a72dd871eedae7ec4b7e4ee519b8583ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c0cb635b5a83dbbfb7dbc1cd298c36"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af8c0cb635b5a83dbbfb7dbc1cd298c36"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, short &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#af8c0cb635b5a83dbbfb7dbc1cd298c36">color::rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b) noexcept</td></tr>
-<tr class="memdesc:af8c0cb635b5a83dbbfb7dbc1cd298c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value.  <a href="namespacecolor.html#af8c0cb635b5a83dbbfb7dbc1cd298c36">More...</a><br /></td></tr>
-<tr class="separator:af8c0cb635b5a83dbbfb7dbc1cd298c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::enable_if_t&lt; std::is_integral_v&lt; T &gt;, std::tuple&lt; T, T, T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#afa2ad926302f6a42b2ab2eb96ebeca92">color::sgr_to_rgb</a> (const T &amp;sgr_color)</td></tr>
-<tr class="separator:afa2ad926302f6a42b2ab2eb96ebeca92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3040cf6eb45eed908ffc3e519fc4d37c"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a3040cf6eb45eed908ffc3e519fc4d37c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a3040cf6eb45eed908ffc3e519fc4d37c">color::rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b)</td></tr>
+<tr class="memdesc:a3040cf6eb45eed908ffc3e519fc4d37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value. <br  />
+ <a href="https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces">https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces</a>.  <a href="namespacecolor.html#a3040cf6eb45eed908ffc3e519fc4d37c">More...</a><br /></td></tr>
+<tr class="separator:a3040cf6eb45eed908ffc3e519fc4d37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0623876c21c8fe1e4fac7d75099aa8ac"><td class="memTemplParams" colspan="2">template&lt;::std::floating_point T&gt; </td></tr>
+<tr class="memitem:a0623876c21c8fe1e4fac7d75099aa8ac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const ColorT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a0623876c21c8fe1e4fac7d75099aa8ac">color::rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b) noexcept</td></tr>
+<tr class="memdesc:a0623876c21c8fe1e4fac7d75099aa8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value.  <a href="namespacecolor.html#a0623876c21c8fe1e4fac7d75099aa8ac">More...</a><br /></td></tr>
+<tr class="separator:a0623876c21c8fe1e4fac7d75099aa8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea368bb3ab9f4599f979a98e21639489"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:aea368bb3ab9f4599f979a98e21639489"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#aea368bb3ab9f4599f979a98e21639489">color::rgb_to_sgr</a> (const RGB&lt; T &gt; &amp;rgb_color) noexcept</td></tr>
+<tr class="memdesc:aea368bb3ab9f4599f979a98e21639489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to an SGR value.  <a href="namespacecolor.html#aea368bb3ab9f4599f979a98e21639489">More...</a><br /></td></tr>
+<tr class="separator:aea368bb3ab9f4599f979a98e21639489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89482c63ac08a5bf56b34ea0818476c1"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a89482c63ac08a5bf56b34ea0818476c1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const RGB&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a89482c63ac08a5bf56b34ea0818476c1">color::sgr_to_rgb</a> (const T &amp;sgr_color)</td></tr>
+<tr class="memdesc:a89482c63ac08a5bf56b34ea0818476c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value into an RGB color value.  <a href="namespacecolor.html#a89482c63ac08a5bf56b34ea0818476c1">More...</a><br /></td></tr>
+<tr class="separator:a89482c63ac08a5bf56b34ea0818476c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a0436cfd097ec1f1c89f3185f2f1311a2">color::ishexnum</a> (const char &amp;ch)</td></tr>
+<tr class="memdesc:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid hexadecimal value. (Range: 0 - 9 | a - f | A - F)  <a href="namespacecolor.html#a0436cfd097ec1f1c89f3185f2f1311a2">More...</a><br /></td></tr>
+<tr class="separator:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b7fb80b9814385210173a50ad8add6"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:ab0b7fb80b9814385210173a50ad8add6"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ab0b7fb80b9814385210173a50ad8add6">color::hex_to_int</a> (const char &amp;ch)</td></tr>
+<tr class="memdesc:ab0b7fb80b9814385210173a50ad8add6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal character to an integral value.  <a href="namespacecolor.html#ab0b7fb80b9814385210173a50ad8add6">More...</a><br /></td></tr>
+<tr class="separator:ab0b7fb80b9814385210173a50ad8add6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c815104e3c97e98c79f06975c154869"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:a9c815104e3c97e98c79f06975c154869"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a9c815104e3c97e98c79f06975c154869">color::hex_to_int</a> (const std::string &amp;hex_str) noexcept</td></tr>
+<tr class="memdesc:a9c815104e3c97e98c79f06975c154869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal value to an integral.  <a href="namespacecolor.html#a9c815104e3c97e98c79f06975c154869">More...</a><br /></td></tr>
+<tr class="separator:a9c815104e3c97e98c79f06975c154869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88efe56b901a020eb070171598fe6e17"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a88efe56b901a020eb070171598fe6e17"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> RGB&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a88efe56b901a020eb070171598fe6e17">color::hex_to_rgb</a> (const ::std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:a88efe56b901a020eb070171598fe6e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value to an RGB color value.  <a href="namespacecolor.html#a88efe56b901a020eb070171598fe6e17">More...</a><br /></td></tr>
+<tr class="separator:a88efe56b901a020eb070171598fe6e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12822c7a730aaa1431b63f98fe764c17"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a12822c7a730aaa1431b63f98fe764c17"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a12822c7a730aaa1431b63f98fe764c17">color::hex_to_sgr</a> (const ::std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:a12822c7a730aaa1431b63f98fe764c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal string to an SGR color value.  <a href="namespacecolor.html#a12822c7a730aaa1431b63f98fe764c17">More...</a><br /></td></tr>
+<tr class="separator:a12822c7a730aaa1431b63f98fe764c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a31844abff93283d5e4c632cb829d931d">color::int_to_hex</a> (const T &amp;v, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:a31844abff93283d5e4c632cb829d931d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer value to hexadecimal.  <a href="namespacecolor.html#a31844abff93283d5e4c632cb829d931d">More...</a><br /></td></tr>
+<tr class="separator:a31844abff93283d5e4c632cb829d931d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ae3a2d5ea64178e79d236c1e5d133b1ed">color::rgb_to_hex</a> (const RGB&lt; T &gt; &amp;rgb, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB color value to hexadecimal.  <a href="namespacecolor.html#ae3a2d5ea64178e79d236c1e5d133b1ed">More...</a><br /></td></tr>
+<tr class="separator:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecolor.html#ac7b6e5fac8b837a753114c11a37b77a6">color::sgr_to_hex</a> (const T &amp;sgr, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:ac7b6e5fac8b837a753114c11a37b77a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value to hexadecimal.  <a href="namespacecolor.html#ac7b6e5fac8b837a753114c11a37b77a6">More...</a><br /></td></tr>
+<tr class="separator:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains functions for transforming color values between different formats. </p>

@@ -16,7 +16,7 @@ var structtoken_1_1_tokenizer_base_functions =
     [ "getnotsimilar", "structtoken_1_1_tokenizer_base_functions.html#aba84c094e57bf0d4c2806c05ddbefe27", null ],
     [ "getsimilar", "structtoken_1_1_tokenizer_base_functions.html#ae41438e0a8b00f5940bbe7a7a590585d", null ],
     [ "getsimilar", "structtoken_1_1_tokenizer_base_functions.html#af1c5c95f95cbee02f51465950d7dfbc5", null ],
-    [ "getsimilar_ch", "structtoken_1_1_tokenizer_base_functions.html#a08299bcb01cdd50e47e16a7732968d43", null ],
+    [ "getsimilar_ch", "structtoken_1_1_tokenizer_base_functions.html#a4e9243d907174714cdf9cdeba91c86ea", null ],
     [ "good", "structtoken_1_1_tokenizer_base_functions.html#a86e9356c412a8727fb66f8d766caaa43", null ],
     [ "hasMore", "structtoken_1_1_tokenizer_base_functions.html#a43d25017f3f9b97585b5a70d4ac77ed4", null ],
     [ "operator const std::string", "structtoken_1_1_tokenizer_base_functions.html#a79d24b0fc840f48a6b06ad636c6a8837", null ],

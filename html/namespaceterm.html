@@ -205,12 +205,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">EraseInLine</a> (const T &amp;erase_scope) noexcept(false)</td></tr>
 <tr class="memdesc:a0d48bd75be8181d47c51c5e3703820fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all text within the current line as specified by the given mode with space characters.  <a href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">More...</a><br /></td></tr>
 <tr class="separator:a0d48bd75be8181d47c51c5e3703820fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a727e847355477eea5d685f5f2ad0fb1c"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... vT&gt; </td></tr>
-<tr class="memitem:a727e847355477eea5d685f5f2ad0fb1c"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a727e847355477eea5d685f5f2ad0fb1c">SGR</a> (const vT &amp;... modes)</td></tr>
-<tr class="separator:a727e847355477eea5d685f5f2ad0fb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... vT&gt; </td></tr>
-<tr class="memitem:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acb56c6d8ad0bbb39add8a15befdd3311">SetGraphicsRendition</a> (const vT &amp;... modes)</td></tr>
-<tr class="separator:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aed6aef0c65f2e2500ebd365f1dacf545">SGR</a> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a38d197365c9a1b858e90c436e07aa936">SelectGraphicsRendition</a> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:a38d197365c9a1b858e90c436e07aa936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ed28a553fcaeda1fb5843237462f51"><td class="memItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a83ed28a553fcaeda1fb5843237462f51">NextTabStop</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:a83ed28a553fcaeda1fb5843237462f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the next column with a tab stop. <br  />
  If there are no more tab stops, move to the last column in the row. <br  />
@@ -313,7 +313,7 @@ Variables</h2></td></tr>
 <tr class="separator:a205b4446d1631997e0bbecc767fe8877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c65759cf102ac65faa9d4e385d684a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad3c65759cf102ac65faa9d4e385d684a">error</a> { &quot;[ERROR]&quot;, color::setcolor{<a class="el" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a> } }</td></tr>
 <tr class="separator:ad3c65759cf102ac65faa9d4e385d684a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b719b59cb9277b1e04982a6068fc1a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab1b719b59cb9277b1e04982a6068fc1a">crit</a> { &quot;[CRIT]&quot;,color::setcolor{<a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">color::dark_red</a>, <a class="el" href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">color::BOLD</a> } }</td></tr>
+<tr class="memitem:ab1b719b59cb9277b1e04982a6068fc1a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab1b719b59cb9277b1e04982a6068fc1a">crit</a> { &quot;[CRIT]&quot;,color::setcolor{<a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">color::dark_red</a>, <a class="el" href="structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa">color::format::BOLD</a> } }</td></tr>
 <tr class="separator:ab1b719b59cb9277b1e04982a6068fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -1275,6 +1275,36 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a38d197365c9a1b858e90c436e07aa936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d197365c9a1b858e90c436e07aa936">&#9670;&nbsp;</a></span>SelectGraphicsRendition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::Streamable... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Sequence term::SelectGraphicsRendition </td>
+          <td>(</td>
+          <td class="paramtype">const Ts &amp;...&#160;</td>
+          <td class="paramname"><em>modes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00391">391</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a65dcb7ead96f775f138afc7d38d46650"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65dcb7ead96f775f138afc7d38d46650">&#9670;&nbsp;</a></span>setCursorPosition() <span class="overload">[1/2]</span></h2>
 
@@ -1367,36 +1397,6 @@ template&lt;std::integral T&gt; </div>
 
 </div>
 </div>
-<a id="acb56c6d8ad0bbb39add8a15befdd3311"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb56c6d8ad0bbb39add8a15befdd3311">&#9670;&nbsp;</a></span>SetGraphicsRendition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::Streamable... vT&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Sequence term::SetGraphicsRendition </td>
-          <td>(</td>
-          <td class="paramtype">const vT &amp;...&#160;</td>
-          <td class="paramname"><em>modes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00391">391</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a931c836a528da7227b3babfaef8600a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a931c836a528da7227b3babfaef8600a8">&#9670;&nbsp;</a></span>setMessageColorEnabled()</h2>
 
@@ -1430,7 +1430,7 @@ template&lt;var::Streamable... vT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00019">19</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00020">20</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1458,17 +1458,17 @@ template&lt;var::Streamable... vT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_cursor_origin_8h_source.html#l00006">6</a> of file <a class="el" href="term_2include_2_cursor_origin_8h_source.html">CursorOrigin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cursor_origin_8h_source.html#l00006">6</a> of file <a class="el" href="_cursor_origin_8h_source.html">CursorOrigin.h</a>.</p>
 
 </div>
 </div>
-<a id="a727e847355477eea5d685f5f2ad0fb1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a727e847355477eea5d685f5f2ad0fb1c">&#9670;&nbsp;</a></span>SGR()</h2>
+<a id="aed6aef0c65f2e2500ebd365f1dacf545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6aef0c65f2e2500ebd365f1dacf545">&#9670;&nbsp;</a></span>SGR()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable... vT&gt; </div>
+template&lt;var::Streamable... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1476,7 +1476,7 @@ template&lt;var::Streamable... vT&gt; </div>
         <tr>
           <td class="memname">static Sequence term::SGR </td>
           <td>(</td>
-          <td class="paramtype">const vT &amp;...&#160;</td>
+          <td class="paramtype">const Ts &amp;...&#160;</td>
           <td class="paramname"><em>modes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1552,12 +1552,12 @@ template&lt;var::Streamable... vT&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classterm_1_1_message.html">Message</a> term::crit { &quot;[CRIT]&quot;,color::setcolor{<a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">color::dark_red</a>, <a class="el" href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">color::BOLD</a> } }</td>
+          <td class="memname">const <a class="el" href="classterm_1_1_message.html">Message</a> term::crit { &quot;[CRIT]&quot;,color::setcolor{<a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">color::dark_red</a>, <a class="el" href="structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa">color::format::BOLD</a> } }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00070">70</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00071">71</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1573,7 +1573,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00066">66</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00067">67</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1901,7 +1901,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00069">69</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00070">70</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1917,7 +1917,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00064">64</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00065">65</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1959,7 +1959,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00065">65</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00066">66</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -1975,7 +1975,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00067">67</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00068">68</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>
@@ -2245,7 +2245,7 @@ template&lt;var::Streamable... vT&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2_message_8hpp_source.html#l00068">68</a> of file <a class="el" href="term_2include_2_message_8hpp_source.html">Message.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00069">69</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
 
 </div>
 </div>

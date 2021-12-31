@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['junction_5f3_5fway_5fbottom_1479',['JUNCTION_3_WAY_BOTTOM',['../structterm_1_1_line_character.html#ab190d4341b282d86c18e1ba9c8d7485c',1,'term::LineCharacter::JUNCTION_3_WAY_BOTTOM()'],['../structsys_1_1term_1_1_line_character.html#a67ca12712496db15e686ce2170238db9',1,'sys::term::LineCharacter::JUNCTION_3_WAY_BOTTOM()']]],
-  ['junction_5f3_5fway_5fleft_1480',['JUNCTION_3_WAY_LEFT',['../structterm_1_1_line_character.html#a80a99d42c3023167b6bd50b48ce99e06',1,'term::LineCharacter::JUNCTION_3_WAY_LEFT()'],['../structsys_1_1term_1_1_line_character.html#a0a23841c86113ff2fc7baad920636f68',1,'sys::term::LineCharacter::JUNCTION_3_WAY_LEFT()']]],
-  ['junction_5f3_5fway_5fright_1481',['JUNCTION_3_WAY_RIGHT',['../structterm_1_1_line_character.html#acbed94cd4ea03a25913994ace10df747',1,'term::LineCharacter::JUNCTION_3_WAY_RIGHT()'],['../structsys_1_1term_1_1_line_character.html#a2404ad7e905ecb44251efa4b8c12f0ec',1,'sys::term::LineCharacter::JUNCTION_3_WAY_RIGHT()']]],
-  ['junction_5f3_5fway_5ftop_1482',['JUNCTION_3_WAY_TOP',['../structterm_1_1_line_character.html#a3e97e08e21bb3b2f2eb797e965bd0417',1,'term::LineCharacter::JUNCTION_3_WAY_TOP()'],['../structsys_1_1term_1_1_line_character.html#a8cec35c72ad196142164cfb388b0f092',1,'sys::term::LineCharacter::JUNCTION_3_WAY_TOP()']]],
-  ['junction_5f4_5fway_1483',['JUNCTION_4_WAY',['../structterm_1_1_line_character.html#af4963809c521a430a413fb70d9ef1493',1,'term::LineCharacter::JUNCTION_4_WAY()'],['../structsys_1_1term_1_1_line_character.html#a588f12249b59d161c7cbd96648ea549b',1,'sys::term::LineCharacter::JUNCTION_4_WAY()']]]
+  ['lastpos_1331',['lastPos',['../structtoken_1_1_tokenizer_base_functions.html#afbd6e4527f66d3a455629270d2aa6918',1,'token::TokenizerBaseFunctions']]],
+  ['light_5fblue_1332',['light_blue',['../namespacecolor.html#a4b657969ac14460c813064667a9f1107',1,'color']]],
+  ['light_5fgray_1333',['light_gray',['../namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1',1,'color']]],
+  ['light_5fpurple_1334',['light_purple',['../namespacecolor.html#a893c727634f7edadf42286d273113d64',1,'color']]],
+  ['line_5fhorizontal_1335',['LINE_HORIZONTAL',['../structterm_1_1_line_character.html#afdb295573ea8aaa1ae71fe107e800705',1,'term::LineCharacter']]],
+  ['line_5fvertical_1336',['LINE_VERTICAL',['../structterm_1_1_line_character.html#aa7e1091b4ed6216a824bf588bd16f92b',1,'term::LineCharacter']]],
+  ['loadcursor_1337',['LoadCursor',['../namespaceterm.html#ad54e668aab8666e52c2575d653404537',1,'term']]],
+  ['log_1338',['LOG',['../structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285',1,'xlog::level']]],
+  ['log_1339',['log',['../namespaceterm.html#a6290d19a08a2a59cf537f15e8964633e',1,'term']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/opt-lib/include/ArgParser.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/optlib/include/ArgParser.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,12 +103,14 @@ $(document).ready(function(){initNavTree('_arg_parser_8hpp.html',''); initResiza
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ArgParser.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_arg_parser_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_arg_parser_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_arg_parser_8hpp__dep__incl.svg" width="180" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_arg_parser_8hpp__dep__incl.svg" width="176" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="_arg_parser_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -131,9 +133,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a294152959e0541808274c2ff685f8eb6"><td class="memItemLeft" align="right" valign="top">constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a294152959e0541808274c2ff685f8eb6">opt::is_delimiter</a> (const char &amp;c)</td></tr>
-<tr class="memdesc:a294152959e0541808274c2ff685f8eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.  <a href="namespaceopt.html#a294152959e0541808274c2ff685f8eb6">More...</a><br /></td></tr>
-<tr class="separator:a294152959e0541808274c2ff685f8eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b4f449717849b24bb02e949fa66e58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a89b4f449717849b24bb02e949fa66e58">opt::is_delimiter</a> (const char &amp;c)</td></tr>
+<tr class="memdesc:a89b4f449717849b24bb02e949fa66e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.  <a href="namespaceopt.html#a89b4f449717849b24bb02e949fa66e58">More...</a><br /></td></tr>
+<tr class="separator:a89b4f449717849b24bb02e949fa66e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa297a02e7d112f878e200ef839a78605"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">opt::is_number</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:aa297a02e7d112f878e200ef839a78605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.  <a href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">More...</a><br /></td></tr>
 <tr class="separator:aa297a02e7d112f878e200ef839a78605"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +152,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7c659d3e86eb26fb94a5915b10cbb74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d4a82db2d7eef33350854b082131315"><td class="memItemLeft" align="right" valign="top">ArgContainerType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a3d4a82db2d7eef33350854b082131315">opt::parse</a> (const StrVec &amp;args, const CaptureList &amp;captures)</td></tr>
 <tr class="memdesc:a3d4a82db2d7eef33350854b082131315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
- <b>Argument Types</b> <br  />
+ <b><a class="el" href="classopt_1_1_argument.html">Argument</a> Types</b> <br  />
  - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
  - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
  - Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. <br  />
@@ -164,9 +166,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abc103cb3c943291e5f87bccf7df19651"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">opt::parse</a> (auto &amp;&amp;args, const VT &amp;... captures)</td></tr>
 <tr class="memdesc:abc103cb3c943291e5f87bccf7df19651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. This function accepts a variadic capture list.  <a href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">More...</a><br /></td></tr>
 <tr class="separator:abc103cb3c943291e5f87bccf7df19651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="memItemLeft" align="right" valign="top">constexpr static StrVec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ad4af6b73cdba4c9f27bf3fcd9b747e57">opt::vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
-<tr class="memdesc:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt.html#ad4af6b73cdba4c9f27bf3fcd9b747e57">More...</a><br /></td></tr>
-<tr class="separator:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> StrVec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0">opt::vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
+<tr class="memdesc:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0">More...</a><br /></td></tr>
+<tr class="separator:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -183,7 +185,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d324c36f93010ed4675722a103842de0.html">opt-lib</a></li><li class="navelem"><a class="el" href="dir_12b6b687c3ea1b80b9111062b865dc73.html">include</a></li><li class="navelem"><a class="el" href="_arg_parser_8hpp.html">ArgParser.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_8a5e14e7985632d035ffd9350f48db82.html">optlib</a></li><li class="navelem"><a class="el" href="dir_ed4452f55a058c7bc8783773eb3d452e.html">include</a></li><li class="navelem"><a class="el" href="_arg_parser_8hpp.html">ArgParser.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

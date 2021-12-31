@@ -1,13 +1,10 @@
 var strconv_8hpp =
 [
-    [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
     [ "bool_to_string", "strconv_8hpp.html#a11fa2dd079f3b6ebd63eaffb030e980c", null ],
     [ "string_to_bool", "strconv_8hpp.html#a29b3be3bdfe64e47f3652175fa46e0d5", null ],
-    [ "to_string", "strconv_8hpp.html#aa24c21e682b76356086bb5e306b09806", null ],
-    [ "tolower", "strconv_8hpp.html#a3fdf8a3ec9b115bcd8e8e4695c279b58", null ],
-    [ "tolower", "strconv_8hpp.html#af92909ccb4e0084cbb0bc92c5cd1dc59", null ],
-    [ "tolower", "strconv_8hpp.html#a913ce30227f12946e232734f73ded7e6", null ],
-    [ "toupper", "strconv_8hpp.html#a218400b9bcf5473a62ce0a8b6b383b44", null ],
-    [ "toupper", "strconv_8hpp.html#a5ee30c2da1bf6e8e0ff5d4a7885dc16d", null ],
-    [ "toupper", "strconv_8hpp.html#affdc41eaf21b8103c7ebd95350127b51", null ]
+    [ "to_string", "strconv_8hpp.html#a16fdfbc25414c557d8a7438d47fc71c4", null ],
+    [ "tolower", "strconv_8hpp.html#ae2bfcfb51a1c131387fd6d08629aba53", null ],
+    [ "tolower", "strconv_8hpp.html#a8981700b8e845f34864ace4d4ddfcf25", null ],
+    [ "toupper", "strconv_8hpp.html#aae017529a0116f69b6d0edf9d9ea7f96", null ],
+    [ "toupper", "strconv_8hpp.html#aa8dbbdf96e49e575d8b322ef8880f2f1", null ]
 ];

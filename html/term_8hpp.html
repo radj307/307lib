@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/term/include/term.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/include/term.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,8 +101,8 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_segments_8h_source.html">Segments.h</a>&gt;</code><br />
-<code>#include &lt;Sequence.hpp&gt;</code><br />
-<code>#include &lt;<a class="el" href="term_2include_2_cursor_origin_8h_source.html">CursorOrigin.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_cursor_origin_8h_source.html">CursorOrigin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
@@ -110,12 +110,14 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for term.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="328" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="328" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="term_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -227,12 +229,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">term::EraseInLine</a> (const T &amp;erase_scope) noexcept(false)</td></tr>
 <tr class="memdesc:a0d48bd75be8181d47c51c5e3703820fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all text within the current line as specified by the given mode with space characters.  <a href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">More...</a><br /></td></tr>
 <tr class="separator:a0d48bd75be8181d47c51c5e3703820fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a727e847355477eea5d685f5f2ad0fb1c"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... vT&gt; </td></tr>
-<tr class="memitem:a727e847355477eea5d685f5f2ad0fb1c"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a727e847355477eea5d685f5f2ad0fb1c">term::SGR</a> (const vT &amp;... modes)</td></tr>
-<tr class="separator:a727e847355477eea5d685f5f2ad0fb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... vT&gt; </td></tr>
-<tr class="memitem:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acb56c6d8ad0bbb39add8a15befdd3311">term::SetGraphicsRendition</a> (const vT &amp;... modes)</td></tr>
-<tr class="separator:acb56c6d8ad0bbb39add8a15befdd3311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aed6aef0c65f2e2500ebd365f1dacf545">term::SGR</a> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a38d197365c9a1b858e90c436e07aa936">term::SelectGraphicsRendition</a> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:a38d197365c9a1b858e90c436e07aa936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ed28a553fcaeda1fb5843237462f51"><td class="memItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a83ed28a553fcaeda1fb5843237462f51">term::NextTabStop</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:a83ed28a553fcaeda1fb5843237462f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the next column with a tab stop. <br  />
  If there are no more tab stops, move to the last column in the row. <br  />
@@ -331,7 +333,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_40c8cd2cae3f65031431c344a42befb0.html">term</a></li><li class="navelem"><a class="el" href="dir_9053650a5af2ef835bdf268d3c4ae526.html">include</a></li><li class="navelem"><a class="el" href="term_8hpp.html">term.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1.html">include</a></li><li class="navelem"><a class="el" href="term_8hpp.html">term.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/file-lib/include/token/LEXEME.h File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/filelib/include/LEXEME.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,12 +98,14 @@ $(document).ready(function(){initNavTree('_l_e_x_e_m_e_8h.html',''); initResizab
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LEXEME.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_l_e_x_e_m_e_8h__incl.svg" width="182" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_l_e_x_e_m_e_8h__incl.svg" width="158" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_l_e_x_e_m_e_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_l_e_x_e_m_e_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="_l_e_x_e_m_e_8h_source.html">Go to the source code of this file.</a></p>
@@ -124,33 +126,35 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea8cc6c2a8240840901a7317b95658c073">token::ADDITION</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea23ebcc4776b613af25dfbe7c8ce4813e">token::SUBTRACT</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaa058c5dc734e54ff3d93b96acac339f4">token::UNDERSCORE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaf65f22e75defc168edfc6444e6aaf4f8">token::COLON</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabaaceccc27b1d4e0968c999583f97de5">token::SEMICOLON</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f">token::POUND</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabaaceccc27b1d4e0968c999583f97de5">token::SEMICOLON</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f">token::POUND</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6865d19576ae60f95fd4e61333404352">token::PERCENT</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea53334ac5d6f3b0f182e817626c3a40f3">token::QUOTE_SINGLE</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea82e4480814328a7f679b86165942d02d">token::QUOTE_DOUBLE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6">token::BRACKET_OPEN</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea82e4480814328a7f679b86165942d02d">token::QUOTE_DOUBLE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6">token::BRACKET_OPEN</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea24f34bfbbd1bf4bcf427fd459df7b776">token::BRACKET_CLOSE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eacc3fdb5e3acc094388e75f45ada1a935">token::PARENTHESIS_OPEN</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea459697561df348fd7420e66ef9a339bf">token::PARENTHESIS_CLOSE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea9d06a63a514ba53ce1d070b7fadf0c56">token::SQUAREBRACKET_OPEN</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea459697561df348fd7420e66ef9a339bf">token::PARENTHESIS_CLOSE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea9d06a63a514ba53ce1d070b7fadf0c56">token::SQUAREBRACKET_OPEN</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab4372360595bf077da217681d688e459">token::SQUAREBRACKET_CLOSE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eac254559f045cd56ef0446567e06192e4">token::ANGLEBRACKET_OPEN</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea5dd311b9fc4bab0e30977b17da32ad44">token::ANGLEBRACKET_CLOSE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea1ee09ab960822ee667ea204df4839b22">token::LETTER_UPPERCASE</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea5dd311b9fc4bab0e30977b17da32ad44">token::ANGLEBRACKET_CLOSE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea1ee09ab960822ee667ea204df4839b22">token::LETTER_UPPERCASE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea2ef79ee1deef2a3563748a2b70fa06d3">token::LETTER_LOWERCASE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea999bbbf1d86bc7611397c77222e076db">token::DIGIT</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eade58a28573783fe95304a260ccd90362">token::PERIOD</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea4d9b3e9fc12849d060371eb65154c751">token::COMMA</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eade58a28573783fe95304a260ccd90362">token::PERIOD</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea4d9b3e9fc12849d060371eb65154c751">token::COMMA</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea52f1e315372b38db1b8f4e3666c4f721">token::WHITESPACE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea80c8c6b1bcf9ad27b73d5aaa56ed4ff3">token::NEWLINE</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaeb7076becd9b9973e6b08024597db564">token::_EOF</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaeb7076becd9b9973e6b08024597db564">token::_EOF</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a6881fced0c9273e26f7ff9717bd6639e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the partially-abstracted type of a character. This acts as an intermediary between the raw character types and a Token Type, and LEXEMEs are not recognized by anything downstream from the <em>TokenizerBase</em> class &amp; derivatives, including the <em>Token</em> struct. <br  />
@@ -176,7 +180,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c5684899e5e01c172f9eed214f74031a.html">file-lib</a></li><li class="navelem"><a class="el" href="dir_8ec8f43acb17a27fb87ced8a715784d3.html">include</a></li><li class="navelem"><a class="el" href="dir_faaf52696baeb53ea9931225dbc24510.html">token</a></li><li class="navelem"><a class="el" href="_l_e_x_e_m_e_8h.html">LEXEME.h</a></li>
+    <li class="navelem"><a class="el" href="dir_0f370597da718f425d39865e9f37f757.html">filelib</a></li><li class="navelem"><a class="el" href="dir_7e62b374f2d21189b905638bab9f8001.html">include</a></li><li class="navelem"><a class="el" href="_l_e_x_e_m_e_8h.html">LEXEME.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

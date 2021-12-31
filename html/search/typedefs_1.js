@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boolean_1579',['Boolean',['../namespacetoken_1_1parse.html#a7b592064560353ab54338ba2eb42b976',1,'token::parse']]]
+  ['boolean_1432',['Boolean',['../namespacetoken_1_1parse.html#a0e16805710b398e1238b4d3225063732',1,'token::parse']]]
 ];

@@ -1,13 +1,12 @@
 var namespacetoken =
 [
     [ "parse", "namespacetoken_1_1parse.html", "namespacetoken_1_1parse" ],
+    [ "TokenizerINI", "structtoken_1_1_tokenizer_i_n_i.html", "structtoken_1_1_tokenizer_i_n_i" ],
     [ "TokenBase", "structtoken_1_1_token_base.html", "structtoken_1_1_token_base" ],
     [ "Token", "structtoken_1_1_token.html", "structtoken_1_1_token" ],
-    [ "TokenizedContainer", "structtoken_1_1_tokenized_container.html", "structtoken_1_1_tokenized_container" ],
     [ "TokenizerBaseFunctions", "structtoken_1_1_tokenizer_base_functions.html", "structtoken_1_1_tokenizer_base_functions" ],
     [ "TokenizerBase", "classtoken_1_1_tokenizer_base.html", "classtoken_1_1_tokenizer_base" ],
-    [ "TokenizerINI", "structtoken_1_1_tokenizer_i_n_i.html", "structtoken_1_1_tokenizer_i_n_i" ],
-    [ "TokenizerRE", "classtoken_1_1_tokenizer_r_e.html", "classtoken_1_1_tokenizer_r_e" ],
+    [ "TokenParserBase", "structtoken_1_1_token_parser_base.html", "structtoken_1_1_token_parser_base" ],
     [ "AccessibleToken", "namespacetoken.html#a97e62e02b84ef4db79cc42b0235cbcec", null ],
     [ "LEXEME", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e", [
       [ "NULL_TYPE", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabadc789d64efa09e2be666a687efeb5d", null ],
@@ -16,6 +15,7 @@ var namespacetoken =
       [ "EQUALS", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6837aeca94b8f55801166eb031e26a5a", null ],
       [ "ADDITION", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea8cc6c2a8240840901a7317b95658c073", null ],
       [ "SUBTRACT", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea23ebcc4776b613af25dfbe7c8ce4813e", null ],
+      [ "UNDERSCORE", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaa058c5dc734e54ff3d93b96acac339f4", null ],
       [ "COLON", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaf65f22e75defc168edfc6444e6aaf4f8", null ],
       [ "SEMICOLON", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabaaceccc27b1d4e0968c999583f97de5", null ],
       [ "POUND", "namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f", null ],

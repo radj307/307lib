@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gold_1459',['gold',['../namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606',1,'color::gold()'],['../namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606',1,'color::gold()']]],
-  ['gray_1460',['gray',['../namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615',1,'color::gray()'],['../namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615',1,'color::gray()']]],
-  ['green_1461',['green',['../namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620',1,'color::green()'],['../namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620',1,'color::green()']]]
+  ['gold_1307',['gold',['../namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606',1,'color']]],
+  ['gray_1308',['gray',['../namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615',1,'color']]],
+  ['green_1309',['green',['../structcolor_1_1setcolor__seq.html#ad6872e3c9e028e21ab6e875ea90ee1b5',1,'color::setcolor_seq::green()'],['../namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620',1,'color::green()']]]
 ];

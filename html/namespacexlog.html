@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('namespacexlog.html',''); initResizable
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">xlog Namespace Reference</div>  </div>
@@ -114,30 +115,162 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a3f4d7f33a143258670d14ca2c852bbeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a3f4d7f33a143258670d14ca2c852bbeb">msg_break_t</a> = nullptr_t</td></tr>
-<tr class="separator:a3f4d7f33a143258670d14ca2c852bbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436882d6f9c6e3403fec2e65c4b89dc2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2">msg_break_t</a> = nullptr_t</td></tr>
+<tr class="separator:a436882d6f9c6e3403fec2e65c4b89dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a01a6b05c760cf3311af433147e91b334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a01a6b05c760cf3311af433147e91b334">message_to_level</a> (const <a class="el" href="classterm_1_1_message.html">term::Message</a> &amp;msg)</td></tr>
+<tr class="memdesc:a01a6b05c760cf3311af433147e91b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a Message instance to its equivalent xlog level. This is hardcoded.  <a href="namespacexlog.html#a01a6b05c760cf3311af433147e91b334">More...</a><br /></td></tr>
+<tr class="separator:a01a6b05c760cf3311af433147e91b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00ac6299d1cefde07dc64a33d1bddae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#ac00ac6299d1cefde07dc64a33d1bddae">string_to_level</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:ac00ac6299d1cefde07dc64a33d1bddae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84387da6f1581d51c44e0c66e1167c71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a84387da6f1581d51c44e0c66e1167c71">include_all_below</a> (<a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> lvl)</td></tr>
+<tr class="memdesc:a84387da6f1581d51c44e0c66e1167c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the bitwise OR operation to merge the given level with all levels below it.  <a href="namespacexlog.html#a84387da6f1581d51c44e0c66e1167c71">More...</a><br /></td></tr>
+<tr class="separator:a84387da6f1581d51c44e0c66e1167c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6d36b999124aa8544a00652a04554b16"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacexlog.html#a3f4d7f33a143258670d14ca2c852bbeb">msg_break_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a6d36b999124aa8544a00652a04554b16">endm</a> = nullptr</td></tr>
+<tr class="memitem:a6d36b999124aa8544a00652a04554b16"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2">msg_break_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a6d36b999124aa8544a00652a04554b16">endm</a> = nullptr</td></tr>
 <tr class="separator:a6d36b999124aa8544a00652a04554b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains all user-facing xlog functions &amp; objects. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a3f4d7f33a143258670d14ca2c852bbeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f4d7f33a143258670d14ca2c852bbeb">&#9670;&nbsp;</a></span>msg_break_t</h2>
+<a id="a436882d6f9c6e3403fec2e65c4b89dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436882d6f9c6e3403fec2e65c4b89dc2">&#9670;&nbsp;</a></span>msg_break_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef nullptr_t <a class="el" href="namespacexlog.html#a3f4d7f33a143258670d14ca2c852bbeb">xlog::msg_break_t</a></td>
+          <td class="memname">using <a class="el" href="namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2">xlog::msg_break_t</a> = typedef nullptr_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00298">298</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00376">376</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a84387da6f1581d51c44e0c66e1167c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84387da6f1581d51c44e0c66e1167c71">&#9670;&nbsp;</a></span>include_all_below()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::include_all_below </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td>
+          <td class="paramname"><em>lvl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the bitwise OR operation to merge the given level with all levels below it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl</td><td>Input Log Level. Must be equal to 1, or a multiple of 2 to be valid. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">level::LogLevel</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00204">204</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacexlog_a84387da6f1581d51c44e0c66e1167c71_cgraph.svg" width="351" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a01a6b05c760cf3311af433147e91b334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a6b05c760cf3311af433147e91b334">&#9670;&nbsp;</a></span>message_to_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::message_to_level </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classterm_1_1_message.html">term::Message</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a Message instance to its equivalent xlog level. This is hardcoded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Input Message Type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">level::LogLevel</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00153">153</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacexlog_a01a6b05c760cf3311af433147e91b334_cgraph.svg" width="387" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac00ac6299d1cefde07dc64a33d1bddae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00ac6299d1cefde07dc64a33d1bddae">&#9670;&nbsp;</a></span>string_to_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::string_to_level </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00174">174</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacexlog_ac00ac6299d1cefde07dc64a33d1bddae_cgraph.svg" width="332" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -152,7 +285,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="namespacexlog.html#a3f4d7f33a143258670d14ca2c852bbeb">msg_break_t</a> xlog::endm = nullptr</td>
+          <td class="memname">constexpr const <a class="el" href="namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2">msg_break_t</a> xlog::endm = nullptr</td>
         </tr>
       </table>
   </td>
@@ -162,7 +295,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00299">299</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00377">377</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>

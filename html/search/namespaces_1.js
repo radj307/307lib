@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ansi_880',['ANSI',['../namespace_a_n_s_i.html',1,'']]]
+  ['color_801',['color',['../namespacecolor.html',1,'']]],
+  ['fileext_802',['fileext',['../namespacecolor_1_1fileext.html',1,'color']]]
 ];

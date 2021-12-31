@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/file-lib/include/env.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/filelib/include/env.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('env_8hpp.html',''); initResizable(); }
  Must be either std::string or std::filesystem::path.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fileutil_8hpp_source.html">fileutil.hpp</a>&gt;</code><br />
@@ -117,12 +118,14 @@ $(document).ready(function(){initNavTree('env_8hpp.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for env.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="env_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="env_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="env_8hpp__dep__incl.svg" width="158" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="env_8hpp__dep__incl.svg" width="158" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="env_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -147,10 +150,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
-<tr class="memitem:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#a487a66d0b7d88225bdbe879e4ac1aeb3">env::getvar</a> (auto &amp;&amp;name) noexcept</td></tr>
-<tr class="memdesc:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#a487a66d0b7d88225bdbe879e4ac1aeb3">More...</a><br /></td></tr>
-<tr class="separator:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
+<tr class="memitem:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const std::optional&lt; RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#a29536ff5ce1cfb5de6f7144f1ae0988c">env::getvar</a> (auto &amp;&amp;name) noexcept</td></tr>
+<tr class="memdesc:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#a29536ff5ce1cfb5de6f7144f1ae0988c">More...</a><br /></td></tr>
+<tr class="separator:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab47cc3a34c382ae12acdd442236f2fa5"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
 <tr class="memitem:ab47cc3a34c382ae12acdd442236f2fa5"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#ab47cc3a34c382ae12acdd442236f2fa5">env::getvar</a> (const std::string &amp;name) noexcept</td></tr>
 <tr class="memdesc:ab47cc3a34c382ae12acdd442236f2fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#ab47cc3a34c382ae12acdd442236f2fa5">More...</a><br /></td></tr>
@@ -192,7 +195,7 @@ Functions</h2></td></tr>
 
 <p>You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for <a class="el" href="env_8hpp.html" title="Contains the env namespace &amp; all of its functions.   Features   - env::getvar(&lt;var_name&gt;)   Wrapper f...">env.hpp</a> functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00032">32</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00033">33</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
 
 </div>
 </div>
@@ -201,7 +204,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c5684899e5e01c172f9eed214f74031a.html">file-lib</a></li><li class="navelem"><a class="el" href="dir_8ec8f43acb17a27fb87ced8a715784d3.html">include</a></li><li class="navelem"><a class="el" href="env_8hpp.html">env.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_0f370597da718f425d39865e9f37f757.html">filelib</a></li><li class="navelem"><a class="el" href="dir_7e62b374f2d21189b905638bab9f8001.html">include</a></li><li class="navelem"><a class="el" href="env_8hpp.html">env.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

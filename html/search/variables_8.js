@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['header_1462',['header',['../structfile_1_1ini_1_1_key_helper.html#a779565d07b3027ce3879f5ff998b8e10',1,'file::ini::KeyHelper']]]
+  ['include_5fcaptures_1310',['include_captures',['../namespaceopt.html#af1925c987700a22c15487e69b49ea84d',1,'opt']]],
+  ['info_1311',['INFO',['../structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b',1,'xlog::level']]],
+  ['info_1312',['info',['../namespaceterm.html#a3aec96a82c331734431b75ef4f2dfc2b',1,'term']]],
+  ['iniparser_5fallowblankvalue_1313',['INIParser_AllowBlankValue',['../namespacetoken_1_1parse.html#a601e1e0939498a291d5720936c75f4d3',1,'token::parse']]],
+  ['intense_5fblue_1314',['intense_blue',['../namespacecolor.html#ab4b69e578748a245f307eeb03ddc12ef',1,'color']]],
+  ['intense_5fcyan_1315',['intense_cyan',['../namespacecolor.html#a41d4ad30347d37c4d3d162f492a8c374',1,'color']]],
+  ['intense_5fgreen_1316',['intense_green',['../namespacecolor.html#ab196f0985b3a5da3b3065dabf0747e45',1,'color']]],
+  ['intense_5fmagenta_1317',['intense_magenta',['../namespacecolor.html#a7ca2cc6ffd2243391fdceb2e731761f0',1,'color']]],
+  ['intense_5fred_1318',['intense_red',['../namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773',1,'color']]],
+  ['intense_5fwhite_1319',['intense_white',['../namespacecolor.html#a30c667606a0a43af09ffceb9177ee8bd',1,'color']]],
+  ['intense_5fyellow_1320',['intense_yellow',['../namespacecolor.html#aa0a7a84e61742d594070a9cd7607903b',1,'color']]],
+  ['invert_1321',['INVERT',['../structcolor_1_1format.html#aba7ff186902a056143c5ab1c02e431b1',1,'color::format']]],
+  ['invert_1322',['invert',['../namespacecolor.html#ae07544c885e4865bbe8be9f1f783b4bb',1,'color']]],
+  ['is_5fvalid_5fchar_5ftype_5fv_1323',['is_valid_char_type_v',['../namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba',1,'rng']]],
+  ['is_5fvalid_5fint_5ftype_5fv_1324',['is_valid_int_type_v',['../namespacerng.html#ae1724038e8a24b7ec7de06190919b005',1,'rng']]],
+  ['is_5fvalid_5freal_5ftype_5fv_1325',['is_valid_real_type_v',['../namespacerng.html#ad993e4e657f38f52b1f2f226651e5ce0',1,'rng']]]
 ];

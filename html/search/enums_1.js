@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['characterset_1617',['CharacterSet',['../namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1',1,'sys::term']]]
+  ['layer_1465',['Layer',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10',1,'color']]],
+  ['lexeme_1466',['LEXEME',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e',1,'token']]]
 ];

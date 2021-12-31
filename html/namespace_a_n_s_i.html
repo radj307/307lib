@@ -86,7 +86,6 @@ $(document).ready(function(){initNavTree('namespace_a_n_s_i.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -95,15 +94,6 @@ $(document).ready(function(){initNavTree('namespace_a_n_s_i.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_n_s_i_1_1_sequence.html">Sequence</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual functor that exposes multiple methods of executing an <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequence. <br  />
- - operator&lt;&lt; <em>Output Streams</em> <br  />
- - operator&gt;&gt; <em>Input Streams</em> <br  />
- - operator() <em>Inline</em>  <a href="struct_a_n_s_i_1_1_sequence.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a9c1c8df11c51500db7d1c5485c39e547"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">Sequence</a> = std::string</td></tr>
@@ -113,30 +103,23 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6d91b78581c19190e9043c378d6431d4"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... vT&gt; </td></tr>
-<tr class="memitem:a6d91b78581c19190e9043c378d6431d4"><td class="memTemplItemLeft" align="right" valign="top">const Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4">make_sequence</a> (const vT &amp;... segments) noexcept</td></tr>
-<tr class="separator:a6d91b78581c19190e9043c378d6431d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a977251e5c42aaa7c2d2cdbf9cbc7e29d"><td class="memTemplParams" colspan="2">template&lt;typename... VT&gt; </td></tr>
-<tr class="memitem:a977251e5c42aaa7c2d2cdbf9cbc7e29d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d">make_sequence</a> (const VT &amp;... ch)</td></tr>
-<tr class="separator:a977251e5c42aaa7c2d2cdbf9cbc7e29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memTemplItemLeft" align="right" valign="top">const Type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a89f2c7ec9c0e17e7bcbbd0141a291c35">make_sequence</a> (const Ts &amp;... segments) noexcept</td></tr>
+<tr class="separator:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a44c3e4e788ab40a7fac378f198fe5053"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a> { &quot;\x1b&quot; }</td></tr>
-<tr class="memdesc:a44c3e4e788ab40a7fac378f198fe5053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape Character. Required at the beginning of all escape sequences.  <a href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">More...</a><br /></td></tr>
 <tr class="separator:a44c3e4e788ab40a7fac378f198fe5053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a> { &quot;\x1b\x5b&quot; }</td></tr>
-<tr class="memdesc:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control <a class="el" href="struct_a_n_s_i_1_1_sequence.html" title="Virtual functor that exposes multiple methods of executing an ANSI escape sequence....">Sequence</a> Introducer. Only valid when preceeded by ESC.  <a href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">More...</a><br /></td></tr>
 <tr class="separator:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8">OSC</a> { &quot;\x1b\x5d&quot; }</td></tr>
-<tr class="memdesc:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operating System Command. Only valid when preceeded by ESC.  <a href="namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8">More...</a><br /></td></tr>
 <tr class="separator:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adffdaf52aff898f52f792695d7290587"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#adffdaf52aff898f52f792695d7290587">COLOR</a> { &quot;;5&quot; }</td></tr>
 <tr class="separator:adffdaf52aff898f52f792695d7290587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af392d5b2fe5db6b8a207e42f3ec985d2"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#af392d5b2fe5db6b8a207e42f3ec985d2">RGB_COLOR</a> { &quot;;2&quot; }</td></tr>
 <tr class="separator:af392d5b2fe5db6b8a207e42f3ec985d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">END</a> { &quot;m&quot; }</td></tr>
-<tr class="memdesc:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color sequence end character.  <a href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">More...</a><br /></td></tr>
 <tr class="separator:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f033a85adc48ccf24df22d68c20b8e0"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a5f033a85adc48ccf24df22d68c20b8e0">SGR_BOLD</a> { &quot;1&quot; }</td></tr>
 <tr class="separator:a5f033a85adc48ccf24df22d68c20b8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,31 +140,11 @@ Variables</h2></td></tr>
 <tr class="memitem:a63b718e34115fc0ad40565216b7bcaf3"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a63b718e34115fc0ad40565216b7bcaf3">SGR_RESET</a> { &quot;0&quot; }</td></tr>
 <tr class="separator:a63b718e34115fc0ad40565216b7bcaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a132d88e8d26b6264915dd3c1e97456ce"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a132d88e8d26b6264915dd3c1e97456ce">ENABLE</a> { &quot;h&quot; }</td></tr>
-<tr class="memdesc:a132d88e8d26b6264915dd3c1e97456ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character used by some toggleable escape sequences to define that it should be enabled.  <a href="namespace_a_n_s_i.html#a132d88e8d26b6264915dd3c1e97456ce">More...</a><br /></td></tr>
 <tr class="separator:a132d88e8d26b6264915dd3c1e97456ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02946f46d67d032c9c38bef1b1be0528"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a02946f46d67d032c9c38bef1b1be0528">DISABLE</a> { &quot;l&quot; }</td></tr>
-<tr class="memdesc:a02946f46d67d032c9c38bef1b1be0528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character used by some toggleable escape sequences to define that it should be disabled.  <a href="namespace_a_n_s_i.html#a02946f46d67d032c9c38bef1b1be0528">More...</a><br /></td></tr>
 <tr class="separator:a02946f46d67d032c9c38bef1b1be0528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adba156d334da60a4394d5a6c30c87706"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#adba156d334da60a4394d5a6c30c87706">NULL_TERM</a> { &quot;\0&quot; }</td></tr>
 <tr class="separator:adba156d334da60a4394d5a6c30c87706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">FORE</a> { &quot;38;5&quot; }</td></tr>
-<tr class="memdesc:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a color sequence as applying to the foreground (text) layer.  <a href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">More...</a><br /></td></tr>
-<tr class="separator:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f20220a21206828ab597808d20fd55"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">BACK</a> { &quot;48;5&quot; }</td></tr>
-<tr class="memdesc:a90f20220a21206828ab597808d20fd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a color sequence as applying to the background layer.  <a href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">More...</a><br /></td></tr>
-<tr class="separator:a90f20220a21206828ab597808d20fd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#aa9009661631cfe31ae37e86bf1bc9e0c">CURSOR_VISIBLE</a> { &quot;?25&quot; }</td></tr>
-<tr class="memdesc:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Midsequence used by the cursor visibility sequence.  <a href="namespace_a_n_s_i.html#aa9009661631cfe31ae37e86bf1bc9e0c">More...</a><br /></td></tr>
-<tr class="separator:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af22969a59eed0d19ea2f709ec1d86534"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#af22969a59eed0d19ea2f709ec1d86534">CURSOR_BLINK</a> { &quot;?12&quot; }</td></tr>
-<tr class="memdesc:af22969a59eed0d19ea2f709ec1d86534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Midsequence used by the cursor blinking sequence.  <a href="namespace_a_n_s_i.html#af22969a59eed0d19ea2f709ec1d86534">More...</a><br /></td></tr>
-<tr class="separator:af22969a59eed0d19ea2f709ec1d86534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac975ec98657ebd2496942158febd9926"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#ac975ec98657ebd2496942158febd9926">CHARACTER_SET</a> { '(' }</td></tr>
-<tr class="memdesc:ac975ec98657ebd2496942158febd9926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by the character set sequence.  <a href="namespace_a_n_s_i.html#ac975ec98657ebd2496942158febd9926">More...</a><br /></td></tr>
-<tr class="separator:ac975ec98657ebd2496942158febd9926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e3458c09610341abad36d390495fde6"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a3e3458c09610341abad36d390495fde6">STRING_TERMINATOR</a> { '\0' }</td></tr>
-<tr class="memdesc:a3e3458c09610341abad36d390495fde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by some escape sequences to terminate a string.  <a href="namespace_a_n_s_i.html#a3e3458c09610341abad36d390495fde6">More...</a><br /></td></tr>
-<tr class="separator:a3e3458c09610341abad36d390495fde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a9c1c8df11c51500db7d1c5485c39e547"></a>
@@ -191,12 +154,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="struct_a_n_s_i_1_1_sequence.html">ANSI::Sequence</a> = typedef std::string</td>
+          <td class="memname">using <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a> = typedef std::string</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html#l00016">16</a> of file <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sequence_8hpp_source.html#l00016">16</a> of file <a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
 
 </div>
 </div>
@@ -212,48 +175,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html#l00017">17</a> of file <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sequence_8hpp_source.html#l00017">17</a> of file <a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a977251e5c42aaa7c2d2cdbf9cbc7e29d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a977251e5c42aaa7c2d2cdbf9cbc7e29d">&#9670;&nbsp;</a></span>make_sequence() <span class="overload">[1/2]</span></h2>
+<a id="a89f2c7ec9c0e17e7bcbbd0141a291c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f2c7ec9c0e17e7bcbbd0141a291c35">&#9670;&nbsp;</a></span>make_sequence()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... VT&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto ANSI::make_sequence </td>
-          <td>(</td>
-          <td class="paramtype">const VT &amp;...&#160;</td>
-          <td class="paramname"><em>ch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00040">40</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
-
-</div>
-</div>
-<a id="a6d91b78581c19190e9043c378d6431d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d91b78581c19190e9043c378d6431d4">&#9670;&nbsp;</a></span>make_sequence() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... vT&gt; </div>
+template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -261,7 +194,7 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
         <tr>
           <td class="memname">const Type ANSI::make_sequence </td>
           <td>(</td>
-          <td class="paramtype">const vT &amp;...&#160;</td>
+          <td class="paramtype">const Ts &amp;...&#160;</td>
           <td class="paramname"><em>segments</em></td><td>)</td>
           <td></td>
         </tr>
@@ -273,63 +206,11 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html#l00021">21</a> of file <a class="el" href="_a_n_s_i_2include_2_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_sequence_8hpp_source.html#l00021">21</a> of file <a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a90f20220a21206828ab597808d20fd55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90f20220a21206828ab597808d20fd55">&#9670;&nbsp;</a></span>BACK</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::BACK { &quot;48;5&quot; }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Defines a color sequence as applying to the background layer. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00021">21</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
-
-</div>
-</div>
-<a id="ac975ec98657ebd2496942158febd9926"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac975ec98657ebd2496942158febd9926">&#9670;&nbsp;</a></span>CHARACTER_SET</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::CHARACTER_SET { '(' }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Used by the character set sequence. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00036">36</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
-
-</div>
-</div>
 <a id="adffdaf52aff898f52f792695d7290587"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adffdaf52aff898f52f792695d7290587">&#9670;&nbsp;</a></span>COLOR</h2>
 
@@ -369,66 +250,12 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Control <a class="el" href="struct_a_n_s_i_1_1_sequence.html" title="Virtual functor that exposes multiple methods of executing an ANSI escape sequence....">Sequence</a> Introducer. Only valid when preceeded by ESC. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00011">11</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
-
-</div>
-</div>
-<a id="af22969a59eed0d19ea2f709ec1d86534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af22969a59eed0d19ea2f709ec1d86534">&#9670;&nbsp;</a></span>CURSOR_BLINK</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::CURSOR_BLINK { &quot;?12&quot; }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Midsequence used by the cursor blinking sequence. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00033">33</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
-
-</div>
-</div>
-<a id="aa9009661631cfe31ae37e86bf1bc9e0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9009661631cfe31ae37e86bf1bc9e0c">&#9670;&nbsp;</a></span>CURSOR_VISIBLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::CURSOR_VISIBLE { &quot;?25&quot; }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Midsequence used by the cursor visibility sequence. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00031">31</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -447,12 +274,10 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Character used by some toggleable escape sequences to define that it should be disabled. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00029">29</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
 
@@ -473,12 +298,10 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Character used by some toggleable escape sequences to define that it should be enabled. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00028">28</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
 
@@ -499,12 +322,10 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Color sequence end character. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00016">16</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
 
@@ -525,40 +346,12 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Escape Character. Required at the beginning of all escape sequences. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00010">10</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
-
-</div>
-</div>
-<a id="a0d79d94677c7f3c5c63b3f2e332497a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d79d94677c7f3c5c63b3f2e332497a0">&#9670;&nbsp;</a></span>FORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::FORE { &quot;38;5&quot; }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Defines a color sequence as applying to the foreground (text) layer. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00019">19</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -601,12 +394,10 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Operating System Command. Only valid when preceeded by ESC. </p>
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00012">12</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
 
@@ -849,32 +640,6 @@ template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable... v
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_segments_8h_source.html#l00020">20</a> of file <a class="el" href="_segments_8h_source.html">Segments.h</a>.</p>
-
-</div>
-</div>
-<a id="a3e3458c09610341abad36d390495fde6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e3458c09610341abad36d390495fde6">&#9670;&nbsp;</a></span>STRING_TERMINATOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const auto ANSI::STRING_TERMINATOR { '\0' }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Used by some escape sequences to terminate a string. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h_source.html#l00038">38</a> of file <a class="el" href="_a_n_s_i_defs_8h_source.html">ANSIDefs.h</a>.</p>
 
 </div>
 </div>

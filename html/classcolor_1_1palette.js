@@ -1,5 +1,6 @@
 var classcolor_1_1palette =
 [
+    [ "PaletteType", "classcolor_1_1palette.html#a223211a6e142eb4ef9d0347a86fb3fe4", null ],
     [ "palette", "classcolor_1_1palette.html#a66feb58f76059b1d1d3764faf2f367f8", null ],
     [ "palette", "classcolor_1_1palette.html#aa5944206c2df8d17f65fcd0f6c6ec4f5", null ],
     [ "palette", "classcolor_1_1palette.html#acc616c900277b1a61dbc508494a27982", null ],

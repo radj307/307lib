@@ -90,86 +90,82 @@ $(document).ready(function(){initNavTree('page1.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>A C++20 Library designed for using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences inline with std iostreams, or independently.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 EDIT | How to use TermAPI Version 3</h1>
 <p>Add the following line to your <code>CMakeLists.txt</code> file before <code>add_subdirectory("307lib")</code>: </p><div class="fragment"><div class="line">set(TERMAPI_VERSION 3)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Usage</h1>
-<p>Include the &lt;TermAPI.hpp&gt; header in the file you want to use it. <br  />
- All functions are contained within the <a class="el" href="namespacesys_1_1term.html" title="&lt;">sys::term</a> namespace(s).</p>
+<p>Include the &lt;<a class="el" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt; header in the file you want to use it. <br  />
+ All functions are contained within the sys::term namespace(s).</p>
 <p><b>A Note on Windows Escape Sequence Support</b> The Windows 10 Anniversary Update added (more) support for "Virtual Sequences"; _(also known as ANSI escape sequences)_ this feature is disabled by default, and must be enabled by the program before using them.</p>
 <p>TermAPI provides a convenient method for accomplishing this in the form of the <b>EnableANSI</b> function. <br  />
  This function is available for all operating systems, however it does nothing on all operating systems other than Windows. <br  />
  Using preprocessor statements, the underlying code to enable virtual sequence support is automatic and does not require input from the programmer. <br  />
- </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
+ </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt;</span></div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">    std::cout &lt;&lt; <a class="code" href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a>;</div>
+<div class="line">    std::cout &lt;&lt; sys::term::EnableANSI;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacesys_1_1term_html_ac00a411b0ea4bcc1d677c011c86f3bfe"><div class="ttname"><a href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a></div><div class="ttdeci">std::istream &amp; EnableANSI(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> <a href="v3_2include_2_term_a_p_i_8hpp_source.html#l00422">TermAPI.hpp:422</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+<div class="ttc" id="a_term_a_p_i_8hpp_html"><div class="ttname"><a href="_term_a_p_i_8hpp.html">TermAPI.hpp</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
 Version 2.0.0 Sequences</h2>
 <p>As of TermAPI 2.0.0, the old functions have been completely replaced with a new Sequence object. <br  />
  By default, these functions are used instead of the version 1.0.0 functions. <br  />
- The Sequence object is returned from most of the functions found in &lt;<a class="el" href="_sequence_definitions_8hpp.html" title="Contains ANSI escape sequence functors derived from Sequence.   Covers most/all of the virtual sequen...">SequenceDefinitions.hpp</a>&gt; and is called by using one of its operators: <br  />
+ The Sequence object is returned from most of the functions found in &lt;SequenceDefinitions.hpp&gt; and is called by using one of its operators: <br  />
 </p><ul>
 <li>operator&lt;&lt; <br  />
- Inserts the sequence into the given output stream. <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacesys_1_1term.html#a9860c3b4101735f5d5373c4e18c1692b">sys::term::HideCursor</a> &lt;&lt; std::endl;</div>
-<div class="ttc" id="anamespacesys_1_1term_html_a9860c3b4101735f5d5373c4e18c1692b"><div class="ttname"><a href="namespacesys_1_1term.html#a9860c3b4101735f5d5373c4e18c1692b">sys::term::HideCursor</a></div><div class="ttdeci">Sequence HideCursor()</div><div class="ttdoc">Hides the cursor.</div><div class="ttdef"><b>Definition:</b> <a href="_sequence_definitions_8hpp_source.html#l00132">SequenceDefinitions.hpp:132</a></div></div>
+ Inserts the sequence into the given output stream. <div class="fragment"><div class="line">std::cout &lt;&lt; sys::term::HideCursor &lt;&lt; std::endl;</div>
 </div><!-- fragment --></li>
 <li>operator&gt;&gt; This is a non-standard usage of the input stream operator, to allow using escape sequences inline with input streams. <br  />
- The sequence will be printed to STDOUT by calling operator(). <div class="fragment"><div class="line">std::cin &gt;&gt; <a class="code" href="namespacesys_1_1term.html#ac06e935eb8bbd977e0523094c9e907ab">sys::term::setCursorPosition</a>(5, 5);</div>
-<div class="ttc" id="anamespacesys_1_1term_html_ac06e935eb8bbd977e0523094c9e907ab"><div class="ttname"><a href="namespacesys_1_1term.html#ac06e935eb8bbd977e0523094c9e907ab">sys::term::setCursorPosition</a></div><div class="ttdeci">Sequence setCursorPosition(const unsigned &amp;x_column, const unsigned &amp;y_row)</div><div class="ttdoc">Set the cursor's position to a given column and row.</div><div class="ttdef"><b>Definition:</b> <a href="_sequence_definitions_8hpp_source.html#l00096">SequenceDefinitions.hpp:96</a></div></div>
+ The sequence will be printed to STDOUT by calling operator(). <div class="fragment"><div class="line">std::cin &gt;&gt; <a class="code" href="namespaceterm.html#a18b814b00708a834bdd06e38c048b1a2">sys::term::setCursorPosition</a>(5, 5);</div>
+<div class="ttc" id="anamespaceterm_html_a18b814b00708a834bdd06e38c048b1a2"><div class="ttname"><a href="namespaceterm.html#a18b814b00708a834bdd06e38c048b1a2">term::setCursorPosition</a></div><div class="ttdeci">Sequence setCursorPosition(const T &amp;x_column, const T &amp;y_row)</div><div class="ttdoc">Set the cursor's position to a given column and row.</div><div class="ttdef"><b>Definition:</b> <a href="term_8hpp_source.html#l00211">term.hpp:211</a></div></div>
 </div><!-- fragment --></li>
 <li>operator() <br  />
- Can be called anywhere. The sequence will be printed to STDOUT using printf. <div class="fragment"><div class="line"><a class="code" href="namespacesys_1_1term.html#a9860c3b4101735f5d5373c4e18c1692b">sys::term::HideCursor</a>()();</div>
-</div><!-- fragment --> Not all functions can be used inline, specifically functions that require multiple parameters for input or functions from <a class="el" href="_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position....">TermAPIQuery.hpp</a> that require reading responses from STDIN, such as getCursorPosition. <br  />
+ Can be called anywhere. The sequence will be printed to STDOUT using printf. <div class="fragment"><div class="line">sys::term::HideCursor()();</div>
+</div><!-- fragment --> Not all functions can be used inline, specifically functions that require multiple parameters for input or functions from TermAPIQuery.hpp that require reading responses from STDIN, such as getCursorPosition. <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Using Version 1.0.0 Functions</h2>
 <p>To use the functions from v1: </p><div class="fragment"><div class="line"><span class="preprocessor">#define TERMAPI_ENABLE_OLD_FUNCTIONS</span></div>
 <div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
 </div><!-- fragment --><p>These functions cannot be used inline for the most part, except for a few specific functions.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 A Note on Cursor Positioning</h2>
 <p>By default, the screen buffer origin point is (1,1); <em>not (0,0) as one might expect.</em> TermAPI provides a function that allows you to change the origin point from (1,1) to (0,0) by automatically translating coordinates in all functions that accept or return cursor coordinates. </p><div class="fragment"><div class="line"><span class="comment">// Set the cursor origin point to (0,0):</span></div>
 <div class="line">sys::term::SetOriginPos(0);</div>
 <div class="line"><span class="comment">// Set the cursor origin point to (1,1):</span></div>
 <div class="line">sys::term::SetOriginPos(1);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Color Library</h1>
 <p>TermAPI uses the xterm-256color palette by default. <br  />
 </p>
 <p>The color library uses the color namespace, and is split between multiple different headers which provide different levels of functionality. <br  />
  To quickly set the color of text, you can use something similar to this example: </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a>(<a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>) &lt;&lt; <span class="stringliteral">&quot;This is red!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="ttc" id="anamespacecolor_html_ab505233a6f26bec737e27a8efd713db5"><div class="ttname"><a href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a></div><div class="ttdeci">static const ANSI::Sequence reset</div><div class="ttdef"><b>Definition:</b> <a href="color-format_8hpp_source.html#l00082">color-format.hpp:82</a></div></div>
-<div class="ttc" id="anamespacecolor_html_ac8cf093e96967abc35d1d201ceb4b332"><div class="ttname"><a href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a></div><div class="ttdeci">static constexpr const short red</div><div class="ttdoc">Red color.</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2color-values_8h_source.html#l00009">color-values.h:9</a></div></div>
-<div class="ttc" id="anamespacecolor_html_ad6a9060bb07f1fa2bad8de6d718282a8"><div class="ttname"><a href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a></div><div class="ttdeci">setcolor_seq&lt; ANSI::Sequence &gt; setcolor</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2setcolor_8hpp_source.html#l00084">setcolor.hpp:84</a></div></div>
-</div><!-- fragment --><p> You can set the color of the background by including a Layer when calling setcolor: _(By default, <a class="el" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">Layer::FOREGROUND</a> is used.)_ </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a>(<a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>, <a class="code" href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">color::Layer::BACKGROUND</a>) &lt;&lt; <span class="stringliteral">&quot;My background is red!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="ttc" id="astructcolor_1_1_layer_html_ae98872f4aae9cd11d17ae90734d19fa1"><div class="ttname"><a href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">color::Layer::BACKGROUND</a></div><div class="ttdeci">static const Layer BACKGROUND</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp_source.html#l00037">Layer.hpp:37</a></div></div>
+<div class="ttc" id="anamespacecolor_html_ab505233a6f26bec737e27a8efd713db5"><div class="ttname"><a href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a></div><div class="ttdeci">static const ANSI::Sequence reset</div><div class="ttdef"><b>Definition:</b> <a href="color-format_8hpp_source.html#l00178">color-format.hpp:178</a></div></div>
+<div class="ttc" id="anamespacecolor_html_ac8cf093e96967abc35d1d201ceb4b332"><div class="ttname"><a href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a></div><div class="ttdeci">static constexpr const short red</div><div class="ttdoc">Red color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00009">color-values.h:9</a></div></div>
+<div class="ttc" id="anamespacecolor_html_ad6a9060bb07f1fa2bad8de6d718282a8"><div class="ttname"><a href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a></div><div class="ttdeci">setcolor_seq&lt; ANSI::Sequence &gt; setcolor</div><div class="ttdoc">Sets the foreground or background color to the specified color. It can also set formatting flags like...</div><div class="ttdef"><b>Definition:</b> <a href="setcolor_8hpp_source.html#l00161">setcolor.hpp:161</a></div></div>
+</div><!-- fragment --><p> You can set the color of the background by including a Layer when calling setcolor: _(By default, Layer::FOREGROUND is used.)_ </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a>(<a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>, color::Layer::BACKGROUND) &lt;&lt; <span class="stringliteral">&quot;My background is red!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 </div><!-- fragment --><p> You can also make bold, inverted, or underlined text by using the FormatFlags object. <br  />
- To make bold text with an underline, you could use: </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a>(<a class="code" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a>, <a class="code" href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">FormatFlag::BOLD</a> | <a class="code" href="namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff">FormatFlag::UNDERLINE</a>) &lt;&lt; <span class="stringliteral">&quot;This is bold!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="ttc" id="anamespacecolor_html_a9c93b36269e286563ec3adfd42a8d3b0"><div class="ttname"><a href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">color::BOLD</a></div><div class="ttdeci">static constexpr const FormatFlag BOLD</div><div class="ttdoc">Bold printed text.</div><div class="ttdef"><b>Definition:</b> <a href="color-format_8hpp_source.html#l00045">color-format.hpp:45</a></div></div>
-<div class="ttc" id="anamespacecolor_html_ab878b1c61db9fd6d93486884f2db8620"><div class="ttname"><a href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a></div><div class="ttdeci">static constexpr const short green</div><div class="ttdoc">Green color.</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2color-values_8h_source.html#l00010">color-values.h:10</a></div></div>
-<div class="ttc" id="anamespacecolor_html_abac5f50ee78aee1a7bdc1a680b7962ff"><div class="ttname"><a href="namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff">color::UNDERLINE</a></div><div class="ttdeci">static constexpr const FormatFlag UNDERLINE</div><div class="ttdoc">Underline printed text.</div><div class="ttdef"><b>Definition:</b> <a href="color-format_8hpp_source.html#l00049">color-format.hpp:49</a></div></div>
+ To make bold text with an underline, you could use: </p><div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="namespacecolor.html#ad6a9060bb07f1fa2bad8de6d718282a8">color::setcolor</a>(<a class="code" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a>, FormatFlag::BOLD | FormatFlag::UNDERLINE) &lt;&lt; <span class="stringliteral">&quot;This is bold!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="ttc" id="anamespacecolor_html_ab878b1c61db9fd6d93486884f2db8620"><div class="ttname"><a href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a></div><div class="ttdeci">static constexpr const short green</div><div class="ttdoc">Green color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00010">color-values.h:10</a></div></div>
 </div><!-- fragment --><p>Since setcolor is an object, you can also instantiate it and use it whenever you want: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">    <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a> myColor{ <a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>, <a class="code" href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">Layer::BACKGROUND</a>, <a class="code" href="namespacecolor.html#a9c93b36269e286563ec3adfd42a8d3b0">FormatFlag::BOLD</a> };</div>
+<div class="line">    <a class="code" href="structcolor_1_1setcolor__seq.html">color::setcolor</a> myColor{ <a class="code" href="namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332">color::red</a>, Layer::BACKGROUND, FormatFlag::BOLD };</div>
 <div class="line">    std::cout &lt;&lt; myColor &lt;&lt; <span class="stringliteral">&quot;This text is bold, with a red background!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line">              &lt;&lt; <span class="stringliteral">&quot;This is the default text color\n&quot;</span></div>
 <div class="line">              &lt;&lt; myColor &lt;&lt; <span class="stringliteral">&quot;And this is bold with a red background again!&quot;</span> &lt;&lt; <a class="code" href="namespacecolor.html#ab505233a6f26bec737e27a8efd713db5">color::reset</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="astructcolor_1_1setcolor_html"><div class="ttname"><a href="structcolor_1_1setcolor.html">color::setcolor</a></div><div class="ttdef"><b>Definition:</b> <a href="v3_2include_2setcolor_8hpp_source.html#l00032">setcolor.hpp:32</a></div></div>
+<div class="ttc" id="astructcolor_1_1setcolor__seq_html"><div class="ttname"><a href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a></div><div class="ttdoc">Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....</div><div class="ttdef"><b>Definition:</b> <a href="setcolor_8hpp_source.html#l00026">setcolor.hpp:26</a></div></div>
 </div><!-- fragment --><p> This is especially useful as a member of another object, when you want it to be printed with the same color all the time. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 ColorPalette</h2>
 <p>When using the color library, you may come across a situation where you want to be able to quickly set the same color for similar characters, and be able to disable all color sequences from being printed out in certain operation modes. <br  />
- To accomplish this, you can use the ColorPalette object from the <a class="el" href="_color_palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">ColorPalette.hpp</a> header to quickly &amp; easily set consistent colors, as well as disable/enable all sequences without changing your code. All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_color_palette_8hpp.html">ColorPalette.hpp</a>&gt;</span></div>
+ To accomplish this, you can use the ColorPalette object from the ColorPalette.hpp header to quickly &amp; easily set consistent colors, as well as disable/enable all sequences without changing your code. All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;ColorPalette.hpp&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Create something to use as a key: (enum of type char uses only 1 byte, so is very useful)</span></div>
 <div class="line"><span class="keyword">enum class</span> UIElement : char {</div>
@@ -180,20 +176,20 @@ ColorPalette</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// using UIElement as the key type:</span></div>
-<div class="line"><span class="keyword">using</span> PaletteType = <a class="code" href="classcolor_1_1_color_palette.html">color::ColorPalette&lt;UIElement&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> PaletteType = color::ColorPalette&lt;UIElement&gt;;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// define which colors to use for each UIElement:</span></div>
 <div class="line">PaletteType palette{</div>
-<div class="line">    std::make_pair(UIElement::MESSAGE,              <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a>)),</div>
-<div class="line">    std::make_pair(UIElement::ERROR_CODE,           <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">color::intense_red</a>)),</div>
-<div class="line">    std::make_pair(UIElement::BRACKETS,             <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">color::white</a>, <a class="code" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a>, <a class="code" href="structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0">color::FormatFlag::BOLD</a> | <a class="code" href="structcolor_1_1_format_flag.html#aefe4a985b694a5122577988b16df5a5a">color::FormatFlag::INVERT</a>)),</div>
-<div class="line">    std::make_pair(UIElement::SOME_OTHER_ELEMENT,   <a class="code" href="structcolor_1_1setcolor.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">color::orange</a>)),</div>
+<div class="line">    std::make_pair(UIElement::MESSAGE,              <a class="code" href="structcolor_1_1setcolor__seq.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620">color::green</a>)),</div>
+<div class="line">    std::make_pair(UIElement::ERROR_CODE,           <a class="code" href="structcolor_1_1setcolor__seq.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">color::intense_red</a>)),</div>
+<div class="line">    std::make_pair(UIElement::BRACKETS,             <a class="code" href="structcolor_1_1setcolor__seq.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">color::white</a>, color::Layer::FOREGROUND, color::FormatFlag::BOLD | color::FormatFlag::INVERT)),</div>
+<div class="line">    std::make_pair(UIElement::SOME_OTHER_ELEMENT,   <a class="code" href="structcolor_1_1setcolor__seq.html">color::setcolor</a>(<a class="code" href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">color::orange</a>)),</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> print_message()</div>
 <div class="line">{</div>
 <div class="line">    std::cout </div>
-<div class="line">        &lt;&lt; palette.<a class="code" href="classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9">set</a>(UIElement::MESSAGE)</div>
+<div class="line">        &lt;&lt; palette.set(UIElement::MESSAGE)</div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;This message is green!&quot;</span></div>
 <div class="line">        &lt;&lt; palette.reset() </div>
 <div class="line">        &lt;&lt; std::endl;</div>
@@ -202,7 +198,7 @@ ColorPalette</h2>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
 <div class="line"><span class="preprocessor">#ifdef OS_WIN</span></div>
-<div class="line">    std::cout &lt;&lt; <a class="code" href="namespacesys_1_1term.html#ac00a411b0ea4bcc1d677c011c86f3bfe">sys::term::EnableANSI</a>;</div>
+<div class="line">    std::cout &lt;&lt; sys::term::EnableANSI;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">    <span class="comment">// Print a message with color:</span></div>
 <div class="line">    print_message();</div>
@@ -211,25 +207,16 @@ ColorPalette</h2>
 <div class="line">    print_message();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_color_palette_8hpp_html"><div class="ttname"><a href="_color_palette_8hpp.html">ColorPalette.hpp</a></div><div class="ttdoc">Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...</div></div>
-<div class="ttc" id="aclasscolor_1_1_color_palette_html"><div class="ttname"><a href="classcolor_1_1_color_palette.html">color::ColorPalette</a></div><div class="ttdoc">Contains a key-color map and functions to set terminal colors inline.</div><div class="ttdef"><b>Definition:</b> <a href="_color_palette_8hpp_source.html#l00041">ColorPalette.hpp:41</a></div></div>
-<div class="ttc" id="aclasscolor_1_1_color_palette_html_a1a3f7ebbeb63d6e80920594db85f3cb9"><div class="ttname"><a href="classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9">color::ColorPalette::set</a></div><div class="ttdeci">virtual setcolor set(const KeyType &amp;key) const noexcept(false)</div><div class="ttdoc">Retrieve the mapped color setter functor for the given key when active, otherwise returns a placehold...</div><div class="ttdef"><b>Definition:</b> <a href="_color_palette_8hpp_source.html#l00108">ColorPalette.hpp:108</a></div></div>
-<div class="ttc" id="anamespacecolor_html_a54c37f8f01788456dd7a8d3596b19773"><div class="ttname"><a href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">color::intense_red</a></div><div class="ttdeci">static constexpr const short intense_red</div><div class="ttdoc">High Intensity Red color.</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2color-values_8h_source.html#l00020">color-values.h:20</a></div></div>
-<div class="ttc" id="anamespacecolor_html_a84e5ca1ca60a23294347ec0c3a34c373"><div class="ttname"><a href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">color::white</a></div><div class="ttdeci">static constexpr const short white</div><div class="ttdoc">White color.</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2color-values_8h_source.html#l00016">color-values.h:16</a></div></div>
-<div class="ttc" id="anamespacecolor_html_a9095944dc7740f26c9ca43cdb125397d"><div class="ttname"><a href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">color::orange</a></div><div class="ttdeci">static constexpr const short orange</div><div class="ttdoc">Orange color.</div><div class="ttdef"><b>Definition:</b> <a href="color_2include_2color-values_8h_source.html#l00027">color-values.h:27</a></div></div>
-<div class="ttc" id="astructcolor_1_1_format_flag_html_abc2d3f01bb2740aa1a3f7906ba355ac0"><div class="ttname"><a href="structcolor_1_1_format_flag.html#abc2d3f01bb2740aa1a3f7906ba355ac0">color::FormatFlag::BOLD</a></div><div class="ttdeci">static const FormatFlag BOLD</div><div class="ttdoc">Bolt text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00038">FormatFlag.hpp:38</a></div></div>
-<div class="ttc" id="astructcolor_1_1_format_flag_html_aefe4a985b694a5122577988b16df5a5a"><div class="ttname"><a href="structcolor_1_1_format_flag.html#aefe4a985b694a5122577988b16df5a5a">color::FormatFlag::INVERT</a></div><div class="ttdeci">static const FormatFlag INVERT</div><div class="ttdoc">Invert foreground &amp; background colors of printed text.</div><div class="ttdef"><b>Definition:</b> <a href="_format_flag_8hpp_source.html#l00040">FormatFlag.hpp:40</a></div></div>
-<div class="ttc" id="astructcolor_1_1_layer_html_a24bb448623eb5018aecfb1638153d772"><div class="ttname"><a href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a></div><div class="ttdeci">static const Layer FOREGROUND</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp_source.html#l00037">Layer.hpp:37</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+<div class="ttc" id="anamespacecolor_html_a54c37f8f01788456dd7a8d3596b19773"><div class="ttname"><a href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">color::intense_red</a></div><div class="ttdeci">static constexpr const short intense_red</div><div class="ttdoc">High Intensity Red color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00020">color-values.h:20</a></div></div>
+<div class="ttc" id="anamespacecolor_html_a84e5ca1ca60a23294347ec0c3a34c373"><div class="ttname"><a href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">color::white</a></div><div class="ttdeci">static constexpr const short white</div><div class="ttdoc">White color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00016">color-values.h:16</a></div></div>
+<div class="ttc" id="anamespacecolor_html_a9095944dc7740f26c9ca43cdb125397d"><div class="ttname"><a href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">color::orange</a></div><div class="ttdeci">static constexpr const short orange</div><div class="ttdoc">Orange color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00027">color-values.h:27</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
 DEC Line Drawings</h2>
 <div class="fragment"><div class="line"><span class="comment">// Enable Line Drawing Mode:</span></div>
-<div class="line"><a class="code" href="namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5">sys::term::setCharacterSet</a>(<a class="code" href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67">sys::term::CharacterSet::DEC_LINE_DRAWING</a>)();</div>
+<div class="line">sys::term::setCharacterSet(sys::term::CharacterSet::DEC_LINE_DRAWING)();</div>
 <div class="line"><span class="comment">// Disable Line Drawing Mode:</span></div>
-<div class="line"><a class="code" href="namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5">sys::term::setCharacterSet</a>(<a class="code" href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1ad2cd8253361a9c732d21ca1d336599cc">sys::term::CharacterSet::ASCII</a>)();</div>
-<div class="ttc" id="anamespacesys_1_1term_html_a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67"><div class="ttname"><a href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67">sys::term::CharacterSet::DEC_LINE_DRAWING</a></div><div class="ttdeci">@ DEC_LINE_DRAWING</div><div class="ttdoc">VT100 DEC Line Drawing mode (https://vt100.net/docs/vt220-rm/table2-4.html)</div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_a1a1e82b48b124efd4609b891a6afa1c1ad2cd8253361a9c732d21ca1d336599cc"><div class="ttname"><a href="namespacesys_1_1term.html#a1a1e82b48b124efd4609b891a6afa1c1ad2cd8253361a9c732d21ca1d336599cc">sys::term::CharacterSet::ASCII</a></div><div class="ttdeci">@ ASCII</div><div class="ttdoc">U.S. ASCII mode.</div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_aede7564a702e358d583a91c9ece6d9a5"><div class="ttname"><a href="namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5">sys::term::setCharacterSet</a></div><div class="ttdeci">Sequence setCharacterSet(const CharacterSet &amp;chset=CharacterSet::ASCII) noexcept(false)</div><div class="ttdoc">Change the active character set mapping to ASCII or DEC Line Drawing Mode.   MS Docs: https://docs....</div><div class="ttdef"><b>Definition:</b> <a href="_sequence_definitions_8hpp_source.html#l00416">SequenceDefinitions.hpp:416</a></div></div>
-</div><!-- fragment --><p> TermAPI provides a helper object for drawing lines in the LineCharacter.hpp header. <br  />
+<div class="line">sys::term::setCharacterSet(sys::term::CharacterSet::ASCII)();</div>
+</div><!-- fragment --><p> TermAPI provides a helper object for drawing lines in the <a class="el" href="_line_character_8hpp.html" title="TermAPI Extension that adds the LineCharacter object, which wraps most of the DEC Line Drawing charac...">LineCharacter.hpp</a> header. <br  />
  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

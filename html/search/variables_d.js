@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['magenta_1494',['magenta',['../namespacecolor.html#a4d9a8dfa7552ebe5422d8ddeb562588d',1,'color::magenta()'],['../namespacecolor.html#a4d9a8dfa7552ebe5422d8ddeb562588d',1,'color::magenta()']]],
-  ['maxmessagesizeindent_1495',['maxMessageSizeIndent',['../namespaceterm_1_1message__settings.html#a7eedeba3afde41ed93aee32258b618f4',1,'term::message_settings::maxMessageSizeIndent()'],['../namespacesys_1_1term_1_1message__settings.html#a7d4898f22f03db2ab2c0f85da5b5e314',1,'sys::term::message_settings::maxMessageSizeIndent()']]],
-  ['message_1496',['MESSAGE',['../structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a',1,'xlog::level']]],
-  ['monostate_1497',['MONOSTATE',['../structopt_1_1_index.html#a13151c7c2feb614020dac8b20fae6515',1,'opt::Index']]],
-  ['msg_1498',['msg',['../namespaceterm.html#af605b07ea492a00db68564dbd519b40e',1,'term::msg()'],['../namespacesys_1_1term.html#a8f3d0c56ffc3a4732f53418a21de73d6',1,'sys::term::msg()']]]
+  ['onlyerrors_1357',['OnlyErrors',['../structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f',1,'xlog::level']]],
+  ['onlyerrorsandwarnings_1358',['OnlyErrorsAndWarnings',['../structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0',1,'xlog::level']]],
+  ['onlyerrorsandwarningsdebug_1359',['OnlyErrorsAndWarningsDebug',['../structxlog_1_1level.html#a889d6f7a00ad4ba7db5ccf45f28dbd7c',1,'xlog::level']]],
+  ['onlyerrorsdebug_1360',['OnlyErrorsDebug',['../structxlog_1_1level.html#ab00ee258c013709823fa5f1f8ec6d5fb',1,'xlog::level']]],
+  ['option_1361',['OPTION',['../structopt_1_1_index.html#a3d78e6266e6d2c33bf07325037110491',1,'opt::Index']]],
+  ['orange_1362',['orange',['../namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d',1,'color']]],
+  ['osc_1363',['OSC',['../namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8',1,'ANSI']]]
 ];

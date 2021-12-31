@@ -1,37 +1,22 @@
 var annotated_dup =
 [
-    [ "ANSI", "namespace_a_n_s_i.html", [
-      [ "Sequence", "struct_a_n_s_i_1_1_sequence.html", "struct_a_n_s_i_1_1_sequence" ]
-    ] ],
     [ "color", "namespacecolor.html", [
-      [ "background", "namespacecolor_1_1background.html", [
-        [ "setcolor", "structcolor_1_1background_1_1setcolor.html", "structcolor_1_1background_1_1setcolor" ]
-      ] ],
       [ "fileext", "namespacecolor_1_1fileext.html", [
         [ "ConfigTokenizer", "classcolor_1_1fileext_1_1_config_tokenizer.html", "classcolor_1_1fileext_1_1_config_tokenizer" ],
         [ "ConfigParser", "classcolor_1_1fileext_1_1_config_parser.html", "classcolor_1_1fileext_1_1_config_parser" ]
       ] ],
-      [ "foreground", "namespacecolor_1_1foreground.html", [
-        [ "setcolor", "structcolor_1_1foreground_1_1setcolor.html", "structcolor_1_1foreground_1_1setcolor" ]
-      ] ],
-      [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ],
+      [ "ConfigDefaults", "structcolor_1_1_config_defaults.html", "structcolor_1_1_config_defaults" ],
       [ "Config", "classcolor_1_1_config.html", "classcolor_1_1_config" ],
-      [ "FormatFlag", "structcolor_1_1_format_flag.html", "structcolor_1_1_format_flag" ],
-      [ "ColorFormat", "structcolor_1_1_color_format.html", "structcolor_1_1_color_format" ],
+      [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ],
       [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ],
-      [ "ColorPalette", "classcolor_1_1_color_palette.html", "classcolor_1_1_color_palette" ],
-      [ "Layer", "structcolor_1_1_layer.html", "structcolor_1_1_layer" ],
-      [ "setcolor", "structcolor_1_1setcolor.html", "structcolor_1_1setcolor" ],
-      [ "textcolor", "structcolor_1_1textcolor.html", "structcolor_1_1textcolor" ]
+      [ "format", "structcolor_1_1format.html", "structcolor_1_1format" ]
     ] ],
     [ "env", "namespaceenv.html", [
       [ "PATH", "classenv_1_1_p_a_t_h.html", "classenv_1_1_p_a_t_h" ]
     ] ],
     [ "file", "namespacefile.html", [
       [ "ini", "namespacefile_1_1ini.html", [
-        [ "KeyHelper", "structfile_1_1ini_1_1_key_helper.html", "structfile_1_1ini_1_1_key_helper" ],
-        [ "INI", "structfile_1_1ini_1_1_i_n_i.html", "structfile_1_1ini_1_1_i_n_i" ],
-        [ "ContainerINI", "structfile_1_1ini_1_1_container_i_n_i.html", "structfile_1_1ini_1_1_container_i_n_i" ]
+        [ "INI", "structfile_1_1ini_1_1_i_n_i.html", "structfile_1_1ini_1_1_i_n_i" ]
       ] ]
     ] ],
     [ "opt", "namespaceopt.html", [
@@ -40,8 +25,13 @@ var annotated_dup =
       [ "InputWrapper", "structopt_1_1_input_wrapper.html", "structopt_1_1_input_wrapper" ],
       [ "ArgContainer", "structopt_1_1_arg_container.html", "structopt_1_1_arg_container" ],
       [ "CaptureList", "structopt_1_1_capture_list.html", "structopt_1_1_capture_list" ],
+      [ "Argument", "classopt_1_1_argument.html", "classopt_1_1_argument" ],
       [ "Index", "structopt_1_1_index.html", "structopt_1_1_index" ],
       [ "VirtualArgument", "structopt_1_1_virtual_argument.html", "structopt_1_1_virtual_argument" ]
+    ] ],
+    [ "process", "namespaceprocess.html", [
+      [ "Mode", "structprocess_1_1_mode.html", "structprocess_1_1_mode" ],
+      [ "Proc", "structprocess_1_1_proc.html", "structprocess_1_1_proc" ]
     ] ],
     [ "rng", "namespacerng.html", [
       [ "Rand", "structrng_1_1_rand.html", "structrng_1_1_rand" ],
@@ -55,16 +45,8 @@ var annotated_dup =
       ] ],
       [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
       [ "VariableIndentation", "structstr_1_1_variable_indentation.html", "structstr_1_1_variable_indentation" ],
-      [ "MyType", "structstr_1_1_my_type.html", "structstr_1_1_my_type" ],
       [ "SetLocale", "structstr_1_1_set_locale.html", "structstr_1_1_set_locale" ],
       [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ]
-    ] ],
-    [ "sys", "namespacesys.html", [
-      [ "term", "namespacesys_1_1term.html", [
-        [ "LineCharacter", "structsys_1_1term_1_1_line_character.html", "structsys_1_1term_1_1_line_character" ],
-        [ "Message", "classsys_1_1term_1_1_message.html", "classsys_1_1term_1_1_message" ],
-        [ "Cursor", "structsys_1_1term_1_1_cursor.html", "structsys_1_1term_1_1_cursor" ]
-      ] ]
     ] ],
     [ "term", "namespaceterm.html", [
       [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
@@ -74,20 +56,14 @@ var annotated_dup =
     [ "token", "namespacetoken.html", [
       [ "parse", "namespacetoken_1_1parse.html", [
         [ "INIContainer", "classtoken_1_1parse_1_1_i_n_i_container.html", "classtoken_1_1parse_1_1_i_n_i_container" ],
-        [ "INIContainerMonoType", "classtoken_1_1parse_1_1_i_n_i_container_mono_type.html", "classtoken_1_1parse_1_1_i_n_i_container_mono_type" ],
-        [ "REElement", "structtoken_1_1parse_1_1_r_e_element.html", "structtoken_1_1parse_1_1_r_e_element" ],
-        [ "REContainer", "structtoken_1_1parse_1_1_r_e_container.html", "structtoken_1_1parse_1_1_r_e_container" ],
-        [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ],
-        [ "INIParserMonoType", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type.html", "structtoken_1_1parse_1_1_i_n_i_parser_mono_type" ],
-        [ "REParser", "structtoken_1_1parse_1_1_r_e_parser.html", "structtoken_1_1parse_1_1_r_e_parser" ]
+        [ "INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", "structtoken_1_1parse_1_1_i_n_i_parser" ]
       ] ],
+      [ "TokenizerINI", "structtoken_1_1_tokenizer_i_n_i.html", "structtoken_1_1_tokenizer_i_n_i" ],
       [ "TokenBase", "structtoken_1_1_token_base.html", "structtoken_1_1_token_base" ],
       [ "Token", "structtoken_1_1_token.html", "structtoken_1_1_token" ],
-      [ "TokenizedContainer", "structtoken_1_1_tokenized_container.html", "structtoken_1_1_tokenized_container" ],
       [ "TokenizerBaseFunctions", "structtoken_1_1_tokenizer_base_functions.html", "structtoken_1_1_tokenizer_base_functions" ],
       [ "TokenizerBase", "classtoken_1_1_tokenizer_base.html", "classtoken_1_1_tokenizer_base" ],
-      [ "TokenizerINI", "structtoken_1_1_tokenizer_i_n_i.html", "structtoken_1_1_tokenizer_i_n_i" ],
-      [ "TokenizerRE", "classtoken_1_1_tokenizer_r_e.html", "classtoken_1_1_tokenizer_r_e" ]
+      [ "TokenParserBase", "structtoken_1_1_token_parser_base.html", "structtoken_1_1_token_parser_base" ]
     ] ],
     [ "xlog", "namespacexlog.html", [
       [ "level", "structxlog_1_1level.html", "structxlog_1_1level" ],
@@ -95,7 +71,5 @@ var annotated_dup =
       [ "xLog", "classxlog_1_1x_log.html", "classxlog_1_1x_log" ],
       [ "xLogs", "classxlog_1_1x_logs.html", "classxlog_1_1x_logs" ]
     ] ],
-    [ "CharacterSet", "struct_character_set.html", null ],
-    [ "except", "classexcept.html", "classexcept" ],
-    [ "set", "structset.html", null ]
+    [ "except", "classexcept.html", "classexcept" ]
 ];

@@ -89,43 +89,8 @@ $(document).ready(function(){initNavTree('setcolor_8cpp_source.html',''); initRe
 <div class="title">setcolor.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="setcolor_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="setcolor_8hpp.html" title="Contains the setcolor struct, which can be used inline with ostream&#39;s operator&lt;&lt; to set text/backgrou...">&quot;setcolor.hpp&quot;</a></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// setcolor function definitions</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#a23348d70bd00efebca926e440edce46e">    4</a></span>&#160;<a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#a23348d70bd00efebca926e440edce46e">operator</a> std::string() <span class="keyword">const</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">return</span> _seq;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#aa373d865238517dc9cc959020551884d">    8</a></span>&#160;<a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1_color_format.html">ColorFormat</a> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#aa373d865238517dc9cc959020551884d">getFormat</a>() <span class="keyword">const</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> _format;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#a18d08494231db24bdfda1247a9645c90">   12</a></span>&#160;<a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1_color_format.html">ColorFormat</a> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#a18d08494231db24bdfda1247a9645c90">setFormat</a>(<span class="keyword">const</span> <a class="code" href="structcolor_1_1_format_flag.html">FormatFlag</a>&amp; newFormat)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> copy{ _format };</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    _format = newFormat;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> copy;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#ac0ed71a32f41fd070d1ccd2b6cc9ebe9">   18</a></span>&#160;<a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1_color_format.html">ColorFormat</a> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#ac0ed71a32f41fd070d1ccd2b6cc9ebe9">addFormat</a>(<span class="keyword">const</span> <a class="code" href="structcolor_1_1_format_flag.html">FormatFlag</a>&amp; modFormat)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> copy{ _format };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    _format |= modFormat;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> copy;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#a8f93187f2669f4a8811541a0c4031c1a">   24</a></span>&#160;<a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1_color_format.html">ColorFormat</a> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#a8f93187f2669f4a8811541a0c4031c1a">removeFormat</a>(<span class="keyword">const</span> <a class="code" href="structcolor_1_1_format_flag.html">FormatFlag</a>&amp; modFormat)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> copy{ _format };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    _format &amp;= modFormat;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> copy;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">   30</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">operator</a>==(<span class="keyword">const</span> <a class="code" href="structcolor_1_1setcolor.html">setcolor</a>&amp; o) <span class="keyword">const</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> _seq == o._seq;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structcolor_1_1setcolor.html#a4f0b667befd196d215f0578f33e9d23a">   34</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacecolor.html">color</a>::<a class="code" href="structcolor_1_1setcolor.html">setcolor</a>::<a class="code" href="structcolor_1_1setcolor.html#a4f0b667befd196d215f0578f33e9d23a">operator</a>!=(<span class="keyword">const</span> <a class="code" href="structcolor_1_1setcolor.html">setcolor</a>&amp; o) <span class="keyword">const</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> !<span class="keyword">this</span><a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">-&gt;</a><a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">operator</a><a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">==</a><a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">(</a>o<a class="code" href="structcolor_1_1setcolor.html#a523d4a5b49b25b2e7ca00cd68792f021">)</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<a href="setcolor_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="setcolor_8hpp.html">&quot;setcolor.hpp&quot;</a></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// This is a dummy file so cmake generates the library correctly.</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

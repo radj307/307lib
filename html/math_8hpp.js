@@ -1,5 +1,6 @@
 var math_8hpp =
 [
-    [ "mod", "math_8hpp.html#a012f2c1454c32185597ab209c509aaed", null ],
-    [ "normalize", "math_8hpp.html#a0661d2c31d7a02c650d267191087059a", null ]
+    [ "max_value", "math_8hpp.html#a9960033ce279248f389ef71e0820f576", null ],
+    [ "mod", "math_8hpp.html#a5c3011b8d185bc4a0dd015c3ee9c8eb2", null ],
+    [ "normalize", "math_8hpp.html#ae93bbc00f9d04acc4ab47fcb6820255b", null ]
 ];

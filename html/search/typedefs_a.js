@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['option_1594',['Option',['../namespaceopt.html#abd2615cfb6e34b4dccd6647b8181ed4c',1,'opt']]],
-  ['optiontype_1595',['OptionType',['../namespaceopt.html#a8e7cc9a2010617a6b4f9e9707419bcdd',1,'opt']]]
+  ['palettetype_1448',['PaletteType',['../classcolor_1_1palette.html#a223211a6e142eb4ef9d0347a86fb3fe4',1,'color::palette']]],
+  ['parameter_1449',['Parameter',['../namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807',1,'opt']]],
+  ['parametertype_1450',['ParameterType',['../namespaceopt.html#aef25741f3063b9139b8440400ddf74da',1,'opt']]]
 ];

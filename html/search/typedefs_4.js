@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['flag_1584',['Flag',['../namespaceopt.html#a80d501ad109f7745fa44e7f52e6380d0',1,'opt']]],
-  ['flagtype_1585',['FlagType',['../namespaceopt.html#a26b17b9a781806db5683836e034cb85b',1,'opt']]],
-  ['float_1586',['Float',['../namespacetoken_1_1parse.html#a6c6c3644f6212ab5acee5350b567ef7a',1,'token::parse']]],
-  ['format_1587',['Format',['../color-format_8hpp.html#ac8156ab8938a726d829e91247e77d5ce',1,'Format():&#160;color-format.hpp'],['../_format_flag_8hpp.html#ac8156ab8938a726d829e91247e77d5ce',1,'Format():&#160;FormatFlag.hpp']]]
+  ['flag_1436',['Flag',['../structcolor_1_1format.html#a445c96e1ab3baf569c2574f5ac467900',1,'color::format::Flag()'],['../namespaceopt.html#a80d501ad109f7745fa44e7f52e6380d0',1,'opt::Flag()']]],
+  ['flagtype_1437',['FlagType',['../namespaceopt.html#a26b17b9a781806db5683836e034cb85b',1,'opt']]],
+  ['float_1438',['Float',['../namespacetoken_1_1parse.html#aba798f9824e7bf35f88b5fefa344199a',1,'token::parse']]],
+  ['formatflag_1439',['FormatFlag',['../namespacecolor.html#a9454e0fab41f3b132c3d9d616b993f57',1,'color']]]
 ];

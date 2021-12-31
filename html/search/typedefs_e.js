@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['type_1608',['Type',['../structopt_1_1_virtual_argument.html#a651c6d0949e710611e7cf263b9647ae6',1,'opt::VirtualArgument']]]
+  ['variablet_1459',['VariableT',['../namespacetoken_1_1parse.html#ad5406e0ccc45a6f8315660ad79426a10',1,'token::parse']]],
+  ['variantargumenttype_1460',['VariantArgumentType',['../namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]],
+  ['vindent_1461',['VIndent',['../namespacestr.html#a576148d382d024fc11d46dc0ef839cec',1,'str']]]
 ];

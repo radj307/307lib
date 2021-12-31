@@ -25,35 +25,35 @@
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "307Lib", "index.html#autotoc_md1", [
-      [ "Index", "index.html#autotoc_md2", null ],
-      [ "Shared Headers", "index.html#autotoc_md3", null ]
+    [ "307Lib", "index.html#autotoc_md3", [
+      [ "Index", "index.html#autotoc_md4", null ],
+      [ "Shared Headers", "index.html#autotoc_md5", null ]
     ] ],
     [ "TermAPI v3", "page1.html", [
-      [ "EDIT | How to use TermAPI Version 3", "page1.html#autotoc_md4", null ],
-      [ "Usage", "page1.html#autotoc_md5", [
-        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md6", null ],
-        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md7", null ],
-        [ "A Note on Cursor Positioning", "page1.html#autotoc_md8", null ]
+      [ "EDIT | How to use TermAPI Version 3", "page1.html#autotoc_md6", null ],
+      [ "Usage", "page1.html#autotoc_md7", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md8", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md9", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md10", null ]
       ] ],
-      [ "Color Library", "page1.html#autotoc_md9", [
-        [ "ColorPalette", "page1.html#autotoc_md10", null ],
-        [ "DEC Line Drawings", "page1.html#autotoc_md11", null ]
+      [ "Color Library", "page1.html#autotoc_md11", [
+        [ "ColorPalette", "page1.html#autotoc_md12", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md13", null ]
       ] ]
     ] ],
     [ "TermAPI v4", "page2.html", [
-      [ "How to use Version 3", "page2.html#autotoc_md12", null ],
-      [ "Changes in Version 4", "page2.html#autotoc_md13", null ],
-      [ "color", "page2.html#autotoc_md14", null ]
+      [ "How to use Version 3", "page2.html#autotoc_md14", null ],
+      [ "Changes in Version 4", "page2.html#autotoc_md15", null ],
+      [ "color", "page2.html#autotoc_md16", null ]
     ] ],
     [ "307lib Documentation", "md__r_e_a_d_m_e.html", [
-      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md16", null ]
+      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md18", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -68,7 +68,6 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -77,7 +76,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -86,15 +84,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_n_s_i_2include_2_line_character_8hpp.html",
-"_term_a_p_i_query_8hpp.html#a77930a4d97877c68026bd2aba18c6313",
-"classtoken_1_1parse_1_1_i_n_i_container_mono_type.html#aabcca442242c9bd21e360b1ce345f965",
-"functions_rela.html",
-"namespacemembers_func_v.html",
-"namespaceterm.html#a27fec72318fb53cde2b49a52faa6d93f",
-"strmanip_8hpp.html#a61c9108691e6d984499341518c993787",
-"structrng_1_1s_rand.html#afffb48b4af7f1277e217cdfbc331e332",
-"sysarch_8h.html"
+"_arg_8hpp.html",
+"classcolor_1_1format_1_1_flag_base.html#ae1aeb476a7cfdcf6399ca5ca1288f9ab",
+"fileio_8hpp.html#ab1318022228e9fe9edb5138ac4c0aaa5",
+"namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18",
+"namespacetoken_1_1parse.html#aba798f9824e7bf35f88b5fefa344199a",
+"structopt_1_1_input_wrapper.html#a373b55a390d7421967f1b09f663bf123",
+"sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

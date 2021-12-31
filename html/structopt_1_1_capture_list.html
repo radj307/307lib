@@ -105,8 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#ab73e3b9f29a5a344be830aaef1b54ea1">CaptureList</a> (const VT &amp;... capturing_arguments)</td></tr>
 <tr class="memdesc:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="structopt_1_1_capture_list.html#ab73e3b9f29a5a344be830aaef1b54ea1">More...</a><br /></td></tr>
 <tr class="separator:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700138a83a51133078e240817c67a868"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#a700138a83a51133078e240817c67a868">operator const std::vector&lt; InputWrapper &gt;</a> () const</td></tr>
-<tr class="separator:a700138a83a51133078e240817c67a868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e31e5405937be0c11c26f8e4b88bdec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#a6e31e5405937be0c11c26f8e4b88bdec">operator const std::vector&lt; InputWrapper &gt;</a> () const</td></tr>
+<tr class="separator:a6e31e5405937be0c11c26f8e4b88bdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="memTemplParams" colspan="2">template&lt;var::all_same&lt; char &gt;... DelimT&gt; </td></tr>
 <tr class="memitem:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#adfe7ff1e725fe2c3a592dbb2fae27d03">is_present</a> (const std::string &amp;name, const DelimT &amp;... delims) const</td></tr>
 <tr class="memdesc:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given argument appears in the capture list. Names are case-sensitive.  <a href="structopt_1_1_capture_list.html#adfe7ff1e725fe2c3a592dbb2fae27d03">More...</a><br /></td></tr>
@@ -213,7 +213,7 @@ template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Input Argument Name. </td></tr>
+    <tr><td class="paramname">name</td><td>Input <a class="el" href="classopt_1_1_argument.html">Argument</a> Name. </td></tr>
     <tr><td class="paramname">...delims</td><td>Optional list of delimiters to remove from the given name. </td></tr>
   </table>
   </dd>
@@ -224,8 +224,8 @@ template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
 
 </div>
 </div>
-<a id="a700138a83a51133078e240817c67a868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700138a83a51133078e240817c67a868">&#9670;&nbsp;</a></span>operator const std::vector&lt; InputWrapper &gt;()</h2>
+<a id="a6e31e5405937be0c11c26f8e4b88bdec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e31e5405937be0c11c26f8e4b88bdec">&#9670;&nbsp;</a></span>operator const std::vector&lt; InputWrapper &gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +234,7 @@ template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr opt::CaptureList::operator const std::vector&lt; <a class="el" href="structopt_1_1_input_wrapper.html">InputWrapper</a> &gt; </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> opt::CaptureList::operator const std::vector&lt; <a class="el" href="structopt_1_1_input_wrapper.html">InputWrapper</a> &gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -242,7 +242,7 @@ template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -271,7 +271,7 @@ template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>X:/_Workspace/_repo/cpp-307lib/opt-lib/include/<a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a></li>
+<li>X:/_Workspace/_repo/cpp-307lib/optlib/include/<a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

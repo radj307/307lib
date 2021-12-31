@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['parameter_1520',['PARAMETER',['../structopt_1_1_index.html#ada5b2c850a6e3e55ac11a4e59b84062c',1,'opt::Index']]],
-  ['purple_1521',['purple',['../namespacecolor.html#ad3054056a3f586375ba838bc838dfa85',1,'color::purple()'],['../namespacecolor.html#ad3054056a3f586375ba838bc838dfa85',1,'color::purple()']]]
+  ['read_1367',['READ',['../structprocess_1_1_mode.html#a890c4a3d697331e647b59eb07019656d',1,'process::Mode']]],
+  ['red_1368',['red',['../structcolor_1_1setcolor__seq.html#a166df43fec9ae21487034734b65f54c8',1,'color::setcolor_seq::red()'],['../namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color::red()']]],
+  ['reportcursorposition_1369',['ReportCursorPosition',['../namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01',1,'term']]],
+  ['reportdeviceattributes_1370',['ReportDeviceAttributes',['../namespaceterm.html#aa162e433dc0590b0fba4d742ac7ebfb9',1,'term']]],
+  ['reset_1371',['reset',['../structcolor_1_1setcolor__seq.html#aeb7ab92025545085ceeb4a74caba3b62',1,'color::setcolor_seq']]],
+  ['reset_1372',['RESET',['../structcolor_1_1format.html#a42f90f70e5e9534f79a3efe238e09749',1,'color::format']]],
+  ['reset_1373',['Reset',['../namespaceterm.html#ac20bda3ffedffdc8939bfc82b8807663',1,'term']]],
+  ['reset_1374',['reset',['../namespacecolor.html#ab505233a6f26bec737e27a8efd713db5',1,'color']]],
+  ['reset_5fall_1375',['reset_all',['../namespacecolor.html#a1388e8e6e3480c5968bb643fbc54aebb',1,'color']]],
+  ['reset_5fb_1376',['reset_b',['../namespacecolor.html#a7e3fccce20699c20489657918d1b918b',1,'color']]],
+  ['reset_5ff_1377',['reset_f',['../namespacecolor.html#ac23eccfe66e28b988112483f8dcdbec4',1,'color']]],
+  ['reset_5ffmt_1378',['reset_fmt',['../namespacecolor.html#a1244c967e78bc5d400dbba4194372894',1,'color']]],
+  ['resetbackcolor_1379',['ResetBackColor',['../namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f',1,'term']]],
+  ['resetcolor_1380',['ResetColor',['../namespaceterm.html#a0a4f4903544983e6e22d9d099d4cb0ef',1,'term']]],
+  ['resettextcolor_1381',['ResetTextColor',['../namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475',1,'term']]],
+  ['rgb_5fcolor_1382',['RGB_COLOR',['../namespace_a_n_s_i.html#af392d5b2fe5db6b8a207e42f3ec985d2',1,'ANSI']]]
 ];

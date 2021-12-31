@@ -86,44 +86,19 @@ $(document).ready(function(){initNavTree('namespacefile_1_1ini.html',''); initRe
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">file::ini Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Contains methods and objects related to parsing &amp; interacting with .ini format files.  
-<a href="namespacefile_1_1ini.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacefile_1_1ini_1_1__internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile_1_1ini_1_1__internal.html">_internal</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile_1_1ini_1_1_key_helper.html">KeyHelper</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents one key located somewhere in the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Simple wrapper/child of ContainerINI that introduces file parsing capability. This is simply a wrappe...">INI</a> map. <br  />
- To use similarly to an enum: <br  />
- struct Setting { <br  />
-<br  />
- static const Setting FOO, BAR; <br  />
- }; <br  />
- inline const Setting Setting::FOO{ "my_header", "foo" }, Setting::BAR{ "my_header", "bar" }; <br  />
-<br  />
-.  <a href="structfile_1_1ini_1_1_key_helper.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile_1_1ini_1_1_i_n_i.html">INI</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper/child of <a class="el" href="structfile_1_1ini_1_1_container_i_n_i.html" title="Data storage used for INI files. It cannot parse files itself, and does not have any knowledge of the...">ContainerINI</a> that introduces file parsing capability. This is simply a wrapper object for the <a class="el" href="namespacefile_1_1ini_1_1__internal.html#a2c168e661cee8d51bfaab65be9fadc8a" title="Parse a stringstream containing raw INI text into an INI container.">_internal::parseINI()</a> function that allows multiple files to be parsed &amp; merged into a single configuration structure.  <a href="structfile_1_1ini_1_1_i_n_i.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile_1_1ini_1_1_container_i_n_i.html">ContainerINI</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data storage used for <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Simple wrapper/child of ContainerINI that introduces file parsing capability. This is simply a wrappe...">INI</a> files. It cannot parse files itself, and does not have any knowledge of the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Simple wrapper/child of ContainerINI that introduces file parsing capability. This is simply a wrappe...">INI</a> parser found in <a class="el" href="_i_n_i_8hpp.html">INI.hpp</a>.  <a href="structfile_1_1ini_1_1_container_i_n_i.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile_1_1ini_1_1_i_n_i.html">INI</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends the (<a class="el" href="namespacetoken_1_1parse.html">token::parse</a>) INIContainer object with file I/O functionality.  <a href="structfile_1_1ini_1_1_i_n_i.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains methods and objects related to parsing &amp; interacting with .ini format files. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

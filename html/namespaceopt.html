@@ -112,6 +112,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html">CaptureList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt_1_1_capture_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1_argument.html">Argument</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_index.html">Index</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant compile-time variant index object. This allows retrieving types from a variant argument with friendly names rather than raw numbers or types.  <a href="structopt_1_1_index.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,15 +154,15 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2db34133c5d7b2d0bbcdddd6c4c6a016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a2db34133c5d7b2d0bbcdddd6c4c6a016">paramVecToStrVec</a> (const std::vector&lt; <a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">opt::Parameter</a> &gt; &amp;param_vec)</td></tr>
-<tr class="separator:a2db34133c5d7b2d0bbcdddd6c4c6a016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c314c592f71be32b77f09484f17bc75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a3c314c592f71be32b77f09484f17bc75">paramVecToStrVec</a> (const std::vector&lt; <a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">opt::Parameter</a> &gt; &amp;param_vec)</td></tr>
+<tr class="separator:a3c314c592f71be32b77f09484f17bc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f6625ec874e68c060b1e04795dbb18"><td class="memTemplParams" colspan="2">template&lt;ValidArgType T&gt; </td></tr>
 <tr class="memitem:a05f6625ec874e68c060b1e04795dbb18"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classopt_1_1_arg.html">Arg</a>&lt; T &gt; &amp;arg)</td></tr>
 <tr class="memdesc:a05f6625ec874e68c060b1e04795dbb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator for the <a class="el" href="classopt_1_1_arg.html" title="Polymorphic argument wrapper class that exposes helper functions.">Arg</a> class. See the Settings_Arg static struct for changing output format settings.  <a href="namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18">More...</a><br /></td></tr>
 <tr class="separator:a05f6625ec874e68c060b1e04795dbb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a294152959e0541808274c2ff685f8eb6"><td class="memItemLeft" align="right" valign="top">constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a294152959e0541808274c2ff685f8eb6">is_delimiter</a> (const char &amp;c)</td></tr>
-<tr class="memdesc:a294152959e0541808274c2ff685f8eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.  <a href="namespaceopt.html#a294152959e0541808274c2ff685f8eb6">More...</a><br /></td></tr>
-<tr class="separator:a294152959e0541808274c2ff685f8eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b4f449717849b24bb02e949fa66e58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a89b4f449717849b24bb02e949fa66e58">is_delimiter</a> (const char &amp;c)</td></tr>
+<tr class="memdesc:a89b4f449717849b24bb02e949fa66e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.  <a href="namespaceopt.html#a89b4f449717849b24bb02e949fa66e58">More...</a><br /></td></tr>
+<tr class="separator:a89b4f449717849b24bb02e949fa66e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa297a02e7d112f878e200ef839a78605"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">is_number</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:aa297a02e7d112f878e200ef839a78605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.  <a href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">More...</a><br /></td></tr>
 <tr class="separator:aa297a02e7d112f878e200ef839a78605"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,7 +179,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7c659d3e86eb26fb94a5915b10cbb74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d4a82db2d7eef33350854b082131315"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a3d4a82db2d7eef33350854b082131315">parse</a> (const <a class="el" href="namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb">StrVec</a> &amp;args, const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;captures)</td></tr>
 <tr class="memdesc:a3d4a82db2d7eef33350854b082131315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
- <b>Argument Types</b> <br  />
+ <b><a class="el" href="classopt_1_1_argument.html">Argument</a> Types</b> <br  />
  - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
  - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
  - Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. <br  />
@@ -191,9 +193,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abc103cb3c943291e5f87bccf7df19651"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">parse</a> (auto &amp;&amp;args, const VT &amp;... captures)</td></tr>
 <tr class="memdesc:abc103cb3c943291e5f87bccf7df19651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. This function accepts a variadic capture list.  <a href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">More...</a><br /></td></tr>
 <tr class="separator:abc103cb3c943291e5f87bccf7df19651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb">StrVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ad4af6b73cdba4c9f27bf3fcd9b747e57">vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
-<tr class="memdesc:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt.html#ad4af6b73cdba4c9f27bf3fcd9b747e57">More...</a><br /></td></tr>
-<tr class="separator:ad4af6b73cdba4c9f27bf3fcd9b747e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="el" href="namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb">StrVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0">vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
+<tr class="memdesc:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0">More...</a><br /></td></tr>
+<tr class="separator:ab2a04d5b8af8ab1a4b5b4652723649e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33135292342ae5562b5fe2321d0cbe18"><td class="memTemplParams" colspan="2">template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a33135292342ae5562b5fe2321d0cbe18"><td class="memTemplItemLeft" align="right" valign="top">constexpr const <a class="el" href="structopt_1_1_index.html">Index</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a33135292342ae5562b5fe2321d0cbe18">get_index</a> () noexcept(false)</td></tr>
 <tr class="separator:a33135292342ae5562b5fe2321d0cbe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,8 +205,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a2159b287993f819a2fbadd4f5798d426"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Type&gt; </td></tr>
 <tr class="memitem:a2159b287993f819a2fbadd4f5798d426"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a2159b287993f819a2fbadd4f5798d426">requires</a> (sizeof...(Type) &gt; 1) inline static const expr const bool <a class="el" href="namespaceopt.html#a81e37cea59bb7d8675fc517ef3d0e590">is_type</a>(const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
 <tr class="separator:a2159b287993f819a2fbadd4f5798d426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3e447cf9b68ce004f7a44a49cae6404"><td class="memItemLeft" align="right" valign="top">constexpr const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ab3e447cf9b68ce004f7a44a49cae6404">get_name</a> (const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
-<tr class="separator:ab3e447cf9b68ce004f7a44a49cae6404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618422774482964fd07a842299c845b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a618422774482964fd07a842299c845b5">get_name</a> (const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
+<tr class="separator:a618422774482964fd07a842299c845b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplParams" colspan="2">template&lt;typename IntegerT , IntegerT index&gt; </td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">requires</a> (index==static_cast&lt; IntegerT &gt;(0)) &amp;&amp;std</td></tr>
 <tr class="memdesc:aa2f10f2c576dc410b4cacf831c949d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a std::monostate type from a VariantArgumentType instance.  <a href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">More...</a><br /></td></tr>
@@ -274,7 +276,7 @@ Variables</h2></td></tr>
 
 <p>drugs </p>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00016">16</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00017">17</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +294,7 @@ Variables</h2></td></tr>
 
 <p>brain on </p>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00015">15</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00016">16</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +312,7 @@ Variables</h2></td></tr>
 
 <p>your </p>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00014">14</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00015">15</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 
 </div>
 </div>
@@ -561,7 +563,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a9cec335d3ad0b30de028267001ee9e1f_cgraph.svg" width="292" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a9cec335d3ad0b30de028267001ee9e1f_cgraph.svg" width="292" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -630,36 +633,28 @@ template&lt;ValidArg Type&gt; </div>
 
 </div>
 </div>
-<a id="ab3e447cf9b68ce004f7a44a49cae6404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3e447cf9b68ce004f7a44a49cae6404">&#9670;&nbsp;</a></span>get_name()</h2>
+<a id="a618422774482964fd07a842299c845b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618422774482964fd07a842299c845b5">&#9670;&nbsp;</a></span>get_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const std::string opt::get_name </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const std::string opt::get_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;&#160;</td>
           <td class="paramname"><em>arg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_variant_argument_type_8hpp_source.html#l00063">63</a> of file <a class="el" href="_variant_argument_type_8hpp_source.html">VariantArgumentType.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a294152959e0541808274c2ff685f8eb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a294152959e0541808274c2ff685f8eb6">&#9670;&nbsp;</a></span>is_delimiter()</h2>
+<a id="a89b4f449717849b24bb02e949fa66e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b4f449717849b24bb02e949fa66e58">&#9670;&nbsp;</a></span>is_delimiter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -668,7 +663,7 @@ template&lt;ValidArg Type&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const bool opt::is_delimiter </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const bool opt::is_delimiter </td>
           <td>(</td>
           <td class="paramtype">const char &amp;&#160;</td>
           <td class="paramname"><em>c</em></td><td>)</td>
@@ -677,7 +672,7 @@ template&lt;ValidArg Type&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -695,7 +690,8 @@ template&lt;ValidArg Type&gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a294152959e0541808274c2ff685f8eb6_icgraph.svg" width="579" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a89b4f449717849b24bb02e949fa66e58_icgraph.svg" width="579" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -818,7 +814,7 @@ template&lt;ValidArgType T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>- (implicit) Output Stream. </td></tr>
-    <tr><td class="paramname">arg</td><td>- (implicit) Argument instance. </td></tr>
+    <tr><td class="paramname">arg</td><td>- (implicit) <a class="el" href="classopt_1_1_argument.html">Argument</a> instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -876,8 +872,8 @@ template&lt;ValidArgType T&gt; </div>
 
 </div>
 </div>
-<a id="a2db34133c5d7b2d0bbcdddd6c4c6a016"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2db34133c5d7b2d0bbcdddd6c4c6a016">&#9670;&nbsp;</a></span>paramVecToStrVec()</h2>
+<a id="a3c314c592f71be32b77f09484f17bc75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c314c592f71be32b77f09484f17bc75">&#9670;&nbsp;</a></span>paramVecToStrVec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -886,7 +882,7 @@ template&lt;ValidArgType T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> const std::vector&lt;std::string&gt; opt::paramVecToStrVec </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const std::vector&lt;std::string&gt; opt::paramVecToStrVec </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">opt::Parameter</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>param_vec</em></td><td>)</td>
@@ -900,7 +896,7 @@ template&lt;ValidArgType T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00158">158</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00159">159</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
 
 </div>
 </div>
@@ -995,7 +991,7 @@ template&lt;ValidInputType... VT&gt; </div>
 </div><div class="memdoc">
 
 <p>Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
- <b>Argument Types</b> <br  />
+ <b><a class="el" href="classopt_1_1_argument.html">Argument</a> Types</b> <br  />
  - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
  - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
  - Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. <br  />
@@ -1017,7 +1013,8 @@ template&lt;ValidInputType... VT&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a3d4a82db2d7eef33350854b082131315_cgraph.svg" width="579" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a3d4a82db2d7eef33350854b082131315_cgraph.svg" width="579" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1185,7 +1182,8 @@ template&lt;ValidArg... Type&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a7c659d3e86eb26fb94a5915b10cbb74d_cgraph.svg" width="451" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a7c659d3e86eb26fb94a5915b10cbb74d_cgraph.svg" width="451" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1195,8 +1193,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad4af6b73cdba4c9f27bf3fcd9b747e57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4af6b73cdba4c9f27bf3fcd9b747e57">&#9670;&nbsp;</a></span>vectorize()</h2>
+<a id="ab2a04d5b8af8ab1a4b5b4652723649e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a04d5b8af8ab1a4b5b4652723649e0">&#9670;&nbsp;</a></span>vectorize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1205,7 +1203,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb">StrVec</a> opt::vectorize </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="el" href="namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb">StrVec</a> opt::vectorize </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>sz</em>, </td>
@@ -1230,7 +1228,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

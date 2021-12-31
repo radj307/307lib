@@ -102,10 +102,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
-<tr class="memitem:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#a487a66d0b7d88225bdbe879e4ac1aeb3">getvar</a> (auto &amp;&amp;name) noexcept</td></tr>
-<tr class="memdesc:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#a487a66d0b7d88225bdbe879e4ac1aeb3">More...</a><br /></td></tr>
-<tr class="separator:a487a66d0b7d88225bdbe879e4ac1aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
+<tr class="memitem:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const std::optional&lt; RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#a29536ff5ce1cfb5de6f7144f1ae0988c">getvar</a> (auto &amp;&amp;name) noexcept</td></tr>
+<tr class="memdesc:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#a29536ff5ce1cfb5de6f7144f1ae0988c">More...</a><br /></td></tr>
+<tr class="separator:a29536ff5ce1cfb5de6f7144f1ae0988c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab47cc3a34c382ae12acdd442236f2fa5"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_DEFAULT_RETURN_TYPE&gt; </td></tr>
 <tr class="memitem:ab47cc3a34c382ae12acdd442236f2fa5"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#ab47cc3a34c382ae12acdd442236f2fa5">getvar</a> (const std::string &amp;name) noexcept</td></tr>
 <tr class="memdesc:ab47cc3a34c382ae12acdd442236f2fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of a given environment variable. This function is a wrapper for getenv.  <a href="namespaceenv.html#ab47cc3a34c382ae12acdd442236f2fa5">More...</a><br /></td></tr>
@@ -147,12 +147,12 @@ template&lt;std::same_as&lt; std::vector&lt; std::filesystem::path &gt;&gt; RT =
 <dd>
 std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00085">85</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00086">86</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a487a66d0b7d88225bdbe879e4ac1aeb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a487a66d0b7d88225bdbe879e4ac1aeb3">&#9670;&nbsp;</a></span>getvar() <span class="overload">[1/2]</span></h2>
+<a id="a29536ff5ce1cfb5de6f7144f1ae0988c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29536ff5ce1cfb5de6f7144f1ae0988c">&#9670;&nbsp;</a></span>getvar() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +163,7 @@ template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_D
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr const RT env::getvar </td>
+          <td class="memname">static constexpr const std::optional&lt;RT&gt; env::getvar </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -192,7 +192,7 @@ template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_D
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00063">63</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00064">64</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +237,7 @@ template&lt;var::any_same&lt; std::filesystem::path, std::string &gt; RT = ENV_D
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00078">78</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="env_8hpp_source.html#l00079">79</a> of file <a class="el" href="env_8hpp_source.html">env.hpp</a>.</p>
 
 </div>
 </div>

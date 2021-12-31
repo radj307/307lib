@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['magenta_1162',['magenta',['../namespacecolor_1_1foreground.html#afa4d1d8493a8b324d2ea2777d3821c89',1,'color::foreground::magenta()'],['../namespacecolor_1_1background.html#acae4420c94c6a77279eefa98210a7fee',1,'color::background::magenta()']]],
-  ['make_5fexception_1163',['make_exception',['../make__exception_8hpp.html#ad0a7a9c7b25380e6f2845b18821eaca0',1,'make_exception.hpp']]],
-  ['make_5fsequence_1164',['make_sequence',['../namespace_a_n_s_i.html#a6d91b78581c19190e9043c378d6431d4',1,'ANSI::make_sequence(const vT &amp;... segments) noexcept'],['../namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d',1,'ANSI::make_sequence(const VT &amp;... ch)']]],
-  ['makecolorsequence_1165',['makeColorSequence',['../structcolor_1_1setcolor__seq.html#a9d86ed6ebfc89713ce0f128c2c242493',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;SGR) const'],['../structcolor_1_1setcolor__seq.html#acd7e064e1512924744284aa98641790b',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const'],['../structcolor_1_1setcolor__seq.html#aafad060af746592dd94e5e128da11569',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const'],['../namespacecolor.html#afb722f27f1974608161e7e033f063037',1,'color::makeColorSequence()']]],
-  ['max_5fsize_1166',['max_size',['../structopt_1_1_arg_container.html#ab61643f97fa3c204f616c870d0fb8038',1,'opt::ArgContainer']]],
-  ['merge_1167',['merge',['../structfile_1_1ini_1_1_i_n_i.html#a9b11b37bc76df9c1b4ef9416a8274104',1,'file::ini::INI']]],
-  ['merge_5fcontainer_1168',['merge_container',['../structfile_1_1ini_1_1_container_i_n_i.html#a08350f6cc793df8dc1a7928be72c44de',1,'file::ini::ContainerINI::merge_container()'],['../classtoken_1_1parse_1_1_i_n_i_container.html#a77276c46c3b81660d2f5f07c9ff4ed2c',1,'token::parse::INIContainer::merge_container()'],['../classtoken_1_1parse_1_1_i_n_i_container_mono_type.html#a05ef3b87ea6a2d9ba92a224b910dec3a',1,'token::parse::INIContainerMonoType::merge_container()']]],
-  ['message_1169',['Message',['../classterm_1_1_message.html#a9acd946d53d340a375f6abbfe176a89b',1,'term::Message::Message()'],['../classsys_1_1term_1_1_message.html#a18cc398e008282d8c1bb5d80fcd3aaa8',1,'sys::term::Message::Message()']]],
-  ['mod_1170',['mod',['../namespacemath.html#a012f2c1454c32185597ab209c509aaed',1,'math']]]
+  ['make_5farray_1046',['make_array',['../namespaceprocess.html#a0977f36ec347108a1322b04f6adc4074',1,'process']]],
+  ['make_5fexception_1047',['make_exception',['../make__exception_8hpp.html#a1d1d97107beaad9e13b084d2aec7b562',1,'make_exception.hpp']]],
+  ['make_5fsequence_1048',['make_sequence',['../namespace_a_n_s_i.html#a89f2c7ec9c0e17e7bcbbd0141a291c35',1,'ANSI']]],
+  ['makecolorsequence_1049',['makeColorSequence',['../structcolor_1_1setcolor__seq.html#a9d86ed6ebfc89713ce0f128c2c242493',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;SGR) const'],['../structcolor_1_1setcolor__seq.html#acd7e064e1512924744284aa98641790b',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const'],['../structcolor_1_1setcolor__seq.html#aafad060af746592dd94e5e128da11569',1,'color::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const']]],
+  ['max_5fsize_1050',['max_size',['../structopt_1_1_arg_container.html#a8b1b62996683808f1e5c4331396f9ad4',1,'opt::ArgContainer']]],
+  ['max_5fvalue_1051',['max_value',['../namespacemath.html#a9960033ce279248f389ef71e0820f576',1,'math']]],
+  ['merge_5fcontainer_1052',['merge_container',['../classtoken_1_1parse_1_1_i_n_i_container.html#a77276c46c3b81660d2f5f07c9ff4ed2c',1,'token::parse::INIContainer']]],
+  ['message_1053',['Message',['../classterm_1_1_message.html#aa7126bc60000b97e584fe1930bf02406',1,'term::Message']]],
+  ['message_5fto_5flevel_1054',['message_to_level',['../namespacexlog.html#a01a6b05c760cf3311af433147e91b334',1,'xlog']]],
+  ['mod_1055',['mod',['../namespacemath.html#a5c3011b8d185bc4a0dd015c3ee9c8eb2',1,'math']]],
+  ['mode_1056',['Mode',['../structprocess_1_1_mode.html#a40e170953c0a2f2f34e41abfd625f020',1,'process::Mode::Mode(const char &amp;v)'],['../structprocess_1_1_mode.html#a863fcbd781ba6636fd83733fd3c66d15',1,'process::Mode::Mode(const std::string &amp;str)']]],
+  ['msg_1057',['msg',['../classxlog_1_1x_log.html#a0e1070ebe13504206d56625b686cf5ed',1,'xlog::xLog']]]
 ];

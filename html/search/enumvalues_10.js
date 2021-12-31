@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_1682',['VALUE',['../structtoken_1_1parse_1_1_r_e_element.html#ae590bfd32104084421d0c31a05ce3d83aecc2e9c313faddb07e7da223c1dc5c3f',1,'token::parse::REElement']]]
+  ['whitespace_1517',['WHITESPACE',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea52f1e315372b38db1b8f4e3666c4f721',1,'token']]]
 ];

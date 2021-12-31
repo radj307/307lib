@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['rand_851',['Rand',['../structrng_1_1_rand.html',1,'rng']]],
-  ['rand_3c_20defaultengine_20_3e_852',['Rand&lt; DefaultEngine &gt;',['../structrng_1_1_rand.html',1,'rng']]],
-  ['recontainer_853',['REContainer',['../structtoken_1_1parse_1_1_r_e_container.html',1,'token::parse']]],
-  ['reelement_854',['REElement',['../structtoken_1_1parse_1_1_r_e_element.html',1,'token::parse']]],
-  ['reparser_855',['REParser',['../structtoken_1_1parse_1_1_r_e_parser.html',1,'token::parse']]]
+  ['setcolor_5fseq_782',['setcolor_seq',['../structcolor_1_1setcolor__seq.html',1,'color']]],
+  ['setlocale_783',['SetLocale',['../structstr_1_1_set_locale.html',1,'str']]],
+  ['setlocalefacet_784',['SetLocaleFacet',['../structstr_1_1_set_locale_facet.html',1,'str']]],
+  ['srand_785',['sRand',['../structrng_1_1s_rand.html',1,'rng']]]
 ];

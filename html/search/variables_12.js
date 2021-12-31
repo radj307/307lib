@@ -1,19 +1,6 @@
 var searchData=
 [
-  ['red_1523',['red',['../namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color::red()'],['../namespacecolor.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color::red()']]],
-  ['reportcursorposition_1524',['ReportCursorPosition',['../namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01',1,'term']]],
-  ['reportdeviceattributes_1525',['ReportDeviceAttributes',['../namespaceterm.html#aa162e433dc0590b0fba4d742ac7ebfb9',1,'term']]],
-  ['reset_1526',['RESET',['../namespacecolor.html#aa723ff8ac3e9d7ad2b565976e97c1116',1,'color']]],
-  ['reset_1527',['reset',['../namespacecolor.html#ab505233a6f26bec737e27a8efd713db5',1,'color::reset()'],['../namespacecolor.html#ab0116b5ba859fc9f7a8d6b7a5423dd62',1,'color::reset()']]],
-  ['reset_1528',['Reset',['../namespaceterm.html#ac20bda3ffedffdc8939bfc82b8807663',1,'term']]],
-  ['reset_5fall_1529',['reset_all',['../namespacecolor.html#a15d0dc293806a43fccae35d614d6ce22',1,'color']]],
-  ['reset_5fb_1530',['reset_b',['../namespacecolor.html#a7e3fccce20699c20489657918d1b918b',1,'color']]],
-  ['reset_5fbold_1531',['RESET_BOLD',['../structcolor_1_1_format_flag.html#a28fcb98202afb047a744f65d20933149',1,'color::FormatFlag']]],
-  ['reset_5ff_1532',['reset_f',['../namespacecolor.html#ac23eccfe66e28b988112483f8dcdbec4',1,'color']]],
-  ['reset_5finvert_1533',['RESET_INVERT',['../structcolor_1_1_format_flag.html#a3b3184e8da936902c85d4d29eb8172da',1,'color::FormatFlag']]],
-  ['reset_5funderline_1534',['RESET_UNDERLINE',['../structcolor_1_1_format_flag.html#acaf3f5e03730f7f6473c76ecf70d48ef',1,'color::FormatFlag']]],
-  ['resetbackcolor_1535',['ResetBackColor',['../namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f',1,'term']]],
-  ['resetcolor_1536',['ResetColor',['../namespaceterm.html#a0a4f4903544983e6e22d9d099d4cb0ef',1,'term']]],
-  ['resettextcolor_1537',['ResetTextColor',['../namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475',1,'term']]],
-  ['rgb_5fcolor_1538',['RGB_COLOR',['../namespace_a_n_s_i.html#af392d5b2fe5db6b8a207e42f3ec985d2',1,'ANSI']]]
+  ['target_1398',['target',['../structxlog_1_1_output_target.html#a54ce76bb1c5069bea8dc628b8cd3fa91',1,'xlog::OutputTarget']]],
+  ['text_1399',['TEXT',['../structprocess_1_1_mode.html#ad5dc0ccf1d1f7733c4918c96ce41bc34',1,'process::Mode']]],
+  ['tokens_1400',['tokens',['../structtoken_1_1_token_parser_base.html#a2ea43686e0ad267994830ff9afabe8d5',1,'token::TokenParserBase']]]
 ];

@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['lastpos_1485',['lastPos',['../structtoken_1_1_tokenizer_base_functions.html#afbd6e4527f66d3a455629270d2aa6918',1,'token::TokenizerBaseFunctions']]],
-  ['light_5fblue_1486',['light_blue',['../namespacecolor.html#a4b657969ac14460c813064667a9f1107',1,'color::light_blue()'],['../namespacecolor.html#a4b657969ac14460c813064667a9f1107',1,'color::light_blue()']]],
-  ['light_5fgray_1487',['light_gray',['../namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1',1,'color::light_gray()'],['../namespacecolor.html#a8021362dc29dd9c36b2c4b51e20374b1',1,'color::light_gray()']]],
-  ['light_5fpurple_1488',['light_purple',['../namespacecolor.html#a893c727634f7edadf42286d273113d64',1,'color::light_purple()'],['../namespacecolor.html#a893c727634f7edadf42286d273113d64',1,'color::light_purple()']]],
-  ['line_5fhorizontal_1489',['LINE_HORIZONTAL',['../structterm_1_1_line_character.html#afdb295573ea8aaa1ae71fe107e800705',1,'term::LineCharacter::LINE_HORIZONTAL()'],['../structsys_1_1term_1_1_line_character.html#a4064ac63c776900f35924b59353ced27',1,'sys::term::LineCharacter::LINE_HORIZONTAL()']]],
-  ['line_5fvertical_1490',['LINE_VERTICAL',['../structterm_1_1_line_character.html#aa7e1091b4ed6216a824bf588bd16f92b',1,'term::LineCharacter::LINE_VERTICAL()'],['../structsys_1_1term_1_1_line_character.html#a23fbcdf77fdec739e648e11ebe6fc509',1,'sys::term::LineCharacter::LINE_VERTICAL()']]],
-  ['loadcursor_1491',['LoadCursor',['../namespaceterm.html#ad54e668aab8666e52c2575d653404537',1,'term']]],
-  ['log_1492',['LOG',['../structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285',1,'xlog::level']]],
-  ['log_1493',['log',['../namespaceterm.html#a6290d19a08a2a59cf537f15e8964633e',1,'term::log()'],['../namespacesys_1_1term.html#a4256e5fc99d3a84b002f7bb6deee6854',1,'sys::term::log()']]]
+  ['no_5fbold_1345',['NO_BOLD',['../structcolor_1_1format.html#a6cc837b6704f9703bbf0c4a92be7e88e',1,'color::format']]],
+  ['no_5fbold_1346',['no_bold',['../namespacecolor.html#a7d0b38cd4b23408a7a6a0cf0f9339938',1,'color']]],
+  ['no_5finvert_1347',['NO_INVERT',['../structcolor_1_1format.html#ac60bab0b9430a70c620000f1f62f6ae5',1,'color::format']]],
+  ['no_5finvert_1348',['no_invert',['../namespacecolor.html#a88c1e3de58c5174da532ef80c93536d1',1,'color']]],
+  ['no_5funderline_1349',['NO_UNDERLINE',['../structcolor_1_1format.html#a562c0abc98a972f8912610b2878d94a4',1,'color::format']]],
+  ['no_5funderline_1350',['no_underline',['../namespacecolor.html#a35d0d0c265b0fcd9af095f0ea017fb67',1,'color']]],
+  ['noerrors_1351',['NoErrors',['../structxlog_1_1level.html#a56f0e0e289842d38336b5e2f0a32f654',1,'xlog::level']]],
+  ['noerrorsdebug_1352',['NoErrorsDebug',['../structxlog_1_1level.html#a7844940c16909e11940ee5618d3a3d15',1,'xlog::level']]],
+  ['noerrorsorwarnings_1353',['NoErrorsOrWarnings',['../structxlog_1_1level.html#a4065c1901ee75d4c913d4ee438bf1979',1,'xlog::level']]],
+  ['noerrorsorwarningsdebug_1354',['NoErrorsOrWarningsDebug',['../structxlog_1_1level.html#affc5880963f1019f5681f68e4e72446e',1,'xlog::level']]],
+  ['none_1355',['NONE',['../structxlog_1_1level.html#a1ea82679755f988c1534601c3c732c0b',1,'xlog::level::NONE()'],['../structprocess_1_1_mode.html#a4ea89dfdd2d26d1640d6a81119d4f3ad',1,'process::Mode::NONE()'],['../structcolor_1_1format.html#a76b63f6053121da916461d9d256df706',1,'color::format::NONE()']]],
+  ['null_5fterm_1356',['NULL_TERM',['../namespace_a_n_s_i.html#adba156d334da60a4394d5a6c30c87706',1,'ANSI']]]
 ];

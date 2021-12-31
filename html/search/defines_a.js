@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['xlog_5finclude_5fself_1705',['XLOG_INCLUDE_SELF',['../term_2include_2xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'XLOG_INCLUDE_SELF():&#160;xlog.hpp'],['../v3_2include_2xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'XLOG_INCLUDE_SELF():&#160;xlog.hpp']]]
+  ['pclose_1542',['PCLOSE',['../process_8hpp.html#a4c39c7c96d7f5d1f5cd1743122d476e3',1,'process.hpp']]],
+  ['popen_1543',['POPEN',['../process_8hpp.html#ab6949e8178edeb4294d893f3ee4966d5',1,'process.hpp']]]
 ];

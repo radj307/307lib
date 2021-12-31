@@ -1,8 +1,19 @@
 var searchData=
 [
-  ['underline_1558',['UNDERLINE',['../structcolor_1_1_format_flag.html#a2f28fa9dd967599eea92139c708deeb9',1,'color::FormatFlag']]],
-  ['underline_1559',['underline',['../namespacecolor.html#aecbbaf451a13126290a5bf25f57aa7e9',1,'color']]],
-  ['underline_1560',['UNDERLINE',['../namespacecolor.html#abac5f50ee78aee1a7bdc1a680b7962ff',1,'color']]],
-  ['unsettabstop_1561',['UnsetTabStop',['../namespaceterm.html#a811b5f940751a85357cd1336163dce2c',1,'term']]],
-  ['usecolorsequencesinmessages_1562',['useColorSequencesInMessages',['../namespaceterm_1_1message__settings.html#a36b88892377bb86d8a70a644d72ec1f3',1,'term::message_settings::useColorSequencesInMessages()'],['../namespacesys_1_1term_1_1message__settings.html#a76bcdea14541786dd63f5ffd17cfa424',1,'sys::term::message_settings::useColorSequencesInMessages()']]]
+  ['warn_1410',['warn',['../namespaceterm.html#a205b4446d1631997e0bbecc767fe8877',1,'term']]],
+  ['warning_1411',['WARNING',['../structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e',1,'xlog::level']]],
+  ['wbold_1412',['wbold',['../namespacecolor.html#a0963661f89a9d5d8e803ed7358c30710',1,'color']]],
+  ['white_1413',['white',['../structcolor_1_1setcolor__seq.html#afc67272e0a36f313d5fbff479afb3853',1,'color::setcolor_seq::white()'],['../namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373',1,'color::white()']]],
+  ['winvert_1414',['winvert',['../namespacecolor.html#a69c09007e4078687e498c173f117aaad',1,'color']]],
+  ['wno_5fbold_1415',['wno_bold',['../namespacecolor.html#ab7d40a1a2763fda2d79cf4b68bf2be83',1,'color']]],
+  ['wno_5finvert_1416',['wno_invert',['../namespacecolor.html#a4c67a0b14f25374f5202c0e050df7552',1,'color']]],
+  ['wno_5funderline_1417',['wno_underline',['../namespacecolor.html#a0d7c71bd3cf1bb22cf93e473d505c69e',1,'color']]],
+  ['wreset_1418',['wreset',['../namespacecolor.html#a799db641c027b1e47aa7dff72e3fe23d',1,'color']]],
+  ['wreset_5fall_1419',['wreset_all',['../namespacecolor.html#af270f001cc2653a39bfedcda27b8e026',1,'color']]],
+  ['wreset_5fb_1420',['wreset_b',['../namespacecolor.html#a06fa4196067669328e2fa6b937fdae61',1,'color']]],
+  ['wreset_5ff_1421',['wreset_f',['../namespacecolor.html#a9223e9f45fd4054bf457f2503e628c32',1,'color']]],
+  ['wreset_5ffmt_1422',['wreset_fmt',['../namespacecolor.html#a277800920cff3c6ab6591fc8886ec6b4',1,'color']]],
+  ['write_1423',['WRITE',['../structprocess_1_1_mode.html#a80fcf280f42da37ae612bc69ca7872f8',1,'process::Mode']]],
+  ['wsetcolor_5fplaceholder_1424',['wsetcolor_placeholder',['../namespacecolor.html#a8427e0abdba26374e98d3fc1c2f650d2',1,'color']]],
+  ['wunderline_1425',['wunderline',['../namespacecolor.html#a6d923f4be8a9d013f36959864a98766a',1,'color']]]
 ];

@@ -96,19 +96,10 @@ $(document).ready(function(){initNavTree('namespacefile.html',''); initResizable
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefile_1_1ini"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile_1_1ini.html">ini</a></td></tr>
-<tr class="memdesc:namespacefile_1_1ini"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains methods and objects related to parsing &amp; interacting with .ini format files. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae282a33f5ff49fa51c9bfe1466dcb382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ae282a33f5ff49fa51c9bfe1466dcb382">count</a> (auto &amp;&amp;is, const char &amp;character) noexcept(false)</td></tr>
-<tr class="memdesc:ae282a33f5ff49fa51c9bfe1466dcb382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of characters that appear in a given file stream.  <a href="namespacefile.html#ae282a33f5ff49fa51c9bfe1466dcb382">More...</a><br /></td></tr>
-<tr class="separator:ae282a33f5ff49fa51c9bfe1466dcb382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4055e6bf6be8a04379d0c681f5f65ffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a4055e6bf6be8a04379d0c681f5f65ffb">getLineCount</a> (auto &amp;&amp;is) noexcept(false)</td></tr>
-<tr class="memdesc:a4055e6bf6be8a04379d0c681f5f65ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of newline characters in a given file.  <a href="namespacefile.html#a4055e6bf6be8a04379d0c681f5f65ffb">More...</a><br /></td></tr>
-<tr class="separator:a4055e6bf6be8a04379d0c681f5f65ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb4b66e6c33d9711a203e4f027b7a96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a3bb4b66e6c33d9711a203e4f027b7a96">isPathSeparator</a> (const char &amp;ch)</td></tr>
-<tr class="separator:a3bb4b66e6c33d9711a203e4f027b7a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58cb6a1779c73244fbff0725224ed4c9"><td class="memTemplParams" colspan="2">template&lt;class RT &gt; </td></tr>
 <tr class="memitem:a58cb6a1779c73244fbff0725224ed4c9"><td class="memTemplItemLeft" align="right" valign="top">static std::enable_if_t&lt; std::is_same_v&lt; RT, std::ifstream &gt;, std::ifstream &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a58cb6a1779c73244fbff0725224ed4c9">read</a> (const std::string &amp;path)</td></tr>
 <tr class="separator:a58cb6a1779c73244fbff0725224ed4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,12 +124,20 @@ Functions</h2></td></tr>
 <tr class="separator:ab1318022228e9fe9edb5138ac4c0aaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af491faff6e178b4381dceaecc0fe7ff6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#af491faff6e178b4381dceaecc0fe7ff6">write</a> (const std::string &amp;path, std::stringstream &amp;ss, const bool append=true)</td></tr>
 <tr class="separator:af491faff6e178b4381dceaecc0fe7ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba0ccb6b3025e276b15c729a57196af8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#aba0ccb6b3025e276b15c729a57196af8">write</a> (const std::string &amp;path, const std::stringbuf *rdbuf, const bool append=true)</td></tr>
-<tr class="separator:aba0ccb6b3025e276b15c729a57196af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c934e76bb6845a79513b5610d68a7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ad4c934e76bb6845a79513b5610d68a7e">write</a> (const std::string &amp;path, std::stringbuf *rdbuf, const bool append=true)</td></tr>
+<tr class="separator:ad4c934e76bb6845a79513b5610d68a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93909d0fba7c38b358413cff6f7a592a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a93909d0fba7c38b358413cff6f7a592a">count</a> (auto &amp;&amp;is, const char &amp;character) noexcept(false)</td></tr>
+<tr class="memdesc:a93909d0fba7c38b358413cff6f7a592a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of characters that appear in a given file stream.  <a href="namespacefile.html#a93909d0fba7c38b358413cff6f7a592a">More...</a><br /></td></tr>
+<tr class="separator:a93909d0fba7c38b358413cff6f7a592a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7897a61f3078bb19a06d9f428836eb7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a7897a61f3078bb19a06d9f428836eb7e">getLineCount</a> (auto &amp;&amp;is) noexcept(false)</td></tr>
+<tr class="memdesc:a7897a61f3078bb19a06d9f428836eb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of newline characters in a given file.  <a href="namespacefile.html#a7897a61f3078bb19a06d9f428836eb7e">More...</a><br /></td></tr>
+<tr class="separator:a7897a61f3078bb19a06d9f428836eb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d6ea150e75c71f2d58eeacdb9784eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#aa5d6ea150e75c71f2d58eeacdb9784eb">isPathSeparator</a> (const char &amp;ch)</td></tr>
+<tr class="separator:aa5d6ea150e75c71f2d58eeacdb9784eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae282a33f5ff49fa51c9bfe1466dcb382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae282a33f5ff49fa51c9bfe1466dcb382">&#9670;&nbsp;</a></span>count()</h2>
+<a id="a93909d0fba7c38b358413cff6f7a592a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93909d0fba7c38b358413cff6f7a592a">&#9670;&nbsp;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +146,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> std::streamoff file::count </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::streamoff file::count </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&amp;&#160;</td>
           <td class="paramname"><em>is</em>, </td>
@@ -184,8 +183,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4055e6bf6be8a04379d0c681f5f65ffb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4055e6bf6be8a04379d0c681f5f65ffb">&#9670;&nbsp;</a></span>getLineCount()</h2>
+<a id="a7897a61f3078bb19a06d9f428836eb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7897a61f3078bb19a06d9f428836eb7e">&#9670;&nbsp;</a></span>getLineCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +193,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> std::streamoff file::getLineCount </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::streamoff file::getLineCount </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&amp;&#160;</td>
           <td class="paramname"><em>is</em></td><td>)</td>
@@ -221,8 +220,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3bb4b66e6c33d9711a203e4f027b7a96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bb4b66e6c33d9711a203e4f027b7a96">&#9670;&nbsp;</a></span>isPathSeparator()</h2>
+<a id="aa5d6ea150e75c71f2d58eeacdb9784eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d6ea150e75c71f2d58eeacdb9784eb">&#9670;&nbsp;</a></span>isPathSeparator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +230,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_layer_8hpp.html#a7ff62ace4b261d15f42b604ae7d6614d">_CONSTEXPR</a> bool file::isPathSeparator </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> bool file::isPathSeparator </td>
           <td>(</td>
           <td class="paramtype">const char &amp;&#160;</td>
           <td class="paramname"><em>ch</em></td><td>)</td>
@@ -349,8 +348,8 @@ template&lt;class RT &gt; </div>
 
 </div>
 </div>
-<a id="aba0ccb6b3025e276b15c729a57196af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba0ccb6b3025e276b15c729a57196af8">&#9670;&nbsp;</a></span>write() <span class="overload">[1/6]</span></h2>
+<a id="ad4c934e76bb6845a79513b5610d68a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c934e76bb6845a79513b5610d68a7e">&#9670;&nbsp;</a></span>write() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +366,7 @@ template&lt;class RT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::stringbuf *&#160;</td>
+          <td class="paramtype">std::stringbuf *&#160;</td>
           <td class="paramname"><em>rdbuf</em>, </td>
         </tr>
         <tr>
@@ -393,7 +392,8 @@ template&lt;class RT &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_aba0ccb6b3025e276b15c729a57196af8_cgraph.svg" width="206" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_ad4c934e76bb6845a79513b5610d68a7e_cgraph.svg" width="206" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

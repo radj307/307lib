@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('structxlog_1_1level.html',''); initRes
 <p>Contains possible <a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">LogLevel</a> values that are used by the message whitelisting system.  
  <a href="structxlog_1_1level.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for xlog::level:</div>
 <div class="dyncontent">
@@ -113,8 +113,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab10a299dc9cebe183add8d98b53a36ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee">level</a> ()=delete</td></tr>
-<tr class="separator:ab10a299dc9cebe183add8d98b53a36ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab10a299dc9cebe183add8d98b53a36ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee">level</a> ()=delete</td></tr>
 <tr class="separator:ab10a299dc9cebe183add8d98b53a36ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -132,18 +130,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a670a5a95a8d893ee2c09e45b0d44f81e"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e">WARNING</a> { 4 }</td></tr>
 <tr class="memdesc:a670a5a95a8d893ee2c09e45b0d44f81e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show warning messages.  <a href="structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e">More...</a><br /></td></tr>
 <tr class="separator:a670a5a95a8d893ee2c09e45b0d44f81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad24240ad595ecd221160a32eae30c285"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285">LOG</a> { 8 }</td></tr>
-<tr class="memdesc:ad24240ad595ecd221160a32eae30c285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show log messages.  <a href="structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285">More...</a><br /></td></tr>
-<tr class="separator:ad24240ad595ecd221160a32eae30c285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4755db4cac57ab496803f96bfaffef6b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b">INFO</a> { 16 }</td></tr>
-<tr class="memdesc:a4755db4cac57ab496803f96bfaffef6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show informational messages.  <a href="structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b">More...</a><br /></td></tr>
-<tr class="separator:a4755db4cac57ab496803f96bfaffef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adec00c7560400db04204534a5a9ba6a5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5">DEBUG</a> { 32 }</td></tr>
-<tr class="memdesc:adec00c7560400db04204534a5a9ba6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show debugging messages.  <a href="structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5">More...</a><br /></td></tr>
-<tr class="separator:adec00c7560400db04204534a5a9ba6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7516167f83ebb4a7bae702559cdc771a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a">MESSAGE</a> { 64 }</td></tr>
+<tr class="memitem:a7516167f83ebb4a7bae702559cdc771a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a">MESSAGE</a> { 8 }</td></tr>
 <tr class="memdesc:a7516167f83ebb4a7bae702559cdc771a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show program messages.  <a href="structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a">More...</a><br /></td></tr>
 <tr class="separator:a7516167f83ebb4a7bae702559cdc771a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24240ad595ecd221160a32eae30c285"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285">LOG</a> { 16 }</td></tr>
+<tr class="memdesc:ad24240ad595ecd221160a32eae30c285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show log messages.  <a href="structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285">More...</a><br /></td></tr>
+<tr class="separator:ad24240ad595ecd221160a32eae30c285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4755db4cac57ab496803f96bfaffef6b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b">INFO</a> { 32 }</td></tr>
+<tr class="memdesc:a4755db4cac57ab496803f96bfaffef6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show informational messages.  <a href="structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b">More...</a><br /></td></tr>
+<tr class="separator:a4755db4cac57ab496803f96bfaffef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec00c7560400db04204534a5a9ba6a5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5">DEBUG</a> { 64 }</td></tr>
+<tr class="memdesc:adec00c7560400db04204534a5a9ba6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base: Show debugging messages.  <a href="structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5">More...</a><br /></td></tr>
+<tr class="separator:adec00c7560400db04204534a5a9ba6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e5f0a2d19186b82c49bd5dc66c3236f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxlog_1_1level_1_1_log_level.html">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f">OnlyErrors</a> { <a class="el" href="structxlog_1_1level.html#a9ff200bbeb8431595aaf1d79152435d8">CRITICAL</a> | <a class="el" href="structxlog_1_1level.html#a8cc2512ac145dcc2eb59cad183cef382">ERROR</a> }</td></tr>
 <tr class="memdesc:a6e5f0a2d19186b82c49bd5dc66c3236f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only show CRITICAL &amp; ERROR level messages.  <a href="structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f">More...</a><br /></td></tr>
 <tr class="separator:a6e5f0a2d19186b82c49bd5dc66c3236f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,7 +178,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains possible <a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">LogLevel</a> values that are used by the message whitelisting system. </p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Base Levels</h1>
 <p>The <a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">LogLevel</a> struct can contain any or all of these values. </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -202,58 +200,7 @@ Base Levels</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>NONE</code>   </td><td class="markdownTableBodyNone">This isn't technically a log level, just the absence of one. Shows nothing.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md18"></a>
-Level Presets</h1>
-<p>These are premade combinations of the above Base Levels. <br  />
- Levels marked with <em>X</em> are shown by the related constant. </p><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">DEBUG   </th><th class="markdownTableHeadNone">MESSAGE   </th><th class="markdownTableHeadNone">INFO   </th><th class="markdownTableHeadNone">LOG   </th><th class="markdownTableHeadNone">WARNING   </th><th class="markdownTableHeadNone">ERROR   </th><th class="markdownTableHeadNone">CRITICAL    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>OnlyErrors</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>OnlyErrorsAndWarnings</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>OnlyErrorsDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>OnlyErrorsAndWarningsDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Default</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>All</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>AllDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>NoErrors</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>NoErrorsOrWarnings</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>NoErrorsDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>NoErrorsOrWarningsDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-</table>
-<h1><a class="anchor" id="autotoc_md20"></a>
-Base Levels</h1>
-<p>The <a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">LogLevel</a> struct can contain any or all of these values. </p><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Description of Included Information    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>CRITICAL</code>   </td><td class="markdownTableBodyNone">Only shows critically-important information.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>ERROR</code>   </td><td class="markdownTableBodyNone">Shows program errors.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>WARNING</code>   </td><td class="markdownTableBodyNone">Shows program warnings.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>LOG</code>   </td><td class="markdownTableBodyNone">Shows program logs.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>INFO</code>   </td><td class="markdownTableBodyNone">Shows program information, and unimportant additional information.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>MESSAGE</code>   </td><td class="markdownTableBodyNone">Shows program messages.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>DEBUG</code>   </td><td class="markdownTableBodyNone">Shows debugging information that is usually only useful for the developer.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>NONE</code>   </td><td class="markdownTableBodyNone">This isn't technically a log level, just the absence of one. Shows nothing.   </td></tr>
-</table>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Level Presets</h1>
 <p>These are premade combinations of the above Base Levels. <br  />
  Levels marked with <em>X</em> are shown by the related constant. </p><table class="markdownTable">
@@ -283,35 +230,10 @@ Level Presets</h1>
 <td class="markdownTableBodyNone"><code>NoErrorsOrWarningsDebug</code>   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone">X   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00069">69</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00069">69</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab10a299dc9cebe183add8d98b53a36ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab10a299dc9cebe183add8d98b53a36ee">&#9670;&nbsp;</a></span>level() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">xlog::level::level </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab10a299dc9cebe183add8d98b53a36ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab10a299dc9cebe183add8d98b53a36ee">&#9670;&nbsp;</a></span>level() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10a299dc9cebe183add8d98b53a36ee">&#9670;&nbsp;</a></span>level()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +280,7 @@ Level Presets</h1>
 
 <p>Show all levels except for DEBUG. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00109">109</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00113">113</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +306,7 @@ Level Presets</h1>
 
 <p>Show all levels including DEBUG. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00111">111</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00115">115</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +332,7 @@ Level Presets</h1>
 
 <p>Base: Show critical error messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00086">86</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00090">90</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -424,7 +346,7 @@ Level Presets</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::DEBUG { 32 }</td>
+          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::DEBUG { 64 }</td>
         </tr>
       </table>
   </td>
@@ -436,7 +358,7 @@ Level Presets</h1>
 
 <p>Base: Show debugging messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00096">96</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00102">102</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -462,7 +384,7 @@ Level Presets</h1>
 
 <p>Shows CRITICAL, ERROR, WARNING, &amp; LOG level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00113">113</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00117">117</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +410,7 @@ Level Presets</h1>
 
 <p>Base: Show error messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00088">88</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00092">92</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -502,7 +424,7 @@ Level Presets</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::INFO { 16 }</td>
+          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::INFO { 32 }</td>
         </tr>
       </table>
   </td>
@@ -514,7 +436,7 @@ Level Presets</h1>
 
 <p>Base: Show informational messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00094">94</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00100">100</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +450,7 @@ Level Presets</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::LOG { 8 }</td>
+          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::LOG { 16 }</td>
         </tr>
       </table>
   </td>
@@ -540,7 +462,7 @@ Level Presets</h1>
 
 <p>Base: Show log messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00092">92</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00098">98</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +476,7 @@ Level Presets</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::MESSAGE { 64 }</td>
+          <td class="memname">constexpr const <a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::level::MESSAGE { 8 }</td>
         </tr>
       </table>
   </td>
@@ -566,7 +488,7 @@ Level Presets</h1>
 
 <p>Base: Show program messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00098">98</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00096">96</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +514,7 @@ Level Presets</h1>
 
 <p>Show everything except for DEBUG, CRITICAL, &amp; ERROR level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00115">115</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00119">119</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +540,7 @@ Level Presets</h1>
 
 <p>Show everything except for CRITICAL, &amp; ERROR level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00119">119</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00123">123</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -644,7 +566,7 @@ Level Presets</h1>
 
 <p>Show everything except for DEBUG, CRITICAL, ERROR, &amp; WARNING level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00117">117</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00121">121</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -670,7 +592,7 @@ Level Presets</h1>
 
 <p>Show everything except for CRITICAL, ERROR, &amp; WARNING level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00121">121</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00125">125</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -696,7 +618,7 @@ Level Presets</h1>
 
 <p>Base: Don't show any messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00084">84</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00088">88</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -722,7 +644,7 @@ Level Presets</h1>
 
 <p>Only show CRITICAL &amp; ERROR level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00101">101</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00105">105</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -748,7 +670,7 @@ Level Presets</h1>
 
 <p>Only show CRITICAL, ERROR, &amp; WARNING level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00103">103</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00107">107</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -774,7 +696,7 @@ Level Presets</h1>
 
 <p>Only show CRITICAL, ERROR, &amp; WARNING level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00107">107</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00111">111</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -800,7 +722,7 @@ Level Presets</h1>
 
 <p>Only show CRITICAL &amp; ERROR level messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00105">105</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00109">109</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
@@ -826,12 +748,12 @@ Level Presets</h1>
 
 <p>Base: Show warning messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="term_2include_2xlog_8hpp_source.html#l00090">90</a> of file <a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00094">94</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/term/include/<a class="el" href="term_2include_2xlog_8hpp_source.html">xlog.hpp</a></li>
+<li>X:/_Workspace/_repo/cpp-307lib/TermAPI/include/<a class="el" href="xlog_8hpp_source.html">xlog.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

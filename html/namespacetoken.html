@@ -107,23 +107,21 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_i_n_i.html">TokenizerINI</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI tokenizer.  <a href="structtoken_1_1_tokenizer_i_n_i.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_token_base.html">TokenBase</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_token.html">Token</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base unit used by the Tokenizer as an intermediary between raw characters, and the abstract elements of a file format, as well as containing the actual string in the parsed data that it represents.  <a href="structtoken_1_1_token.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenized_container.html">TokenizedContainer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container for storing sequences of tokens, as pairs where the first element is the string &amp; the second is the type of token.  <a href="structtoken_1_1_tokenized_container.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_base_functions.html">TokenizerBaseFunctions</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1_tokenizer_base.html">TokenizerBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for Tokenizer derivatives. Contains all of the virtual methods needed to interact with a token stream.  <a href="classtoken_1_1_tokenizer_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_tokenizer_i_n_i.html">TokenizerINI</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI tokenizer.  <a href="structtoken_1_1_tokenizer_i_n_i.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1_tokenizer_r_e.html">TokenizerRE</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1_token_parser_base.html">TokenParserBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container for storing sequences of tokens, as pairs where the first element is the string &amp; the second is the type of token.  <a href="structtoken_1_1_token_parser_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -141,33 +139,35 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea8cc6c2a8240840901a7317b95658c073">ADDITION</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea23ebcc4776b613af25dfbe7c8ce4813e">SUBTRACT</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaa058c5dc734e54ff3d93b96acac339f4">UNDERSCORE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaf65f22e75defc168edfc6444e6aaf4f8">COLON</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabaaceccc27b1d4e0968c999583f97de5">SEMICOLON</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f">POUND</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eabaaceccc27b1d4e0968c999583f97de5">SEMICOLON</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab7759d7f7e254ec48628af1511c85e4f">POUND</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea6865d19576ae60f95fd4e61333404352">PERCENT</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea53334ac5d6f3b0f182e817626c3a40f3">QUOTE_SINGLE</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea82e4480814328a7f679b86165942d02d">QUOTE_DOUBLE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6">BRACKET_OPEN</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea82e4480814328a7f679b86165942d02d">QUOTE_DOUBLE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea37c51803bdf9763d9b1ca1d364bdf9f6">BRACKET_OPEN</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea24f34bfbbd1bf4bcf427fd459df7b776">BRACKET_CLOSE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eacc3fdb5e3acc094388e75f45ada1a935">PARENTHESIS_OPEN</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea459697561df348fd7420e66ef9a339bf">PARENTHESIS_CLOSE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea9d06a63a514ba53ce1d070b7fadf0c56">SQUAREBRACKET_OPEN</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea459697561df348fd7420e66ef9a339bf">PARENTHESIS_CLOSE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea9d06a63a514ba53ce1d070b7fadf0c56">SQUAREBRACKET_OPEN</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eab4372360595bf077da217681d688e459">SQUAREBRACKET_CLOSE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eac254559f045cd56ef0446567e06192e4">ANGLEBRACKET_OPEN</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea5dd311b9fc4bab0e30977b17da32ad44">ANGLEBRACKET_CLOSE</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea1ee09ab960822ee667ea204df4839b22">LETTER_UPPERCASE</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea5dd311b9fc4bab0e30977b17da32ad44">ANGLEBRACKET_CLOSE</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea1ee09ab960822ee667ea204df4839b22">LETTER_UPPERCASE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea2ef79ee1deef2a3563748a2b70fa06d3">LETTER_LOWERCASE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea999bbbf1d86bc7611397c77222e076db">DIGIT</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eade58a28573783fe95304a260ccd90362">PERIOD</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea4d9b3e9fc12849d060371eb65154c751">COMMA</a>
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eade58a28573783fe95304a260ccd90362">PERIOD</a>
+, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea4d9b3e9fc12849d060371eb65154c751">COMMA</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea52f1e315372b38db1b8f4e3666c4f721">WHITESPACE</a>
 , <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea80c8c6b1bcf9ad27b73d5aaa56ed4ff3">NEWLINE</a>
-, <a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaeb7076becd9b9973e6b08024597db564">_EOF</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639eaeb7076becd9b9973e6b08024597db564">_EOF</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a6881fced0c9273e26f7ff9717bd6639e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the partially-abstracted type of a character. This acts as an intermediary between the raw character types and a Token Type, and LEXEMEs are not recognized by anything downstream from the <em>TokenizerBase</em> class &amp; derivatives, including the <em>Token</em> struct. <br  />
@@ -234,7 +234,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00095">95</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00096">96</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
 
 </div>
 </div>
@@ -273,6 +273,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a6881fced0c9273e26f7ff9717bd6639ea8cc6c2a8240840901a7317b95658c073"></a>ADDITION&#160;</td><td class="fielddoc"><p>'+' </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a6881fced0c9273e26f7ff9717bd6639ea23ebcc4776b613af25dfbe7c8ce4813e"></a>SUBTRACT&#160;</td><td class="fielddoc"><p>'-' </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6881fced0c9273e26f7ff9717bd6639eaa058c5dc734e54ff3d93b96acac339f4"></a>UNDERSCORE&#160;</td><td class="fielddoc"><p>'_' </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a6881fced0c9273e26f7ff9717bd6639eaf65f22e75defc168edfc6444e6aaf4f8"></a>COLON&#160;</td><td class="fielddoc"><p>':' </p>
 </td></tr>
@@ -387,7 +389,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00022">22</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00024">24</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +435,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LEXEME </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00080">80</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00081">81</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -480,7 +482,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00049">49</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_8hpp_source.html#l00051">51</a> of file <a class="el" href="_token_8hpp_source.html">Token.hpp</a>.</p>
 
 </div>
 </div>
@@ -508,7 +510,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00042">42</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00043">43</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
 
 </div>
 </div>
@@ -533,7 +535,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00040">40</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_x_e_m_e_8h_source.html#l00041">41</a> of file <a class="el" href="_l_e_x_e_m_e_8h_source.html">LEXEME.h</a>.</p>
 
 </div>
 </div>

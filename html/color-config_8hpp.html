@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/extensions/include/color-config.hpp File Reference</title>
+<title>307Lib: X:/_Workspace/_repo/cpp-307lib/TermAPI/include/color-config.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,26 +93,36 @@ $(document).ready(function(){initNavTree('color-config_8hpp.html',''); initResiz
 <div class="title">color-config.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Color config is a relatively simple alternative to <a class="el" href="palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">palette.hpp</a> that uses files to store &amp; read color values. <br  />
+ Configs have many of the same functionality as a palette, but keys are always the std::string type. <br  />
+ Configs have built-in conversion functions to create a palette from a config, and vice-versa.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>&gt;</code><br />
-<code>#include &lt;color-transform.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="palette_8hpp_source.html">palette.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fileio_8hpp_source.html">fileio.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fileutil_8hpp_source.html">fileutil.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_tokenizer_base_8hpp_source.html">token/TokenizerBase.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_tokenized_container_8hpp_source.html">token/TokenizedContainer.hpp</a>&gt;</code><br />
-<code>#include &lt;setcolor.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="_tokenizer_base_8hpp_source.html">TokenizerBase.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_token_parser_base_8hpp_source.html">TokenParserBase.hpp</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for color-config.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="color-config_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="color-config_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="color-config_8hpp__dep__incl.svg" width="178" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="color-config_8hpp__dep__incl.svg" width="174" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="color-config_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -123,12 +133,17 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1fileext_1_1_config_parser.html">color::fileext::ConfigParser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1_config_defaults.html">color::ConfigDefaults</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_config.html">color::Config</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecolor"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html">color</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacefileext"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefileext.html">fileext</a></td></tr>
+<tr class="memdesc:namespacefileext"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing file library extensions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecolor_1_1fileext"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor_1_1fileext.html">color::fileext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,12 +153,19 @@ Functions</h2></td></tr>
 <tr class="memitem:ad228e07bc8304fd5b7c8dc734215dc54"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, RGB&lt; short &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor_1_1fileext.html#ad228e07bc8304fd5b7c8dc734215dc54">color::fileext::read_config</a> (const std::string &amp;filename)</td></tr>
 <tr class="separator:ad228e07bc8304fd5b7c8dc734215dc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Color config is a relatively simple alternative to <a class="el" href="palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">palette.hpp</a> that uses files to store &amp; read color values. <br  />
+ Configs have many of the same functionality as a palette, but keys are always the std::string type. <br  />
+ Configs have built-in conversion functions to create a palette from a config, and vice-versa. </p>
+<dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="color-config_8hpp_source.html">color-config.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_e0a4563f417edcfffe129ed57e1b8393.html">extensions</a></li><li class="navelem"><a class="el" href="dir_ec96ef01b3088b3d5c3f8f2f95d771cf.html">include</a></li><li class="navelem"><a class="el" href="color-config_8hpp.html">color-config.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1.html">include</a></li><li class="navelem"><a class="el" href="color-config_8hpp.html">color-config.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
