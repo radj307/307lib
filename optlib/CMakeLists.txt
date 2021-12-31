@@ -10,20 +10,25 @@ if (MSVC)
 endif()
 
 set(optlib_VERSION_MAJOR 1)
-set(optlib_VERSION_MINOR 0)
+set(optlib_VERSION_MINOR 1)
 set(optlib_VERSION_PATCH 0)
 set(optlib_VERSION ${optlib_VERSION_MAJOR}.${optlib_VERSION_MINOR}.${optlib_VERSION_PATCH})
 
 project("optlib" VERSION ${optlib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
-	"include/Argument.hpp"
 	"include/Arg.hpp"
 	"include/ArgContainer.hpp"
 	"include/ArgParser.hpp"
 	"include/VariantArgumentType.hpp"
 	"include/ParamsAPI2.hpp"
 )
+
+include(CMakeDependentOption)
+cmake_dependent_option(OPTLIB_ENABLE_EXPERIMENTAL "Enable the work-in-progress experimental ParamsAPI3 implementation. This is not complete or even working!" OFF "ENABLE_OPTLIB" OFF)
+if (OPTLIB_ENABLE_EXPERIMENTAL)
+	list(APPEND HEADERS "include/Argument.hpp")
+endif()
 
 file(GLOB SRC "src/*.cpp")
 
