@@ -19,6 +19,29 @@
 #include "optlib.h"
 #include "strlib.h"
 
+#include <xRand.hpp>
+
+template<size_t CYCLE_COUNT>
+inline std::array<int, CYCLE_COUNT> get_rng_num_instance(const int& min = 0, const int& max = 10000)
+{
+	std::array<int, CYCLE_COUNT> arr;
+	memset(&arr, 0, CYCLE_COUNT);
+	rng::xRand<std::mt19937, rng::seed::FromRandomDevice> rng;
+	for (size_t i{ 0ull }; i < CYCLE_COUNT; ++i)
+		arr[i] = rng.get(min, max);
+	return arr;
+}
+template<size_t CYCLE_COUNT>
+inline std::array<int, CYCLE_COUNT> get_rng_num_fresh(const int& min = 0, const int& max = 10000)
+{
+	std::array<int, CYCLE_COUNT> arr;
+	memset(&arr, 0, CYCLE_COUNT);
+	for (size_t i{ 0ull }; i < CYCLE_COUNT; ++i)
+		arr[i] = rng::xRand<std::mt19937, rng::seed::FromRandomDevice>().get(min, max);
+	return arr;
+}
+
+
 int main(const int argc, char** argv)
 {
 	try {
@@ -26,14 +49,22 @@ int main(const int argc, char** argv)
 		std::cout << term::EnableANSI;
 		#endif
 
-		if (argc > 1) {
-			opt::Argument arg{ argv[1] };
+		using CLK = std::chrono::high_resolution_clock;
+		using DurationT = std::chrono::duration<double, std::micro>;
+		using TimePointT = std::chrono::time_point<CLK, DurationT>;
 
-			opt::ParamsAPI2 args{ argc, argv, 'c', "capture" };
-			for (auto& arg : args) {
-				std::cout << "  " << arg << '\n';
-			}
-		}
+		const TimePointT t00{ CLK::now() };
+		const auto r0{ get_rng_num_instance<2000ull>() };
+		const TimePointT t01{ CLK::now() };
+
+		const TimePointT t10{ CLK::now() };
+		const auto r1{ get_rng_num_fresh<2000ull>() };
+		const TimePointT t11{ CLK::now() };
+
+		const DurationT t0{ t01 - t00 }, t1{ t11 - t10 };
+		(std::cout << std::fixed).precision(4);
+		std::cout << "Instance:  " << color::setcolor::cyan << t0 << color::setcolor::reset << '\n';
+		std::cout << "Fresh:     " << color::setcolor::green << t1 << color::setcolor::reset << '\n';
 
 		using namespace process;
 
