@@ -147,7 +147,7 @@ namespace process {
 		 *							| BINARY | Opens the process pipe in binary mode. |
 		 *							| TEXT   | Opens the process pipe in text mode.   |
 		 */
-		Proc(int* out_return_code, const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ out_return_code }
+		Proc(int& out_return_code, const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ &out_return_code }
 		{
 			fflush(NULL); // flush all streams
 			_pipe = POPEN((command + SEQ_SHELL_OUTPUT_REDIRECT).c_str(), mode.str().c_str()); // open the pipe
@@ -175,7 +175,7 @@ namespace process {
 		}
 		/**
 		 * @brief					Execute a command in the shell through a process pipe, and set the given pointer to the return code.
-		 * @param return_code_ptr	Optional pointer to an integer to allow receiving the return code from inline functions.  
+		 * @param return_code_ptr	Optional pointer to an integer to allow receiving the return code from inline functions.
 		 *\n						If null, or if the process doesn't successfully return, this is left unmodified.
 		 * @param command			The shell command to execute.
 		 * @param mode				The mode to pass to popen. This string can contain 'r', 'w', 'b', and/or 't'.
@@ -187,7 +187,7 @@ namespace process {
 		 *							| 'b'    | Opens the process pipe in binary mode. |
 		 *							| 't'    | Opens the process pipe in text mode.   |
 		 */
-		Proc(int* out_return_code, const std::string& command, const std::string& mode) noexcept(false) : Proc(out_return_code, command, std::move(Mode(mode))) {}
+		Proc(int& out_return_code, const std::string& command, const std::string& mode) noexcept(false) : Proc(&out_return_code, command, std::move(Mode(mode))) {}
 		/**
 		 * @brief			Execute a command in the shell through a process pipe.
 		 * @param command	The shell command to execute.
