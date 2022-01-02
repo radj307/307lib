@@ -16,9 +16,6 @@ set(shared_VERSION ${shared_VERSION_MAJOR}.${shared_VERSION_MINOR}.${shared_VERS
 
 project("shared" VERSION ${shared_VERSION} LANGUAGES CXX)
 
-
-#include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_CURRENT_SOURCE_DIR}/src")
-
 file(GLOB SRCS 
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
