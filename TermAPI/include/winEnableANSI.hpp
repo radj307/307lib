@@ -5,6 +5,7 @@
  */
 #pragma once
 #include <sysarch.h>
+#include <make_exception.hpp>
 #include <memory>
 #include <optional>
 #include <functional>
@@ -13,7 +14,6 @@
 #include <Windows.h>
 
 namespace term {
-	#ifdef OS_WIN
 	/**
 	 * @struct	TargetHandle
 	 * @brief	Pseudo-flag object that allows targetting any or all of STDIN, STDOUT, & STDERR
@@ -155,6 +155,4 @@ namespace term {
 			false
 		);
 	}
-	#endif
 }
-#undef DWORD
