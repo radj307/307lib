@@ -117,10 +117,13 @@ namespace process {
 	/// @brief	Text mode. All process pipe operations run in text mode.
 	INLINE CONSTEXPR const Mode Mode::TEXT{ 8 };
 
+	/// @brief	When appended to a shell command, this will redirect STDERR to STDOUT.
+	INLINE CONSTEXPR const auto SEQ_SHELL_OUTPUT_REDIRECT{ " 2>&1" };
+
 	/**
 	 * @struct				Proc
-	 * @brief				Execute a process, capture STDOUT & STDERR, and retrieve the return code.  
-	 *\n					Note that to retrieve the return code, you must call close() once the process has completed.  
+	 * @brief				Execute a process, capture STDOUT & STDERR, and retrieve the return code.
+	 *\n					Note that to retrieve the return code, you must call close() once the process has completed.
 	 * @tparam BUFFER_SIZE	The size of the character array buffer used to read/write from the process pipe. Defaults to 2048.
 	 */
 	template<size_t BUFFER_SIZE = 2048>
@@ -128,37 +131,74 @@ namespace process {
 	private:
 		mutable FILE* _pipe{ nullptr };
 		CONSTEXPR static const int RETURN_ERROR_CODE{ -1 };
+		int* _rc_ptr;
 	public:
 		/**
-		 * @brief			Execute a command in the shell through a process pipe.
-		 * @param command	The shell command to execute.
-		 * @param mode		The Mode to pass to popen.  
-		 * 
-		 *					| Mode   | Description                            |  
-		 *					|:------:|:---------------------------------------|  
-		 *					| READ   | Enables reading from STDOUT & STDERR.  |  
-		 *					| WRITE  | Enables writing to STDIN.              |  
-		 *					| BINARY | Opens the process pipe in binary mode. |  
-		 *					| TEXT   | Opens the process pipe in text mode.   |  
+		 * @brief					Execute a command in the shell through a process pipe, and set the given pointer to the return code.
+		 * @param return_code_ptr	Optional pointer to an integer to allow receiving the return code from inline functions.
+		 *\n						If null, or if the process doesn't successfully return, this is left unmodified.
+		 * @param command			The shell command to execute.
+		 * @param mode				The Mode to pass to popen.
+		 *
+		 *							| Mode   | Description                            |
+		 *							|:------:|:---------------------------------------|
+		 *							| READ   | Enables reading from STDOUT & STDERR.  |
+		 *							| WRITE  | Enables writing to STDIN.              |
+		 *							| BINARY | Opens the process pipe in binary mode. |
+		 *							| TEXT   | Opens the process pipe in text mode.   |
 		 */
-		Proc(const std::string& command, const Mode& mode = (Mode::READ | Mode::TEXT)) noexcept(false)
+		Proc(int* out_return_code, const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ out_return_code }
 		{
 			fflush(NULL); // flush all streams
-			_pipe = POPEN((command + " 2>&1").c_str(), mode.str().c_str()); // open the pipe
+			_pipe = POPEN((command + SEQ_SHELL_OUTPUT_REDIRECT).c_str(), mode.str().c_str()); // open the pipe
 			if (!_pipe) // if the pipe isn't open, throw an exception
 				throw make_exception("Failed to open a pipe with command: \"", command, "\" and mode: \"", mode.str(), '\"');
 		}
 		/**
-		 * @brief			Execute a command in the shell through a process pipe. 
+		 * @brief			Execute a command in the shell through a process pipe.
 		 * @param command	The shell command to execute.
-		 * @param mode		The mode to pass to popen. This string can contain 'r', 'w', 'b', and/or 't'.  
-		 * 
-		 *					| Char   | Description                            |  
-		 *					|:------:|:---------------------------------------|  
-		 *					| 'r'    | Enables reading from STDOUT & STDERR.  |  
-		 *					| 'w'    | Enables writing to STDIN.              |  
-		 *					| 'b'    | Opens the process pipe in binary mode. |  
-		 *					| 't'    | Opens the process pipe in text mode.   |  
+		 * @param mode		The Mode to pass to popen.
+		 *
+		 *					| Mode   | Description                            |
+		 *					|:------:|:---------------------------------------|
+		 *					| READ   | Enables reading from STDOUT & STDERR.  |
+		 *					| WRITE  | Enables writing to STDIN.              |
+		 *					| BINARY | Opens the process pipe in binary mode. |
+		 *					| TEXT   | Opens the process pipe in text mode.   |
+		 */
+		Proc(const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ nullptr }
+		{
+			fflush(NULL); // flush all streams
+			_pipe = POPEN((command + SEQ_SHELL_OUTPUT_REDIRECT).c_str(), mode.str().c_str()); // open the pipe
+			if (!_pipe) // if the pipe isn't open, throw an exception
+				throw make_exception("Failed to open a pipe with command: \"", command, "\" and mode: \"", mode.str(), '\"');
+		}
+		/**
+		 * @brief					Execute a command in the shell through a process pipe, and set the given pointer to the return code.
+		 * @param return_code_ptr	Optional pointer to an integer to allow receiving the return code from inline functions.  
+		 *\n						If null, or if the process doesn't successfully return, this is left unmodified.
+		 * @param command			The shell command to execute.
+		 * @param mode				The mode to pass to popen. This string can contain 'r', 'w', 'b', and/or 't'.
+		 *
+		 *							| Char   | Description                            |
+		 *							|:------:|:---------------------------------------|
+		 *							| 'r'    | Enables reading from STDOUT & STDERR.  |
+		 *							| 'w'    | Enables writing to STDIN.              |
+		 *							| 'b'    | Opens the process pipe in binary mode. |
+		 *							| 't'    | Opens the process pipe in text mode.   |
+		 */
+		Proc(int* out_return_code, const std::string& command, const std::string& mode) noexcept(false) : Proc(out_return_code, command, std::move(Mode(mode))) {}
+		/**
+		 * @brief			Execute a command in the shell through a process pipe.
+		 * @param command	The shell command to execute.
+		 * @param mode		The mode to pass to popen. This string can contain 'r', 'w', 'b', and/or 't'.
+		 *
+		 *					| Char   | Description                            |
+		 *					|:------:|:---------------------------------------|
+		 *					| 'r'    | Enables reading from STDOUT & STDERR.  |
+		 *					| 'w'    | Enables writing to STDIN.              |
+		 *					| 'b'    | Opens the process pipe in binary mode. |
+		 *					| 't'    | Opens the process pipe in text mode.   |
 		 */
 		Proc(const std::string& command, const std::string& mode) noexcept(false) : Proc(command, std::move(Mode(mode))) {}
 
@@ -167,16 +207,19 @@ namespace process {
 		 */
 		~Proc(void) noexcept
 		{
-			if (_pipe) // if the pipe is open, close it
-				(void)close();
+			if (_pipe) {// if the pipe is open, close it:
+				if (_rc_ptr)
+					*_rc_ptr = this->close();
+				else (void)this->close();
+			}
 		}
 
 		/**
-		 * @brief	Check if the process pipe is valid & open.  
-		 *\n		Note that this does ___not___ check whether there is pending data in the pipe, only if the pipe is open.  
-		 * @returns	bool  
-		 *\n		`true`	The process pipe is not null.  
-		 *\n		`false`	The process pipe is null. This can result from an error opening the pipe, or if the pipe was already closed with the close() function.  
+		 * @brief	Check if the process pipe is valid & open.
+		 *\n		Note that this does ___not___ check whether there is pending data in the pipe, only if the pipe is open.
+		 * @returns	bool
+		 *\n		`true`	The process pipe is not null.
+		 *\n		`false`	The process pipe is null. This can result from an error opening the pipe, or if the pipe was already closed with the close() function.
 		 */
 		CONSTEXPR [[nodiscard]] bool is_open() const noexcept
 		{
@@ -234,9 +277,12 @@ namespace process {
 			auto buff{ make_array<char, BUFFER_SIZE>() };
 			while (p.read(buff)) { // while fread is receiving characters
 				for (auto& ch : buff) {
-					if (ch != NULL) // only insert valid characters
+					switch (ch) {
+					case NULL:break;
+					default:
 						os << ch;
-					else break;
+						break;
+					}
 				}
 				buff = {};
 			}
@@ -254,7 +300,7 @@ namespace process {
 
 	/**
 	 * @brief			Execute a command in the default shell using `popen`, and return the result. STDOUT & STDERR output is inserted into the given stringstream pointer.
-	 * @param buffer	A pointer to a std::stringstream instance to insert the captured contents of STDOUT/STDERR.  
+	 * @param buffer	A pointer to a std::stringstream instance to insert the captured contents of STDOUT/STDERR.
 	 *\n				Note that the buffer is only populated once the given command is finished executing. For live I/O, see the Proc struct.
 	 * @param command	The shell command to execute.
 	 * @param mode		The pipe operation mode.
