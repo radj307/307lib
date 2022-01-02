@@ -16,11 +16,16 @@
 #include <strutility.hpp>
 
  /**
-  * @namespace str
-  * @brief Contains various string manipulation, conversion, and parsing functions
+  * @namespace	str
+  * @brief		Contains various string manipulation, conversion, and parsing functions
   */
 namespace str {
-	inline std::string reverse(const std::string& str)
+	/**
+	 * @brief		Reverse the characters of a given string.
+	 * @param str	Input String
+	 * @returns		std::string
+	 */
+	inline std::string reverse(const std::string_view& str)
 	{
 		std::string tmp;
 		tmp.reserve(str.size());
@@ -55,24 +60,29 @@ namespace str {
 	 * @param off	- Position to begin searching at.
 	 * @returns std::string::iterator
 	 */
-	inline std::string::iterator find_any(std::string ln, const std::string& dels, const std::string::iterator& off)
+	inline std::string::iterator find_any(std::string ln, const std::string_view& dels, const std::string::iterator& off)
 	{
 		return std::find_if(off, ln.end(), [&dels](const char c) -> bool { return str::pos_valid(dels.find(c)); });
 	}
-	inline std::string::iterator find_any(std::string ln, const std::string& dels)
+	/**
+	 * @brief		Find any of a given set of delimiters in a string.
+	 * @param ln	String to search.
+	 * @param dels	Delimiters to search for.
+	 * @returns		std::string::iterator
+	 */
+	inline std::string::iterator find_any(std::string ln, const std::string_view& dels)
 	{
 		return find_any(std::move(ln), dels);
 	}
 
 	/**
-	 * @function strip_line(std::string, const Param&)
-	 * @brief Removes comments and preceeding/trailing whitespace from a given string.
-	 * @param str				- Input string.
-	 * @param comment_chars		- Characters that should be treated as line comments, everything that appears after one of these characters is removed.
-	 * @param whitespace_chars	- Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
-	 * @returns std::string
+	 * @brief					Removes comments and preceeding/trailing whitespace from a given string.
+	 * @param str				Input string.
+	 * @param comment_chars		Characters that should be treated as line comments, everything that appears after one of these characters is removed.
+	 * @param whitespace_chars	Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
+	 * @returns					std::string
 	 */
-	inline std::string strip_line(std::string str, const std::string& comment_chars = {}, const std::string& whitespace_chars = " \t\r\n\v")
+	inline std::string strip_line(std::string str, const std::string_view& comment_chars = {}, const std::string_view& whitespace_chars = " \t\r\n\v")
 	{
 		if (const int dPos{ static_cast<signed>(str.find_first_of(comment_chars)) }; !str.empty() && pos_valid(dPos)) // remove comments first
 			str.erase(str.begin() + dPos, str.end());
@@ -92,7 +102,7 @@ namespace str {
 	 * @param whitespace_chars	- Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
 	 * @returns std::string
 	 */
-	inline std::string strip_line_multiCharComment(std::string str, const std::vector<std::string>& comment_del = {}, const std::string& whitespace_chars = " \t\r\n\v")
+	inline std::string strip_line_multiCharComment(std::string str, const std::vector<std::string>& comment_del = {}, const std::string_view& whitespace_chars = " \t\r\n\v")
 	{
 		for (auto& del : comment_del)
 			if (const int dPos{ static_cast<signed>(str.find(del)) }; !str.empty() && pos_valid(dPos)) // remove comments first
@@ -130,7 +140,7 @@ namespace str {
 	 * @param setw	- Number of characters in the returned string.
 	 * @returns string
 	 */
-	inline std::string align_center(const std::string& str, const unsigned int setw)
+	inline std::string align_center(const std::string_view& str, const unsigned int setw)
 	{
 		if (str.size() < setw) {
 			const auto width{ (setw - str.size()) / 2 }, mod{ (str.size() - 1) % 2 };
@@ -139,7 +149,7 @@ namespace str {
 			ret += std::string(width - mod, ' ');
 			return ret;
 		}
-		return str;
+		return std::string{ str };
 	}
 
 #pragma endregion center_str
