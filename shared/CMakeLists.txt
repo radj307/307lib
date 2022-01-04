@@ -18,7 +18,7 @@ file(GLOB SRCS
 	"src/*.c*"
 )
 
-add_library(shared STATIC ${SRCS})
+add_library(shared STATIC "cpp.hint" ${SRCS})
 
 target_include_directories(shared PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
