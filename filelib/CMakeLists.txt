@@ -9,35 +9,20 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-set(HEADERS
-	# Base File Lib
-	"include/fileio.hpp"
-	"include/fileutil.hpp"
-	"include/env.hpp"
-	# Tokenizer Extensions
-	"include/LEXEME.h"
-	"include/Token.hpp"
-	"include/TokenizerBase.hpp"
-	"include/TokenParserBase.hpp"
-	# INI File Format
-	"include/INI_Tokenizer.hpp"
-	"include/INI_Container.hpp"
-	"include/INI_Parser.hpp"
-	"include/INI.hpp"
-
-	# New Tokenizer
-	"include/TokenRedux.hpp"
-)
-
-file(GLOB SRC "src/*.cpp")
 project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
-add_library(filelib STATIC ${HEADERS} ${SRC})
+file(GLOB SRCS 
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
+	"src/*.c*"
+)
 
+add_library(filelib STATIC ${SRCS})
 
 target_include_directories(filelib PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-	"$<INSTALL_INTERFACE:include>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:include;src>"
 )
 
 target_link_libraries(filelib PUBLIC shared strlib)
