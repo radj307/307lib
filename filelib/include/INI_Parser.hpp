@@ -106,7 +106,7 @@ namespace token::parse {
 						throwEx(ln, "Missing Setter");
 					if (value.has_value()) {
 						if (std::holds_alternative<String>(value.value()))
-							value = (std::get<String>(value.value()) + ' ' + str); // allow fallthrough keys to be appended
+							value = (std::get<String>(value.value()) + str); // allow fallthrough keys to be appended
 						else throwEx(ln, "Duplicate Value");
 					}
 					else
