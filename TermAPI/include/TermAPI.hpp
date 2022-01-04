@@ -5,8 +5,12 @@
 #include <LineCharacter.hpp>
 
 #ifdef OS_WIN
-#include <winEnableANSI.hpp>
-#endif
+#ifndef TERMAPI_USE_LEGACY_ENABLE_ANSI
+#include <WinTermAPI.hpp>		// Fast n' dirty method
+#else
+#include <winEnableANSI.hpp>	// Legacy method
+#endif //#ifndef TERMAPI_USE_LEGACY_ENABLE_ANSI
+#endif //#ifdef OS_WIN
 
 // Include color library resources
 #include <color-values.h>

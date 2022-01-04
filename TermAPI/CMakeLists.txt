@@ -33,6 +33,7 @@ set(HEADERS
 	"include/term.hpp"
 	# TermAPI
 	"include/TermAPI.hpp"
+	"include/WinTermAPI.hpp"
 )
 
 file(GLOB SRC "src/*.cpp")
