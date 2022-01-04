@@ -11,7 +11,7 @@
  *          | Format  | A data format, usually a file format, such as JSON, YAML, INI, etc.                                 |  
  *			| Package | Contains the actual implementations of some portion of the TokenRedux pipeline.                     |  
  *			| Lexeme  | A single character's type, such as a lowercase letter, digit, or semicolon.                         |  
- *			| Token   | Composed of 0 or more characters with a similar lexical type, such as a string, boolean, or number. |  
+ *			| TokenBase   | Composed of 0 or more characters with a similar lexical type, such as a string, boolean, or number. |  
  *
  * 
  *			## TokenRedux Components  
@@ -19,13 +19,13 @@
  *			| Component / Layer  | Functionality                                                                          |  
  *			|--------------------|----------------------------------------------------------------------------------------|  
  *			| Virtualized Base   | Provides the basic tokenization framework, as well as helper methods.                  |  
- *			| Definition Package | Provides generic Lexeme definitions and Token types that apply to one or more formats. |  
+ *			| Definition Package | Provides generic Lexeme definitions and TokenBase types that apply to one or more formats. |  
  *			| Format Package     | Provides the Tokenization and parsing implementations specific to one format.          |  
  *	
  *
  *			## Definition Packages  
  * 
- *			A definitions package is usually composed of a LexemeDict override, and 2 enums:  
+ *			A definitions package is usually composed of a LexemeDictBase override, and 2 enums:  
  *			- __Lexeme Type__  
  *			  Defines possible types associated with a single character, such as a digit, quotation mark, or letter.  
  *			- __Token Type__  
@@ -52,21 +52,21 @@
 #include <string>
 #include <concepts>
 
-namespace file {
+namespace file::base {
 	/**
-	 * @struct			LexemeDict
+	 * @struct			LexemeDictBase
 	 * @brief			Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type".
 	 *\n				A Lexeme can be thought of as a character's type, and as such multiple characters can be associated with a single Lexeme, but a single Lexeme always represents a single character length.
 	 * @tparam LexemeT	Lexeme type. This is defined by a "definitions package".
 	 */
 	template<typename LexemeT>
-	struct LexemeDict {
+	struct LexemeDictBase {
 		/**
 		 * @brief		Override this function to select a lexeme type given a single character.
 		 * @param ch	Input Character
 		 * @returns		LexemeT
 		 */
-		[[nodiscard]] virtual LexemeT char_to_lexeme(const char& ch) const noexcept = 0;
+		[[nodiscard]] virtual LexemeT char_to_lexeme(const char&) const noexcept = 0;
 
 		/**
 		 * @brief		Convert a char to a LexemeT
@@ -77,12 +77,12 @@ namespace file {
 	};
 
 	/**
-	 * @struct			Token
+	 * @struct			TokenBase
 	 * @brief			Base token object. It represents zero or more characters of data, and is the most basic unit recognized by the parsing step.
-	 * @tparam TknType	The Token Type instance to use. This is defined by a "definitions package".
+	 * @tparam TknType	The TokenBase Type instance to use. This is defined by a "definitions package".
 	 */
 	template<typename TknType>
-	struct Token {
+	struct TokenBase {
 		using Type = TknType;
 
 		/// @brief	This token's type identifier
@@ -93,56 +93,67 @@ namespace file {
 		[[nodiscard]] WINCONSTEXPR operator Type() const { return type; }
 		[[nodiscard]] operator std::string() const { return str; }
 
-		[[nodiscard]] WINCONSTEXPR bool operator==(const Token<Type>& o) const { return type == o.type && str == o.str; }
+		[[nodiscard]] WINCONSTEXPR bool operator==(const TokenBase<Type>& o) const { return type == o.type && str == o.str; }
 		[[nodiscard]] WINCONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
-		friend std::ostream& operator<<(std::ostream& os, const Token<Type>& token) { return os << token.str; }
+		friend std::ostream& operator<<(std::ostream& os, const TokenBase<Type>& token) { return os << token.str; }
 
-	protected:
 		/**
-		 * @brief		Token Constructor.
+		 * @brief		TokenBase Constructor.
 		 * @param type	This token's type.
 		 * @param str	This token's string.
 		 */
-		WINCONSTEXPR Token(const Type& type, const std::string& str = {}) : type{ type }, str{ str } {}
+		WINCONSTEXPR TokenBase(const Type& type, const std::string& str = {}) : type{ type }, str{ str } {}
 		/**
-		 * @brief		Token Constructor.
+		 * @brief		TokenBase Constructor.
+		 * @param type	This token's type.
+		 * @param ch	This token's character.
+		 */
+		WINCONSTEXPR TokenBase(const Type& type, const char& ch) : type{ type }, str{ 1ull, ch } {}
+		/**
+		 * @brief		TokenBase Constructor.
 		 * @param str	This token's string.
 		 * @param type	This token's type.
 		 */
-		WINCONSTEXPR Token(const std::string& str, const Type& type) : type{ type }, str{ str } {}
+		WINCONSTEXPR TokenBase(const std::string& str, const Type& type) : type{ type }, str{ str } {}
+		/**
+		 * @brief		TokenBase Constructor.
+		 * @param ch	This token's character.
+		 * @param type	This token's type.
+		 */
+		WINCONSTEXPR TokenBase(const char& ch, const Type& type) : type{ type }, str{ 1ull, ch } {}
 
 		/// @brief	Virtual Destructor
-		virtual ~Token() noexcept = default;
+		virtual ~TokenBase() noexcept = default;
 	};
 
 	/**
-	 * @class			Tokenizer
-	 * @brief			Base Tokenizer object that accepts a stringstream and lexeme dictionary, then tokenizes the data.
-	 *\n				Can be used inline by calling `tokenize()`.
-	 * @tparam LexemeT	The Lexeme Type to use. This is defined by a "definitions package".
-	 * @tparam TknType	The Token::Type to use. This is defined by a "definitions package".
-	 * @tparam TokenT
+	 * @class				TokenizerBase
+	 * @brief				Base TokenizerBase object that accepts a stringstream and lexeme dictionary, then tokenizes the data.
+	 *\n					Can be used inline by calling `tokenize()`.
+	 * @tparam LexemeT		The Lexeme Type to use. This is defined by a "definitions package".
+	 * @tparam Dictionary	The Lexeme Dictionary Type to use. This is defined by a "definitions package".
+	 * @tparam TknType		The TokenBase::Type to use. This is defined by a "definitions package".
+	 * @tparam TokenT		The TokenBase type to use. This is defined by a "definitions package".
 	 */
-	template<typename LexemeT, typename TknType, std::derived_from<Token<TknType>> TokenT>
-	class Tokenizer {
+	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TknType, std::derived_from<TokenBase<TknType>> TokenT>
+	class TokenizerBase {
 	protected:
 		std::stringstream ss;
 		std::streamoff lastPos{ 0ll };
 		/// @brief	Lexeme dictionary used to retrieve the lexeme associated with a given character.
-		LexemeDict<LexemeT> get_lexeme;
+		Dictionary get_lexeme;
 		LexemeT lexeme_whitespace;
 
 		/**
 		 * @brief				Default Constructor.
 		 * @param ss			Stringstream rvalue reference containing the target data.
 		 * @param whitespace	The lexeme associated with whitespace characters. This is used by the getch() method to skip whitespace.
-		 * @param end			The token type associated with the end of file (EOF).
 		 */
-		Tokenizer(std::stringstream&& ss, LexemeDict<LexemeT> lexemeDictionary, LexemeT whitespace) : ss{ std::move(ss) }, lastPos{ 0ull }, get_lexeme{ lexemeDictionary }, lexeme_whitespace{ whitespace } {}
+		TokenizerBase(std::stringstream&& ss, LexemeT whitespace) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace } {}
 		
 		/// @brief	Virtual Destructor
-		virtual ~Tokenizer() noexcept = default;
+		virtual ~TokenizerBase() noexcept = default;
 
 		/**
 		 * @brief String operator, returns the result local stream's str() function.
@@ -151,14 +162,14 @@ namespace file {
 		[[nodiscard]] virtual explicit operator const std::string() const { return ss.str(); }
 
 		/// @brief Stream extraction operator. Inserts the istream's read buffer into the local stream.
-		template<class T> requires std::derived_from<T, Tokenizer>
+		template<class T> requires std::derived_from<T, TokenizerBase>
 		friend std::istream& operator>>(std::istream& is, T& tokenizer)
 		{
 			is >> tokenizer.ss.rdbuf();
 			return is;
 		}
 		/// @brief Stream insertion operator. Inserts the local stream's read buffer in the given ostream.
-		template<class T> requires std::derived_from<T, Tokenizer>
+		template<class T> requires std::derived_from<T, TokenizerBase>
 		friend std::ostream& operator<<(std::ostream& os, const T& tokenizer)
 		{
 			os << tokenizer.ss.rdbuf();
@@ -196,7 +207,7 @@ namespace file {
 			if (allow_whitespace) // allow whitespace, return next character
 				return static_cast<char>(ss.get());
 			char c; // don't allow whitespace, read ahead until next non-whitespace character and return that
-			for (c = ss.get(); (c) == lexeme_whitespace; c = ss.get()) { setLastPosHere(); }
+			for (c = ss.get(); get_lexeme(c) == lexeme_whitespace; c = ss.get()) { setLastPosHere(); }
 			return c;
 		}
 
@@ -367,12 +378,12 @@ namespace file {
 	public:
 		/**
 		 * @brief			Tokenize the whole local stream and return it as a vector.
-		 * @param eof_tkn	An optional token to append to the end of the vector, if it doesn't already exist.
+		 * @param eof_tkn	An optional token to append to the end of the vector, if it doesn't already exist. If this is left blank, no EOF token is appended.
 		 * @returns			std::vector<TokenT>
 		 */
-		[[nodiscard]] std::vector<TokenT> tokenize(const std::optional<TokenT>& eof_tkn = std::nullopt)
+		[[nodiscard]] std::vector<TokenT> tokenize(const std::optional<TokenT>& eof_tkn = std::nullopt, const size_t& reserve_sz = 256ull)
 		{
-			auto vec{ tokenize_internal() };
+			auto vec{ tokenize_internal(reserve_sz) };
 			if (eof_tkn.has_value() && (vec.empty() || !vec.empty() && vec.back() != eof_tkn))
 				vec.emplace_back(eof_tkn.value());
 			return vec;
@@ -380,29 +391,29 @@ namespace file {
 	};
 
 	/**
-	 * @class				TokenParser
+	 * @class				TokenParserBase
 	 * @brief				Base parser object that accepts a vector of tokens, and returns an implementation-defined type.
 	 * @tparam OutputType	User-defined Output Type.
-	 * @tparam TokenT		Token Object Type.
+	 * @tparam TokenT		TokenBase Object Type.
 	 */
 	template<class OutputType, typename TokenT>
-	class TokenParser {
+	class TokenParserBase {
 	protected:
 		std::vector<TokenT> tokens;
 
 		/**
 		 * @brief			Constructor.
-		 * @param tokens	Token Vector Rvalue Reference
+		 * @param tokens	TokenBase Vector Rvalue Reference
 		 */
-		TokenParser(std::vector<TokenT>&& tokens) : tokens{ std::move(tokens) } {}
+		TokenParserBase(std::vector<TokenT>&& tokens) : tokens{ std::move(tokens) } {}
 		/**
 		 * @brief			Constructor.
-		 * @param tokens	Token Vector
+		 * @param tokens	TokenBase Vector
 		 */
-		TokenParser(const std::vector<TokenT>& tokens) : tokens{ tokens } {}
+		TokenParserBase(const std::vector<TokenT>& tokens) : tokens{ tokens } {}
 
 		/// @brief	Virtual Destructor
-		virtual ~TokenParser() noexcept = default;
+		virtual ~TokenParserBase() noexcept = default;
 
 	public:
 		/**
