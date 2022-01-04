@@ -9,13 +9,6 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-set(filelib_VERSION_MAJOR 4)
-set(filelib_VERSION_MINOR 0)
-set(filelib_VERSION_PATCH 0)
-set(filelib_VERSION ${filelib_VERSION_MAJOR}.${filelib_VERSION_MINOR}.${filelib_VERSION_PATCH})
-
-project("filelib" VERSION ${filelib_VERSION} LANGUAGES CXX)
-
 set(HEADERS
 	# Base File Lib
 	"include/fileio.hpp"
@@ -37,6 +30,7 @@ set(HEADERS
 )
 
 file(GLOB SRC "src/*.cpp")
+project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 add_library(filelib STATIC ${HEADERS} ${SRC})
 
