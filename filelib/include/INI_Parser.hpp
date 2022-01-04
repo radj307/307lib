@@ -29,7 +29,7 @@ namespace token::parse {
 	private:
 		const std::string& filename;
 
-		void throwEx(const size_t line, const std::string& msg)
+		void throwEx(const size_t& line, const std::string& msg)
 		{
 			throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: ", filename);
 		}
