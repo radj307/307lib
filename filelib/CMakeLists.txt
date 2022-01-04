@@ -31,6 +31,9 @@ set(HEADERS
 	"include/INI_Container.hpp"
 	"include/INI_Parser.hpp"
 	"include/INI.hpp"
+
+	# New Tokenizer
+	"include/TokenRedux.hpp"
 )
 
 file(GLOB SRC "src/*.cpp")
