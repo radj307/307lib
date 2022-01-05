@@ -123,7 +123,12 @@ namespace file {
 		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
 		return file::write(ofs, std::forward<T>(data));
 	}
-	inline bool write(const std::string& path, std::stringstream& ss, const bool append = true)
+	inline bool write(const std::string& path, std::stringstream&& ss, const bool append = true)
+	{
+		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, ss.rdbuf());
+	}
+	inline bool write(const std::string& path, const std::stringstream& ss, const bool append = true)
 	{
 		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
 		return file::write(ofs, ss.rdbuf());
@@ -134,10 +139,26 @@ namespace file {
 		return write(ofs, rdbuf);
 	}
 #if LANG_CPP >= 17
-	template<typename T>
+	template<var::Streamable T>
 	inline bool write(const std::filesystem::path& path, T&& data, const bool append = true)
 	{
-		return write(path.generic_string(), std::forward<T>(data), append);
+		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, std::forward<T>(data));
+	}
+	inline bool write(const std::filesystem::path& path, std::stringstream&& ss, const bool append = true)
+	{
+		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, ss.rdbuf());
+	}
+	inline bool write(const std::filesystem::path& path, const std::stringstream& ss, const bool append = true)
+	{
+		std::ofstream ofs{ path,append ? std::ios_base::app : std::ios_base::out };
+		return file::write(ofs, ss.rdbuf());
+	}
+	inline bool write(const std::filesystem::path& path, std::stringbuf* rdbuf, const bool append = true)
+	{
+		std::ofstream ofs{ path, append ? std::ios_base::app : std::ios_base::out };
+		return write(ofs, rdbuf);
 	}
 #endif
 #pragma endregion WRITE
