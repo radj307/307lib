@@ -16,13 +16,18 @@ file(GLOB HEADERS
 	CONFIGURE_DEPENDS
 	"include/*.h*"
 )
+include(PrependEach)
+PREPEND_EACH(HEADERS_ABSOLUTE ${HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/")
 set(SRCS
 	"src/fileio.cpp"
 )
 
 add_library(filelib STATIC ${SRCS})
 
-target_sources(filelib PUBLIC ${HEADERS})
+target_sources(filelib PUBLIC 
+	"$<BUILD_INTERFACE:${HEADERS_ABSOLUTE}>"
+	"$<INSTALL_INTERFACE:${HEADERS}>"
+)
 target_include_directories(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:include;src>"
