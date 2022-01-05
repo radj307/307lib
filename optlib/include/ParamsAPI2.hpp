@@ -128,7 +128,7 @@ namespace opt {
 			vec.shrink_to_fit();
 			return vec;
 		}
-		template<CanHaveValueArgument... Types, ValidInputType... Names> requires var::none_same<Parameter, Types...>
+		template<CanHaveValueArgument... Types, ValidInputType... Names> requires var::not_same<Parameter, Types...>
 		constexpr const std::vector<std::string> typegetv_all(const Names&... names) const
 		{
 			constexpr const bool match_any_type{ var::none<Types...> }, match_any_name{ var::none<Names...> };
