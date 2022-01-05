@@ -10,5 +10,9 @@ var var_8hpp =
     [ "tuple_or", "var_8hpp.html#a232d8fe90138010e09ccce0d56e3bb3c", null ],
     [ "tuple_or", "var_8hpp.html#a060dae79f908e9ec94f42175a42c45b1", null ],
     [ "variadic_and", "var_8hpp.html#acd4adc200dff50fed630c357d3b5fd16", null ],
-    [ "variadic_or", "var_8hpp.html#aab48ef63e82c6fbb650f1b7af64c951a", null ]
+    [ "variadic_or", "var_8hpp.html#aab48ef63e82c6fbb650f1b7af64c951a", null ],
+    [ "is_less_than", "var_8hpp.html#a2aaf4dd4f69e9c785738f9787bcf24d9", null ],
+    [ "is_more_than", "var_8hpp.html#af973ed02d6c01387e3c752a735801170", null ],
+    [ "is_more_than_one", "var_8hpp.html#a20024427ebc79b98a7d147129f00810a", null ],
+    [ "is_same_size", "var_8hpp.html#af0f7a091df3704b1a3a3b0271b004f70", null ]
 ];

@@ -90,10 +90,10 @@ $(document).ready(function(){initNavTree('page1.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>A C++20 Library designed for using <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences inline with std iostreams, or independently.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 EDIT | How to use TermAPI Version 3</h1>
 <p>Add the following line to your <code>CMakeLists.txt</code> file before <code>add_subdirectory("307lib")</code>: </p><div class="fragment"><div class="line">set(TERMAPI_VERSION 3)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Usage</h1>
 <p>Include the &lt;<a class="el" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt; header in the file you want to use it. <br  />
  All functions are contained within the sys::term namespace(s).</p>
@@ -104,11 +104,12 @@ Usage</h1>
  </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_term_a_p_i_8hpp.html">TermAPI.hpp</a>&gt;</span></div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">    std::cout &lt;&lt; sys::term::EnableANSI;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">sys::term::EnableANSI</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="a_term_a_p_i_8hpp_html"><div class="ttname"><a href="_term_a_p_i_8hpp.html">TermAPI.hpp</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+<div class="ttc" id="anamespaceterm_html_a172fb2c7a41abb5332380d247f0eab01"><div class="ttname"><a href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">term::EnableANSI</a></div><div class="ttdeci">std::istream &amp; EnableANSI(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> <a href="win_enable_a_n_s_i_8hpp_source.html#l00118">winEnableANSI.hpp:118</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Version 2.0.0 Sequences</h2>
 <p>As of TermAPI 2.0.0, the old functions have been completely replaced with a new Sequence object. <br  />
  By default, these functions are used instead of the version 1.0.0 functions. <br  />
@@ -126,18 +127,18 @@ Version 2.0.0 Sequences</h2>
 </div><!-- fragment --> Not all functions can be used inline, specifically functions that require multiple parameters for input or functions from TermAPIQuery.hpp that require reading responses from STDIN, such as getCursorPosition. <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Using Version 1.0.0 Functions</h2>
 <p>To use the functions from v1: </p><div class="fragment"><div class="line"><span class="preprocessor">#define TERMAPI_ENABLE_OLD_FUNCTIONS</span></div>
 <div class="line"><span class="preprocessor">#include &lt;TermAPI.hpp&gt;</span></div>
 </div><!-- fragment --><p>These functions cannot be used inline for the most part, except for a few specific functions.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 A Note on Cursor Positioning</h2>
 <p>By default, the screen buffer origin point is (1,1); <em>not (0,0) as one might expect.</em> TermAPI provides a function that allows you to change the origin point from (1,1) to (0,0) by automatically translating coordinates in all functions that accept or return cursor coordinates. </p><div class="fragment"><div class="line"><span class="comment">// Set the cursor origin point to (0,0):</span></div>
 <div class="line">sys::term::SetOriginPos(0);</div>
 <div class="line"><span class="comment">// Set the cursor origin point to (1,1):</span></div>
 <div class="line">sys::term::SetOriginPos(1);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Color Library</h1>
 <p>TermAPI uses the xterm-256color palette by default. <br  />
 </p>
@@ -160,7 +161,7 @@ Color Library</h1>
 <div class="ttc" id="astructcolor_1_1setcolor__seq_html"><div class="ttname"><a href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a></div><div class="ttdoc">Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....</div><div class="ttdef"><b>Definition:</b> <a href="setcolor_8hpp_source.html#l00026">setcolor.hpp:26</a></div></div>
 </div><!-- fragment --><p> This is especially useful as a member of another object, when you want it to be printed with the same color all the time. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 ColorPalette</h2>
 <p>When using the color library, you may come across a situation where you want to be able to quickly set the same color for similar characters, and be able to disable all color sequences from being printed out in certain operation modes. <br  />
  To accomplish this, you can use the ColorPalette object from the ColorPalette.hpp header to quickly &amp; easily set consistent colors, as well as disable/enable all sequences without changing your code. All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.</p>
@@ -198,7 +199,7 @@ ColorPalette</h2>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
 <div class="line"><span class="preprocessor">#ifdef OS_WIN</span></div>
-<div class="line">    std::cout &lt;&lt; sys::term::EnableANSI;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">sys::term::EnableANSI</a>;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">    <span class="comment">// Print a message with color:</span></div>
 <div class="line">    print_message();</div>
@@ -210,7 +211,7 @@ ColorPalette</h2>
 <div class="ttc" id="anamespacecolor_html_a54c37f8f01788456dd7a8d3596b19773"><div class="ttname"><a href="namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773">color::intense_red</a></div><div class="ttdeci">static constexpr const short intense_red</div><div class="ttdoc">High Intensity Red color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00020">color-values.h:20</a></div></div>
 <div class="ttc" id="anamespacecolor_html_a84e5ca1ca60a23294347ec0c3a34c373"><div class="ttname"><a href="namespacecolor.html#a84e5ca1ca60a23294347ec0c3a34c373">color::white</a></div><div class="ttdeci">static constexpr const short white</div><div class="ttdoc">White color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00016">color-values.h:16</a></div></div>
 <div class="ttc" id="anamespacecolor_html_a9095944dc7740f26c9ca43cdb125397d"><div class="ttname"><a href="namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d">color::orange</a></div><div class="ttdeci">static constexpr const short orange</div><div class="ttdoc">Orange color.</div><div class="ttdef"><b>Definition:</b> <a href="color-values_8h_source.html#l00027">color-values.h:27</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
 DEC Line Drawings</h2>
 <div class="fragment"><div class="line"><span class="comment">// Enable Line Drawing Mode:</span></div>
 <div class="line">sys::term::setCharacterSet(sys::term::CharacterSet::DEC_LINE_DRAWING)();</div>

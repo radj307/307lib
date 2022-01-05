@@ -17,5 +17,12 @@ var dir_7e62b374f2d21189b905638bab9f8001 =
     ] ],
     [ "TokenParserBase.hpp", "_token_parser_base_8hpp.html", [
       [ "TokenParserBase", "structtoken_1_1_token_parser_base.html", "structtoken_1_1_token_parser_base" ]
-    ] ]
+    ] ],
+    [ "TokenRedux.hpp", "_token_redux_8hpp.html", [
+      [ "LexemeDictBase", "structfile_1_1base_1_1_lexeme_dict_base.html", "structfile_1_1base_1_1_lexeme_dict_base" ],
+      [ "TokenBase", "structfile_1_1base_1_1_token_base.html", "structfile_1_1base_1_1_token_base" ],
+      [ "TokenizerBase", "classfile_1_1base_1_1_tokenizer_base.html", "classfile_1_1base_1_1_tokenizer_base" ],
+      [ "TokenParserBase", "classfile_1_1base_1_1_token_parser_base.html", "classfile_1_1base_1_1_token_parser_base" ]
+    ] ],
+    [ "TokenReduxDefaultDefs.hpp", "_token_redux_default_defs_8hpp.html", "_token_redux_default_defs_8hpp" ]
 ];

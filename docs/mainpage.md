@@ -12,8 +12,8 @@ Most of the options are dependent options, but I can't guarantee that everything
 | ------- | ------- | --------------- | -------------------------------------------------------------------------- | --------------- |
 | shared  | \<all\> |                 | Functions used by all other libraries.                                     | C++17 / C++20   |
 | str-lib | \<all\> | shared          | String-related functions.                                                  | C++17 / C++20   |
-| TermAPI | 3       | shared, str-lib | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
-| TermAPI | 4       | shared		  | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
+| TermAPI | 3.X.X   | shared, str-lib | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
+| TermAPI | 4.X.X   | shared		  | ANSI Escape Sequences, & various utilities for controlling the terminal.   | C++20           |
 | file-lib| \<all\> | shared, str-lib | File I/O & Utility functions.                                              | C++14 / C++17   |
 | opt-lib | \<all\> | shared, str-lib | Commandline-argument objects & functions, as well as environment variables | C++20           |
 
@@ -43,3 +43,9 @@ These are some of the shared lib's headers:
 	Experimental wrapper for the \<Windows.h\> header that includes it within a namespace to avoid polluting global.  
 	Unfortunately, since most/all other libraries just include \<Windows.h\> in the global namespace this often will not work correctly.  
 	It also undefines many of the \<Windows.h\> macros.
+
+- xRand.hpp  
+	Provides a wrapper for \<random\> library functions.
+
+- process.hpp  
+	Contains the process namespace & Proc object, which can be used to execute shell commands.

@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">307Lib Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
 307Lib</h1>
 <p>This is my personal collection of libraries for C++. <br  />
 </p>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
  _(Except for the ENABLE_TESTING option, this is guaranteed to work as nothing else depends on it.)_ <br  />
  Most of the options are dependent options, but I can't guarantee that everything will work as expected when disabling libraries as I am still new to using CMake. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Index</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -107,22 +107,22 @@ Index</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">str-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone">String-related functions.   </td><td class="markdownTableBodyNone">C++17 / C++20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
+<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">3.X.X   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
+<td class="markdownTableBodyNone">TermAPI   </td><td class="markdownTableBodyNone">4.X.X   </td><td class="markdownTableBodyNone">shared   </td><td class="markdownTableBodyNone"><a class="el" href="namespace_a_n_s_i.html">ANSI</a> Escape Sequences, &amp; various utilities for controlling the terminal.   </td><td class="markdownTableBodyNone">C++20    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">file-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">File I/O &amp; Utility functions.   </td><td class="markdownTableBodyNone">C++14 / C++17    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">opt-lib   </td><td class="markdownTableBodyNone">&lt;all&gt;   </td><td class="markdownTableBodyNone">shared, str-lib   </td><td class="markdownTableBodyNone">Commandline-argument objects &amp; functions, as well as environment variables   </td><td class="markdownTableBodyNone">C++20   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Shared Headers</h2>
 <p>These are some of the shared lib's headers:</p>
 <ul>
 <li><a class="el" href="sysarch_8h.html" title="Contains preprocessor definitions useful for determining properties of the host system.">sysarch.h</a> <br  />
  Used as a basic wrapper for certain preprocessor macros that can determine which C/C++ version the compiler is using, which compiler is being used, which operating system the compiler is running on, which architecture the compiler is set to, and more. <br  />
 </li>
-<li><a class="el" href="var_8hpp.html" title="Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts.">var.hpp</a> <br  />
+<li><a class="el" href="var_8hpp.html" title="Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts....">var.hpp</a> <br  />
  Contains some generic functions &amp; concepts for working with variadic functions and tuples. <br  />
 </li>
 <li><a class="el" href="iter_8hpp.html">iter.hpp</a> <br  />
@@ -138,7 +138,11 @@ Shared Headers</h2>
  Somewhat obviously, this is only relevant for Windows. <br  />
  Experimental wrapper for the &lt;Windows.h&gt; header that includes it within a namespace to avoid polluting global. <br  />
  Unfortunately, since most/all other libraries just include &lt;Windows.h&gt; in the global namespace this often will not work correctly. <br  />
- It also undefines many of the &lt;Windows.h&gt; macros. </li>
+ It also undefines many of the &lt;Windows.h&gt; macros.</li>
+<li><a class="el" href="x_rand_8hpp.html" title="Updated version of the xRand.h header using C++20 concepts.">xRand.hpp</a> <br  />
+ Provides a wrapper for &lt;random&gt; library functions.</li>
+<li><a class="el" href="process_8hpp.html" title="Contains the process namespace, which acts as an abstraction layer between the popen function&#39;s proce...">process.hpp</a> <br  />
+ Contains the process namespace &amp; Proc object, which can be used to execute shell commands. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

@@ -1,16 +1,13 @@
 var namespacefile =
 [
+    [ "base", "namespacefile_1_1base.html", "namespacefile_1_1base" ],
+    [ "DefaultDefs", "namespacefile_1_1_default_defs.html", "namespacefile_1_1_default_defs" ],
     [ "ini", "namespacefile_1_1ini.html", "namespacefile_1_1ini" ],
+    [ "append", "namespacefile.html#a1e73c166483c865e61f9c9a3c75e803a", null ],
     [ "count", "namespacefile.html#a93909d0fba7c38b358413cff6f7a592a", null ],
     [ "getLineCount", "namespacefile.html#a7897a61f3078bb19a06d9f428836eb7e", null ],
     [ "isPathSeparator", "namespacefile.html#aa5d6ea150e75c71f2d58eeacdb9784eb", null ],
-    [ "read", "namespacefile.html#a58cb6a1779c73244fbff0725224ed4c9", null ],
-    [ "read", "namespacefile.html#a5169b9600f8d519bcf70c617f7c89ab8", null ],
-    [ "read", "namespacefile.html#ab78ab1b229f95b3906cb0d7e66b63417", null ],
-    [ "write", "namespacefile.html#ad4c934e76bb6845a79513b5610d68a7e", null ],
-    [ "write", "namespacefile.html#af491faff6e178b4381dceaecc0fe7ff6", null ],
-    [ "write", "namespacefile.html#ab1318022228e9fe9edb5138ac4c0aaa5", null ],
-    [ "write", "namespacefile.html#a42e8d0d60671b56cbc3341c7b537565c", null ],
-    [ "write", "namespacefile.html#afceaac166ac3fd1efbb792dc900cab1a", null ],
-    [ "write", "namespacefile.html#a53b00ff562949fd947ef80a37c6e8ec9", null ]
+    [ "read", "namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2", null ],
+    [ "write", "namespacefile.html#ad7fc87c5817c3230a233d6846fd9d50e", null ],
+    [ "write", "namespacefile.html#a8fa09d231de63c61381a32adb1b0f54d", null ]
 ];

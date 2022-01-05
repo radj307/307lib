@@ -86,7 +86,8 @@ $(document).ready(function(){initNavTree('namespacevar.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">var Namespace Reference</div>  </div>
 </div><!--header-->
@@ -139,6 +140,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">tuple_and</a> (const std::tuple&lt; Types... &gt; &amp;l, const std::tuple&lt; Types... &gt; &amp;r)</td></tr>
 <tr class="memdesc:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two tuples containing the same element types are equivalent.  <a href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">More...</a><br /></td></tr>
 <tr class="separator:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af0f7a091df3704b1a3a3b0271b004f70"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:af0f7a091df3704b1a3a3b0271b004f70"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#af0f7a091df3704b1a3a3b0271b004f70">is_same_size</a> = (sizeof...(VT) == compsize)</td></tr>
+<tr class="memdesc:af0f7a091df3704b1a3a3b0271b004f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has the same number of arguments as a given value.  <a href="namespacevar.html#af0f7a091df3704b1a3a3b0271b004f70">More...</a><br /></td></tr>
+<tr class="separator:af0f7a091df3704b1a3a3b0271b004f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af973ed02d6c01387e3c752a735801170"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:af973ed02d6c01387e3c752a735801170"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#af973ed02d6c01387e3c752a735801170">is_more_than</a> = (sizeof...(VT) &gt; compsize)</td></tr>
+<tr class="memdesc:af973ed02d6c01387e3c752a735801170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has more arguments than a given number.  <a href="namespacevar.html#af973ed02d6c01387e3c752a735801170">More...</a><br /></td></tr>
+<tr class="separator:af973ed02d6c01387e3c752a735801170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a2aaf4dd4f69e9c785738f9787bcf24d9">is_less_than</a> = (sizeof...(VT) &lt; compsize)</td></tr>
+<tr class="memdesc:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has less arguments than a given number.  <a href="namespacevar.html#a2aaf4dd4f69e9c785738f9787bcf24d9">More...</a><br /></td></tr>
+<tr class="separator:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20024427ebc79b98a7d147129f00810a"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
+<tr class="memitem:a20024427ebc79b98a7d147129f00810a"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a20024427ebc79b98a7d147129f00810a">is_more_than_one</a> = more_than&lt;1, VT...&gt;</td></tr>
+<tr class="separator:a20024427ebc79b98a7d147129f00810a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains helper methods for variadic templated functions, as well as std::tuple. </p>
@@ -179,7 +198,7 @@ template&lt;typename T , same_or_convertible&lt; T &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00284">284</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00276">276</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -209,7 +228,7 @@ template&lt;typename T , same_or_convertible&lt; T &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00294">294</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00286">286</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +277,7 @@ template&lt;typename... CompareTypes, typename... TupleTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00397">397</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00389">389</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +316,7 @@ template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </di
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00367">367</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00359">359</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +362,7 @@ template&lt;typename T , same_or_convertible&lt; T &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00304">304</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00296">296</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +392,7 @@ template&lt;typename T , same_or_convertible&lt; T &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00314">314</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00306">306</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +448,7 @@ template&lt;size_t i = 0ull, typename... Types&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00416">416</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00408">408</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -486,7 +505,7 @@ template&lt;size_t i = 0, typename CompareType , typename... TupleTypes, class P
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00384">384</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00376">376</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +545,7 @@ template&lt;size_t i = 0ull, typename... TupleTypesLeft, typename... TupleTypesR
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00403">403</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00395">395</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -572,7 +591,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00278">278</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00270">270</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +637,142 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00267">267</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00259">259</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a2aaf4dd4f69e9c785738f9787bcf24d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aaf4dd4f69e9c785738f9787bcf24d9">&#9670;&nbsp;</a></span>is_less_than</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto compsize, class... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt;decltype(compsize)&gt; const bool var::is_less_than = (sizeof...(VT) &lt; compsize)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a variadic templated type has less arguments than a given number. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">compsize</td><td>One after the number of arguments VT must contain before returning false. </td></tr>
+    <tr><td class="paramname">...VT</td><td>Input Variadic Templated Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00052">52</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af973ed02d6c01387e3c752a735801170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af973ed02d6c01387e3c752a735801170">&#9670;&nbsp;</a></span>is_more_than</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto compsize, class... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt;decltype(compsize)&gt; const bool var::is_more_than = (sizeof...(VT) &gt; compsize)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a variadic templated type has more arguments than a given number. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">compsize</td><td>One before the number of arguments VT must contain before returning true. </td></tr>
+    <tr><td class="paramname">...VT</td><td>Input Variadic Templated Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00044">44</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a20024427ebc79b98a7d147129f00810a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20024427ebc79b98a7d147129f00810a">&#9670;&nbsp;</a></span>is_more_than_one</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool var::is_more_than_one = more_than&lt;1, VT...&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00054">54</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af0f7a091df3704b1a3a3b0271b004f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f7a091df3704b1a3a3b0271b004f70">&#9670;&nbsp;</a></span>is_same_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto compsize, class... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> static constexpr std::unsigned_integral&lt;decltype(compsize)&gt; const bool var::is_same_size = (sizeof...(VT) == compsize)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a variadic templated type has the same number of arguments as a given value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">compsize</td><td>The size to compare. </td></tr>
+    <tr><td class="paramname">...VT</td><td>Input Variadic Templated Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00036">36</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>

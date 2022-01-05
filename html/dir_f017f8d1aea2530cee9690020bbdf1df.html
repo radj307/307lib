@@ -105,14 +105,19 @@ Files</h2></td></tr>
 <tr class="memdesc:sysarch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains preprocessor definitions useful for determining properties of the host system. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:var_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="var_8hpp.html">var.hpp</a> <a href="var_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:var_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. <br /></td></tr>
+<tr class="memdesc:var_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. <br  />
+ I can't seem to find any documentation on how exactly concept templates are deduced, <br  />
+ but from my testing &amp; std concepts like std::derived_from it appears that when used <br  />
+ instead of <code>typename</code>|<code>class</code>, the test type is inserted into the <b>FIRST</b> template <br  />
+ parameter. <br  />
+ That's pretty great because it allows variadic concepts like var::any_same. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_windows_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_windows_8hpp.html">Windows.hpp</a> <a href="_windows_8hpp_source.html">[code]</a></td></tr>
 <tr class="memdesc:_windows_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps the &lt;Windows.h&gt; header inside of the "win" namespace. <br  />
 . <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:x_rand_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="x_rand_8hpp.html">xRand.hpp</a> <a href="x_rand_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:x_rand_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updated version of the xRand.h library using SFINAE. <br /></td></tr>
+<tr class="memdesc:x_rand_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updated version of the xRand.h header using C++20 concepts. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

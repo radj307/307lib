@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structrng_1_1_rand.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Virtual base object for <a class="el" href="structrng_1_1t_rand.html" title="Random number getter that uses time to seed the default random engine.">tRand</a>, <a class="el" href="structrng_1_1d_rand.html" title="Random number getter that uses the system random_device to seed the default random engine.">dRand</a>, and <a class="el" href="structrng_1_1s_rand.html" title="Random number getter that uses given integers to seed the default random engine.">sRand</a>.  
+<p>Virtual base object for tRand, dRand, and sRand.  
  <a href="structrng_1_1_rand.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>&gt;</code></p>
@@ -121,26 +121,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3559ac7d4d3de6d265b4ae14fbf67e35"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba">is_valid_char_type_v</a>&lt; T &gt;, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#a3559ac7d4d3de6d265b4ae14fbf67e35">operator()</a> (T min, T max)</td></tr>
 <tr class="memdesc:a3559ac7d4d3de6d265b4ae14fbf67e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a random value in a given range.  <a href="structrng_1_1_rand.html#a3559ac7d4d3de6d265b4ae14fbf67e35">More...</a><br /></td></tr>
 <tr class="separator:a3559ac7d4d3de6d265b4ae14fbf67e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3898759957dd684cf82a40a19978125d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3898759957dd684cf82a40a19978125d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3898759957dd684cf82a40a19978125d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#a3898759957dd684cf82a40a19978125d">get</a> (T min, T max)</td></tr>
 <tr class="memdesc:a3898759957dd684cf82a40a19978125d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a random value in a given range.  <a href="structrng_1_1_rand.html#a3898759957dd684cf82a40a19978125d">More...</a><br /></td></tr>
 <tr class="separator:a3898759957dd684cf82a40a19978125d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78740e1e24439b98193c3b7111774720"><td class="memTemplParams" colspan="2">template&lt;typename Min , typename Max &gt; </td></tr>
-<tr class="memitem:a78740e1e24439b98193c3b7111774720"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#a78740e1e24439b98193c3b7111774720">requires</a> (std::integral&lt; Min &gt; &amp;&amp;std::integral&lt; Max &gt;)||(std</td></tr>
-<tr class="separator:a78740e1e24439b98193c3b7111774720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a82deae36d8c3fb16b00dcb98512f670b"><td class="memItemLeft" align="right" valign="top">Engine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#a82deae36d8c3fb16b00dcb98512f670b">_engine</a></td></tr>
-<tr class="separator:a82deae36d8c3fb16b00dcb98512f670b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a331b2dedac7be3cf30f6482cc9889e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#a1a331b2dedac7be3cf30f6482cc9889e">_seed_every_time</a> { false }</td></tr>
-<tr class="separator:a1a331b2dedac7be3cf30f6482cc9889e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8a82a77da278bedd8f5240fea03246"><td class="memItemLeft" align="right" valign="top">Engine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html#afb8a82a77da278bedd8f5240fea03246">engine</a></td></tr>
+<tr class="separator:afb8a82a77da278bedd8f5240fea03246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Engine&gt;<br />
 struct rng::Rand&lt; Engine &gt;</h3>
 
-<p>Virtual base object for <a class="el" href="structrng_1_1t_rand.html" title="Random number getter that uses time to seed the default random engine.">tRand</a>, <a class="el" href="structrng_1_1d_rand.html" title="Random number getter that uses the system random_device to seed the default random engine.">dRand</a>, and <a class="el" href="structrng_1_1s_rand.html" title="Random number getter that uses given integers to seed the default random engine.">sRand</a>. </p>
+<p>Virtual base object for tRand, dRand, and sRand. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Engine</td><td>- The random engine to use. </td></tr>
@@ -148,7 +143,7 @@ struct rng::Rand&lt; Engine &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00050">50</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00198">198</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a19b1b96b5ea3d545e43b333957de9a9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19b1b96b5ea3d545e43b333957de9a9a">&#9670;&nbsp;</a></span>Rand()</h2>
@@ -177,7 +172,7 @@ template&lt;class Engine &gt; </div>
 
 <p>Default Constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00057">57</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00204">204</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -217,7 +212,7 @@ template&lt;class Engine &gt; </div>
 <div class="memtemplate">
 template&lt;class Engine &gt; </div>
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -263,7 +258,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00114">114</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00261">261</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +316,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00072">72</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00219">219</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +374,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00086">86</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00233">233</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -437,39 +432,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00100">100</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a78740e1e24439b98193c3b7111774720"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78740e1e24439b98193c3b7111774720">&#9670;&nbsp;</a></span>requires()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Engine &gt; </div>
-<div class="memtemplate">
-template&lt;typename Min , typename Max &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structrng_1_1_rand.html">rng::Rand</a>&lt; Engine &gt;::requires </td>
-          <td>(</td>
-          <td class="paramtype">std::integral&lt; Min &gt; &amp;&amp;std::integral&lt; Max &gt;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00119">119</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00247">247</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -500,13 +463,11 @@ template&lt;class Engine &gt; </div>
 
 <p>Seed the random generator. This is called automatically by <a class="el" href="structrng_1_1_rand.html#a3898759957dd684cf82a40a19978125d" title="Retrieve a random value in a given range.">get()</a>. </p>
 
-<p>Implemented in <a class="el" href="structrng_1_1s_rand.html#afffb48b4af7f1277e217cdfbc331e332">rng::sRand</a>, <a class="el" href="structrng_1_1d_rand.html#a377ed8b8d3c64dd0ca836e10f6ab2939">rng::dRand</a>, and <a class="el" href="structrng_1_1t_rand.html#ac7e1f3ca76bb5f22ceacdba3af64a768">rng::tRand</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a82deae36d8c3fb16b00dcb98512f670b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82deae36d8c3fb16b00dcb98512f670b">&#9670;&nbsp;</a></span>_engine</h2>
+<a id="afb8a82a77da278bedd8f5240fea03246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8a82a77da278bedd8f5240fea03246">&#9670;&nbsp;</a></span>engine</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,30 +475,12 @@ template&lt;class Engine &gt; </div>
 template&lt;class Engine &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Engine <a class="el" href="structrng_1_1_rand.html">rng::Rand</a>&lt; Engine &gt;::_engine</td>
+          <td class="memname">Engine <a class="el" href="structrng_1_1_rand.html">rng::Rand</a>&lt; Engine &gt;::engine</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00051">51</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1a331b2dedac7be3cf30f6482cc9889e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a331b2dedac7be3cf30f6482cc9889e">&#9670;&nbsp;</a></span>_seed_every_time</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Engine &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="structrng_1_1_rand.html">rng::Rand</a>&lt; Engine &gt;::_seed_every_time { false }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00052">52</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00199">199</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>

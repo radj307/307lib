@@ -94,20 +94,21 @@ $(document).ready(function(){initNavTree('fileio_8hpp.html',''); initResizable()
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fileio.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="fileio_8hpp__incl.svg" width="476" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="fileio_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="fileio_8hpp__dep__incl.svg" width="576" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="fileio_8hpp__dep__incl.svg" width="576" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="fileio_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -119,32 +120,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a58cb6a1779c73244fbff0725224ed4c9"><td class="memTemplParams" colspan="2">template&lt;class RT &gt; </td></tr>
-<tr class="memitem:a58cb6a1779c73244fbff0725224ed4c9"><td class="memTemplItemLeft" align="right" valign="top">static std::enable_if_t&lt; std::is_same_v&lt; RT, std::ifstream &gt;, std::ifstream &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a58cb6a1779c73244fbff0725224ed4c9">file::read</a> (const std::string &amp;path)</td></tr>
-<tr class="separator:a58cb6a1779c73244fbff0725224ed4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5169b9600f8d519bcf70c617f7c89ab8"><td class="memTemplParams" colspan="2">template&lt;class RT &gt; </td></tr>
-<tr class="memitem:a5169b9600f8d519bcf70c617f7c89ab8"><td class="memTemplItemLeft" align="right" valign="top">static std::enable_if_t&lt; std::is_same_v&lt; RT, std::stringstream &gt;, std::stringstream &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a5169b9600f8d519bcf70c617f7c89ab8">file::read</a> (const std::string &amp;path)</td></tr>
-<tr class="separator:a5169b9600f8d519bcf70c617f7c89ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78ab1b229f95b3906cb0d7e66b63417"><td class="memTemplParams" colspan="2">template&lt;class RT &gt; </td></tr>
-<tr class="memitem:ab78ab1b229f95b3906cb0d7e66b63417"><td class="memTemplItemLeft" align="right" valign="top">static std::enable_if_t&lt; std::is_same_v&lt; RT, std::string &gt;, std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#ab78ab1b229f95b3906cb0d7e66b63417">file::read</a> (const std::string &amp;path)</td></tr>
-<tr class="separator:ab78ab1b229f95b3906cb0d7e66b63417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afceaac166ac3fd1efbb792dc900cab1a"><td class="memTemplParams" colspan="2">template&lt;var::Streamable T&gt; </td></tr>
-<tr class="memitem:afceaac166ac3fd1efbb792dc900cab1a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#afceaac166ac3fd1efbb792dc900cab1a">file::write</a> (std::ofstream &amp;ofs, const T &amp;data)</td></tr>
-<tr class="memdesc:afceaac166ac3fd1efbb792dc900cab1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to the given output filestream.  <a href="namespacefile.html#afceaac166ac3fd1efbb792dc900cab1a">More...</a><br /></td></tr>
-<tr class="separator:afceaac166ac3fd1efbb792dc900cab1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b00ff562949fd947ef80a37c6e8ec9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a53b00ff562949fd947ef80a37c6e8ec9">file::write</a> (std::ofstream &amp;ofs, std::stringstream &amp;&amp;ss)</td></tr>
-<tr class="memdesc:a53b00ff562949fd947ef80a37c6e8ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a stringstream to the given output filestream.  <a href="namespacefile.html#a53b00ff562949fd947ef80a37c6e8ec9">More...</a><br /></td></tr>
-<tr class="separator:a53b00ff562949fd947ef80a37c6e8ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e8d0d60671b56cbc3341c7b537565c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a42e8d0d60671b56cbc3341c7b537565c">file::write</a> (std::ofstream &amp;ofs, const std::stringbuf *rdbuf)</td></tr>
-<tr class="separator:a42e8d0d60671b56cbc3341c7b537565c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1318022228e9fe9edb5138ac4c0aaa5"><td class="memTemplParams" colspan="2">template&lt;var::Streamable T&gt; </td></tr>
-<tr class="memitem:ab1318022228e9fe9edb5138ac4c0aaa5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#ab1318022228e9fe9edb5138ac4c0aaa5">file::write</a> (const std::string &amp;path, T &amp;&amp;data, const bool append=true)</td></tr>
-<tr class="memdesc:ab1318022228e9fe9edb5138ac4c0aaa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a file.  <a href="namespacefile.html#ab1318022228e9fe9edb5138ac4c0aaa5">More...</a><br /></td></tr>
-<tr class="separator:ab1318022228e9fe9edb5138ac4c0aaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af491faff6e178b4381dceaecc0fe7ff6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#af491faff6e178b4381dceaecc0fe7ff6">file::write</a> (const std::string &amp;path, std::stringstream &amp;ss, const bool append=true)</td></tr>
-<tr class="separator:af491faff6e178b4381dceaecc0fe7ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c934e76bb6845a79513b5610d68a7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ad4c934e76bb6845a79513b5610d68a7e">file::write</a> (const std::string &amp;path, std::stringbuf *rdbuf, const bool append=true)</td></tr>
-<tr class="separator:ad4c934e76bb6845a79513b5610d68a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">file::read</a> (const std::filesystem::path &amp;) noexcept</td></tr>
+<tr class="memdesc:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">More...</a><br /></td></tr>
+<tr class="separator:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7fc87c5817c3230a233d6846fd9d50e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ad7fc87c5817c3230a233d6846fd9d50e">file::write</a> (const std::filesystem::path &amp;, std::stringstream &amp;&amp;, const bool &amp;=false)</td></tr>
+<tr class="memdesc:ad7fc87c5817c3230a233d6846fd9d50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="namespacefile.html#ad7fc87c5817c3230a233d6846fd9d50e">More...</a><br /></td></tr>
+<tr class="separator:ad7fc87c5817c3230a233d6846fd9d50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa09d231de63c61381a32adb1b0f54d"><td class="memTemplParams" colspan="2">template&lt;::var::Streamable... T&gt; </td></tr>
+<tr class="memitem:a8fa09d231de63c61381a32adb1b0f54d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a8fa09d231de63c61381a32adb1b0f54d">file::write</a> (const std::filesystem::path &amp;path, T &amp;&amp;... data)</td></tr>
+<tr class="memdesc:a8fa09d231de63c61381a32adb1b0f54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write any number of objects to a file.  <a href="namespacefile.html#a8fa09d231de63c61381a32adb1b0f54d">More...</a><br /></td></tr>
+<tr class="separator:a8fa09d231de63c61381a32adb1b0f54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e73c166483c865e61f9c9a3c75e803a"><td class="memTemplParams" colspan="2">template&lt;::var::Streamable... T&gt; </td></tr>
+<tr class="memitem:a1e73c166483c865e61f9c9a3c75e803a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a1e73c166483c865e61f9c9a3c75e803a">file::append</a> (const std::filesystem::path &amp;path, T &amp;&amp;... data)</td></tr>
+<tr class="memdesc:a1e73c166483c865e61f9c9a3c75e803a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append any number of objects to the end of a file.  <a href="namespacefile.html#a1e73c166483c865e61f9c9a3c75e803a">More...</a><br /></td></tr>
+<tr class="separator:a1e73c166483c865e61f9c9a3c75e803a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -89,7 +89,43 @@ $(document).ready(function(){initNavTree('make__exception_8hpp_source.html','');
 <div class="title">make_exception.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="make__exception_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="make__exception_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sstream</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">exception</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">var</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * @class   except</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * @brief   Exception object with a custom message stored as a member variable.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classexcept.html">   12</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classexcept.html">except</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> std::string _message;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classexcept.html#aad6d1cb65b53bc4f76527ec34ac1f275">   16</a></span>&#160;    <a class="code" href="classexcept.html#aad6d1cb65b53bc4f76527ec34ac1f275">except</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">   17</a></span>&#160;    <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">except</a>(<span class="keyword">auto</span>&amp;&amp; message) : <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">_message</a>{ <a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">std</a>::<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">forward</a>&lt;<span class="keyword">decltype</span>(<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">message</a>)&gt;(<a class="code" href="classexcept.html#a8bbb64cacecdd202c54a8f107be8875a">message</a>) } {}</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classexcept.html#a51f221c6069106f1968f6e3800a29d34">   18</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classexcept.html#a51f221c6069106f1968f6e3800a29d34">what</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> { <span class="keywordflow">return</span> _message.c_str(); }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @brief               Create an exception with a given message.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @tparam ReturnT      The type of exception to return.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @tparam ...VT        Variadic Templated Types.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @param ...message    The message shown when calling the what() function.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @returns             ReturnT</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt;std::derived_from&lt;std::exception&gt; ReturnT, var::Streamable&lt;std::stringstream&gt;... VT&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">   29</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">ReturnT</a> <a class="code" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">make_custom_exception</a>(VT <span class="keyword">const</span>&amp;... message)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::stringstream ss;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    (ss &lt;&lt; ... &lt;&lt; message);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span>{ ss.str() };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;var::Streamable&lt;std::stringstream&gt;... VT&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a61e1891574c70ce7b56f37f84570c06a">   37</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a61e1891574c70ce7b56f37f84570c06a">make_exception</a>(VT <span class="keyword">const</span>&amp;... message) { <span class="keywordflow">return</span> make_custom_exception&lt;except&gt;(message...); }</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

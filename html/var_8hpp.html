@@ -87,13 +87,19 @@ $(document).ready(function(){initNavTree('var_8hpp.html',''); initResizable(); }
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">var.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts.  
+<p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. <br  />
+ I can't seem to find any documentation on how exactly concept templates are deduced, <br  />
+ but from my testing &amp; std concepts like std::derived_from it appears that when used <br  />
+ instead of <code>typename</code>|<code>class</code>, the test type is inserted into the <b>FIRST</b> template <br  />
+ parameter. <br  />
+ That's pretty great because it allows variadic concepts like var::any_same.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -103,7 +109,8 @@ $(document).ready(function(){initNavTree('var_8hpp.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for var.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="var_8hpp__incl.svg" width="432" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="var_8hpp__incl.svg" width="432" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -164,9 +171,32 @@ Functions</h2></td></tr>
 <tr class="memitem:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">var::tuple_and</a> (const std::tuple&lt; Types... &gt; &amp;l, const std::tuple&lt; Types... &gt; &amp;r)</td></tr>
 <tr class="memdesc:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two tuples containing the same element types are equivalent.  <a href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">More...</a><br /></td></tr>
 <tr class="separator:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af0f7a091df3704b1a3a3b0271b004f70"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:af0f7a091df3704b1a3a3b0271b004f70"><td class="memTemplItemLeft" align="right" valign="top">requires static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#af0f7a091df3704b1a3a3b0271b004f70">var::is_same_size</a> = (sizeof...(VT) == compsize)</td></tr>
+<tr class="memdesc:af0f7a091df3704b1a3a3b0271b004f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has the same number of arguments as a given value.  <a href="namespacevar.html#af0f7a091df3704b1a3a3b0271b004f70">More...</a><br /></td></tr>
+<tr class="separator:af0f7a091df3704b1a3a3b0271b004f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af973ed02d6c01387e3c752a735801170"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:af973ed02d6c01387e3c752a735801170"><td class="memTemplItemLeft" align="right" valign="top">requires static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#af973ed02d6c01387e3c752a735801170">var::is_more_than</a> = (sizeof...(VT) &gt; compsize)</td></tr>
+<tr class="memdesc:af973ed02d6c01387e3c752a735801170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has more arguments than a given number.  <a href="namespacevar.html#af973ed02d6c01387e3c752a735801170">More...</a><br /></td></tr>
+<tr class="separator:af973ed02d6c01387e3c752a735801170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memTemplParams" colspan="2">template&lt;auto compsize, class... VT&gt; </td></tr>
+<tr class="memitem:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memTemplItemLeft" align="right" valign="top">requires static constexpr std::unsigned_integral&lt; decltype(compsize)&gt; const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a2aaf4dd4f69e9c785738f9787bcf24d9">var::is_less_than</a> = (sizeof...(VT) &lt; compsize)</td></tr>
+<tr class="memdesc:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has less arguments than a given number.  <a href="namespacevar.html#a2aaf4dd4f69e9c785738f9787bcf24d9">More...</a><br /></td></tr>
+<tr class="separator:a2aaf4dd4f69e9c785738f9787bcf24d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20024427ebc79b98a7d147129f00810a"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
+<tr class="memitem:a20024427ebc79b98a7d147129f00810a"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a20024427ebc79b98a7d147129f00810a">var::is_more_than_one</a> = more_than&lt;1, VT...&gt;</td></tr>
+<tr class="separator:a20024427ebc79b98a7d147129f00810a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. </p>
+<div class="textblock"><p>Contains helper methods for variadic templates &amp; tuples, as well as general-use concepts. <br  />
+ I can't seem to find any documentation on how exactly concept templates are deduced, <br  />
+ but from my testing &amp; std concepts like std::derived_from it appears that when used <br  />
+ instead of <code>typename</code>|<code>class</code>, the test type is inserted into the <b>FIRST</b> template <br  />
+ parameter. <br  />
+ That's pretty great because it allows variadic concepts like var::any_same. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>

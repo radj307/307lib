@@ -15,6 +15,15 @@ var annotated_dup =
       [ "PATH", "classenv_1_1_p_a_t_h.html", "classenv_1_1_p_a_t_h" ]
     ] ],
     [ "file", "namespacefile.html", [
+      [ "base", "namespacefile_1_1base.html", [
+        [ "LexemeDictBase", "structfile_1_1base_1_1_lexeme_dict_base.html", "structfile_1_1base_1_1_lexeme_dict_base" ],
+        [ "TokenBase", "structfile_1_1base_1_1_token_base.html", "structfile_1_1base_1_1_token_base" ],
+        [ "TokenizerBase", "classfile_1_1base_1_1_tokenizer_base.html", "classfile_1_1base_1_1_tokenizer_base" ],
+        [ "TokenParserBase", "classfile_1_1base_1_1_token_parser_base.html", "classfile_1_1base_1_1_token_parser_base" ]
+      ] ],
+      [ "DefaultDefs", "namespacefile_1_1_default_defs.html", [
+        [ "LexemeDict", "structfile_1_1_default_defs_1_1_lexeme_dict.html", "structfile_1_1_default_defs_1_1_lexeme_dict" ]
+      ] ],
       [ "ini", "namespacefile_1_1ini.html", [
         [ "INI", "structfile_1_1ini_1_1_i_n_i.html", "structfile_1_1ini_1_1_i_n_i" ]
       ] ]
@@ -34,10 +43,12 @@ var annotated_dup =
       [ "Proc", "structprocess_1_1_proc.html", "structprocess_1_1_proc" ]
     ] ],
     [ "rng", "namespacerng.html", [
-      [ "Rand", "structrng_1_1_rand.html", "structrng_1_1_rand" ],
-      [ "tRand", "structrng_1_1t_rand.html", "structrng_1_1t_rand" ],
-      [ "dRand", "structrng_1_1d_rand.html", "structrng_1_1d_rand" ],
-      [ "sRand", "structrng_1_1s_rand.html", "structrng_1_1s_rand" ]
+      [ "seed", "namespacerng_1_1seed.html", [
+        [ "FromTime", "structrng_1_1seed_1_1_from_time.html", "structrng_1_1seed_1_1_from_time" ],
+        [ "FromRandomDevice", "structrng_1_1seed_1_1_from_random_device.html", "structrng_1_1seed_1_1_from_random_device" ],
+        [ "FromIntegral", "structrng_1_1seed_1_1_from_integral.html", "structrng_1_1seed_1_1_from_integral" ]
+      ] ],
+      [ "Rand", "structrng_1_1_rand.html", "structrng_1_1_rand" ]
     ] ],
     [ "str", "namespacestr.html", [
       [ "facet", "namespacestr_1_1facet.html", [
@@ -51,7 +62,8 @@ var annotated_dup =
     [ "term", "namespaceterm.html", [
       [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
       [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
-      [ "Message", "classterm_1_1_message.html", "classterm_1_1_message" ]
+      [ "Message", "classterm_1_1_message.html", "classterm_1_1_message" ],
+      [ "TargetHandle", "structterm_1_1_target_handle.html", "structterm_1_1_target_handle" ]
     ] ],
     [ "token", "namespacetoken.html", [
       [ "parse", "namespacetoken_1_1parse.html", [

@@ -6,5 +6,6 @@ var process_8hpp =
     [ "POPEN", "process_8hpp.html#ab6949e8178edeb4294d893f3ee4966d5", null ],
     [ "exec", "process_8hpp.html#aa5e26429e7a90976dc53b2e7a5fbe9fe", null ],
     [ "exec", "process_8hpp.html#ad519689022bbbe9b921d4718b01380d4", null ],
-    [ "make_array", "process_8hpp.html#a0977f36ec347108a1322b04f6adc4074", null ]
+    [ "make_array", "process_8hpp.html#a0977f36ec347108a1322b04f6adc4074", null ],
+    [ "SEQ_SHELL_OUTPUT_REDIRECT", "process_8hpp.html#afce8f816e85cde77fbc85e256743df08", null ]
 ];

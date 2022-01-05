@@ -41,6 +41,7 @@ var namespaces_dup =
     [ "process", "namespaceprocess.html", "namespaceprocess" ],
     [ "Query", "namespace_query.html", null ],
     [ "rng", "namespacerng.html", "namespacerng" ],
+    [ "seed", "namespaceseed.html", null ],
     [ "str", "namespacestr.html", "namespacestr" ],
     [ "term", "namespaceterm.html", "namespaceterm" ],
     [ "token", "namespacetoken.html", "namespacetoken" ],
@@ -55,7 +56,11 @@ var namespaces_dup =
       [ "tuple_or", "namespacevar.html#a232d8fe90138010e09ccce0d56e3bb3c", null ],
       [ "tuple_or", "namespacevar.html#a060dae79f908e9ec94f42175a42c45b1", null ],
       [ "variadic_and", "namespacevar.html#acd4adc200dff50fed630c357d3b5fd16", null ],
-      [ "variadic_or", "namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a", null ]
+      [ "variadic_or", "namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a", null ],
+      [ "is_less_than", "namespacevar.html#a2aaf4dd4f69e9c785738f9787bcf24d9", null ],
+      [ "is_more_than", "namespacevar.html#af973ed02d6c01387e3c752a735801170", null ],
+      [ "is_more_than_one", "namespacevar.html#a20024427ebc79b98a7d147129f00810a", null ],
+      [ "is_same_size", "namespacevar.html#af0f7a091df3704b1a3a3b0271b004f70", null ]
     ] ],
     [ "win", "namespacewin.html", [
       [ "_STD_ERROR_HANDLE", "namespacewin.html#a049da41bec4054e31a7525bc016350e8", null ],

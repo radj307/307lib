@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('namespacerng.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -97,25 +98,34 @@ $(document).ready(function(){initNavTree('namespacerng.html',''); initResizable(
 <p>Contains objects &amp; methods related to generating random numbers.  
 <a href="namespacerng.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacerng_1_1seed"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng_1_1seed.html">seed</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html">Rand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual base object for <a class="el" href="structrng_1_1t_rand.html" title="Random number getter that uses time to seed the default random engine.">tRand</a>, <a class="el" href="structrng_1_1d_rand.html" title="Random number getter that uses the system random_device to seed the default random engine.">dRand</a>, and <a class="el" href="structrng_1_1s_rand.html" title="Random number getter that uses given integers to seed the default random engine.">sRand</a>.  <a href="structrng_1_1_rand.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1t_rand.html">tRand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number getter that uses time to seed the default random engine.  <a href="structrng_1_1t_rand.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1d_rand.html">dRand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number getter that uses the system random_device to seed the default random engine.  <a href="structrng_1_1d_rand.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1s_rand.html">sRand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number getter that uses given integers to seed the default random engine.  <a href="structrng_1_1s_rand.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual base object for tRand, dRand, and sRand.  <a href="structrng_1_1_rand.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4b8ac1f1c29f3f22c35f0726b2bd89bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a4b8ac1f1c29f3f22c35f0726b2bd89bc">DefaultEngine</a> = std::default_random_engine</td></tr>
-<tr class="separator:a4b8ac1f1c29f3f22c35f0726b2bd89bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d6ea6a0a4e6d9907313a60d4c93043"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a> = ::std::default_randomengine</td></tr>
+<tr class="separator:ab0d6ea6a0a4e6d9907313a60d4c93043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memTemplParams" colspan="2">template&lt;class Engine , template&lt; class &gt; class Seeder&gt; </td></tr>
+<tr class="memitem:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a> = Seeder&lt; Engine &gt;</td></tr>
+<tr class="memdesc:a03c4e5a192da41d6433c42a4d8e6496c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated using statement for rng engines.  <a href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">More...</a><br /></td></tr>
+<tr class="separator:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a388919ed472f27b0298f67e9f8252d98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a388919ed472f27b0298f67e9f8252d98">tRand</a> = <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt; <a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_time.html">seed::FromTime</a> &gt;</td></tr>
+<tr class="memdesc:a388919ed472f27b0298f67e9f8252d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using the time since epoch (retrieved from std::chrono::steady_clock) as a seed.  <a href="namespacerng.html#a388919ed472f27b0298f67e9f8252d98">More...</a><br /></td></tr>
+<tr class="separator:a388919ed472f27b0298f67e9f8252d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebbcbc58faa63afda357f49f1f9e049"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a8ebbcbc58faa63afda357f49f1f9e049">dRand</a> = <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt; <a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_random_device.html">seed::FromRandomDevice</a> &gt;</td></tr>
+<tr class="memdesc:a8ebbcbc58faa63afda357f49f1f9e049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using the system's random_device as the seed.  <a href="namespacerng.html#a8ebbcbc58faa63afda357f49f1f9e049">More...</a><br /></td></tr>
+<tr class="separator:a8ebbcbc58faa63afda357f49f1f9e049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452a64450662c089f2f33011f7156dad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a452a64450662c089f2f33011f7156dad">sRand</a> = <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt; <a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_integral.html">seed::FromIntegral</a> &gt;</td></tr>
+<tr class="memdesc:a452a64450662c089f2f33011f7156dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using a user-specified unsigned integral as the seed.  <a href="namespacerng.html#a452a64450662c089f2f33011f7156dad">More...</a><br /></td></tr>
+<tr class="separator:a452a64450662c089f2f33011f7156dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -135,19 +145,100 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains objects &amp; methods related to generating random numbers. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a4b8ac1f1c29f3f22c35f0726b2bd89bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b8ac1f1c29f3f22c35f0726b2bd89bc">&#9670;&nbsp;</a></span>DefaultEngine</h2>
+<a id="ab0d6ea6a0a4e6d9907313a60d4c93043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d6ea6a0a4e6d9907313a60d4c93043">&#9670;&nbsp;</a></span>DefaultEngine</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacerng.html#a4b8ac1f1c29f3f22c35f0726b2bd89bc">rng::DefaultEngine</a> = typedef std::default_random_engine</td>
+          <td class="memname">using <a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">rng::DefaultEngine</a> = typedef ::std::default_randomengine</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00024">24</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00331">331</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ebbcbc58faa63afda357f49f1f9e049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ebbcbc58faa63afda357f49f1f9e049">&#9670;&nbsp;</a></span>dRand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerng.html#a8ebbcbc58faa63afda357f49f1f9e049">rng::dRand</a> = typedef <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt;<a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_random_device.html">seed::FromRandomDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random number generator using the system's random_device as the seed. </p>
+
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00345">345</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a452a64450662c089f2f33011f7156dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452a64450662c089f2f33011f7156dad">&#9670;&nbsp;</a></span>sRand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerng.html#a452a64450662c089f2f33011f7156dad">rng::sRand</a> = typedef <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt;<a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_integral.html">seed::FromIntegral</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random number generator using a user-specified unsigned integral as the seed. </p>
+
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00347">347</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a388919ed472f27b0298f67e9f8252d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388919ed472f27b0298f67e9f8252d98">&#9670;&nbsp;</a></span>tRand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerng.html#a388919ed472f27b0298f67e9f8252d98">rng::tRand</a> = typedef <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">xRand</a>&lt;<a class="el" href="namespacerng.html#ab0d6ea6a0a4e6d9907313a60d4c93043">DefaultEngine</a>, <a class="el" href="structrng_1_1seed_1_1_from_time.html">seed::FromTime</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random number generator using the time since epoch (retrieved from std::chrono::steady_clock) as a seed. </p>
+
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00343">343</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a03c4e5a192da41d6433c42a4d8e6496c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c4e5a192da41d6433c42a4d8e6496c">&#9670;&nbsp;</a></span>xRand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Engine , template&lt; class &gt; class Seeder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">rng::xRand</a> = typedef Seeder&lt;Engine&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Templated using statement for rng engines. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Engine</td><td>Randomization engine. </td></tr>
+    <tr><td class="paramname">Seeder</td><td>Seeding algorithm implementation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00341">341</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -182,7 +273,7 @@ template&lt;class _Ty &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00043">43</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00190">190</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +307,7 @@ template&lt;class _Ty &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00037">37</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00184">184</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +341,7 @@ template&lt;class _Ty &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00031">31</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00178">178</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
 </div>
 </div>

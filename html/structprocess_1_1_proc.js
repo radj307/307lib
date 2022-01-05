@@ -1,6 +1,8 @@
 var structprocess_1_1_proc =
 [
-    [ "Proc", "structprocess_1_1_proc.html#a870b4c37f3cb911305818d16cc79bf27", null ],
+    [ "Proc", "structprocess_1_1_proc.html#adb172aac03993695cf51c8dfd3ab7a27", null ],
+    [ "Proc", "structprocess_1_1_proc.html#a735999238844668017aa6bc241239d90", null ],
+    [ "Proc", "structprocess_1_1_proc.html#afa5f64b4d4a4b951cc2e7d8d30f62bfc", null ],
     [ "Proc", "structprocess_1_1_proc.html#a748176848e97b97d4f77eb7ebcbf37fe", null ],
     [ "~Proc", "structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc", null ],
     [ "close", "structprocess_1_1_proc.html#a3675feb2224f03031c8d8eeb32f89e59", null ],

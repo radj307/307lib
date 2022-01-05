@@ -4,6 +4,11 @@ var hierarchy =
     [ "opt::ArgContainer", "structopt_1_1_arg_container.html", [
       [ "opt::ParamsAPI2", "classopt_1_1_params_a_p_i2.html", null ]
     ] ],
+    [ "rng::BasicRand", null, [
+      [ "rng::seed::FromIntegral< Engine >", "structrng_1_1seed_1_1_from_integral.html", null ],
+      [ "rng::seed::FromRandomDevice< Engine >", "structrng_1_1seed_1_1_from_random_device.html", null ],
+      [ "rng::seed::FromTime< Engine >", "structrng_1_1seed_1_1_from_time.html", null ]
+    ] ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
     [ "color::Config", "classcolor_1_1_config.html", null ],
     [ "color::ConfigDefaults", "structcolor_1_1_config_defaults.html", null ],
@@ -19,6 +24,10 @@ var hierarchy =
     ] ],
     [ "opt::InputWrapper", "structopt_1_1_input_wrapper.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
+    [ "file::base::LexemeDictBase< LexemeT >", "structfile_1_1base_1_1_lexeme_dict_base.html", null ],
+    [ "file::base::LexemeDictBase< LEXEME >", "structfile_1_1base_1_1_lexeme_dict_base.html", [
+      [ "file::DefaultDefs::LexemeDict", "structfile_1_1_default_defs_1_1_lexeme_dict.html", null ]
+    ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
     [ "term::Message", "classterm_1_1_message.html", null ],
@@ -33,21 +42,19 @@ var hierarchy =
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "rng::Rand< Engine >", "structrng_1_1_rand.html", null ],
-    [ "rng::Rand< DefaultEngine >", "structrng_1_1_rand.html", [
-      [ "rng::dRand", "structrng_1_1d_rand.html", null ],
-      [ "rng::sRand", "structrng_1_1s_rand.html", null ],
-      [ "rng::tRand", "structrng_1_1t_rand.html", null ]
-    ] ],
     [ "color::setcolor_seq< SeqT >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
     [ "std::string_view", null, [
       [ "opt::Argument", "classopt_1_1_argument.html", null ]
     ] ],
+    [ "term::TargetHandle", "structterm_1_1_target_handle.html", null ],
+    [ "file::base::TokenBase< TknType >", "structfile_1_1base_1_1_token_base.html", null ],
     [ "token::TokenBase< TokenT >", "structtoken_1_1_token_base.html", null ],
     [ "token::TokenBase< TokenType >", "structtoken_1_1_token_base.html", [
       [ "token::Token", "structtoken_1_1_token.html", null ]
     ] ],
+    [ "file::base::TokenizerBase< LexemeT, Dictionary, TknType, TokenT >", "classfile_1_1base_1_1_tokenizer_base.html", null ],
     [ "token::TokenizerBaseFunctions< TokenT >", "structtoken_1_1_tokenizer_base_functions.html", null ],
     [ "token::TokenizerBaseFunctions< Token >", "structtoken_1_1_tokenizer_base_functions.html", [
       [ "token::TokenizerBase", "classtoken_1_1_tokenizer_base.html", [
@@ -55,6 +62,7 @@ var hierarchy =
         [ "token::TokenizerINI", "structtoken_1_1_tokenizer_i_n_i.html", null ]
       ] ]
     ] ],
+    [ "file::base::TokenParserBase< OutputType, TokenT >", "classfile_1_1base_1_1_token_parser_base.html", null ],
     [ "token::TokenParserBase", "structtoken_1_1_token_parser_base.html", [
       [ "color::fileext::ConfigParser", "classcolor_1_1fileext_1_1_config_parser.html", null ],
       [ "token::parse::INIParser", "structtoken_1_1parse_1_1_i_n_i_parser.html", null ]

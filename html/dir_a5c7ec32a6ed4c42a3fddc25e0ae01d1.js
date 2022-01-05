@@ -18,5 +18,6 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
     [ "term.hpp", "term_8hpp.html", "term_8hpp" ],
     [ "TermAPI.hpp", "_term_a_p_i_8hpp.html", null ],
     [ "winEnableANSI.hpp", "win_enable_a_n_s_i_8hpp.html", "win_enable_a_n_s_i_8hpp" ],
+    [ "WinTermAPI.hpp", "_win_term_a_p_i_8hpp.html", "_win_term_a_p_i_8hpp" ],
     [ "xlog.hpp", "xlog_8hpp.html", "xlog_8hpp" ]
 ];

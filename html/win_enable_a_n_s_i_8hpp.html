@@ -86,13 +86,17 @@ $(document).ready(function(){initNavTree('win_enable_a_n_s_i_8hpp.html',''); ini
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">winEnableANSI.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
@@ -100,12 +104,18 @@ $(document).ready(function(){initNavTree('win_enable_a_n_s_i_8hpp.html',''); ini
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for winEnableANSI.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="win_enable_a_n_s_i_8hpp__incl.svg" width="487" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="win_enable_a_n_s_i_8hpp__incl.svg" width="607" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
 <p><a href="win_enable_a_n_s_i_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_target_handle.html">term::TargetHandle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pseudo-flag object that allows targetting any or all of STDIN, STDOUT, &amp; STDERR.  <a href="structterm_1_1_target_handle.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceterm"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html">term</a></td></tr>
@@ -116,6 +126,27 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win_enable_a_n_s_i_8hpp.html#ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</a></td></tr>
 <tr class="separator:ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a172fb2c7a41abb5332380d247f0eab01"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">term::EnableANSI</a> (std::istream &amp;is)</td></tr>
+<tr class="separator:a172fb2c7a41abb5332380d247f0eab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f6e8813a164f0dbd42af1392a774ff"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a23f6e8813a164f0dbd42af1392a774ff">term::DisableANSI</a> (std::istream &amp;is)</td></tr>
+<tr class="separator:a23f6e8813a164f0dbd42af1392a774ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae757070ed7f466847cdb48708150f249"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae757070ed7f466847cdb48708150f249">term::EnableANSI</a> (std::ostream &amp;os)</td></tr>
+<tr class="separator:ae757070ed7f466847cdb48708150f249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb49efa95b3fe86a93104097d25997b8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#adb49efa95b3fe86a93104097d25997b8">term::DisableANSI</a> (std::ostream &amp;os)</td></tr>
+<tr class="separator:adb49efa95b3fe86a93104097d25997b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cbafab3a5d5b7363c9b9058707a1bab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9cbafab3a5d5b7363c9b9058707a1bab">term::EnableANSI</a> (const TargetHandle &amp;target=TargetHandle::STDIN|TargetHandle::STDOUT)</td></tr>
+<tr class="separator:a9cbafab3a5d5b7363c9b9058707a1bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c6a58eb0578e3100539f320d287f01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af7c6a58eb0578e3100539f320d287f01">term::DisableANSI</a> (const TargetHandle &amp;target=TargetHandle::STDIN|TargetHandle::STDOUT)</td></tr>
+<tr class="separator:af7c6a58eb0578e3100539f320d287f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac3fd6d8de55ecb6d77a86d784d4108e2">term::ConsoleModeSetter</a></td></tr>
+<tr class="separator:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac7bef5d85e3dcd73eef56ad39ffc84a9"></a>
@@ -130,7 +161,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00012">12</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00013">13</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
 
 </div>
 </div>

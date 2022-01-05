@@ -118,6 +118,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1_message.html">Message</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for messages.  <a href="classterm_1_1_message.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_target_handle.html">TargetHandle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pseudo-flag object that allows targetting any or all of STDIN, STDOUT, &amp; STDERR.  <a href="structterm_1_1_target_handle.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -226,6 +229,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a931c836a528da7227b3babfaef8600a8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a931c836a528da7227b3babfaef8600a8">setMessageColorEnabled</a> (const bool &amp;enable)</td></tr>
 <tr class="memdesc:a931c836a528da7227b3babfaef8600a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows enabling/disabling the use of <a class="el" href="namespace_a_n_s_i.html">ANSI</a> color sequences in message functions.  <a href="namespaceterm.html#a931c836a528da7227b3babfaef8600a8">More...</a><br /></td></tr>
 <tr class="separator:a931c836a528da7227b3babfaef8600a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172fb2c7a41abb5332380d247f0eab01"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">EnableANSI</a> (std::istream &amp;is)</td></tr>
+<tr class="separator:a172fb2c7a41abb5332380d247f0eab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f6e8813a164f0dbd42af1392a774ff"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a23f6e8813a164f0dbd42af1392a774ff">DisableANSI</a> (std::istream &amp;is)</td></tr>
+<tr class="separator:a23f6e8813a164f0dbd42af1392a774ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae757070ed7f466847cdb48708150f249"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae757070ed7f466847cdb48708150f249">EnableANSI</a> (std::ostream &amp;os)</td></tr>
+<tr class="separator:ae757070ed7f466847cdb48708150f249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb49efa95b3fe86a93104097d25997b8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#adb49efa95b3fe86a93104097d25997b8">DisableANSI</a> (std::ostream &amp;os)</td></tr>
+<tr class="separator:adb49efa95b3fe86a93104097d25997b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cbafab3a5d5b7363c9b9058707a1bab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9cbafab3a5d5b7363c9b9058707a1bab">EnableANSI</a> (const <a class="el" href="structterm_1_1_target_handle.html">TargetHandle</a> &amp;target=<a class="el" href="structterm_1_1_target_handle.html#aca973b8ac1fbfea3a94785888385bcfc">TargetHandle::STDIN</a>|<a class="el" href="structterm_1_1_target_handle.html#a3635d7ab6e7b9c44ae128521724330fe">TargetHandle::STDOUT</a>)</td></tr>
+<tr class="separator:a9cbafab3a5d5b7363c9b9058707a1bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c6a58eb0578e3100539f320d287f01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af7c6a58eb0578e3100539f320d287f01">DisableANSI</a> (const <a class="el" href="structterm_1_1_target_handle.html">TargetHandle</a> &amp;target=<a class="el" href="structterm_1_1_target_handle.html#aca973b8ac1fbfea3a94785888385bcfc">TargetHandle::STDIN</a>|<a class="el" href="structterm_1_1_target_handle.html#a3635d7ab6e7b9c44ae128521724330fe">TargetHandle::STDOUT</a>)</td></tr>
+<tr class="separator:af7c6a58eb0578e3100539f320d287f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329019f0d66361cb39a8952309537e38"><td class="memTemplParams" colspan="2">template&lt;int fd&gt; </td></tr>
+<tr class="memitem:a329019f0d66361cb39a8952309537e38"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a329019f0d66361cb39a8952309537e38">requires</a> (fd==<a class="el" href="namespaceterm.html#a6e80650d00f5868864f3955098385a79">STDIN_HANDLE</a>||fd==<a class="el" href="namespaceterm.html#a1ddb1af34f2ff0fd9e2ffd31ac5e958b">STDOUT_HANDLE</a>||fd==<a class="el" href="namespaceterm.html#ab94145b8e25bc77f2730ac3686d5c5e3">STDERR_HANDLE</a>) inline bool <a class="el" href="namespaceterm.html#a172fb2c7a41abb5332380d247f0eab01">EnableANSI</a>() noexcept</td></tr>
+<tr class="separator:a329019f0d66361cb39a8952309537e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -315,6 +333,15 @@ Variables</h2></td></tr>
 <tr class="separator:ad3c65759cf102ac65faa9d4e385d684a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1b719b59cb9277b1e04982a6068fc1a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab1b719b59cb9277b1e04982a6068fc1a">crit</a> { &quot;[CRIT]&quot;,color::setcolor{<a class="el" href="namespacecolor.html#ad3176a9fe9736aa1305fa2050eabab92">color::dark_red</a>, <a class="el" href="structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa">color::format::BOLD</a> } }</td></tr>
 <tr class="separator:ab1b719b59cb9277b1e04982a6068fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac3fd6d8de55ecb6d77a86d784d4108e2">ConsoleModeSetter</a></td></tr>
+<tr class="separator:ac3fd6d8de55ecb6d77a86d784d4108e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e80650d00f5868864f3955098385a79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a6e80650d00f5868864f3955098385a79">STDIN_HANDLE</a> { 0 }</td></tr>
+<tr class="separator:a6e80650d00f5868864f3955098385a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddb1af34f2ff0fd9e2ffd31ac5e958b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1ddb1af34f2ff0fd9e2ffd31ac5e958b">STDOUT_HANDLE</a> { 1 }</td></tr>
+<tr class="separator:a1ddb1af34f2ff0fd9e2ffd31ac5e958b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94145b8e25bc77f2730ac3686d5c5e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab94145b8e25bc77f2730ac3686d5c5e3">STDERR_HANDLE</a> { 2 }</td></tr>
+<tr class="separator:ab94145b8e25bc77f2730ac3686d5c5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains pre-made <a class="el" href="namespace_a_n_s_i.html">ANSI</a> sequences &amp; helper functions for making sequences. </p>
@@ -779,6 +806,186 @@ template&lt;std::integral T&gt; </div>
 
 </div>
 </div>
+<a id="af7c6a58eb0578e3100539f320d287f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c6a58eb0578e3100539f320d287f01">&#9670;&nbsp;</a></span>DisableANSI() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool term::DisableANSI </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structterm_1_1_target_handle.html">TargetHandle</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em> = <code><a class="el" href="structterm_1_1_target_handle.html#aca973b8ac1fbfea3a94785888385bcfc">TargetHandle::STDIN</a>&#160;|&#160;<a class="el" href="structterm_1_1_target_handle.html#a3635d7ab6e7b9c44ae128521724330fe">TargetHandle::STDOUT</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00151">151</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_af7c6a58eb0578e3100539f320d287f01_cgraph.svg" width="320" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a23f6e8813a164f0dbd42af1392a774ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f6e8813a164f0dbd42af1392a774ff">&#9670;&nbsp;</a></span>DisableANSI() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; term::DisableANSI </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00123">123</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adb49efa95b3fe86a93104097d25997b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb49efa95b3fe86a93104097d25997b8">&#9670;&nbsp;</a></span>DisableANSI() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; term::DisableANSI </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00136">136</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9cbafab3a5d5b7363c9b9058707a1bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cbafab3a5d5b7363c9b9058707a1bab">&#9670;&nbsp;</a></span>EnableANSI() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool term::EnableANSI </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structterm_1_1_target_handle.html">TargetHandle</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em> = <code><a class="el" href="structterm_1_1_target_handle.html#aca973b8ac1fbfea3a94785888385bcfc">TargetHandle::STDIN</a>&#160;|&#160;<a class="el" href="structterm_1_1_target_handle.html#a3635d7ab6e7b9c44ae128521724330fe">TargetHandle::STDOUT</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00144">144</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a9cbafab3a5d5b7363c9b9058707a1bab_cgraph.svg" width="318" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a172fb2c7a41abb5332380d247f0eab01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172fb2c7a41abb5332380d247f0eab01">&#9670;&nbsp;</a></span>EnableANSI() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; term::EnableANSI </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00118">118</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae757070ed7f466847cdb48708150f249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae757070ed7f466847cdb48708150f249">&#9670;&nbsp;</a></span>EnableANSI() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; term::EnableANSI </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="win_enable_a_n_s_i_8hpp_source.html#l00128">128</a> of file <a class="el" href="win_enable_a_n_s_i_8hpp_source.html">winEnableANSI.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ad847765cb42301b52e7e1decbb147241"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad847765cb42301b52e7e1decbb147241">&#9670;&nbsp;</a></span>EraseChar()</h2>
 
@@ -1141,6 +1348,36 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00427">427</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a329019f0d66361cb39a8952309537e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329019f0d66361cb39a8952309537e38">&#9670;&nbsp;</a></span>requires()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int fd&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">term::requires </td>
+          <td>(</td>
+          <td class="paramtype">fd&#160;</td>
+          <td class="paramname"> = <code>=&#160;<a class="el" href="namespaceterm.html#a6e80650d00f5868864f3955098385a79">STDIN_HANDLE</a>&#160;||&#160;fd&#160;==&#160;<a class="el" href="namespaceterm.html#a1ddb1af34f2ff0fd9e2ffd31ac5e958b">STDOUT_HANDLE</a>&#160;||&#160;fd&#160;==&#160;<a class="el" href="namespaceterm.html#ab94145b8e25bc77f2730ac3686d5c5e3">STDERR_HANDLE</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_win_term_a_p_i_8hpp_source.html#l00017">17</a> of file <a class="el" href="_win_term_a_p_i_8hpp_source.html">WinTermAPI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1542,6 +1779,20 @@ template&lt;var::Streamable... Ts&gt; </div>
 <p>Clear all currently set tab stops. </p>
 
 <p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00436">436</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac3fd6d8de55ecb6d77a86d784d4108e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3fd6d8de55ecb6d77a86d784d4108e2">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }  term::ConsoleModeSetter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2204,6 +2455,54 @@ template&lt;var::Streamable... Ts&gt; </div>
 <p>Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column. </p>
 
 <p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00406">406</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab94145b8e25bc77f2730ac3686d5c5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94145b8e25bc77f2730ac3686d5c5e3">&#9670;&nbsp;</a></span>STDERR_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int term::STDERR_HANDLE { 2 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_win_term_a_p_i_8hpp_source.html#l00015">15</a> of file <a class="el" href="_win_term_a_p_i_8hpp_source.html">WinTermAPI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6e80650d00f5868864f3955098385a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e80650d00f5868864f3955098385a79">&#9670;&nbsp;</a></span>STDIN_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int term::STDIN_HANDLE { 0 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_win_term_a_p_i_8hpp_source.html#l00013">13</a> of file <a class="el" href="_win_term_a_p_i_8hpp_source.html">WinTermAPI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ddb1af34f2ff0fd9e2ffd31ac5e958b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddb1af34f2ff0fd9e2ffd31ac5e958b">&#9670;&nbsp;</a></span>STDOUT_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const int term::STDOUT_HANDLE { 1 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_win_term_a_p_i_8hpp_source.html#l00014">14</a> of file <a class="el" href="_win_term_a_p_i_8hpp_source.html">WinTermAPI.hpp</a>.</p>
 
 </div>
 </div>

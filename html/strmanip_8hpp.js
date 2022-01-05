@@ -1,6 +1,6 @@
 var strmanip_8hpp =
 [
-    [ "align_center", "strmanip_8hpp.html#a61c9108691e6d984499341518c993787", null ],
+    [ "align_center", "strmanip_8hpp.html#a026f55497d251c5acccef7dd42148138", null ],
     [ "apply_to_each", "strmanip_8hpp.html#a82f6e6378f1869b65cce94f28f31d665", null ],
     [ "concat", "strmanip_8hpp.html#a38d0037316e84612973026c052ec0616", null ],
     [ "contains", "strmanip_8hpp.html#a0f7141b95490d6fff216bb4dc520831d", null ],
@@ -10,8 +10,8 @@ var strmanip_8hpp =
     [ "extractString", "strmanip_8hpp.html#a2b36762bf1fb176cef1f3ab327ff2da6", null ],
     [ "extractString", "strmanip_8hpp.html#a3e72dddafe6ddd37de81a5368ad75f0e", null ],
     [ "extractStringUntil", "strmanip_8hpp.html#af3d243724dffd234a19646d7c7b13553", null ],
-    [ "find_any", "strmanip_8hpp.html#acd8f258dcf725866036392dc253eb48d", null ],
-    [ "find_any", "strmanip_8hpp.html#a93d96ab238bb0666c844c65b60303dbd", null ],
+    [ "find_any", "strmanip_8hpp.html#ad4712ba59b2780def08bcddcca090fe6", null ],
+    [ "find_any", "strmanip_8hpp.html#a37d8523d5d709baa8186137694899ac7", null ],
     [ "getline", "strmanip_8hpp.html#af632b5ef496a88eb6c6a50ee18385c62", null ],
     [ "getline_pred", "strmanip_8hpp.html#aea95d9955d4eaf233668351a309059db", null ],
     [ "getStreamLength", "strmanip_8hpp.html#a2665afb44cc6e90ff1e922639ea0e528", null ],
@@ -21,12 +21,12 @@ var strmanip_8hpp =
     [ "remove_all", "strmanip_8hpp.html#a16f757b5761b656d6ce1d15aee26507c", null ],
     [ "remove_all_of", "strmanip_8hpp.html#a30c7ac3d05115fd618a8779045def1c7", null ],
     [ "remove_whitespace", "strmanip_8hpp.html#ad1d6dd0849bbc57ab6970682bf0f8078", null ],
-    [ "reverse", "strmanip_8hpp.html#a14c6dc2d1ec575eb4f211b202f1baec0", null ],
+    [ "reverse", "strmanip_8hpp.html#a9ef656ed2d8e17d0f1e68df1770058bc", null ],
     [ "sanitize", "strmanip_8hpp.html#aba157b4f80912e0c19b9ad7676d2c8d1", null ],
     [ "split_by_words", "strmanip_8hpp.html#aa4bf5f1b14b776ed8c1225f5c2870a92", null ],
     [ "split_to_vector", "strmanip_8hpp.html#a5bac9088e59d818dfcb958ca9fc1c673", null ],
-    [ "strip_line", "strmanip_8hpp.html#a7346dfeb6d8d2d04a563649f4bf3cbca", null ],
-    [ "strip_line_multiCharComment", "strmanip_8hpp.html#a41372d1cf755e2aa10b286aa5cc7e5b1", null ],
+    [ "strip_line", "strmanip_8hpp.html#afd95e8c52ef329511c996acbbc021c5d", null ],
+    [ "strip_line_multiCharComment", "strmanip_8hpp.html#ab3d3b4fc0b12749a6a027d5b0e58be81", null ],
     [ "toMap", "strmanip_8hpp.html#a88947ca78984e05f41dd36fb221d32d6", null ],
     [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ]
 ];

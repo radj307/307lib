@@ -25,29 +25,29 @@
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "307Lib", "index.html#autotoc_md3", [
-      [ "Index", "index.html#autotoc_md4", null ],
-      [ "Shared Headers", "index.html#autotoc_md5", null ]
+    [ "307Lib", "index.html#autotoc_md4", [
+      [ "Index", "index.html#autotoc_md5", null ],
+      [ "Shared Headers", "index.html#autotoc_md6", null ]
     ] ],
     [ "TermAPI v3", "page1.html", [
-      [ "EDIT | How to use TermAPI Version 3", "page1.html#autotoc_md6", null ],
-      [ "Usage", "page1.html#autotoc_md7", [
-        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md8", null ],
-        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md9", null ],
-        [ "A Note on Cursor Positioning", "page1.html#autotoc_md10", null ]
+      [ "EDIT | How to use TermAPI Version 3", "page1.html#autotoc_md7", null ],
+      [ "Usage", "page1.html#autotoc_md8", [
+        [ "Version 2.0.0 Sequences", "page1.html#autotoc_md9", null ],
+        [ "Using Version 1.0.0 Functions", "page1.html#autotoc_md10", null ],
+        [ "A Note on Cursor Positioning", "page1.html#autotoc_md11", null ]
       ] ],
-      [ "Color Library", "page1.html#autotoc_md11", [
-        [ "ColorPalette", "page1.html#autotoc_md12", null ],
-        [ "DEC Line Drawings", "page1.html#autotoc_md13", null ]
+      [ "Color Library", "page1.html#autotoc_md12", [
+        [ "ColorPalette", "page1.html#autotoc_md13", null ],
+        [ "DEC Line Drawings", "page1.html#autotoc_md14", null ]
       ] ]
     ] ],
     [ "TermAPI v4", "page2.html", [
-      [ "How to use Version 3", "page2.html#autotoc_md14", null ],
-      [ "Changes in Version 4", "page2.html#autotoc_md15", null ],
-      [ "color", "page2.html#autotoc_md16", null ]
+      [ "How to use Version 3", "page2.html#autotoc_md15", null ],
+      [ "Changes in Version 4", "page2.html#autotoc_md16", null ],
+      [ "color", "page2.html#autotoc_md17", null ]
     ] ],
     [ "307lib Documentation", "md__r_e_a_d_m_e.html", [
-      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md18", null ]
+      [ "Generating Documentation", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -85,12 +85,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_arg_8hpp.html",
-"classcolor_1_1format_1_1_flag_base.html#ae1aeb476a7cfdcf6399ca5ca1288f9ab",
-"fileio_8hpp.html#ab1318022228e9fe9edb5138ac4c0aaa5",
-"namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18",
-"namespacetoken_1_1parse.html#aba798f9824e7bf35f88b5fefa344199a",
-"structopt_1_1_input_wrapper.html#a373b55a390d7421967f1b09f663bf123",
-"sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116"
+"_win_term_a_p_i_8hpp_source.html",
+"color-format_8hpp.html#a06fa4196067669328e2fa6b937fdae61",
+"namespacecolor.html#a88c1e3de58c5174da532ef80c93536d1",
+"namespacestr.html#ad2842f64da212ac392e6c3385eb54a3e",
+"str_8hpp.html#abea510ab5719c607e5a2ce61bde9e03e",
+"structrng_1_1seed_1_1_from_time.html",
+"term_8hpp.html#abebb4775eea85eb7c438340d466ef5ac"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

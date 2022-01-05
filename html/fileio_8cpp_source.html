@@ -89,8 +89,36 @@ $(document).ready(function(){initNavTree('fileio_8cpp_source.html',''); initResi
 <div class="title">fileio.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="fileio_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="fileio_8hpp.html">&quot;fileio.hpp&quot;</a></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// dummy file so cmake generates the library correctly</span></div>
+<a href="fileio_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../include/fileio.hpp&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @brief       Read the contents of a file to a stringstream.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * @param path  Target Filepath</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * @returns     std::stringstream&amp;&amp;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">    8</a></span>&#160;std::stringstream <a class="code" href="namespacefile.html">file</a>::<a class="code" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">read</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::stringstream buffer;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (std::ifstream ifs(path); ifs.is_open())</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        buffer &lt;&lt; ifs.rdbuf();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> std::move(buffer);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @brief           Write the contents of a stringstream buffer to a file.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * @param path      Target filepath</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @param buffer    Stringstream rvalue reference.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @param append    When true, the buffer is appended to the end of the file rather than overwriting the previous contents.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @returns         bool</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *\n                true    Successfully wrote all data to file without error.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *\n                false   Failed to write all data to file because of an error.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacefile.html#ad7fc87c5817c3230a233d6846fd9d50e">   25</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacefile.html">file</a>::<a class="code" href="namespacefile.html#ad7fc87c5817c3230a233d6846fd9d50e">write</a>(<span class="keyword">const</span> std::filesystem::path&amp; path, std::stringstream&amp;&amp; buffer, <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; append)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (std::ofstream ofs(path, (append ? std::ios_base::app : std::ios_base::trunc)); ofs.is_open())</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;<span class="keywordtype">bool</span>&gt;(ofs &lt;&lt; std::move(buffer.rdbuf()));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

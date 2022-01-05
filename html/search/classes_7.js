@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['message_770',['Message',['../classterm_1_1_message.html',1,'term']]],
-  ['mode_771',['Mode',['../structprocess_1_1_mode.html',1,'process']]]
+  ['numbergrouping_814',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
 ];
