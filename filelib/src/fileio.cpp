@@ -5,7 +5,7 @@
  * @param path	Target Filepath
  * @returns		std::stringstream&&
  */
-std::stringstream&& file::read(const std::filesystem::path& path) noexcept
+std::stringstream file::read(const std::filesystem::path& path) noexcept
 {
 	std::stringstream buffer;
 	if (std::ifstream ifs(path); ifs.is_open())
@@ -27,22 +27,4 @@ bool file::write(const std::filesystem::path& path, std::stringstream&& buffer, 
 	if (std::ofstream ofs(path, (append ? std::ios_base::app : std::ios_base::trunc)); ofs.is_open())
 		return static_cast<bool>(ofs << std::move(buffer.rdbuf()));
 	return false;
-}
-
-/**
- * @brief			Write any number of objects to a file.
- * @tparam APPEND	When true, appends the given types to the file instead of overwriting the file's previous contents.
- * @tparam T...		Variadic Types
- * @param path		Target Filepath
- * @param data...	Any number of objects to write to the file.
- *\n				The object must have a std::ostream::operator<< compatible overload.
- * @returns			bool
- *\n				true	Successfully wrote all data to file without error.
- *\n				false	Failed to write all data to file because of an error.
- */
-template<bool APPEND, ::var::Streamable... T> bool file::write(const std::filesystem::path& path, T&&... data)
-{
-	std::stringstream buffer;
-	(buffer << ... << data);
-	return ::write(path, std::move(buffer), APPEND);
 }
