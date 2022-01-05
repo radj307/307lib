@@ -17,7 +17,7 @@ namespace ANSI {
 	using wSequence = std::wstring;
 
 	// char
-	template<std::same_as<Sequence> Type = Sequence, var::Streamable... Ts>
+	template<std::same_as<Sequence> Type = Sequence, var::Streamable<std::stringstream>... Ts>
 	const Type make_sequence(const Ts&... segments) noexcept
 	{
 		if constexpr (sizeof...(segments) > 0ull)
@@ -26,7 +26,7 @@ namespace ANSI {
 		return{};
 	}
 	// wide char
-	template<std::same_as<wSequence> Type, var::wStreamable... Ts>
+	template<std::same_as<wSequence> Type, var::Streamable<std::wstringstream>... Ts>
 	const Type make_sequence(const Ts&... segments) noexcept
 	{
 		if constexpr (sizeof...(segments) > 0ull)
