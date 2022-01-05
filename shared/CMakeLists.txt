@@ -9,12 +9,7 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus") # Fix MSVC __cplusplus macro
 endif()
 
-set(shared_VERSION_MAJOR 1)
-set(shared_VERSION_MINOR 1)
-set(shared_VERSION_PATCH 0)
-set(shared_VERSION ${shared_VERSION_MAJOR}.${shared_VERSION_MINOR}.${shared_VERSION_PATCH})
-
-project("shared" VERSION ${shared_VERSION} LANGUAGES CXX)
+project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 file(GLOB SRCS 
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -23,7 +18,7 @@ file(GLOB SRCS
 	"src/*.c*"
 )
 
-add_library(shared STATIC ${SRCS})
+add_library(shared STATIC "cpp.hint" ${SRCS})
 
 target_include_directories(shared PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"

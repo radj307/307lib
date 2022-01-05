@@ -58,7 +58,7 @@ namespace token {
 			case LEXEME::DIGIT: {
 				rollback();
 				const auto str{ getsimilar(LEXEME::SUBTRACT, LEXEME::DIGIT, LEXEME::PERIOD) };
-				return (str::pos_valid(str.find('.') || (str.back() == 'f' || str.back() == 'F')) ? Token{ str, TokenType::NUMBER } : Token{ str, TokenType::NUMBER_INT });
+				return (str::pos_valid(str.find('.') || !str.empty() && (str.back() == 'f' || str.back() == 'F')) ? Token{ str, TokenType::NUMBER } : Token{ str, TokenType::NUMBER_INT });
 			}
 			case LEXEME::NEWLINE:
 				return Token{ ch, TokenType::NEWLINE };

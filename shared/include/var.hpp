@@ -157,6 +157,7 @@ namespace var {
 	 * @tparam T2	Second Type. Order doesn't matter.
 	 */
 	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
+	template<class T1, class T2> concept same_or_derived = std::same_as<T2, T1> || std::derived_from<T1, T2> || std::derived_from<T2, T1>;
 	/**
 	 * @concept			all_same_or_convertible
 	 * @brief			Checks if all of the given types are the same as or convertible to another given type.

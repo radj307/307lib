@@ -9,12 +9,7 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-set(strlib_VERSION_MAJOR 1)
-set(strlib_VERSION_MINOR 0)
-set(strlib_VERSION_PATCH 0)
-set(strlib_VERSION ${strlib_VERSION_MAJOR}.${strlib_VERSION_MINOR}.${strlib_VERSION_PATCH})
-
-project("strlib" VERSION ${strlib_VERSION} LANGUAGES CXX)
+project("strlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	"include/strconv.hpp"
