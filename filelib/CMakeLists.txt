@@ -11,17 +11,20 @@ endif()
 
 project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
-file(GLOB SRCS 
+file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"include/*.h*"
-	"src/*.c*"
+)
+set(SRCS
+	"src/fileio.cpp"
 )
 
 add_library(filelib STATIC ${SRCS})
 
+target_sources(filelib PUBLIC ${HEADERS})
 target_include_directories(filelib PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:include;src>"
 )
 
