@@ -25,8 +25,8 @@ public:
  * @param ...message	The message shown when calling the what() function.
  * @returns				ReturnT
  */
-template<std::derived_from<std::exception> ReturnT = except, var::Streamable... VT>
-WINCONSTEXPR ReturnT make_exception(VT const&... message)
+template<std::derived_from<std::exception> ReturnT = except, var::Streamable... Ts>
+WINCONSTEXPR ReturnT make_exception(Ts const&... message)
 {
 	std::stringstream ss;
 	(ss << ... << message);
