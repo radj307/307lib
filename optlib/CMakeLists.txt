@@ -9,12 +9,7 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-set(optlib_VERSION_MAJOR 1)
-set(optlib_VERSION_MINOR 1)
-set(optlib_VERSION_PATCH 0)
-set(optlib_VERSION ${optlib_VERSION_MAJOR}.${optlib_VERSION_MINOR}.${optlib_VERSION_PATCH})
-
-project("optlib" VERSION ${optlib_VERSION} LANGUAGES CXX)
+project("optlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 set(HEADERS
 	"include/Arg.hpp"

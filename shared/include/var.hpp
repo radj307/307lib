@@ -2,6 +2,11 @@
  * @file	var.hpp
  * @author	radj307
  * @brief	Contains helper methods for variadic templates & tuples, as well as general-use concepts.
+ *\n		I can't seem to find any documentation on how exactly concept templates are deduced,
+ *\n		but from my testing & std concepts like std::derived_from it appears that when used
+ *\n		instead of `typename`|`class`, the test type is inserted into the __FIRST__ template
+ *\n		parameter.
+ *\n		That's pretty great because it allows variadic concepts like var::any_same.
  */
 #pragma once
 #include <sysarch.h>
@@ -19,27 +24,8 @@
   * @brief Contains helper methods for variadic templated functions, as well as std::tuple.
   */
 namespace var {
-#if LANG_CPP >= 20
-#pragma region Concepts
-
-	/**
-	 * @concept		Streamable
-	 * @brief		Check if the given type can be inserted into an output stream.
-	 * @tparam T	A type to attempt to insert into the stream.
-	 */
-	template<typename T> concept Streamable = requires(T obj)
-	{
-		std::declval<std::stringstream&>() << obj;
-	};
-	/**
-	 * @concept		wStreamable
-	 * @brief		Check if the given type can be inserted into a wide char output stream.
-	 * @tparam T	A type to attempt to insert into the stream.
-	 */
-	template<typename T> concept wStreamable = requires(T obj)
-	{
-		std::declval<std::wstringstream&>() << obj;
-	};
+	#pragma region ConstexprTests
+	////////////////////////////////// BEGIN / Constexpr Tests /////////////////////////////////////////////
 	/**
 	 * @brief			Check if a variadic templated type has the same number of arguments as a given value.
 	 * @tparam compsize	The size to compare.
@@ -66,6 +52,108 @@ namespace var {
 	inline static constexpr const bool is_less_than = (sizeof...(VT) < compsize);
 	template<class... VT>
 	inline static constexpr const bool is_more_than_one = more_than<1, VT...>;
+	////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////
+	#pragma endregion ConstexprTests
+
+	#if LANG_CPP >= 20
+	#pragma region Concepts
+	////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
+	#pragma region DeclvalTest_Concepts
+	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
+	/**
+	 * @concept		Streamable
+	 * @brief		Check if the given type can be inserted into an output stream.
+	 * @tparam T	A type to attempt to insert into the stream.
+	 */
+	template<typename T, class StreamType = std::stringstream>
+	concept Streamable = requires(T obj)
+	{
+		std::declval<StreamType&>() << obj;
+	};
+	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
+	#pragma endregion DeclvalTest_Concepts
+	#pragma region Type_Concepts	
+	////////////////////////////////// BEGIN / Type Concepts /////////////////////////////////////////////
+	/**
+	 * @concept		same_or_convertible
+	 * @brief		Checks if the given types are the same, or if type From can be converted to type To.
+	 * @tparam From	The type to convert from, or the same type as To.
+	 * @tparam To	The type to convert to, or the same type as From.
+	 */
+	template<class From, class To> concept same_or_convertible = std::same_as<From, To> || std::convertible_to<From, To>;
+	/**
+	 * @concept		same_or_biconvertible
+	 * @brief		Checks if the given types are the same, or if one can be converted to the other. (Checks both ways)
+	 * @tparam T1	First Type. Order doesn't matter.
+	 * @tparam T2	Second Type. Order doesn't matter.
+	 */
+	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
+	////////////////////////////////// END / Type Concepts /////////////////////////////////////////////
+	#pragma endregion Type_Concepts
+	#pragma region Variadic_Count_Concepts
+	////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
+	/**
+	 * @concept			at_least_one
+	 * @brief			Check if a variadic templated type has at least one included argument.
+	 * @tparam ...VT	Input Variadic Templated Type
+	 * @returns			bool
+	 */
+	template<class... VT> concept at_least_one = (sizeof...(VT) > 0);
+	/**
+	 * @concept			none
+	 * @brief			Check if the number of included variadic arguments is 0.
+	 * @tparam VT...	Variadic Templated Types
+	 */
+	template<class... VT> concept none = (sizeof...(VT) == 0);
+	////////////////////////////////// END / Variadic Count Concepts /////////////////////////////////////////////
+	#pragma endregion Variadic_Count_Concepts
+	#pragma region VariadicType_Concepts
+	////////////////////////////////// BEGIN / Variadic Type Concepts /////////////////////////////////////////////
+	/**
+	 * @concept			not_same
+	 * @brief			Check if a specified type was not included in a variadic pack.
+	 * @tparam T		Type that shouldn't appear in variadic templated types.
+	 * @tparam VT...	Variadic Templated Types.
+	 */
+	template<typename T, typename... Ts> concept not_same = ((!std::same_as<T, Ts>) && ...);
+	/**
+	 * @concept			all_same
+	 * @brief			Concept that checks if all of the given variadic templated types are of the same specified type.
+	 * @tparam T		The type to compare against each variadic type.
+	 * @tparam VT...	Variadic Templated Input Types.
+	 */
+	template<typename T, typename... Ts> concept all_same = (std::same_as<T, Ts> && ...);
+	/**
+	 * @concept			any_same
+	 * @brief			Concept that checks if all of the given variadic templated types have the same type as any of the specified types.
+	 * @tparam T		The type to compare against each variadic type.
+	 * @tparam VT...	Variadic Templated Input Types.
+	 */
+	template<typename T, typename... Ts> concept any_same = (std::same_as<T, Ts> || ...);
+
+	template<typename T, typename... Ts> concept not_convertible = ((!std::convertible_to<T, Ts>) && ...);
+	template<typename T, typename... Ts> concept all_convertible = (std::convertible_to<T, Ts> && ...);
+	template<typename T, typename... Ts> concept any_convertible = (std::convertible_to<T, Ts> || ...);
+
+	/**
+	 * @concept			all_same_or_convertible
+	 * @brief			Checks if all of the given types are the same as or convertible to another given type.
+	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
+	 * @tparam VT...	Input Variadic Types
+	 */
+	template<class T, class... Ts> concept all_same_or_convertible = (same_or_convertible <T, Ts> && ...);
+	/**
+	 * @concept			any_same_or_convertible
+	 * @brief			Checks if any of the given types are the same as or convertible to another given type.
+	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
+	 * @tparam VT...	Input Variadic Types
+	 */
+	template<class T, class... Ts> concept any_same_or_convertible = (same_or_convertible <T, Ts> || ...);
+
+	////////////////////////////////// END / Variadic Type Concepts /////////////////////////////////////////////
+	#pragma endregion VariadicType_Concepts
+	#pragma region ByteSize_Concepts
+	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
 	/**
 	 * @concept		same_size
 	 * @brief		Checks if the given types are the same size in bytes.
@@ -101,141 +189,47 @@ namespace var {
 	 * @tparam R	Input Type 2
 	 */
 	template<typename L, typename R> concept larger_equal_size = (sizeof(L) >= sizeof(R));
-	/**
-	 * @concept			at_least_one
-	 * @brief			Check if a variadic templated type has at least one included argument.
-	 * @tparam ...VT	Input Variadic Templated Type
-	 * @returns			bool
-	 */
-	template<class... VT> concept at_least_one = (sizeof...(VT) > 0);
-	/**
-	 * @concept			all_same
-	 * @brief			Concept that checks if all of the given variadic templated types are of the same specified type.
-	 * @tparam T		The type to compare against each variadic type.
-	 * @tparam VT...	Variadic Templated Input Types.
-	 */
-	template<typename T, typename... VT> concept all_same = (std::same_as<T, VT> && ...);
-	/**
-	 * @concept			any_same
-	 * @brief			Concept that checks if all of the given variadic templated types have the same type as any of the specified types.
-	 * @tparam T		The type to compare against each variadic type.
-	 * @tparam VT...	Variadic Templated Input Types.
-	 */
-	template<typename T, typename... VT> concept any_same = (std::same_as<T, VT> || ...);
-	//template<typename Here, typename Next, typename... Rest> concept any_same = ((std::same_as<Here, Rest> || ...) || any_same<Next, Rest..., Here>);
-	/**
-	 * @concept			all_convertible_to
-	 * @brief			Check if all variadic templated types are able to be converted to a single specified type.
-	 * @tparam To		Type that all variadic types must be able to be implicitly converted to.
-	 * @tparam From...	Variadic types to check
-	 */
-	template<typename To, typename... From> concept all_convertible_to = (std::convertible_to<From, To> && ...);
-	/**
-	 * @concept			none
-	 * @brief			Check if the number of included variadic arguments is 0.
-	 * @tparam VT...	Variadic Templated Types
-	 */
-	template<class... VT> concept none = (sizeof...(VT) == 0);
-	/**
-	 * @concept			none_same
-	 * @brief			Check if a specified type was not included in a variadic pack.
-	 * @tparam T		Type that shouldn't appear in variadic templated types.
-	 * @tparam VT...	Variadic Templated Types.
-	 */
-	template<class T, class... VT> concept none_same = (!std::same_as<T, VT> && ...);
-	/**
-	 * @concept		same_or_convertible
-	 * @brief		Checks if the given types are the same, or if type From can be converted to type To.
-	 * @tparam From	The type to convert from, or the same type as To.
-	 * @tparam To	The type to convert to, or the same type as From.
-	 */
-	template<class From, class To> concept same_or_convertible = std::same_as<From, To> || std::convertible_to<From, To>;
-	/**
-	 * @concept		same_or_biconvertible
-	 * @brief		Checks if the given types are the same, or if one can be converted to the other. (Checks both ways)
-	 * @tparam T1	First Type. Order doesn't matter.
-	 * @tparam T2	Second Type. Order doesn't matter.
-	 */
-	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
-	/**
-	 * @concept			all_same_or_convertible
-	 * @brief			Checks if all of the given types are the same as or convertible to another given type.
-	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
-	 * @tparam VT...	Input Variadic Types
-	 */
-	template<class T, class... VT > concept all_same_or_convertible = (same_or_biconvertible <T, VT> && ...);
-	/**
-	 * @concept			any_same_or_convertible
-	 * @brief			Checks if any of the given types are the same as or convertible to another given type.
-	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
-	 * @tparam VT...	Input Variadic Types
-	 */
-	template<class T, class... VT > concept any_same_or_convertible = (same_or_biconvertible <T, VT> || ...);
-	/**
-	 * @concept		not_same
-	 * @brief		Checks that the given types are not the same.
-	 * @param T1	First Input Type
-	 * @param T2	Second Input Type
-	 */
-	template<typename T1, typename T2> concept not_same = std::negation_v<std::is_same<T1, T2>>;
-#pragma endregion Concepts
-#pragma region StringConcepts
+	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
+	#pragma endregion ByteSize_Concepts
+	#pragma region StringConcepts
+	////////////////////////////////// BEGIN / String Concepts /////////////////////////////////////////////
 	/**
 	 * @concept		valid_char
 	 * @brief		Allows all standard char types as of C++20, including signed/unsigned char, wchar_t, UTF-8, UTF-16, & UTF-32 types.
-	 * @tparam T	Input Type.
+	 * @tparam T	Test Type.
 	 */
-	template<class T> concept valid_char =
-		std::same_as<T, signed char>
-		|| std::same_as<T, unsigned char>
-		|| std::same_as<T, char>
-		|| std::same_as<T, wchar_t>
-		|| std::same_as<T, char8_t>
-		|| std::same_as<T, char16_t>
-		|| std::same_as<T, char32_t>;
+	template<class T> concept valid_char = any_same<T, signed char, unsigned char, char, wchar_t, char8_t, char16_t, char32_t>;
 	/**
 	 * @concept		valid_string
 	 * @brief		Allows standard string types, including narrow/wide, UTF-8, UTF-16, & UTF-32 types.
-	 * @tparam T	Input Type.
+	 * @tparam T	Test Type.
 	 */
-	template<class T> concept valid_string =
-		std::same_as<T, std::string>
-		|| std::same_as<T, std::wstring>
-		|| std::same_as<T, std::u8string>
-		|| std::same_as<T, std::u16string>
-		|| std::same_as<T, std::u32string>;
-	template<class T> concept valid_string_or_convertible = valid_string<T> || std::convertible_to<T, std::string> || std::convertible_to<T, std::wstring> || std::convertible_to<T, std::u8string> || std::convertible_to<T, std::u16string> || std::convertible_to<T, std::u32string>;
+	template<class T> concept valid_string = any_same<T, std::string, std::wstring, std::u8string, std::u16string, std::u32string>;
+	/**
+	 * @concept		valid_string_or_convertible
+	 * @brief		Allows standard string types, and any type that can be implicitly converted to string.
+	 * @tparam T	Test Type.
+	 */
+	template<class T> concept valid_string_or_convertible = valid_string<T> || any_convertible<T, std::string, std::wstring, std::u8string, std::u16string, std::u32string>;
 	/**
 	 * @concept		valid_string_view
 	 * @brief		Allows standard string_view types, including narrow/wide, UTF-8, UTF-16, & UTF-32 types.
-	 * @tparam T	Input Type.
+	 * @tparam T	Test Type.
 	 */
-	template<class T> concept valid_string_view =
-		std::same_as<T, std::string_view>
-		|| std::same_as<T, std::wstring_view>
-		|| std::same_as<T, std::u8string_view>
-		|| std::same_as<T, std::u16string_view>
-		|| std::same_as<T, std::u32string_view>;
+	template<class T> concept valid_string_view = any_same<T, std::string_view, std::wstring_view, std::u8string_view, std::u16string_view, std::u32string_view>;
+
 	/**
 	 * @concept		valid_stringbuf
 	 * @brief		Allows standard stringbuf types, including narrow/wide types.
-	 * @tparam T	Input Type.
+	 * @tparam T	Test Type.
 	 */
-	template<class T> concept valid_stringbuf =
-		std::same_as<T, std::stringbuf>
-		|| std::same_as<T, std::wstringbuf>;
+	template<class T> concept valid_stringbuf = std::same_as<T, std::stringbuf> || std::same_as<T, std::wstringbuf>;
 	/**
 	 * @concept		valid_stringstream
 	 * @brief		Allows standard stringstream types, including i/o, narrow/wide types.
 	 * @tparam T	Input Type.
 	 */
-	template<class T> concept valid_stringstream =
-		std::same_as<T, std::stringstream>
-		|| std::same_as<T, std::istringstream>
-		|| std::same_as<T, std::ostringstream>
-		|| std::same_as<T, std::wstringstream>
-		|| std::same_as<T, std::wistringstream>
-		|| std::same_as<T, std::wostringstream>;
+	template<class T> concept valid_stringstream = any_same<T, std::stringstream, std::istringstream, std::ostringstream, std::wstringstream, std::wostringstream, std::wistringstream>;
 	/**
 	 * @concept		valid_streambuf
 	 * @brief		Allows standard streambuf types, including narrow/wide types.
@@ -247,16 +241,14 @@ namespace var {
 	 * @brief		Allows standard streampos types, including narrow/wide, UTF-8, UTF-16, &UTF-32 types.
 	 * @tparam T	Input Type.
 	 */
-	template<class T> concept valid_streampos =
-		std::same_as<T, std::streampos>
-		|| std::same_as<T, std::wstreampos>
-		|| std::same_as<T, std::u8streampos>
-		|| std::same_as<T, std::u16streampos>
-		|| std::same_as<T, std::u32streampos>;
-#pragma endregion StringConcepts
-#endif // CPP >= 20
+	template<class T> concept valid_streampos = any_same<T, std::streampos, std::wstreampos, std::u8streampos, std::u16streampos, std::u32streampos>;
+	////////////////////////////////// END / String Concepts /////////////////////////////////////////////
+	#pragma endregion StringConcepts
+	////////////////////////////////// END / Concepts /////////////////////////////////////////////
+	#pragma endregion Concepts
+	#endif // CPP >= 20
 
-#pragma region variadic
+	#pragma region variadic
 	/**
 	 * @brief			Non-templated std::disjunction that accepts any number of boolean
 	 *\n 				conditions and returns true when at least one of them evaluates to true.
@@ -313,7 +305,7 @@ namespace var {
 	template<typename T, same_or_convertible<T>... Ts>
 	[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
 
-#if LANG_CPP >= 20
+	#if LANG_CPP >= 20
 	/**
 	 * @brief			Variadic templated helper function that returns a vector of templated element types.
 	 *\n				All types must be convertible to the specified output type.
@@ -352,10 +344,10 @@ namespace var {
 	{
 		return StrT{ static_cast<StrT::value_type>(ch)... };
 	}
-#endif
+	#endif
 
-#pragma endregion variadic
-#pragma region tuple
+	#pragma endregion variadic
+	#pragma region tuple
 	/**
 	 * @brief					Compare each element in a tuple against a given variable.
 	 * @tparam CompareType		Type that can be compared to all elements in the tuple.
@@ -418,5 +410,5 @@ namespace var {
 		return std::get<i>(l) == std::get<i>(r)
 			&& (sizeof...(Types) == i || tuple_and<i + 1ull>(l, r)); // if this is the last element, short circuit and stop recursing
 	}
-#pragma endregion tuple
+	#pragma endregion tuple
 }

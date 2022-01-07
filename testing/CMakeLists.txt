@@ -15,11 +15,12 @@ file(GLOB HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.h*")
 file(GLOB SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 add_executable(testing ${HEADERS} ${SRC})
+target_link_libraries(testing PUBLIC strlib optlib filelib TermAPI)
+
 target_sources(testing PUBLIC ${HEADERS} ${SRC})
 target_include_directories(testing PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
 	"$<INSTALL_INTERFACE:include>"
 )
 
-target_link_libraries(testing PUBLIC strlib optlib filelib TermAPI)
 

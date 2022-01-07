@@ -9,38 +9,28 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-set(filelib_VERSION_MAJOR 4)
-set(filelib_VERSION_MINOR 0)
-set(filelib_VERSION_PATCH 0)
-set(filelib_VERSION ${filelib_VERSION_MAJOR}.${filelib_VERSION_MINOR}.${filelib_VERSION_PATCH})
+project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
-project("filelib" VERSION ${filelib_VERSION} LANGUAGES CXX)
-
-set(HEADERS
-	# Base File Lib
-	"include/fileio.hpp"
-	"include/fileutil.hpp"
-	"include/env.hpp"
-	# Tokenizer Extensions
-	"include/LEXEME.h"
-	"include/Token.hpp"
-	"include/TokenizerBase.hpp"
-	"include/TokenParserBase.hpp"
-	# INI File Format
-	"include/INI_Tokenizer.hpp"
-	"include/INI_Container.hpp"
-	"include/INI_Parser.hpp"
-	"include/INI.hpp"
+file(GLOB HEADERS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
+)
+include(PrependEach)
+PREPEND_EACH(HEADERS_ABSOLUTE ${HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/")
+set(SRCS
+	"src/fileio.cpp"
 )
 
-file(GLOB SRC "src/*.cpp")
+add_library(filelib STATIC ${SRCS})
 
-add_library(filelib STATIC ${HEADERS} ${SRC})
-
-
+target_sources(filelib PUBLIC 
+	"$<BUILD_INTERFACE:${HEADERS_ABSOLUTE}>"
+	"$<INSTALL_INTERFACE:${HEADERS}>"
+)
 target_include_directories(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-	"$<INSTALL_INTERFACE:include>"
+	"$<INSTALL_INTERFACE:include;src>"
 )
 
 target_link_libraries(filelib PUBLIC shared strlib)

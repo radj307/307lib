@@ -29,7 +29,7 @@ namespace token::parse {
 	private:
 		const std::string& filename;
 
-		void throwEx(const size_t line, const std::string& msg)
+		void throwEx(const size_t& line, const std::string& msg)
 		{
 			throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: ", filename);
 		}
@@ -106,7 +106,7 @@ namespace token::parse {
 						throwEx(ln, "Missing Setter");
 					if (value.has_value()) {
 						if (std::holds_alternative<String>(value.value()))
-							value = (std::get<String>(value.value()) + ' ' + str); // allow fallthrough keys to be appended
+							value = (std::get<String>(value.value()) + str); // allow fallthrough keys to be appended
 						else throwEx(ln, "Duplicate Value");
 					}
 					else
