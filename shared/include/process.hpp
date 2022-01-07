@@ -147,7 +147,7 @@ namespace process {
 		 *							| BINARY | Opens the process pipe in binary mode. |
 		 *							| TEXT   | Opens the process pipe in text mode.   |
 		 */
-		Proc(int& out_return_code, const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ &out_return_code }
+		Proc(int& out_return_code, const std::string& command, const Mode& mode = (Mode::READ | Mode::TEXT)) noexcept(false) : _rc_ptr{ &out_return_code }
 		{
 			fflush(NULL); // flush all streams
 			_pipe = POPEN((command + SEQ_SHELL_OUTPUT_REDIRECT).c_str(), mode.str().c_str()); // open the pipe
