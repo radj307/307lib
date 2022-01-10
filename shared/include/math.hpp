@@ -61,4 +61,12 @@ namespace math {
 			return{ 255 * sizeof(T) };
 		else return { 128 * sizeof(T) };
 	}
+
+	/**
+	 * @brief		Constant-time math abs function. (Removes negative sign from numbers)
+	 * @tparam T	Input Type
+	 * @param val	Input Value
+	 * @returns		T
+	 */
+	template<var::arithmetic T> [[nodiscard]] static constexpr T abs(const T& val) { return val > 0 ? val : -val; }
 }

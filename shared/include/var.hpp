@@ -88,6 +88,12 @@ namespace var {
 	 * @tparam T2	Second Type. Order doesn't matter.
 	 */
 	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
+	/**
+	 * @concept		arithmetic
+	 * @brief		Checks if the given type is a value arithmetic input type.
+	 * @tparam T	Input Type
+	 */
+	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
 	////////////////////////////////// END / Type Concepts /////////////////////////////////////////////
 	#pragma endregion Type_Concepts
 	#pragma region Variadic_Count_Concepts
