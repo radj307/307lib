@@ -56,7 +56,7 @@ namespace str {
 	 *	disable "use of a moved from object 'buffer'", speed comparison testing shows a major performance
 	 *	increase when using return-move() for these functions. (~300000ns)
 	 */
-#pragma warning (disable: 26800) 
+	#pragma warning (disable: 26800) 
 	 /**
 	  * @brief Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
 	  * @tparam ...VT	- Variadic Templated Arguments.
@@ -215,7 +215,7 @@ namespace str {
 				shortest = strtpl;
 		return shortest;
 	}
-#pragma warning (default: 26800) // re-enable moved-from-object warning
+	#pragma warning (default: 26800) // re-enable moved-from-object warning
 
 	/**
 	 * @brief Compare 2 strings.
@@ -233,14 +233,14 @@ namespace str {
 		return l == r;
 	}
 
-#pragma region concepts
+	#pragma region concepts
 	/**
 	 * @concept ConvertibleStringT
 	 * @brief Allows types that are constructor-convertible to std::string
 	 * @tparam T	- Input Type
 	 */
 	template<class... T> concept ConvertibleStringT = std::constructible_from<std::string, T...>;
-#pragma endregion concepts
+	#pragma endregion concepts
 
 	/**
 	 * @struct Printable
@@ -363,4 +363,79 @@ namespace str {
 		return{ str, {} };
 	}
 
+	/**
+	 * @brief				Check if a given string matches any of a list of strings.
+	 * @tparam MatchCase	When true, matches are case sensitive, otherwise they are case insensitive.
+	 * @tparam StrT			String Type.
+	 * @tparam Ts...		Variadic number of types that are the same as StrT.
+	 * @param str			Input String
+	 * @param matches		At least one string to compare to str.
+	 * @returns bool
+	 */
+	template<bool MatchCase = true, var::valid_string StrT, var::same_or_convertible<StrT>... Ts> requires var::at_least_one<Ts...>
+	inline WINCONSTEXPR bool matches_any(const StrT& str, const Ts&... matches)
+	{
+		if constexpr (!MatchCase)
+			return var::variadic_or((str::tolower(str) == str::tolower(matches))...);
+		return var::variadic_or((str == matches)...);
+	}
+	/**
+	 * @brief				Check if a given string matches any of a list of strings.
+	 * @tparam MatchCase	When true, matches are case sensitive, otherwise they are case insensitive.
+	 * @tparam StrT			String Type.
+	 * @tparam Ts...		Variadic number of types that are the same as StrT.
+	 * @param str			Input String.
+	 * @param count			Minimum number of characters in _str_ that match an input string before being considered matching.
+	 * @param matches		At least one string to compare to str.
+	 * @returns bool
+	 */
+	template<bool MatchCase = true, var::same_or_convertible<std::string>... Ts> requires var::at_least_one<Ts...>
+	inline WINCONSTEXPR bool matches_any(const std::string& str, const int& count, const Ts&... matches)
+	{
+		const auto& compare{ [](const std::string& l, const std::string& r) {
+			if constexpr (MatchCase)
+				return l.compare(r);
+			return str::tolower(l).compare(str::tolower(r));
+		} };
+		return var::variadic_or((compare(str, matches) >= count)...);
+	}
+
+	/**
+	 * @brief				Remove trailing characters from a string.
+	 * @tparam DelimT		Variadic Input Types.
+	 * @param float_str		Input String.
+	 * @param delims...		At least one character to remove from the end of the string. These are casted to char before comparing!
+	 * @returns				std::string_view
+	 */
+	template<var::valid_char... DelimT>
+	inline static std::string_view strip_trailing(const std::string_view& str, const DelimT&... delims)
+	{
+		static_assert(sizeof...(DelimT) > 0, "strip_trailing() requires at least one delimiter char!");
+		size_t i{ 0ull };
+		for (auto rit{ str.rbegin() }; rit != str.rend(); ++rit) {
+			if (var::variadic_or(*rit == static_cast<char>(delims)...))
+				++i;
+			else break;
+		}
+		return str.substr(0ull, str.size() - i);
+	}
+	/**
+	 * @brief				Remove preceeding characters from a string.
+	 * @tparam DelimT		Variadic Input Types.
+	 * @param float_str		Input String.
+	 * @param delims...		At least one character to remove from the beginning of the string. These are casted to char before comparing!
+	 * @returns				std::string_view
+	 */
+	template<var::valid_char... DelimT>
+	inline static std::string_view strip_preceeding(const std::string_view& str, const DelimT&... delims)
+	{
+		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
+		size_t i{ 0ull };
+		for (auto it{ str.begin() }; it != str.end(); ++it) {
+			if (var::variadic_or(*it == static_cast<char>(delims)...))
+				++i;
+			else break;
+		}
+		return str.substr(i);
+	}
 };
