@@ -55,6 +55,11 @@ namespace term {
 			return buffer.str();
 		}
 
+		std::string operator()(const bool& use_colors = false) const 
+		{
+			return use_colors ? as_string() : as_string_no_color();
+		}
+
 		friend std::ostream& operator<<(std::ostream& os, const Message& msg)
 		{
 			return os << msg.as_string();
