@@ -116,16 +116,31 @@ $(document).ready(function(){initNavTree('make__exception_8hpp_source.html','');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @param ...message    The message shown when calling the what() function.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @returns             ReturnT</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt;std::derived_from&lt;std::exception&gt; ReturnT, var::Streamable&lt;std::stringstream&gt;... VT&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">   29</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">ReturnT</a> <a class="code" href="make__exception_8hpp.html#ad0e7483ee4c12e22e99dda8512cd2b7f">make_custom_exception</a>(VT <span class="keyword">const</span>&amp;... message)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt;std::derived_from&lt;std::exception&gt; ReturnT, var::Streamable&lt;std::stringstream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a0141aa4cae1ec336af9b8853d549e59d">   29</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="make__exception_8hpp.html#a0141aa4cae1ec336af9b8853d549e59d">ReturnT</a> <a class="code" href="make__exception_8hpp.html#a0141aa4cae1ec336af9b8853d549e59d">make_custom_exception</a>(Ts <span class="keyword">const</span>&amp;... message)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::stringstream ss;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    (ss &lt;&lt; ... &lt;&lt; message);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span>{ ss.str() };</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;var::Streamable&lt;std::stringstream&gt;... VT&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a61e1891574c70ce7b56f37f84570c06a">   37</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a61e1891574c70ce7b56f37f84570c06a">make_exception</a>(VT <span class="keyword">const</span>&amp;... message) { <span class="keywordflow">return</span> make_custom_exception&lt;except&gt;(message...); }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;var::Streamable&lt;std::stringstream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a9175df443a507aba1c1a98d773b31644">   37</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a9175df443a507aba1c1a98d773b31644">make_exception</a>(Ts <span class="keyword">const</span>&amp;... message) { <span class="keywordflow">return</span> make_custom_exception&lt;except&gt;(message...); }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;std::derived_from&lt;std::exception&gt; ReturnT, var::Streamable&lt;std::wstringstream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="make__exception_8hpp.html#a6e5891ec44fb93fb66e527980e57dcc6">   40</a></span>&#160;<a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="code" href="classexcept.html">except</a> <a class="code" href="make__exception_8hpp.html#a6e5891ec44fb93fb66e527980e57dcc6">make_exeption</a>(Ts <span class="keyword">const</span>&amp;... message)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::wstring wstr;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::wstringstream ss;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        (ss &lt;&lt; ... &lt;&lt; message);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        wstr = ss.str();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::string str;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; wch : wstr)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        str += <span class="keyword">static_cast</span>&lt;<span class="keywordtype">char</span>&gt;(wch);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> { str.c_str() };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -32,6 +32,7 @@ var namespaces_dup =
       [ "for_each", "namespaceiter.html#a720238a195858e9f3d7c5bd41ca886a4", null ]
     ] ],
     [ "math", "namespacemath.html", [
+      [ "abs", "namespacemath.html#ae38193d1e37188ab8143e576de392274", null ],
       [ "max_value", "namespacemath.html#a9960033ce279248f389ef71e0820f576", null ],
       [ "mod", "namespacemath.html#a5c3011b8d185bc4a0dd015c3ee9c8eb2", null ],
       [ "normalize", "namespacemath.html#ae93bbc00f9d04acc4ab47fcb6820255b", null ]

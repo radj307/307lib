@@ -12,6 +12,8 @@ var str_8hpp =
     [ "longest", "str_8hpp.html#a718e93d72455a6f9af50cca592378f99", null ],
     [ "longest", "str_8hpp.html#aab273e18c3896683954b42ea222129f4", null ],
     [ "longest", "str_8hpp.html#a4e29c1c2f11c9fdba7e76bb2e3327c4b", null ],
+    [ "matches_any", "str_8hpp.html#a462ec615ed85579769474a5291837279", null ],
+    [ "matches_any", "str_8hpp.html#a99874f5b703e388240420d5bec8557a3", null ],
     [ "optional_find", "str_8hpp.html#a68189011dff0dc860136f8606606169c", null ],
     [ "requires", "str_8hpp.html#ad35ece5b07dfe3a18235ccc6c0f563ba", null ],
     [ "rsplit", "str_8hpp.html#ace29034bfe12d695cf5aea81e33d4561", null ],
@@ -25,5 +27,7 @@ var str_8hpp =
     [ "stringify", "str_8hpp.html#a670a97b2121a31298814cb8e4a5d13ff", null ],
     [ "stringify_container", "str_8hpp.html#a76cdfa929c2dbd674745f23f30f4f9f4", null ],
     [ "stringify_split", "str_8hpp.html#ae44a61b1fed1e226ac26abe03d69adab", null ],
+    [ "strip_preceeding", "str_8hpp.html#af0af04c544f86405952967e64478ba71", null ],
+    [ "strip_trailing", "str_8hpp.html#a2ae11e23345e42931190d38a29eee4f2", null ],
     [ "ConvertibleStringT", "str_8hpp.html#abea510ab5719c607e5a2ce61bde9e03e", null ]
 ];

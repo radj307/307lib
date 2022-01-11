@@ -123,10 +123,10 @@ $(document).ready(function(){initNavTree('_win_term_a_p_i_8hpp_source.html','');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// this is only here to quiet the compiler, it isn&#39;t possible to hit it.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> INCLUDES_STDIN = <span class="keyword">false</span>&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">inline</span> std::ostream&amp; EnableANSI(std::ostream&amp; os)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> INCLUDES_STDIN = <span class="keyword">false</span>, <span class="keywordtype">bool</span> ALLOW_EXCEPTIONS = <span class="keyword">false</span>&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">inline</span> std::ostream&amp; EnableANSI(std::ostream&amp; os) <span class="keyword">noexcept</span>(<span class="keyword">false</span>)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> ((INCLUDES_STDIN &amp;&amp; !EnableANSI&lt;STDIN_HANDLE&gt;()) || !EnableANSI&lt;STDOUT_HANDLE&gt;() || !EnableANSI&lt;STDERR_HANDLE&gt;())</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> ((INCLUDES_STDIN &amp;&amp; !EnableANSI&lt;STDIN_HANDLE&gt;()) || !EnableANSI&lt;STDOUT_HANDLE&gt;() || !EnableANSI&lt;STDERR_HANDLE&gt;() &amp;&amp; ALLOW_EXCEPTIONS)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">throw</span> make_exception(<span class="stringliteral">&quot;EnableANSI():\tFailed to enable Windows virtual terminal sequence support!&quot;</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> os;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>

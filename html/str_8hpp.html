@@ -113,8 +113,7 @@ Include dependency graph for str.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="str_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -217,6 +216,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ace29034bfe12d695cf5aea81e33d4561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> const std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ace29034bfe12d695cf5aea81e33d4561">str::rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
 <tr class="memdesc:ace29034bfe12d695cf5aea81e33d4561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ace29034bfe12d695cf5aea81e33d4561">More...</a><br /></td></tr>
 <tr class="separator:ace29034bfe12d695cf5aea81e33d4561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">str::matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
+<tr class="memdesc:a99874f5b703e388240420d5bec8557a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">More...</a><br /></td></tr>
+<tr class="separator:a99874f5b703e388240420d5bec8557a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462ec615ed85579769474a5291837279"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::same_or_convertible&lt; std::string &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a462ec615ed85579769474a5291837279"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a462ec615ed85579769474a5291837279">str::matches_any</a> (const std::string &amp;str, const int &amp;count, const Ts &amp;... matches)</td></tr>
+<tr class="memdesc:a462ec615ed85579769474a5291837279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a462ec615ed85579769474a5291837279">More...</a><br /></td></tr>
+<tr class="separator:a462ec615ed85579769474a5291837279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae11e23345e42931190d38a29eee4f2"><td class="memTemplParams" colspan="2">template&lt;var::valid_char... DelimT&gt; </td></tr>
+<tr class="memitem:a2ae11e23345e42931190d38a29eee4f2"><td class="memTemplItemLeft" align="right" valign="top">static std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2ae11e23345e42931190d38a29eee4f2">str::strip_trailing</a> (const std::string_view &amp;str, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:a2ae11e23345e42931190d38a29eee4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a string.  <a href="namespacestr.html#a2ae11e23345e42931190d38a29eee4f2">More...</a><br /></td></tr>
+<tr class="separator:a2ae11e23345e42931190d38a29eee4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0af04c544f86405952967e64478ba71"><td class="memTemplParams" colspan="2">template&lt;var::valid_char... DelimT&gt; </td></tr>
+<tr class="memitem:af0af04c544f86405952967e64478ba71"><td class="memTemplItemLeft" align="right" valign="top">static std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#af0af04c544f86405952967e64478ba71">str::strip_preceeding</a> (const std::string_view &amp;str, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:af0af04c544f86405952967e64478ba71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a string.  <a href="namespacestr.html#af0af04c544f86405952967e64478ba71">More...</a><br /></td></tr>
+<tr class="separator:af0af04c544f86405952967e64478ba71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

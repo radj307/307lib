@@ -152,7 +152,15 @@ $(document).ready(function(){initNavTree('math_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span>{ 255 * <span class="keyword">sizeof</span>(<a class="code" href="namespacemath.html">T</a>) };</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> { 128 * <span class="keyword">sizeof</span>(<a class="code" href="namespacemath.html">T</a>) };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * @brief       Constant-time math abs function. (Removes negative sign from numbers)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @tparam T    Input Type</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * @param val   Input Value</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     * @returns     T</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">   71</a></span>&#160;    <span class="keyword">template</span>&lt;var::arithmetic T&gt; [[<a class="code" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">nodiscard</a>]] <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">T</a> <a class="code" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">abs</a>(<span class="keyword">const</span> <a class="code" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">T</a>&amp; <a class="code" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">val</a>) { <span class="keywordflow">return</span> val &gt; 0 ? val : -val; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

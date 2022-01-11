@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['variableindentation_835',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str']]],
-  ['virtualargument_836',['VirtualArgument',['../structopt_1_1_virtual_argument.html',1,'opt']]]
+  ['variableindentation_841',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str']]],
+  ['virtualargument_842',['VirtualArgument',['../structopt_1_1_virtual_argument.html',1,'opt']]]
 ];

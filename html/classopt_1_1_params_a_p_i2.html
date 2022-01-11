@@ -148,9 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ef311d793959d44f29462a8aeed7411"><td class="memTemplParams" colspan="2">template&lt;var::all_same&lt; Parameter &gt; Type, ValidInputType... Names&gt; </td></tr>
 <tr class="memitem:a9ef311d793959d44f29462a8aeed7411"><td class="memTemplItemLeft" align="right" valign="top">constexpr const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classopt_1_1_params_a_p_i2.html#a9ef311d793959d44f29462a8aeed7411">typegetv_all</a> (const Names &amp;... names) const</td></tr>
 <tr class="separator:a9ef311d793959d44f29462a8aeed7411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7179e0943494c16f7434d936ca01333c"><td class="memTemplParams" colspan="2">template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:a7179e0943494c16f7434d936ca01333c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#a2159b287993f819a2fbadd4f5798d426">requires</a> constexpr var::none_same&lt; <a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">Parameter</a>, Types... &gt; const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classopt_1_1_params_a_p_i2.html#a7179e0943494c16f7434d936ca01333c">typegetv_all</a> (const Names &amp;... names) const</td></tr>
-<tr class="separator:a7179e0943494c16f7434d936ca01333c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df9d5855a3b0510547b0117726bc61c"><td class="memTemplParams" colspan="2">template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </td></tr>
+<tr class="memitem:a4df9d5855a3b0510547b0117726bc61c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#a2159b287993f819a2fbadd4f5798d426">requires</a> constexpr var::not_same&lt; <a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">Parameter</a>, Types... &gt; const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classopt_1_1_params_a_p_i2.html#a4df9d5855a3b0510547b0117726bc61c">typegetv_all</a> (const Names &amp;... names) const</td></tr>
+<tr class="separator:a4df9d5855a3b0510547b0117726bc61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structopt_1_1_arg_container"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structopt_1_1_arg_container')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structopt_1_1_arg_container.html">opt::ArgContainer</a></td></tr>
 <tr class="memitem:a9dde4462308b7860bee5f0f9ef756d51 inherit pub_methods_structopt_1_1_arg_container"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9dde4462308b7860bee5f0f9ef756d51">ArgContainer</a> ()=default</td></tr>
 <tr class="separator:a9dde4462308b7860bee5f0f9ef756d51 inherit pub_methods_structopt_1_1_arg_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -770,8 +770,8 @@ template&lt;var::all_same&lt; Parameter &gt; Type, ValidInputType... Names&gt; <
 
 </div>
 </div>
-<a id="a7179e0943494c16f7434d936ca01333c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7179e0943494c16f7434d936ca01333c">&#9670;&nbsp;</a></span>typegetv_all() <span class="overload">[2/2]</span></h2>
+<a id="a4df9d5855a3b0510547b0117726bc61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df9d5855a3b0510547b0117726bc61c">&#9670;&nbsp;</a></span>typegetv_all() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +782,7 @@ template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceopt.html#a2159b287993f819a2fbadd4f5798d426">requires</a> constexpr var::none_same&lt;<a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">Parameter</a>, Types...&gt; const std::vector&lt;std::string&gt; opt::ParamsAPI2::typegetv_all </td>
+          <td class="memname"><a class="el" href="namespaceopt.html#a2159b287993f819a2fbadd4f5798d426">requires</a> constexpr var::not_same&lt;<a class="el" href="namespaceopt.html#a316557ae32d1fffe2b704fc5c9638807">Parameter</a>, Types...&gt; const std::vector&lt;std::string&gt; opt::ParamsAPI2::typegetv_all </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;...&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
