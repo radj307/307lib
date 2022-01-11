@@ -1,8 +1,9 @@
 /**
- * @file strmanip.hpp
- * @brief Contains an assortment of string manipulation functions & methods. \n
- * Many of these have problems, and are not guaranteed to work.
- * @author radj307
+ * @file	strmanip.hpp
+ * @author	radj307
+ * @brief	Contains an assortment of string manipulation functions & methods.
+ *\n		This contains the majority of str namespace functions that do not use
+ *\n		variadic templates or other more advanced concepts. (such as concepts)
  */
 #pragma once
 #include <algorithm>
