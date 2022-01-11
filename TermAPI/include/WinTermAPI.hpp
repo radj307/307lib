@@ -32,10 +32,10 @@ namespace term {
 		return false; // this is only here to quiet the compiler, it isn't possible to hit it.
 	}
 
-	template<bool INCLUDES_STDIN = false>
+	template<bool INCLUDES_STDIN = false, bool ALLOW_EXCEPTIONS = false>
 	inline std::ostream& EnableANSI(std::ostream& os) noexcept(false)
 	{
-		if ((INCLUDES_STDIN && !EnableANSI<STDIN_HANDLE>()) || !EnableANSI<STDOUT_HANDLE>() || !EnableANSI<STDERR_HANDLE>())
+		if ((INCLUDES_STDIN && !EnableANSI<STDIN_HANDLE>()) || !EnableANSI<STDOUT_HANDLE>() || !EnableANSI<STDERR_HANDLE>() && ALLOW_EXCEPTIONS)
 			throw make_exception("EnableANSI():\tFailed to enable Windows virtual terminal sequence support!");
 		return os;
 	}
