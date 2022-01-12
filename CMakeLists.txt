@@ -24,7 +24,7 @@ To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
 ]]
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE) # Enable position independent code for all subprojects
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/307modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/307modules")
 
 # Setup packaging
 string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
