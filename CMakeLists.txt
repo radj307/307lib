@@ -24,15 +24,7 @@ To set options on the commandline, use -OPTION_NAME=OPTION_VALUE
 ]]
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE) # Enable position independent code for all subprojects
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/307modules")
-
-# Setup packaging
-string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
-option(307lib_ENABLE_PACKAGING "Enable library packaging" ${TOP_LEVEL})
-if (307lib_ENABLE_PACKAGING)
-	include(PackageInstaller)
-endif()
-
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/307modules")
 # Get the current version
 include(AutoVersion)
 GET_VERSION("${CMAKE_CURRENT_SOURCE_DIR}" 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH)
@@ -40,6 +32,19 @@ MAKE_VERSION(307lib_VERSION ${307lib_VERSION_MAJOR} ${307lib_VERSION_MINOR} ${30
 
 # create project
 project("307lib" VERSION ${307lib_VERSION} LANGUAGES CXX)
+
+# Setup packaging
+string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEVEL)
+
+if (NOT DEFINED 307lib_VERSION OR "${307lib_VERSION}" STREQUAL "")
+	set(TOP_LEVEL FALSE CACHE BOOL "" FORCE)
+endif()
+
+option(307lib_ENABLE_PACKAGING "Enable library packaging" ${TOP_LEVEL})
+if (307lib_ENABLE_PACKAGING)
+	include(PackageInstaller)
+endif()
+unset(TOP_LEVEL CACHE)
 
 # Add shared lib
 add_subdirectory("shared")
