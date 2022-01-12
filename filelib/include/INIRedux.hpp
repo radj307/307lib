@@ -1,3 +1,4 @@
+#pragma once
 #include <TokenRedux.hpp>				// For base tokenization framework
 #include <TokenReduxDefaultDefs.hpp>	// For tokenizer definitions package
 #include <filei.hpp>					// For file reading
