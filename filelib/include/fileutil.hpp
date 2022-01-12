@@ -48,15 +48,6 @@ namespace file {
 	 */
 	inline WINCONSTEXPR bool hasTrailingSeparator(const std::string_view& path) { return !path.empty() && isPathSeparator(path.back()); }
 
-	#if LANG_CPP >= 17
-	/**
-	 * @brief		Checks if the given path has a trailing separator character. ('/' | '\\')
-	 * @param path	Input path.
-	 * @returns		bool
-	 */
-	inline WINCONSTEXPR bool hasTrailingSeparator(const std::filesystem::path& path) { return hasTrailingSeparator(path.c_str()); }
-	#endif
-
 	/**
 	 * @brief			Check if the given filepath exists on the system. The given path must resolve to a file, not directory.
 	 * @param filepath	The filepath to check
