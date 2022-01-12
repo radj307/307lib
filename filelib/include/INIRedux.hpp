@@ -56,7 +56,6 @@ namespace file::ini {
 		throw std::bad_variant_access();
 	}
 
-
 	/**
 	 * @class	INIContainer
 	 * @brief	Base container object for the INI object. Contains all of the functions from the INI format that are not related to file i/o.
@@ -433,6 +432,11 @@ namespace file::ini {
 
 	namespace tokenizer {
 		using namespace DefaultDefs;
+
+		/**
+		 * @struct	INITokenizer
+		 * @brief	Tokenizes the contents of an INI config file.
+		 */
 		struct INITokenizer : file::base::TokenizerBase<DefaultDefs::LEXEME, DefaultDefs::LexemeDict, DefaultDefs::TokenType, DefaultDefs::Token> {
 			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE) {}
 		protected:
@@ -486,9 +490,13 @@ namespace file::ini {
 			}
 		};
 
+		/**
+		 * @struct	INIParser
+		 * @brief	
+		 */
 		struct INIParser : file::base::TokenParserBase<INIContainer::Map, DefaultDefs::Token> {
 			bool allowBlankValue{ true };
-			const std::string_view& filename{};
+			const std::string filename{};
 
 			#if LANG_CPP >= 17
 			INIParser(std::vector<Token>&& tokens, const std::filesystem::path& filename = {}) : TokenParserBase(std::move(tokens)), filename{ filename.generic_string() } {}

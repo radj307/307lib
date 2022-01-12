@@ -5,11 +5,11 @@
  */
 #pragma once
 #include <Message.hpp>	// TermAPI
-#include <str.hpp>		// strlib
 
 #include <iostream>
 #include <string>
 #include <optional>
+#include <algorithm>
 
 #pragma region UndefineMicrosoftBullshitMacros
 #ifdef ERROR

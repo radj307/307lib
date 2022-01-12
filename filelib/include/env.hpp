@@ -18,11 +18,11 @@
 #pragma once
 #include <sysarch.h>
 #include <make_exception.hpp>
-#include <var.hpp>
-
 #include <str.hpp>
 #include <fileutil.hpp>
+#include <var.hpp>
 
+#include <optional>
 #include <cstdlib> // for C environment functions
 
  /**
@@ -41,8 +41,8 @@ namespace env {
 	 * @param name	Environment variable name.
 	 * @returns		RT
 	 */
-	template<var::any_same<std::filesystem::path, std::string> RT = ENV_DEFAULT_RETURN_TYPE>
-	inline static constexpr const std::optional<RT> getvar(const char* name) noexcept
+	template<var::any_same<std::filesystem::path, std::string> RT = std::string>
+	inline static CONSTEXPR const std::optional<RT> getvar(const char* name) noexcept
 	{
 		char* buffer;
 		size_t size;

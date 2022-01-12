@@ -6,7 +6,6 @@
 #include <iomanip>
 
 namespace term {
-#ifndef TERMAPI_ENABLE_OLD_FUNCTIONS
 	namespace message_settings {
 		static bool useColorSequencesInMessages{ true };
 		static size_t maxMessageSizeIndent{ 8ull };
@@ -74,5 +73,4 @@ namespace term {
 		warn{ "[WARN]",color::setcolor{color::orange} },
 		error{ "[ERROR]", color::setcolor{color::red } },
 		crit{ "[CRIT]",color::setcolor{color::dark_red, color::format::BOLD } };
-#endif
 }

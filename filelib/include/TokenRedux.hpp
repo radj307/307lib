@@ -59,8 +59,9 @@ namespace file::base {
 	 *\n				A Lexeme can be thought of as a character's type, and as such multiple characters can be associated with a single Lexeme, but a single Lexeme always represents a single character length.
 	 * @tparam LexemeT	Lexeme type. This is defined by a "definitions package".
 	 */
-	template<typename LexemeT>
+	template<typename LexemeType>
 	struct LexemeDictBase {
+		using LexemeT = LexemeType;
 		/**
 		 * @brief		Override this function to select a lexeme type given a single character.
 		 * @param ch	Input Character
