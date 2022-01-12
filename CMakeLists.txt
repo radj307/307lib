@@ -51,6 +51,7 @@ if (ENABLE_STRLIB)
 endif()
 
 # Add file library
+include(CMakeDependentOption)
 cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
 if (ENABLE_FILELIB)
 	add_subdirectory("filelib")

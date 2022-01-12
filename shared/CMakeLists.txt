@@ -1,29 +1,28 @@
 # 307lib/shared
 cmake_minimum_required(VERSION 3.15)
-include(CMakeDependentOption)
 
-set(CMAKE_CXX_STANDARD 20)
-
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus") # Fix MSVC __cplusplus macro
-endif()
-
+# Create shared project
 project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
+# Get headers & sources
+file(GLOB HEADERS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
+)
 file(GLOB SRCS 
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"src/*.c*"
 )
 
-file(GLOB HEADERS
-	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
-	CONFIGURE_DEPENDS
-	"include/*.h*"
-)
-
+# Create static library
 add_library(shared STATIC "cpp.hint" ${SRCS})
+
+# Set library properties
+set_property(TARGET shared PROPERTY CXX_STANDARD 20)
+set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
+target_compile_options(shared PUBLIC "/Zc:__cplusplus")
 
 include(PrependEach)
 PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -40,6 +39,7 @@ target_include_directories(shared PUBLIC
 
 # Packaging
 if (307lib_ENABLE_PACKAGING) # Include packaging
+	include(PackageInstaller)
 	GENERATE_PACKAGING(shared)
 	WRITE_VERSION_FILE(shared SameMajorVersion)
 	INSTALL_PACKAGE(shared)

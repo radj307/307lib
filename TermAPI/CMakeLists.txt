@@ -1,71 +1,54 @@
 # 307lib/TermAPI
 cmake_minimum_required(VERSION 3.15)
 
-set(CMAKE_CXX_STANDARD 20)
-
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-	# Fix MSVC __cplusplus macro
-	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
+# Create TermAPI project
 project("TermAPI" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
-set(HEADERS
-	# ANSI
-	"include/Segments.h"
-	"include/Sequence.hpp"
-	"include/winEnableANSI.hpp"
-	"include/LineCharacter.hpp"
-	# color
-	"include/color-values.h"
-	"include/color-transform.hpp"
-	"include/color-format.hpp"
-	"include/setcolor.hpp"
-	"include/palette.hpp"
-	# term
-	"include/CursorOrigin.h"
-	"include/term.hpp"
-	# TermAPI
-	"include/TermAPI.hpp"
-	"include/WinTermAPI.hpp"
+# Get headers & sources
+file(GLOB HEADERS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
+)
+file(GLOB SRC 
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"src/*.c*"
 )
 
-file(GLOB SRC "src/*.cpp")
+# Create static library
+add_library(TermAPI STATIC ${SRC})
 
-include(CMakeDependentOption)
+# Set library properties
+set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
+set_property(TARGET TermAPI PROPERTY CXX_STANDARD_REQUIRED ON)
+target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus")
 
-# extensions
-set(ADDITIONAL_DEPENDENCIES)
-cmake_dependent_option(TERMAPI_EXTENSIONS "Enable TermAPI extension headers that require additional dependencies." ON "ENABLE_TERMAPI" OFF)
-if (TERMAPI_EXTENSIONS)
-	# xlog
-	cmake_dependent_option(TERMAPI_EXTENSIONS_XLOG "Enable the xLog TermAPI extension." ON "ENABLE_TERMAPI;TERMAPI_EXTENSIONS;ENABLE_STRLIB" OFF)
-	if (TERMAPI_EXTENSIONS_XLOG)
-		list(APPEND HEADERS "include/xlog.hpp")
-		list(APPEND SRC "src/xlog.cpp")
-		list(APPEND ADDITIONAL_DEPENDENCIES strlib)
-	endif()
-	# color-config
-	cmake_dependent_option(TERMAPI_EXTENSIONS_COLORCONFIG "Enable the color-config TermAPI extension." ON "ENABLE_TERMAPI;TERMAPI_EXTENSIONS;ENABLE_STRLIB;ENABLE_FILELIB" OFF)
-	if (TERMAPI_EXTENSIONS_COLORCONFIG)
-		list(APPEND HEADERS "include/color-config.hpp")
-		list(APPEND SRC "src/color-config.cpp")
-		list(APPEND ADDITIONAL_DEPENDENCIES filelib) # filelib already requires strlib
-	endif()
-endif()
+# make a list of absolute paths for headers
+include(PrependEach)
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+# specify library headers
+target_sources(TermAPI PUBLIC
+	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
+	"$<INSTALL_INTERFACE:${HEADERS}>"
+)
 
-add_library(TermAPI STATIC ${HEADERS} ${SRC})
-
+# Specify library include dirs
 target_include_directories(TermAPI PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
 	"$<INSTALL_INTERFACE:include;src>"
 )
 
-target_link_libraries(TermAPI PUBLIC shared ${ADDITIONAL_DEPENDENCIES})
+# Link library dependencies
+target_link_libraries(TermAPI PUBLIC shared)
 
-# Packaging
-if (307lib_ENABLE_PACKAGING) # Include packaging
+# Create library installation targets
+if (307lib_ENABLE_PACKAGING)
+	include(PackageInstaller)
 	GENERATE_PACKAGING(TermAPI)
 	WRITE_VERSION_FILE(TermAPI SameMajorVersion)
 	INSTALL_PACKAGE(TermAPI)

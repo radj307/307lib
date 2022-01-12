@@ -49,6 +49,7 @@ target_include_directories(optlib PUBLIC
 target_link_libraries(optlib PUBLIC shared strlib)
 
 if (307lib_ENABLE_PACKAGING) # Include packaging
+	include(PackageInstaller)
 	GENERATE_PACKAGING(optlib)
 	WRITE_VERSION_FILE(optlib SameMajorVersion)
 	INSTALL_PACKAGE(optlib)

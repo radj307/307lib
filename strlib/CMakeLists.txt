@@ -39,6 +39,7 @@ target_link_libraries(strlib PUBLIC shared)
 
 # Packaging
 if (307lib_ENABLE_PACKAGING) # Include packaging
+	include(PackageInstaller)
 	GENERATE_PACKAGING(strlib)
 	WRITE_VERSION_FILE(strlib SameMajorVersion)
 	INSTALL_PACKAGE(strlib)

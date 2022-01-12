@@ -1,10 +1,6 @@
 # 307lib/filelib
 cmake_minimum_required(VERSION 3.15)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
 # Create project
 project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
@@ -22,10 +18,13 @@ file(GLOB SRCS
 
 # Create static library
 add_library(filelib STATIC ${SRCS})
+set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
 
 # Set library properties
-set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
-target_compile_options(filelib PUBLIC "/Zc:__cplusplus")
+#set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
+
+#include(InitProperties)
+#INIT_TARGET_PROPERTIES(filelib 20 REQUIRED)
 
 # Set library sources & include dirs
 include(PrependEach)
@@ -44,6 +43,7 @@ target_link_libraries(filelib PUBLIC shared strlib)
 
 # Create library installation targets
 if (307lib_ENABLE_PACKAGING) # Include packaging
+	include(PackageInstaller)
 	GENERATE_PACKAGING(filelib)
 	WRITE_VERSION_FILE(filelib SameMajorVersion)
 	INSTALL_PACKAGE(filelib)
