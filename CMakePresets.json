@@ -1,98 +1,94 @@
 ﻿{
-  "version": 3,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 15,
-    "patch": 0
-  },
+  "version": 2,
   "configurePresets": [
-
     {
-      "name": "linux-default",
-      "displayName": "Linux Debug",
-      "description": "Target the Windows Subsystem for Linux (WSL) or a remote Linux system.",
+      "name": "default",
+      "hidden": true,
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
+      }
+
+    },
+    {
+      "name": "linux-default",
+      "hidden": true,
+      "inherits": "default",
+      "displayName": "Linux",
+      "description": "Target the Windows Subsystem for Linux (WSL) or a remote Linux system.",
+      "generator": "Ninja",
       "vendor": {
         "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" }
       }
     },
     {
-      "name": "linux-rel",
-      "displayName": "Linux Release",
+      "name": "linux-debug",
+      "hidden": false,
       "inherits": "linux-default",
+      "displayName": "Linux Debug",
       "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "OFF"
-        },
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "linux-release",
+      "hidden": false,
+      "inherits": "linux-default",
+      "displayName": "Linux Release",
+      "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
     },
     {
       "name": "macos-default",
-      "displayName": "macOS Debug",
+      "hidden": true,
+      "inherits": "default",
+      "displayName": "macOS",
       "description": "Target a remote macOS system with Ninja",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
       "vendor": {
         "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "macOS" ] },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" }
       }
     },
     {
-      "name": "macos-rel",
-      "displayName": "macOS Release",
+      "name": "macos-debug",
+      "hidden": false,
       "inherits": "macos-default",
+      "displayName": "macOS Debug",
       "cacheVariables": {
-        "ENABLE_TESTING": {
-          "type": "BOOL",
-          "value": "OFF"
-        },
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "macos-release",
+      "hidden": false,
+      "inherits": "macos-default",
+      "displayName": "macOS Release",
+      "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
     },
     {
       "name": "windows-default",
+      "hidden": true,
+      "inherits": "default",
       "displayName": "Windows x64",
       "description": "Target Windows with the Visual Studio development environment.",
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "generator": "Ninja",
       "architecture": {
         "value": "x64",
         "strategy": "external"
       },
-      "cacheVariables": {
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
-      "vendor": {
-        "microsoft.com/VisualStudioSettings/CMake/1.0": {
-          "hostOS": [ "Windows" ],
-          "autoFormat": true
-        }
-      }
+      "vendor": { "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Windows" ] } }
     },
     {
-      "name": "windows-dev",
-      "displayName": "Windows x64 Development",
+      "name": "windows-debug",
+      "hidden": false,
       "inherits": "windows-default",
+      "displayName": "Windows x64 Debug",
       "cacheVariables": {
         "ENABLE_TESTING": {
           "type": "BOOL",
@@ -102,35 +98,12 @@
       }
     },
     {
-      "name": "Debug",
-      "displayName": "Windows x64 Debug",
+      "name": "windows-release",
+      "hidden": false,
       "inherits": "windows-default",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    },
-    {
-      "name": "Release",
       "displayName": "Windows x64 Release",
-      "inherits": "windows-default",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
-      }
-    },
-    {
-      "name": "MinSizeRel",
-      "displayName": "Windows x64 MinSizeRel",
-      "inherits": "windows-default",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "MinSizeRel"
-      }
-    },
-    {
-      "name": "RelWithDebInfo",
-      "displayName": "Windows x64 RelWithDebInfo",
-      "inherits": "windows-default",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       }
     }
   ]
