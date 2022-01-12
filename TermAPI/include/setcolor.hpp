@@ -22,16 +22,16 @@ namespace color {
 	 *\n			Uses the ostream operator<< to insert escape sequences into streams.
 	 * @tparam SeqT	The type of string to use for escape sequences.
 	 */
-	template<typename SeqT = ANSI::Sequence> requires std::same_as<SeqT, ANSI::Sequence> || std::same_as<SeqT, ANSI::wSequence>
+	template<var::any_same<ANSI::Sequence, ANSI::wSequence> SeqT = ANSI::Sequence>
 	struct setcolor_seq {
 	protected:
 		SeqT _seq;
 		format::MutableFlag _fmt;
 		/**
-		 * @brief		Build a color escape sequence from an SGR (color) code. 
+		 * @brief		Build a color escape sequence from an SGR (color) code.
 		 *\n			If using Windows or if SETCOLOR_NO_RGB is defined, this function is automatically always used instead.
 		 * @param lyr	Target Layer. (Foreground/Background)
-		 * @param SGR	An SGR color code value.			
+		 * @param SGR	An SGR color code value.
 		 * @returns		SeqT
 		 */
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& SGR) const
@@ -143,9 +143,9 @@ namespace color {
 			return *this;
 		}
 		/**
-		 * @brief		Insert this escape sequence into 
-		 * @param os	
-		 * @param color	
+		 * @brief		Insert this escape sequence into
+		 * @param os
+		 * @param color
 		 * @returns		std::ostream&
 		 */
 		friend std::ostream& operator<<(std::ostream& os, const setcolor_seq<SeqT>& color)
@@ -154,7 +154,7 @@ namespace color {
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.
-		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset;
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset, reset_f, reset_b;
 	};
 
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
@@ -163,8 +163,17 @@ namespace color {
 	static const setcolor setcolor_placeholder{ ANSI::Sequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
-	inline const setcolor setcolor::red{ color::red }, setcolor::green{ color::green }, setcolor::blue{ color::blue }, setcolor::yellow{ color::yellow }, setcolor::magenta{ color::magenta }, setcolor::cyan{ color::cyan }, setcolor::black{ color::black }, setcolor::white{ color::white }, setcolor::reset{ color::reset };
-
+	template<> inline const setcolor setcolor::red{ color::red };
+	template<> inline const setcolor setcolor::green{ color::green };
+	template<> inline const setcolor setcolor::blue{ color::blue };
+	template<> inline const setcolor setcolor::yellow{ color::yellow };
+	template<> inline const setcolor setcolor::magenta{ color::magenta };
+	template<> inline const setcolor setcolor::cyan{ color::cyan };
+	template<> inline const setcolor setcolor::black{ color::black };
+	template<> inline const setcolor setcolor::white{ color::white };
+	template<> inline const setcolor setcolor::reset{ color::reset };
+	template<> inline const setcolor setcolor::reset_f{ color::reset_f };
+	template<> inline const setcolor setcolor::reset_b{ color::reset_b };
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
 	using wsetcolor = setcolor_seq<ANSI::wSequence>;
@@ -172,5 +181,15 @@ namespace color {
 	static const wsetcolor wsetcolor_placeholder{ ANSI::wSequence{}, format::NONE };
 
 	/// Define static constant colors for the basic 8-bit color palette.
-	inline const wsetcolor wsetcolor::red{ color::red }, wsetcolor::green{ color::green }, wsetcolor::blue{ color::blue }, wsetcolor::yellow{ color::yellow }, wsetcolor::magenta{ color::magenta }, wsetcolor::cyan{ color::cyan }, wsetcolor::black{ color::black }, wsetcolor::white{ color::white }, wsetcolor::reset{ color::wreset };
+	template<> inline const wsetcolor wsetcolor::red{ color::red };
+	template<> inline const wsetcolor wsetcolor::green{ color::green };
+	template<> inline const wsetcolor wsetcolor::blue{ color::blue };
+	template<> inline const wsetcolor wsetcolor::yellow{ color::yellow };
+	template<> inline const wsetcolor wsetcolor::magenta{ color::magenta };
+	template<> inline const wsetcolor wsetcolor::cyan{ color::cyan };
+	template<> inline const wsetcolor wsetcolor::black{ color::black };
+	template<> inline const wsetcolor wsetcolor::white{ color::white };
+	template<> inline const wsetcolor wsetcolor::reset{ color::wreset };
+	template<> inline const wsetcolor wsetcolor::reset_f{ color::wreset_f };
+	template<> inline const wsetcolor wsetcolor::reset_b{ color::wreset_b };
 }
