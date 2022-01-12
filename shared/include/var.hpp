@@ -1,7 +1,7 @@
 /**
  * @file	var.hpp
  * @author	radj307
- * @brief	Contains helper methods for variadic templates & tuples, as well as general-use concepts.
+ * @brief	Contains helper methods for variadic templates & tuples, as well as C++20 concepts.
  *\n		I can't seem to find any documentation on how exactly concept templates are deduced,
  *\n		but from my testing & std concepts like std::derived_from it appears that when used
  *\n		instead of `typename`|`class`, the test type is inserted into the __FIRST__ template
@@ -30,28 +30,39 @@ namespace var {
 	 * @brief			Check if a variadic templated type has the same number of arguments as a given value.
 	 * @tparam compsize	The size to compare.
 	 * @tparam ...VT	Input Variadic Templated Type
-	 * @returns			bool
 	 */
-	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool is_same_size = (sizeof...(VT) == compsize);
+	template<auto compsize, typename... Ts> struct is_same_as {
+		/// @brief	std::true_type when true, std::false_type when false.
+		using type = std::conditional<(sizeof...(Ts) == compsize), std::true_type, std::false_type>;
+	};
+	/// @brief	is_same_as::type macro.
+	template<auto compsize, typename... Ts> using is_same_as_t = is_same_as<compsize, Ts...>::type;
+
 	/**
 	 * @brief			Check if a variadic templated type has more arguments than a given number.
 	 * @tparam compsize	One before the number of arguments VT must contain before returning true.
 	 * @tparam ...VT	Input Variadic Templated Type
-	 * @returns			bool
 	 */
-	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool is_more_than = (sizeof...(VT) > compsize);
+	template<auto compsize, typename... Ts> struct is_more_than {
+		/// @brief	std::true_type when true, std::false_type when false.
+		using type = std::conditional<(sizeof...(Ts) > compsize), std::true_type, std::false_type>;
+	};
+	/// @brief	is_more_than::type macro.
+	template<auto compsize, typename... Ts> using is_more_than_t = is_more_than<compsize, Ts...>::type;
+
+	template<typename... Ts> using is_more_than_one = is_more_than_t<1ull, Ts...>;
+
 	/**
 	 * @brief			Check if a variadic templated type has less arguments than a given number.
 	 * @tparam compsize	One after the number of arguments VT must contain before returning false.
 	 * @tparam ...VT	Input Variadic Templated Type
-	 * @returns			bool
 	 */
-	template<auto compsize, class... VT> requires std::unsigned_integral<decltype(compsize)>
-	inline static constexpr const bool is_less_than = (sizeof...(VT) < compsize);
-	template<class... VT>
-	inline static constexpr const bool is_more_than_one = more_than<1, VT...>;
+	template<auto compsize, typename... Ts> struct is_less_than {
+		/// @brief	std::true_type when true, std::false_type when false.
+		using type = std::conditional<(sizeof...(Ts) < compsize), std::true_type, std::false_type>;
+	};
+	/// @brief	is_less_than::type macro.
+	template<auto compsize, typename... Ts> using is_less_than_t = is_less_than<compsize, Ts...>::type;
 	////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////
 	#pragma endregion ConstexprTests
 
@@ -73,7 +84,7 @@ namespace var {
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 	#pragma endregion DeclvalTest_Concepts
 	#pragma region Type_Concepts	
-	////////////////////////////////// BEGIN / Type Concepts /////////////////////////////////////////////
+	////////////////////////////////// BEGIN / "Type Concepts" /////////////////////////////////////////////
 	/**
 	 * @concept		same_or_convertible
 	 * @brief		Checks if the given types are the same, or if type From can be converted to type To.
@@ -94,69 +105,146 @@ namespace var {
 	 * @tparam T	Input Type
 	 */
 	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
-	////////////////////////////////// END / Type Concepts /////////////////////////////////////////////
+	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
 	#pragma endregion Type_Concepts
 	#pragma region Variadic_Count_Concepts
 	////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
 	/**
+	 * @concept			more_than
+	 * @brief			Check if the number of variadic arguments received is greater than a given threshold.
+	 * @tparam compsize	Pass test when there are more than this number of variadic arguments.
+	 * @tparam Ts...	Any number of variadic template arguments.
+	 */
+	template<auto compsize, typename... Ts> concept more_than = std::same_as<is_more_than_t<compsize, Ts...>, std::true_type>;
+	/**
 	 * @concept			at_least_one
 	 * @brief			Check if a variadic templated type has at least one included argument.
-	 * @tparam ...VT	Input Variadic Templated Type
-	 * @returns			bool
+	 * @tparam ...Ts	Input Variadic Templated Type
 	 */
-	template<class... VT> concept at_least_one = (sizeof...(VT) > 0);
+	template<class... Ts> concept at_least_one = more_than<0ull, Ts...>;
+	/**
+	 * @concept			less_than
+	 * @brief			Check if the number of variadic arguments received is less than a given threshold.
+	 * @tparam compsize	Pass test when there are less than this number of variadic arguments.
+	 * @tparam Ts...	Any number of variadic template arguments.
+	 */
+	template<auto compsize, typename... Ts> concept less_than = std::same_as<is_less_than_t<compsize, Ts...>, std::true_type>;
 	/**
 	 * @concept			none
 	 * @brief			Check if the number of included variadic arguments is 0.
-	 * @tparam VT...	Variadic Templated Types
+	 * @tparam Ts...	Variadic Templated Types
 	 */
-	template<class... VT> concept none = (sizeof...(VT) == 0);
+	template<class... Ts> concept none = less_than<1ull, Ts...>;
 	////////////////////////////////// END / Variadic Count Concepts /////////////////////////////////////////////
 	#pragma endregion Variadic_Count_Concepts
 	#pragma region VariadicType_Concepts
-	////////////////////////////////// BEGIN / Variadic Type Concepts /////////////////////////////////////////////
+	////////////////////////////////// BEGIN / Variadic "Type Concepts" /////////////////////////////////////////////
 	/**
 	 * @concept			not_same
-	 * @brief			Check if a specified type was not included in a variadic pack.
-	 * @tparam T		Type that shouldn't appear in variadic templated types.
-	 * @tparam VT...	Variadic Templated Types.
+	 * @brief			Concept that checks if none of the given variadic types match a given type.
+	 * @tparam Type		Type that all variadic types must not match to pass.
+	 * @tparam Ts...	Variadic types to compare.
 	 */
-	template<typename T, typename... Ts> concept not_same = ((!std::same_as<T, Ts>) && ...);
+	template<typename Type, typename... Ts> concept not_same = ((!std::same_as<Type, Ts>) && ...);
 	/**
 	 * @concept			all_same
-	 * @brief			Concept that checks if all of the given variadic templated types are of the same specified type.
-	 * @tparam T		The type to compare against each variadic type.
-	 * @tparam VT...	Variadic Templated Input Types.
+	 * @brief			Concept that checks if all of the given variadic types match a given type.
+	 * @tparam Type		Type that all variadic types must match to pass.
+	 * @tparam Ts...	Variadic types to compare.
 	 */
-	template<typename T, typename... Ts> concept all_same = (std::same_as<T, Ts> && ...);
+	template<typename Type, typename... Ts> concept all_same = (std::same_as<Type, Ts> && ...);
 	/**
 	 * @concept			any_same
-	 * @brief			Concept that checks if all of the given variadic templated types have the same type as any of the specified types.
-	 * @tparam T		The type to compare against each variadic type.
-	 * @tparam VT...	Variadic Templated Input Types.
+	 * @brief			Concept that checks if any of the given variadic types match a given type.
+	 * @tparam Type		Type that any variadic type must match to pass.
+	 * @tparam Ts...	Variadic types to compare.
 	 */
-	template<typename T, typename... Ts> concept any_same = (std::same_as<T, Ts> || ...);
-
-	template<typename T, typename... Ts> concept not_convertible = ((!std::convertible_to<T, Ts>) && ...);
-	template<typename T, typename... Ts> concept all_convertible = (std::convertible_to<T, Ts> && ...);
-	template<typename T, typename... Ts> concept any_convertible = (std::convertible_to<T, Ts> || ...);
-
+	template<typename Type, typename... Ts> concept any_same = (std::same_as<Type, Ts> || ...);
+	/**
+	 * @concept			not_convertible
+	 * @brief			Concept that checks if a given input type cannot be converted to any of the given output types.
+	 * @tparam From		Input type.
+	 * @tparam To...	Any number of output types.
+	 */
+	template<typename From, typename... To> concept not_convertible = ((!std::convertible_to<From, To>) && ...);
+	/**
+	 * @concept			not_convertible_to
+	 * @brief			Concept that checks if none of the given input types can be converted to a given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept not_convertible_to = ((!std::convertible_to<From, To>) && ...);
+	/**
+	 * @concept			all_convertible
+	 * @brief			Concept that checks if the given input type can be converted to all of the given output types.
+	 * @tparam From		Input type.
+	 * @tparam To...	Any number of output types.
+	 */
+	template<typename From, typename... To> concept all_convertible = (std::convertible_to<From, To> && ...);
+	/**
+	 * @concept			all_convertible_to
+	 * @brief			Concept that checks if all of the given input types can be converted to the given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept all_convertible_to = (std::convertible_to<From, To> && ...);
+	/**
+	 * @concept			any_convertible
+	 * @brief			Concept that checks if the given input type can be converted to any of the given output types.
+	 * @tparam From		Input type.
+	 * @tparam To...	Any number of output types.
+	 */
+	template<typename From, typename... To> concept any_convertible = (std::convertible_to<From, To> || ...);
+	/**
+	 * @concept			any_convertible_to
+	 * @brief			Concept that checks if any of the given input types can be converted to the given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept any_convertible_to = (std::convertible_to<From, To> || ...);
+	/**
+	 * @concept			not_same_or_convertible
+	 * @brief			Concept that checks if the given input type does not match and is not convertible to any of the given output types.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename From, typename... To> concept not_same_or_convertible = ((!std::same_as<From, To> && !std::convertible_to<From, To>) && ...);
+	/**
+	 * @concept			not_same_or_convertible_to
+	 * @brief			Concept that checks if none of the given input types match or are convertible to a given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept not_same_or_convertible_to = ((!std::same_as<From, To> && !std::convertible_to<From, To>) && ...);
 	/**
 	 * @concept			all_same_or_convertible
-	 * @brief			Checks if all of the given types are the same as or convertible to another given type.
-	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
-	 * @tparam VT...	Input Variadic Types
+	 * @brief			Concept that checks if a given input type can be converted to all of the given output types.
+	 * @tparam From		Input type.
+	 * @tparam To...	Any number of output types.
 	 */
-	template<class T, class... Ts> concept all_same_or_convertible = (same_or_convertible <T, Ts> && ...);
+	template<typename From, typename... To> concept all_same_or_convertible = (same_or_convertible<From, To> && ...);
+	/**
+	 * @concept			all_same_or_convertible
+	 * @brief			Concept that checks if all of the given input types can be converted to the given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept all_same_or_convertible_to = (same_or_convertible<From, To> && ...);
 	/**
 	 * @concept			any_same_or_convertible
-	 * @brief			Checks if any of the given types are the same as or convertible to another given type.
-	 * @tparam T		Predicate type. At least one of the variadic types must be the same as, or convertible to, this type.
-	 * @tparam VT...	Input Variadic Types
+	 * @brief			Concept that checks if a given input type can be converted to any of the given output types.
+	 * @tparam From		Input type.
+	 * @tparam To...	Any number of output types.
 	 */
-	template<class T, class... Ts> concept any_same_or_convertible = (same_or_convertible <T, Ts> || ...);
-
-	////////////////////////////////// END / Variadic Type Concepts /////////////////////////////////////////////
+	template<typename From, typename... To> concept any_same_or_convertible = (same_or_convertible <From, To> || ...);
+	/**
+	 * @concept			any_same_or_convertible_to
+	 * @brief			Concept that checks if any of the given input types can be converted to the given output type.
+	 * @tparam To		Output type.
+	 * @tparam From...	Any number of input types.
+	 */
+	template<typename To, typename... From> concept any_same_or_convertible_to = (same_or_convertible<From, To> || ...);
+	////////////////////////////////// END / Variadic "Type Concepts" /////////////////////////////////////////////
 	#pragma endregion VariadicType_Concepts
 	#pragma region ByteSize_Concepts
 	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////

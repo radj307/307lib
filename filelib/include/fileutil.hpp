@@ -12,15 +12,6 @@
 #include <sstream>
 #include <algorithm>
 
-
-#ifndef CONSTEXPR
-#if LANG_CPP >= 17
-#define CONSTEXPR constexpr
-#else
-#define CONSTEXPR
-#endif
-#endif
-
 namespace file {
 	/**
 	 * @brief		Counts the number of characters that appear in a given file stream.
@@ -43,21 +34,58 @@ namespace file {
 		return count(std::forward<decltype(is)>(is), '\n');
 	}
 
-	inline CONSTEXPR bool isPathSeparator(const char& ch)
-	{
-		return ch == '/' || ch == '\\';
-	}
+	/**
+	 * @brief		Checks if the given character is a slash '/' or backslash '\\'.
+	 * @param ch	Input character
+	 * @returns		bool
+	 */
+	inline CONSTEXPR bool isPathSeparator(const char& ch) { return ch == '/' || ch == '\\'; }
+
+	/**
+	 * @brief		Checks if the given path has a trailing separator character. ('/' | '\\')
+	 * @param path	Input path.
+	 * @returns		bool
+	 */
+	inline WINCONSTEXPR bool hasTrailingSeparator(const std::string_view& path) { return !path.empty() && isPathSeparator(path.back()); }
+
+	#if LANG_CPP >= 17
+	/**
+	 * @brief		Checks if the given path has a trailing separator character. ('/' | '\\')
+	 * @param path	Input path.
+	 * @returns		bool
+	 */
+	inline WINCONSTEXPR bool hasTrailingSeparator(const std::filesystem::path& path) { return hasTrailingSeparator(path.c_str()); }
+	#endif
+
+	/**
+	 * @brief			Check if the given filepath exists on the system. The given path must resolve to a file, not directory.
+	 * @param filepath	The filepath to check
+	 * @returns			bool
+	 */
+	#if LANG_CPP >= 17
+	inline bool exists(const std::filesystem::path& filepath) { return filepath.has_filename() && std::filesystem::exists(filepath); }
+	#else
+	inline bool exists(const std::string_view& filepath) { return std::ofstream(filepath.data()).is_open(); }
+	#endif
+
+	/**
+	 * @brief				Check if any of the given filepaths exist in the filesystem.
+	 * @tparam ...Paths		Types that must be accepted by the exists() function.
+	 * @param ...filepaths	Any number of filepaths to check.
+	 * @returns				bool
+	 */
+	template<typename... Paths> static bool any_exist(Paths&&... filepaths) { return var::variadic_or(exists(std::forward<Paths>(filepaths))...); }
+	/**
+	 * @brief				Check if all of the given filepaths exist in the filesystem.
+	 * @tparam ...Paths		Types that must be accepted by the exists() function.
+	 * @param ...filepaths	Any number of filepaths to check.
+	 * @returns				bool
+	 */
+	template<typename... Paths> static bool all_exist(Paths&&... filepaths) { return var::variadic_and(exists(std::forward<Paths>(filepaths))...); }
 }
 
 #if LANG_CPP >= 17
-#include <filesystem>
-
 namespace file {
-	inline bool hasTrailingSeparator(const std::filesystem::path& path)
-	{
-		return !path.empty() && isPathSeparator(path.generic_string().back());
-	}
-
 	using Directory = std::vector<std::filesystem::directory_entry>;
 
 	/**
@@ -114,62 +142,6 @@ namespace file {
 		vec.shrink_to_fit();
 		return vec;
 	}
-
-	/**
-	 * @function exists(string&)
-	 * @brief Checks if a file exists & can be opened at the specified location.
-	 * @param filename  - The name/location of the target file.
-	 * @return true		- The target file exists.
-	 * @return false	- The target file does not exist.
-	 */
-	 //static bool exists(const std::filesystem::path& filename) noexcept
-	 //{
-	 //	return std::filesystem::exists(filename);
-	 //}
-
-	 /**
-	  * @function exists(T&&...)
-	  * @brief Check if an arbitrary number of files ( >1 ) exists on the local disk.
-	  * @tparam T		- Variadic String Template.
-	  * @param filelist	- Variadic Strings.
-	  * @return true		- At least one of the target file(s) exist.
-	  * @return false	- None of the target file(s) exist.
-	  */
-	  //template<var::more_than<1>... T> static bool exists(T&& ...filelist)
-	  //{
-	  //	static_assert(sizeof...(filelist) > 0);
-	  //	auto ret{ false };
-	  //	(([&ret](const std::string& filename) {
-	  //		const auto doesExist{ exists(filename) };
-	  //		if (doesExist)
-	  //			ret = true;
-	  //		return doesExist;
-	  //		}(filelist)), ...);
-	  //	return ret;
-	  //}
-
-	inline bool exists(const std::string& filepath) noexcept(false)
-	{
-	#if LANG_CPP >= 17
-		return std::filesystem::exists(filepath);
-	#else
-		return std::ofstream(filepath).is_open();
-	#endif
-	}
-
-#if LANG_CPP >= 17
-	inline bool exists(const std::filesystem::path& path) noexcept(false)
-	{
-		return std::filesystem::exists(path);
-	}
-#if LANG_CPP >= 20
-	template<typename... VT> requires var::more_than<1ull, VT...>
-	inline bool exists_any(VT&&... paths) noexcept(false)
-	{
-		return (exists(std::forward<VT>(paths)) || ...);
-	}
-#endif
-#endif
 
 	/**
 	 * @brief Replace the extension of a given filename.

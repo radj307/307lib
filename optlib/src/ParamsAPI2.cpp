@@ -1,2 +1,2 @@
 #include "ParamsAPI2.hpp"
-// this is a dummy file so cmake builds the 
+// this is a dummy file so cmake builds the library correctly

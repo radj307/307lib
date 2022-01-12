@@ -19,7 +19,7 @@ public:
 };
 
 /**
- * @brief				Create an exception with a given message.
+ * @brief				Create a custom exception type with the given arguments as a message.
  * @tparam ReturnT		The type of exception to return.
  * @tparam ...VT		Variadic Templated Types.
  * @param ...message	The message shown when calling the what() function.
@@ -33,11 +33,26 @@ WINCONSTEXPR ReturnT make_custom_exception(Ts const&... message)
 	return{ ss.str() };
 }
 
+/**
+ * @brief			Create an exception with a message.
+ * @param message	Any number of types with a std::ostream& operator<<
+ * @returns			except
+ */
 template<var::Streamable<std::stringstream>... Ts>
-WINCONSTEXPR except make_exception(Ts const&... message) { return make_custom_exception<except>(message...); }
+WINCONSTEXPR except make_exception(Ts const&... message)
+{
+	return make_custom_exception<except>(message...);
+}
 
+/**
+ * @brief			Create an exception with a given message. 
+ *\n				This function only accepts wide-char-based types, and truncates all 
+ *\n				of the characters to 1 byte as exception messages cannot contain w
+ * @param message	Any number of types with a std::wostream& operator<<
+ * @returns			except
+ */
 template<std::derived_from<std::exception> ReturnT, var::Streamable<std::wstringstream>... Ts>
-WINCONSTEXPR except make_exeption(Ts const&... message) 
+WINCONSTEXPR except make_exeption(Ts const&... message)
 {
 	std::wstring wstr;
 	{
@@ -50,3 +65,4 @@ WINCONSTEXPR except make_exeption(Ts const&... message)
 		str += static_cast<char>(wch);
 	return { str.c_str() };
 }
+
