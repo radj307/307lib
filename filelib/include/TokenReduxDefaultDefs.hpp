@@ -166,7 +166,6 @@ namespace file::DefaultDefs {
 		BOOLEAN,		///< @brief Boolean type, should only ever match "true" or "false" (implementation-defined-case-sensitivity)
 		NUMBER,			///< @brief Number type.
 		NUMBER_INT,		///< @brief Integer type, used by some file formats (INI) to differentiate between floating-points and integrals.
-		NUMBER_HEX,		///< @brief Hexadecimal number type, used by some file formats.
 		HEADER,			///< @brief Header type, used by some file formats (INI "[]") similarly to a key, but with special syntax.
 		SETTER,			///< @brief Setter type, used by some file formats (INI '=', JSON ':') to indicate a variable being defined.
 		OPEN_SECTION,	///< @brief Section open type, used by JSON & similar formats. Must have a matching CLOSE_SECTION.

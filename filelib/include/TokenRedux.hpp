@@ -136,8 +136,10 @@ namespace file::base {
 	 * @tparam TknType		The TokenBase::Type to use. This is defined by a "definitions package".
 	 * @tparam TokenT		The TokenBase type to use. This is defined by a "definitions package".
 	 */
-	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TknType, std::derived_from<TokenBase<TknType>> TokenT>
+	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TknType, std::derived_from<TokenBase<TknType>> TokenType = TokenBase<TknType>>
 	class TokenizerBase {
+	public:
+		using TokenT = TokenType;
 	protected:
 		std::stringstream ss;
 		std::streamoff lastPos{ 0ll };
@@ -145,13 +147,14 @@ namespace file::base {
 		Dictionary get_lexeme;
 		LexemeT lexeme_whitespace;
 
+	public:
 		/**
 		 * @brief				Default Constructor.
 		 * @param ss			Stringstream rvalue reference containing the target data.
 		 * @param whitespace	The lexeme associated with whitespace characters. This is used by the getch() method to skip whitespace.
 		 */
 		TokenizerBase(std::stringstream&& ss, LexemeT whitespace) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace } {}
-		
+	protected:
 		/// @brief	Virtual Destructor
 		virtual ~TokenizerBase() noexcept = default;
 
@@ -396,31 +399,42 @@ namespace file::base {
 	 * @tparam OutputType	User-defined Output Type.
 	 * @tparam TokenT		TokenBase Object Type.
 	 */
-	template<class OutputType, typename TokenT>
+	template<class OutputType, typename TokenType>
 	class TokenParserBase {
 	protected:
-		std::vector<TokenT> tokens;
+		std::vector<TokenType> tokens;
 
 		/**
 		 * @brief			Constructor.
 		 * @param tokens	TokenBase Vector Rvalue Reference
 		 */
-		TokenParserBase(std::vector<TokenT>&& tokens) : tokens{ std::move(tokens) } {}
+		TokenParserBase(std::vector<TokenType>&& tokens) : tokens{ std::move(tokens) } {}
 		/**
 		 * @brief			Constructor.
 		 * @param tokens	TokenBase Vector
 		 */
-		TokenParserBase(const std::vector<TokenT>& tokens) : tokens{ tokens } {}
+		TokenParserBase(const std::vector<TokenType>& tokens) : tokens{ tokens } {}
 
 		/// @brief	Virtual Destructor
 		virtual ~TokenParserBase() noexcept = default;
 
+		template<typename... Ts>
+		std::vector<TokenType> strip_types(const Ts&... types) const
+		{
+			std::vector<TokenType> copy{tokens};
+			copy.erase(std::remove_if(copy.begin(), copy.end(), [&](auto&& tkn) { return var::variadic_or(tkn.type == types...); }), copy.end());
+			return copy;
+		}
+
 	public:
+		using OutputT = OutputType;
+		using TokenT = TokenType;
+
 		/**
 		 * @brief	Parse the token container.
 		 * @returns	OutputType
 		 */
-		virtual OutputType parse() const = 0;
-		virtual operator OutputType() const { return parse(); }
+		virtual OutputT parse() const = 0;
+		virtual operator OutputT() const { return parse(); }
 	};
 }
