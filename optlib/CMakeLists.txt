@@ -11,12 +11,10 @@ endif()
 
 project("optlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
-set(HEADERS
-	"include/Arg.hpp"
-	"include/ArgContainer.hpp"
-	"include/ArgParser.hpp"
-	"include/VariantArgumentType.hpp"
-	"include/ParamsAPI2.hpp"
+file(GLOB HEADERS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
 )
 
 include(CMakeDependentOption)
@@ -25,9 +23,21 @@ if (OPTLIB_ENABLE_EXPERIMENTAL)
 	list(APPEND HEADERS "include/Argument.hpp")
 endif()
 
-file(GLOB SRC "src/*.cpp")
+file(GLOB SRC
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"src/*.c*"
+)
 
-add_library(optlib STATIC ${HEADERS} ${SRC})
+add_library(optlib STATIC ${SRC})
+
+include(PrependEach)
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+
+target_sources(optlib PUBLIC
+	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
+	"$<INSTALL_INTERFACE:${HEADERS}>"
+)
 
 # include directories
 target_include_directories(optlib PUBLIC 

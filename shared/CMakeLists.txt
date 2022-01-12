@@ -14,11 +14,24 @@ project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
 file(GLOB SRCS 
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
-	"include/*.h*"
 	"src/*.c*"
 )
 
+file(GLOB HEADERS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"include/*.h*"
+)
+
 add_library(shared STATIC "cpp.hint" ${SRCS})
+
+include(PrependEach)
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+
+target_sources(shared PUBLIC 
+	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
+	"$<INSTALL_INTERFACE:${HEADERS}>"
+)
 
 target_include_directories(shared PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
