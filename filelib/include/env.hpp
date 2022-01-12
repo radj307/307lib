@@ -23,6 +23,7 @@
 #include <var.hpp>
 
 #include <optional>
+#include <filesystem>
 #include <cstdlib> // for C environment functions
 
  /**
@@ -34,49 +35,18 @@
 #endif
 
 namespace env {
-#ifdef OS_WIN
 	/**
-	 * @brief		Retrieve the value of a given environment variable. This function is a wrapper for getenv.
-	 * @tparam RT	Desired return type. [std::filesystem::path|std::string]
+	 * @brief		Retrieve the value of a given environment variable as a std::string.
 	 * @param name	Environment variable name.
-	 * @returns		RT
+	 * @returns		std::string
 	 */
-	template<var::any_same<std::filesystem::path, std::string> RT = std::string>
-	inline static CONSTEXPR const std::optional<RT> getvar(const char* name) noexcept
+	inline std::optional<std::string> getvar(auto&& name) noexcept
 	{
-		char* buffer;
-		size_t size;
-		const auto rc{ _dupenv_s(&buffer, &size, name) };
-		if (rc != 0 || buffer == nullptr)
-			return std::nullopt;
-		const std::string v{ buffer };
-		free(buffer);
-		return{ v };
+		#pragma warning (disable: 4996) // disable deprecation warning
+		const auto var{ std::getenv(std::forward<decltype(name)>(name)) };
+		return( var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt) );
+		#pragma warning (default: 4996)
 	}
-#else
-	/**
-	 * @brief		Retrieve the value of a given environment variable. This function is a wrapper for getenv.
-	 * @tparam RT	Desired return type. [std::filesystem::path|std::string]
-	 * @param name	Environment variable name.
-	 * @returns		RT
-	 */
-	template<var::any_same<std::filesystem::path, std::string> RT = ENV_DEFAULT_RETURN_TYPE>
-	inline static constexpr const std::optional<RT> getvar(auto&& name) noexcept
-	{
-	#pragma warning (disable: 4996) // disable deprecation warning, don't require defining "_CRT_SECURE_NO_WARNINGS" in every single project that may use this file somewhere
-		const auto v{ std::getenv(std::forward<decltype(name)>(name)) };
-		return(v == nullptr ? static_cast<std::optional<RT>>(std::nullopt) : RT{ v });
-	#pragma warning (default: 4996)
-	}
-#endif
-	/**
-	 * @brief		Retrieve the value of a given environment variable. This function is a wrapper for getenv.
-	 * @tparam RT	Desired return type. [std::filesystem::path|std::string]
-	 * @param name	Environment variable name.
-	 * @returns		RT
-	 */
-	template<var::any_same<std::filesystem::path, std::string> RT = ENV_DEFAULT_RETURN_TYPE>
-	inline static constexpr const auto getvar(const std::string& name) noexcept { const auto c_str{ name.c_str() }; return getvar<RT, decltype(c_str)>(c_str); }
 
 	/**
 	 * @brief	Retrieve the value of the PATH environment variable as a vector of filesystem paths.
@@ -115,7 +85,7 @@ namespace env {
 		throw make_exception("Failed to retrieve PATH variable!");
 	}
 
-#ifndef USE_DEPRECATED_PATH_ALGORITHM
+	#ifndef USE_DEPRECATED_PATH_ALGORITHM
 	/**
 	 * @struct	PATH
 	 * @brief	Object used to interact with the PATH environment variable.
@@ -245,7 +215,7 @@ namespace env {
 			return{ p, {} };
 		}
 	};
-#else
+	#else
 	class PATH {
 		using ContainerType = std::vector<std::string>;
 		const ContainerType path;
@@ -320,5 +290,5 @@ namespace env {
 			return filename;
 		}
 	};
-#endif
+	#endif
 }
