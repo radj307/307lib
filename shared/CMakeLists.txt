@@ -1,6 +1,10 @@
 # 307lib/shared
 cmake_minimum_required(VERSION 3.15)
 
+if (MSVC)
+	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
 # Create shared project
 project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
@@ -22,7 +26,9 @@ add_library(shared STATIC "cpp.hint" ${SRCS})
 # Set library properties
 set_property(TARGET shared PROPERTY CXX_STANDARD 20)
 set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
-target_compile_options(shared PUBLIC "/Zc:__cplusplus")
+if (MSVC)
+	target_compile_options(shared PUBLIC "/Zc:__cplusplus")
+endif()
 
 include(PrependEach)
 PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")

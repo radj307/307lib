@@ -26,7 +26,9 @@ add_library(TermAPI STATIC ${SRC})
 # Set library properties
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD_REQUIRED ON)
-target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus")
+if (MSVC)
+	target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus")
+endif()
 
 # make a list of absolute paths for headers
 include(PrependEach)

@@ -29,6 +29,10 @@
       "inherits": "linux-default",
       "displayName": "Linux Debug",
       "cacheVariables": {
+        "ENABLE_TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },

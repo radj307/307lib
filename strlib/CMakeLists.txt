@@ -3,8 +3,6 @@ cmake_minimum_required (VERSION 3.13)
 
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-	# Fix MSVC __cplusplus macro
-	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
 project("strlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
@@ -21,6 +19,9 @@ file(GLOB SRC
 
 add_library(strlib STATIC ${SRC})
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
+if (MSVC)
+	target_compile_options(strlib PUBLIC "/Zc:__cplusplus")
+endif()
 
 include(PrependEach)
 PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
