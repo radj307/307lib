@@ -389,8 +389,8 @@ namespace str {
 	 * @param matches		At least one string to compare to str.
 	 * @returns bool
 	 */
-	template<bool MatchCase = true, var::same_or_convertible<std::string>... Ts> requires var::at_least_one<Ts...>
-	inline WINCONSTEXPR bool matches_any(const std::string& str, const int& count, const Ts&... matches)
+	template<bool MatchCase = true, var::same_or_convertible<std::string>... Ts>
+	inline WINCONSTEXPR bool matches_min_any(const std::string& str, const int& count, const Ts&... matches)
 	{
 		const auto& compare{ [](const std::string& l, const std::string& r) {
 			if constexpr (MatchCase)
