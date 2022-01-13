@@ -2,9 +2,13 @@
  * @file	xLog.hpp
  * @author	radj307
  * @brief	Contains the xlog _(eXtensible LOG)_ namespace, a framework for implementing console logs into C++ programs.
+ *\n		This header is dependent on additional libraries: 307lib::strlib
  */
 #pragma once
-#include <Message.hpp>	// TermAPI
+#include <sysarch.h>
+#include <str.hpp>
+#include <var.hpp>
+#include <redirect.hpp>
 
 #include <iostream>
 #include <string>
@@ -33,6 +37,14 @@
    * @brief		Contains all user-facing xlog functions & objects.
    */
 namespace xlog {
+	INLINE CONSTEXPR const char* debug{ "\033[38;5;99m[DEBUG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* info{ "\033[38;5;246m[INFO]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* log{ "\033[38;5;7m[LOG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* msg{ "\033[38;5;2m[MSG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* warn{ "\033[38;5;208m[WARN]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* error{ "\033[38;5;1m[ERROR]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* crit{ "\033[38;5;88m[CRIT]\033[38;5;7m\t" };
+
 	/**
 	 * @struct	level
 	 * @brief	Contains possible LogLevel values that are used by the message whitelisting system.
@@ -150,50 +162,23 @@ namespace xlog {
 	 * @param msg	Input Message Type.
 	 * @returns		level::LogLevel
 	 */
-	inline level::LogLevel message_to_level(const term::Message& msg)
+	inline level::LogLevel message_to_level(const char* msg)
 	{
-		const auto str{ msg.as_string_no_color() };
-		const auto contains{ [&str](const auto& substr) { return str.find(substr) != std::string::npos; } };
-		if (contains("INFO"))
-			return level::INFO;
-		else if (contains("LOG"))
-			return level::LOG;
-		else if (contains("DEBUG"))
+		if (msg == debug)
 			return level::DEBUG;
-		else if (contains("MSG"))
+		if (msg == info)
+			return level::INFO;
+		if (msg == log)
+			return level::LOG;
+		if (msg == msg)
 			return level::MESSAGE;
-		else if (contains("WARN"))
+		if (msg == warn)
 			return level::WARNING;
-		else if (contains("ERROR"))
+		if (msg == error)
 			return level::ERROR;
-		else if (contains("CRIT"))
+		if (msg == crit)
 			return level::CRITICAL;
 		return level::NONE;
-	}
-
-	inline level::LogLevel string_to_level(const std::string& str)
-	{
-		if (std::all_of(str.begin(), str.end(), isdigit))
-			return { str::stouc(str) };
-		else {
-			const auto lc{ str::tolower(str) };
-			const auto contains{ [&lc](const auto& substr) { return lc.find(substr) != std::string::npos; } };
-			if (contains("critical"))
-				return level::CRITICAL;
-			else if (contains("error"))
-				return level::ERROR;
-			else if (contains("warn"))
-				return level::WARNING;
-			else if (contains("log"))
-				return level::LOG;
-			else if (contains("info"))
-				return level::INFO;
-			else if (contains("debug"))
-				return level::DEBUG;
-			else if (contains("message") || contains("msg"))
-				return level::MESSAGE;
-			return level::NONE;
-		}
 	}
 
 	/**
@@ -254,39 +239,44 @@ namespace xlog {
 		{
 			if (!_add_prefix)
 				return message;
-			const term::Message* message_type{ nullptr };
+			const char* message_type{ nullptr };
 			switch (level) {
 			case level::CRITICAL:
-				message_type = &term::crit;
+				message_type = &crit;
 				break;
 			case level::ERROR:
-				message_type = &term::error;
+				message_type = &error;
 				break;
 			case level::WARNING:
-				message_type = &term::warn;
+				message_type = &warn;
 				break;
 			case level::LOG:
-				message_type = &term::log;
+				message_type = &log;
 				break;
 			case level::INFO:
-				message_type = &term::info;
+				message_type = &info;
 				break;
 			case level::MESSAGE:
-				message_type = &term::msg;
+				message_type = &msg;
 				break;
 			case level::DEBUG:
-				message_type = &term::debug;
+				message_type = &debug;
 				break;
 			default:
 				break;
 			}
 			if (message_type != nullptr) {
 				if constexpr (std::derived_from<StreamType, std::ofstream>)
-					return { message_type->as_string_no_color() + message };
+					return { [](const std::string_view& message_prefix) -> std::string {
+						const auto open{ message_prefix.find('[', 3ull) }, close{ message_prefix.find(']') };
+						if (const auto& sz{message_prefix.size()};  open < sz && close < sz)
+							return { message_prefix.substr(open, close - open + 1ull).data() };
+						return{};
+					}(message_type) + message };
 				else
-					return { message_type->as_string() + message };
+					return { message_type + message };
 			}
-			return str::stringify(str::VIndent(term::message_settings::maxMessageSizeIndent), message);
+			return { "\t"s + message };
 		}
 
 		/**
@@ -313,7 +303,13 @@ namespace xlog {
 		}
 
 	public:
-		xLog(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::cerr }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : _target{ out }, _level{ std::make_unique<level::LogLevel>(log_level) }, _add_prefix{ add_prefix } {}
+		/**
+		 * @brief				Default Constructor
+		 * @param log_level		Default Log Level.
+		 * @param add_prefix	When true, log level prefixes are enabled. (Ex: "[LOG]")
+		 */
+		xLog(const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : _target{ std::clog }, _level{ std::make_unique<level::LogLevel>(log_level) }, _add_prefix{ add_prefix } {}
+		xLog(const OutputTarget<StreamType>& out, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : _target{ out }, _level{ std::make_unique<level::LogLevel>(log_level) }, _add_prefix{ add_prefix } {}
 
 		friend std::istream& operator>>(std::istream& is, const xLog<StreamType>& x) { return is >> x._target; }
 		friend std::ostream& operator<<(std::ostream& os, const xLog<StreamType>& x) { return os << x._target; }
@@ -393,7 +389,7 @@ namespace xlog {
 		 * @param log_level		The log level whitelist.
 		 * @param add_prefix	When true, log messages are prefixed with their level.
 		 */
-		xLogs(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::cerr }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
+		xLogs(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::clog }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
 
 		/**
 		 * @brief		Stream insertion operator for the xLogs class.
@@ -410,8 +406,6 @@ namespace xlog {
 		{
 			if constexpr (std::same_as<T, level::LogLevel>)
 				oxl._last = std::make_unique<level::LogLevel>(m);
-			else if constexpr (std::same_as<T, term::Message>)
-				oxl._last = std::make_unique<level::LogLevel>(message_to_level(m));
 			else if constexpr (std::same_as<T, msg_break_t>) {
 				if (!oxl._add_prefix || oxl._last.get() == nullptr)
 					oxl.write(level::NONE, oxl._buffer.str());
