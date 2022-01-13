@@ -226,7 +226,7 @@
 #endif
 #endif
 
-#ifdef COMPILER_MSVC /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
+#if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
 #define WINCONSTEXPR CONSTEXPR
 #else
 #define WINCONSTEXPR
