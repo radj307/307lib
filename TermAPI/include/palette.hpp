@@ -33,7 +33,7 @@
 
 #include <unordered_map>
 
-namespace color {
+namespace term {
 	/**
 	 * @struct palette
 	 * @brief Contains a key-color map and functions to set terminal colors inline.
@@ -146,4 +146,8 @@ namespace color {
 		virtual setcolor operator()() const { return reset(); }
 		explicit operator PaletteType() const { return _palette; }
 	};
-};
+}
+
+namespace color {
+	using term::palette;
+}

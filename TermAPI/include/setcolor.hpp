@@ -16,6 +16,12 @@ namespace color {
 		F = false,
 		B = true,
 	};
+}
+
+namespace term {
+	using color::Layer;
+	using color::format;
+	using color::FormatFlag;
 
 	/**
 	 * @brief		Acts as a wrapper and controller for SGR & RGB color codes, as well as certain SGR format codes.
@@ -51,7 +57,7 @@ namespace color {
 		{
 			using namespace ANSI;
 			#ifdef SETCOLOR_NO_RGB
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", rgb_to_sgr(r, g, b), END);
+			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", color::rgb_to_sgr(r, g, b), END);
 			#else
 			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;2;", r, ';', g, ';', b, END);
 			#endif
@@ -174,6 +180,7 @@ namespace color {
 	template<> inline const setcolor setcolor::reset{ color::reset };
 	template<> inline const setcolor setcolor::reset_f{ color::reset_f };
 	template<> inline const setcolor setcolor::reset_b{ color::reset_b };
+	//setcolor::white{ color::white }, setcolor::reset{ color::reset }, setcolor::reset_f{ color::reset_f }, setcolor::reset_b{ color::reset_b };
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
 	using wsetcolor = setcolor_seq<ANSI::wSequence>;
@@ -192,4 +199,10 @@ namespace color {
 	template<> inline const wsetcolor wsetcolor::reset{ color::wreset };
 	template<> inline const wsetcolor wsetcolor::reset_f{ color::wreset_f };
 	template<> inline const wsetcolor wsetcolor::reset_b{ color::wreset_b };
+}
+
+namespace color {
+	using term::setcolor_seq;
+	using term::setcolor;
+	using term::wsetcolor;
 }
