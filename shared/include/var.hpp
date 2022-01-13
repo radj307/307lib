@@ -299,6 +299,7 @@ namespace var {
 	 * @tparam T	Test Type.
 	 */
 	template<class T> concept valid_string = any_same<T, std::string, std::wstring, std::u8string, std::u16string, std::u32string>;
+	template<class T> concept valid_string_or_cstr = std::same_as<std::remove_cv_t<T>, char*> || any_same<T, std::string, std::wstring, std::u8string, std::u16string, std::u32string>;
 	/**
 	 * @concept		valid_string_or_convertible
 	 * @brief		Allows standard string types, and any type that can be implicitly converted to string.
