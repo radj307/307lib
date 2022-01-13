@@ -12,13 +12,24 @@
 #include <redirect.hpp>
 #include <xlog.hpp>
 
+struct LogCap {
+	std::stringstream stream;
+
+	std::streambuf* rdbuf() { return stream.rdbuf(); }
+	std::streambuf* rdbuf(auto&& buf) { return stream.rdbuf(std::forward<decltype(buf)>(buf)); }
+};
+
 int main(const int argc, char** argv)
 {
 	try {
 		using namespace color;
 		std::cout << term::EnableANSI;
 
-		file::ini::INI ini{ "test.ini" };
+		xlog::xLogs log{ xlog::level::All };
+		std::clog.rdbuf();
+
+
+
 
 		// CHECK ENV FOR TERM SUPPORT
 		#ifdef OS_WIN
