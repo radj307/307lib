@@ -40,11 +40,11 @@ namespace env {
 	 * @param name	Environment variable name.
 	 * @returns		std::string
 	 */
-	inline std::optional<std::string> getvar(auto&& name) noexcept
+	inline std::optional<std::string> getvar(const std::string_view& name) noexcept
 	{
 		#pragma warning (disable: 4996) // disable deprecation warning
-		const auto var{ std::getenv(std::forward<decltype(name)>(name)) };
-		return( var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt) );
+		const auto var{ std::getenv(name.data()) };
+		return(var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt));
 		#pragma warning (default: 4996)
 	}
 
@@ -291,4 +291,5 @@ namespace env {
 		}
 	};
 	#endif
+
 }
