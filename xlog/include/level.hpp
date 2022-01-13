@@ -1,4 +1,6 @@
 #pragma once
+#include <sysarch.h>
+#include <string>
 
 namespace xlog {
 	/**

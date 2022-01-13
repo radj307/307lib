@@ -4,13 +4,12 @@
     {
       "name": "default",
       "hidden": true,
-      "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "cacheVariables": {
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       }
-
     },
+
     {
       "name": "linux-default",
       "hidden": true,
@@ -45,6 +44,7 @@
         "CMAKE_BUILD_TYPE": "Release"
       }
     },
+
     {
       "name": "macos-default",
       "hidden": true,
@@ -63,6 +63,10 @@
       "inherits": "macos-default",
       "displayName": "macOS Debug",
       "cacheVariables": {
+        "ENABLE_TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
@@ -75,6 +79,7 @@
         "CMAKE_BUILD_TYPE": "Release"
       }
     },
+
     {
       "name": "windows-default",
       "hidden": true,
