@@ -249,7 +249,8 @@ namespace xlog {
 		 * @param log_level		The log level whitelist.
 		 * @param add_prefix	When true, log messages are prefixed with their level.
 		 */
-		xLogs(const OutputTarget<StreamType>& out = OutputTarget<StreamType>{ std::clog }, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
+		xLogs(const OutputTarget<StreamType>& out, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
+		xLogs(const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(log_level, add_prefix) {}
 
 		/**
 		 * @brief		Stream insertion operator for the xLogs class.
