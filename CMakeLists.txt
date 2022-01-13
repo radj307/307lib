@@ -27,7 +27,15 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE) # Enable position in
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/307modules")
 # Get the current version
 include(AutoVersion)
-GET_VERSION("${CMAKE_CURRENT_SOURCE_DIR}" 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH)
+if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+	message(STATUS "Git repository located, using AutoVersion::GET_VERSION...")
+	GET_VERSION("${CMAKE_CURRENT_SOURCE_DIR}" 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH)
+else()
+	message(WARNING "No git repository found, using \"0.0.0\" as the version number by default.")
+	set(307lib_VERSION_MAJOR "0" CACHE STRING "" FORCE)
+	set(307lib_VERSION_MINOR "0" CACHE STRING "" FORCE)
+	set(307lib_VERSION_PATCH "0" CACHE STRING "" FORCE)
+endif()
 MAKE_VERSION(307lib_VERSION ${307lib_VERSION_MAJOR} ${307lib_VERSION_MINOR} ${307lib_VERSION_PATCH})
 
 # create project
