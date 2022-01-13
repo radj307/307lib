@@ -49,24 +49,31 @@ unset(TOP_LEVEL CACHE)
 # Add shared lib
 add_subdirectory("shared")
 
+# Add TermAPI
+option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
+if(ENABLE_TERMAPI)
+	add_subdirectory("TermAPI")
+endif()
+
 # Add string library
 option(ENABLE_STRLIB "Enable the string library." ON)
 if (ENABLE_STRLIB)
 	add_subdirectory("strlib")
 endif()
 
-# Add file library
+# Add xlog
 include(CMakeDependentOption)
+cmake_dependent_option(ENABLE_XLOG "Enable building the xlog library." ON "ENABLE_STRLIB" OFF)
+if (ENABLE_XLOG)
+	add_subdirectory("xlog")
+endif()
+
+# Add file library
 cmake_dependent_option(ENABLE_FILELIB "Enable the file library." ON "ENABLE_STRLIB" OFF)
 if (ENABLE_FILELIB)
 	add_subdirectory("filelib")
 endif()
 
-# Add TermAPI
-option(ENABLE_TERMAPI "Enable the TermAPI library." ON)
-if(ENABLE_TERMAPI)
-	add_subdirectory("TermAPI")
-endif()
 
 # Add opt library
 cmake_dependent_option(ENABLE_OPTLIB "Enable the commandline option library." ON "ENABLE_STRLIB;ENABLE_FILELIB" OFF)
