@@ -1,7 +1,7 @@
 /**
- * @file	env.hpp
+ * @file	envpath.hpp
  * @author	radj307
- * @brief	Contains the env namespace & all of its functions.
+ * @brief	Contains the PATH-variable-related functions of the env namespace.
  *\n		__Features__
  *\n		- env::getvar(<var_name>)
  *\n			Wrapper for the C getenv() function.
@@ -17,37 +17,24 @@
  */
 #pragma once
 #include <sysarch.h>
-#include <make_exception.hpp>
+#include <env.hpp>
 #include <str.hpp>
 #include <fileutil.hpp>
 #include <var.hpp>
 
 #include <optional>
 #include <filesystem>
-#include <cstdlib> // for C environment functions
+#include <concepts>
 
- /**
-  * @def		ENV_DEFAULT_RETURN_TYPE
-  * @brief	You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for env.hpp functions.
-  */
+/**
+ * @def		ENV_DEFAULT_RETURN_TYPE
+ * @brief	You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for env.hpp functions.
+ */
 #ifndef ENV_DEFAULT_RETURN_TYPE
 #define ENV_DEFAULT_RETURN_TYPE std::string
 #endif
 
 namespace env {
-	/**
-	 * @brief		Retrieve the value of a given environment variable as a std::string.
-	 * @param name	Environment variable name.
-	 * @returns		std::string
-	 */
-	inline std::optional<std::string> getvar(const std::string_view& name) noexcept
-	{
-		#pragma warning (disable: 4996) // disable deprecation warning
-		const auto var{ std::getenv(name.data()) };
-		return(var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt));
-		#pragma warning (default: 4996)
-	}
-
 	/**
 	 * @brief	Retrieve the value of the PATH environment variable as a vector of filesystem paths.
 	 * @returns	std::vector<std::filesystem::path>
@@ -231,7 +218,7 @@ namespace env {
 				path.shrink_to_fit();
 				return path;
 			}
-			throw std::exception("Failed to retrieve PATH variable!");
+			throw make_exception("Failed to retrieve PATH variable!");
 		}
 
 		static inline std::string normalize_path(std::string path, const char& desiredPathDelim = '/')
