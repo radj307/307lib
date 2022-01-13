@@ -21,6 +21,13 @@
   * @brief		Contains pre-made ANSI sequences & helper functions for making sequences.
   */
 namespace term {
+	INLINE CONSTEXPR const char* debug{ "\033[38;5;99m[DEBUG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* info{ "\033[38;5;246m[INFO]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* log{ "\033[38;5;7m[LOG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* msg{ "\033[38;5;2m[MSG]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* warn{ "\033[38;5;208m[WARN]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* error{ "\033[38;5;1m[ERROR]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* crit{ "\033[38;5;88m[CRIT]\033[38;5;7m\t" };
 #ifdef OS_WIN
 #include <conio.h>
 #endif
