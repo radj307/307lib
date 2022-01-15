@@ -58,37 +58,37 @@ namespace str {
 	 */
 	#pragma warning (disable: 26800) 
 	 /**
-	  * @brief Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
-	  * @tparam ...VT	- Variadic Templated Arguments.
-	  * @param ...args	- Arguments to insert into the stream, in order.
-	  * @returns std::stringstream
+	  * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
+	  * @tparam ...Ts	Variadic Templated Arguments.
+	  * @param ...args	Arguments to insert into the stream, in order.
+	  * @returns		std::stringstream
 	  */
-	template<var::Streamable... VT>
-	[[nodiscard]] static std::stringstream streamify(VT... args)
+	template<var::Streamable... Ts>
+	[[nodiscard]] static std::stringstream streamify(Ts&&... args)
 	{
 		std::stringstream buffer;
-		(buffer << ... << std::move(args));
+		(buffer << ... << std::forward<Ts>(args));
 		return std::move(buffer);
 	}
 
 	/**
 	 * @brief Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.
-	 * @tparam ...VT	- Variadic Templated Arguments.
+	 * @tparam ...Ts	- Variadic Templated Arguments.
 	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
 	 * @returns std::string
 	 */
-	template<var::Streamable... VT>
-	[[nodiscard]] constexpr static const std::string stringify(const VT&... args)
+	template<var::Streamable... Ts>
+	[[nodiscard]] constexpr static const std::string stringify(Ts&&... args)
 	{
-		if constexpr (var::none<VT...>)
+		if constexpr (var::none<Ts...>)
 			return{};
 		std::stringstream buffer;	// init stringstream
-		(buffer << ... << args);	// insert variadic arguments in order
+		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
 		return std::move(buffer.str());		// return as string
 	}
 
 	/**
-	 * @brief stringify() variant that accepts a vector of elements instead of variadic arguments.
+	 * @brief 
 	 * @tparam ContainerT	- Container Type. Accepts most STL containers that hold a single type, such as: std::vector, std::set, etc.
 	 * @tparam ElemT		- Templated Element Type. Must be compatible with ostream::operator<<.
 	 * @tparam ...VT		- Variadic Templated Separators. These are inserted in order between every element in the container.
@@ -97,7 +97,7 @@ namespace str {
 	 * @returns std::string
 	 */
 	template<template<class, class> class ContainerT, class ElemT, var::Streamable... VT> requires std::convertible_to<ElemT, std::string>
-	[[nodiscard]] constexpr static const std::string stringify_container(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
+	[[nodiscard]] constexpr static const std::string join(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
 	{
 		std::stringstream buffer;
 		for (auto element{ container.begin() }; element != container.end(); ++element) {
