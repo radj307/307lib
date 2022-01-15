@@ -4,8 +4,38 @@
 #include <utility>
 #include <string>
 #include <algorithm>
+#include <numeric>
 
 namespace math {
+	/**
+	 * @brief		Retrieve the machine epsilon value for the given type using numeric_limits.
+	 * @tparam T	Input floating-point type
+	 * @returns		T
+	 */
+	template<std::floating_point T>
+	INLINE CONSTEXPR T getEpsilon() noexcept { return std::numeric_limits<T>::epsilon(); }
+
+	/**
+	 * @brief		Checks if the given floating-point numbers are closer to being equal than the machine epsilon value.
+	 * @tparam T	Input Floating-Point Type.
+	 * @param l		First comparison value.
+	 * @param r		Second comparison value.
+	 * @returns		T
+	 */
+	template<std::floating_point T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept 
+	{
+		const T diff{ l - r };
+		return (diff < static_cast<T>(0.0) ? -diff : diff) < getEpsilon<T>();
+	}
+	/**
+	 * @brief		Checks if the given numbers are equal. This function only exists to allow SFINAE handling of integral types
+	 * @tparam T	Input Integral Type.
+	 * @param l		First comparison value.
+	 * @param r		Second comparison value.
+	 * @returns		T
+	 */
+	template<std::integral T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept { return l == r; }
+
 	/**
 	 * @brief			Calculate the result of a floating-point modulo operation.
 	 * @tparam T		Floating-Point Type
@@ -16,16 +46,16 @@ namespace math {
 	template<std::floating_point T>
 	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
-	#ifdef OS_WIN
+		#ifdef OS_WIN
 		if constexpr (std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
 		else if constexpr (std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
-	#else
+		#else
 		return std::fmod(value, modulo);
-	#endif
+		#endif
 	}
 
 	/**
