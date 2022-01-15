@@ -87,7 +87,7 @@ namespace xlog {
 	protected:
 		OutputTarget<StreamType> _target;
 		std::unique_ptr<level::LogLevel> _level;
-		bool _add_prefix, _log_self{ false };
+		bool _add_prefix, _log_self{ false }, _allow_color{ false };
 
 		/**
 		 * @brief			Format a given message using the current settings.
@@ -102,25 +102,25 @@ namespace xlog {
 			const char* message_type{ nullptr };
 			switch (level) {
 			case level::CRITICAL:
-				message_type = &crit;
+				message_type = _allow_color ? "\033[38;5;9m\033[1m[CRIT]\033[38;5;7m" : "[CRIT]";
 				break;
 			case level::ERROR:
-				message_type = &error;
+				message_type = _allow_color ? "\033[38;5;9m[ERROR]\033[38;5;7m" : "[ERROR]";
 				break;
 			case level::WARNING:
-				message_type = &warn;
+				message_type = _allow_color ? "\033[38;5;11m[WARN]\033[38;5;7m" : "[WARN]";
 				break;
 			case level::LOG:
-				message_type = &log;
+				message_type = _allow_color ? "\033[38;5;4m[LOG]\033[38;5;7m" : "[LOG]";
 				break;
 			case level::INFO:
-				message_type = &info;
+				message_type = _allow_color ? "\033[38;5;12m[INFO]\033[38;5;7m" : "[INFO]";
 				break;
 			case level::MESSAGE:
-				message_type = &msg;
+				message_type = _allow_color ? "\033[38;5;10m[MSG]\033[38;5;7m" : "[MSG]";
 				break;
 			case level::DEBUG:
-				message_type = &debug;
+				message_type = _allow_color ? "\033[38;5;13m[DEBUG]\033[38;5;7m" : "[DEBUG]";
 				break;
 			default:
 				break;
@@ -132,7 +132,7 @@ namespace xlog {
 						if (const auto& sz{message_prefix.size()};  open < sz && close < sz)
 							return { message_prefix.substr(open, close - open + 1ull).data() };
 						return{};
-					}(message_type) + message };
+					}(message_type)+message };
 				else
 					return { message_type + message };
 			}
@@ -173,6 +173,18 @@ namespace xlog {
 
 		friend std::istream& operator>>(std::istream& is, const xLog<StreamType>& x) { return is >> x._target; }
 		friend std::ostream& operator<<(std::ostream& os, const xLog<StreamType>& x) { return os << x._target; }
+
+		/**
+		 * @brief			Enable or disable the usage of colors in output.
+		 * @param enable	When true, colors are enabled.
+		 * @returns			bool
+		 */
+		bool setColorEnabled(const bool& enable)
+		{
+			const auto copy{ _allow_color };
+			_allow_color = enable;
+			return copy;
+		}
 
 		/**
 		 * @brief			Set whether messages should automatically be given a colorized prefix such as "[ERROR]".
@@ -251,6 +263,9 @@ namespace xlog {
 		 */
 		xLogs(const OutputTarget<StreamType>& out, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
 		xLogs(const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(log_level, add_prefix) {}
+		
+		std::streambuf* rdbuf() const { return _buffer.rdbuf(); }
+		std::streambuf* rdbuf(std::streambuf* rdbuf) { return _buffer.rdbuf(rdbuf); }
 
 		/**
 		 * @brief		Stream insertion operator for the xLogs class.

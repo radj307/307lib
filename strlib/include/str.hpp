@@ -407,7 +407,7 @@ namespace str {
 	 * @param delims...		At least one character to remove from the end of the string. These are casted to char before comparing!
 	 * @returns				std::string_view
 	 */
-	template<var::valid_char... DelimT>
+	template<std::same_as<char>... DelimT>
 	inline static std::string_view strip_trailing(const std::string_view& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_trailing() requires at least one delimiter char!");
@@ -426,7 +426,7 @@ namespace str {
 	 * @param delims...		At least one character to remove from the beginning of the string. These are casted to char before comparing!
 	 * @returns				std::string_view
 	 */
-	template<var::valid_char... DelimT>
+	template<std::same_as<char>... DelimT>
 	inline static std::string_view strip_preceeding(const std::string_view& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
@@ -437,5 +437,18 @@ namespace str {
 			else break;
 		}
 		return str.substr(i);
+	}
+
+	/**
+	 * @brief 
+	 * @param str 
+	 * @param ...delims	Any number of characters to remove from the given string.
+	 * @returns			std::string_view
+	 */
+	template<std::same_as<char>... DelimT>
+	inline WINCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
+	{
+		s.erase(std::remove_if(s.begin(), s.end(), [&delims...](auto&& ch) { return var::variadic_or(ch == delims...); }), s.end());
+		return s;
 	}
 };

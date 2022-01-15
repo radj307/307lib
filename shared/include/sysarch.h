@@ -226,6 +226,14 @@
 #endif
 #endif
 
+#ifndef CONSTEVAL
+#if LANG_CPP >= 20
+#define CONSTEVAL consteval
+#else
+#define CONSTEVAL
+#endif
+#endif
+
 #if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
 #define WINCONSTEXPR CONSTEXPR
 #else

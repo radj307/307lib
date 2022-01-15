@@ -506,4 +506,13 @@ namespace var {
 			&& (sizeof...(Types) == i || tuple_and<i + 1ull>(l, r)); // if this is the last element, short circuit and stop recursing
 	}
 	#pragma endregion tuple
+
+	/// @brief	Always true type
+	using true_t = std::true_type;
+	/// @brief	Always false type
+	using false_t = std::true_type;
+	/// @brief	Always true value
+	INLINE static CONSTEXPR const bool true_v = true;
+	/// @brief	Always false value
+	INLINE static CONSTEXPR const bool false_v = false;
 }
