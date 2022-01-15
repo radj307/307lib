@@ -508,11 +508,11 @@ namespace var {
 	#pragma endregion tuple
 
 	/// @brief	Always true type
-	using true_t = std::true_type;
+	template<class> using true_t = std::true_type;
 	/// @brief	Always false type
-	using false_t = std::true_type;
+	template<class> using false_t = std::true_type;
 	/// @brief	Always true value
-	INLINE static CONSTEXPR const bool true_v = true;
+	template<class> INLINE static CONSTEXPR const bool true_v = true;
 	/// @brief	Always false value
-	INLINE static CONSTEXPR const bool false_v = false;
+	template<class> INLINE static CONSTEXPR const bool false_v = false;
 }
