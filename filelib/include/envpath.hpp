@@ -35,6 +35,12 @@
 #endif
 
 namespace env {
+	#ifdef OS_WIN
+	INLINE CONSTEXPR const auto PATH_VAR_NAME{ "path" };
+	#else
+	INLINE CONSTEXPR const auto PATH_VAR_NAME{ "PATH" };
+	#endif
+
 	/**
 	 * @brief	Retrieve the value of the PATH environment variable as a vector of filesystem paths.
 	 * @returns	std::vector<std::filesystem::path>
@@ -42,7 +48,7 @@ namespace env {
 	template<std::same_as<std::vector<std::filesystem::path>> RT = std::vector<ENV_DEFAULT_RETURN_TYPE>>
 	inline RT get_path() noexcept(false)
 	{
-		if (const auto v{ getvar("path") }; v.has_value()) {
+		if (const auto v{ getvar(PATH_VAR_NAME) }; v.has_value()) {
 			std::vector<std::filesystem::path> path;
 			path.reserve(std::count(v.value().begin(), v.value().end(), ';'));
 			std::stringstream ss{ v.value() };
@@ -60,7 +66,7 @@ namespace env {
 	template<std::same_as<std::vector<std::string>> RT = std::vector<ENV_DEFAULT_RETURN_TYPE>>
 	inline RT get_path() noexcept(false)
 	{
-		if (const auto v{ getvar("path") }; v.has_value()) {
+		if (const auto v{ getvar(PATH_VAR_NAME) }; v.has_value()) {
 			std::vector<std::string> path;
 			path.reserve(std::count(v.value().begin(), v.value().end(), ';'));
 			std::stringstream ss{ v.value() };
