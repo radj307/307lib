@@ -379,26 +379,6 @@ namespace str {
 			return var::variadic_or((str::tolower(str) == str::tolower(matches))...);
 		return var::variadic_or((str == matches)...);
 	}
-	/**
-	 * @brief				Check if a given string matches any of a list of strings.
-	 * @tparam MatchCase	When true, matches are case sensitive, otherwise they are case insensitive.
-	 * @tparam StrT			String Type.
-	 * @tparam Ts...		Variadic number of types that are the same as StrT.
-	 * @param str			Input String.
-	 * @param count			Minimum number of characters in _str_ that match an input string before being considered matching.
-	 * @param matches		At least one string to compare to str.
-	 * @returns bool
-	 */
-	template<bool MatchCase = true, var::same_or_convertible<std::string>... Ts>
-	inline WINCONSTEXPR bool matches_min_any(const std::string& str, const int& count, const Ts&... matches)
-	{
-		const auto& compare{ [](const std::string& l, const std::string& r) {
-			if constexpr (MatchCase)
-				return l.compare(r);
-			return str::tolower(l).compare(str::tolower(r));
-		} };
-		return var::variadic_or((compare(str, matches) >= count)...);
-	}
 
 	/**
 	 * @brief				Remove trailing characters from a string.
