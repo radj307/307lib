@@ -239,3 +239,8 @@
 #else
 #define WINCONSTEXPR
 #endif
+
+#if !defined(STRINGIZE) && !defined(_STRINGIZE_INTERNAL) /** @def STRINGIZE @brief Stringize the given preprocessor macro by enclosing it in quotes. */
+#define _STRINGIZE_INTERNAL(x) #x
+#define STRINGIZE(x) _STRINGIZE_INTERNAL(x)
+#endif
