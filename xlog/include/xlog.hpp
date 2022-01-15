@@ -265,7 +265,12 @@ namespace xlog {
 		xLogs(const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(log_level, add_prefix) {}
 		
 		std::streambuf* rdbuf() const { return _buffer.rdbuf(); }
-		std::streambuf* rdbuf(std::streambuf* rdbuf) { return _buffer.rdbuf(rdbuf); }
+		std::streambuf* rdbuf(std::streambuf* rdbuf) 
+		{
+			const auto* const copy{ _buffer.rdbuf() };
+			_buffer.set_rdbuf(rdbuf);
+			return copy;
+		}
 
 		/**
 		 * @brief		Stream insertion operator for the xLogs class.
