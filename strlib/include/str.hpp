@@ -58,37 +58,37 @@ namespace str {
 	 */
 	#pragma warning (disable: 26800) 
 	 /**
-	  * @brief Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
-	  * @tparam ...VT	- Variadic Templated Arguments.
-	  * @param ...args	- Arguments to insert into the stream, in order.
-	  * @returns std::stringstream
+	  * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
+	  * @tparam ...Ts	Variadic Templated Arguments.
+	  * @param ...args	Arguments to insert into the stream, in order.
+	  * @returns		std::stringstream
 	  */
-	template<var::Streamable... VT>
-	[[nodiscard]] static std::stringstream streamify(VT... args)
+	template<var::Streamable... Ts>
+	[[nodiscard]] static std::stringstream streamify(Ts&&... args)
 	{
 		std::stringstream buffer;
-		(buffer << ... << std::move(args));
+		(buffer << ... << std::forward<Ts>(args));
 		return std::move(buffer);
 	}
 
 	/**
 	 * @brief Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.
-	 * @tparam ...VT	- Variadic Templated Arguments.
+	 * @tparam ...Ts	- Variadic Templated Arguments.
 	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
 	 * @returns std::string
 	 */
-	template<var::Streamable... VT>
-	[[nodiscard]] constexpr static const std::string stringify(const VT&... args)
+	template<var::Streamable... Ts>
+	[[nodiscard]] constexpr static const std::string stringify(Ts&&... args)
 	{
-		if constexpr (var::none<VT...>)
+		if constexpr (var::none<Ts...>)
 			return{};
 		std::stringstream buffer;	// init stringstream
-		(buffer << ... << args);	// insert variadic arguments in order
+		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
 		return std::move(buffer.str());		// return as string
 	}
 
 	/**
-	 * @brief stringify() variant that accepts a vector of elements instead of variadic arguments.
+	 * @brief 
 	 * @tparam ContainerT	- Container Type. Accepts most STL containers that hold a single type, such as: std::vector, std::set, etc.
 	 * @tparam ElemT		- Templated Element Type. Must be compatible with ostream::operator<<.
 	 * @tparam ...VT		- Variadic Templated Separators. These are inserted in order between every element in the container.
@@ -97,7 +97,7 @@ namespace str {
 	 * @returns std::string
 	 */
 	template<template<class, class> class ContainerT, class ElemT, var::Streamable... VT> requires std::convertible_to<ElemT, std::string>
-	[[nodiscard]] constexpr static const std::string stringify_container(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
+	[[nodiscard]] constexpr static const std::string join(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
 	{
 		std::stringstream buffer;
 		for (auto element{ container.begin() }; element != container.end(); ++element) {
@@ -379,26 +379,6 @@ namespace str {
 			return var::variadic_or((str::tolower(str) == str::tolower(matches))...);
 		return var::variadic_or((str == matches)...);
 	}
-	/**
-	 * @brief				Check if a given string matches any of a list of strings.
-	 * @tparam MatchCase	When true, matches are case sensitive, otherwise they are case insensitive.
-	 * @tparam StrT			String Type.
-	 * @tparam Ts...		Variadic number of types that are the same as StrT.
-	 * @param str			Input String.
-	 * @param count			Minimum number of characters in _str_ that match an input string before being considered matching.
-	 * @param matches		At least one string to compare to str.
-	 * @returns bool
-	 */
-	template<bool MatchCase = true, var::same_or_convertible<std::string>... Ts>
-	inline WINCONSTEXPR bool matches_min_any(const std::string& str, const int& count, const Ts&... matches)
-	{
-		const auto& compare{ [](const std::string& l, const std::string& r) {
-			if constexpr (MatchCase)
-				return l.compare(r);
-			return str::tolower(l).compare(str::tolower(r));
-		} };
-		return var::variadic_or((compare(str, matches) >= count)...);
-	}
 
 	/**
 	 * @brief				Remove trailing characters from a string.
@@ -407,7 +387,7 @@ namespace str {
 	 * @param delims...		At least one character to remove from the end of the string. These are casted to char before comparing!
 	 * @returns				std::string_view
 	 */
-	template<var::valid_char... DelimT>
+	template<std::same_as<char>... DelimT>
 	inline static std::string_view strip_trailing(const std::string_view& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_trailing() requires at least one delimiter char!");
@@ -426,7 +406,7 @@ namespace str {
 	 * @param delims...		At least one character to remove from the beginning of the string. These are casted to char before comparing!
 	 * @returns				std::string_view
 	 */
-	template<var::valid_char... DelimT>
+	template<std::same_as<char>... DelimT>
 	inline static std::string_view strip_preceeding(const std::string_view& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
@@ -437,5 +417,18 @@ namespace str {
 			else break;
 		}
 		return str.substr(i);
+	}
+
+	/**
+	 * @brief 
+	 * @param str 
+	 * @param ...delims	Any number of characters to remove from the given string.
+	 * @returns			std::string_view
+	 */
+	template<std::same_as<char>... DelimT>
+	inline WINCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
+	{
+		s.erase(std::remove_if(s.begin(), s.end(), [&delims...](auto&& ch) { return var::variadic_or(ch == delims...); }), s.end());
+		return s;
 	}
 };

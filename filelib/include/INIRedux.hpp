@@ -1,7 +1,7 @@
 #pragma once
 #include <TokenRedux.hpp>				// For base tokenization framework
 #include <TokenReduxDefaultDefs.hpp>	// For tokenizer definitions package
-#include <filei.hpp>					// For file reading
+#include <fileio.hpp>					// For file I/O
 
 #include <string>
 #include <variant>
@@ -467,7 +467,7 @@ namespace file::ini {
 					else
 						ss.seekg(pos - 1ll);
 					// getsimilar
-					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
+					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
 				}
 				case LEXEME::SUBTRACT: [[fallthrough]]; // number start
 				case LEXEME::DIGIT:
@@ -507,7 +507,7 @@ namespace file::ini {
 		private:
 			void throwEx(const size_t& line, const std::string& msg) const
 			{
-				throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: ", filename);
+				throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: \"", filename, '\"');
 			}
 		public:
 
@@ -647,9 +647,9 @@ namespace file::ini {
 			for (auto& file : var::variadic_accumulate<std::string>(std::string{ filenames }...))
 				read(file);
 		}
-		bool write(const std::filesystem::path& filename, const bool append = false) const
+		bool write(const std::filesystem::path& filename) const
 		{
-			return file::write(filename, str::streamify(*this).rdbuf(), append);
+			return file::write(filename, *this);
 		}
 	};
 }

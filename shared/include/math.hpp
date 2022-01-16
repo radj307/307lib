@@ -1,11 +1,44 @@
 #pragma once
 #include <sysarch.h>
+
 #include <cmath>
 #include <utility>
 #include <string>
 #include <algorithm>
+#include <numeric>
+#include <ratio>
+#include <chrono>
 
 namespace math {
+	/**
+	 * @brief		Retrieve the machine epsilon value for the given type using numeric_limits.
+	 * @tparam T	Input floating-point type
+	 * @returns		T
+	 */
+	template<std::floating_point T>
+	INLINE CONSTEXPR T getEpsilon() noexcept { return std::numeric_limits<T>::epsilon(); }
+
+	/**
+	 * @brief		Checks if the given floating-point numbers are closer to being equal than the machine epsilon value.
+	 * @tparam T	Input Floating-Point Type.
+	 * @param l		First comparison value.
+	 * @param r		Second comparison value.
+	 * @returns		T
+	 */
+	template<std::floating_point T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept 
+	{
+		const T diff{ l - r };
+		return (diff < static_cast<T>(0.0) ? -diff : diff) < getEpsilon<T>();
+	}
+	/**
+	 * @brief		Checks if the given numbers are equal. This function only exists to allow SFINAE handling of integral types
+	 * @tparam T	Input Integral Type.
+	 * @param l		First comparison value.
+	 * @param r		Second comparison value.
+	 * @returns		T
+	 */
+	template<std::integral T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept { return l == r; }
+
 	/**
 	 * @brief			Calculate the result of a floating-point modulo operation.
 	 * @tparam T		Floating-Point Type
@@ -16,16 +49,16 @@ namespace math {
 	template<std::floating_point T>
 	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
-	#ifdef OS_WIN
+		#ifdef OS_WIN
 		if constexpr (std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
 		else if constexpr (std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
-	#else
+		#else
 		return std::fmod(value, modulo);
-	#endif
+		#endif
 	}
 
 	/**
@@ -69,4 +102,37 @@ namespace math {
 	 * @returns		T
 	 */
 	template<var::arithmetic T> [[nodiscard]] static constexpr T abs(const T& val) { return val > 0 ? val : -val; }
+
+	#if LANG_CPP >= 17
+	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::reduce(begin, end)
+	#else
+	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::accumulate(begin, end, T{ 0 })
+	#endif
+
+	/**
+	 * @brief		Get the average of a vector of numbers.
+	 * @param vec	Input vector of any arithmetic type.
+	 * @returns		T
+	 *\n			The average of all of the numbers in the vector.
+	 */
+	template<var::arithmetic T, typename IteratorT> [[nodiscard]] static constexpr T average(const IteratorT& begin, const IteratorT& end)
+	{
+		return MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) / static_cast<T>(std::distance(begin, end));
+	}
+
+	/**
+	 * @brief		Get the average of a variadic list of numbers.
+	 * @param vec	Any number of values of type T.
+	 * @returns		T
+	 *\n			The average of all of the numbers in the vector.
+	 */
+	template<var::arithmetic T, std::same_as<T>... Ts> [[nodiscard]] static constexpr T average(T&& fst, Ts&&... rest)
+	{
+		return average<T>(std::vector<T>{ std::forward<T>(fst), std::forward<Ts>(rest)... });
+	}
+
+	template<typename Rep, typename Period = std::ratio<1L, 1L>> static constexpr std::chrono::duration<Rep, Period> average(const std::vector<std::chrono::duration<Rep, Period>>& durations)
+	{
+		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / durations.size();
+	}
 }

@@ -29,7 +29,7 @@ namespace file {
 	 * @param ifs	Input Stream
 	 * @returns		std::streamoff
 	 */
-	inline CONSTEXPR std::streamoff getLineCount(auto&& is) noexcept(false)
+	inline CONSTEXPR std::streamoff getLineCount(std::istream& is) noexcept(false)
 	{
 		return count(std::forward<decltype(is)>(is), '\n');
 	}

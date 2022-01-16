@@ -226,8 +226,21 @@
 #endif
 #endif
 
+#ifndef CONSTEVAL
+#if LANG_CPP >= 20
+#define CONSTEVAL consteval
+#else
+#define CONSTEVAL
+#endif
+#endif
+
 #if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
 #define WINCONSTEXPR CONSTEXPR
 #else
 #define WINCONSTEXPR
+#endif
+
+#if !defined(STRINGIZE) && !defined(_STRINGIZE_INTERNAL) /** @def STRINGIZE @brief Stringize the given preprocessor macro by enclosing it in quotes. */
+#define _STRINGIZE_INTERNAL(x) #x
+#define STRINGIZE(x) _STRINGIZE_INTERNAL(x)
 #endif

@@ -26,10 +26,10 @@ public:
  * @returns				ReturnT
  */
 template<std::derived_from<std::exception> ReturnT, var::Streamable<std::stringstream>... Ts>
-WINCONSTEXPR ReturnT make_custom_exception(Ts const&... message)
+WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
 {
 	std::stringstream ss;
-	(ss << ... << message);
+	(ss << ... << std::forward<Ts>(message));
 	return{ ss.str() };
 }
 
@@ -39,9 +39,9 @@ WINCONSTEXPR ReturnT make_custom_exception(Ts const&... message)
  * @returns			except
  */
 template<var::Streamable<std::stringstream>... Ts>
-WINCONSTEXPR except make_exception(Ts const&... message)
+WINCONSTEXPR except make_exception(Ts&&... message)
 {
-	return make_custom_exception<except>(message...);
+	return make_custom_exception<except>(std::forward<Ts>(message)...);
 }
 
 /**
@@ -52,12 +52,12 @@ WINCONSTEXPR except make_exception(Ts const&... message)
  * @returns			except
  */
 template<std::derived_from<std::exception> ReturnT, var::Streamable<std::wstringstream>... Ts>
-WINCONSTEXPR except make_exeption(Ts const&... message)
+WINCONSTEXPR except make_exeption(Ts&&... message)
 {
 	std::wstring wstr;
 	{
 		std::wstringstream ss;
-		(ss << ... << message);
+		(ss << ... << std::forward<Ts>(message));
 		wstr = ss.str();
 	}
 	std::string str;

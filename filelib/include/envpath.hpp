@@ -26,15 +26,21 @@
 #include <filesystem>
 #include <concepts>
 
-/**
- * @def		ENV_DEFAULT_RETURN_TYPE
- * @brief	You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for env.hpp functions.
- */
+ /**
+  * @def		ENV_DEFAULT_RETURN_TYPE
+  * @brief	You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for env.hpp functions.
+  */
 #ifndef ENV_DEFAULT_RETURN_TYPE
 #define ENV_DEFAULT_RETURN_TYPE std::string
 #endif
 
 namespace env {
+	#ifdef OS_WIN
+	INLINE CONSTEXPR const auto PATH_VAR_NAME{ "path" };
+	#else
+	INLINE CONSTEXPR const auto PATH_VAR_NAME{ "PATH" };
+	#endif
+
 	/**
 	 * @brief	Retrieve the value of the PATH environment variable as a vector of filesystem paths.
 	 * @returns	std::vector<std::filesystem::path>
@@ -42,7 +48,7 @@ namespace env {
 	template<std::same_as<std::vector<std::filesystem::path>> RT = std::vector<ENV_DEFAULT_RETURN_TYPE>>
 	inline RT get_path() noexcept(false)
 	{
-		if (const auto v{ getvar("path") }; v.has_value()) {
+		if (const auto v{ getvar(PATH_VAR_NAME) }; v.has_value()) {
 			std::vector<std::filesystem::path> path;
 			path.reserve(std::count(v.value().begin(), v.value().end(), ';'));
 			std::stringstream ss{ v.value() };
@@ -60,7 +66,7 @@ namespace env {
 	template<std::same_as<std::vector<std::string>> RT = std::vector<ENV_DEFAULT_RETURN_TYPE>>
 	inline RT get_path() noexcept(false)
 	{
-		if (const auto v{ getvar("path") }; v.has_value()) {
+		if (const auto v{ getvar(PATH_VAR_NAME) }; v.has_value()) {
 			std::vector<std::string> path;
 			path.reserve(std::count(v.value().begin(), v.value().end(), ';'));
 			std::stringstream ss{ v.value() };
@@ -200,6 +206,19 @@ namespace env {
 				return{ p.remove_filename(), filename };
 			}
 			return{ p, {} };
+		}
+
+		/**
+		 * @brief		Get the path to the currently running program's directory.
+		 * @param arg0	Command used to call this program. If this is left blank and no arg0 was passed in the constructor, an exception is thrown.
+		 * @throws		std::exception
+		 * @returns		std::filesystem::path
+		 */
+		std::filesystem::path get_program_dir(const std::optional<std::filesystem::path>& arg0 = std::nullopt) const noexcept(false)
+		{
+			if (arg0.has_value() || !program_path.empty())
+				return resolve_split(arg0.value_or(program_path)).first;
+			throw make_exception("env::PATH::get_current_location() failed:  No arg0 was given!");
 		}
 	};
 	#else
