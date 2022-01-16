@@ -133,6 +133,6 @@ namespace math {
 
 	template<typename Rep, typename Period = std::ratio<1L, 1L>> static constexpr std::chrono::duration<Rep, Period> average(const std::vector<std::chrono::duration<Rep, Period>>& durations)
 	{
-		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / std::distance(begin, end);
+		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / durations.size();
 	}
 }
