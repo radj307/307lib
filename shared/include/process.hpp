@@ -12,6 +12,7 @@
 #include <sstream>
 #include <utility>
 #include <cstdio>
+#include <cstring>
 
 #ifdef OS_WIN
 #define POPEN _popen
@@ -22,6 +23,34 @@
 #endif
 
 namespace process {
+	/**
+	 * @brief		Check if the given read file descriptor has pending data.
+	 * @param fd	The target file descriptor. (STDIN = 0)
+	 * @param s		Timeout in seconds.
+	 * @param us	Additional timeout in nanoseconds.
+	 * @returns		bool
+	 *\n			true	There is pending input.
+	 *\n			false	There is no pending input.
+	 */
+	inline bool hasPendingInput(const int& fd)
+	{
+		struct timespec timeout { 0L, 0L };
+		fd_set fds; // create a file descriptor set
+		FD_ZERO(&fds);
+		FD_SET(fd, &fds); // stdin file descriptor is 0
+		fflush(NULL); // flush input buffer
+		return pselect(fd + 1, &fds, nullptr, nullptr, &timeout, nullptr) == 1;
+	}
+
+	/**
+	 * @brief	Check if STDIN has pending input.
+	 * @returns	bool
+	 */
+	inline bool hasPendingInputSTDIN()
+	{
+		return hasPendingInput(0);
+	}
+
 	template<typename T, size_t SIZE>
 	std::array<T, SIZE> make_array(const int& val = 0)
 	{
@@ -221,7 +250,7 @@ namespace process {
 		 *\n		`true`	The process pipe is not null.
 		 *\n		`false`	The process pipe is null. This can result from an error opening the pipe, or if the pipe was already closed with the close() function.
 		 */
-		CONSTEXPR [[nodiscard]] bool is_open() const noexcept
+		[[nodiscard]] CONSTEXPR bool is_open() const noexcept
 		{
 			return(_pipe != nullptr);
 		}
@@ -278,7 +307,7 @@ namespace process {
 			while (p.read(buff)) { // while fread is receiving characters
 				for (auto& ch : buff) {
 					switch (ch) {
-					case NULL:break;
+					case '\0': break;
 					default:
 						os << ch;
 						break;
