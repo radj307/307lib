@@ -431,4 +431,39 @@ namespace str {
 		s.erase(std::remove_if(s.begin(), s.end(), [&delims...](auto&& ch) { return var::variadic_or(ch == delims...); }), s.end());
 		return s;
 	}
+
+	/**
+	 * @brief				Variadic variant of the getline function.
+	 * @tparam Ch			Char Type
+	 * @tparam Tr			Char Traits
+	 * @tparam A			Allocator Type
+	 * @tparam DelimT...	Any number of types that are the same or convertible to Ch
+	 * @param is			Input stream ref
+	 * @param str			Output string ref
+	 * @param delimiters	Any number of characters to use as delimiters.
+	 * @returns				basic_istream<Ch, Tr>&
+	 */
+	template<class Ch, class Tr, class A, var::same_or_convertible<Ch>... DelimT>
+	std::basic_istream<Ch, Tr>& getline(std::basic_istream<Ch, Tr>& is, std::basic_string<Ch, Tr, A>& str, DelimT const&... delims)
+	{
+		std::string::size_type nread{ 0 }; // number of characters read
+		if (std::istream::sentry(is, true)) {
+			std::streambuf* sbuf{ is.rdbuf() };
+			str.clear();
+			while (nread < str.max_size()) {
+				auto c1{ sbuf->sbumpc() };
+				if (Tr::eq_int_type(c1, Tr::eof())) {
+					is.setstate(std::istream::eofbit);
+					break;
+				}
+				++nread;
+				if (const Ch ch{ Tr::to_char_type(c1) }; !var::variadic_or(ch == delims...))
+				str.push_back(ch);
+				else break;
+			}
+		}
+		if (nread == 0 || nread >= str.max_size())
+			is.setstate(std::istream::failbit);
+		return is;
+	}
 };

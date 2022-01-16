@@ -207,15 +207,14 @@ namespace str {
 	}
 
 	/**
-	 * @function getline(basic_istream<Ch, Tr>&, basic_string<Ch, Tr, A>&, string&)
-	 * @brief Alternative std::getline that accepts a string of delimiters rather than a single char.
-	 * @tparam Ch		- Char Type
-	 * @tparam Tr		- Char Traits
-	 * @tparam A		- Allocator Type
-	 * @param is		- Input Stream
-	 * @param str		- Output String
-	 * @param delims	- String of Delimiters
-	 * @returns basic_istream<Ch, Tr>&
+	 * @brief				Alternative to std::getline that accepts a string of delimiters rather than a single char.
+	 * @tparam Ch			Char Type
+	 * @tparam Tr			Char Traits
+	 * @tparam A			Allocator Type
+	 * @param is			Input Stream
+	 * @param str			Output String
+	 * @param delimiters	Delimiters
+	 * @returns				basic_istream<Ch, Tr>&
 	 */
 	template<class Ch, class Tr, class A>
 	std::basic_istream<Ch, Tr>& getline(std::basic_istream<Ch, Tr>& is, std::basic_string<Ch, Tr, A>& str, const std::string& delimiters)
