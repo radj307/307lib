@@ -19,11 +19,33 @@
 #include <type_traits>
 #endif
 
+#include <functional>
+
  /**
   * @namespace var
   * @brief Contains helper methods for variadic templated functions, as well as std::tuple.
   */
 namespace var {
+	/**
+	 * @brief 
+	 * @tparam Pred 
+	 * @param begin 
+	 * @param end 
+	 * @param fn	A function that accepts (IteratorT::value_type) and returns an integral or boolean.
+	 * @returns		size_t
+	 */
+	template<class Pred, std::input_or_output_iterator IteratorT> static CONSTEXPR size_t count(IteratorT begin, IteratorT end, const Pred& fn) noexcept(false)
+	{
+		size_t counter{ 0ull };
+		for (auto it{ begin }; it != end; ++it) {
+			auto n{ fn(*it) };
+			using T = std::decay_t<decltype(n)>;
+			if constexpr (std::same_as<T, bool> || std::integral<T>)
+				counter += static_cast<size_t>(n);
+		}
+		return counter;
+	}
+
 	#pragma region ConstexprTests
 	////////////////////////////////// BEGIN / Constexpr Tests /////////////////////////////////////////////
 	/**

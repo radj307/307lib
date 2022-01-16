@@ -1,10 +1,13 @@
 #pragma once
 #include <sysarch.h>
+
 #include <cmath>
 #include <utility>
 #include <string>
 #include <algorithm>
 #include <numeric>
+#include <ratio>
+#include <chrono>
 
 namespace math {
 	/**
@@ -99,4 +102,37 @@ namespace math {
 	 * @returns		T
 	 */
 	template<var::arithmetic T> [[nodiscard]] static constexpr T abs(const T& val) { return val > 0 ? val : -val; }
+
+	#if LANG_CPP >= 17
+	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::reduce(begin, end)
+	#else
+	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::accumulate(begin, end, T{ 0 })
+	#endif
+
+	/**
+	 * @brief		Get the average of a vector of numbers.
+	 * @param vec	Input vector of any arithmetic type.
+	 * @returns		T
+	 *\n			The average of all of the numbers in the vector.
+	 */
+	template<var::arithmetic T, typename IteratorT> [[nodiscard]] static constexpr T average(const IteratorT& begin, const IteratorT& end)
+	{
+		return MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) / static_cast<T>(std::distance(begin, end));
+	}
+
+	/**
+	 * @brief		Get the average of a variadic list of numbers.
+	 * @param vec	Any number of values of type T.
+	 * @returns		T
+	 *\n			The average of all of the numbers in the vector.
+	 */
+	template<var::arithmetic T, std::same_as<T>... Ts> [[nodiscard]] static constexpr T average(T&& fst, Ts&&... rest)
+	{
+		return average<T>(std::vector<T>{ std::forward<T>(fst), std::forward<Ts>(rest)... });
+	}
+
+	template<typename Rep, typename Period = std::ratio<1L, 1L>> static constexpr std::chrono::duration<Rep, Period> average(const std::vector<std::chrono::duration<Rep, Period>>& durations)
+	{
+		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / std::distance(begin, end);
+	}
 }
