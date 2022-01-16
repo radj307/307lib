@@ -23,34 +23,6 @@
 #endif
 
 namespace process {
-	/**
-	 * @brief		Check if the given read file descriptor has pending data.
-	 * @param fd	The target file descriptor. (STDIN = 0)
-	 * @param s		Timeout in seconds.
-	 * @param us	Additional timeout in nanoseconds.
-	 * @returns		bool
-	 *\n			true	There is pending input.
-	 *\n			false	There is no pending input.
-	 */
-	inline bool hasPendingInput(const int& fd)
-	{
-		struct timespec timeout { 0L, 0L };
-		fd_set fds; // create a file descriptor set
-		FD_ZERO(&fds);
-		FD_SET(fd, &fds); // stdin file descriptor is 0
-		fflush(NULL); // flush input buffer
-		return pselect(fd + 1, &fds, nullptr, nullptr, &timeout, nullptr) == 1;
-	}
-
-	/**
-	 * @brief	Check if STDIN has pending input.
-	 * @returns	bool
-	 */
-	inline bool hasPendingInputSTDIN()
-	{
-		return hasPendingInput(0);
-	}
-
 	template<typename T, size_t SIZE>
 	std::array<T, SIZE> make_array(const int& val = 0)
 	{

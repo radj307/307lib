@@ -11,26 +11,10 @@
 
 #ifdef OS_WIN
 // Windows headers
-#define WIN32_LEAN_AND_MEAN
+#include <WindowsNotToday.h>
 #include <Windows.h>
-// VIRTUAL KEY CODE DOCS: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 namespace nstd {
-
-    /// @brief  Checks if any virtual keys are pressed.
-    inline int vk_kbhit() noexcept
-    {
-        PBYTE state{ nullptr };
-        if (GetKeyboardState(state) && state != nullptr)
-            return static_cast<int>(*state);
-        return 0;
-    }
-    /// @brief  Checks if the specified virtual key is pressed.
-    inline bool vk_pressed(const int& vk_code) noexcept
-    {
-        return GetAsyncKeyState(vk_code);
-    }
-
     inline int kbhit() noexcept
     {
         return (WaitForSingleObject(GetStdHandle(STD_INPUT_HANDLE), 0) == WAIT_OBJECT_0);
@@ -71,13 +55,32 @@ namespace nstd {
         tcsetattr(0, TCSANOW, &orig_termios);
     }
 
+    /**
+     * @brief		Check if the given read file descriptor has pending data.
+     * @param fd	The target file descriptor. (STDIN = 0)
+     * @param s		Timeout in seconds.
+     * @param us	Additional timeout in nanoseconds.
+     * @returns		bool
+     *\n			true	There is pending input.
+     *\n			false	There is no pending input.
+     */
+    inline bool hasPendingInput(const int& fd)
+    {
+        struct timespec timeout { 0L, 0L };
+        fd_set fds; // create a file descriptor set
+        FD_ZERO(&fds);
+        FD_SET(fd, &fds); // stdin file descriptor is 0
+        fflush(NULL); // flush input buffer
+        return pselect(fd + 1, &fds, nullptr, nullptr, &timeout, nullptr) == 1;
+    }
+
+    /**
+     * @brief	Check if STDIN has pending input.
+     * @returns	bool
+     */
     inline int kbhit()
     {
-
-    }
-    inline int getch()
-    {
-
+        return !!hasPendingInput(0);
     }
 }
 #endif
