@@ -30,15 +30,11 @@ string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEV
 
 # Get the current version
 include(AutoVersion)
+set(ENV{307lib_VERSION} "0.0.0")
+GET_VERSION("307lib" "${CMAKE_CURRENT_SOURCE_DIR}")
+
 if (EXISTS "${CMAKE_SOURCE_DIR}/.git" AND ${TOP_LEVEL})
 	message(STATUS "Enabled 307lib packaging.")
-	GET_VERSION("${CMAKE_CURRENT_SOURCE_DIR}" 307lib_VERSION 307lib_VERSION_MAJOR 307lib_VERSION_MINOR 307lib_VERSION_PATCH)
-else()
-	message(STATUS "No git repository found, using \"0.0.0\" as the 307lib version number by default.")
-	set(307lib_VERSION_MAJOR 0 CACHE STRING "" FORCE)
-	set(307lib_VERSION_MINOR 0 CACHE STRING "" FORCE)
-	set(307lib_VERSION_PATCH 0 CACHE STRING "" FORCE)
-	set(307lib_VERSION "${307lib_VERSION_MAJOR}.${307lib_VERSION_MINOR}.${307lib_VERSION_PATCH}")
 endif()
 
 # create project
