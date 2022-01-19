@@ -74,36 +74,6 @@ namespace opt {
 		}
 	}
 
-	struct VirtualArgument {
-		using Type = std::variant<std::monostate, Parameter, Option, Flag>;
-		Type _arg;
-
-		VirtualArgument(Type arg) : _arg{ std::move(arg) } {}
-
-		std::string name() const { return get_name(_arg); }
-		std::optional<std::string> capture() const
-		{
-			switch (_arg.index()) {
-			case Index::OPTION:
-				return std::get<opt::Option>(_arg).getv();
-			case Index::FLAG:
-				return std::get<opt::Flag>(_arg).getv();
-			default:
-				return std::nullopt;
-			}
-		}
-
-		template<ValidArg Type> bool is() const noexcept { return std::holds_alternative<Type>(_arg); }
-		auto is_parameter() const noexcept { return is<opt::Parameter>(); }
-		auto is_option() const noexcept { return is<opt::Option>(); }
-		auto is_flag() const noexcept { return is<opt::Flag>(); }
-
-		template<ValidArg Type> Type get() const noexcept(false) { return std::get<Type>(_arg); }
-		auto get_parameter() const noexcept(false) { return get<opt::Parameter>(); }
-		auto get_option() const noexcept(false) { return get<opt::Option>(); }
-		auto get_flag() const noexcept(false) { return get<opt::Flag>(); }
-	};
-
 	/**
 	 * @brief Retrieve a std::monostate type from a VariantArgumentType instance.
 	 * @tparam IntegerT	- Integer type

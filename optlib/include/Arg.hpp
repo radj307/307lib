@@ -28,12 +28,15 @@ namespace opt {
 		T _arg;
 
 	public:
+		using type = T;
+
 		/// CONSTRUCTORS
 		/**
 		 * @brief Any-Constructor. Can make Parameters, Options, or Flags depending on input type.
 		 * @param arg	- Raw argument from the commandline to wrap with an Arg class.
 		 */
-		Arg(T arg) : _arg{ std::move(arg) } {}
+		Arg(T&& arg) : _arg{ std::move(arg) } {}
+		Arg(const T& arg) : _arg{ arg } {}
 		/**
 		 * @brief Option Constructor.
 		 * @param arg		- Argument string.
