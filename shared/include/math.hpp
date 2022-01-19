@@ -139,10 +139,11 @@ namespace math {
 	 * @param durations		Vector of durations.
 	 * @returns				DurationT
 	 */
-	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::derived_from<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
+	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::same_as<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
 	[[nodiscard]] static constexpr DurationT average(const std::vector<DurationT>& durations)
 	{
-		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / durations.size();
+		const DurationT sum{ MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()) };
+		return sum / durations.size();
 	}
 
 	/**

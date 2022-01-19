@@ -112,7 +112,7 @@ namespace opt {
 		 * @class	Tokenizer
 		 * @brief	Tokenizes streams containing arguments.
 		 */
-		class Tokenizer : public ::token::base::TokenizerBase<LEXEME, LexemeDictionary, Type, Token> {
+		class Tokenizer final : public ::token::base::TokenizerBase<LEXEME, LexemeDictionary, Type, Token> {
 			bool _allowSlash;
 
 		public:
@@ -144,8 +144,8 @@ namespace opt {
 				case LEXEME::END:
 					return{ Type::END, ch };
 				case LEXEME::SLASH:
-					if (_allowSlash) [[fallthrough]];
-					else			 goto HANDLE_PARAMETER; //////////> GOTO
+					if (!_allowSlash) goto HANDLE_PARAMETER; //////////> GOTO
+					else [[fallthrough]];
 				case LEXEME::DASH:
 				{
 					auto next{ peeklex(LEXEME::NULL_TYPE) };
@@ -189,14 +189,53 @@ namespace opt {
 		 * @class	Parser
 		 * @brief	Parses tokenized argument vectors.
 		 */
-		class Parser : public ::token::base::TokenParserBase<ArgContainerType, Token> {
+		class Parser final : public ::token::base::TokenParserBase<ArgContainerType, Token> {
 		public:
+			struct Input final {
+				using variant = std::variant<std::string, char>;
+				using invec = std::vector<variant>;
+				using outvec = std::vector<std::string>;
+				outvec operator()(invec&& variant_vec) const
+				{
+					strvec vec;
+					vec.reserve(variant_vec.size());
+					for (auto& it : variant_vec) {
+						std::string s{};
+						if (std::holds_alternative<char>(it))
+							s = std::string{ 1ull, std::move(std::get<char>(std::move(it))) };
+						else
+							s = std::move(std::get<std::string>(std::move(it)));
+						vec.emplace_back(std::move(str::strip_preceeding(std::move(s), '-')));
+					}
+					vec.shrink_to_fit();
+					return vec;
+				}
+				CONSTEXPR outvec&& operator()(outvec&& vec) const { return std::forward<outvec>(vec); }
+				outvec operator()(const invec& variant_vec) const
+				{
+					strvec vec;
+					vec.reserve(variant_vec.size());
+					for (auto& it : variant_vec) {
+						std::string s{};
+						if (std::holds_alternative<char>(it))
+							s = std::string{ 1ull, std::get<char>(it) };
+						else
+							s = std::get<std::string>(it);
+						vec.emplace_back(str::strip_preceeding(s, '-'));
+					}
+					vec.shrink_to_fit();
+					return vec;
+				}
+				outvec operator()(const outvec& vec) const { return vec; }
+			};
+
 			using capture_variant = std::variant<std::string, char>;
 			using invec = std::vector<capture_variant>;
 			using strvec = std::vector<std::string>;
 		private:
 			strvec capture_list;
 
+			/// @brief	This function accepts a vector of string/char variants, and returns a vector of strings.
 			static strvec expand_capture_vec(invec&& capturelist)
 			{
 				strvec vec;
@@ -223,8 +262,10 @@ namespace opt {
 			}
 
 		public:
-			Parser(std::vector<Token>&& tokens, invec&& capture_list) : TokenParserBase<ArgContainerType, Token>(std::move(tokens)), capture_list{ std::move(expand_capture_vec(std::move(capture_list))) } {}
-			Parser(const std::vector<Token>& tokens, const strvec& capture_list) : TokenParserBase<ArgContainerType, Token>(tokens), capture_list{ capture_list } {}
+			Parser(std::vector<Token>&& tokens, Input::invec&& capture_list) : TokenParserBase<ArgContainerType, Token>(std::move(tokens)), capture_list{ Input()((std::move(capture_list))) } {}
+			Parser(std::vector<Token>&& tokens, Input::outvec&& capture_list) : TokenParserBase<ArgContainerType, Token>(std::move(tokens)), capture_list{ Input()((std::move(capture_list))) } {}
+			Parser(const std::vector<Token>& tokens, const Input::invec& capture_list) : TokenParserBase<ArgContainerType, Token>(tokens), capture_list{ Input()(capture_list) } {}
+			Parser(const std::vector<Token>& tokens, const Input::outvec& capture_list) : TokenParserBase<ArgContainerType, Token>(tokens), capture_list{ Input()(capture_list) } {}
 
 			OutputT parse() const
 			{
@@ -343,15 +384,22 @@ namespace opt {
 		 * @param argv			Argument array from main.
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<ValidInputType... VT>
-		ParamsAPI3(const int argc, char** argv, const VT&... captures) : ArgContainer(token::Parser(token::Tokenizer(to_stream(argc, argv)).tokenize(), token::Parser::invec{ captures... }).parse(), argv[0]) {}
+		template<ValidInputType... Ts>
+		ParamsAPI3(const int argc, char** argv, const Ts&... captures) : ArgContainer(token::Parser(token::Tokenizer(std::move(to_stream(argc, argv))).tokenize(), token::Parser::invec{ captures... }).parse(), argv[0]) {}
 		/**
 		 * @brief				Parsing Constructor.
 		 * @param args			Argument vector.
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<ValidInputType... VT>
-		ParamsAPI3(const std::vector<std::string>& args, const VT&... captures) : ArgContainer(token::Parser(token::Tokenizer(to_stream(args)).tokenize(), token::Parser::invec{ captures... }).parse()) {}
+		template<ValidInputType... Ts>
+		ParamsAPI3(const std::vector<std::string>& args, const Ts&... captures) : ArgContainer(token::Parser(token::Tokenizer(std::move(to_stream(args))).tokenize(), token::Parser::invec{ captures... }).parse()) {}
+				/**
+		 * @brief				Parsing Constructor.
+		 * @param args			Argument vector.
+		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
+		 */
+		template<ValidInputType... Ts>
+		ParamsAPI3(std::vector<std::string>&& args, const Ts&... captures) : ArgContainer(token::Parser(token::Tokenizer(std::move(to_stream(std::move(args)))).tokenize(), token::Parser::invec{ captures... }).parse()) {}
 
 		ParamsAPI3& operator=(const ParamsAPI3&) = default;
 		ParamsAPI3& operator=(ParamsAPI3&&) = default;
@@ -457,22 +505,6 @@ namespace opt {
 		 */
 		template<var::all_same<Parameter> Type, ValidInputType... Names>
 		constexpr const std::vector<std::string> typegetv_all(const Names&... names) const
-		{
-			std::vector<std::string> vec;
-			vec.reserve(_args.size());
-			for (auto& it : typeget_all<Type>(InputWrapper(names)...))
-				vec.emplace_back(get_name(it));
-			vec.shrink_to_fit();
-			return vec;
-		}
-		/**
-		 * @brief			Get all matching parameters. (Volatile Overload)
-		 * @tparam Type		Input Type. (Parameter)
-		 * @tparam Names	Variadic Input Types
-		 * @param names...	Any number of parameter names. If no names are included, all parameters will be returned.
-		 */
-		template<var::all_same<Parameter> Type, ValidInputType... Names>
-		constexpr const std::vector<std::string> typegetv_all(const Names&... names) const volatile
 		{
 			std::vector<std::string> vec;
 			vec.reserve(_args.size());

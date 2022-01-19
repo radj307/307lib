@@ -1,7 +1,6 @@
 # 307lib/shared
 cmake_minimum_required(VERSION 3.15)
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
@@ -27,6 +26,7 @@ add_library(shared STATIC "cpp.hint" ${SRCS})
 # Set library properties
 set_property(TARGET shared PROPERTY CXX_STANDARD 20)
 set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET shared PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(shared PUBLIC "/Zc:__cplusplus")
 endif()

@@ -22,9 +22,9 @@ struct LogCap {
 	std::streambuf* rdbuf(auto&& buf) { return stream.rdbuf(std::forward<decltype(buf)>(buf)); }
 };
 
-using CLK = std::chrono::_V2::steady_clock;
-using DUR = std::chrono::duration<double, std::nano>;
-using TIMECONT = std::vector<std::chrono::_V2::steady_clock::time_point>;
+using CLK = std::chrono::steady_clock;
+using DUR = std::chrono::duration<double, std::micro>;
+using TIMECONT = std::vector<std::chrono::steady_clock::time_point>;
 #define TIMEP(test_number, object_name, identifier) t##test_number##_##object_name##_##identifier{ CLK::now() }
 #define MAKE_DUR(test_number, object_name) t##test_number##_##object_name##_dur{ t##test_number##_##object_name##_##end - t##test_number##_##object_name##_##begin }
 #define GET_DUR(test_number, object_name) t##test_number##_##object_name##_dur
@@ -38,33 +38,33 @@ int main(const int argc, char** argv)
 		const DUR MAKE_DUR(0, v2);
 
 		const auto TIMEP(0, v3, begin); // BEGIN
-		volatile opt::ParamsAPI3 args_v3{ argc, argv, "precision", "align-to" };
+		opt::ParamsAPI3 args_v3{ argc, argv, "precision", "align-to" };
 		const auto TIMEP(0, v3, end); // BEGIN
 		const DUR MAKE_DUR(0, v3);
 
-
 		const auto TIMEP(1, v2, begin); // BEGIN
-		for (const auto& it : args_v2.typegetv_all<opt::Parameter>())
-			(void)(it);
+		const auto v2_parameters{ args_v2.typegetv_all<opt::Parameter>() };
 		const auto TIMEP(1, v2, end); // END
 		const DUR MAKE_DUR(1, v2);
 
 		const auto TIMEP(1, v3, begin); // BEGIN
-		for (const auto& it : args_v3.typegetv_all<opt::Parameter>())
-			(void)(it);
+		const auto v3_parameters{ args_v3.typegetv_all<opt::Parameter>() };
 		const auto TIMEP(1, v3, end); // END
 		const DUR MAKE_DUR(1, v3);
 
+		if (v2_parameters.size() != v3_parameters.size())
+			throw make_exception("Vector sizes do not match, outcome is not deterministic!");
+
 		std::cout
 			<< "Initialization Speed:\n"
-			<< "  " << "[v2]:    " << GET_DUR(0, v2).count() << " ns" << '\n'
-			<< "  " << "[v3]:    " << GET_DUR(0, v3).count() << " ns" << '\n'
-			<< "  " << "Diff:    " << math::difference<double, std::nano>(GET_DUR(0, v2), GET_DUR(0, v3)).count() << " ns" << '\n'
+			<< "  " << "[v2]:    " << GET_DUR(0, v2).count() << " us" << '\n'
+			<< "  " << "[v3]:    " << GET_DUR(0, v3).count() << " us" << '\n'
+			<< "  " << "Diff:    " << math::difference<double, std::micro>(GET_DUR(0, v2), GET_DUR(0, v3)).count() << " us" << '\n'
 			<< "  " << "Winner:  " << (GET_DUR(0, v2).count() < GET_DUR(0, v3).count() ? "[v2]" : "[v3]")
 			<< "\nTime to retrieve and iterate through all parameters:\n"
-			<< "  " << "[v2]:    " << GET_DUR(1, v2).count() << " ns" << '\n'
-			<< "  " << "[v3]:    " << GET_DUR(1, v3).count() << " ns" << '\n'
-			<< "  " << "Diff:    " << math::difference<double, std::nano>(GET_DUR(1, v2), GET_DUR(1, v3)).count() << " ns" << '\n'
+			<< "  " << "[v2]:    " << GET_DUR(1, v2).count() << " us" << '\n'
+			<< "  " << "[v3]:    " << GET_DUR(1, v3).count() << " us" << '\n'
+			<< "  " << "Diff:    " << math::difference<double, std::micro>(GET_DUR(1, v2), GET_DUR(1, v3)).count() << " us" << '\n'
 			<< "  " << "Winner:  " << (GET_DUR(1, v2).count() < GET_DUR(1, v3).count() ? "[v2]" : "[v3]")
 			<< "\n\n"
 			;

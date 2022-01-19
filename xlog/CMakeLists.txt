@@ -26,6 +26,7 @@ add_library(xlog STATIC "${SRCS}")
 # Set library properties
 set_property(TARGET xlog PROPERTY CXX_STANDARD 20)
 set_property(TARGET xlog PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET xlog PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(xlog PUBLIC "/Zc:__cplusplus")
 endif()

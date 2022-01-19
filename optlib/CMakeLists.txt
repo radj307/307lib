@@ -35,6 +35,7 @@ add_library(optlib STATIC ${SRC})
 # Set library properties
 set_property(TARGET optlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET optlib PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET optlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(optlib PUBLIC "/Zc:__cplusplus")
 endif()

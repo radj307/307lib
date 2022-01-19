@@ -1,7 +1,6 @@
 # 307lib/tokenlib
 cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
@@ -28,6 +27,7 @@ add_library(tokenlib STATIC ${SRCS})
 # Set properties
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET tokenlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(tokenlib PUBLIC "/Zc:__cplusplus")
 endif()

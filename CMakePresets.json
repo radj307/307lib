@@ -20,14 +20,16 @@
       "hidden": true,
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "307lib_ENABLE_DEVELOPMENT": true
+        "307lib_ENABLE_DEVELOPMENT": true,
+        "307lib_ENABLE_UNIT_TESTING": true
       }
     },
     {
       "name": "RelWithDebInfo",
       "hidden": true,
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "307lib_ENABLE_UNIT_TESTING": true
       }
     },
     {
@@ -61,15 +63,27 @@
     },
     {
       "name": "linux-debug",
-      "hidden": false,
       "inherits": [ "linux-default", "Debug" ],
+      "hidden": false,
       "displayName": "Linux Debug"
     },
     {
-      "name": "linux-release",
+      "name": "linux-relwithdebinfo",
+      "inherits": [ "linux-default", "RelWithDebInfo" ],
       "hidden": false,
+      "displayName": "Linux Release w/ Debugging Symbols"
+    },
+    {
+      "name": "linux-release",
       "inherits": [ "linux-default", "Release" ],
+      "hidden": false,
       "displayName": "Linux Release"
+    },
+    {
+      "name": "linux-minsizerel",
+      "inherits": [ "linux-default", "MinSizeRel" ],
+      "hidden": false,
+      "displayName": "Linux Minimal Release"
     },
 
 
@@ -93,10 +107,22 @@
       "displayName": "macOS Debug"
     },
     {
+      "name": "macos-relwithdebinfo",
+      "inherits": [ "macos-default", "RelWithDebInfo" ],
+      "hidden": false,
+      "displayName": "macOS Release w/ Debugging Symbols"
+    },
+    {
       "name": "macos-release",
       "hidden": false,
       "inherits": [ "macos-default", "Release" ],
       "displayName": "macOS Release"
+    },
+    {
+      "name": "macos-minsizerel",
+      "inherits": [ "macos-default", "MinSizeRel" ],
+      "hidden": false,
+      "displayName": "macOS Minimal Release"
     },
 
 
@@ -116,15 +142,27 @@
     },
     {
       "name": "windows-debug",
-      "hidden": false,
       "inherits": [ "windows-default", "Debug" ],
+      "hidden": false,
       "displayName": "Windows x64 Debug"
     },
     {
-      "name": "windows-release",
+      "name": "windows-relwithdebinfo",
+      "inherits": [ "windows-default", "RelWithDebInfo" ],
       "hidden": false,
+      "displayName": "Windows x64 Release w/ Debugging Symbols"
+    },
+    {
+      "name": "windows-release",
       "inherits": [ "windows-default", "Release" ],
+      "hidden": false,
       "displayName": "Windows x64 Release"
+    },
+    {
+      "name": "windows-minsizerel",
+      "inherits": [ "windows-default", "MinSizeRel" ],
+      "hidden": false,
+      "displayName": "Windows x64 Minimal Release"
     }
   ],
 

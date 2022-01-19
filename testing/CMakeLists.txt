@@ -1,26 +1,38 @@
 # 307lib/testing
-cmake_minimum_required (VERSION 3.13)
-
-set(CMAKE_CXX_STANDARD 20)
+cmake_minimum_required (VERSION 3.20)
 
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-	# Fix MSVC __cplusplus macro
-	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("testing")
+option(307lib_ENABLE_DEVELOPMENT "Enable 307lib's development testing subproject." OFF)
+if(307lib_ENABLE_DEVELOPMENT)
+	# Collect files
+	file(GLOB HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.h*")
+	file(GLOB SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
-file(GLOB HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.h*")
-file(GLOB SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+	# Add executable
+	add_executable(testing ${HEADERS} ${SRC})
 
-add_executable(testing ${HEADERS} ${SRC})
-target_link_libraries(testing PUBLIC shared TermAPI strlib xlog optlib filelib)
+	# Set properties
+	set_property(TARGET testing PROPERTY CXX_STANDARD 20)
+	set_property(TARGET testing PROPERTY CXX_STANDARD_REQUIRED ON)
+	if (MSVC)
+		target_compile_options(testing PUBLIC "/Zc:__cplusplus")
+	endif()
 
-target_sources(testing PUBLIC ${HEADERS} ${SRC})
-target_include_directories(testing PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-	"$<INSTALL_INTERFACE:include>"
-)
+	target_link_libraries(testing INTERFACE 307lib)
 
+	target_sources(testing PUBLIC ${HEADERS} ${SRC})
+	target_include_directories(testing PUBLIC 
+		"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+		"$<INSTALL_INTERFACE:include>"
+	)
+endif()
 
+# Enables Unit Tests using googletest & googlemock.
+option(307lib_ENABLE_UNIT_TESTING "Enable the unit testing subproject." OFF)
+if (307lib_ENABLE_UNIT_TESTING)
+	message(STATUS "Unit Testing is enabled.")
+	add_subdirectory("UnitTests")
+endif()

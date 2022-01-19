@@ -44,8 +44,4 @@ add_subdirectory("optlib")
 # Create an interface library
 add_library(307lib INTERFACE)
 
-
-# Add testing executable
-if (307lib_ENABLE_DEVELOPMENT)
-	add_subdirectory("testing")
-endif()
+add_subdirectory("testing")

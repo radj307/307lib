@@ -1,7 +1,6 @@
 ﻿# 307lib/strlib
 cmake_minimum_required (VERSION 3.13)
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
@@ -20,6 +19,8 @@ file(GLOB SRC
 
 add_library(strlib STATIC ${SRC})
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
+set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
+set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(strlib PUBLIC "/Zc:__cplusplus")
 endif()

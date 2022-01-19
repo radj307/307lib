@@ -1,7 +1,6 @@
 # 307lib/filelib
 cmake_minimum_required(VERSION 3.15)
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
@@ -26,6 +25,7 @@ add_library(filelib STATIC ${SRCS})
 
 set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
 set_property(TARGET filelib PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET filelib PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	target_compile_options(filelib PUBLIC "/Zc:__cplusplus")
 endif()
