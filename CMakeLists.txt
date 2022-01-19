@@ -57,10 +57,10 @@ if(ENABLE_TERMAPI)
 endif()
 
 # Add string library
-option(ENABLE_STRLIB "Enable the string library." ON)
-if (ENABLE_STRLIB)
-	add_subdirectory("strlib")
-endif()
+add_subdirectory("strlib")
+
+# Add token library
+add_subdirectory("tokenlib")
 
 # Add xlog
 include(CMakeDependentOption)

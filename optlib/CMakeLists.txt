@@ -54,7 +54,7 @@ target_include_directories(optlib PUBLIC
 )
 
 # link optlib dependencies
-target_link_libraries(optlib PUBLIC shared strlib)
+target_link_libraries(optlib PUBLIC shared strlib tokenlib)
 
 # Create installation targets
 if (307lib_ENABLE_PACKAGING) # Include packaging

@@ -1,6 +1,7 @@
 # 307lib/filelib
 cmake_minimum_required(VERSION 3.15)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
@@ -48,7 +49,7 @@ target_include_directories(filelib PUBLIC
 )
 
 # Link library dependencies
-target_link_libraries(filelib PUBLIC shared strlib)
+target_link_libraries(filelib PUBLIC shared strlib tokenlib)
 
 # Create library installation targets
 if (307lib_ENABLE_PACKAGING) # Include packaging

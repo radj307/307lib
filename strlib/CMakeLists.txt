@@ -1,6 +1,7 @@
 ﻿# 307lib/strlib
 cmake_minimum_required (VERSION 3.13)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 if (MSVC)
 	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()

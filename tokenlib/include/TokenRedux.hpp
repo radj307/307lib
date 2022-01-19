@@ -52,7 +52,7 @@
 #include <string>
 #include <concepts>
 
-namespace file::base {
+namespace token {
 	/**
 	 * @struct			LexemeDictBase
 	 * @brief			Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type".
