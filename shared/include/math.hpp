@@ -131,8 +131,32 @@ namespace math {
 		return average<T>(std::vector<T>{ std::forward<T>(fst), std::forward<Ts>(rest)... });
 	}
 
-	template<typename Rep, typename Period = std::ratio<1L, 1L>> static constexpr std::chrono::duration<Rep, Period> average(const std::vector<std::chrono::duration<Rep, Period>>& durations)
+	/**
+	 * @brief				Calculate the average duration from a list of durations.
+	 * @tparam Rep			Duration Type Rep.
+	 * @tparam Period		Duration Type Period.
+	 * @tparam DurationT	Duration Type.
+	 * @param durations		Vector of durations.
+	 * @returns				DurationT
+	 */
+	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::derived_from<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
+	[[nodiscard]] static constexpr DurationT average(const std::vector<DurationT>& durations)
 	{
 		return MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()).count() / durations.size();
+	}
+
+	/**
+	 * @brief				Get the difference between two durations.
+	 * @tparam Rep			Duration Type Rep.
+	 * @tparam Period		Duration Type Period.
+	 * @tparam DurationT	Duration Type.
+	 * @param left			First input duration.
+	 * @param right			Second input duration.
+	 * @returns				DurationT
+	*/
+	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::derived_from<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
+	[[nodiscard]] static constexpr DurationT difference(DurationT const& left, DurationT const& right)
+	{
+		return DurationT{ std::abs(left.count() - right.count()) };
 	}
 }

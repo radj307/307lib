@@ -1,47 +1,48 @@
 /**
  * @file	TokenRedux.hpp
  * @author	radj307
- * @brief	New tokenization & parsing library providing superior abstraction capabilities and a much less confusing usage experience.  
- *			For more information on tokenization, see: https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization  
- *	
- *			## Terminology  
- * 
- *			| Term    | Description                                                                                         |  
- *			|---------|-----------------------------------------------------------------------------------------------------|  
- *          | Format  | A data format, usually a file format, such as JSON, YAML, INI, etc.                                 |  
- *			| Package | Contains the actual implementations of some portion of the TokenRedux pipeline.                     |  
- *			| Lexeme  | A single character's type, such as a lowercase letter, digit, or semicolon.                         |  
- *			| TokenBase   | Composed of 0 or more characters with a similar lexical type, such as a string, boolean, or number. |  
+ * @brief	New tokenization & parsing library providing superior abstraction capabilities and a much less confusing usage experience.
+ *			For more information on tokenization, see: https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization
  *
- * 
- *			## TokenRedux Components  
- *			
- *			| Component / Layer  | Functionality                                                                          |  
- *			|--------------------|----------------------------------------------------------------------------------------|  
- *			| Virtualized Base   | Provides the basic tokenization framework, as well as helper methods.                  |  
- *			| Definition Package | Provides generic Lexeme definitions and TokenBase types that apply to one or more formats. |  
- *			| Format Package     | Provides the Tokenization and parsing implementations specific to one format.          |  
- *	
+ *			## Terminology
  *
- *			## Definition Packages  
- * 
- *			A definitions package is usually composed of a LexemeDictBase override, and 2 enums:  
- *			- __Lexeme Type__  
- *			  Defines possible types associated with a single character, such as a digit, quotation mark, or letter.  
- *			- __Token Type__  
- *			  Defines possible types associated with sections of the input data, such as words, numbers, or lines.  
- * 
+ *			| Term    | Description                                                                                         |
+ *			|---------|-----------------------------------------------------------------------------------------------------|
+ *          | Format  | A data format, usually a file format, such as JSON, YAML, INI, etc.                                 |
+ *			| Package | Contains the actual implementations of some portion of the TokenRedux pipeline.                     |
+ *			| Lexeme  | A single character's type, such as a lowercase letter, digit, or semicolon.                         |
+ *			| TokenBase   | Composed of 0 or more characters with a similar lexical type, such as a string, boolean, or number. |
  *
- *			## Format Packages  
  *
- *			A format package is composed of 2 derived objects, to implement the tokenization & parsing stages of reading a single serialized data format.  
- *			- __Tokenizer__  
- *			  Takes a stringstream as input, and divides it into a vector of Tokens using the provided Definition Package.  
- *			- __Parser__  
- *			  Takes a vector of Tokens as input, and parses it into a usable type, defined by the implementation.  
+ *			## TokenRedux Components
+ *
+ *			| Component / Layer  | Functionality                                                                          |
+ *			|--------------------|----------------------------------------------------------------------------------------|
+ *			| Virtualized Base   | Provides the basic tokenization framework, as well as helper methods.                  |
+ *			| Definition Package | Provides generic Lexeme definitions and TokenBase types that apply to one or more formats. |
+ *			| Format Package     | Provides the Tokenization and parsing implementations specific to one format.          |
+ *
+ *
+ *			## Definition Packages
+ *
+ *			A definitions package is usually composed of a LexemeDictBase override, and 2 enums:
+ *			- __Lexeme Type__
+ *			  Defines possible types associated with a single character, such as a digit, quotation mark, or letter.
+ *			- __Token Type__
+ *			  Defines possible types associated with sections of the input data, such as words, numbers, or lines.
+ *
+ *
+ *			## Format Packages
+ *
+ *			A format package is composed of 2 derived objects, to implement the tokenization & parsing stages of reading a single serialized data format.
+ *			- __Tokenizer__
+ *			  Takes a stringstream as input, and divides it into a vector of Tokens using the provided Definition Package.
+ *			- __Parser__
+ *			  Takes a vector of Tokens as input, and parses it into a usable type, defined by the implementation.
  */
 #pragma once
 #include <sysarch.h>
+#include <make_exception.hpp>
 #include <var.hpp>
 #include <str.hpp>
 
@@ -50,9 +51,10 @@
 #include <ostream>
 #include <vector>
 #include <string>
+#include <iterator>
 #include <concepts>
 
-namespace file::base {
+namespace token::base {
 	/**
 	 * @struct			LexemeDictBase
 	 * @brief			Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type".
@@ -62,6 +64,9 @@ namespace file::base {
 	template<typename LexemeType>
 	struct LexemeDictBase {
 		using LexemeT = LexemeType;
+
+		virtual ~LexemeDictBase() = default;
+
 		/**
 		 * @brief		Override this function to select a lexeme type given a single character.
 		 * @param ch	Input Character
@@ -74,7 +79,10 @@ namespace file::base {
 		 * @param ch	Input Character
 		 * @returns		LexemeT
 		 */
-		[[nodiscard]] LexemeT operator()(const char& ch) const noexcept { return char_to_lexeme(ch); }
+		[[nodiscard]] LexemeT operator()(const char& ch) const noexcept
+		{
+			return char_to_lexeme(ch);
+		}
 	};
 
 	/**
@@ -201,9 +209,10 @@ namespace file::base {
 		}
 
 		/**
-		 * @brief Get the next character from the stream, and move the getter position forward by one.
-		 * @param allow_whitespace	- When true, allows any character to be returned, including whitespace characters.
-		 * @returns char
+		 * @brief					Get the next character from the stream, and move the getter position forward by one.
+		 *\n						This function sets lastPos to the current position before incrementing the getter.
+		 * @param allow_whitespace	When true, allows any character to be returned, including whitespace characters.
+		 * @returns					char
 		 */
 		[[nodiscard]] char getch(const bool allow_whitespace = false)
 		{
@@ -211,7 +220,7 @@ namespace file::base {
 			if (allow_whitespace) // allow whitespace, return next character
 				return static_cast<char>(ss.get());
 			char c; // don't allow whitespace, read ahead until next non-whitespace character and return that
-			for (c = ss.get(); get_lexeme(c) == lexeme_whitespace; c = ss.get()) { setLastPosHere(); }
+			for (c = static_cast<char>(ss.get()); get_lexeme(c) == lexeme_whitespace; c = static_cast<char>(ss.get())) { setLastPosHere(); }
 			return c;
 		}
 
@@ -227,12 +236,53 @@ namespace file::base {
 		}
 
 		/**
+		 * @brief			Retrieve the next character from the stream, but don't advance the read pointer.
+		 * @throws except	There are no more tokens to peek at in the buffer.
+		 * @returns			LexemeT
+		 */
+		[[nodiscard]] LexemeT peeklex() noexcept(false)
+		{
+			if (!hasMore())
+				throw make_exception("peeklex() failed:  There are no remaining tokens!");
+			return get_lexeme(static_cast<char>(ss.peek()));
+		}
+
+		/**
+		 * @brief					Retrieve the next character from the stream, but don't advance the read pointer.
+		 * @param noTokensDefault	If there are no more tokens to peek at in the buffer, return this value instead of throwing like the parameterless variant of peeklex().
+		 * @returns					LexemeT
+		 */
+		[[nodiscard]] LexemeT peeklex(const LexemeT& noTokensDefault) noexcept
+		{
+			if (!hasMore())
+				return noTokensDefault;
+			return get_lexeme(static_cast<char>(ss.peek()));
+		}
+
+		/**
+		 * @brief			Eat (advance the read pos past) upcoming characters.
+		 * @param count		The number of characters the eat.
+		 * @returns			bool
+		 *\n		true	There are more upcoming characters.
+		 *\n		false	Reached EOF while eating characters.
+		 */
+		bool eatnext(const size_t& count = 1ull) noexcept
+		{
+			for (size_t i{ 0ull }; i < count; ++i) {
+				if (ss.good())
+					(void)ss.get();
+				else return false;
+			}
+			return hasMore();
+		}
+
+		/**
 		 * @brief Get a string containing everything from the current stream getter position until a given delimiter.
 		 * @param delim			- Stop reading ahead when this character is encountered
-		 * @param no_rollback	- When true, does not roll back the getter pos to 1 before the delimiter. This causes the delimiter character to be "eaten".
+		 * @param no_rollback	- When true, the first delimiter reached will be eaten when returning. (You can still rollback manually.)
 		 * @returns std::string
 		 */
-		[[nodiscard]] virtual std::string getline(const char& delim = '\n', const bool no_rollback = true)
+		[[nodiscard]] virtual std::string getline(const char& delim = '\n', const bool& no_rollback = true)
 		{
 			std::string line{};
 			str::getline(ss, line, delim);
@@ -251,6 +301,37 @@ namespace file::base {
 			for (size_t i{ 0 }; i < count && hasMore(); ++i)
 				line += ss.get();
 			return line;
+		}
+		/**
+		 * @brief				Continue getting characters until the given predicate function returns false.
+		 * @tparam PredicateT	Predicate Function Type.
+		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
+		 * @param no_rollback	When true, the character matched by the predicate will be eaten.
+		 * @returns				std::string
+		 */
+		template<class PredicateT>
+		[[nodiscard]] std::string getuntil(const PredicateT& pred, const bool& no_rollback = true)
+		{
+			std::string s;
+			s.reserve(50);
+			for (char c{ getch(true) }; good() && hasMore() && !pred(c); c = getch(true))
+				s += c;
+			s.shrink_to_fit();
+			if (!no_rollback)
+				ss.seekg(ss.tellg() - 1ll); // rollback to eat predicate match
+			return s;
+		}
+		/**
+		 * @brief				Retrieve all of the characters from the current read pos until the first unescaped delimiter
+		 * @tparam PredicateT	Predicate Function Type.
+		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
+		 * @param no_rollback	When true, the character matched by the predicate will be eaten.
+		 * @returns				std::string
+		 */
+		[[nodiscard]] virtual std::string getuntil_unescaped(const char& delim, const bool& no_rollback = true)
+		{
+			char prev{ '\0' };
+			return getuntil([&prev, &delim](auto&& ch) { return prev != '\\' && ch == delim; }, no_rollback);
 		}
 		/**
 		 * @brief Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed.
@@ -400,36 +481,36 @@ namespace file::base {
 	 * @tparam OutputType	User-defined Output Type.
 	 * @tparam TokenT		TokenBase Object Type.
 	 */
-	template<class OutputType, typename TokenType>
+	template<class OutputType, typename TknT>
 	class TokenParserBase {
 	protected:
-		std::vector<TokenType> tokens;
+		std::vector<TknT> tokens;
 
 		/**
 		 * @brief			Constructor.
 		 * @param tokens	TokenBase Vector Rvalue Reference
 		 */
-		TokenParserBase(std::vector<TokenType>&& tokens) : tokens{ std::move(tokens) } {}
+		TokenParserBase(std::vector<TknT>&& tokens) : tokens{ std::move(tokens) } {}
 		/**
 		 * @brief			Constructor.
 		 * @param tokens	TokenBase Vector
 		 */
-		TokenParserBase(const std::vector<TokenType>& tokens) : tokens{ tokens } {}
+		TokenParserBase(const std::vector<TknT>& tokens) : tokens{ tokens } {}
 
 		/// @brief	Virtual Destructor
 		virtual ~TokenParserBase() noexcept = default;
 
 		template<typename... Ts>
-		std::vector<TokenType> strip_types(const Ts&... types) const
+		std::vector<TknT> strip_types(const Ts&... types) const
 		{
-			std::vector<TokenType> copy{tokens};
+			std::vector<TknT> copy{ tokens };
 			copy.erase(std::remove_if(copy.begin(), copy.end(), [&](auto&& tkn) { return var::variadic_or(tkn.type == types...); }), copy.end());
 			return copy;
 		}
 
 	public:
 		using OutputT = OutputType;
-		using TokenT = TokenType;
+		using TokenT = TknT;
 
 		/**
 		 * @brief	Parse the token container.

@@ -431,13 +431,13 @@ namespace file::ini {
 	};
 
 	namespace tokenizer {
-		using namespace DefaultDefs;
+		using namespace token::DefaultDefs;
 
 		/**
 		 * @struct	INITokenizer
 		 * @brief	Tokenizes the contents of an INI config file.
 		 */
-		struct INITokenizer : file::base::TokenizerBase<DefaultDefs::LEXEME, DefaultDefs::LexemeDict, DefaultDefs::TokenType, DefaultDefs::Token> {
+		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, TokenType, Token> {
 			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE) {}
 		protected:
 			TokenT getNext() override
@@ -494,7 +494,7 @@ namespace file::ini {
 		 * @struct	INIParser
 		 * @brief	
 		 */
-		struct INIParser : file::base::TokenParserBase<INIContainer::Map, DefaultDefs::Token> {
+		struct INIParser : token::base::TokenParserBase<INIContainer::Map, Token> {
 			bool allowBlankValue{ true };
 			const std::string filename{};
 
