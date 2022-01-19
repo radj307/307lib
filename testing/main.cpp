@@ -11,6 +11,7 @@
 
 #include <redirect.hpp>
 #include <xlog.hpp>
+#include <ArgumentRedux.hpp>
 
 struct LogCap {
 	std::stringstream stream;
@@ -22,14 +23,7 @@ struct LogCap {
 int main(const int argc, char** argv)
 {
 	try {
-		using namespace color;
-		std::cout << term::EnableANSI;
-
-		xlog::xLogs log{ xlog::level::All };
-		std::clog.rdbuf();
-
-
-
+		using term::setcolor;
 
 		// CHECK ENV FOR TERM SUPPORT
 		#ifdef OS_WIN

@@ -52,7 +52,7 @@
 #include <string>
 #include <concepts>
 
-namespace token {
+namespace token::base {
 	/**
 	 * @struct			LexemeDictBase
 	 * @brief			Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type".
@@ -62,6 +62,9 @@ namespace token {
 	template<typename LexemeType>
 	struct LexemeDictBase {
 		using LexemeT = LexemeType;
+
+		virtual ~LexemeDictBase() = default;
+
 		/**
 		 * @brief		Override this function to select a lexeme type given a single character.
 		 * @param ch	Input Character
@@ -74,7 +77,7 @@ namespace token {
 		 * @param ch	Input Character
 		 * @returns		LexemeT
 		 */
-		[[nodiscard]] LexemeT operator()(const char& ch) const noexcept { return char_to_lexeme(ch); }
+		[[nodiscard]] LexemeT operator()(const char& ch) const noexcept;
 	};
 
 	/**
@@ -137,7 +140,7 @@ namespace token {
 	 * @tparam TknType		The TokenBase::Type to use. This is defined by a "definitions package".
 	 * @tparam TokenT		The TokenBase type to use. This is defined by a "definitions package".
 	 */
-	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TknType, std::derived_from<TokenBase<TknType>> TokenType = TokenBase<TknType>>
+	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TknType, std::derived_from<TokenBase<TknType>> TokenType = TokenBase<TknType>, typename SettingsType = void>
 	class TokenizerBase {
 	public:
 		using TokenT = TokenType;
@@ -227,12 +230,53 @@ namespace token {
 		}
 
 		/**
+		 * @brief			Retrieve the next character from the stream, but don't advance the read pointer.
+		 * @throws except	There are no more tokens to peek at in the buffer.
+		 * @returns			LexemeT
+		 */
+		[[nodiscard]] LexemeT peeklex() noexcept(false)
+		{
+			if (!hasMore())
+				throw make_exception("peeklex() failed:  There are no remaining tokens!");
+			return get_lexeme(static_cast<char>(ss.peek()));
+		}
+		
+		/**
+		 * @brief					Retrieve the next character from the stream, but don't advance the read pointer.
+		 * @param noTokensDefault	If there are no more tokens to peek at in the buffer, return this value instead of throwing like the parameterless variant of peeklex().
+		 * @returns					LexemeT
+		 */
+		[[nodiscard]] LexemeT peeklex(const LexemeT& noTokensDefault) noexcept
+		{
+			if (!hasMore())
+				return noTokensDefault;
+			return get_lexeme(static_cast<char>(ss.peek()));
+		}
+
+		/**
+		 * @brief			Eat (advance the read pos past) upcoming characters.
+		 * @param count		The number of characters the eat.
+		 * @returns			bool
+		 *\n		true	There are more upcoming characters.
+		 *\n		false	Reached EOF while eating characters.
+		 */
+		[[nodiscard]] LexemeT eatnext(const size_t& count = 1ull) noexcept
+		{
+			for (size_t i{ 0ull }; i < count; ++i) {
+				if (ss.good())
+					(void)ss.get();
+				else return false;
+			}
+			return hasMore();
+		}
+
+		/**
 		 * @brief Get a string containing everything from the current stream getter position until a given delimiter.
 		 * @param delim			- Stop reading ahead when this character is encountered
-		 * @param no_rollback	- When true, does not roll back the getter pos to 1 before the delimiter. This causes the delimiter character to be "eaten".
+		 * @param no_rollback	- When true, the first delimiter reached will be eaten when returning. (You can still rollback manually.)
 		 * @returns std::string
 		 */
-		[[nodiscard]] virtual std::string getline(const char& delim = '\n', const bool no_rollback = true)
+		[[nodiscard]] virtual std::string getline(const char& delim = '\n', const bool& no_rollback = true)
 		{
 			std::string line{};
 			str::getline(ss, line, delim);
@@ -251,6 +295,37 @@ namespace token {
 			for (size_t i{ 0 }; i < count && hasMore(); ++i)
 				line += ss.get();
 			return line;
+		}
+		/**
+		 * @brief				Continue getting characters until the given predicate function returns false.
+		 * @tparam PredicateT	Predicate Function Type.
+		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
+		 * @param no_rollback	When true, the character matched by the predicate will be eaten.
+		 * @returns				std::string
+		 */
+		template<class PredicateT>
+		[[nodiscard]] virtual std::string getuntil(const PredicateT& pred, const bool& no_rollback = true)
+		{
+			std::string s;
+			s.reserve(50);
+			for (char c{ ss.get() }; good() && !pred(c); c = ss.get())
+				s += c;
+			s.shrink_to_fit();
+			if (!no_rollback)
+				ss.seekg(ss.tellg() - 1ll); // rollback to eat predicate match
+			return s;
+		}
+		/**
+		 * @brief				Retrieve all of the characters from the current read pos until the first unescaped delimiter
+		 * @tparam PredicateT	Predicate Function Type.
+		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
+		 * @param no_rollback	When true, the character matched by the predicate will be eaten.
+		 * @returns				std::string
+		 */
+		[[nodiscard]] virtual std::string getuntil_unescaped(const char& delim, const bool& no_rollback = true)
+		{
+			char prev{'\0'};
+			return getuntil([&prev](auto&& ch) { return prev != '\\' && ch == delim; }, no_rollback);
 		}
 		/**
 		 * @brief Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed.

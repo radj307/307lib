@@ -465,68 +465,68 @@ namespace var {
 
 	#pragma endregion variadic
 	#pragma region tuple
-	///**
-	// * @brief					Compare each element in a tuple against a given variable.
-	// * @tparam CompareType		Type that can be compared to all elements in the tuple.
-	// * @tparam ...TupleTypes	Types in the given tuple.
-	// * @param tuple				A tuple containing elements which can be compared for equality with the given comparison type.
-	// * @param compare			A variable to compare to each element in the tuple.
-	// * @returns					bool
-	// */
-	//template<size_t i = 0, typename CompareType, typename... TupleTypes> requires (std::equality_comparable_with<CompareType, TupleTypes> && ...)
-	//	[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareType& compare)
-	//{
-	//	return std::get<i>(tuple) == compare || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, compare);
-	//}
+	/**
+	 * @brief					Compare each element in a tuple against a given variable.
+	 * @tparam CompareType		Type that can be compared to all elements in the tuple.
+	 * @tparam ...TupleTypes	Types in the given tuple.
+	 * @param tuple				A tuple containing elements which can be compared for equality with the given comparison type.
+	 * @param compare			A variable to compare to each element in the tuple.
+	 * @returns					bool
+	 */
+	template<size_t i = 0, typename CompareType, typename... TupleTypes> requires (std::equality_comparable_with<CompareType, TupleTypes> && ...)
+		[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareType& compare)
+	{
+		return std::get<i>(tuple) == compare || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, compare);
+	}
 
-	///**
-	// * @brief					Compare each element in a tuple against a given variable using a predicate.
-	// * @tparam CompareType		Type that can be compared to all elements in the tuple.
-	// * @tparam ...TupleTypes	Types in the given tuple.
-	// * @tparam Comparator		Predicate function that returns a bool and accepts CompareType on the left, and TupleType on the right.
-	// * @param tuple				A tuple containing elements which can be compared for equality with the given comparison type.
-	// * @param val				A variable to compare to each element in the tuple.
-	// * @param predicate			A predicate function to perform the comparsion.
-	// * @returns					bool
-	// */
-	//template<size_t i = 0, typename CompareType, typename... TupleTypes, class Pred>
-	//[[nodiscard]] CONSTEXPR bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareType& val, const Pred& predicate)
-	//{
-	//	return predicate(val, std::get<i>(tuple)) || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, val, predicate);
-	//}
+	/**
+	 * @brief					Compare each element in a tuple against a given variable using a predicate.
+	 * @tparam CompareType		Type that can be compared to all elements in the tuple.
+	 * @tparam ...TupleTypes	Types in the given tuple.
+	 * @tparam Comparator		Predicate function that returns a bool and accepts CompareType on the left, and TupleType on the right.
+	 * @param tuple				A tuple containing elements which can be compared for equality with the given comparison type.
+	 * @param val				A variable to compare to each element in the tuple.
+	 * @param predicate			A predicate function to perform the comparsion.
+	 * @returns					bool
+	 */
+	template<size_t i = 0, typename CompareType, typename... TupleTypes, class Pred>
+	[[nodiscard]] CONSTEXPR bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareType& val, const Pred& predicate)
+	{
+		return predicate(val, std::get<i>(tuple)) || (sizeof...(TupleTypes) > i + 1ull) && tuple_or<i + 1ull>(tuple, val, predicate);
+	}
 
-	///**
-	// * @brief					Compare a variadic tuple against at least one comparable type.
-	// * @tparam ...CompareTypes	Variadic templated types
-	// * @tparam ...TupleTypes	Variadic templated tuple types
-	// * @param tuple				Tuple of values to compare
-	// * @param ...compare		Values to compare
-	// * @returns					bool
-	// */
-	//template<typename... CompareTypes, typename... TupleTypes> requires (sizeof...(CompareTypes) > 0)
-	//	[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareTypes&... compare)
-	//{
-	//	return (tuple_or(tuple, compare) || ...);
-	//}
-	//template<size_t i = 0ull, typename... TupleTypesLeft, typename... TupleTypesRight>
-	//[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypesLeft...>& left, const std::tuple<TupleTypesRight...>& right)
-	//{
-	//	return tuple_or(left, std::get<i>(right)) || (sizeof...(TupleTypesRight) > i + 1) && tuple_or<i + 1>(left, right);
-	//}
+	/**
+	 * @brief					Compare a variadic tuple against at least one comparable type.
+	 * @tparam ...CompareTypes	Variadic templated types
+	 * @tparam ...TupleTypes	Variadic templated tuple types
+	 * @param tuple				Tuple of values to compare
+	 * @param ...compare		Values to compare
+	 * @returns					bool
+	 */
+	template<typename... CompareTypes, typename... TupleTypes> requires (sizeof...(CompareTypes) > 0)
+		[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypes...>& tuple, const CompareTypes&... compare)
+	{
+		return (tuple_or(tuple, compare) || ...);
+	}
+	template<size_t i = 0ull, typename... TupleTypesLeft, typename... TupleTypesRight>
+	[[nodiscard]] constexpr bool tuple_or(const std::tuple<TupleTypesLeft...>& left, const std::tuple<TupleTypesRight...>& right)
+	{
+		return tuple_or(left, std::get<i>(right)) || (sizeof...(TupleTypesRight) > i + 1) && tuple_or<i + 1>(left, right);
+	}
 
-	///**
-	// * @brief			Check if two tuples containing the same element types are equivalent.
-	// * @tparam ...Types	Variadic Templated Types. Both tuples must contain the same types in the same order.
-	// * @param l			First tuple to compare.
-	// * @param r			Second tuple to compare.
-	// * @returns			bool
-	// */
-	//template<size_t i = 0ull, typename... Types>
-	//[[nodiscard]] constexpr bool tuple_and(const std::tuple<Types...>& l, const std::tuple<Types...>& r)
-	//{
-	//	return std::get<i>(l) == std::get<i>(r)
-	//		&& (sizeof...(Types) == i || tuple_and<i + 1ull>(l, r)); // if this is the last element, short circuit and stop recursing
-	//}
+	/**
+	 * @brief			Check if two tuples containing the same element types are equivalent.
+	 * @tparam ...Types	Variadic Templated Types. Both tuples must contain the same types in the same order.
+	 * @param l			First tuple to compare.
+	 * @param r			Second tuple to compare.
+	 * @returns			bool
+	 */
+	template<size_t i = 0ull, typename... Types>
+	[[nodiscard]] constexpr bool tuple_and(const std::tuple<Types...>& l, const std::tuple<Types...>& r)
+	{
+		return std::get<i>(l) == std::get<i>(r)
+			&& (sizeof...(Types) == i || tuple_and<i + 1ull>(l, r)); // if this is the last element, short circuit and stop recursing
+	}
 	#pragma endregion tuple
 
 	/// @brief	Always true type
