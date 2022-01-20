@@ -101,6 +101,26 @@ namespace file::ini {
 		/// @brief Retrieve the value of a given key name, but accepts a Header-Key pair as input. @throws out_of_range exception if the header/key doesn't exist.
 		[[nodiscard]] auto at(const HeaderKeyPair& hkpr) const { return at(hkpr.first, hkpr.second); }
 
+		/**
+		 * @brief	Retrieve the number of keys in the INI.
+		 * @returns	size_t
+		 */
+		[[nodiscard]] size_t countKeys() const
+		{
+			size_t count{ 0ull };
+			for (const auto& [_, section] : _cont)
+				count += section.size();
+			return count;
+		}
+		/**
+		 * @brief	Retrieve the number of headers in the INI.
+		 * @returns size_t
+		 */
+		[[nodiscard]] size_t countHeaders() const
+		{
+			return _cont.size();
+		}
+
 		/// @brief Equality-comparison operator, checks if the local container matches the container of another INIContainer instance.
 		bool operator==(const INIContainer& o) const { return _cont == o._cont; }
 		/// @brief Inverse Equality-comparison operator.
@@ -444,7 +464,7 @@ namespace file::ini {
 			{
 				const auto ch{ getch() };
 				switch (get_lexeme(ch)) {
-				case LEXEME::POUND:[[fallthrough]];
+				case LEXEME::POUND: [[fallthrough]];
 				case LEXEME::SEMICOLON:// Comment
 					return Token{ std::string(1ull, ch) += getline('\n', false), TokenType::COMMENT };
 				case LEXEME::EQUALS: // Setter Start
@@ -492,7 +512,7 @@ namespace file::ini {
 
 		/**
 		 * @struct	INIParser
-		 * @brief	
+		 * @brief
 		 */
 		struct INIParser : token::base::TokenParserBase<INIContainer::Map, Token> {
 			bool allowBlankValue{ true };
@@ -508,7 +528,7 @@ namespace file::ini {
 			void throwEx(const size_t& line, const std::string& msg) const
 			{
 				throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: \"", filename, '\"');
-			}
+		}
 		public:
 
 			OutputT parse() const
@@ -616,8 +636,8 @@ namespace file::ini {
 				throwEx(ln, "Missing Token: END / EOF");
 				return{}; // this will never be reached, but it prevents compiler warning
 			}
-		};
-	}
+	};
+}
 
 	/**
 	 * @struct	INI
