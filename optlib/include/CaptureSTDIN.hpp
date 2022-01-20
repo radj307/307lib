@@ -40,7 +40,7 @@ INLINE CONSTEXPR bool hasPending(const int& fd) { return false; }
  */
 INLINE std::vector<std::string> CaptureSTDIN(const size_t& reserve_sz = 26ull)
 {
-	INLINE CONSTEXPR const auto STDIN_FD{ 0 };
+	CONSTEXPR const auto STDIN_FD{ 0 };
 	if (!hasPendingInput(STDIN_FD))
 		return{};
 	
@@ -57,8 +57,6 @@ INLINE std::vector<std::string> CaptureSTDIN(const size_t& reserve_sz = 26ull)
 	while (std::cin.good() && hasPendingInput(0)) {// keep looping until there is no more pending data
 		if (auto word{ getNextWord() }; !word.empty())
 			vec.emplace_back(std::move(word));
-		if (vec.capacity() + 2ull > reserve_sz)
-			vec.reserve(vec.size() + reserve_sz);
 	}
 	vec.shrink_to_fit();
 	return vec;
