@@ -14,7 +14,7 @@ term::FDHANDLE::type term::EnableANSI(const FDHANDLE& fdh) noexcept
 	};
 	FDHANDLE successful{ 0 };
 	if (fdh.contains(FDHANDLE::STDIN)) // STDIN
-		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_INPUT_HANDLE)), ENABLE_VIRTUAL_TERMINAL_INPUT | ENABLE_LINE_INPUT))
+		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_INPUT_HANDLE)), ENABLE_VIRTUAL_TERMINAL_INPUT))
 			successful |= FDHANDLE::STDIN;
 	if (fdh.contains(FDHANDLE::STDOUT)) // STDOUT
 		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_OUTPUT_HANDLE)), ENABLE_VIRTUAL_TERMINAL_PROCESSING | DISABLE_NEWLINE_AUTO_RETURN))
