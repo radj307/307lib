@@ -31,7 +31,7 @@ INLINE bool hasPendingInput(const int& fd)
 }
 #else
  // Dummy function for windows that always returns false
-INLINE CONSTEXPR bool hasPending(const int& fd) { return false; }
+INLINE CONSTEXPR bool hasPendingInput(const int& fd) { return false; }
 #endif
 
 /**
