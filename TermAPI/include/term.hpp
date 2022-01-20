@@ -28,6 +28,7 @@ namespace term {
 	INLINE CONSTEXPR const char* warn{ "\033[38;5;208m[WARN]\033[38;5;7m\t" };
 	INLINE CONSTEXPR const char* error{ "\033[38;5;1m[ERROR]\033[38;5;7m\t" };
 	INLINE CONSTEXPR const char* crit{ "\033[38;5;88m[CRIT]\033[38;5;7m\t" };
+	INLINE CONSTEXPR const char* placeholder{ "" };
 #ifdef OS_WIN
 #include <conio.h>
 #endif
