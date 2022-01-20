@@ -437,7 +437,7 @@ namespace file::ini {
 		 * @struct	INITokenizer
 		 * @brief	Tokenizes the contents of an INI config file.
 		 */
-		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, TokenType, Token> {
+		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token> {
 			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE) {}
 		protected:
 			TokenT getNext() override
