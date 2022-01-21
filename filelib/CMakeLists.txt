@@ -21,8 +21,9 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(filelib STATIC ${SRCS})
+add_library(filelib STATIC "${SRCS}")
 
+# Set properties
 set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
 set_property(TARGET filelib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET filelib PROPERTY POSITION_INDEPENDENT_CODE ON)
@@ -30,17 +31,12 @@ if (MSVC)
 	target_compile_options(filelib PUBLIC "/Zc:__cplusplus")
 endif()
 
-# Set library properties
-#set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
-
-#include(InitProperties)
-#INIT_TARGET_PROPERTIES(filelib 20 REQUIRED)
-
 # Set library sources & include dirs
 include(PrependEach)
-PREPEND_EACH(HEADERS_ABSOLUTE ${HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/")
+PREPEND_EACH(HEADERS_ABS ${HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/")
+
 target_sources(filelib PUBLIC 
-	"$<BUILD_INTERFACE:${HEADERS_ABSOLUTE}>"
+	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
 	"$<INSTALL_INTERFACE:${HEADERS}>"
 )
 target_include_directories(filelib PUBLIC 

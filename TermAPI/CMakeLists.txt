@@ -33,7 +33,7 @@ endif()
 
 # make a list of absolute paths for headers
 include(PrependEach)
-PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
 # specify library headers
 target_sources(TermAPI PUBLIC
 	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
