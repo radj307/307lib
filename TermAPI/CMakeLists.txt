@@ -31,6 +31,12 @@ if (MSVC)
 	target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus")
 endif()
 
+# Specify library include dirs
+target_include_directories(TermAPI PUBLIC 
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
+	"$<INSTALL_INTERFACE:include;src>"
+)
+
 # make a list of absolute paths for headers
 include(PrependEach)
 PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
@@ -38,12 +44,6 @@ PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
 target_sources(TermAPI PUBLIC
 	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
 	"$<INSTALL_INTERFACE:${HEADERS}>"
-)
-
-# Specify library include dirs
-target_include_directories(TermAPI PUBLIC 
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
-	"$<INSTALL_INTERFACE:include;src>"
 )
 
 # Link library dependencies
