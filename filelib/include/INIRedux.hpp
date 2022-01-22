@@ -487,7 +487,7 @@ namespace file::ini {
 					else
 						ss.seekg(pos - 1ll);
 					// getsimilar
-					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
+					return Token{ str::strip_line(getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), "#;"), TokenType::KEY};
 				}
 				case LEXEME::SUBTRACT: [[fallthrough]]; // number start
 				case LEXEME::DIGIT:
