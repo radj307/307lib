@@ -430,20 +430,25 @@ namespace file::ini {
 		 * @param p2	Second argument (key)
 		 * @returns		std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<std::string> getvs(auto&& p1, auto&& p2) const
+		[[nodiscard]] std::optional<std::string> getvs(const std::string& p1, const std::string& p2) const
 		{
-			if (const auto v{ getv(std::forward<decltype(p1)>(p1), std::forward<decltype(p2)>(p2)) }; v.has_value())
+			const auto v{ getv(p1, p2) };
+
+			if (v.has_value()) {
 				return to_string(v.value());
-			return std::nullopt;
+			}
+			else {
+				return std::nullopt;
+			}
 		}
 		/**
 		 * @brief		Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding.
 		 * @param p1	First argument (Header)
 		 * @returns		std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<std::string> getvs(auto&& p1) const
+		[[nodiscard]] std::optional<std::string> getvs(const std::string& p1) const
 		{
-			if (const auto v{ getv(std::forward<decltype(p1)>(p1)) })
+			if (const auto v{ getv(p1) })
 				return to_string(v.value());
 			return std::nullopt;
 		}
@@ -487,7 +492,7 @@ namespace file::ini {
 					else
 						ss.seekg(pos - 1ll);
 					// getsimilar
-					return Token{ str::strip_line(getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), "#;"), TokenType::KEY};
+					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
 				}
 				case LEXEME::SUBTRACT: [[fallthrough]]; // number start
 				case LEXEME::DIGIT:
@@ -512,7 +517,7 @@ namespace file::ini {
 
 		/**
 		 * @struct	INIParser
-		 * @brief
+		 * @brief	Token parser for the INI file format.
 		 */
 		struct INIParser : token::base::TokenParserBase<INIContainer::Map, Token> {
 			bool allowBlankValue{ true };
@@ -528,7 +533,7 @@ namespace file::ini {
 			void throwEx(const size_t& line, const std::string& msg) const
 			{
 				throw make_exception("Syntax Error: ", msg, " at line ", line, " in file: \"", filename, '\"');
-		}
+			}
 		public:
 
 			OutputT parse() const
@@ -540,7 +545,7 @@ namespace file::ini {
 				bool setter{ false };
 				size_t ln{ 1ull };
 				// Init map:
-				INIContainer::Map map{};
+				OutputT map{};
 
 				strip_types(TokenType::COMMENT); // remove all comments
 
@@ -561,11 +566,11 @@ namespace file::ini {
 				const auto& any_defined{ [&key, &value, &setter]() { return key.has_value() || value.has_value() || setter; } };
 
 				size_t i{ 0ull };
-				for (auto& [type, str] : tokens) {
+				for (const auto& [type, str] : tokens) {
 					++i; // increment index by one (used to add _EOL)
 					switch (type) {
 					case TokenType::HEADER: // set the header
-						header = str;
+						header = str::strip_line(str, "#;");
 						break;
 					case TokenType::SETTER: // set the temp setter variable to true if it isn't already
 						if (!setter)
@@ -574,7 +579,7 @@ namespace file::ini {
 						break;
 					case TokenType::KEY: // set the temp key
 						if (!key.has_value()) {
-							key = str;
+							key = str::strip_line(str, "#;");
 							break;
 						}
 						else [[fallthrough]]; // if the key is already set, parse as a string value
@@ -583,25 +588,25 @@ namespace file::ini {
 							throwEx(ln, "Missing Setter");
 						if (value.has_value()) {
 							if (std::holds_alternative<String>(value.value()))
-								value = (std::get<String>(value.value()) + str); // allow fallthrough keys to be appended
+								value = (std::get<String>(value.value()) + str); // allow fallthrough "keys" (additional values that were cut off by the tokenizer -- shouldn't happen but just in case) to be appended
 							else throwEx(ln, "Duplicate Value");
 						}
 						else
-							value = str;
+							value = str::strip_line(str, "#;");
 						break;
 					case TokenType::NUMBER: // set the temp value to a long double
 						if (!setter)
 							throwEx(ln, "Missing Setter");
 						if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count == 1; }))
-							value = str::stold(str);
-						else value = str;
+							value = str::stold(str::strip_line(str, "#;"));
+						else value = str::strip_line(str, "#;");
 						break;
 					case TokenType::NUMBER_INT: // set the temp value to an integer
 						if (!setter)
 							throwEx(ln, "Missing Setter");
 						if (std::all_of(str.begin(), str.end(), isdigit))
-							value = str::stoll(str);
-						else value = str;
+							value = str::stoll(str::strip_line(str, "#;"));
+						else value = str::strip_line(str, "#;");
 						break;
 					case TokenType::BOOLEAN:
 					{ // set the temp value to a boolean
@@ -636,8 +641,8 @@ namespace file::ini {
 				throwEx(ln, "Missing Token: END / EOF");
 				return{}; // this will never be reached, but it prevents compiler warning
 			}
-	};
-}
+		};
+	}
 
 	/**
 	 * @struct	INI
@@ -650,7 +655,7 @@ namespace file::ini {
 		#if LANG_CPP >= 17
 		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator INIContainer::Map()) {}
 		#else
-		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator file::INIContainer::Map()) {}
+		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator INIContainer::Map()) {}
 		#endif
 
 		/**
