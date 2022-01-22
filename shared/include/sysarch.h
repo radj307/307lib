@@ -117,27 +117,34 @@
 
   // OS
 #if defined(__GNUG__) || defined(__GNUC__)
+	// Current Operating System & Architecture.
 	#define OS_LINUX ARCH
 #endif
 #if defined(__CYGWIN__)
+	// Current Operating System & Architecture.
 	#define OS_CYGWIN ARCH
 #endif
 #if defined(_WIN32)
+	// Current Operating System & Architecture.
 	#define OS_WIN ARCH
 #endif
 #if defined(_MAC)
+	// Current Operating System & Architecture.
 	#define OS_MAC ARCH
 #endif
 #if __STDC_HOSTED__ == 0
 #ifdef ARCH
+	// Current Operating System & Architecture.
 	#define OS_NONE ARCH
 #else
+	// Current Operating System & Architecture.
 	#define OS_NONE
 #endif
 #endif
 
 // Language
 #ifdef __cplusplus_cli
+	// Using C++/CLI
 	#define LANG_CPPCLI
 #endif
 
