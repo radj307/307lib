@@ -4,7 +4,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h> // include windows.h in the source file to prevent pollution
 
-bool term::enable_fd_modes(HANDLE hndl, const DWORD& modes) noexcept
+bool term::enable_fd_modes(void* hndl, const unsigned long& modes) noexcept
 {
 	DWORD mode{ 0ul };
 	return (
