@@ -123,19 +123,19 @@ namespace term {
 		 * @brief	Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
 		 * @returns setcolor
 		 */
-		virtual setcolor reset() const noexcept(false)
+		virtual setcolor reset(const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
 		{
 			using namespace ANSI;
-			return _isActive ? setcolor{ color::reset } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence } : setcolor_placeholder;
 		}
 		/**
 		 * @brief	Reset the current terminal color, then set it to a new value.
 		 * @returns	setcolor
 		 */
-		virtual setcolor reset(const KeyType& key) const noexcept(false)
+		virtual setcolor reset(const KeyType& key, const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
 		{
 			using namespace ANSI;
-			return _isActive ? setcolor{ color::reset + _palette.at(key).operator std::string() } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence + _palette.at(key).operator std::string() } : setcolor_placeholder;
 		}
 
 		/**
