@@ -115,8 +115,8 @@ namespace term {
 				return _isActive ? _palette.at(key) : setcolor_placeholder;
 			}
 			if constexpr (var::Streamable<KeyType>)
-				throw make_exception("set(KeyType):\tKey not found: \"", key, "\"!");
-			throw make_exception("set(KeyType):\tKey not found!");
+				throw make_exception("set(KeyType) failed:  Key not found: \"", key, "\"!");
+			throw make_exception("set(KeyType) failed:  Key not found!");
 		}
 
 		/**
@@ -125,7 +125,6 @@ namespace term {
 		 */
 		virtual setcolor reset(const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
 		{
-			using namespace ANSI;
 			return _isActive ? setcolor{ reset_sequence } : setcolor_placeholder;
 		}
 		/**
@@ -134,8 +133,7 @@ namespace term {
 		 */
 		virtual setcolor reset(const KeyType& key, const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
 		{
-			using namespace ANSI;
-			return _isActive ? setcolor{ reset_sequence + _palette.at(key).operator std::string() } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence + _palette.at(key).operator ANSI::Sequence() } : setcolor_placeholder;
 		}
 
 		/**
