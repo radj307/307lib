@@ -135,11 +135,15 @@ namespace opt {
 	 * @param captures	A CaptureList instance specifying which arguments are allowed to capture other arguments as their parameters
 	 * @returns			ArgContainer
 	 */
-	inline ArgContainerType parse(const StrVec& args, const CaptureList& captures)
+	inline ArgContainerType parse(StrVec&& args, const CaptureList& captures)
 	{
+		// remove empty arguments, which are possible when passing arguments from automated testing applications
+		args.erase(std::remove_if(args.begin(), args.end(), [](auto&& s) { return s.empty(); }), args.end());
+
 		ArgContainerType cont{};
 		cont.reserve(args.size());
-		for (auto it{ args.begin() }; it != args.end(); ++it) {
+
+		for (StrVec::const_iterator it{ args.begin() }; it != args.end(); ++it) {
 			auto [arg, d_count] { strip_prefix(*it, 2ull) };
 			switch (d_count) {
 			case 2ull: // Option
