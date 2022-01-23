@@ -491,8 +491,8 @@ namespace file::ini {
 						return{ str, TokenType::BOOLEAN };
 					else
 						ss.seekg(pos - 1ll);
-					// getsimilar
-					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
+					// getnotsimilar to newlines, equals, pound/semicolon '#'/';' (comments), and EOF
+					return Token{ str::strip_line(getnotsimilar(LEXEME::NEWLINE, LEXEME::EQUALS, LEXEME::POUND, LEXEME::SEMICOLON, LEXEME::_EOF), "#;"), TokenType::KEY};
 				}
 				case LEXEME::SUBTRACT: [[fallthrough]]; // number start
 				case LEXEME::DIGIT:
@@ -570,7 +570,7 @@ namespace file::ini {
 					++i; // increment index by one (used to add _EOL)
 					switch (type) {
 					case TokenType::HEADER: // set the header
-						header = str::strip_line(str, "#;");
+						header = str;
 						break;
 					case TokenType::SETTER: // set the temp setter variable to true if it isn't already
 						if (!setter)
@@ -579,7 +579,7 @@ namespace file::ini {
 						break;
 					case TokenType::KEY: // set the temp key
 						if (!key.has_value()) {
-							key = str::strip_line(str, "#;");
+							key = str;
 							break;
 						}
 						else [[fallthrough]]; // if the key is already set, parse as a string value
@@ -592,21 +592,21 @@ namespace file::ini {
 							else throwEx(ln, "Duplicate Value");
 						}
 						else
-							value = str::strip_line(str, "#;");
+							value = str;
 						break;
 					case TokenType::NUMBER: // set the temp value to a long double
 						if (!setter)
 							throwEx(ln, "Missing Setter");
 						if (size_t decimal_count{ 0ull }; std::all_of(str.begin(), str.end(), [&decimal_count](auto&& ch) { if (ch == '.') ++decimal_count; return isdigit(ch) && decimal_count == 1; }))
-							value = str::stold(str::strip_line(str, "#;"));
-						else value = str::strip_line(str, "#;");
+							value = str::stold(str);
+						else value = str;
 						break;
 					case TokenType::NUMBER_INT: // set the temp value to an integer
 						if (!setter)
 							throwEx(ln, "Missing Setter");
 						if (std::all_of(str.begin(), str.end(), isdigit))
-							value = str::stoll(str::strip_line(str, "#;"));
-						else value = str::strip_line(str, "#;");
+							value = str::stoll(str);
+						else value = str;
 						break;
 					case TokenType::BOOLEAN:
 					{ // set the temp value to a boolean
