@@ -33,7 +33,7 @@ endif()
 
 # Set library sources & include dirs
 include(PrependEach)
-PREPEND_EACH(HEADERS_ABS ${HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/")
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
 
 target_sources(filelib PUBLIC 
 	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
