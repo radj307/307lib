@@ -653,9 +653,9 @@ namespace file::ini {
 		INI() = default;
 		INI(INIContainer::Map&& map) : INIContainer(std::move(map)) {}
 		#if LANG_CPP >= 17
-		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator INIContainer::Map()) {}
+		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
 		#else
-		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator INIContainer::Map()) {}
+		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
 		#endif
 
 		/**
