@@ -46,6 +46,7 @@ namespace term {
 	private:
 		PaletteType _palette;
 		bool _isActive{ false }; ///< @brief When false, a blank setcolor placeholder will always be returned from the set() function. This can be used to programmatically enable/disable output colors depending on need.
+		ANSI::Sequence _default_reset_seq{ color::reset };
 
 
 	public:
@@ -104,6 +105,29 @@ namespace term {
 		}
 
 		/**
+		 * @brief		Change the default sequence used to reset terminal colors & formatting, when an override isn't specified.
+		 * @param seq	The sequence to use as the default reset sequence.
+		 * @returns		ANSI::Sequence
+		 *\n			The previous default reset sequence.
+		 */
+		ANSI::Sequence setDefaultResetSequence(const ANSI::Sequence& seq)
+		{
+			const auto copy{ _default_reset_seq };
+			_default_reset_seq = seq;
+			return copy;
+		}
+
+		/**
+		 * @brief		Get the default sequence used to reset terminal colors & formatting.
+		 * @returns		ANSI::Sequence
+		 *\n			The current default reset sequence.
+		 */
+		ANSI::Sequence getDefaultResetSequence() const
+		{
+			return _default_reset_seq;
+		}
+
+		/**
 		 * @brief Retrieve the mapped color setter functor for the given key when active, otherwise returns a placeholder.
 		 * @param key	- Key associated with the target color.
 		 * @returns setcolor
@@ -123,17 +147,17 @@ namespace term {
 		 * @brief	Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
 		 * @returns setcolor
 		 */
-		virtual setcolor reset(const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
+		virtual setcolor reset(const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt) const noexcept(false)
 		{
-			return _isActive ? setcolor{ reset_sequence } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) } : setcolor_placeholder;
 		}
 		/**
 		 * @brief	Reset the current terminal color, then set it to a new value.
 		 * @returns	setcolor
 		 */
-		virtual setcolor reset(const KeyType& key, const ANSI::Sequence& reset_sequence = color::reset) const noexcept(false)
+		virtual setcolor reset(const KeyType& key, const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt) const noexcept(false)
 		{
-			return _isActive ? setcolor{ reset_sequence + _palette.at(key).operator ANSI::Sequence() } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) + _palette.at(key).operator ANSI::Sequence()} : setcolor_placeholder;
 		}
 
 		/**
