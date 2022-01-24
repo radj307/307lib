@@ -20,7 +20,7 @@ namespace env {
 	{
 		#pragma warning (disable: 4996) // disable deprecation warning
 		const auto var{ std::getenv(name.data()) };
-		return(var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt));
+		return(var != nullptr ? std::string{ var } : static_cast<std::optional<std::string>>(std::nullopt));
 		#pragma warning (default: 4996)
 	}
 }
