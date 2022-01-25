@@ -63,7 +63,7 @@ namespace opt {
 
 		WINCONSTEXPR operator const ArgContainerType() const { return _args; }
 
-	#pragma region ForwardVectorFunctions
+		#pragma region ForwardVectorFunctions
 		WINCONSTEXPR auto begin() const { return _args.begin(); }
 		WINCONSTEXPR auto end() const { return _args.end(); }
 		WINCONSTEXPR auto rbegin() const { return _args.rbegin(); }
@@ -85,12 +85,12 @@ namespace opt {
 		auto pop_front() noexcept(false)
 		{
 			const auto front{ _args.front() };
-			for (auto pos{ _args.begin() }; pos != _args.end() - 1ll; ++pos)
+			for (auto pos{ _args.begin() }, endit{ _args.end() - 1ll }; pos != endit; ++pos)
 				pos = (pos + 1ll);
 			_args.pop_back();
 			return front;
 		}
-	#pragma endregion ForwardVectorFunctions
+		#pragma endregion ForwardVectorFunctions
 
 		/// @brief Retrieve the optional argv[0] argument. @returns std::optional<std::string>
 		auto arg0() const { return _arg0; }
@@ -98,7 +98,7 @@ namespace opt {
 		/// @brief Set the value of the optional argv[0] argument, and return the previous value. @returns std::optional<std::string>
 		auto arg0(std::optional<std::string> arg0) { const auto copy{ _arg0 }; _arg0 = arg0; return copy; }
 
-	#pragma region FindFunctions
+		#pragma region FindFunctions
 		/**
 		 * @brief			Find an argument in the container.
 		 * @tparam Types...	If none are specified, allows arguments with any type to be a match. If at least one is specified, only allows arguments with the specified types to be a match.
@@ -112,7 +112,7 @@ namespace opt {
 		WINCONSTEXPR ArgContainerIteratorType find(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 };
-			for (auto it{ off.value_or(_args.begin()) }; it != end.value_or(_args.end()); ++it)
+			for (auto it{ off.value_or(_args.begin()) }, endit{ end.value_or(_args.end()) }; it != endit; ++it)
 				if ((match_any_type || var::variadic_or(it->index() == get_index<Types>()...)) && get_name(*it) == InputWrapper(name))
 					return it;
 			return _args.end();
@@ -148,7 +148,7 @@ namespace opt {
 		WINCONSTEXPR ArgContainerIteratorType find_any(const Names&... names) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
-			for (auto it{ begin() }; it != end(); ++it)
+			for (auto it{ begin() }, endit{ end() }; it != endit; ++it)
 				if (match_any_type || var::variadic_or(is_type<Types>(*it)...)) {
 					if (match_any_name)
 						return it;
@@ -198,7 +198,7 @@ namespace opt {
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			ArgContainerIteratorContainerType vec;
 			vec.reserve(_args.size());
-			for (auto it{ begin() }; it != end(); ++it)
+			for (auto it{ begin() }, endit{ end() }; it != endit; ++it)
 				if (match_any_type || var::variadic_or(is_type<Types>(*it)...)) {
 					if (match_any_name)
 						vec.emplace_back(it);
@@ -234,9 +234,9 @@ namespace opt {
 			vec.shrink_to_fit();
 			return vec;
 		}
-	#pragma endregion FindFunctions
+		#pragma endregion FindFunctions
 
-	#pragma region CheckFunctions
+		#pragma region CheckFunctions
 		/**
 		 * @brief			Check if a given argument was included on the commandline.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching.
@@ -295,9 +295,9 @@ namespace opt {
 		{
 			return var::variadic_and(find(names) != _args.end()...);
 		}
-	#pragma endregion CheckFunctions
+		#pragma endregion CheckFunctions
 
-	#pragma region GetFunctions
+		#pragma region GetFunctions
 		/**
 		 * @brief			Get a specified argument from within the container. This function is the equivalent of safely dereferencing the result of find() and returning it as an optional.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching. Leaving this blank will allow any argument types to match.
@@ -358,16 +358,16 @@ namespace opt {
 			if (const auto targets{ find_all<Types...>(names...) }; !targets.empty()) {
 				std::vector<VariantArgumentType> vec;
 				vec.reserve(targets.size());
-				for (auto& it : targets)
+				for (const auto& it : targets)
 					vec.emplace_back(*it);
 				vec.shrink_to_fit();
 				return vec;
 			}
 			return{}; // return empty
 		}
-	#pragma endregion GetFunctions
+		#pragma endregion GetFunctions
 
-	#pragma region GetRangeFunction
+		#pragma region GetRangeFunction
 		/**
 		 * @brief				Retrieve a range of arguments from the list, with an optional predicate function for filtering.
 		 * @param from			The beginning position in the list.
@@ -383,7 +383,7 @@ namespace opt {
 			if (const auto it_end{ to.value_or(_args.end()) }; inclusive ? it_end >= from : it_end > from) {
 				ArgContainerType vec;
 				vec.reserve(to.value_or(_args.end()) - from);
-				for (; from != (inclusive ? (to.value_or(_args.end() - 1ll) + 1ll) : to.value()) && from != _args.end(); ++from)
+				for (const auto& endit{ _args.end() }; from != (inclusive ? (to.value_or(_args.end() - 1ll) + 1ll) : to.value()) && from != endit; ++from)
 					if (!pred.has_value() || pred.value()(*from))
 						vec.emplace_back(*from);
 				vec.shrink_to_fit();
@@ -418,10 +418,10 @@ namespace opt {
 		virtual ArgContainer duplicate_range(const ArgContainerIteratorType& from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const
 		{
 			ArgContainerType cont;
-			for (auto& it : get_range(from, to, inclusive, pred))
+			for (const auto& it : get_range(from, to, inclusive, pred))
 				cont.emplace_back(it);
 			return decltype(*this){ std::move(cont), _arg0 };
 		}
-	#pragma endregion GetRangeFunction
+		#pragma endregion GetRangeFunction
 	};
 }

@@ -298,7 +298,7 @@ namespace token::base {
 		[[nodiscard]] virtual std::string getline(const size_t& count)
 		{
 			std::string line{};
-			for (size_t i{ 0 }; i < count && hasMore(); ++i)
+			for (size_t i{ 0 }; hasMore() && i < count; ++i)
 				line += ss.get();
 			return line;
 		}
@@ -314,7 +314,7 @@ namespace token::base {
 		{
 			std::string s;
 			s.reserve(50);
-			for (char c{ getch(true) }; good() && hasMore() && !pred(c); c = getch(true))
+			for (char c{ getch(true) }; hasMore() && good() && !pred(c); c = getch(true))
 				s += c;
 			s.shrink_to_fit();
 			if (!no_rollback)

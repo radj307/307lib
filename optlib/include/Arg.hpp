@@ -119,7 +119,7 @@ namespace opt {
 			if (Settings_Arg.include_captures)
 				if (const auto cap{ arg.getv() }; cap.has_value()) {
 					const auto& v{ cap.value() };
-					for (auto& div : Settings_Arg.divider)
+					for (const auto& div : Settings_Arg.divider)
 						os << div;
 					if (Settings_Arg.enclose_multiword_with_quotes && str::pos_valid(v.find(' '))) // Value has spaces in its argument, enclose it with quotes
 						os << Settings_Arg.quote_char << v << Settings_Arg.quote_char;

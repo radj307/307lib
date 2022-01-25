@@ -90,3 +90,27 @@ WINCONSTEXPR ex::except make_exeption(Ts&&... message)
 		str += static_cast<char>(wch);
 	return { str.c_str() };
 }
+
+#ifndef MAKE_EXCEPTION_HPP_SIMPLE
+/**
+ * @def		MAKE_EXCEPTION_HPP_SIMPLE
+ * @brief	When defined, this macro will disable <make_exception.hpp>'s advanced feature set,
+ *\n		including multi-line template exceptions, and derivatives of the except object.
+ */
+#define MAKE_EXCEPTION_HPP_SIMPLE
+#undef MAKE_EXCEPTION_HPP_SIMPLE
+#endif
+
+#ifndef MAKE_EXCEPTION_HPP_SIMPLE
+
+namespace ex {
+	/**
+	 * @struct	mlexcept
+	 * @brief	A multi-line exception object that is derived from except.
+	 */
+	class mlexcept : public except {
+		std::vector<std::unique_ptr<except>> _lines;
+	};
+}
+
+#endif
