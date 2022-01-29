@@ -76,30 +76,65 @@ namespace file::ini {
 		AlignType _align_output;
 
 	public:
-		/// @brief Default Constructor
+		/// @brief	Default Constructor
 		INIContainer(const AlignType& align_output = AlignType::SECTION) : _align_output{ align_output } {}
 		/**
-		 * @brief Move-Constructor
-		 * @param map	- rvalue reference of a pre-constructed Map instance.
+		 * @brief		Move-Constructor
+		 * @param map	rvalue reference of a pre-constructed Map instance.
 		 */
 		INIContainer(Map&& map, const AlignType& align_output = AlignType::SECTION) : _cont{ std::move(map) }, _align_output{ align_output } {}
 
-		/// @brief Returns local container.
+		/// @brief	Returns local container.
 		explicit operator Map() const { return _cont; }
 
-		/// @brief Returns the begin const_iterator for the local container.
+		/// @brief	Returns the begin const_iterator for the local container.
 		[[nodiscard]] auto begin() const { return _cont.begin(); }
-		/// @brief Returns the end const_iterator for the local container.
+		/// @brief	Returns the end const_iterator for the local container.
 		[[nodiscard]] auto end() const { return _cont.end(); }
-		/// @brief Check if the local container is empty. Checks for keys, not sections, so if headers exist in the file but not keys, this function will still return true.
+		/// @brief	Check if the local container is empty. Checks for keys, not sections, so if headers exist in the file but not keys, this function will still return true.
 		[[nodiscard]] auto empty() const { if (_cont.empty()) return true; for (const auto& [header, keys] : _cont) if (!keys.empty()) return false; return true; }
 
-		/// @brief Retrieve the SectionContent of a given header name. @throws out_of_range exception if the header does not exist.
+		/// @brief	Retrieve the SectionContent of a given header name. @throws out_of_range exception if the header does not exist.
 		[[nodiscard]] auto at(const std::string& header) const { return _cont.at(header); }
-		/// @brief Retrieve the value of a given key name. @throws out_of_range exception if the header/key doesn't exist.
+		/// @brief	Retrieve the value of a given key name. @throws out_of_range exception if the header/key doesn't exist.
 		[[nodiscard]] auto at(const std::string& header, const std::string& key) const { return _cont.at(header).at(key); }
-		/// @brief Retrieve the value of a given key name, but accepts a Header-Key pair as input. @throws out_of_range exception if the header/key doesn't exist.
+		/// @brief	Retrieve the value of a given key name, but accepts a Header-Key pair as input. @throws out_of_range exception if the header/key doesn't exist.
 		[[nodiscard]] auto at(const HeaderKeyPair& hkpr) const { return at(hkpr.first, hkpr.second); }
+		/// @brief	Find an element with its header name.
+		[[nodiscard]] auto find(auto&& header) const { return _cont.find(std::forward<decltype(header)>(header)); }
+		/// @brief	Erase a section.
+		bool erase(auto&& header) noexcept
+		{
+			return static_cast<bool>(_cont.erase(std::forward<decltype(header)>(header)));
+		}
+		/// @brief	Erase a key from a section
+		bool erase(auto&& header, auto&& key) noexcept
+		{
+			if (auto& section{ _cont.find(std::forward<decltype(header)>(header)) }; section != _cont.end())
+				return static_cast<bool>(section.erase(std::forward<decltype(key)>(key)));
+			return false;
+		}
+
+
+		/**
+		 * @brief	Retrieve the number of keys in the INI.
+		 * @returns	size_t
+		 */
+		[[nodiscard]] size_t countKeys() const
+		{
+			size_t count{ 0ull };
+			for (const auto& [_, section] : _cont)
+				count += section.size();
+			return count;
+		}
+		/**
+		 * @brief	Retrieve the number of headers in the INI.
+		 * @returns size_t
+		 */
+		[[nodiscard]] size_t countHeaders() const
+		{
+			return _cont.size();
+		}
 
 		/// @brief Equality-comparison operator, checks if the local container matches the container of another INIContainer instance.
 		bool operator==(const INIContainer& o) const { return _cont == o._cont; }
@@ -107,8 +142,8 @@ namespace file::ini {
 		bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
 		/**
-		 * @brief Retrieve a given subsection if it exists.
-		 * @param header	- Header name of target section.
+		 * @brief			Retrieve a given subsection if it exists.
+		 * @param header	Header name of target section.
 		 */
 		[[nodiscard]] std::optional<SectionContent> operator[](const std::string& header) const
 		{
@@ -116,10 +151,10 @@ namespace file::ini {
 		}
 
 		/**
-		 * @brief Stream insertion operator. Outputs in valid file format, with quotation-enclosed strings.
-		 * @param os	- (implicit) Target output stream.
-		 * @param obj	- (implicit) Target INIContainer instance.
-		 * @returns std::ostream&
+		 * @brief		Stream insertion operator. Outputs in valid file format, with quotation-enclosed strings.
+		 * @param os	(implicit) Target output stream.
+		 * @param obj	(implicit) Target INIContainer instance.
+		 * @returns		std::ostream&
 		 */
 		friend std::ostream& operator<<(std::ostream& os, const INIContainer& obj)
 		{
@@ -164,56 +199,77 @@ namespace file::ini {
 		}
 
 		#pragma region Functions_Setters
-		/// @brief Insert a new Key-Value pair into the map.
+		/// @brief	Insert a whole section into the INI container.
+		auto insert(std::pair<std::string, SectionContent>&& pr)
+		{
+			return _cont.insert(std::forward<std::pair<std::string, SectionContent>>(pr));
+		}
+		/// @brief	Insert or assign a whole section of the INI.
+		auto insert_or_assign(std::string&& header, SectionContent&& section)
+		{
+			return _cont.insert_or_assign(std::forward<std::string>(header), std::forward<SectionContent>(section));
+		}
+		/// @brief	Insert a whole section into the INI container.
+		auto insert(const std::pair<std::string, SectionContent>& pr)
+		{
+			return _cont.insert(pr);
+		}
+		/// @brief	Insert or assign a whole section of the INI.
+		auto insert_or_assign(const std::string& header, const SectionContent& section)
+		{
+			return _cont.insert_or_assign(header, section);
+		}
+
+		/// @brief	Insert a new Key-Value pair into the map.
 		auto insert(const std::string& header, KeyPair kvpr)
 		{
 			return _cont[header].insert(std::move(kvpr));
 		}
-		/// @brief Insert a new Value into the map, at the specified key in the specified header.
+		/// @brief	Insert a new Value into the map, at the specified key in the specified header.
 		template<ValidValueT T>
 		auto insert(const std::string& header, std::string key, T value)
 		{
 			return insert(header, std::move(std::make_pair(std::move(key), std::move(VariableT{ std::move(value) }))));
 		}
-		/// @brief Insert a new value at the specified Header-Key pair.
+		/// @brief	Insert a new value at the specified Header-Key pair.
 		template<ValidValueT T>
 		auto insert(const HeaderKeyPair& hkpr, T value)
 		{
 			return insert(hkpr.first, hkpr.second, std::move(value));
 		}
-		/// @brief Insert or assign an existing Key-Value pair.
+		/// @brief	Insert or assign an existing Key-Value pair.
 		auto insert_or_assign(const std::string& header, KeyPair kvpr)
 		{
 			return _cont[header].insert_or_assign(std::move(kvpr.first), std::move(kvpr.second));
 		}
-		/// @brief Insert or assign an existing value at the specified key in the specified header.
+		/// @brief	Insert or assign an existing value at the specified key in the specified header.
 		template<ValidValueT T>
 		auto insert_or_assign(const std::string& header, std::string key, T value)
 		{
 			return _cont[header].insert_or_assign(std::move(key), std::move(VariableT{ std::move(value) }));
 		}
-		/// @brief Insert or assign an existing value at the specified Header-Key pair.
+		/// @brief	Insert or assign an existing value at the specified Header-Key pair.
 		template<ValidValueT T>
 		auto insert_or_assign(const HeaderKeyPair& hkpr, T value)
 		{
 			return insert_or_assign(hkpr.first, hkpr.second, std::move(value));
 		}
 
-		/// @brief Calls insert_or_assign with the given forwarded parameters.
+		/// @brief	Calls insert_or_assign with the given forwarded parameters.
 		auto set(auto&& fst, auto&& snd)
 		{
 			return insert_or_assign(std::forward<decltype(fst)>(fst), std::forward<decltype(snd)>(snd));
 		}
-		/// @brief Calls insert_or_assign with the given forwarded parameters.
+		/// @brief	Calls insert_or_assign with the given forwarded parameters.
 		auto set(auto&& header, auto&& key, auto&& value)
 		{
 			return insert_or_assign(std::forward<decltype(header)>(header), std::forward<decltype(key)>(key), std::forward<decltype(value)>(value));
 		}
 
 		/**
-		 * @brief Move-Merge a map from another location into this ContainerINI instance.
-		 * @param other					- Other SectionMap rvalue
-		 * @param overwrite_existing	- When true, overwrites existing keys with given map.
+		 * @brief						Move-Merge a map from another location into this ContainerINI instance.
+		 * @param other					Other SectionMap rvalue
+		 * @param overwrite_existing	When true, overwrites existing keys with given map.
 		 */
 		void merge_container(Map&& o, const bool overwrite_existing = true)
 		{
@@ -225,8 +281,8 @@ namespace file::ini {
 		#pragma endregion Functions_Setters
 		#pragma region Functions_Check
 		/**
-		 * @brief Check if a given header exists.
-		 * @param header	- The section to check for.
+		 * @brief			Check if a given header exists.
+		 * @param header	The section to check for.
 		 * @returns bool
 		 */
 		[[nodiscard]] bool check_header(const std::string& header) const
@@ -234,19 +290,19 @@ namespace file::ini {
 			return _cont.contains(header);
 		}
 		/**
-		 * @brief Check if a given header or key in a blank header exists.
-		 * @param header_or_key	- The header name, or key name in a blank header, to search for.
-		 * @returns bool
+		 * @brief					Check if a given header or key in a blank header exists.
+		 * @param header_or_key		The header name, or key name in a blank header, to search for.
+		 * @returns					bool
 		 */
 		[[nodiscard]] bool check(const std::string& header_or_key) const
 		{
 			return _cont.contains(header_or_key) || _cont.contains("") && _cont.at("").contains(header_or_key);
 		}
 		/**
-		 * @brief Check if a given key exists in a given header.
-		 * @param header	- The section to search within.
-		 * @param key		- The name of the target key.
-		 * @returns bool
+		 * @brief			Check if a given key exists in a given header.
+		 * @param header	The section to search within.
+		 * @param key		The name of the target key.
+		 * @returns			bool
 		 */
 		[[nodiscard]] bool check(const std::string& header, const std::string& key) const
 		{
@@ -258,11 +314,11 @@ namespace file::ini {
 			return check(hkpr.first, hkpr.second);
 		}
 		/**
-		 * @brief Check if any of an arbitrary number of keys exist in a given header.
-		 * @tparam ...VT	- Variadic Template (std::string)
-		 * @param header	- The header name to search within. If the target keys are not located under a header, use std::nullopt.
-		 * @param ...keys	- More than 1 key names to check.
-		 * @returns bool
+		 * @brief			Check if any of an arbitrary number of keys exist in a given header.
+		 * @tparam ...VT	Variadic Template (std::string)
+		 * @param header	The header name to search within. If the target keys are not located under a header, use std::nullopt.
+		 * @param ...keys	More than 1 key names to check.
+		 * @returns			bool
 		 */
 		template<class... VT> requires std::conjunction_v<std::is_same<VT, std::string>...> && (sizeof...(VT) > 1)
 			[[nodiscard]] bool check_any(const std::optional<std::string>& header, const VT&... keys) const
@@ -270,11 +326,11 @@ namespace file::ini {
 			return var::variadic_or((check(header.value_or(""), keys))...);
 		}
 		/**
-		 * @brief Check if any of an arbitrary number of keys exist in a given header.
-		 * @tparam ...T		- Variadic templated argument, should be of type std::string.
-		 * @param header	- The header name to search within. If the target keys are not located under a header, use std::nullopt.
-		 * @param ...keys	- More than 1 key names to check.
-		 * @returns bool
+		 * @brief			Check if any of an arbitrary number of keys exist in a given header.
+		 * @tparam ...T		Variadic templated argument, should be of type std::string.
+		 * @param header	The header name to search within. If the target keys are not located under a header, use std::nullopt.
+		 * @param ...keys	More than 1 key names to check.
+		 * @returns			bool
 		 */
 		template<class... VT> requires std::conjunction_v<std::is_same<VT, std::string>...> && (sizeof...(VT) > 1)
 			[[nodiscard]] bool check_all(const std::optional<std::string>& header, const VT&... keys) const
@@ -282,11 +338,11 @@ namespace file::ini {
 			return var::variadic_and((check(header.value_or(""), keys))...);
 		}
 		/**
-		 * @brief Check the value of a key located in a given section.
-		 * @param header	- The section name where the target key is located.
-		 * @param key		- The name of the key to check.
-		 * @param value		- The value to compare against the key value.
-		 * @returns bool
+		 * @brief			Check the value of a key located in a given section.
+		 * @param header	The section name where the target key is located.
+		 * @param key		The name of the key to check.
+		 * @param value		The value to compare against the key value.
+		 * @returns			bool
 		 */
 		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const std::string& value, const bool& case_sensitive = true) const
 		{
@@ -299,10 +355,10 @@ namespace file::ini {
 			return check(header, key) && _cont.at(header).at(key) == value;
 		}
 		/**
-		 * @brief Check the value of a key not located in a header.
-		 * @param key	- The name of the key to check.
-		 * @param value	- The value to compare against the key value.
-		 * @returns bool
+		 * @brief		Check the value of a key not located in a header.
+		 * @param key	The name of the key to check.
+		 * @param value	The value to compare against the key value.
+		 * @returns		bool
 		 */
 		[[nodiscard]] bool checkv(const std::string& key, const VariableT& value) const
 		{
@@ -317,10 +373,10 @@ namespace file::ini {
 		#pragma endregion Functions_Check
 		#pragma region Functions_Getters
 		/**
-		 * @brief Get the value of a specified key.
-		 * @param header	- The section to search within.
-		 * @param key		- The name of the target key.
-		 * @returns std::optional<std::string>
+		 * @brief			Get the value of a specified key.
+		 * @param header	The section to search within.
+		 * @param key		The name of the target key.
+		 * @returns			std::optional<std::string>
 		 */
 		[[nodiscard]] std::optional<VariableT> getv(const std::string& header, const std::string& key) const
 		{
@@ -410,20 +466,25 @@ namespace file::ini {
 		 * @param p2	Second argument (key)
 		 * @returns		std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<std::string> getvs(auto&& p1, auto&& p2) const
+		[[nodiscard]] std::optional<std::string> getvs(const std::string& p1, const std::string& p2) const
 		{
-			if (const auto v{ getv(std::forward<decltype(p1)>(p1), std::forward<decltype(p2)>(p2)) }; v.has_value())
+			const auto v{ getv(p1, p2) };
+
+			if (v.has_value()) {
 				return to_string(v.value());
-			return std::nullopt;
+			}
+			else {
+				return std::nullopt;
+			}
 		}
 		/**
 		 * @brief		Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding.
 		 * @param p1	First argument (Header)
 		 * @returns		std::optional<std::string>
 		 */
-		[[nodiscard]] std::optional<std::string> getvs(auto&& p1) const
+		[[nodiscard]] std::optional<std::string> getvs(const std::string& p1) const
 		{
-			if (const auto v{ getv(std::forward<decltype(p1)>(p1)) })
+			if (const auto v{ getv(p1) })
 				return to_string(v.value());
 			return std::nullopt;
 		}
@@ -437,14 +498,14 @@ namespace file::ini {
 		 * @struct	INITokenizer
 		 * @brief	Tokenizes the contents of an INI config file.
 		 */
-		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, TokenType, Token> {
+		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token> {
 			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE) {}
 		protected:
 			TokenT getNext() override
 			{
 				const auto ch{ getch() };
 				switch (get_lexeme(ch)) {
-				case LEXEME::POUND:[[fallthrough]];
+				case LEXEME::POUND: [[fallthrough]];
 				case LEXEME::SEMICOLON:// Comment
 					return Token{ std::string(1ull, ch) += getline('\n', false), TokenType::COMMENT };
 				case LEXEME::EQUALS: // Setter Start
@@ -466,8 +527,8 @@ namespace file::ini {
 						return{ str, TokenType::BOOLEAN };
 					else
 						ss.seekg(pos - 1ll);
-					// getsimilar
-					return Token{ getsimilar(LEXEME::LETTER_LOWERCASE, LEXEME::LETTER_UPPERCASE, LEXEME::UNDERSCORE, LEXEME::SUBTRACT, LEXEME::PERIOD, LEXEME::COMMA, LEXEME::DIGIT, LEXEME::WHITESPACE), TokenType::KEY };
+					// getnotsimilar to newlines, equals, pound/semicolon '#'/';' (comments), and EOF
+					return Token{ str::strip_line(getnotsimilar(LEXEME::NEWLINE, LEXEME::EQUALS, LEXEME::POUND, LEXEME::SEMICOLON, LEXEME::_EOF), "#;"), TokenType::KEY };
 				}
 				case LEXEME::SUBTRACT: [[fallthrough]]; // number start
 				case LEXEME::DIGIT:
@@ -492,7 +553,7 @@ namespace file::ini {
 
 		/**
 		 * @struct	INIParser
-		 * @brief	
+		 * @brief	Token parser for the INI file format.
 		 */
 		struct INIParser : token::base::TokenParserBase<INIContainer::Map, Token> {
 			bool allowBlankValue{ true };
@@ -520,7 +581,7 @@ namespace file::ini {
 				bool setter{ false };
 				size_t ln{ 1ull };
 				// Init map:
-				INIContainer::Map map{};
+				OutputT map{};
 
 				strip_types(TokenType::COMMENT); // remove all comments
 
@@ -541,7 +602,7 @@ namespace file::ini {
 				const auto& any_defined{ [&key, &value, &setter]() { return key.has_value() || value.has_value() || setter; } };
 
 				size_t i{ 0ull };
-				for (auto& [type, str] : tokens) {
+				for (const auto& [type, str] : tokens) {
 					++i; // increment index by one (used to add _EOL)
 					switch (type) {
 					case TokenType::HEADER: // set the header
@@ -563,7 +624,7 @@ namespace file::ini {
 							throwEx(ln, "Missing Setter");
 						if (value.has_value()) {
 							if (std::holds_alternative<String>(value.value()))
-								value = (std::get<String>(value.value()) + str); // allow fallthrough keys to be appended
+								value = (std::get<String>(value.value()) + str); // allow fallthrough "keys" (additional values that were cut off by the tokenizer -- shouldn't happen but just in case) to be appended
 							else throwEx(ln, "Duplicate Value");
 						}
 						else
@@ -628,9 +689,9 @@ namespace file::ini {
 		INI() = default;
 		INI(INIContainer::Map&& map) : INIContainer(std::move(map)) {}
 		#if LANG_CPP >= 17
-		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator INIContainer::Map()) {}
+		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
 		#else
-		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize()), filepath).operator file::INIContainer::Map()) {}
+		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
 		#endif
 
 		/**

@@ -44,4 +44,7 @@ add_subdirectory("optlib")
 # Create an interface library
 add_library(307lib INTERFACE)
 
-add_subdirectory("testing")
+option(307lib_ENABLE_DEV_PROJECT "Enable the unstable development executable project in 307lib. This is not recommended." OFF)
+if (${307lib_ENABLE_DEV_PROJECT})
+	add_subdirectory("testing")
+endif()

@@ -16,11 +16,14 @@ namespace env {
 	 * @param name	Environment variable name.
 	 * @returns		std::string
 	 */
-	INLINE std::optional<std::string> getvar(const std::string_view& name) noexcept
+	std::optional<std::string> getvar(const std::string_view&) noexcept;
+
+	inline std::string get_home() noexcept
 	{
-		#pragma warning (disable: 4996) // disable deprecation warning
-		const auto var{ std::getenv(name.data()) };
-		return(var != nullptr ? var : static_cast<std::optional<std::string>>(std::nullopt));
-		#pragma warning (default: 4996)
+		#ifdef OS_WIN
+		return getvar("USERPROFILE").value_or(getvar("HOME").value_or(""));
+		#else
+		return getvar("HOME").value_or("");
+		#endif
 	}
 }

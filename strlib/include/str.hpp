@@ -388,7 +388,7 @@ namespace str {
 	 * @returns				std::string_view
 	 */
 	template<std::same_as<char>... DelimT>
-	inline static std::string_view strip_trailing(const std::string_view& str, const DelimT&... delims)
+	inline static std::string strip_trailing(const std::string& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_trailing() requires at least one delimiter char!");
 		size_t i{ 0ull };
@@ -407,7 +407,7 @@ namespace str {
 	 * @returns				std::string_view
 	 */
 	template<std::same_as<char>... DelimT>
-	inline static std::string_view strip_preceeding(const std::string_view& str, const DelimT&... delims)
+	inline static std::string strip_preceeding(const std::string& str, const DelimT&... delims)
 	{
 		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
 		size_t i{ 0ull };
@@ -420,8 +420,8 @@ namespace str {
 	}
 
 	/**
-	 * @brief 
-	 * @param str 
+	 * @brief			Remove all specified characters from the given string.
+	 * @param str		Input String
 	 * @param ...delims	Any number of characters to remove from the given string.
 	 * @returns			std::string_view
 	 */

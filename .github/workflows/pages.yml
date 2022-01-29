@@ -1,0 +1,48 @@
+name: Deploy gh-pages
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  generate-documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone the repository
+      - name: Clone 307lib repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          persist-credentials: false
+      
+      # Clone the gh-pages branch into ./307lib/gh-pages
+      - name: Get the gh-pages branch
+        run:  git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
+
+      - name: '[DEBUG]: ls'
+        run:  ls -lAgh
+        
+      - name: '[DEBUG]: ls ./gh-pages'
+        run:  ls -lAgh ./gh-pages
+
+      - name: Run doxygen
+        uses: mattnotmitt/doxygen-action@v1.9.2
+        with:
+          working-directory: ./gh-pages
+          doxyfile-path: ./gh-pages/Doxyfile
+
+      - name: Commit Updated Documentation
+        uses: EndBug/add-and-commit@v8
+        with:
+          message:  'Update Documentation (github action)'
+          push:     'gh-pages'
+               
+
+#      - name: Deploy Pages
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{secrets.GITHUB_TOKEN}}
+#          publish_dir: ./

@@ -42,7 +42,7 @@ endif()
 
 # Add headers
 include(PrependEach)
-PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")
 target_sources(optlib PUBLIC
 	"$<BUILD_INTERFACE:${HEADERS_ABS}>"
 	"$<INSTALL_INTERFACE:${HEADERS}>"
@@ -55,7 +55,7 @@ target_include_directories(optlib PUBLIC
 )
 
 # link optlib dependencies
-target_link_libraries(optlib PUBLIC shared strlib tokenlib)
+target_link_libraries(optlib PUBLIC strlib tokenlib)
 
 # Create installation targets
 if (307lib_ENABLE_PACKAGING) # Include packaging

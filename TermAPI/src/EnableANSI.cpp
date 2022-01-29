@@ -1,29 +1,34 @@
 #include "../include/EnableANSI.hpp"
+
 #ifdef OS_WIN
 #define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-term::FDHANDLE::type term::EnableANSI(const FDHANDLE& fdh) noexcept
+#include <Windows.h> // include windows.h in the source file to prevent pollution
+
+bool term::enable_fd_modes(void* hndl, const unsigned long& modes) noexcept
 {
-	const auto& setmode{
-		[](HANDLE&& stdhandle, const DWORD& flags) -> bool {
-			DWORD mode{0};
-			if (!GetConsoleMode(std::forward<HANDLE>(stdhandle), &mode))
-				return false;
-			return SetConsoleMode(std::forward<HANDLE>(stdhandle), (mode | flags));
-		}
-	};
-	FDHANDLE successful{ 0 };
-	if (fdh.contains(FDHANDLE::STDIN)) // STDIN
-		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_INPUT_HANDLE)), ENABLE_VIRTUAL_TERMINAL_INPUT | ENABLE_LINE_INPUT))
-			successful |= FDHANDLE::STDIN;
-	if (fdh.contains(FDHANDLE::STDOUT)) // STDOUT
-		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_OUTPUT_HANDLE)), ENABLE_VIRTUAL_TERMINAL_PROCESSING | DISABLE_NEWLINE_AUTO_RETURN))
-			successful |= FDHANDLE::STDOUT;
-	if (fdh.contains(FDHANDLE::STDERR)) // STDERR
-		if (setmode(std::forward<HANDLE>(GetStdHandle(STD_ERROR_HANDLE)), ENABLE_VIRTUAL_TERMINAL_PROCESSING | DISABLE_NEWLINE_AUTO_RETURN))
-			successful |= FDHANDLE::STDERR;
-	return successful;
+	DWORD mode{ 0ul };
+	return (
+		hndl != nullptr // don't allow null handles
+		&& GetConsoleMode(hndl, &mode) // short-circuit and return false if GetConsoleMode fails
+		&& (
+		(mode & ENABLE_VIRTUAL_TERMINAL_PROCESSING) != 0 // return true if ANSI sequences are already enabled
+		|| SetConsoleMode(hndl, mode | modes) // return true if SetConsoleMode is successful
+		)
+	);
 }
-#else
-term::FDHANDLE::type term::EnableANSI(const FDHANDLE& fdh) noexcept { return (FDHANDLE::STDIN | FDHANDLE::STDOUT | FDHANDLE::STDERR); }
+
+bool term::enable_fd(const term::HandleFD& handle_fd) noexcept
+{
+	using enum HandleFD;
+	switch (handle_fd) {
+	case STDIN:
+		return enable_fd_modes(GetStdHandle(STD_INPUT_HANDLE), ENABLE_VIRTUAL_TERMINAL_INPUT);
+	case STDOUT:
+		return enable_fd_modes(GetStdHandle(STD_OUTPUT_HANDLE), ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+	case STDERR:
+		return enable_fd_modes(GetStdHandle(STD_ERROR_HANDLE), ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+	default:
+		return false;
+	}
+}
 #endif
