@@ -1,0 +1,39 @@
+name: Deploy gh-pages
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  generate-documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone the repository
+      - name: Clone 307lib repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      
+      # Clone the gh-pages branch into ./307lib/gh-pages
+      - name: Get the gh-pages branch
+        uses: actions/checkout@v2.4.0
+        with:
+          ref:  gh-pages
+          path: 307lib #< This is always relative to ${{github.workspace}}
+      
+      - name: Run doxygen
+        uses: mattnotmitt/doxygen-action@v1.9.2
+        with:
+          additional-packages:  font-fira-code
+          working-directory:    ${{github.workspace}}/307lib/gh-pages
+          doxyfile-path:        ${{github.workspace}}/307lib/gh-pages/Doxyfile
+
+
+      - name: Deploy Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./
