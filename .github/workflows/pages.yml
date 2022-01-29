@@ -20,12 +20,12 @@ jobs:
       
       # Clone the gh-pages branch into ./307lib/gh-pages
       - name: Get the gh-pages branch
-        run:  git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages
+        run:  git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
 
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
-          working-directory: gh-pages
+          working-directory: ./gh-pages
 
       - name: Commit Updated Documentation
         uses: EndBug/add-and-commit@v8
