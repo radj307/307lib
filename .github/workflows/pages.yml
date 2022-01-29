@@ -12,14 +12,13 @@ jobs:
 
     steps:
       # Clone the repository
-      - name: Clone 307lib repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           submodules: recursive
           persist-credentials: false
       
       # Clone the gh-pages branch into ./307lib/gh-pages
-      - name: Get the gh-pages branch
+      - name: 'Clone the Documentation'
         run:  git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
 
       - name: 'Print Debugging Information'
@@ -29,16 +28,11 @@ jobs:
               ls -lAgh ${{github.workspace}}
               echo "########## WORKING DIRECTORY:"
               ls -lAgh ./
-              echo "########## 307lib DIRECTORY:"
-              ls -lAgh ${{github.workspace}}/307lib
-              echo "########## TARGET GITHUB PAGES DIR:"
-              ls -lAgh ${{github.workspace}}/307lib/gh-pages
 
       - name: Run doxygen
-        uses: radj307/action-doxygen@v1
+        uses: radj307/action-doxygen@v1.1
         with:
-          working-dir: ${{github.workspace}}/307lib/gh-pages
-          doxyfile: ./gh-pages/Doxyfile
+          working-dir: ${{github.workspace}}/gh-pages
 
       - name: Commit Changes
         run:  |
@@ -46,16 +40,3 @@ jobs:
               git add -A
               git commit -m "Update Documentation"
               git push -u origin gh-pages
-
-#      - name: Commit Updated Documentation
-#        uses: EndBug/add-and-commit@v8
-#        with:
-#          message:  'Update Documentation (github action)'
-#          push:     'gh-pages'
-               
-
-#      - name: Deploy Pages
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{secrets.GITHUB_TOKEN}}
-#          publish_dir: ./
