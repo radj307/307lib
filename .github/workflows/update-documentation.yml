@@ -3,8 +3,7 @@ name: Update Documentation
 on:
   push:
     branches: [ main ]
-
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
     inputs:
       is-dry-run:
         type: boolean
