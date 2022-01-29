@@ -46,9 +46,11 @@ jobs:
 #        with:
 #          working-dir: ${{github.workspace}}/gh-pages
 
-      - name: 'Configure actions git user'
-        uses: fregante/setup-git-user@v1.0.1
-      
+      - name: 'Configure a Git User'
+        run:  |
+              git config user.email "radj307@gmail.com"
+              git config user.name  "radj307"
+
       - name: Commit Changes
         if:   github.event.inputs.is-dry-run == false
         run:  |
