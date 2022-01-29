@@ -48,8 +48,8 @@ jobs:
 
       - name: 'Configure a Git User'
         run:  |
-              git config user.email "radj307@gmail.com"
-              git config user.name  "radj307"
+              git config --global user.email "radj307@gmail.com"
+              git config --global user.name radj307
 
       - name: Commit Changes
         if:   github.event.inputs.is-dry-run == false
