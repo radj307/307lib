@@ -22,6 +22,12 @@ jobs:
       - name: Get the gh-pages branch
         run:  git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
 
+      - name: '[DEBUG]: ls'
+        run:  ls -lAgh
+        
+      - name: '[DEBUG]: ls ./gh-pages'
+        run:  ls -lAgh ./gh-pages
+
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
