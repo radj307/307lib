@@ -49,7 +49,7 @@ jobs:
       - name: Commit Changes
         if:   github.event.inputs.is-dry-run == false
         run:  |
-              cd ./gh-pages
+              cd ${{github.workspace}}/gh-pages
               git add -A
               git commit -m "Update Documentation"
               git push -u origin gh-pages
