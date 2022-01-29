@@ -46,6 +46,9 @@ jobs:
 #        with:
 #          working-dir: ${{github.workspace}}/gh-pages
 
+      - name: 'Configure actions git user'
+        uses: fregante/setup-git-user@v1.0.1
+      
       - name: Commit Changes
         if:   github.event.inputs.is-dry-run == false
         run:  |
