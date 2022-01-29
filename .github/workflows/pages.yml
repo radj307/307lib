@@ -25,13 +25,15 @@ jobs:
           path: gh-pages
           
       - name: List Dir
-        run:  ls -lAghR ${{github.workspace}}
+        run:  ls -lAgh ${{github.workspace}}/307lib
+        
+      - name: Change dir
+        run: cd ${{github.workspace}}/307lib/gh-pages
       
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
           additional-packages:  font-fira-code
-          working-directory: ${{github.workspace}}/307lib/gh-pages
 
 
       - name: Deploy Pages
