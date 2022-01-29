@@ -24,6 +24,8 @@ jobs:
 
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
+        with:
+          working-directory: gh-pages
 
       - name: Commit Updated Documentation
         uses: EndBug/add-and-commit@v8
