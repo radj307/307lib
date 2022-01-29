@@ -33,10 +33,18 @@ jobs:
               echo "########## WORKING DIRECTORY:"
               ls -lAgh ./
 
-      - name: Run doxygen
-        uses: radj307/action-doxygen@v0.2
-        with:
-          working-dir: ${{github.workspace}}/gh-pages
+      - name: Install Doxygen
+        run:  sudo apt-get update && sudo apt-get install doxygen graphviz -y
+        
+      - name: Run Doxygen
+        run:  |
+              cd gh-pages
+              doxygen ./Doxyfile
+       
+#      - name: Run doxygen
+#        uses: radj307/action-doxygen@v0.2
+#        with:
+#          working-dir: ${{github.workspace}}/gh-pages
 
       - name: Commit Changes
         if:   github.event.inputs.is-dry-run == false
