@@ -27,13 +27,11 @@ jobs:
           
       - name: List Dir
         run:  ls -lAgh ${{github.workspace}}
-        
-      - name: Change dir
-        run: cd ${{github.workspace}}/307lib/gh-pages
-      
+          
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
+          working-directory: ./gh-pages
           additional-packages:  font-fira-code
 
 
