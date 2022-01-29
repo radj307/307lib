@@ -32,7 +32,6 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
           working-directory: ./gh-pages
-          additional-packages:  font-fira-code
 
 
       - name: Deploy Pages
