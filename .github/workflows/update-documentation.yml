@@ -4,11 +4,6 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
-    inputs:
-      is-dry-run:
-        type: boolean
-        required: false
-        default:  'false'
 
 jobs:
   update-documentation:
@@ -52,7 +47,6 @@ jobs:
               git config --global user.name radj307
 
       - name: Commit Changes
-        if:   github.event.inputs.is-dry-run == false
         run:  |
               cd ${{github.workspace}}/gh-pages
               git add -A
