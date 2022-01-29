@@ -22,7 +22,10 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           ref:  gh-pages
-          path: 307lib #< This is always relative to ${{github.workspace}}
+          path: 307lib/gh-pages #< This is always relative to ${{github.workspace}}
+          
+      - name: List Dir
+        run:  ls -lAghR ${{github.workspace}}
       
       - name: Run doxygen
         uses: mattnotmitt/doxygen-action@v1.9.2
