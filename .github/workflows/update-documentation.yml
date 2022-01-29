@@ -34,7 +34,7 @@ jobs:
               ls -lAgh ./
 
       - name: Run doxygen
-        uses: radj307/action-doxygen@v0
+        uses: radj307/action-doxygen@v0.1
         with:
           working-dir: ${{github.workspace}}/gh-pages
 
