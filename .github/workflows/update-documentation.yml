@@ -27,11 +27,19 @@ jobs:
         run:  |
               cd "${{github.workspace}}/gh-pages"
               doxygen ./Doxyfile
+              
+      - name: Check for changes
+        id:   git-check
+        run:  |
+              cd "${{github.workspace}}/gh-pages"
+              echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
 
       - name: Commit Changes
+        if:   steps.git-check.outputs.modified == 'true'
         run:  |
               cd ${{github.workspace}}/gh-pages
-              git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
-              git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-              git add -A && git commit -m "Update Documentation"
+              git config --global user.name "radj307"
+              git config --global user.email "radj307@gmail.com"
+              git add -A
+              git commit -m "Update Documentation"
               git push
