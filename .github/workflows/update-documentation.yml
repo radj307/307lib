@@ -36,9 +36,7 @@ jobs:
 
       - name: Commit Changes
         if:   steps.git-check.outputs.modified == 'true'
-        uses: EndBug/add-and-commit@v7
+        uses: ad-m/github-push-action@master
         with:
-          cwd:            '${{github.workspace}}/gh-pages'
-          default_author: github_actor
-          message:        'Update Documentation'
+          directory:      "${{github.workspace}}/gh-pages"
           branch:         gh-pages
