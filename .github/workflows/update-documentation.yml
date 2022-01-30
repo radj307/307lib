@@ -36,10 +36,10 @@ jobs:
 
       - name: Commit Changes
         if:   steps.git-check.outputs.modified == 'true'
-        run:  |
-              cd ${{github.workspace}}/gh-pages
-              git config --global user.name "radj307"
-              git config --global user.email "radj307@gmail.com"
-              git add -A
-              git commit -m "Update Documentation"
-              git push
+        uses: EndBug/add-and-commit@v8.0.1
+        with:
+          cwd:            '${{github.workspace}}/gh-pages'
+          default_author: github_actor
+          message:        'Update Documentation'
+          new_branch:     gh-pages
+          push:           true
