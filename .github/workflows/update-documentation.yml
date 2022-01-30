@@ -36,10 +36,9 @@ jobs:
 
       - name: Commit Changes
         if:   steps.git-check.outputs.modified == 'true'
-        uses: EndBug/add-and-commit@v8.0.1
+        uses: EndBug/add-and-commit@v7
         with:
           cwd:            '${{github.workspace}}/gh-pages'
           default_author: github_actor
           message:        'Update Documentation'
           new_branch:     gh-pages
-          push:           true
