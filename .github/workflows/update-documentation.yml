@@ -1,0 +1,45 @@
+name: Update Documentation
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  
+jobs:
+  update-documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone the repository
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          persist-credentials: false
+      
+      # Clone the gh-pages branch into ./307lib/gh-pages
+      - name: 'Clone the Documentation'
+        run:  |
+              git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
+              cd gh-pages
+              git submodule update --init --recursive
+      
+      - name: Install Doxygen
+        run:  sudo apt-get update && sudo apt-get install -y doxygen graphviz
+        
+      - name: Run Doxygen
+        run:  |
+              cd "${{github.workspace}}/gh-pages"
+              doxygen ./Doxyfile
+              
+      - name: Check for changes
+        id:   git-check
+        run:  |
+              cd "${{github.workspace}}/gh-pages"
+              echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: Commit Changes
+        if:   steps.git-check.outputs.modified == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          directory:      "${{github.workspace}}/gh-pages"
+          branch:         gh-pages
