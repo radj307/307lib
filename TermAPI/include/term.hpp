@@ -15,39 +15,57 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <string>
 
  /**
   * @namespace	term
   * @brief		Contains pre-made ANSI sequences & helper functions for making sequences.
   */
 namespace term {
-	INLINE CONSTEXPR const char* debug{ "\033[38;5;99m[DEBUG]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* info{ "\033[38;5;246m[INFO]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* log{ "\033[38;5;7m[LOG]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* msg{ "\033[38;5;2m[MSG]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* warn{ "\033[38;5;208m[WARN]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* error{ "\033[38;5;1m[ERROR]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* crit{ "\033[38;5;88m[CRIT]\033[38;5;7m\t" };
-	INLINE CONSTEXPR const char* debug_no_color{ "[DEBUG]\t" };
-	INLINE CONSTEXPR const char* info_no_color{ "[INFO]\t" };
-	INLINE CONSTEXPR const char* log_no_color{ "[LOG]\t" };
-	INLINE CONSTEXPR const char* msg_no_color{ "[MSG]\t" };
-	INLINE CONSTEXPR const char* warn_no_color{ "[WARN]\t" };
-	INLINE CONSTEXPR const char* error_no_color{ "[ERROR]\t" };
-	INLINE CONSTEXPR const char* crit_no_color{ "[CRIT]\t" };
-	INLINE CONSTEXPR const char* placeholder{ "" };
+	struct Message {
+		const char* const body;
+		bool append_tab;
 
-	INLINE CONSTEXPR const char* get_debug(const bool& allow_color = true) noexcept { return(allow_color ? debug : debug_no_color); }
-	INLINE CONSTEXPR const char* get_info(const bool& allow_color = true) noexcept { return(allow_color ? info : info_no_color); }
-	INLINE CONSTEXPR const char* get_log(const bool& allow_color = true) noexcept { return(allow_color ? log : log_no_color); }
-	INLINE CONSTEXPR const char* get_msg(const bool& allow_color = true) noexcept { return(allow_color ? msg : msg_no_color); }
-	INLINE CONSTEXPR const char* get_warn(const bool& allow_color = true) noexcept { return(allow_color ? warn : warn_no_color); }
-	INLINE CONSTEXPR const char* get_error(const bool& allow_color = true) noexcept { return(allow_color ? error : error_no_color); }
-	INLINE CONSTEXPR const char* get_crit(const bool& allow_color = true) noexcept { return(allow_color ? crit : crit_no_color); }
-	INLINE CONSTEXPR const char* get_placeholder(const bool& allow_color = true) noexcept { return placeholder; }
-	#ifdef OS_WIN
-	#include <conio.h>
-	#endif
+		CONSTEXPR Message() = default;
+		explicit CONSTEXPR Message(const char* body, const bool& appendTab) : body{ body }, append_tab{ appendTab } {}
+
+		explicit operator const char* const() const { return body; }
+		operator std::string() const { return{ body }; }
+
+		friend std::ostream& operator<<(std::ostream& os, const Message& msg)
+		{
+			if (msg.body != nullptr) {
+				os << msg.body;
+				if (msg.append_tab)
+					os << '\t';
+			}
+			return os;
+		}
+	};
+
+	INLINE CONSTEXPR const Message debug{ "[DEBUG]", true };
+	INLINE CONSTEXPR const Message info{ "[INFO]", true };
+	INLINE CONSTEXPR const Message log{ "[LOG]", true };
+	INLINE CONSTEXPR const Message msg{ "[MSG]", true };
+	INLINE CONSTEXPR const Message warn{ "[WARN]", true };
+	INLINE CONSTEXPR const Message error{ "[ERROR]", true };
+	INLINE CONSTEXPR const Message crit{ "[CRIT]", true };
+	INLINE CONSTEXPR const Message placeholder{ "", false };
+
+	INLINE CONSTEXPR const Message get_debug(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", append_tab) : Message("[DEBUG]", append_tab)); }
+	INLINE CONSTEXPR const Message get_info(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", append_tab) : Message("[INFO]", append_tab)); }
+	INLINE CONSTEXPR const Message get_log(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;7m[LOG]\033[38;5;7m", append_tab) : Message("[LOG]", append_tab)); }
+	INLINE CONSTEXPR const Message get_msg(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;2m[MSG]\033[38;5;7m", append_tab) : Message("[MSG]", append_tab)); }
+	INLINE CONSTEXPR const Message get_warn(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", append_tab) : Message("[WARN]", append_tab)); }
+	INLINE CONSTEXPR const Message get_error(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", append_tab) : Message("[ERROR]", append_tab)); }
+	INLINE CONSTEXPR const Message get_crit(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", append_tab) : Message("[CRIT]", append_tab)); }
+
+	INLINE CONSTEXPR const Message get_placeholder(const bool& allow_color = true) noexcept { return placeholder; }
+
+#	ifdef OS_WIN
+#	include <conio.h>
+#	endif
+
 	using namespace std::chrono_literals;
 	using namespace ::ANSI;
 	/**
@@ -66,17 +84,17 @@ namespace term {
 			if (flush_output_stream)
 				fflush(stdout);
 			std::string seq; // already has enough space reserved
-			#ifdef OS_WIN
+#			ifdef OS_WIN
 			for (int i{ 0 }; !_kbhit() && i < timeout; ++i) // wait until a "key press" or until timeout is reached.
 				std::this_thread::sleep_for(1ms);
 			while (_kbhit()) // while a key is "pressed"
 				seq += static_cast<char>(_getch()); // get key code, cast to char
-			#else
+#			else
 			std::cin.clear();
 			for (char c; !std::cin.fail() && std::cin >> c; )
 				seq += c;
 			std::cin.clear();
-			#endif
+#			endif
 			return seq;
 		}
 	}
@@ -404,12 +422,12 @@ namespace term {
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SGR(const Ts&... modes)
 	{
-		#ifdef OS_WIN
+#ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
-		#else
+#else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
-		#endif
-	}
+#endif
+}
 
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SelectGraphicsRendition(const Ts&... modes)
@@ -465,7 +483,7 @@ namespace term {
 	/// @brief	Disable DEC Line Drawing mode.
 	inline static const Sequence DisableLineDrawing{ make_sequence(OSC, 'B') };
 
-	#ifdef OS_WIN
+#ifdef OS_WIN
 	/**
 	 * @brief		Set the console window title to a given string.
 	 * @param title	A string shorter than 254 characters. If the string is longer, it will be truncated.
@@ -477,7 +495,7 @@ namespace term {
 			title = title.substr(0ull, 254ull);
 		return make_sequence(OSC, "0;", title.c_str(), NULL_TERM);
 	}
-	#endif
+#endif
 
 	/**
 	 * @brief	Resets the following terminal properties:
@@ -500,10 +518,10 @@ namespace term {
 	/// @brief	Resets foreground (text) color & background color to their defaults.
 	inline static const Sequence ResetColor{ make_sequence(ResetTextColor, ResetBackColor) };
 
-	#pragma region AlternateScreenBuffer
+#pragma region AlternateScreenBuffer
 	/// @brief	Enables the alternate screen buffer.
 	inline static const Sequence EnableAltScreenBuffer{ make_sequence(CSI, "?1049", ENABLE) };
 	/// @brief	Disables the alternate screen buffer.
 	inline static const Sequence DisableAltScreenBuffer{ make_sequence(CSI, "?1049", DISABLE) };
-	#pragma endregion AlternateScreenBuffer
+#pragma endregion AlternateScreenBuffer
 }
