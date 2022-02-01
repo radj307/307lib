@@ -26,7 +26,7 @@ namespace term {
 		const char* const body;
 		bool append_tab;
 
-		CONSTEXPR Message() = default;
+		CONSTEXPR Message() : body{ nullptr }, append_tab{ false } {}
 		explicit CONSTEXPR Message(const char* body, const bool& appendTab) : body{ body }, append_tab{ appendTab } {}
 
 		explicit operator const char* const() const { return body; }
