@@ -38,3 +38,17 @@
 	static_assert(false, "<hasPendingDataSTDIN.h>:  Cannot determine which Operating System is being used, see <sysarch.h>");
 	#endif
 }
+
+/**
+ * @brief	Retrieve all pending data from STDIN and return it as a stringstream.
+ * @returns	std::stringstream
+ */
+[[nodiscard]] INLINE std::stringstream getPendingDataSTDIN()
+{
+#	pragma warning(disable:26800)
+	std::stringstream ss;
+	if (hasPendingDataSTDIN())
+		while (std::cin.good() && std::cin >> ss.rdbuf()) {}
+	return ss;
+#	pragma warning(default:26800)
+}

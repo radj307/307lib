@@ -133,10 +133,10 @@ namespace term {
 		 * @returns setcolor
 		 * @throws std::exception
 		 */
-		virtual setcolor set(const KeyType& key) const noexcept(false)
+		virtual setcolor set(const KeyType& key, const bool& quoteWhenInactive = false) const noexcept(false)
 		{
 			if (key_exists(key)) {
-				return _isActive ? _palette.at(key) : setcolor_placeholder;
+				return _isActive ? _palette.at(key) : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
 			}
 			if constexpr (var::Streamable<KeyType>)
 				throw make_exception("set(KeyType) failed:  Key not found: \"", key, "\"!");
@@ -147,17 +147,17 @@ namespace term {
 		 * @brief	Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
 		 * @returns setcolor
 		 */
-		virtual setcolor reset(const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt) const noexcept(false)
+		virtual setcolor reset(const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt, const bool& quoteWhenInactive = false) const noexcept(false)
 		{
-			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) } : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) } : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
 		}
 		/**
 		 * @brief	Reset the current terminal color, then set it to a new value.
 		 * @returns	setcolor
 		 */
-		virtual setcolor reset(const KeyType& key, const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt) const noexcept(false)
+		virtual setcolor reset(const KeyType& key, const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt, const bool& quoteWhenInactive = false) const noexcept(false)
 		{
-			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) + _palette.at(key).operator ANSI::Sequence()} : setcolor_placeholder;
+			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) + _palette.at(key).operator ANSI::Sequence()} : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
 		}
 
 		/**
