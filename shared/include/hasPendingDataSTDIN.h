@@ -24,31 +24,17 @@
  */
 [[nodiscard]] INLINE bool hasPendingDataSTDIN()
 {
-	#if defined(OS_WIN)
+#	if defined(OS_WIN)
 	// Return true when the STDIN file descriptor is waiting
 	return !_isatty(_fileno(__acrt_iob_func(0)));
-	#elif defined(OS_LINUX) || defined(OS_MAC) // POSIX
+#	elif defined(OS_LINUX) || defined(OS_MAC) // POSIX
 	struct timespec timeout { 0l, 0l };
 	fd_set fds{};
 	FD_ZERO(&fds);
 	FD_SET(0, &fds);
 	// return true when select says 1 fd (stdin) is ready.
 	return pselect(0 + 1, &fds, nullptr, nullptr, &timeout, nullptr) == 1;
-	#else
+#	else
 	static_assert(false, "<hasPendingDataSTDIN.h>:  Cannot determine which Operating System is being used, see <sysarch.h>");
-	#endif
-}
-
-/**
- * @brief	Retrieve all pending data from STDIN and return it as a stringstream.
- * @returns	std::stringstream
- */
-[[nodiscard]] INLINE std::stringstream getPendingDataSTDIN()
-{
-#	pragma warning(disable:26800)
-	std::stringstream ss;
-	if (hasPendingDataSTDIN())
-		while (std::cin.good() && std::cin >> ss.rdbuf()) {}
-	return ss;
-#	pragma warning(default:26800)
+#	endif
 }
