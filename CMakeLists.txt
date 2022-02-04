@@ -14,8 +14,8 @@ string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" TOP_LEV
 set(ENV{307lib_VERSION} "0.0.0")
 
 # Get the current version
-include(AutoVersion)
-GET_VERSION("307lib" "${CMAKE_CURRENT_SOURCE_DIR}")
+include(VersionTag)
+GET_VERSION_TAG("${CMAKE_CURRENT_SOURCE_DIR}" "307lib")
 
 # create project
 project("307lib" VERSION ${307lib_VERSION} LANGUAGES CXX)
