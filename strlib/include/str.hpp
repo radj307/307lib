@@ -56,7 +56,7 @@ namespace str {
 	 *	disable "use of a moved from object 'buffer'", speed comparison testing shows a major performance
 	 *	increase when using return-move() for these functions. (~300000ns)
 	 */
-	#pragma warning (disable: 26800) 
+#pragma warning (disable: 26800) 
 	 /**
 	  * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
 	  * @tparam ...Ts	Variadic Templated Arguments.
@@ -88,7 +88,7 @@ namespace str {
 	}
 
 	/**
-	 * @brief 
+	 * @brief
 	 * @tparam ContainerT	- Container Type. Accepts most STL containers that hold a single type, such as: std::vector, std::set, etc.
 	 * @tparam ElemT		- Templated Element Type. Must be compatible with ostream::operator<<.
 	 * @tparam ...VT		- Variadic Templated Separators. These are inserted in order between every element in the container.
@@ -108,6 +108,13 @@ namespace str {
 		return std::move(buffer.str());
 	}
 
+	inline static size_t count(std::stringstream& ss, char delim)
+	{
+		size_t count{ 0ull };
+		for (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}
+		return count;
+	}
+
 	/**
 	 * @brief Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.
 	 * @tparam DelimType	- Input Delimiter Type
@@ -116,17 +123,43 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<class DelimType, var::Streamable... VT>
-	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, VT... args)
+	template<class DelimType, var::Streamable... Ts>
+	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, Ts&&... args)
 	{
 		std::stringstream buffer;
-		(buffer << ... << args) << delimiter;
+		(buffer << ... << std::forward<Ts>(args)) << delimiter;
 		std::vector<std::string> vec;
-		vec.reserve(std::count(buffer.beg(), buffer.end(), delimiter));
+		vec.reserve(count(buffer, delimiter));
 		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
 		vec.shrink_to_fit();
 		return std::move(vec);
 	}
+
+	/**
+	 * @brief Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.
+	 * @tparam DelimType	- Input Delimiter Type
+	 * @tparam ...VT		- Variadic Templated Arguments.
+	 * @param delimiter		- Delimiter to use when splitting the result.
+	 * @param ...args		- Arguments to insert into the stream in sequential order.
+	 * @returns std::vector<std::string>
+	 */
+	template<class DelimType, var::Streamable T>
+	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, const std::vector<T>& args)
+	{
+		std::stringstream buffer;
+		size_t count{ 0ull };
+		for (auto it{ args.begin() }; it != args.end(); ++it, ++count) {
+			buffer << *it;
+			if (std::distance(it, args.end()) > 1)
+				buffer << ' ';
+		}
+		std::vector<std::string> vec;
+		vec.reserve(count);
+		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
+		vec.shrink_to_fit();
+		return std::move(vec);
+	}
+
 	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... Ts>
 	static T compare(const Pred& predicate, const T& fst, const Ts&... strings)
 	{
@@ -215,7 +248,7 @@ namespace str {
 				shortest = strtpl;
 		return shortest;
 	}
-	#pragma warning (default: 26800) // re-enable moved-from-object warning
+#pragma warning (default: 26800) // re-enable moved-from-object warning
 
 	/**
 	 * @brief Compare 2 strings.
@@ -233,14 +266,14 @@ namespace str {
 		return l == r;
 	}
 
-	#pragma region concepts
+#pragma region concepts
 	/**
 	 * @concept ConvertibleStringT
 	 * @brief Allows types that are constructor-convertible to std::string
 	 * @tparam T	- Input Type
 	 */
 	template<class... T> concept ConvertibleStringT = std::constructible_from<std::string, T...>;
-	#pragma endregion concepts
+#pragma endregion concepts
 
 	/**
 	 * @struct Printable
@@ -422,8 +455,21 @@ namespace str {
 	/**
 	 * @brief			Remove all specified characters from the given string.
 	 * @param str		Input String
+	 * @param delims	A string containing all of the blacklisted characters.
+	 * @returns			std::string
+	 */
+	inline WINCONSTEXPR static std::string strip(std::string s, const std::string_view& delims)
+	{
+		if (!s.empty() && !delims.empty())
+			s.erase(std::remove_if(s.begin(), s.end(), [&delims](auto&& ch) {return delims.find(ch) != std::string::npos; }), s.end());
+		return s;
+	}
+
+	/**
+	 * @brief			Remove all specified characters from the given string.
+	 * @param str		Input String
 	 * @param ...delims	Any number of characters to remove from the given string.
-	 * @returns			std::string_view
+	 * @returns			std::string
 	 */
 	template<std::same_as<char>... DelimT>
 	inline WINCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
@@ -458,7 +504,7 @@ namespace str {
 				}
 				++nread;
 				if (const Ch ch{ Tr::to_char_type(c1) }; !var::variadic_or(ch == delims...))
-				str.push_back(ch);
+					str.push_back(ch);
 				else break;
 			}
 		}
