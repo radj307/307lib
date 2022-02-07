@@ -32,7 +32,7 @@ endif()
 
 # Enables Unit Tests using googletest & googlemock.
 option(307lib_ENABLE_UNIT_TESTING "Enable the unit testing subproject." OFF)
-if (307lib_ENABLE_UNIT_TESTING)
+if (307lib_ENABLE_UNIT_TESTING AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/UnitTests")
 	message(STATUS "Unit Testing is enabled.")
 	add_subdirectory("UnitTests")
 endif()
