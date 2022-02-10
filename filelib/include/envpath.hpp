@@ -21,6 +21,7 @@
 #include <str.hpp>
 #include <fileutil.hpp>
 #include <var.hpp>
+#include <make_exception.hpp>
 
 #include <optional>
 #include <filesystem>
