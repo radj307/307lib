@@ -13,6 +13,7 @@
 #include <make_exception.hpp>
 
 #include <iostream>
+#include <iomanip>
 #include <chrono>
 #include <thread>
 #include <string>
@@ -22,12 +23,51 @@
   * @brief		Contains pre-made ANSI sequences & helper functions for making sequences.
   */
 namespace term {
+	/**
+	 * @struct		indentor
+	 * @brief		Handles calculating variable indentation for strings or output streams.
+	 * @tparam T	The integral type to use for the size values.
+	 */
+	template<std::integral T = std::streamsize>
+	struct indentor {
+		/// @brief	The size type used.
+		using size_type = T;
+	protected:
+		/// @brief	The calculated size of the indentation, in characters.
+		const size_type sz;
+	public:
+		/**
+		 * @brief		Constructor
+		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
+		 * @param used	The number of characters that are already printed and should be accounted for before printing the indentation.
+		 */
+		CONSTEXPR indentor(size_type const& size, size_type const& used = static_cast<size_type>(0)) : sz{ (size < used) ? static_cast<size_type>(0) : (size - used) } {}
+
+		CONSTEXPR size_type size() const { return sz; }
+		WINCONSTEXPR std::string toString(const char& c = ' ') const { return std::string(c, sz); }
+
+		WINCONSTEXPR operator std::string() const { return toString(); }
+
+		/**
+		 * @brief	Stream insertion operator
+		 * @returns	std::ostream&
+		 */
+		friend std::ostream& operator<<(std::ostream& os, const indentor<T>& ind)
+		{
+			if (ind.sz == static_cast<T>(0))
+				return os;
+			return os << std::setw(static_cast<std::streamsize>(ind.sz - static_cast<T>(1))) << ' ';
+		}
+	};
+	/// @brief	Variable on-demand indentation for output streams.
+	using indent = indentor<std::streamsize>;
+
 	struct Message {
 		const char* const body;
-		bool append_tab;
+		const indent::size_type margin_sz;
 
-		CONSTEXPR Message() : body{ nullptr }, append_tab{ false } {}
-		explicit CONSTEXPR Message(const char* body, const bool& appendTab) : body{ body }, append_tab{ appendTab } {}
+		CONSTEXPR Message() : body{ nullptr }, margin_sz{ 10ull } {}
+		explicit CONSTEXPR Message(const char* body, const indent::size_type& marginSize = 10ull) : body{ body }, margin_sz{ marginSize } {}
 
 		explicit operator const char* const() const { return body; }
 		operator std::string() const { return{ body }; }
@@ -35,30 +75,31 @@ namespace term {
 		friend std::ostream& operator<<(std::ostream& os, const Message& msg)
 		{
 			if (msg.body != nullptr) {
-				os << msg.body;
-				if (msg.append_tab)
-					os << '\t';
+				std::string body{ msg.body };
+				os << body << indent(msg.margin_sz, body.size());
 			}
 			return os;
 		}
 	};
 
-	INLINE CONSTEXPR const Message debug{ "[DEBUG]", true };
-	INLINE CONSTEXPR const Message info{ "[INFO]", true };
-	INLINE CONSTEXPR const Message log{ "[LOG]", true };
-	INLINE CONSTEXPR const Message msg{ "[MSG]", true };
-	INLINE CONSTEXPR const Message warn{ "[WARN]", true };
-	INLINE CONSTEXPR const Message error{ "[ERROR]", true };
-	INLINE CONSTEXPR const Message crit{ "[CRIT]", true };
-	INLINE CONSTEXPR const Message placeholder{ "", false };
+	INLINE CONSTEXPR const indent::size_type MessageMarginSize{ 10 };
 
-	INLINE CONSTEXPR const Message get_debug(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", append_tab) : Message("[DEBUG]", append_tab)); }
-	INLINE CONSTEXPR const Message get_info(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", append_tab) : Message("[INFO]", append_tab)); }
-	INLINE CONSTEXPR const Message get_log(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;7m[LOG]\033[38;5;7m", append_tab) : Message("[LOG]", append_tab)); }
-	INLINE CONSTEXPR const Message get_msg(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;2m[MSG]\033[38;5;7m", append_tab) : Message("[MSG]", append_tab)); }
-	INLINE CONSTEXPR const Message get_warn(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", append_tab) : Message("[WARN]", append_tab)); }
-	INLINE CONSTEXPR const Message get_error(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", append_tab) : Message("[ERROR]", append_tab)); }
-	INLINE CONSTEXPR const Message get_crit(const bool& allow_color = true, const bool& append_tab = true) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", append_tab) : Message("[CRIT]", append_tab)); }
+	INLINE CONSTEXPR const Message debug{ "[DEBUG]", MessageMarginSize };
+	INLINE CONSTEXPR const Message info{ "[INFO]", MessageMarginSize };
+	INLINE CONSTEXPR const Message log{ "[LOG]", MessageMarginSize };
+	INLINE CONSTEXPR const Message msg{ "[MSG]", MessageMarginSize };
+	INLINE CONSTEXPR const Message warn{ "[WARN]", MessageMarginSize };
+	INLINE CONSTEXPR const Message error{ "[ERROR]", MessageMarginSize };
+	INLINE CONSTEXPR const Message crit{ "[CRIT]", MessageMarginSize };
+	INLINE CONSTEXPR const Message placeholder{ "", 0 };
+
+	INLINE CONSTEXPR const Message get_debug(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", indentation) : Message("[DEBUG]", indentation)); }
+	INLINE CONSTEXPR const Message get_info(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", indentation) : Message("[INFO]", indentation)); }
+	INLINE CONSTEXPR const Message get_log(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;7m[LOG]\033[38;5;7m", indentation) : Message("[LOG]", indentation)); }
+	INLINE CONSTEXPR const Message get_msg(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;2m[MSG]\033[38;5;7m", indentation) : Message("[MSG]", indentation)); }
+	INLINE CONSTEXPR const Message get_warn(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", indentation) : Message("[WARN]", indentation)); }
+	INLINE CONSTEXPR const Message get_error(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", indentation) : Message("[ERROR]", indentation)); }
+	INLINE CONSTEXPR const Message get_crit(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", indentation) : Message("[CRIT]", indentation)); }
 
 	INLINE CONSTEXPR const Message get_placeholder(const bool& allow_color = true) noexcept { return placeholder; }
 
@@ -427,7 +468,7 @@ namespace term {
 #else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
 #endif
-}
+	}
 
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SelectGraphicsRendition(const Ts&... modes)
