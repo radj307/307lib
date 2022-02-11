@@ -314,19 +314,19 @@ namespace term {
 
 #		pragma region MessageHeaders
 		// @brief	Returns [DEBUG] header that uses colors only if the palette is enabled.
-		Message get_debug() const noexcept { return get_debug(_enable, MessageMarginSize); }
+		Message get_debug() const noexcept { return term::get_debug(_enable, MessageMarginSize); }
 		// @brief	Returns [INFO] header that uses colors only if the palette is enabled.
-		Message get_info() const noexcept { return get_info(_enable, MessageMarginSize); }
+		Message get_info() const noexcept { return term::get_info(_enable, MessageMarginSize); }
 		// @brief	Returns [LOG] header that uses colors only if the palette is enabled.
-		Message get_log() const noexcept { return get_log(_enable, MessageMarginSize); }
+		Message get_log() const noexcept { return term::get_log(_enable, MessageMarginSize); }
 		// @brief	Returns [MSG] header that uses colors only if the palette is enabled.
-		Message get_msg() const noexcept { return get_msg(_enable, MessageMarginSize); }
+		Message get_msg() const noexcept { return term::get_msg(_enable, MessageMarginSize); }
 		// @brief	Returns [WARN] header that uses colors only if the palette is enabled.
-		Message get_warn() const noexcept { return get_warn(_enable, MessageMarginSize); }
+		Message get_warn() const noexcept { return term::get_warn(_enable, MessageMarginSize); }
 		// @brief	Returns [ERROR] header that uses colors only if the palette is enabled.
-		Message get_error() const noexcept { return get_error(_enable, MessageMarginSize); }
+		Message get_error() const noexcept { return term::get_error(_enable, MessageMarginSize); }
 		// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
-		Message get_crit() const noexcept { return get_crit(_enable, MessageMarginSize); }
+		Message get_crit() const noexcept { return term::get_crit(_enable, MessageMarginSize); }
 		// @brief	Returns an empty space header the same size as a normal message's indentation.
 		Message get_placeholder() const noexcept { return term::placeholder; }
 #		pragma endregion MessageHeaders
