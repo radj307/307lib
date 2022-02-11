@@ -160,7 +160,7 @@ namespace term {
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.
-		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset, reset_f, reset_b;
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset, reset_f, reset_b, placeholder;
 	};
 
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
@@ -180,6 +180,7 @@ namespace term {
 	template<> inline const setcolor setcolor::reset{ color::reset };
 	template<> inline const setcolor setcolor::reset_f{ color::reset_f };
 	template<> inline const setcolor setcolor::reset_b{ color::reset_b };
+	template<> inline const setcolor setcolor::placeholder{ ANSI::Sequence() };
 	//setcolor::white{ color::white }, setcolor::reset{ color::reset }, setcolor::reset_f{ color::reset_f }, setcolor::reset_b{ color::reset_b };
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
@@ -199,6 +200,7 @@ namespace term {
 	template<> inline const wsetcolor wsetcolor::reset{ color::wreset };
 	template<> inline const wsetcolor wsetcolor::reset_f{ color::wreset_f };
 	template<> inline const wsetcolor wsetcolor::reset_b{ color::wreset_b };
+	template<> inline const wsetcolor wsetcolor::placeholder{ ANSI::wSequence() };
 }
 
 namespace color {
