@@ -15,94 +15,118 @@
  *
  *	Palette myPalette{
  *	{
- *		{ MyKeyType::TYPE1, color::red },
- *		{ MyKeyType::TYPE2, { color::green, color::Layer::FOREGROUND, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE } },
- *		{ MyKeyType::TYPE3, color::blue },
+ *		std::make_pair(MyKeyType::TYPE1, color::red),
+ *		std::make_pair(MyKeyType::TYPE2, setcolor{ color::green, color::Layer::FOREGROUND, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE }),
+ *		std::make_pair(MyKeyType::TYPE3, color::blue),
  *	}
  *	};
  *
  *	void example()
  *	{
- *		std::cout << myPalette(MyKeyType::TYPE1) << "red text" << color::reset;
+ *		std::cout << myPalette(MyKeyType::TYPE1) << "red text" << myPalette();
  *	}
  */
 #pragma once
 #include <Segments.h>
 #include <setcolor.hpp>
-#include <make_exception.hpp>
+#include <Message.hpp>
 
-#include <unordered_map>
+#include <var.hpp>
+
+#include <fstream>
+#include <algorithm>
+#include <map>
 
 namespace term {
 	/**
-	 * @struct palette
-	 * @brief Contains a key-color map and functions to set terminal colors inline.
-	 * @tparam KeyType	- The type of key to use as an identifier for each color. An enum of type char is recommended as each element only uses 1 byte.
+	 * @class		palette
+	 * @brief		Maps color sequences to a templated key type.
+	 *\n			Provides convenience methods for recalling color sequences by using keys.
+	 *\n			Very useful when you want to control the usage of escape sequences throughout your program.
+	 * @tparam Key	
 	 */
-	template<typename KeyType>
+	template<typename Key>
 	class palette {
 	public:
-		using PaletteType = std::unordered_map<KeyType, setcolor>;
-	private:
-		PaletteType _palette;
-		bool _isActive{ false }; ///< @brief When false, a blank setcolor placeholder will always be returned from the set() function. This can be used to programmatically enable/disable output colors depending on need.
-		ANSI::Sequence _default_reset_seq{ color::reset };
+		using key_type = Key;
+		using value_type = setcolor;
+		using pair_type = std::pair<key_type, value_type>;
+		using container_type = std::map<key_type, value_type>;
+		using size_type = container_type::size_type;
+		using iterator = container_type::iterator;
+		using const_iterator = container_type::const_iterator;
+	protected:
+		container_type _palette;
+		bool _enable{ true };
+		ANSI::Sequence _reset_seq{ color::reset };
 
+		inline static ANSI::Sequence return_if_disabled(const char& c) { return{ std::string(1ull, c) }; }
+		inline static ANSI::Sequence return_if_disabled(const ANSI::Sequence& seq) { return seq; }
 
 	public:
+#		pragma region Constructors
+		/**
+		 * @brief	Default Constructor
+		 */
 		palette() = default;
-		palette(PaletteType palette) : _palette{ std::move(palette) }, _isActive{ true } {}
-		template<class... VT>
-		palette(VT... color_pairs) : _palette{ std::move(color_pairs)... }, _isActive{ true } {}
 
 		/**
-		 * @brief Retrieve the reference of this palette's isActive boolean, allowing it to be modified.
-		 * @returns bool&
+		 * @brief				Constructor
+		 * @param palette		rvalue reference to a pre-existing palette container.
+		 * @param enable		When true, escape sequences are enabled.
+		 * @param reset_seq		The escape sequence used by the reset functions.
 		 */
-		constexpr bool& isActive() { return _isActive; }
+		palette(container_type&& palette, const bool& enable = true, const ANSI::Sequence& reset_seq = color::reset) : _palette{ std::move(palette) }, _enable{ enable }, _reset_seq{ reset_seq } {}
 
 		/**
-		 * @brief Function that
-		 * @param new_state	- When true, the palette will be set to active.
-		 * @returns bool
+		 * @brief				Variadic Constructor
+		 * @tparam Ts...		Variadic color pair types.
+		 * @param ...colors		Any number of color pairs.
 		 */
-		constexpr bool setActive(const bool& new_state)
+		template<var::same_or_convertible<pair_type>... Ts>
+		palette(Ts&&... colors) : _palette{ std::forward<Ts>(colors)... } {}
+#		pragma endregion Constructors
+
+#		pragma region Functions
+		/**
+		 * @brief	Check if the palette is currently enabled.
+		 * @returns	bool
+		 */
+		constexpr bool enabled() const { return _enable; }
+
+		/**
+		 * @brief	Check if the palette is currently enabled.
+		 *\n		This function exists for backwards-compatibility with previous versions of palette.hpp
+		 * @returns	bool
+		 */
+		constexpr bool isActive() const { return enabled(); }
+
+		/**
+		 * @brief			Enable or disable the palette.
+		 * @param enable	When true, the palette will be enabled.
+		 * @returns			bool
+		 *\n				The previous enabled state.
+		 */
+		constexpr bool setEnabled(const bool& enable)
 		{
-			const auto copy{ _isActive };
-			_isActive = new_state;
+			const auto copy{ _enable };
+			_enable = enable;
 			return copy;
 		}
 
 		/**
-		 * @brief Set this palette as active or inactive.
-		 * @param active	- When true, palette is active.
-		 * @returns ColorPalette<KeyType>&
+		 * @brief			Enable or disable the palette.
+		 *\n				This function exists for backwards-compatibility with previous versions of palette.hpp
+		 * @param enable	When true, the palette will be enabled.
+		 * @returns			bool
+		 *\n				The previous enabled state.
 		 */
-		constexpr auto operator=(const bool& active)
-		{
-			_isActive = active;
-			return *this;
-		}
-		/**
-		 * @brief Reset this palette's key-color map.
-		 * @param palette	- New key-color map
-		 * @returns ColorPalette<KeyType>&
-		 */
-		constexpr auto operator=(const PaletteType& palette)
-		{
-			_palette = palette;
-			return *this;
-		}
+		constexpr bool setActive(const bool& active) { return setEnabled(active); }
 
-		/**
-		 * @brief Check if a given key exists in the palette.
-		 * @param key	- Key to check for.
-		 * @returns bool
-		 */
-		virtual bool key_exists(const KeyType& key) const
-		{
-			return _palette.contains(key);
-		}
+		// @brief	Enable this color palette.
+		constexpr void enable() { setEnabled(true); }
+		// @brief	Disable this color palette.
+		constexpr void disable() { setEnabled(false); }
 
 		/**
 		 * @brief		Change the default sequence used to reset terminal colors & formatting, when an override isn't specified.
@@ -110,10 +134,10 @@ namespace term {
 		 * @returns		ANSI::Sequence
 		 *\n			The previous default reset sequence.
 		 */
-		ANSI::Sequence setDefaultResetSequence(const ANSI::Sequence& seq)
+		virtual ANSI::Sequence setDefaultResetSequence(const ANSI::Sequence& seq)
 		{
-			const auto copy{ _default_reset_seq };
-			_default_reset_seq = seq;
+			const auto copy{ _reset_seq };
+			_reset_seq = seq;
 			return copy;
 		}
 
@@ -122,54 +146,218 @@ namespace term {
 		 * @returns		ANSI::Sequence
 		 *\n			The current default reset sequence.
 		 */
-		ANSI::Sequence getDefaultResetSequence() const
+		virtual ANSI::Sequence getDefaultResetSequence() const { return _reset_seq; }
+
+		/**
+		 * @brief		Check if a given key exists in the palette.
+		 *\n			This function exists for backwards-compatibility with previous versions of palette.hpp
+		 * @param key	The key to check for.
+		 * @returns		bool
+		 */
+		virtual bool key_exists(key_type&& key) const { return contains(std::forward<key_type>(key)); }
+
+#		pragma region ContainerPassthroughFunctions
+		// @brief	Get an iterator to the specified key if it exists, or end if it doesn't.
+		virtual const_iterator find(key_type&& key) const { return _palette.find(std::forward<key_type>(key)); }
+		// @brief	Get an iterator for the beginning of the palette container.
+		virtual const_iterator begin() const { return _palette.begin(); }
+		// @brief	Get an iterator for the end of the palette container.
+		virtual const_iterator end() const { return _palette.end(); }
+		// @brief	Check if the palette has any registered color keys.
+		virtual bool empty() const { return _palette.empty(); }
+		// @brief	Get the number of registered color keys.
+		virtual size_type size() const { return _palette.size(); }
+		// @brief	Check if the palette contains the specified color key.
+		virtual bool contains(key_type&& key) const { return _palette.contains(std::forward<key_type>(key)); }
+		// @brief	Insert a new color key pair into the palette if one doesn't already exist.
+		auto&& insert(pair_type&& pr) { return _palette.insert(std::forward<pair_type>(pr)); }
+		// @brief	Insert a new color & key into the palette, or assign a key to the specified color if it already exists.
+		auto&& insert_or_assign(key_type&& key, value_type&& value) { return _palette.insert_or_assign(std::forward<key_type>(key), std::forward<value_type>(value)); }
+#		pragma endregion ContainerPassthroughFunctions
+#		pragma endregion Functions
+
+#		pragma region SequenceGetters
+		/**
+		 * @brief		Return a sequence that will set the current console output color to the one associated with a specified key.
+		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @param key	The key associated with the desired color.
+		 * @returns		ANSI::Sequence
+		 */
+		ANSI::Sequence set(key_type&& key) const noexcept
 		{
-			return _default_reset_seq;
+			if (_enable)
+				if (const auto it{ find(std::forward<key_type>(key)) }; it != end())
+					return it->second;
+			return setcolor::placeholder;
 		}
 
 		/**
-		 * @brief Retrieve the mapped color setter functor for the given key when active, otherwise returns a placeholder.
-		 * @param key	- Key associated with the target color.
-		 * @returns setcolor
-		 * @throws std::exception
+		 * @brief				Return a sequence that will set the current console output color to the one associated with a specified key.
+		 *\n					If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
+		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
+		 * @param key			The key associated with the desired color.
+		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
+		 * @returns				ANSI::Sequence
 		 */
-		virtual setcolor set(const KeyType& key, const bool& quoteWhenInactive = false) const noexcept(false)
+		template<var::any_same_or_convertible<std::string, char> T>
+		ANSI::Sequence set_or(key_type&& key, const T& if_disabled) const noexcept
 		{
-			if (key_exists(key)) {
-				return _isActive ? _palette.at(key) : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
+			if (_enable)
+				return set(std::forward<key_type>(key));
+			return return_if_disabled(if_disabled);
+		}
+
+		/**
+		 * @brief		Return a sequence that will reset the current console output color using the default reset sequence.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @returns		ANSI::Sequence
+		 */
+		ANSI::Sequence reset() const noexcept
+		{
+			if (_enable)
+				return _reset_seq;
+			return setcolor::placeholder;
+		}
+
+		/**
+		 * @brief				Return a sequence that will reset the current console output color using the default reset sequence.
+		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
+		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
+		 * @returns				ANSI::Sequence
+		 */
+		template<var::any_same_or_convertible<std::string, char> T>
+		ANSI::Sequence reset_or(const T& if_disabled) const noexcept
+		{
+			if (_enable)
+				return reset();
+			return return_if_disabled(if_disabled);
+		}
+
+		/**
+		 * @brief		Return a sequence that will reset the current console output color using the default reset sequence, and set it to the one associated with a specified key.
+		 *\n			If the palette is enabled and the key doesn't exist, only the reset sequence is returned.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @param key	The key associated with the desired color.
+		 * @returns		ANSI::Sequence
+		 */
+		ANSI::Sequence reset(key_type&& key) const noexcept
+		{
+			if (_enable) {
+				if (const auto it{ find(std::forward<key_type>(key)) }; it != end())
+					return ANSI::make_sequence(_reset_seq, it->second);
+				return _reset_seq;
 			}
-			if constexpr (var::Streamable<KeyType>)
-				throw make_exception("set(KeyType) failed:  Key not found: \"", key, "\"!");
-			throw make_exception("set(KeyType) failed:  Key not found!");
+			return setcolor::placeholder;
 		}
 
 		/**
-		 * @brief	Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
-		 * @returns setcolor
-		 */
-		virtual setcolor reset(const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt, const bool& quoteWhenInactive = false) const noexcept(false)
+		 * @brief				Return a sequence that will reset the current console output color using the default reset sequence, and set it to the one associated with a specified key.
+		 *\n					If the palette is enabled and the key doesn't exist, only the reset sequence is returned.
+		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
+		 * @param key			The key associated with the desired color.
+		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
+		 * @returns				ANSI::Sequence
+		*/
+		template<var::any_same_or_convertible<std::string, char> T>
+		ANSI::Sequence reset_or(key_type&& key, const T& if_disabled) const noexcept
 		{
-			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) } : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
-		}
-		/**
-		 * @brief	Reset the current terminal color, then set it to a new value.
-		 * @returns	setcolor
-		 */
-		virtual setcolor reset(const KeyType& key, const std::optional<ANSI::Sequence>& reset_sequence = std::nullopt, const bool& quoteWhenInactive = false) const noexcept(false)
-		{
-			return _isActive ? setcolor{ reset_sequence.value_or(_default_reset_seq) + _palette.at(key).operator ANSI::Sequence()} : (quoteWhenInactive ? setcolor("\"") : setcolor_placeholder);
+			if (_enable)
+				return reset(std::forward<key_type>(key));
+			return return_if_disabled(if_disabled);
 		}
 
+
 		/**
-		 * @brief	Retrieve the mapped color setter functor for the given key. You can use this with output stream operator<< as an inline console color changer.
-		 * @returns setcolor
+		 * @brief		Return a sequence that will set the current console output color to the one associated with a specified key.
+		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @param key	The key associated with the desired color.
+		 * @returns		ANSI::Sequence
 		 */
-		virtual setcolor operator()(const KeyType& key) const { return set(key); }
-		virtual setcolor operator()() const { return reset(); }
-		explicit operator PaletteType() const { return _palette; }
+		ANSI::Sequence operator[](key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
+
+		/**
+		 * @brief		Return a sequence that will set the current console output color to the one associated with a specified key.
+		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @param key	The key associated with the desired color.
+		 * @returns		ANSI::Sequence
+		 */
+		ANSI::Sequence operator()(key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
+
+		/**
+		 * @brief				Return a sequence that will set the current console output color to the one associated with a specified key.
+		 *\n					If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
+		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
+		 * @param key			The key associated with the desired color.
+		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
+		 * @returns				ANSI::Sequence
+		 */
+		ANSI::Sequence operator()(key_type&& key, auto&& if_disabled) const noexcept { return set_or(std::forward<key_type>(key), std::forward<decltype(if_disabled)>(if_disabled)); }
+
+		/**
+		 * @brief		Return a sequence that will reset the current console output color using the default reset sequence.
+		 *\n			If the palette is disabled, nothing happens.
+		 * @returns		ANSI::Sequence
+		 */
+		ANSI::Sequence operator()() const noexcept { return reset(); }
+
+		/**
+		 * @brief				Return a sequence that will reset the current console output color using the default reset sequence.
+		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
+		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
+		 * @returns				ANSI::Sequence
+		 */
+		ANSI::Sequence operator()(auto&& if_disabled) const noexcept { return reset_or(if_disabled); }
+#		pragma endregion SequenceGetters
+
+#		pragma region FileIO
+		// ENUM
+		friend std::ofstream& operator<<(std::ofstream& ofs, const palette<key_type>& p) requires (std::is_enum_v<key_type>)
+		{
+			for (const auto& [key, color] : p._palette)
+				ofs << std::to_string(static_cast<int>(key)) << "=" << color << '\n';
+			return ofs;
+		}
+		// NON-ENUM
+		friend std::ofstream& operator<<(std::ofstream& ofs, const palette<key_type>& p) requires (!std::is_enum_v<key_type>&& var::Streamable<key_type, std::ofstream>)
+		{
+			for (const auto& [key, color] : p._palette)
+				ofs << key << "=" << color << '\n';
+			return ofs;
+		}
+		// ENUM
+		friend std::ifstream& operator>>(std::ifstream& ifs, palette<key_type>& p) requires (std::is_enum_v<key_type>)
+		{
+			for (std::string lnbuf; std::getline(ifs, lnbuf, '\n'); ) {
+				if (!lnbuf.empty()) {
+					lnbuf.erase(std::remove_if(lnbuf.begin(), lnbuf.end(), isspace), lnbuf.end()); // remove spaces
+					if (auto eq{ lnbuf.find('=') }; eq != std::string::npos) {
+						if (const auto keystr{ lnbuf.substr(0ull, eq) }; std::all_of(keystr.begin(), keystr.end(), isdigit)) {
+							p.insert_or_assign(static_cast<key_type>(std::stoi(keystr)), setcolor{ lnbuf.substr(eq + 1ull) });
+						}
+						else continue;
+					}
+				}
+			}
+			return ifs;
+		}
+		// NON-ENUM
+		friend std::ifstream& operator>>(std::ifstream& ifs, palette<key_type>& p) requires (!std::is_enum_v<key_type>&& var::Streamable<key_type, std::ifstream>)
+		{
+			for (std::string lnbuf; std::getline(ifs, lnbuf, '\n'); ) {
+				if (!lnbuf.empty()) {
+					lnbuf.erase(std::remove_if(lnbuf.begin(), lnbuf.end(), isspace), lnbuf.end()); // remove spaces
+					if (auto eq{ lnbuf.find('=') }; eq != std::string::npos) {
+						p.insert_or_assign(static_cast<key_type>(lnbuf.substr(0ull, eq)), setcolor{ lnbuf.substr(eq + 1ull) });
+					}
+				}
+			}
+			return ifs;
+		}
+#		pragma endregion FileIO
 	};
 }
 
-namespace color {
-	using term::palette;
-}
+namespace color { using term::palette; }
