@@ -312,6 +312,23 @@ namespace term {
 		ANSI::Sequence operator()(auto&& if_disabled) const noexcept { return reset_or(if_disabled); }
 #		pragma endregion SequenceGetters
 
+#		pragma region MessageHeaders
+		// @brief	Returns [DEBUG] header that uses colors only if the palette is enabled.
+		Message debug() const noexcept { return get_debug(_enable, MessageMarginSize); }
+		// @brief	Returns [INFO] header that uses colors only if the palette is enabled.
+		Message info() const noexcept { return get_info(_enable, MessageMarginSize); }
+		// @brief	Returns [LOG] header that uses colors only if the palette is enabled.
+		Message log() const noexcept { return get_log(_enable, MessageMarginSize); }
+		// @brief	Returns [MSG] header that uses colors only if the palette is enabled.
+		Message msg() const noexcept { return get_msg(_enable, MessageMarginSize); }
+		// @brief	Returns [WARN] header that uses colors only if the palette is enabled.
+		Message warn() const noexcept { return get_warn(_enable, MessageMarginSize); }
+		// @brief	Returns [ERROR] header that uses colors only if the palette is enabled.
+		Message error() const noexcept { return get_error(_enable, MessageMarginSize); }
+		// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
+		Message crit() const noexcept { return get_crit(_enable, MessageMarginSize); }
+#		pragma endregion MessageHeaders
+
 #		pragma region FileIO
 		// ENUM
 		friend std::ofstream& operator<<(std::ofstream& ofs, const palette<key_type>& p) requires (std::is_enum_v<key_type>)
