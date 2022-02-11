@@ -40,7 +40,7 @@ namespace term {
 	INLINE CONSTEXPR const Message warn{ "[WARN]", MessageMarginSize };
 	INLINE CONSTEXPR const Message error{ "[ERROR]", MessageMarginSize };
 	INLINE CONSTEXPR const Message crit{ "[CRIT]", MessageMarginSize };
-	INLINE CONSTEXPR const Message placeholder{ "", 0 };
+	INLINE CONSTEXPR const Message placeholder{ "", MessageMarginSize };
 
 	INLINE CONSTEXPR const Message get_debug(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", indentation) : Message("[DEBUG]", indentation)); }
 	INLINE CONSTEXPR const Message get_info(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", indentation) : Message("[INFO]", indentation)); }
