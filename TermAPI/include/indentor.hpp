@@ -9,6 +9,7 @@
 
 #include <ostream>
 #include <concepts>
+#include <iomanip>
 
 namespace term {
 	/**

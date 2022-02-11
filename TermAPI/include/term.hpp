@@ -15,7 +15,6 @@
 #include <make_exception.hpp>
 
 #include <iostream>
-#include <iomanip>
 #include <chrono>
 #include <thread>
 #include <string>
