@@ -1,5 +1,4 @@
 #include <TermAPI.hpp>
-#include <xlog.hpp>
 
 #include <fileio.hpp>
 #include <TokenRedux.hpp>
@@ -9,8 +8,6 @@
 
 #include <iostream>
 
-#include <redirect.hpp>
-#include <xlog.hpp>
 #include <ArgumentRedux.hpp>
 
 #include <ParamsAPI2.hpp>
@@ -83,10 +80,10 @@ int main(const int argc, char** argv)
 
 		return 0;
 	} catch (const std::exception& ex) {
-		std::cerr << xlog::error << ex.what() << std::endl;
+		std::cerr << term::error << ex.what() << std::endl;
 		return -1;
 	} catch (...) {
-		std::cerr << xlog::error << "An unknown exception occurred!" << std::endl;
+		std::cerr << term::error << "An unknown exception occurred!" << std::endl;
 		return -2;
 	}
 }
