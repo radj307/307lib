@@ -4,6 +4,8 @@
  * @brief	Contains the Message object definition, and the constant pre-defined message typesf.
  */
 #pragma once
+#include <sysarch.h>
+#include <regex>
 #include "indentor.hpp"
 
 namespace term {
@@ -14,6 +16,7 @@ namespace term {
 	struct Message {
 		const char* const body;
 		const indent::size_type margin_sz;
+		const bool use_regex_indent{ true };
 
 		CONSTEXPR Message() : body{ nullptr }, margin_sz{ 10ull } {}
 		explicit CONSTEXPR Message(const char* body, const indent::size_type& marginSize = 10ull) : body{ body }, margin_sz{ marginSize } {}
@@ -25,7 +28,12 @@ namespace term {
 		{
 			if (msg.body != nullptr) {
 				std::string body{ msg.body };
-				os << body << indent(msg.margin_sz, body.size());
+				if (msg.use_regex_indent) {
+					std::smatch match;
+					if (std::regex_search(body, match, std::basic_regex<char>("\\[[A-Z]+?\\]")))
+						body = match.str();
+				}
+				os << msg.body << indent(msg.margin_sz, body.size());
 			}
 			return os;
 		}
