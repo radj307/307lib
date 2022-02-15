@@ -56,6 +56,17 @@ namespace ex {
 	}
 }
 
+struct IllegalTypeError {
+	template<typename T>
+	IllegalTypeError(T&&) {
+		static_assert(!std::same_as<T, T>, 
+			"Invalid type passed as a parameter to make_exception()!\nTypes must have a valid std::ostream operator<< overload."
+		);
+	}
+};
+
+inline ex::except make_exception(IllegalTypeError, ...) = delete;
+
 /**
  * @brief			Create an exception with a given message.
  * @tparam ...Ts	Any number of types with an overloaded operator<< for std::ostream.
@@ -95,7 +106,7 @@ WINCONSTEXPR ex::except make_exeption(Ts&&... message)
 /**
  * @def		MAKE_EXCEPTION_HPP_SIMPLE
  * @brief	When defined, this macro will disable <make_exception.hpp>'s advanced feature set,
- *\n		including multi-line template exceptions, and derivatives of the except object.
+ *\n		including derivatives of the except object.
  */
 #define MAKE_EXCEPTION_HPP_SIMPLE
 #undef MAKE_EXCEPTION_HPP_SIMPLE
@@ -104,12 +115,8 @@ WINCONSTEXPR ex::except make_exeption(Ts&&... message)
 #ifndef MAKE_EXCEPTION_HPP_SIMPLE
 
 namespace ex {
-	/**
-	 * @struct	mlexcept
-	 * @brief	A multi-line exception object that is derived from except.
-	 */
-	class mlexcept : public except {
-		std::vector<std::unique_ptr<except>> _lines;
+	class permexcept : public except {
+		permexcept(){}
 	};
 }
 
