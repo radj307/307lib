@@ -1,7 +1,11 @@
 #pragma once
 #include <sysarch.h>
 
+#define _USE_MATH_DEFINES
 #include <cmath>
+#ifdef OS_WIN // M$VC doesn't include math constants in <cmath>, so include <math.h> to fix this broke asf implementation
+#include <math.h>
+#endif
 #include <utility>
 #include <string>
 #include <algorithm>
