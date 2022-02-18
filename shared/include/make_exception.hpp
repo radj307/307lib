@@ -56,17 +56,6 @@ namespace ex {
 	}
 }
 
-struct IllegalTypeError {
-	template<typename T>
-	IllegalTypeError(T&&) {
-		static_assert(!std::same_as<T, T>, 
-			"Invalid type passed as a parameter to make_exception()!\nTypes must have a valid std::ostream operator<< overload."
-		);
-	}
-};
-
-inline ex::except make_exception(IllegalTypeError, ...) = delete;
-
 /**
  * @brief			Create an exception with a given message.
  * @tparam ...Ts	Any number of types with an overloaded operator<< for std::ostream.
