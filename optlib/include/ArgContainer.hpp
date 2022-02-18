@@ -53,17 +53,30 @@ namespace opt {
 		ArgContainerType _args;
 
 	public:
+		/**
+		 * @brief	Default Constructor.
+		 */
 		ArgContainer() = default;
+		/**
+		 * @brief		Constructor
+		 * @param args	Argument Container rvalue.
+		 * @param arg0	Optional value of argv[0].
+		 */
 		ArgContainer(ArgContainerType&& args, std::optional<std::string> arg0 = std::nullopt) : _arg0{ std::move(arg0) }, _args{ std::move(args) } {}
+		/**
+		 * @brief			Variadic Constructor.
+		 * @param ...args	Arguments
+		 */
 		template<ValidArg... VT> requires var::at_least_one<VT...>
 		explicit ArgContainer(const VT&... args) : _arg0{ std::nullopt }, _args{ var::variadic_accumulate<VariantArgumentType>(args...) } {}
 
-		WINCONSTEXPR bool operator==(const ArgContainer& o) const { return _args.size() == o._args.size() && _args == o._args; }
-		WINCONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
+		[[nodiscard]] WINCONSTEXPR bool operator==(const ArgContainer& o) const { return _args.size() == o._args.size() && _args == o._args; }
+		[[nodiscard]] WINCONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
-		WINCONSTEXPR operator const ArgContainerType() const { return _args; }
+		// @brief	Get a copy of the argument list.
+		[[nodiscard]] WINCONSTEXPR operator const ArgContainerType() const { return _args; }
 
-		#pragma region ForwardVectorFunctions
+	#pragma region ForwardVectorFunctions
 		WINCONSTEXPR auto begin() const { return _args.begin(); }
 		WINCONSTEXPR auto end() const { return _args.end(); }
 		WINCONSTEXPR auto rbegin() const { return _args.rbegin(); }
@@ -90,32 +103,94 @@ namespace opt {
 			_args.pop_back();
 			return front;
 		}
-		#pragma endregion ForwardVectorFunctions
+	#pragma endregion ForwardVectorFunctions
 
 		/// @brief Retrieve the optional argv[0] argument. @returns std::optional<std::string>
-		auto arg0() const { return _arg0; }
+		[[nodiscard]] auto arg0() const { return _arg0; }
 
 		/// @brief Set the value of the optional argv[0] argument, and return the previous value. @returns std::optional<std::string>
-		auto arg0(std::optional<std::string> arg0) { const auto copy{ _arg0 }; _arg0 = arg0; return copy; }
+		[[nodiscard]] auto arg0(std::optional<std::string> arg0) { const auto copy{ _arg0 }; _arg0 = arg0; return copy; }
 
-		#pragma region FindFunctions
+	#pragma region FindFunctions
 		/**
 		 * @brief			Find an argument in the container.
 		 * @tparam Types...	If none are specified, allows arguments with any type to be a match. If at least one is specified, only allows arguments with the specified types to be a match.
 		 * @tparam Name		Input name type. (string | char)
 		 * @param name		Argument name to search for.
-		 * @param off		Option begin iterator position. If not specified, defaults to begin().
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
 		 * @param end		Optional end iterator position. If not specified, defaults to end().
 		 * @returns			ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		WINCONSTEXPR ArgContainerIteratorType find(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 };
 			for (auto it{ off.value_or(_args.begin()) }, endit{ end.value_or(_args.end()) }; it != endit; ++it)
 				if ((match_any_type || var::variadic_or(it->index() == get_index<Types>()...)) && get_name(*it) == InputWrapper(name))
 					return it;
 			return _args.end();
+		}
+
+		/**
+		 * @brief			Find the starting position of the specified compound flag within the given range.
+		 * @tparam Type		Compound Flag Type.
+		 * @param ...name	Compounded Flag to search for. Cannot be blank.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
+		 * @returns			ArgContainerIteratorType
+		 */
+		template<std::same_as<CompoundFlag> Type>
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find(const std::string& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		{
+			if (name.empty())
+				return _args.end();
+
+			const auto& length{ name.size() };
+
+			const auto& endit{ end.value_or(_args.end()) };
+			
+			ArgContainerIteratorType pos{ _args.end() }; //< iterator for the first flag
+			size_t i{ 0ull }; //< count consecutive matched flags
+
+			for (auto it{ off.value_or(_args.begin()) }; i < length && it != endit; ++it) {
+				if (auto flag = std::get_if<Flag>(&*it)) {
+					if (const char& f{ flag->flag() }; f == name.at(i++)) {
+						if (pos == _args.end())
+							pos = it;
+						continue;
+					}
+				}
+				pos = _args.end();
+				i = 0ull;
+			}
+
+			return pos;
+		}
+		/**
+		 * @brief			Find the starting position of the specified compound flag within the given range.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Name		Variadic char Type(s). These are combined into a std::string and passed to find.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
+		 * @param ...name	Compounded Flag to search for.
+		 * @returns			ArgContainerIteratorType
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<char>... Name>
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find(const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt, const Name&... compoundFlags) const
+		{
+			return find<CompoundFlag>(std::string{ compoundFlags... }, off, end);
+		}
+		/**
+		 * @brief			Find the starting position of the specified compound flag.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Name		Variadic char Type(s). These are combined into a std::string and passed to find.
+		 * @param ...name	Input Compounded Flags to search for.
+		 * @returns			ArgContainerIteratorType
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<char>... Name>
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find(const Name&... compoundFlags) const
+		{
+			return find<CompoundFlag>(std::string{ compoundFlags... }, std::nullopt, std::nullopt);
 		}
 
 		/**
@@ -128,8 +203,8 @@ namespace opt {
 		 * @param ...names	Argument name(s) to search for. If left empty, any argument name will be considered a match, so long as it has a matching type.
 		 * @returns			ArgContainerIteratorType
 		 */
-		template<ValidArg... Types, ValidInputType Name>
-		WINCONSTEXPR ArgContainerIteratorType find_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		template<ValidArg... Types, ValidInputType Names>
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find_any(const Names& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			return find<Types...>(name, off, end);
 		}
@@ -145,7 +220,7 @@ namespace opt {
 		 * @returns			ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		WINCONSTEXPR ArgContainerIteratorType find_any(const Names&... names) const
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find_any(const Names&... names) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			for (auto it{ begin() }, endit{ end() }; it != endit; ++it)
@@ -168,7 +243,7 @@ namespace opt {
 		 * @returns				ArgContainerIteratorType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		WINCONSTEXPR ArgContainerIteratorType find_any(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
+		[[nodiscard]] WINCONSTEXPR ArgContainerIteratorType find_any(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
 		{
 			WINCONSTEXPR const bool match_any_type{ var::none<Types...> }, match_any_name{ var::none<Names...> };
 			for (auto it{ first }; it != last; ++it) {
@@ -193,7 +268,7 @@ namespace opt {
 		 * @returns			ArgContainerIteratorContainerType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		WINCONSTEXPR const ArgContainerIteratorContainerType find_all(const Names&... names) const
+		[[nodiscard]] WINCONSTEXPR const ArgContainerIteratorContainerType find_all(const Names&... names) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			ArgContainerIteratorContainerType vec;
@@ -219,7 +294,7 @@ namespace opt {
 		 * @returns			ArgContainerIteratorContainerType
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		WINCONSTEXPR const ArgContainerIteratorContainerType find_all(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
+		[[nodiscard]] WINCONSTEXPR const ArgContainerIteratorContainerType find_all(const std::tuple<Names...>& names, const ArgContainerIteratorType& first, const ArgContainerIteratorType& last) const
 		{
 			WINCONSTEXPR const bool match_any_type{ sizeof...(Types) == 0 }, match_any_name{ sizeof...(Names) == 0 };
 			ArgContainerIteratorContainerType vec;
@@ -234,20 +309,20 @@ namespace opt {
 			vec.shrink_to_fit();
 			return vec;
 		}
-		#pragma endregion FindFunctions
+	#pragma endregion FindFunctions
 
-		#pragma region CheckFunctions
+	#pragma region CheckFunctions
 		/**
 		 * @brief			Check if a given argument was included on the commandline.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching.
 		 * @tparam Name		Argument name type. (string|char)
 		 * @param name		Argument name to check.
-		 * @param off		Option begin iterator position. If not specified, defaults to begin().
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
 		 * @param end		Optional end iterator position. If not specified, defaults to end().
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		WINCONSTEXPR const bool check(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
+		[[nodiscard]] WINCONSTEXPR const bool check(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const
 		{
 			return find<Types...>(name, off, end) != _args.end();
 		}
@@ -256,19 +331,19 @@ namespace opt {
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching.
 		 * @tparam Name		Argument name type. (string|char)
 		 * @param name		Argument name to check.
-		 * @param off		Option begin iterator position. If not specified, defaults to begin().
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
 		 * @param end		Optional end iterator position. If not specified, defaults to end().
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType Name>
-		WINCONSTEXPR const bool check_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const { return check<Types...>(name, off, end); }
+		[[nodiscard]] WINCONSTEXPR const bool check_any(const Name& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const { return check<Types...>(name, off, end); }
 		/**
 		 * @brief			Check if any arguments of a given type were included on the commandline.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching. Leaving this blank is the equivalent of calling !empty().
 		 * @returns			bool
 		 */
 		template<ValidArg... Types>
-		WINCONSTEXPR const bool check() const
+		[[nodiscard]] WINCONSTEXPR const bool check() const
 		{
 			return find_any<Types...>() != _args.end();
 		}
@@ -280,7 +355,7 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidArg... Types, ValidInputType... Names>
-		WINCONSTEXPR const bool check_any(const Names&... names) const
+		[[nodiscard]] WINCONSTEXPR const bool check_any(const Names&... names) const
 		{
 			return find_any<Types...>(names...) != _args.end();
 		}
@@ -291,13 +366,56 @@ namespace opt {
 		 * @returns			bool
 		 */
 		template<ValidInputType... Names>
-		WINCONSTEXPR const bool check_all(const Names&... names) const
+		[[nodiscard]] WINCONSTEXPR const bool check_all(const Names&... names) const
 		{
 			return var::variadic_and(find(names) != _args.end()...);
 		}
-		#pragma endregion CheckFunctions
+		/**
+		 * @brief			Check if a given compound flag was included on the commandline.
+		 *\n				This function differs from non-compound-flag functions in that it requires a non-empty name.
+		 * @tparam Type		Compound Flag Type.
+		 * @param name		Compound Flag name to search for.
+		 *\n				If left blank, no compound arguments can be considered a match.
+		 * @returns			bool
+		 */
+		template<std::same_as<CompoundFlag> Type>
+		[[nodiscard]] WINCONSTEXPR const bool check(const std::string& name) const
+		{
+			return !name.empty() && find<CompoundFlag>(name, _args.begin(), _args.end()) != _args.end();
+		}
+		/**
+		 * @brief			Check if any of the given compound flags were included on the commandline.
+		 *\n				This function differs from non-compound-flag functions in that it requires a non-empty name.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Names	Variadic std::string Types.
+		 * @param names		Compound Flag Name(s) to search for.
+		 *\n				Requires at least one.
+		 * @returns			bool
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<std::string>... Names>
+		[[nodiscard]] WINCONSTEXPR const bool check_any(const Names&... names) const
+		{
+			static_assert(sizeof...(Names) > 0ull, "You must include at least one name when searching for compound flags. See the function documentation for check_any<CompoundFlag>()");
+			return var::variadic_or(find<CompoundFlag>(names) != _args.end()...);
+		}
+		/**
+		 * @brief			Check if all of the given compound flags were included on the commandline.
+		 *\n				This function differs from non-compound-flag functions in that it requires a non-empty name.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Names	Variadic std::string Types.
+		 * @param names		Compound Flag Name(s) to search for.
+		 *\n				Requires at least one.
+		 * @returns			bool
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<std::string>... Names>
+		[[nodiscard]] WINCONSTEXPR const bool check_all(const Names&... names) const
+		{
+			static_assert(sizeof...(Names) > 0ull, "You must include at least one name when searching for compound flags. See the function documentation for check_all<CompoundFlag>().");
+			return var::variadic_and(find<CompoundFlag>(names) != _args.end()...);
+		}
+	#pragma endregion CheckFunctions
 
-		#pragma region GetFunctions
+	#pragma region GetFunctions
 		/**
 		 * @brief			Get a specified argument from within the container. This function is the equivalent of safely dereferencing the result of find() and returning it as an optional.
 		 * @tparam Types...	Zero or more argument type(s) to consider as matching. Leaving this blank will allow any argument types to match.
@@ -365,9 +483,9 @@ namespace opt {
 			}
 			return{}; // return empty
 		}
-		#pragma endregion GetFunctions
+	#pragma endregion GetFunctions
 
-		#pragma region GetRangeFunction
+	#pragma region GetRangeFunction
 		/**
 		 * @brief				Retrieve a range of arguments from the list, with an optional predicate function for filtering.
 		 * @param from			The beginning position in the list.
@@ -422,6 +540,6 @@ namespace opt {
 				cont.emplace_back(it);
 			return decltype(*this){ std::move(cont), _arg0 };
 		}
-		#pragma endregion GetRangeFunction
+	#pragma endregion GetRangeFunction
 	};
 }

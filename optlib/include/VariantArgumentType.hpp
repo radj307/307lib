@@ -12,6 +12,17 @@ namespace opt {
 	/// @brief Variant type that allows std::monostate (null/all), Parameter, Option, & Flag types, in that order.
 	using VariantArgumentType = std::variant<std::monostate, Parameter, Option, Flag>;
 
+	struct VariantArg {
+		using type = std::variant<std::monostate, Parameter, Option, Flag>;
+
+		type value;
+
+		CONSTEXPR VariantArg(auto&& v) : value{ v } {}
+
+		operator type() const { return value; }
+		explicit operator type& () { return value; }
+	};
+
 	/**
 	 * @struct Index
 	 * @brief Constant compile-time variant index object. This allows retrieving types from a variant argument with friendly names rather than raw numbers or types.
@@ -37,7 +48,7 @@ namespace opt {
 
 
 	template<ValidArg Type>
-	constexpr const Index& get_index() noexcept(false)
+	static constexpr const Index& get_index() noexcept(false)
 	{
 		if constexpr (std::same_as<Type, Parameter>)
 			return Index::PARAMETER;

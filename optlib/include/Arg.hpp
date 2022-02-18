@@ -6,24 +6,46 @@
 #include <string>
 
 namespace opt {
-	/// @brief The variable type contained within a Parameter instance.
+	/// @brief	The variable type contained within a Parameter instance.
 	using ParameterType = std::string;
-	/// @brief The variable type contained within an Option instance.
+	/// @brief	The variable type contained within an Option instance.
 	using OptionType = std::pair<std::string, std::optional<std::string>>;
-	/// @brief The variable type contained within a Flag instance.
+	/// @brief	The variable type contained within a Flag instance.
 	using FlagType = std::pair<char, std::optional<std::string>>;
+	// @brief	The variable type contained with a CompoundFlag instance.
+	using CompoundFlagType = std::pair<std::vector<char>, std::optional<std::string>>;
+
+	inline CompoundFlagType toCFT(const std::string& s, const std::optional<std::string>& capture = std::nullopt)
+	{
+		std::vector<char> vec;
+		vec.reserve(s.size());
+		for (const auto& c : s)
+			vec.emplace_back(c);
+		vec.shrink_to_fit();
+		return CompoundFlagType(std::move(vec), capture);
+	}
+	inline std::string fromCFT(const CompoundFlagType& compoundFlag)
+	{
+		std::string name;
+		name.reserve(compoundFlag.first.size());
+		for (const auto& c : compoundFlag.first)
+			name.push_back(c);
+		name.shrink_to_fit();
+		return name;
+	}
 
 	/// @brief Concept constraint for Arg subtypes. Allows: ( ParameterType | OptionType | FlagType )
 	template<typename T> concept ValidArgType = std::same_as<T, ParameterType> || std::same_as<T, OptionType> || std::same_as<T, FlagType>;
+	template<typename T> concept ValidArgTypeOrCompound = ValidArgType<T> || std::same_as<T, CompoundFlagType>;
 	/// @brief Concept constraint for Option/Flag pair subtypes
-	template<typename T> concept CanHaveValueArgumentType = std::same_as<T, OptionType> || std::same_as<T, FlagType>;
+	template<typename T> concept CanHaveValueArgumentType = std::same_as<T, OptionType> || std::same_as<T, FlagType> || std::same_as<T, CompoundFlagType>;
 
 	/**
 	 * @class Arg
 	 * @brief Polymorphic argument wrapper class that exposes helper functions.
 	 * @tparam T	- Argument Type. Allows ParameterType, OptionType, or FlagType.
 	 */
-	template<ValidArgType T>
+	template<ValidArgTypeOrCompound T>
 	class Arg {
 		T _arg;
 
@@ -65,6 +87,8 @@ namespace opt {
 				return _arg.first;
 			else if constexpr (std::same_as<T, FlagType>) // Convert flags to std::string
 				return std::string(1ull, _arg.first);
+			else if constexpr (std::same_as<T, CompoundFlagType>)
+				return fromCFT(_arg);
 			return{};
 		}
 
@@ -77,6 +101,7 @@ namespace opt {
 
 		/// @brief Retrieve this Arg's name as it appeared on the commandline. @returns const std::string()
 		[[nodiscard]] constexpr auto name() const noexcept { return operator const std::string(); }
+		[[nodiscard]] WINCONSTEXPR auto flag() const noexcept requires std::same_as<T, FlagType> { return operator const std::string().front(); }
 
 		/// @brief Check if this Arg has a captured argument. @returns bool
 		[[nodiscard]] constexpr bool hasv() const noexcept requires CanHaveValueArgumentType<T> { return (std::same_as<T, OptionType> || std::same_as<T, FlagType>) && _arg.second.has_value(); }
@@ -129,14 +154,19 @@ namespace opt {
 		return os;
 	}
 
-	using Option = Arg<std::pair<std::string, std::optional<std::string>>>;
-	using Flag = Arg<std::pair<char, std::optional<std::string>>>;
-	using Parameter = Arg<std::string>;
+	using Option = Arg<OptionType>;
+	using Flag = Arg<FlagType>;
+	using CompoundFlag = Arg<CompoundFlagType>;
+	using Parameter = Arg<ParameterType>;
 
 	/**
 	 * @brief Allows types: ( Parameter | Option | Flag )
 	 */
 	template<class T> concept ValidArg = std::same_as<T, Parameter> || std::same_as<T, Option> || std::same_as<T, Flag>;
+	/**
+	 * @brief Allows types: ( Parameter | Option | Flag | CompoundFlag )
+	 */
+	template<class T> concept ValidArgOrCompound = ValidArg<T> || std::same_as<T, CompoundFlag>;
 	/**
 	 * @brief Allows types: ( Option | Flag )
 	 */
