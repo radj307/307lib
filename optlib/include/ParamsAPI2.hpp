@@ -102,12 +102,48 @@ namespace opt {
 			return std::nullopt;
 		}
 
+		/**
+		 * @brief			Retrieve a CompoundFlag.
+		 *\n				This function accepts variadic chars instead of a string.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Name...	At least one char type.
+		 * @param name		At least one character representing the compound flag, in order.
+		 * @returns			std::optional<CompoundFlag>
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<char>... Name> requires var::at_least_one<Name...>
+		[[nodiscard]] constexpr const std::optional<CompoundFlag> typeget(const Name&... name) const noexcept
+		{
+			return typeget<CompoundFlag>(std::string{ name... }, _args.begin(), _args.end());
+		}
+
+		/**
+		 * @brief			Retrieve the captured argument from a CompoundFlag.
+		 * @tparam Type		Compound Flag Type.
+		 * @param name		A string containing each flag that composes the compound flag, in order.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
+		 * @returns			std::optional<std::string>
+		 */
 		template<std::same_as<CompoundFlag> Type>
 		[[nodiscard]] constexpr const std::optional<std::string> typegetv(const std::string& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
 		{
 			if (const auto& f{ typeget<CompoundFlag>(name, off, end) }; f.has_value())
 				return f.value().getv();
 			return std::nullopt;
+		}
+
+		/**
+		 * @brief			Retrieve the captured argument from a CompoundFlag.
+		 *\n				This function accepts variadic chars instead of a string.
+		 * @tparam Type		Compound Flag Type.
+		 * @tparam Name...	At least one char type.
+		 * @param name		At least one character representing the compound flag, in order.
+		 * @returns			std::optional<CompoundFlag>
+		 */
+		template<std::same_as<CompoundFlag> Type, var::same_or_convertible<char>... Name> requires var::at_least_one<Name...>
+		[[nodiscard]] constexpr const std::optional<std::string> typegetv(const Name&... name) const noexcept
+		{
+			return typegetv<CompoundFlag>(std::string{ name... }, _args.begin(), _args.end());
 		}
 
 		/**
@@ -125,6 +161,7 @@ namespace opt {
 			const auto target{ get<Type>(name, off, end) };
 			return (target.has_value() ? std::get<Type>(target.value()) : static_cast<std::optional<Type>>(std::nullopt));
 		}
+
 		/**
 		 * @brief			Retrieve any arguments of a specified type as its actual type; not as a variant.
 		 * @tparam Type		Type to search for & return as.
@@ -139,6 +176,7 @@ namespace opt {
 				return std::get<Type>(t.value());
 			return std::nullopt;
 		}
+
 		/**
 		 * @brief			Retrieve all arguments of a specified type, as their actual type; not as a variant.
 		 * @tparam Type		Type to search for & return as.
