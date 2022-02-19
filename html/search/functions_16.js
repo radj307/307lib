@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['_7eflagbase_1283',['~FlagBase',['../classcolor_1_1format_1_1_flag_base.html#a0afa2c37df194e1a63aeceeee3d48aaf',1,'color::format::FlagBase']]],
-  ['_7eproc_1284',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]],
-  ['_7erand_1285',['~Rand',['../structrng_1_1_rand.html#a4fedec6fe885e48cdc0afff654d82c70',1,'rng::Rand']]],
-  ['_7etokenbase_1286',['~TokenBase',['../structfile_1_1base_1_1_token_base.html#aceab37d02e7abd367affccad19e3728a',1,'file::base::TokenBase']]],
-  ['_7etokenizerbase_1287',['~TokenizerBase',['../classtoken_1_1_tokenizer_base.html#ae15d61a740058f7b764f0b5802ea4330',1,'token::TokenizerBase::~TokenizerBase()'],['../classfile_1_1base_1_1_tokenizer_base.html#a1f1db362d6636cb0ab2367b31d015a49',1,'file::base::TokenizerBase::~TokenizerBase()']]],
-  ['_7etokenizerbasefunctions_1288',['~TokenizerBaseFunctions',['../structtoken_1_1_tokenizer_base_functions.html#aa80d1056fbf7f4f6ab499cdc1f5b3ebd',1,'token::TokenizerBaseFunctions']]],
-  ['_7etokenparserbase_1289',['~TokenParserBase',['../classfile_1_1base_1_1_token_parser_base.html#aadb2c0849ada411cd95f812e39c4e4fc',1,'file::base::TokenParserBase']]]
+  ['xlog_1351',['xLog',['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog::xLog(const level::LogLevel &amp;log_level=level::Default, const bool &amp;add_prefix=true)'],['../classxlog_1_1x_log.html#a1b704910d56f80b45f4713c2a38f5af3',1,'xlog::xLog::xLog(const OutputTarget&lt; StreamType &gt; &amp;out, const level::LogLevel &amp;log_level=level::Default, const bool &amp;add_prefix=true)']]],
+  ['xlogs_1352',['xLogs',['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs::xLogs(const OutputTarget&lt; StreamType &gt; &amp;out, const level::LogLevel &amp;log_level=level::Default, const bool &amp;add_prefix=true)'],['../classxlog_1_1x_logs.html#a1c2d5316a1733e7fc418f712b03b30eb',1,'xlog::xLogs::xLogs(const level::LogLevel &amp;log_level=level::Default, const bool &amp;add_prefix=true)']]]
 ];

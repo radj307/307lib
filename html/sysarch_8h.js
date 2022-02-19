@@ -1,7 +1,9 @@
 var sysarch_8h =
 [
+    [ "_STRINGIZE_INTERNAL", "sysarch_8h.html#ad1512bd26ba3ed605e470cd2f2bb83f9", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
+    [ "CONSTEVAL", "sysarch_8h.html#a9020686a7e116e040711b247d4f864ba", null ],
     [ "CONSTEXPR", "sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280", null ],
     [ "INLINE", "sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116", null ],
     [ "LANG_C", "sysarch_8h.html#a69f1d54d0578e6b3400b774500973439", null ],
@@ -15,5 +17,6 @@ var sysarch_8h =
     [ "OS_NONE", "sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9", null ],
     [ "OS_WIN", "sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b", null ],
     [ "STRICT_POINTER_SAFETY", "sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff", null ],
+    [ "STRINGIZE", "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb", null ],
     [ "WINCONSTEXPR", "sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960", null ]
 ];

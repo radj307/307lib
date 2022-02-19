@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['wsequence_1549',['wSequence',['../namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3',1,'ANSI']]],
-  ['wsetcolor_1550',['wsetcolor',['../namespacecolor.html#a661329f1ca1cec17890ea4eef3da37fa',1,'color']]]
+  ['value_5ftype_1625',['value_type',['../classterm_1_1palette.html#aed7b8cd933802708e8b6c42cec92b6ee',1,'term::palette']]],
+  ['variablet_1626',['VariableT',['../namespacefile_1_1ini.html#aa69516302ad141a002476d66d4bbd08f',1,'file::ini']]],
+  ['variant_1627',['variant',['../structopt_1_1token_1_1_parser_1_1_input.html#a53d4c67f3a1d8aa96fc8b667d67daa9f',1,'opt::token::Parser::Input']]],
+  ['variantargumenttype_1628',['VariantArgumentType',['../namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]],
+  ['vindent_1629',['VIndent',['../namespacestr.html#a576148d382d024fc11d46dc0ef839cec',1,'str']]]
 ];

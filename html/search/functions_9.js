@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_5fexists_1095',['key_exists',['../classcolor_1_1palette.html#a318ac0fcf15bd53c04de68ccbd808b8b',1,'color::palette']]]
+  ['join_1162',['join',['../namespacestr.html#acf8be91baa116c4582e66f6278db959f',1,'str']]]
 ];

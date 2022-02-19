@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['variableindentation_1272',['VariableIndentation',['../structstr_1_1_variable_indentation.html#a0b7ed36241b97b1ff080384c0e1ba4d3',1,'str::VariableIndentation']]],
-  ['variadic_5fand_1273',['variadic_and',['../namespacevar.html#acd4adc200dff50fed630c357d3b5fd16',1,'var']]],
-  ['variadic_5for_1274',['variadic_or',['../namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a',1,'var']]],
-  ['vectorize_1275',['vectorize',['../namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0',1,'opt']]],
-  ['virtualargument_1276',['VirtualArgument',['../structopt_1_1_virtual_argument.html#abe716209d169dceacb7475fce4d711f1',1,'opt::VirtualArgument']]]
+  ['up_1340',['up',['../structterm_1_1_cursor.html#ab4379e7827ebc4639dfd59ee36827554',1,'term::Cursor']]]
 ];

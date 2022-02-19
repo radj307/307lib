@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tokentype_1555',['TokenType',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074',1,'token::TokenType()'],['../namespacefile_1_1_default_defs.html#a68f2f42f98851a7a90ad2aae970e0c9f',1,'file::DefaultDefs::TokenType()']]]
+  ['tokentype_1636',['TokenType',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799',1,'token::DefaultDefs']]],
+  ['type_1637',['Type',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0f',1,'opt::token']]]
 ];

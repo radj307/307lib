@@ -5,9 +5,9 @@ var structprocess_1_1_mode =
     [ "contains", "structprocess_1_1_mode.html#a008fcc7d2515078e82596f5f101b45bf", null ],
     [ "operator char", "structprocess_1_1_mode.html#aaf3feb9a82779ba963d29b619d789b9e", null ],
     [ "str", "structprocess_1_1_mode.html#a0eb6d1b414b38c19b64fad2a6c2b453e", null ],
-    [ "BINARY", "structprocess_1_1_mode.html#a50760f0fb87c6a0ea47a31c30629ba6b", null ],
-    [ "NONE", "structprocess_1_1_mode.html#a4ea89dfdd2d26d1640d6a81119d4f3ad", null ],
-    [ "READ", "structprocess_1_1_mode.html#a890c4a3d697331e647b59eb07019656d", null ],
-    [ "TEXT", "structprocess_1_1_mode.html#ad5dc0ccf1d1f7733c4918c96ce41bc34", null ],
-    [ "WRITE", "structprocess_1_1_mode.html#a80fcf280f42da37ae612bc69ca7872f8", null ]
+    [ "BINARY", "structprocess_1_1_mode.html#ac7364b0aaddb9497c41379e020de3a8f", null ],
+    [ "NONE", "structprocess_1_1_mode.html#ae27b31b4b3562fad21a7257d5983d213", null ],
+    [ "READ", "structprocess_1_1_mode.html#a636e70e25eb0cbb39b2282367f0eaf44", null ],
+    [ "TEXT", "structprocess_1_1_mode.html#a4b8e47bd0aa03d6e139f5247fd17c8b5", null ],
+    [ "WRITE", "structprocess_1_1_mode.html#abfd9e4654085f06ae291dee9de602740", null ]
 ];

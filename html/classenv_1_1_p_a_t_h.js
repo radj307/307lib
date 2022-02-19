@@ -10,6 +10,7 @@ var classenv_1_1_p_a_t_h =
     [ "exists", "classenv_1_1_p_a_t_h.html#a3c7a654d3355f808683c3b2f21553f4c", null ],
     [ "findInPath", "classenv_1_1_p_a_t_h.html#a00dad07a6095f4d212dbe773e25e13d1", null ],
     [ "findWithExtension", "classenv_1_1_p_a_t_h.html#af2e02777bf5672a0adde91c8eb5927bd", null ],
+    [ "get_program_dir", "classenv_1_1_p_a_t_h.html#acebcb576ff203225f0f6d08a6785e4f8", null ],
     [ "rbegin", "classenv_1_1_p_a_t_h.html#ac554e9ffbfd45c2806ff6973c99d6dd3", null ],
     [ "rend", "classenv_1_1_p_a_t_h.html#a29799c8605a97271a342e006f12f1d14", null ],
     [ "resolve", "classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72", null ],

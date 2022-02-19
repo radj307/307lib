@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aligntype_1552',['AlignType',['../namespacetoken_1_1parse.html#aab4e33870ec294d68ddcc88d96097923',1,'token::parse']]]
+  ['aligntype_1633',['AlignType',['../namespacefile_1_1ini.html#aa86b3efdca35b91db3538f0f9cebaafe',1,'file::ini']]]
 ];

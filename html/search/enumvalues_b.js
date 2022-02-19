@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['open_5farray_1587',['OPEN_ARRAY',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074acad76732f05f48d11662f07169a473a9',1,'token::OPEN_ARRAY()'],['../namespacefile_1_1_default_defs.html#a68f2f42f98851a7a90ad2aae970e0c9facad76732f05f48d11662f07169a473a9',1,'file::DefaultDefs::OPEN_ARRAY()']]],
-  ['open_5fsection_1588',['OPEN_SECTION',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a5efb5e8e14933944971b07e0fca3bde2',1,'token::OPEN_SECTION()'],['../namespacefile_1_1_default_defs.html#a68f2f42f98851a7a90ad2aae970e0c9fa5efb5e8e14933944971b07e0fca3bde2',1,'file::DefaultDefs::OPEN_SECTION()']]]
+  ['open_5farray_1673',['OPEN_ARRAY',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799acad76732f05f48d11662f07169a473a9',1,'token::DefaultDefs']]],
+  ['open_5fsection_1674',['OPEN_SECTION',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a5efb5e8e14933944971b07e0fca3bde2',1,'token::DefaultDefs']]],
+  ['option_1675',['OPTION',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0fae1c4a02aed2e485ae96bc5a5b1d01ee5',1,'opt::token']]]
 ];

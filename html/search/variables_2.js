@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['binary_1320',['BINARY',['../structprocess_1_1_mode.html#a50760f0fb87c6a0ea47a31c30629ba6b',1,'process::Mode']]],
-  ['black_1321',['black',['../structcolor_1_1setcolor__seq.html#a6d5dd9a1b9131bf8fa9fa581e4b6e64f',1,'color::setcolor_seq::black()'],['../namespacecolor.html#a95da3b84ca9ce74003a135dde7942463',1,'color::black()']]],
-  ['blue_1322',['blue',['../structcolor_1_1setcolor__seq.html#afccb0668b9610be02f84673e017504f6',1,'color::setcolor_seq::blue()'],['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()']]],
-  ['bold_1323',['BOLD',['../structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa',1,'color::format']]],
-  ['bold_1324',['bold',['../namespacecolor.html#ac9e866bcf92676cd068a32b3db6afe5d',1,'color']]]
+  ['binary_1386',['BINARY',['../structprocess_1_1_mode.html#ac7364b0aaddb9497c41379e020de3a8f',1,'process::Mode']]],
+  ['black_1387',['black',['../structterm_1_1setcolor__seq.html#af73be6a64538c6d81b56adc9b509f264',1,'term::setcolor_seq::black()'],['../namespacecolor.html#a95da3b84ca9ce74003a135dde7942463',1,'color::black()']]],
+  ['blue_1388',['blue',['../structterm_1_1setcolor__seq.html#a3b762bb7cb5eea1f38ae72915ff387ca',1,'term::setcolor_seq::blue()'],['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()']]],
+  ['body_1389',['body',['../structterm_1_1_message.html#abd91e7c810e685cc67c7de34916a7bd0',1,'term::Message']]],
+  ['bold_1390',['BOLD',['../structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa',1,'color::format::BOLD()'],['../namespacecolor.html#ac9e866bcf92676cd068a32b3db6afe5d',1,'color::bold()']]]
 ];

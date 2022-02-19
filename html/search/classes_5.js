@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['level_812',['level',['../structxlog_1_1level.html',1,'xlog']]],
-  ['lexemedict_813',['LexemeDict',['../structfile_1_1_default_defs_1_1_lexeme_dict.html',1,'file::DefaultDefs']]],
-  ['lexemedictbase_814',['LexemeDictBase',['../structfile_1_1base_1_1_lexeme_dict_base.html',1,'file::base']]],
-  ['lexemedictbase_3c_20lexeme_20_3e_815',['LexemeDictBase&lt; LEXEME &gt;',['../structfile_1_1base_1_1_lexeme_dict_base.html',1,'file::base']]],
-  ['linecharacter_816',['LineCharacter',['../structterm_1_1_line_character.html',1,'term']]],
-  ['loglevel_817',['LogLevel',['../structxlog_1_1level_1_1_log_level.html',1,'xlog::level']]]
+  ['indentor_852',['indentor',['../structindentor.html',1,'']]],
+  ['index_853',['Index',['../structopt_1_1_index.html',1,'opt']]],
+  ['ini_854',['INI',['../structfile_1_1ini_1_1_i_n_i.html',1,'file::ini']]],
+  ['inicontainer_855',['INIContainer',['../classfile_1_1ini_1_1_i_n_i_container.html',1,'file::ini']]],
+  ['iniparser_856',['INIParser',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html',1,'file::ini::tokenizer']]],
+  ['initokenizer_857',['INITokenizer',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html',1,'file::ini::tokenizer']]],
+  ['input_858',['Input',['../structopt_1_1token_1_1_parser_1_1_input.html',1,'opt::token::Parser']]],
+  ['inputwrapper_859',['InputWrapper',['../structopt_1_1_input_wrapper.html',1,'opt']]],
+  ['is_5fless_5fthan_860',['is_less_than',['../structvar_1_1is__less__than.html',1,'var']]],
+  ['is_5fmore_5fthan_861',['is_more_than',['../structvar_1_1is__more__than.html',1,'var']]],
+  ['is_5fsame_5fas_862',['is_same_as',['../structvar_1_1is__same__as.html',1,'var']]]
 ];

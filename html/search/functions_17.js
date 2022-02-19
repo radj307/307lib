@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['_7erand_1360',['~Rand',['../structrng_1_1_rand.html#a4fedec6fe885e48cdc0afff654d82c70',1,'rng::Rand']]],
-  ['_7esequence_1361',['~Sequence',['../struct_a_n_s_i_1_1_sequence.html#a978a84010b09e93d44a05cd664eb98d7',1,'ANSI::Sequence']]],
-  ['_7etokenizerbase_1362',['~TokenizerBase',['../classtoken_1_1_tokenizer_base.html#ae15d61a740058f7b764f0b5802ea4330',1,'token::TokenizerBase']]],
-  ['_7etokenizerbasefunctions_1363',['~TokenizerBaseFunctions',['../structtoken_1_1_tokenizer_base_functions.html#aa80d1056fbf7f4f6ab499cdc1f5b3ebd',1,'token::TokenizerBaseFunctions']]]
+  ['_7eflagbase_1353',['~FlagBase',['../classcolor_1_1format_1_1_flag_base.html#a0afa2c37df194e1a63aeceeee3d48aaf',1,'color::format::FlagBase']]],
+  ['_7elexemedictbase_1354',['~LexemeDictBase',['../structtoken_1_1base_1_1_lexeme_dict_base.html#a93110b6c0908f98f3ac9a3e914714102',1,'token::base::LexemeDictBase']]],
+  ['_7eproc_1355',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]],
+  ['_7erand_1356',['~Rand',['../structrng_1_1_rand.html#a4fedec6fe885e48cdc0afff654d82c70',1,'rng::Rand']]],
+  ['_7etokenbase_1357',['~TokenBase',['../structtoken_1_1base_1_1_token_base.html#ae273f34f1238961c9d327f581cadd5b4',1,'token::base::TokenBase']]],
+  ['_7etokenizerbase_1358',['~TokenizerBase',['../classtoken_1_1base_1_1_tokenizer_base.html#a5d1209b3d3fc579e7d3f8b083ce6b445',1,'token::base::TokenizerBase']]],
+  ['_7etokenparserbase_1359',['~TokenParserBase',['../classtoken_1_1base_1_1_token_parser_base.html#afbe2f6db202301a5e4a2034bdd8fb9f6',1,'token::base::TokenParserBase']]]
 ];

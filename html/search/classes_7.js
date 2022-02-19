@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['numbergrouping_820',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
+  ['message_870',['Message',['../structterm_1_1_message.html',1,'term']]],
+  ['mode_871',['Mode',['../structprocess_1_1_mode.html',1,'process']]]
 ];

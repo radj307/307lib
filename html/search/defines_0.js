@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5fwin32_5fwinnt_1608',['_WIN32_WINNT',['../_windows_8hpp.html#ac50762666aa00bd3a4308158510f1748',1,'Windows.hpp']]]
+  ['_5fstringize_5finternal_1697',['_STRINGIZE_INTERNAL',['../sysarch_8h.html#ad1512bd26ba3ed605e470cd2f2bb83f9',1,'sysarch.h']]],
+  ['_5fuse_5fmath_5fdefines_1698',['_USE_MATH_DEFINES',['../math_8hpp.html#a525335710b53cb064ca56b936120431e',1,'math.hpp']]]
 ];

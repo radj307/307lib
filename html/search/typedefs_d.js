@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['token_1543',['Token',['../namespacefile_1_1_default_defs.html#af5cdb5aeb38918deaae024a9e1e767f1',1,'file::DefaultDefs']]],
-  ['trand_1544',['tRand',['../namespacerng.html#a388919ed472f27b0298f67e9f8252d98',1,'rng']]],
-  ['type_1545',['Type',['../structfile_1_1base_1_1_token_base.html#a7060be789efede91e267d7ca7edaa5df',1,'file::base::TokenBase::Type()'],['../structopt_1_1_virtual_argument.html#a651c6d0949e710611e7cf263b9647ae6',1,'opt::VirtualArgument::Type()']]]
+  ['sectioncontent_1612',['SectionContent',['../classfile_1_1ini_1_1_i_n_i_container.html#aa9edf86bd0f23248d1484559e72ecdf0',1,'file::ini::INIContainer']]],
+  ['sequence_1613',['Sequence',['../namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547',1,'ANSI']]],
+  ['setcolor_1614',['setcolor',['../namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50',1,'term']]],
+  ['size_5ftype_1615',['size_type',['../classterm_1_1palette.html#a86f50158c24735726db38a983fc33fb4',1,'term::palette::size_type()'],['../structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5',1,'indentor::size_type()']]],
+  ['srand_1616',['sRand',['../namespacerng.html#a452a64450662c089f2f33011f7156dad',1,'rng']]],
+  ['string_1617',['String',['../namespacefile_1_1ini.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini']]],
+  ['string_5ftype_1618',['string_type',['../structindentor.html#a19918b0b633d941b16632193a5dfb69a',1,'indentor']]],
+  ['strvec_1619',['strvec',['../classopt_1_1token_1_1_parser.html#ab0eef44aedc5f7103b8cbc209f125274',1,'opt::token::Parser::strvec()'],['../namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb',1,'opt::StrVec()']]]
 ];

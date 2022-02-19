@@ -1,13 +1,17 @@
 var _arg_8hpp =
 [
     [ "Arg", "classopt_1_1_arg.html", "classopt_1_1_arg" ],
-    [ "Flag", "_arg_8hpp.html#a80d501ad109f7745fa44e7f52e6380d0", null ],
+    [ "CompoundFlag", "_arg_8hpp.html#acd0f844a7b674bfe1ff370b8fd947f7d", null ],
+    [ "CompoundFlagType", "_arg_8hpp.html#a1cf40dd1ca21c5ccc9b88c3685a81c3c", null ],
+    [ "Flag", "_arg_8hpp.html#aa99cb5f86173816ad15e25ca7fe9ac90", null ],
     [ "FlagType", "_arg_8hpp.html#a26b17b9a781806db5683836e034cb85b", null ],
-    [ "Option", "_arg_8hpp.html#abd2615cfb6e34b4dccd6647b8181ed4c", null ],
+    [ "Option", "_arg_8hpp.html#ad17e17cf8257066ba09d74695ea5738d", null ],
     [ "OptionType", "_arg_8hpp.html#a8e7cc9a2010617a6b4f9e9707419bcdd", null ],
-    [ "Parameter", "_arg_8hpp.html#a316557ae32d1fffe2b704fc5c9638807", null ],
+    [ "Parameter", "_arg_8hpp.html#acc2207e5e307ef6a7b39dd228cff76ca", null ],
     [ "ParameterType", "_arg_8hpp.html#aef25741f3063b9139b8440400ddf74da", null ],
+    [ "fromCFT", "_arg_8hpp.html#a6a373c5a56e4d1774fc66862eb3a2559", null ],
     [ "operator<<", "_arg_8hpp.html#a05f6625ec874e68c060b1e04795dbb18", null ],
+    [ "toCFT", "_arg_8hpp.html#a2239544491f3103f7ba7e0fa4b631029", null ],
     [ "CanHaveValueArgument", "_arg_8hpp.html#a5d706641e94a68458cc42af1f1374d15", null ],
     [ "CanHaveValueArgumentType", "_arg_8hpp.html#a1533898171fa583a49f5b0ae1d5d8986", null ],
     [ "divider", "_arg_8hpp.html#a4b432ae180b54ef2d396baba32f45d36", null ],
@@ -16,5 +20,7 @@ var _arg_8hpp =
     [ "quote_char", "_arg_8hpp.html#aed4bb1fd09af1fecb79401708e096a6f", null ],
     [ "Settings_Arg", "_arg_8hpp.html#a90c25f48273450116b3e78ecd10faf6f", null ],
     [ "ValidArg", "_arg_8hpp.html#af5a63481366bb7bf0406ff735e6b592f", null ],
-    [ "ValidArgType", "_arg_8hpp.html#a5186e11563094f28ac3182224bfbc6d0", null ]
+    [ "ValidArgOrCompound", "_arg_8hpp.html#adf158337f8369478586d64f9162afead", null ],
+    [ "ValidArgType", "_arg_8hpp.html#a5186e11563094f28ac3182224bfbc6d0", null ],
+    [ "ValidArgTypeOrCompound", "_arg_8hpp.html#ab813ec0eff2e375a9077ceffaae2f8a6", null ]
 ];

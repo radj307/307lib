@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['digit_1570',['DIGIT',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639ea999bbbf1d86bc7611397c77222e076db',1,'token::DIGIT()'],['../namespacefile_1_1_default_defs.html#aec020feaa1d7e2cd54e14e41fe9f1825a999bbbf1d86bc7611397c77222e076db',1,'file::DefaultDefs::DIGIT()']]],
-  ['divider_1571',['DIVIDER',['../namespacetoken.html#a5a65fe57c80eec8fe264dc4d4f0bf074a711b8afd35852659719992fac8ccf66c',1,'token::DIVIDER()'],['../namespacefile_1_1_default_defs.html#a68f2f42f98851a7a90ad2aae970e0c9fa711b8afd35852659719992fac8ccf66c',1,'file::DefaultDefs::DIVIDER()']]]
+  ['dash_1654',['DASH',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675daabb5fed0e6709fade0ab65c15b790508',1,'opt::token']]],
+  ['digit_1655',['DIGIT',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675da999bbbf1d86bc7611397c77222e076db',1,'opt::token::DIGIT()'],['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a999bbbf1d86bc7611397c77222e076db',1,'token::DefaultDefs::DIGIT()']]],
+  ['divider_1656',['DIVIDER',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a711b8afd35852659719992fac8ccf66c',1,'token::DefaultDefs']]]
 ];

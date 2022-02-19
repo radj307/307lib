@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['get_5flexeme_1375',['get_lexeme',['../classfile_1_1base_1_1_tokenizer_base.html#a07da102ee121556967994f9ead9ad275',1,'file::base::TokenizerBase']]],
-  ['gold_1376',['gold',['../namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606',1,'color']]],
-  ['gray_1377',['gray',['../namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615',1,'color']]],
-  ['green_1378',['green',['../structcolor_1_1setcolor__seq.html#ad6872e3c9e028e21ab6e875ea90ee1b5',1,'color::setcolor_seq::green()'],['../namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620',1,'color::green()']]]
+  ['get_5flexeme_1442',['get_lexeme',['../classtoken_1_1base_1_1_tokenizer_base.html#ae86681d1f577015e7fa82ba84f8a379a',1,'token::base::TokenizerBase']]],
+  ['gold_1443',['gold',['../namespacecolor.html#aeb9a7f5e243195f8bcd8c9b223800606',1,'color']]],
+  ['gray_1444',['gray',['../namespacecolor.html#a7882dcee4c1ebf89810583e8f42d7615',1,'color']]],
+  ['green_1445',['green',['../structterm_1_1setcolor__seq.html#aa5b9fb05455f847cb0cc5875cc43e366',1,'term::setcolor_seq::green()'],['../namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620',1,'color::green()']]]
 ];

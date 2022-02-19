@@ -1,5 +1,15 @@
 var var_8hpp =
 [
+    [ "is_same_as", "structvar_1_1is__same__as.html", "structvar_1_1is__same__as" ],
+    [ "is_more_than", "structvar_1_1is__more__than.html", "structvar_1_1is__more__than" ],
+    [ "is_less_than", "structvar_1_1is__less__than.html", "structvar_1_1is__less__than" ],
+    [ "false_t", "var_8hpp.html#a41080bdb7186fa7a77b12bfcdf06ff9f", null ],
+    [ "is_less_than_t", "var_8hpp.html#aa77448b6227b775a15035ce6bdd4d5e1", null ],
+    [ "is_more_than_one", "var_8hpp.html#a7326dbe784dec7d5ca3c3fce14a960d7", null ],
+    [ "is_more_than_t", "var_8hpp.html#a1fe6daf9fe08d32d9d92b2429dbd3c74", null ],
+    [ "is_same_as_t", "var_8hpp.html#a475b05869c1d243426da8c22f6d2b402", null ],
+    [ "true_t", "var_8hpp.html#acab1408bc96243070e634538e35db53f", null ],
+    [ "count", "var_8hpp.html#a60876b488cb4daebaacc460fa738f625", null ],
     [ "largest", "var_8hpp.html#a5c7b548836d697787813fbb1b441f9d7", null ],
     [ "largest", "var_8hpp.html#a560fa1c70e80f8b11fa40ed35d3809b6", null ],
     [ "requires", "var_8hpp.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e", null ],
@@ -11,8 +21,6 @@ var var_8hpp =
     [ "tuple_or", "var_8hpp.html#a060dae79f908e9ec94f42175a42c45b1", null ],
     [ "variadic_and", "var_8hpp.html#acd4adc200dff50fed630c357d3b5fd16", null ],
     [ "variadic_or", "var_8hpp.html#aab48ef63e82c6fbb650f1b7af64c951a", null ],
-    [ "is_less_than", "var_8hpp.html#a2aaf4dd4f69e9c785738f9787bcf24d9", null ],
-    [ "is_more_than", "var_8hpp.html#af973ed02d6c01387e3c752a735801170", null ],
-    [ "is_more_than_one", "var_8hpp.html#a20024427ebc79b98a7d147129f00810a", null ],
-    [ "is_same_size", "var_8hpp.html#af0f7a091df3704b1a3a3b0271b004f70", null ]
+    [ "false_v", "var_8hpp.html#a941e67bbf70f7289a4f50eab1ed7324c", null ],
+    [ "true_v", "var_8hpp.html#af85ba36b30b1c828f7a4c611c3681375", null ]
 ];

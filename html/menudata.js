@@ -1,26 +1,24 @@
 /*
- @licstart  The following is the entire license notice for the JavaScript code in this file.
+@licstart  The following is the entire license notice for the
+JavaScript code in this file.
 
- The MIT License (MIT)
+Copyright (C) 1997-2019 by Dimitri van Heesch
 
- Copyright (C) 1997-2020 by Dimitri van Heesch
+This program is free software; you can redistribute it and/or modify
+it under the terms of version 2 of the GNU General Public License as published by
+the Free Software Foundation
 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software
- and associated documentation files (the "Software"), to deal in the Software without restriction,
- including without limitation the rights to use, copy, modify, merge, publish, distribute,
- sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
- The above copyright notice and this permission notice shall be included in all copies or
- substantial portions of the Software.
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
- BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
- DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
- @licend  The above is the entire license notice for the JavaScript code in this file
+@licend  The above is the entire license notice
+for the JavaScript code in this file
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
@@ -29,8 +27,7 @@ var menudata={children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
 {text:"All",url:"namespacemembers.html",children:[
-{text:"_",url:"namespacemembers.html#index__5F"},
-{text:"a",url:"namespacemembers_a.html#index_a"},
+{text:"a",url:"namespacemembers.html#index_a"},
 {text:"b",url:"namespacemembers_b.html#index_b"},
 {text:"c",url:"namespacemembers_c.html#index_c"},
 {text:"d",url:"namespacemembers_d.html#index_d"},
@@ -39,6 +36,7 @@ var menudata={children:[
 {text:"g",url:"namespacemembers_g.html#index_g"},
 {text:"h",url:"namespacemembers_h.html#index_h"},
 {text:"i",url:"namespacemembers_i.html#index_i"},
+{text:"j",url:"namespacemembers_j.html#index_j"},
 {text:"l",url:"namespacemembers_l.html#index_l"},
 {text:"m",url:"namespacemembers_m.html#index_m"},
 {text:"n",url:"namespacemembers_n.html#index_n"},
@@ -63,6 +61,7 @@ var menudata={children:[
 {text:"g",url:"namespacemembers_func.html#index_g"},
 {text:"h",url:"namespacemembers_func.html#index_h"},
 {text:"i",url:"namespacemembers_func.html#index_i"},
+{text:"j",url:"namespacemembers_func.html#index_j"},
 {text:"l",url:"namespacemembers_func.html#index_l"},
 {text:"m",url:"namespacemembers_func.html#index_m"},
 {text:"n",url:"namespacemembers_func.html#index_n"},
@@ -74,11 +73,11 @@ var menudata={children:[
 {text:"v",url:"namespacemembers_func.html#index_v"},
 {text:"w",url:"namespacemembers_func.html#index_w"}]},
 {text:"Variables",url:"namespacemembers_vars.html",children:[
-{text:"_",url:"namespacemembers_vars.html#index__5F"},
 {text:"b",url:"namespacemembers_vars.html#index_b"},
 {text:"c",url:"namespacemembers_vars.html#index_c"},
 {text:"d",url:"namespacemembers_vars.html#index_d"},
 {text:"e",url:"namespacemembers_vars.html#index_e"},
+{text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"g",url:"namespacemembers_vars.html#index_g"},
 {text:"i",url:"namespacemembers_vars.html#index_i"},
 {text:"l",url:"namespacemembers_vars.html#index_l"},
@@ -89,6 +88,7 @@ var menudata={children:[
 {text:"q",url:"namespacemembers_vars.html#index_q"},
 {text:"r",url:"namespacemembers_vars.html#index_r"},
 {text:"s",url:"namespacemembers_vars.html#index_s"},
+{text:"t",url:"namespacemembers_vars.html#index_t"},
 {text:"u",url:"namespacemembers_vars.html#index_u"},
 {text:"v",url:"namespacemembers_vars.html#index_v"},
 {text:"w",url:"namespacemembers_vars.html#index_w"},
@@ -189,7 +189,19 @@ var menudata={children:[
 {text:"v",url:"functions_vars.html#index_v"},
 {text:"w",url:"functions_vars.html#index_w"},
 {text:"y",url:"functions_vars.html#index_y"}]},
-{text:"Typedefs",url:"functions_type.html"},
+{text:"Typedefs",url:"functions_type.html",children:[
+{text:"c",url:"functions_type.html#index_c"},
+{text:"f",url:"functions_type.html#index_f"},
+{text:"h",url:"functions_type.html#index_h"},
+{text:"i",url:"functions_type.html#index_i"},
+{text:"k",url:"functions_type.html#index_k"},
+{text:"l",url:"functions_type.html#index_l"},
+{text:"m",url:"functions_type.html#index_m"},
+{text:"o",url:"functions_type.html#index_o"},
+{text:"p",url:"functions_type.html#index_p"},
+{text:"s",url:"functions_type.html#index_s"},
+{text:"t",url:"functions_type.html#index_t"},
+{text:"v",url:"functions_type.html#index_v"}]},
 {text:"Related Functions",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
@@ -200,6 +212,7 @@ var menudata={children:[
 {text:"c",url:"globals.html#index_c"},
 {text:"d",url:"globals.html#index_d"},
 {text:"e",url:"globals.html#index_e"},
+{text:"h",url:"globals.html#index_h"},
 {text:"i",url:"globals.html#index_i"},
 {text:"l",url:"globals.html#index_l"},
 {text:"m",url:"globals.html#index_m"},
@@ -210,6 +223,7 @@ var menudata={children:[
 {text:"w",url:"globals.html#index_w"},
 {text:"x",url:"globals.html#index_x"}]},
 {text:"Functions",url:"globals_func.html"},
+{text:"Typedefs",url:"globals_type.html"},
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"_",url:"globals_defs.html#index__5F"},
 {text:"a",url:"globals_defs.html#index_a"},

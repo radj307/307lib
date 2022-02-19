@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['except_801',['except',['../classexcept.html',1,'']]]
+  ['capturelist_844',['CaptureList',['../structopt_1_1_capture_list.html',1,'opt']]],
+  ['cursor_845',['Cursor',['../structterm_1_1_cursor.html',1,'term']]]
 ];

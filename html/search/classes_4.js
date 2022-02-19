@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['index_807',['Index',['../structopt_1_1_index.html',1,'opt']]],
-  ['ini_808',['INI',['../structfile_1_1ini_1_1_i_n_i.html',1,'file::ini']]],
-  ['inicontainer_809',['INIContainer',['../classtoken_1_1parse_1_1_i_n_i_container.html',1,'token::parse']]],
-  ['iniparser_810',['INIParser',['../structtoken_1_1parse_1_1_i_n_i_parser.html',1,'token::parse']]],
-  ['inputwrapper_811',['InputWrapper',['../structopt_1_1_input_wrapper.html',1,'opt']]]
+  ['flagbase_847',['FlagBase',['../classcolor_1_1format_1_1_flag_base.html',1,'color::format']]],
+  ['format_848',['format',['../structcolor_1_1format.html',1,'color']]],
+  ['fromintegral_849',['FromIntegral',['../structrng_1_1seed_1_1_from_integral.html',1,'rng::seed']]],
+  ['fromrandomdevice_850',['FromRandomDevice',['../structrng_1_1seed_1_1_from_random_device.html',1,'rng::seed']]],
+  ['fromtime_851',['FromTime',['../structrng_1_1seed_1_1_from_time.html',1,'rng::seed']]]
 ];
