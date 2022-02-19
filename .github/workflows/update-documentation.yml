@@ -11,19 +11,26 @@ jobs:
 
     steps:
       # Clone the repository
-      - uses: actions/checkout@v2
+      - name: Clone the Main Branch
+        uses: actions/checkout@v2
+        with:
+          submodules:   recursive
+          ref:          main
+          
+      - name: Clone the Documentatioon Branch
+        uses: actions/checkout@v2
         with:
           submodules: recursive
-          persist-credentials: false
+          ref:        gh-pages
+          path:       gh-pages
       
       # Clone the gh-pages branch into ./307lib/gh-pages
-      - name: 'Clone the Documentation'
-        run:  |
-              git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages
-              cd gh-pages
-              git submodule update --init --recursive
+      #- name: Clone the Documentation
+      #  run:  |
+      #        git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages
+      #        git submodule update --init --recursive
       
-      - name: Install Doxygen
+      - name: Install Doxygen & Graphviz
         run:  sudo apt-get update && sudo apt-get install -y doxygen graphviz
         
       - name: Run Doxygen
@@ -32,7 +39,8 @@ jobs:
               doxygen ./Doxyfile
               
       - name: Commit Changes
-        uses: ad-m/github-push-action@master
-        with:
-          directory:      "${{github.workspace}}/gh-pages"
-          branch:         gh-pages
+        run:  |
+              git config user.name github-actions
+              git config user.email github-actions@github.com
+              git add -A && git commit -m "Generated Documentation"
+              git push
