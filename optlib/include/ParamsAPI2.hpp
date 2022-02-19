@@ -74,12 +74,20 @@ namespace opt {
 			return check<opt::Parameter>(param);
 		}
 
+		/**
+		 * @brief			Retrieve a CompoundFlag.
+		 * @tparam Type		Compound Flag Type.
+		 * @param name		A string containing each flag that composes the compound flag, in order.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
+		 * @returns			std::optional<CompoundFlag>
+		 */
 		template<std::same_as<CompoundFlag> Type>
-		[[nodiscard]] constexpr const std::optional<CompoundFlag> typeget(const std::string& compoundFlag, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
+		[[nodiscard]] constexpr const std::optional<CompoundFlag> typeget(const std::string& name, const std::optional<ArgContainerIteratorType>& off = std::nullopt, const std::optional<ArgContainerIteratorType>& end = std::nullopt) const noexcept
 		{
-			if (!compoundFlag.empty()) {
-				const auto& pos{ find<CompoundFlag>(compoundFlag, off, end) };
-				const auto& size{ compoundFlag.size() };
+			if (!name.empty()) {
+				const auto& pos{ find<CompoundFlag>(name, off, end) };
+				const auto& size{ name.size() };
 				if (std::distance(pos, _args.end()) >= size) {
 					std::vector<char> cmpd;
 					size_t i{ 0ull };
@@ -156,6 +164,9 @@ namespace opt {
 		 * @brief			Retrieve the captured argument of the specified option or flag.
 		 * @tparam Type		Option or Flag type.
 		 * @tparam Name		Argument name type.
+		 * @param name		Argument name to search for.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
 		 * @returns			std::optional<std::string>
 		 *\n				Value is std::nullopt when no match was found.
 		 */
