@@ -119,10 +119,10 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  */</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace</span> var {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @brief </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @tparam Pred </span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * @param begin </span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * @param end </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @brief</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @tparam Pred</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * @param begin</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * @param end</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * @param fn    A function that accepts (IteratorT::value_type) and returns an integral or boolean.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * @returns     size_t</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     */</span></div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> counter;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">ConstexprTests</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">ConstexprTests</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / Constexpr Tests /////////////////////////////////////////////</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @brief           Check if a variadic templated type has the same number of arguments as a given value.</span></div>
@@ -178,33 +178,33 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/// @brief  is_less_than::type macro.</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespacevar.html#aa77448b6227b775a15035ce6bdd4d5e1">   88</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">auto</span> compsize, <span class="keyword">typename</span>... Ts&gt; <span class="keyword">using</span> is_less_than_t = <a class="code" href="structvar_1_1is__less__than.html">is_less_than</a>&lt;compsize, Ts...&gt;::type;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">ConstexprTests</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">ConstexprTests</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Concepts</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">DeclvalTest_Concepts</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     * @concept     Streamable</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">     * @brief       Check if the given type can be inserted into an output stream.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">     * @tparam T    A type to attempt to insert into the stream.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Concepts</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">DeclvalTest_Concepts</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * @concept     Streamable</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * @brief       Check if the given type can be inserted into an output stream.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * @tparam T    A type to attempt to insert into the stream.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">class</span> StreamType = std::stringstream&gt;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    concept Streamable = requires(T obj)</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::declval&lt;StreamType&amp;&gt;() &lt;&lt; obj;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">DeclvalTest_Concepts</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Type_Concepts</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">     * @concept     same_or_convertible</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">     * @brief       Checks if the given types are the same, or if type From can be converted to type To.</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">     * @tparam From The type to convert from, or the same type as To.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">     * @tparam To   The type to convert to, or the same type as From.</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">DeclvalTest_Concepts</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Type_Concepts</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">////////////////////////////////// BEGIN / &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * @concept     same_or_convertible</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * @brief       Checks if the given types are the same, or if type From can be converted to type To.</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * @tparam From The type to convert from, or the same type as To.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * @tparam To   The type to convert to, or the same type as From.</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> From, <span class="keyword">class</span> To&gt; concept same_or_convertible = std::same_as&lt;From, To&gt; || std::convertible_to&lt;From, To&gt;;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">     * @concept     same_or_biconvertible</span></div>
@@ -227,15 +227,15 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; concept numeric = arithmetic&lt;T&gt;;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">////////////////////////////////// END / &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Type_Concepts</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Variadic_Count_Concepts</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">     * @concept         more_than</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">     * @brief           Check if the number of variadic arguments received is greater than a given threshold.</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">     * @tparam compsize Pass test when there are more than this number of variadic arguments.</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">     * @tparam Ts...    Any number of variadic template arguments.</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Type_Concepts</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">Variadic_Count_Concepts</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * @concept         more_than</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> * @brief           Check if the number of variadic arguments received is greater than a given threshold.</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * @tparam compsize Pass test when there are more than this number of variadic arguments.</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> * @tparam Ts...    Any number of variadic template arguments.</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">auto</span> compsize, <span class="keyword">typename</span>... Ts&gt; concept more_than = std::same_as&lt;is_more_than_t&lt;compsize, Ts...&gt;, std::true_type&gt;;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">     * @concept         at_least_one</span></div>
@@ -257,15 +257,15 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span>... Ts&gt; concept none = less_than&lt;1ull, Ts...&gt;;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">////////////////////////////////// END / Variadic Count Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Variadic_Count_Concepts</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">VariadicType_Concepts</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / Variadic &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">     * @concept         not_same</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">     * @brief           Concept that checks if none of the given variadic types match a given type.</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">     * @tparam Type     Type that all variadic types must not match to pass.</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">     * @tparam Ts...    Variadic types to compare.</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Variadic_Count_Concepts</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">VariadicType_Concepts</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">////////////////////////////////// BEGIN / Variadic &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"> * @concept         not_same</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> * @brief           Concept that checks if none of the given variadic types match a given type.</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> * @tparam Type     Type that all variadic types must not match to pass.</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"> * @tparam Ts...    Variadic types to compare.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type, <span class="keyword">typename</span>... Ts&gt; concept not_same = ((!std::same_as&lt;Type, Ts&gt;) &amp;&amp; ...);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">     * @concept         all_same</span></div>
@@ -366,15 +366,15 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> To, <span class="keyword">typename</span>... From&gt; concept any_same_or_convertible_to = (same_or_convertible&lt;From, To&gt; || ...);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">////////////////////////////////// END / Variadic &quot;Type Concepts&quot; /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">VariadicType_Concepts</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">ByteSize_Concepts</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">     * @concept     same_size</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">     * @brief       Checks if the given types are the same size in bytes.</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">     * @tparam L    Input Type 1</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">     * @tparam R    Input Type 2</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">VariadicType_Concepts</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">ByteSize_Concepts</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment"> * @concept     same_size</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment"> * @brief       Checks if the given types are the same size in bytes.</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment"> * @tparam L    Input Type 1</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment"> * @tparam R    Input Type 2</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> L, <span class="keyword">typename</span> R&gt; concept same_size = (<span class="keyword">sizeof</span>(L) == <span class="keyword">sizeof</span>(R));</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">     * @concept     smaller_size</span></div>
@@ -405,14 +405,14 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> L, <span class="keyword">typename</span> R&gt; concept larger_equal_size = (<span class="keyword">sizeof</span>(L) &gt;= <span class="keyword">sizeof</span>(R));</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">ByteSize_Concepts</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">StringConcepts</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">////////////////////////////////// BEGIN / String Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">     * @concept     valid_char</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">     * @brief       Allows all standard char types as of C++20, including signed/unsigned char, wchar_t, UTF-8, UTF-16, &amp; UTF-32 types.</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">     * @tparam T    Test Type.</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">ByteSize_Concepts</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">StringConcepts</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">////////////////////////////////// BEGIN / String Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment"> * @concept     valid_char</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment"> * @brief       Allows all standard char types as of C++20, including signed/unsigned char, wchar_t, UTF-8, UTF-16, &amp; UTF-32 types.</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment"> * @tparam T    Test Type.</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; concept valid_char = any_same&lt;T, <span class="keywordtype">signed</span> <span class="keywordtype">char</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>, <span class="keywordtype">char</span>, <span class="keywordtype">wchar_t</span>, char8_t, <span class="keyword">char16_t</span>, <span class="keyword">char32_t</span>&gt;;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">     * @concept     valid_string</span></div>
@@ -459,19 +459,19 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; concept valid_streampos = any_same&lt;T, std::streampos, std::wstreampos, std::u8streampos, std::u16streampos, std::u32streampos&gt;;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">////////////////////////////////// END / String Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">StringConcepts</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">////////////////////////////////// END / Concepts /////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Concepts</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// CPP &gt;= 20</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">StringConcepts</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">////////////////////////////////// END / Concepts /////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">Concepts</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// CPP &gt;= 20</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">variadic</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">     * @brief           Non-templated std::disjunction that accepts any number of boolean</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">     *\n                conditions and returns true when at least one of them evaluates to true.</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">     * @tparam ...T     Variadic Template Parameter Pack.</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">     * @param booleans  Any number of boolean values to compare.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment">     * @returns         bool</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">variadic</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> * @brief           Non-templated std::disjunction that accepts any number of boolean</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> *\n                conditions and returns true when at least one of them evaluates to true.</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> * @tparam ...T     Variadic Template Parameter Pack.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> * @param booleans  Any number of boolean values to compare.</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> * @returns         bool</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a">  384</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span>...T&gt; [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a">variadic_or</a>(<span class="keyword">const</span> T... booleans)</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">return</span> ((booleans) || ...);</div>
@@ -521,7 +521,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, same_or_convertible&lt;T&gt;... Ts&gt;</div>
 <div class="line"><a name="l00431"></a><span class="lineno"><a class="line" href="namespacevar.html#ac527f228e8860da2a3b732178960730d">  431</a></span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> T <a class="code" href="namespacevar.html#ac527f228e8860da2a3b732178960730d">smallest</a>(<span class="keyword">const</span> Ts&amp;... elements) { <span class="keywordflow">return</span> smallest&lt;T&gt;(std::make_tuple(elements...)); }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 20</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="comment">     * @brief           Variadic templated helper function that returns a vector of templated element types.</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="comment">     *\n                All types must be convertible to the specified output type.</span></div>
@@ -560,10 +560,10 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">return</span> StrT{ <span class="keyword">static_cast</span>&lt;StrT::value_type&gt;(ch)... };</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    }</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">variadic</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">tuple</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">variadic</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">region</span> <span class="preprocessor">tuple</span></div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="comment">     * @brief                   Compare each element in a tuple against a given variable.</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="comment">     * @tparam CompareType      Type that can be compared to all elements in the tuple.</span></div>
@@ -626,7 +626,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">return</span> std::get&lt;i&gt;(l) == std::get&lt;i&gt;(r)</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            &amp;&amp; (<span class="keyword">sizeof</span>...(Types) == i || tuple_and&lt;i + 1ull&gt;(l, r)); <span class="comment">// if this is the last element, short circuit and stop recursing</span></div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">tuple</span></div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">tuple</span></div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="comment">/// @brief  Always true type</span></div>
 <div class="line"><a name="l00541"></a><span class="lineno"><a class="line" href="namespacevar.html#acab1408bc96243070e634538e35db53f">  541</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">using</span> true_t = std::true_type;</div>
@@ -636,9 +636,27 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00545"></a><span class="lineno"><a class="line" href="namespacevar.html#af85ba36b30b1c828f7a4c611c3681375">  545</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <a class="code" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keyword">static</span> <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#af85ba36b30b1c828f7a4c611c3681375">true_v</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="comment">/// @brief  Always false value</span></div>
 <div class="line"><a name="l00547"></a><span class="lineno"><a class="line" href="namespacevar.html#a941e67bbf70f7289a4f50eab1ed7324c">  547</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <a class="code" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keyword">static</span> <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="namespacevar.html#a941e67bbf70f7289a4f50eab1ed7324c">false_v</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="comment">     * @brief           Reverse the order of elements of a given vector.</span></div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">     * @tparam T        Type contained within the vector.</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment">     * @tparam AllocT   Allocator type.</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="comment">     * @param vec       Input vector to reverse.</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="comment">     * @returns         std::vector&lt;T&gt;</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno"><a class="line" href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">  556</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> AllocT = std::allocator&lt;T&gt;&gt; [[nodiscard]] std::vector&lt;T, AllocT&gt; <a class="code" href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">reverse</a>(std::vector&lt;T, AllocT&gt; <span class="keyword">const</span>&amp; vec)</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    {</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        std::vector&lt;T, AllocT&gt; out;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        out.reserve(vec.size());</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it{ vec.rbegin() }; it != vec.rend(); ++it)</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            out.emplace_back(*it);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        out.shrink_to_fit();</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    }</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespacevar_html_a8df8ae33fd372f8c6dd08b6c1395f5cc"><div class="ttname"><a href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">var::reverse</a></div><div class="ttdeci">std::vector&lt; T, AllocT &gt; reverse(std::vector&lt; T, AllocT &gt; const &amp;vec)</div><div class="ttdoc">Reverse the order of elements of a given vector.</div><div class="ttdef"><b>Definition:</b> <a href="var_8hpp_source.html#l00556">var.hpp:556</a></div></div>
 <div class="ttc" id="anamespacevar_html_a941e67bbf70f7289a4f50eab1ed7324c"><div class="ttname"><a href="namespacevar.html#a941e67bbf70f7289a4f50eab1ed7324c">var::false_v</a></div><div class="ttdeci">static INLINE const CONSTEXPR bool false_v</div><div class="ttdoc">Always false value.</div><div class="ttdef"><b>Definition:</b> <a href="var_8hpp_source.html#l00547">var.hpp:547</a></div></div>
 <div class="ttc" id="anamespacevar_html_a060dae79f908e9ec94f42175a42c45b1"><div class="ttname"><a href="namespacevar.html#a060dae79f908e9ec94f42175a42c45b1">var::tuple_or</a></div><div class="ttdeci">constexpr bool tuple_or(const std::tuple&lt; TupleTypesLeft... &gt; &amp;left, const std::tuple&lt; TupleTypesRight... &gt; &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="var_8hpp_source.html#l00520">var.hpp:520</a></div></div>
 <div class="ttc" id="anamespacevar_html_a5c7b548836d697787813fbb1b441f9d7"><div class="ttname"><a href="namespacevar.html#a5c7b548836d697787813fbb1b441f9d7">var::largest</a></div><div class="ttdeci">static constexpr T largest(const std::tuple&lt; Ts... &gt; &amp;tpl, const T &amp;base=static_cast&lt; T &gt;(0))</div><div class="ttdef"><b>Definition:</b> <a href="var_8hpp_source.html#l00401">var.hpp:401</a></div></div>

@@ -1,16 +1,17 @@
 var structtoken_1_1base_1_1_token_base =
 [
-    [ "Type", "structtoken_1_1base_1_1_token_base.html#a563e802098a0d1c0df25c17d6b4f7561", null ],
-    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a3b5dfdfceda258579cd437a240fce2f7", null ],
-    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a98e105e6848db7c6fdf36fe1584ab618", null ],
-    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a54fb7bfb967e4af785293512204c92bd", null ],
-    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a7bf9fd1a72bb2a27b51dafe4a5d7033e", null ],
-    [ "~TokenBase", "structtoken_1_1base_1_1_token_base.html#ae273f34f1238961c9d327f581cadd5b4", null ],
-    [ "operator std::string", "structtoken_1_1base_1_1_token_base.html#a9e9eaebf3cb71f90a25caa3131753e6d", null ],
-    [ "operator Type", "structtoken_1_1base_1_1_token_base.html#ad0e731e4d3f44c0fee9b66380c38be24", null ],
-    [ "operator!=", "structtoken_1_1base_1_1_token_base.html#abe25ca9381765ee5e402b84d4fee9103", null ],
-    [ "operator==", "structtoken_1_1base_1_1_token_base.html#aeebcd9ec903eeef6d09d368baf9feb53", null ],
+    [ "Type", "structtoken_1_1base_1_1_token_base.html#a1abf8724638777fd8b21402f3ed5f7fd", null ],
+    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a096d918d532f7ee2a8aa9f7da573325c", null ],
+    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a2f4bda629cd7345cb57d1d0ea7a292da", null ],
+    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a266145df0984ff910780fda4c1991d05", null ],
+    [ "TokenBase", "structtoken_1_1base_1_1_token_base.html#a0ccc3e922886932f7e8a02ea1ff2e8f7", null ],
+    [ "~TokenBase", "structtoken_1_1base_1_1_token_base.html#a5c38603a86cd922391783326ed593f6f", null ],
+    [ "operator std::string", "structtoken_1_1base_1_1_token_base.html#a03a0b4d5f390ae31842ea23f45911e69", null ],
+    [ "operator Type", "structtoken_1_1base_1_1_token_base.html#ad33dce1d7f63856c50c10876b617abfa", null ],
+    [ "operator!=", "structtoken_1_1base_1_1_token_base.html#aedf8312516548db04395aa77986b3d7c", null ],
+    [ "operator==", "structtoken_1_1base_1_1_token_base.html#a7cb5a7413cb016d9fc2f32b7dd303fdc", null ],
     [ "operator<<", "structtoken_1_1base_1_1_token_base.html#ad759f727a84c1d138caea2dc096f4334", null ],
-    [ "str", "structtoken_1_1base_1_1_token_base.html#a247811917f98c5d0f946e05b105466c7", null ],
-    [ "type", "structtoken_1_1base_1_1_token_base.html#a4c9105b07ca32bfaec545418ae6bcdc5", null ]
+    [ "NullToken", "structtoken_1_1base_1_1_token_base.html#a6a626355cbde742f92caba6103cdc0c2", null ],
+    [ "str", "structtoken_1_1base_1_1_token_base.html#a5d0b17b0997ecf5eaa04164986348d68", null ],
+    [ "type", "structtoken_1_1base_1_1_token_base.html#a8f1003b2294790fe7e8e6264d7a2709c", null ]
 ];

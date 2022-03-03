@@ -23,6 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
+    [ "Support", "index.html#autotoc_md12", null ],
     [ "Building from Source", "index.html#autotoc_md13", [
       [ "Pre-Requisities", "index.html#autotoc_md14", null ],
       [ "Process", "index.html#autotoc_md15", null ]
@@ -31,16 +32,17 @@ var NAVTREE =
       [ "Pre-Requisites", "index.html#autotoc_md17", null ],
       [ "Process", "index.html#autotoc_md18", null ]
     ] ],
+    [ "TokenRedux", "_token_redux.html", null ],
     [ "307modules", "307modules.html", [
-      [ "307modules", "307modules.html#autotoc_md4", [
-        [ "Usage", "307modules.html#autotoc_md5", null ],
-        [ "Modules", "307modules.html#autotoc_md6", [
-          [ "InputFinder", "307modules.html#autotoc_md7", null ],
-          [ "AutoVersion", "307modules.html#autotoc_md8", null ],
-          [ "VersioninfoMaker", "307modules.html#autotoc_md9", null ],
-          [ "PrependEach", "307modules.html#autotoc_md10", null ],
-          [ "PackageInstaller", "307modules.html#autotoc_md11", null ],
-          [ "OptionalArgs", "307modules.html#autotoc_md12", null ]
+      [ "307modules", "307modules.html#autotoc_md3", [
+        [ "Usage", "307modules.html#autotoc_md4", null ],
+        [ "Modules", "307modules.html#autotoc_md5", [
+          [ "InputFinder", "307modules.html#autotoc_md6", null ],
+          [ "AutoVersion", "307modules.html#autotoc_md7", null ],
+          [ "VersioninfoMaker", "307modules.html#autotoc_md8", null ],
+          [ "PrependEach", "307modules.html#autotoc_md9", null ],
+          [ "PackageInstaller", "307modules.html#autotoc_md10", null ],
+          [ "OptionalArgs", "307modules.html#autotoc_md11", null ]
         ] ]
       ] ]
     ] ],
@@ -81,11 +83,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "307modules.html",
-"_windows_not_today_8h.html#a348ad07df4aceda9097d9497b78bccd9",
-"classtoken_1_1base_1_1_tokenizer_base.html#a77a865abf231f38e8f213f355fc6b883",
-"indentor_8hpp.html#a8c3ec20545425cd957ccf01b3085dc3f",
-"structcolor_1_1format.html#a9deaebe7d68dd5abf11875b7938e8681",
-"structterm_1_1setcolor__seq.html#a1bb07ee0925601e455fd9a37cfe67315"
+"_windows_not_today_8h.html#a2ee511fa2fd29a9a1f0efbcb2c364b8f",
+"classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518",
+"has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2",
+"strmanip_8hpp.html#aff70a0416ef1eed4ca4968378d46f9a9",
+"structterm_1_1_message.html#a0263ac25c2e3a0d5b947c23f2b4db041"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -14,6 +14,7 @@ var var_8hpp =
     [ "largest", "var_8hpp.html#a560fa1c70e80f8b11fa40ed35d3809b6", null ],
     [ "requires", "var_8hpp.html#a8dc45aca25e4f1c6b9b62bb7e3f8d15e", null ],
     [ "requires", "var_8hpp.html#a3c51dee573904e0882f2fb72103dddea", null ],
+    [ "reverse", "var_8hpp.html#a8df8ae33fd372f8c6dd08b6c1395f5cc", null ],
     [ "smallest", "var_8hpp.html#a95ee5cd8d5aae3626d1372992fe74e2b", null ],
     [ "smallest", "var_8hpp.html#ac527f228e8860da2a3b732178960730d", null ],
     [ "tuple_and", "var_8hpp.html#a532c5c65bdf52f2ff2c398e8d1d4e420", null ],

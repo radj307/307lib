@@ -56,15 +56,15 @@ var hierarchy =
     [ "string_view", null, [
       [ "opt::Argument", "classopt_1_1_argument.html", null ]
     ] ],
-    [ "token::base::TokenBase< TknType >", "structtoken_1_1base_1_1_token_base.html", null ],
-    [ "token::base::TokenizerBase< LexemeT, Dictionary, TknType, TokenType >", "classtoken_1_1base_1_1_tokenizer_base.html", null ],
+    [ "token::base::TokenBase< TokenType >", "structtoken_1_1base_1_1_token_base.html", null ],
+    [ "token::base::TokenizerBase< LexemeT, Dictionary, TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", null ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "file::ini::tokenizer::INITokenizer", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html", null ]
     ] ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDictionary, Type, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "opt::token::Tokenizer", "classopt_1_1token_1_1_tokenizer.html", null ]
     ] ],
-    [ "token::base::TokenParserBase< OutputType, TknT >", "classtoken_1_1base_1_1_token_parser_base.html", null ],
+    [ "token::base::TokenParserBase< OutputType, Token >", "classtoken_1_1base_1_1_token_parser_base.html", null ],
     [ "token::base::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1_token_parser_base.html", [
       [ "opt::token::Parser", "classopt_1_1token_1_1_parser.html", null ]
     ] ],

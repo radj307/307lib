@@ -115,8 +115,7 @@ Include dependency graph for TokenRedux.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="_token_redux_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -127,14 +126,14 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type". <br  />
  A Lexeme can be thought of as a character's type, and as such multiple characters can be associated with a single Lexeme, but a single Lexeme always represents a single character length.  <a href="structtoken_1_1base_1_1_lexeme_dict_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1base_1_1_token_base.html">token::base::TokenBase&lt; TknType &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1base_1_1_token_base.html">token::base::TokenBase&lt; TokenType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base token object. It represents zero or more characters of data, and is the most basic unit recognized by the parsing step.  <a href="structtoken_1_1base_1_1_token_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase&lt; LexemeT, Dictionary, TknType, TokenType &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html" title="Base TokenizerBase object that accepts a stringstream and lexeme dictionary, then tokenizes the data....">TokenizerBase</a> object that accepts a stringstream and lexeme dictionary, then tokenizes the data. <br  />
- Can be used inline by calling <code><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3c6cbde8e59ddc2c966769d7369ef65e" title="Tokenize the whole local stream and return it as a vector.">tokenize()</a></code>.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#details">More...</a><br /></td></tr>
+ Can be used inline by calling <code><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a5b19d51ed6cc6480b62469c1ac11ff5f" title="Tokenize the whole local stream and return it as a vector.">tokenize()</a></code>.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_token_parser_base.html">token::base::TokenParserBase&lt; OutputType, TknT &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_token_parser_base.html">token::base::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base parser object that accepts a vector of tokens, and returns an implementation-defined type.  <a href="classtoken_1_1base_1_1_token_parser_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -148,46 +147,7 @@ Namespaces</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>New tokenization &amp; parsing library providing superior abstraction capabilities and a much less confusing usage experience. For more information on tokenization, see: <a href="https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization">https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization</a>. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Terminology</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Term </th><th class="markdownTableHeadNone">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Format </td><td class="markdownTableBodyNone">A data format, usually a file format, such as JSON, YAML, INI, etc.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Package </td><td class="markdownTableBodyNone">Contains the actual implementations of some portion of the TokenRedux pipeline.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Lexeme </td><td class="markdownTableBodyNone">A single character's type, such as a lowercase letter, digit, or semicolon.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">TokenBase </td><td class="markdownTableBodyNone">Composed of 0 or more characters with a similar lexical type, such as a string, boolean, or number.  </td></tr>
-</table>
-<pre class="fragment">    ## TokenRedux Components
 
-    | Component / Layer  | Functionality                                                                          |
-    |--------------------|----------------------------------------------------------------------------------------|
-    | Virtualized Base   | Provides the basic tokenization framework, as well as helper methods.                  |
-    | Definition Package | Provides generic Lexeme definitions and TokenBase types that apply to one or more formats. |
-    | Format Package     | Provides the Tokenization and parsing implementations specific to one format.          |
-
-
-    ## Definition Packages
-
-    A definitions package is usually composed of a LexemeDictBase override, and 2 enums:
-    - __Lexeme Type__
-      Defines possible types associated with a single character, such as a digit, quotation mark, or letter.
-    - __Token Type__
-      Defines possible types associated with sections of the input data, such as words, numbers, or lines.
-
-
-    ## Format Packages
-
-    A format package is composed of 2 derived objects, to implement the tokenization &amp; parsing stages of reading a single serialized data format.
-    - __Tokenizer__
-      Takes a stringstream as input, and divides it into a vector of Tokens using the provided Definition Package.
-    - __Parser__
-      Takes a vector of Tokens as input, and parses it into a usable type, defined by the implementation.
-</pre> 
 <p class="definition">Definition in file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

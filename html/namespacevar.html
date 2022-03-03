@@ -183,6 +183,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">tuple_and</a> (const std::tuple&lt; Types... &gt; &amp;l, const std::tuple&lt; Types... &gt; &amp;r)</td></tr>
 <tr class="memdesc:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two tuples containing the same element types are equivalent.  <a href="namespacevar.html#a532c5c65bdf52f2ff2c398e8d1d4e420">More...</a><br /></td></tr>
 <tr class="separator:a532c5c65bdf52f2ff2c398e8d1d4e420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="memTemplParams" colspan="2">template&lt;class T , class AllocT  = std::allocator&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T, AllocT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">reverse</a> (std::vector&lt; T, AllocT &gt; const &amp;vec)</td></tr>
+<tr class="memdesc:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the order of elements of a given vector.  <a href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">More...</a><br /></td></tr>
+<tr class="separator:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -533,6 +537,44 @@ template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </di
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00484">484</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8df8ae33fd372f8c6dd08b6c1395f5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df8ae33fd372f8c6dd08b6c1395f5cc">&#9670;&nbsp;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class AllocT  = std::allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T, AllocT&gt; var::reverse </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; T, AllocT &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reverse the order of elements of a given vector. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type contained within the vector. </td></tr>
+    <tr><td class="paramname">AllocT</td><td>Allocator type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>Input vector to reverse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00556">556</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>

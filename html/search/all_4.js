@@ -16,7 +16,7 @@ var searchData=
   ['checkflag_89',['checkflag',['../structopt_1_1_params_a_p_i2.html#a207a2c03cc062c7237aa32aa4e5f91d0',1,'opt::ParamsAPI2']]],
   ['checkopt_90',['checkopt',['../structopt_1_1_params_a_p_i2.html#a3f5c1f0dbaa140ff038d33700fc360f5',1,'opt::ParamsAPI2']]],
   ['checkparam_91',['checkparam',['../structopt_1_1_params_a_p_i2.html#a277fad207c06f259994332852b6e703a',1,'opt::ParamsAPI2']]],
-  ['clear_92',['clear',['../classtoken_1_1base_1_1_tokenizer_base.html#a6f45f2ab99efce1d171cfd6da5c03328',1,'token::base::TokenizerBase::clear()'],['../namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa',1,'term::clear()']]],
+  ['clear_92',['clear',['../classtoken_1_1base_1_1_tokenizer_base.html#a8ddd7727897ca902a0b0f16a3ab4e88c',1,'token::base::TokenizerBase::clear()'],['../namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa',1,'term::clear()']]],
   ['cleartabstops_93',['ClearTabStops',['../namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74',1,'term']]],
   ['close_94',['close',['../structprocess_1_1_proc.html#a3675feb2224f03031c8d8eeb32f89e59',1,'process::Proc']]],
   ['close_5farray_95',['CLOSE_ARRAY',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a06cf574c3df37f163252af8c93232269',1,'token::DefaultDefs']]],

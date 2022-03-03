@@ -3,7 +3,7 @@ var searchData=
   ['b_60',['B',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a9d5ed678fe57bcca610140957afab571',1,'color']]],
   ['backslash_61',['BACKSLASH',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675daecb4a6f3440c2ed0dff59f17375a27c0',1,'opt::token']]],
   ['backward_62',['backward',['../structterm_1_1_cursor.html#ae47ddfefe7f7eba501f8b5eecfceffc9',1,'term::Cursor']]],
-  ['bad_63',['bad',['../classtoken_1_1base_1_1_tokenizer_base.html#a518d4a1a78ea53a96921e27ac28b412d',1,'token::base::TokenizerBase']]],
+  ['bad_63',['bad',['../classtoken_1_1base_1_1_tokenizer_base.html#ac797564b27f30193941fd599cbbca154',1,'token::base::TokenizerBase']]],
   ['begin_64',['begin',['../classterm_1_1palette.html#a5e35775358488d1eb9e21cd283758be2',1,'term::palette::begin()'],['../classenv_1_1_p_a_t_h.html#affd14389ce2e70d769d45a8aa830a391',1,'env::PATH::begin()'],['../classfile_1_1ini_1_1_i_n_i_container.html#a6a8799ea170e27913cef7898d95cdf46',1,'file::ini::INIContainer::begin()'],['../structopt_1_1_arg_container.html#a2d11daad0d6e1e6d410e50509ec90678',1,'opt::ArgContainer::begin()']]],
   ['binary_65',['BINARY',['../structprocess_1_1_mode.html#ac7364b0aaddb9497c41379e020de3a8f',1,'process::Mode']]],
   ['black_66',['black',['../structterm_1_1setcolor__seq.html#af73be6a64538c6d81b56adc9b509f264',1,'term::setcolor_seq::black()'],['../namespacecolor.html#a95da3b84ca9ce74003a135dde7942463',1,'color::black()']]],
