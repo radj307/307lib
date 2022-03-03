@@ -29,10 +29,10 @@ namespace str {
 	 * @param str	Any ASCII string.
 	 * @returns		bool
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isbinarydigit(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool isbinary(const std::string& str) noexcept
 	{
-		for (const auto& ch : str)
-			if (!isbinarydigit(ch))
+		for (auto it{ str.begin() + (str::startsWith(str, "0b") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
+			if (!isbinarydigit(*it))
 				return false;
 		return true;
 	}
@@ -52,10 +52,10 @@ namespace str {
 	 * @param str	Any ASCII string.
 	 * @return		bool
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isoctaldigit(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool isoctal(const std::string& str) noexcept
 	{
-		for (const auto& ch : str)
-			if (!isoctaldigit(ch))
+		for (auto it{ str.begin() + (str::startsWith(str, '\\') ? 1 : 0) }, endit{ str.end() }; it != endit; ++it)
+			if (!isoctaldigit(*it))
 				return false;
 		return true;
 	}
@@ -75,7 +75,7 @@ namespace str {
 	 * @param str	Any ASCII string.
 	 * @return		bool
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isdecimaldigit(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool isdecimal(const std::string& str) noexcept
 	{
 		for (const auto& ch : str)
 			if (!isdecimaldigit(ch))
@@ -98,10 +98,10 @@ namespace str {
 	 * @param str	Any ASCII string.
 	 * @returns		bool
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool ishexdigit(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool ishex(const std::string& str) noexcept
 	{
-		for (const auto& ch : str)
-			if (!ishexdigit(ch))
+		for (auto it{ str.begin() + (str::startsWith(str, "0x") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
+			if (!ishexdigit(*it))
 				return false;
 		return true;
 	}
@@ -162,12 +162,19 @@ namespace str {
 	 * @param fromBase		The base of the input number.
 	 * @returns				decimal
 	 */
-	WINCONSTEXPR decimal toBase10(const std::string& number, const int& fromBase) noexcept(false)
+	WINCONSTEXPR decimal toBase10(std::string number, const int& fromBase) noexcept(false)
 	{
 		if (number.empty())
 			return 0;
 		else if (fromBase < 2 || fromBase > 36)
 			throw make_exception("str::toBase10() failed:  \'", fromBase, "\' isn't a valid alphanumeric base in the range: (2 - 36)!");
+		else if (fromBase == 10)
+			return str::stoll(number);
+
+		if (str::startsWith(number, "0b") || str::startsWith(number, "0x"))
+			number = number.substr(2ull);
+		else if (str::startsWith(number, '\\'))
+			number = number.substr(1ull);
 
 		bool negative{ number.at(0) == '-' };
 
@@ -193,6 +200,8 @@ namespace str {
 	{
 		if (toBase < 2 || toBase > 36)
 			throw make_exception("str::fromBase10() failed:  \'", toBase, "\' isn't a valid alphanumeric base in the range: (2 - 36)!");
+		else if (toBase == 10)
+			return std::to_string(number);
 
 		// short circuit if zero
 		if (number == 0)
@@ -221,9 +230,19 @@ namespace str {
 
 		return str::reverse(value);
 	}
+	/**
+	 * @brief				Convert a number from base 10 (decimal) to an arbitrary base.
+	 * @param number		Input decimal number.
+	 * @param toBase		The target number base.
+	 * @returns				std::string
+	 */
+	WINCONSTEXPR std::string fromBase10(const std::string& number, const int& toBase) noexcept(false)
+	{
+		return fromBase10(str::stoll(number), toBase);
+	}
 
 	struct FloatingBase {
-	private:
+	protected:
 		int base;
 
 	public:

@@ -504,7 +504,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::Streamable<std::stringstream>... Ts>
-	inline bool startsWith(const std::string& str, Ts&&... prefix)
+	inline WINCONSTEXPR bool startsWith(const std::string& str, Ts&&... prefix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
 			return false;
@@ -533,7 +533,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::Streamable<std::stringstream>... Ts>
-	inline bool endsWith(const std::string& str, Ts&&... suffix)
+	inline WINCONSTEXPR bool endsWith(const std::string& str, Ts&&... suffix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
 			return false;
