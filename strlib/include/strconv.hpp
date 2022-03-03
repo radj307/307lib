@@ -17,9 +17,9 @@
 namespace str {
 #pragma region ChangeCase_Lower
 	/**
-	 * @brief Convert a character to lowercase.
-	 * @param c	- Char to convert. If the character is not an uppercase letter, it will be returned unmodified.
-	 * @returns char
+	 * @brief		Convert a character to lowercase.
+	 * @param c		Char to convert. If the character is not an uppercase letter, it will be returned unmodified.
+	 * @returns		char
 	 */
 	[[nodiscard]] inline CONSTEXPR char tolower(const char& c) noexcept
 	{
@@ -29,16 +29,16 @@ namespace str {
 	}
 
 	/**
-	 * @brief Convert a convertible-character to lowercase.
-	 * @tparam T	- Type that is convertible to char.
-	 * @param c		- Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
-	 * @returns char
+	 * @brief		Convert a convertible-character to lowercase.
+	 * @tparam T	Type that is convertible to char.
+	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
+	 * @returns		char
 	 */
 #if LANG_CPP >= 20 // v >= C++20
-	template<typename T> requires std::convertible_to<T, char>
+	template<std::convertible_to<char> T>
 	[[nodiscard]] inline static CONSTEXPR char tolower(const T& c) noexcept
 	{
-		return tolower(std::move(static_cast<char>(c)));
+		return tolower(static_cast<char>(c));
 	}
 #elif LANG_CPP >= 11 // C++11 <= v < C++20
 	template<typename T>
@@ -49,9 +49,9 @@ namespace str {
 #endif
 
 	/**
-	 * @brief Convert a whole string to lowercase.
-	 * @param str	- String to convert.
-	 * @returns std::string
+	 * @brief		Convert a whole string to lowercase.
+	 * @param str	String to convert.
+	 * @returns		std::string
 	 */
 	[[nodiscard]] inline WINCONSTEXPR const std::string tolower(std::string str) noexcept
 	{
@@ -59,7 +59,55 @@ namespace str {
 			ch = std::move(tolower(ch));
 		return str;
 	}
+
 #pragma endregion ChangeCase_Lower
+#pragma region ChangeCase_LowerWide
+
+	/**
+	 * @brief		Convert a character to lowercase.
+	 * @param c		Wide-char to convert. If the character is not an uppercase letter, it will be returned unmodified.
+	 * @returns		wchar_t
+	 */
+	[[nodiscard]] inline CONSTEXPR wchar_t tolower(const wchar_t& c) noexcept
+	{
+		if (c >= static_cast<wchar_t>('A') && c <= static_cast<wchar_t>('Z'))
+			return c + static_cast<wchar_t>(32);
+		return c;
+	}
+
+	/**
+	 * @brief		Convert a convertible-character to lowercase.
+	 * @tparam T	Type that is convertible to char.
+	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
+	 * @returns		char
+	 */
+#if LANG_CPP >= 20 // v >= C++20
+	template<std::convertible_to<wchar_t> T>
+	[[nodiscard]] inline static CONSTEXPR wchar_t tolower(const T& c) noexcept
+	{
+		return tolower(static_cast<wchar_t>(c));
+	}
+#elif LANG_CPP >= 11 // C++11 <= v < C++20
+	template<typename T>
+	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, wchar_t> || std::is_convertible_v<T, wchar_t>, wchar_t> tolower(const T& c) noexcept
+	{
+		return tolower(std::move(static_cast<wchar_t>(c)));
+	}
+#endif
+
+	/**
+	 * @brief		Convert a whole string to lowercase.
+	 * @param str	String to convert.
+	 * @returns		std::string
+	 */
+	[[nodiscard]] inline WINCONSTEXPR const std::wstring tolower(std::wstring str) noexcept
+	{
+		for (auto& wch : str)
+			wch = std::move(tolower(wch));
+		return str;
+	}
+
+#pragma endregion ChangeCase_LowerWide
 #pragma region ChangeCase_Upper
 	/**
 	 * @brief Convert a character to uppercase.
@@ -106,6 +154,53 @@ namespace str {
 	}
 
 #pragma endregion ChangeCase_Upper
+#pragma region ChangeCase_UpperWide
+
+	/**
+	 * @brief		Convert a character to lowercase.
+	 * @param c		Wide-char to convert. If the character is not an uppercase letter, it will be returned unmodified.
+	 * @returns		wchar_t
+	 */
+	[[nodiscard]] inline CONSTEXPR wchar_t toupper(const wchar_t& c) noexcept
+	{
+		if (c >= static_cast<wchar_t>('a') && c <= static_cast<wchar_t>('z'))
+			return c - static_cast<wchar_t>(32);
+		return c;
+	}
+
+	/**
+	 * @brief		Convert a convertible-character to lowercase.
+	 * @tparam T	Type that is convertible to char.
+	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
+	 * @returns		char
+	 */
+#if LANG_CPP >= 20 // v >= C++20
+	template<std::convertible_to<wchar_t> T>
+	[[nodiscard]] inline static CONSTEXPR wchar_t toupper(const T& c) noexcept
+	{
+		return tolower(static_cast<wchar_t>(c));
+	}
+#elif LANG_CPP >= 11 // C++11 <= v < C++20
+	template<typename T>
+	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, wchar_t> || std::is_convertible_v<T, wchar_t>, wchar_t> toupper(const T& c) noexcept
+	{
+		return tolower(std::move(static_cast<wchar_t>(c)));
+	}
+#endif
+
+	/**
+	 * @brief		Convert a whole string to lowercase.
+	 * @param str	String to convert.
+	 * @returns		std::string
+	 */
+	[[nodiscard]] inline WINCONSTEXPR const std::wstring toupper(std::wstring str) noexcept
+	{
+		for (auto& wch : str)
+			wch = std::move(tolower(wch));
+		return str;
+	}
+
+#pragma endregion ChangeCase_UpperWide
 
 	/**
 	 * @brief				Convert a floating-point to a string in standard notation, with a specified amount of precision.

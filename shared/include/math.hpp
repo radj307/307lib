@@ -164,4 +164,5 @@ namespace math {
 	{
 		return DurationT{ std::abs(left.count() - right.count()) };
 	}
+
 }

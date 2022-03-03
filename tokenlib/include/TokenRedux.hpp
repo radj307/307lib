@@ -325,7 +325,7 @@ namespace token::base {
 			return hasMore();
 		}
 
-		template<class Tokenizer = decltype(this)>
+		template<class Tokenizer = TokenizerBase<LexemeT, Dictionary, TokenType, Token>>
 		[[nodiscard]] std::vector<TokenT> recurseInto(const std::string& str, const std::optional<TokenT>& eof_tkn = std::nullopt, const size_t& reserve_sz = 256ull)
 		{
 			return Tokenizer(std::move(std::stringstream{ str }), lexeme_whitespace).tokenize(eof_tkn, reserve_sz);
