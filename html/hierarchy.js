@@ -19,6 +19,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "color::format::FlagBase< T >", "classcolor_1_1format_1_1_flag_base.html", null ],
+    [ "str::FloatingBase", "structstr_1_1_floating_base.html", null ],
     [ "color::format", "structcolor_1_1format.html", null ],
     [ "indentor< T, CharT >", "structindentor.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],

@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('classtoken_1_1base_1_1_tokenizer_base.
 <div class="dynheader">
 Collaboration diagram for token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base__coll__graph.svg" width="262" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base__coll__graph.svg" width="262" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -162,7 +161,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af6d982af9dba92ceba7c77b893c8c278"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#af6d982af9dba92ceba7c77b893c8c278">eatnext</a> (const size_t &amp;count=1ull) noexcept</td></tr>
 <tr class="memdesc:af6d982af9dba92ceba7c77b893c8c278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eat (advance the read pos past) upcoming characters.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#af6d982af9dba92ceba7c77b893c8c278">More...</a><br /></td></tr>
 <tr class="separator:af6d982af9dba92ceba7c77b893c8c278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplParams" colspan="2">template&lt;class Tokenizer  = decltype(this)&gt; </td></tr>
+<tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplParams" colspan="2">template&lt;class Tokenizer  = TokenizerBase&lt;LexemeT, Dictionary, TokenType, Token&gt;&gt; </td></tr>
 <tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#abca5bfb52fe0b7be90bf9286aa9caee3">recurseInto</a> (const std::string &amp;str, const std::optional&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt; &amp;eof_tkn=std::nullopt, const size_t &amp;reserve_sz=256ull)</td></tr>
 <tr class="separator:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e56a917f92d9b27605fcffe70d068ca"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a6e56a917f92d9b27605fcffe70d068ca">getBrackets</a> (const LexemeT &amp;bracketOpen, const LexemeT &amp;bracketClose, const bool &amp;eatLast=true)</td></tr>
@@ -861,8 +860,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_ad2354fddeabd1b5d0272f1686830cd86_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_ad2354fddeabd1b5d0272f1686830cd86_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1345,7 +1343,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <div class="memtemplate">
 template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class Tokenizer  = decltype(this)&gt; </div>
+template&lt;class Tokenizer  = TokenizerBase&lt;LexemeT, Dictionary, TokenType, Token&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

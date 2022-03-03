@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numbergrouping_878',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
+  ['numbergrouping_899',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
 ];
