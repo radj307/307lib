@@ -28,10 +28,10 @@
   */
 namespace var {
 	/**
-	 * @brief 
-	 * @tparam Pred 
-	 * @param begin 
-	 * @param end 
+	 * @brief
+	 * @tparam Pred
+	 * @param begin
+	 * @param end
 	 * @param fn	A function that accepts (IteratorT::value_type) and returns an integral or boolean.
 	 * @returns		size_t
 	 */
@@ -47,7 +47,7 @@ namespace var {
 		return counter;
 	}
 
-	#pragma region ConstexprTests
+#pragma region ConstexprTests
 	////////////////////////////////// BEGIN / Constexpr Tests /////////////////////////////////////////////
 	/**
 	 * @brief			Check if a variadic templated type has the same number of arguments as a given value.
@@ -87,33 +87,33 @@ namespace var {
 	/// @brief	is_less_than::type macro.
 	template<auto compsize, typename... Ts> using is_less_than_t = is_less_than<compsize, Ts...>::type;
 	////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////
-	#pragma endregion ConstexprTests
+#pragma endregion ConstexprTests
 
-	#if LANG_CPP >= 20
-	#pragma region Concepts
-	////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
-	#pragma region DeclvalTest_Concepts
-	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
-	/**
-	 * @concept		Streamable
-	 * @brief		Check if the given type can be inserted into an output stream.
-	 * @tparam T	A type to attempt to insert into the stream.
-	 */
+#if LANG_CPP >= 20
+#pragma region Concepts
+////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
+#pragma region DeclvalTest_Concepts
+////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
+/**
+ * @concept		Streamable
+ * @brief		Check if the given type can be inserted into an output stream.
+ * @tparam T	A type to attempt to insert into the stream.
+ */
 	template<typename T, class StreamType = std::stringstream>
 	concept Streamable = requires(T obj)
 	{
 		std::declval<StreamType&>() << obj;
 	};
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
-	#pragma endregion DeclvalTest_Concepts
-	#pragma region Type_Concepts	
-	////////////////////////////////// BEGIN / "Type Concepts" /////////////////////////////////////////////
-	/**
-	 * @concept		same_or_convertible
-	 * @brief		Checks if the given types are the same, or if type From can be converted to type To.
-	 * @tparam From	The type to convert from, or the same type as To.
-	 * @tparam To	The type to convert to, or the same type as From.
-	 */
+#pragma endregion DeclvalTest_Concepts
+#pragma region Type_Concepts	
+////////////////////////////////// BEGIN / "Type Concepts" /////////////////////////////////////////////
+/**
+ * @concept		same_or_convertible
+ * @brief		Checks if the given types are the same, or if type From can be converted to type To.
+ * @tparam From	The type to convert from, or the same type as To.
+ * @tparam To	The type to convert to, or the same type as From.
+ */
 	template<class From, class To> concept same_or_convertible = std::same_as<From, To> || std::convertible_to<From, To>;
 	/**
 	 * @concept		same_or_biconvertible
@@ -136,15 +136,15 @@ namespace var {
 	 */
 	template<typename T> concept numeric = arithmetic<T>;
 	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
-	#pragma endregion Type_Concepts
-	#pragma region Variadic_Count_Concepts
-	////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
-	/**
-	 * @concept			more_than
-	 * @brief			Check if the number of variadic arguments received is greater than a given threshold.
-	 * @tparam compsize	Pass test when there are more than this number of variadic arguments.
-	 * @tparam Ts...	Any number of variadic template arguments.
-	 */
+#pragma endregion Type_Concepts
+#pragma region Variadic_Count_Concepts
+////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
+/**
+ * @concept			more_than
+ * @brief			Check if the number of variadic arguments received is greater than a given threshold.
+ * @tparam compsize	Pass test when there are more than this number of variadic arguments.
+ * @tparam Ts...	Any number of variadic template arguments.
+ */
 	template<auto compsize, typename... Ts> concept more_than = std::same_as<is_more_than_t<compsize, Ts...>, std::true_type>;
 	/**
 	 * @concept			at_least_one
@@ -166,15 +166,15 @@ namespace var {
 	 */
 	template<class... Ts> concept none = less_than<1ull, Ts...>;
 	////////////////////////////////// END / Variadic Count Concepts /////////////////////////////////////////////
-	#pragma endregion Variadic_Count_Concepts
-	#pragma region VariadicType_Concepts
-	////////////////////////////////// BEGIN / Variadic "Type Concepts" /////////////////////////////////////////////
-	/**
-	 * @concept			not_same
-	 * @brief			Concept that checks if none of the given variadic types match a given type.
-	 * @tparam Type		Type that all variadic types must not match to pass.
-	 * @tparam Ts...	Variadic types to compare.
-	 */
+#pragma endregion Variadic_Count_Concepts
+#pragma region VariadicType_Concepts
+////////////////////////////////// BEGIN / Variadic "Type Concepts" /////////////////////////////////////////////
+/**
+ * @concept			not_same
+ * @brief			Concept that checks if none of the given variadic types match a given type.
+ * @tparam Type		Type that all variadic types must not match to pass.
+ * @tparam Ts...	Variadic types to compare.
+ */
 	template<typename Type, typename... Ts> concept not_same = ((!std::same_as<Type, Ts>) && ...);
 	/**
 	 * @concept			all_same
@@ -275,15 +275,15 @@ namespace var {
 	 */
 	template<typename To, typename... From> concept any_same_or_convertible_to = (same_or_convertible<From, To> || ...);
 	////////////////////////////////// END / Variadic "Type Concepts" /////////////////////////////////////////////
-	#pragma endregion VariadicType_Concepts
-	#pragma region ByteSize_Concepts
-	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
-	/**
-	 * @concept		same_size
-	 * @brief		Checks if the given types are the same size in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
-	 */
+#pragma endregion VariadicType_Concepts
+#pragma region ByteSize_Concepts
+////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
+/**
+ * @concept		same_size
+ * @brief		Checks if the given types are the same size in bytes.
+ * @tparam L	Input Type 1
+ * @tparam R	Input Type 2
+ */
 	template<typename L, typename R> concept same_size = (sizeof(L) == sizeof(R));
 	/**
 	 * @concept		smaller_size
@@ -314,14 +314,14 @@ namespace var {
 	 */
 	template<typename L, typename R> concept larger_equal_size = (sizeof(L) >= sizeof(R));
 	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
-	#pragma endregion ByteSize_Concepts
-	#pragma region StringConcepts
-	////////////////////////////////// BEGIN / String Concepts /////////////////////////////////////////////
-	/**
-	 * @concept		valid_char
-	 * @brief		Allows all standard char types as of C++20, including signed/unsigned char, wchar_t, UTF-8, UTF-16, & UTF-32 types.
-	 * @tparam T	Test Type.
-	 */
+#pragma endregion ByteSize_Concepts
+#pragma region StringConcepts
+////////////////////////////////// BEGIN / String Concepts /////////////////////////////////////////////
+/**
+ * @concept		valid_char
+ * @brief		Allows all standard char types as of C++20, including signed/unsigned char, wchar_t, UTF-8, UTF-16, & UTF-32 types.
+ * @tparam T	Test Type.
+ */
 	template<class T> concept valid_char = any_same<T, signed char, unsigned char, char, wchar_t, char8_t, char16_t, char32_t>;
 	/**
 	 * @concept		valid_string
@@ -368,19 +368,19 @@ namespace var {
 	 */
 	template<class T> concept valid_streampos = any_same<T, std::streampos, std::wstreampos, std::u8streampos, std::u16streampos, std::u32streampos>;
 	////////////////////////////////// END / String Concepts /////////////////////////////////////////////
-	#pragma endregion StringConcepts
-	////////////////////////////////// END / Concepts /////////////////////////////////////////////
-	#pragma endregion Concepts
-	#endif // CPP >= 20
+#pragma endregion StringConcepts
+////////////////////////////////// END / Concepts /////////////////////////////////////////////
+#pragma endregion Concepts
+#endif // CPP >= 20
 
-	#pragma region variadic
-	/**
-	 * @brief			Non-templated std::disjunction that accepts any number of boolean
-	 *\n 				conditions and returns true when at least one of them evaluates to true.
-	 * @tparam ...T		Variadic Template Parameter Pack.
-	 * @param booleans	Any number of boolean values to compare.
-	 * @returns			bool
-	 */
+#pragma region variadic
+/**
+ * @brief			Non-templated std::disjunction that accepts any number of boolean
+ *\n 				conditions and returns true when at least one of them evaluates to true.
+ * @tparam ...T		Variadic Template Parameter Pack.
+ * @param booleans	Any number of boolean values to compare.
+ * @returns			bool
+ */
 	template<typename...T> [[nodiscard]] inline static constexpr bool variadic_or(const T... booleans)
 	{
 		return ((booleans) || ...);
@@ -430,7 +430,7 @@ namespace var {
 	template<typename T, same_or_convertible<T>... Ts>
 	[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
 
-	#if LANG_CPP >= 20
+#if LANG_CPP >= 20
 	/**
 	 * @brief			Variadic templated helper function that returns a vector of templated element types.
 	 *\n				All types must be convertible to the specified output type.
@@ -469,10 +469,10 @@ namespace var {
 	{
 		return StrT{ static_cast<StrT::value_type>(ch)... };
 	}
-	#endif
+#endif
 
-	#pragma endregion variadic
-	#pragma region tuple
+#pragma endregion variadic
+#pragma region tuple
 	/**
 	 * @brief					Compare each element in a tuple against a given variable.
 	 * @tparam CompareType		Type that can be compared to all elements in the tuple.
@@ -535,7 +535,7 @@ namespace var {
 		return std::get<i>(l) == std::get<i>(r)
 			&& (sizeof...(Types) == i || tuple_and<i + 1ull>(l, r)); // if this is the last element, short circuit and stop recursing
 	}
-	#pragma endregion tuple
+#pragma endregion tuple
 
 	/// @brief	Always true type
 	template<class> using true_t = std::true_type;
@@ -545,4 +545,21 @@ namespace var {
 	template<class> INLINE static CONSTEXPR const bool true_v = true;
 	/// @brief	Always false value
 	template<class> INLINE static CONSTEXPR const bool false_v = false;
+
+	/**
+	 * @brief			Reverse the order of elements of a given vector.
+	 * @tparam T		Type contained within the vector.
+	 * @tparam AllocT	Allocator type.
+	 * @param vec		Input vector to reverse.
+	 * @returns			std::vector<T>
+	 */
+	template<class T, class AllocT = std::allocator<T>> [[nodiscard]] std::vector<T, AllocT> reverse(std::vector<T, AllocT> const& vec)
+	{
+		std::vector<T, AllocT> out;
+		out.reserve(vec.size());
+		for (auto it{ vec.rbegin() }; it != vec.rend(); ++it)
+			out.emplace_back(*it);
+		out.shrink_to_fit();
+		return out;
+	}
 }
