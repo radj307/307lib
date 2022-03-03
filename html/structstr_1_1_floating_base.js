@@ -8,5 +8,6 @@ var structstr_1_1_floating_base =
     [ "getBase", "structstr_1_1_floating_base.html#a586e99cee8fe584909cdf2d94c590361", null ],
     [ "setBase", "structstr_1_1_floating_base.html#a07d792f19c05a9ae4f6c3bf17f2ee960", null ],
     [ "operator<<", "structstr_1_1_floating_base.html#aa5d001bcaaba71138c0f0b015712560b", null ],
+    [ "base", "structstr_1_1_floating_base.html#a5f1f916768beb51d4bc95416c2a014d2", null ],
     [ "number", "structstr_1_1_floating_base.html#ad8f259c6d32683a78d4eb92e74b5b095", null ]
 ];

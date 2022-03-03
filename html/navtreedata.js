@@ -87,8 +87,8 @@ var NAVTREEINDEX =
 "classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518",
 "has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2",
 "strmanip_8hpp.html#a16f757b5761b656d6ce1d15aee26507c",
-"structstr_1_1_printable.html",
-"var_8hpp.html#a5c7b548836d697787813fbb1b441f9d7"
+"structstr_1_1_floating_base.html#abded8644dcc8ad06c6cd51db0edee7bc",
+"var_8hpp.html#a532c5c65bdf52f2ff2c398e8d1d4e420"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

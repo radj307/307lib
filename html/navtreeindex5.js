@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"structstr_1_1_floating_base.html#abded8644dcc8ad06c6cd51db0edee7bc":[6,0,7,1,0],
+"structstr_1_1_floating_base.html#ad8f259c6d32683a78d4eb92e74b5b095":[6,0,7,1,9],
 "structstr_1_1_printable.html":[6,0,7,2],
 "structstr_1_1_printable.html#a097f661e8c2bb195fc5cb0965076435c":[6,0,7,2,4],
 "structstr_1_1_printable.html#a6018e952ad17342eca6ed9cdf0e4add8":[6,0,7,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "var_8hpp.html#a232d8fe90138010e09ccce0d56e3bb3c":[7,0,4,0,8,18],
 "var_8hpp.html#a3c51dee573904e0882f2fb72103dddea":[7,0,4,0,8,13],
 "var_8hpp.html#a41080bdb7186fa7a77b12bfcdf06ff9f":[7,0,4,0,8,3],
-"var_8hpp.html#a475b05869c1d243426da8c22f6d2b402":[7,0,4,0,8,7],
-"var_8hpp.html#a532c5c65bdf52f2ff2c398e8d1d4e420":[7,0,4,0,8,17],
-"var_8hpp.html#a560fa1c70e80f8b11fa40ed35d3809b6":[7,0,4,0,8,11]
+"var_8hpp.html#a475b05869c1d243426da8c22f6d2b402":[7,0,4,0,8,7]
 };
