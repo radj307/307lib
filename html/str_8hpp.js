@@ -11,7 +11,6 @@ var str_8hpp =
     [ "equalsAny", "str_8hpp.html#ac0941f8566d99a99085690ce06c8eec1", null ],
     [ "equalsAny", "str_8hpp.html#ad5a0bf2d97851e9b37bad14d9ed8d224", null ],
     [ "getline", "str_8hpp.html#ae828e40bdc8eec39773e1a4dac9d7ed3", null ],
-    [ "ishexnum", "str_8hpp.html#a9dea0e9b46c42a30922ce893c17d88a8", null ],
     [ "isquote", "str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f", null ],
     [ "join", "str_8hpp.html#acf8be91baa116c4582e66f6278db959f", null ],
     [ "longest", "str_8hpp.html#af0d5f5ddec852ee6650d85fcd45c3030", null ],

@@ -145,8 +145,8 @@ $(document).ready(function(){initNavTree('_token_redux.html',''); initResizable(
 
     ## Building a Format Package
 
-     1. Start by creating a new `Tokenizer`-derived type, filling in template arguments with the corresponding  
-         object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
+     1. Start by creating a new `Tokenizer`-derived type, filling in template arguments with the corresponding
+        object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
     ```cpp
     class Tokenizer : token::base::TokenizerBase&lt;Lexeme, LexemeDictionary, Token, Token&gt; {
         Token getNext() override
@@ -156,11 +156,11 @@ $(document).ready(function(){initNavTree('_token_redux.html',''); initResizable(
     };
     ```
       2. Next, decide how you want to implement the Parser phase:
-        - No parsing phase, use Token vector directly in-place or with another parser.  
+        - No parsing phase, use Token vector directly in-place or with another parser.
            1. __If you choose to use another parser, or not to use a parser, you can skip this step.__
          - Use the TokenRedux parser base object.
            1. Choose the object/type you want the parser to return. This is usually a list of some sort, or a custom object.
-           2. 
+           2.
 </pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

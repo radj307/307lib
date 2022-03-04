@@ -6,6 +6,8 @@ var namespaces_dup =
     [ "ex", "namespaceex.html", null ],
     [ "facet", "namespacefacet.html", null ],
     [ "file", "namespacefile.html", "namespacefile" ],
+    [ "gen1", "namespacegen1.html", null ],
+    [ "gen2", "namespacegen2.html", null ],
     [ "ini", "namespaceini.html", null ],
     [ "iter", "namespaceiter.html", null ],
     [ "math", "namespacemath.html", null ],

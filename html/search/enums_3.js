@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keymode_1619',['KeyMode',['../namespacesys_1_1term.html#a118097cc454175d5e9043aa7ff11a2d3',1,'sys::term']]],
-  ['keymodetarget_1620',['KeyModeTarget',['../namespacesys_1_1term.html#a87bf27bfe5091904b80cf9f5c9e54b33',1,'sys::term']]]
+  ['tokentype_1767',['TokenType',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799',1,'token::DefaultDefs']]],
+  ['type_1768',['Type',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0f',1,'opt::token']]]
 ];

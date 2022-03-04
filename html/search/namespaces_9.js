@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rng_953',['rng',['../namespacerng.html',1,'']]],
-  ['seed_954',['seed',['../namespacerng_1_1seed.html',1,'rng']]]
+  ['query_989',['Query',['../namespace_query.html',1,'']]]
 ];

@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('namespacefile.html',''); initResizable
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">file Namespace Reference</div>  </div>
@@ -105,14 +106,53 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:aa70bfd04a696dbb114f1207712ac36a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An INI file object that can read, write, and interact with configuration values. Uses variadic templates heavily.  <a href="namespacefile.html#aa70bfd04a696dbb114f1207712ac36a6">More...</a><br /></td></tr>
 <tr class="separator:aa70bfd04a696dbb114f1207712ac36a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ad93e4fe300867dbfcd072f26f00879c9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> : std::ios_base::openmode { <br />
+&#160;&#160;<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a334c4a4c42fdb79d7ebc3e73b517e6f8">openmode::none</a> = 0, 
+<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ad2a57dc1d883fd21fb9951699df71cc7">openmode::app</a> = std::ios_base::app, 
+<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a9d7183f16acce70658f686ae7f1a4d20">openmode::binary</a> = std::ios_base::binary, 
+<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a13b5bfe96f3e2fe411c9f66f4a582adf">openmode::in</a> = std::ios_base::in, 
+<br />
+&#160;&#160;<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ac68271a63ddbc431c307beb7d2918275">openmode::out</a> = std::ios_base::out, 
+<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ade5010661a527a7f3565e98f672eb896">openmode::trunc</a> = std::ios_base::trunc, 
+<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a1f0cec14e2c5effcbff50f2feb9495f6">openmode::ate</a> = std::ios_base::ate
+<br />
+ }</td></tr>
+<tr class="memdesc:ad93e4fe300867dbfcd072f26f00879c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper for std::ios_base::openmode types.  <a href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">More...</a><br /></td></tr>
+<tr class="separator:ad93e4fe300867dbfcd072f26f00879c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">read</a> (const std::filesystem::path &amp;) noexcept</td></tr>
-<tr class="memdesc:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">More...</a><br /></td></tr>
-<tr class="separator:a22aa35c20e3a06ba5a7e3a080fc970b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc2a87c554d26357df15cfaa4e639bf7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#afc2a87c554d26357df15cfaa4e639bf7">write_to</a> (const std::filesystem::path &amp;, std::stringstream &amp;&amp;, const bool &amp;=false)</td></tr>
-<tr class="memdesc:afc2a87c554d26357df15cfaa4e639bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="namespacefile.html#afc2a87c554d26357df15cfaa4e639bf7">More...</a><br /></td></tr>
-<tr class="separator:afc2a87c554d26357df15cfaa4e639bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901dadc07a40cd7ca78331425d9aa2db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a901dadc07a40cd7ca78331425d9aa2db">operator|</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;left, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;right)</td></tr>
+<tr class="separator:a901dadc07a40cd7ca78331425d9aa2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add73c977374c83f7edb2ae7c0f59e7f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#add73c977374c83f7edb2ae7c0f59e7f8">operator^</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;left, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;right)</td></tr>
+<tr class="separator:add73c977374c83f7edb2ae7c0f59e7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee40c608ad41e1b4f5cb3414fd6dff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#adee40c608ad41e1b4f5cb3414fd6dff6">operator&amp;</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;left, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;right)</td></tr>
+<tr class="separator:adee40c608ad41e1b4f5cb3414fd6dff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b8200d0e17e657bc6cfc7c7f17d84f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ad8b8200d0e17e657bc6cfc7c7f17d84f">operator|=</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;mode, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;o)</td></tr>
+<tr class="separator:ad8b8200d0e17e657bc6cfc7c7f17d84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315a2753944c8dc19ed77d556a158193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a315a2753944c8dc19ed77d556a158193">operator^=</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;mode, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;o)</td></tr>
+<tr class="separator:a315a2753944c8dc19ed77d556a158193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48d434d59dcc59f3d8f542677811ea6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ae48d434d59dcc59f3d8f542677811ea6">operator&amp;=</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;mode, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;o)</td></tr>
+<tr class="separator:ae48d434d59dcc59f3d8f542677811ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a15f49f99fb91401ec7ee536305ccc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a82a15f49f99fb91401ec7ee536305ccc">operator==</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;mode, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;o)</td></tr>
+<tr class="separator:a82a15f49f99fb91401ec7ee536305ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f9bf6399bfebe69114a4c4bb277043"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a67f9bf6399bfebe69114a4c4bb277043">operator==</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;mode, int const &amp;o)</td></tr>
+<tr class="separator:a67f9bf6399bfebe69114a4c4bb277043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000fdcb257310de51c3e03b37780536b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a000fdcb257310de51c3e03b37780536b">operator==</a> (int const &amp;num, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;mode)</td></tr>
+<tr class="separator:a000fdcb257310de51c3e03b37780536b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a12c76de83380a436f45bd2c490e71f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#a8a12c76de83380a436f45bd2c490e71f">operator!=</a> (<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;mode, auto &amp;&amp;o)</td></tr>
+<tr class="separator:a8a12c76de83380a436f45bd2c490e71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87cdbabc115fa73e19f3686893747ba"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#aa87cdbabc115fa73e19f3686893747ba">read</a> (const std::filesystem::path &amp;, const <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;=<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a13b5bfe96f3e2fe411c9f66f4a582adf">openmode::in</a>) noexcept</td></tr>
+<tr class="memdesc:aa87cdbabc115fa73e19f3686893747ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="namespacefile.html#aa87cdbabc115fa73e19f3686893747ba">More...</a><br /></td></tr>
+<tr class="separator:aa87cdbabc115fa73e19f3686893747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb16bb3233f8b03314c0a7cc8e174d30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#adb16bb3233f8b03314c0a7cc8e174d30">write_to</a> (const std::filesystem::path &amp;, std::stringstream &amp;&amp;, <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;=<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ac68271a63ddbc431c307beb7d2918275">openmode::out</a>|<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ade5010661a527a7f3565e98f672eb896">openmode::trunc</a>)</td></tr>
+<tr class="memdesc:adb16bb3233f8b03314c0a7cc8e174d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="namespacefile.html#adb16bb3233f8b03314c0a7cc8e174d30">More...</a><br /></td></tr>
+<tr class="separator:adb16bb3233f8b03314c0a7cc8e174d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2a7198efd624fa2e734406bbea96a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefile.html#ace2a7198efd624fa2e734406bbea96a7">write_to</a> (const std::filesystem::path &amp;path, std::stringstream &amp;&amp;buffer, const bool &amp;<a class="el" href="namespacefile.html#a1432480e7d992958086d355a6be5904b">append</a>=false)</td></tr>
+<tr class="memdesc:ace2a7198efd624fa2e734406bbea96a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="namespacefile.html#ace2a7198efd624fa2e734406bbea96a7">More...</a><br /></td></tr>
+<tr class="separator:ace2a7198efd624fa2e734406bbea96a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a677d00eb29a467f18394236d2a60a97f"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
 <tr class="memitem:a677d00eb29a467f18394236d2a60a97f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefile.html#a677d00eb29a467f18394236d2a60a97f">write</a> (const std::filesystem::path &amp;path, Ts &amp;&amp;... data)</td></tr>
 <tr class="memdesc:a677d00eb29a467f18394236d2a60a97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write any number of objects to a file.  <a href="namespacefile.html#a677d00eb29a467f18394236d2a60a97f">More...</a><br /></td></tr>
@@ -161,6 +201,42 @@ Functions</h2></td></tr>
 <p>An INI file object that can read, write, and interact with configuration values. Uses variadic templates heavily. </p>
 
 <p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00720">720</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ad93e4fe300867dbfcd072f26f00879c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93e4fe300867dbfcd072f26f00879c9">&#9670;&nbsp;</a></span>openmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">file::openmode</a> : std::ios_base::openmode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience wrapper for std::ios_base::openmode types. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9ad2a57dc1d883fd21fb9951699df71cc7"></a>app&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9a9d7183f16acce70658f686ae7f1a4d20"></a>binary&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9a13b5bfe96f3e2fe411c9f66f4a582adf"></a>in&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9ac68271a63ddbc431c307beb7d2918275"></a>out&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9ade5010661a527a7f3565e98f672eb896"></a>trunc&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad93e4fe300867dbfcd072f26f00879c9a1f0cec14e2c5effcbff50f2feb9495f6"></a>ate&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00014">14</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
 
 </div>
 </div>
@@ -310,7 +386,7 @@ template&lt;var::Streamable... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00056">56</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00067">67</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 
 </div>
 </div>
@@ -509,8 +585,424 @@ template&lt;var::Streamable... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a22aa35c20e3a06ba5a7e3a080fc970b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22aa35c20e3a06ba5a7e3a080fc970b2">&#9670;&nbsp;</a></span>read()</h2>
+<a id="a8a12c76de83380a436f45bd2c490e71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a12c76de83380a436f45bd2c490e71f">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00069">69</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+
+</div>
+</div>
+<a id="adee40c608ad41e1b4f5cb3414fd6dff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee40c608ad41e1b4f5cb3414fd6dff6">&#9670;&nbsp;</a></span>operator&amp;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> file::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00034">34</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_adee40c608ad41e1b4f5cb3414fd6dff6_icgraph.svg" width="300" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae48d434d59dcc59f3d8f542677811ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48d434d59dcc59f3d8f542677811ea6">&#9670;&nbsp;</a></span>operator&amp;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&amp; file::operator&amp;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00049">49</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_ae48d434d59dcc59f3d8f542677811ea6_cgraph.svg" width="300" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a000fdcb257310de51c3e03b37780536b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a000fdcb257310de51c3e03b37780536b">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::operator== </td>
+          <td>(</td>
+          <td class="paramtype">int const &amp;&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00064">64</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+
+</div>
+</div>
+<a id="a67f9bf6399bfebe69114a4c4bb277043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f9bf6399bfebe69114a4c4bb277043">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00059">59</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+
+</div>
+</div>
+<a id="a82a15f49f99fb91401ec7ee536305ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a15f49f99fb91401ec7ee536305ccc">&#9670;&nbsp;</a></span>operator==() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00054">54</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+
+</div>
+</div>
+<a id="add73c977374c83f7edb2ae7c0f59e7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add73c977374c83f7edb2ae7c0f59e7f8">&#9670;&nbsp;</a></span>operator^()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> file::operator^ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00029">29</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_add73c977374c83f7edb2ae7c0f59e7f8_icgraph.svg" width="302" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a315a2753944c8dc19ed77d556a158193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a315a2753944c8dc19ed77d556a158193">&#9670;&nbsp;</a></span>operator^=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&amp; file::operator^= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00044">44</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_a315a2753944c8dc19ed77d556a158193_cgraph.svg" width="302" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a901dadc07a40cd7ca78331425d9aa2db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901dadc07a40cd7ca78331425d9aa2db">&#9670;&nbsp;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> file::operator| </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00024">24</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_a901dadc07a40cd7ca78331425d9aa2db_icgraph.svg" width="288" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad8b8200d0e17e657bc6cfc7c7f17d84f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b8200d0e17e657bc6cfc7c7f17d84f">&#9670;&nbsp;</a></span>operator|=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&amp; file::operator|= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="openmode_8h_source.html#l00039">39</a> of file <a class="el" href="openmode_8h_source.html">openmode.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefile_ad8b8200d0e17e657bc6cfc7c7f17d84f_cgraph.svg" width="288" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa87cdbabc115fa73e19f3686893747ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87cdbabc115fa73e19f3686893747ba">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,8 +1014,18 @@ template&lt;var::Streamable... Ts&gt; </div>
           <td class="memname">std::stringstream file::read </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a13b5bfe96f3e2fe411c9f66f4a582adf">openmode::in</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -602,12 +1104,61 @@ template&lt;var::Streamable... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00037">37</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00048">48</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 
 </div>
 </div>
-<a id="afc2a87c554d26357df15cfaa4e639bf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc2a87c554d26357df15cfaa4e639bf7">&#9670;&nbsp;</a></span>write_to()</h2>
+<a id="adb16bb3233f8b03314c0a7cc8e174d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb16bb3233f8b03314c0a7cc8e174d30">&#9670;&nbsp;</a></span>write_to() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::write_to </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::stringstream &amp;&amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ac68271a63ddbc431c307beb7d2918275">openmode::out</a>&#160;|&#160;<a class="el" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ade5010661a527a7f3565e98f672eb896">openmode::trunc</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the contents of a stringstream buffer to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Target filepath </td></tr>
+    <tr><td class="paramname">buffer</td><td>Stringstream rvalue reference. </td></tr>
+    <tr><td class="paramname">mode</td><td>Open mode flags that control how the stream operates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <br  />
+ true Successfully wrote all data to file without error. <br  />
+ false Failed to write all data to file because of an error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fileo_8cpp_source.html#l00005">5</a> of file <a class="el" href="fileo_8cpp_source.html">fileo.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ace2a7198efd624fa2e734406bbea96a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2a7198efd624fa2e734406bbea96a7">&#9670;&nbsp;</a></span>write_to() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +1202,7 @@ template&lt;var::Streamable... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8cpp_source.html#l00005">5</a> of file <a class="el" href="fileo_8cpp_source.html">fileo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8cpp_source.html#l00011">11</a> of file <a class="el" href="fileo_8cpp_source.html">fileo.cpp</a>.</p>
 
 </div>
 </div>

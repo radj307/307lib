@@ -5,6 +5,14 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
+    [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
+      [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
+        [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
+      ] ]
+    ] ],
+    [ "token::base::gen2::BasicCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
+      [ "token::base::gen2::IteratingCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", null ]
+    ] ],
     [ "BasicRand", null, [
       [ "rng::seed::FromIntegral< Engine >", "structrng_1_1seed_1_1_from_integral.html", null ],
       [ "rng::seed::FromRandomDevice< Engine >", "structrng_1_1seed_1_1_from_random_device.html", null ],
@@ -65,13 +73,12 @@ var hierarchy =
     [ "token::base::TokenizerBase< LEXEME, LexemeDictionary, Type, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "opt::token::Tokenizer", "classopt_1_1token_1_1_tokenizer.html", null ]
     ] ],
-    [ "token::base::TokenParserBase< OutputType, Token >", "classtoken_1_1base_1_1_token_parser_base.html", null ],
-    [ "token::base::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1_token_parser_base.html", [
+    [ "token::base::gen1::TokenParserBase< OutputType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", [
+      [ "file::ini::tokenizer::INIParser", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html", null ],
       [ "opt::token::Parser", "classopt_1_1token_1_1_parser.html", null ]
     ] ],
-    [ "token::base::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1_token_parser_base.html", [
-      [ "file::ini::tokenizer::INIParser", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html", null ]
-    ] ],
+    [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
+    [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],

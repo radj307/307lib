@@ -93,17 +93,18 @@ $(document).ready(function(){initNavTree('filei_8cpp_source.html',''); initResiz
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">fstream</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">    5</a></span>&#160;std::stringstream <a class="code" href="namespacefile.html">file</a>::<a class="code" href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">read</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespacefile.html#aa87cdbabc115fa73e19f3686893747ba">    5</a></span>&#160;std::stringstream <a class="code" href="namespacefile.html">file</a>::<a class="code" href="namespacefile.html#aa87cdbabc115fa73e19f3686893747ba">read</a>(<span class="keyword">const</span> std::filesystem::path&amp; path, <span class="keyword">const</span> <a class="code" href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">openmode</a>&amp; mode) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    std::stringstream buffer;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (std::ifstream ifs(path); ifs.is_open())</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (std::ifstream ifs(path, <span class="keyword">static_cast</span>&lt;std::ios_base::openmode&gt;(mode)); ifs.is_open())</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        buffer &lt;&lt; ifs.rdbuf();</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> std::move(buffer);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacefile_html_a22aa35c20e3a06ba5a7e3a080fc970b2"><div class="ttname"><a href="namespacefile.html#a22aa35c20e3a06ba5a7e3a080fc970b2">file::read</a></div><div class="ttdeci">std::stringstream read(const std::filesystem::path &amp;) noexcept</div><div class="ttdoc">Read the contents of a file to a stringstream.</div><div class="ttdef"><b>Definition:</b> <a href="filei_8cpp_source.html#l00005">filei.cpp:5</a></div></div>
-<div class="ttc" id="anamespacefile_html"><div class="ttname"><a href="namespacefile.html">file</a></div><div class="ttdef"><b>Definition:</b> <a href="filei_8hpp_source.html#l00014">filei.hpp:14</a></div></div>
+<div class="ttc" id="anamespacefile_html_ad93e4fe300867dbfcd072f26f00879c9"><div class="ttname"><a href="namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9">file::openmode</a></div><div class="ttdeci">openmode</div><div class="ttdoc">Convenience wrapper for std::ios_base::openmode types.</div><div class="ttdef"><b>Definition:</b> <a href="openmode_8h_source.html#l00014">openmode.h:14</a></div></div>
+<div class="ttc" id="anamespacefile_html"><div class="ttname"><a href="namespacefile.html">file</a></div><div class="ttdef"><b>Definition:</b> <a href="openmode_8h_source.html#l00009">openmode.h:9</a></div></div>
+<div class="ttc" id="anamespacefile_html_aa87cdbabc115fa73e19f3686893747ba"><div class="ttname"><a href="namespacefile.html#aa87cdbabc115fa73e19f3686893747ba">file::read</a></div><div class="ttdeci">std::stringstream read(const std::filesystem::path &amp;, const openmode &amp;=openmode::in) noexcept</div><div class="ttdoc">Read the contents of a file to a stringstream.</div><div class="ttdef"><b>Definition:</b> <a href="filei_8cpp_source.html#l00005">filei.cpp:5</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

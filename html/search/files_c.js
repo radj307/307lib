@@ -1,11 +1,17 @@
 var searchData=
 [
-  ['term_2ecpp_1022',['term.cpp',['../term_8cpp.html',1,'']]],
-  ['term_2ehpp_1023',['term.hpp',['../term_8hpp.html',1,'']]],
-  ['termapi_2ecpp_1024',['TermAPI.cpp',['../_term_a_p_i_8cpp.html',1,'']]],
-  ['termapi_2ehpp_1025',['TermAPI.hpp',['../_term_a_p_i_8hpp.html',1,'']]],
-  ['tokenredux_2ecpp_1026',['TokenRedux.cpp',['../_token_redux_8cpp.html',1,'']]],
-  ['tokenredux_2ehpp_1027',['TokenRedux.hpp',['../_token_redux_8hpp.html',1,'']]],
-  ['tokenreduxdefaultdefs_2ecpp_1028',['TokenReduxDefaultDefs.cpp',['../_token_redux_default_defs_8cpp.html',1,'']]],
-  ['tokenreduxdefaultdefs_2ehpp_1029',['TokenReduxDefaultDefs.hpp',['../_token_redux_default_defs_8hpp.html',1,'']]]
+  ['segments_2eh_1048',['Segments.h',['../_segments_8h.html',1,'']]],
+  ['sequence_2ecpp_1049',['Sequence.cpp',['../_sequence_8cpp.html',1,'']]],
+  ['sequence_2ehpp_1050',['Sequence.hpp',['../_sequence_8hpp.html',1,'']]],
+  ['setcolor_2ecpp_1051',['setcolor.cpp',['../setcolor_8cpp.html',1,'']]],
+  ['setcolor_2ehpp_1052',['setcolor.hpp',['../setcolor_8hpp.html',1,'']]],
+  ['str_2ecpp_1053',['str.cpp',['../str_8cpp.html',1,'']]],
+  ['str_2ehpp_1054',['str.hpp',['../str_8hpp.html',1,'']]],
+  ['strconv_2ehpp_1055',['strconv.hpp',['../strconv_8hpp.html',1,'']]],
+  ['strlocale_2ehpp_1056',['strlocale.hpp',['../strlocale_8hpp.html',1,'']]],
+  ['strmanip_2ehpp_1057',['strmanip.hpp',['../strmanip_8hpp.html',1,'']]],
+  ['strmath_2ehpp_1058',['strmath.hpp',['../strmath_8hpp.html',1,'']]],
+  ['strregex_2ehpp_1059',['strregex.hpp',['../strregex_8hpp.html',1,'']]],
+  ['strutility_2ehpp_1060',['strutility.hpp',['../strutility_8hpp.html',1,'']]],
+  ['sysarch_2eh_1061',['sysarch.h',['../sysarch_8h.html',1,'']]]
 ];
