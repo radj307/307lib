@@ -153,7 +153,9 @@ namespace str {
 		if (n < static_cast<T>(0) || n > static_cast<T>('Z' - 'A' + 10))
 			throw make_exception("str::toAlphaNumeric() failed:  \'", n, "\' cannot be converted to an alphanumeric value because it isn't within the range ( 0 - 36(Z) )");
 
-		return static_cast<char>(static_cast<T>(upper ? 'A' : 'a') + n);
+		if (n < 10)
+			return '0' + n;
+		else return (upper ? 'A' : 'a') + n;
 	}
 
 	/**
@@ -215,13 +217,7 @@ namespace str {
 		value.reserve(getLength(number));
 
 		do {
-			char digit{ toAlphaNumeric(n % toBase) };
-
-			if (digit < 10)
-				digit += '0';
-			else digit += ('A' - 10);
-
-			value += digit;
+			value += toAlphaNumeric(n % toBase);
 			n /= toBase;
 		} while (n > 0);
 
