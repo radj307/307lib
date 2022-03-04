@@ -46,6 +46,7 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -84,11 +85,11 @@ var NAVTREEINDEX =
 [
 "307modules.html",
 "_windows_not_today_8h.html#a2ee511fa2fd29a9a1f0efbcb2c364b8f",
-"classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518",
-"has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2",
-"strmanip_8hpp.html#a16f757b5761b656d6ce1d15aee26507c",
-"structstr_1_1_floating_base.html#abded8644dcc8ad06c6cd51db0edee7bc",
-"var_8hpp.html#a532c5c65bdf52f2ff2c398e8d1d4e420"
+"classtoken_1_1base_1_1_tokenizer_base.html#a6e56a917f92d9b27605fcffe70d068ca",
+"globals_func.html",
+"strmanip_8hpp.html#a026f55497d251c5acccef7dd42148138",
+"structstr_1_1_floating_base.html#a1da6285cc7ef0ac4c0e32072ae1f8509",
+"var_8hpp.html#a060dae79f908e9ec94f42175a42c45b1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

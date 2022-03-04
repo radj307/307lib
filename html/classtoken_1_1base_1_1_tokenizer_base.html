@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('classtoken_1_1base_1_1_tokenizer_base.
 <a href="#friends">Friends</a> &#124;
 <a href="classtoken_1_1base_1_1_tokenizer_base-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -215,10 +215,22 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a948c5508d2e704adb1422f7b2a084c67"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">getline_and_match</a> (const size_t &amp;count, const std::string &amp;comp, std::string &amp;str)</td></tr>
 <tr class="memdesc:a948c5508d2e704adb1422f7b2a084c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variation of the getline(count) function that returns true if the result matches a given comparison string.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">More...</a><br /></td></tr>
 <tr class="separator:a948c5508d2e704adb1422f7b2a084c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2354fddeabd1b5d0272f1686830cd86"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ad2354fddeabd1b5d0272f1686830cd86">getNext</a> ()=0</td></tr>
-<tr class="memdesc:ad2354fddeabd1b5d0272f1686830cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
- This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ad2354fddeabd1b5d0272f1686830cd86">More...</a><br /></td></tr>
-<tr class="separator:ad2354fddeabd1b5d0272f1686830cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1">getNextToken</a> (const char &amp;)</td></tr>
+<tr class="memdesc:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function <br  />
+ This is an alternative to the getNext(bool) function, and when this is overridden but <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> is NOT, this is used for parsing instead. <br  />
+ You can also override getNext(bool) to <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1">More...</a><br /></td></tr>
+<tr class="separator:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda7c9526d3f5d10dc1997a4585ce907"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#adda7c9526d3f5d10dc1997a4585ce907">getNextChar</a> (const bool &amp;allowWhitespace)</td></tr>
+<tr class="memdesc:adda7c9526d3f5d10dc1997a4585ce907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#adda7c9526d3f5d10dc1997a4585ce907">More...</a><br /></td></tr>
+<tr class="separator:adda7c9526d3f5d10dc1997a4585ce907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544e67585a3967388589bf511d255d56"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56">getNext</a> ()</td></tr>
+<tr class="memdesc:a544e67585a3967388589bf511d255d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
+ This is implemented for backwards-compatibility, and is simply an alias for calling <code>getNext(false);</code>. <br  />
+ For improved <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> alternatives, see the getNextChar(bool) &amp; getNextToken(char) overloads. <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56">More...</a><br /></td></tr>
+<tr class="separator:a544e67585a3967388589bf511d255d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -827,8 +839,8 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 </div>
 </div>
-<a id="ad2354fddeabd1b5d0272f1686830cd86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2354fddeabd1b5d0272f1686830cd86">&#9670;&nbsp;</a></span>getNext()</h2>
+<a id="a544e67585a3967388589bf511d255d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544e67585a3967388589bf511d255d56">&#9670;&nbsp;</a></span>getNext()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -847,20 +859,106 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
+ This is implemented for backwards-compatibility, and is simply an alias for calling <code>getNext(false);</code>. <br  />
+ For improved <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> alternatives, see the getNextChar(bool) &amp; getNextToken(char) overloads. <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use the getNextChar(bool) &amp; getNextToken(char) functions instead.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
+
+<p>Reimplemented in <a class="el" href="structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566">file::ini::tokenizer::INITokenizer</a>, and <a class="el" href="classopt_1_1token_1_1_tokenizer.html#ac203fbf32ec07e3848b489cd4aca8db5">opt::token::Tokenizer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00585">585</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adda7c9526d3f5d10dc1997a4585ce907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda7c9526d3f5d10dc1997a4585ce907">&#9670;&nbsp;</a></span>getNextChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getNextChar </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>allowWhitespace</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
  This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowWhitespace</td><td>When true, whitespace may be passed to the getNext(char) overload. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
-<p>Implemented in <a class="el" href="structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566">file::ini::tokenizer::INITokenizer</a>, and <a class="el" href="classopt_1_1token_1_1_tokenizer.html#ac203fbf32ec07e3848b489cd4aca8db5">opt::token::Tokenizer</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00574">574</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1458a1f6fccc3ebceca0e9a0413dd9c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1458a1f6fccc3ebceca0e9a0413dd9c1">&#9670;&nbsp;</a></span>getNextToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getNextToken </td>
+          <td>(</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual function <br  />
+ This is an alternative to the getNext(bool) function, and when this is overridden but <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> is NOT, this is used for parsing instead. <br  />
+ You can also override getNext(bool) to <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ch</td><td>Automatically called by the BASE <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> function. Depending on the getNext(bool) overload, this may or may not be whitespace. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_ad2354fddeabd1b5d0272f1686830cd86_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_a1458a1f6fccc3ebceca0e9a0413dd9c1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -1563,7 +1661,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00586">586</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00608">608</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
