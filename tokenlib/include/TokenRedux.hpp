@@ -58,15 +58,15 @@
  *            Must derive from the `TokenParserBase` object.
  *
  *			# Getting Started
- * 
+ *
  *			## Planning
- * 
+ *
  *			## Building a Definitions Package
- * 
+ *
  *			## Building a Format Package
- * 
- *			 1. Start by creating a new `Tokenizer`-derived type, filling in template arguments with the corresponding  
-                object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
+ *
+ *			 1. Start by creating a new `Tokenizer`-derived type, filling in template arguments with the corresponding
+				object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
  *			```cpp
  *			class Tokenizer : token::base::TokenizerBase<Lexeme, LexemeDictionary, Token, Token> {
  *				Token getNext() override
@@ -76,11 +76,11 @@
  *			};
  *			```
  *           2. Next, decide how you want to implement the Parser phase:
- *				- No parsing phase, use Token vector directly in-place or with another parser.  
+ *				- No parsing phase, use Token vector directly in-place or with another parser.
  *                1. __If you choose to use another parser, or not to use a parser, you can skip this step.__
  *              - Use the TokenRedux parser base object.
  *                1. Choose the object/type you want the parser to return. This is usually a list of some sort, or a custom object.
- *                2. 
+ *                2.
  */
 #pragma once
 #include <sysarch.h>
@@ -128,8 +128,8 @@ namespace token::base {
 	};
 
 	/**
-	 * @struct			TokenBase
-	 * @brief			Base token object. It represents zero or more characters of data, and is the most basic unit recognized by the parsing step.
+	 * @struct				TokenBase
+	 * @brief				Base token object. It represents zero or more characters of data, and is the most basic unit recognized by the parsing step.
 	 * @tparam TokenType	The TokenBase Type instance to use. This is defined by a "definitions package".
 	 */
 	template<typename TokenType>
@@ -179,8 +179,6 @@ namespace token::base {
 
 		static const TokenBase NullToken;
 	};
-	template<class TokenType>
-	inline const TokenBase<TokenType> TokenBase<TokenType>::NullToken{ static_cast<TokenType>(0), '\0' };
 
 	/**
 	 * @class				TokenizerBase
@@ -310,12 +308,12 @@ namespace token::base {
 
 		/**
 		 * @brief			Eat (advance the read pos past) upcoming characters.
-		 * @param count		The number of characters the eat.
+		 * @param count		The number of characters to "eat".
 		 * @returns			bool
 		 *\n		true	There are more upcoming characters.
 		 *\n		false	Reached EOF while eating characters.
 		 */
-		bool eatnext(const size_t& count = 1ull) noexcept
+		bool eat(const size_t& count = 1ull) noexcept
 		{
 			for (size_t i{ 0ull }; i < count; ++i) {
 				if (ss.good())
@@ -324,6 +322,13 @@ namespace token::base {
 			}
 			return hasMore();
 		}
+		/**
+		 * @brief			Eat (advance the read pos past) the next character.
+		 * @returns			bool
+		 *\n		true	There are more upcoming characters.
+		 *\n		false	Reached EOF while eating characters.
+		 */
+		bool eatnext() noexcept { return eat(1ull); }
 
 		template<class Tokenizer = TokenizerBase<LexemeT, Dictionary, TokenType, Token>>
 		[[nodiscard]] std::vector<TokenT> recurseInto(const std::string& str, const std::optional<TokenT>& eof_tkn = std::nullopt, const size_t& reserve_sz = 256ull)
@@ -563,7 +568,7 @@ namespace token::base {
 		 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
 		 * @returns		TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNextToken(const char&);
+		[[nodiscard]] virtual TokenT getNextToken(const char&) = 0;
 
 		/**
 		 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
@@ -575,7 +580,7 @@ namespace token::base {
 
 		/**
 		 * @deprecated Use the getNextChar(bool) & getNextToken(char) functions instead.
-		 * 
+		 *
 		 * @brief	Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
 		 *\n		This is implemented for backwards-compatibility, and is simply an alias for calling ` getNext(false); `.
 		 *\n		For improved getNext() alternatives, see the getNextChar(bool) & getNextToken(char) overloads.
@@ -615,47 +620,314 @@ namespace token::base {
 	};
 
 	/**
-	 * @class				TokenParserBase
-	 * @brief				Base parser object that accepts a vector of tokens, and returns an implementation-defined type.
-	 * @tparam OutputType	User-defined Output Type.
-	 * @tparam TokenT		TokenBase Object Type.
+	 * @namespace	gen1
+	 * @brief		Contains the old "TokenParserBase" object for backwards-compatibility, and/or simplicity.
 	 */
-	template<class OutputType, typename Token>
-	class TokenParserBase {
-	public:
-		using OutputT = OutputType;
-		using TokenT = Token;
-	protected:
-		std::vector<TokenT> tokens;
+	namespace gen1 {
+		/**
+		 * @class				TokenParserBase
+		 * @brief				Base parser object that accepts a vector of tokens, and returns an implementation-defined type.
+		 * @tparam OutputType	User-defined Output Type.
+		 * @tparam TokenT		TokenBase Object Type.
+		 */
+		template<class OutputType, typename Token>
+		class TokenParserBase {
+		public:
+			using OutputT = OutputType;
+			using TokenT = Token;
+		protected:
+			std::vector<TokenT> tokens;
+
+			/**
+			 * @brief			Constructor.
+			 * @param tokens	TokenBase Vector Rvalue Reference
+			 */
+			TokenParserBase(std::vector<TokenT>&& tokens) : tokens{ std::move(tokens) } {}
+			/**
+			 * @brief			Constructor.
+			 * @param tokens	TokenBase Vector
+			 */
+			TokenParserBase(const std::vector<TokenT>& tokens) : tokens{ tokens } {}
+
+			/// @brief	Virtual Destructor
+			virtual ~TokenParserBase() noexcept = default;
+
+			template<typename... Ts>
+			std::vector<TokenT> strip_types(const Ts&... types) const
+			{
+				std::vector<TokenT> copy{ tokens };
+				copy.erase(std::remove_if(copy.begin(), copy.end(), [&](auto&& tkn) { return var::variadic_or(tkn.type == types...); }), copy.end());
+				return copy;
+			}
+
+		public:
+			/**
+			 * @brief	Parse the token container.
+			 * @returns	OutputType
+			 */
+			virtual OutputT parse() const = 0;
+			virtual operator OutputT() const { return parse(); }
+		};
+	}
+
+	/**
+	 * @namespace	gen2
+	 * @brief		Contains upgraded parsers with more features than the gen 1 "TokenParserBase" object.
+	 */
+	namespace gen2 {
 
 		/**
-		 * @brief			Constructor.
-		 * @param tokens	TokenBase Vector Rvalue Reference
+		 * @class				BasicCoreParserBase
+		 * @brief				Base object for all Gen.2 parsers. Does not specify an output type, allowing for implementation-defined flexibility.
+		 * @tparam TokenType	The TokenType that Tokens use.
+		 * @tparam Token		The type of Token object to use.
 		 */
-		TokenParserBase(std::vector<TokenT>&& tokens) : tokens{ std::move(tokens) } {}
+		template<typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
+		class BasicCoreParserBase {
+		public:
+			/// @brief	The internal TokenType enum type used by Tokens.
+			using TokenTypeT = TokenType;
+			/// @brief	The type of Token object being used by the Tokenizer & Parser
+			using TokenT = Token;
+			/// @brief	A std::vector of TokenT instances.
+			using TokenCont = std::vector<TokenT>;
+			/// @brief	Mutable TokenCont iterator type.
+			using iterator = TokenCont::iterator;
+			/// @brief	Immutable TokenCont iterator type.
+			using const_iterator = TokenCont::const_iterator;
+
+		protected:
+			TokenCont tokens;
+
+			/**
+			 * @brief		Parser Move Constructor.
+			 * @param tkns	A token container of type std::vector<Token> to move into the parser.
+			 */
+			BasicCoreParserBase(TokenCont&& tkns) : tokens{ std::move(tkns) } {}
+			/**
+			 * @brief		Parser Copy Constructor.
+			 * @param tkns	A token container of type std::vector<Token> to copy into the parser.
+			 */
+			BasicCoreParserBase(const TokenCont& tkns) : tokens{ tkns } {}
+			virtual ~BasicCoreParserBase() noexcept = default;
+
+			/// @brief	Retrieve an iterator for the start of the token container.
+			const_iterator begin() const { return tokens.begin(); }
+			/// @brief	Retrieve an iterator for the end of the token container.
+			const_iterator end() const { return tokens.end(); }
+
+		public:
+			/**
+			 * @brief			Copy & remove all Tokens with types that match any of the specified TokenTypes.
+			 * @tparam Ts...	Variadic input that accepts at least one TokenType.
+			 * @param ...types	One of more TokenTypes to remove.
+			 * @returns			TokenCont
+			 *\n				This contains all of the removed tokens, in the order that they were removed. (forward iterated)
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			TokenCont strip_tokens(Ts&&... types)
+			{
+				TokenCont vec;
+				vec.reserve(tokens.size());
+
+				tokens.erase(std::remove_if(tokens.begin(), tokens.end(), [&vec, &types...](auto&& tkn) {
+					if (var::variadic_or(tkn.type == types...)) {
+						vec.emplace_back(tkn);
+						return true;
+					}
+					return false;
+				}), tokens.end());
+
+				vec.shrink_to_fit();
+				return vec;
+			}
+
+			/**
+			 * @brief			Copy all Tokens with types that match any of the specified types to a vector and return it.
+			 * @tparam Ts...	Variadic input that accepts at least one TokenType.
+			 * @param ...types	At least one TokenType to search for.
+			 * @returns			TokenCont
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			[[nodiscard]] TokenCont get_tokens(Ts&&... types) const
+			{
+				TokenCont vec;
+				vec.reserve(tokens.size());
+
+				for (const TokenT& tkn : tokens)
+					if (var::variadic_or(tkn.type == types...))
+						vec.emplace_back(tkn);
+
+				vec.shrink_to_fit();
+				return vec;
+			}
+		};
+
 		/**
-		 * @brief			Constructor.
-		 * @param tokens	TokenBase Vector
+		 * @class				IteratingCoreParserBase
+		 * @brief				Token Parser with an integrated read pointer, and helper functions similar to TokenizerBase.
+		 * @tparam TokenType	The TokenType that Tokens use.
+		 * @tparam Token		The type of Token object to use.
 		 */
-		TokenParserBase(const std::vector<TokenT>& tokens) : tokens{ tokens } {}
+		template<typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
+		class IteratingCoreParserBase : public BasicCoreParserBase<TokenType, Token> {
+		protected:
+			using const_iterator = BasicCoreParserBase<TokenType, Token>::const_iterator;
+			using TokenCont = BasicCoreParserBase<TokenType, Token>::TokenCont;
 
-		/// @brief	Virtual Destructor
-		virtual ~TokenParserBase() noexcept = default;
+			const_iterator readpos;
 
-		template<typename... Ts>
-		std::vector<TokenT> strip_types(const Ts&... types) const
-		{
-			std::vector<TokenT> copy{ tokens };
-			copy.erase(std::remove_if(copy.begin(), copy.end(), [&](auto&& tkn) { return var::variadic_or(tkn.type == types...); }), copy.end());
-			return copy;
-		}
+			IteratingCoreParserBase(TokenCont&& tkns) : BasicCoreParserBase<TokenType, Token>(std::forward<TokenCont>(tkns)), readpos{ this->tokens.begin() } {}
+			IteratingCoreParserBase(const TokenCont& tkns) : BasicCoreParserBase<TokenType, Token>(tkns), readpos{ this->tokens.begin() } {}
+			virtual ~IteratingCoreParserBase() noexcept = default;
 
-	public:
-		/**
-		 * @brief	Parse the token container.
-		 * @returns	OutputType
-		 */
-		virtual OutputT parse() const = 0;
-		virtual operator OutputT() const { return parse(); }
-	};
+			/// @brief	Check if the read position hasn't reached the end of the container.
+			bool hasMore() const { return readpos < this->end(); }
+
+			/**
+			 * @brief		Advance the read position by the specified number of tokens.
+			 * @param n		Number of tokens to move the read position by.
+			 * @returns		const_iterator
+			 */
+			const_iterator getNext(const size_t& n = 1ull) noexcept
+			{
+				const auto& endit{ this->end() };
+				if (std::distance(readpos, endit) > n)
+					return readpos += n;
+				return endit;
+			}
+
+			/**
+			 * @brief			Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.
+			 * @param ...types	At least one TokenType to match.
+			 * @returns			const_iterator
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			const_iterator getNext(Ts&&... types) noexcept
+			{
+				const auto& endit{ this->end() };
+				for (; readpos < endit; ++readpos)
+					if (var::variadic_or(readpos->type == std::forward<Ts>(types)...))
+						return readpos;
+				return endit;
+			}
+
+			/**
+			 * @brief		Move the read position back by the given number of tokens.
+			 * @param n		Number of tokens to move the read position by.
+			 * @returns		const_iterator
+			 */
+			const_iterator getLast(const size_t& n = 1ull) const noexcept
+			{
+				const auto& beg{ this->begin() };
+				if (std::distance(beg, readpos) >= n)
+					return readpos -= n;
+				return beg;
+			}
+
+			/**
+			 * @brief			Keep moving the read position back until the first Token whose type matches one of the given TokenTypes.
+			 * @param ...types	At least one TokenType to match.
+			 * @returns			const_iterator
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			const_iterator getLast(Ts&&... types) noexcept
+			{
+				const auto& beg{ this->begin() };
+				for (; readpos != beg; --readpos)
+					if (var::variadic_or(readpos->type == std::forward<Ts>(types)...))
+						return readpos;
+				return beg;
+			}
+
+
+			/**
+			 * @brief		Advance the read position by the specified number of tokens.
+			 * @param n		Number of tokens to move the read position by.
+			 * @returns		const_iterator
+			 */
+			const_iterator peekNext(const size_t& n = 1ull) const noexcept
+			{
+				const auto& endit{ this->end() };
+				if (std::distance(readpos, endit) > n)
+					return readpos + n;
+				return endit - 1;
+			}
+
+			/**
+			 * @brief			Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.
+			 * @param ...types	At least one TokenType to match.
+			 * @returns			const_iterator
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			const_iterator peekNext(Ts&&... types) const noexcept
+			{
+				const auto& endit{ this->end() };
+				for (auto it{ readpos }; it < endit; ++it)
+					if (var::variadic_or(it->type == std::forward<Ts>(types)...))
+						return it;
+				return endit - 1;
+			}
+
+			/**
+			 * @brief		Move the read position back by the given number of tokens.
+			 * @param n		Number of tokens to move the read position by.
+			 * @returns		const_iterator
+			 */
+			const_iterator peekLast(const size_t& n = 1ull) const noexcept
+			{
+				const auto& beg{ this->begin() };
+				if (std::distance(beg, readpos) >= n)
+					return readpos - n;
+				return beg;
+			}
+
+			/**
+			 * @brief			Keep moving the read position back until the first Token whose type matches one of the given TokenTypes.
+			 * @param ...types	At least one TokenType to match.
+			 * @returns			const_iterator
+			 */
+			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
+			const_iterator peekLast(Ts&&... types) const noexcept
+			{
+				const auto& beg{ this->begin() };
+				for (auto it{ readpos }; it != beg; --it)
+					if (var::variadic_or(it->type == std::forward<Ts>(types)...))
+						return it;
+				return beg;
+			}
+		};
+
+		template<typename Output, typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>, template<typename, typename> class ParserBaseT = IteratingCoreParserBase>
+		class ParserBase : public ParserBaseT<TokenType, Token> {
+		public:
+			/// @brief	The internal TokenType enum type used by Tokens.
+			using TokenTypeT = TokenType;
+			/// @brief	The type of Token object being used by the Tokenizer & Parser
+			using TokenT = Token;
+			/// @brief	A std::vector of TokenT instances.
+			using TokenCont = std::vector<TokenT>;
+			/// @brief	Mutable TokenCont iterator type.
+			using iterator = TokenCont::iterator;
+			/// @brief	Immutable TokenCont iterator type.
+			using const_iterator = TokenCont::const_iterator;
+
+			using OutputT = Output;
+
+			ParserBase(TokenCont&& tkns) : ParserBaseT<TokenType, Token>(std::move(tkns)) {}
+			ParserBase(const TokenCont& tkns) : ParserBaseT<TokenType, Token>(tkns) {}
+			virtual ~ParserBase() noexcept = default;
+
+			virtual OutputT parse() = 0;
+		};
+
+		template<typename Output, typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
+		using BasicParserBase = ParserBase<Output, TokenType, Token, BasicCoreParserBase>;
+		template<typename Output, typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
+		using IteratingParserBase = ParserBase<Output, TokenType, Token, IteratingCoreParserBase>;
+	}
+
+	using gen1::TokenParserBase;
+	using gen2::BasicParserBase;
+	using gen2::IteratingParserBase;
 }
