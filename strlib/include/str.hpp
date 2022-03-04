@@ -23,19 +23,6 @@ using namespace std::string_literals;
 #endif
 
 /**
- * @brief	Check if a given character is a valid hexadecimal digit. Valid: ( 0-9 | a-f | A-F )
- * @param c	Input Character
- * @returns int
- *			0	Character is not a valid hexadecimal digit.
- *			1	Character is a valid hexadecimal digit.
- */
-inline static constexpr const int ishexnum(const int& c)
-{
-	return (c >= '0' && c <= '9')			// digit
-		|| (c >= 'a' && c <= 'f')	// a-f
-		|| (c >= 'A' && c <= 'F');	// A-F
-}
-/**
  * @brief Test that checks if a given char is a quotation mark. (Accepts single or double quotes.)
  * @param c	- Input char
  * @returns bool

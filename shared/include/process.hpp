@@ -170,6 +170,14 @@ namespace process {
 		Proc(const std::string& command, const Mode& mode = (Mode::READ | Mode::BINARY)) noexcept(false) : _rc_ptr{ nullptr }
 		{
 			fflush(NULL); // flush all streams
+
+			if ((mode & Mode::READ) == 0 && (mode & Mode::WRITE) == 0) {
+				throw make_exception(
+					"Cannot open a process pipe without a READ or WRITE mode flag!\n",
+					indent(10), "To fix this exception, include the Mode::READ or Mode::WRITE flag in the process pipe call."
+				);
+			}
+
 			_pipe = POPEN((command + SEQ_SHELL_OUTPUT_REDIRECT).c_str(), mode.str().c_str()); // open the pipe
 			if (!_pipe) // if the pipe isn't open, throw an exception
 				throw make_exception("Failed to open a pipe with command: \"", command, "\" and mode: \"", mode.str(), '\"');
@@ -297,7 +305,10 @@ namespace process {
 	 * @param mode		The pipe operation mode.
 	 * @returns			int
 	 */
-	inline int exec(const std::string& command, const Mode& mode = (Mode::TEXT)) { return Proc{ command, mode }.close(); }
+	inline int exec(const std::string& command, const Mode& mode = (Mode::TEXT))
+	{
+		return Proc{ command, mode }.close();
+	}
 
 	/**
 	 * @brief			Execute a command in the default shell using `popen`, and return the result. STDOUT & STDERR output is inserted into the given stringstream pointer.
