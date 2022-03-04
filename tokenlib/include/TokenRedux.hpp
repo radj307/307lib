@@ -556,11 +556,33 @@ namespace token::base {
 		}
 
 		/**
-		 * @brief Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
-		 *\n	  This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
-		 * @returns TokenT
+		 * @brief		Pure virtual function
+		 *\n			This is an alternative to the getNext(bool) function, and when this is overridden but getNext() is NOT, this is used for parsing instead.
+		 *\n			You can also override getNext(bool) to
+		 *\n			This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+		 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
+		 * @returns		TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNext() = 0;
+		[[nodiscard]] virtual TokenT getNextToken(const char&);
+
+		/**
+		 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
+		 *\n						This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+		 * @param allowWhitespace	When true, whitespace may be passed to the getNext(char) overload.
+		 * @returns					TokenT
+		 */
+		[[nodiscard]] virtual TokenT getNextChar(const bool& allowWhitespace) { return getNextToken(getch(allowWhitespace)); }
+
+		/**
+		 * @deprecated Use the getNextChar(bool) & getNextToken(char) functions instead.
+		 * 
+		 * @brief	Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
+		 *\n		This is implemented for backwards-compatibility, and is simply an alias for calling ` getNext(false); `.
+		 *\n		For improved getNext() alternatives, see the getNextChar(bool) & getNextToken(char) overloads.
+		 *\n		This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+		 * @returns	TokenT
+		 */
+		[[nodiscard]] virtual TokenT getNext() { return getNextChar(false); }
 
 	private:
 		[[nodiscard]] std::vector<TokenT> tokenize_internal(const size_t& reserve)

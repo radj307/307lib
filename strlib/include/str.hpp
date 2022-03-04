@@ -10,7 +10,6 @@
 #include <var.hpp>
 
 #include <iomanip>				// for std::setw & other std::iostream manipulation functions.
-#include <regex>
 
  /// Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.
 /**
@@ -601,4 +600,4 @@ namespace str {
 			return var::variadic_or((str::tolower(str) == str::tolower(matches))...);
 		return var::variadic_or((str == matches)...);
 	}
-};
+}
