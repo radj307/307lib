@@ -2,10 +2,10 @@
 
 #include <fstream>
 
-std::stringstream file::read(const std::filesystem::path& path) noexcept
+std::stringstream file::read(const std::filesystem::path& path, const openmode& mode) noexcept
 {
 	std::stringstream buffer;
-	if (std::ifstream ifs(path); ifs.is_open())
+	if (std::ifstream ifs(path, static_cast<std::ios_base::openmode>(mode)); ifs.is_open())
 		buffer << ifs.rdbuf();
 	return std::move(buffer);
 }

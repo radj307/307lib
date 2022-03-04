@@ -4,6 +4,8 @@
  * @brief	Contains file input functions.
  */
 #pragma once
+#include "openmode.h"
+
 #include <sstream>
 #include <filesystem>
 
@@ -17,5 +19,5 @@ namespace file {
 	 * @param path	Target Filepath
 	 * @returns		std::stringstream&&
 	 */
-	std::stringstream read(const std::filesystem::path&) noexcept;
+	std::stringstream read(const std::filesystem::path&, const openmode& = openmode::in) noexcept;
 }
