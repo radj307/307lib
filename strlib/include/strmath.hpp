@@ -155,7 +155,7 @@ namespace str {
 
 		if (n < 10)
 			return '0' + n;
-		else return (upper ? 'A' : 'a') + n;
+		else return (upper ? 'A' : 'a') + (n - 10);
 	}
 
 	/**
