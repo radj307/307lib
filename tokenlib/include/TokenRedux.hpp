@@ -179,6 +179,8 @@ namespace token::base {
 
 		static const TokenBase NullToken;
 	};
+	template<typename TokenType>
+	inline const TokenBase<TokenType> TokenBase<TokenType>::NullToken{ static_cast<TokenType>(0), '\0' };
 
 	/**
 	 * @class				TokenizerBase
@@ -568,7 +570,7 @@ namespace token::base {
 		 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
 		 * @returns		TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNextToken(const char&) = 0;
+		[[nodiscard]] virtual TokenT getNextToken(const char&) { return TokenT::NullToken; }
 
 		/**
 		 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
@@ -771,10 +773,13 @@ namespace token::base {
 		 */
 		template<typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
 		class IteratingCoreParserBase : public BasicCoreParserBase<TokenType, Token> {
-		protected:
+		public:
+			/// @brief	The internal TokenType enum type used by Tokens.
+			using TokenTypeT = TokenType;
 			using const_iterator = BasicCoreParserBase<TokenType, Token>::const_iterator;
 			using TokenCont = BasicCoreParserBase<TokenType, Token>::TokenCont;
 
+		protected:
 			const_iterator readpos;
 
 			IteratingCoreParserBase(TokenCont&& tkns) : BasicCoreParserBase<TokenType, Token>(std::forward<TokenCont>(tkns)), readpos{ this->tokens.begin() } {}
@@ -802,8 +807,8 @@ namespace token::base {
 			 * @param ...types	At least one TokenType to match.
 			 * @returns			const_iterator
 			 */
-			template<std::same_as<TokenTypeT>... Ts> requires var::at_least_one<Ts...>
-			const_iterator getNext(Ts&&... types) noexcept
+			template<std::same_as<TokenTypeT>... Ts> requires (var::at_least_one<Ts...>)
+				const_iterator getNext(Ts&&... types) noexcept
 			{
 				const auto& endit{ this->end() };
 				for (; readpos < endit; ++readpos)
