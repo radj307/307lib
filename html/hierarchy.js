@@ -47,6 +47,7 @@ var hierarchy =
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
+    [ "matrix::matrix< T, SizeX, SizeY >", "structmatrix_1_1matrix.html", null ],
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
     [ "numpunct", null, [
@@ -54,6 +55,9 @@ var hierarchy =
     ] ],
     [ "xlog::OutputTarget< StreamType >", "structxlog_1_1_output_target.html", null ],
     [ "xlog::OutputTarget< std::ostream >", "structxlog_1_1_output_target.html", null ],
+    [ "pair", null, [
+      [ "matrix::point< T >", "structmatrix_1_1point.html", null ]
+    ] ],
     [ "term::palette< Key >", "classterm_1_1palette.html", null ],
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],

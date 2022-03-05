@@ -12,7 +12,7 @@ var searchData=
   ['anglebracket_5fopen_36',['ANGLEBRACKET_OPEN',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6ac254559f045cd56ef0446567e06192e4',1,'token::DefaultDefs']]],
   ['ansi_37',['ANSI',['../namespace_a_n_s_i.html',1,'']]],
   ['any_5fexist_38',['any_exist',['../namespacefile.html#a4697327cfb74a10cca44af22563c58d3',1,'file']]],
-  ['app_39',['app',['../namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ad2a57dc1d883fd21fb9951699df71cc7',1,'file']]],
+  ['app_39',['app',['../namespacefile.html#a4172803d88f79140493760c26cbf1ea4ad2a57dc1d883fd21fb9951699df71cc7',1,'file']]],
   ['append_40',['append',['../namespacefile.html#a1432480e7d992958086d355a6be5904b',1,'file']]],
   ['apply_5fto_5feach_41',['apply_to_each',['../namespacestr.html#a82f6e6378f1869b65cce94f28f31d665',1,'str']]],
   ['arch_42',['ARCH',['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h'],['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h']]],
@@ -33,6 +33,6 @@ var searchData=
   ['as_5fsequence_5fwith_5fformat_57',['as_sequence_with_format',['../structterm_1_1setcolor__seq.html#a3212c28a76b23d16f5cf619b50c36d81',1,'term::setcolor_seq']]],
   ['as_5fstring_5fid_58',['as_string_id',['../structxlog_1_1level_1_1_log_level.html#a8588a6f6ca0abf5f3945498f8b46edb2',1,'xlog::level::LogLevel']]],
   ['at_59',['at',['../classenv_1_1_p_a_t_h.html#af15da7ddc8328ef1e3835f23cb900f52',1,'env::PATH::at()'],['../classfile_1_1ini_1_1_i_n_i_container.html#a2dd6aab11649e8c4e9efead1a12365fd',1,'file::ini::INIContainer::at(const std::string &amp;header) const'],['../classfile_1_1ini_1_1_i_n_i_container.html#ac3d742078be76180e4f198e1720674f7',1,'file::ini::INIContainer::at(const std::string &amp;header, const std::string &amp;key) const'],['../classfile_1_1ini_1_1_i_n_i_container.html#a1c407840d7f6edadf5d1e09cd52f2bae',1,'file::ini::INIContainer::at(const HeaderKeyPair &amp;hkpr) const'],['../structopt_1_1_arg_container.html#a858c85802a222f64ea68f7092e29389c',1,'opt::ArgContainer::at()']]],
-  ['ate_60',['ate',['../namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9a1f0cec14e2c5effcbff50f2feb9495f6',1,'file']]],
+  ['ate_60',['ate',['../namespacefile.html#a4172803d88f79140493760c26cbf1ea4a1f0cec14e2c5effcbff50f2feb9495f6',1,'file']]],
   ['average_61',['average',['../namespacemath.html#a4ebbcb8080baa327efd4900b564f29ac',1,'math::average(const IteratorT &amp;begin, const IteratorT &amp;end)'],['../namespacemath.html#abb804e71d6df020d52dc5d30b5b84e59',1,'math::average(T &amp;&amp;fst, Ts &amp;&amp;... rest)'],['../namespacemath.html#aa8798fa12a38b9e4de69c79b15143c6e',1,'math::average(const std::vector&lt; DurationT &gt; &amp;durations)']]]
 ];

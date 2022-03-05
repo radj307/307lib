@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trunc_1828',['trunc',['../namespacefile.html#ad93e4fe300867dbfcd072f26f00879c9ade5010661a527a7f3565e98f672eb896',1,'file']]]
+  ['trunc_1847',['trunc',['../namespacefile.html#a4172803d88f79140493760c26cbf1ea4ade5010661a527a7f3565e98f672eb896',1,'file']]]
 ];

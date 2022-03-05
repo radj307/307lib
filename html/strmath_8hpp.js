@@ -10,6 +10,7 @@ var strmath_8hpp =
     [ "fromBase10", "strmath_8hpp.html#ac02e5c31bf205b9b08d87b3c3c946baf", null ],
     [ "fromBase10", "strmath_8hpp.html#a041f49f2d8f911fcb5e47ed6ff691ab0", null ],
     [ "getLength", "strmath_8hpp.html#a51a5ecaec1b7efa91322b8b79949f551", null ],
+    [ "getNumberLength", "strmath_8hpp.html#a47b165f72dcf094c144c89e27861888a", null ],
     [ "hexToDecimal", "strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2", null ],
     [ "hexToDecimal", "strmath_8hpp.html#a42c6b6a3bd47743a574df997a0bb8c65", null ],
     [ "isbinary", "strmath_8hpp.html#ae6e5ba0568ee7667816d0ec5535adcb6", null ],

@@ -27,12 +27,13 @@ var searchData=
   ['format_254',['format',['../structcolor_1_1format.html',1,'color::format'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()']]],
   ['formatflag_255',['FormatFlag',['../namespacecolor.html#a9454e0fab41f3b132c3d9d616b993f57',1,'color']]],
   ['forward_256',['forward',['../structterm_1_1_cursor.html#a3b8e415312fbfc9e152d7307cc5e5f1e',1,'term::Cursor']]],
-  ['fromalphanumeric_257',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
-  ['frombase10_258',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]],
-  ['fromcft_259',['fromCFT',['../namespaceopt.html#a6a373c5a56e4d1774fc66862eb3a2559',1,'opt']]],
-  ['fromintegral_260',['FromIntegral',['../structrng_1_1seed_1_1_from_integral.html',1,'rng::seed']]],
-  ['fromrandomdevice_261',['FromRandomDevice',['../structrng_1_1seed_1_1_from_random_device.html',1,'rng::seed']]],
-  ['fromtime_262',['FromTime',['../structrng_1_1seed_1_1_from_time.html',1,'rng::seed']]],
-  ['ini_263',['ini',['../namespacefile_1_1ini.html',1,'file']]],
-  ['tokenizer_264',['tokenizer',['../namespacefile_1_1ini_1_1tokenizer.html',1,'file::ini']]]
+  ['from1d_257',['from1D',['../structmatrix_1_1point.html#a5d9b1658a3edd652fb56efb8ea39cfef',1,'matrix::point::from1D(const size_t &amp;index) noexcept'],['../structmatrix_1_1point.html#a080b1146497027ecc46e92fe3d9ddbb1',1,'matrix::point::from1D(const size_t &amp;index) noexcept']]],
+  ['fromalphanumeric_258',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
+  ['frombase10_259',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]],
+  ['fromcft_260',['fromCFT',['../namespaceopt.html#a6a373c5a56e4d1774fc66862eb3a2559',1,'opt']]],
+  ['fromintegral_261',['FromIntegral',['../structrng_1_1seed_1_1_from_integral.html',1,'rng::seed']]],
+  ['fromrandomdevice_262',['FromRandomDevice',['../structrng_1_1seed_1_1_from_random_device.html',1,'rng::seed']]],
+  ['fromtime_263',['FromTime',['../structrng_1_1seed_1_1_from_time.html',1,'rng::seed']]],
+  ['ini_264',['ini',['../namespacefile_1_1ini.html',1,'file']]],
+  ['tokenizer_265',['tokenizer',['../namespacefile_1_1ini_1_1tokenizer.html',1,'file::ini']]]
 ];
