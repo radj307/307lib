@@ -116,11 +116,15 @@ namespace str {
 	template<std::integral T>
 	[[nodiscard]] constexpr inline static size_t getLength(T integral) noexcept
 	{
-		size_t count{ 1ull };
-		for (const auto& ten{ static_cast<T>(10) }, two{ static_cast<T>(2) }; integral > ten; ++count)
-			integral /= two;
-		return count;
+		return static_cast<size_t>(std::log10<T>(integral)) + 1ull + static_cast<size_t>(integral < 0);
 	}
+	/**
+	 * @brief			Get the length of the given integral number in digits.
+	 * @param integral	Input number.
+	 * @returns			size_t
+	 */
+	template<std::integral T>
+	[[nodiscard]] constexpr inline static size_t getNumberLength(const T& integral) { return getLength(integral); }
 
 	// @brief	Alias for type (long long).
 	using decimal = long long;
