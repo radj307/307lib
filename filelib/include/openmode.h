@@ -11,7 +11,7 @@ namespace file {
 	 * @enum	openmode
 	 * @brief	Convenience wrapper for std::ios_base::openmode types.
 	 */
-	enum class openmode : std::ios_base::openmode {
+	enum class openmode : int {
 		none = 0,
 		app = std::ios_base::app,
 		binary = std::ios_base::binary,
