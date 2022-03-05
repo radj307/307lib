@@ -85,10 +85,10 @@ var NAVTREEINDEX =
 [
 "307modules.html",
 "_windows_not_today_8h.html#a2d7186e4a6dfcc0011461ce1e8b70a05",
-"classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67",
-"functions_func_c.html",
-"setcolor_8cpp_source.html",
-"structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385",
+"classtoken_1_1base_1_1_tokenizer_base.html#a908d9de9eed05398a7c44b10b7e648ac",
+"functions_func_b.html",
+"setcolor_8cpp.html",
+"structopt_1_1_params_a_p_i2.html#a4fe2851de46239a5d97ae13d724771e8",
 "sysarch_8h.html#a63e66b419dba650abc74240836e8447a"
 ];
 

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"setcolor_8cpp.html":[8,0,6,1,3],
 "setcolor_8cpp_source.html":[8,0,6,1,3],
 "setcolor_8hpp.html":[8,0,6,0,10],
 "setcolor_8hpp.html#a16bb0ca9938c4b43be74d9934120047b":[8,0,6,0,10,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structopt_1_1_params_a_p_i2.html#a2c95b64e9107d41979fc9780acb95d1f":[7,0,4,7,18],
 "structopt_1_1_params_a_p_i2.html#a2e63ee6962343e8e43c6abef51fb9e78":[7,0,4,7,17],
 "structopt_1_1_params_a_p_i2.html#a3f5c1f0dbaa140ff038d33700fc360f5":[7,0,4,7,6],
-"structopt_1_1_params_a_p_i2.html#a4e0d7fa6c94ea465367985a150343ea9":[7,0,4,7,11],
-"structopt_1_1_params_a_p_i2.html#a4fe2851de46239a5d97ae13d724771e8":[7,0,4,7,3]
+"structopt_1_1_params_a_p_i2.html#a4e0d7fa6c94ea465367985a150343ea9":[7,0,4,7,11]
 };

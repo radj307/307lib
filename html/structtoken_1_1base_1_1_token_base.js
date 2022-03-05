@@ -11,7 +11,7 @@ var structtoken_1_1base_1_1_token_base =
     [ "operator!=", "structtoken_1_1base_1_1_token_base.html#aedf8312516548db04395aa77986b3d7c", null ],
     [ "operator==", "structtoken_1_1base_1_1_token_base.html#a7cb5a7413cb016d9fc2f32b7dd303fdc", null ],
     [ "operator<<", "structtoken_1_1base_1_1_token_base.html#ad759f727a84c1d138caea2dc096f4334", null ],
-    [ "NullToken", "structtoken_1_1base_1_1_token_base.html#ab4aebd6387a37f8c1bd34c3356d7613f", null ],
+    [ "NullToken", "structtoken_1_1base_1_1_token_base.html#a6a626355cbde742f92caba6103cdc0c2", null ],
     [ "str", "structtoken_1_1base_1_1_token_base.html#a5d0b17b0997ecf5eaa04164986348d68", null ],
     [ "type", "structtoken_1_1base_1_1_token_base.html#a8f1003b2294790fe7e8e6264d7a2709c", null ]
 ];

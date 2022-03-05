@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"functions_func_b.html":[7,3,1,1],
 "functions_func_c.html":[7,3,1,2],
 "functions_func_d.html":[7,3,1,3],
 "functions_func_e.html":[7,3,1,4],
@@ -166,8 +167,8 @@ var NAVTREEINDEX3 =
 "namespaceopt_1_1token.html":[7,0,4,0],
 "namespaceprocess.html":[6,0,13],
 "namespaceprocess.html":[7,0,5],
-"namespacerng.html":[6,0,15],
 "namespacerng.html":[7,0,6],
+"namespacerng.html":[6,0,15],
 "namespacerng_1_1seed.html":[6,0,15,0],
 "namespacerng_1_1seed.html":[7,0,6,0],
 "namespaces.html":[6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "redirect_8hpp.html":[8,0,8,0,2],
 "redirect_8hpp.html#a4eae54f1c095fe3028ff66ef28f62513":[8,0,8,0,2,1],
 "redirect_8hpp.html#ac687798f75e93c5c1adb49552730ec4e":[8,0,8,0,2,2],
-"redirect_8hpp_source.html":[8,0,8,0,2],
-"setcolor_8cpp.html":[8,0,6,1,3]
+"redirect_8hpp_source.html":[8,0,8,0,2]
 };

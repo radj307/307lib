@@ -9,6 +9,6 @@ var searchData=
   ['noerrorsorwarningsdebug_1610',['NoErrorsOrWarningsDebug',['../structxlog_1_1level.html#affc5880963f1019f5681f68e4e72446e',1,'xlog::level']]],
   ['none_1611',['NONE',['../structxlog_1_1level.html#a1ea82679755f988c1534601c3c732c0b',1,'xlog::level::NONE()'],['../structprocess_1_1_mode.html#ae27b31b4b3562fad21a7257d5983d213',1,'process::Mode::NONE()'],['../structcolor_1_1format.html#a76b63f6053121da916461d9d256df706',1,'color::format::NONE()']]],
   ['null_5fterm_1612',['NULL_TERM',['../namespace_a_n_s_i.html#abe6abfce983c77ae9757a082cd56800e',1,'ANSI']]],
-  ['nulltoken_1613',['NullToken',['../structtoken_1_1base_1_1_token_base.html#ab4aebd6387a37f8c1bd34c3356d7613f',1,'token::base::TokenBase']]],
+  ['nulltoken_1613',['NullToken',['../structtoken_1_1base_1_1_token_base.html#a6a626355cbde742f92caba6103cdc0c2',1,'token::base::TokenBase']]],
   ['number_1614',['number',['../structstr_1_1_floating_base.html#ad8f259c6d32683a78d4eb92e74b5b095',1,'str::FloatingBase']]]
 ];

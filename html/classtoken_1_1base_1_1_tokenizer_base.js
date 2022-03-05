@@ -17,7 +17,7 @@ var classtoken_1_1base_1_1_tokenizer_base =
     [ "getline_and_match", "classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67", null ],
     [ "getNext", "classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56", null ],
     [ "getNextChar", "classtoken_1_1base_1_1_tokenizer_base.html#adda7c9526d3f5d10dc1997a4585ce907", null ],
-    [ "getNextToken", "classtoken_1_1base_1_1_tokenizer_base.html#ab11ee9a43bdc52f11182f8e985539877", null ],
+    [ "getNextToken", "classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1", null ],
     [ "getnotsimilar", "classtoken_1_1base_1_1_tokenizer_base.html#a39dd6b3095daa8bc06fab3c5265d66ae", null ],
     [ "getsimilar", "classtoken_1_1base_1_1_tokenizer_base.html#afa7c6a9bb2019ef421bd97b9c6d5861f", null ],
     [ "getsimilar", "classtoken_1_1base_1_1_tokenizer_base.html#ae2bc243b56c523aeb8bcbdd44f14ea49", null ],
