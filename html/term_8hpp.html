@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 <code>#include &lt;<a class="el" href="indentor_8hpp_source.html">indentor.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_message_8hpp_source.html">Message.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="has_pending_data_s_t_d_i_n_8h_source.html">hasPendingDataSTDIN.h</a>&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
@@ -113,7 +114,8 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for term.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -142,10 +144,17 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af07bee9f06674309ae5efe70f5f801a6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm_1_1query.html#af07bee9f06674309ae5efe70f5f801a6">term::query::getResponse</a> (const int &amp;timeout=256, const bool flush_output_stream=false) noexcept</td></tr>
-<tr class="memdesc:af07bee9f06674309ae5efe70f5f801a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a query response from STDIN, and return it as a string. <br  />
- It is ___highly discouraged___ to call this function from outside of the term namespace.  <a href="namespaceterm_1_1query.html#af07bee9f06674309ae5efe70f5f801a6">More...</a><br /></td></tr>
-<tr class="separator:af07bee9f06674309ae5efe70f5f801a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad99af1bd0d76beed39ad95da2d893710"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm_1_1query.html#ad99af1bd0d76beed39ad95da2d893710">term::query::getResponse</a> () noexcept</td></tr>
+<tr class="memdesc:ad99af1bd0d76beed39ad95da2d893710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a query response from STDIN, and return it as a string.  <a href="namespaceterm_1_1query.html#ad99af1bd0d76beed39ad95da2d893710">More...</a><br /></td></tr>
+<tr class="separator:ad99af1bd0d76beed39ad95da2d893710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">term::kbhit</a> ()</td></tr>
+<tr class="memdesc:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a key was pressed. <br  />
+ On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().  <a href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">More...</a><br /></td></tr>
+<tr class="separator:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705b8e2f941f96208d459673c5a11b4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">term::getch</a> ()</td></tr>
+<tr class="memdesc:a705b8e2f941f96208d459673c5a11b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a single keypress from STDIN, without blocking. <br  />
+ On windows, this uses _getch(), while on linux, it uses getchar_unlocked().  <a href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">More...</a><br /></td></tr>
+<tr class="separator:a705b8e2f941f96208d459673c5a11b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55343558a46cefcc203c3a5cc5ccaf8f"><td class="memTemplParams" colspan="2">template&lt;std::integral RT = size_t&gt; </td></tr>
 <tr class="memitem:a55343558a46cefcc203c3a5cc5ccaf8f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; RT, RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a55343558a46cefcc203c3a5cc5ccaf8f">term::getCursorPosition</a> () noexcept(false)</td></tr>
 <tr class="memdesc:a55343558a46cefcc203c3a5cc5ccaf8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current position of the cursor, measured in characters of the screen buffer.  <a href="namespaceterm.html#a55343558a46cefcc203c3a5cc5ccaf8f">More...</a><br /></td></tr>
@@ -185,10 +194,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">term::CursorVerticalAbs</a> (const T &amp;row)</td></tr>
 <tr class="memdesc:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific row/line.  <a href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">More...</a><br /></td></tr>
 <tr class="separator:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18b814b00708a834bdd06e38c048b1a2"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:a18b814b00708a834bdd06e38c048b1a2"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a18b814b00708a834bdd06e38c048b1a2">term::setCursorPosition</a> (const T &amp;x_column, const T &amp;y_row)</td></tr>
-<tr class="memdesc:a18b814b00708a834bdd06e38c048b1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#a18b814b00708a834bdd06e38c048b1a2">More...</a><br /></td></tr>
-<tr class="separator:a18b814b00708a834bdd06e38c048b1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
+<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">term::setCursorPosition</a> (const Tx &amp;x_column, const Ty &amp;y_row)</td></tr>
+<tr class="memdesc:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">More...</a><br /></td></tr>
+<tr class="separator:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65dcb7ead96f775f138afc7d38d46650"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a65dcb7ead96f775f138afc7d38d46650">term::setCursorPosition</a> (const std::pair&lt; unsigned, unsigned &gt; &amp;pos)</td></tr>
 <tr class="memdesc:a65dcb7ead96f775f138afc7d38d46650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#a65dcb7ead96f775f138afc7d38d46650">More...</a><br /></td></tr>
 <tr class="separator:a65dcb7ead96f775f138afc7d38d46650"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,7 +282,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a8562447d9e29e8b67e3f16f68dcccef8">term::DisableCursorBlink</a> { make_sequence(CSI, &quot;?12&quot;, DISABLE) }</td></tr>
 <tr class="memdesc:a8562447d9e29e8b67e3f16f68dcccef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable cursor blinking.  <a href="namespaceterm.html#a8562447d9e29e8b67e3f16f68dcccef8">More...</a><br /></td></tr>
 <tr class="separator:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">term::clear</a> { make_sequence(CSI, 2,'J') }</td></tr>
+<tr class="memitem:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">term::clear</a> { make_sequence(CSI, 2, 'J') }</td></tr>
 <tr class="memdesc:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all characters in the current viewport. (similar to <code>clear</code>|<code>cls</code>)  <a href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">More...</a><br /></td></tr>
 <tr class="separator:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88357e2d383772f737a8e22add373567"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a88357e2d383772f737a8e22add373567">term::EnableKeypadApplicationMode</a> { make_sequence(ESC, '=') }</td></tr>
