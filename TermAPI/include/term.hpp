@@ -13,21 +13,22 @@
 #include <indentor.hpp>
 #include <Message.hpp>
 #include <make_exception.hpp>
+#include <hasPendingDataSTDIN.h>
 
 #include <iostream>
 #include <chrono>
 #include <thread>
 #include <string>
 
+#	ifdef OS_WIN
+#	include <conio.h>
+#	endif
+
  /**
   * @namespace	term
   * @brief		Contains pre-made ANSI sequences & helper functions for making sequences.
   */
 namespace term {
-#	ifdef OS_WIN
-#	include <conio.h>
-#	endif
-
 	using namespace std::chrono_literals;
 	using namespace ::ANSI;
 	/**
@@ -37,28 +38,63 @@ namespace term {
 	namespace query {
 		/**
 		 * @brief			Receive a query response from STDIN, and return it as a string.
-		 *\n				It is ___highly discouraged___ to call this function from outside of the term namespace.
-		 * @param timeout	If this many milliseconds pass without receiving any data, the function will break and return nothing.
 		 * @returns			std::string
 		 */
-		inline std::string getResponse(const int& timeout = 256, const bool flush_output_stream = false) noexcept
+		inline std::string getResponse() noexcept
 		{
-			if (flush_output_stream)
-				fflush(stdout);
-			std::string seq; // already has enough space reserved
-#			ifdef OS_WIN
-			for (int i{ 0 }; !_kbhit() && i < timeout; ++i) // wait until a "key press" or until timeout is reached.
-				std::this_thread::sleep_for(1ms);
-			while (_kbhit()) // while a key is "pressed"
-				seq += static_cast<char>(_getch()); // get key code, cast to char
-#			else
+			std::string s;
+			if (hasPendingDataSTDIN())
+				while (std::cin)
+					s += static_cast<char>(std::cin.get());
 			std::cin.clear();
-			for (char c; !std::cin.fail() && std::cin >> c; )
-				seq += c;
-			std::cin.clear();
-#			endif
-			return seq;
+			return s;
+			// OLD IMPLEMENTATION
+//			if (flush_output_stream)
+//				fflush(stdout);
+//			std::string seq; // already has enough space reserved
+//#			ifdef OS_WIN
+//			for (int i{ 0 }; !_kbhit() && i < timeout; ++i) // wait until a "key press" or until timeout is reached.
+//				std::this_thread::sleep_for(1ms);
+//			while (_kbhit()) // while a key is "pressed"
+//				seq += static_cast<char>(_getch()); // get key code, cast to char
+//#			else
+//			std::cin.clear();
+//			for (char c; !std::cin.fail() && std::cin >> c; )
+//				seq += c;
+//			std::cin.clear();
+//#			endif
+//			return seq;
 		}
+	}
+
+	/**
+	 * @brief			Check if a key was pressed.
+	 *\n				On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().
+	 * @returns	bool:	True when a key was pressed and there is data waiting in STDIN.
+	 */
+	inline bool kbhit()
+	{
+	#ifdef OS_WIN
+		return _kbhit() != 0;
+	#else
+		return hasPendingDataSTDIN();
+	#endif
+	}
+
+	/**
+	 * @brief			Get a single keypress from STDIN, without blocking.
+	 *\n				On windows, this uses _getch(), while on linux, it uses getchar_unlocked().
+	 * @returns	int:	The key code of the pressed key.
+	 *\n				Note that function & arrow keys will insert 2 characters into the STDIN
+	 *					 buffer, and will require calling getch() twice to retrieve both characters.
+	 */
+	inline int getch()
+	{
+	#ifdef OS_WIN
+		return _getch();
+	#else
+		return getchar_unlocked();
+	#endif
 	}
 
 	/// @brief	Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.
@@ -211,8 +247,8 @@ namespace term {
 	 * @param y_row		- Vertical position / the target line.
 	 * @returns Sequence
 	 */
-	template<std::integral T>
-	[[nodiscard]] inline Sequence setCursorPosition(const T& x_column, const T& y_row)
+	template<std::integral Tx, std::integral Ty>
+	[[nodiscard]] inline Sequence setCursorPosition(const Tx& x_column, const Ty& y_row)
 	{
 		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + y_row, ';', !!_internal::CURSOR_MIN_AXIS + x_column, 'H');
 	}
@@ -221,7 +257,10 @@ namespace term {
 	 * @param pos	- Pair where the first element is the horizontal position, and the second is the vertical position.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence setCursorPosition(const std::pair<unsigned, unsigned>& pos) { return setCursorPosition(pos.first, pos.second); }
+	[[nodiscard]] inline Sequence setCursorPosition(const std::pair<unsigned, unsigned>& pos)
+	{
+		return setCursorPosition(pos.first, pos.second);
+	}
 
 	/// @brief	Save the cursor position. Can be recalled later with LoadCursor.
 	inline static const Sequence SaveCursor{ make_sequence(ESC, '7') };
@@ -342,7 +381,7 @@ namespace term {
 	}
 
 	/// @brief	Erases all characters in the current viewport. (similar to `clear`|`cls`)
-	inline static const Sequence clear{ make_sequence(CSI, 2,'J') };
+	inline static const Sequence clear{ make_sequence(CSI, 2, 'J') };
 
 	/**
 	 * @brief		Replaces text within the viewport with spaces. The area of text cleared is defined by the given operation mode.
@@ -384,12 +423,12 @@ namespace term {
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SGR(const Ts&... modes)
 	{
-#ifdef OS_WIN
+	#ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
-#else
+	#else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
-#endif
-	}
+	#endif
+}
 
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SelectGraphicsRendition(const Ts&... modes)
