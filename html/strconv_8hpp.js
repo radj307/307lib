@@ -1,6 +1,7 @@
 var strconv_8hpp =
 [
     [ "bool_to_string", "strconv_8hpp.html#a11fa2dd079f3b6ebd63eaffb030e980c", null ],
+    [ "stob", "strconv_8hpp.html#a2e4febc1416769a1b195250f723bcfc0", null ],
     [ "string_to_bool", "strconv_8hpp.html#a29b3be3bdfe64e47f3652175fa46e0d5", null ],
     [ "to_string", "strconv_8hpp.html#ac4e783a54607a280e8929aaeb876de36", null ],
     [ "tolower", "strconv_8hpp.html#ae2bfcfb51a1c131387fd6d08629aba53", null ],
