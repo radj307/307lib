@@ -1,8 +1,3 @@
-/**
- * @file	INIRedux.hpp
- * @author	radj307
- * @brief	INI Tokenizer, Parser, and Container/Manipulator.
- */
 #pragma once
 #include <TokenRedux.hpp>				// For base tokenization framework
 #include <TokenReduxDefaultDefs.hpp>	// For tokenizer definitions package
@@ -448,61 +443,6 @@ namespace file::ini {
 		[[nodiscard]] std::optional<RT> getv(const HeaderKeyPair& hkpr) const
 		{
 			return getv<RT>(hkpr.first, hkpr.second);
-		}
-
-		/**
-		 * @brief				Retrieve a specified key's value, casted to a given type using a given function.
-		 * @tparam CastTo:		A type to cast the value to using the given function, if the key exists.
-		 * @param header:		The header to search within.
-		 * @param key:			The name of the target key.
-		 * @param castFunction:	A function or lambda capable of converting from (VariableT) => (CastTo)
-		 * @returns				std::optional<CastTo>
-		 */
-		template<typename CastTo>
-		[[nodiscard]] std::optional<CastTo> getv_cast(const std::string& header, const std::string& key, const std::function<CastTo(VariableT)>& castFunction) const
-		{
-			if (const auto& v{ getv(header, key) }; v.has_value())
-				return castFunction(v.value());
-			return std::nullopt;
-		}
-		/**
-		 * @brief				Retrieve a specified key's value, casted to a given type using a given function.
-		 * @tparam CastTo:		A type to cast the value to using the given function, if the key exists.
-		 * @param hkpr:			A header-key pair.
-		 * @param castFunction:	A function or lambda capable of converting from (VariableT) => (CastTo)
-		 * @returns				std::optional<CastTo>
-		 */
-		template<typename CastTo>
-		[[nodiscard]] std::optional<CastTo> getv_cast(const HeaderKeyPair& hkpr, const std::function<CastTo(VariableT)>& castFunction) const
-		{
-			return getv_cast<CastTo>(hkpr.first, hkpr.second, castFunction);
-		}
-		/**
-		 * @brief				Retrieve a specified key's value as a string, then cast it to a given type using a function.
-		 * @tparam CastTo:		A type to cast the value to using the given function, if the key exists.
-		 * @param header:		The header to search within.
-		 * @param key:			The name of the target key.
-		 * @param castFunction:	A function or lambda capable of converting from (std::string) => (CastTo)
-		 * @returns				std::optional<CastTo>
-		 */
-		template<typename CastTo>
-		[[nodiscard]] std::optional<CastTo> getvs_cast(const std::string& header, const std::string& key, const std::function<CastTo(std::string)>& castFunction) const
-		{
-			if (const auto& v{ getvs(header, key) }; v.has_value())
-				return castFunction(v.value());
-			return std::nullopt;
-		}
-		/**
-		 * @brief				Retrieve a specified key's value as a string, then cast it to a given type using a function.
-		 * @tparam CastTo:		A type to cast the value to using the given function, if the key exists.
-		 * @param hkpr:			A header-key pair.
-		 * @param castFunction:	A function or lambda capable of converting from (std::string) => (CastTo)
-		 * @returns				std::optional<CastTo>
-		 */
-		template<typename CastTo>
-		[[nodiscard]] std::optional<CastTo> getvs_cast(const HeaderKeyPair& hkpr, const std::function<CastTo(std::string)>& castFunction) const
-		{
-			return getvs_cast<CastTo>(hkpr.first, hkpr.second, castFunction);
 		}
 
 

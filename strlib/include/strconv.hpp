@@ -265,18 +265,6 @@ namespace str {
 	// Functions that emulate STL string <-> type functions, except they don't throw exceptions and can be passed as std::function.
 #pragma region change_type
 	/**
-	 * @brief		Convert a string to a non-optional boolean with the following rules:
-	 *\n			- Returns true if the input string is (case-insensitive) equal to "true".
-	 *\n			- Otherwise, returns false.
-	 * @param str	Input String.
-	 * @returns		bool
-	 */
-	[[nodiscard]] inline WINCONSTEXPR bool stob(const std::string& str)
-	{
-		return str::tolower(str) == "true";
-	}
-
-	/**
 	 * @function ctos(char)
 	 * @brief Converts char to string. Can be passed as std::function. Does not throw exceptions.
 	 * @param c		- Char to convert
