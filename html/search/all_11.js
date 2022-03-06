@@ -27,7 +27,7 @@ var searchData=
   ['percent_618',['PERCENT',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a6865d19576ae60f95fd4e61333404352',1,'token::DefaultDefs']]],
   ['period_619',['PERIOD',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6ade58a28573783fe95304a260ccd90362',1,'token::DefaultDefs']]],
   ['permexcept_620',['permexcept',['../classex_1_1permexcept.html',1,'ex']]],
-  ['placeholder_621',['placeholder',['../structterm_1_1setcolor__seq.html#aa013e9f34f788f5c936463417c1a290a',1,'term::setcolor_seq::placeholder()'],['../namespaceterm.html#aea8d84b53b0720b2324367c93077b289',1,'term::placeholder()'],['../namespacestr.html#a26bde2717215ef2e746a382003a8fc58',1,'str::Placeholder()']]],
+  ['placeholder_621',['placeholder',['../structterm_1_1setcolor__seq.html#aa013e9f34f788f5c936463417c1a290a',1,'term::setcolor_seq::placeholder()'],['../namespacestr.html#a26bde2717215ef2e746a382003a8fc58',1,'str::Placeholder()'],['../namespaceterm.html#aea8d84b53b0720b2324367c93077b289',1,'term::placeholder()']]],
   ['point_622',['point',['../structmatrix_1_1point.html',1,'matrix::point&lt; T &gt;'],['../structmatrix_1_1point.html#ae0e6730b9382f85b34c0cbbd83926703',1,'matrix::point::point()']]],
   ['pop_5fback_623',['pop_back',['../structopt_1_1_arg_container.html#a86b37b4732e634799cf592b259da5fa2',1,'opt::ArgContainer']]],
   ['pop_5ffront_624',['pop_front',['../structopt_1_1_arg_container.html#a05e9c6ee3eaa5154f789ece481657943',1,'opt::ArgContainer']]],
