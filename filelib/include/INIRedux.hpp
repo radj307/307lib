@@ -320,8 +320,8 @@ namespace file::ini {
 		 * @param ...keys	More than 1 key names to check.
 		 * @returns			bool
 		 */
-		template<class... VT> requires std::conjunction_v<std::is_same<VT, std::string>...> && (sizeof...(VT) > 1)
-			[[nodiscard]] bool check_any(const std::optional<std::string>& header, const VT&... keys) const
+		template<var::same_or_convertible<std::string>... Ts> requires var::at_least_one<Ts...>
+			[[nodiscard]] bool check_any(const std::optional<std::string>& header, const Ts&... keys) const
 		{
 			return var::variadic_or((check(header.value_or(""), keys))...);
 		}
