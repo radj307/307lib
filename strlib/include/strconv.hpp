@@ -293,19 +293,28 @@ namespace str {
 	 * @param str	String to convert
 	 * @returns		char
 	 */
-	[[nodiscard]] inline char stoc(const std::string& str) noexcept { try { return static_cast<char>(std::stoi(str)); } catch (...) { return static_cast<short>(0); } }
+	[[nodiscard]] inline char stoc(const std::string& str) noexcept
+	{
+		return !str.empty() ? str.at(0ull) : static_cast<char>(0);
+	}
 	/**
 	 * @brief		Converts string to unsigned char. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 	 * @param str	String to convert
 	 * @returns		unsigned char
 	 */
-	[[nodiscard]] inline unsigned char stouc(const std::string& str) noexcept { try { return static_cast<unsigned char>(std::stoi(str)); } catch (...) { return static_cast<short>(0); } }
+	[[nodiscard]] inline unsigned char stouc(const std::string& str) noexcept
+	{
+		return !str.empty() ? static_cast<unsigned char>(str.at(0ull)) : static_cast<unsigned char>(0);
+	}
 	/**
 	 * @brief		Converts string to wchar_t. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 	 * @param str	String to convert
 	 * @returns		wchar_t
 	 */
-	[[nodiscard]] inline wchar_t stowc(const std::string& str) noexcept { try { return static_cast<wchar_t>(std::stoi(str)); } catch (...) { return static_cast<short>(0); } }
+	[[nodiscard]] inline wchar_t stowc(const std::wstring& str) noexcept
+	{
+		return !str.empty() ? str.at(0ull) : static_cast<wchar_t>(0);
+	}
 	/**
 	 * @brief		Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 	 * @param str	String to convert

@@ -50,6 +50,8 @@ namespace rng {
 		 */
 		template<std::integral T> [[nodiscard]] T operator()(const T& min, const T& max)
 		{
+			if (min > max)
+				throw make_exception("rng::BasicRand::operator() failed:  Min \'", min, "\' cannot be greater than max \'", max, "\'!");
 			seed();
 			return std::uniform_int_distribution<T>{ min, max }(engine);
 		}
@@ -63,6 +65,8 @@ namespace rng {
 		 */
 		template<std::floating_point T> [[nodiscard]] T operator()(const T& min, const T& max)
 		{
+			if (min > max)
+				throw make_exception("rng::BasicRand::operator() failed:  Min \'", min, "\' cannot be greater than max \'", max, "\'!");
 			seed();
 			return std::uniform_real_distribution<T>{ min, max }(engine);
 		}
@@ -76,6 +80,8 @@ namespace rng {
 		 */
 		template<var::valid_char T> [[nodiscard]] T operator()(const T& min, const T& max)
 		{
+			if (min > max)
+				throw make_exception("rng::BasicRand::operator() failed:  Min \'", min, "\' cannot be greater than max \'", max, "\'!");
 			seed();
 			return static_cast<T>(std::uniform_int_distribution<size_t>{ static_cast<size_t>(min), static_cast<size_t>(max) }(engine));
 		}
