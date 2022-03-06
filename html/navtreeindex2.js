@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classtoken_1_1base_1_1_tokenizer_base.html#a8ddd7727897ca902a0b0f16a3ab4e88c":[7,0,10,0,4,4],
 "classtoken_1_1base_1_1_tokenizer_base.html#a908d9de9eed05398a7c44b10b7e648ac":[7,0,10,0,4,33],
 "classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67":[7,0,10,0,4,14],
 "classtoken_1_1base_1_1_tokenizer_base.html#a9e6bf0706ef98f0995c85d53a3e1684c":[7,0,10,0,4,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "functions_d.html":[7,3,0,4],
 "functions_e.html":[7,3,0,5],
 "functions_f.html":[7,3,0,6],
-"functions_func.html":[7,3,1],
-"functions_func.html":[7,3,1,0]
+"functions_func.html":[7,3,1]
 };

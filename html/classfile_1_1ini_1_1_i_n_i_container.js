@@ -13,6 +13,7 @@ var classfile_1_1ini_1_1_i_n_i_container =
     [ "check", "classfile_1_1ini_1_1_i_n_i_container.html#aa6867de33f89ac89d5bdb9874082f5ff", null ],
     [ "check", "classfile_1_1ini_1_1_i_n_i_container.html#a117f7f806ca0b3d1dfc54ee3995082fb", null ],
     [ "check", "classfile_1_1ini_1_1_i_n_i_container.html#a906d83ec3e3f0f544359fd48375e036c", null ],
+    [ "check_any", "classfile_1_1ini_1_1_i_n_i_container.html#ab5b0de2dd79a1782cc5a8802da8759ca", null ],
     [ "check_header", "classfile_1_1ini_1_1_i_n_i_container.html#abb84851366902ef7e3b30f06b2aa7500", null ],
     [ "countHeaders", "classfile_1_1ini_1_1_i_n_i_container.html#a028bed6d889b1fba0600aeee47c9f8fd", null ],
     [ "countKeys", "classfile_1_1ini_1_1_i_n_i_container.html#a18652a13f9991aa99a8666204a5758da", null ],
