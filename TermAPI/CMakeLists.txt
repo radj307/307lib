@@ -14,14 +14,14 @@ file(GLOB HEADERS
 	CONFIGURE_DEPENDS
 	"include/*.h*"
 )
-file(GLOB SRC 
+file(GLOB SRCS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"src/*.c*"
 )
 
 # Create static library
-add_library(TermAPI STATIC ${SRC})
+add_library(TermAPI STATIC "${SRCS}" "../cpp.hint")
 
 # Set library properties
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)

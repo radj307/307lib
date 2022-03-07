@@ -9,19 +9,19 @@ endif()
 project(xlog VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 # Get headers & sources
-file(GLOB SRCS
-	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
-	CONFIGURE_DEPENDS
-	"src/*.c*"
-)
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"include/*.h*"
 )
+file(GLOB SRCS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
+	"src/*.c*"
+)
 
 # Create static library
-add_library(xlog STATIC "${SRCS}")
+add_library(xlog STATIC "${SRCS}" "../cpp.hint")
 
 # Set library properties
 set_property(TARGET xlog PROPERTY CXX_STANDARD 20)
