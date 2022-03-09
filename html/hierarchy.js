@@ -53,6 +53,9 @@ var hierarchy =
     [ "numpunct", null, [
       [ "str::facet::NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", null ]
     ] ],
+    [ "optional::optional< T >", "structoptional_1_1optional.html", [
+      [ "optional::optional_passthru< T >", "structoptional_1_1optional__passthru.html", null ]
+    ] ],
     [ "xlog::OutputTarget< StreamType >", "structxlog_1_1_output_target.html", null ],
     [ "xlog::OutputTarget< std::ostream >", "structxlog_1_1_output_target.html", null ],
     [ "pair", null, [

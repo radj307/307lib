@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['strict_5fpointer_5fsafety_1917',['STRICT_POINTER_SAFETY',['../sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff',1,'sysarch.h']]],
-  ['stringize_1918',['STRINGIZE',['../sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb',1,'sysarch.h']]]
+  ['strict_5fpointer_5fsafety_1941',['STRICT_POINTER_SAFETY',['../sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff',1,'sysarch.h']]],
+  ['stringize_1942',['STRINGIZE',['../sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb',1,'sysarch.h']]]
 ];

@@ -14,6 +14,7 @@ var namespaces_dup =
     [ "matrix", "namespacematrix.html", null ],
     [ "op", "namespaceop.html", null ],
     [ "opt", "namespaceopt.html", "namespaceopt" ],
+    [ "optional", "namespaceoptional.html", null ],
     [ "process", "namespaceprocess.html", null ],
     [ "Query", "namespace_query.html", null ],
     [ "rng", "namespacerng.html", "namespacerng" ],
