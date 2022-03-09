@@ -3,7 +3,7 @@
  * @author	radj307
  * @brief	INI Tokenizer, Parser, and Container/Manipulator.
  */
-#pragma once
+#		pragma once
 #include <TokenRedux.hpp>				// For base tokenization framework
 #include <TokenReduxDefaultDefs.hpp>	// For tokenizer definitions package
 #include <fileio.hpp>					// For file I/O
@@ -12,10 +12,10 @@
 #include <variant>
 #include <concepts>
 
-/**
- * @namespace	ini
- * @brief		Contains everything used for tokenizing, parsing, storing, and interacting with INI configuration files.
- */
+ /**
+  * @namespace	ini
+  * @brief		Contains everything used for tokenizing, parsing, storing, and interacting with INI configuration files.
+  */
 namespace file::ini {
 	using String = std::string;	///< @brief Represents an ini variable of type TokenType::STRING
 	using Float = long double;	///< @brief Represents an ini variable of type TokenType::NUMBER
@@ -203,7 +203,7 @@ namespace file::ini {
 			return os;
 		}
 
-		#pragma region Functions_Setters
+#		pragma region Functions_Setters
 		/// @brief	Insert a whole section into the INI container.
 		auto insert(std::pair<std::string, SectionContent>&& pr)
 		{
@@ -283,8 +283,8 @@ namespace file::ini {
 					overwrite_existing ? insert_or_assign(header, std::move(kvpr)) : insert(header, std::move(kvpr));
 			return;
 		}
-		#pragma endregion Functions_Setters
-		#pragma region Functions_Check
+#		pragma endregion Functions_Setters
+#		pragma region Functions_Check
 		/**
 		 * @brief			Check if a given header exists.
 		 * @param header	The section to check for.
@@ -326,7 +326,7 @@ namespace file::ini {
 		 * @returns			bool
 		 */
 		template<var::same_or_convertible<std::string>... Ts> requires var::at_least_one<Ts...>
-			[[nodiscard]] bool check_any(const std::optional<std::string>& header, const Ts&... keys) const
+		[[nodiscard]] bool check_any(const std::optional<std::string>& header, const Ts&... keys) const
 		{
 			return var::variadic_or((check(header.value_or(""), keys))...);
 		}
@@ -375,8 +375,30 @@ namespace file::ini {
 		[[nodiscard]] bool checkv(const KeyPair& kvpr) const { return checkv(kvpr.first, kvpr.second); }
 		/// @brief Extends checkv function to allow Header-Key pairs as input.
 		[[nodiscard]] bool checkv(const HeaderKeyPair& hkpr, const VariableT& value) const { return checkv(hkpr.first, hkpr.second, value); }
-		#pragma endregion Functions_Check
-		#pragma region Functions_Getters
+#		pragma endregion Functions_Check
+
+		/**
+		 * @brief				Get the value of a key as a string or its type, cast it using a given function, and return it.
+		 *\n					Returns std::nullopt if it wasn't found
+		 * @tparam CastType:	The return type of the converter function.
+		 * @tparam GetType:		This is the input type for the converter function. It may be a VariableT type or a std::string (default).
+		 * @param header:		The name of the header where the target key is located. If the key isn't in a header, pass a blank string.
+		 * @param key:			The name of the target key under the given header.
+		 * @param converter:	Conversion function that accepts GetType and returns CastType.
+		 * @returns				std::optional<CastType>
+		 */
+		template<typename CastType, var::any_same<VariableT, std::string> GetType = std::string>
+		[[nodiscard]] std::optional<CastType> get(const std::string& header, const std::string& key, const std::function<CastType(GetType)>& converter) const
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value()) {
+				if constexpr (std::same_as<GetType, std::string>)
+					return converter(to_string(v.value()));
+				return converter(v.value());
+			}
+			return std::nullopt;
+		}
+
+#		pragma region Functions_Getters
 		/**
 		 * @brief			Get the value of a specified key.
 		 * @param header	The section to search within.
@@ -517,9 +539,9 @@ namespace file::ini {
 				return _cont.at(header.value_or(""));
 			return{};
 		}
-		#pragma endregion Functions_Getters
+#		pragma endregion Functions_Getters
 
-		#pragma region Functions_StringVariants
+#		pragma region Functions_StringVariants
 		/**
 		 * @brief		Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding.
 		 * @param p1	First argument (Header)
@@ -548,7 +570,7 @@ namespace file::ini {
 				return to_string(v.value());
 			return std::nullopt;
 		}
-		#pragma endregion Functions_StringVariants
+#		pragma endregion Functions_StringVariants
 	};
 
 	namespace tokenizer {
@@ -619,11 +641,11 @@ namespace file::ini {
 			bool allowBlankValue{ true };
 			const std::string filename{};
 
-			#if LANG_CPP >= 17
+#			if LANG_CPP >= 17
 			INIParser(std::vector<Token>&& tokens, const std::filesystem::path& filename = {}) : TokenParserBase(std::move(tokens)), filename{ filename.generic_string() } {}
-			#else
+#			else
 			INIParser(std::vector<Token>&& tokens, const std::string_view& filename = {}) : TokenParserBase(std::move(tokens)), filename{ filename } {}
-			#endif
+#			endif
 
 		private:
 			void throwEx(const size_t& line, const std::string& msg) const
@@ -748,11 +770,11 @@ namespace file::ini {
 	struct INI : public INIContainer {
 		INI() = default;
 		INI(INIContainer::Map&& map) : INIContainer(std::move(map)) {}
-		#if LANG_CPP >= 17
+#		if LANG_CPP >= 17
 		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
-		#else
+#		else
 		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
-		#endif
+#		endif
 
 		/**
 		 * @brief Read a specified file and merge its contents with the local INI map.

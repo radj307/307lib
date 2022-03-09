@@ -48,22 +48,6 @@ namespace term {
 					s += static_cast<char>(std::cin.get());
 			std::cin.clear();
 			return s;
-			// OLD IMPLEMENTATION
-//			if (flush_output_stream)
-//				fflush(stdout);
-//			std::string seq; // already has enough space reserved
-//#			ifdef OS_WIN
-//			for (int i{ 0 }; !_kbhit() && i < timeout; ++i) // wait until a "key press" or until timeout is reached.
-//				std::this_thread::sleep_for(1ms);
-//			while (_kbhit()) // while a key is "pressed"
-//				seq += static_cast<char>(_getch()); // get key code, cast to char
-//#			else
-//			std::cin.clear();
-//			for (char c; !std::cin.fail() && std::cin >> c; )
-//				seq += c;
-//			std::cin.clear();
-//#			endif
-//			return seq;
 		}
 	}
 
