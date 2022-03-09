@@ -165,8 +165,6 @@ namespace math {
 		return DurationT{ std::abs(left.count() - right.count()) };
 	}
 
-
-
 	/**
 	 * @brief			Split an integral type between 2 types that are half the size of the input type.
 	 *\n				Note: This function uses memory address manipulation.
@@ -219,6 +217,7 @@ namespace math {
 
 	/**
 	 * @brief				Joins two half-sized types into a single type that is double its size.
+	 *\n					Note: This function uses memory address manipulation.
 	 * @tparam Input		Input type.
 	 * @tparam Output		Output type that is exactly 2x the size of the input type.
 	 * @param highBytes		The high-order bytes to join.
@@ -235,6 +234,7 @@ namespace math {
 	}
 	/**
 	 * @brief				Joins two half-sized types into a single type that is double its size.
+	 *\n					Note: This function uses memory address manipulation.
 	 * @tparam Input		Input type.
 	 * @tparam Output		Output type that is exactly 2x the size of the input type.
 	 * @param bytes			A pair of 2 input types where
