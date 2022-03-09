@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['abs_29',['abs',['../namespacemath.html#ae38193d1e37188ab8143e576de392274',1,'math']]],
+  ['abs_29',['abs',['../namespacemath.html#af513e1404ec024919d53d4dc7670d90f',1,'math']]],
   ['addition_30',['ADDITION',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a8cc6c2a8240840901a7317b95658c073',1,'token::DefaultDefs']]],
   ['align_5fcenter_31',['align_center',['../namespacestr.html#a026f55497d251c5acccef7dd42148138',1,'str']]],
   ['aligntype_32',['AlignType',['../namespacefile_1_1ini.html#aa86b3efdca35b91db3538f0f9cebaafe',1,'file::ini']]],
@@ -34,5 +34,5 @@ var searchData=
   ['as_5fstring_5fid_60',['as_string_id',['../structxlog_1_1level_1_1_log_level.html#a8588a6f6ca0abf5f3945498f8b46edb2',1,'xlog::level::LogLevel']]],
   ['at_61',['at',['../classenv_1_1_p_a_t_h.html#af15da7ddc8328ef1e3835f23cb900f52',1,'env::PATH::at()'],['../classfile_1_1ini_1_1_i_n_i_container.html#a2dd6aab11649e8c4e9efead1a12365fd',1,'file::ini::INIContainer::at(const std::string &amp;header) const'],['../classfile_1_1ini_1_1_i_n_i_container.html#ac3d742078be76180e4f198e1720674f7',1,'file::ini::INIContainer::at(const std::string &amp;header, const std::string &amp;key) const'],['../classfile_1_1ini_1_1_i_n_i_container.html#a1c407840d7f6edadf5d1e09cd52f2bae',1,'file::ini::INIContainer::at(const HeaderKeyPair &amp;hkpr) const'],['../structopt_1_1_arg_container.html#a858c85802a222f64ea68f7092e29389c',1,'opt::ArgContainer::at()']]],
   ['ate_62',['ate',['../namespacefile.html#a4172803d88f79140493760c26cbf1ea4a1f0cec14e2c5effcbff50f2feb9495f6',1,'file']]],
-  ['average_63',['average',['../namespacemath.html#a4ebbcb8080baa327efd4900b564f29ac',1,'math::average(const IteratorT &amp;begin, const IteratorT &amp;end)'],['../namespacemath.html#abb804e71d6df020d52dc5d30b5b84e59',1,'math::average(T &amp;&amp;fst, Ts &amp;&amp;... rest)'],['../namespacemath.html#aa8798fa12a38b9e4de69c79b15143c6e',1,'math::average(const std::vector&lt; DurationT &gt; &amp;durations)']]]
+  ['average_63',['average',['../namespacemath.html#a4a8d63d51389dcd4bf9495baca9c5f65',1,'math::average(const IteratorT &amp;begin, const IteratorT &amp;end)'],['../namespacemath.html#a6406660da98884a4c9bb3df11bb1858f',1,'math::average(T &amp;&amp;fst, Ts &amp;&amp;... rest)'],['../namespacemath.html#a3b41b8992442f82108b2ef5efcf64b92',1,'math::average(const std::vector&lt; DurationT &gt; &amp;durations)']]]
 ];

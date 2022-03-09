@@ -113,30 +113,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a9960033ce279248f389ef71e0820f576"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9960033ce279248f389ef71e0820f576"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a9960033ce279248f389ef71e0820f576">max_value</a> ()</td></tr>
 <tr class="separator:a9960033ce279248f389ef71e0820f576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae38193d1e37188ab8143e576de392274"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T&gt; </td></tr>
-<tr class="memitem:ae38193d1e37188ab8143e576de392274"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#ae38193d1e37188ab8143e576de392274">abs</a> (const T &amp;val)</td></tr>
-<tr class="memdesc:ae38193d1e37188ab8143e576de392274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant-time math abs function. (Removes negative sign from numbers)  <a href="namespacemath.html#ae38193d1e37188ab8143e576de392274">More...</a><br /></td></tr>
-<tr class="separator:ae38193d1e37188ab8143e576de392274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ebbcb8080baa327efd4900b564f29ac"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T, typename IteratorT &gt; </td></tr>
-<tr class="memitem:a4ebbcb8080baa327efd4900b564f29ac"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a4ebbcb8080baa327efd4900b564f29ac">average</a> (const IteratorT &amp;begin, const IteratorT &amp;end)</td></tr>
-<tr class="memdesc:a4ebbcb8080baa327efd4900b564f29ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the average of a vector of numbers.  <a href="namespacemath.html#a4ebbcb8080baa327efd4900b564f29ac">More...</a><br /></td></tr>
-<tr class="separator:a4ebbcb8080baa327efd4900b564f29ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb804e71d6df020d52dc5d30b5b84e59"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T, std::same_as&lt; T &gt;... Ts&gt; </td></tr>
-<tr class="memitem:abb804e71d6df020d52dc5d30b5b84e59"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#abb804e71d6df020d52dc5d30b5b84e59">average</a> (T &amp;&amp;fst, Ts &amp;&amp;... rest)</td></tr>
-<tr class="memdesc:abb804e71d6df020d52dc5d30b5b84e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the average of a variadic list of numbers.  <a href="namespacemath.html#abb804e71d6df020d52dc5d30b5b84e59">More...</a><br /></td></tr>
-<tr class="separator:abb804e71d6df020d52dc5d30b5b84e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8798fa12a38b9e4de69c79b15143c6e"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::same_as&lt; std::chrono::duration&lt; Rep, Period &gt;&gt; DurationT = std::chrono::duration&lt;Rep, Period&gt;&gt; </td></tr>
-<tr class="memitem:aa8798fa12a38b9e4de69c79b15143c6e"><td class="memTemplItemLeft" align="right" valign="top">static constexpr DurationT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#aa8798fa12a38b9e4de69c79b15143c6e">average</a> (const std::vector&lt; DurationT &gt; &amp;durations)</td></tr>
-<tr class="memdesc:aa8798fa12a38b9e4de69c79b15143c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the average duration from a list of durations.  <a href="namespacemath.html#aa8798fa12a38b9e4de69c79b15143c6e">More...</a><br /></td></tr>
-<tr class="separator:aa8798fa12a38b9e4de69c79b15143c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e585536d7f3de054d4bd4ce590b460d"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::derived_from&lt; std::chrono::duration&lt; Rep, Period &gt;&gt; DurationT = std::chrono::duration&lt;Rep, Period&gt;&gt; </td></tr>
-<tr class="memitem:a5e585536d7f3de054d4bd4ce590b460d"><td class="memTemplItemLeft" align="right" valign="top">static constexpr DurationT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a5e585536d7f3de054d4bd4ce590b460d">difference</a> (DurationT const &amp;left, DurationT const &amp;right)</td></tr>
-<tr class="memdesc:a5e585536d7f3de054d4bd4ce590b460d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two durations.  <a href="namespacemath.html#a5e585536d7f3de054d4bd4ce590b460d">More...</a><br /></td></tr>
-<tr class="separator:a5e585536d7f3de054d4bd4ce590b460d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af513e1404ec024919d53d4dc7670d90f"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T&gt; </td></tr>
+<tr class="memitem:af513e1404ec024919d53d4dc7670d90f"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#af513e1404ec024919d53d4dc7670d90f">abs</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:af513e1404ec024919d53d4dc7670d90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant-time math abs function. (Removes negative sign from numbers)  <a href="namespacemath.html#af513e1404ec024919d53d4dc7670d90f">More...</a><br /></td></tr>
+<tr class="separator:af513e1404ec024919d53d4dc7670d90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a8d63d51389dcd4bf9495baca9c5f65"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T, typename IteratorT &gt; </td></tr>
+<tr class="memitem:a4a8d63d51389dcd4bf9495baca9c5f65"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a4a8d63d51389dcd4bf9495baca9c5f65">average</a> (const IteratorT &amp;begin, const IteratorT &amp;end)</td></tr>
+<tr class="memdesc:a4a8d63d51389dcd4bf9495baca9c5f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the average of a vector of numbers.  <a href="namespacemath.html#a4a8d63d51389dcd4bf9495baca9c5f65">More...</a><br /></td></tr>
+<tr class="separator:a4a8d63d51389dcd4bf9495baca9c5f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6406660da98884a4c9bb3df11bb1858f"><td class="memTemplParams" colspan="2">template&lt;var::arithmetic T, std::same_as&lt; T &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a6406660da98884a4c9bb3df11bb1858f"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a6406660da98884a4c9bb3df11bb1858f">average</a> (T &amp;&amp;fst, Ts &amp;&amp;... rest)</td></tr>
+<tr class="memdesc:a6406660da98884a4c9bb3df11bb1858f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the average of a variadic list of numbers.  <a href="namespacemath.html#a6406660da98884a4c9bb3df11bb1858f">More...</a><br /></td></tr>
+<tr class="separator:a6406660da98884a4c9bb3df11bb1858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b41b8992442f82108b2ef5efcf64b92"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::same_as&lt; std::chrono::duration&lt; Rep, Period &gt;&gt; DurationT = std::chrono::duration&lt;Rep, Period&gt;&gt; </td></tr>
+<tr class="memitem:a3b41b8992442f82108b2ef5efcf64b92"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> DurationT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a3b41b8992442f82108b2ef5efcf64b92">average</a> (const std::vector&lt; DurationT &gt; &amp;durations)</td></tr>
+<tr class="memdesc:a3b41b8992442f82108b2ef5efcf64b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the average duration from a list of durations.  <a href="namespacemath.html#a3b41b8992442f82108b2ef5efcf64b92">More...</a><br /></td></tr>
+<tr class="separator:a3b41b8992442f82108b2ef5efcf64b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8372e964c526372c08485b5639eb4f6"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::derived_from&lt; std::chrono::duration&lt; Rep, Period &gt;&gt; DurationT = std::chrono::duration&lt;Rep, Period&gt;&gt; </td></tr>
+<tr class="memitem:ad8372e964c526372c08485b5639eb4f6"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> DurationT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#ad8372e964c526372c08485b5639eb4f6">difference</a> (DurationT const &amp;left, DurationT const &amp;right)</td></tr>
+<tr class="memdesc:ad8372e964c526372c08485b5639eb4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two durations.  <a href="namespacemath.html#ad8372e964c526372c08485b5639eb4f6">More...</a><br /></td></tr>
+<tr class="separator:ad8372e964c526372c08485b5639eb4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae38193d1e37188ab8143e576de392274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae38193d1e37188ab8143e576de392274">&#9670;&nbsp;</a></span>abs()</h2>
+<a id="af513e1404ec024919d53d4dc7670d90f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af513e1404ec024919d53d4dc7670d90f">&#9670;&nbsp;</a></span>abs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +147,7 @@ template&lt;var::arithmetic T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr T math::abs </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T math::abs </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
@@ -156,7 +156,7 @@ template&lt;var::arithmetic T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -180,8 +180,8 @@ template&lt;var::arithmetic T&gt; </div>
 
 </div>
 </div>
-<a id="a4ebbcb8080baa327efd4900b564f29ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ebbcb8080baa327efd4900b564f29ac">&#9670;&nbsp;</a></span>average() <span class="overload">[1/3]</span></h2>
+<a id="a4a8d63d51389dcd4bf9495baca9c5f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a8d63d51389dcd4bf9495baca9c5f65">&#9670;&nbsp;</a></span>average() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +192,7 @@ template&lt;var::arithmetic T, typename IteratorT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr T math::average </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T math::average </td>
           <td>(</td>
           <td class="paramtype">const IteratorT &amp;&#160;</td>
           <td class="paramname"><em>begin</em>, </td>
@@ -211,7 +211,7 @@ template&lt;var::arithmetic T, typename IteratorT &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -230,8 +230,8 @@ template&lt;var::arithmetic T, typename IteratorT &gt; </div>
 
 </div>
 </div>
-<a id="aa8798fa12a38b9e4de69c79b15143c6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8798fa12a38b9e4de69c79b15143c6e">&#9670;&nbsp;</a></span>average() <span class="overload">[2/3]</span></h2>
+<a id="a3b41b8992442f82108b2ef5efcf64b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b41b8992442f82108b2ef5efcf64b92">&#9670;&nbsp;</a></span>average() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +242,7 @@ template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::sam
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr DurationT math::average </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> DurationT math::average </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; DurationT &gt; &amp;&#160;</td>
           <td class="paramname"><em>durations</em></td><td>)</td>
@@ -251,7 +251,7 @@ template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::sam
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -277,8 +277,8 @@ template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::sam
 
 </div>
 </div>
-<a id="abb804e71d6df020d52dc5d30b5b84e59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb804e71d6df020d52dc5d30b5b84e59">&#9670;&nbsp;</a></span>average() <span class="overload">[3/3]</span></h2>
+<a id="a6406660da98884a4c9bb3df11bb1858f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6406660da98884a4c9bb3df11bb1858f">&#9670;&nbsp;</a></span>average() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ template&lt;var::arithmetic T, std::same_as&lt; T &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr T math::average </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T math::average </td>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>fst</em>, </td>
@@ -308,7 +308,7 @@ template&lt;var::arithmetic T, std::same_as&lt; T &gt;... Ts&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -327,8 +327,8 @@ template&lt;var::arithmetic T, std::same_as&lt; T &gt;... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a5e585536d7f3de054d4bd4ce590b460d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e585536d7f3de054d4bd4ce590b460d">&#9670;&nbsp;</a></span>difference()</h2>
+<a id="ad8372e964c526372c08485b5639eb4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8372e964c526372c08485b5639eb4f6">&#9670;&nbsp;</a></span>difference()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +339,7 @@ template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::der
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr DurationT math::difference </td>
+          <td class="memname">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> DurationT math::difference </td>
           <td>(</td>
           <td class="paramtype">DurationT const &amp;&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -358,7 +358,7 @@ template&lt;typename Rep , typename Period  = std::ratio&lt;1L, 1L&gt;, std::der
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

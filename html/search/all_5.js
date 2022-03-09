@@ -19,7 +19,7 @@ var searchData=
   ['deleteline_169',['DeleteLine',['../namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2',1,'term']]],
   ['delimiters_170',['delimiters',['../namespaceopt.html#ae8c01003898064a3b55b55bf6674f58e',1,'opt']]],
   ['deprecated_20list_171',['Deprecated List',['../deprecated.html',1,'']]],
-  ['difference_172',['difference',['../namespacemath.html#a5e585536d7f3de054d4bd4ce590b460d',1,'math']]],
+  ['difference_172',['difference',['../namespacemath.html#ad8372e964c526372c08485b5639eb4f6',1,'math']]],
   ['digit_173',['DIGIT',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675da999bbbf1d86bc7611397c77222e076db',1,'opt::token::DIGIT()'],['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a999bbbf1d86bc7611397c77222e076db',1,'token::DefaultDefs::DIGIT()']]],
   ['disable_174',['disable',['../classterm_1_1palette.html#ab7f4124b345be876cc81d53c2d2c24fa',1,'term::palette::disable()'],['../namespace_a_n_s_i.html#a67578595d3e8c90006d91bbe5f39511b',1,'ANSI::DISABLE()']]],
   ['disable_5fstr_5fliterals_175',['DISABLE_STR_LITERALS',['../str_8hpp.html#a65bc2f112d723a2d6e8492077a63318c',1,'str.hpp']]],

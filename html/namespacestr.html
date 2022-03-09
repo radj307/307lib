@@ -281,6 +281,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">string_to_bool</a> (std::string str)</td></tr>
 <tr class="memdesc:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">More...</a><br /></td></tr>
 <tr class="separator:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043877ac6918557cb4f677c212539d6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a043877ac6918557cb4f677c212539d6c">stows</a> (const std::string &amp;str) noexcept</td></tr>
+<tr class="memdesc:a043877ac6918557cb4f677c212539d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a narrow-char string to a wide-char string.  <a href="namespacestr.html#a043877ac6918557cb4f677c212539d6c">More...</a><br /></td></tr>
+<tr class="separator:a043877ac6918557cb4f677c212539d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2782b51ac64cba2ff93d7c3d197852d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2782b51ac64cba2ff93d7c3d197852d">wstos</a> (const std::wstring &amp;wstr) noexcept</td></tr>
+<tr class="memdesc:ae2782b51ac64cba2ff93d7c3d197852d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a wide-char string to a narrow-char string.  <a href="namespacestr.html#ae2782b51ac64cba2ff93d7c3d197852d">More...</a><br /></td></tr>
+<tr class="separator:ae2782b51ac64cba2ff93d7c3d197852d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4febc1416769a1b195250f723bcfc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2e4febc1416769a1b195250f723bcfc0">stob</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:a2e4febc1416769a1b195250f723bcfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
  - Returns true if the input string is (case-insensitive) equal to "true". <br  />
@@ -3900,7 +3906,7 @@ template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00304">304</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00330">330</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3909,7 +3915,50 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2e4febc1416769a1b195250f723bcfc0_icgraph.svg" width="272" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a2e4febc1416769a1b195250f723bcfc0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a043877ac6918557cb4f677c212539d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a043877ac6918557cb4f677c212539d6c">&#9670;&nbsp;</a></span>stows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> std::wstring str::stows </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a narrow-char string to a wide-char string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input string using narrow-width chars. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wstring </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00302">302</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a043877ac6918557cb4f677c212539d6c_cgraph.svg" width="219" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -5051,8 +5100,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a16fb669c01ac6edd91ed062f90069635_cgraph.svg" width="231" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a16fb669c01ac6edd91ed062f90069635_cgraph.svg" width="231" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -5254,6 +5302,49 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00349">349</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae2782b51ac64cba2ff93d7c3d197852d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2782b51ac64cba2ff93d7c3d197852d">&#9670;&nbsp;</a></span>wstos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> std::string str::wstos </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>wstr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a wide-char string to a narrow-char string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input string using wide chars. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00315">315</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae2782b51ac64cba2ff93d7c3d197852d_cgraph.svg" width="219" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
