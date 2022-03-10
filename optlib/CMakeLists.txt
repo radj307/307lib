@@ -23,14 +23,14 @@ if (OPTLIB_ENABLE_EXPERIMENTAL)
 endif()
 
 # Get sources
-file(GLOB SRC
+file(GLOB SRCS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"src/*.c*"
 )
 
 # Create static library
-add_library(optlib STATIC ${SRC})
+add_library(optlib STATIC "${SRCS}" "../cpp.hint")
 
 # Set library properties
 set_property(TARGET optlib PROPERTY CXX_STANDARD 20)
