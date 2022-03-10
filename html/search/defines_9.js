@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['oemresource_1937',['OEMRESOURCE',['../_windows_not_today_8h.html#a3a75770af38d05856eb2e9d1867b471c',1,'WindowsNotToday.h']]],
-  ['os_5fcygwin_1938',['OS_CYGWIN',['../sysarch_8h.html#a0a2f6d164420a9c9323e6842ed663bf3',1,'sysarch.h']]],
-  ['os_5flinux_1939',['OS_LINUX',['../sysarch_8h.html#ae273c7db78098028c7a6b6b230ac0503',1,'sysarch.h']]],
-  ['os_5fmac_1940',['OS_MAC',['../sysarch_8h.html#aed780a73afd13baec93bd08fbdae4ad7',1,'sysarch.h']]],
-  ['os_5fnone_1941',['OS_NONE',['../sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9',1,'OS_NONE():&#160;sysarch.h'],['../sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9',1,'OS_NONE():&#160;sysarch.h']]],
-  ['os_5fwin_1942',['OS_WIN',['../sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b',1,'sysarch.h']]]
+  ['oemresource_1962',['OEMRESOURCE',['../_windows_not_today_8h.html#a3a75770af38d05856eb2e9d1867b471c',1,'WindowsNotToday.h']]],
+  ['os_5fcygwin_1963',['OS_CYGWIN',['../sysarch_8h.html#a0a2f6d164420a9c9323e6842ed663bf3',1,'sysarch.h']]],
+  ['os_5flinux_1964',['OS_LINUX',['../sysarch_8h.html#ae273c7db78098028c7a6b6b230ac0503',1,'sysarch.h']]],
+  ['os_5fmac_1965',['OS_MAC',['../sysarch_8h.html#aed780a73afd13baec93bd08fbdae4ad7',1,'sysarch.h']]],
+  ['os_5fnone_1966',['OS_NONE',['../sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9',1,'OS_NONE():&#160;sysarch.h'],['../sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9',1,'OS_NONE():&#160;sysarch.h']]],
+  ['os_5fwin_1967',['OS_WIN',['../sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b',1,'sysarch.h']]]
 ];

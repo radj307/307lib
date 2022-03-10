@@ -86,7 +86,13 @@ $(document).ready(function(){initNavTree('structmatrix_1_1matrix.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structmatrix_1_1matrix-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">matrix::matrix&lt; T, SizeX, SizeY &gt; Struct Template Reference</div>  </div>
@@ -95,34 +101,191 @@ $(document).ready(function(){initNavTree('structmatrix_1_1matrix.html',''); init
 
 <p><code>#include &lt;<a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab9068f452a0af1ebdb762c0c86733db2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> = std::array&lt; T,(SizeX *SizeY)&gt;</td></tr>
+<tr class="separator:ab9068f452a0af1ebdb762c0c86733db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3234e8e8afc1653277c16b725f1293d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a3234e8e8afc1653277c16b725f1293d8">matrix</a> ()=default</td></tr>
-<tr class="separator:a3234e8e8afc1653277c16b725f1293d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea10bcfe15f0c757fee044425094c53c"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; T &gt;... Ts&gt; </td></tr>
-<tr class="memitem:aea10bcfe15f0c757fee044425094c53c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#aea10bcfe15f0c757fee044425094c53c">requires</a> (sizeof...(Ts)==(SizeX *SizeY)) <a class="el" href="structmatrix_1_1matrix.html">matrix</a>(Ts const &amp;... values)</td></tr>
-<tr class="separator:aea10bcfe15f0c757fee044425094c53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b042a372771ab5f8f78577f029b38ee"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a3b042a372771ab5f8f78577f029b38ee">get</a> (const <a class="el" href="structmatrix_1_1point.html">point</a> &amp;pos) const</td></tr>
-<tr class="separator:a3b042a372771ab5f8f78577f029b38ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aeda49ced04739a76b834466fb1e1fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a3aeda49ced04739a76b834466fb1e1fe">matrix</a> ()</td></tr>
+<tr class="separator:a3aeda49ced04739a76b834466fb1e1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62db6bf179c0581c957b1ac7889e7bb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a62db6bf179c0581c957b1ac7889e7bb5">matrix</a> (<a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&amp;o)</td></tr>
+<tr class="separator:a62db6bf179c0581c957b1ac7889e7bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27845fc73792caa7bd2d182bcb0f91db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a27845fc73792caa7bd2d182bcb0f91db">matrix</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;o)</td></tr>
+<tr class="separator:a27845fc73792caa7bd2d182bcb0f91db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e5a58637975f8179857b258a1c36a2"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; T &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a41e5a58637975f8179857b258a1c36a2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a41e5a58637975f8179857b258a1c36a2">requires</a> (sizeof...(Ts)==<a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a>) <a class="el" href="structmatrix_1_1matrix.html">matrix</a>(Ts &amp;&amp;... values)</td></tr>
+<tr class="separator:a41e5a58637975f8179857b258a1c36a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88035468a003f51214f66062fb1ad9ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a88035468a003f51214f66062fb1ad9ee">matrix</a> (std::array&lt; T, <a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a> &gt; &amp;&amp;arr)</td></tr>
+<tr class="separator:a88035468a003f51214f66062fb1ad9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52145d594b3ddc62523ad104abed2cd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a52145d594b3ddc62523ad104abed2cd0">matrix</a> (const std::array&lt; T, <a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a> &gt; &amp;arr)</td></tr>
+<tr class="separator:a52145d594b3ddc62523ad104abed2cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a82b5636a4dc8a9d6da26c14bb9cba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a59a82b5636a4dc8a9d6da26c14bb9cba">operator=</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;mtx)</td></tr>
+<tr class="memdesc:a59a82b5636a4dc8a9d6da26c14bb9cba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix Copy-Assignment Operator.  <a href="structmatrix_1_1matrix.html#a59a82b5636a4dc8a9d6da26c14bb9cba">More...</a><br /></td></tr>
+<tr class="separator:a59a82b5636a4dc8a9d6da26c14bb9cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b54622f1aa32bd0da3b798a218dff78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a3b54622f1aa32bd0da3b798a218dff78">operator=</a> (<a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&amp;mtx)</td></tr>
+<tr class="memdesc:a3b54622f1aa32bd0da3b798a218dff78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix Move-Assignment Operator.  <a href="structmatrix_1_1matrix.html#a3b54622f1aa32bd0da3b798a218dff78">More...</a><br /></td></tr>
+<tr class="separator:a3b54622f1aa32bd0da3b798a218dff78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978f1276afb20df72fb3a22cc7189639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a978f1276afb20df72fb3a22cc7189639">operator=</a> (const <a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> &amp;arr)</td></tr>
+<tr class="memdesc:a978f1276afb20df72fb3a22cc7189639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix Copy-Assignment Operator.  <a href="structmatrix_1_1matrix.html#a978f1276afb20df72fb3a22cc7189639">More...</a><br /></td></tr>
+<tr class="separator:a978f1276afb20df72fb3a22cc7189639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43991875ed51d294382e7d2f2f78e5fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a43991875ed51d294382e7d2f2f78e5fc">operator=</a> (<a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> &amp;&amp;arr)</td></tr>
+<tr class="memdesc:a43991875ed51d294382e7d2f2f78e5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix Move-Assignment Operator.  <a href="structmatrix_1_1matrix.html#a43991875ed51d294382e7d2f2f78e5fc">More...</a><br /></td></tr>
+<tr class="separator:a43991875ed51d294382e7d2f2f78e5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3be64b5b20bb3ca64bca0c4b10bb28d"><td class="memItemLeft" align="right" valign="top">type::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#af3be64b5b20bb3ca64bca0c4b10bb28d">begin</a> () const</td></tr>
+<tr class="memdesc:af3be64b5b20bb3ca64bca0c4b10bb28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the beginning array iterator.  <a href="structmatrix_1_1matrix.html#af3be64b5b20bb3ca64bca0c4b10bb28d">More...</a><br /></td></tr>
+<tr class="separator:af3be64b5b20bb3ca64bca0c4b10bb28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f29e9fdbbd46f15d77b53b03e18e2a"><td class="memItemLeft" align="right" valign="top">type::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a29f29e9fdbbd46f15d77b53b03e18e2a">end</a> () const</td></tr>
+<tr class="memdesc:a29f29e9fdbbd46f15d77b53b03e18e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ending array iterator.  <a href="structmatrix_1_1matrix.html#a29f29e9fdbbd46f15d77b53b03e18e2a">More...</a><br /></td></tr>
+<tr class="separator:a29f29e9fdbbd46f15d77b53b03e18e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad080b44d5b604bde9c7c91c773a78ced"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ad080b44d5b604bde9c7c91c773a78ced">empty</a> () const</td></tr>
+<tr class="memdesc:ad080b44d5b604bde9c7c91c773a78ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the matrix is empty.  <a href="structmatrix_1_1matrix.html#ad080b44d5b604bde9c7c91c773a78ced">More...</a><br /></td></tr>
+<tr class="separator:ad080b44d5b604bde9c7c91c773a78ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03af9dfdf4ad4962300a69b447986176"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a03af9dfdf4ad4962300a69b447986176">size</a> () const</td></tr>
+<tr class="memdesc:a03af9dfdf4ad4962300a69b447986176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the matrix, in elements.  <a href="structmatrix_1_1matrix.html#a03af9dfdf4ad4962300a69b447986176">More...</a><br /></td></tr>
+<tr class="separator:a03af9dfdf4ad4962300a69b447986176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c85cc9234f163b0b95dd8928698ccb"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a39c85cc9234f163b0b95dd8928698ccb">get</a> (const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;pos) const</td></tr>
+<tr class="memdesc:a39c85cc9234f163b0b95dd8928698ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the element at the specified point.  <a href="structmatrix_1_1matrix.html#a39c85cc9234f163b0b95dd8928698ccb">More...</a><br /></td></tr>
+<tr class="separator:a39c85cc9234f163b0b95dd8928698ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5157b4e4c44d0040484831e80517e9f5"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a5157b4e4c44d0040484831e80517e9f5">set</a> (const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;pos, const T &amp;value)</td></tr>
+<tr class="memdesc:a5157b4e4c44d0040484831e80517e9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the element at the specified point to the given value.  <a href="structmatrix_1_1matrix.html#a5157b4e4c44d0040484831e80517e9f5">More...</a><br /></td></tr>
+<tr class="separator:a5157b4e4c44d0040484831e80517e9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a133040041ba02d6f429800b0f719a218"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a133040041ba02d6f429800b0f719a218">get</a> (const size_t &amp;x, const size_t &amp;y) const</td></tr>
+<tr class="memdesc:a133040041ba02d6f429800b0f719a218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the element at the specified point.  <a href="structmatrix_1_1matrix.html#a133040041ba02d6f429800b0f719a218">More...</a><br /></td></tr>
 <tr class="separator:a133040041ba02d6f429800b0f719a218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5d76abb48b5b840107f587b69ce55d3"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ab5d76abb48b5b840107f587b69ce55d3">set</a> (const <a class="el" href="structmatrix_1_1point.html">point</a> &amp;pos, const T &amp;value)</td></tr>
-<tr class="separator:ab5d76abb48b5b840107f587b69ce55d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62ffc85bd058dd0749ccdc032b79e72"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#af62ffc85bd058dd0749ccdc032b79e72">set</a> (const size_t &amp;x, const size_t &amp;y, const T &amp;value)</td></tr>
+<tr class="memdesc:af62ffc85bd058dd0749ccdc032b79e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the element at the specified point to the given value.  <a href="structmatrix_1_1matrix.html#af62ffc85bd058dd0749ccdc032b79e72">More...</a><br /></td></tr>
+<tr class="separator:af62ffc85bd058dd0749ccdc032b79e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d07656a203d4b2c8958aca15d3a137"><td class="memItemLeft" align="right" valign="top">std::array&lt; T, SizeX &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a44d07656a203d4b2c8958aca15d3a137">getRow</a> (const size_t &amp;y) const</td></tr>
+<tr class="memdesc:a44d07656a203d4b2c8958aca15d3a137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a single row from the matrix.  <a href="structmatrix_1_1matrix.html#a44d07656a203d4b2c8958aca15d3a137">More...</a><br /></td></tr>
+<tr class="separator:a44d07656a203d4b2c8958aca15d3a137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56947e727978fd6cfb33512e4e146d91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a56947e727978fd6cfb33512e4e146d91">setRow</a> (const size_t &amp;y, const std::array&lt; T, SizeX &gt; &amp;row)</td></tr>
+<tr class="memdesc:a56947e727978fd6cfb33512e4e146d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a whole row of the matrix to the given row.  <a href="structmatrix_1_1matrix.html#a56947e727978fd6cfb33512e4e146d91">More...</a><br /></td></tr>
+<tr class="separator:a56947e727978fd6cfb33512e4e146d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa948e06c6cf6cf3c8e38949b6ecca088"><td class="memItemLeft" align="right" valign="top">std::array&lt; T, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#aa948e06c6cf6cf3c8e38949b6ecca088">getColumn</a> (const size_t &amp;x) const</td></tr>
+<tr class="memdesc:aa948e06c6cf6cf3c8e38949b6ecca088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a single column from the matrix.  <a href="structmatrix_1_1matrix.html#aa948e06c6cf6cf3c8e38949b6ecca088">More...</a><br /></td></tr>
+<tr class="separator:aa948e06c6cf6cf3c8e38949b6ecca088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f70620c792c56b5cc821b36df6557d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#aa8f70620c792c56b5cc821b36df6557d">setColumn</a> (const size_t &amp;x, const std::array&lt; T, SizeY &gt; &amp;col)</td></tr>
+<tr class="memdesc:aa8f70620c792c56b5cc821b36df6557d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a whole column of the matrix to the given column.  <a href="structmatrix_1_1matrix.html#aa8f70620c792c56b5cc821b36df6557d">More...</a><br /></td></tr>
+<tr class="separator:aa8f70620c792c56b5cc821b36df6557d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b66ff70ab7aada7124c0d650384d7c4"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a9b66ff70ab7aada7124c0d650384d7c4">operator[]</a> (const size_t &amp;index)</td></tr>
+<tr class="memdesc:a9b66ff70ab7aada7124c0d650384d7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">1-Dimensional Indexer Operator.  <a href="structmatrix_1_1matrix.html#a9b66ff70ab7aada7124c0d650384d7c4">More...</a><br /></td></tr>
+<tr class="separator:a9b66ff70ab7aada7124c0d650384d7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4e503c2c49fb7f3ccfcb9e648da4dd"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a9f4e503c2c49fb7f3ccfcb9e648da4dd">operator[]</a> (const size_t &amp;index) const</td></tr>
+<tr class="memdesc:a9f4e503c2c49fb7f3ccfcb9e648da4dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">1-Dimensional Indexer Operator.  <a href="structmatrix_1_1matrix.html#a9f4e503c2c49fb7f3ccfcb9e648da4dd">More...</a><br /></td></tr>
+<tr class="separator:a9f4e503c2c49fb7f3ccfcb9e648da4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462c678e33586781cf66bfd32774be18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeY, SizeX &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a462c678e33586781cf66bfd32774be18">transpose</a> () const</td></tr>
+<tr class="memdesc:a462c678e33586781cf66bfd32774be18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose the rows of the matrix onto columns of the returned matrix.  <a href="structmatrix_1_1matrix.html#a462c678e33586781cf66bfd32774be18">More...</a><br /></td></tr>
+<tr class="separator:a462c678e33586781cf66bfd32774be18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a56bd3afa594163c606655574e6930"><td class="memTemplParams" colspan="2">template&lt;size_t OtherX&gt; </td></tr>
+<tr class="memitem:a67a56bd3afa594163c606655574e6930"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, OtherX, SizeY &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a67a56bd3afa594163c606655574e6930">operator*</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, OtherX, SizeX &gt; &amp;mtx) const</td></tr>
+<tr class="memdesc:a67a56bd3afa594163c606655574e6930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a matrix multiplication operation on this matrix and another given matrix. <br  />
+ Matrix multiplication requires that the input matrix has the same number of columns as this matrix has rows.  <a href="structmatrix_1_1matrix.html#a67a56bd3afa594163c606655574e6930">More...</a><br /></td></tr>
+<tr class="separator:a67a56bd3afa594163c606655574e6930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40e725d5f1b51f63b92f1ca713d52f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ae40e725d5f1b51f63b92f1ca713d52f8">apply</a> (const std::function&lt; T(T)&gt; &amp;f)</td></tr>
+<tr class="memdesc:ae40e725d5f1b51f63b92f1ca713d52f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the given function to each element of this matrix.  <a href="structmatrix_1_1matrix.html#ae40e725d5f1b51f63b92f1ca713d52f8">More...</a><br /></td></tr>
+<tr class="separator:ae40e725d5f1b51f63b92f1ca713d52f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b3a33522ed7f93e3cdb702d3858050"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a74b3a33522ed7f93e3cdb702d3858050">apply</a> (const std::function&lt; T(T, T)&gt; &amp;f, const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;mtx)</td></tr>
+<tr class="memdesc:a74b3a33522ed7f93e3cdb702d3858050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the given function to each element of this matrix and another matrix.  <a href="structmatrix_1_1matrix.html#a74b3a33522ed7f93e3cdb702d3858050">More...</a><br /></td></tr>
+<tr class="separator:a74b3a33522ed7f93e3cdb702d3858050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb4e0bb070d63f58b8921e9bd2a2fb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a6fb4e0bb070d63f58b8921e9bd2a2fb4">apply</a> (const std::function&lt; T(T)&gt; &amp;f) const</td></tr>
+<tr class="memdesc:a6fb4e0bb070d63f58b8921e9bd2a2fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the given function to each element of the matrix, and return the resulting matrix without modifying this one.  <a href="structmatrix_1_1matrix.html#a6fb4e0bb070d63f58b8921e9bd2a2fb4">More...</a><br /></td></tr>
+<tr class="separator:a6fb4e0bb070d63f58b8921e9bd2a2fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2b9e488c7f3c0e4fc63de7f745af69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a5c2b9e488c7f3c0e4fc63de7f745af69">apply</a> (const std::function&lt; T(T, T)&gt; &amp;f, const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;mtx) const</td></tr>
+<tr class="memdesc:a5c2b9e488c7f3c0e4fc63de7f745af69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the given function to each element of the matrix and another matrix, and return the resulting matrix without modifying this one.  <a href="structmatrix_1_1matrix.html#a5c2b9e488c7f3c0e4fc63de7f745af69">More...</a><br /></td></tr>
+<tr class="separator:a5c2b9e488c7f3c0e4fc63de7f745af69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0a5582cfadaf04cf871904aeb5e57d"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; T &gt; U&gt; </td></tr>
+<tr class="memitem:a3e0a5582cfadaf04cf871904aeb5e57d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a3e0a5582cfadaf04cf871904aeb5e57d">operator*=</a> (const U &amp;scalar)</td></tr>
+<tr class="memdesc:a3e0a5582cfadaf04cf871904aeb5e57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scalar multiplication operator.  <a href="structmatrix_1_1matrix.html#a3e0a5582cfadaf04cf871904aeb5e57d">More...</a><br /></td></tr>
+<tr class="separator:a3e0a5582cfadaf04cf871904aeb5e57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752fac103928d0c32c09d8d9ec031648"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a752fac103928d0c32c09d8d9ec031648">operator+=</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;o)</td></tr>
+<tr class="memdesc:a752fac103928d0c32c09d8d9ec031648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix addition operator.  <a href="structmatrix_1_1matrix.html#a752fac103928d0c32c09d8d9ec031648">More...</a><br /></td></tr>
+<tr class="separator:a752fac103928d0c32c09d8d9ec031648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fc2c07017372c11df37e4a89634fb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a06fc2c07017372c11df37e4a89634fb0">operator-=</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;o)</td></tr>
+<tr class="memdesc:a06fc2c07017372c11df37e4a89634fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix subtraction operator.  <a href="structmatrix_1_1matrix.html#a06fc2c07017372c11df37e4a89634fb0">More...</a><br /></td></tr>
+<tr class="separator:a06fc2c07017372c11df37e4a89634fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5e1a43c9134c308fa73a0b744c3dfbee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a5e1a43c9134c308fa73a0b744c3dfbee">initMatrix</a> ()</td></tr>
+<tr class="memdesc:a5e1a43c9134c308fa73a0b744c3dfbee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a matrix where each element is set to the specified value.  <a href="structmatrix_1_1matrix.html#a5e1a43c9134c308fa73a0b744c3dfbee">More...</a><br /></td></tr>
+<tr class="separator:a5e1a43c9134c308fa73a0b744c3dfbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae06fabe46503121c17d823d2aadcd781"><td class="memItemLeft" align="right" valign="top">static constexpr const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a> { SizeX * SizeY }</td></tr>
+<tr class="separator:ae06fabe46503121c17d823d2aadcd781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a28ff2029097269727a68737290cea2e8"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a28ff2029097269727a68737290cea2e8">to1D</a> (const size_t &amp;x, const size_t &amp;y)</td></tr>
+<tr class="memdesc:a28ff2029097269727a68737290cea2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a 2-dimensional point to a 1-dimensional index number.  <a href="structmatrix_1_1matrix.html#a28ff2029097269727a68737290cea2e8">More...</a><br /></td></tr>
+<tr class="separator:a28ff2029097269727a68737290cea2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc63d4f62c5759f02abb2e29428708d"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a4dc63d4f62c5759f02abb2e29428708d">to1D</a> (const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;pos)</td></tr>
+<tr class="memdesc:a4dc63d4f62c5759f02abb2e29428708d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a 2-dimensional point to a 1-dimensional index number.  <a href="structmatrix_1_1matrix.html#a4dc63d4f62c5759f02abb2e29428708d">More...</a><br /></td></tr>
+<tr class="separator:a4dc63d4f62c5759f02abb2e29428708d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace141254bf73c7e9d9b20df0bd97abcb"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ace141254bf73c7e9d9b20df0bd97abcb">from1D</a> (const size_t &amp;n)</td></tr>
+<tr class="memdesc:ace141254bf73c7e9d9b20df0bd97abcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a 1-dimensional index number to a 2-dimensional point.  <a href="structmatrix_1_1matrix.html#ace141254bf73c7e9d9b20df0bd97abcb">More...</a><br /></td></tr>
+<tr class="separator:ace141254bf73c7e9d9b20df0bd97abcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a70b392a29f945bd55ad419d69102813e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a70b392a29f945bd55ad419d69102813e">_arr</a></td></tr>
+<tr class="separator:a70b392a29f945bd55ad419d69102813e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac9f96e05970db5a892dc9473d6439b52"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#ac9f96e05970db5a892dc9473d6439b52">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;v2d) <a class="el" href="structmatrix_1_1matrix.html#a41e5a58637975f8179857b258a1c36a2">requires</a> var</td></tr>
+<tr class="memdesc:ac9f96e05970db5a892dc9473d6439b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator that is available when (T) has a valid operator&lt;&lt; overload.  <a href="structmatrix_1_1matrix.html#ac9f96e05970db5a892dc9473d6439b52">More...</a><br /></td></tr>
+<tr class="separator:ac9f96e05970db5a892dc9473d6439b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e422bab2cf53256b9f5d62a10c76d34"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; T &gt; U&gt; </td></tr>
+<tr class="memitem:a5e422bab2cf53256b9f5d62a10c76d34"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a5e422bab2cf53256b9f5d62a10c76d34">operator*</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;mtx, const U &amp;scalar)</td></tr>
+<tr class="memdesc:a5e422bab2cf53256b9f5d62a10c76d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scalar multiplication operator.  <a href="structmatrix_1_1matrix.html#a5e422bab2cf53256b9f5d62a10c76d34">More...</a><br /></td></tr>
+<tr class="separator:a5e422bab2cf53256b9f5d62a10c76d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1a634cafdac1ad06468d10c17315c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a1d1a634cafdac1ad06468d10c17315c8">operator!</a> (<a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;mtx)</td></tr>
+<tr class="memdesc:a1d1a634cafdac1ad06468d10c17315c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix negation operator.  <a href="structmatrix_1_1matrix.html#a1d1a634cafdac1ad06468d10c17315c8">More...</a><br /></td></tr>
+<tr class="separator:a1d1a634cafdac1ad06468d10c17315c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99fc0b15b1188c86d3549a8ee324891c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#a99fc0b15b1188c86d3549a8ee324891c">operator+</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;left, const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;right)</td></tr>
+<tr class="memdesc:a99fc0b15b1188c86d3549a8ee324891c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix addition operator.  <a href="structmatrix_1_1matrix.html#a99fc0b15b1188c86d3549a8ee324891c">More...</a><br /></td></tr>
+<tr class="separator:a99fc0b15b1188c86d3549a8ee324891c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc0fc2a199e7fea58e0ad2d15305a13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html#abdc0fc2a199e7fea58e0ad2d15305a13">operator-</a> (const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;left, const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;right)</td></tr>
+<tr class="memdesc:abdc0fc2a199e7fea58e0ad2d15305a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix subtraction operator.  <a href="structmatrix_1_1matrix.html#abdc0fc2a199e7fea58e0ad2d15305a13">More...</a><br /></td></tr>
+<tr class="separator:abdc0fc2a199e7fea58e0ad2d15305a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, size_t SizeX, size_t SizeY&gt;<br />
+<div class="textblock"><h3>template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt;<br />
 struct matrix::matrix&lt; T, SizeX, SizeY &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00056">56</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3234e8e8afc1653277c16b725f1293d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3234e8e8afc1653277c16b725f1293d8">&#9670;&nbsp;</a></span>matrix()</h2>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00075">75</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab9068f452a0af1ebdb762c0c86733db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9068f452a0af1ebdb762c0c86733db2">&#9670;&nbsp;</a></span>type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::<a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> =  std::array&lt;T, (SizeX* SizeY)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00077">77</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3aeda49ced04739a76b834466fb1e1fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aeda49ced04739a76b834466fb1e1fe">&#9670;&nbsp;</a></span>matrix() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -136,21 +299,510 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00113">113</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3b042a372771ab5f8f78577f029b38ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b042a372771ab5f8f78577f029b38ee">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="a62db6bf179c0581c957b1ac7889e7bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62db6bf179c0581c957b1ac7889e7bb5">&#9670;&nbsp;</a></span>matrix() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::<a class="el" href="structmatrix_1_1matrix.html">matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00115">115</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a27845fc73792caa7bd2d182bcb0f91db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27845fc73792caa7bd2d182bcb0f91db">&#9670;&nbsp;</a></span>matrix() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::<a class="el" href="structmatrix_1_1matrix.html">matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00116">116</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a88035468a003f51214f66062fb1ad9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88035468a003f51214f66062fb1ad9ee">&#9670;&nbsp;</a></span>matrix() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::<a class="el" href="structmatrix_1_1matrix.html">matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; T, <a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00121">121</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a88035468a003f51214f66062fb1ad9ee_cgraph.svg" width="420" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a52145d594b3ddc62523ad104abed2cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52145d594b3ddc62523ad104abed2cd0">&#9670;&nbsp;</a></span>matrix() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::<a class="el" href="structmatrix_1_1matrix.html">matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; T, <a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00122">122</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a52145d594b3ddc62523ad104abed2cd0_cgraph.svg" width="420" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae40e725d5f1b51f63b92f1ca713d52f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40e725d5f1b51f63b92f1ca713d52f8">&#9670;&nbsp;</a></span>apply() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; T(T)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the given function to each element of this matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A function to apply to each element, accepting each element's value as input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00375">375</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_ae40e725d5f1b51f63b92f1ca713d52f8_cgraph.svg" width="414" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6fb4e0bb070d63f58b8921e9bd2a2fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb4e0bb070d63f58b8921e9bd2a2fb4">&#9670;&nbsp;</a></span>apply() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; T(T)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the given function to each element of the matrix, and return the resulting matrix without modifying this one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A function to apply to each element, accepting each element's value as input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00398">398</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a6fb4e0bb070d63f58b8921e9bd2a2fb4_cgraph.svg" width="414" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a74b3a33522ed7f93e3cdb702d3858050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b3a33522ed7f93e3cdb702d3858050">&#9670;&nbsp;</a></span>apply() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; T(T, T)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the given function to each element of this matrix and another matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A function to apply to each element, accepting both the value of this matrix's corresponding element as well as (mtx)'s. </td></tr>
+    <tr><td class="paramname">mtx</td><td>Another matrix to use as input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00387">387</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a74b3a33522ed7f93e3cdb702d3858050_cgraph.svg" width="414" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5c2b9e488c7f3c0e4fc63de7f745af69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2b9e488c7f3c0e4fc63de7f745af69">&#9670;&nbsp;</a></span>apply() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; T(T, T)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the given function to each element of the matrix and another matrix, and return the resulting matrix without modifying this one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A function to apply to each element, accepting both the value of this matrix's corresponding element as well as (mtx)'s. </td></tr>
+    <tr><td class="paramname">mtx</td><td>Another matrix to use as input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00411">411</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a5c2b9e488c7f3c0e4fc63de7f745af69_cgraph.svg" width="414" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af3be64b5b20bb3ca64bca0c4b10bb28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3be64b5b20bb3ca64bca0c4b10bb28d">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type::const_iterator <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the beginning array iterator. </p>
+<dl class="section return"><dt>Returns</dt><dd>type::const_iterator </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00169">169</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_af3be64b5b20bb3ca64bca0c4b10bb28d_cgraph.svg" width="414" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad080b44d5b604bde9c7c91c773a78ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad080b44d5b604bde9c7c91c773a78ced">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the matrix is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00179">179</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_ad080b44d5b604bde9c7c91c773a78ced_cgraph.svg" width="420" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a29f29e9fdbbd46f15d77b53b03e18e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f29e9fdbbd46f15d77b53b03e18e2a">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type::const_iterator <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the ending array iterator. </p>
+<dl class="section return"><dt>Returns</dt><dd>type::const_iterator </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00174">174</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a29f29e9fdbbd46f15d77b53b03e18e2a_cgraph.svg" width="402" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ace141254bf73c7e9d9b20df0bd97abcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace141254bf73c7e9d9b20df0bd97abcb">&#9670;&nbsp;</a></span>from1D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="structmatrix_1_1point.html">point</a>&lt;size_t&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::from1D </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a 1-dimensional index number to a 2-dimensional point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>A 1-Dimensional Index Number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>point&lt;size_t&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00106">106</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a39c85cc9234f163b0b95dd8928698ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c85cc9234f163b0b95dd8928698ccb">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -158,7 +810,7 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::get </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmatrix_1_1point.html">point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -170,11 +822,21 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00079">79</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p>Get the element at the specified point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Target Point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00191">191</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a3b042a372771ab5f8f78577f029b38ee_cgraph.svg" width="348" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a39c85cc9234f163b0b95dd8928698ccb_cgraph.svg" width="399" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -185,7 +847,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -215,34 +877,43 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00083">83</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p>Get the element at the specified point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Target X-Axis Position. </td></tr>
+    <tr><td class="paramname">y</td><td>Target Y-Axis Position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00214">214</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a133040041ba02d6f429800b0f719a218_cgraph.svg" width="348" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a133040041ba02d6f429800b0f719a218_cgraph.svg" width="399" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="aea10bcfe15f0c757fee044425094c53c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea10bcfe15f0c757fee044425094c53c">&#9670;&nbsp;</a></span>requires()</h2>
+<a id="aa948e06c6cf6cf3c8e38949b6ecca088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa948e06c6cf6cf3c8e38949b6ecca088">&#9670;&nbsp;</a></span>getColumn()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
-<div class="memtemplate">
-template&lt;std::same_as&lt; T &gt;... Ts&gt; </div>
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::requires </td>
+          <td class="memname">std::array&lt;T, SizeY&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::getColumn </td>
           <td>(</td>
-          <td class="paramtype">sizeof...&#160;</td>
-          <td class="paramname">Ts = <code>=&#160;(SizeX&#160;*&#160;SizeY)</code></td><td>)</td>
-          <td> const &amp;</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -252,22 +923,626 @@ template&lt;std::same_as&lt; T &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00076">76</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p>Get a single column from the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-axis index of the column to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::array&lt;T, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00260">260</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_aea10bcfe15f0c757fee044425094c53c_cgraph.svg" width="380" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_aa948e06c6cf6cf3c8e38949b6ecca088_cgraph.svg" width="448" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ab5d76abb48b5b840107f587b69ce55d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5d76abb48b5b840107f587b69ce55d3">&#9670;&nbsp;</a></span>set()</h2>
+<a id="a44d07656a203d4b2c8958aca15d3a137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d07656a203d4b2c8958aca15d3a137">&#9670;&nbsp;</a></span>getRow()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;T, SizeX&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::getRow </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a single row from the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>The y-axis index of the row to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::array&lt;T, SizeX&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00238">238</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a44d07656a203d4b2c8958aca15d3a137_cgraph.svg" width="427" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5e1a43c9134c308fa73a0b744c3dfbee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1a43c9134c308fa73a0b744c3dfbee">&#9670;&nbsp;</a></span>initMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::initMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a matrix where each element is set to the specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>The value to initialize each element of the matrix with. Defaults to zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00333">333</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a5e1a43c9134c308fa73a0b744c3dfbee_cgraph.svg" width="440" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a67a56bd3afa594163c606655574e6930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a56bd3afa594163c606655574e6930">&#9670;&nbsp;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<div class="memtemplate">
+template&lt;size_t OtherX&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, OtherX, SizeY&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, OtherX, SizeX &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform a matrix multiplication operation on this matrix and another given matrix. <br  />
+ Matrix multiplication requires that the input matrix has the same number of columns as this matrix has rows. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">OtherX</td><td>The (variable) width of the other matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Input Matrix to Multiply By. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, OtherX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00357">357</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a67a56bd3afa594163c606655574e6930_cgraph.svg" width="440" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3e0a5582cfadaf04cf871904aeb5e57d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0a5582cfadaf04cf871904aeb5e57d">&#9670;&nbsp;</a></span>operator*=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<div class="memtemplate">
+template&lt;var::same_or_convertible&lt; T &gt; U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const U &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix scalar multiplication operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>Scalar multiplier value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00436">436</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a3e0a5582cfadaf04cf871904aeb5e57d_cgraph.svg" width="451" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a752fac103928d0c32c09d8d9ec031648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752fac103928d0c32c09d8d9ec031648">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix addition operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Input matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00466">466</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a752fac103928d0c32c09d8d9ec031648_cgraph.svg" width="455" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a06fc2c07017372c11df37e4a89634fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc2c07017372c11df37e4a89634fb0">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix subtraction operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Input matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00485">485</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a06fc2c07017372c11df37e4a89634fb0_cgraph.svg" width="206" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a06fc2c07017372c11df37e4a89634fb0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a59a82b5636a4dc8a9d6da26c14bb9cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a82b5636a4dc8a9d6da26c14bb9cba">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix Copy-Assignment Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Input Matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00129">129</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a59a82b5636a4dc8a9d6da26c14bb9cba_cgraph.svg" width="444" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a978f1276afb20df72fb3a22cc7189639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978f1276afb20df72fb3a22cc7189639">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix Copy-Assignment Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Input Array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00149">149</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a978f1276afb20df72fb3a22cc7189639_cgraph.svg" width="444" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3b54622f1aa32bd0da3b798a218dff78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b54622f1aa32bd0da3b798a218dff78">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>mtx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix Move-Assignment Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Input Matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00139">139</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a3b54622f1aa32bd0da3b798a218dff78_cgraph.svg" width="444" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a43991875ed51d294382e7d2f2f78e5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43991875ed51d294382e7d2f2f78e5fc">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix Move-Assignment Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Input Array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00159">159</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a43991875ed51d294382e7d2f2f78e5fc_cgraph.svg" width="444" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9b66ff70ab7aada7124c0d650384d7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b66ff70ab7aada7124c0d650384d7c4">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>1-Dimensional Indexer Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>1-Dimensional Index Number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00283">283</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a9b66ff70ab7aada7124c0d650384d7c4_cgraph.svg" width="443" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9f4e503c2c49fb7f3ccfcb9e648da4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4e503c2c49fb7f3ccfcb9e648da4dd">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>1-Dimensional Indexer Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>1-Dimensional Index Number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00289">289</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a9f4e503c2c49fb7f3ccfcb9e648da4dd_cgraph.svg" width="443" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a41e5a58637975f8179857b258a1c36a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e5a58637975f8179857b258a1c36a2">&#9670;&nbsp;</a></span>requires()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<div class="memtemplate">
+template&lt;var::same_or_convertible&lt; T &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::requires </td>
+          <td>(</td>
+          <td class="paramtype">sizeof...&#160;</td>
+          <td class="paramname">Ts = <code>=&#160;<a class="el" href="structmatrix_1_1matrix.html#ae06fabe46503121c17d823d2aadcd781">SIZE</a></code></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00118">118</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a41e5a58637975f8179857b258a1c36a2_cgraph.svg" width="431" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5157b4e4c44d0040484831e80517e9f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5157b4e4c44d0040484831e80517e9f5">&#9670;&nbsp;</a></span>set() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -275,7 +1550,7 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmatrix_1_1point.html">point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
@@ -297,17 +1572,663 @@ template&lt;typename T , size_t SizeX, size_t SizeY&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00088">88</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p>Set the element at the specified point to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Target Point. </td></tr>
+    <tr><td class="paramname">value</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T: The previous value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00201">201</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_ab5d76abb48b5b840107f587b69ce55d3_cgraph.svg" width="155" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a5157b4e4c44d0040484831e80517e9f5_cgraph.svg" width="398" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
+</div>
+
+</div>
+</div>
+<a id="af62ffc85bd058dd0749ccdc032b79e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62ffc85bd058dd0749ccdc032b79e72">&#9670;&nbsp;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the element at the specified point to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Target X-Axis Position. </td></tr>
+    <tr><td class="paramname">y</td><td>Target Y-Axis Position. </td></tr>
+    <tr><td class="paramname">value</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T: The previous value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00225">225</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_ab5d76abb48b5b840107f587b69ce55d3_icgraph.svg" width="380" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_af62ffc85bd058dd0749ccdc032b79e72_cgraph.svg" width="398" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
+</div>
+
+</div>
+</div>
+<a id="aa8f70620c792c56b5cc821b36df6557d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f70620c792c56b5cc821b36df6557d">&#9670;&nbsp;</a></span>setColumn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::setColumn </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; T, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a whole column of the matrix to the given column. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-axis index of the target column to overwrite. </td></tr>
+    <tr><td class="paramname">col</td><td>Input Column. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00272">272</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_aa8f70620c792c56b5cc821b36df6557d_cgraph.svg" width="448" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a56947e727978fd6cfb33512e4e146d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56947e727978fd6cfb33512e4e146d91">&#9670;&nbsp;</a></span>setRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::setRow </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; T, SizeX &gt; &amp;&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a whole row of the matrix to the given row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>The y-axis index of the target row to overwrite. </td></tr>
+    <tr><td class="paramname">row</td><td>Input Row. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00250">250</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a56947e727978fd6cfb33512e4e146d91_cgraph.svg" width="426" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a03af9dfdf4ad4962300a69b447986176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03af9dfdf4ad4962300a69b447986176">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the size of the matrix, in elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00184">184</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a03af9dfdf4ad4962300a69b447986176_cgraph.svg" width="404" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4dc63d4f62c5759f02abb2e29428708d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc63d4f62c5759f02abb2e29428708d">&#9670;&nbsp;</a></span>to1D() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr size_t <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::to1D </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1point.html">point</a>&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a 2-dimensional point to a 1-dimensional index number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>A 2-Dimensional Point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00097">97</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a28ff2029097269727a68737290cea2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28ff2029097269727a68737290cea2e8">&#9670;&nbsp;</a></span>to1D() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr size_t <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::to1D </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a 2-dimensional point to a 1-dimensional index number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>X-Axis Position. </td></tr>
+    <tr><td class="paramname">y</td><td>Y-Axis Position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00088">88</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a462c678e33586781cf66bfd32774be18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a462c678e33586781cf66bfd32774be18">&#9670;&nbsp;</a></span>transpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeY, SizeX&gt; <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::transpose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transpose the rows of the matrix onto columns of the returned matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeY, SizeX&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00344">344</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmatrix_1_1matrix_a462c678e33586781cf66bfd32774be18_cgraph.svg" width="442" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a1d1a634cafdac1ad06468d10c17315c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1a634cafdac1ad06468d10c17315c8">&#9670;&nbsp;</a></span>operator!</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt;&amp; operator! </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix negation operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Input Matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00446">446</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e422bab2cf53256b9f5d62a10c76d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e422bab2cf53256b9f5d62a10c76d34">&#9670;&nbsp;</a></span>operator*</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<div class="memtemplate">
+template&lt;var::same_or_convertible&lt; T &gt; U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mtx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const U &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix scalar multiplication operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Input Matrix. </td></tr>
+    <tr><td class="paramname">scalar</td><td>Scalar multiplier value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00426">426</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a99fc0b15b1188c86d3549a8ee324891c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99fc0b15b1188c86d3549a8ee324891c">&#9670;&nbsp;</a></span>operator+</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix addition operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Input Matrix A. </td></tr>
+    <tr><td class="paramname">right</td><td>Input Matrix B. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00457">457</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abdc0fc2a199e7fea58e0ad2d15305a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc0fc2a199e7fea58e0ad2d15305a13">&#9670;&nbsp;</a></span>operator-</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt;T, SizeX, SizeY&gt; operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matrix subtraction operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Input Matrix A. </td></tr>
+    <tr><td class="paramname">right</td><td>Input Matrix B. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>matrix&lt;T, SizeX, SizeY&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00476">476</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9f96e05970db5a892dc9473d6439b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f96e05970db5a892dc9473d6439b52">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmatrix_1_1matrix.html">matrix</a>&lt; T, SizeX, SizeY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v2d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stream insertion operator that is available when (T) has a valid operator&lt;&lt; overload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>ostream instance. </td></tr>
+    <tr><td class="paramname">v2d</td><td>Matrix instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::ostream&amp;</dd></dl>
+<p>Initialize an array where each element is set to the specified value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>The value to initialize each element of the array with. Defaults to zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::array&lt;T, SIZE&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00297">297</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a70b392a29f945bd55ad419d69102813e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b392a29f945bd55ad419d69102813e">&#9670;&nbsp;</a></span>_arr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix_1_1matrix.html#ab9068f452a0af1ebdb762c0c86733db2">type</a> <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::_arr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00080">80</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae06fabe46503121c17d823d2aadcd781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06fabe46503121c17d823d2aadcd781">&#9670;&nbsp;</a></span>SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::numeric T, size_t SizeX, size_t SizeY&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const size_t <a class="el" href="structmatrix_1_1matrix.html">matrix::matrix</a>&lt; T, SizeX, SizeY &gt;::SIZE { SizeX * SizeY }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00076">76</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 </div>
 </div>

@@ -47,6 +47,7 @@ var hierarchy =
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
+    [ "matrix", "structmatrix.html", null ],
     [ "matrix::matrix< T, SizeX, SizeY >", "structmatrix_1_1matrix.html", null ],
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
