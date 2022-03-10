@@ -39,6 +39,29 @@ inline constexpr bool isquote(const char c)
 }
 
 namespace str {
+	[[nodiscard]] inline std::string unescape(std::string str)
+	{
+		const auto& next{ [&str](const size_t& current) {
+			if (current + 1 < str.size())
+				return str.at(current + 1);
+			return '\0';
+		} };
+		for (size_t i{ str.find('\\') }; i < str.size(); i = str.find('\\', i + 1)) {
+			if (next(i) == '\\') // special escape character
+				str.erase(i, i);
+			if (isdigit(next(i))) { // octal
+				std::string n;
+				for (const auto& c : str.substr(i)) {
+					if (!isdigit(c))
+						break;
+					n += c;
+				}
+				str = str.substr(0ull, i) + str::stringify(std::oct, n) + str.substr(i + n.size());
+			}
+		}
+		return str;
+	}
+
 	/**
 	 *	disable "use of a moved from object 'buffer'", speed comparison testing shows a major performance
 	 *	increase when using return-move() for these functions. (~300000ns)
