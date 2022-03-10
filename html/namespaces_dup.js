@@ -10,6 +10,7 @@ var namespaces_dup =
     [ "gen2", "namespacegen2.html", null ],
     [ "ini", "namespaceini.html", null ],
     [ "iter", "namespaceiter.html", null ],
+    [ "legacy", "namespacelegacy.html", null ],
     [ "math", "namespacemath.html", null ],
     [ "matrix", "namespacematrix.html", null ],
     [ "op", "namespaceop.html", null ],

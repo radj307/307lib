@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['math_1021',['math',['../namespacemath.html',1,'']]],
-  ['matrix_1022',['matrix',['../namespacematrix.html',1,'']]]
+  ['legacy_1035',['legacy',['../namespacelegacy.html',1,'']]]
 ];

@@ -99,7 +99,8 @@ $(document).ready(function(){initNavTree('str_8hpp.html',''); initResizable(); }
 
 <p>Includes all of the str namespace extension headers, and additional functions related to string manipulation &amp; conversions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="stringify_8hpp_source.html">stringify.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="strlocale_8hpp_source.html">strlocale.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
@@ -149,27 +150,11 @@ Functions</h2></td></tr>
 <tr class="memitem:aa415d1d4d4888d8486edf353a9405d9f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f">isquote</a> (const char c)</td></tr>
 <tr class="memdesc:aa415d1d4d4888d8486edf353a9405d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test that checks if a given char is a quotation mark. (Accepts single or double quotes.)  <a href="str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f">More...</a><br /></td></tr>
 <tr class="separator:aa415d1d4d4888d8486edf353a9405d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18758598172725d265bdab25d48f5836"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a18758598172725d265bdab25d48f5836"><td class="memTemplItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a18758598172725d265bdab25d48f5836">str::streamify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a18758598172725d265bdab25d48f5836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.  <a href="namespacestr.html#a18758598172725d265bdab25d48f5836">More...</a><br /></td></tr>
-<tr class="separator:a18758598172725d265bdab25d48f5836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724f84184c0c1cd75e91b4ac95f40768"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a724f84184c0c1cd75e91b4ac95f40768"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">str::stringify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a724f84184c0c1cd75e91b4ac95f40768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">More...</a><br /></td></tr>
-<tr class="separator:a724f84184c0c1cd75e91b4ac95f40768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplParams" colspan="2">template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::Streamable... VT&gt; </td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr static const std::convertible_to&lt; ElemT, std::string &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf8be91baa116c4582e66f6278db959f">str::join</a> (const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;container, VT... separators)</td></tr>
 <tr class="separator:acf8be91baa116c4582e66f6278db959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a8c67ed7c199414fca456eef77b60e7"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">str::count</a> (std::stringstream &amp;ss, char delim)</td></tr>
 <tr class="separator:a8a8c67ed7c199414fca456eef77b60e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d0e9313e9c0b862cfe77a3814139aa9"><td class="memTemplParams" colspan="2">template&lt;class DelimType , var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a3d0e9313e9c0b862cfe77a3814139aa9"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3d0e9313e9c0b862cfe77a3814139aa9">str::stringify_split</a> (const DelimType &amp;delimiter, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a3d0e9313e9c0b862cfe77a3814139aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#a3d0e9313e9c0b862cfe77a3814139aa9">More...</a><br /></td></tr>
-<tr class="separator:a3d0e9313e9c0b862cfe77a3814139aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e1ce424ded2930c3b83b41a06b0894"><td class="memTemplParams" colspan="2">template&lt;class DelimType , var::Streamable T&gt; </td></tr>
-<tr class="memitem:a89e1ce424ded2930c3b83b41a06b0894"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a89e1ce424ded2930c3b83b41a06b0894">str::stringify_split</a> (const DelimType &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
-<tr class="memdesc:a89e1ce424ded2930c3b83b41a06b0894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#a89e1ce424ded2930c3b83b41a06b0894">More...</a><br /></td></tr>
-<tr class="separator:a89e1ce424ded2930c3b83b41a06b0894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab58e4fd600a73d4ffbdea3d65c5bdabd"><td class="memTemplParams" colspan="2">template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_or_convertible... Ts&gt; </td></tr>
 <tr class="memitem:ab58e4fd600a73d4ffbdea3d65c5bdabd"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab58e4fd600a73d4ffbdea3d65c5bdabd">str::compare</a> (const Pred &amp;predicate, const T &amp;fst, const Ts &amp;... strings)</td></tr>
 <tr class="separator:ab58e4fd600a73d4ffbdea3d65c5bdabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -286,7 +271,7 @@ Variables</h2></td></tr>
 <p>Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace. </p>
 <p>Disables the "using namespace std::string_literals;" from being declared in the global namespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00020">20</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00021">21</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +309,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00030">30</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00031">31</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>

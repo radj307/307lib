@@ -96,7 +96,8 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 <p>Contains string conversion functions that can be passed as a std::function as they are not overloaded.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="math_8hpp_source.html">math.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="stringify_8hpp_source.html">stringify.hpp</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -104,7 +105,7 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strconv.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="655" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -119,6 +120,16 @@ This graph shows which files directly or indirectly include this file:</div>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacestr"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html">str</a></td></tr>
 <tr class="memdesc:namespacestr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains various string manipulation, conversion, and parsing functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceoptional"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceoptional.html">optional</a></td></tr>
+<tr class="memdesc:namespaceoptional"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains string to numeric type converters that use optional wrapper objects instead of exceptions to indicate whether an input value is valid or not. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestr_1_1optional"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html">str::optional</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacelegacy"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelegacy.html">legacy</a></td></tr>
+<tr class="memdesc:namespacelegacy"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legacy conversion functions that use simple try-catch blocks to avoid exceptions from invalid inputs to stoX functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestr_1_1legacy"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html">str::legacy</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -153,22 +164,67 @@ Functions</h2></td></tr>
 <tr class="memitem:ae294fab98bc23e2063bda2780ea9ab55"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae294fab98bc23e2063bda2780ea9ab55">str::toupper</a> (std::wstring str) noexcept</td></tr>
 <tr class="memdesc:ae294fab98bc23e2063bda2780ea9ab55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#ae294fab98bc23e2063bda2780ea9ab55">More...</a><br /></td></tr>
 <tr class="separator:ae294fab98bc23e2063bda2780ea9ab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e783a54607a280e8929aaeb876de36"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ac4e783a54607a280e8929aaeb876de36"><td class="memTemplItemLeft" align="right" valign="top">requires std::floating_point&lt; T &gt; const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac4e783a54607a280e8929aaeb876de36">str::to_string</a> (const T &amp;val, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
-<tr class="memdesc:ac4e783a54607a280e8929aaeb876de36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point to a string in standard notation, with a specified amount of precision.  <a href="namespacestr.html#ac4e783a54607a280e8929aaeb876de36">More...</a><br /></td></tr>
-<tr class="separator:ac4e783a54607a280e8929aaeb876de36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">str::bool_to_string</a> (const bool &amp;val, const bool &amp;first_upper=false)</td></tr>
-<tr class="memdesc:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a boolean to a string.  <a href="namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c">More...</a><br /></td></tr>
-<tr class="separator:a11fa2dd079f3b6ebd63eaffb030e980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
-<tr class="memitem:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memTemplItemLeft" align="right" valign="top">requires std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">str::string_to_bool</a> (std::string str)</td></tr>
-<tr class="memdesc:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr.html#a29b3be3bdfe64e47f3652175fa46e0d5">More...</a><br /></td></tr>
-<tr class="separator:a29b3be3bdfe64e47f3652175fa46e0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e4febc1416769a1b195250f723bcfc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2e4febc1416769a1b195250f723bcfc0">str::stob</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:a2e4febc1416769a1b195250f723bcfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
+<tr class="memitem:a0215db0125fa67b33ab8529511b504bc"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:a0215db0125fa67b33ab8529511b504bc"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a0215db0125fa67b33ab8529511b504bc">str::optional::sto</a> (const std::function&lt; T(const char *, char **, int)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a0215db0125fa67b33ab8529511b504bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given string to an integer type.  <a href="namespacestr_1_1optional.html#a0215db0125fa67b33ab8529511b504bc">More...</a><br /></td></tr>
+<tr class="separator:a0215db0125fa67b33ab8529511b504bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351517219af2a9c512f9a09554b5b530"><td class="memItemLeft" align="right" valign="top">std::optional&lt; signed int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a351517219af2a9c512f9a09554b5b530">str::optional::stoi</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a351517219af2a9c512f9a09554b5b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#a351517219af2a9c512f9a09554b5b530">More...</a><br /></td></tr>
+<tr class="separator:a351517219af2a9c512f9a09554b5b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#aafed4845d5b2a67c29087eb33c4ab83a">str::optional::stoui</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:aafed4845d5b2a67c29087eb33c4ab83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#aafed4845d5b2a67c29087eb33c4ab83a">More...</a><br /></td></tr>
+<tr class="separator:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#adb21e6334e41c8ed96da69eaf8d414ce">str::optional::stol</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:adb21e6334e41c8ed96da69eaf8d414ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#adb21e6334e41c8ed96da69eaf8d414ce">More...</a><br /></td></tr>
+<tr class="separator:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c08701e978014060eb16ac475840dcb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a2c08701e978014060eb16ac475840dcb">str::optional::stoul</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a2c08701e978014060eb16ac475840dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#a2c08701e978014060eb16ac475840dcb">More...</a><br /></td></tr>
+<tr class="separator:a2c08701e978014060eb16ac475840dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7da731bb16960ab119048356e14eac1"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#ab7da731bb16960ab119048356e14eac1">str::optional::stoll</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:ab7da731bb16960ab119048356e14eac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#ab7da731bb16960ab119048356e14eac1">More...</a><br /></td></tr>
+<tr class="separator:ab7da731bb16960ab119048356e14eac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3452a9c740a65e466e0b298924f993d5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a3452a9c740a65e466e0b298924f993d5">str::optional::stoull</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a3452a9c740a65e466e0b298924f993d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="namespacestr_1_1optional.html#a3452a9c740a65e466e0b298924f993d5">More...</a><br /></td></tr>
+<tr class="separator:a3452a9c740a65e466e0b298924f993d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c45167debf1f2363f467b9e05f6ff2"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
+<tr class="memitem:ad3c45167debf1f2363f467b9e05f6ff2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#ad3c45167debf1f2363f467b9e05f6ff2">str::optional::sto</a> (const std::function&lt; T(const char *, char **)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
+<tr class="memdesc:ad3c45167debf1f2363f467b9e05f6ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a decimal floating-point number to a floating-point number.  <a href="namespacestr_1_1optional.html#ad3c45167debf1f2363f467b9e05f6ff2">More...</a><br /></td></tr>
+<tr class="separator:ad3c45167debf1f2363f467b9e05f6ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1676f79b9905e77f5b9be7f4befd523d"><td class="memItemLeft" align="right" valign="top">std::optional&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a1676f79b9905e77f5b9be7f4befd523d">str::optional::stof</a> (const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
+<tr class="memdesc:a1676f79b9905e77f5b9be7f4befd523d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a floating-point number to a float.  <a href="namespacestr_1_1optional.html#a1676f79b9905e77f5b9be7f4befd523d">More...</a><br /></td></tr>
+<tr class="separator:a1676f79b9905e77f5b9be7f4befd523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2060a7dff48c5c09b55c2aba12900ec"><td class="memItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#aa2060a7dff48c5c09b55c2aba12900ec">str::optional::stod</a> (const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
+<tr class="memdesc:aa2060a7dff48c5c09b55c2aba12900ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a floating-point number to a double.  <a href="namespacestr_1_1optional.html#aa2060a7dff48c5c09b55c2aba12900ec">More...</a><br /></td></tr>
+<tr class="separator:aa2060a7dff48c5c09b55c2aba12900ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a99dc990ff9a8b043727d3910202914"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1optional.html#a1a99dc990ff9a8b043727d3910202914">str::optional::stold</a> (const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
+<tr class="memdesc:a1a99dc990ff9a8b043727d3910202914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a floating-point number to a long double.  <a href="namespacestr_1_1optional.html#a1a99dc990ff9a8b043727d3910202914">More...</a><br /></td></tr>
+<tr class="separator:a1a99dc990ff9a8b043727d3910202914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9273d11efb3303985d45732ac2023302"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302">str::legacy::bool_to_string</a> (const bool &amp;val, const bool &amp;first_upper=false)</td></tr>
+<tr class="memdesc:a9273d11efb3303985d45732ac2023302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a boolean to a string.  <a href="namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302">More...</a><br /></td></tr>
+<tr class="separator:a9273d11efb3303985d45732ac2023302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
+<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplItemLeft" align="right" valign="top">requires std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">str::legacy::string_to_bool</a> (std::string str)</td></tr>
+<tr class="memdesc:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">More...</a><br /></td></tr>
+<tr class="separator:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f63431313d7591f070b95bb5dc047f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#ad6f63431313d7591f070b95bb5dc047f">str::legacy::stob</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:ad6f63431313d7591f070b95bb5dc047f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
  - Returns true if the input string is (case-insensitive) equal to "true". <br  />
- - Otherwise, returns false.  <a href="namespacestr.html#a2e4febc1416769a1b195250f723bcfc0">More...</a><br /></td></tr>
-<tr class="separator:a2e4febc1416769a1b195250f723bcfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ - Otherwise, returns false.  <a href="namespacestr_1_1legacy.html#ad6f63431313d7591f070b95bb5dc047f">More...</a><br /></td></tr>
+<tr class="separator:ad6f63431313d7591f070b95bb5dc047f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt; T, var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">str::to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt, Ts &amp;&amp;... additionalFmt)</td></tr>
+<tr class="memdesc:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from any valid streamable type to a string. <br  />
+ This function is a wrapper around <a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions.  <a href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">More...</a><br /></td></tr>
+<tr class="separator:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplParams" colspan="2">template&lt;var::numeric T&gt; </td></tr>
+<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">str::to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt=std::ios_base::fixed)</td></tr>
+<tr class="memdesc:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert numeric types to string.  <a href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">More...</a><br /></td></tr>
+<tr class="separator:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
+<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str::to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool &amp;force_decimal=false)</td></tr>
+<tr class="memdesc:aa560642b42f72dd03b56c5b60f918d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
+ This is a legacy support function.  <a href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">More...</a><br /></td></tr>
+<tr class="separator:aa560642b42f72dd03b56c5b60f918d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains string conversion functions that can be passed as a std::function as they are not overloaded. </p>

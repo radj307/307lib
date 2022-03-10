@@ -15,7 +15,7 @@ var searchData=
   ['blue_78',['blue',['../structterm_1_1setcolor__seq.html#a3b762bb7cb5eea1f38ae72915ff387ca',1,'term::setcolor_seq::blue()'],['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()']]],
   ['body_79',['body',['../structterm_1_1_message.html#abd91e7c810e685cc67c7de34916a7bd0',1,'term::Message']]],
   ['bold_80',['BOLD',['../structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa',1,'color::format::BOLD()'],['../namespacecolor.html#ac9e866bcf92676cd068a32b3db6afe5d',1,'color::bold()']]],
-  ['bool_5fto_5fstring_81',['bool_to_string',['../namespacestr.html#a11fa2dd079f3b6ebd63eaffb030e980c',1,'str']]],
+  ['bool_5fto_5fstring_81',['bool_to_string',['../namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302',1,'str::legacy']]],
   ['boolean_82',['Boolean',['../namespacefile_1_1ini.html#a42c2b4ad6a7698c012a5c55ee35f4f8c',1,'file::ini::Boolean()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799ac48d5da12d702e73d6966069f2687376',1,'token::DefaultDefs::BOOLEAN()']]],
   ['bracket_5fclose_83',['BRACKET_CLOSE',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a24f34bfbbd1bf4bcf427fd459df7b776',1,'token::DefaultDefs']]],
   ['bracket_5fopen_84',['BRACKET_OPEN',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a37c51803bdf9763d9b1ca1d364bdf9f6',1,'token::DefaultDefs']]],
