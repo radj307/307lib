@@ -32,5 +32,6 @@ var str_8hpp =
     [ "strip", "str_8hpp.html#acf63c00706c91be7da3f18b08a088224", null ],
     [ "strip_preceeding", "str_8hpp.html#a4a7fab88e397cd6251944c3d01a7438d", null ],
     [ "strip_trailing", "str_8hpp.html#a45c1b11a2e282a4fc8d38548eaf45f3c", null ],
+    [ "unescape", "str_8hpp.html#a570e218d41f53ace14a1e941e6c1d205", null ],
     [ "ConvertibleStringT", "str_8hpp.html#abea510ab5719c607e5a2ce61bde9e03e", null ]
 ];

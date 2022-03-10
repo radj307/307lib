@@ -98,7 +98,7 @@ var searchData=
   ['strconv_2ehpp_792',['strconv.hpp',['../strconv_8hpp.html',1,'']]],
   ['streamify_793',['streamify',['../namespacestr.html#a18758598172725d265bdab25d48f5836',1,'str']]],
   ['strict_5fpointer_5fsafety_794',['STRICT_POINTER_SAFETY',['../sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff',1,'sysarch.h']]],
-  ['string_795',['STRING',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0fa63b588d5559f64f89a416e656880b949',1,'opt::token::STRING()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a63b588d5559f64f89a416e656880b949',1,'token::DefaultDefs::STRING()'],['../namespacefile_1_1ini.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini::String()']]],
+  ['string_795',['String',['../namespacefile_1_1ini.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini::String()'],['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0fa63b588d5559f64f89a416e656880b949',1,'opt::token::STRING()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a63b588d5559f64f89a416e656880b949',1,'token::DefaultDefs::STRING()']]],
   ['string_5fto_5fbool_796',['string_to_bool',['../namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91',1,'str::legacy']]],
   ['string_5ftype_797',['string_type',['../structindentor.html#a19918b0b633d941b16632193a5dfb69a',1,'indentor']]],
   ['stringify_798',['stringify',['../namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768',1,'str']]],
