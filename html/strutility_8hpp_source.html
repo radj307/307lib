@@ -92,72 +92,87 @@ $(document).ready(function(){initNavTree('strutility_8hpp_source.html',''); init
 <a href="strutility_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">ostream</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">concepts</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">     * @namespace op</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">     * @brief Contains templated operator overloads compatible with std types so that they don&#39;t pollute the namespace.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacestr_1_1op.html">   11</a></span>&#160;    <span class="keyword">namespace</span> <a class="code" href="namespacestr_1_1op.html">op</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">         * @function operator&lt;&lt;(ostream&amp;, cont_type&lt;T, allocator&lt;T&gt;&gt;&amp;)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * @brief Templated stream insertion operator&lt;&lt; overload for STL containers such as std::vector &amp; std::list.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * @tparam ContType - Type of container</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * @tparam T            - Type of element stored in the container</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         * @param os            - Output stream ref</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">         * @param cont          - Container ref</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">         * @returns ostream&amp;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span>&gt; <span class="keyword">class</span> ContType, <span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacestr_1_1op.html#a76a33af138db3cf1368d172e8c26cda7">   22</a></span>&#160;        <span class="keyword">static</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> ContType&lt;T, std::allocator&lt;T&gt;&gt;&amp; cont) <span class="keyword">noexcept</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : cont)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    os &lt;&lt; i &lt;&lt; <span class="stringliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            } <span class="keywordflow">catch</span> (...) {}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> os;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * @brief Simply checks the given position value against std::string::npos</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * @tparam T        - Position value type.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * @param pos       - Position to check.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @returns bool</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     *\n        true    - The given position is NOT equal to std::string::npos</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     *\n        false   - The given position is equal to std::string::npos, and is invalid.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">   41</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">pos_valid</a>(<span class="keyword">const</span> T&amp; pos) <span class="keyword">noexcept</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;size_t&gt;(pos) != std::string::npos;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sstream</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">concepts</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">     * @namespace op</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">     * @brief Contains templated operator overloads compatible with std types so that they don&#39;t pollute the namespace.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacestr_1_1op.html">   12</a></span>&#160;    <span class="keyword">namespace</span> <a class="code" href="namespacestr_1_1op.html">op</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * @function operator&lt;&lt;(ostream&amp;, cont_type&lt;T, allocator&lt;T&gt;&gt;&amp;)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * @brief Templated stream insertion operator&lt;&lt; overload for STL containers such as std::vector &amp; std::list.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * @tparam ContType - Type of container</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         * @tparam T            - Type of element stored in the container</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">         * @param os            - Output stream ref</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">         * @param cont          - Container ref</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">         * @returns ostream&amp;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span>&gt; <span class="keyword">class</span> ContType, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacestr_1_1op.html#a76a33af138db3cf1368d172e8c26cda7">   23</a></span>&#160;        <span class="keyword">static</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> ContType&lt;T, std::allocator&lt;T&gt;&gt;&amp; cont) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : cont)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    os &lt;&lt; i &lt;&lt; <span class="stringliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            } <span class="keywordflow">catch</span> (...) {}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * @brief Simply checks the given position value against std::string::npos</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * @tparam T        - Position value type.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @param pos       - Position to check.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @returns bool</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     *\n        true    - The given position is NOT equal to std::string::npos</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     *\n        false   - The given position is equal to std::string::npos, and is invalid.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">   42</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">pos_valid</a>(<span class="keyword">const</span> T&amp; pos) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;size_t&gt;(pos) != std::string::npos;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @brief Retrieve the length of the longest string in a given STL container.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @tparam RT       - Return Type. Must be an integral value.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     * @param cont      - Container to check.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * @param offset    - Add this number to the returned value. Including this allows template auto-deduction.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * @returns RT</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span>&lt;std::integral RT, <span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span>&gt; <span class="keyword">class</span> Cont&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">   55</a></span>&#160;    [[nodiscard]] <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">get_longest_string</a>(<span class="keyword">const</span> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">Cont</a>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">string</a>, <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">allocator</a>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">string</a>&gt;&gt;&amp; <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">cont</a>, <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">offset</a> = <span class="keyword">static_cast</span>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a>&gt;(0))</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        size_t longest{ 0llu };</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : cont)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> sz{ it.size() }; sz &gt; longest)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                longest = sz;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> offset + <span class="keyword">static_cast</span>&lt;RT&gt;(longest);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @brief Retrieve the length of the longest string in a given STL container.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     * @tparam RT       - Return Type. Must be an integral value.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * @param cont      - Container to check.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * @param offset    - Add this number to the returned value. Including this allows template auto-deduction.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @returns RT</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span>&lt;std::integral RT, <span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span>&gt; <span class="keyword">class</span> Cont&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">   56</a></span>&#160;    [[nodiscard]] <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">get_longest_string</a>(<span class="keyword">const</span> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">Cont</a>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">string</a>, <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">allocator</a>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">std</a>::<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">string</a>&gt;&gt;&amp; <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">cont</a>, <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a> <a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">offset</a> = <span class="keyword">static_cast</span>&lt;<a class="code" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">RT</a>&gt;(0))</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        size_t longest{ 0llu };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : cont)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> sz{ it.size() }; sz &gt; longest)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                longest = sz;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> offset + <span class="keyword">static_cast</span>&lt;RT&gt;(longest);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * @brief           Count the number of delimiters that occur within a given stringstream.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @param ss:       Input Stringstream</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * @param delim:    The delimiter to count.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     * @returns         size_t</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">   71</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> size_t <a class="code" href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">count</a>(std::stringstream&amp; ss, <span class="keywordtype">char</span> delim)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        size_t count{ 0ull };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> count;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacestr_html_ac833e4f5138a5dd64fb8985361215835"><div class="ttname"><a href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">str::get_longest_string</a></div><div class="ttdeci">RT get_longest_string(const Cont&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;cont, RT offset=static_cast&lt; RT &gt;(0))</div><div class="ttdoc">Retrieve the length of the longest string in a given STL container.</div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00055">strutility.hpp:55</a></div></div>
-<div class="ttc" id="anamespacestr_1_1op_html"><div class="ttname"><a href="namespacestr_1_1op.html">str::op</a></div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00011">strutility.hpp:11</a></div></div>
-<div class="ttc" id="anamespacestr_html_aa560642b42f72dd03b56c5b60f918d43"><div class="ttname"><a href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str::to_string</a></div><div class="ttdeci">const CONSTEXPR std::string to_string(const T &amp;value, const std::streamsize &amp;precision=8, const bool &amp;force_decimal=false)</div><div class="ttdoc">Convert a floating-point number to a string, with variable precision and automatic truncation....</div><div class="ttdef"><b>Definition:</b> <a href="strconv_8hpp_source.html#l00659">strconv.hpp:659</a></div></div>
-<div class="ttc" id="anamespacestr_html_a26bf9f8189aea4146e003477d8b7a62d"><div class="ttname"><a href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">str::pos_valid</a></div><div class="ttdeci">constexpr bool pos_valid(const T &amp;pos) noexcept</div><div class="ttdoc">Simply checks the given position value against std::string::npos.</div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00041">strutility.hpp:41</a></div></div>
+<div class="ttc" id="anamespacestr_html_ac833e4f5138a5dd64fb8985361215835"><div class="ttname"><a href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">str::get_longest_string</a></div><div class="ttdeci">RT get_longest_string(const Cont&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;cont, RT offset=static_cast&lt; RT &gt;(0))</div><div class="ttdoc">Retrieve the length of the longest string in a given STL container.</div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00056">strutility.hpp:56</a></div></div>
+<div class="ttc" id="anamespacestr_1_1op_html"><div class="ttname"><a href="namespacestr_1_1op.html">str::op</a></div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00012">strutility.hpp:12</a></div></div>
+<div class="ttc" id="anamespacestr_html_aa560642b42f72dd03b56c5b60f918d43"><div class="ttname"><a href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str::to_string</a></div><div class="ttdeci">const CONSTEXPR std::string to_string(const T &amp;value, const std::streamsize &amp;precision=8, const bool &amp;force_decimal=false)</div><div class="ttdoc">Convert a floating-point number to a string, with variable precision and automatic truncation....</div><div class="ttdef"><b>Definition:</b> <a href="strconv_8hpp_source.html#l00746">strconv.hpp:746</a></div></div>
+<div class="ttc" id="anamespacestr_html_a8a8c67ed7c199414fca456eef77b60e7"><div class="ttname"><a href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">str::count</a></div><div class="ttdeci">static size_t count(std::stringstream &amp;ss, char delim)</div><div class="ttdoc">Count the number of delimiters that occur within a given stringstream.</div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00071">strutility.hpp:71</a></div></div>
+<div class="ttc" id="anamespacestr_html_a26bf9f8189aea4146e003477d8b7a62d"><div class="ttname"><a href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">str::pos_valid</a></div><div class="ttdeci">constexpr bool pos_valid(const T &amp;pos) noexcept</div><div class="ttdoc">Simply checks the given position value against std::string::npos.</div><div class="ttdef"><b>Definition:</b> <a href="strutility_8hpp_source.html#l00042">strutility.hpp:42</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

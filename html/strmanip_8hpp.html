@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('strmanip_8hpp.html',''); initResizable
  This contains the majority of str namespace functions that do not use <br  />
  variadic templates or other more advanced concepts. (such as concepts)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -105,11 +106,11 @@ $(document).ready(function(){initNavTree('strmanip_8hpp.html',''); initResizable
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strmanip.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -140,9 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad4712ba59b2780def08bcddcca090fe6"><td class="memItemLeft" align="right" valign="top">std::string::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad4712ba59b2780def08bcddcca090fe6">str::find_any</a> (std::string ln, const std::string_view &amp;dels)</td></tr>
 <tr class="memdesc:ad4712ba59b2780def08bcddcca090fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find any of a given set of delimiters in a string.  <a href="namespacestr.html#ad4712ba59b2780def08bcddcca090fe6">More...</a><br /></td></tr>
 <tr class="separator:ad4712ba59b2780def08bcddcca090fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd95e8c52ef329511c996acbbc021c5d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#afd95e8c52ef329511c996acbbc021c5d">str::strip_line</a> (std::string str, const std::string_view &amp;comment_chars={}, const std::string_view &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
-<tr class="memdesc:afd95e8c52ef329511c996acbbc021c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes comments and preceeding/trailing whitespace from a given string.  <a href="namespacestr.html#afd95e8c52ef329511c996acbbc021c5d">More...</a><br /></td></tr>
-<tr class="separator:afd95e8c52ef329511c996acbbc021c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">str::strip_line</a> (std::string str, const std::string &amp;comment_chars={}, const std::string &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
+<tr class="memdesc:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes comments and preceeding/trailing whitespace from a given string.  <a href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">More...</a><br /></td></tr>
+<tr class="separator:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab3d3b4fc0b12749a6a027d5b0e58be81">str::strip_line_multiCharComment</a> (std::string str, const std::vector&lt; std::string &gt; &amp;comment_del={}, const std::string_view &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
 <tr class="memdesc:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes more complex comments ( ex. C/JSON/html comments ) and preceeding/trailing whitespace from a given string.  <a href="namespacestr.html#ab3d3b4fc0b12749a6a027d5b0e58be81">More...</a><br /></td></tr>
 <tr class="separator:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="memSeparator" colspan="2">&#160;</td></tr>

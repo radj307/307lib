@@ -3,7 +3,7 @@ var searchData=
   ['lang_5fc_420',['LANG_C',['../sysarch_8h.html#a69f1d54d0578e6b3400b774500973439',1,'sysarch.h']]],
   ['lang_5fcpp_421',['LANG_CPP',['../sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb',1,'sysarch.h']]],
   ['lang_5fcppcli_422',['LANG_CPPCLI',['../sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49',1,'sysarch.h']]],
-  ['largest_423',['largest',['../namespacevar.html#a5c7b548836d697787813fbb1b441f9d7',1,'var::largest(const std::tuple&lt; Ts... &gt; &amp;tpl, const T &amp;base=static_cast&lt; T &gt;(0))'],['../namespacevar.html#a560fa1c70e80f8b11fa40ed35d3809b6',1,'var::largest(const Ts &amp;... elements)']]],
+  ['largest_423',['largest',['../namespacevar.html#a07e936aa3182fb0b067fbc33e8b1579b',1,'var::largest(const Container&lt; T, std::allocator&lt; T &gt;&gt; &amp;cont)'],['../namespacevar.html#adaa4064bc1e20af4c7b01b2976f87ed6',1,'var::largest(const T &amp;fst, const Ts &amp;... values)']]],
   ['lastpos_424',['lastPos',['../classtoken_1_1base_1_1_tokenizer_base.html#a4d5d3065b3e842f2c6a651709794f795',1,'token::base::TokenizerBase']]],
   ['layer_425',['Layer',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10',1,'color']]],
   ['legacy_426',['legacy',['../namespacelegacy.html',1,'']]],

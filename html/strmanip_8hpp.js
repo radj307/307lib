@@ -25,7 +25,7 @@ var strmanip_8hpp =
     [ "sanitize", "strmanip_8hpp.html#aba157b4f80912e0c19b9ad7676d2c8d1", null ],
     [ "split_by_words", "strmanip_8hpp.html#aa4bf5f1b14b776ed8c1225f5c2870a92", null ],
     [ "split_to_vector", "strmanip_8hpp.html#a5bac9088e59d818dfcb958ca9fc1c673", null ],
-    [ "strip_line", "strmanip_8hpp.html#afd95e8c52ef329511c996acbbc021c5d", null ],
+    [ "strip_line", "strmanip_8hpp.html#a7346dfeb6d8d2d04a563649f4bf3cbca", null ],
     [ "strip_line_multiCharComment", "strmanip_8hpp.html#ab3d3b4fc0b12749a6a027d5b0e58be81", null ],
     [ "toMap", "strmanip_8hpp.html#a88947ca78984e05f41dd36fb221d32d6", null ],
     [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ]

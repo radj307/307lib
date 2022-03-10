@@ -6,7 +6,6 @@ var str_8hpp =
     [ "VIndent", "str_8hpp.html#a576148d382d024fc11d46dc0ef839cec", null ],
     [ "compare", "str_8hpp.html#ab58e4fd600a73d4ffbdea3d65c5bdabd", null ],
     [ "compare", "str_8hpp.html#acd4ee543bc885f863faf20217f7142fe", null ],
-    [ "count", "str_8hpp.html#a8a8c67ed7c199414fca456eef77b60e7", null ],
     [ "endsWith", "str_8hpp.html#a25dcad1131572f82cbb30a06c81006b0", null ],
     [ "equalsAny", "str_8hpp.html#ac0941f8566d99a99085690ce06c8eec1", null ],
     [ "equalsAny", "str_8hpp.html#ad5a0bf2d97851e9b37bad14d9ed8d224", null ],
@@ -32,6 +31,5 @@ var str_8hpp =
     [ "strip", "str_8hpp.html#acf63c00706c91be7da3f18b08a088224", null ],
     [ "strip_preceeding", "str_8hpp.html#a4a7fab88e397cd6251944c3d01a7438d", null ],
     [ "strip_trailing", "str_8hpp.html#a45c1b11a2e282a4fc8d38548eaf45f3c", null ],
-    [ "unescape", "str_8hpp.html#a570e218d41f53ace14a1e941e6c1d205", null ],
     [ "ConvertibleStringT", "str_8hpp.html#abea510ab5719c607e5a2ce61bde9e03e", null ]
 ];
