@@ -124,7 +124,10 @@ namespace str {
 	 * @returns			size_t
 	 */
 	template<std::integral T>
-	[[nodiscard]] constexpr inline static size_t getNumberLength(const T& integral) { return getLength(integral); }
+	[[nodiscard]] constexpr inline static size_t getNumberLength(const T& integral)
+	{
+		return getLength(integral);
+	}
 
 	// @brief	Alias for type (long long).
 	using decimal = long long;

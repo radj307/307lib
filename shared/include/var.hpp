@@ -106,6 +106,21 @@ namespace var {
 	};
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
+#	pragma region Equatable_Concepts
+	////////////////////////////////// BEGIN / "Equatable Concepts" /////////////////////////////////////////////
+	/**
+	 * @concept			same_or_equatable
+	 * @brief			Check if the given types are the same type, or if they can be compared.
+	 *\n				Comparable check returns true if either ( Left::operator== ) or ( Right::operator== ) can perform the comparison.
+	 * @tparam Left:	First Input Type.
+	 * @tparam Right:	Second Input Type.
+	 */
+	template<typename Left, typename Right> concept same_or_equatable = requires (Left l, Right r)
+	{
+		std::same_as<Left, Right> || std::declval<Left>() == std::declval<Right>() || std::declval<Right>() == std::declval<Left>();
+	};
+	////////////////////////////////// END / "Equatable Concepts" /////////////////////////////////////////////
+#	pragma endregion Equatable_Concepts
 #	pragma region Type_Concepts	
 	////////////////////////////////// BEGIN / "Type Concepts" /////////////////////////////////////////////
 	/**

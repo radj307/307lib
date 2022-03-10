@@ -18,6 +18,21 @@
   * @brief Contains various string manipulation, conversion, and parsing functions
   */
 namespace str {
+
+	/// TOLOWER
+
+	/**
+	 * @brief		Convert a character stored in an int to lowercase.
+	 * @param c		Input character.
+	 * @returns		int
+	 */
+	inline CONSTEXPR int tolower(const int& c) noexcept
+	{
+		if (c >= static_cast<int>('A') && c <= static_cast<int>('Z'))
+			return c + 32;
+		return c;
+	}
+
 #pragma region ChangeCase_Lower
 	/**
 	 * @brief		Convert a character to lowercase.
@@ -111,6 +126,21 @@ namespace str {
 	}
 
 #pragma endregion ChangeCase_LowerWide
+
+	/// TOUPPER
+
+	/**
+	 * @brief		Convert a character stored in an int to uppercase.
+	 * @param c		Input character.
+	 * @returns		int
+	 */
+	inline CONSTEXPR int toupper(const int& c) noexcept
+	{
+		if (c >= static_cast<int>('a') && c <= static_cast<int>('a'))
+			return c - 32;
+		return c;
+	}
+
 #pragma region ChangeCase_Upper
 	/**
 	 * @brief Convert a character to uppercase.
