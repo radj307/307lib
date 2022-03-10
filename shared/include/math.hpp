@@ -1,5 +1,6 @@
 #pragma once
 #include <sysarch.h>
+#include <var.hpp>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -29,7 +30,7 @@ namespace math {
 	 * @param r		Second comparison value.
 	 * @returns		T
 	 */
-	template<std::floating_point T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept 
+	template<std::floating_point T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept
 	{
 		const T diff{ l - r };
 		return (diff < static_cast<T>(0.0) ? -diff : diff) < getEpsilon<T>();
@@ -53,16 +54,16 @@ namespace math {
 	template<std::floating_point T>
 	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
-		#ifdef OS_WIN
-		if CONSTEXPR (std::same_as<T, long double>) // long double
+#ifdef OS_WIN
+		if CONSTEXPR(std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
-		else if CONSTEXPR (std::same_as<T, double>) // double
+		else if CONSTEXPR(std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
-		#else
+#else
 		return std::fmod(value, modulo);
-		#endif
+#endif
 	}
 
 	/**
@@ -94,7 +95,7 @@ namespace math {
 
 	template<typename T> [[nodiscard]] static CONSTEXPR T max_value()
 	{
-		if CONSTEXPR (std::unsigned_integral<T>)
+		if CONSTEXPR(std::unsigned_integral<T>)
 			return{ 255 * sizeof(T) };
 		else return { 128 * sizeof(T) };
 	}
@@ -107,11 +108,11 @@ namespace math {
 	 */
 	template<var::arithmetic T> [[nodiscard]] static CONSTEXPR T abs(const T& val) { return val > 0 ? val : -val; }
 
-	#if LANG_CPP >= 17
-	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::reduce(begin, end)
-	#else
-	#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::accumulate(begin, end, T{ 0 })
-	#endif
+#if LANG_CPP >= 17
+#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::reduce(begin, end)
+#else
+#define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::accumulate(begin, end, T{ 0 })
+#endif
 
 	/**
 	 * @brief		Get the average of a vector of numbers.
@@ -175,44 +176,10 @@ namespace math {
 	 *\n				  first:	High-order Byte(s).
 	 *\n				  second:	Low-order Byte(s).
 	 */
-	template<typename Output, std::integral Input> requires (sizeof(Output) == sizeof(Input) / 2)
+	template<typename Output, typename Input> requires (sizeof(Output) == sizeof(Input) / 2)
 		inline CONSTEXPR std::pair<Output, Output> byteSplit(const Input& value) noexcept
 	{
 		return{ *((Output*)&(value)+1), *((Output*)&(value)+0) };
-	}
-
-	/**
-	 * @brief			Split a long type into two int types.
-	 * @param value		Input value.
-	 * @returns			std::pair<int, int>
-	 *\n				  first:	High-order bytes.
-	 *\n				  second:	Low-order bytes.
-	 */
-	inline CONSTEXPR std::pair<int, int> byteSplit(const long& value) noexcept
-	{
-		return byteSplit<int>(value);
-	}
-	/**
-	 * @brief			Split an int type into two short types.
-	 * @param value		Input value.
-	 * @returns			std::pair<short, short>
-	 *\n				  first:	High-order bytes.
-	 *\n				  second:	Low-order bytes.
-	 */
-	inline CONSTEXPR std::pair<short, short> byteSplit(const int& value) noexcept
-	{
-		return byteSplit<short>(value);
-	}
-	/**
-	 * @brief			Split a short type into two char types.
-	 * @param value		Input value.
-	 * @returns			std::pair<char, char>
-	 *\n				  first:	High-order byte.
-	 *\n				  second:	Low-order byte.
-	 */
-	inline CONSTEXPR std::pair<char, char> byteSplit(const short& value) noexcept
-	{
-		return byteSplit<char>(value);
 	}
 
 	/**
@@ -246,69 +213,5 @@ namespace math {
 		inline CONSTEXPR Output byteJoin(const std::pair<Input, Input>& bytes) noexcept
 	{
 		return join<Output, Input>(bytes.first, bytes.second);
-	}
-
-	/**
-	 * @brief		Join two char types into a short type.
-	 * @param hi	High-order byte.
-	 * @param lo	Low-order byte.
-	 * @returns		short
-	 */
-	inline CONSTEXPR short byteJoin(const char& hi, const char& lo) noexcept
-	{
-		return byteJoin<short>(hi, lo);
-	}
-	/**
-	 * @brief		Join two char types into a short type.
-	 * @param bytes	Input bytes as a pair.
-	 *\n			  first:	High-order byte.
-	 *\n			  second:	Low-order byte.
-	 * @returns		short
-	 */
-	inline CONSTEXPR short byteJoin(const std::pair<char, char>& bytes) noexcept
-	{
-		return byteJoin<short>(bytes.first, bytes.second);
-	}
-	/**
-	 * @brief		Join two short types into an int type.
-	 * @param hi	High-order bytes.
-	 * @param lo	Low-order bytes.
-	 * @returns		int
-	 */
-	inline CONSTEXPR int byteJoin(const short& hi, const short& lo) noexcept
-	{
-		return byteJoin<int>(hi, lo);
-	}
-	/**
-	 * @brief		Join two short types into an int type.
-	 * @param bytes	Input bytes as a pair.
-	 *\n			  first:	High-order byte.
-	 *\n			  second:	Low-order byte.
-	 * @returns		int
-	 */
-	inline CONSTEXPR int byteJoin(const std::pair<short, short>& bytes) noexcept
-	{
-		return byteJoin<int>(bytes.first, bytes.second);
-	}
-	/**
-	 * @brief		Join two int types into a long type.
-	 * @param hi	High-order bytes.
-	 * @param lo	Low-order bytes.
-	 * @returns		long
-	 */
-	inline CONSTEXPR long byteJoin(const int& hi, const int& lo) noexcept
-	{
-		return byteJoin<long>(hi, lo);
-	}
-	/**
-	 * @brief		Join two int types into a long type.
-	 * @param bytes	Input bytes as a pair.
-	 *\n			  first:	High-order byte.
-	 *\n			  second:	Low-order byte.
-	 * @returns		long
-	 */
-	inline CONSTEXPR long byteJoin(const std::pair<int, int>& bytes) noexcept
-	{
-		return byteJoin<long>(bytes.first, bytes.second);
 	}
 }

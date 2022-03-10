@@ -5,6 +5,8 @@
  */
 #pragma once
 #include <sysarch.h>
+#include <math.hpp>
+
 #include <string>
 #include <sstream>
 #include <optional>
@@ -295,32 +297,6 @@ namespace str {
 	// Functions that emulate STL string <-> type functions, except they don't throw exceptions and can be passed as std::function.
 #pragma region change_type
 	/**
-	 * @brief		Convert a narrow-char string to a wide-char string.
-	 * @param str	Input string using narrow-width chars.
-	 * @returns		std::wstring
-	 */
-	inline WINCONSTEXPR std::wstring stows(const std::string& str) noexcept
-	{
-		std::wstring wstr{};
-		for (const auto& ch : str)
-			wstr += static_cast<wchar_t>(ch);
-		return wstr;
-	}
-
-	/**
-	 * @brief		Convert a wide-char string to a narrow-char string.
-	 * @param str	Input string using wide chars.
-	 * @returns		std::string
-	 */
-	inline WINCONSTEXPR std::string wstos(const std::wstring& wstr) noexcept
-	{
-		std::string str{};
-		for (const auto& wch : wstr)
-			str += static_cast<char>(wch);
-		return str;
-	}
-
-	/**
 	 * @brief		Convert a string to a non-optional boolean with the following rules:
 	 *\n			- Returns true if the input string is (case-insensitive) equal to "true".
 	 *\n			- Otherwise, returns false.
@@ -329,7 +305,7 @@ namespace str {
 	 */
 	[[nodiscard]] inline WINCONSTEXPR bool stob(const std::string& str)
 	{
-		return str::tolower(str) == "true";
+		return tolower(str) == "true";
 	}
 
 	/**

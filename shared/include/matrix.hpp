@@ -11,18 +11,33 @@
 namespace matrix {
 	template<std::integral T = size_t>
 	struct point : std::pair<T, T> {
-		T& x{ first };
-		T& y{ second };
+		T& x{ this->first };
+		T& y{ this->second };
 
 		// @brief	Default Constructor.
 		constexpr point() = default;
+		constexpr point(T&& x, T&& y) : std::pair<T, T>(std::forward<T>(x), std::forward<T>(y)) {}
+		constexpr point(std::pair<T, T>&& pr) : std::pair<T, T>(std::forward<std::pair<T, T>>(pr)) {}
+
+		inline point<T>& transpose()
+		{
+			const auto& copy{x};
+			x = y;
+			y = copy;
+			return *this;
+		}
+
+		inline point<T> transpose() const
+		{
+			return{ y, x };
+		}
 
 		/**
 		 * @brief			Get the value of this point as a 1-dimensional index number in the range (0 - (\<Max_X\> * \<Max_Y\>)).
 		 * @tparam SizeX:	The size of one "row" (chunk) in the virtual matrix.
 		 * @returns	size_t:	1D Index Value.
 		 */
-		template<size_t SizeX> [[nodiscard]] inline constexpr size_t to1D() const noexcept
+		template<size_t SizeX> inline constexpr size_t to1D() const noexcept
 		{
 			return (x + (y * SizeX));
 		}
@@ -31,7 +46,7 @@ namespace matrix {
 		 * @tparam SizeX:	The size of one "row" (chunk) in the virtual matrix.
 		 * @param index:	1D Index Value.
 		 */
-		template<size_t SizeX> [[nodiscard]] inline constexpr void from1D(const size_t& index) noexcept
+		template<size_t SizeX> inline constexpr void from1D(const size_t& index) noexcept
 		{
 			x = index / SizeX;
 			y = index % SizeX;
@@ -43,7 +58,7 @@ namespace matrix {
 		 * @tparam T:		The integral type used by the desired point.
 		 * @param index:	1D Index Value.
 		 */
-		template<size_t SizeX, typename T = size_t> [[nodiscard]] inline static constexpr point<T> from1D(const size_t& index) noexcept
+		template<size_t SizeX> inline static constexpr point<T> from1D(const size_t& index) noexcept
 		{
 			point<T> pos;
 			pos.x = index / SizeX;
@@ -52,47 +67,233 @@ namespace matrix {
 		}
 	};
 
-	template<typename T, size_t SizeX, size_t SizeY>
+	/**
+	 * @struct	matrix
+	 * @brief	Provides an interface for performing linear algebra operations on matricies.
+	 */
+	template<var::numeric T, size_t SizeX, size_t SizeY>
 	struct matrix {
-	private:
-		const size_t SIZE{ SizeX * SizeY };
-		std::array<T, (SizeX* SizeY)> _arr;
+		static constexpr const size_t SIZE{ SizeX * SizeY };
+		using type = std::array<T, (SizeX* SizeY)>;
 
+	protected:
+		type _arr;
+
+		/**
+		 * @brief		Convert a 2-dimensional point to a 1-dimensional index number.
+		 * @param x:	X-Axis Position.
+		 * @param y:	Y-Axis Position.
+		 * @returns		size_t
+		 */
 		inline static constexpr size_t to1D(const size_t& x, const size_t& y)
 		{
 			return (SizeX * y) + x;
 		}
-		inline static constexpr size_t to1D(const point& pos)
+		/**
+		 * @brief		Convert a 2-dimensional point to a 1-dimensional index number.
+		 * @param pos:	A 2-Dimensional Point.
+		 * @returns		size_t
+		 */
+		inline static constexpr size_t to1D(const point<size_t>& pos)
 		{
 			return to1D(pos.x, pos.y);
 		}
-		inline static constexpr point from1D(const size_t& n)
+		/**
+		 * @brief		Convert a 1-dimensional index number to a 2-dimensional point.
+		 * @param n:	A 1-Dimensional Index Number.
+		 * @returns		point<size_t>
+		 */
+		inline static constexpr point<size_t> from1D(const size_t& n)
 		{
-			return{ n / SizeX, n % SizeX };
+			return std::make_pair(n / SizeX, n % SizeX);
 		}
 
 	public:
-		matrix() = default;
-		template<std::same_as<T>... Ts> requires (sizeof...(Ts) == (SizeX * SizeY))
-			matrix(Ts const&... values) : _arr{ values... } {}
+		// @brief	Default Constructor.
+		matrix() : _arr{ initArray() } {}
 
-		T get(const point& pos) const
+		matrix(matrix<T, SizeX, SizeY>&& o) : _arr{ std::move(o._arr) } {}
+		matrix(const matrix<T, SizeX, SizeY>& o) : _arr{ o._arr } {}
+		
+		template<var::same_or_convertible<T>... Ts> requires (sizeof...(Ts) == SIZE)
+			matrix(Ts&&... values) : _arr{ static_cast<T>(std::forward<Ts>(values))... } {}
+
+		matrix(std::array<T, SIZE>&& arr) : _arr{ std::move(arr) } {}
+		matrix(const std::array<T, SIZE>& arr) : _arr{ arr } {}
+
+		/**
+		 * @brief		Matrix Copy-Assignment Operator.
+		 * @param mtx:	Input Matrix.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& operator=(const matrix<T, SizeX, SizeY>& mtx)
+		{
+			_arr = mtx._arr;
+			return *this;
+		}
+		/**
+		 * @brief		Matrix Move-Assignment Operator.
+		 * @param mtx:	Input Matrix.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& operator=(matrix<T, SizeX, SizeY>&& mtx)
+		{
+			_arr = std::move(mtx._arr);
+			return *this;
+		}
+		/**
+		 * @brief		Matrix Copy-Assignment Operator.
+		 * @param arr:	Input Array.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& operator=(const type& arr)
+		{
+			_arr = arr;
+			return *this;
+		}
+		/**
+		 * @brief		Matrix Move-Assignment Operator.
+		 * @param arr:	Input Array.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& operator=(type&& arr)
+		{
+			_arr = std::move(arr);
+			return *this;
+		}
+
+		/**
+		 * @brief	Get the beginning array iterator.
+		 * @returns	type::const_iterator
+		 */
+		type::const_iterator begin() const { return _arr.begin(); }
+		/**
+		 * @brief	Get the ending array iterator.
+		 * @returns	type::const_iterator
+		 */
+		type::const_iterator end() const { return _arr.end(); }
+		/**
+		 * @brief	Check if the matrix is empty.
+		 * @returns	bool
+		 */
+		bool empty() const { return _arr.empty(); }
+		/**
+		 * @brief	Get the size of the matrix, in elements.
+		 * @returns	size_t
+		 */
+		size_t size() const { return _arr.size(); }
+
+		/**
+		 * @brief		Get the element at the specified point.
+		 * @param pos:	Target Point.
+		 * @returns		T
+		 */
+		T get(const point<size_t>& pos) const
 		{
 			return _arr[to1D(pos)];
 		}
-		T get(const size_t& x, const size_t& y) const
-		{
-			return get({ x, y });
-		}
-
-		T set(const point& pos, const T& value)
+		/**
+		 * @brief			Set the element at the specified point to the given value.
+		 * @param pos:		Target Point.
+		 * @param value:	Input Value.
+		 * @returns	T:		The previous value.
+		 */
+		T set(const point<size_t>& pos, const T& value)
 		{
 			const auto& index{ to1D(pos) };
 			const auto& copy{ _arr[index] };
 			_arr[index] = value;
 			return copy;
 		}
+		/**
+		 * @brief		Get the element at the specified point.
+		 * @param x:	Target X-Axis Position.
+		 * @param y:	Target Y-Axis Position.	
+		 * @returns		T
+		 */
+		T get(const size_t& x, const size_t& y) const
+		{
+			return get({ x, y });
+		}
+		/**
+		 * @brief			Set the element at the specified point to the given value.
+		 * @param x:		Target X-Axis Position.
+		 * @param y:		Target Y-Axis Position.
+		 * @param value:	Input Value.
+		 * @returns	T:		The previous value.
+		 */
+		T set(const size_t& x, const size_t& y, const T& value)
+		{
+			const auto& index{ to1D(x, y) };
+			const auto& copy{ _arr[index] };
+			_arr[index] = value;
+			return copy;
+		}
 
+		/**
+		 * @brief		Get a single row from the matrix.
+		 * @param y:	The y-axis index of the row to copy.
+		 * @returns		std::array<T, SizeX>
+		 */
+		std::array<T, SizeX> getRow(const size_t& y) const
+		{
+			std::array<T, SizeX> arr;
+			for (size_t x{ 0 }; x < SizeX; ++x)
+				arr[x] = _arr[to1D(x, y)];
+			return arr;
+		}
+		/**
+		 * @brief		Set a whole row of the matrix to the given row.
+		 * @param y:	The y-axis index of the target row to overwrite.
+		 * @param row:	Input Row.
+		 */
+		void setRow(const size_t& y, const std::array<T, SizeX>& row)
+		{
+			for (size_t x{ 0 }; x < SizeX; ++x)
+				_arr[to1D(x, y)] = row[x];
+		}
+		/**
+		 * @brief		Get a single column from the matrix.
+		 * @param x:	The x-axis index of the column to copy.
+		 * @returns		std::array<T, SizeY>
+		 */
+		std::array<T, SizeY> getColumn(const size_t& x) const
+		{
+			std::array<T, SizeY> arr;
+			for (size_t y{ 0 }; y < SizeY; ++y)
+				arr[y] = _arr[to1D(x, y)];
+			return arr;
+		}
+		/**
+		 * @brief		Set a whole column of the matrix to the given column.
+		 * @param x:	The x-axis index of the target column to overwrite.
+		 * @param col:	Input Column.
+		 */
+		void setColumn(const size_t& x, const std::array<T, SizeY>& col)
+		{
+			for (size_t y{ 0 }; y < SizeY; ++y)
+				_arr[to1D(x, y)] = col[y];
+		}
+
+		/**
+		 * @brief			1-Dimensional Indexer Operator.
+		 * @param index:	1-Dimensional Index Number.
+		 * @returns			T&
+		 */
+		T& operator[](const size_t& index) { return _arr[index]; }
+		/**
+		 * @brief			1-Dimensional Indexer Operator.
+		 * @param index:	1-Dimensional Index Number.
+		 * @returns			T
+		 */
+		T operator[](const size_t& index) const { return _arr[index]; }
+
+		/**
+		 * @brief		Stream insertion operator that is available when (T) has a valid operator<< overload.
+		 * @param os:	ostream instance.
+		 * @param v2d:	Matrix instance.
+		 * @returns		std::ostream&
+		 */
 		friend std::ostream& operator<<(std::ostream& os, const matrix<T, SizeX, SizeY>& v2d) requires var::Streamable<T, std::ostream>
 		{
 			for (size_t y{ 0ull }; y < SizeY; ++y) {
@@ -101,7 +302,7 @@ namespace matrix {
 					os << here;
 
 					if (x < SizeX - 1) {
-						const auto& len{ str::getNumberLength(here) };
+						const auto& len{ std::log10<T>(here) + 1 + !!here < 0 };
 						const auto ind{ indent(8, len) };
 						os << ind;
 					}
@@ -110,6 +311,180 @@ namespace matrix {
 					os << '\n';
 			}
 			return os;
+		}
+
+		/**
+		 * @brief				Initialize an array where each element is set to the specified value.
+		 * @param defaultValue:	The value to initialize each element of the array with. Defaults to zero.
+		 * @returns				std::array<T, SIZE>
+		 */
+		inline static std::array<T, SIZE> initArray()
+		{
+			std::array<T, SIZE> out;
+			memset(&out, 0, sizeof(std::array<T, SIZE>));
+			return out;
+		}
+
+		/**
+		 * @brief				Initialize a matrix where each element is set to the specified value.
+		 * @param defaultValue:	The value to initialize each element of the matrix with. Defaults to zero.
+		 * @returns				matrix<T, SizeX, SizeY>
+		 */
+		inline static matrix<T, SizeX, SizeY> initMatrix()
+		{
+			matrix<T, SizeX, SizeY> out;
+			memset(&out, 0, sizeof(matrix<T, SizeX, SizeY>));
+			return out;
+		}
+
+		/**
+		 * @brief	Transpose the rows of the matrix onto columns of the returned matrix.
+		 * @returns	matrix<T, SizeY, SizeX>
+		 */
+		matrix<T, SizeY, SizeX> transpose() const
+		{
+			return{ _arr };
+		}
+
+		/**
+		 * @brief			Perform a matrix multiplication operation on this matrix and another given matrix.
+		 *\n				Matrix multiplication requires that the input matrix has the same number of columns as this matrix has rows.
+		 * @tparam OtherX	The (variable) width of the other matrix.
+		 * @param mtx		Input Matrix to Multiply By.
+		 * @returns			matrix<T, OtherX, SizeY>
+		 */
+		template<size_t OtherX>
+		[[nodiscard]] matrix<T, OtherX, SizeY> operator*(const matrix<T, OtherX, SizeX>& mtx) const
+		{
+			auto out{ initMatrix() };
+			for (size_t y{ 0ull }, j{ 0 }; y < SizeY; ++y) { // iterate through row indexes (y value)
+				for (size_t x{ 0ull }; x < OtherX; ++x, ++j) { // iterate through column indexes (x value)
+					const auto& row{ getRow(y) }, col{ mtx.getColumn(x) };
+					for (size_t i{ 0ull }; i < SizeX; ++i)
+						out[j] += ((row[i]) * (col[i]));
+				}
+			}
+			return out;
+		}
+
+		/**
+		 * @brief		Apply the given function to each element of this matrix.
+		 * @param f:	A function to apply to each element, accepting each element's value as input.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& apply(const std::function<T(T)>& f)
+		{
+			for (size_t i{ 0 }; i < SIZE; ++i)
+				_arr[i] = f(_arr[i]);
+			return *this;
+		}
+		/**
+		 * @brief		Apply the given function to each element of this matrix and another matrix.
+		 * @param f:	A function to apply to each element, accepting both the value of this matrix's corresponding element as well as (mtx)'s.
+		 * @param mtx:	Another matrix to use as input.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		matrix<T, SizeX, SizeY>& apply(const std::function<T(T, T)>& f, const matrix<T, SizeX, SizeY>& mtx)
+		{
+			for (size_t i{ 0 }; i < SIZE; ++i)
+				_arr[i] = f(_arr[i], mtx._arr[i]);
+			return *this;
+		}
+		/**
+		 * @brief		Apply the given function to each element of the matrix, and return the resulting matrix without modifying this one.
+		 * @param f:	A function to apply to each element, accepting each element's value as input.
+		 * @returns		matrix<T, SizeX, SizeY>
+		 */
+		matrix<T, SizeX, SizeY> apply(const std::function<T(T)>& f) const
+		{
+			auto out{ initMatrix() };
+			for (size_t i{ 0 }; i < SIZE; ++i)
+				out[i] = f(_arr[i]);
+			return out;
+		}
+		/**
+		 * @brief		Apply the given function to each element of the matrix and another matrix, and return the resulting matrix without modifying this one.
+		 * @param f:	A function to apply to each element, accepting both the value of this matrix's corresponding element as well as (mtx)'s.
+		 * @param mtx:	Another matrix to use as input.
+		 * @returns		matrix<T, SizeX, SizeY>
+		 */
+		matrix<T, SizeX, SizeY> apply(const std::function<T(T, T)>& f, const matrix<T, SizeX, SizeY>& mtx) const
+		{
+			auto out{ initMatrix() };
+			for (size_t i{ 0 }; i < SIZE; ++i)
+				out[i] = f(_arr[i], mtx._arr[i]);
+			return out;
+		}
+
+		/**
+		 * @brief			Matrix scalar multiplication operator.
+		 * @param mtx:		Input Matrix.
+		 * @param scalar:	Scalar multiplier value.
+		 * @returns			matrix<T, SizeX, SizeY>
+		 */
+		template<var::same_or_convertible<T> U>
+		[[nodiscard]] friend matrix<T, SizeX, SizeY> operator*(const matrix<T, SizeX, SizeY>& mtx, const U& scalar)
+		{
+			return mtx.apply([&scalar](const T& v) -> T { return static_cast<T>(scalar) * v; });
+		}
+		/**
+		 * @brief			Matrix scalar multiplication operator.
+		 * @param scalar:	Scalar multiplier value.
+		 * @returns			matrix<T, SizeX, SizeY>&
+		 */
+		template<var::same_or_convertible<T> U>
+		[[nodiscard]] matrix<T, SizeX, SizeY>& operator*=(const U& scalar)
+		{
+			return apply([&scalar](const T& v) -> T { return static_cast<T>(scalar) * v; });
+		}
+
+		/**
+		 * @brief		Matrix negation operator.
+		 * @param mtx:	Input Matrix.
+		 * @returns		matrix<T, SizeX, SizeY>
+		 */
+		[[nodiscard]] friend matrix<T, SizeX, SizeY>& operator!(matrix<T, SizeX, SizeY>& mtx)
+		{
+			return mtx.apply([](const T& v) -> T { return -v; });
+		}
+
+		/**
+		 * @brief			Matrix addition operator.
+		 * @param left:		Input Matrix A.
+		 * @param right:	Input Matrix B.
+		 * @returns			matrix<T, SizeX, SizeY>
+		 */
+		[[nodiscard]] friend matrix<T, SizeX, SizeY> operator+(const matrix<T, SizeX, SizeY>& left, const matrix<T, SizeX, SizeY>& right)
+		{
+			return left.apply([](const T& l, const T& r) -> T { return l + r; }, right);
+		}
+		/**
+		 * @brief		Matrix addition operator.
+		 * @param o:	Input matrix.
+		 * @returns		matrix<T, SizeX, SizeY>
+		 */
+		[[nodiscard]] matrix<T, SizeX, SizeY>& operator+=(const matrix<T, SizeX, SizeY>& o)
+		{
+			return apply([](const T& l, const T& r) -> T { return l + r; }, o);
+		}
+		/**
+		 * @brief			Matrix subtraction operator.
+		 * @param left:		Input Matrix A.
+		 * @param right:	Input Matrix B.
+		 * @returns			matrix<T, SizeX, SizeY>
+		 */
+		[[nodiscard]] friend matrix<T, SizeX, SizeY> operator-(const matrix<T, SizeX, SizeY>& left, const matrix<T, SizeX, SizeY>& right)
+		{
+			return left.apply([](const T& l, const T& r) -> T { return l - r; }, right);
+		}
+		/**
+		 * @brief		Matrix subtraction operator.
+		 * @param o:	Input matrix.
+		 * @returns		matrix<T, SizeX, SizeY>&
+		 */
+		[[nodiscard]] matrix<T, SizeX, SizeY>& operator-=(const matrix<T, SizeX, SizeY>& o)
+		{
+			return apply([](const T& l, const T& r) -> T { return l - r; }, o);
 		}
 	};
 }
