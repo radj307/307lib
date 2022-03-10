@@ -6,18 +6,20 @@
 #pragma once
 #include <sysarch.h>
 #include <var.hpp>
+#include <strutility.hpp>
 
+#include <vector>
 #include <utility>
 
 namespace str {
 #	pragma warning (disable: 26800) // disable moved-from-object warning
 
-	 /**
-	  * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
-	  * @tparam ...Ts	Variadic Templated Arguments.
-	  * @param ...args	Arguments to insert into the stream, in order.
-	  * @returns		std::stringstream
-	  */
+	/**
+	 * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
+	 * @tparam ...Ts	Variadic Templated Arguments.
+	 * @param ...args	Arguments to insert into the stream, in order.
+	 * @returns		std::stringstream
+	 */
 	template<var::Streamable... Ts>
 	[[nodiscard]] static std::stringstream streamify(Ts&&... args)
 	{
@@ -51,14 +53,14 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<class DelimType, var::Streamable... Ts>
-	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, Ts&&... args)
+	template<var::Streamable... Ts>
+	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const char& delimiter, Ts&&... args)
 	{
 		std::stringstream buffer;
 		(buffer << ... << std::forward<Ts>(args)) << delimiter;
 		std::vector<std::string> vec;
 		vec.reserve(count(buffer, delimiter));
-		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
+		for (std::string sub{}; std::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
 		vec.shrink_to_fit();
 		return std::move(vec);
 	}
@@ -71,8 +73,8 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<class DelimType, var::Streamable T>
-	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, const std::vector<T>& args)
+	template<var::Streamable T>
+	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const char& delimiter, const std::vector<T>& args)
 	{
 		std::stringstream buffer;
 		size_t count{ 0ull };
@@ -83,7 +85,7 @@ namespace str {
 		}
 		std::vector<std::string> vec;
 		vec.reserve(count);
-		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
+		for (std::string sub{}; std::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
 		vec.shrink_to_fit();
 		return std::move(vec);
 	}

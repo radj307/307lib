@@ -40,29 +40,6 @@ inline constexpr bool isquote(const char c)
 }
 
 namespace str {
-	[[nodiscard]] inline std::string unescape(std::string str)
-	{
-		const auto& next{ [&str](const size_t& current) {
-			if (current + 1 < str.size())
-				return str.at(current + 1);
-			return '\0';
-		} };
-		for (size_t i{ str.find('\\') }; i < str.size(); i = str.find('\\', i + 1)) {
-			if (next(i) == '\\') // special escape character
-				str.erase(i, i);
-			if (isdigit(next(i))) { // octal
-				std::string n;
-				for (const auto& c : str.substr(i)) {
-					if (!isdigit(c))
-						break;
-					n += c;
-				}
-				str = str.substr(0ull, i) + str::stringify(std::oct, n) + str.substr(i + n.size());
-			}
-		}
-		return str;
-	}
-
 	/**
 	 * @brief
 	 * @tparam ContainerT	- Container Type. Accepts most STL containers that hold a single type, such as: std::vector, std::set, etc.
@@ -82,13 +59,6 @@ namespace str {
 			buffer << static_cast<std::string>(*element);
 		}
 		return std::move(buffer.str());
-	}
-
-	inline static size_t count(std::stringstream& ss, char delim)
-	{
-		size_t count{ 0ull };
-		for (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}
-		return count;
 	}
 	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... Ts>
 	static T compare(const Pred& predicate, const T& fst, const Ts&... strings)

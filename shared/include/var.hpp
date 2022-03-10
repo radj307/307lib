@@ -411,39 +411,75 @@ namespace var {
 	{
 		return ((booleans) && ...);
 	}
-
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
+	
+	template<typename T, template<class, class> class Container>
+	[[nodiscard]] inline static constexpr T largest(const Container<T, std::allocator<T>>& cont)
 	{
-		constexpr const auto max{ sizeof...(Ts) };
-		T largest{ base };
-		for (size_t i{ 0ull }; i < max; ++i)
-			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
-				largest = v;
+		if (cont.empty())
+			return static_cast<T>(0);
+		T largest{ cont.at(0ull) };
+		for (const auto& it : cont)
+			if (it > largest)
+				largest = it;
 		return largest;
 	}
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T largest(const Ts&... elements) { return largest<T>(std::make_tuple(elements...)); }
-
-	/**
-	 * @brief			Retrieve the smallest number in a tuple of arbitrary size.
-	 * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
-	 * @tparam Ts...	(implicit) Types stored in the tuple.
-	 * @param tpl		The tuple to operate on.
-	 * @returns			T
-	 */
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
+	template<typename T, std::same_as<T>... Ts>
+	[[nodiscard]] inline static constexpr T largest(const T& fst, const Ts&... values)
 	{
-		constexpr const auto max{ sizeof...(Ts) };
-		T smallest{ static_cast<T>(0) };
-		for (size_t i{ 0ull }; i < max; ++i)
-			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
-				smallest = v;
+		return largest<T>(std::vector<T>{ fst, values... });
+	}
+	template<typename T, template<class, class> class Container>
+	[[nodiscard]] inline static constexpr T smallest(const Container<T, std::allocator<T>>& cont)
+	{
+		if (cont.empty())
+			return static_cast<T>(0);
+		T smallest{ cont.at(0ull) };
+		for (const auto& it : cont)
+			if (it < smallest)
+				smallest = it;
 		return smallest;
 	}
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
+	template<typename T, std::same_as<T>... Ts>
+	[[nodiscard]] inline static constexpr T smallest(const T& fst, const Ts&... values)
+	{
+		return smallest<T>(std::vector<T>{ fst, values... });
+	}
+
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
+	//{
+	//	constexpr const auto max{ sizeof...(Ts) };
+	//	T largest{ base };
+	//	for (size_t i{ 0ull }; i < max; ++i)
+	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
+	//			largest = v;
+	//	return largest;
+	//}
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T largest(const T& fst, const Ts&... elements)
+	//{
+	//	return largest<T>(std::make_tuple(fst, elements...));
+	//}
+
+	///**
+	// * @brief			Retrieve the smallest number in a tuple of arbitrary size.
+	// * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
+	// * @tparam Ts...	(implicit) Types stored in the tuple.
+	// * @param tpl		The tuple to operate on.
+	// * @returns			T
+	// */
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
+	//{
+	//	constexpr const auto max{ sizeof...(Ts) };
+	//	T smallest{ static_cast<T>(0) };
+	//	for (size_t i{ 0ull }; i < max; ++i)
+	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
+	//			smallest = v;
+	//	return smallest;
+	//}
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
 
 #	if LANG_CPP >= 20
 	/**
