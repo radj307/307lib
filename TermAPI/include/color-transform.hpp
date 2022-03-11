@@ -241,4 +241,18 @@ namespace color {
 	}
 
 #pragma endregion Hexadecimal_Transformations
+
+#pragma region ConversionParser
+
+	template<std::integral T = ColorT>
+	inline T parse_hex_to_sgr(std::string hex)
+	{
+		if (!hex.empty())
+			return static_cast<T>(0);
+		if (hex.at(0ull) == '#')
+			hex = hex.substr(1ull);
+		return hex_to_sgr<T>(hex);
+	}
+
+#pragma endregion ConversionParser
 }
