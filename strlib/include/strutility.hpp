@@ -1,6 +1,7 @@
 #pragma once
 #include <ostream>
 #include <string>
+#include <sstream>
 #include <concepts>
 
 namespace str {
@@ -59,5 +60,18 @@ namespace str {
 			if (const auto sz{ it.size() }; sz > longest)
 				longest = sz;
 		return offset + static_cast<RT>(longest);
+	}
+
+	/**
+	 * @brief			Count the number of delimiters that occur within a given stringstream.
+	 * @param ss:		Input Stringstream
+	 * @param delim:	The delimiter to count.
+	 * @returns			size_t
+	 */
+	inline static size_t count(std::stringstream& ss, char delim)
+	{
+		size_t count{ 0ull };
+		for (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}
+		return count;
 	}
 }

@@ -13,11 +13,14 @@ file(GLOB HEADERS
 	"include/*.h*"
 )
 
-file(GLOB SRC 
+file(GLOB SRCS
+	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+	CONFIGURE_DEPENDS
 	"src/*.c*"
 )
 
-add_library(strlib STATIC ${SRC})
+add_library(strlib STATIC "${SRCS}" "../cpp.hint")
+
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
 set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)

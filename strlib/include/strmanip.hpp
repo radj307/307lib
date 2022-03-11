@@ -6,6 +6,8 @@
  *\n		variadic templates or other more advanced concepts. (such as concepts)
  */
 #pragma once
+#include <strutility.hpp>
+
 #include <algorithm>
 #include <functional>
 #include <map>
@@ -14,13 +16,13 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include <strutility.hpp>
 
  /**
   * @namespace	str
   * @brief		Contains various string manipulation, conversion, and parsing functions
   */
 namespace str {
+
 	/**
 	 * @brief		Reverse the characters of a given string.
 	 * @param str	Input String
@@ -83,7 +85,7 @@ namespace str {
 	 * @param whitespace_chars	Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
 	 * @returns					std::string
 	 */
-	inline std::string strip_line(std::string str, const std::string_view& comment_chars = {}, const std::string_view& whitespace_chars = " \t\r\n\v")
+	inline std::string strip_line(std::string str, const std::string& comment_chars = {}, const std::string& whitespace_chars = " \t\r\n\v")
 	{
 		if (const int dPos{ static_cast<signed>(str.find_first_of(comment_chars)) }; !str.empty() && pos_valid(dPos)) // remove comments first
 			str.erase(str.begin() + dPos, str.end());

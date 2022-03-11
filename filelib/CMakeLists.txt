@@ -21,7 +21,7 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(filelib STATIC "${SRCS}")
+add_library(filelib STATIC "${SRCS}" "../cpp.hint")
 
 # Set properties
 set_property(TARGET filelib PROPERTY CXX_STANDARD 20)

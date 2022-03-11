@@ -22,7 +22,7 @@ file(GLOB SRCS
 )
 
 # Create a static library
-add_library(tokenlib STATIC ${SRCS})
+add_library(tokenlib STATIC "${SRCS}" "../cpp.hint")
 
 # Set properties
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD 20)

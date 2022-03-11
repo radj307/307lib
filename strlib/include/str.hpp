@@ -4,6 +4,7 @@
  * @brief	Includes all of the str namespace extension headers, and additional functions related to string manipulation & conversions.
  */
 #pragma once
+#include <stringify.hpp>
 #include <strconv.hpp>			// str library component that includes string conversion functions.
 #include <strmanip.hpp>			// str library component that includes string manipulation functions.
 #include <strlocale.hpp>		// str library component that includes <locale>-based string functions.
@@ -12,11 +13,11 @@
 #include <iomanip>				// for std::setw & other std::iostream manipulation functions.
 
  /// Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.
+#ifndef DISABLE_STR_LITERALS
 /**
  * @def		DISABLE_STR_LITERALS
  * @brief	Disables the "using namespace std::string_literals;" from being declared in the global namespace.
  */
-#ifndef DISABLE_STR_LITERALS
 #define DISABLE_STR_LITERALS // for doxygen to see the definition
 #undef DISABLE_STR_LITERALS
 using namespace std::string_literals;
@@ -40,41 +41,6 @@ inline constexpr bool isquote(const char c)
 
 namespace str {
 	/**
-	 *	disable "use of a moved from object 'buffer'", speed comparison testing shows a major performance
-	 *	increase when using return-move() for these functions. (~300000ns)
-	 */
-#pragma warning (disable: 26800) 
-	 /**
-	  * @brief			Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.
-	  * @tparam ...Ts	Variadic Templated Arguments.
-	  * @param ...args	Arguments to insert into the stream, in order.
-	  * @returns		std::stringstream
-	  */
-	template<var::Streamable... Ts>
-	[[nodiscard]] static std::stringstream streamify(Ts&&... args)
-	{
-		std::stringstream buffer;
-		(buffer << ... << std::forward<Ts>(args));
-		return std::move(buffer);
-	}
-
-	/**
-	 * @brief Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.
-	 * @tparam ...Ts	- Variadic Templated Arguments.
-	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
-	 * @returns std::string
-	 */
-	template<var::Streamable... Ts>
-	[[nodiscard]] constexpr static const std::string stringify(Ts&&... args)
-	{
-		if constexpr (var::none<Ts...>)
-			return{};
-		std::stringstream buffer;	// init stringstream
-		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
-		return std::move(buffer.str());		// return as string
-	}
-
-	/**
 	 * @brief
 	 * @tparam ContainerT	- Container Type. Accepts most STL containers that hold a single type, such as: std::vector, std::set, etc.
 	 * @tparam ElemT		- Templated Element Type. Must be compatible with ostream::operator<<.
@@ -94,59 +60,6 @@ namespace str {
 		}
 		return std::move(buffer.str());
 	}
-
-	inline static size_t count(std::stringstream& ss, char delim)
-	{
-		size_t count{ 0ull };
-		for (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}
-		return count;
-	}
-
-	/**
-	 * @brief Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.
-	 * @tparam DelimType	- Input Delimiter Type
-	 * @tparam ...VT		- Variadic Templated Arguments.
-	 * @param delimiter		- Delimiter to use when splitting the result.
-	 * @param ...args		- Arguments to insert into the stream in sequential order.
-	 * @returns std::vector<std::string>
-	 */
-	template<class DelimType, var::Streamable... Ts>
-	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, Ts&&... args)
-	{
-		std::stringstream buffer;
-		(buffer << ... << std::forward<Ts>(args)) << delimiter;
-		std::vector<std::string> vec;
-		vec.reserve(count(buffer, delimiter));
-		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
-		vec.shrink_to_fit();
-		return std::move(vec);
-	}
-
-	/**
-	 * @brief Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.
-	 * @tparam DelimType	- Input Delimiter Type
-	 * @tparam ...VT		- Variadic Templated Arguments.
-	 * @param delimiter		- Delimiter to use when splitting the result.
-	 * @param ...args		- Arguments to insert into the stream in sequential order.
-	 * @returns std::vector<std::string>
-	 */
-	template<class DelimType, var::Streamable T>
-	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const DelimType& delimiter, const std::vector<T>& args)
-	{
-		std::stringstream buffer;
-		size_t count{ 0ull };
-		for (auto it{ args.begin() }; it != args.end(); ++it, ++count) {
-			buffer << *it;
-			if (std::distance(it, args.end()) > 1)
-				buffer << ' ';
-		}
-		std::vector<std::string> vec;
-		vec.reserve(count);
-		for (std::string sub{}; str::getline(buffer, sub, delimiter); vec.emplace_back(sub)) {}
-		vec.shrink_to_fit();
-		return std::move(vec);
-	}
-
 	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... Ts>
 	static T compare(const Pred& predicate, const T& fst, const Ts&... strings)
 	{
@@ -235,7 +148,6 @@ namespace str {
 				shortest = strtpl;
 		return shortest;
 	}
-#pragma warning (default: 26800) // re-enable moved-from-object warning
 
 	/**
 	 * @brief Compare 2 strings.
@@ -532,7 +444,7 @@ namespace str {
 			return false;
 
 		size_t matches{ 0ull };
-		for (auto itstr{ str.rbegin() }, itstrEnd{ str.rend() }, itcomp{comp.rbegin()}, itcompEnd{ comp.rend() }; itstr < itstrEnd && itcomp < itcompEnd; ++itstr, ++itcomp) {
+		for (auto itstr{ str.rbegin() }, itstrEnd{ str.rend() }, itcomp{ comp.rbegin() }, itcompEnd{ comp.rend() }; itstr < itstrEnd && itcomp < itcompEnd; ++itstr, ++itcomp) {
 			if (*itstr == *itcomp)
 				++matches;
 			else return false;

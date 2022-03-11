@@ -225,12 +225,18 @@
   
 #ifndef CONSTEXPR /** @def CONSTEXPR @brief Macro for C++17 constexpr. */
 #if LANG_CPP >= 17
-#define CONSTEXPR constexpr
 #define INLINE inline
+#define CONSTEXPR constexpr
 #else
-#define CONSTEXPR
 #define INLINE
+#define CONSTEXPR
 #endif
+#endif
+
+#if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
+#define WINCONSTEXPR CONSTEXPR
+#else
+#define WINCONSTEXPR
 #endif
 
 #ifndef CONSTEVAL
@@ -239,12 +245,6 @@
 #else
 #define CONSTEVAL
 #endif
-#endif
-
-#if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
-#define WINCONSTEXPR CONSTEXPR
-#else
-#define WINCONSTEXPR
 #endif
 
 #if !defined(STRINGIZE) && !defined(_STRINGIZE_INTERNAL) /** @def STRINGIZE @brief Stringize the given preprocessor macro by enclosing it in quotes. */
