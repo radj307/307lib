@@ -8,6 +8,7 @@ var color_transform_8hpp =
     [ "hex_to_sgr", "color-transform_8hpp.html#a12822c7a730aaa1431b63f98fe764c17", null ],
     [ "int_to_hex", "color-transform_8hpp.html#a31844abff93283d5e4c632cb829d931d", null ],
     [ "ishexnum", "color-transform_8hpp.html#a0436cfd097ec1f1c89f3185f2f1311a2", null ],
+    [ "parse_hex_to_sgr", "color-transform_8hpp.html#ada0a983aea79add67c44e074b62e632b", null ],
     [ "rgb_to_hex", "color-transform_8hpp.html#ae3a2d5ea64178e79d236c1e5d133b1ed", null ],
     [ "rgb_to_sgr", "color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f", null ],
     [ "rgb_to_sgr", "color-transform_8hpp.html#abb7692aee3ffa41815309ca473a5e906", null ],

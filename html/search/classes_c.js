@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setcolor_5fseq_1000',['setcolor_seq',['../structterm_1_1setcolor__seq.html',1,'term']]],
-  ['setlocale_1001',['SetLocale',['../structstr_1_1_set_locale.html',1,'str']]],
-  ['setlocalefacet_1002',['SetLocaleFacet',['../structstr_1_1_set_locale_facet.html',1,'str']]]
+  ['setcolor_5fseq_1001',['setcolor_seq',['../structterm_1_1setcolor__seq.html',1,'term']]],
+  ['setlocale_1002',['SetLocale',['../structstr_1_1_set_locale.html',1,'str']]],
+  ['setlocalefacet_1003',['SetLocaleFacet',['../structstr_1_1_set_locale_facet.html',1,'str']]]
 ];
