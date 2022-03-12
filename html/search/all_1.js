@@ -5,7 +5,7 @@ var searchData=
   ['_5fallow_5fcolor_3',['_allow_color',['../classxlog_1_1x_log.html#a69ef0f8f51da1dc813a8e11ec1c7f9ba',1,'xlog::xLog']]],
   ['_5farg0_4',['_arg0',['../structopt_1_1_arg_container.html#a6771631ff222bdf2f387c2b2c7c9215e',1,'opt::ArgContainer']]],
   ['_5fargs_5',['_args',['../structopt_1_1_arg_container.html#a59c5d3d94fe9ae4102f69dc4e6001f71',1,'opt::ArgContainer']]],
-  ['_5farr_6',['_arr',['../structmatrix_1_1matrix.html#a70b392a29f945bd55ad419d69102813e',1,'matrix::matrix']]],
+  ['_5farr_6',['_arr',['../structmatrix_1_1basic__matrix.html#a500b660caefc37d8dac244b29917f2cb',1,'matrix::basic_matrix::_arr()'],['../structmatrix_1_1nmatrix.html#a098fef76acb24225c16cea59760af535',1,'matrix::nmatrix::_arr()']]],
   ['_5fcont_7',['_cont',['../classfile_1_1ini_1_1_i_n_i_container.html#a7e26330deb23c043665b623a579a485b',1,'file::ini::INIContainer']]],
   ['_5fdiv_8',['_div',['../structstr_1_1_printable.html#aa096ba2fe91640135686d959d48b9d58',1,'str::Printable']]],
   ['_5fenable_9',['_enable',['../classterm_1_1palette.html#a07d61b4649da1c4526eb8ff43b50e127',1,'term::palette']]],

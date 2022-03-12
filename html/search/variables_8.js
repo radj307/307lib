@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['include_5fcaptures_1653',['include_captures',['../namespaceopt.html#af1925c987700a22c15487e69b49ea84d',1,'opt']]],
-  ['info_1654',['INFO',['../structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b',1,'xlog::level::INFO()'],['../namespacexlog.html#a6bd4968ce18155406e9471df189c73b1',1,'xlog::info()'],['../namespaceterm.html#a9b78b820ff7f8d8d7c8df4b7465a6929',1,'term::info()']]],
-  ['info_5fheader_1655',['info_header',['../namespacexlog.html#aac514855aead16ec8c21e1bd7c7a3f18',1,'xlog']]],
-  ['intense_5fblue_1656',['intense_blue',['../namespacecolor.html#ab4b69e578748a245f307eeb03ddc12ef',1,'color']]],
-  ['intense_5fcyan_1657',['intense_cyan',['../namespacecolor.html#a41d4ad30347d37c4d3d162f492a8c374',1,'color']]],
-  ['intense_5fgreen_1658',['intense_green',['../namespacecolor.html#ab196f0985b3a5da3b3065dabf0747e45',1,'color']]],
-  ['intense_5fmagenta_1659',['intense_magenta',['../namespacecolor.html#a7ca2cc6ffd2243391fdceb2e731761f0',1,'color']]],
-  ['intense_5fred_1660',['intense_red',['../namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773',1,'color']]],
-  ['intense_5fwhite_1661',['intense_white',['../namespacecolor.html#a30c667606a0a43af09ffceb9177ee8bd',1,'color']]],
-  ['intense_5fyellow_1662',['intense_yellow',['../namespacecolor.html#aa0a7a84e61742d594070a9cd7607903b',1,'color']]],
-  ['invert_1663',['INVERT',['../structcolor_1_1format.html#aba7ff186902a056143c5ab1c02e431b1',1,'color::format::INVERT()'],['../namespacecolor.html#ae07544c885e4865bbe8be9f1f783b4bb',1,'color::invert()']]],
-  ['is_5fvalid_5fchar_5ftype_5fv_1664',['is_valid_char_type_v',['../namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba',1,'rng']]],
-  ['is_5fvalid_5fint_5ftype_5fv_1665',['is_valid_int_type_v',['../namespacerng.html#ae1724038e8a24b7ec7de06190919b005',1,'rng']]],
-  ['is_5fvalid_5freal_5ftype_5fv_1666',['is_valid_real_type_v',['../namespacerng.html#ad993e4e657f38f52b1f2f226651e5ce0',1,'rng']]]
+  ['include_5fcaptures_1678',['include_captures',['../namespaceopt.html#af1925c987700a22c15487e69b49ea84d',1,'opt']]],
+  ['info_1679',['INFO',['../structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b',1,'xlog::level::INFO()'],['../namespacexlog.html#a6bd4968ce18155406e9471df189c73b1',1,'xlog::info()'],['../namespaceterm.html#a9b78b820ff7f8d8d7c8df4b7465a6929',1,'term::info()']]],
+  ['info_5fheader_1680',['info_header',['../namespacexlog.html#aac514855aead16ec8c21e1bd7c7a3f18',1,'xlog']]],
+  ['intense_5fblue_1681',['intense_blue',['../namespacecolor.html#ab4b69e578748a245f307eeb03ddc12ef',1,'color']]],
+  ['intense_5fcyan_1682',['intense_cyan',['../namespacecolor.html#a41d4ad30347d37c4d3d162f492a8c374',1,'color']]],
+  ['intense_5fgreen_1683',['intense_green',['../namespacecolor.html#ab196f0985b3a5da3b3065dabf0747e45',1,'color']]],
+  ['intense_5fmagenta_1684',['intense_magenta',['../namespacecolor.html#a7ca2cc6ffd2243391fdceb2e731761f0',1,'color']]],
+  ['intense_5fred_1685',['intense_red',['../namespacecolor.html#a54c37f8f01788456dd7a8d3596b19773',1,'color']]],
+  ['intense_5fwhite_1686',['intense_white',['../namespacecolor.html#a30c667606a0a43af09ffceb9177ee8bd',1,'color']]],
+  ['intense_5fyellow_1687',['intense_yellow',['../namespacecolor.html#aa0a7a84e61742d594070a9cd7607903b',1,'color']]],
+  ['invert_1688',['INVERT',['../structcolor_1_1format.html#aba7ff186902a056143c5ab1c02e431b1',1,'color::format::INVERT()'],['../namespacecolor.html#ae07544c885e4865bbe8be9f1f783b4bb',1,'color::invert()']]],
+  ['is_5fvalid_5fchar_5ftype_5fv_1689',['is_valid_char_type_v',['../namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba',1,'rng']]],
+  ['is_5fvalid_5fint_5ftype_5fv_1690',['is_valid_int_type_v',['../namespacerng.html#ae1724038e8a24b7ec7de06190919b005',1,'rng']]],
+  ['is_5fvalid_5freal_5ftype_5fv_1691',['is_valid_real_type_v',['../namespacerng.html#ad993e4e657f38f52b1f2f226651e5ce0',1,'rng']]]
 ];

@@ -87,7 +87,9 @@ $(document).ready(function(){initNavTree('matrix_8hpp.html',''); initResizable()
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">matrix.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -108,14 +110,36 @@ Include dependency graph for matrix.hpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1point.html">matrix::point&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a point in a matrix.  <a href="structmatrix_1_1point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1matrix.html">matrix::matrix&lt; T, SizeX, SizeY &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1basic__matrix.html">matrix::basic_matrix&lt; T, SizeX, SizeY &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic pseudo-matrix object that uses a 1-dimensional array internally for performance, but exposes a 2-dimensional coordinate-based interface.  <a href="structmatrix_1_1basic__matrix.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix_1_1nmatrix.html">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for performing linear algebra operations on matricies.  <a href="structmatrix_1_1nmatrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacematrix"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacematrix.html">matrix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9df42eea7cdecb876fdb3475128f9784"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t SizeX, size_t SizeY&gt; </td></tr>
+<tr class="memitem:a9df42eea7cdecb876fdb3475128f9784"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacematrix.html#a9df42eea7cdecb876fdb3475128f9784">matrix::matrix</a> = basic_matrix&lt; T, SizeX, SizeY &gt;</td></tr>
+<tr class="separator:a9df42eea7cdecb876fdb3475128f9784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0637a3cea5ba8c869a658d080a27451e"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t SizeX&gt; </td></tr>
+<tr class="memitem:a0637a3cea5ba8c869a658d080a27451e"><td class="memTemplItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacematrix.html#a0637a3cea5ba8c869a658d080a27451e">matrix::to1D</a> (const T &amp;x, const T &amp;y) noexcept</td></tr>
+<tr class="memdesc:a0637a3cea5ba8c869a658d080a27451e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of this point as a 1-dimensional index number in the range (0 - (&lt;Max_X&gt; * &lt;Max_Y&gt;)).  <a href="namespacematrix.html#a0637a3cea5ba8c869a658d080a27451e">More...</a><br /></td></tr>
+<tr class="separator:a0637a3cea5ba8c869a658d080a27451e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525a56ebec15f97af688067c1f4235cb"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t SizeX&gt; </td></tr>
+<tr class="memitem:a525a56ebec15f97af688067c1f4235cb"><td class="memTemplItemLeft" align="right" valign="top">static constexpr point&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacematrix.html#a525a56ebec15f97af688067c1f4235cb">matrix::from1D</a> (const size_t &amp;index) noexcept</td></tr>
+<tr class="memdesc:a525a56ebec15f97af688067c1f4235cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of this point using a 1-dimensional index number in the range (0 - (Max_X * Max_Y)).  <a href="namespacematrix.html#a525a56ebec15f97af688067c1f4235cb">More...</a><br /></td></tr>
+<tr class="separator:a525a56ebec15f97af688067c1f4235cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Matrix object that uses a 1-dimensional array to store elements for speed, while exposing a 2-dimensional interface. </p>

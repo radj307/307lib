@@ -14,6 +14,5 @@ var annotated_dup =
     [ "token", "namespacetoken.html", "namespacetoken" ],
     [ "var", "namespacevar.html", "namespacevar" ],
     [ "xlog", "namespacexlog.html", "namespacexlog" ],
-    [ "indentor", "structindentor.html", "structindentor" ],
-    [ "matrix", "structmatrix.html", null ]
+    [ "indentor", "structindentor.html", "structindentor" ]
 ];

@@ -90,9 +90,55 @@ $(document).ready(function(){initNavTree('term_8cpp_source.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <a href="term_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="term_8hpp.html" title="Contains ANSI escape sequence functors derived from the Sequence type.   Covers most/all of the virtu...">&quot;term.hpp&quot;</a></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// this is a dummy file so cmake generates the library correctly.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">OS_WIN</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">Windows</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;[[nodiscard]] std::pair&lt;size_t, size_t&gt; term::getScreenBufferSize()</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    CONSOLE_SCREEN_BUFFER_INFO csbi;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &amp;csbi)) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="comment">// put together a more useful error message, then throw an exception.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> BUFFER_SIZE{ 256u };</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">char</span> msg[BUFFER_SIZE];</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">const</span> DWORD err{ GetLastError() };</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        FormatMessage(</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            0,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            err,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            0,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            msg,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            BUFFER_SIZE,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            0</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">throw</span> make_exception(<span class="stringliteral">&quot;term::getScreenBufferSize() failed:  Win32 API Error!\n&quot;</span>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            indent(10), <span class="stringliteral">&quot;Function:       \&#39;GetConsoleScreenBufferInfo()\&#39;\n&quot;</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            indent(10), <span class="stringliteral">&quot;Error Code:     \&#39;&quot;</span>, err, <span class="stringliteral">&quot;\&#39;\n&quot;</span>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            indent(10), <span class="stringliteral">&quot;Error Message:  \&quot;&quot;</span>, msg, <span class="stringliteral">&quot;\&quot;\n&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; srWindow{ csbi.srWindow };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span>{ <span class="keyword">static_cast</span>&lt;size_t&gt;(srWindow.Top + srWindow.Bottom), <span class="keyword">static_cast</span>&lt;size_t&gt;(srWindow.Left + srWindow.Right) };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span> <span class="comment">// POSIX</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sys</span><span class="preprocessor">/</span><span class="preprocessor">ioctl</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdio</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">unistd</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">   38</a></span>&#160;[[nodiscard]] std::pair&lt;size_t, size_t&gt; <a class="code" href="namespaceterm.html">term</a>::<a class="code" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">getScreenBufferSize</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    winsize ts;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ioctl(STDIN_FILENO, TIOCGWINSZ, &amp;ts);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span>{ <span class="keyword">static_cast</span>&lt;size_t&gt;(ts.ws_col), <span class="keyword">static_cast</span>&lt;size_t&gt;(ts.ws_row) };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceterm_html_a16752c0ed2d0565599638c183df30b54"><div class="ttname"><a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">term::getScreenBufferSize</a></div><div class="ttdeci">std::pair&lt; size_t, size_t &gt; getScreenBufferSize()</div><div class="ttdoc">Get the size of the screen buffer, in characters.</div><div class="ttdef"><b>Definition:</b> <a href="term_8cpp_source.html#l00038">term.cpp:38</a></div></div>
+<div class="ttc" id="anamespaceterm_html"><div class="ttname"><a href="namespaceterm.html">term</a></div><div class="ttdoc">Contains pre-made ANSI sequences &amp; helper functions for making sequences.</div><div class="ttdef"><b>Definition:</b> <a href="palette_8hpp_source.html#l00040">palette.hpp:40</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -5,6 +5,7 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
+    [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
         [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
@@ -47,10 +48,9 @@ var hierarchy =
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
-    [ "matrix", "structmatrix.html", null ],
-    [ "matrix::matrix< T, SizeX, SizeY >", "structmatrix_1_1matrix.html", null ],
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
+    [ "matrix::nmatrix< T, SizeX, SizeY >", "structmatrix_1_1nmatrix.html", null ],
     [ "numpunct", null, [
       [ "str::facet::NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", null ]
     ] ],

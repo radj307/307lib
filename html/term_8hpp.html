@@ -254,6 +254,12 @@ Functions</h2></td></tr>
  If there are no more tab stops, moves the cursor to the first column. <br  />
  If the cursor is in the first column, doesn’t move the cursor.  <a href="namespaceterm.html#af3d7a971263a93fdd71c5f6e598e92cf">More...</a><br /></td></tr>
 <tr class="separator:af3d7a971263a93fdd71c5f6e598e92cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c280d0060ee1b851034f4cbfc72740"><td class="memItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a57c280d0060ee1b851034f4cbfc72740">term::setScreenBufferSize</a> (const size_t &amp;columnCount, const size_t &amp;lineCount)</td></tr>
+<tr class="memdesc:a57c280d0060ee1b851034f4cbfc72740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#a57c280d0060ee1b851034f4cbfc72740">More...</a><br /></td></tr>
+<tr class="separator:a57c280d0060ee1b851034f4cbfc72740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16752c0ed2d0565599638c183df30b54"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">term::getScreenBufferSize</a> ()</td></tr>
+<tr class="memdesc:a16752c0ed2d0565599638c183df30b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the screen buffer, in characters.  <a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">More...</a><br /></td></tr>
+<tr class="separator:a16752c0ed2d0565599638c183df30b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -305,6 +311,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4df569ee83171a2d8f18c2b913127c74"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">term::ClearTabStops</a> { make_sequence(CSI, &quot;3g&quot;) }</td></tr>
 <tr class="memdesc:a4df569ee83171a2d8f18c2b913127c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all currently set tab stops.  <a href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">More...</a><br /></td></tr>
 <tr class="separator:a4df569ee83171a2d8f18c2b913127c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa4d9728514d82414bc1c11f8a05cf49a">term::ResetTabStops</a> { make_sequence(CSI, &quot;?5W&quot;) }</td></tr>
+<tr class="memdesc:aa4d9728514d82414bc1c11f8a05cf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tab stop at every 8th column. (Default)  <a href="namespaceterm.html#aa4d9728514d82414bc1c11f8a05cf49a">More...</a><br /></td></tr>
+<tr class="separator:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cc01e2e44e1add4fc78370f391206d"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">term::EnableLineDrawing</a> { make_sequence(OSC, '0') }</td></tr>
 <tr class="memdesc:a27cc01e2e44e1add4fc78370f391206d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DEC Line Drawing mode.  <a href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">More...</a><br /></td></tr>
 <tr class="separator:a27cc01e2e44e1add4fc78370f391206d"><td class="memSeparator" colspan="2">&#160;</td></tr>

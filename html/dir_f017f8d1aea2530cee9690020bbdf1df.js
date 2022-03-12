@@ -6,10 +6,7 @@ var dir_f017f8d1aea2530cee9690020bbdf1df =
     [ "iter.hpp", "iter_8hpp.html", "iter_8hpp" ],
     [ "make_exception.hpp", "make__exception_8hpp.html", "make__exception_8hpp" ],
     [ "math.hpp", "math_8hpp.html", "math_8hpp" ],
-    [ "matrix.hpp", "matrix_8hpp.html", [
-      [ "point", "structmatrix_1_1point.html", "structmatrix_1_1point" ],
-      [ "matrix", "structmatrix_1_1matrix.html", "structmatrix_1_1matrix" ]
-    ] ],
+    [ "matrix.hpp", "matrix_8hpp.html", "matrix_8hpp" ],
     [ "optional.hpp", "optional_8hpp.html", [
       [ "optional", "structoptional_1_1optional.html", "structoptional_1_1optional" ],
       [ "optional_passthru", "structoptional_1_1optional__passthru.html", "structoptional_1_1optional__passthru" ]

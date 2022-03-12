@@ -8,9 +8,9 @@
  viewBox="0.00 0.00 279.00 137.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 133)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node64 -->
+<!-- Node63 -->
 <g id="node1" class="node">
-<title>Node64</title>
+<title>Node63</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-55 0,-74 68,-74 68,-55 0,-55"/>
 <text text-anchor="middle" x="34" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">BasicRand</text>
@@ -27,15 +27,15 @@
 </a>
 </g>
 </g>
-<!-- Node64&#45;&gt;Node0 -->
+<!-- Node63&#45;&gt;Node0 -->
 <g id="edge1" class="edge">
-<title>Node64&#45;&gt;Node0</title>
+<title>Node63&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M69.72,-77.58C80.64,-81.55 92.78,-85.84 104,-89.5 113.22,-92.51 123.07,-95.53 132.65,-98.38"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="70.69,-74.2 60.1,-74.04 68.28,-80.77 70.69,-74.2"/>
 </g>
-<!-- Node66 -->
+<!-- Node65 -->
 <g id="node3" class="node">
-<title>Node66</title>
+<title>Node65</title>
 <g id="a_node3"><a xlink:href="structrng_1_1seed_1_1_from_random_device.html" target="_top" xlink:title="Uses the host system&#39;s random_device if one is available to seed the generator. This is often the pre...">
 <polygon fill="none" stroke="black" points="104,-49.5 104,-79.5 271,-79.5 271,-49.5 104,-49.5"/>
 <text text-anchor="start" x="112" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">rng::seed::FromRandomDevice</text>
@@ -43,15 +43,15 @@
 </a>
 </g>
 </g>
-<!-- Node64&#45;&gt;Node66 -->
+<!-- Node63&#45;&gt;Node65 -->
 <g id="edge2" class="edge">
-<title>Node64&#45;&gt;Node66</title>
+<title>Node63&#45;&gt;Node65</title>
 <path fill="none" stroke="midnightblue" d="M78.47,-64.5C86.54,-64.5 95.2,-64.5 104,-64.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="78.25,-61 68.25,-64.5 78.25,-68 78.25,-61"/>
 </g>
-<!-- Node67 -->
+<!-- Node66 -->
 <g id="node4" class="node">
-<title>Node67</title>
+<title>Node66</title>
 <g id="a_node4"><a xlink:href="structrng_1_1seed_1_1_from_time.html" target="_top" xlink:title="Uses the time since epoch reported by &lt;chrono&gt;&#39;s steady_clock as a seed value. &#160;&#160;&#160;&#160;The seed is automa...">
 <polygon fill="none" stroke="black" points="129,-0.5 129,-30.5 246,-30.5 246,-0.5 129,-0.5"/>
 <text text-anchor="start" x="137" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">rng::seed::FromTime</text>
@@ -59,9 +59,9 @@
 </a>
 </g>
 </g>
-<!-- Node64&#45;&gt;Node67 -->
+<!-- Node63&#45;&gt;Node66 -->
 <g id="edge3" class="edge">
-<title>Node64&#45;&gt;Node67</title>
+<title>Node63&#45;&gt;Node66</title>
 <path fill="none" stroke="midnightblue" d="M71.47,-51.51C81.94,-47.86 93.4,-43.95 104,-40.5 114.25,-37.17 125.26,-33.73 135.79,-30.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="70.06,-48.29 61.78,-54.9 72.38,-54.9 70.06,-48.29"/>
 </g>
