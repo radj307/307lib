@@ -58,7 +58,7 @@ namespace term {
 	protected:
 		container_type _palette;
 		bool _enable{ true };
-		ANSI::Sequence _reset_seq{ color::reset };
+		ANSI::Sequence _reset_seq{ color::reset + color::reset_fmt };
 
 		inline static ANSI::Sequence return_if_disabled(const char& c) { return{ std::string(1ull, c) }; }
 		inline static ANSI::Sequence return_if_disabled(const ANSI::Sequence& seq) { return seq; }
