@@ -568,6 +568,8 @@ namespace str {
 		{
 			return !str.empty() ? str.at(0ull) : static_cast<wchar_t>(0);
 		}
+
+
 		/**
 		 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 		 * @param str		String to convert
@@ -703,6 +705,122 @@ namespace str {
 #		pragma endregion change_type
 	}
 
+	using legacy::string_to_bool;
+	using legacy::bool_to_string;
+	using legacy::stob;
+	using legacy::stoc;
+
+	/**
+	 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			int
+	 */
+	[[nodiscard]] inline int stoi(const std::string& str) noexcept
+	{
+		return str::legacy::stoi(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			short
+	 */
+	[[nodiscard]] inline short stos(const std::string& str) noexcept
+	{
+		return str::legacy::stoi(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to unsigned int. Wrapper for static_cast<unsigned>(std::stoi) that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			unsigned int
+	 */
+	[[nodiscard]] inline unsigned int stoui(const std::string& str) noexcept
+	{
+		return str::legacy::stoi(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			long
+	 */
+	[[nodiscard]] inline long stol(const std::string& str) noexcept
+	{
+		return str::legacy::stol(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			long long
+	 */
+	[[nodiscard]] inline long long stoll(const std::string& str) noexcept
+	{
+		return str::legacy::stoll(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			unsigned long
+	 */
+	[[nodiscard]] inline unsigned long stoul(const std::string& str) noexcept
+	{
+		return str::legacy::stoul(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			unsigned long
+	 */
+	[[nodiscard]] inline unsigned long long stoull(const std::string& str) noexcept
+	{
+		return str::legacy::stoull(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to unsigned short. Wrapper for static_cast<unsigned short>(std::stoi) that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			unsigned int
+	 */
+	[[nodiscard]] inline unsigned short stous(const std::string& str) noexcept
+	{
+		return str::legacy::stoi(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			float
+	 */
+	[[nodiscard]] inline float stof(const std::string& str) noexcept
+	{
+		return str::legacy::stof(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			double
+	 */
+	[[nodiscard]] inline double stod(const std::string& str) noexcept
+	{
+		return str::legacy::stod(str, nullptr);
+	}
+	/**
+	 * @brief			Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.
+	 * @param str		String to convert
+	 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+	 * @returns			double
+	 */
+	[[nodiscard]] inline long double stold(const std::string& str) noexcept
+	{
+		return str::legacy::stold(str, nullptr);
+	}
+
 	/**
 	 * @brief					Convert from any valid streamable type to a string.
 	 *\n						This function is a wrapper around stringify(), with a focus on (numeric) => (string) conversions.
@@ -765,10 +883,4 @@ namespace str {
 	{
 		return to_string<T>(value, fmt);
 	}
-
-#ifndef USE_STRCONV_OPTIONAL
-	using namespace legacy;
-#else
-	using namespace optional;
-#endif
 }
