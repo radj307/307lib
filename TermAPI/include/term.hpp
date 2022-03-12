@@ -20,9 +20,9 @@
 #include <thread>
 #include <string>
 
-#	ifdef OS_WIN
-#	include <conio.h>
-#	endif
+#ifdef OS_WIN
+#include <conio.h>
+#endif
 
  /**
   * @namespace	term
@@ -58,11 +58,11 @@ namespace term {
 	 */
 	inline bool kbhit()
 	{
-	#ifdef OS_WIN
+#		ifdef OS_WIN
 		return _kbhit() != 0;
-	#else
+#		else
 		return hasPendingDataSTDIN();
-	#endif
+#		endif
 	}
 
 	/**
@@ -74,11 +74,11 @@ namespace term {
 	 */
 	inline int getch()
 	{
-	#ifdef OS_WIN
+#		ifdef OS_WIN
 		return _getch();
-	#else
+#		else
 		return getchar_unlocked();
-	#endif
+#		endif
 	}
 
 	/// @brief	Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.
@@ -407,12 +407,12 @@ namespace term {
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SGR(const Ts&... modes)
 	{
-	#ifdef OS_WIN
+#		ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
-	#else
+#		else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
-	#endif
-}
+#		endif
+	}
 
 	template<var::Streamable... Ts>
 	[[nodiscard]] inline static Sequence SelectGraphicsRendition(const Ts&... modes)
@@ -462,11 +462,33 @@ namespace term {
 	/// @brief	Clear all currently set tab stops.
 	inline static const Sequence ClearTabStops{ make_sequence(CSI, "3g") };
 
+	/// @brief	Sets a tab stop at every 8th column. (Default)
+	inline static const Sequence ResetTabStops{ make_sequence(CSI, "?5W") };
+
 	/// @brief	Enable DEC Line Drawing mode.
 	inline static const Sequence EnableLineDrawing{ make_sequence(OSC, '0') };
 
 	/// @brief	Disable DEC Line Drawing mode.
 	inline static const Sequence DisableLineDrawing{ make_sequence(OSC, 'B') };
+
+	/**
+	 * @brief				Generate an escape sequence that resizes the console screen buffer and/or window.
+	 * @param xColumnCount:	Number of horizontal columns.
+	 * @param yLineCount:	Number of vertical lines.
+	 * @returns				Sequence
+	 */
+	[[nodiscard]] inline static Sequence setScreenBufferSize(const size_t& columnCount, const size_t& lineCount)
+	{
+		return make_sequence(CSI, "8;", lineCount, ';', columnCount, 't');
+	}
+
+	/**
+	 * @brief	Get the size of the screen buffer, in characters.
+	 * @returns	std::pair<size_t, size_t>
+	 *			 1.	Number of columns. (Horizontal/Width/x)
+	 *			 2.	Number of rows. (Vertical/Height/y)
+	 */
+	[[nodiscard]] std::pair<size_t, size_t> getScreenBufferSize();
 
 #ifdef OS_WIN
 	/**
