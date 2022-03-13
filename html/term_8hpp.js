@@ -30,7 +30,7 @@ var term_8hpp =
     [ "ScrollDown", "term_8hpp.html#ab7252b6fed28898f8dc1b18e8d07732b", null ],
     [ "ScrollUp", "term_8hpp.html#a07bf8f762236c80ac20ff423051fc789", null ],
     [ "SelectGraphicsRendition", "term_8hpp.html#a38d197365c9a1b858e90c436e07aa936", null ],
-    [ "setCursorPosition", "term_8hpp.html#a65dcb7ead96f775f138afc7d38d46650", null ],
+    [ "setCursorPosition", "term_8hpp.html#a02fa6106b18c0a2d6e8080d25178e807", null ],
     [ "setCursorPosition", "term_8hpp.html#ae0c8aa9fd722753f992cf2ae393dbf31", null ],
     [ "setScreenBufferSize", "term_8hpp.html#a57c280d0060ee1b851034f4cbfc72740", null ],
     [ "SGR", "term_8hpp.html#aed6aef0c65f2e2500ebd365f1dacf545", null ],
