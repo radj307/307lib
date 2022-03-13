@@ -241,9 +241,10 @@ namespace term {
 	 * @param pos	- Pair where the first element is the horizontal position, and the second is the vertical position.
 	 * @returns Sequence
 	 */
-	[[nodiscard]] inline Sequence setCursorPosition(const std::pair<unsigned, unsigned>& pos)
+	template<std::integral Tx, std::integral Ty>
+	[[nodiscard]] inline Sequence setCursorPosition(const std::pair<Tx, Ty>& pos)
 	{
-		return setCursorPosition(pos.first, pos.second);
+		return setCursorPosition<Tx, Ty>(pos.first, pos.second);
 	}
 
 	/// @brief	Save the cursor position. Can be recalled later with LoadCursor.

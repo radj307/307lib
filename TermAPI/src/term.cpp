@@ -27,7 +27,7 @@
 		);
 	}
 	const auto& srWindow{ csbi.srWindow };
-	return{ static_cast<size_t>(srWindow.Top + srWindow.Bottom), static_cast<size_t>(srWindow.Left + srWindow.Right) };
+	return{ static_cast<size_t>(srWindow.Left + srWindow.Right), static_cast<size_t>(srWindow.Top + srWindow.Bottom) };
 }
 
 #else // POSIX
@@ -41,6 +41,5 @@
 	ioctl(STDIN_FILENO, TIOCGWINSZ, &ts);
 	return{ static_cast<size_t>(ts.ws_col), static_cast<size_t>(ts.ws_row) };
 }
-
 
 #endif
