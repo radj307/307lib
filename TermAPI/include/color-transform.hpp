@@ -16,8 +16,9 @@
 
 namespace color {
 	using ColorT = short;
-	template<::std::integral T = ColorT>
-	using RGB = ::std::tuple<T, T, T>;
+	template<std::integral T = ColorT>
+	using RGB = 
+		std::tuple<T, T, T>;
 
 	/**
 	 * @brief		Convert an RGB value to a SGR color value.
@@ -28,10 +29,10 @@ namespace color {
 	 * @param b		Blue value. (Range: 0 - 5)
 	 * @returns		T
 	 */
-	template<::std::integral T = ColorT>
+	template<std::integral T = ColorT>
 	inline CONSTEXPR const T rgb_to_sgr(const T& r, const T& g, const T& b)
 	{
-		return { r * static_cast<T>(36) + g * static_cast<T>(6) + (b + static_cast<T>(16)) };
+		return static_cast<T>(static_cast<int>(r) * 36 + static_cast<int>(g) * 6 + (static_cast<int>(b) + 16));
 	}
 
 	/**

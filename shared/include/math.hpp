@@ -87,7 +87,7 @@ namespace math {
 	 * @param new_range		The number range to translate the given value to.
 	 * @returns				T
 	 */
-	template<typename T, typename RT = T>
+	template<var::numeric T, var::numeric RT = T>
 	[[nodiscard]] static CONSTEXPR RT normalize(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
 	{
 		return static_cast<RT>(new_range.first) + (static_cast<RT>(value) - static_cast<RT>(old_range.first)) * static_cast<RT>(static_cast<RT>(new_range.second) - static_cast<RT>(new_range.first)) / (static_cast<RT>(old_range.second) - static_cast<RT>(old_range.first));
