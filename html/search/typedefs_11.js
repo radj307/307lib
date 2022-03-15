@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['xrand_1877',['xRand',['../namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c',1,'rng']]]
+  ['wsequence_1872',['wSequence',['../namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3',1,'ANSI']]],
+  ['wsetcolor_1873',['wsetcolor',['../namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b',1,'term']]]
 ];

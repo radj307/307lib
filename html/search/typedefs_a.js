@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['option_1847',['Option',['../namespaceopt.html#ad17e17cf8257066ba09d74695ea5738d',1,'opt']]],
-  ['optiontype_1848',['OptionType',['../namespaceopt.html#a8e7cc9a2010617a6b4f9e9707419bcdd',1,'opt']]],
-  ['outputt_1849',['OutputT',['../classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ae02842f434f65bb4361ce63be753cc99',1,'token::base::gen1::TokenParserBase::OutputT()'],['../classtoken_1_1base_1_1gen2_1_1_parser_base.html#af9d70af5219762bc0cf808cebf710762',1,'token::base::gen2::ParserBase::OutputT()']]],
-  ['outvec_1850',['outvec',['../structopt_1_1token_1_1_parser_1_1_input.html#ab434a1a8b7b581248165b158896a6f4c',1,'opt::token::Parser::Input']]]
+  ['map_1839',['Map',['../classfile_1_1ini_1_1_i_n_i_container.html#acd056f85c0bbe3cc8f4582aeab8dae29',1,'file::ini::INIContainer']]],
+  ['matrix_1840',['matrix',['../namespacematrix.html#a9df42eea7cdecb876fdb3475128f9784',1,'matrix']]],
+  ['msg_5fbreak_5ft_1841',['msg_break_t',['../namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2',1,'xlog']]],
+  ['mutableflag_1842',['MutableFlag',['../structcolor_1_1format.html#a9deaebe7d68dd5abf11875b7938e8681',1,'color::format']]]
 ];

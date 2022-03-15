@@ -1,7 +1,7 @@
 var color_transform_8hpp =
 [
     [ "ColorT", "color-transform_8hpp.html#af2826c17236b522b3dc49be41cfb294e", null ],
-    [ "RGB", "color-transform_8hpp.html#a785ee587c76fb3198cdf2da23d19de99", null ],
+    [ "RGB", "color-transform_8hpp.html#af28a4461e704efd1f226754e225e35cb", null ],
     [ "hex_to_int", "color-transform_8hpp.html#ab0b7fb80b9814385210173a50ad8add6", null ],
     [ "hex_to_int", "color-transform_8hpp.html#a9c815104e3c97e98c79f06975c154869", null ],
     [ "hex_to_rgb", "color-transform_8hpp.html#a88efe56b901a020eb070171598fe6e17", null ],

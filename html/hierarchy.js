@@ -14,14 +14,11 @@ var hierarchy =
     [ "token::base::gen2::BasicCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", null ]
     ] ],
-    [ "BasicRand", null, [
-      [ "rng::seed::FromIntegral< Engine >", "structrng_1_1seed_1_1_from_integral.html", null ],
-      [ "rng::seed::FromRandomDevice< Engine >", "structrng_1_1seed_1_1_from_random_device.html", null ],
-      [ "rng::seed::FromTime< Engine >", "structrng_1_1seed_1_1_from_time.html", null ]
-    ] ],
     [ "xlog::BufferManager", "classxlog_1_1_buffer_manager.html", null ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
+    [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
+    [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
     [ "exception", null, [
       [ "ex::except", "classex_1_1except.html", [
         [ "ex::permexcept", "classex_1_1permexcept.html", null ]
@@ -66,7 +63,6 @@ var hierarchy =
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
-    [ "rng::Rand< Engine >", "structrng_1_1_rand.html", null ],
     [ "term::setcolor_seq< SeqT >", "structterm_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
@@ -92,5 +88,6 @@ var hierarchy =
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [
       [ "xlog::xLogs< StreamType >", "classxlog_1_1x_logs.html", null ]
-    ] ]
+    ] ],
+    [ "rng::xRand< Engine >", "structrng_1_1x_rand.html", null ]
 ];

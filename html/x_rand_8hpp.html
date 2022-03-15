@@ -88,8 +88,7 @@ $(document).ready(function(){initNavTree('x_rand_8hpp.html',''); initResizable()
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">xRand.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -101,33 +100,23 @@ $(document).ready(function(){initNavTree('x_rand_8hpp.html',''); initResizable()
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for xRand.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="x_rand_8hpp__incl.svg" width="655" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="x_rand_8hpp__incl.svg" width="655" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="x_rand_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1_rand.html">rng::Rand&lt; Engine &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual base object for tRand, dRand, and sRand.  <a href="structrng_1_1_rand.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrng_1_1_engine_wrapper.html">rng::EngineWrapper&lt; Engine &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for a randomization engine. This is used internally by the <a class="el" href="structrng_1_1x_rand.html" title="Random number generator wrapper object with convenience functions.">xRand</a> object.  <a href="classrng_1_1_engine_wrapper.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1seed_1_1_from_time.html">rng::seed::FromTime&lt; Engine &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the time since epoch reported by &lt;chrono&gt;'s steady_clock as a seed value. <br  />
- <br  />
- The seed is automatically refreshed from the current time since epoch each time <a class="el" href="namespaceopt.html#a8723d0634e92526f4ca97fc8a93221ab">get()</a> is called.  <a href="structrng_1_1seed_1_1_from_time.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1seed_1_1_from_random_device.html">rng::seed::FromRandomDevice&lt; Engine &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the host system's random_device if one is available to seed the generator. This is often the preferred method on newer hardware. <br  />
- <br  />
- The seed is automatically refreshed from the system's random_device each time <a class="el" href="namespaceopt.html#a8723d0634e92526f4ca97fc8a93221ab">get()</a> is called.  <a href="structrng_1_1seed_1_1_from_random_device.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1seed_1_1_from_integral.html">rng::seed::FromIntegral&lt; Engine &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a user-specified unsigned integral number to seed the generator. <br  />
- <br  />
- The seed must be changed manually each time in order to have random output.  <a href="structrng_1_1seed_1_1_from_integral.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html">rng::xRand&lt; Engine &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator wrapper object with convenience functions.  <a href="structrng_1_1x_rand.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -135,44 +124,17 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacerng"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html">rng</a></td></tr>
 <tr class="memdesc:namespacerng"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains objects &amp; methods related to generating random numbers. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceseed"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseed.html">seed</a></td></tr>
-<tr class="memdesc:namespaceseed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains various seeding implementation methods &amp; sources, as objects inhertiting from Rand. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerng_1_1seed"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng_1_1seed.html">rng::seed</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a79077e8effeaf92c6b280b33d8d5ca05"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a79077e8effeaf92c6b280b33d8d5ca05">rng::DefaultEngine</a> = ::std::mt19937_64</td></tr>
-<tr class="separator:a79077e8effeaf92c6b280b33d8d5ca05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memTemplParams" colspan="2">template&lt;class Engine , template&lt; class &gt; class Seeder&gt; </td></tr>
-<tr class="memitem:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">rng::xRand</a> = Seeder&lt; Engine &gt;</td></tr>
-<tr class="memdesc:a03c4e5a192da41d6433c42a4d8e6496c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated using statement for rng engines.  <a href="namespacerng.html#a03c4e5a192da41d6433c42a4d8e6496c">More...</a><br /></td></tr>
-<tr class="separator:a03c4e5a192da41d6433c42a4d8e6496c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a388919ed472f27b0298f67e9f8252d98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a388919ed472f27b0298f67e9f8252d98">rng::tRand</a> = xRand&lt; DefaultEngine, seed::FromTime &gt;</td></tr>
-<tr class="memdesc:a388919ed472f27b0298f67e9f8252d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using the time since epoch (retrieved from std::chrono::steady_clock) as a seed.  <a href="namespacerng.html#a388919ed472f27b0298f67e9f8252d98">More...</a><br /></td></tr>
-<tr class="separator:a388919ed472f27b0298f67e9f8252d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ebbcbc58faa63afda357f49f1f9e049"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a8ebbcbc58faa63afda357f49f1f9e049">rng::dRand</a> = xRand&lt; DefaultEngine, seed::FromRandomDevice &gt;</td></tr>
-<tr class="memdesc:a8ebbcbc58faa63afda357f49f1f9e049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using the system's random_device as the seed.  <a href="namespacerng.html#a8ebbcbc58faa63afda357f49f1f9e049">More...</a><br /></td></tr>
-<tr class="separator:a8ebbcbc58faa63afda357f49f1f9e049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452a64450662c089f2f33011f7156dad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a452a64450662c089f2f33011f7156dad">rng::sRand</a> = xRand&lt; DefaultEngine, seed::FromIntegral &gt;</td></tr>
-<tr class="memdesc:a452a64450662c089f2f33011f7156dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator using a user-specified unsigned integral as the seed.  <a href="namespacerng.html#a452a64450662c089f2f33011f7156dad">More...</a><br /></td></tr>
-<tr class="separator:a452a64450662c089f2f33011f7156dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ad993e4e657f38f52b1f2f226651e5ce0"><td class="memTemplParams" colspan="2">template&lt;class _Ty &gt; </td></tr>
-<tr class="memitem:ad993e4e657f38f52b1f2f226651e5ce0"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerng.html#ad993e4e657f38f52b1f2f226651e5ce0">rng::is_valid_real_type_v</a> = std::_Is_any_of_v&lt;std::remove_cv_t&lt;_Ty&gt;, float, double, long double&gt;</td></tr>
-<tr class="memdesc:ad993e4e657f38f52b1f2f226651e5ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant test expression that checks if a given type is an integral type.  <a href="namespacerng.html#ad993e4e657f38f52b1f2f226651e5ce0">More...</a><br /></td></tr>
-<tr class="separator:ad993e4e657f38f52b1f2f226651e5ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1724038e8a24b7ec7de06190919b005"><td class="memTemplParams" colspan="2">template&lt;class _Ty &gt; </td></tr>
-<tr class="memitem:ae1724038e8a24b7ec7de06190919b005"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerng.html#ae1724038e8a24b7ec7de06190919b005">rng::is_valid_int_type_v</a> = std::_Is_any_of_v&lt;std::remove_cv_t&lt;_Ty&gt;, short, int, long, long long, unsigned short, unsigned int, unsigned long, unsigned long long&gt;</td></tr>
-<tr class="memdesc:ae1724038e8a24b7ec7de06190919b005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant test expression that checks if a given type is a floating-point type.  <a href="namespacerng.html#ae1724038e8a24b7ec7de06190919b005">More...</a><br /></td></tr>
-<tr class="separator:ae1724038e8a24b7ec7de06190919b005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68007f96e35c28c63c6f8a5d6c0aa0ba"><td class="memTemplParams" colspan="2">template&lt;class _Ty &gt; </td></tr>
-<tr class="memitem:a68007f96e35c28c63c6f8a5d6c0aa0ba"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba">rng::is_valid_char_type_v</a> = std::_Is_any_of_v&lt;std::remove_cv_t&lt;_Ty&gt;, char, unsigned char, signed char, char&gt;</td></tr>
-<tr class="memdesc:a68007f96e35c28c63c6f8a5d6c0aa0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant test expression that checks if a given type is a char type.  <a href="namespacerng.html#a68007f96e35c28c63c6f8a5d6c0aa0ba">More...</a><br /></td></tr>
-<tr class="separator:a68007f96e35c28c63c6f8a5d6c0aa0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5fe6482dd0d33df064d0616b329eb0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#a7b5fe6482dd0d33df064d0616b329eb0">rng::Random</a> = xRand&lt; std::mt19937 &gt;</td></tr>
+<tr class="separator:a7b5fe6482dd0d33df064d0616b329eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3340f6ed3c3cb00408289bf714a7583"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#ab3340f6ed3c3cb00408289bf714a7583">rng::dRand</a> = Random</td></tr>
+<tr class="separator:ab3340f6ed3c3cb00408289bf714a7583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae409d9d9ec42bb424c36db9e44fa226c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#ae409d9d9ec42bb424c36db9e44fa226c">rng::tRand</a> = Random</td></tr>
+<tr class="separator:ae409d9d9ec42bb424c36db9e44fa226c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3fc7c935039f1dcfeee387664d2f79f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerng.html#ad3fc7c935039f1dcfeee387664d2f79f">rng::sRand</a> = Random</td></tr>
+<tr class="separator:ad3fc7c935039f1dcfeee387664d2f79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Updated version of the xRand.h header using C++20 concepts. </p>

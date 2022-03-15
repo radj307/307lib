@@ -106,7 +106,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a5c3011b8d185bc4a0dd015c3ee9c8eb2"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#a5c3011b8d185bc4a0dd015c3ee9c8eb2">mod</a> (const T &amp;value, const T &amp;modulo)</td></tr>
 <tr class="memdesc:a5c3011b8d185bc4a0dd015c3ee9c8eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the result of a floating-point modulo operation.  <a href="namespacemath.html#a5c3011b8d185bc4a0dd015c3ee9c8eb2">More...</a><br /></td></tr>
 <tr class="separator:a5c3011b8d185bc4a0dd015c3ee9c8eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae93bbc00f9d04acc4ab47fcb6820255b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename RT  = T&gt; </td></tr>
+<tr class="memitem:ae93bbc00f9d04acc4ab47fcb6820255b"><td class="memTemplParams" colspan="2">template&lt;var::numeric T, var::numeric RT = T&gt; </td></tr>
 <tr class="memitem:ae93bbc00f9d04acc4ab47fcb6820255b"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemath.html#ae93bbc00f9d04acc4ab47fcb6820255b">normalize</a> (const T &amp;value, const std::pair&lt; T, T &gt; &amp;old_range, const std::pair&lt; T, T &gt; &amp;new_range={ 1, 1 })</td></tr>
 <tr class="memdesc:ae93bbc00f9d04acc4ab47fcb6820255b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a given value from its current range to a new one.  <a href="namespacemath.html#ae93bbc00f9d04acc4ab47fcb6820255b">More...</a><br /></td></tr>
 <tr class="separator:ae93bbc00f9d04acc4ab47fcb6820255b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -600,7 +600,7 @@ template&lt;std::floating_point T&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename RT  = T&gt; </div>
+template&lt;var::numeric T, var::numeric RT = T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

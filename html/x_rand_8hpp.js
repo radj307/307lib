@@ -1,15 +1,9 @@
 var x_rand_8hpp =
 [
-    [ "Rand", "structrng_1_1_rand.html", "structrng_1_1_rand" ],
-    [ "FromTime", "structrng_1_1seed_1_1_from_time.html", "structrng_1_1seed_1_1_from_time" ],
-    [ "FromRandomDevice", "structrng_1_1seed_1_1_from_random_device.html", "structrng_1_1seed_1_1_from_random_device" ],
-    [ "FromIntegral", "structrng_1_1seed_1_1_from_integral.html", "structrng_1_1seed_1_1_from_integral" ],
-    [ "DefaultEngine", "x_rand_8hpp.html#a79077e8effeaf92c6b280b33d8d5ca05", null ],
-    [ "dRand", "x_rand_8hpp.html#a8ebbcbc58faa63afda357f49f1f9e049", null ],
-    [ "sRand", "x_rand_8hpp.html#a452a64450662c089f2f33011f7156dad", null ],
-    [ "tRand", "x_rand_8hpp.html#a388919ed472f27b0298f67e9f8252d98", null ],
-    [ "xRand", "x_rand_8hpp.html#a03c4e5a192da41d6433c42a4d8e6496c", null ],
-    [ "is_valid_char_type_v", "x_rand_8hpp.html#a68007f96e35c28c63c6f8a5d6c0aa0ba", null ],
-    [ "is_valid_int_type_v", "x_rand_8hpp.html#ae1724038e8a24b7ec7de06190919b005", null ],
-    [ "is_valid_real_type_v", "x_rand_8hpp.html#ad993e4e657f38f52b1f2f226651e5ce0", null ]
+    [ "EngineWrapper", "classrng_1_1_engine_wrapper.html", "classrng_1_1_engine_wrapper" ],
+    [ "xRand", "structrng_1_1x_rand.html", "structrng_1_1x_rand" ],
+    [ "dRand", "x_rand_8hpp.html#ab3340f6ed3c3cb00408289bf714a7583", null ],
+    [ "Random", "x_rand_8hpp.html#a7b5fe6482dd0d33df064d0616b329eb0", null ],
+    [ "sRand", "x_rand_8hpp.html#ad3fc7c935039f1dcfeee387664d2f79f", null ],
+    [ "tRand", "x_rand_8hpp.html#ae409d9d9ec42bb424c36db9e44fa226c", null ]
 ];

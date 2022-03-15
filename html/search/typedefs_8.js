@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lexemet_1842',['LexemeT',['../structtoken_1_1base_1_1_lexeme_dict_base.html#ac6fda2aeba110c1173e833f7c8485a48',1,'token::base::LexemeDictBase']]]
+  ['key_5ftype_1836',['key_type',['../classterm_1_1palette.html#ae211e91c003e1fca4bda38c6143fcdb9',1,'term::palette']]],
+  ['keypair_1837',['KeyPair',['../classfile_1_1ini_1_1_i_n_i_container.html#a21b3bd5f78cd55e9b88626b2722dc2ec',1,'file::ini::INIContainer']]]
 ];
