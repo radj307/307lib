@@ -448,7 +448,7 @@ namespace term {
 	/**
 	 * @brief	Move the cursor to the previous column with a tab stop.
 	 *\n		If there are no more tab stops, moves the cursor to the first column.
-	 *\n		If the cursor is in the first column, doesn’t move the cursor.
+	 *\n		If the cursor is in the first column, doesnï¿½t move the cursor.
 	 * @param n	Number of tab stops to jump backwards by.
 	 * @returns Sequence
 	 */
