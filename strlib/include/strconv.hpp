@@ -241,88 +241,6 @@ namespace str {
 	 *				 objects instead of exceptions to indicate whether an input value is valid or not.
 	 */
 	namespace optional {
-		/**
-		 * @brief				Convert a boolean to a string.
-		 * @param val			Target boolean to convert.
-		 * @param first_upper	When true, returns a string where the first letter is uppercase.
-		 * @returns				std::string
-		 */
-		[[nodiscard]] inline std::string bool_to_string(const bool& val, const bool& first_upper = false)
-		{
-			if (val)
-				return first_upper ? "True" : "true";
-			return first_upper ? "False" : "false";
-		}
-
-		/**
-		 * @brief		Convert a string to a boolean.
-		 * @param str	String to convert to boolean. Must contain ONLY the words "true" or "false". (case-insensitive)
-		 * @returns		std::optional<bool>
-		 */
-		template<typename ReturnType = std::optional<bool>> requires std::same_as<ReturnType, bool> || std::same_as<ReturnType, std::optional<bool>>
-		[[nodiscard]] inline ReturnType string_to_bool(std::string str)
-		{
-			str = tolower(str);
-			if (str == "true")
-				return true;
-			else if (str == "false")
-				return false;
-			if constexpr (std::same_as<ReturnType, std::optional<bool>>)
-				return std::nullopt;
-			else return false;
-		}
-		/**
-		 * @brief		Convert a string to a non-optional boolean with the following rules:
-		 *\n			- Returns true if the input string is (case-insensitive) equal to "true".
-		 *\n			- Otherwise, returns false.
-		 * @param str	Input String.
-		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
-		 * @returns		bool
-		 */
-		[[nodiscard]] inline WINCONSTEXPR bool stob(std::string str) noexcept
-		{
-			return str::tolower(str) == "true";
-		}
-
-		/**
-		 * @function ctos(char)
-		 * @brief Converts char to string. Can be passed as std::function. Does not throw exceptions.
-		 * @param c		- Char to convert
-		 * @returns string
-		 */
-		template<typename CharType> requires (sizeof(CharType) <= sizeof(wchar_t) && sizeof(CharType) >= 0ull && !std::is_same_v<CharType, bool> && !std::is_same_v<CharType, short>)
-			inline CONSTEXPR const std::string ctos(CharType c) noexcept
-		{
-			return std::string(1ull, std::move(c));
-		}
-
-		/**
-		 * @brief		Converts string to char. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
-		 * @param str	String to convert
-		 * @returns		char
-		 */
-		[[nodiscard]] inline char stoc(const std::string& str) noexcept
-		{
-			return !str.empty() ? str.at(0ull) : static_cast<char>(0);
-		}
-		/**
-		 * @brief		Converts string to unsigned char. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
-		 * @param str	String to convert
-		 * @returns		unsigned char
-		 */
-		[[nodiscard]] inline unsigned char stouc(const std::string& str) noexcept
-		{
-			return !str.empty() ? static_cast<unsigned char>(str.at(0ull)) : static_cast<unsigned char>(0);
-		}
-		/**
-		 * @brief		Converts string to wchar_t. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
-		 * @param str	String to convert
-		 * @returns		wchar_t
-		 */
-		[[nodiscard]] inline wchar_t stowc(const std::wstring& str) noexcept
-		{
-			return !str.empty() ? str.at(0ull) : static_cast<wchar_t>(0);
-		}
 
 		/**
 		 * @brief				Convert a given string to an integer type.
@@ -482,40 +400,6 @@ namespace str {
 	 * @brief		Legacy conversion functions that use simple try-catch blocks to avoid exceptions from invalid inputs to stoX functions.
 	 */
 	namespace legacy {
-
-		/**
-		 * @brief				Convert a boolean to a string.
-		 * @param val			Target boolean to convert.
-		 * @param first_upper	When true, returns a string where the first letter is uppercase.
-		 * @returns				std::string
-		 */
-		[[nodiscard]] inline std::string bool_to_string(const bool& val, const bool& first_upper = false)
-		{
-			if (val)
-				return first_upper ? "True" : "true";
-			return first_upper ? "False" : "false";
-		}
-
-		/**
-		 * @brief		Convert a string to a boolean.
-		 * @param str	String to convert to boolean. Must contain ONLY the words "true" or "false". (case-insensitive)
-		 * @returns		std::optional<bool>
-		 */
-		template<typename ReturnType = std::optional<bool>> requires std::same_as<ReturnType, bool> || std::same_as<ReturnType, std::optional<bool>>
-		[[nodiscard]] inline ReturnType string_to_bool(std::string str)
-		{
-			str = tolower(str);
-			if (str == "true")
-				return true;
-			else if (str == "false")
-				return false;
-			if constexpr (std::same_as<ReturnType, std::optional<bool>>)
-				return std::nullopt;
-			else return false;
-		}
-
-		// Functions that emulate STL string <-> type functions, except they don't throw exceptions and can be passed as std::function.
-#		pragma region change_type
 		/**
 		 * @brief		Convert a string to a non-optional boolean with the following rules:
 		 *\n			- Returns true if the input string is (case-insensitive) equal to "true".
@@ -569,7 +453,39 @@ namespace str {
 			return !str.empty() ? str.at(0ull) : static_cast<wchar_t>(0);
 		}
 
+		/**
+		 * @brief				Convert a boolean to a string.
+		 * @param val			Target boolean to convert.
+		 * @param first_upper	When true, returns a string where the first letter is uppercase.
+		 * @returns				std::string
+		 */
+		[[nodiscard]] inline std::string bool_to_string(const bool& val, const bool& first_upper = false)
+		{
+			if (val)
+				return first_upper ? "True" : "true";
+			return first_upper ? "False" : "false";
+		}
 
+		/**
+		 * @brief		Convert a string to a boolean.
+		 * @param str	String to convert to boolean. Must contain ONLY the words "true" or "false". (case-insensitive)
+		 * @returns		std::optional<bool>
+		 */
+		template<typename ReturnType = std::optional<bool>> requires std::same_as<ReturnType, bool> || std::same_as<ReturnType, std::optional<bool>>
+		[[nodiscard]] inline ReturnType string_to_bool(std::string str)
+		{
+			str = tolower(str);
+			if (str == "true")
+				return true;
+			else if (str == "false")
+				return false;
+			if constexpr (std::same_as<ReturnType, std::optional<bool>>)
+				return std::nullopt;
+			else return false;
+		}
+
+		// Functions that emulate STL string <-> type functions, except they don't throw exceptions and can be passed as std::function.
+#		pragma region change_type
 		/**
 		 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
 		 * @param str		String to convert
@@ -709,6 +625,7 @@ namespace str {
 	using legacy::bool_to_string;
 	using legacy::stob;
 	using legacy::stoc;
+	using legacy::ctos;
 
 	/**
 	 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
