@@ -16,10 +16,9 @@ var searchData=
   ['blue_78',['blue',['../structterm_1_1setcolor__seq.html#a3b762bb7cb5eea1f38ae72915ff387ca',1,'term::setcolor_seq::blue()'],['../namespacecolor.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color::blue()']]],
   ['body_79',['body',['../structterm_1_1_message.html#abd91e7c810e685cc67c7de34916a7bd0',1,'term::Message']]],
   ['bold_80',['BOLD',['../structcolor_1_1format.html#aa3c62a5daa22256094cfb91abc3f0caa',1,'color::format::BOLD()'],['../namespacecolor.html#ac9e866bcf92676cd068a32b3db6afe5d',1,'color::bold()']]],
-  ['bool_5fto_5fstring_81',['bool_to_string',['../namespacestr_1_1optional.html#a4dac32744b3eb205b86587da97d2dfda',1,'str::optional::bool_to_string()'],['../namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302',1,'str::legacy::bool_to_string()']]],
-  ['boolean_82',['Boolean',['../namespacefile_1_1ini.html#a42c2b4ad6a7698c012a5c55ee35f4f8c',1,'file::ini::Boolean()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799ac48d5da12d702e73d6966069f2687376',1,'token::DefaultDefs::BOOLEAN()']]],
-  ['bracket_5fclose_83',['BRACKET_CLOSE',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a24f34bfbbd1bf4bcf427fd459df7b776',1,'token::DefaultDefs']]],
-  ['bracket_5fopen_84',['BRACKET_OPEN',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a37c51803bdf9763d9b1ca1d364bdf9f6',1,'token::DefaultDefs']]],
-  ['buffer_85',['Buffer',['../namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513',1,'xlog']]],
-  ['buffermanager_86',['BufferManager',['../classxlog_1_1_buffer_manager.html',1,'xlog::BufferManager'],['../classxlog_1_1_buffer_manager.html#afd5e7b96ae950befb0fe4b2f79b2bebc',1,'xlog::BufferManager::BufferManager()']]]
+  ['boolean_81',['Boolean',['../namespacefile_1_1ini.html#a42c2b4ad6a7698c012a5c55ee35f4f8c',1,'file::ini::Boolean()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799ac48d5da12d702e73d6966069f2687376',1,'token::DefaultDefs::BOOLEAN()']]],
+  ['bracket_5fclose_82',['BRACKET_CLOSE',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a24f34bfbbd1bf4bcf427fd459df7b776',1,'token::DefaultDefs']]],
+  ['bracket_5fopen_83',['BRACKET_OPEN',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a37c51803bdf9763d9b1ca1d364bdf9f6',1,'token::DefaultDefs']]],
+  ['buffer_84',['Buffer',['../namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513',1,'xlog']]],
+  ['buffermanager_85',['BufferManager',['../classxlog_1_1_buffer_manager.html',1,'xlog::BufferManager'],['../classxlog_1_1_buffer_manager.html#afd5e7b96ae950befb0fe4b2f79b2bebc',1,'xlog::BufferManager::BufferManager()']]]
 ];

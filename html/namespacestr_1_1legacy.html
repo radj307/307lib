@@ -94,56 +94,102 @@ $(document).ready(function(){initNavTree('namespacestr_1_1legacy.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9273d11efb3303985d45732ac2023302"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302">bool_to_string</a> (const bool &amp;val, const bool &amp;first_upper=false)</td></tr>
-<tr class="memdesc:a9273d11efb3303985d45732ac2023302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a boolean to a string.  <a href="namespacestr_1_1legacy.html#a9273d11efb3303985d45732ac2023302">More...</a><br /></td></tr>
-<tr class="separator:a9273d11efb3303985d45732ac2023302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
-<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">string_to_bool</a> (std::string str)</td></tr>
-<tr class="memdesc:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">More...</a><br /></td></tr>
-<tr class="separator:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6f63431313d7591f070b95bb5dc047f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#ad6f63431313d7591f070b95bb5dc047f">stob</a> (std::string str) noexcept</td></tr>
 <tr class="memdesc:ad6f63431313d7591f070b95bb5dc047f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
  - Returns true if the input string is (case-insensitive) equal to "true". <br  />
  - Otherwise, returns false.  <a href="namespacestr_1_1legacy.html#ad6f63431313d7591f070b95bb5dc047f">More...</a><br /></td></tr>
 <tr class="separator:ad6f63431313d7591f070b95bb5dc047f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad135677615582774e2f6c4076a7dc87"><td class="memTemplParams" colspan="2">template&lt;typename CharType &gt; </td></tr>
+<tr class="memitem:aad135677615582774e2f6c4076a7dc87"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#aad135677615582774e2f6c4076a7dc87">requires</a> (sizeof(CharType)&lt;=sizeof(wchar_t) &amp;&amp;sizeof(CharType) &gt;=0ull &amp;&amp;!std::is_same_v&lt; CharType, bool &gt; &amp;&amp;!std::is_same_v&lt; CharType, short &gt;) inline <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> const std</td></tr>
+<tr class="memdesc:aad135677615582774e2f6c4076a7dc87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts char to string. Can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#aad135677615582774e2f6c4076a7dc87">More...</a><br /></td></tr>
+<tr class="separator:aad135677615582774e2f6c4076a7dc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
+<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr_1_1legacy.html#aad135677615582774e2f6c4076a7dc87">requires</a> std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">string_to_bool</a> (std::string str)</td></tr>
+<tr class="memdesc:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="namespacestr_1_1legacy.html#a0799a6e0dcea7f2552d98ecff33a4b91">More...</a><br /></td></tr>
+<tr class="separator:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6c146e834dd6c490265eec61969d35"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a1d6c146e834dd6c490265eec61969d35">stoi</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a1d6c146e834dd6c490265eec61969d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a1d6c146e834dd6c490265eec61969d35">More...</a><br /></td></tr>
+<tr class="separator:a1d6c146e834dd6c490265eec61969d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#ad63ac649fec6f4afa4fb9103ec6ab1ae">stos</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#ad63ac649fec6f4afa4fb9103ec6ab1ae">More...</a><br /></td></tr>
+<tr class="separator:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579069fd499f2475fba6fb2dce38fbec"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a579069fd499f2475fba6fb2dce38fbec">stoui</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a579069fd499f2475fba6fb2dce38fbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a579069fd499f2475fba6fb2dce38fbec">More...</a><br /></td></tr>
+<tr class="separator:a579069fd499f2475fba6fb2dce38fbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad228532e602a68da76e85d63242d0b5e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#ad228532e602a68da76e85d63242d0b5e">stol</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:ad228532e602a68da76e85d63242d0b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#ad228532e602a68da76e85d63242d0b5e">More...</a><br /></td></tr>
+<tr class="separator:ad228532e602a68da76e85d63242d0b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#acfe445496c4fe90cc1b336ef61ed6d5e">stoll</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#acfe445496c4fe90cc1b336ef61ed6d5e">More...</a><br /></td></tr>
+<tr class="separator:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d8c8099044b8a177f115fda517aa10"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a75d8c8099044b8a177f115fda517aa10">stoul</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a75d8c8099044b8a177f115fda517aa10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a75d8c8099044b8a177f115fda517aa10">More...</a><br /></td></tr>
+<tr class="separator:a75d8c8099044b8a177f115fda517aa10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541bb9bcde3544000d74ee67bd12dd1c"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a541bb9bcde3544000d74ee67bd12dd1c">stoull</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a541bb9bcde3544000d74ee67bd12dd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a541bb9bcde3544000d74ee67bd12dd1c">More...</a><br /></td></tr>
+<tr class="separator:a541bb9bcde3544000d74ee67bd12dd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a9bb7536532fa08f39f49fbd6b4780a5f">stous</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned short. Wrapper for static_cast&lt;unsigned short&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a9bb7536532fa08f39f49fbd6b4780a5f">More...</a><br /></td></tr>
+<tr class="separator:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de9b4b7e754453871bde6e4937cf11e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a5de9b4b7e754453871bde6e4937cf11e">stof</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a5de9b4b7e754453871bde6e4937cf11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a5de9b4b7e754453871bde6e4937cf11e">More...</a><br /></td></tr>
+<tr class="separator:a5de9b4b7e754453871bde6e4937cf11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94952f508d5e64a43b48cb377eb5d472"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a94952f508d5e64a43b48cb377eb5d472">stod</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a94952f508d5e64a43b48cb377eb5d472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a94952f508d5e64a43b48cb377eb5d472">More...</a><br /></td></tr>
+<tr class="separator:a94952f508d5e64a43b48cb377eb5d472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47632826bef1d3d645b95efb97963f75"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1legacy.html#a47632826bef1d3d645b95efb97963f75">stold</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
+<tr class="memdesc:a47632826bef1d3d645b95efb97963f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr_1_1legacy.html#a47632826bef1d3d645b95efb97963f75">More...</a><br /></td></tr>
+<tr class="separator:a47632826bef1d3d645b95efb97963f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9273d11efb3303985d45732ac2023302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9273d11efb3303985d45732ac2023302">&#9670;&nbsp;</a></span>bool_to_string()</h2>
+<a id="aad135677615582774e2f6c4076a7dc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad135677615582774e2f6c4076a7dc87">&#9670;&nbsp;</a></span>requires()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;typename CharType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::string str::legacy::bool_to_string </td>
+          <td class="memname">str::legacy::requires </td>
           <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>first_upper</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">sizeof(CharType)&lt;=sizeof(wchar_t) &amp;&amp;sizeof(CharType) &gt;=0ull &amp;&amp;!std::is_same_v&lt; CharType, bool &gt; &amp;&amp;!std::is_same_v&lt; CharType, short &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Convert a boolean to a string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Converts char to string. Can be passed as std::function. Does not throw exceptions. </p>
+<p>@function ctos(char) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- Char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string</dd></dl>
+<p>Converts string to char. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char</dd></dl>
+<p>Converts string to unsigned char. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned char</dd></dl>
+<p>Converts string to wchar_t. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>wchar_t</dd></dl>
+<p>Convert a boolean to a string. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td>Target boolean to convert. </td></tr>
     <tr><td class="paramname">first_upper</td><td>When true, returns a string where the first letter is uppercase. </td></tr>
@@ -152,11 +198,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00492">492</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00422">422</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a9273d11efb3303985d45732ac2023302_cgraph.svg" width="330" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_aad135677615582774e2f6c4076a7dc87_cgraph.svg" width="339" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -197,16 +244,612 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00527">527</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00411">411</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_ad6f63431313d7591f070b95bb5dc047f_cgraph.svg" width="136" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_ad6f63431313d7591f070b95bb5dc047f_cgraph.svg" width="314" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a94952f508d5e64a43b48cb377eb5d472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94952f508d5e64a43b48cb377eb5d472">&#9670;&nbsp;</a></span>stod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double str::legacy::stod </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00603">603</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a94952f508d5e64a43b48cb377eb5d472_cgraph.svg" width="314" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5de9b4b7e754453871bde6e4937cf11e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de9b4b7e754453871bde6e4937cf11e">&#9670;&nbsp;</a></span>stof()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float str::legacy::stof </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00591">591</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a5de9b4b7e754453871bde6e4937cf11e_cgraph.svg" width="311" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1d6c146e834dd6c490265eec61969d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6c146e834dd6c490265eec61969d35">&#9670;&nbsp;</a></span>stoi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int str::legacy::stoi </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00495">495</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a1d6c146e834dd6c490265eec61969d35_cgraph.svg" width="310" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad228532e602a68da76e85d63242d0b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad228532e602a68da76e85d63242d0b5e">&#9670;&nbsp;</a></span>stol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long str::legacy::stol </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00531">531</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_ad228532e602a68da76e85d63242d0b5e_cgraph.svg" width="310" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a47632826bef1d3d645b95efb97963f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47632826bef1d3d645b95efb97963f75">&#9670;&nbsp;</a></span>stold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long double str::legacy::stold </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00615">615</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a47632826bef1d3d645b95efb97963f75_cgraph.svg" width="140" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_ad6f63431313d7591f070b95bb5dc047f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a47632826bef1d3d645b95efb97963f75_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acfe445496c4fe90cc1b336ef61ed6d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe445496c4fe90cc1b336ef61ed6d5e">&#9670;&nbsp;</a></span>stoll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long str::legacy::stoll </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long long </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00543">543</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_acfe445496c4fe90cc1b336ef61ed6d5e_cgraph.svg" width="314" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad63ac649fec6f4afa4fb9103ec6ab1ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63ac649fec6f4afa4fb9103ec6ab1ae">&#9670;&nbsp;</a></span>stos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">short str::legacy::stos </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>short </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00507">507</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_ad63ac649fec6f4afa4fb9103ec6ab1ae_cgraph.svg" width="312" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a579069fd499f2475fba6fb2dce38fbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579069fd499f2475fba6fb2dce38fbec">&#9670;&nbsp;</a></span>stoui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int str::legacy::stoui </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00519">519</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a579069fd499f2475fba6fb2dce38fbec_cgraph.svg" width="318" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a75d8c8099044b8a177f115fda517aa10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75d8c8099044b8a177f115fda517aa10">&#9670;&nbsp;</a></span>stoul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long str::legacy::stoul </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00555">555</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a75d8c8099044b8a177f115fda517aa10_cgraph.svg" width="318" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a541bb9bcde3544000d74ee67bd12dd1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541bb9bcde3544000d74ee67bd12dd1c">&#9670;&nbsp;</a></span>stoull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long str::legacy::stoull </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00567">567</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a541bb9bcde3544000d74ee67bd12dd1c_cgraph.svg" width="322" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9bb7536532fa08f39f49fbd6b4780a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb7536532fa08f39f49fbd6b4780a5f">&#9670;&nbsp;</a></span>stous()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short str::legacy::stous </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts string to unsigned short. Wrapper for static_cast&lt;unsigned short&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to convert </td></tr>
+    <tr><td class="paramname">nextCh</td><td>Optional pointer that is set to the index of the next character in the string after the number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00579">579</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a9bb7536532fa08f39f49fbd6b4780a5f_cgraph.svg" width="320" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -223,7 +866,7 @@ template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacestr.html#ad35ece5b07dfe3a18235ccc6c0f563ba">requires</a> std::same_as&lt;ReturnType, bool&gt; std::same_as&lt;ReturnType, std::optional&lt;bool&gt; &gt; ReturnType str::legacy::string_to_bool </td>
+          <td class="memname"><a class="el" href="namespacestr_1_1legacy.html#aad135677615582774e2f6c4076a7dc87">requires</a> std::same_as&lt;ReturnType, bool&gt; std::same_as&lt;ReturnType, std::optional&lt;bool&gt; &gt; ReturnType str::legacy::string_to_bool </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -246,11 +889,12 @@ template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;bool&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00505">505</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00475">475</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a0799a6e0dcea7f2552d98ecff33a4b91_cgraph.svg" width="319" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_1_1legacy_a0799a6e0dcea7f2552d98ecff33a4b91_cgraph.svg" width="323" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
