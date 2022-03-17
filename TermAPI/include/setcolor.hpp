@@ -4,11 +4,9 @@
 #include <color-values.h>
 #include <Sequence.hpp>
 #include <Segments.h>
+#include <color-transform.hpp>
 #ifdef OS_WIN
 #define SETCOLOR_NO_RGB
-#endif
-#ifdef SETCOLOR_NO_RGB
-#include <color-transform.hpp>
 #endif
 
 namespace color {
@@ -104,6 +102,8 @@ namespace term {
 		 */
 		SeqT as_sequence_with_format() const { return as_sequence(true); }
 
+
+
 		/**
 		 * @brief	Calls as_sequence(true)
 		 * @returns	SeqT
@@ -160,7 +160,11 @@ namespace term {
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.
-		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset, reset_f, reset_b, placeholder;
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white;
+		/// Declare static constant colors for the basic color utility sequences
+		static const setcolor_seq<SeqT> reset, reset_f, reset_b, reset_fmt, placeholder;
+		/// Declare static constant colors for the basic 16-bit color palette
+		static const setcolor_seq<SeqT> intense_red, intense_green, intense_blue, intense_yellow, intense_magenta, intense_cyan;
 	};
 
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
@@ -177,10 +181,19 @@ namespace term {
 	template<> inline const setcolor setcolor::cyan{ color::cyan };
 	template<> inline const setcolor setcolor::black{ color::black };
 	template<> inline const setcolor setcolor::white{ color::white };
+
 	template<> inline const setcolor setcolor::reset{ color::reset };
 	template<> inline const setcolor setcolor::reset_f{ color::reset_f };
 	template<> inline const setcolor setcolor::reset_b{ color::reset_b };
+	template<> inline const setcolor setcolor::reset_fmt{ color::reset_fmt };
 	template<> inline const setcolor setcolor::placeholder{ ANSI::Sequence() };
+
+	template<> inline const setcolor setcolor::intense_red{ color::intense_red };
+	template<> inline const setcolor setcolor::intense_green{ color::intense_green };
+	template<> inline const setcolor setcolor::intense_blue{ color::intense_blue };
+	template<> inline const setcolor setcolor::intense_yellow{ color::intense_yellow };
+	template<> inline const setcolor setcolor::intense_magenta{ color::intense_magenta };
+	template<> inline const setcolor setcolor::intense_cyan{ color::intense_cyan };
 	//setcolor::white{ color::white }, setcolor::reset{ color::reset }, setcolor::reset_f{ color::reset_f }, setcolor::reset_b{ color::reset_b };
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
@@ -197,10 +210,19 @@ namespace term {
 	template<> inline const wsetcolor wsetcolor::cyan{ color::cyan };
 	template<> inline const wsetcolor wsetcolor::black{ color::black };
 	template<> inline const wsetcolor wsetcolor::white{ color::white };
+
 	template<> inline const wsetcolor wsetcolor::reset{ color::wreset };
 	template<> inline const wsetcolor wsetcolor::reset_f{ color::wreset_f };
 	template<> inline const wsetcolor wsetcolor::reset_b{ color::wreset_b };
+	template<> inline const wsetcolor wsetcolor::reset_fmt{ color::wreset_fmt };
 	template<> inline const wsetcolor wsetcolor::placeholder{ ANSI::wSequence() };
+
+	template<> inline const wsetcolor wsetcolor::intense_red{ color::intense_red };
+	template<> inline const wsetcolor wsetcolor::intense_green{ color::intense_green };
+	template<> inline const wsetcolor wsetcolor::intense_blue{ color::intense_blue };
+	template<> inline const wsetcolor wsetcolor::intense_yellow{ color::intense_yellow };
+	template<> inline const wsetcolor wsetcolor::intense_magenta{ color::intense_magenta };
+	template<> inline const wsetcolor wsetcolor::intense_cyan{ color::intense_cyan };
 }
 
 namespace color {
