@@ -27,7 +27,7 @@ var searchData=
   ['format_261',['format',['../structcolor_1_1format.html',1,'color::format'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()']]],
   ['formatflag_262',['FormatFlag',['../namespacecolor.html#a9454e0fab41f3b132c3d9d616b993f57',1,'color']]],
   ['forward_263',['forward',['../structterm_1_1_cursor.html#a3b8e415312fbfc9e152d7307cc5e5f1e',1,'term::Cursor']]],
-  ['from1d_264',['from1D',['../structmatrix_1_1point.html#a5d9b1658a3edd652fb56efb8ea39cfef',1,'matrix::point::from1D()'],['../structmatrix_1_1basic__matrix.html#a8aa29a86207f0ffbff216f87a7577706',1,'matrix::basic_matrix::from1D()'],['../structmatrix_1_1nmatrix.html#a5d090edd8ee5c2829f0b08f0b89d1a61',1,'matrix::nmatrix::from1D()'],['../namespacematrix.html#a525a56ebec15f97af688067c1f4235cb',1,'matrix::from1D()']]],
+  ['from1d_264',['from1D',['../structmatrix_1_1basic__matrix.html#a8aa29a86207f0ffbff216f87a7577706',1,'matrix::basic_matrix::from1D()'],['../structmatrix_1_1nmatrix.html#a5d090edd8ee5c2829f0b08f0b89d1a61',1,'matrix::nmatrix::from1D()'],['../namespacematrix.html#a525a56ebec15f97af688067c1f4235cb',1,'matrix::from1D()']]],
   ['fromalphanumeric_265',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
   ['frombase10_266',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]],
   ['fromcft_267',['fromCFT',['../namespaceopt.html#a6a373c5a56e4d1774fc66862eb3a2559',1,'opt']]],
