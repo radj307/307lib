@@ -4,72 +4,28 @@
  * @brief	Matrix object that uses a 1-dimensional array to store elements for speed, while exposing a 2-dimensional interface.
  */
 #pragma once
+#include <make_exception.hpp>
 #include <var.hpp>
 
+#include <concepts>
+#include <vector>
 #include <array>
 
 namespace matrix {
+	template<typename T = long long>
+	struct point : protected std::pair<T, T> {
+		T& x{ first };
+		T& y{ second };
 
-	/**
-	 * @struct	point
-	 * @brief	Represents a point in a matrix.
-	 */
-	template<std::integral T = size_t>
-	struct point : std::pair<T, T> {
-		T& x{ this->first };
-		T& y{ this->second };
+		template<std::convertible_to<T> U>
+		point(std::pair<U, U>&& o) : std::pair<T, T>(std::move(static_cast<T>(std::move(o.first))), std::move(static_cast<T>(std::move(o.second)))) {}
+		template<std::convertible_to<T> U>
+		point(const std::pair<U, U>& o) : std::pair<T, T>(static_cast<T>(o.first), static_cast<T>(o.second)) {}
 
-		// @brief	Default Constructor.
-		constexpr point() = default;
 
-		constexpr point(T&& x, T&& y) : std::pair<T, T>(std::forward<T>(x), std::forward<T>(y)) {}
-		constexpr point(const T& x, const T& y) : std::pair<T, T>(x, y) {}
-
-		constexpr point(std::pair<T, T>&& pr) : std::pair<T, T>(std::forward<std::pair<T, T>>(pr)) {}
-		constexpr point(const std::pair<T, T>& pr) : std::pair<T, T>(pr) {}
-
-		/**
-		 * @brief	Swaps the x & y values of the point.
-		 * @returns	point<T>&
-		 */
-		inline point<T>& transpose()
-		{
-			const auto& copy{ x };
-			x = y;
-			y = copy;
-			return *this;
-		}
-
-		/**
-		 * @brief	Copy the point with its x & y axis swapped.
-		 * @returns	point<T>
-		 */
-		inline point<T> transpose() const
-		{
-			return{ y, x };
-		}
-
-		/**
-		 * @brief			Get the value of this point as a 1-dimensional index number in the range (0 - (\<Max_X\> * \<Max_Y\>)).
-		 * @tparam SizeX:	The size of one "row" (chunk) in the virtual matrix.
-		 * @returns	size_t:	1D Index Value.
-		 */
-		template<size_t SizeX> inline constexpr size_t to1D() const noexcept
-		{
-			return (x + (y * SizeX));
-		}
-		/**
-		 * @brief			Set the value of this point using a 1-dimensional index number in the range (0 - (Max_X * Max_Y)).
-		 * @tparam SizeX:	The size of one "row" (chunk) in the virtual matrix.
-		 * @param index:	1D Index Value.
-		 */
-		template<size_t SizeX> inline constexpr void from1D(const size_t& index) noexcept
-		{
-			x = index / SizeX;
-			y = index % SizeX;
-		}
 	};
 
+#pragma region
 	/**
 	 * @struct	basic_matrix
 	 * @brief	Basic pseudo-matrix object that uses a 1-dimensional array internally for performance, but exposes a 2-dimensional coordinate-based interface.
@@ -373,7 +329,6 @@ namespace matrix {
 	{
 		return { index / SizeX, index % SizeX };
 	}
-
 
 	template<typename T, size_t SizeX, size_t SizeY>
 	using matrix = basic_matrix<T, SizeX, SizeY>;
@@ -798,4 +753,5 @@ namespace matrix {
 			return apply([](const T& l, const T& r) -> T { return l - r; }, o);
 		}
 	};
+#pragma endregion
 }
