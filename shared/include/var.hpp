@@ -206,6 +206,34 @@ namespace var {
 	 */
 	template<typename Type, typename... Ts> concept any_same = (std::same_as<Type, Ts> || ...);
 	/**
+	 * @concept			convertible_from_all
+	 * @brief			Concept that checks if all given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from_all = ((std::convertible_to<From, To>) && ...);
+	/**
+	 * @concept			convertible_from_any
+	 * @brief			Concept that checks if any given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from_any = ((std::convertible_to<From, To>) || ...);
+	/**
+	 * @concept			convertible_from
+	 * @brief			Concept that checks if any given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from = convertible_from_any<To, From...>;
+	/**
+	 * @concept			not_convertible_from
+	 * @brief			Concept that checks if none of the given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept not_convertible_from = (!convertible_from_any<To, From...>);
+	/**
 	 * @concept			not_convertible
 	 * @brief			Concept that checks if a given input type cannot be converted to any of the given output types.
 	 * @tparam From		Input type.
