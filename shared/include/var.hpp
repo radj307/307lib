@@ -185,6 +185,20 @@ namespace var {
 #	pragma region VariadicType_Concepts
 	////////////////////////////////// BEGIN / Variadic "Type Concepts" /////////////////////////////////////////////
 	/**
+	 * @concept			derived_from_any
+	 * @brief			Concept that checks if the given type is derived from any of the specified types.
+	 * @tparam Type		Input Type (This is provided during template deduction).
+	 * @tparam Ts...	Potential base type(s).
+	 */
+	template<typename Type, typename... Ts> concept derived_from_any = ((std::derived_from<Type, Ts>) || ...);
+	/**
+	 * @concept			derived_from_all
+	 * @brief			Concept that checks if the given type is derived from all of the specified types.
+	 * @tparam Type		Input Type (This is provided during template deduction).
+	 * @tparam Ts...	Potential base type(s).
+	 */
+	template<typename Type, typename... Ts> concept derived_from_all = ((std::derived_from<Type, Ts>) && ...);
+	/**
 	 * @concept			not_same
 	 * @brief			Concept that checks if none of the given variadic types match a given type.
 	 * @tparam Type		Type that all variadic types must not match to pass.
