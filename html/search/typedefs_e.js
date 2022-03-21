@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['sectioncontent_1858',['SectionContent',['../classfile_1_1ini_1_1_i_n_i_container.html#aa9edf86bd0f23248d1484559e72ecdf0',1,'file::ini::INIContainer']]],
-  ['sequence_1859',['Sequence',['../namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547',1,'ANSI']]],
-  ['setcolor_1860',['setcolor',['../namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50',1,'term']]],
-  ['size_5ftype_1861',['size_type',['../classterm_1_1palette.html#a86f50158c24735726db38a983fc33fb4',1,'term::palette::size_type()'],['../structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5',1,'indentor::size_type()']]],
-  ['srand_1862',['sRand',['../namespacerng.html#ad3fc7c935039f1dcfeee387664d2f79f',1,'rng']]],
-  ['string_1863',['String',['../namespacefile_1_1ini.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini']]],
-  ['string_5ftype_1864',['string_type',['../structindentor.html#a19918b0b633d941b16632193a5dfb69a',1,'indentor']]],
-  ['strvec_1865',['strvec',['../classopt_1_1token_1_1_parser.html#ab0eef44aedc5f7103b8cbc209f125274',1,'opt::token::Parser::strvec()'],['../namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb',1,'opt::StrVec()']]]
+  ['sectioncontent_1856',['SectionContent',['../classfile_1_1ini_1_1_i_n_i_container.html#aa9edf86bd0f23248d1484559e72ecdf0',1,'file::ini::INIContainer']]],
+  ['sequence_1857',['Sequence',['../namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547',1,'ANSI']]],
+  ['setcolor_1858',['setcolor',['../namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50',1,'term']]],
+  ['size_5ftype_1859',['size_type',['../classterm_1_1palette.html#a86f50158c24735726db38a983fc33fb4',1,'term::palette::size_type()'],['../structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5',1,'indentor::size_type()']]],
+  ['srand_1860',['sRand',['../namespacerng.html#ad3fc7c935039f1dcfeee387664d2f79f',1,'rng']]],
+  ['string_1861',['String',['../namespacefile_1_1ini.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini']]],
+  ['string_5ftype_1862',['string_type',['../structindentor.html#a19918b0b633d941b16632193a5dfb69a',1,'indentor']]],
+  ['strvec_1863',['strvec',['../classopt_1_1token_1_1_parser.html#ab0eef44aedc5f7103b8cbc209f125274',1,'opt::token::Parser::strvec()'],['../namespaceopt.html#ae49449e838a7675e67e0859a749f3bdb',1,'opt::StrVec()']]]
 ];

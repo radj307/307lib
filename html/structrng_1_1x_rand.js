@@ -17,6 +17,5 @@ var structrng_1_1x_rand =
     [ "uniform_distribution", "structrng_1_1x_rand.html#a071dc556769a2741dfce6358fceb5421", null ],
     [ "uniform_distribution", "structrng_1_1x_rand.html#ab0cc0cdfd2f087fb1301b5ea73f8eb69", null ],
     [ "engine", "structrng_1_1x_rand.html#acfcf71922ee582e8f2e8d661b51725c1", null ],
-    [ "max", "structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c", null ],
-    [ "random_device", "structrng_1_1x_rand.html#a0500b781e36f62f7e4ac740cc93572d8", null ]
+    [ "max", "structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c", null ]
 ];
