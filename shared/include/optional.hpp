@@ -32,8 +32,6 @@ namespace opt {
 
 		/// @brief	Inherited Constructor(s).
 		using base::base;
-		/// @brief	Inherited Assignment Operator(s).
-		using base::operator=;
 
 		/**
 		 * @brief		Decay this optional wrapper into a regular optional type.
@@ -184,8 +182,6 @@ namespace opt {
 
 		/// @brief	Inherited Constructor(s).
 		using base::base;
-		/// @brief	Inherited Assignment Operator(s).
-		using base::operator=;
 
 		/**
 		 * @brief		Decay this optional wrapper into a regular optional type.
