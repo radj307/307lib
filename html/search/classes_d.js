@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['variableindentation_1022',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str']]],
-  ['variantarg_1023',['VariantArg',['../structopt_1_1_variant_arg.html',1,'opt']]]
+  ['unsafe_5foptional_1021',['unsafe_optional',['../structopt_1_1unsafe__optional.html',1,'opt']]]
 ];

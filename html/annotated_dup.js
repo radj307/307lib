@@ -6,7 +6,6 @@ var annotated_dup =
     [ "file", "namespacefile.html", "namespacefile" ],
     [ "matrix", "namespacematrix.html", "namespacematrix" ],
     [ "opt", "namespaceopt.html", "namespaceopt" ],
-    [ "optional", "namespaceoptional.html", "namespaceoptional" ],
     [ "process", "namespaceprocess.html", "namespaceprocess" ],
     [ "rng", "namespacerng.html", "namespacerng" ],
     [ "str", "namespacestr.html", "namespacestr" ],

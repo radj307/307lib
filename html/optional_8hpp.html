@@ -87,13 +87,15 @@ $(document).ready(function(){initNavTree('optional_8hpp.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">optional.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains a stack-based alternative to the std::optional type.  
+<p>Contains useful derivatives of the std::optional object, such as casting_optional. <br  />
+ These are focused on adding functionality to the std::optional object, and can be used as a drop-in replacement.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
@@ -102,28 +104,41 @@ $(document).ready(function(){initNavTree('optional_8hpp.html',''); initResizable
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for optional.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="optional_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="optional_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="optional_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structoptional_1_1optional.html">optional::optional&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a third variable state to any type: "null". This is an alternative to the std::optional object that uses the stack. <br  />
- Note: This function does not allocate memory on the heap, and should only be used for small variable types as a wrapper.  <a href="structoptional_1_1optional.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html">opt::casting_optional&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for std::optional that includes several helpful typecasting functions. <br  />
+ This inherits &amp; forwards most of its functionality from std::optional. <br  />
+ See functions with the word "cast" in their name for a list of new functions.  <a href="structopt_1_1casting__optional.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structoptional_1_1optional__passthru.html">optional::optional_passthru&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1unsafe__optional.html">opt::unsafe_optional&lt; T, Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An "unsafe" wrapper object that allows implicit "casting"/retrieval of the underlying value. <br  />
+ If the value isn't set, an exception will be thrown during an implicit casting operation, making debugging very difficult. <br  />
+ For this reason, it is NOT recommended to use the <a class="el" href="structopt_1_1unsafe__optional.html" title="An &quot;unsafe&quot; wrapper object that allows implicit &quot;casting&quot;/retrieval of the underlying value....">unsafe_optional</a> object in production code.  <a href="structopt_1_1unsafe__optional.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespaceoptional"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceoptional.html">optional</a></td></tr>
-<tr class="memdesc:namespaceoptional"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains string to numeric type converters that use optional wrapper objects instead of exceptions to indicate whether an input value is valid or not. <br /></td></tr>
+<tr class="memitem:namespaceopt"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html">opt</a></td></tr>
+<tr class="memdesc:namespaceopt"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing functions &amp; objects related to "optional" variables. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af479aa967940ddaafb0bffd528f37bb3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af479aa967940ddaafb0bffd528f37bb3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3">opt::optional</a> = casting_optional&lt; T &gt;</td></tr>
+<tr class="memdesc:af479aa967940ddaafb0bffd528f37bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the <a class="el" href="structopt_1_1casting__optional.html" title="Wrapper for std::optional that includes several helpful typecasting functions.   This inherits &amp; forw...">casting_optional</a> object.  <a href="namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3">More...</a><br /></td></tr>
+<tr class="separator:af479aa967940ddaafb0bffd528f37bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains a stack-based alternative to the std::optional type. </p>
+<div class="textblock"><p>Contains useful derivatives of the std::optional object, such as casting_optional. <br  />
+ These are focused on adding functionality to the std::optional object, and can be used as a drop-in replacement. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="optional_8hpp_source.html">optional.hpp</a>.</p>

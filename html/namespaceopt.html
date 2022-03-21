@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('namespaceopt.html',''); initResizable(
 <div class="title">opt Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace containing functions &amp; objects related to "optional" variables.  
+<a href="namespaceopt.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -115,6 +118,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html">CaptureList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt_1_1_capture_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html">casting_optional</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for std::optional that includes several helpful typecasting functions. <br  />
+ This inherits &amp; forwards most of its functionality from std::optional. <br  />
+ See functions with the word "cast" in their name for a list of new functions.  <a href="structopt_1_1casting__optional.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_index.html">Index</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant compile-time variant index object. This allows retrieving types from a variant argument with friendly names rather than raw numbers or types.  <a href="structopt_1_1_index.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +132,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html">ParamsAPI2</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1_params_a_p_i3.html">ParamsAPI3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1unsafe__optional.html">unsafe_optional</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An "unsafe" wrapper object that allows implicit "casting"/retrieval of the underlying value. <br  />
+ If the value isn't set, an exception will be thrown during an implicit casting operation, making debugging very difficult. <br  />
+ For this reason, it is NOT recommended to use the <a class="el" href="structopt_1_1unsafe__optional.html" title="An &quot;unsafe&quot; wrapper object that allows implicit &quot;casting&quot;/retrieval of the underlying value....">unsafe_optional</a> object in production code.  <a href="structopt_1_1unsafe__optional.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_variant_arg.html">VariantArg</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +178,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> = std::variant&lt; std::monostate, <a class="el" href="namespaceopt.html#acc2207e5e307ef6a7b39dd228cff76ca">Parameter</a>, <a class="el" href="namespaceopt.html#ad17e17cf8257066ba09d74695ea5738d">Option</a>, <a class="el" href="namespaceopt.html#aa99cb5f86173816ad15e25ca7fe9ac90">Flag</a> &gt;</td></tr>
 <tr class="memdesc:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variant type that allows std::monostate (null/all), Parameter, Option, &amp; Flag types, in that order.  <a href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">More...</a><br /></td></tr>
 <tr class="separator:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af479aa967940ddaafb0bffd528f37bb3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af479aa967940ddaafb0bffd528f37bb3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3">optional</a> = <a class="el" href="structopt_1_1casting__optional.html">casting_optional</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:af479aa967940ddaafb0bffd528f37bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the <a class="el" href="structopt_1_1casting__optional.html" title="Wrapper for std::optional that includes several helpful typecasting functions.   This inherits &amp; forw...">casting_optional</a> object.  <a href="namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3">More...</a><br /></td></tr>
+<tr class="separator:af479aa967940ddaafb0bffd528f37bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -287,7 +304,9 @@ Variables</h2></td></tr>
 <tr class="memdesc:a1ad24f650521129892e3c4c134660796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static (non-const) settings structure.  <a href="namespaceopt.html#a1ad24f650521129892e3c4c134660796">More...</a><br /></td></tr>
 <tr class="separator:a1ad24f650521129892e3c4c134660796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace containing functions &amp; objects related to "optional" variables. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a8048bb6c81102ec4e6d0e267f620f928"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8048bb6c81102ec4e6d0e267f620f928">&#9670;&nbsp;</a></span>ArgContainerIteratorContainerType</h2>
 
@@ -437,6 +456,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_arg_8hpp_source.html#l00157">157</a> of file <a class="el" href="_arg_8hpp_source.html">Arg.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af479aa967940ddaafb0bffd528f37bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af479aa967940ddaafb0bffd528f37bb3">&#9670;&nbsp;</a></span>optional</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3">opt::optional</a> = typedef <a class="el" href="structopt_1_1casting__optional.html">casting_optional</a>&lt;T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for the <a class="el" href="structopt_1_1casting__optional.html" title="Wrapper for std::optional that includes several helpful typecasting functions.   This inherits &amp; forw...">casting_optional</a> object. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Value Type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="optional_8hpp_source.html#l00168">168</a> of file <a class="el" href="optional_8hpp_source.html">optional.hpp</a>.</p>
 
 </div>
 </div>
@@ -705,7 +750,8 @@ template&lt;ValidArg T&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8723d0634e92526f4ca97fc8a93221ab_cgraph.svg" width="259" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8723d0634e92526f4ca97fc8a93221ab_cgraph.svg" width="286" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -982,12 +1028,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8e94744bdbabe51bbb6262321407d0ed_cgraph.svg" width="139" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8e94744bdbabe51bbb6262321407d0ed_cgraph.svg" width="342" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8e94744bdbabe51bbb6262321407d0ed_icgraph.svg" width="291" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1230,7 +1272,8 @@ template&lt;typename IntegerT , IntegerT index&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_aa2f10f2c576dc410b4cacf831c949d09_cgraph.svg" width="291" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_aa2f10f2c576dc410b4cacf831c949d09_cgraph.svg" width="318" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
