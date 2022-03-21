@@ -29,6 +29,13 @@ namespace rng {
 		Engine _engine;
 
 	public:
+		EngineWrapper()
+		{
+			std::random_device r;
+			std::seed_seq seq{ r(), r(), r(), r(), r(), r() };
+			_engine.seed(seq);
+		}
+
 		/**
 		 * @brief		Constructor.
 		 *\n			Seeds the generator using a random_device.
@@ -87,10 +94,9 @@ namespace rng {
 	struct xRand {
 		using engine_type = Engine;
 
-		std::random_device random_device;
 		EngineWrapper<Engine> engine;
 
-		xRand() : random_device{}, engine { random_device } {}
+		xRand() {}
 
 		/**
 		 * @brief	Retrieve a reference to the internal randomization engine.
