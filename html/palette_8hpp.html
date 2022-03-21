@@ -110,7 +110,8 @@ Include dependency graph for palette.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="palette_8hpp__dep__incl.svg" width="468" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="palette_8hpp__dep__incl.svg" width="580" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="palette_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -118,7 +119,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1palette.html">term::palette&lt; Key &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps color sequences to a templated key type. <br  />
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associative binding container with additional helper methods &amp; operators. <br  />
+ Maps color sequences to a templated key type. <br  />
  Provides convenience methods for recalling color sequences by using keys. <br  />
  Very useful when you want to control the usage of escape sequences throughout your program.  <a href="classterm_1_1palette.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,12 +136,6 @@ Namespaces</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
-<h1><a class="anchor" id="autotoc_md0"></a>
-Example Implementation:</h1>
-<p>enum class MyKeyType { TYPE1, TYPE2, TYPE3, }</p>
-<p>using Palette = color::ColorPalette&lt;MyKeyType&gt;;</p>
-<p>Palette myPalette{ { std::make_pair(MyKeyType::TYPE1, color::red), std::make_pair(MyKeyType::TYPE2, setcolor{ <a class="el" href="namespacecolor.html#ab878b1c61db9fd6d93486884f2db8620" title="Green color.">color::green</a>, color::Layer::FOREGROUND, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE }), std::make_pair(MyKeyType::TYPE3, color::blue), } };</p>
-<p>void example() { std::cout &lt;&lt; myPalette(MyKeyType::TYPE1) &lt;&lt; "red text" &lt;&lt; myPalette(); } </p>
 
 <p class="definition">Definition in file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 </div></div><!-- contents -->

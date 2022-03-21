@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['layer_1621',['Layer',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10',1,'color']]],
-  ['lexeme_1622',['LEXEME',['../namespacetoken.html#a6881fced0c9273e26f7ff9717bd6639e',1,'token']]]
+  ['tokentype_1885',['TokenType',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799',1,'token::DefaultDefs']]],
+  ['type_1886',['Type',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0f',1,'opt::token']]]
 ];

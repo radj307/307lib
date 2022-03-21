@@ -23,26 +23,26 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "Support", "index.html#autotoc_md12", null ],
-    [ "Building from Source", "index.html#autotoc_md13", [
-      [ "Pre-Requisities", "index.html#autotoc_md14", null ],
-      [ "Process", "index.html#autotoc_md15", null ]
+    [ "Support", "index.html#autotoc_md11", null ],
+    [ "Building from Source", "index.html#autotoc_md12", [
+      [ "Pre-Requisities", "index.html#autotoc_md13", null ],
+      [ "Process", "index.html#autotoc_md14", null ]
     ] ],
-    [ "Generating Documentation", "index.html#autotoc_md16", [
-      [ "Pre-Requisites", "index.html#autotoc_md17", null ],
-      [ "Process", "index.html#autotoc_md18", null ]
+    [ "Generating Documentation", "index.html#autotoc_md15", [
+      [ "Pre-Requisites", "index.html#autotoc_md16", null ],
+      [ "Process", "index.html#autotoc_md17", null ]
     ] ],
     [ "TokenRedux", "_token_redux.html", null ],
     [ "307modules", "307modules.html", [
-      [ "307modules", "307modules.html#autotoc_md3", [
-        [ "Usage", "307modules.html#autotoc_md4", null ],
-        [ "Modules", "307modules.html#autotoc_md5", [
-          [ "InputFinder", "307modules.html#autotoc_md6", null ],
-          [ "AutoVersion", "307modules.html#autotoc_md7", null ],
-          [ "VersioninfoMaker", "307modules.html#autotoc_md8", null ],
-          [ "PrependEach", "307modules.html#autotoc_md9", null ],
-          [ "PackageInstaller", "307modules.html#autotoc_md10", null ],
-          [ "OptionalArgs", "307modules.html#autotoc_md11", null ]
+      [ "307modules", "307modules.html#autotoc_md2", [
+        [ "Usage", "307modules.html#autotoc_md3", null ],
+        [ "Modules", "307modules.html#autotoc_md4", [
+          [ "InputFinder", "307modules.html#autotoc_md5", null ],
+          [ "AutoVersion", "307modules.html#autotoc_md6", null ],
+          [ "VersioninfoMaker", "307modules.html#autotoc_md7", null ],
+          [ "PrependEach", "307modules.html#autotoc_md8", null ],
+          [ "PackageInstaller", "307modules.html#autotoc_md9", null ],
+          [ "OptionalArgs", "307modules.html#autotoc_md10", null ]
         ] ]
       ] ]
     ] ],
@@ -74,10 +74,13 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
@@ -86,11 +89,11 @@ var NAVTREEINDEX =
 "307modules.html",
 "_windows_not_today_8h.html#a2d7186e4a6dfcc0011461ce1e8b70a05",
 "classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833",
-"fileutil_8hpp_source.html",
-"prefix_8h.html#aa7855ff071a186460e6bdcb5a5ef5f5e",
-"structmatrix_1_1basic__matrix.html#ac15dd6901d913b3f6b33884627f00bcb",
-"structstr_1_1_printable.html#a097f661e8c2bb195fc5cb0965076435c",
-"term_8hpp.html#af3d7a971263a93fdd71c5f6e598e92cf"
+"fileutil_8hpp.html#a93909d0fba7c38b358413cff6f7a592a",
+"palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3ac429fde8b1b986d42f84ba63dbfef6ac",
+"structmatrix_1_1basic__matrix.html#a6418ecdcce50a983608e041a4bad3277",
+"structstr_1_1_floating_base.html",
+"term_8hpp.html#acfe494a7ec02f00524ac081d83e28a12"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -85,14 +85,14 @@ $(document).ready(function(){initNavTree('307modules.html',''); initResizable();
 </div>
 
 <div class="PageDoc"><div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md2"></a>
 307modules</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Usage</h2>
 <p>First you need to tell CMake where to locate these modules, by appending the path to the 307modules directory to <code>CMAKE_MODULE_PATH</code>: </p><div class="fragment"><div class="line">list(APPEND CMAKE_MODULE_PATH &quot;${CMAKE_SOURCE_DIR}/307modules&quot;)</div>
 </div><!-- fragment --><p><em>You may have to change the path depending on where 307modules is located.</em></p>
 <p>Now all of the modules are available to be included. To include a module, use: </p><div class="fragment"><div class="line">include(&lt;ModuleName&gt;)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
 Modules</h2>
 <p>This is a list of all of the available modules, and a short description of each.</p>
 <table class="markdownTable">
@@ -111,13 +111,13 @@ Modules</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">OptionalArgs </td><td class="markdownTableBodyNone">_(Work-in-Progress)_ Provides functions intended to reduce the repetition of checking optional arguments.  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md6"></a>
+<h3><a class="anchor" id="autotoc_md5"></a>
 InputFinder</h3>
 <ul>
 <li>FIND_INPUT_FILE(&lt;OUT_VAR&gt; &lt;FILENAME&gt; [REQUIRED] [Possible-Path-To-Filename...]) <br  />
  Looks for ${FILENAME} in each element of the <code>CMAKE_MODULE_PATH</code> list, and sets ${OUT_VAR} to its absolute path. If "REQUIRED" is specified as the 3rd parameter, an error is thrown if the file wasn't located. Additional parameters can be specified that point directly to ${FILENAME}. The first extant path will be used.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md7"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 AutoVersion</h3>
 <ul>
 <li>GET_VERSION(&lt;DIRECTORY&gt; &lt;OUT_MAJOR_VERSION&gt; &lt;OUT_MINOR_VERSION&gt; &lt;OUT_PATCH_VERSION&gt;) <br  />
@@ -145,7 +145,7 @@ AutoVersion</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">${TARGET}_VERSION </td><td class="markdownTableBodyNone">"${MAJOR}.${MINOR}.${PATCH}"  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md7"></a>
 VersioninfoMaker</h3>
 <ul>
 <li>CREATE_VERSION_RESOURCE(&lt;DIRECTORY&gt; &lt;MAJOR&gt; &lt;MINOR&gt; &lt;PATCH&gt; &lt;COMPANY_NAME&gt; &lt;FILE_DESCRIPTION&gt; &lt;INTERNAL_NAME&gt; &lt;COPYRIGHT&gt; &lt;ORIGINAL_FILENAME&gt; &lt;PRODUCT_NAME&gt;) <br  />
@@ -153,7 +153,7 @@ VersioninfoMaker</h3>
  See the <em>Properties -&gt; Details</em> tab of an executable for an idea of what this will look like. <br  />
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md9"></a>
+<h3><a class="anchor" id="autotoc_md8"></a>
 PrependEach</h3>
 <ul>
 <li>PREPEND_EACH(&lt;OUT_VAR&gt; &lt;LIST&gt; &lt;STRING&gt;) <br  />
@@ -162,7 +162,7 @@ PrependEach</h3>
  where the build interface requires absolute paths, while the install interface requires relative paths. <br  />
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md10"></a>
+<h3><a class="anchor" id="autotoc_md9"></a>
 PackageInstaller</h3>
 <ul>
 <li>GENERATE_PACKAGING(&lt;TARGET&gt;) <br  />
@@ -198,7 +198,7 @@ PackageInstaller</h3>
  If "GENERATE" is included as the 2nd argument, <code>CREATE_PACKAGE</code> will be called first using the 3rd argument as the compatibility mode if it exists, otherwise "SameMajorVersion" is used. <br  />
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md10"></a>
 OptionalArgs</h3>
 <ul>
 <li>GET_ARG(&lt;ARGN&gt; &lt;INDEX&gt; &lt;OUT_VAR&gt; [TOLOWER|TOUPPER]) <br  />

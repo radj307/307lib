@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['layer_1873',['Layer',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10',1,'color']]],
-  ['lexeme_1874',['LEXEME',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675d',1,'opt::token::LEXEME()'],['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6',1,'token::DefaultDefs::LEXEME()']]]
+  ['color_1881',['COLOR',['../palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3',1,'palette_example.cpp']]]
 ];
