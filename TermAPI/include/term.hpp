@@ -478,9 +478,22 @@ namespace term {
 	 * @param yLineCount:	Number of vertical lines.
 	 * @returns				Sequence
 	 */
-	[[nodiscard]] inline static Sequence setScreenBufferSize(const size_t& columnCount, const size_t& lineCount)
+	template<std::integral T> requires var::Streamable<T, std::stringstream>
+	[[nodiscard]] inline static Sequence setScreenBufferSize(const T& columnCount, const T& lineCount)
 	{
 		return make_sequence(CSI, "8;", lineCount, ';', columnCount, 't');
+	}
+
+	/**
+	 * @brief				Generate an escape sequence that resizes the console screen buffer and/or window.
+	 * @param xColumnCount:	Number of horizontal columns.
+	 * @param yLineCount:	Number of vertical lines.
+	 * @returns				Sequence
+	 */
+	template<std::integral T> requires var::Streamable<T, std::stringstream>
+	[[nodiscard]] inline static Sequence setScreenBufferSize(const std::pair<T, T> colRowPair)
+	{
+		return make_sequence(CSI, "8;", colRowPair.second, ';', colRowPair.first, 't');
 	}
 
 	/**

@@ -29,7 +29,7 @@ set_property(TARGET filelib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET filelib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(filelib PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(filelib PUBLIC "/Zc:__cplusplus")
+	target_compile_options(filelib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 # Set library sources & include dirs

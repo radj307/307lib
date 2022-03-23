@@ -29,7 +29,7 @@ set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET shared PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(shared PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(shared PUBLIC "/Zc:__cplusplus")
+	target_compile_options(shared PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 include(PrependEach)

@@ -30,7 +30,7 @@ set_property(TARGET tokenlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET tokenlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(tokenlib PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(tokenlib PUBLIC "/Zc:__cplusplus")
+	target_compile_options(tokenlib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 # Include headers

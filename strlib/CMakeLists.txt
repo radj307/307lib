@@ -26,7 +26,7 @@ set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
 set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(strlib PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(strlib PUBLIC "/Zc:__cplusplus")
+	target_compile_options(strlib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 include(PrependEach)
