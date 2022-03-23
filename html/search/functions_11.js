@@ -28,7 +28,7 @@ var searchData=
   ['setpos_1493',['setPos',['../structterm_1_1_cursor.html#ada792de05a7506bc1553df54b38bb98f',1,'term::Cursor::setPos(const std::pair&lt; unsigned, unsigned &gt; &amp;pos)'],['../structterm_1_1_cursor.html#ae3923c94db04d6b4e1221544af452505',1,'term::Cursor::setPos(const unsigned &amp;x_column, const unsigned &amp;y_row)']]],
   ['setprefixenabled_1494',['setPrefixEnabled',['../classxlog_1_1x_log.html#a41948bd8833a7e02e42f4fe801a60a5c',1,'xlog::xLog']]],
   ['setrow_1495',['setRow',['../structmatrix_1_1basic__matrix.html#ad2a166894f0d9ea3c5eda55b18b6df82',1,'matrix::basic_matrix::setRow()'],['../structmatrix_1_1nmatrix.html#a9ef24a27210c63a40a8e645c43870da9',1,'matrix::nmatrix::setRow()']]],
-  ['setscreenbuffersize_1496',['setScreenBufferSize',['../namespaceterm.html#a57c280d0060ee1b851034f4cbfc72740',1,'term']]],
+  ['setscreenbuffersize_1496',['setScreenBufferSize',['../namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7',1,'term::setScreenBufferSize(const T &amp;columnCount, const T &amp;lineCount)'],['../namespaceterm.html#ae36ee6a2b9c19ca5965b906a1d7f55b8',1,'term::setScreenBufferSize(const std::pair&lt; T, T &gt; colRowPair)']]],
   ['setslashenabled_1497',['setSlashEnabled',['../classopt_1_1token_1_1_tokenizer.html#ab0d0ab037261599a8e6dbbe2c3ecbff9',1,'opt::token::Tokenizer']]],
   ['sgr_1498',['SGR',['../namespaceterm.html#aed6aef0c65f2e2500ebd365f1dacf545',1,'term']]],
   ['sgr_5fto_5fhex_1499',['sgr_to_hex',['../namespacecolor.html#ac7b6e5fac8b837a753114c11a37b77a6',1,'color']]],
