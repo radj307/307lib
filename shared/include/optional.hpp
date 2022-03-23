@@ -1,7 +1,8 @@
 /**
  * @file	optional.hpp
  * @author	radj307
- * @brief	Contains a stack-based alternative to the std::optional type.
+ * @brief	Contains useful derivatives of the std::optional object, such as casting_optional.
+ *\n		These are focused on adding functionality to the std::optional object, and can be used as a drop-in replacement.
  */
 #pragma once
 #include <sysarch.h>
@@ -10,104 +11,212 @@
 
 #include <optional>
 
- /**
-  * @namespace	optional
-  * @brief		Contains a stack-based alternative to the std::optional type, with some useful derived types.
-  */
-namespace optional {
+/**
+ * @namespace	opt
+ * @brief		Namespace containing functions & objects related to "optional" variables.
+ */
+namespace opt {
 	/**
-	 * @brief		Adds a third variable state to any type: "null". This is an alternative to the std::optional object that uses the stack.
-	 *\n			Note: This function does not allocate memory on the heap, and should only be used for small variable types as a wrapper.
-	 * @tparam T:	Value Type.
-	*/
+	 * @struct		casting_optional
+	 * @brief		Wrapper for std::optional that includes several helpful typecasting functions.
+	 *\n			This inherits & forwards most of its functionality from std::optional.
+	 *\n			See functions with the word "cast" in their name for a list of new functions.
+	 * @tparam T	Value Type.
+	 */
 	template<typename T>
-	struct optional {
-	protected:
-		T _value;
-		bool _has_value;
+	struct casting_optional : public std::optional<T> {
+		/// @brief	Contained value's type.
+		using type = T;
+		/// @brief	Regular optional type from which this wrapper is derived.
+		using base = std::optional<type>;
 
-	public:
-		template<typename... Args>
-		explicit optional(Args&&... init_args) : _value{ std::forward<Args>(init_args)... }, _has_value{ true } {}
+		/// @brief	Inherited Constructor(s).
+		using base::base;
 
 		/**
-		 * @brief			Value-move constructor.
-		 * @param value:	rvalue reference of a value to initialize the optional with.
+		 * @brief		Decay this optional wrapper into a regular optional type.
+		 * @returns		std::optional<T>&
 		 */
-		optional(T&& value) : _value{ std::move(value) }, _has_value{ true } {}
+		operator base& () { return *this; }
 		/**
-		 * @brief			Value-copy constructor.
-		 * @param value:	const lvalue reference of a value to initialize the optional with.
+		 * @brief		Decay this optional wrapper into a regular optional type.
+		 * @returns		std::optional<T>
 		 */
-		optional(const T& value) : _value{ value }, _has_value{ true } {}
+		operator base() const { return *this; }
 
-		optional(optional<T>&& o) : _value{ std::move(o._value) }, _has_value{ std::move(o._has_value) } {}
-		optional(const optional<T>& o) : _value{ o._value }, _has_value{ o._has_value } {}
-
-		optional(const std::nullopt_t& nullopt = std::nullopt) : _has_value{ false } {}
-
-		[[nodiscard]] bool has_value() const noexcept
+		/**
+		 * @brief								Retrieve the value, casted to another type using static_cast.
+		 * @tparam U							Another type that can be trivially converted to from type T.
+		 * @returns								U
+		 * @throws std::bad_optional_access		The underlying value isn't set, and cannot be retrieved.
+		 */
+		template<var::convertible_from<T> U>
+		[[nodiscard]] constexpr U cast_value() const noexcept(false)
 		{
-			return _has_value;
-		}
-		[[nodiscard]] T value() const noexcept(false)
-		{
-			if (_has_value)
-				return _value;
-			throw make_exception("optional::value():  Null Value Exception!");
-		}
-		[[nodiscard]] T value_or(auto&& alt) const noexcept
-		{
-			return _has_value
-				? _value
-				: std::forward<decltype(alt)>(alt);
+			if (!this->_Has_value)
+				throw std::bad_optional_access{};
+			return static_cast<U>(this->_Value);
 		}
 
-		optional<T>& operator=(T&& value) noexcept
+		/**
+		 * @brief								Retrieve the value, casted to another type using a provided conversion function.
+		 * @tparam U							Any other type.
+		 * @param converter						A converter function that accepts type T and returns type U.
+		 * @returns								U
+		 * @throws std::bad_optional_access		The underlying value isn't set, and cannot be retrieved.
+		 */
+		template<typename U>
+		[[nodiscard]] constexpr U cast_value(const std::function<U(T)>& converter) const noexcept(false)
 		{
-			_value = std::move(value);
-			_has_value = true;
-			return *this;
+			if (!this->_Has_value)
+				throw std::bad_optional_access{};
+			return converter(this->_Value);
 		}
-		optional<T>& operator=(const T& value) noexcept
+
+		/**
+		 * @brief					Retrieve the value, casted to another type using static_cast.
+		 * @tparam U				Another type that can be trivially converted to from type T.
+		 * @param default_value		An alternative value to return if has_value() is false.
+		 * @returns					U
+		 */
+		template<var::convertible_from<T> U>
+		[[nodiscard]] constexpr U cast_value_or(const U& default_value) const noexcept
 		{
-			_value = std::move(value);
-			_has_value = true;
-			return *this;
+			if (!this->_Has_value)
+				return default_value;
+			return static_cast<U>(this->_Value);
 		}
-		optional<T>& operator=(const std::nullopt_t& nullopt) noexcept
+
+		/**
+		 * @brief					Retrieve the value, casted to another type using a provided conversion function.
+		 * @tparam U				Any other type.
+		 * @param default_value		An alternative value to return if has_value() is false.
+		 * @param converter			A converter function that accepts type T and returns type U.
+		 * @returns					U
+		 */
+		template<typename U>
+		[[nodiscard]] constexpr U cast_value_or(const U& default_value, const std::function<U(T)>& converter) const noexcept
 		{
-			_has_value = false;
-			return *this;
+			if (!this->_Has_value)
+				return default_value;
+			return converter(this->_Value);
+		}
+
+		/**
+		 * @brief				Retrieve the value, casted to another type using static_cast.
+		 * @tparam U			Another type that can be trivially converted to from type T
+		 * @param alternate		An alternative value to return if has_value() is false.
+		 * @returns				U
+		 */
+		template<var::convertible_from<T> U>
+		[[nodiscard]] constexpr U cast_value_or(const T& alternate) const noexcept
+		{
+			if (!this->_Has_value)
+				return static_cast<U>(alternate);
+			return static_cast<U>(this->_Value);
+		}
+
+		/**
+		 * @brief				Retrieve the value, casted to another type using a provided conversion function.
+		 * @tparam U			Any other type.
+		 * @param alternate		An alternative value to pass to the converter if has_value() is false.
+		 * @param converter		A converter function that accepts type T and returns type U.
+		 * @returns				U
+		 */
+		template<typename U>
+		[[nodiscard]] constexpr U cast_value_or(const T& alternate, const std::function<U(T)>& converter) const noexcept
+		{
+			if (!this->_Has_value)
+				return converter(alternate);
+			return converter(this->_Value);
+		}
+
+		/**
+		 * @brief		Copy this optional object and cast its value to another type.
+		 * @tparam U	Another type that can be converted to from type T using static_cast.
+		 * @returns		casting_optional<U>
+		 */
+		template<var::convertible_from<T> U>
+		[[nodiscard]] constexpr casting_optional<U> cast() const noexcept
+		{
+			if (this->_Has_value)
+				return casting_optional<U>{ static_cast<U>(this->_Value) };
+			return casting_optional<U>{ std::nullopt };
+		}
+
+		/**
+		 * @brief				Copy this optional object and cast its value to another type.
+		 * @tparam U			Any other type.
+		 * @param converter		A converter function that can convert from type T to type U.
+		 * @returns				casting_optional<U>
+		 */
+		template<typename U>
+		[[nodiscard]] constexpr casting_optional<U> cast(const std::function<U(T)>& converter) const noexcept
+		{
+			if (this->_Has_value)
+				return casting_optional<U>{ converter(this->_Value) };
+			return casting_optional<U>{ std::nullopt };
 		}
 	};
 
-	template<typename T>
-	struct optional_passthru : optional<T> {
-		T default_value;
+	/**
+	 * @brief		Alias for the casting_optional object.
+	 * @tparam T	Value Type
+	 */
+	template<typename T> using optional = casting_optional<T>;
 
-		void setDefaultValue(T&& value)
+	/**
+	 * @struct			unsafe_optional
+	 * @brief			An "unsafe" wrapper object that allows implicit "casting"/retrieval of the underlying value.
+	 *\n				If the value isn't set, an exception will be thrown during an implicit casting operation, making debugging very difficult.
+	 *\n				For this reason, it is NOT recommended to use the unsafe_optional object in production code.
+	 * @tparam T		Value Type
+	 * @tparam Base		Base optional type. This defaults to casting_optional, but any type derived from std::optional is accepted.
+	 */
+	template<typename T, std::derived_from<std::optional<T>> Base = casting_optional<T>>
+	struct unsafe_optional : public Base {
+		/// @brief	Contained value's type.
+		using type = T;
+		/// @brief	Regular optional type from which this wrapper is derived.
+		using base = std::optional<type>;
+
+		/// @brief	Inherited Constructor(s).
+		using base::base;
+
+		/**
+		 * @brief		Decay this optional wrapper into a regular optional type.
+		 * @returns		std::optional<T>&
+		 */
+		operator base& () { return *this; }
+		/**
+		 * @brief		Decay this optional wrapper into a regular optional type.
+		 * @returns		std::optional<T>
+		 */
+		operator base() const { return *this; }
+
+		/**
+		 * @brief	Casting operator that retrieves the underlying value, if it is set.
+		 *\n		If there is no value set, an exception will be thrown during the casting operation!
+		 * @returns	T&
+		 * @throws	std::bad_optional_access
+		 */
+		operator T& () noexcept(false)
 		{
-			default_value = std::forward<T>(value);
+			if (!this->_Has_value)
+				throw std::bad_optional_access{};
+			return this->_Value;
 		}
-		T getDefaultValue() const
+		/**
+		 * @brief	Casting operator that retrieves the underlying value, if it is set.
+		 *\n		If there is no value set, an exception will be thrown during the casting operation!
+		 * @returns	T
+		 * @throws	std::bad_optional_access
+		 */
+		operator T() const noexcept(false)
 		{
-			return default_value;
-		}
-
-		optional_passthru(T&& value, T&& defaultValue) : optional<T>(std::forward<T>(value)), default_value{ std::forward<T>(defaultValue) } {}
-		optional_passthru(const T& value, const T& defaultValue) : optional<T>(value), default_value{ defaultValue } {}
-
-		optional_passthru(const std::nullopt_t& nullopt, T&& defaultValue) : optional<T>(nullopt), default_value{ std::forward<T>(defaultValue) } {}
-		optional_passthru(const std::nullopt_t& nullopt, const T& defaultValue) : optional<T>(nullopt), default_value{ defaultValue } {}
-
-		optional_passthru(const std::nullopt_t& nullopt = std::nullopt) : optional<T>(nullopt) {}
-
-		operator T() const
-		{
-			if (_has_value)
-				return _value;
-			return default_value;
+			if (!this->_Has_value)
+				throw std::bad_optional_access{};
+			return this->_Value;
 		}
 	};
 }
