@@ -97,12 +97,25 @@ namespace ex {
 	 * @param ...message	The message shown when calling the what() function.
 	 * @returns				ReturnT
 	 */
-	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts>
+	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts> requires std::constructible_from<ReturnT, std::string>
 	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
 	{
 		std::stringstream ss;
 		(ss << ... << std::forward<Ts>(message));
 		return ReturnT{ ss.str() };
+	}
+
+	/**
+	 * @brief				Create a custom exception type with the given arguments as a message.
+	 * @tparam ReturnT		The type of exception to return.
+	 * @tparam ...Ts		Variadic Templated Types.
+	 * @param ...message	The message shown when calling the what() function.
+	 * @returns				ReturnT
+	 */
+	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...> && std::constructible_from<ReturnT, Ts...>
+	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
+	{
+		return ReturnT{ std::forward<Ts>(message)... };
 	}
 
 	/**
@@ -119,9 +132,9 @@ namespace ex {
 
 	/**
 	 * @overload
-	 * @brief			Create an exception with a given message.
+	 * @brief			Create an exception with a given message, using wide-characters.
 	 *\n				This function only accepts types using wchar_t instead of char, however all characters are
-	 *\n				converted to 1 byte chars before returning, as exception messages cannot contain wide chars.
+	 *\n				 converted to narrow chars before returning, as exception messages cannot contain wide chars.
 	 * @tparam ...Ts	Any number of types with an overloaded operator<< for std::wostream.
 	 * @param message	Any number of printable variables/objects.
 	 * @returns			except
@@ -140,17 +153,10 @@ namespace ex {
 			str += static_cast<char>(wch);
 		return { str.c_str() };
 	}
-
-	/**
-	 * @brief			Construct a custom exception type without a message.
-	 *\n				The exception type must be trivially constructible with no arguments.
-	 * @returns			except
-	 */
-	template<std::derived_from<except> ReturnT> requires std::constructible_from<ReturnT>
-	[[nodiscard]] WINCONSTEXPR except make_exception() { return make_custom_exception<ReturnT>(); }
 }
 
 #ifndef MAKE_EXCEPTION_HPP_NOGLOBAL
+using ex::make_custom_exception;
 using ex::make_exception;
 #endif
 
