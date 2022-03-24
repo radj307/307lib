@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"fileutil_8hpp.html#a27bcc84a662f2dbc4672a525bd1cbca2":[9,0,2,0,4,5],
 "fileutil_8hpp.html#a4697327cfb74a10cca44af22563c58d3":[9,0,2,0,4,1],
 "fileutil_8hpp.html#a545ac57d10eb404b9b6d0f82b45cce9c":[9,0,2,0,4,3],
 "fileutil_8hpp.html#a5bd9e947a1aa5eb0ff2cb45685c7eb32":[9,0,2,0,4,4],
@@ -121,8 +122,8 @@ var NAVTREEINDEX3 =
 "namespacecolor.html":[8,0,0],
 "namespaceenv.html":[8,0,1],
 "namespaceenv.html":[7,0,2],
-"namespaceex.html":[7,0,3],
 "namespaceex.html":[8,0,2],
+"namespaceex.html":[7,0,3],
 "namespacefacet.html":[7,0,4],
 "namespacefile.html":[8,0,3],
 "namespacefile.html":[7,0,5],
@@ -189,8 +190,8 @@ var NAVTREEINDEX3 =
 "namespacemembers_w.html":[7,1,0,22],
 "namespacemembers_y.html":[7,1,0,23],
 "namespaceop.html":[7,0,13],
-"namespaceopt.html":[7,0,14],
 "namespaceopt.html":[8,0,5],
+"namespaceopt.html":[7,0,14],
 "namespaceopt_1_1token.html":[8,0,5,0],
 "namespaceopt_1_1token.html":[7,0,14,0],
 "namespaceoptional.html":[7,0,15],
@@ -202,8 +203,8 @@ var NAVTREEINDEX3 =
 "namespaceseq.html":[7,0,19],
 "namespacestr.html":[8,0,8],
 "namespacestr.html":[7,0,20],
-"namespacestr_1_1facet.html":[7,0,20,0],
 "namespacestr_1_1facet.html":[8,0,8,0],
+"namespacestr_1_1facet.html":[7,0,20,0],
 "namespacestr_1_1legacy.html":[7,0,20,1],
 "namespacestr_1_1op.html":[7,0,20,2],
 "namespacestr_1_1optional.html":[7,0,20,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "optional_8hpp.html":[9,0,4,1,6],
 "optional_8hpp.html#af479aa967940ddaafb0bffd528f37bb3":[9,0,4,1,6,2],
 "optional_8hpp_source.html":[9,0,4,1,6],
-"pages.html":[],
-"palette_8cpp.html":[9,0,6,2,1]
+"pages.html":[]
 };

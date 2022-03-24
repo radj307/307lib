@@ -1,7 +1,8 @@
 var classex_1_1except =
 [
     [ "except", "classex_1_1except.html#a581b98d569a67ae32138d05f361b8169", null ],
-    [ "except", "classex_1_1except.html#a741b4aea7ac6368ff08f12253bb394bb", null ],
+    [ "except", "classex_1_1except.html#acf3274c84645a298650a0c13f051063e", null ],
+    [ "except", "classex_1_1except.html#ad2af334a85f3a209e0e288efef403643", null ],
     [ "except", "classex_1_1except.html#a66394baea459179bcf9f4a2fd494dc3c", null ],
     [ "format", "classex_1_1except.html#af89540e6163c1969d96dcc15728dd738", null ],
     [ "get_message", "classex_1_1except.html#adf3ea15dc5cf5d02bb09cdbf0059230b", null ],
