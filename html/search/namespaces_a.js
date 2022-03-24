@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['query_1052',['Query',['../namespace_query.html',1,'']]]
+  ['query_1058',['Query',['../namespace_query.html',1,'']]]
 ];

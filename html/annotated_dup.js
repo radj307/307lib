@@ -13,5 +13,7 @@ var annotated_dup =
     [ "token", "namespacetoken.html", "namespacetoken" ],
     [ "var", "namespacevar.html", "namespacevar" ],
     [ "xlog", "namespacexlog.html", "namespacexlog" ],
-    [ "indentor", "structindentor.html", "structindentor" ]
+    [ "indentor", "structindentor.html", "structindentor" ],
+    [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
+    [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ]
 ];

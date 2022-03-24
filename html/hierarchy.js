@@ -21,7 +21,8 @@ var hierarchy =
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
     [ "exception", null, [
       [ "ex::except", "classex_1_1except.html", [
-        [ "ex::permexcept", "classex_1_1permexcept.html", null ]
+        [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
+        [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
     ] ],
     [ "color::format::FlagBase< T >", "classcolor_1_1format_1_1_flag_base.html", null ],
