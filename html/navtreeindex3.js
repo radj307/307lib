@@ -91,10 +91,11 @@ var NAVTREEINDEX3 =
 "make__exception_8cpp.html":[9,0,4,2,1],
 "make__exception_8cpp_source.html":[9,0,4,2,1],
 "make__exception_8hpp.html":[9,0,4,1,4],
-"make__exception_8hpp.html#a7ec375bf819f888d38463a5498103f27":[9,0,4,1,4,4],
+"make__exception_8hpp.html#a1e4f831cd8340b9b40499542c762b18b":[9,0,4,1,4,5],
+"make__exception_8hpp.html#a79f6b6ae99ab47418dbb1805add3c489":[9,0,4,1,4,4],
+"make__exception_8hpp.html#aa8c8b2efaa10efa8331d5ee2b2d8197d":[9,0,4,1,4,3],
 "make__exception_8hpp.html#aa93973e131b366d8ba064af6088eff8f":[9,0,4,1,4,2],
 "make__exception_8hpp.html#aad95c316cd717051005c0a304534f81d":[9,0,4,1,4,1],
-"make__exception_8hpp.html#ab974c2f3149e8410f4ca38aad9803267":[9,0,4,1,4,3],
 "make__exception_8hpp_source.html":[9,0,4,1,4],
 "make__exception__example_8cpp.html":[9,0,4,0,0],
 "make__exception__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1":[9,0,4,0,0,2],
@@ -120,8 +121,8 @@ var NAVTREEINDEX3 =
 "namespacecolor.html":[8,0,0],
 "namespaceenv.html":[8,0,1],
 "namespaceenv.html":[7,0,2],
-"namespaceex.html":[8,0,2],
 "namespaceex.html":[7,0,3],
+"namespaceex.html":[8,0,2],
 "namespacefacet.html":[7,0,4],
 "namespacefile.html":[8,0,3],
 "namespacefile.html":[7,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "optional_8hpp.html#af479aa967940ddaafb0bffd528f37bb3":[9,0,4,1,6,2],
 "optional_8hpp_source.html":[9,0,4,1,6],
 "pages.html":[],
-"palette_8cpp.html":[9,0,6,2,1],
-"palette_8cpp_source.html":[9,0,6,2,1]
+"palette_8cpp.html":[9,0,6,2,1]
 };

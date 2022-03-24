@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"palette_8cpp_source.html":[9,0,6,2,1],
 "palette_8hpp.html":[9,0,6,1,7],
 "palette_8hpp_source.html":[9,0,6,1,7],
 "palette__example_8cpp.html":[9,0,6,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structmatrix_1_1basic__matrix.html":[8,0,4,0],
 "structmatrix_1_1basic__matrix.html#a016397c1b823e59ba56ad188bf947acc":[8,0,4,0,15],
 "structmatrix_1_1basic__matrix.html#a059f35fc8712c35a21bf674b282480f4":[8,0,4,0,24],
-"structmatrix_1_1basic__matrix.html#a10dacb107f319a1ce9ab2d2db82061b5":[8,0,4,0,0],
-"structmatrix_1_1basic__matrix.html#a11203b512e732b1fd1de995c03977d95":[8,0,4,0,8]
+"structmatrix_1_1basic__matrix.html#a10dacb107f319a1ce9ab2d2db82061b5":[8,0,4,0,0]
 };

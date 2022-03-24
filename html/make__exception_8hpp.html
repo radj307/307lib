@@ -103,14 +103,12 @@ $(document).ready(function(){initNavTree('make__exception_8hpp.html',''); initRe
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for make_exception.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="make__exception_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -140,20 +138,25 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa93973e131b366d8ba064af6088eff8f"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:aa93973e131b366d8ba064af6088eff8f"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:aa93973e131b366d8ba064af6088eff8f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#aa93973e131b366d8ba064af6088eff8f">ex::make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:aa93973e131b366d8ba064af6088eff8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#aa93973e131b366d8ba064af6088eff8f">More...</a><br /></td></tr>
 <tr class="separator:aa93973e131b366d8ba064af6088eff8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab974c2f3149e8410f4ca38aad9803267"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ab974c2f3149e8410f4ca38aad9803267"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="el" href="classex_1_1except.html">ex::except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#ab974c2f3149e8410f4ca38aad9803267">ex::make_exception</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:ab974c2f3149e8410f4ca38aad9803267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="namespaceex.html#ab974c2f3149e8410f4ca38aad9803267">More...</a><br /></td></tr>
-<tr class="separator:ab974c2f3149e8410f4ca38aad9803267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ec375bf819f888d38463a5498103f27"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; std::exception &gt; ReturnT, var::Streamable&lt; std::wstringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a7ec375bf819f888d38463a5498103f27"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <a class="el" href="classex_1_1except.html">ex::except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a7ec375bf819f888d38463a5498103f27">ex::make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:a7ec375bf819f888d38463a5498103f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message. <br  />
+<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> except&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">ex::make_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memdesc:a79f6b6ae99ab47418dbb1805add3c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">More...</a><br /></td></tr>
+<tr class="separator:a79f6b6ae99ab47418dbb1805add3c489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::wostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> except&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">ex::make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memdesc:a1e4f831cd8340b9b40499542c762b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message. <br  />
  This function only accepts types using wchar_t instead of char, however all characters are <br  />
- converted to 1 byte chars before returning, as exception messages cannot contain wide chars.  <a href="namespaceex.html#a7ec375bf819f888d38463a5498103f27">More...</a><br /></td></tr>
-<tr class="separator:a7ec375bf819f888d38463a5498103f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ converted to 1 byte chars before returning, as exception messages cannot contain wide chars.  <a href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">More...</a><br /></td></tr>
+<tr class="separator:a1e4f831cd8340b9b40499542c762b18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c8b2efaa10efa8331d5ee2b2d8197d"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT&gt; </td></tr>
+<tr class="memitem:aa8c8b2efaa10efa8331d5ee2b2d8197d"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; ReturnT &gt; <a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> except&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#aa8c8b2efaa10efa8331d5ee2b2d8197d">ex::make_exception</a> ()</td></tr>
+<tr class="memdesc:aa8c8b2efaa10efa8331d5ee2b2d8197d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a custom exception type without a message. <br  />
+ The exception type must be trivially constructible with no arguments.  <a href="namespaceex.html#aa8c8b2efaa10efa8331d5ee2b2d8197d">More...</a><br /></td></tr>
+<tr class="separator:aa8c8b2efaa10efa8331d5ee2b2d8197d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aad95c316cd717051005c0a304534f81d"></a>
@@ -172,7 +175,7 @@ Functions</h2></td></tr>
  including derivatives of the except object. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>This section is incomplete. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00155">155</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00163">163</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 
 </div>
 </div>
