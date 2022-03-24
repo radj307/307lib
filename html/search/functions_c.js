@@ -2,8 +2,8 @@ var searchData=
 [
   ['main_1368',['main',['../make__exception__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1',1,'main(const int argc, char **argv):&#160;make_exception_example.cpp'],['../palette__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1',1,'main(const int argc, char **argv):&#160;palette_example.cpp']]],
   ['make_5farray_1369',['make_array',['../namespaceprocess.html#a0977f36ec347108a1322b04f6adc4074',1,'process']]],
-  ['make_5fcustom_5fexception_1370',['make_custom_exception',['../namespaceex.html#aa93973e131b366d8ba064af6088eff8f',1,'ex']]],
-  ['make_5fexception_1371',['make_exception',['../namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489',1,'ex::make_exception(Ts &amp;&amp;... message)'],['../namespaceex.html#aa8c8b2efaa10efa8331d5ee2b2d8197d',1,'ex::make_exception()']]],
+  ['make_5fcustom_5fexception_1370',['make_custom_exception',['../namespaceex.html#a56b249bc94ccdfbc96b5b12de3f27db2',1,'ex::make_custom_exception(Ts &amp;&amp;... message)'],['../namespaceex.html#a5cccd7262d57daafb09710d952aac1ea',1,'ex::make_custom_exception(Ts &amp;&amp;... message)']]],
+  ['make_5fexception_1371',['make_exception',['../namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489',1,'ex']]],
   ['make_5fexeption_1372',['make_exeption',['../namespaceex.html#a1e4f831cd8340b9b40499542c762b18b',1,'ex']]],
   ['make_5fsequence_1373',['make_sequence',['../namespace_a_n_s_i.html#a89f2c7ec9c0e17e7bcbbd0141a291c35',1,'ANSI']]],
   ['makecolorsequence_1374',['makeColorSequence',['../structterm_1_1setcolor__seq.html#a5e20d5bcd65fbec82c6171b0f4a3f50b',1,'term::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;SGR) const'],['../structterm_1_1setcolor__seq.html#abc44c7ddde149b91a46fa98306bad530',1,'term::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const'],['../structterm_1_1setcolor__seq.html#ad35aa01bdeda027c1ff75205331be5bd',1,'term::setcolor_seq::makeColorSequence(const Layer &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const']]],
