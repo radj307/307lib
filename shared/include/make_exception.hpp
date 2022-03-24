@@ -56,10 +56,12 @@ namespace ex {
 		 * @brief			Constructor with a message.
 		 * @param message	A string to print when calling the what() method.
 		 */
-		except(auto&& message)
-		{
-			this->message.get()->append(std::forward<decltype(message)>(message));
-		}
+		except(std::string&& message) : message{ std::move(std::make_unique<std::string>(std::move(message))) } {}
+		/**
+		 * @brief			Constructor with a message.
+		 * @param message	A string to print when calling the what() method.
+		 */
+		except(const std::string& message) : message{ std::move(std::make_unique<std::string>(message)) } {}
 		/**
 		 * @brief			Move Constructor
 		 * @param o			Another except object to move.
@@ -69,8 +71,8 @@ namespace ex {
 		/**
 		 * @brief		Retrieve the message associated with this exception.
 		 * @returns		const char*
-		 * 
-		 * @deprecated	Implementing an override for this function is deprecated! 
+		 *
+		 * @deprecated	Implementing an override for this function is deprecated! Use format() in derived objects instead.
 		 */
 		[[nodiscard]] virtual const char* what() const noexcept override
 		{
