@@ -95,7 +95,7 @@ namespace ex {
 	 * @param ...message	The message shown when calling the what() function.
 	 * @returns				ReturnT
 	 */
-	template<std::derived_from<except> ReturnT, var::Streamable<std::stringstream>... Ts>
+	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts>
 	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
 	{
 		std::stringstream ss;
@@ -109,8 +109,8 @@ namespace ex {
 	 * @param message	Any number of printable variables/objects.
 	 * @returns			except
 	 */
-	template<var::Streamable<std::stringstream>... Ts>
-	[[nodiscard]] WINCONSTEXPR ex::except make_exception(Ts&&... message)
+	template<var::Streamable<std::ostream>... Ts>
+	[[nodiscard]] WINCONSTEXPR except make_exception(Ts&&... message)
 	{
 		return ex::make_custom_exception<ex::except>(std::forward<Ts>(message)...);
 	}
@@ -124,8 +124,8 @@ namespace ex {
 	 * @param message	Any number of printable variables/objects.
 	 * @returns			except
 	 */
-	template<std::derived_from<std::exception> ReturnT, var::Streamable<std::wstringstream>... Ts>
-	[[nodiscard]] WINCONSTEXPR ex::except make_exeption(Ts&&... message)
+	template<std::derived_from<except> ReturnT, var::Streamable<std::wostream>... Ts>
+	[[nodiscard]] WINCONSTEXPR except make_exeption(Ts&&... message)
 	{
 		std::wstring wstr;
 		{
@@ -138,6 +138,14 @@ namespace ex {
 			str += static_cast<char>(wch);
 		return { str.c_str() };
 	}
+
+	/**
+	 * @brief			Construct a custom exception type without a message.
+	 *\n				The exception type must be trivially constructible with no arguments.
+	 * @returns			except
+	 */
+	template<std::derived_from<except> ReturnT> requires std::constructible_from<ReturnT>
+	[[nodiscard]] WINCONSTEXPR except make_exception() { return make_custom_exception<ReturnT>(); }
 }
 
 #ifndef MAKE_EXCEPTION_HPP_NOGLOBAL
