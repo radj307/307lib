@@ -210,10 +210,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">startsWith</a> (const std::string &amp;str, Ts &amp;&amp;... prefix)</td></tr>
 <tr class="memdesc:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with the given characters.  <a href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">More...</a><br /></td></tr>
 <tr class="separator:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">startsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... prefixes)</td></tr>
+<tr class="memdesc:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with any of the given character sequences.  <a href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">More...</a><br /></td></tr>
+<tr class="separator:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">endsWith</a> (const std::string &amp;str, Ts &amp;&amp;... suffix)</td></tr>
 <tr class="memdesc:a25dcad1131572f82cbb30a06c81006b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with the given characters.  <a href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">More...</a><br /></td></tr>
 <tr class="separator:a25dcad1131572f82cbb30a06c81006b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">endsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... suffixes)</td></tr>
+<tr class="memdesc:afe1efa734a2a1e8106138ce3b5995874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with any of the given character sequences.  <a href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">More...</a><br /></td></tr>
+<tr class="separator:afe1efa734a2a1e8106138ce3b5995874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplParams" colspan="2">template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </td></tr>
 <tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">equalsAny</a> (const std::string &amp;str, Ts &amp;&amp;... <a class="el" href="namespacestr.html#ab58e4fd600a73d4ffbdea3d65c5bdabd">compare</a>)</td></tr>
 <tr class="memdesc:ac0941f8566d99a99085690ce06c8eec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">More...</a><br /></td></tr>
@@ -1169,7 +1177,57 @@ template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00434">434</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00446">446</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afe1efa734a2a1e8106138ce3b5995874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1efa734a2a1e8106138ce3b5995874">&#9670;&nbsp;</a></span>endsWithAny()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool str::endsWithAny </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>suffixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the given string ends with any of the given character sequences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input String. </td></tr>
+    <tr><td class="paramname">...suffixes</td><td>Any number of independent suffixes to check. Each variable is checked independently of the others. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00474">474</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1277,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::stri
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00462">462</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00486">486</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -1269,7 +1327,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00477">477</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00501">501</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2904,7 +2962,7 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00496">496</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00520">520</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3865,6 +3923,56 @@ template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00405">405</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6ccb7cb4dfd45bb24e56b297a5cbe276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ccb7cb4dfd45bb24e56b297a5cbe276">&#9670;&nbsp;</a></span>startsWithAny()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> bool str::startsWithAny </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>prefixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the given string starts with any of the given character sequences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input String. </td></tr>
+    <tr><td class="paramname">...suffixes</td><td>Any number of independent suffixes to check. Each variable is checked independently of the others. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00433">433</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>

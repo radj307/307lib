@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['onlyerrors_1733',['OnlyErrors',['../structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f',1,'xlog::level']]],
-  ['onlyerrorsandwarnings_1734',['OnlyErrorsAndWarnings',['../structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0',1,'xlog::level']]],
-  ['onlyerrorsandwarningsdebug_1735',['OnlyErrorsAndWarningsDebug',['../structxlog_1_1level.html#a889d6f7a00ad4ba7db5ccf45f28dbd7c',1,'xlog::level']]],
-  ['onlyerrorsdebug_1736',['OnlyErrorsDebug',['../structxlog_1_1level.html#ab00ee258c013709823fa5f1f8ec6d5fb',1,'xlog::level']]],
-  ['option_1737',['OPTION',['../structopt_1_1_index.html#a3d78e6266e6d2c33bf07325037110491',1,'opt::Index']]],
-  ['orange_1738',['orange',['../namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d',1,'color']]],
-  ['osc_1739',['OSC',['../namespace_a_n_s_i.html#a12cdc2e8874d072dd86a67a216cf2db3',1,'ANSI']]]
+  ['onlyerrors_1737',['OnlyErrors',['../structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f',1,'xlog::level']]],
+  ['onlyerrorsandwarnings_1738',['OnlyErrorsAndWarnings',['../structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0',1,'xlog::level']]],
+  ['onlyerrorsandwarningsdebug_1739',['OnlyErrorsAndWarningsDebug',['../structxlog_1_1level.html#a889d6f7a00ad4ba7db5ccf45f28dbd7c',1,'xlog::level']]],
+  ['onlyerrorsdebug_1740',['OnlyErrorsDebug',['../structxlog_1_1level.html#ab00ee258c013709823fa5f1f8ec6d5fb',1,'xlog::level']]],
+  ['option_1741',['OPTION',['../structopt_1_1_index.html#a3d78e6266e6d2c33bf07325037110491',1,'opt::Index']]],
+  ['orange_1742',['orange',['../namespacecolor.html#a9095944dc7740f26c9ca43cdb125397d',1,'color']]],
+  ['osc_1743',['OSC',['../namespace_a_n_s_i.html#a12cdc2e8874d072dd86a67a216cf2db3',1,'ANSI']]]
 ];

@@ -92,9 +92,9 @@ var NAVTREEINDEX =
 "classtoken_1_1base_1_1_tokenizer_base.html#a4f3a9e89946bba39ffe8828ab3f844c9",
 "fileutil_8hpp.html#a27bcc84a662f2dbc4672a525bd1cbca2",
 "palette_8cpp.html",
-"structmatrix_1_1basic__matrix.html#a10dacb107f319a1ce9ab2d2db82061b5",
-"structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50",
-"term_8hpp.html#aa4d9728514d82414bc1c11f8a05cf49a"
+"structmatrix_1_1basic__matrix.html#a016397c1b823e59ba56ad188bf947acc",
+"structrng_1_1x_rand.html#a562d90df590cb6025ec25b0cb5317605",
+"term_8hpp.html#a9d8a0312c8f436c9b23fee1ac63edcfb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
