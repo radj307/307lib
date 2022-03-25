@@ -138,18 +138,30 @@ namespace var {
 	 */
 	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
 	/**
+	 * @concept		enumerator
+	 * @brief		Checks if the given type is an enum.
+	 * @tparam T	Input Type
+	 */
+	template<typename T> concept enumerator = std::is_enum_v<T>;
+	/**
 	 * @concept		arithmetic
 	 * @brief		Checks if the given type can be used in arithmetic operations.
 	 * @tparam T	Input Type
 	 */
 	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
 	/**
+	 * 
 	 * @concept		numeric
 	 * @brief		Checks if the given type can be used in arithmetic operations.
-	 *\n			This is an alias for the arithmetic concept.
 	 * @tparam T	Input Type
 	 */
 	template<typename T> concept numeric = arithmetic<T>;
+	/**
+	 * @concept		fundamental
+	 * @brief		Checks if the given type is a fundamental type.
+	 * @tparam T	Input Type
+	 */
+	template<typename T> concept fundamental = std::is_fundamental_v<T>;
 	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
 #	pragma endregion Type_Concepts
 #	pragma region Variadic_Count_Concepts
