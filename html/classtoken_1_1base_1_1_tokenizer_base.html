@@ -111,13 +111,14 @@ Collaboration diagram for token::base::TokenizerBase&lt; LexemeT, Dictionary, To
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3fff93940be5df3ad7a74503159b302c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> = Token</td></tr>
+<tr class="memdesc:a3fff93940be5df3ad7a74503159b302c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is set to the type specified by the Token template parameter.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">More...</a><br /></td></tr>
 <tr class="separator:a3fff93940be5df3ad7a74503159b302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1f4b60d297085a0f355f03a926a8a37e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1f4b60d297085a0f355f03a926a8a37e">TokenizerBase</a> (std::stringstream &amp;&amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac3fb48c8f4680c8ce7d9bfce87199f0f">ss</a>, LexemeT whitespace)</td></tr>
-<tr class="memdesc:a1f4b60d297085a0f355f03a926a8a37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a1f4b60d297085a0f355f03a926a8a37e">More...</a><br /></td></tr>
-<tr class="separator:a1f4b60d297085a0f355f03a926a8a37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e51cd75648fb8f567c21ae1d491350b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a9e51cd75648fb8f567c21ae1d491350b">TokenizerBase</a> (std::stringstream &amp;&amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac3fb48c8f4680c8ce7d9bfce87199f0f">ss</a>, LexemeT const &amp;whitespace, LexemeT const &amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ab80c71fb1db0f177523940fb29dac34a">eof</a>)</td></tr>
+<tr class="memdesc:a9e51cd75648fb8f567c21ae1d491350b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a9e51cd75648fb8f567c21ae1d491350b">More...</a><br /></td></tr>
+<tr class="separator:a9e51cd75648fb8f567c21ae1d491350b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b19d51ed6cc6480b62469c1ac11ff5f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a5b19d51ed6cc6480b62469c1ac11ff5f">tokenize</a> (const std::optional&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt; &amp;eof_tkn=std::nullopt, const size_t &amp;reserve_sz=64ull)</td></tr>
 <tr class="memdesc:a5b19d51ed6cc6480b62469c1ac11ff5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize the whole local stream and return it as a vector.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a5b19d51ed6cc6480b62469c1ac11ff5f">More...</a><br /></td></tr>
 <tr class="separator:a5b19d51ed6cc6480b62469c1ac11ff5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,7 +129,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a31911e275af4e0a6244c12b5e4b45bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a31911e275af4e0a6244c12b5e4b45bcb">More...</a><br /></td></tr>
 <tr class="separator:a31911e275af4e0a6244c12b5e4b45bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64a991aa63481c801b5593c76c86c833"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833">operator const std::string</a> () const</td></tr>
-<tr class="memdesc:a64a991aa63481c801b5593c76c86c833"><td class="mdescLeft">&#160;</td><td class="mdescRight">String operator, returns the result local stream's str() function.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833">More...</a><br /></td></tr>
+<tr class="memdesc:a64a991aa63481c801b5593c76c86c833"><td class="mdescLeft">&#160;</td><td class="mdescRight">String operator, returns the result local stream's <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str()</a> function.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833">More...</a><br /></td></tr>
 <tr class="separator:a64a991aa63481c801b5593c76c86c833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25aec6e6117c8750979e801c5c958dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ab25aec6e6117c8750979e801c5c958dc">good</a> () const</td></tr>
 <tr class="memdesc:ab25aec6e6117c8750979e801c5c958dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current goodbit state of the local stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ab25aec6e6117c8750979e801c5c958dc">More...</a><br /></td></tr>
@@ -140,32 +141,40 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a413334a3f245ab57af3e03d8ec1acdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current failbit state of the local stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a413334a3f245ab57af3e03d8ec1acdf5">More...</a><br /></td></tr>
 <tr class="separator:a413334a3f245ab57af3e03d8ec1acdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab80c71fb1db0f177523940fb29dac34a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ab80c71fb1db0f177523940fb29dac34a">eof</a> () const</td></tr>
-<tr class="memdesc:ab80c71fb1db0f177523940fb29dac34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current eofbit state of the local stream. Use the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a069bdb8ef1619aaad250d82bd5d4983c" title="Check if there are more valid characters ahead of the current stream getter position....">hasMore()</a> function to check whether the stream is at the end or not.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ab80c71fb1db0f177523940fb29dac34a">More...</a><br /></td></tr>
+<tr class="memdesc:ab80c71fb1db0f177523940fb29dac34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current eofbit state of the local stream. Use the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e" title="Check if there are more valid characters ahead of the current stream getter position....">hasMore()</a> function to check whether the stream is at the end or not.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ab80c71fb1db0f177523940fb29dac34a">More...</a><br /></td></tr>
 <tr class="separator:ab80c71fb1db0f177523940fb29dac34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a069bdb8ef1619aaad250d82bd5d4983c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a069bdb8ef1619aaad250d82bd5d4983c">hasMore</a> () const</td></tr>
-<tr class="memdesc:a069bdb8ef1619aaad250d82bd5d4983c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a069bdb8ef1619aaad250d82bd5d4983c">More...</a><br /></td></tr>
-<tr class="separator:a069bdb8ef1619aaad250d82bd5d4983c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee29297b85fc176bdf3643ab4874e9c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aeee29297b85fc176bdf3643ab4874e9c">getch</a> (const bool allow_whitespace=false)</td></tr>
-<tr class="memdesc:aeee29297b85fc176bdf3643ab4874e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next character from the stream, and move the getter position forward by one. <br  />
- This function sets lastPos to the current position before incrementing the getter.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aeee29297b85fc176bdf3643ab4874e9c">More...</a><br /></td></tr>
-<tr class="separator:aeee29297b85fc176bdf3643ab4874e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2001121f2b9ecd74be4183d2c152cd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a9f2001121f2b9ecd74be4183d2c152cd">peek</a> ()</td></tr>
-<tr class="memdesc:a9f2001121f2b9ecd74be4183d2c152cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a9f2001121f2b9ecd74be4183d2c152cd">More...</a><br /></td></tr>
-<tr class="separator:a9f2001121f2b9ecd74be4183d2c152cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a751424c86165d580ee97be9726c03946"><td class="memItemLeft" align="right" valign="top">LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a751424c86165d580ee97be9726c03946">peeklex</a> () noexcept(false)</td></tr>
-<tr class="memdesc:a751424c86165d580ee97be9726c03946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a751424c86165d580ee97be9726c03946">More...</a><br /></td></tr>
-<tr class="separator:a751424c86165d580ee97be9726c03946"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65db1761ad2d98305575619d992b54a5"><td class="memItemLeft" align="right" valign="top">LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a65db1761ad2d98305575619d992b54a5">peeklex</a> (const LexemeT &amp;noTokensDefault) noexcept</td></tr>
-<tr class="memdesc:a65db1761ad2d98305575619d992b54a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a65db1761ad2d98305575619d992b54a5">More...</a><br /></td></tr>
-<tr class="separator:a65db1761ad2d98305575619d992b54a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa06e82528a926a0002bd52cb0ce7eae3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aa06e82528a926a0002bd52cb0ce7eae3">eat</a> (const size_t &amp;count=1ull) noexcept</td></tr>
-<tr class="memdesc:aa06e82528a926a0002bd52cb0ce7eae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eat (advance the read pos past) upcoming characters.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aa06e82528a926a0002bd52cb0ce7eae3">More...</a><br /></td></tr>
-<tr class="separator:aa06e82528a926a0002bd52cb0ce7eae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa30cd612d508c3573f63335dbf8e735"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aaa30cd612d508c3573f63335dbf8e735">eatnext</a> () noexcept</td></tr>
-<tr class="memdesc:aaa30cd612d508c3573f63335dbf8e735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eat (advance the read pos past) the next character.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aaa30cd612d508c3573f63335dbf8e735">More...</a><br /></td></tr>
-<tr class="separator:aaa30cd612d508c3573f63335dbf8e735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a41698530bbf4f55fc1eeb4a845d25"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a98a41698530bbf4f55fc1eeb4a845d25">setf</a> (std::ios_base::fmtflags const &amp;format)</td></tr>
+<tr class="memdesc:a98a41698530bbf4f55fc1eeb4a845d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the underlying stream's format flags.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a98a41698530bbf4f55fc1eeb4a845d25">More...</a><br /></td></tr>
+<tr class="separator:a98a41698530bbf4f55fc1eeb4a845d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4add67268f0daa3f8d868123264f5bca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a4add67268f0daa3f8d868123264f5bca">unsetf</a> (std::ios_base::fmtflags const &amp;mask)</td></tr>
+<tr class="separator:a4add67268f0daa3f8d868123264f5bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fdd8458587b872fff6e93477515ff88"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str</a> () const</td></tr>
+<tr class="separator:a1fdd8458587b872fff6e93477515ff88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e">hasMore</a> ()</td></tr>
+<tr class="memdesc:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e">More...</a><br /></td></tr>
+<tr class="separator:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5673718fea9a4e88aa227075f777a13"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac5673718fea9a4e88aa227075f777a13">getch</a> (const bool allow_whitespace=false)</td></tr>
+<tr class="memdesc:ac5673718fea9a4e88aa227075f777a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next character from the stream, and move the getter position forward by one. <br  />
+ This function sets lastPos to the current position before incrementing the getter.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ac5673718fea9a4e88aa227075f777a13">More...</a><br /></td></tr>
+<tr class="separator:ac5673718fea9a4e88aa227075f777a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada07d69646fd5ab6f0967c0174b2a845"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ada07d69646fd5ab6f0967c0174b2a845">peek</a> ()</td></tr>
+<tr class="memdesc:ada07d69646fd5ab6f0967c0174b2a845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ada07d69646fd5ab6f0967c0174b2a845">More...</a><br /></td></tr>
+<tr class="separator:ada07d69646fd5ab6f0967c0174b2a845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a7e7385c2f09d0c20e8d002895060b"><td class="memItemLeft" align="right" valign="top">virtual LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ad6a7e7385c2f09d0c20e8d002895060b">peeklex</a> () noexcept(false)</td></tr>
+<tr class="memdesc:ad6a7e7385c2f09d0c20e8d002895060b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ad6a7e7385c2f09d0c20e8d002895060b">More...</a><br /></td></tr>
+<tr class="separator:ad6a7e7385c2f09d0c20e8d002895060b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985b8681ccb010f83cb4e4db8858281f"><td class="memItemLeft" align="right" valign="top">virtual LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a985b8681ccb010f83cb4e4db8858281f">peeklex</a> (const LexemeT &amp;noTokensDefault) noexcept</td></tr>
+<tr class="memdesc:a985b8681ccb010f83cb4e4db8858281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a985b8681ccb010f83cb4e4db8858281f">More...</a><br /></td></tr>
+<tr class="separator:a985b8681ccb010f83cb4e4db8858281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fecbb9c10be51d1c6e50123b5acfe99"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a6fecbb9c10be51d1c6e50123b5acfe99">eat</a> (const size_t &amp;count=1ull) noexcept</td></tr>
+<tr class="memdesc:a6fecbb9c10be51d1c6e50123b5acfe99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eat any number of characters by advancing the read position by the given number of characters.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a6fecbb9c10be51d1c6e50123b5acfe99">More...</a><br /></td></tr>
+<tr class="separator:a6fecbb9c10be51d1c6e50123b5acfe99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7c31725d91e51bffe9de8194fcd5f3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aee7c31725d91e51bffe9de8194fcd5f3">eatnext</a> () noexcept</td></tr>
+<tr class="memdesc:aee7c31725d91e51bffe9de8194fcd5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eat the next character by advancing the read position by one.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aee7c31725d91e51bffe9de8194fcd5f3">More...</a><br /></td></tr>
+<tr class="separator:aee7c31725d91e51bffe9de8194fcd5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplParams" colspan="2">template&lt;class Tokenizer  = TokenizerBase&lt;LexemeT, Dictionary, TokenType, Token&gt;&gt; </td></tr>
-<tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#abca5bfb52fe0b7be90bf9286aa9caee3">recurseInto</a> (const std::string &amp;str, const std::optional&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt; &amp;eof_tkn=std::nullopt, const size_t &amp;reserve_sz=256ull)</td></tr>
+<tr class="memitem:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#abca5bfb52fe0b7be90bf9286aa9caee3">recurseInto</a> (const std::string &amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str</a>, const std::optional&lt; <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> &gt; &amp;eof_tkn=std::nullopt, const size_t &amp;reserve_sz=256ull)</td></tr>
+<tr class="memdesc:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recurse into the given string using a copy of this tokenizer instance.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#abca5bfb52fe0b7be90bf9286aa9caee3">More...</a><br /></td></tr>
 <tr class="separator:abca5bfb52fe0b7be90bf9286aa9caee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e56a917f92d9b27605fcffe70d068ca"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a6e56a917f92d9b27605fcffe70d068ca">getBrackets</a> (const LexemeT &amp;bracketOpen, const LexemeT &amp;bracketClose, const bool &amp;eatLast=true)</td></tr>
 <tr class="memdesc:a6e56a917f92d9b27605fcffe70d068ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a string containing everything enclosed by the given bracket types, respecting bracket scope.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a6e56a917f92d9b27605fcffe70d068ca">More...</a><br /></td></tr>
@@ -179,6 +188,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a33a60326ff0e7840784cee9bdd29c9e4"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a33a60326ff0e7840784cee9bdd29c9e4">getline</a> (const LexemeT &amp;lex, const bool &amp;no_rollback=true, const size_t &amp;occurrence=1ull)</td></tr>
 <tr class="memdesc:a33a60326ff0e7840784cee9bdd29c9e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string containing all characters from the current read position to the specified occurrence of the specified lexeme.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a33a60326ff0e7840784cee9bdd29c9e4">More...</a><br /></td></tr>
 <tr class="separator:a33a60326ff0e7840784cee9bdd29c9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c8d9733a85ee3966fe99aca20fb7d9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a46c8d9733a85ee3966fe99aca20fb7d9">getmatch</a> (const size_t &amp;count, const std::string &amp;comp, std::string &amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str</a>)</td></tr>
+<tr class="memdesc:a46c8d9733a85ee3966fe99aca20fb7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variation of the getline(count) function that returns true if the result matches a given comparison string.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a46c8d9733a85ee3966fe99aca20fb7d9">More...</a><br /></td></tr>
+<tr class="separator:a46c8d9733a85ee3966fe99aca20fb7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948c5508d2e704adb1422f7b2a084c67"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">getline_and_match</a> (const size_t &amp;count, const std::string &amp;comp, std::string &amp;<a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str</a>)</td></tr>
+<tr class="memdesc:a948c5508d2e704adb1422f7b2a084c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variation of the getline(count) function that returns true if the result matches a given comparison string.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">More...</a><br /></td></tr>
+<tr class="separator:a948c5508d2e704adb1422f7b2a084c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7633bcfea1c909f0e5f5e3cc10080518"><td class="memTemplParams" colspan="2">template&lt;class PredicateT &gt; </td></tr>
 <tr class="memitem:a7633bcfea1c909f0e5f5e3cc10080518"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518">getuntil</a> (const PredicateT &amp;pred, const bool &amp;no_rollback=true)</td></tr>
 <tr class="memdesc:a7633bcfea1c909f0e5f5e3cc10080518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue getting characters until the given predicate function returns false.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518">More...</a><br /></td></tr>
@@ -194,12 +209,14 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a39dd6b3095daa8bc06fab3c5265d66ae"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a39dd6b3095daa8bc06fab3c5265d66ae">getnotsimilar</a> (const Ts &amp;... type)</td></tr>
 <tr class="memdesc:a39dd6b3095daa8bc06fab3c5265d66ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue reading ahead until the first character whose type doesn't match at least one of the given lexeme types.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a39dd6b3095daa8bc06fab3c5265d66ae">More...</a><br /></td></tr>
 <tr class="separator:a39dd6b3095daa8bc06fab3c5265d66ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa7c6a9bb2019ef421bd97b9c6d5861f"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
-<tr class="memitem:afa7c6a9bb2019ef421bd97b9c6d5861f"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#afa7c6a9bb2019ef421bd97b9c6d5861f">getsimilar</a> (const Pred &amp;predicate)</td></tr>
-<tr class="separator:afa7c6a9bb2019ef421bd97b9c6d5861f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7251c5423b4fc0523e57fe0e84c521"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... Ts&gt; </td></tr>
 <tr class="memitem:aeb7251c5423b4fc0523e57fe0e84c521"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aeb7251c5423b4fc0523e57fe0e84c521">getsimilar_ch</a> (const Ts &amp;... character)</td></tr>
+<tr class="memdesc:aeb7251c5423b4fc0523e57fe0e84c521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue reading ahead until the first character that isn't present in the given list of characters.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aeb7251c5423b4fc0523e57fe0e84c521">More...</a><br /></td></tr>
 <tr class="separator:aeb7251c5423b4fc0523e57fe0e84c521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3560099fc89b201167e1735eb4df52b"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:aa3560099fc89b201167e1735eb4df52b"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aa3560099fc89b201167e1735eb4df52b">get_if</a> (const Pred &amp;predicate)</td></tr>
+<tr class="memdesc:aa3560099fc89b201167e1735eb4df52b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue reading ahead until the given predicate returns false.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#aa3560099fc89b201167e1735eb4df52b">More...</a><br /></td></tr>
+<tr class="separator:aa3560099fc89b201167e1735eb4df52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ddd7727897ca902a0b0f16a3ab4e88c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a8ddd7727897ca902a0b0f16a3ab4e88c">clear</a> ()</td></tr>
 <tr class="memdesc:a8ddd7727897ca902a0b0f16a3ab4e88c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears/Resets the internal stream buffer's <em>error state flags</em>.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a8ddd7727897ca902a0b0f16a3ab4e88c">More...</a><br /></td></tr>
 <tr class="separator:a8ddd7727897ca902a0b0f16a3ab4e88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,25 +226,31 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9e6bf0706ef98f0995c85d53a3e1684c"><td class="memItemLeft" align="right" valign="top">virtual std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a9e6bf0706ef98f0995c85d53a3e1684c">rollback_reset</a> ()</td></tr>
 <tr class="memdesc:a9e6bf0706ef98f0995c85d53a3e1684c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the getter position to the beginning of the stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a9e6bf0706ef98f0995c85d53a3e1684c">More...</a><br /></td></tr>
 <tr class="separator:a9e6bf0706ef98f0995c85d53a3e1684c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726cf1b9cd00a7d62bb2d85cb7878b14"><td class="memItemLeft" align="right" valign="top">virtual std::streampos&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a726cf1b9cd00a7d62bb2d85cb7878b14">getCurrentPos</a> ()</td></tr>
+<tr class="memdesc:a726cf1b9cd00a7d62bb2d85cb7878b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current stream read position. (character index)  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a726cf1b9cd00a7d62bb2d85cb7878b14">More...</a><br /></td></tr>
+<tr class="separator:a726cf1b9cd00a7d62bb2d85cb7878b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a58d39b4f0d45ab21286ef7422331d3"><td class="memItemLeft" align="right" valign="top">virtual std::streamsize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1a58d39b4f0d45ab21286ef7422331d3">getStreamSize</a> ()</td></tr>
+<tr class="memdesc:a1a58d39b4f0d45ab21286ef7422331d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of characters in the stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a1a58d39b4f0d45ab21286ef7422331d3">More...</a><br /></td></tr>
+<tr class="separator:a1a58d39b4f0d45ab21286ef7422331d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c5507dee72bb684a44bc4ed493077a"><td class="memItemLeft" align="right" valign="top">virtual std::streamsize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a10c5507dee72bb684a44bc4ed493077a">getRemainingSize</a> ()</td></tr>
+<tr class="memdesc:a10c5507dee72bb684a44bc4ed493077a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remaining number of characters in the stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a10c5507dee72bb684a44bc4ed493077a">More...</a><br /></td></tr>
+<tr class="separator:a10c5507dee72bb684a44bc4ed493077a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908d9de9eed05398a7c44b10b7e648ac"><td class="memItemLeft" align="right" valign="top">virtual std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a908d9de9eed05398a7c44b10b7e648ac">setLastPos</a> (const std::streamoff &amp;pos)</td></tr>
-<tr class="memdesc:a908d9de9eed05398a7c44b10b7e648ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of lastPos directly.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a908d9de9eed05398a7c44b10b7e648ac">More...</a><br /></td></tr>
+<tr class="memdesc:a908d9de9eed05398a7c44b10b7e648ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set (lastPos) to a specific read position.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a908d9de9eed05398a7c44b10b7e648ac">More...</a><br /></td></tr>
 <tr class="separator:a908d9de9eed05398a7c44b10b7e648ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87598c1deb9eca1d61610dd21676477b"><td class="memItemLeft" align="right" valign="top">virtual std::streamoff&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a87598c1deb9eca1d61610dd21676477b">setLastPosHere</a> ()</td></tr>
-<tr class="memdesc:a87598c1deb9eca1d61610dd21676477b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the last position to the current position.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a87598c1deb9eca1d61610dd21676477b">More...</a><br /></td></tr>
+<tr class="memdesc:a87598c1deb9eca1d61610dd21676477b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set (lastPos) to the current read position.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a87598c1deb9eca1d61610dd21676477b">More...</a><br /></td></tr>
 <tr class="separator:a87598c1deb9eca1d61610dd21676477b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a948c5508d2e704adb1422f7b2a084c67"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">getline_and_match</a> (const size_t &amp;count, const std::string &amp;comp, std::string &amp;str)</td></tr>
-<tr class="memdesc:a948c5508d2e704adb1422f7b2a084c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variation of the getline(count) function that returns true if the result matches a given comparison string.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a948c5508d2e704adb1422f7b2a084c67">More...</a><br /></td></tr>
-<tr class="separator:a948c5508d2e704adb1422f7b2a084c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1">getNextToken</a> (const char &amp;)</td></tr>
-<tr class="memdesc:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function <br  />
- This is an alternative to the getNext(bool) function, and when this is overridden but <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> is NOT, this is used for parsing instead. <br  />
- You can also override getNext(bool) to <br  />
+<tr class="memdesc:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next token from the stream. <br  />
+ By default, this method always returns (TokenT::NullToken). This is to support overriding either this function, OR the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> function. <br  />
  This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1">More...</a><br /></td></tr>
 <tr class="separator:a1458a1f6fccc3ebceca0e9a0413dd9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adda7c9526d3f5d10dc1997a4585ce907"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#adda7c9526d3f5d10dc1997a4585ce907">getNextChar</a> (const bool &amp;allowWhitespace)</td></tr>
-<tr class="memdesc:adda7c9526d3f5d10dc1997a4585ce907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
- This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#adda7c9526d3f5d10dc1997a4585ce907">More...</a><br /></td></tr>
-<tr class="separator:adda7c9526d3f5d10dc1997a4585ce907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a2f074d612317c25cce20baec9f1f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a78a2f074d612317c25cce20baec9f1f4">getNext</a> (const bool &amp;allowWhitespace)</td></tr>
+<tr class="memdesc:a78a2f074d612317c25cce20baec9f1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. <br  />
+ By default, this function calls <code>return getNextToken(getch(allowWhitespace));</code>.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a78a2f074d612317c25cce20baec9f1f4">More...</a><br /></td></tr>
+<tr class="separator:a78a2f074d612317c25cce20baec9f1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544e67585a3967388589bf511d255d56"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56">getNext</a> ()</td></tr>
 <tr class="memdesc:a544e67585a3967388589bf511d255d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
  This is implemented for backwards-compatibility, and is simply an alias for calling <code>getNext(false);</code>. <br  />
@@ -249,6 +272,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0fb8307ea5cd4ea4e548231174aa8ec6"><td class="memItemLeft" align="right" valign="top">LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a0fb8307ea5cd4ea4e548231174aa8ec6">lexeme_whitespace</a></td></tr>
 <tr class="memdesc:a0fb8307ea5cd4ea4e548231174aa8ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lexeme associated with skippable whitespace.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a0fb8307ea5cd4ea4e548231174aa8ec6">More...</a><br /></td></tr>
 <tr class="separator:a0fb8307ea5cd4ea4e548231174aa8ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f86f19e5817ed33eadd3adfd6bc017"><td class="memItemLeft" align="right" valign="top">LexemeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a41f86f19e5817ed33eadd3adfd6bc017">lexeme_eof</a></td></tr>
+<tr class="separator:a41f86f19e5817ed33eadd3adfd6bc017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -277,7 +302,7 @@ class token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt;<
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00195">195</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00197">197</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3fff93940be5df3ad7a74503159b302c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fff93940be5df3ad7a74503159b302c">&#9670;&nbsp;</a></span>TokenT</h2>
@@ -293,13 +318,15 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00197">197</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p>This is set to the type specified by the Token template parameter. </p>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00200">200</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1f4b60d297085a0f355f03a926a8a37e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f4b60d297085a0f355f03a926a8a37e">&#9670;&nbsp;</a></span>TokenizerBase()</h2>
+<a id="a9e51cd75648fb8f567c21ae1d491350b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e51cd75648fb8f567c21ae1d491350b">&#9670;&nbsp;</a></span>TokenizerBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,8 +345,14 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LexemeT&#160;</td>
-          <td class="paramname"><em>whitespace</em>&#160;</td>
+          <td class="paramtype">LexemeT const &amp;&#160;</td>
+          <td class="paramname"><em>whitespace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LexemeT const &amp;&#160;</td>
+          <td class="paramname"><em>eof</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -338,12 +371,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ss</td><td>Stringstream rvalue reference containing the target data. </td></tr>
-    <tr><td class="paramname">whitespace</td><td>The lexeme associated with whitespace characters. This is used by the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#aeee29297b85fc176bdf3643ab4874e9c" title="Get the next character from the stream, and move the getter position forward by one....">getch()</a> method to skip whitespace. </td></tr>
+    <tr><td class="paramname">whitespace</td><td>The lexeme associated with whitespace characters. This is used by the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac5673718fea9a4e88aa227075f777a13" title="Get the next character from the stream, and move the getter position forward by one....">getch()</a> method to skip whitespace. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00214">214</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00217">217</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +437,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Retrieve the current badbit state of the local stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00243">243</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00246">246</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,12 +468,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Clears/Resets the internal stream buffer's <em>error state flags</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00504">504</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00601">601</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa06e82528a926a0002bd52cb0ce7eae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa06e82528a926a0002bd52cb0ce7eae3">&#9670;&nbsp;</a></span>eat()</h2>
+<a id="a6fecbb9c10be51d1c6e50123b5acfe99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fecbb9c10be51d1c6e50123b5acfe99">&#9670;&nbsp;</a></span>eat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +484,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::eat </td>
+          <td class="memname">virtual bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::eat </td>
           <td>(</td>
           <td class="paramtype">const size_t &amp;&#160;</td>
           <td class="paramname"><em>count</em> = <code>1ull</code></td><td>)</td>
@@ -460,12 +493,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Eat (advance the read pos past) upcoming characters. </p>
+<p>Eat any number of characters by advancing the read position by the given number of characters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">count</td><td>The number of characters to "eat". </td></tr>
@@ -476,12 +509,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
  true There are more upcoming characters. <br  />
  false Reached EOF while eating characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00318">318</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00348">348</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aaa30cd612d508c3573f63335dbf8e735"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa30cd612d508c3573f63335dbf8e735">&#9670;&nbsp;</a></span>eatnext()</h2>
+<a id="aee7c31725d91e51bffe9de8194fcd5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7c31725d91e51bffe9de8194fcd5f3">&#9670;&nbsp;</a></span>eatnext()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -492,7 +525,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::eatnext </td>
+          <td class="memname">virtual bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::eatnext </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -500,17 +533,17 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Eat (advance the read pos past) the next character. </p>
+<p>Eat the next character by advancing the read position by one. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool <br  />
  true There are more upcoming characters. <br  />
  false Reached EOF while eating characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00333">333</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00363">363</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -539,9 +572,9 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </table>
 </div><div class="memdoc">
 
-<p>Retrieve the current eofbit state of the local stream. Use the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a069bdb8ef1619aaad250d82bd5d4983c" title="Check if there are more valid characters ahead of the current stream getter position....">hasMore()</a> function to check whether the stream is at the end or not. </p>
+<p>Retrieve the current eofbit state of the local stream. Use the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e" title="Check if there are more valid characters ahead of the current stream getter position....">hasMore()</a> function to check whether the stream is at the end or not. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00247">247</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00250">250</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -572,7 +605,54 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Retrieve the current failbit state of the local stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00245">245</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00248">248</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa3560099fc89b201167e1735eb4df52b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3560099fc89b201167e1735eb4df52b">&#9670;&nbsp;</a></span>get_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class Pred &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::get_if </td>
+          <td>(</td>
+          <td class="paramtype">const Pred &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Continue reading ahead until the given predicate returns false. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Pred</td><td>Predicate Function Type. Must accept a char and return a boolean / implicit boolean. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">predicate</td><td>Predicate Function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00588">588</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -629,12 +709,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00348">348</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00388">388</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aeee29297b85fc176bdf3643ab4874e9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeee29297b85fc176bdf3643ab4874e9c">&#9670;&nbsp;</a></span>getch()</h2>
+<a id="ac5673718fea9a4e88aa227075f777a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5673718fea9a4e88aa227075f777a13">&#9670;&nbsp;</a></span>getch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,7 +725,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getch </td>
+          <td class="memname">virtual char <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getch </td>
           <td>(</td>
           <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>allow_whitespace</em> = <code>false</code></td><td>)</td>
@@ -654,7 +734,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -669,7 +749,39 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00266">266</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00290">290</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a726cf1b9cd00a7d62bb2d85cb7878b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726cf1b9cd00a7d62bb2d85cb7878b14">&#9670;&nbsp;</a></span>getCurrentPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::streampos <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getCurrentPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the current stream read position. (character index) </p>
+<dl class="section return"><dt>Returns</dt><dd>std::streamoff : Current Read Position. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00638">638</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -719,7 +831,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00376">376</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00417">417</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +888,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00403">403</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00449">449</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -815,7 +927,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00389">389</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00431">431</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -862,22 +974,80 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </div><div class="memdoc">
 
 <p>Variation of the getline(count) function that returns true if the result matches a given comparison string. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>This function uses an old naming convention that will be removed in a future release. Use the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a46c8d9733a85ee3966fe99aca20fb7d9" title="Variation of the getline(count) function that returns true if the result matches a given comparison s...">getmatch()</a> method instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">count</td><td>- The number of characters to read ahead. </td></tr>
-    <tr><td class="paramname">comp</td><td>- Comparison string, if the final value of str matches this (case-insensitive), the function will return true. </td></tr>
-    <tr><td class="paramname">str</td><td>- Reference of a string to use as output for getline. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of characters to read ahead. </td></tr>
+    <tr><td class="paramname">comp</td><td>Comparison string, if the final value of str matches this (case-insensitive), the function will return true. </td></tr>
+    <tr><td class="paramname">str</td><td>Reference of a string to use as output for getline. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00559">559</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00491">491</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a46c8d9733a85ee3966fe99aca20fb7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c8d9733a85ee3966fe99aca20fb7d9">&#9670;&nbsp;</a></span>getmatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getmatch </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variation of the getline(count) function that returns true if the result matches a given comparison string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The number of characters to read ahead. </td></tr>
+    <tr><td class="paramname">comp</td><td>Comparison string, if the final value of str matches this (case-insensitive), the function will return true. </td></tr>
+    <tr><td class="paramname">str</td><td>Reference of a string to use as output for getline. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00475">475</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a544e67585a3967388589bf511d255d56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a544e67585a3967388589bf511d255d56">&#9670;&nbsp;</a></span>getNext()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a544e67585a3967388589bf511d255d56">&#9670;&nbsp;</a></span>getNext() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -905,17 +1075,17 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
  This is implemented for backwards-compatibility, and is simply an alias for calling <code>getNext(false);</code>. <br  />
  For improved <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> alternatives, see the getNextChar(bool) &amp; getNextToken(char) overloads. <br  />
  This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use the getNextChar(bool) &amp; getNextToken(char) functions instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>Directly overloading this function is deprecated, but still supported. It is recommended to override the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1458a1f6fccc3ebceca0e9a0413dd9c1" title="Retrieve the next token from the stream.   By default, this method always returns (TokenT::NullToken)...">getNextToken(const char&amp;)</a> method instead.</dd></dl>
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p><dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
 <p>Reimplemented in <a class="el" href="structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566">file::ini::tokenizer::INITokenizer</a>, and <a class="el" href="classopt_1_1token_1_1_tokenizer.html#ac203fbf32ec07e3848b489cd4aca8db5">opt::token::Tokenizer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00592">592</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00729">729</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="adda7c9526d3f5d10dc1997a4585ce907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adda7c9526d3f5d10dc1997a4585ce907">&#9670;&nbsp;</a></span>getNextChar()</h2>
+<a id="a78a2f074d612317c25cce20baec9f1f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a2f074d612317c25cce20baec9f1f4">&#9670;&nbsp;</a></span>getNext() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -926,7 +1096,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getNextChar </td>
+          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a3fff93940be5df3ad7a74503159b302c">TokenT</a> <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getNext </td>
           <td>(</td>
           <td class="paramtype">const bool &amp;&#160;</td>
           <td class="paramname"><em>allowWhitespace</em></td><td>)</td>
@@ -941,7 +1111,8 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </div><div class="memdoc">
 
 <p>Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream. <br  />
- This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
+ This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. <br  />
+ By default, this function calls <code>return getNextToken(getch(allowWhitespace));</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowWhitespace</td><td>When true, whitespace may be passed to the getNext(char) overload. </td></tr>
@@ -950,7 +1121,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00581">581</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00713">713</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -980,9 +1151,8 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </table>
 </div><div class="memdoc">
 
-<p>Pure virtual function <br  />
- This is an alternative to the getNext(bool) function, and when this is overridden but <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> is NOT, this is used for parsing instead. <br  />
- You can also override getNext(bool) to <br  />
+<p>Retrieve the next token from the stream. <br  />
+ By default, this method always returns (TokenT::NullToken). This is to support overriding either this function, OR the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a544e67585a3967388589bf511d255d56" title="Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream....">getNext()</a> function. <br  />
  This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -992,7 +1162,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00573">573</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00700">700</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1033,44 +1203,44 @@ template&lt;std::same_as&lt; LexemeT &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00472">472</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00555">555</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="afa7c6a9bb2019ef421bd97b9c6d5861f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa7c6a9bb2019ef421bd97b9c6d5861f">&#9670;&nbsp;</a></span>getsimilar() <span class="overload">[1/2]</span></h2>
+<a id="a10c5507dee72bb684a44bc4ed493077a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c5507dee72bb684a44bc4ed493077a">&#9670;&nbsp;</a></span>getRemainingSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;class Pred &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getsimilar </td>
+          <td class="memname">virtual std::streamsize <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getRemainingSize </td>
           <td>(</td>
-          <td class="paramtype">const Pred &amp;&#160;</td>
-          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00482">482</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p>Get the remaining number of characters in the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::streamsize </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00663">663</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ae2bc243b56c523aeb8bcbdd44f14ea49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2bc243b56c523aeb8bcbdd44f14ea49">&#9670;&nbsp;</a></span>getsimilar() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2bc243b56c523aeb8bcbdd44f14ea49">&#9670;&nbsp;</a></span>getsimilar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1112,7 +1282,7 @@ template&lt;std::same_as&lt; LexemeT &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00458">458</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00539">539</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1144,7 +1314,48 @@ template&lt;std::same_as&lt; char &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00492">492</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p>Continue reading ahead until the first character that isn't present in the given list of characters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...character</td><td>Any number of characters to match. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00571">571</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1a58d39b4f0d45ab21286ef7422331d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a58d39b4f0d45ab21286ef7422331d3">&#9670;&nbsp;</a></span>getStreamSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::streamsize <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::getStreamSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the total number of characters in the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::streamsize </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00648">648</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1202,7 +1413,7 @@ template&lt;class PredicateT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00428">428</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00505">505</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1258,7 +1469,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00446">446</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00525">525</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1289,12 +1500,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Retrieve the current goodbit state of the local stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00241">241</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00244">244</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a069bdb8ef1619aaad250d82bd5d4983c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a069bdb8ef1619aaad250d82bd5d4983c">&#9670;&nbsp;</a></span>hasMore()</h2>
+<a id="ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e">&#9670;&nbsp;</a></span>hasMore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1308,7 +1519,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
           <td class="memname">virtual bool <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::hasMore </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -1321,7 +1532,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00253">253</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00276">276</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1350,15 +1561,15 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </table>
 </div><div class="memdoc">
 
-<p>String operator, returns the result local stream's str() function. </p>
+<p>String operator, returns the result local stream's <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88">str()</a> function. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00223">223</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00226">226</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9f2001121f2b9ecd74be4183d2c152cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f2001121f2b9ecd74be4183d2c152cd">&#9670;&nbsp;</a></span>peek()</h2>
+<a id="ada07d69646fd5ab6f0967c0174b2a845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada07d69646fd5ab6f0967c0174b2a845">&#9670;&nbsp;</a></span>peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1369,7 +1580,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peek </td>
+          <td class="memname">virtual char <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peek </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1377,7 +1588,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1385,12 +1596,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Retrieve the next character from the stream, but don't advance the read pointer. </p>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00280">280</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00307">307</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a751424c86165d580ee97be9726c03946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a751424c86165d580ee97be9726c03946">&#9670;&nbsp;</a></span>peeklex() <span class="overload">[1/2]</span></h2>
+<a id="ad6a7e7385c2f09d0c20e8d002895060b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a7e7385c2f09d0c20e8d002895060b">&#9670;&nbsp;</a></span>peeklex() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1401,7 +1612,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LexemeT <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peeklex </td>
+          <td class="memname">virtual LexemeT <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peeklex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1409,7 +1620,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1423,12 +1634,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LexemeT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00292">292</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00320">320</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a65db1761ad2d98305575619d992b54a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65db1761ad2d98305575619d992b54a5">&#9670;&nbsp;</a></span>peeklex() <span class="overload">[2/2]</span></h2>
+<a id="a985b8681ccb010f83cb4e4db8858281f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985b8681ccb010f83cb4e4db8858281f">&#9670;&nbsp;</a></span>peeklex() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1439,7 +1650,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LexemeT <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peeklex </td>
+          <td class="memname">virtual LexemeT <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::peeklex </td>
           <td>(</td>
           <td class="paramtype">const LexemeT &amp;&#160;</td>
           <td class="paramname"><em>noTokensDefault</em></td><td>)</td>
@@ -1448,7 +1659,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1456,13 +1667,13 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Retrieve the next character from the stream, but don't advance the read pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">noTokensDefault</td><td>If there are no more tokens to peek at in the buffer, return this value instead of throwing like the parameterless variant of <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a751424c86165d580ee97be9726c03946" title="Retrieve the next character from the stream, but don&#39;t advance the read pointer.">peeklex()</a>. </td></tr>
+    <tr><td class="paramname">noTokensDefault</td><td>If there are no more tokens to peek at in the buffer, return this value instead of throwing like the parameterless variant of <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ad6a7e7385c2f09d0c20e8d002895060b" title="Retrieve the next character from the stream, but don&#39;t advance the read pointer.">peeklex()</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LexemeT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00304">304</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00333">333</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1510,7 +1721,24 @@ template&lt;class Tokenizer  = TokenizerBase&lt;LexemeT, Dictionary, TokenType, 
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00336">336</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p>Recurse into the given string using a copy of this tokenizer instance. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Tokenizer</td><td>Tokenizer type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input String </td></tr>
+    <tr><td class="paramname">eof_tkn</td><td>EOF token type. </td></tr>
+    <tr><td class="paramname">reserve_sz</td><td>Number of elements to reserve at a time. This is passed to the <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a5b19d51ed6cc6480b62469c1ac11ff5f" title="Tokenize the whole local stream and return it as a vector.">tokenize()</a> function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00375">375</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1540,9 +1768,9 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </div><div class="memdoc">
 
 <p>Set the getter position to lastPos. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::streamoff The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00513">513</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00611">611</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1572,9 +1800,48 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </div><div class="memdoc">
 
 <p>Set the getter position to the beginning of the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::streamoff The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00525">525</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00624">624</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a98a41698530bbf4f55fc1eeb4a845d25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a41698530bbf4f55fc1eeb4a845d25">&#9670;&nbsp;</a></span>setf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::setf </td>
+          <td>(</td>
+          <td class="paramtype">std::ios_base::fmtflags const &amp;&#160;</td>
+          <td class="paramname"><em>format</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the underlying stream's format flags. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>The format flags to apply to the stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::ios_base::fmtflags : The previous format control flags. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00257">257</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1604,16 +1871,16 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </table>
 </div><div class="memdoc">
 
-<p>Set the value of lastPos directly. </p>
+<p>Set (lastPos) to a specific read position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>- Value to set as the last stream getter position. </td></tr>
+    <tr><td class="paramname">pos</td><td>Input Read Position </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::streamoff - The previous stream getter position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::streamoff This is the previous value of (lastPos). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00539">539</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00675">675</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1642,9 +1909,39 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </table>
 </div><div class="memdoc">
 
-<p>Set the last position to the current position. </p>
+<p>Set (lastPos) to the current read position. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::streamoff </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00547">547</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00687">687</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1fdd8458587b872fff6e93477515ff88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fdd8458587b872fff6e93477515ff88">&#9670;&nbsp;</a></span>str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::str </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00266">266</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1694,12 +1991,43 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00615">615</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00765">765</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_a5b19d51ed6cc6480b62469c1ac11ff5f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1_tokenizer_base_a5b19d51ed6cc6480b62469c1ac11ff5f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+</div>
+
+</div>
+</div>
+<a id="a4add67268f0daa3f8d868123264f5bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4add67268f0daa3f8d868123264f5bca">&#9670;&nbsp;</a></span>unsetf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::unsetf </td>
+          <td>(</td>
+          <td class="paramtype">std::ios_base::fmtflags const &amp;&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00261">261</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1744,7 +2072,7 @@ template&lt;class T &gt; </div>
 
 <p>Stream insertion operator. Inserts the local stream's read buffer in the given ostream. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00234">234</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00237">237</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1788,7 +2116,7 @@ template&lt;class T &gt; </div>
 
 <p>Stream extraction operator. Inserts the istream's read buffer into the local stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00227">227</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00230">230</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1817,7 +2145,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Lexeme dictionary used to retrieve the lexeme associated with a given character. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00204">204</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00207">207</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1845,7 +2173,33 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>The stream reader position prior to the most recent call to a base reader method such as <code>getch</code>, <code>getsimilar</code>, <code>getUntil</code>, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00202">202</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00205">205</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a41f86f19e5817ed33eadd3adfd6bc017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f86f19e5817ed33eadd3adfd6bc017">&#9670;&nbsp;</a></span>lexeme_eof</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT &gt;&gt; Dictionary, typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LexemeT <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::lexeme_eof</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00209">209</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1873,7 +2227,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Lexeme associated with skippable whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00206">206</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00209">209</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1901,7 +2255,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>The stringstream containing the untokenized data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00200">200</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00203">203</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['eat_190',['eat',['../classtoken_1_1base_1_1_tokenizer_base.html#aa06e82528a926a0002bd52cb0ce7eae3',1,'token::base::TokenizerBase']]],
-  ['eatnext_191',['eatnext',['../classtoken_1_1base_1_1_tokenizer_base.html#aaa30cd612d508c3573f63335dbf8e735',1,'token::base::TokenizerBase']]],
+  ['eat_190',['eat',['../classtoken_1_1base_1_1_tokenizer_base.html#a6fecbb9c10be51d1c6e50123b5acfe99',1,'token::base::TokenizerBase']]],
+  ['eatnext_191',['eatnext',['../classtoken_1_1base_1_1_tokenizer_base.html#aee7c31725d91e51bffe9de8194fcd5f3',1,'token::base::TokenizerBase']]],
   ['emplace_5fback_192',['emplace_back',['../structopt_1_1_arg_container.html#aadd081fe09b3146de132f4e912993825',1,'opt::ArgContainer']]],
   ['empty_193',['empty',['../classterm_1_1palette.html#afef0d05a5b3bee5b7459823b9f5e6d77',1,'term::palette::empty()'],['../classenv_1_1_p_a_t_h.html#a88ef9c0004be5030e5bcd5bf60067322',1,'env::PATH::empty()'],['../classfile_1_1ini_1_1_i_n_i_container.html#a6560b96e9c12a92703703715b82042bb',1,'file::ini::INIContainer::empty()'],['../structopt_1_1_arg_container.html#afd847a7f21a1efaa6f396e5226ebdec8',1,'opt::ArgContainer::empty()'],['../structmatrix_1_1basic__matrix.html#a8f47e9742b95e48a652b354709950def',1,'matrix::basic_matrix::empty()'],['../structmatrix_1_1nmatrix.html#adb2d1a86febda35efa9f6c4dd0186f08',1,'matrix::nmatrix::empty()']]],
   ['enable_194',['enable',['../classterm_1_1palette.html#a5c3a4c0b27c7cb212b77abf73b77a21d',1,'term::palette::enable()'],['../namespace_a_n_s_i.html#ad902385087a1bd9491be336ef4de6cc8',1,'ANSI::ENABLE()']]],
