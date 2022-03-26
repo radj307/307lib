@@ -5,6 +5,7 @@ var structprocess_1_1_mode =
     [ "contains", "structprocess_1_1_mode.html#a008fcc7d2515078e82596f5f101b45bf", null ],
     [ "operator char", "structprocess_1_1_mode.html#aaf3feb9a82779ba963d29b619d789b9e", null ],
     [ "str", "structprocess_1_1_mode.html#a0eb6d1b414b38c19b64fad2a6c2b453e", null ],
+    [ "_v", "structprocess_1_1_mode.html#a6c2d1ebd4f77575197edaa02b878632c", null ],
     [ "BINARY", "structprocess_1_1_mode.html#ac7364b0aaddb9497c41379e020de3a8f", null ],
     [ "NONE", "structprocess_1_1_mode.html#ae27b31b4b3562fad21a7257d5983d213", null ],
     [ "READ", "structprocess_1_1_mode.html#a636e70e25eb0cbb39b2282367f0eaf44", null ],

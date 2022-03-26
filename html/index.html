@@ -98,15 +98,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
  It aims to provide a universal set of cross-platform C++ extensions to accomplish pretty much anything with ease. <br  />
 </p>
 <h1><a class="anchor" id="autotoc_md11"></a>
-Support</h1>
+Platform Support</h1>
 <p>Currently supported operating systems:</p><ul>
 <li>Windows</li>
 <li>Linux</li>
-<li>macOS<ul>
-<li><em>Note: I can't test the macOS releases.</em></li>
+<li>macOS</li>
 </ul>
-</li>
-</ul>
+<p>This library was designed for x64 and x86 systems, but may work on other architectures.</p>
 <h1><a class="anchor" id="autotoc_md12"></a>
 Building from Source</h1>
 <p>Building from source is easy and platform-independent.</p>
@@ -166,7 +164,7 @@ Process</h2>
 <li>Run doxygen. <br  />
  <code>doxygen ./Doxyfile</code></li>
 </ol>
-<p>To execute all of the above steps, you can use this incredibly long one-liner: <br  />
+<p>To execute all of the above steps _(The repository is cloned into your current working directory.)_, you can use this incredibly long one-liner: <br  />
  <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib &amp;&amp; git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; doxygen ./Doxyfile</code> <br  />
  </p>
 </div></div><!-- PageDoc -->

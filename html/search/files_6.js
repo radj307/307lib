@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['indentor_2ehpp_1110',['indentor.hpp',['../indentor_8hpp.html',1,'']]],
-  ['ini_2ehpp_1111',['INI.hpp',['../_i_n_i_8hpp.html',1,'']]],
-  ['iniredux_2ehpp_1112',['INIRedux.hpp',['../_i_n_i_redux_8hpp.html',1,'']]],
-  ['iter_2ehpp_1113',['iter.hpp',['../iter_8hpp.html',1,'']]]
+  ['linecharacter_2ehpp_680',['LineCharacter.hpp',['../_line_character_8hpp.html',1,'']]]
 ];

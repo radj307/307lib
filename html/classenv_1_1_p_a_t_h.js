@@ -15,5 +15,7 @@ var classenv_1_1_p_a_t_h =
     [ "rend", "classenv_1_1_p_a_t_h.html#a29799c8605a97271a342e006f12f1d14", null ],
     [ "resolve", "classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72", null ],
     [ "resolve_split", "classenv_1_1_p_a_t_h.html#a9c0b444116365a6cd6a203bb32db3de6", null ],
-    [ "size", "classenv_1_1_p_a_t_h.html#a5103d6e106434efc0fffb1e94e9816ae", null ]
+    [ "size", "classenv_1_1_p_a_t_h.html#a5103d6e106434efc0fffb1e94e9816ae", null ],
+    [ "path_var", "classenv_1_1_p_a_t_h.html#a1153822aa22114138b1ca58be69b61c7", null ],
+    [ "program_path", "classenv_1_1_p_a_t_h.html#a52a0f68409ac9b713d091fcd14c47f8c", null ]
 ];

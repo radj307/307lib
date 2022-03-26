@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['color_2dformat_2ehpp_1094',['color-format.hpp',['../color-format_8hpp.html',1,'']]],
-  ['color_2dtransform_2ehpp_1095',['color-transform.hpp',['../color-transform_8hpp.html',1,'']]],
-  ['color_2dvalues_2eh_1096',['color-values.h',['../color-values_8h.html',1,'']]],
-  ['cursororigin_2eh_1097',['CursorOrigin.h',['../_cursor_origin_8h.html',1,'']]]
+  ['enableansi_2ehpp_671',['EnableANSI.hpp',['../_enable_a_n_s_i_8hpp.html',1,'']]],
+  ['env_2ehpp_672',['env.hpp',['../env_8hpp.html',1,'']]],
+  ['envpath_2ehpp_673',['envpath.hpp',['../envpath_8hpp.html',1,'']]]
 ];

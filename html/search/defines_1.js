@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arch_1989',['ARCH',['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h'],['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h']]]
+  ['disable_5fstr_5fliterals_1187',['DISABLE_STR_LITERALS',['../str_8hpp.html#a65bc2f112d723a2d6e8492077a63318c',1,'str.hpp']]]
 ];

@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('structxlog_1_1level_1_1_log_level.html
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structxlog_1_1level_1_1_log_level-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">xlog::level::LogLevel Struct Reference</div>  </div>
@@ -100,142 +101,30 @@ $(document).ready(function(){initNavTree('structxlog_1_1level_1_1_log_level.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3ee9df2f5d32d7613a768ae5acbfcce7"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level_1_1_log_level.html#a3ee9df2f5d32d7613a768ae5acbfcce7">LogLevel</a> (const unsigned char &amp;<a class="el" href="structxlog_1_1level.html">level</a>)</td></tr>
+<tr class="memitem:a3ee9df2f5d32d7613a768ae5acbfcce7"><td class="memItemLeft" align="right" valign="top"><a id="a3ee9df2f5d32d7613a768ae5acbfcce7"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>LogLevel</b> (const unsigned char &amp;<a class="el" href="structxlog_1_1level.html">level</a>)</td></tr>
 <tr class="separator:a3ee9df2f5d32d7613a768ae5acbfcce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19147fab37d7e0827bcbdec2fe443e75"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level_1_1_log_level.html#a19147fab37d7e0827bcbdec2fe443e75">operator const unsigned char</a> () const</td></tr>
-<tr class="separator:a19147fab37d7e0827bcbdec2fe443e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0cf98e155b7401616ae40a3ad1902ae"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level_1_1_log_level.html#af0cf98e155b7401616ae40a3ad1902ae">contains</a> (const unsigned char &amp;l) const</td></tr>
-<tr class="separator:af0cf98e155b7401616ae40a3ad1902ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8588a6f6ca0abf5f3945498f8b46edb2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxlog_1_1level_1_1_log_level.html#a8588a6f6ca0abf5f3945498f8b46edb2">as_string_id</a> () const</td></tr>
+<tr class="memitem:a8588a6f6ca0abf5f3945498f8b46edb2"><td class="memItemLeft" align="right" valign="top"><a id="a8588a6f6ca0abf5f3945498f8b46edb2"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>as_string_id</b> () const</td></tr>
 <tr class="separator:a8588a6f6ca0abf5f3945498f8b46edb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0cf98e155b7401616ae40a3ad1902ae"><td class="memItemLeft" align="right" valign="top"><a id="af0cf98e155b7401616ae40a3ad1902ae"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const unsigned char &amp;l) const</td></tr>
+<tr class="separator:af0cf98e155b7401616ae40a3ad1902ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19147fab37d7e0827bcbdec2fe443e75"><td class="memItemLeft" align="right" valign="top"><a id="a19147fab37d7e0827bcbdec2fe443e75"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>operator const unsigned char</b> () const</td></tr>
+<tr class="separator:a19147fab37d7e0827bcbdec2fe443e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af5744f359c2722aadb1cb63a016b952e"><td class="memItemLeft" align="right" valign="top"><a id="af5744f359c2722aadb1cb63a016b952e"></a>
+const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>_level</b></td></tr>
+<tr class="separator:af5744f359c2722aadb1cb63a016b952e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a message flag system that allows the programmer or user to only show specific message types. </p>
 
 <p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00045">45</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3ee9df2f5d32d7613a768ae5acbfcce7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ee9df2f5d32d7613a768ae5acbfcce7">&#9670;&nbsp;</a></span>LogLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr xlog::level::LogLevel::LogLevel </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned char &amp;&#160;</td>
-          <td class="paramname"><em>level</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00049">49</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structxlog_1_1level_1_1_log_level_a3ee9df2f5d32d7613a768ae5acbfcce7_icgraph.svg" width="390" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8588a6f6ca0abf5f3945498f8b46edb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8588a6f6ca0abf5f3945498f8b46edb2">&#9670;&nbsp;</a></span>as_string_id()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string xlog::level::LogLevel::as_string_id </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00052">52</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af0cf98e155b7401616ae40a3ad1902ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0cf98e155b7401616ae40a3ad1902ae">&#9670;&nbsp;</a></span>contains()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool xlog::level::LogLevel::contains </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned char &amp;&#160;</td>
-          <td class="paramname"><em>l</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00051">51</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structxlog_1_1level_1_1_log_level_af0cf98e155b7401616ae40a3ad1902ae_icgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a19147fab37d7e0827bcbdec2fe443e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19147fab37d7e0827bcbdec2fe443e75">&#9670;&nbsp;</a></span>operator const unsigned char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr xlog::level::LogLevel::operator const unsigned char </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00050">50</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/xlog/include/<a class="el" href="level_8hpp_source.html">level.hpp</a></li>
 </ul>
 </div><!-- contents -->

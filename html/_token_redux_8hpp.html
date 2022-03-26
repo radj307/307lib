@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('_token_redux_8hpp.html',''); initResiz
 <p>New tokenization &amp; parsing library providing superior abstraction capabilities and a much less confusing usage experience. For more information on tokenization, see: <a href="https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization">https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;make_exception.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
@@ -110,21 +110,31 @@ $(document).ready(function(){initNavTree('_token_redux_8hpp.html',''); initResiz
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TokenRedux.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_token_redux_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="_token_redux_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base object for all Gen.2 parsers. Does not specify an output type, allowing for implementation-defined flexibility.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html">token::base::gen2::IteratingCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token Parser with an integrated read pointer, and helper functions similar to <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html" title="Base TokenizerBase object that accepts a stringstream and lexeme dictionary, then tokenizes the data....">TokenizerBase</a>.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1base_1_1_lexeme_dict_base.html">token::base::LexemeDictBase&lt; LexemeType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert characters to a templated Lexeme object, which represents a single character's lexical "type". <br  />
  A Lexeme can be thought of as a character's type, and as such multiple characters can be associated with a single Lexeme, but a single Lexeme always represents a single character length.  <a href="structtoken_1_1base_1_1_lexeme_dict_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoken_1_1base_1_1_token_base.html">token::base::TokenBase&lt; TokenType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base token object. It represents zero or more characters of data, and is the most basic unit recognized by the parsing step.  <a href="structtoken_1_1base_1_1_token_base.html#details">More...</a><br /></td></tr>
@@ -136,39 +146,25 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html">token::base::gen1::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base parser object that accepts a vector of tokens, and returns an implementation-defined type.  <a href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base object for all Gen.2 parsers. Does not specify an output type, allowing for implementation-defined flexibility.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html">token::base::gen2::IteratingCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token Parser with an integrated read pointer, and helper functions similar to <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html" title="Base TokenizerBase object that accepts a stringstream and lexeme dictionary, then tokenizes the data....">TokenizerBase</a>.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacetoken"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken.html">token</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacetoken_1_1base"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1base.html">token::base</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacegen1"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegen1.html">gen1</a></td></tr>
 <tr class="memdesc:namespacegen1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the old "TokenParserBase" object for backwards-compatibility, and/or simplicity. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacetoken_1_1base_1_1gen1"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1base_1_1gen1.html">token::base::gen1</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacegen2"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegen2.html">gen2</a></td></tr>
 <tr class="memdesc:namespacegen2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains upgraded parsers with more features than the gen 1 "TokenParserBase" object. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacetoken_1_1base_1_1gen2"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1base_1_1gen2.html">token::base::gen2</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab7884a0bef16c49be96123b019b2ab5c"><td class="memTemplParams" colspan="2">template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </td></tr>
-<tr class="memitem:ab7884a0bef16c49be96123b019b2ab5c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1base_1_1gen2.html#ab7884a0bef16c49be96123b019b2ab5c">token::base::gen2::BasicParserBase</a> = ParserBase&lt; Output, TokenType, Token, BasicCoreParserBase &gt;</td></tr>
+<tr class="memitem:ab7884a0bef16c49be96123b019b2ab5c"><td class="memTemplParams" colspan="2"><a id="ab7884a0bef16c49be96123b019b2ab5c"></a>
+template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </td></tr>
+<tr class="memitem:ab7884a0bef16c49be96123b019b2ab5c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>token::base::gen2::BasicParserBase</b> = ParserBase&lt; Output, TokenType, Token, BasicCoreParserBase &gt;</td></tr>
 <tr class="separator:ab7884a0bef16c49be96123b019b2ab5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ed88184cb9b36061413a1f07c93b2df"><td class="memTemplParams" colspan="2">template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </td></tr>
-<tr class="memitem:a2ed88184cb9b36061413a1f07c93b2df"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoken_1_1base_1_1gen2.html#a2ed88184cb9b36061413a1f07c93b2df">token::base::gen2::IteratingParserBase</a> = ParserBase&lt; Output, TokenType, Token, IteratingCoreParserBase &gt;</td></tr>
+<tr class="memitem:a2ed88184cb9b36061413a1f07c93b2df"><td class="memTemplParams" colspan="2"><a id="a2ed88184cb9b36061413a1f07c93b2df"></a>
+template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;&gt; </td></tr>
+<tr class="memitem:a2ed88184cb9b36061413a1f07c93b2df"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>token::base::gen2::IteratingParserBase</b> = ParserBase&lt; Output, TokenType, Token, IteratingCoreParserBase &gt;</td></tr>
 <tr class="separator:a2ed88184cb9b36061413a1f07c93b2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

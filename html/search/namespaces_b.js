@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rng_1071',['rng',['../namespacerng.html',1,'']]]
+  ['xlog_667',['xlog',['../namespacexlog.html',1,'']]]
 ];

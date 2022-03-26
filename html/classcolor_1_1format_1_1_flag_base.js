@@ -19,5 +19,6 @@ var classcolor_1_1format_1_1_flag_base =
     [ "Sequence", "classcolor_1_1format_1_1_flag_base.html#a3f267754f6cd0974a07f32e2a2685f25", null ],
     [ "set", "classcolor_1_1format_1_1_flag_base.html#ac340878f3659a0705c31c6709971b342", null ],
     [ "set", "classcolor_1_1format_1_1_flag_base.html#a221a3abf0f7d0cd8382a7b5c865b9008", null ],
-    [ "wSequence", "classcolor_1_1format_1_1_flag_base.html#a353a798970e17b18f2228cee132c187c", null ]
+    [ "wSequence", "classcolor_1_1format_1_1_flag_base.html#a353a798970e17b18f2228cee132c187c", null ],
+    [ "_v", "classcolor_1_1format_1_1_flag_base.html#a09bb3790cef69dd6f04a5a674b490afc", null ]
 ];

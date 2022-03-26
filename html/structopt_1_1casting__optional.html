@@ -113,45 +113,17 @@ Collaboration diagram for opt::casting_optional&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a> = T</td></tr>
-<tr class="memdesc:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contained value's type.  <a href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">More...</a><br /></td></tr>
-<tr class="separator:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a972bd303b14f7f3df58cd5e571f6820f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a972bd303b14f7f3df58cd5e571f6820f">base</a> = std::optional&lt; <a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a> &gt;</td></tr>
-<tr class="memdesc:a972bd303b14f7f3df58cd5e571f6820f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular optional type from which this wrapper is derived.  <a href="structopt_1_1casting__optional.html#a972bd303b14f7f3df58cd5e571f6820f">More...</a><br /></td></tr>
+<tr class="memitem:a972bd303b14f7f3df58cd5e571f6820f"><td class="memItemLeft" align="right" valign="top"><a id="a972bd303b14f7f3df58cd5e571f6820f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a972bd303b14f7f3df58cd5e571f6820f">base</a> = std::optional&lt; <a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a> &gt;</td></tr>
+<tr class="memdesc:a972bd303b14f7f3df58cd5e571f6820f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular optional type from which this wrapper is derived. <br /></td></tr>
 <tr class="separator:a972bd303b14f7f3df58cd5e571f6820f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="memItemLeft" align="right" valign="top"><a id="ae5d1b1dd65253fb40d6454ad3809f85d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a> = T</td></tr>
+<tr class="memdesc:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contained value's type. <br /></td></tr>
+<tr class="separator:ae5d1b1dd65253fb40d6454ad3809f85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acf957842bf885c2af1ef2214e2539d5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a">operator base &amp;</a> ()</td></tr>
-<tr class="memdesc:acf957842bf885c2af1ef2214e2539d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decay this optional wrapper into a regular optional type.  <a href="structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a">More...</a><br /></td></tr>
-<tr class="separator:acf957842bf885c2af1ef2214e2539d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af592cf45c4f0ab7175c4b683116da78a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a">operator base</a> () const</td></tr>
-<tr class="memdesc:af592cf45c4f0ab7175c4b683116da78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decay this optional wrapper into a regular optional type.  <a href="structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a">More...</a><br /></td></tr>
-<tr class="separator:af592cf45c4f0ab7175c4b683116da78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4022b619c3dca81266d3ed326b06286d"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:a4022b619c3dca81266d3ed326b06286d"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d">cast_value</a> () const noexcept(false)</td></tr>
-<tr class="memdesc:a4022b619c3dca81266d3ed326b06286d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d">More...</a><br /></td></tr>
-<tr class="separator:a4022b619c3dca81266d3ed326b06286d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac39846e730c161045884cfb9c7bdcb2e"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:ac39846e730c161045884cfb9c7bdcb2e"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ac39846e730c161045884cfb9c7bdcb2e">cast_value</a> (const std::function&lt; U(T)&gt; &amp;converter) const noexcept(false)</td></tr>
-<tr class="memdesc:ac39846e730c161045884cfb9c7bdcb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#ac39846e730c161045884cfb9c7bdcb2e">More...</a><br /></td></tr>
-<tr class="separator:ac39846e730c161045884cfb9c7bdcb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4117a1ff85371fd413ae30154b719f36"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:a4117a1ff85371fd413ae30154b719f36"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a4117a1ff85371fd413ae30154b719f36">cast_value_or</a> (const U &amp;default_value) const noexcept</td></tr>
-<tr class="memdesc:a4117a1ff85371fd413ae30154b719f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#a4117a1ff85371fd413ae30154b719f36">More...</a><br /></td></tr>
-<tr class="separator:a4117a1ff85371fd413ae30154b719f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a5f8d1e81f3deba8580b72a77f39e77c9">cast_value_or</a> (const U &amp;default_value, const std::function&lt; U(T)&gt; &amp;converter) const noexcept</td></tr>
-<tr class="memdesc:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#a5f8d1e81f3deba8580b72a77f39e77c9">More...</a><br /></td></tr>
-<tr class="separator:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ac198ccedddd6f42aa3c7138d9d15cbf3">cast_value_or</a> (const T &amp;alternate) const noexcept</td></tr>
-<tr class="memdesc:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#ac198ccedddd6f42aa3c7138d9d15cbf3">More...</a><br /></td></tr>
-<tr class="separator:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a1ffc2c4569ba19c6f98d7d90818f6d0c">cast_value_or</a> (const T &amp;alternate, const std::function&lt; U(T)&gt; &amp;converter) const noexcept</td></tr>
-<tr class="memdesc:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#a1ffc2c4569ba19c6f98d7d90818f6d0c">More...</a><br /></td></tr>
-<tr class="separator:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7674ae88c967b2828da320b4f8b85b9c"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
 <tr class="memitem:a7674ae88c967b2828da320b4f8b85b9c"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt_1_1casting__optional.html">casting_optional</a>&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a7674ae88c967b2828da320b4f8b85b9c">cast</a> () const noexcept</td></tr>
 <tr class="memdesc:a7674ae88c967b2828da320b4f8b85b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy this optional object and cast its value to another type.  <a href="structopt_1_1casting__optional.html#a7674ae88c967b2828da320b4f8b85b9c">More...</a><br /></td></tr>
@@ -160,6 +132,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a374a8aa545cec6797e453313853a2374"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt_1_1casting__optional.html">casting_optional</a>&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a374a8aa545cec6797e453313853a2374">cast</a> (const std::function&lt; U(T)&gt; &amp;converter) const noexcept</td></tr>
 <tr class="memdesc:a374a8aa545cec6797e453313853a2374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy this optional object and cast its value to another type.  <a href="structopt_1_1casting__optional.html#a374a8aa545cec6797e453313853a2374">More...</a><br /></td></tr>
 <tr class="separator:a374a8aa545cec6797e453313853a2374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4022b619c3dca81266d3ed326b06286d"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
+<tr class="memitem:a4022b619c3dca81266d3ed326b06286d"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d">cast_value</a> () const noexcept(false)</td></tr>
+<tr class="memdesc:a4022b619c3dca81266d3ed326b06286d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d">More...</a><br /></td></tr>
+<tr class="separator:a4022b619c3dca81266d3ed326b06286d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39846e730c161045884cfb9c7bdcb2e"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:ac39846e730c161045884cfb9c7bdcb2e"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ac39846e730c161045884cfb9c7bdcb2e">cast_value</a> (const std::function&lt; U(T)&gt; &amp;converter) const noexcept(false)</td></tr>
+<tr class="memdesc:ac39846e730c161045884cfb9c7bdcb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#ac39846e730c161045884cfb9c7bdcb2e">More...</a><br /></td></tr>
+<tr class="separator:ac39846e730c161045884cfb9c7bdcb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
+<tr class="memitem:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#ac198ccedddd6f42aa3c7138d9d15cbf3">cast_value_or</a> (const T &amp;alternate) const noexcept</td></tr>
+<tr class="memdesc:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#ac198ccedddd6f42aa3c7138d9d15cbf3">More...</a><br /></td></tr>
+<tr class="separator:ac198ccedddd6f42aa3c7138d9d15cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a1ffc2c4569ba19c6f98d7d90818f6d0c">cast_value_or</a> (const T &amp;alternate, const std::function&lt; U(T)&gt; &amp;converter) const noexcept</td></tr>
+<tr class="memdesc:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#a1ffc2c4569ba19c6f98d7d90818f6d0c">More...</a><br /></td></tr>
+<tr class="separator:a1ffc2c4569ba19c6f98d7d90818f6d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4117a1ff85371fd413ae30154b719f36"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; T &gt; U&gt; </td></tr>
+<tr class="memitem:a4117a1ff85371fd413ae30154b719f36"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a4117a1ff85371fd413ae30154b719f36">cast_value_or</a> (const U &amp;default_value) const noexcept</td></tr>
+<tr class="memdesc:a4117a1ff85371fd413ae30154b719f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using static_cast.  <a href="structopt_1_1casting__optional.html#a4117a1ff85371fd413ae30154b719f36">More...</a><br /></td></tr>
+<tr class="separator:a4117a1ff85371fd413ae30154b719f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memTemplItemLeft" align="right" valign="top">constexpr U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#a5f8d1e81f3deba8580b72a77f39e77c9">cast_value_or</a> (const U &amp;default_value, const std::function&lt; U(T)&gt; &amp;converter) const noexcept</td></tr>
+<tr class="memdesc:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value, casted to another type using a provided conversion function.  <a href="structopt_1_1casting__optional.html#a5f8d1e81f3deba8580b72a77f39e77c9">More...</a><br /></td></tr>
+<tr class="separator:a5f8d1e81f3deba8580b72a77f39e77c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af592cf45c4f0ab7175c4b683116da78a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a">operator base</a> () const</td></tr>
+<tr class="memdesc:af592cf45c4f0ab7175c4b683116da78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decay this optional wrapper into a regular optional type.  <a href="structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a">More...</a><br /></td></tr>
+<tr class="separator:af592cf45c4f0ab7175c4b683116da78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf957842bf885c2af1ef2214e2539d5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a">operator base &amp;</a> ()</td></tr>
+<tr class="memdesc:acf957842bf885c2af1ef2214e2539d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decay this optional wrapper into a regular optional type.  <a href="structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a">More...</a><br /></td></tr>
+<tr class="separator:acf957842bf885c2af1ef2214e2539d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -176,48 +178,7 @@ struct opt::casting_optional&lt; T &gt;</h3>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="optional_8hpp_source.html#l00027">27</a> of file <a class="el" href="optional_8hpp_source.html">optional.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a972bd303b14f7f3df58cd5e571f6820f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a972bd303b14f7f3df58cd5e571f6820f">&#9670;&nbsp;</a></span>base</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structopt_1_1casting__optional.html">opt::casting_optional</a>&lt; T &gt;::<a class="el" href="structopt_1_1casting__optional.html#a972bd303b14f7f3df58cd5e571f6820f">base</a> =  std::optional&lt;<a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Regular optional type from which this wrapper is derived. </p>
-
-<p class="definition">Definition at line <a class="el" href="optional_8hpp_source.html#l00031">31</a> of file <a class="el" href="optional_8hpp_source.html">optional.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ae5d1b1dd65253fb40d6454ad3809f85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5d1b1dd65253fb40d6454ad3809f85d">&#9670;&nbsp;</a></span>type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structopt_1_1casting__optional.html">opt::casting_optional</a>&lt; T &gt;::<a class="el" href="structopt_1_1casting__optional.html#ae5d1b1dd65253fb40d6454ad3809f85d">type</a> =  T</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Contained value's type. </p>
-
-<p class="definition">Definition at line <a class="el" href="optional_8hpp_source.html#l00029">29</a> of file <a class="el" href="optional_8hpp_source.html">optional.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7674ae88c967b2828da320b4f8b85b9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7674ae88c967b2828da320b4f8b85b9c">&#9670;&nbsp;</a></span>cast() <span class="overload">[1/2]</span></h2>
 

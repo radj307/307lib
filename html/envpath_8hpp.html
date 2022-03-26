@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('envpath_8hpp.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -100,7 +99,7 @@ $(document).ready(function(){initNavTree('envpath_8hpp.html',''); initResizable(
  <b>Features</b> <br  />
  - env::getvar(&lt;var_name&gt;) <br  />
  Wrapper for the C getenv() function. <br  />
- - <a class="el" href="namespaceenv.html#aa308f9dd5c91172a08fa8d785945b3f7" title="Retrieve the value of the PATH environment variable as a vector of filesystem paths.">env::get_path()</a> <br  />
+ - <a class="el" href="envpath_8hpp.html#aa308f9dd5c91172a08fa8d785945b3f7" title="Retrieve the value of the PATH environment variable as a vector of filesystem paths.">env::get_path()</a> <br  />
  Retrieves the PATH environment variable as a vector. <br  />
  - <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">env::PATH</a> <br  />
  Object that can be used to resolve relative paths or filenames to absolute filepaths. <br  />
@@ -113,16 +112,17 @@ $(document).ready(function(){initNavTree('envpath_8hpp.html',''); initResizable(
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="env_8hpp_source.html">env.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="fileutil_8hpp_source.html">fileutil.hpp</a>&gt;</code><br />
+<code>#include &lt;fileutil.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;make_exception.hpp&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for envpath.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="envpath_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="envpath_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="envpath_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -134,27 +134,24 @@ Classes</h2></td></tr>
  Also contains useful filesystem path resolution methods using various methods.  <a href="classenv_1_1_p_a_t_h.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceenv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceenv.html">env</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a510f766a796ee27683bfe0335bfc085c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="envpath_8hpp.html#a510f766a796ee27683bfe0335bfc085c">ENV_DEFAULT_RETURN_TYPE</a>&#160;&#160;&#160;std::string</td></tr>
-<tr class="memdesc:a510f766a796ee27683bfe0335bfc085c"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for <a class="el" href="env_8hpp.html" title="Contains the env namespace&#39;s getvar function, used to retrieve the value of a given environment varia...">env.hpp</a> functions.  <a href="envpath_8hpp.html#a510f766a796ee27683bfe0335bfc085c">More...</a><br /></td></tr>
+<tr class="memitem:a510f766a796ee27683bfe0335bfc085c"><td class="memItemLeft" align="right" valign="top"><a id="a510f766a796ee27683bfe0335bfc085c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="envpath_8hpp.html#a510f766a796ee27683bfe0335bfc085c">ENV_DEFAULT_RETURN_TYPE</a>&#160;&#160;&#160;std::string</td></tr>
+<tr class="memdesc:a510f766a796ee27683bfe0335bfc085c"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for <a class="el" href="env_8hpp.html" title="Contains the env namespace&#39;s getvar function, used to retrieve the value of a given environment varia...">env.hpp</a> functions. <br /></td></tr>
 <tr class="separator:a510f766a796ee27683bfe0335bfc085c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa308f9dd5c91172a08fa8d785945b3f7"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; std::vector&lt; std::filesystem::path &gt;&gt; RT = std::vector&lt;ENV_DEFAULT_RETURN_TYPE&gt;&gt; </td></tr>
-<tr class="memitem:aa308f9dd5c91172a08fa8d785945b3f7"><td class="memTemplItemLeft" align="right" valign="top">RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceenv.html#aa308f9dd5c91172a08fa8d785945b3f7">env::get_path</a> () noexcept(false)</td></tr>
-<tr class="memdesc:aa308f9dd5c91172a08fa8d785945b3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable as a vector of filesystem paths.  <a href="namespaceenv.html#aa308f9dd5c91172a08fa8d785945b3f7">More...</a><br /></td></tr>
+<tr class="memitem:aa308f9dd5c91172a08fa8d785945b3f7"><td class="memTemplItemLeft" align="right" valign="top">RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="envpath_8hpp.html#aa308f9dd5c91172a08fa8d785945b3f7">env::get_path</a> () noexcept(false)</td></tr>
+<tr class="memdesc:aa308f9dd5c91172a08fa8d785945b3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value of the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable as a vector of filesystem paths.  <a href="envpath_8hpp.html#aa308f9dd5c91172a08fa8d785945b3f7">More...</a><br /></td></tr>
 <tr class="separator:aa308f9dd5c91172a08fa8d785945b3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab28000084be529533b4009e16a6212f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceenv.html#ab28000084be529533b4009e16a6212f7">env::PATH_VAR_NAME</a> { &quot;PATH&quot; }</td></tr>
+<tr class="memitem:ab28000084be529533b4009e16a6212f7"><td class="memItemLeft" align="right" valign="top"><a id="ab28000084be529533b4009e16a6212f7"></a>
+INLINE const CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>env::PATH_VAR_NAME</b> { &quot;PATH&quot; }</td></tr>
 <tr class="separator:ab28000084be529533b4009e16a6212f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -162,7 +159,7 @@ Variables</h2></td></tr>
  <b>Features</b> <br  />
  - env::getvar(&lt;var_name&gt;) <br  />
  Wrapper for the C getenv() function. <br  />
- - <a class="el" href="namespaceenv.html#aa308f9dd5c91172a08fa8d785945b3f7" title="Retrieve the value of the PATH environment variable as a vector of filesystem paths.">env::get_path()</a> <br  />
+ - <a class="el" href="envpath_8hpp.html#aa308f9dd5c91172a08fa8d785945b3f7" title="Retrieve the value of the PATH environment variable as a vector of filesystem paths.">env::get_path()</a> <br  />
  Retrieves the PATH environment variable as a vector. <br  />
  - <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">env::PATH</a> <br  />
  Object that can be used to resolve relative paths or filenames to absolute filepaths. <br  />
@@ -174,22 +171,39 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a510f766a796ee27683bfe0335bfc085c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a510f766a796ee27683bfe0335bfc085c">&#9670;&nbsp;</a></span>ENV_DEFAULT_RETURN_TYPE</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aa308f9dd5c91172a08fa8d785945b3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa308f9dd5c91172a08fa8d785945b3f7">&#9670;&nbsp;</a></span>get_path()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;std::same_as&lt; std::vector&lt; std::filesystem::path &gt;&gt; RT = std::vector&lt;ENV_DEFAULT_RETURN_TYPE&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define ENV_DEFAULT_RETURN_TYPE&#160;&#160;&#160;std::string</td>
+          <td class="memname">RT env::get_path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>You can override this preprocessor macro to specify either std::string or std::filesystem::path as the default return type for <a class="el" href="env_8hpp.html" title="Contains the env namespace&#39;s getvar function, used to retrieve the value of a given environment varia...">env.hpp</a> functions. </p>
+<p>Retrieve the value of the PATH environment variable as a vector of filesystem paths. </p>
+<p>Retrieve the value of the PATH environment variable as a vector of strings.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::filesystem::path&gt;</dd>
+<dd>
+std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00035">35</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00050">50</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>

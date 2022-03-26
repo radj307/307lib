@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['haspendingdatastdin_2eh_1109',['hasPendingDataSTDIN.h',['../has_pending_data_s_t_d_i_n_8h.html',1,'']]]
+  ['indentor_2ehpp_678',['indentor.hpp',['../indentor_8hpp.html',1,'']]],
+  ['iniredux_2ehpp_679',['INIRedux.hpp',['../_i_n_i_redux_8hpp.html',1,'']]]
 ];

@@ -10,5 +10,8 @@ var structprocess_1_1_proc =
     [ "read", "structprocess_1_1_proc.html#a90344413752f0badd95a9c0fccd07472", null ],
     [ "read", "structprocess_1_1_proc.html#a3005c1857c5b95664e8fc9b718ef8146", null ],
     [ "write", "structprocess_1_1_proc.html#a9b1401682e80ff728a3974a367ec79a8", null ],
-    [ "operator<<", "structprocess_1_1_proc.html#a3576833c5eb8db4a66f867595fc63ed5", null ]
+    [ "operator<<", "structprocess_1_1_proc.html#a3576833c5eb8db4a66f867595fc63ed5", null ],
+    [ "_pipe", "structprocess_1_1_proc.html#a2144c248b340f7b62557268ae0e6d815", null ],
+    [ "_rc_ptr", "structprocess_1_1_proc.html#a8115412355058ad3693935182ef0801f", null ],
+    [ "RETURN_ERROR_CODE", "structprocess_1_1_proc.html#a462ca24e5ee27fd295a58a7f2f38c2cd", null ]
 ];

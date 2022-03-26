@@ -86,9 +86,7 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -96,16 +94,9 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
-<p>Contains pre-made <a class="el" href="namespace_a_n_s_i.html">ANSI</a> sequences &amp; helper functions for making sequences.  
+<p>Contains pre-made ANSI sequences &amp; helper functions for making sequences.  
 <a href="namespaceterm.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceterm_1_1__internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm_1_1__internal.html">_internal</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceterm_1_1query"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm_1_1query.html">query</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_cursor.html">Cursor</a></td></tr>
@@ -123,42 +114,94 @@ Classes</h2></td></tr>
  Provides convenience methods for recalling color sequences by using keys. <br  />
  Very useful when you want to control the usage of escape sequences throughout your program.  <a href="classterm_1_1palette.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1setcolor__seq.html">setcolor_seq</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes. <br  />
- Uses the ostream operator&lt;&lt; to insert escape sequences into streams.  <a href="structterm_1_1setcolor__seq.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">setcolor</a> = <a class="el" href="structterm_1_1setcolor__seq.html">setcolor_seq</a>&lt; <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a> &gt;</td></tr>
-<tr class="memdesc:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, &amp; invert.  <a href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">More...</a><br /></td></tr>
-<tr class="separator:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16bb0ca9938c4b43be74d9934120047b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">wsetcolor</a> = <a class="el" href="structterm_1_1setcolor__seq.html">setcolor_seq</a>&lt; <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a> &gt;</td></tr>
-<tr class="memdesc:a16bb0ca9938c4b43be74d9934120047b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, &amp; invert.  <a href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">More...</a><br /></td></tr>
-<tr class="separator:a16bb0ca9938c4b43be74d9934120047b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5afccc4766b9f6f3a8a27b117c963530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a5afccc4766b9f6f3a8a27b117c963530">get_debug</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a5afccc4766b9f6f3a8a27b117c963530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac09ff0cafecb392091dfa6b01a0fb56d">get_info</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a77d2dec7cf8b0647fed1258a7af870fc">get_log</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adabf99de91b121935fd978e942d23549"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#adabf99de91b121935fd978e942d23549">get_msg</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:adabf99de91b121935fd978e942d23549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7032043c360b734ce3d518087229d488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a7032043c360b734ce3d518087229d488">get_warn</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a7032043c360b734ce3d518087229d488"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af968b2b78f82244432a43ba5348527ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af968b2b78f82244432a43ba5348527ca">get_error</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:af968b2b78f82244432a43ba5348527ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec502dd2f559f2199624493c171337f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4ec502dd2f559f2199624493c171337f">get_crit</a> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="memitem:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1ea1d4ba6d61d7856187a3fa217d15ca">CursorBackward</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor backwards on the current line.  <a href="namespaceterm.html#a1ea1d4ba6d61d7856187a3fa217d15ca">More...</a><br /></td></tr>
+<tr class="separator:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a65a144b336a363cac21e401c69940"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae5a65a144b336a363cac21e401c69940">CursorBlink</a> (const bool &amp;blinking)</td></tr>
+<tr class="memdesc:ae5a65a144b336a363cac21e401c69940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is blinking or not.  <a href="namespaceterm.html#ae5a65a144b336a363cac21e401c69940">More...</a><br /></td></tr>
+<tr class="separator:ae5a65a144b336a363cac21e401c69940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7707952950b52fdec571a7d532f5cc2"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:aa7707952950b52fdec571a7d532f5cc2"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa7707952950b52fdec571a7d532f5cc2">CursorDown</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:aa7707952950b52fdec571a7d532f5cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor down in the screen buffer.  <a href="namespaceterm.html#aa7707952950b52fdec571a7d532f5cc2">More...</a><br /></td></tr>
+<tr class="separator:aa7707952950b52fdec571a7d532f5cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c072ad1f886a392201a102e20d9d91"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:ab0c072ad1f886a392201a102e20d9d91"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab0c072ad1f886a392201a102e20d9d91">CursorForward</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:ab0c072ad1f886a392201a102e20d9d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor forwards on the current line.  <a href="namespaceterm.html#ab0c072ad1f886a392201a102e20d9d91">More...</a><br /></td></tr>
+<tr class="separator:ab0c072ad1f886a392201a102e20d9d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1df4934c91e7c5629ff5e761f1461bdb">CursorHorizontalAbs</a> (const T &amp;column)</td></tr>
+<tr class="memdesc:a1df4934c91e7c5629ff5e761f1461bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's horizontal position to a specific column.  <a href="namespaceterm.html#a1df4934c91e7c5629ff5e761f1461bdb">More...</a><br /></td></tr>
+<tr class="separator:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe494a7ec02f00524ac081d83e28a12"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:acfe494a7ec02f00524ac081d83e28a12"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acfe494a7ec02f00524ac081d83e28a12">CursorNextLine</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:acfe494a7ec02f00524ac081d83e28a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the beginning of one of the next lines.  <a href="namespaceterm.html#acfe494a7ec02f00524ac081d83e28a12">More...</a><br /></td></tr>
+<tr class="separator:acfe494a7ec02f00524ac081d83e28a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae016a93189d65a0b48d1b7d4424b3edf">CursorPrevLine</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:ae016a93189d65a0b48d1b7d4424b3edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the beginning of a previous line.  <a href="namespaceterm.html#ae016a93189d65a0b48d1b7d4424b3edf">More...</a><br /></td></tr>
+<tr class="separator:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abebb4775eea85eb7c438340d466ef5ac"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
+<tr class="memitem:abebb4775eea85eb7c438340d466ef5ac"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abebb4775eea85eb7c438340d466ef5ac">CursorUp</a> (const T &amp;n=1u)</td></tr>
+<tr class="memdesc:abebb4775eea85eb7c438340d466ef5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor up in the screen buffer.  <a href="namespaceterm.html#abebb4775eea85eb7c438340d466ef5ac">More...</a><br /></td></tr>
+<tr class="separator:abebb4775eea85eb7c438340d466ef5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">CursorVerticalAbs</a> (const T &amp;row)</td></tr>
+<tr class="memdesc:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific row/line.  <a href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">More...</a><br /></td></tr>
+<tr class="separator:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c874fcafe5dde9e406bb1180273d8b"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a99c874fcafe5dde9e406bb1180273d8b">CursorVisible</a> (const bool &amp;visible)</td></tr>
+<tr class="memdesc:a99c874fcafe5dde9e406bb1180273d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is visible or not.  <a href="namespaceterm.html#a99c874fcafe5dde9e406bb1180273d8b">More...</a><br /></td></tr>
+<tr class="separator:a99c874fcafe5dde9e406bb1180273d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aae015be66e78986b5736ad2653268e"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a2aae015be66e78986b5736ad2653268e">DeleteChar</a> (const unsigned &amp;n=1u)</td></tr>
+<tr class="memdesc:a2aae015be66e78986b5736ad2653268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes characters at the current cursor position, shifting any existing text from the right towards the cursor.  <a href="namespaceterm.html#a2aae015be66e78986b5736ad2653268e">More...</a><br /></td></tr>
+<tr class="separator:a2aae015be66e78986b5736ad2653268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6183118ec8512e645891f7a6c690b7d2"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2">DeleteLine</a> (const unsigned &amp;n=1u)</td></tr>
+<tr class="memdesc:a6183118ec8512e645891f7a6c690b7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes lines from the screen buffer, starting with the row the cursor is on, shifting any lines below the cursor upwards.  <a href="namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2">More...</a><br /></td></tr>
+<tr class="separator:a6183118ec8512e645891f7a6c690b7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95364d7fbd84a90684a350948fb5c33"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">EnableANSI</a> (std::istream &amp;is) noexcept</td></tr>
+<tr class="memdesc:ad95364d7fbd84a90684a350948fb5c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDIN.  <a href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">More...</a><br /></td></tr>
+<tr class="separator:ad95364d7fbd84a90684a350948fb5c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36fb322471abc5481fc5a34da3922c0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">EnableANSI</a> (std::ostream &amp;os) noexcept</td></tr>
+<tr class="memdesc:ae36fb322471abc5481fc5a34da3922c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDOUT &amp; STDERR.  <a href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">More...</a><br /></td></tr>
+<tr class="separator:ae36fb322471abc5481fc5a34da3922c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad847765cb42301b52e7e1decbb147241"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad847765cb42301b52e7e1decbb147241">EraseChar</a> (const unsigned &amp;n=1u)</td></tr>
+<tr class="memdesc:ad847765cb42301b52e7e1decbb147241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a given number of characters starting at the current cursor position by overwriting them with a space character. Any existing text is not shifted.  <a href="namespaceterm.html#ad847765cb42301b52e7e1decbb147241">More...</a><br /></td></tr>
+<tr class="separator:ad847765cb42301b52e7e1decbb147241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd993d3e830781517f3939111aa1b05f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abd993d3e830781517f3939111aa1b05f"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abd993d3e830781517f3939111aa1b05f">EraseInDisplay</a> (const T &amp;erase_scope)</td></tr>
+<tr class="memdesc:abd993d3e830781517f3939111aa1b05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces text within the viewport with spaces. The area of text cleared is defined by the given operation mode.  <a href="namespaceterm.html#abd993d3e830781517f3939111aa1b05f">More...</a><br /></td></tr>
+<tr class="separator:abd993d3e830781517f3939111aa1b05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">EraseInLine</a> (const T &amp;erase_scope) noexcept(false)</td></tr>
+<tr class="memdesc:a0d48bd75be8181d47c51c5e3703820fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all text within the current line as specified by the given mode with space characters.  <a href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">More...</a><br /></td></tr>
+<tr class="separator:a0d48bd75be8181d47c51c5e3703820fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec502dd2f559f2199624493c171337f"><td class="memItemLeft" align="right" valign="top"><a id="a4ec502dd2f559f2199624493c171337f"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_crit</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
 <tr class="separator:a4ec502dd2f559f2199624493c171337f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9e674dd845df27faf9c69cfc0d7076"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a5c9e674dd845df27faf9c69cfc0d7076">get_placeholder</a> (const bool &amp;allow_color=true) noexcept</td></tr>
+<tr class="memitem:a5afccc4766b9f6f3a8a27b117c963530"><td class="memItemLeft" align="right" valign="top"><a id="a5afccc4766b9f6f3a8a27b117c963530"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_debug</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a5afccc4766b9f6f3a8a27b117c963530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af968b2b78f82244432a43ba5348527ca"><td class="memItemLeft" align="right" valign="top"><a id="af968b2b78f82244432a43ba5348527ca"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_error</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:af968b2b78f82244432a43ba5348527ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memItemLeft" align="right" valign="top"><a id="ac09ff0cafecb392091dfa6b01a0fb56d"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_info</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memItemLeft" align="right" valign="top"><a id="a77d2dec7cf8b0647fed1258a7af870fc"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_log</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabf99de91b121935fd978e942d23549"><td class="memItemLeft" align="right" valign="top"><a id="adabf99de91b121935fd978e942d23549"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_msg</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:adabf99de91b121935fd978e942d23549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9e674dd845df27faf9c69cfc0d7076"><td class="memItemLeft" align="right" valign="top"><a id="a5c9e674dd845df27faf9c69cfc0d7076"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_placeholder</b> (const bool &amp;allow_color=true) noexcept</td></tr>
 <tr class="separator:a5c9e674dd845df27faf9c69cfc0d7076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">kbhit</a> ()</td></tr>
-<tr class="memdesc:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a key was pressed. <br  />
- On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().  <a href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">More...</a><br /></td></tr>
-<tr class="separator:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7032043c360b734ce3d518087229d488"><td class="memItemLeft" align="right" valign="top"><a id="a7032043c360b734ce3d518087229d488"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_warn</b> (const bool &amp;allow_color=true, const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a7032043c360b734ce3d518087229d488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705b8e2f941f96208d459673c5a11b4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">getch</a> ()</td></tr>
 <tr class="memdesc:a705b8e2f941f96208d459673c5a11b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a single keypress from STDIN, without blocking. <br  />
  On windows, this uses _getch(), while on linux, it uses getchar_unlocked().  <a href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">More...</a><br /></td></tr>
@@ -170,90 +213,19 @@ Functions</h2></td></tr>
 <tr class="memitem:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">getDeviceAttributes</a> () noexcept</td></tr>
 <tr class="memdesc:ae3c7abf7e060ae620d231d2f8682fe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN.  <a href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">More...</a><br /></td></tr>
 <tr class="separator:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abebb4775eea85eb7c438340d466ef5ac"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:abebb4775eea85eb7c438340d466ef5ac"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abebb4775eea85eb7c438340d466ef5ac">CursorUp</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:abebb4775eea85eb7c438340d466ef5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor up in the screen buffer.  <a href="namespaceterm.html#abebb4775eea85eb7c438340d466ef5ac">More...</a><br /></td></tr>
-<tr class="separator:abebb4775eea85eb7c438340d466ef5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7707952950b52fdec571a7d532f5cc2"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:aa7707952950b52fdec571a7d532f5cc2"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa7707952950b52fdec571a7d532f5cc2">CursorDown</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:aa7707952950b52fdec571a7d532f5cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor down in the screen buffer.  <a href="namespaceterm.html#aa7707952950b52fdec571a7d532f5cc2">More...</a><br /></td></tr>
-<tr class="separator:aa7707952950b52fdec571a7d532f5cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0c072ad1f886a392201a102e20d9d91"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:ab0c072ad1f886a392201a102e20d9d91"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab0c072ad1f886a392201a102e20d9d91">CursorForward</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:ab0c072ad1f886a392201a102e20d9d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor forwards on the current line.  <a href="namespaceterm.html#ab0c072ad1f886a392201a102e20d9d91">More...</a><br /></td></tr>
-<tr class="separator:ab0c072ad1f886a392201a102e20d9d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1ea1d4ba6d61d7856187a3fa217d15ca">CursorBackward</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor backwards on the current line.  <a href="namespaceterm.html#a1ea1d4ba6d61d7856187a3fa217d15ca">More...</a><br /></td></tr>
-<tr class="separator:a1ea1d4ba6d61d7856187a3fa217d15ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfe494a7ec02f00524ac081d83e28a12"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:acfe494a7ec02f00524ac081d83e28a12"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acfe494a7ec02f00524ac081d83e28a12">CursorNextLine</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:acfe494a7ec02f00524ac081d83e28a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the beginning of one of the next lines.  <a href="namespaceterm.html#acfe494a7ec02f00524ac081d83e28a12">More...</a><br /></td></tr>
-<tr class="separator:acfe494a7ec02f00524ac081d83e28a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memTemplParams" colspan="2">template&lt;std::integral T = unsigned&gt; </td></tr>
-<tr class="memitem:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae016a93189d65a0b48d1b7d4424b3edf">CursorPrevLine</a> (const T &amp;n=1u)</td></tr>
-<tr class="memdesc:ae016a93189d65a0b48d1b7d4424b3edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the beginning of a previous line.  <a href="namespaceterm.html#ae016a93189d65a0b48d1b7d4424b3edf">More...</a><br /></td></tr>
-<tr class="separator:ae016a93189d65a0b48d1b7d4424b3edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1df4934c91e7c5629ff5e761f1461bdb">CursorHorizontalAbs</a> (const T &amp;column)</td></tr>
-<tr class="memdesc:a1df4934c91e7c5629ff5e761f1461bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's horizontal position to a specific column.  <a href="namespaceterm.html#a1df4934c91e7c5629ff5e761f1461bdb">More...</a><br /></td></tr>
-<tr class="separator:a1df4934c91e7c5629ff5e761f1461bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">CursorVerticalAbs</a> (const T &amp;row)</td></tr>
-<tr class="memdesc:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific row/line.  <a href="namespaceterm.html#af59aac3c2f4e1b0e5d9f1eddd87deaf3">More...</a><br /></td></tr>
-<tr class="separator:af59aac3c2f4e1b0e5d9f1eddd87deaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
-<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">setCursorPosition</a> (const Tx &amp;x_column, const Ty &amp;y_row)</td></tr>
-<tr class="memdesc:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">More...</a><br /></td></tr>
-<tr class="separator:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02fa6106b18c0a2d6e8080d25178e807"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
-<tr class="memitem:a02fa6106b18c0a2d6e8080d25178e807"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a02fa6106b18c0a2d6e8080d25178e807">setCursorPosition</a> (const std::pair&lt; Tx, Ty &gt; &amp;pos)</td></tr>
-<tr class="memdesc:a02fa6106b18c0a2d6e8080d25178e807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#a02fa6106b18c0a2d6e8080d25178e807">More...</a><br /></td></tr>
-<tr class="separator:a02fa6106b18c0a2d6e8080d25178e807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99c874fcafe5dde9e406bb1180273d8b"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a99c874fcafe5dde9e406bb1180273d8b">CursorVisible</a> (const bool &amp;visible)</td></tr>
-<tr class="memdesc:a99c874fcafe5dde9e406bb1180273d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is visible or not.  <a href="namespaceterm.html#a99c874fcafe5dde9e406bb1180273d8b">More...</a><br /></td></tr>
-<tr class="separator:a99c874fcafe5dde9e406bb1180273d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5a65a144b336a363cac21e401c69940"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae5a65a144b336a363cac21e401c69940">CursorBlink</a> (const bool &amp;blinking)</td></tr>
-<tr class="memdesc:ae5a65a144b336a363cac21e401c69940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is blinking or not.  <a href="namespaceterm.html#ae5a65a144b336a363cac21e401c69940">More...</a><br /></td></tr>
-<tr class="separator:ae5a65a144b336a363cac21e401c69940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab014dc52e2eb3f00ef432c7a08b237f6">Scroll</a> (const bool &amp;dir, const unsigned &amp;n)</td></tr>
-<tr class="memdesc:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up or down by a given number of lines.  <a href="namespaceterm.html#ab014dc52e2eb3f00ef432c7a08b237f6">More...</a><br /></td></tr>
-<tr class="separator:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07bf8f762236c80ac20ff423051fc789"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a07bf8f762236c80ac20ff423051fc789">ScrollUp</a> (const unsigned &amp;n=1u)</td></tr>
-<tr class="memdesc:a07bf8f762236c80ac20ff423051fc789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up by inserting lines from the bottom.  <a href="namespaceterm.html#a07bf8f762236c80ac20ff423051fc789">More...</a><br /></td></tr>
-<tr class="separator:a07bf8f762236c80ac20ff423051fc789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7252b6fed28898f8dc1b18e8d07732b"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab7252b6fed28898f8dc1b18e8d07732b">ScrollDown</a> (const unsigned &amp;n=1u)</td></tr>
-<tr class="memdesc:ab7252b6fed28898f8dc1b18e8d07732b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport down by inserting lines from the top.  <a href="namespaceterm.html#ab7252b6fed28898f8dc1b18e8d07732b">More...</a><br /></td></tr>
-<tr class="separator:ab7252b6fed28898f8dc1b18e8d07732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16752c0ed2d0565599638c183df30b54"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">getScreenBufferSize</a> ()</td></tr>
+<tr class="memdesc:a16752c0ed2d0565599638c183df30b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the screen buffer, in characters.  <a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">More...</a><br /></td></tr>
+<tr class="separator:a16752c0ed2d0565599638c183df30b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27fec72318fb53cde2b49a52faa6d93f"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a27fec72318fb53cde2b49a52faa6d93f">InsertChar</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:a27fec72318fb53cde2b49a52faa6d93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts space characters at the current cursor position, shifting any existing text to the right.  <a href="namespaceterm.html#a27fec72318fb53cde2b49a52faa6d93f">More...</a><br /></td></tr>
 <tr class="separator:a27fec72318fb53cde2b49a52faa6d93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aae015be66e78986b5736ad2653268e"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a2aae015be66e78986b5736ad2653268e">DeleteChar</a> (const unsigned &amp;n=1u)</td></tr>
-<tr class="memdesc:a2aae015be66e78986b5736ad2653268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes characters at the current cursor position, shifting any existing text from the right towards the cursor.  <a href="namespaceterm.html#a2aae015be66e78986b5736ad2653268e">More...</a><br /></td></tr>
-<tr class="separator:a2aae015be66e78986b5736ad2653268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad847765cb42301b52e7e1decbb147241"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad847765cb42301b52e7e1decbb147241">EraseChar</a> (const unsigned &amp;n=1u)</td></tr>
-<tr class="memdesc:ad847765cb42301b52e7e1decbb147241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a given number of characters starting at the current cursor position by overwriting them with a space character. Any existing text is not shifted.  <a href="namespaceterm.html#ad847765cb42301b52e7e1decbb147241">More...</a><br /></td></tr>
-<tr class="separator:ad847765cb42301b52e7e1decbb147241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef4592f5141a3d2a4915e85e0abc7a1c"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aef4592f5141a3d2a4915e85e0abc7a1c">InsertLine</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:aef4592f5141a3d2a4915e85e0abc7a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts empty lines above the current cursor position, shifting the cursor down.  <a href="namespaceterm.html#aef4592f5141a3d2a4915e85e0abc7a1c">More...</a><br /></td></tr>
 <tr class="separator:aef4592f5141a3d2a4915e85e0abc7a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6183118ec8512e645891f7a6c690b7d2"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2">DeleteLine</a> (const unsigned &amp;n=1u)</td></tr>
-<tr class="memdesc:a6183118ec8512e645891f7a6c690b7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes lines from the screen buffer, starting with the row the cursor is on, shifting any lines below the cursor upwards.  <a href="namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2">More...</a><br /></td></tr>
-<tr class="separator:a6183118ec8512e645891f7a6c690b7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd993d3e830781517f3939111aa1b05f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abd993d3e830781517f3939111aa1b05f"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abd993d3e830781517f3939111aa1b05f">EraseInDisplay</a> (const T &amp;erase_scope)</td></tr>
-<tr class="memdesc:abd993d3e830781517f3939111aa1b05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces text within the viewport with spaces. The area of text cleared is defined by the given operation mode.  <a href="namespaceterm.html#abd993d3e830781517f3939111aa1b05f">More...</a><br /></td></tr>
-<tr class="separator:abd993d3e830781517f3939111aa1b05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">EraseInLine</a> (const T &amp;erase_scope) noexcept(false)</td></tr>
-<tr class="memdesc:a0d48bd75be8181d47c51c5e3703820fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all text within the current line as specified by the given mode with space characters.  <a href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">More...</a><br /></td></tr>
-<tr class="separator:a0d48bd75be8181d47c51c5e3703820fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aed6aef0c65f2e2500ebd365f1dacf545">SGR</a> (const Ts &amp;... modes)</td></tr>
-<tr class="separator:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a38d197365c9a1b858e90c436e07aa936">SelectGraphicsRendition</a> (const Ts &amp;... modes)</td></tr>
-<tr class="separator:a38d197365c9a1b858e90c436e07aa936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">kbhit</a> ()</td></tr>
+<tr class="memdesc:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a key was pressed. <br  />
+ On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().  <a href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">More...</a><br /></td></tr>
+<tr class="separator:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ed28a553fcaeda1fb5843237462f51"><td class="memItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a83ed28a553fcaeda1fb5843237462f51">NextTabStop</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:a83ed28a553fcaeda1fb5843237462f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the next column with a tab stop. <br  />
  If there are no more tab stops, move to the last column in the row. <br  />
@@ -264,168 +236,177 @@ Functions</h2></td></tr>
  If there are no more tab stops, moves the cursor to the first column. <br  />
  If the cursor is in the first column, doesn�t move the cursor.  <a href="namespaceterm.html#af3d7a971263a93fdd71c5f6e598e92cf">More...</a><br /></td></tr>
 <tr class="separator:af3d7a971263a93fdd71c5f6e598e92cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memTemplItemLeft" align="right" valign="top">requires static var::Streamable&lt; T, std::stringstream &gt; Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">setScreenBufferSize</a> (const T &amp;columnCount, const T &amp;lineCount)</td></tr>
-<tr class="memdesc:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">More...</a><br /></td></tr>
-<tr class="separator:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="memItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab014dc52e2eb3f00ef432c7a08b237f6">Scroll</a> (const bool &amp;dir, const unsigned &amp;n)</td></tr>
+<tr class="memdesc:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up or down by a given number of lines.  <a href="namespaceterm.html#ab014dc52e2eb3f00ef432c7a08b237f6">More...</a><br /></td></tr>
+<tr class="separator:ab014dc52e2eb3f00ef432c7a08b237f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7252b6fed28898f8dc1b18e8d07732b"><td class="memItemLeft" align="right" valign="top"><a id="ab7252b6fed28898f8dc1b18e8d07732b"></a>
+Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab7252b6fed28898f8dc1b18e8d07732b">ScrollDown</a> (const unsigned &amp;n=1u)</td></tr>
+<tr class="memdesc:ab7252b6fed28898f8dc1b18e8d07732b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport down by inserting lines from the top. <br /></td></tr>
+<tr class="separator:ab7252b6fed28898f8dc1b18e8d07732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07bf8f762236c80ac20ff423051fc789"><td class="memItemLeft" align="right" valign="top"><a id="a07bf8f762236c80ac20ff423051fc789"></a>
+Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a07bf8f762236c80ac20ff423051fc789">ScrollUp</a> (const unsigned &amp;n=1u)</td></tr>
+<tr class="memdesc:a07bf8f762236c80ac20ff423051fc789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up by inserting lines from the bottom. <br /></td></tr>
+<tr class="separator:a07bf8f762236c80ac20ff423051fc789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplParams" colspan="2"><a id="a38d197365c9a1b858e90c436e07aa936"></a>
+template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:a38d197365c9a1b858e90c436e07aa936"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SelectGraphicsRendition</b> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:a38d197365c9a1b858e90c436e07aa936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fa6106b18c0a2d6e8080d25178e807"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
+<tr class="memitem:a02fa6106b18c0a2d6e8080d25178e807"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a02fa6106b18c0a2d6e8080d25178e807">setCursorPosition</a> (const std::pair&lt; Tx, Ty &gt; &amp;pos)</td></tr>
+<tr class="memdesc:a02fa6106b18c0a2d6e8080d25178e807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#a02fa6106b18c0a2d6e8080d25178e807">More...</a><br /></td></tr>
+<tr class="separator:a02fa6106b18c0a2d6e8080d25178e807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
+<tr class="memitem:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">setCursorPosition</a> (const Tx &amp;x_column, const Ty &amp;y_row)</td></tr>
+<tr class="memdesc:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#ae0c8aa9fd722753f992cf2ae393dbf31">More...</a><br /></td></tr>
+<tr class="separator:ae0c8aa9fd722753f992cf2ae393dbf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c421f241bde884ca3cdf0748d11439"><td class="memItemLeft" align="right" valign="top"><a id="ac4c421f241bde884ca3cdf0748d11439"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>setOriginPos</b> (const bool &amp;min_axis=1)</td></tr>
+<tr class="separator:ac4c421f241bde884ca3cdf0748d11439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae36ee6a2b9c19ca5965b906a1d7f55b8"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:ae36ee6a2b9c19ca5965b906a1d7f55b8"><td class="memTemplItemLeft" align="right" valign="top">requires static var::Streamable&lt; T, std::stringstream &gt; Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae36ee6a2b9c19ca5965b906a1d7f55b8">setScreenBufferSize</a> (const std::pair&lt; T, T &gt; colRowPair)</td></tr>
 <tr class="memdesc:ae36ee6a2b9c19ca5965b906a1d7f55b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#ae36ee6a2b9c19ca5965b906a1d7f55b8">More...</a><br /></td></tr>
 <tr class="separator:ae36ee6a2b9c19ca5965b906a1d7f55b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16752c0ed2d0565599638c183df30b54"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">getScreenBufferSize</a> ()</td></tr>
-<tr class="memdesc:a16752c0ed2d0565599638c183df30b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the screen buffer, in characters.  <a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">More...</a><br /></td></tr>
-<tr class="separator:a16752c0ed2d0565599638c183df30b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4c421f241bde884ca3cdf0748d11439"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac4c421f241bde884ca3cdf0748d11439">setOriginPos</a> (const bool &amp;min_axis=1)</td></tr>
-<tr class="separator:ac4c421f241bde884ca3cdf0748d11439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae36fb322471abc5481fc5a34da3922c0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">EnableANSI</a> (std::ostream &amp;os) noexcept</td></tr>
-<tr class="memdesc:ae36fb322471abc5481fc5a34da3922c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable <a class="el" href="namespace_a_n_s_i.html">ANSI</a> output sequences for STDOUT &amp; STDERR.  <a href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">More...</a><br /></td></tr>
-<tr class="separator:ae36fb322471abc5481fc5a34da3922c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad95364d7fbd84a90684a350948fb5c33"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">EnableANSI</a> (std::istream &amp;is) noexcept</td></tr>
-<tr class="memdesc:ad95364d7fbd84a90684a350948fb5c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable <a class="el" href="namespace_a_n_s_i.html">ANSI</a> output sequences for STDIN.  <a href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">More...</a><br /></td></tr>
-<tr class="separator:ad95364d7fbd84a90684a350948fb5c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memTemplItemLeft" align="right" valign="top">requires static var::Streamable&lt; T, std::stringstream &gt; Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">setScreenBufferSize</a> (const T &amp;columnCount, const T &amp;lineCount)</td></tr>
+<tr class="memdesc:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">More...</a><br /></td></tr>
+<tr class="separator:aa8d9ccb9b1efdd2decee3585f305f4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplParams" colspan="2"><a id="aed6aef0c65f2e2500ebd365f1dacf545"></a>
+template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memTemplItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SGR</b> (const Ts &amp;... modes)</td></tr>
+<tr class="separator:aed6aef0c65f2e2500ebd365f1dacf545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad39d7cb04941ff840e4199fbf3288bb2"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad39d7cb04941ff840e4199fbf3288bb2">setcolor_placeholder</a> { <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a>{}, <a class="el" href="structcolor_1_1format.html#a76b63f6053121da916461d9d256df706">format::NONE</a> }</td></tr>
-<tr class="memdesc:ad39d7cb04941ff840e4199fbf3288bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions.  <a href="namespaceterm.html#ad39d7cb04941ff840e4199fbf3288bb2">More...</a><br /></td></tr>
-<tr class="separator:ad39d7cb04941ff840e4199fbf3288bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4111eb93e15079e7d1dd6566d7889a6f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">wsetcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4111eb93e15079e7d1dd6566d7889a6f">wsetcolor_placeholder</a> { <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>{}, <a class="el" href="structcolor_1_1format.html#a76b63f6053121da916461d9d256df706">format::NONE</a> }</td></tr>
-<tr class="memdesc:a4111eb93e15079e7d1dd6566d7889a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions.  <a href="namespaceterm.html#a4111eb93e15079e7d1dd6566d7889a6f">More...</a><br /></td></tr>
-<tr class="separator:a4111eb93e15079e7d1dd6566d7889a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0ed174d3b17e83567591be1b53e0826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa0ed174d3b17e83567591be1b53e0826">MessageMarginSize</a> { 10 }</td></tr>
-<tr class="separator:aa0ed174d3b17e83567591be1b53e0826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab3afbd59cc858b2c4bd0e56c35091344">debug</a> { &quot;[DEBUG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9b78b820ff7f8d8d7c8df4b7465a6929">info</a> { &quot;[INFO]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2114561969406531197a84083603f76d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a2114561969406531197a84083603f76d">log</a> { &quot;[LOG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a2114561969406531197a84083603f76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9df737c672d34383ec3e221b9a7c28bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9df737c672d34383ec3e221b9a7c28bf">msg</a> { &quot;[MSG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a9df737c672d34383ec3e221b9a7c28bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a5a96ff1c90bfbbeac88d6663655f2368">warn</a> { &quot;[WARN]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1c834afe66ab8f7a76e9a9c0043dd5ec">error</a> { &quot;[ERROR]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a73d34894a92cb4be71c922809a6e1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a5a73d34894a92cb4be71c922809a6e1b">crit</a> { &quot;[CRIT]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a5a73d34894a92cb4be71c922809a6e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8d84b53b0720b2324367c93077b289"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aea8d84b53b0720b2324367c93077b289">placeholder</a> { &quot;&quot;, <a class="el" href="namespaceterm.html#aa0ed174d3b17e83567591be1b53e0826">MessageMarginSize</a> }</td></tr>
-<tr class="separator:aea8d84b53b0720b2324367c93077b289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01">ReportCursorPosition</a> { make_sequence(CSI, &quot;6n&quot;) }</td></tr>
-<tr class="memdesc:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.  <a href="namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01">More...</a><br /></td></tr>
-<tr class="separator:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa162e433dc0590b0fba4d742ac7ebfb9">ReportDeviceAttributes</a> { make_sequence(CSI, &quot;0c&quot;) }</td></tr>
-<tr class="memdesc:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report device attributes to STDIN.  <a href="namespaceterm.html#aa162e433dc0590b0fba4d742ac7ebfb9">More...</a><br /></td></tr>
-<tr class="separator:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a40374b44ebb409f85e6ef68e4e8b9a28">SaveCursor</a> { make_sequence(ESC, '7') }</td></tr>
-<tr class="memdesc:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the cursor position. Can be recalled later with LoadCursor.  <a href="namespaceterm.html#a40374b44ebb409f85e6ef68e4e8b9a28">More...</a><br /></td></tr>
-<tr class="separator:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad54e668aab8666e52c2575d653404537"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad54e668aab8666e52c2575d653404537">LoadCursor</a> { make_sequence(ESC, '8') }</td></tr>
-<tr class="memdesc:ad54e668aab8666e52c2575d653404537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to the last saved position with SaveCursor.  <a href="namespaceterm.html#ad54e668aab8666e52c2575d653404537">More...</a><br /></td></tr>
-<tr class="separator:ad54e668aab8666e52c2575d653404537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaa98e80454c69f8c01244af54e74640"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acaa98e80454c69f8c01244af54e74640">EnableCursor</a> { make_sequence(CSI, &quot;?25&quot;, ENABLE) }</td></tr>
-<tr class="memdesc:acaa98e80454c69f8c01244af54e74640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable (Show) the cursor.  <a href="namespaceterm.html#acaa98e80454c69f8c01244af54e74640">More...</a><br /></td></tr>
-<tr class="separator:acaa98e80454c69f8c01244af54e74640"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9a59641a3c82cbd78a195f42f2ef39bb">DisableCursor</a> { make_sequence(CSI, &quot;?25&quot;, DISABLE) }</td></tr>
-<tr class="memdesc:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable (Hide) the cursor.  <a href="namespaceterm.html#a9a59641a3c82cbd78a195f42f2ef39bb">More...</a><br /></td></tr>
-<tr class="separator:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a313d89a0319da5a4e0785804c31d2bb3"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a313d89a0319da5a4e0785804c31d2bb3">EnableCursorBlink</a> { make_sequence(CSI, &quot;?12&quot;, ENABLE) }</td></tr>
-<tr class="memdesc:a313d89a0319da5a4e0785804c31d2bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable cursor blinking.  <a href="namespaceterm.html#a313d89a0319da5a4e0785804c31d2bb3">More...</a><br /></td></tr>
-<tr class="separator:a313d89a0319da5a4e0785804c31d2bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a8562447d9e29e8b67e3f16f68dcccef8">DisableCursorBlink</a> { make_sequence(CSI, &quot;?12&quot;, DISABLE) }</td></tr>
-<tr class="memdesc:a8562447d9e29e8b67e3f16f68dcccef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable cursor blinking.  <a href="namespaceterm.html#a8562447d9e29e8b67e3f16f68dcccef8">More...</a><br /></td></tr>
-<tr class="separator:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">clear</a> { make_sequence(CSI, 2, 'J') }</td></tr>
-<tr class="memdesc:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all characters in the current viewport. (similar to <code>clear</code>|<code>cls</code>)  <a href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">More...</a><br /></td></tr>
+<tr class="memitem:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memItemLeft" align="right" valign="top"><a id="ae09c7b504d177f6ffc0f5cd2eb585dfa"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae09c7b504d177f6ffc0f5cd2eb585dfa">clear</a> { make_sequence(CSI, 2, 'J') }</td></tr>
+<tr class="memdesc:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all characters in the current viewport. (similar to <code>clear</code>|<code>cls</code>) <br /></td></tr>
 <tr class="separator:ae09c7b504d177f6ffc0f5cd2eb585dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88357e2d383772f737a8e22add373567"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a88357e2d383772f737a8e22add373567">EnableKeypadApplicationMode</a> { make_sequence(ESC, '=') }</td></tr>
-<tr class="memdesc:a88357e2d383772f737a8e22add373567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables Application Mode for the number pad keys.  <a href="namespaceterm.html#a88357e2d383772f737a8e22add373567">More...</a><br /></td></tr>
-<tr class="separator:a88357e2d383772f737a8e22add373567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9d8a0312c8f436c9b23fee1ac63edcfb">DisableKeypadApplicationMode</a> { make_sequence(ESC, '&gt;') }</td></tr>
-<tr class="memdesc:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables Application Mode for the number pad keys.  <a href="namespaceterm.html#a9d8a0312c8f436c9b23fee1ac63edcfb">More...</a><br /></td></tr>
-<tr class="separator:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea297ec4726f9cf656e4788e14aed8c9"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aea297ec4726f9cf656e4788e14aed8c9">EnableCursorKeysMode</a> { make_sequence(CSI, &quot;?1&quot;, ENABLE) }</td></tr>
-<tr class="memdesc:aea297ec4726f9cf656e4788e14aed8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys.  <a href="namespaceterm.html#aea297ec4726f9cf656e4788e14aed8c9">More...</a><br /></td></tr>
-<tr class="separator:aea297ec4726f9cf656e4788e14aed8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f30978394dd7cac1a38e110e9de346f"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a3f30978394dd7cac1a38e110e9de346f">DisableCursorKeysMode</a> { make_sequence(CSI, &quot;?1&quot;, DISABLE) }</td></tr>
-<tr class="memdesc:a3f30978394dd7cac1a38e110e9de346f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys.  <a href="namespaceterm.html#a3f30978394dd7cac1a38e110e9de346f">More...</a><br /></td></tr>
-<tr class="separator:a3f30978394dd7cac1a38e110e9de346f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a93dd5a5b70e812e7a87d72ffe66fe69d">SetTabStop</a> { make_sequence(ESC, 'H') }</td></tr>
-<tr class="memdesc:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column.  <a href="namespaceterm.html#a93dd5a5b70e812e7a87d72ffe66fe69d">More...</a><br /></td></tr>
-<tr class="separator:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a811b5f940751a85357cd1336163dce2c"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a811b5f940751a85357cd1336163dce2c">UnsetTabStop</a> { make_sequence(CSI, &quot;0g&quot;) }</td></tr>
-<tr class="memdesc:a811b5f940751a85357cd1336163dce2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets any tab stops in the current column from the SetTabStop command.  <a href="namespaceterm.html#a811b5f940751a85357cd1336163dce2c">More...</a><br /></td></tr>
-<tr class="separator:a811b5f940751a85357cd1336163dce2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4df569ee83171a2d8f18c2b913127c74"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">ClearTabStops</a> { make_sequence(CSI, &quot;3g&quot;) }</td></tr>
-<tr class="memdesc:a4df569ee83171a2d8f18c2b913127c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all currently set tab stops.  <a href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">More...</a><br /></td></tr>
+<tr class="memitem:a4df569ee83171a2d8f18c2b913127c74"><td class="memItemLeft" align="right" valign="top"><a id="a4df569ee83171a2d8f18c2b913127c74"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">ClearTabStops</a> { make_sequence(CSI, &quot;3g&quot;) }</td></tr>
+<tr class="memdesc:a4df569ee83171a2d8f18c2b913127c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all currently set tab stops. <br /></td></tr>
 <tr class="separator:a4df569ee83171a2d8f18c2b913127c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa4d9728514d82414bc1c11f8a05cf49a">ResetTabStops</a> { make_sequence(CSI, &quot;?5W&quot;) }</td></tr>
-<tr class="memdesc:aa4d9728514d82414bc1c11f8a05cf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tab stop at every 8th column. (Default)  <a href="namespaceterm.html#aa4d9728514d82414bc1c11f8a05cf49a">More...</a><br /></td></tr>
-<tr class="separator:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27cc01e2e44e1add4fc78370f391206d"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">EnableLineDrawing</a> { make_sequence(OSC, '0') }</td></tr>
-<tr class="memdesc:a27cc01e2e44e1add4fc78370f391206d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DEC Line Drawing mode.  <a href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">More...</a><br /></td></tr>
-<tr class="separator:a27cc01e2e44e1add4fc78370f391206d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e768f0e163c777ac18d1cb57fc85f16"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1e768f0e163c777ac18d1cb57fc85f16">DisableLineDrawing</a> { make_sequence(OSC, 'B') }</td></tr>
-<tr class="memdesc:a1e768f0e163c777ac18d1cb57fc85f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable DEC Line Drawing mode.  <a href="namespaceterm.html#a1e768f0e163c777ac18d1cb57fc85f16">More...</a><br /></td></tr>
+<tr class="memitem:a5a73d34894a92cb4be71c922809a6e1b"><td class="memItemLeft" align="right" valign="top"><a id="a5a73d34894a92cb4be71c922809a6e1b"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crit</b> { &quot;[CRIT]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a5a73d34894a92cb4be71c922809a6e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memItemLeft" align="right" valign="top"><a id="ab3afbd59cc858b2c4bd0e56c35091344"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> { &quot;[DEBUG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="memItemLeft" align="right" valign="top"><a id="aa519b3c1affe13dc5981e9a54f1da5c3"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa519b3c1affe13dc5981e9a54f1da5c3">DisableAltScreenBuffer</a> { make_sequence(CSI, &quot;?1049&quot;, DISABLE) }</td></tr>
+<tr class="memdesc:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the alternate screen buffer. <br /></td></tr>
+<tr class="separator:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="memItemLeft" align="right" valign="top"><a id="a9a59641a3c82cbd78a195f42f2ef39bb"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9a59641a3c82cbd78a195f42f2ef39bb">DisableCursor</a> { make_sequence(CSI, &quot;?25&quot;, DISABLE) }</td></tr>
+<tr class="memdesc:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable (Hide) the cursor. <br /></td></tr>
+<tr class="separator:a9a59641a3c82cbd78a195f42f2ef39bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memItemLeft" align="right" valign="top"><a id="a8562447d9e29e8b67e3f16f68dcccef8"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a8562447d9e29e8b67e3f16f68dcccef8">DisableCursorBlink</a> { make_sequence(CSI, &quot;?12&quot;, DISABLE) }</td></tr>
+<tr class="memdesc:a8562447d9e29e8b67e3f16f68dcccef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable cursor blinking. <br /></td></tr>
+<tr class="separator:a8562447d9e29e8b67e3f16f68dcccef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f30978394dd7cac1a38e110e9de346f"><td class="memItemLeft" align="right" valign="top"><a id="a3f30978394dd7cac1a38e110e9de346f"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a3f30978394dd7cac1a38e110e9de346f">DisableCursorKeysMode</a> { make_sequence(CSI, &quot;?1&quot;, DISABLE) }</td></tr>
+<tr class="memdesc:a3f30978394dd7cac1a38e110e9de346f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys. <br /></td></tr>
+<tr class="separator:a3f30978394dd7cac1a38e110e9de346f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="memItemLeft" align="right" valign="top"><a id="a9d8a0312c8f436c9b23fee1ac63edcfb"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a9d8a0312c8f436c9b23fee1ac63edcfb">DisableKeypadApplicationMode</a> { make_sequence(ESC, '&gt;') }</td></tr>
+<tr class="memdesc:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables Application Mode for the number pad keys. <br /></td></tr>
+<tr class="separator:a9d8a0312c8f436c9b23fee1ac63edcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e768f0e163c777ac18d1cb57fc85f16"><td class="memItemLeft" align="right" valign="top"><a id="a1e768f0e163c777ac18d1cb57fc85f16"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1e768f0e163c777ac18d1cb57fc85f16">DisableLineDrawing</a> { make_sequence(OSC, 'B') }</td></tr>
+<tr class="memdesc:a1e768f0e163c777ac18d1cb57fc85f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable DEC Line Drawing mode. <br /></td></tr>
 <tr class="separator:a1e768f0e163c777ac18d1cb57fc85f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ac50074833e200d016b17f655854af"><td class="memItemLeft" align="right" valign="top"><a id="a33ac50074833e200d016b17f655854af"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a33ac50074833e200d016b17f655854af">EnableAltScreenBuffer</a> { make_sequence(CSI, &quot;?1049&quot;, ENABLE) }</td></tr>
+<tr class="memdesc:a33ac50074833e200d016b17f655854af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the alternate screen buffer. <br /></td></tr>
+<tr class="separator:a33ac50074833e200d016b17f655854af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa98e80454c69f8c01244af54e74640"><td class="memItemLeft" align="right" valign="top"><a id="acaa98e80454c69f8c01244af54e74640"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acaa98e80454c69f8c01244af54e74640">EnableCursor</a> { make_sequence(CSI, &quot;?25&quot;, ENABLE) }</td></tr>
+<tr class="memdesc:acaa98e80454c69f8c01244af54e74640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable (Show) the cursor. <br /></td></tr>
+<tr class="separator:acaa98e80454c69f8c01244af54e74640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313d89a0319da5a4e0785804c31d2bb3"><td class="memItemLeft" align="right" valign="top"><a id="a313d89a0319da5a4e0785804c31d2bb3"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a313d89a0319da5a4e0785804c31d2bb3">EnableCursorBlink</a> { make_sequence(CSI, &quot;?12&quot;, ENABLE) }</td></tr>
+<tr class="memdesc:a313d89a0319da5a4e0785804c31d2bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable cursor blinking. <br /></td></tr>
+<tr class="separator:a313d89a0319da5a4e0785804c31d2bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea297ec4726f9cf656e4788e14aed8c9"><td class="memItemLeft" align="right" valign="top"><a id="aea297ec4726f9cf656e4788e14aed8c9"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aea297ec4726f9cf656e4788e14aed8c9">EnableCursorKeysMode</a> { make_sequence(CSI, &quot;?1&quot;, ENABLE) }</td></tr>
+<tr class="memdesc:aea297ec4726f9cf656e4788e14aed8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys. <br /></td></tr>
+<tr class="separator:aea297ec4726f9cf656e4788e14aed8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88357e2d383772f737a8e22add373567"><td class="memItemLeft" align="right" valign="top"><a id="a88357e2d383772f737a8e22add373567"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a88357e2d383772f737a8e22add373567">EnableKeypadApplicationMode</a> { make_sequence(ESC, '=') }</td></tr>
+<tr class="memdesc:a88357e2d383772f737a8e22add373567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables Application Mode for the number pad keys. <br /></td></tr>
+<tr class="separator:a88357e2d383772f737a8e22add373567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cc01e2e44e1add4fc78370f391206d"><td class="memItemLeft" align="right" valign="top"><a id="a27cc01e2e44e1add4fc78370f391206d"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">EnableLineDrawing</a> { make_sequence(OSC, '0') }</td></tr>
+<tr class="memdesc:a27cc01e2e44e1add4fc78370f391206d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DEC Line Drawing mode. <br /></td></tr>
+<tr class="separator:a27cc01e2e44e1add4fc78370f391206d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memItemLeft" align="right" valign="top"><a id="a1c834afe66ab8f7a76e9a9c0043dd5ec"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> { &quot;[ERROR]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memItemLeft" align="right" valign="top"><a id="a9b78b820ff7f8d8d7c8df4b7465a6929"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>info</b> { &quot;[INFO]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad54e668aab8666e52c2575d653404537"><td class="memItemLeft" align="right" valign="top"><a id="ad54e668aab8666e52c2575d653404537"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad54e668aab8666e52c2575d653404537">LoadCursor</a> { make_sequence(ESC, '8') }</td></tr>
+<tr class="memdesc:ad54e668aab8666e52c2575d653404537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to the last saved position with SaveCursor. <br /></td></tr>
+<tr class="separator:ad54e668aab8666e52c2575d653404537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2114561969406531197a84083603f76d"><td class="memItemLeft" align="right" valign="top"><a id="a2114561969406531197a84083603f76d"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> { &quot;[LOG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a2114561969406531197a84083603f76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ed174d3b17e83567591be1b53e0826"><td class="memItemLeft" align="right" valign="top"><a id="aa0ed174d3b17e83567591be1b53e0826"></a>
+INLINE const CONSTEXPR <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MessageMarginSize</b> { 10 }</td></tr>
+<tr class="separator:aa0ed174d3b17e83567591be1b53e0826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df737c672d34383ec3e221b9a7c28bf"><td class="memItemLeft" align="right" valign="top"><a id="a9df737c672d34383ec3e221b9a7c28bf"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msg</b> { &quot;[MSG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a9df737c672d34383ec3e221b9a7c28bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8d84b53b0720b2324367c93077b289"><td class="memItemLeft" align="right" valign="top"><a id="aea8d84b53b0720b2324367c93077b289"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>placeholder</b> { &quot;&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:aea8d84b53b0720b2324367c93077b289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="memItemLeft" align="right" valign="top"><a id="a054f91c7e4b38fd8481ff3cf4a9e8a01"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01">ReportCursorPosition</a> { make_sequence(CSI, &quot;6n&quot;) }</td></tr>
+<tr class="memdesc:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN. <br /></td></tr>
+<tr class="separator:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="memItemLeft" align="right" valign="top"><a id="aa162e433dc0590b0fba4d742ac7ebfb9"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa162e433dc0590b0fba4d742ac7ebfb9">ReportDeviceAttributes</a> { make_sequence(CSI, &quot;0c&quot;) }</td></tr>
+<tr class="memdesc:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report device attributes to STDIN. <br /></td></tr>
+<tr class="separator:aa162e433dc0590b0fba4d742ac7ebfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac20bda3ffedffdc8939bfc82b8807663"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac20bda3ffedffdc8939bfc82b8807663">Reset</a> { make_sequence(CSI, &quot;!p&quot;) }</td></tr>
 <tr class="memdesc:ac20bda3ffedffdc8939bfc82b8807663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the following terminal properties:  <a href="namespaceterm.html#ac20bda3ffedffdc8939bfc82b8807663">More...</a><br /></td></tr>
 <tr class="separator:ac20bda3ffedffdc8939bfc82b8807663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">ResetTextColor</a> { make_sequence(CSI, SGR_DEFAULT_FORE, END) }</td></tr>
-<tr class="memdesc:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets foreground (text) colors.  <a href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">More...</a><br /></td></tr>
-<tr class="separator:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7d0b122fa5cf56bee110f3859b814f"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">ResetBackColor</a> { make_sequence(CSI, SGR_DEFAULT_BACK, END) }</td></tr>
-<tr class="memdesc:a1f7d0b122fa5cf56bee110f3859b814f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets background colors.  <a href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">More...</a><br /></td></tr>
+<tr class="memitem:a1f7d0b122fa5cf56bee110f3859b814f"><td class="memItemLeft" align="right" valign="top"><a id="a1f7d0b122fa5cf56bee110f3859b814f"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">ResetBackColor</a> { make_sequence(CSI, SGR_DEFAULT_BACK, END) }</td></tr>
+<tr class="memdesc:a1f7d0b122fa5cf56bee110f3859b814f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets background colors. <br /></td></tr>
 <tr class="separator:a1f7d0b122fa5cf56bee110f3859b814f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4f4903544983e6e22d9d099d4cb0ef"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0a4f4903544983e6e22d9d099d4cb0ef">ResetColor</a> { make_sequence(<a class="el" href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">ResetTextColor</a>, <a class="el" href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">ResetBackColor</a>) }</td></tr>
-<tr class="memdesc:a0a4f4903544983e6e22d9d099d4cb0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets foreground (text) color &amp; background color to their defaults.  <a href="namespaceterm.html#a0a4f4903544983e6e22d9d099d4cb0ef">More...</a><br /></td></tr>
+<tr class="memitem:a0a4f4903544983e6e22d9d099d4cb0ef"><td class="memItemLeft" align="right" valign="top"><a id="a0a4f4903544983e6e22d9d099d4cb0ef"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0a4f4903544983e6e22d9d099d4cb0ef">ResetColor</a> { make_sequence(<a class="el" href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">ResetTextColor</a>, <a class="el" href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">ResetBackColor</a>) }</td></tr>
+<tr class="memdesc:a0a4f4903544983e6e22d9d099d4cb0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets foreground (text) color &amp; background color to their defaults. <br /></td></tr>
 <tr class="separator:a0a4f4903544983e6e22d9d099d4cb0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ac50074833e200d016b17f655854af"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a33ac50074833e200d016b17f655854af">EnableAltScreenBuffer</a> { make_sequence(CSI, &quot;?1049&quot;, ENABLE) }</td></tr>
-<tr class="memdesc:a33ac50074833e200d016b17f655854af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the alternate screen buffer.  <a href="namespaceterm.html#a33ac50074833e200d016b17f655854af">More...</a><br /></td></tr>
-<tr class="separator:a33ac50074833e200d016b17f655854af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="memItemLeft" align="right" valign="top">static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa519b3c1affe13dc5981e9a54f1da5c3">DisableAltScreenBuffer</a> { make_sequence(CSI, &quot;?1049&quot;, DISABLE) }</td></tr>
-<tr class="memdesc:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the alternate screen buffer.  <a href="namespaceterm.html#aa519b3c1affe13dc5981e9a54f1da5c3">More...</a><br /></td></tr>
-<tr class="separator:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memItemLeft" align="right" valign="top"><a id="aa4d9728514d82414bc1c11f8a05cf49a"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa4d9728514d82414bc1c11f8a05cf49a">ResetTabStops</a> { make_sequence(CSI, &quot;?5W&quot;) }</td></tr>
+<tr class="memdesc:aa4d9728514d82414bc1c11f8a05cf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tab stop at every 8th column. (Default) <br /></td></tr>
+<tr class="separator:aa4d9728514d82414bc1c11f8a05cf49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="memItemLeft" align="right" valign="top"><a id="acc64ab9ebd5a0d6e67cd99db543c0475"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">ResetTextColor</a> { make_sequence(CSI, SGR_DEFAULT_FORE, END) }</td></tr>
+<tr class="memdesc:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets foreground (text) colors. <br /></td></tr>
+<tr class="separator:acc64ab9ebd5a0d6e67cd99db543c0475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="memItemLeft" align="right" valign="top"><a id="a40374b44ebb409f85e6ef68e4e8b9a28"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a40374b44ebb409f85e6ef68e4e8b9a28">SaveCursor</a> { make_sequence(ESC, '7') }</td></tr>
+<tr class="memdesc:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the cursor position. Can be recalled later with LoadCursor. <br /></td></tr>
+<tr class="separator:a40374b44ebb409f85e6ef68e4e8b9a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="memItemLeft" align="right" valign="top"><a id="a93dd5a5b70e812e7a87d72ffe66fe69d"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a93dd5a5b70e812e7a87d72ffe66fe69d">SetTabStop</a> { make_sequence(ESC, 'H') }</td></tr>
+<tr class="memdesc:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column. <br /></td></tr>
+<tr class="separator:a93dd5a5b70e812e7a87d72ffe66fe69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811b5f940751a85357cd1336163dce2c"><td class="memItemLeft" align="right" valign="top"><a id="a811b5f940751a85357cd1336163dce2c"></a>
+static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a811b5f940751a85357cd1336163dce2c">UnsetTabStop</a> { make_sequence(CSI, &quot;0g&quot;) }</td></tr>
+<tr class="memdesc:a811b5f940751a85357cd1336163dce2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets any tab stops in the current column from the SetTabStop command. <br /></td></tr>
+<tr class="separator:a811b5f940751a85357cd1336163dce2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memItemLeft" align="right" valign="top"><a id="a5a96ff1c90bfbbeac88d6663655f2368"></a>
+INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>warn</b> { &quot;[WARN]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains pre-made <a class="el" href="namespace_a_n_s_i.html">ANSI</a> sequences &amp; helper functions for making sequences. </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a3cf3ddf954d07bcb593ca74f0c636e50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cf3ddf954d07bcb593ca74f0c636e50">&#9670;&nbsp;</a></span>setcolor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">term::setcolor</a> = typedef <a class="el" href="structterm_1_1setcolor__seq.html">setcolor_seq</a>&lt;<a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, &amp; invert. </p>
-
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00171">171</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a16bb0ca9938c4b43be74d9934120047b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16bb0ca9938c4b43be74d9934120047b">&#9670;&nbsp;</a></span>wsetcolor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">term::wsetcolor</a> = typedef <a class="el" href="structterm_1_1setcolor__seq.html">setcolor_seq</a>&lt;<a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, &amp; invert. </p>
-
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00200">200</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<div class="textblock"><p>Contains pre-made ANSI sequences &amp; helper functions for making sequences. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1ea1d4ba6d61d7856187a3fa217d15ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ea1d4ba6d61d7856187a3fa217d15ca">&#9670;&nbsp;</a></span>CursorBackward()</h2>
 
@@ -910,7 +891,7 @@ template&lt;std::integral T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Enable <a class="el" href="namespace_a_n_s_i.html">ANSI</a> output sequences for STDIN. </p>
+<p>Enable ANSI output sequences for STDIN. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>Target Output Stream </td></tr>
@@ -947,7 +928,7 @@ template&lt;std::integral T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Enable <a class="el" href="namespace_a_n_s_i.html">ANSI</a> output sequences for STDOUT &amp; STDERR. </p>
+<p>Enable ANSI output sequences for STDOUT &amp; STDERR. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>Target Output Stream </td></tr>
@@ -1099,300 +1080,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4ec502dd2f559f2199624493c171337f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ec502dd2f559f2199624493c171337f">&#9670;&nbsp;</a></span>get_crit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_crit </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00059">59</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5afccc4766b9f6f3a8a27b117c963530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5afccc4766b9f6f3a8a27b117c963530">&#9670;&nbsp;</a></span>get_debug()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_debug </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00053">53</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af968b2b78f82244432a43ba5348527ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af968b2b78f82244432a43ba5348527ca">&#9670;&nbsp;</a></span>get_error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_error </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00058">58</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac09ff0cafecb392091dfa6b01a0fb56d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac09ff0cafecb392091dfa6b01a0fb56d">&#9670;&nbsp;</a></span>get_info()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_info </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00054">54</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a77d2dec7cf8b0647fed1258a7af870fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77d2dec7cf8b0647fed1258a7af870fc">&#9670;&nbsp;</a></span>get_log()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_log </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00055">55</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="adabf99de91b121935fd978e942d23549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adabf99de91b121935fd978e942d23549">&#9670;&nbsp;</a></span>get_msg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_msg </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00056">56</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5c9e674dd845df27faf9c69cfc0d7076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c9e674dd845df27faf9c69cfc0d7076">&#9670;&nbsp;</a></span>get_placeholder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_placeholder </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00061">61</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a7032043c360b734ce3d518087229d488"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7032043c360b734ce3d518087229d488">&#9670;&nbsp;</a></span>get_warn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::get_warn </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>allow_color</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>indentation</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00057">57</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a705b8e2f941f96208d459673c5a11b4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a705b8e2f941f96208d459673c5a11b4c">&#9670;&nbsp;</a></span>getch()</h2>
 
@@ -1464,7 +1151,8 @@ template&lt;std::integral RT = size_t&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a55343558a46cefcc203c3a5cc5ccaf8f_cgraph.svg" width="640" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a55343558a46cefcc203c3a5cc5ccaf8f_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1499,7 +1187,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ae3c7abf7e060ae620d231d2f8682fe50_cgraph.svg" width="655" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ae3c7abf7e060ae620d231d2f8682fe50_cgraph.svg" width="439" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1779,106 +1468,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ab7252b6fed28898f8dc1b18e8d07732b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7252b6fed28898f8dc1b18e8d07732b">&#9670;&nbsp;</a></span>ScrollDown()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Sequence term::ScrollDown </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em> = <code>1u</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Scroll the viewport down by inserting lines from the top. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00320">320</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ab7252b6fed28898f8dc1b18e8d07732b_cgraph.svg" width="270" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a07bf8f762236c80ac20ff423051fc789"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07bf8f762236c80ac20ff423051fc789">&#9670;&nbsp;</a></span>ScrollUp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Sequence term::ScrollUp </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em> = <code>1u</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Scroll the viewport up by inserting lines from the bottom. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00318">318</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a07bf8f762236c80ac20ff423051fc789_cgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a38d197365c9a1b858e90c436e07aa936"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38d197365c9a1b858e90c436e07aa936">&#9670;&nbsp;</a></span>SelectGraphicsRendition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::Streamable... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Sequence term::SelectGraphicsRendition </td>
-          <td>(</td>
-          <td class="paramtype">const Ts &amp;...&#160;</td>
-          <td class="paramname"><em>modes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00419">419</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a02fa6106b18c0a2d6e8080d25178e807"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02fa6106b18c0a2d6e8080d25178e807">&#9670;&nbsp;</a></span>setCursorPosition() <span class="overload">[1/2]</span></h2>
 
@@ -1965,34 +1554,6 @@ template&lt;std::integral Tx, std::integral Ty&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Sequence </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00235">235</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac4c421f241bde884ca3cdf0748d11439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4c421f241bde884ca3cdf0748d11439">&#9670;&nbsp;</a></span>setOriginPos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int term::setOriginPos </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>min_axis</em> = <code>1</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_cursor_origin_8h_source.html#l00006">6</a> of file <a class="el" href="_cursor_origin_8h_source.html">CursorOrigin.h</a>.</p>
 
 </div>
 </div>
@@ -2091,612 +1652,13 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_aa8d9ccb9b1efdd2decee3585f305f4a7_icgraph.svg" width="386" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_aa8d9ccb9b1efdd2decee3585f305f4a7_icgraph.svg" width="202" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="aed6aef0c65f2e2500ebd365f1dacf545"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed6aef0c65f2e2500ebd365f1dacf545">&#9670;&nbsp;</a></span>SGR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::Streamable... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Sequence term::SGR </td>
-          <td>(</td>
-          <td class="paramtype">const Ts &amp;...&#160;</td>
-          <td class="paramname"><em>modes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00409">409</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ae09c7b504d177f6ffc0f5cd2eb585dfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae09c7b504d177f6ffc0f5cd2eb585dfa">&#9670;&nbsp;</a></span>clear</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::clear { make_sequence(CSI, 2, 'J') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases all characters in the current viewport. (similar to <code>clear</code>|<code>cls</code>) </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00369">369</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4df569ee83171a2d8f18c2b913127c74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4df569ee83171a2d8f18c2b913127c74">&#9670;&nbsp;</a></span>ClearTabStops</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ClearTabStops { make_sequence(CSI, &quot;3g&quot;) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clear all currently set tab stops. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00464">464</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5a73d34894a92cb4be71c922809a6e1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a73d34894a92cb4be71c922809a6e1b">&#9670;&nbsp;</a></span>crit</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::crit { &quot;[CRIT]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00050">50</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab3afbd59cc858b2c4bd0e56c35091344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3afbd59cc858b2c4bd0e56c35091344">&#9670;&nbsp;</a></span>debug</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::debug { &quot;[DEBUG]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00044">44</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa519b3c1affe13dc5981e9a54f1da5c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa519b3c1affe13dc5981e9a54f1da5c3">&#9670;&nbsp;</a></span>DisableAltScreenBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableAltScreenBuffer { make_sequence(CSI, &quot;?1049&quot;, DISABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disables the alternate screen buffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00546">546</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9a59641a3c82cbd78a195f42f2ef39bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a59641a3c82cbd78a195f42f2ef39bb">&#9670;&nbsp;</a></span>DisableCursor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableCursor { make_sequence(CSI, &quot;?25&quot;, DISABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable (Hide) the cursor. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00258">258</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a8562447d9e29e8b67e3f16f68dcccef8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8562447d9e29e8b67e3f16f68dcccef8">&#9670;&nbsp;</a></span>DisableCursorBlink</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableCursorBlink { make_sequence(CSI, &quot;?12&quot;, DISABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable cursor blinking. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00273">273</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a3f30978394dd7cac1a38e110e9de346f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f30978394dd7cac1a38e110e9de346f">&#9670;&nbsp;</a></span>DisableCursorKeysMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableCursorKeysMode { make_sequence(CSI, &quot;?1&quot;, DISABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00431">431</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9d8a0312c8f436c9b23fee1ac63edcfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d8a0312c8f436c9b23fee1ac63edcfb">&#9670;&nbsp;</a></span>DisableKeypadApplicationMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableKeypadApplicationMode { make_sequence(ESC, '&gt;') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disables Application Mode for the number pad keys. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00427">427</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1e768f0e163c777ac18d1cb57fc85f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e768f0e163c777ac18d1cb57fc85f16">&#9670;&nbsp;</a></span>DisableLineDrawing</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::DisableLineDrawing { make_sequence(OSC, 'B') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable DEC Line Drawing mode. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00473">473</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a33ac50074833e200d016b17f655854af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ac50074833e200d016b17f655854af">&#9670;&nbsp;</a></span>EnableAltScreenBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableAltScreenBuffer { make_sequence(CSI, &quot;?1049&quot;, ENABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables the alternate screen buffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00544">544</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="acaa98e80454c69f8c01244af54e74640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaa98e80454c69f8c01244af54e74640">&#9670;&nbsp;</a></span>EnableCursor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableCursor { make_sequence(CSI, &quot;?25&quot;, ENABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable (Show) the cursor. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00256">256</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a313d89a0319da5a4e0785804c31d2bb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a313d89a0319da5a4e0785804c31d2bb3">&#9670;&nbsp;</a></span>EnableCursorBlink</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableCursorBlink { make_sequence(CSI, &quot;?12&quot;, ENABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable cursor blinking. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00271">271</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aea297ec4726f9cf656e4788e14aed8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea297ec4726f9cf656e4788e14aed8c9">&#9670;&nbsp;</a></span>EnableCursorKeysMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableCursorKeysMode { make_sequence(CSI, &quot;?1&quot;, ENABLE) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Keys mode for the home, end, &amp; arrow keys. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00429">429</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a88357e2d383772f737a8e22add373567"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88357e2d383772f737a8e22add373567">&#9670;&nbsp;</a></span>EnableKeypadApplicationMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableKeypadApplicationMode { make_sequence(ESC, '=') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables Application Mode for the number pad keys. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00425">425</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a27cc01e2e44e1add4fc78370f391206d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27cc01e2e44e1add4fc78370f391206d">&#9670;&nbsp;</a></span>EnableLineDrawing</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::EnableLineDrawing { make_sequence(OSC, '0') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable DEC Line Drawing mode. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00470">470</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1c834afe66ab8f7a76e9a9c0043dd5ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c834afe66ab8f7a76e9a9c0043dd5ec">&#9670;&nbsp;</a></span>error</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::error { &quot;[ERROR]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00049">49</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9b78b820ff7f8d8d7c8df4b7465a6929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b78b820ff7f8d8d7c8df4b7465a6929">&#9670;&nbsp;</a></span>info</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::info { &quot;[INFO]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00045">45</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad54e668aab8666e52c2575d653404537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad54e668aab8666e52c2575d653404537">&#9670;&nbsp;</a></span>LoadCursor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::LoadCursor { make_sequence(ESC, '8') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the cursor's position to the last saved position with SaveCursor. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00253">253</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a2114561969406531197a84083603f76d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2114561969406531197a84083603f76d">&#9670;&nbsp;</a></span>log</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::log { &quot;[LOG]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00046">46</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa0ed174d3b17e83567591be1b53e0826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0ed174d3b17e83567591be1b53e0826">&#9670;&nbsp;</a></span>MessageMarginSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5">indent::size_type</a> term::MessageMarginSize { 10 }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00042">42</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9df737c672d34383ec3e221b9a7c28bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9df737c672d34383ec3e221b9a7c28bf">&#9670;&nbsp;</a></span>msg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::msg { &quot;[MSG]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00047">47</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aea8d84b53b0720b2324367c93077b289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea8d84b53b0720b2324367c93077b289">&#9670;&nbsp;</a></span>placeholder</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::placeholder { &quot;&quot;, <a class="el" href="namespaceterm.html#aa0ed174d3b17e83567591be1b53e0826">MessageMarginSize</a> }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00051">51</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a054f91c7e4b38fd8481ff3cf4a9e8a01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a054f91c7e4b38fd8481ff3cf4a9e8a01">&#9670;&nbsp;</a></span>ReportCursorPosition</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ReportCursorPosition { make_sequence(CSI, &quot;6n&quot;) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00085">85</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa162e433dc0590b0fba4d742ac7ebfb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa162e433dc0590b0fba4d742ac7ebfb9">&#9670;&nbsp;</a></span>ReportDeviceAttributes</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ReportDeviceAttributes { make_sequence(CSI, &quot;0c&quot;) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Report device attributes to STDIN. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00136">136</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ac20bda3ffedffdc8939bfc82b8807663"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac20bda3ffedffdc8939bfc82b8807663">&#9670;&nbsp;</a></span>Reset</h2>
 
@@ -2740,256 +1702,6 @@ template&lt;var::Streamable... Ts&gt; </div>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00534">534</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1f7d0b122fa5cf56bee110f3859b814f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f7d0b122fa5cf56bee110f3859b814f">&#9670;&nbsp;</a></span>ResetBackColor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ResetBackColor { make_sequence(CSI, SGR_DEFAULT_BACK, END) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets background colors. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00538">538</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a0a4f4903544983e6e22d9d099d4cb0ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a4f4903544983e6e22d9d099d4cb0ef">&#9670;&nbsp;</a></span>ResetColor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ResetColor { make_sequence(<a class="el" href="namespaceterm.html#acc64ab9ebd5a0d6e67cd99db543c0475">ResetTextColor</a>, <a class="el" href="namespaceterm.html#a1f7d0b122fa5cf56bee110f3859b814f">ResetBackColor</a>) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets foreground (text) color &amp; background color to their defaults. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00540">540</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa4d9728514d82414bc1c11f8a05cf49a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4d9728514d82414bc1c11f8a05cf49a">&#9670;&nbsp;</a></span>ResetTabStops</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ResetTabStops { make_sequence(CSI, &quot;?5W&quot;) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets a tab stop at every 8th column. (Default) </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00467">467</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="acc64ab9ebd5a0d6e67cd99db543c0475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc64ab9ebd5a0d6e67cd99db543c0475">&#9670;&nbsp;</a></span>ResetTextColor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::ResetTextColor { make_sequence(CSI, SGR_DEFAULT_FORE, END) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets foreground (text) colors. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00536">536</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a40374b44ebb409f85e6ef68e4e8b9a28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40374b44ebb409f85e6ef68e4e8b9a28">&#9670;&nbsp;</a></span>SaveCursor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::SaveCursor { make_sequence(ESC, '7') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save the cursor position. Can be recalled later with LoadCursor. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00251">251</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad39d7cb04941ff840e4199fbf3288bb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad39d7cb04941ff840e4199fbf3288bb2">&#9670;&nbsp;</a></span>setcolor_placeholder</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">setcolor</a> term::setcolor_placeholder { <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a>{}, <a class="el" href="structcolor_1_1format.html#a76b63f6053121da916461d9d256df706">format::NONE</a> }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A setcolor instance that does nothing, for use with ternary expressions. </p>
-
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00173">173</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a93dd5a5b70e812e7a87d72ffe66fe69d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93dd5a5b70e812e7a87d72ffe66fe69d">&#9670;&nbsp;</a></span>SetTabStop</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::SetTabStop { make_sequence(ESC, 'H') }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the current column. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00434">434</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a811b5f940751a85357cd1336163dce2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a811b5f940751a85357cd1336163dce2c">&#9670;&nbsp;</a></span>UnsetTabStop</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Sequence term::UnsetTabStop { make_sequence(CSI, &quot;0g&quot;) }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Unsets any tab stops in the current column from the SetTabStop command. </p>
-
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00461">461</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5a96ff1c90bfbbeac88d6663655f2368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a96ff1c90bfbbeac88d6663655f2368">&#9670;&nbsp;</a></span>warn</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="el" href="structterm_1_1_message.html">Message</a> term::warn { &quot;[WARN]&quot;, MessageMarginSize }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_message_8hpp_source.html#l00048">48</a> of file <a class="el" href="_message_8hpp_source.html">Message.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4111eb93e15079e7d1dd6566d7889a6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4111eb93e15079e7d1dd6566d7889a6f">&#9670;&nbsp;</a></span>wsetcolor_placeholder</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">wsetcolor</a> term::wsetcolor_placeholder { <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>{}, <a class="el" href="structcolor_1_1format.html#a76b63f6053121da916461d9d256df706">format::NONE</a> }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A setcolor instance that does nothing, for use with ternary expressions. </p>
-
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00202">202</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 
 </div>
 </div>

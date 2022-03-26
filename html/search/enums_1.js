@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['color_1910',['COLOR',['../palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3',1,'palette_example.cpp']]]
+  ['openmode_1178',['openmode',['../openmode_8h.html#a4172803d88f79140493760c26cbf1ea4',1,'file']]]
 ];

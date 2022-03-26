@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['consteval_1990',['CONSTEVAL',['../sysarch_8h.html#a9020686a7e116e040711b247d4f864ba',1,'sysarch.h']]],
-  ['constexpr_1991',['CONSTEXPR',['../sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280',1,'sysarch.h']]]
+  ['env_5fdefault_5freturn_5ftype_1188',['ENV_DEFAULT_RETURN_TYPE',['../envpath_8hpp.html#a510f766a796ee27683bfe0335bfc085c',1,'envpath.hpp']]]
 ];

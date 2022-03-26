@@ -1,7 +1,5 @@
 var files_dup =
 [
-    [ "307modules", "dir_ccc64ed03bc93cb1a4e9c8e97161261b.html", "dir_ccc64ed03bc93cb1a4e9c8e97161261b" ],
-    [ "docs", "dir_f886482bb532d7f61b5c3590948b6774.html", null ],
     [ "filelib", "dir_0f370597da718f425d39865e9f37f757.html", "dir_0f370597da718f425d39865e9f37f757" ],
     [ "optlib", "dir_8a5e14e7985632d035ffd9350f48db82.html", "dir_8a5e14e7985632d035ffd9350f48db82" ],
     [ "shared", "dir_9982052f7ce695d12571567315b2fafa.html", "dir_9982052f7ce695d12571567315b2fafa" ],

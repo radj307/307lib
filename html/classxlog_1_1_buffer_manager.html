@@ -87,141 +87,50 @@ $(document).ready(function(){initNavTree('classxlog_1_1_buffer_manager.html','')
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classxlog_1_1_buffer_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">xlog::BufferManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for xlog::BufferManager:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classxlog_1_1_buffer_manager__coll__graph.svg" width="182" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afd5e7b96ae950befb0fe4b2f79b2bebc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1_buffer_manager.html#afd5e7b96ae950befb0fe4b2f79b2bebc">BufferManager</a> (std::ostream &amp;bind_to)</td></tr>
+<tr class="memitem:afd5e7b96ae950befb0fe4b2f79b2bebc"><td class="memItemLeft" align="right" valign="top"><a id="afd5e7b96ae950befb0fe4b2f79b2bebc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BufferManager</b> (std::ostream &amp;bind_to)</td></tr>
 <tr class="separator:afd5e7b96ae950befb0fe4b2f79b2bebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a016bcdc73a046bf5bd7cbcb65c52724d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1_buffer_manager.html#a016bcdc73a046bf5bd7cbcb65c52724d">setAltBuffer</a> (<a class="el" href="namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513">Buffer</a> target)</td></tr>
-<tr class="separator:a016bcdc73a046bf5bd7cbcb65c52724d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12e17e776a00afcc85e2ddd54916c06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1_buffer_manager.html#a12e17e776a00afcc85e2ddd54916c06f">getAltBuffer</a> () const</td></tr>
+<tr class="memitem:a12e17e776a00afcc85e2ddd54916c06f"><td class="memItemLeft" align="right" valign="top"><a id="a12e17e776a00afcc85e2ddd54916c06f"></a>
+Buffer&#160;</td><td class="memItemRight" valign="bottom"><b>getAltBuffer</b> () const</td></tr>
 <tr class="separator:a12e17e776a00afcc85e2ddd54916c06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14bcc0963361d44226c5ac4dece66f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxlog_1_1_buffer_manager.html#a14bcc0963361d44226c5ac4dece66f6e">swap</a> () noexcept(false)</td></tr>
+<tr class="memitem:a016bcdc73a046bf5bd7cbcb65c52724d"><td class="memItemLeft" align="right" valign="top"><a id="a016bcdc73a046bf5bd7cbcb65c52724d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAltBuffer</b> (Buffer target)</td></tr>
+<tr class="separator:a016bcdc73a046bf5bd7cbcb65c52724d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14bcc0963361d44226c5ac4dece66f6e"><td class="memItemLeft" align="right" valign="top"><a id="a14bcc0963361d44226c5ac4dece66f6e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>swap</b> () noexcept(false)</td></tr>
 <tr class="separator:a14bcc0963361d44226c5ac4dece66f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5d02b3ab81a60bc031ffe121d0b8fac9"><td class="memItemLeft" align="right" valign="top"><a id="a5d02b3ab81a60bc031ffe121d0b8fac9"></a>
+Buffer&#160;</td><td class="memItemRight" valign="bottom"><b>_alt</b></td></tr>
+<tr class="separator:a5d02b3ab81a60bc031ffe121d0b8fac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2af10b651d54b09c31d34458c4b5e1"><td class="memItemLeft" align="right" valign="top"><a id="a8a2af10b651d54b09c31d34458c4b5e1"></a>
+Buffer&#160;</td><td class="memItemRight" valign="bottom"><b>_main</b></td></tr>
+<tr class="separator:a8a2af10b651d54b09c31d34458c4b5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6bbc8fe5dd06b3a4d1cf1f9ef7adfb"><td class="memItemLeft" align="right" valign="top"><a id="aef6bbc8fe5dd06b3a4d1cf1f9ef7adfb"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>_ostream</b></td></tr>
+<tr class="separator:aef6bbc8fe5dd06b3a4d1cf1f9ef7adfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="redirect_8hpp_source.html#l00018">18</a> of file <a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afd5e7b96ae950befb0fe4b2f79b2bebc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd5e7b96ae950befb0fe4b2f79b2bebc">&#9670;&nbsp;</a></span>BufferManager()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">xlog::BufferManager::BufferManager </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>bind_to</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="redirect_8hpp_source.html#l00023">23</a> of file <a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a12e17e776a00afcc85e2ddd54916c06f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12e17e776a00afcc85e2ddd54916c06f">&#9670;&nbsp;</a></span>getAltBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513">Buffer</a> xlog::BufferManager::getAltBuffer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="redirect_8hpp_source.html#l00026">26</a> of file <a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a016bcdc73a046bf5bd7cbcb65c52724d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a016bcdc73a046bf5bd7cbcb65c52724d">&#9670;&nbsp;</a></span>setAltBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void xlog::BufferManager::setAltBuffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513">Buffer</a>&#160;</td>
-          <td class="paramname"><em>target</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="redirect_8hpp_source.html#l00025">25</a> of file <a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a14bcc0963361d44226c5ac4dece66f6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14bcc0963361d44226c5ac4dece66f6e">&#9670;&nbsp;</a></span>swap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void xlog::BufferManager::swap </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="redirect_8hpp_source.html#l00028">28</a> of file <a class="el" href="redirect_8hpp_source.html">redirect.hpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/xlog/include/<a class="el" href="redirect_8hpp_source.html">redirect.hpp</a></li>
 </ul>
 </div><!-- contents -->

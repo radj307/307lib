@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['underline_1805',['UNDERLINE',['../structcolor_1_1format.html#a83e448fb062ff7de9314282bb32aef53',1,'color::format::UNDERLINE()'],['../namespacecolor.html#ac21a218293bb8e93c7f069a26f3d83a8',1,'color::underline()']]],
-  ['unsettabstop_1806',['UnsetTabStop',['../namespaceterm.html#a811b5f940751a85357cd1336163dce2c',1,'term']]],
-  ['use_5fregex_5findent_1807',['use_regex_indent',['../structterm_1_1_message.html#aa22ac98cf98b3775fcc85ac0ae875e43',1,'term::Message']]]
+  ['validarg_1131',['ValidArg',['../namespaceopt.html#af5a63481366bb7bf0406ff735e6b592f',1,'opt']]],
+  ['validargorcompound_1132',['ValidArgOrCompound',['../namespaceopt.html#adf158337f8369478586d64f9162afead',1,'opt']]],
+  ['validargtype_1133',['ValidArgType',['../namespaceopt.html#a5186e11563094f28ac3182224bfbc6d0',1,'opt']]],
+  ['validinputtype_1134',['ValidInputType',['../namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1',1,'opt']]],
+  ['validvaluet_1135',['ValidValueT',['../_i_n_i_redux_8hpp.html#a696a61687f8419e973918d08bbd6ee65',1,'file::ini']]],
+  ['vec_1136',['vec',['../structopt_1_1_capture_list.html#ab3975dce15bf28ed21536c9f098625cc',1,'opt::CaptureList']]]
 ];

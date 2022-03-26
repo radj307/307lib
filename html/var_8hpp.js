@@ -1,8 +1,8 @@
 var var_8hpp =
 [
-    [ "is_same_as", "structvar_1_1is__same__as.html", "structvar_1_1is__same__as" ],
-    [ "is_more_than", "structvar_1_1is__more__than.html", "structvar_1_1is__more__than" ],
     [ "is_less_than", "structvar_1_1is__less__than.html", "structvar_1_1is__less__than" ],
+    [ "is_more_than", "structvar_1_1is__more__than.html", "structvar_1_1is__more__than" ],
+    [ "is_same_as", "structvar_1_1is__same__as.html", "structvar_1_1is__same__as" ],
     [ "false_t", "var_8hpp.html#a41080bdb7186fa7a77b12bfcdf06ff9f", null ],
     [ "is_less_than_t", "var_8hpp.html#aa77448b6227b775a15035ce6bdd4d5e1", null ],
     [ "is_more_than_one", "var_8hpp.html#a7326dbe784dec7d5ca3c3fce14a960d7", null ],

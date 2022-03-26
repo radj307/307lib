@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['map_1873',['Map',['../classfile_1_1ini_1_1_i_n_i_container.html#acd056f85c0bbe3cc8f4582aeab8dae29',1,'file::ini::INIContainer']]],
-  ['matrix_1874',['matrix',['../namespacematrix.html#a9df42eea7cdecb876fdb3475128f9784',1,'matrix']]],
-  ['msg_5fbreak_5ft_1875',['msg_break_t',['../namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2',1,'xlog']]],
-  ['mutableflag_1876',['MutableFlag',['../structcolor_1_1format.html#a9deaebe7d68dd5abf11875b7938e8681',1,'color::format']]]
+  ['sectioncontent_1166',['SectionContent',['../classfile_1_1ini_1_1_i_n_i_container.html#aa9edf86bd0f23248d1484559e72ecdf0',1,'file::ini::INIContainer']]],
+  ['size_5ftype_1167',['size_type',['../structindentor.html#abc93d2eb3bcfe3ae47fc8e19799fdbc5',1,'indentor']]],
+  ['string_1168',['String',['../_i_n_i_redux_8hpp.html#a6c566c0483cccf316d90f12e2ce7ea11',1,'file::ini']]],
+  ['string_5ftype_1169',['string_type',['../structindentor.html#a19918b0b633d941b16632193a5dfb69a',1,'indentor']]]
 ];

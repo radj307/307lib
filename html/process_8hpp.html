@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('process_8hpp.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -100,7 +99,7 @@ $(document).ready(function(){initNavTree('process_8hpp.html',''); initResizable(
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;make_exception.hpp&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -109,7 +108,8 @@ $(document).ready(function(){initNavTree('process_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for process.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="process_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="process_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="process_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -125,34 +125,33 @@ Classes</h2></td></tr>
  Note that to retrieve the return code, you must call <a class="el" href="structprocess_1_1_proc.html#a3675feb2224f03031c8d8eeb32f89e59" title="Close the process pipe, and retrieve the return code.">close()</a> once the process has completed.  <a href="structprocess_1_1_proc.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceprocess"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocess.html">process</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab6949e8178edeb4294d893f3ee4966d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8hpp.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a>&#160;&#160;&#160;popen</td></tr>
-<tr class="separator:ab6949e8178edeb4294d893f3ee4966d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c39c7c96d7f5d1f5cd1743122d476e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8hpp.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a>&#160;&#160;&#160;pclose</td></tr>
+<tr class="memitem:a4c39c7c96d7f5d1f5cd1743122d476e3"><td class="memItemLeft" align="right" valign="top"><a id="a4c39c7c96d7f5d1f5cd1743122d476e3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCLOSE</b>&#160;&#160;&#160;pclose</td></tr>
 <tr class="separator:a4c39c7c96d7f5d1f5cd1743122d476e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6949e8178edeb4294d893f3ee4966d5"><td class="memItemLeft" align="right" valign="top"><a id="ab6949e8178edeb4294d893f3ee4966d5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>POPEN</b>&#160;&#160;&#160;popen</td></tr>
+<tr class="separator:ab6949e8178edeb4294d893f3ee4966d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0977f36ec347108a1322b04f6adc4074"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t SIZE&gt; </td></tr>
-<tr class="memitem:a0977f36ec347108a1322b04f6adc4074"><td class="memTemplItemLeft" align="right" valign="top">std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprocess.html#a0977f36ec347108a1322b04f6adc4074">process::make_array</a> (const int &amp;val=0)</td></tr>
-<tr class="separator:a0977f36ec347108a1322b04f6adc4074"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5e26429e7a90976dc53b2e7a5fbe9fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocess.html#aa5e26429e7a90976dc53b2e7a5fbe9fe">process::exec</a> (const std::string &amp;command, const Mode &amp;mode=(Mode::TEXT))</td></tr>
-<tr class="memdesc:aa5e26429e7a90976dc53b2e7a5fbe9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is discarded.  <a href="namespaceprocess.html#aa5e26429e7a90976dc53b2e7a5fbe9fe">More...</a><br /></td></tr>
+<tr class="memitem:aa5e26429e7a90976dc53b2e7a5fbe9fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8hpp.html#aa5e26429e7a90976dc53b2e7a5fbe9fe">process::exec</a> (const std::string &amp;command, const Mode &amp;mode=(Mode::TEXT))</td></tr>
+<tr class="memdesc:aa5e26429e7a90976dc53b2e7a5fbe9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is discarded.  <a href="process_8hpp.html#aa5e26429e7a90976dc53b2e7a5fbe9fe">More...</a><br /></td></tr>
 <tr class="separator:aa5e26429e7a90976dc53b2e7a5fbe9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad519689022bbbe9b921d4718b01380d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocess.html#ad519689022bbbe9b921d4718b01380d4">process::exec</a> (std::stringstream *buffer, const std::string &amp;command, const Mode &amp;mode=(Mode::READ|Mode::TEXT))</td></tr>
-<tr class="memdesc:ad519689022bbbe9b921d4718b01380d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is inserted into the given stringstream pointer.  <a href="namespaceprocess.html#ad519689022bbbe9b921d4718b01380d4">More...</a><br /></td></tr>
+<tr class="memitem:ad519689022bbbe9b921d4718b01380d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8hpp.html#ad519689022bbbe9b921d4718b01380d4">process::exec</a> (std::stringstream *buffer, const std::string &amp;command, const Mode &amp;mode=(Mode::READ|Mode::TEXT))</td></tr>
+<tr class="memdesc:ad519689022bbbe9b921d4718b01380d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is inserted into the given stringstream pointer.  <a href="process_8hpp.html#ad519689022bbbe9b921d4718b01380d4">More...</a><br /></td></tr>
 <tr class="separator:ad519689022bbbe9b921d4718b01380d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0977f36ec347108a1322b04f6adc4074"><td class="memTemplParams" colspan="2"><a id="a0977f36ec347108a1322b04f6adc4074"></a>
+template&lt;typename T , size_t SIZE&gt; </td></tr>
+<tr class="memitem:a0977f36ec347108a1322b04f6adc4074"><td class="memTemplItemLeft" align="right" valign="top">std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>process::make_array</b> (const int &amp;val=0)</td></tr>
+<tr class="separator:a0977f36ec347108a1322b04f6adc4074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8725091b9f128111af36cd201ea59c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> const <a class="el" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocess.html#a8725091b9f128111af36cd201ea59c5c">process::SEQ_SHELL_OUTPUT_REDIRECT</a> { &quot; 2&gt;&amp;1&quot; }</td></tr>
-<tr class="memdesc:a8725091b9f128111af36cd201ea59c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When appended to a shell command, this will redirect STDERR to STDOUT.  <a href="namespaceprocess.html#a8725091b9f128111af36cd201ea59c5c">More...</a><br /></td></tr>
+<tr class="memitem:a8725091b9f128111af36cd201ea59c5c"><td class="memItemLeft" align="right" valign="top"><a id="a8725091b9f128111af36cd201ea59c5c"></a>
+INLINE const CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8hpp.html#a8725091b9f128111af36cd201ea59c5c">process::SEQ_SHELL_OUTPUT_REDIRECT</a> { &quot; 2&gt;&amp;1&quot; }</td></tr>
+<tr class="memdesc:a8725091b9f128111af36cd201ea59c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When appended to a shell command, this will redirect STDERR to STDOUT. <br /></td></tr>
 <tr class="separator:a8725091b9f128111af36cd201ea59c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -160,36 +159,108 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="process_8hpp_source.html">process.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a4c39c7c96d7f5d1f5cd1743122d476e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c39c7c96d7f5d1f5cd1743122d476e3">&#9670;&nbsp;</a></span>PCLOSE</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aa5e26429e7a90976dc53b2e7a5fbe9fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e26429e7a90976dc53b2e7a5fbe9fe">&#9670;&nbsp;</a></span>exec() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define PCLOSE&#160;&#160;&#160;pclose</td>
+          <td class="memname">int process::exec </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structprocess_1_1_mode.html">Mode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>(<a class="el" href="structprocess_1_1_mode.html#a4b8e47bd0aa03d6e139f5247fd17c8b5">Mode::TEXT</a>)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process_8hpp_source.html#l00022">22</a> of file <a class="el" href="process_8hpp_source.html">process.hpp</a>.</p>
+<p>Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is discarded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The shell command to execute. </td></tr>
+    <tr><td class="paramname">mode</td><td>The pipe operation mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="process_8hpp_source.html#l00308">308</a> of file <a class="el" href="process_8hpp_source.html">process.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ab6949e8178edeb4294d893f3ee4966d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6949e8178edeb4294d893f3ee4966d5">&#9670;&nbsp;</a></span>POPEN</h2>
+<a id="ad519689022bbbe9b921d4718b01380d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad519689022bbbe9b921d4718b01380d4">&#9670;&nbsp;</a></span>exec() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define POPEN&#160;&#160;&#160;popen</td>
+          <td class="memname">int process::exec </td>
+          <td>(</td>
+          <td class="paramtype">std::stringstream *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structprocess_1_1_mode.html">Mode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>(<a class="el" href="structprocess_1_1_mode.html#a636e70e25eb0cbb39b2282367f0eaf44">Mode::READ</a>&#160;|&#160;<a class="el" href="structprocess_1_1_mode.html#a4b8e47bd0aa03d6e139f5247fd17c8b5">Mode::TEXT</a>)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process_8hpp_source.html#l00021">21</a> of file <a class="el" href="process_8hpp_source.html">process.hpp</a>.</p>
+<p>Execute a command in the default shell using <code>popen</code>, and return the result. STDOUT &amp; STDERR output is inserted into the given stringstream pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>A pointer to a std::stringstream instance to insert the captured contents of STDOUT/STDERR. <br  />
+ Note that the buffer is only populated once the given command is finished executing. For live I/O, see the Proc struct. </td></tr>
+    <tr><td class="paramname">command</td><td>The shell command to execute. </td></tr>
+    <tr><td class="paramname">mode</td><td>The pipe operation mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="process_8hpp_source.html#l00321">321</a> of file <a class="el" href="process_8hpp_source.html">process.hpp</a>.</p>
 
 </div>
 </div>

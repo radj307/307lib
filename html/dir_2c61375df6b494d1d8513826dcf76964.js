@@ -6,6 +6,6 @@ var dir_2c61375df6b494d1d8513826dcf76964 =
     [ "strlocale.hpp", "strlocale_8hpp.html", "strlocale_8hpp" ],
     [ "strmanip.hpp", "strmanip_8hpp.html", "strmanip_8hpp" ],
     [ "strmath.hpp", "strmath_8hpp.html", "strmath_8hpp" ],
-    [ "strregex.hpp", "strregex_8hpp.html", "strregex_8hpp" ],
-    [ "strutility.hpp", "strutility_8hpp.html", "strutility_8hpp" ]
+    [ "strregex.hpp", "strregex_8hpp_source.html", null ],
+    [ "strutility.hpp", "strutility_8hpp_source.html", null ]
 ];

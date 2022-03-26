@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['y_968',['y',['../structmatrix_1_1point.html#ad3edaf113125152862c5511f43b25d82',1,'matrix::point']]],
-  ['yellow_969',['yellow',['../structterm_1_1setcolor__seq.html#adbdb50ef7234a5f8f1f9e2fd81a2e27b',1,'term::setcolor_seq::yellow()'],['../namespacecolor.html#a32611a40f96545beb9cbebdf974b8fec',1,'color::yellow()']]]
+  ['_7eproc_576',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]],
+  ['_7etokenbase_577',['~TokenBase',['../structtoken_1_1base_1_1_token_base.html#a5c38603a86cd922391783326ed593f6f',1,'token::base::TokenBase']]],
+  ['_7etokenizerbase_578',['~TokenizerBase',['../classtoken_1_1base_1_1_tokenizer_base.html#a31911e275af4e0a6244c12b5e4b45bcb',1,'token::base::TokenizerBase']]],
+  ['_7etokenparserbase_579',['~TokenParserBase',['../classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab',1,'token::base::gen1::TokenParserBase']]]
 ];

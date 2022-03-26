@@ -11,5 +11,6 @@ var classopt_1_1_arg =
     [ "operator const std::string", "classopt_1_1_arg.html#acba2c5fcbaac139957d705db9770379b", null ],
     [ "operator!=", "classopt_1_1_arg.html#a44e2810ca9758a760a1b03a8911799e3", null ],
     [ "operator==", "classopt_1_1_arg.html#a2381a1e6c357e09da06d192714b8dc22", null ],
-    [ "operator==", "classopt_1_1_arg.html#adaef8027940927282a37f685c54a93b5", null ]
+    [ "operator==", "classopt_1_1_arg.html#adaef8027940927282a37f685c54a93b5", null ],
+    [ "_arg", "classopt_1_1_arg.html#a7166910cff84eccd5dc5a78acaa87cd8", null ]
 ];

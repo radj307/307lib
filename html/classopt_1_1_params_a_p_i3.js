@@ -8,6 +8,8 @@ var classopt_1_1_params_a_p_i3 =
     [ "ParamsAPI3", "classopt_1_1_params_a_p_i3.html#a7bd146399db6b6e4fc6d5d21cd762827", null ],
     [ "operator=", "classopt_1_1_params_a_p_i3.html#a483b26409ad5fb911e3420c24ebaa74d", null ],
     [ "operator=", "classopt_1_1_params_a_p_i3.html#a382cc9e5e88a0bd39d953d80a8aaf044", null ],
+    [ "to_stream", "classopt_1_1_params_a_p_i3.html#a8a7f7588bc0e4f7b89f072b97bce2bfb", null ],
+    [ "to_stream", "classopt_1_1_params_a_p_i3.html#a0332414f91f0c1a0bace3b832fd730af", null ],
     [ "typeget", "classopt_1_1_params_a_p_i3.html#ab41a04bf09e4e4eeea8df7680f474573", null ],
     [ "typeget_all", "classopt_1_1_params_a_p_i3.html#ab4ceb3e6f30ae167a9bb48da4c76d4bc", null ],
     [ "typeget_any", "classopt_1_1_params_a_p_i3.html#a2da31b7165ffe1c18fd45e46735ece0c", null ],

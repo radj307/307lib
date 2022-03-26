@@ -97,18 +97,20 @@ $(document).ready(function(){initNavTree('stringify_8hpp.html',''); initResizabl
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
+<code>#include &lt;strutility.hpp&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for stringify.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stringify_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stringify_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stringify_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stringify_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="stringify_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -129,14 +131,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a724f84184c0c1cd75e91b4ac95f40768"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">str::stringify</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a724f84184c0c1cd75e91b4ac95f40768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">More...</a><br /></td></tr>
 <tr class="separator:a724f84184c0c1cd75e91b4ac95f40768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d969c8ad087fcf6a701f1241503eab"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a30d969c8ad087fcf6a701f1241503eab"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">str::stringify_split</a> (const char &amp;delimiter, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a30d969c8ad087fcf6a701f1241503eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">More...</a><br /></td></tr>
-<tr class="separator:a30d969c8ad087fcf6a701f1241503eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplParams" colspan="2">template&lt;var::Streamable T&gt; </td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">str::stringify_split</a> (const char &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
 <tr class="memdesc:ac564c68f61fc9cb1018753365dfd9e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">More...</a><br /></td></tr>
 <tr class="separator:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d969c8ad087fcf6a701f1241503eab"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
+<tr class="memitem:a30d969c8ad087fcf6a701f1241503eab"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">str::stringify_split</a> (const char &amp;delimiter, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a30d969c8ad087fcf6a701f1241503eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">More...</a><br /></td></tr>
+<tr class="separator:a30d969c8ad087fcf6a701f1241503eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the various stringify functions. </p>

@@ -1,7 +1,9 @@
 var structterm_1_1_line_character =
 [
+    [ "LineCharacter", "structterm_1_1_line_character.html#ae9b4d39a3c2fecc3673801131b72b075", null ],
     [ "operator const unsigned char", "structterm_1_1_line_character.html#a968a8079c2d66316c5b7ecd8cb4affc2", null ],
     [ "operator<<", "structterm_1_1_line_character.html#a881fcc74dbc732e9d772c6a00875517e", null ],
+    [ "_ch", "structterm_1_1_line_character.html#aaa638238eddce08b05b5dcc419afbf1f", null ],
     [ "CORNER_BOTTOM_LEFT", "structterm_1_1_line_character.html#a203d29cf524ecefb2aa8056404c9d60c", null ],
     [ "CORNER_BOTTOM_RIGHT", "structterm_1_1_line_character.html#a31752c2cc2af3b8d8ee45dafacd77be3", null ],
     [ "CORNER_TOP_LEFT", "structterm_1_1_line_character.html#a59eb2cdc78f43acc7f4e63229211d087", null ],

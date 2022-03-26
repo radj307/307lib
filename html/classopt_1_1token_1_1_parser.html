@@ -89,6 +89,9 @@ $(document).ready(function(){initNavTree('classopt_1_1token_1_1_parser.html','')
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classopt_1_1token_1_1_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">opt::token::Parser Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -107,7 +110,8 @@ Inheritance diagram for opt::token::Parser:</div>
 <div class="dynheader">
 Collaboration diagram for opt::token::Parser:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classopt_1_1token_1_1_parser__coll__graph.svg" width="242" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classopt_1_1token_1_1_parser__coll__graph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -117,271 +121,94 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4f06bda2bd0e3cea043b18f1428044aa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a4f06bda2bd0e3cea043b18f1428044aa">capture_variant</a> = std::variant&lt; std::string, char &gt;</td></tr>
+<tr class="memitem:a4f06bda2bd0e3cea043b18f1428044aa"><td class="memItemLeft" align="right" valign="top"><a id="a4f06bda2bd0e3cea043b18f1428044aa"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>capture_variant</b> = std::variant&lt; std::string, char &gt;</td></tr>
 <tr class="separator:a4f06bda2bd0e3cea043b18f1428044aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32fd0d814f9e85a02640e7c636ca40f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a32fd0d814f9e85a02640e7c636ca40f0">invec</a> = std::vector&lt; <a class="el" href="classopt_1_1token_1_1_parser.html#a4f06bda2bd0e3cea043b18f1428044aa">capture_variant</a> &gt;</td></tr>
+<tr class="memitem:a32fd0d814f9e85a02640e7c636ca40f0"><td class="memItemLeft" align="right" valign="top"><a id="a32fd0d814f9e85a02640e7c636ca40f0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>invec</b> = std::vector&lt; capture_variant &gt;</td></tr>
 <tr class="separator:a32fd0d814f9e85a02640e7c636ca40f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0eef44aedc5f7103b8cbc209f125274"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#ab0eef44aedc5f7103b8cbc209f125274">strvec</a> = std::vector&lt; std::string &gt;</td></tr>
+<tr class="memitem:ab0eef44aedc5f7103b8cbc209f125274"><td class="memItemLeft" align="right" valign="top"><a id="ab0eef44aedc5f7103b8cbc209f125274"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>strvec</b> = std::vector&lt; std::string &gt;</td></tr>
 <tr class="separator:ab0eef44aedc5f7103b8cbc209f125274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html">token::base::gen1::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
-<tr class="memitem:ae02842f434f65bb4361ce63be753cc99 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ae02842f434f65bb4361ce63be753cc99">OutputT</a> = OutputType</td></tr>
+<tr class="memitem:ae02842f434f65bb4361ce63be753cc99 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="ae02842f434f65bb4361ce63be753cc99"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>OutputT</b> = OutputType</td></tr>
 <tr class="separator:ae02842f434f65bb4361ce63be753cc99 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a7d4e6068e3d4f288a38c2eb4e4d674 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a7a7d4e6068e3d4f288a38c2eb4e4d674">TokenT</a> = Token</td></tr>
+<tr class="memitem:a7a7d4e6068e3d4f288a38c2eb4e4d674 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a7a7d4e6068e3d4f288a38c2eb4e4d674"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>TokenT</b> = Token</td></tr>
 <tr class="separator:a7a7d4e6068e3d4f288a38c2eb4e4d674 inherit pub_types_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40e9b89ae78a52813fffd32050d9dd7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a40e9b89ae78a52813fffd32050d9dd7a">Parser</a> (std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>, <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab0e42418e276b33235dd506564d522ec">Input::invec</a> &amp;&amp;capture_list)</td></tr>
-<tr class="separator:a40e9b89ae78a52813fffd32050d9dd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ce6fd4f8a0f5bede434ee584447639b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a3ce6fd4f8a0f5bede434ee584447639b">Parser</a> (std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>, <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab434a1a8b7b581248165b158896a6f4c">Input::outvec</a> &amp;&amp;capture_list)</td></tr>
-<tr class="separator:a3ce6fd4f8a0f5bede434ee584447639b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a75ef8255df84f6c90a0c6a0000791"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a44a75ef8255df84f6c90a0c6a0000791">Parser</a> (const std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>, const <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab0e42418e276b33235dd506564d522ec">Input::invec</a> &amp;capture_list)</td></tr>
+<tr class="memitem:a44a75ef8255df84f6c90a0c6a0000791"><td class="memItemLeft" align="right" valign="top"><a id="a44a75ef8255df84f6c90a0c6a0000791"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (const std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;tokens, const Input::invec &amp;capture_list)</td></tr>
 <tr class="separator:a44a75ef8255df84f6c90a0c6a0000791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85586f47a1a0e38f053702b6a49a696a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a85586f47a1a0e38f053702b6a49a696a">Parser</a> (const std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>, const <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab434a1a8b7b581248165b158896a6f4c">Input::outvec</a> &amp;capture_list)</td></tr>
+<tr class="memitem:a85586f47a1a0e38f053702b6a49a696a"><td class="memItemLeft" align="right" valign="top"><a id="a85586f47a1a0e38f053702b6a49a696a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (const std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;tokens, const Input::outvec &amp;capture_list)</td></tr>
 <tr class="separator:a85586f47a1a0e38f053702b6a49a696a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a948160a81c4f313cc45092711432d582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ae02842f434f65bb4361ce63be753cc99">OutputT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a948160a81c4f313cc45092711432d582">parse</a> () const</td></tr>
+<tr class="memitem:a40e9b89ae78a52813fffd32050d9dd7a"><td class="memItemLeft" align="right" valign="top"><a id="a40e9b89ae78a52813fffd32050d9dd7a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;&amp;tokens, Input::invec &amp;&amp;capture_list)</td></tr>
+<tr class="separator:a40e9b89ae78a52813fffd32050d9dd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce6fd4f8a0f5bede434ee584447639b"><td class="memItemLeft" align="right" valign="top"><a id="a3ce6fd4f8a0f5bede434ee584447639b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;&amp;tokens, Input::outvec &amp;&amp;capture_list)</td></tr>
+<tr class="separator:a3ce6fd4f8a0f5bede434ee584447639b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948160a81c4f313cc45092711432d582"><td class="memItemLeft" align="right" valign="top">OutputT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a948160a81c4f313cc45092711432d582">parse</a> () const</td></tr>
 <tr class="memdesc:a948160a81c4f313cc45092711432d582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the token container.  <a href="classopt_1_1token_1_1_parser.html#a948160a81c4f313cc45092711432d582">More...</a><br /></td></tr>
 <tr class="separator:a948160a81c4f313cc45092711432d582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html">token::base::gen1::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
-<tr class="memitem:a2357de692c06bc381737bfffe255b966 inherit pub_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a2357de692c06bc381737bfffe255b966">operator OutputT</a> () const</td></tr>
+<tr class="memitem:a2357de692c06bc381737bfffe255b966 inherit pub_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a2357de692c06bc381737bfffe255b966"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>operator OutputT</b> () const</td></tr>
 <tr class="separator:a2357de692c06bc381737bfffe255b966 inherit pub_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3fcb9e543e2ce7383f7055902c80e883"><td class="memItemLeft" align="right" valign="top"><a id="a3fcb9e543e2ce7383f7055902c80e883"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>can_capture</b> (const char &amp;flag) const</td></tr>
+<tr class="separator:a3fcb9e543e2ce7383f7055902c80e883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754679fa498361473393480dc529c107"><td class="memItemLeft" align="right" valign="top"><a id="a754679fa498361473393480dc529c107"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>can_capture</b> (const std::string &amp;opt) const</td></tr>
+<tr class="separator:a754679fa498361473393480dc529c107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a23123ef1d83f676fb75ff9ff41bef1c2"><td class="memItemLeft" align="right" valign="top"><a id="a23123ef1d83f676fb75ff9ff41bef1c2"></a>
+static strvec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1token_1_1_parser.html#a23123ef1d83f676fb75ff9ff41bef1c2">expand_capture_vec</a> (invec &amp;&amp;capturelist)</td></tr>
+<tr class="memdesc:a23123ef1d83f676fb75ff9ff41bef1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function accepts a vector of string/char variants, and returns a vector of strings. <br /></td></tr>
+<tr class="separator:a23123ef1d83f676fb75ff9ff41bef1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a911c955ef8d7c489cffb605e0c9ac16b"><td class="memItemLeft" align="right" valign="top"><a id="a911c955ef8d7c489cffb605e0c9ac16b"></a>
+strvec&#160;</td><td class="memItemRight" valign="bottom"><b>capture_list</b></td></tr>
+<tr class="separator:a911c955ef8d7c489cffb605e0c9ac16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html">token::base::gen1::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
-<tr class="memitem:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a240f398f166779e59c68be583c391f2c">TokenParserBase</a> (std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a7a7d4e6068e3d4f288a38c2eb4e4d674">TokenT</a> &gt; &amp;&amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>)</td></tr>
-<tr class="memdesc:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a240f398f166779e59c68be583c391f2c">More...</a><br /></td></tr>
-<tr class="separator:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac486bf76a17ecffbb140cf5e0fb5591a inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ac486bf76a17ecffbb140cf5e0fb5591a">TokenParserBase</a> (const std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a7a7d4e6068e3d4f288a38c2eb4e4d674">TokenT</a> &gt; &amp;<a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a>)</td></tr>
+<tr class="memitem:ac486bf76a17ecffbb140cf5e0fb5591a inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ac486bf76a17ecffbb140cf5e0fb5591a">TokenParserBase</a> (const std::vector&lt; TokenT &gt; &amp;tokens)</td></tr>
 <tr class="memdesc:ac486bf76a17ecffbb140cf5e0fb5591a inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ac486bf76a17ecffbb140cf5e0fb5591a">More...</a><br /></td></tr>
 <tr class="separator:ac486bf76a17ecffbb140cf5e0fb5591a inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90411a7d65d4ef9c6c26d0c4b857cbab inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab">~TokenParserBase</a> () noexcept=default</td></tr>
-<tr class="memdesc:a90411a7d65d4ef9c6c26d0c4b857cbab inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab">More...</a><br /></td></tr>
+<tr class="memitem:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a240f398f166779e59c68be583c391f2c">TokenParserBase</a> (std::vector&lt; TokenT &gt; &amp;&amp;tokens)</td></tr>
+<tr class="memdesc:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a240f398f166779e59c68be583c391f2c">More...</a><br /></td></tr>
+<tr class="separator:a240f398f166779e59c68be583c391f2c inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90411a7d65d4ef9c6c26d0c4b857cbab inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a90411a7d65d4ef9c6c26d0c4b857cbab"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab">~TokenParserBase</a> () noexcept=default</td></tr>
+<tr class="memdesc:a90411a7d65d4ef9c6c26d0c4b857cbab inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor. <br /></td></tr>
 <tr class="separator:a90411a7d65d4ef9c6c26d0c4b857cbab inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85c8188881620d8d998fb924c5a1c017 inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a85c8188881620d8d998fb924c5a1c017 inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a7a7d4e6068e3d4f288a38c2eb4e4d674">TokenT</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a85c8188881620d8d998fb924c5a1c017">strip_types</a> (const Ts &amp;... types) const</td></tr>
+<tr class="memitem:a85c8188881620d8d998fb924c5a1c017 inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memTemplParams" colspan="2"><a id="a85c8188881620d8d998fb924c5a1c017"></a>
+template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a85c8188881620d8d998fb924c5a1c017 inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TokenT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>strip_types</b> (const Ts &amp;... types) const</td></tr>
 <tr class="separator:a85c8188881620d8d998fb924c5a1c017 inherit pro_methods_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoken_1_1base_1_1gen1_1_1_token_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html">token::base::gen1::TokenParserBase&lt; OutputType, Token &gt;</a></td></tr>
-<tr class="memitem:a3b48b4810fa3c2bbc5c41f0a838460a3 inherit pro_attribs_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a7a7d4e6068e3d4f288a38c2eb4e4d674">TokenT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a3b48b4810fa3c2bbc5c41f0a838460a3">tokens</a></td></tr>
+<tr class="memitem:a3b48b4810fa3c2bbc5c41f0a838460a3 inherit pro_attribs_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a3b48b4810fa3c2bbc5c41f0a838460a3"></a>
+std::vector&lt; TokenT &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tokens</b></td></tr>
 <tr class="separator:a3b48b4810fa3c2bbc5c41f0a838460a3 inherit pro_attribs_classtoken_1_1base_1_1gen1_1_1_token_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parses tokenized argument vectors. </p>
 
 <p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00192">192</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a4f06bda2bd0e3cea043b18f1428044aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f06bda2bd0e3cea043b18f1428044aa">&#9670;&nbsp;</a></span>capture_variant</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classopt_1_1token_1_1_parser.html#a4f06bda2bd0e3cea043b18f1428044aa">opt::token::Parser::capture_variant</a> =  std::variant&lt;std::string, char&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00232">232</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a32fd0d814f9e85a02640e7c636ca40f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32fd0d814f9e85a02640e7c636ca40f0">&#9670;&nbsp;</a></span>invec</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classopt_1_1token_1_1_parser.html#a32fd0d814f9e85a02640e7c636ca40f0">opt::token::Parser::invec</a> =  std::vector&lt;<a class="el" href="classopt_1_1token_1_1_parser.html#a4f06bda2bd0e3cea043b18f1428044aa">capture_variant</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00233">233</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab0eef44aedc5f7103b8cbc209f125274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0eef44aedc5f7103b8cbc209f125274">&#9670;&nbsp;</a></span>strvec</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classopt_1_1token_1_1_parser.html#ab0eef44aedc5f7103b8cbc209f125274">opt::token::Parser::strvec</a> =  std::vector&lt;std::string&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00234">234</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40e9b89ae78a52813fffd32050d9dd7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40e9b89ae78a52813fffd32050d9dd7a">&#9670;&nbsp;</a></span>Parser() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">opt::token::Parser::Parser </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>tokens</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab0e42418e276b33235dd506564d522ec">Input::invec</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>capture_list</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00265">265</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a3ce6fd4f8a0f5bede434ee584447639b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ce6fd4f8a0f5bede434ee584447639b">&#9670;&nbsp;</a></span>Parser() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">opt::token::Parser::Parser </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>tokens</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab434a1a8b7b581248165b158896a6f4c">Input::outvec</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>capture_list</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00266">266</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classopt_1_1token_1_1_parser_a3ce6fd4f8a0f5bede434ee584447639b_cgraph.svg" width="330" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a44a75ef8255df84f6c90a0c6a0000791"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44a75ef8255df84f6c90a0c6a0000791">&#9670;&nbsp;</a></span>Parser() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">opt::token::Parser::Parser </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tokens</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab0e42418e276b33235dd506564d522ec">Input::invec</a> &amp;&#160;</td>
-          <td class="paramname"><em>capture_list</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00267">267</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a85586f47a1a0e38f053702b6a49a696a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85586f47a1a0e38f053702b6a49a696a">&#9670;&nbsp;</a></span>Parser() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">opt::token::Parser::Parser </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceopt_1_1token.html#acadd81ab4e00d02600fa8e7cfd9e1794">Token</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tokens</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structopt_1_1token_1_1_parser_1_1_input.html#ab434a1a8b7b581248165b158896a6f4c">Input::outvec</a> &amp;&#160;</td>
-          <td class="paramname"><em>capture_list</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_argument_redux_8hpp_source.html#l00268">268</a> of file <a class="el" href="_argument_redux_8hpp_source.html">ArgumentRedux.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classopt_1_1token_1_1_parser_a85586f47a1a0e38f053702b6a49a696a_cgraph.svg" width="330" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a948160a81c4f313cc45092711432d582"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a948160a81c4f313cc45092711432d582">&#9670;&nbsp;</a></span>parse()</h2>
 
@@ -392,7 +219,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#ae02842f434f65bb4361ce63be753cc99">OutputT</a> opt::token::Parser::parse </td>
+          <td class="memname">OutputT opt::token::Parser::parse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -422,7 +249,7 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceopt.html">opt</a></li><li class="navelem"><a class="el" href="namespaceopt_1_1token.html">token</a></li><li class="navelem"><a class="el" href="classopt_1_1token_1_1_parser.html">Parser</a></li>
+    <li class="navelem"><a class="el" href="namespaceopt.html">opt</a></li><li class="navelem"><b>token</b></li><li class="navelem"><a class="el" href="classopt_1_1token_1_1_parser.html">Parser</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

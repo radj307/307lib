@@ -1,6 +1,10 @@
 var namespaceopt =
 [
-    [ "token", "namespaceopt_1_1token.html", "namespaceopt_1_1token" ],
+    [ "token", null, [
+      [ "LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", "structopt_1_1token_1_1_lexeme_dictionary" ],
+      [ "Parser", "classopt_1_1token_1_1_parser.html", "classopt_1_1token_1_1_parser" ],
+      [ "Tokenizer", "classopt_1_1token_1_1_tokenizer.html", "classopt_1_1token_1_1_tokenizer" ]
+    ] ],
     [ "Arg", "classopt_1_1_arg.html", "classopt_1_1_arg" ],
     [ "ArgContainer", "structopt_1_1_arg_container.html", "structopt_1_1_arg_container" ],
     [ "Argument", "classopt_1_1_argument.html", "classopt_1_1_argument" ],

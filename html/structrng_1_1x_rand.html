@@ -108,16 +108,12 @@ Collaboration diagram for rng::xRand&lt; Engine &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a562d90df590cb6025ec25b0cb5317605"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a562d90df590cb6025ec25b0cb5317605">engine_type</a> = Engine</td></tr>
+<tr class="memitem:a562d90df590cb6025ec25b0cb5317605"><td class="memItemLeft" align="right" valign="top"><a id="a562d90df590cb6025ec25b0cb5317605"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>engine_type</b> = Engine</td></tr>
 <tr class="separator:a562d90df590cb6025ec25b0cb5317605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a141cfcfc998afb5e7ead974c97de2a2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a141cfcfc998afb5e7ead974c97de2a2d">xRand</a> ()</td></tr>
-<tr class="separator:a141cfcfc998afb5e7ead974c97de2a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb443225c7ed3dbe123056974e5dd38a"><td class="memItemLeft" align="right" valign="top">Engine &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#abb443225c7ed3dbe123056974e5dd38a">getEngine</a> ()</td></tr>
-<tr class="memdesc:abb443225c7ed3dbe123056974e5dd38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a reference to the internal randomization engine.  <a href="structrng_1_1x_rand.html#abb443225c7ed3dbe123056974e5dd38a">More...</a><br /></td></tr>
-<tr class="separator:abb443225c7ed3dbe123056974e5dd38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff0a4209c640f617fe50971b6f278d28"><td class="memTemplParams" colspan="2">template&lt;var::numeric T, class Distribution &gt; </td></tr>
 <tr class="memitem:aff0a4209c640f617fe50971b6f278d28"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a> (Distribution &amp;&amp;distrib)</td></tr>
 <tr class="memdesc:aff0a4209c640f617fe50971b6f278d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number in the given distribution using the random engine.  <a href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">More...</a><br /></td></tr>
@@ -126,64 +122,68 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a38fde7268db76d8d7b458e5a1f6623f5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a38fde7268db76d8d7b458e5a1f6623f5">get</a> (Distribution &amp;distrib)</td></tr>
 <tr class="memdesc:a38fde7268db76d8d7b458e5a1f6623f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number in the given distribution using the random engine.  <a href="structrng_1_1x_rand.html#a38fde7268db76d8d7b458e5a1f6623f5">More...</a><br /></td></tr>
 <tr class="separator:a38fde7268db76d8d7b458e5a1f6623f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memTemplParams" colspan="2">template&lt;std::integral Min, std::floating_point Max&gt; </td></tr>
+<tr class="memitem:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memTemplItemLeft" align="right" valign="top">Max&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#ac3d8d13b26a0186e513f7b8c17b54d00">get</a> (Min const &amp;min, Max const &amp;max)</td></tr>
+<tr class="memdesc:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
+ This function allows (min) &amp; (max) to use integrals or floating-point numbers independently, and casts the result to a floating-point type.  <a href="structrng_1_1x_rand.html#ac3d8d13b26a0186e513f7b8c17b54d00">More...</a><br /></td></tr>
+<tr class="separator:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Min, std::integral Max&gt; </td></tr>
+<tr class="memitem:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memTemplItemLeft" align="right" valign="top">Min&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5ff8448ded9db28b54b4a39d58e03feb">get</a> (Min const &amp;min, Max const &amp;max)</td></tr>
+<tr class="memdesc:a5ff8448ded9db28b54b4a39d58e03feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
+ This function allows (min) &amp; (max) to use integrals or floating-point numbers independently, and casts the result to a floating-point type.  <a href="structrng_1_1x_rand.html#a5ff8448ded9db28b54b4a39d58e03feb">More...</a><br /></td></tr>
+<tr class="separator:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b3e4533fc52a7913a932a4b43e49e42"><td class="memTemplParams" colspan="2">template&lt;var::numeric T&gt; </td></tr>
-<tr class="memitem:a8b3e4533fc52a7913a932a4b43e49e42"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a8b3e4533fc52a7913a932a4b43e49e42">get</a> (T const &amp;min, T const &amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
+<tr class="memitem:a8b3e4533fc52a7913a932a4b43e49e42"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a8b3e4533fc52a7913a932a4b43e49e42">get</a> (T const &amp;min, T const &amp;max)</td></tr>
 <tr class="memdesc:a8b3e4533fc52a7913a932a4b43e49e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution.  <a href="structrng_1_1x_rand.html#a8b3e4533fc52a7913a932a4b43e49e42">More...</a><br /></td></tr>
 <tr class="separator:a8b3e4533fc52a7913a932a4b43e49e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplParams" colspan="2">template&lt;std::integral Min, std::integral Max&gt; </td></tr>
-<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">requires</a> (sizeof(Min)&lt;=sizeof(Max)) Max <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
-<tr class="memdesc:a5bc2d755f3de13f65386a0de11249e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
- This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">More...</a><br /></td></tr>
-<tr class="separator:a5bc2d755f3de13f65386a0de11249e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb443225c7ed3dbe123056974e5dd38a"><td class="memItemLeft" align="right" valign="top">Engine &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#abb443225c7ed3dbe123056974e5dd38a">getEngine</a> ()</td></tr>
+<tr class="memdesc:abb443225c7ed3dbe123056974e5dd38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a reference to the internal randomization engine.  <a href="structrng_1_1x_rand.html#abb443225c7ed3dbe123056974e5dd38a">More...</a><br /></td></tr>
+<tr class="separator:abb443225c7ed3dbe123056974e5dd38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895">operator()</a> (auto &amp;&amp;min, auto &amp;&amp;max)</td></tr>
+<tr class="memdesc:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max).  <a href="structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895">More...</a><br /></td></tr>
+<tr class="separator:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memTemplParams" colspan="2">template&lt;std::integral Min, std::integral Max&gt; </td></tr>
 <tr class="memitem:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a8f4e4d0e2d2c4eecc9828b5c324e661a">requires</a> (sizeof(Min) &gt; sizeof(Max)) Min <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
 <tr class="memdesc:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
  This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a8f4e4d0e2d2c4eecc9828b5c324e661a">More...</a><br /></td></tr>
 <tr class="separator:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Min, std::floating_point Max&gt; </td></tr>
-<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">requires</a> (sizeof(Min)&lt;=sizeof(Max)) Max <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
-<tr class="memdesc:a5bc2d755f3de13f65386a0de11249e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
- This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">More...</a><br /></td></tr>
-<tr class="separator:a5bc2d755f3de13f65386a0de11249e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Min, std::floating_point Max&gt; </td></tr>
 <tr class="memitem:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a8f4e4d0e2d2c4eecc9828b5c324e661a">requires</a> (sizeof(Min) &gt; sizeof(Max)) Min <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
 <tr class="memdesc:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
  This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a8f4e4d0e2d2c4eecc9828b5c324e661a">More...</a><br /></td></tr>
 <tr class="separator:a8f4e4d0e2d2c4eecc9828b5c324e661a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memTemplParams" colspan="2">template&lt;std::integral Min, std::floating_point Max&gt; </td></tr>
-<tr class="memitem:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memTemplItemLeft" align="right" valign="top">Max&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#ac3d8d13b26a0186e513f7b8c17b54d00">get</a> (Min const &amp;min, Max const &amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
-<tr class="memdesc:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
- This function allows (min) &amp; (max) to use integrals or floating-point numbers independently, and casts the result to a floating-point type.  <a href="structrng_1_1x_rand.html#ac3d8d13b26a0186e513f7b8c17b54d00">More...</a><br /></td></tr>
-<tr class="separator:ac3d8d13b26a0186e513f7b8c17b54d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Min, std::integral Max&gt; </td></tr>
-<tr class="memitem:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memTemplItemLeft" align="right" valign="top">Min&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5ff8448ded9db28b54b4a39d58e03feb">get</a> (Min const &amp;min, Max const &amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
-<tr class="memdesc:a5ff8448ded9db28b54b4a39d58e03feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
- This function allows (min) &amp; (max) to use integrals or floating-point numbers independently, and casts the result to a floating-point type.  <a href="structrng_1_1x_rand.html#a5ff8448ded9db28b54b4a39d58e03feb">More...</a><br /></td></tr>
-<tr class="separator:a5ff8448ded9db28b54b4a39d58e03feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895">operator()</a> (auto &amp;&amp;min, auto &amp;&amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
-<tr class="memdesc:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max).  <a href="structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895">More...</a><br /></td></tr>
-<tr class="separator:a7b4cb8d44b220b655bcafc9bdd02a895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplParams" colspan="2">template&lt;std::integral Min, std::integral Max&gt; </td></tr>
+<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">requires</a> (sizeof(Min)&lt;=sizeof(Max)) Max <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
+<tr class="memdesc:a5bc2d755f3de13f65386a0de11249e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
+ This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">More...</a><br /></td></tr>
+<tr class="separator:a5bc2d755f3de13f65386a0de11249e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Min, std::floating_point Max&gt; </td></tr>
+<tr class="memitem:a5bc2d755f3de13f65386a0de11249e50"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">requires</a> (sizeof(Min)&lt;=sizeof(Max)) Max <a class="el" href="structrng_1_1x_rand.html#aff0a4209c640f617fe50971b6f278d28">get</a>(Min const &amp;min</td></tr>
+<tr class="memdesc:a5bc2d755f3de13f65386a0de11249e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random number between (min) and (max), using a uniform distribution. <br  />
+ This function allows (min) &amp; (max) to use different types, and automatically returns the result in whichever type is larger.  <a href="structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50">More...</a><br /></td></tr>
+<tr class="separator:a5bc2d755f3de13f65386a0de11249e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a071dc556769a2741dfce6358fceb5421"><td class="memTemplParams" colspan="2">template&lt;std::integral T = int&gt; </td></tr>
-<tr class="memitem:a071dc556769a2741dfce6358fceb5421"><td class="memTemplItemLeft" align="right" valign="top">static std::uniform_int_distribution&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a071dc556769a2741dfce6358fceb5421">uniform_distribution</a> (T const &amp;min, T const &amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
-<tr class="memdesc:a071dc556769a2741dfce6358fceb5421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a uniform integral distribution object.  <a href="structrng_1_1x_rand.html#a071dc556769a2741dfce6358fceb5421">More...</a><br /></td></tr>
-<tr class="separator:a071dc556769a2741dfce6358fceb5421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T = double&gt; </td></tr>
-<tr class="memitem:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memTemplItemLeft" align="right" valign="top">static std::uniform_real_distribution&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#ab0cc0cdfd2f087fb1301b5ea73f8eb69">uniform_distribution</a> (T const &amp;min, T const &amp;<a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>)</td></tr>
-<tr class="memdesc:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a uniform real distribution object.  <a href="structrng_1_1x_rand.html#ab0cc0cdfd2f087fb1301b5ea73f8eb69">More...</a><br /></td></tr>
-<tr class="separator:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51e6d4b1ba104eec1eb37ab47cfab87"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T = double&gt; </td></tr>
 <tr class="memitem:ab51e6d4b1ba104eec1eb37ab47cfab87"><td class="memTemplItemLeft" align="right" valign="top">static std::exponential_distribution&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#ab51e6d4b1ba104eec1eb37ab47cfab87">exponential_distribution</a> (T const &amp;lambda=static_cast&lt; T &gt;(1.0))</td></tr>
 <tr class="memdesc:ab51e6d4b1ba104eec1eb37ab47cfab87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an exponential distribution object.  <a href="structrng_1_1x_rand.html#ab51e6d4b1ba104eec1eb37ab47cfab87">More...</a><br /></td></tr>
 <tr class="separator:ab51e6d4b1ba104eec1eb37ab47cfab87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071dc556769a2741dfce6358fceb5421"><td class="memTemplParams" colspan="2">template&lt;std::integral T = int&gt; </td></tr>
+<tr class="memitem:a071dc556769a2741dfce6358fceb5421"><td class="memTemplItemLeft" align="right" valign="top">static std::uniform_int_distribution&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#a071dc556769a2741dfce6358fceb5421">uniform_distribution</a> (T const &amp;min, T const &amp;max)</td></tr>
+<tr class="memdesc:a071dc556769a2741dfce6358fceb5421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a uniform integral distribution object.  <a href="structrng_1_1x_rand.html#a071dc556769a2741dfce6358fceb5421">More...</a><br /></td></tr>
+<tr class="separator:a071dc556769a2741dfce6358fceb5421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T = double&gt; </td></tr>
+<tr class="memitem:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memTemplItemLeft" align="right" valign="top">static std::uniform_real_distribution&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#ab0cc0cdfd2f087fb1301b5ea73f8eb69">uniform_distribution</a> (T const &amp;min, T const &amp;max)</td></tr>
+<tr class="memdesc:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a uniform real distribution object.  <a href="structrng_1_1x_rand.html#ab0cc0cdfd2f087fb1301b5ea73f8eb69">More...</a><br /></td></tr>
+<tr class="separator:ab0cc0cdfd2f087fb1301b5ea73f8eb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:acfcf71922ee582e8f2e8d661b51725c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrng_1_1_engine_wrapper.html">EngineWrapper</a>&lt; Engine &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#acfcf71922ee582e8f2e8d661b51725c1">engine</a></td></tr>
+<tr class="memitem:acfcf71922ee582e8f2e8d661b51725c1"><td class="memItemLeft" align="right" valign="top"><a id="acfcf71922ee582e8f2e8d661b51725c1"></a>
+<a class="el" href="classrng_1_1_engine_wrapper.html">EngineWrapper</a>&lt; Engine &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>engine</b></td></tr>
 <tr class="separator:acfcf71922ee582e8f2e8d661b51725c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaafc2e5fb4eed2eb9b86fe9732a9e81c"><td class="memItemLeft" align="right" valign="top">Max const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a></td></tr>
+<tr class="memitem:aaafc2e5fb4eed2eb9b86fe9732a9e81c"><td class="memItemLeft" align="right" valign="top">Max const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>max</b></td></tr>
 <tr class="separator:aaafc2e5fb4eed2eb9b86fe9732a9e81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -199,56 +199,7 @@ struct rng::xRand&lt; Engine &gt;</h3>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00094">94</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a562d90df590cb6025ec25b0cb5317605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a562d90df590cb6025ec25b0cb5317605">&#9670;&nbsp;</a></span>engine_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::uniform_random_bit_generator Engine = std::mt19937&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structrng_1_1x_rand.html">rng::xRand</a>&lt; Engine &gt;::<a class="el" href="structrng_1_1x_rand.html#a562d90df590cb6025ec25b0cb5317605">engine_type</a> =  Engine</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00095">95</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a141cfcfc998afb5e7ead974c97de2a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a141cfcfc998afb5e7ead974c97de2a2d">&#9670;&nbsp;</a></span>xRand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::uniform_random_bit_generator Engine = std::mt19937&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structrng_1_1x_rand.html">rng::xRand</a>&lt; Engine &gt;::<a class="el" href="structrng_1_1x_rand.html">xRand</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00099">99</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab51e6d4b1ba104eec1eb37ab47cfab87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab51e6d4b1ba104eec1eb37ab47cfab87">&#9670;&nbsp;</a></span>exponential_distribution()</h2>
 
@@ -970,24 +921,6 @@ template&lt;std::floating_point T = double&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="acfcf71922ee582e8f2e8d661b51725c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcf71922ee582e8f2e8d661b51725c1">&#9670;&nbsp;</a></span>engine</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::uniform_random_bit_generator Engine = std::mt19937&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrng_1_1_engine_wrapper.html">EngineWrapper</a>&lt;Engine&gt; <a class="el" href="structrng_1_1x_rand.html">rng::xRand</a>&lt; Engine &gt;::engine</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00097">97</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
-
-</div>
-</div>
 <a id="aaafc2e5fb4eed2eb9b86fe9732a9e81c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaafc2e5fb4eed2eb9b86fe9732a9e81c">&#9670;&nbsp;</a></span>max</h2>
 
@@ -1002,7 +935,7 @@ template&lt;std::uniform_random_bit_generator Engine = std::mt19937&gt; </div>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">            <span class="keywordflow">return</span> get&lt;Max&gt;(uniform_distribution&lt;Max&gt;(<span class="keyword">static_cast&lt;</span>Max<span class="keyword">&gt;</span>(min), <a class="code" href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">max</a>))</div>
+<div class="line">            <span class="keywordflow">return</span> get&lt;Max&gt;(uniform_distribution&lt;Max&gt;(<span class="keyword">static_cast&lt;</span>Max<span class="keyword">&gt;</span>(min), max))</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="x_rand_8hpp_source.html#l00196">196</a> of file <a class="el" href="x_rand_8hpp_source.html">xRand.hpp</a>.</p>
 
@@ -1013,7 +946,6 @@ template&lt;std::uniform_random_bit_generator Engine = std::mt19937&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructrng_1_1x_rand_html_aaafc2e5fb4eed2eb9b86fe9732a9e81c"><div class="ttname"><a href="structrng_1_1x_rand.html#aaafc2e5fb4eed2eb9b86fe9732a9e81c">rng::xRand::max</a></div><div class="ttdeci">Max const  &amp; max</div><div class="ttdef"><b>Definition:</b> <a href="x_rand_8hpp_source.html#l00196">xRand.hpp:196</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

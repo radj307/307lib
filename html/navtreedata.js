@@ -23,7 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "Support", "index.html#autotoc_md11", null ],
+    [ "Platform Support", "index.html#autotoc_md11", null ],
     [ "Building from Source", "index.html#autotoc_md12", [
       [ "Pre-Requisities", "index.html#autotoc_md13", null ],
       [ "Process", "index.html#autotoc_md14", null ]
@@ -46,16 +46,14 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
-    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -75,9 +73,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ],
@@ -87,14 +83,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"307modules.html",
-"_windows_not_today_8h.html#a2d7186e4a6dfcc0011461ce1e8b70a05",
-"classtoken_1_1base_1_1_tokenizer_base.html#a41f86f19e5817ed33eadd3adfd6bc017",
-"fileo_8hpp.html#a1432480e7d992958086d355a6be5904b",
-"openmode_8h.html#add73c977374c83f7edb2ae7c0f59e7f8",
-"structindentor.html#a4388aa5fd97327c381b49bcdfb12ada3",
-"structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc",
-"term_8hpp.html#a4df569ee83171a2d8f18c2b913127c74"
+".html",
+"classfile_1_1ini_1_1_i_n_i_container.html#aa6867de33f89ac89d5bdb9874082f5ff",
+"classxlog_1_1_buffer_manager.html#a12e17e776a00afcc85e2ddd54916c06f",
+"namespaceop.html",
+"structcolor_1_1setcolor__seq.html#a86af597366f4ae739722bf2b875a7e07",
+"structopt_1_1casting__optional.html#a5f8d1e81f3deba8580b72a77f39e77c9",
+"term_8hpp.html#a33ac50074833e200d016b17f655854af"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

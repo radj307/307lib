@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['openmode_2eh_1122',['openmode.h',['../openmode_8h.html',1,'']]],
-  ['optional_2ehpp_1123',['optional.hpp',['../optional_8hpp.html',1,'']]]
+  ['palette_2ehpp_684',['palette.hpp',['../palette_8hpp.html',1,'']]],
+  ['process_2ehpp_685',['process.hpp',['../process_8hpp.html',1,'']]]
 ];

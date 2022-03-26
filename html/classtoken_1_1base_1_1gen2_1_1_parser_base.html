@@ -93,8 +93,6 @@ $(document).ready(function(){initNavTree('classtoken_1_1base_1_1gen2_1_1_parser_
 <div class="title">token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &gt;:</div>
 <div class="dyncontent">
@@ -103,129 +101,148 @@ Inheritance diagram for token::base::gen2::ParserBase&lt; Output, TokenType, Tok
 <div class="dynheader">
 Collaboration diagram for token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1gen2_1_1_parser_base__coll__graph.svg" width="252" height="290"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtoken_1_1base_1_1gen2_1_1_parser_base__coll__graph.svg" width="100%" height="400"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a49fdf6456d954a993225b5eb804d916c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a49fdf6456d954a993225b5eb804d916c">TokenTypeT</a> = TokenType</td></tr>
-<tr class="memdesc:a49fdf6456d954a993225b5eb804d916c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a49fdf6456d954a993225b5eb804d916c">More...</a><br /></td></tr>
-<tr class="separator:a49fdf6456d954a993225b5eb804d916c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad70de821d3a68234be7bec647c85b05d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ad70de821d3a68234be7bec647c85b05d">TokenT</a> = Token</td></tr>
-<tr class="memdesc:ad70de821d3a68234be7bec647c85b05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of Token object being used by the Tokenizer &amp; Parser.  <a href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ad70de821d3a68234be7bec647c85b05d">More...</a><br /></td></tr>
-<tr class="separator:ad70de821d3a68234be7bec647c85b05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec7395ef4674c0300b4841c6214d58a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#aec7395ef4674c0300b4841c6214d58a4">TokenCont</a> = std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> &gt;</td></tr>
-<tr class="memdesc:aec7395ef4674c0300b4841c6214d58a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A std::vector of TokenT instances.  <a href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#aec7395ef4674c0300b4841c6214d58a4">More...</a><br /></td></tr>
-<tr class="separator:aec7395ef4674c0300b4841c6214d58a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7397e61e167b1d1a562bdbfc737d694"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ae7397e61e167b1d1a562bdbfc737d694">iterator</a> = TokenCont::iterator</td></tr>
-<tr class="memdesc:ae7397e61e167b1d1a562bdbfc737d694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable TokenCont iterator type.  <a href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ae7397e61e167b1d1a562bdbfc737d694">More...</a><br /></td></tr>
-<tr class="separator:ae7397e61e167b1d1a562bdbfc737d694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea23c643eb8e80bf1d4f4b857def84d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#adea23c643eb8e80bf1d4f4b857def84d">const_iterator</a> = TokenCont::const_iterator</td></tr>
-<tr class="memdesc:adea23c643eb8e80bf1d4f4b857def84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immutable TokenCont iterator type.  <a href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#adea23c643eb8e80bf1d4f4b857def84d">More...</a><br /></td></tr>
+<tr class="memitem:adea23c643eb8e80bf1d4f4b857def84d"><td class="memItemLeft" align="right" valign="top"><a id="adea23c643eb8e80bf1d4f4b857def84d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#adea23c643eb8e80bf1d4f4b857def84d">const_iterator</a> = TokenCont::const_iterator</td></tr>
+<tr class="memdesc:adea23c643eb8e80bf1d4f4b857def84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immutable TokenCont iterator type. <br /></td></tr>
 <tr class="separator:adea23c643eb8e80bf1d4f4b857def84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9d70af5219762bc0cf808cebf710762"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#af9d70af5219762bc0cf808cebf710762">OutputT</a> = Output</td></tr>
+<tr class="memitem:ae7397e61e167b1d1a562bdbfc737d694"><td class="memItemLeft" align="right" valign="top"><a id="ae7397e61e167b1d1a562bdbfc737d694"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ae7397e61e167b1d1a562bdbfc737d694">iterator</a> = TokenCont::iterator</td></tr>
+<tr class="memdesc:ae7397e61e167b1d1a562bdbfc737d694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable TokenCont iterator type. <br /></td></tr>
+<tr class="separator:ae7397e61e167b1d1a562bdbfc737d694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9d70af5219762bc0cf808cebf710762"><td class="memItemLeft" align="right" valign="top"><a id="af9d70af5219762bc0cf808cebf710762"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>OutputT</b> = Output</td></tr>
 <tr class="separator:af9d70af5219762bc0cf808cebf710762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7395ef4674c0300b4841c6214d58a4"><td class="memItemLeft" align="right" valign="top"><a id="aec7395ef4674c0300b4841c6214d58a4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#aec7395ef4674c0300b4841c6214d58a4">TokenCont</a> = std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> &gt;</td></tr>
+<tr class="memdesc:aec7395ef4674c0300b4841c6214d58a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A std::vector of TokenT instances. <br /></td></tr>
+<tr class="separator:aec7395ef4674c0300b4841c6214d58a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70de821d3a68234be7bec647c85b05d"><td class="memItemLeft" align="right" valign="top"><a id="ad70de821d3a68234be7bec647c85b05d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#ad70de821d3a68234be7bec647c85b05d">TokenT</a> = Token</td></tr>
+<tr class="memdesc:ad70de821d3a68234be7bec647c85b05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of Token object being used by the Tokenizer &amp; Parser. <br /></td></tr>
+<tr class="separator:ad70de821d3a68234be7bec647c85b05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fdf6456d954a993225b5eb804d916c"><td class="memItemLeft" align="right" valign="top"><a id="a49fdf6456d954a993225b5eb804d916c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a49fdf6456d954a993225b5eb804d916c">TokenTypeT</a> = TokenType</td></tr>
+<tr class="memdesc:a49fdf6456d954a993225b5eb804d916c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens. <br /></td></tr>
+<tr class="separator:a49fdf6456d954a993225b5eb804d916c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html">token::base::gen2::IteratingCoreParserBase&lt; TokenType, TokenBase&lt; TokenType &gt; &gt;</a></td></tr>
-<tr class="memitem:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a43d55547a0551ee4f7632d5b9b76bef2">TokenTypeT</a> = TokenType</td></tr>
-<tr class="memdesc:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a43d55547a0551ee4f7632d5b9b76bef2">More...</a><br /></td></tr>
-<tr class="separator:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44a39dd17c8b9736a2928a9e7c9bb63 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#ae44a39dd17c8b9736a2928a9e7c9bb63">const_iterator</a> = <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">BasicCoreParserBase</a>&lt; TokenType, Token &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a></td></tr>
+<tr class="memitem:ae44a39dd17c8b9736a2928a9e7c9bb63 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="ae44a39dd17c8b9736a2928a9e7c9bb63"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> = <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">BasicCoreParserBase</a>&lt; TokenType, Token &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a></td></tr>
 <tr class="separator:ae44a39dd17c8b9736a2928a9e7c9bb63 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb7434a67d664fcd60a8c5868beebe01 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#abb7434a67d664fcd60a8c5868beebe01">TokenCont</a> = <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">BasicCoreParserBase</a>&lt; TokenType, Token &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a></td></tr>
+<tr class="memitem:abb7434a67d664fcd60a8c5868beebe01 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="abb7434a67d664fcd60a8c5868beebe01"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>TokenCont</b> = <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">BasicCoreParserBase</a>&lt; TokenType, Token &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a></td></tr>
 <tr class="separator:abb7434a67d664fcd60a8c5868beebe01 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a43d55547a0551ee4f7632d5b9b76bef2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a43d55547a0551ee4f7632d5b9b76bef2">TokenTypeT</a> = TokenType</td></tr>
+<tr class="memdesc:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens. <br /></td></tr>
+<tr class="separator:a43d55547a0551ee4f7632d5b9b76bef2 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memitem:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae0846ea009491b9187e1693a75f177cd">TokenTypeT</a> = TokenType</td></tr>
-<tr class="memdesc:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae0846ea009491b9187e1693a75f177cd">More...</a><br /></td></tr>
-<tr class="separator:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> = Token</td></tr>
-<tr class="memdesc:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of Token object being used by the Tokenizer &amp; Parser.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">More...</a><br /></td></tr>
-<tr class="separator:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> = std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> &gt;</td></tr>
-<tr class="memdesc:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">A std::vector of TokenT instances.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">More...</a><br /></td></tr>
-<tr class="separator:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a2cf658ca7ba4dc544bea3ec994d53c06">iterator</a> = TokenCont::iterator</td></tr>
-<tr class="memdesc:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable TokenCont iterator type.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a2cf658ca7ba4dc544bea3ec994d53c06">More...</a><br /></td></tr>
-<tr class="separator:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de8d7f1122b3fe621ee69b8954529e9 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a> = TokenCont::const_iterator</td></tr>
-<tr class="memdesc:a5de8d7f1122b3fe621ee69b8954529e9 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immutable TokenCont iterator type.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">More...</a><br /></td></tr>
+<tr class="memitem:a5de8d7f1122b3fe621ee69b8954529e9 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a5de8d7f1122b3fe621ee69b8954529e9"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a> = TokenCont::const_iterator</td></tr>
+<tr class="memdesc:a5de8d7f1122b3fe621ee69b8954529e9 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immutable TokenCont iterator type. <br /></td></tr>
 <tr class="separator:a5de8d7f1122b3fe621ee69b8954529e9 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a2cf658ca7ba4dc544bea3ec994d53c06"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a2cf658ca7ba4dc544bea3ec994d53c06">iterator</a> = TokenCont::iterator</td></tr>
+<tr class="memdesc:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable TokenCont iterator type. <br /></td></tr>
+<tr class="separator:a2cf658ca7ba4dc544bea3ec994d53c06 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="add5a67384f05e812f74051fdab8d3022"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> = std::vector&lt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> &gt;</td></tr>
+<tr class="memdesc:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">A std::vector of TokenT instances. <br /></td></tr>
+<tr class="separator:add5a67384f05e812f74051fdab8d3022 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a54d144efddef193fb373bce509a92977"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> = Token</td></tr>
+<tr class="memdesc:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of Token object being used by the Tokenizer &amp; Parser. <br /></td></tr>
+<tr class="separator:a54d144efddef193fb373bce509a92977 inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="ae0846ea009491b9187e1693a75f177cd"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae0846ea009491b9187e1693a75f177cd">TokenTypeT</a> = TokenType</td></tr>
+<tr class="memdesc:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal TokenType enum type used by Tokens. <br /></td></tr>
+<tr class="separator:ae0846ea009491b9187e1693a75f177cd inherit pub_types_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a00268681c16357778ada629b014dd26f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a00268681c16357778ada629b014dd26f">ParserBase</a> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
-<tr class="separator:a00268681c16357778ada629b014dd26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9472d11834db6867e0cbc330b25e0cd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a9472d11834db6867e0cbc330b25e0cd8">ParserBase</a> (const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;tkns)</td></tr>
+<tr class="memitem:a9472d11834db6867e0cbc330b25e0cd8"><td class="memItemLeft" align="right" valign="top"><a id="a9472d11834db6867e0cbc330b25e0cd8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ParserBase</b> (const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;tkns)</td></tr>
 <tr class="separator:a9472d11834db6867e0cbc330b25e0cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14707904f40838226478340b749a8042"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a14707904f40838226478340b749a8042">~ParserBase</a> () noexcept=default</td></tr>
-<tr class="separator:a14707904f40838226478340b749a8042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b3f529e7a1014c522eb1d6030f46e66"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#af9d70af5219762bc0cf808cebf710762">OutputT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#a7b3f529e7a1014c522eb1d6030f46e66">parse</a> ()=0</td></tr>
+<tr class="memitem:a00268681c16357778ada629b014dd26f"><td class="memItemLeft" align="right" valign="top"><a id="a00268681c16357778ada629b014dd26f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ParserBase</b> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
+<tr class="separator:a00268681c16357778ada629b014dd26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3f529e7a1014c522eb1d6030f46e66"><td class="memItemLeft" align="right" valign="top"><a id="a7b3f529e7a1014c522eb1d6030f46e66"></a>
+virtual OutputT&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> ()=0</td></tr>
 <tr class="separator:a7b3f529e7a1014c522eb1d6030f46e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memitem:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; TokenTypeT &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a">strip_tokens</a> (Ts &amp;&amp;... types)</td></tr>
-<tr class="memdesc:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy &amp; remove all Tokens with types that match any of the specified TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a">More...</a><br /></td></tr>
-<tr class="separator:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e5c97eaaefc0e6f06982dbfdc2e4d48 inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; TokenTypeT &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a5e5c97eaaefc0e6f06982dbfdc2e4d48 inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5e5c97eaaefc0e6f06982dbfdc2e4d48">get_tokens</a> (Ts &amp;&amp;... types) const</td></tr>
 <tr class="memdesc:a5e5c97eaaefc0e6f06982dbfdc2e4d48 inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy all Tokens with types that match any of the specified types to a vector and return it.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5e5c97eaaefc0e6f06982dbfdc2e4d48">More...</a><br /></td></tr>
 <tr class="separator:a5e5c97eaaefc0e6f06982dbfdc2e4d48 inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; TokenTypeT &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a">strip_tokens</a> (Ts &amp;&amp;... types)</td></tr>
+<tr class="memdesc:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy &amp; remove all Tokens with types that match any of the specified TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a">More...</a><br /></td></tr>
+<tr class="separator:ad0d37086a77b21daf92faa7b598f058a inherit pub_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html">token::base::gen2::IteratingCoreParserBase&lt; TokenType, TokenBase&lt; TokenType &gt; &gt;</a></td></tr>
-<tr class="memitem:a41dddb43f560faa95e5cc25384135107 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a41dddb43f560faa95e5cc25384135107">IteratingCoreParserBase</a> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
-<tr class="separator:a41dddb43f560faa95e5cc25384135107 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5451723be7c6076a53576f04b9b1543d inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a5451723be7c6076a53576f04b9b1543d">IteratingCoreParserBase</a> (const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;tkns)</td></tr>
+<tr class="memitem:a5451723be7c6076a53576f04b9b1543d inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a5451723be7c6076a53576f04b9b1543d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>IteratingCoreParserBase</b> (const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;tkns)</td></tr>
 <tr class="separator:a5451723be7c6076a53576f04b9b1543d inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a272c5f945876b91899f0fd22af2f1d27 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a272c5f945876b91899f0fd22af2f1d27">~IteratingCoreParserBase</a> () noexcept=default</td></tr>
-<tr class="separator:a272c5f945876b91899f0fd22af2f1d27 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#acba4b1debb212cb6922617d756c3073e">hasMore</a> () const</td></tr>
-<tr class="memdesc:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the read position hasn't reached the end of the container.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#acba4b1debb212cb6922617d756c3073e">More...</a><br /></td></tr>
-<tr class="separator:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">getNext</a> (const size_t &amp;n=1ull) noexcept</td></tr>
-<tr class="memdesc:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the read position by the specified number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">More...</a><br /></td></tr>
-<tr class="separator:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> (var::at_least_one&lt; Ts... &gt;) const _iterator <a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">getNext</a>(Ts &amp;&amp;... types) noexcept</td></tr>
-<tr class="memdesc:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">More...</a><br /></td></tr>
-<tr class="separator:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41dddb43f560faa95e5cc25384135107 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a41dddb43f560faa95e5cc25384135107"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>IteratingCoreParserBase</b> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
+<tr class="separator:a41dddb43f560faa95e5cc25384135107 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af69a3541f373460f211f8b61327cecbd inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#af69a3541f373460f211f8b61327cecbd">getLast</a> (const size_t &amp;n=1ull) const noexcept</td></tr>
 <tr class="memdesc:af69a3541f373460f211f8b61327cecbd inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the read position back by the given number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#af69a3541f373460f211f8b61327cecbd">More...</a><br /></td></tr>
 <tr class="separator:af69a3541f373460f211f8b61327cecbd inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7474309fc7975852b69a85c8d9f8705a inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a7474309fc7975852b69a85c8d9f8705a">getLast</a> (Ts &amp;&amp;... types) noexcept</td></tr>
 <tr class="memdesc:a7474309fc7975852b69a85c8d9f8705a inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep moving the read position back until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a7474309fc7975852b69a85c8d9f8705a">More...</a><br /></td></tr>
 <tr class="separator:a7474309fc7975852b69a85c8d9f8705a inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#aef40e9e62ca730903ba257c0f7df128f">peekNext</a> (const size_t &amp;n=1ull) const noexcept</td></tr>
-<tr class="memdesc:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the read position by the specified number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#aef40e9e62ca730903ba257c0f7df128f">More...</a><br /></td></tr>
-<tr class="separator:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1a36820b6d874ff0db31eaee7f1e0dbc">peekNext</a> (Ts &amp;&amp;... types) const noexcept</td></tr>
-<tr class="memdesc:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1a36820b6d874ff0db31eaee7f1e0dbc">More...</a><br /></td></tr>
-<tr class="separator:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">getNext</a> (const size_t &amp;n=1ull) noexcept</td></tr>
+<tr class="memdesc:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the read position by the specified number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">More...</a><br /></td></tr>
+<tr class="separator:a4d484d2d696969ee09f28622fdbae4d2 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="acba4b1debb212cb6922617d756c3073e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#acba4b1debb212cb6922617d756c3073e">hasMore</a> () const</td></tr>
+<tr class="memdesc:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the read position hasn't reached the end of the container. <br /></td></tr>
+<tr class="separator:acba4b1debb212cb6922617d756c3073e inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e64415d8ea97384d5c6e4d2e9700553 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1e64415d8ea97384d5c6e4d2e9700553">peekLast</a> (const size_t &amp;n=1ull) const noexcept</td></tr>
 <tr class="memdesc:a1e64415d8ea97384d5c6e4d2e9700553 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the read position back by the given number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1e64415d8ea97384d5c6e4d2e9700553">More...</a><br /></td></tr>
 <tr class="separator:a1e64415d8ea97384d5c6e4d2e9700553 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59bd3c516f7e0a620a558004860f7e7b inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a59bd3c516f7e0a620a558004860f7e7b">peekLast</a> (Ts &amp;&amp;... types) const noexcept</td></tr>
 <tr class="memdesc:a59bd3c516f7e0a620a558004860f7e7b inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep moving the read position back until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a59bd3c516f7e0a620a558004860f7e7b">More...</a><br /></td></tr>
 <tr class="separator:a59bd3c516f7e0a620a558004860f7e7b inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#aef40e9e62ca730903ba257c0f7df128f">peekNext</a> (const size_t &amp;n=1ull) const noexcept</td></tr>
+<tr class="memdesc:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the read position by the specified number of tokens.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#aef40e9e62ca730903ba257c0f7df128f">More...</a><br /></td></tr>
+<tr class="separator:aef40e9e62ca730903ba257c0f7df128f inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> var::at_least_one&lt; Ts... &gt; <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1a36820b6d874ff0db31eaee7f1e0dbc">peekNext</a> (Ts &amp;&amp;... types) const noexcept</td></tr>
+<tr class="memdesc:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a1a36820b6d874ff0db31eaee7f1e0dbc">More...</a><br /></td></tr>
+<tr class="separator:a1a36820b6d874ff0db31eaee7f1e0dbc inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">requires</a> (var::at_least_one&lt; Ts... &gt;) const _iterator <a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a4d484d2d696969ee09f28622fdbae4d2">getNext</a>(Ts &amp;&amp;... types) noexcept</td></tr>
+<tr class="memdesc:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep advancing the read position until the first Token whose type matches one of the given TokenTypes.  <a href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a09bd2d06c1824517cf73af5434cb4116">More...</a><br /></td></tr>
+<tr class="separator:a09bd2d06c1824517cf73af5434cb4116 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memitem:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ab3c68656b7ed689fae75a5c4199fcd36">BasicCoreParserBase</a> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
-<tr class="memdesc:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parser Move Constructor.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ab3c68656b7ed689fae75a5c4199fcd36">More...</a><br /></td></tr>
-<tr class="separator:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ce53d13cba9b733e7bc7950f40233ca inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a6ce53d13cba9b733e7bc7950f40233ca">BasicCoreParserBase</a> (const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;tkns)</td></tr>
 <tr class="memdesc:a6ce53d13cba9b733e7bc7950f40233ca inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parser Copy Constructor.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a6ce53d13cba9b733e7bc7950f40233ca">More...</a><br /></td></tr>
 <tr class="separator:a6ce53d13cba9b733e7bc7950f40233ca inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97905ca2c48f89212f02d0324e66904d inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a97905ca2c48f89212f02d0324e66904d">~BasicCoreParserBase</a> () noexcept=default</td></tr>
-<tr class="separator:a97905ca2c48f89212f02d0324e66904d inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdcc6e13173da36969c2b4941252e7b3 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#acdcc6e13173da36969c2b4941252e7b3">begin</a> () const</td></tr>
-<tr class="memdesc:acdcc6e13173da36969c2b4941252e7b3 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an iterator for the start of the token container.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#acdcc6e13173da36969c2b4941252e7b3">More...</a><br /></td></tr>
+<tr class="memitem:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ab3c68656b7ed689fae75a5c4199fcd36">BasicCoreParserBase</a> (<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;tkns)</td></tr>
+<tr class="memdesc:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parser Move Constructor.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ab3c68656b7ed689fae75a5c4199fcd36">More...</a><br /></td></tr>
+<tr class="separator:ab3c68656b7ed689fae75a5c4199fcd36 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcc6e13173da36969c2b4941252e7b3 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="acdcc6e13173da36969c2b4941252e7b3"></a>
+<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#acdcc6e13173da36969c2b4941252e7b3">begin</a> () const</td></tr>
+<tr class="memdesc:acdcc6e13173da36969c2b4941252e7b3 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an iterator for the start of the token container. <br /></td></tr>
 <tr class="separator:acdcc6e13173da36969c2b4941252e7b3 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d8bf042ee9cca2f0e9ad30bb5093a91 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a4d8bf042ee9cca2f0e9ad30bb5093a91">end</a> () const</td></tr>
-<tr class="memdesc:a4d8bf042ee9cca2f0e9ad30bb5093a91 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an iterator for the end of the token container.  <a href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a4d8bf042ee9cca2f0e9ad30bb5093a91">More...</a><br /></td></tr>
+<tr class="memitem:a4d8bf042ee9cca2f0e9ad30bb5093a91 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a4d8bf042ee9cca2f0e9ad30bb5093a91"></a>
+<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a4d8bf042ee9cca2f0e9ad30bb5093a91">end</a> () const</td></tr>
+<tr class="memdesc:a4d8bf042ee9cca2f0e9ad30bb5093a91 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an iterator for the end of the token container. <br /></td></tr>
 <tr class="separator:a4d8bf042ee9cca2f0e9ad30bb5093a91 inherit pro_methods_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html">token::base::gen2::IteratingCoreParserBase&lt; TokenType, TokenBase&lt; TokenType &gt; &gt;</a></td></tr>
-<tr class="memitem:aa931447b172cf8bc8a761e9f286dea6a inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#aa931447b172cf8bc8a761e9f286dea6a">readpos</a></td></tr>
+<tr class="memitem:aa931447b172cf8bc8a761e9f286dea6a inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="aa931447b172cf8bc8a761e9f286dea6a"></a>
+<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>readpos</b></td></tr>
 <tr class="separator:aa931447b172cf8bc8a761e9f286dea6a inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html">token::base::gen2::BasicCoreParserBase&lt; TokenType, Token &gt;</a></td></tr>
-<tr class="memitem:a8a62e6a3a7ca47901ed068b842f01301 inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a8a62e6a3a7ca47901ed068b842f01301">tokens</a></td></tr>
+<tr class="memitem:a8a62e6a3a7ca47901ed068b842f01301 inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memItemLeft" align="right" valign="top"><a id="a8a62e6a3a7ca47901ed068b842f01301"></a>
+<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tokens</b></td></tr>
 <tr class="separator:a8a62e6a3a7ca47901ed068b842f01301 inherit pro_attribs_classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -234,242 +251,7 @@ class token::base::gen2::ParserBase&lt; Output, TokenType, Token, ParserBaseT &g
 
 
 <p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01057">1057</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="adea23c643eb8e80bf1d4f4b857def84d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adea23c643eb8e80bf1d4f4b857def84d">&#9670;&nbsp;</a></span>const_iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5de8d7f1122b3fe621ee69b8954529e9">const_iterator</a> =  TokenCont::const_iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Immutable TokenCont iterator type. </p>
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01068">1068</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ae7397e61e167b1d1a562bdbfc737d694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7397e61e167b1d1a562bdbfc737d694">&#9670;&nbsp;</a></span>iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a2cf658ca7ba4dc544bea3ec994d53c06">iterator</a> =  TokenCont::iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mutable TokenCont iterator type. </p>
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01066">1066</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af9d70af5219762bc0cf808cebf710762"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9d70af5219762bc0cf808cebf710762">&#9670;&nbsp;</a></span>OutputT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#af9d70af5219762bc0cf808cebf710762">OutputT</a> =  Output</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01070">1070</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aec7395ef4674c0300b4841c6214d58a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec7395ef4674c0300b4841c6214d58a4">&#9670;&nbsp;</a></span>TokenCont</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> =  std::vector&lt;<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A std::vector of TokenT instances. </p>
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01064">1064</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad70de821d3a68234be7bec647c85b05d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad70de821d3a68234be7bec647c85b05d">&#9670;&nbsp;</a></span>TokenT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a54d144efddef193fb373bce509a92977">TokenT</a> =  Token</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The type of Token object being used by the Tokenizer &amp; Parser. </p>
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01062">1062</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a49fdf6456d954a993225b5eb804d916c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49fdf6456d954a993225b5eb804d916c">&#9670;&nbsp;</a></span>TokenTypeT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae0846ea009491b9187e1693a75f177cd">TokenTypeT</a> =  TokenType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The internal TokenType enum type used by Tokens. </p>
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01060">1060</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a00268681c16357778ada629b014dd26f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00268681c16357778ada629b014dd26f">&#9670;&nbsp;</a></span>ParserBase() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">ParserBase</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>tkns</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01072">1072</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a9472d11834db6867e0cbc330b25e0cd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9472d11834db6867e0cbc330b25e0cd8">&#9670;&nbsp;</a></span>ParserBase() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::<a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">ParserBase</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022">TokenCont</a> &amp;&#160;</td>
-          <td class="paramname"><em>tkns</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l01073">1073</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a14707904f40838226478340b749a8042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14707904f40838226478340b749a8042">&#9670;&nbsp;</a></span>~ParserBase()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::~<a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">ParserBase</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7b3f529e7a1014c522eb1d6030f46e66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b3f529e7a1014c522eb1d6030f46e66">&#9670;&nbsp;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBase&lt; TokenType &gt;&gt; Token = TokenBase&lt;TokenType&gt;, template&lt; typename, typename &gt; class ParserBaseT = IteratingCoreParserBase&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html#af9d70af5219762bc0cf808cebf710762">OutputT</a> <a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">token::base::gen2::ParserBase</a>&lt; Output, TokenType, Token, ParserBaseT &gt;::parse </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/tokenlib/include/<a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a></li>
 </ul>
 </div><!-- contents -->
@@ -477,7 +259,7 @@ template&lt;typename Output , typename TokenType , std::derived_from&lt; TokenBa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacetoken.html">token</a></li><li class="navelem"><a class="el" href="namespacetoken_1_1base.html">base</a></li><li class="navelem"><a class="el" href="namespacetoken_1_1base_1_1gen2.html">gen2</a></li><li class="navelem"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">ParserBase</a></li>
+    <li class="navelem"><b>token</b></li><li class="navelem"><b>base</b></li><li class="navelem"><b>gen2</b></li><li class="navelem"><a class="el" href="classtoken_1_1base_1_1gen2_1_1_parser_base.html">ParserBase</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

@@ -6,6 +6,11 @@ var hierarchy =
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
+    [ "std::basic_string_view< Char >", null, [
+      [ "std::string_view", null, [
+        [ "opt::Argument", "classopt_1_1_argument.html", null ]
+      ] ]
+    ] ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
         [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
@@ -19,7 +24,7 @@ var hierarchy =
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
-    [ "exception", null, [
+    [ "std::exception", null, [
       [ "ex::except", "classex_1_1except.html", [
         [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
@@ -38,6 +43,7 @@ var hierarchy =
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
+    [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
     [ "token::base::LexemeDictBase< LEXEME >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
@@ -66,12 +72,9 @@ var hierarchy =
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
-    [ "term::setcolor_seq< SeqT >", "structterm_1_1setcolor__seq.html", null ],
+    [ "color::setcolor_seq< SeqT >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
-    [ "string_view", null, [
-      [ "opt::Argument", "classopt_1_1_argument.html", null ]
-    ] ],
     [ "token::base::TokenBase< TokenType >", "structtoken_1_1base_1_1_token_base.html", null ],
     [ "token::base::TokenizerBase< LexemeT, Dictionary, TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", null ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [

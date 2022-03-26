@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('palette__example_8cpp_source.html','')
 <div class="title">palette_example.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="palette__example_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @example[{lineno}] palette_example.cpp</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *      This is an example showing how to use the term::palette object as a color manager.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
@@ -98,17 +98,17 @@ $(document).ready(function(){initNavTree('palette__example_8cpp_source.html','')
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">palette</span><span class="preprocessor">.</span><span class="preprocessor">hpp</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// enumerator that will be used as a key.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3">   10</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3">COLOR</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3ac429fde8b1b986d42f84ba63dbfef6ac">HOT</a>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3a3f7ff4daa99912d1b0c8c64340edb9fb">COLD</a>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> COLOR {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    HOT,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    COLD,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="palette__example_8cpp.html#ab14d1d448decf64e6c3ca22e38328b87">   15</a></span>&#160;<span class="keyword">static</span> <a class="code" href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">term</a>::<a class="code" href="classterm_1_1palette.html#aaf290bbe6d2538ac54a5cee1aa73b292">palette</a>&lt;<a class="code" href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3">COLOR</a>&gt; <a class="code" href="palette__example_8cpp.html#ab14d1d448decf64e6c3ca22e38328b87">myPalette</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">static</span> <a class="code" href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">term</a>::palette&lt;COLOR&gt; myPalette {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::make_pair(COLOR::HOT, color::setcolor{ color::orange }),</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::make_pair(COLOR::COLD, color::setcolor{ color::light_blue }),</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="palette__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">   20</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="palette__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i{ 1 }; i &lt; argc; ++i)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (argv[i] == <span class="stringliteral">&quot;--no-color&quot;</span>)</div>
@@ -135,17 +135,11 @@ $(document).ready(function(){initNavTree('palette__example_8cpp_source.html','')
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="apalette__example_8cpp_html_ab14d1d448decf64e6c3ca22e38328b87"><div class="ttname"><a href="palette__example_8cpp.html#ab14d1d448decf64e6c3ca22e38328b87">myPalette</a></div><div class="ttdeci">static term::palette&lt; COLOR &gt; myPalette</div><div class="ttdef"><b>Definition:</b> <a href="palette__example_8cpp_source.html#l00015">palette_example.cpp:15</a></div></div>
-<div class="ttc" id="apalette__example_8cpp_html_af90824509586333cf45ce757d2711ce3a3f7ff4daa99912d1b0c8c64340edb9fb"><div class="ttname"><a href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3a3f7ff4daa99912d1b0c8c64340edb9fb">COLOR::COLD</a></div><div class="ttdeci">@ COLD</div></div>
-<div class="ttc" id="aclassterm_1_1palette_html_aaf290bbe6d2538ac54a5cee1aa73b292"><div class="ttname"><a href="classterm_1_1palette.html#aaf290bbe6d2538ac54a5cee1aa73b292">term::palette::operator&gt;&gt;</a></div><div class="ttdeci">friend std::ifstream &amp; operator&gt;&gt;(std::ifstream &amp;ifs, palette&lt; key_type &gt; &amp;p) requires(!std</div><div class="ttdef"><b>Definition:</b> <a href="palette_8hpp_source.html#l00344">palette.hpp:344</a></div></div>
-<div class="ttc" id="apalette__example_8cpp_html_af90824509586333cf45ce757d2711ce3"><div class="ttname"><a href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3">COLOR</a></div><div class="ttdeci">COLOR</div><div class="ttdef"><b>Definition:</b> <a href="palette__example_8cpp_source.html#l00010">palette_example.cpp:10</a></div></div>
-<div class="ttc" id="apalette__example_8cpp_html_af90824509586333cf45ce757d2711ce3ac429fde8b1b986d42f84ba63dbfef6ac"><div class="ttname"><a href="palette__example_8cpp.html#af90824509586333cf45ce757d2711ce3ac429fde8b1b986d42f84ba63dbfef6ac">COLOR::HOT</a></div><div class="ttdeci">@ HOT</div></div>
 <div class="ttc" id="anamespaceterm_html_aa8d9ccb9b1efdd2decee3585f305f4a7"><div class="ttname"><a href="namespaceterm.html#aa8d9ccb9b1efdd2decee3585f305f4a7">term::setScreenBufferSize</a></div><div class="ttdeci">requires static var::Streamable&lt; T, std::stringstream &gt; Sequence setScreenBufferSize(const T &amp;columnCount, const T &amp;lineCount)</div><div class="ttdoc">Generate an escape sequence that resizes the console screen buffer and/or window.</div><div class="ttdef"><b>Definition:</b> <a href="term_8hpp_source.html#l00482">term.hpp:482</a></div></div>
-<div class="ttc" id="apalette__example_8cpp_html_aa06f5fbe915d0bf149dcf793acea47a1"><div class="ttname"><a href="palette__example_8cpp.html#aa06f5fbe915d0bf149dcf793acea47a1">main</a></div><div class="ttdeci">int main(const int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="palette__example_8cpp_source.html#l00020">palette_example.cpp:20</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_1d5b528ab3832b93f766f73c3c4c2806.html">examples</a></li><li class="navelem"><a class="el" href="palette__example_8cpp.html">palette_example.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_e5c7707bd3ecf7743dd1c172610d219b.html">TermAPI</a></li><li class="navelem"><a class="el" href="dir_1d5b528ab3832b93f766f73c3c4c2806.html">examples</a></li><li class="navelem"><b>palette_example.cpp</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

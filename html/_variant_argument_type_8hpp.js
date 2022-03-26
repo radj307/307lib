@@ -1,7 +1,7 @@
 var _variant_argument_type_8hpp =
 [
-    [ "VariantArg", "structopt_1_1_variant_arg.html", "structopt_1_1_variant_arg" ],
     [ "Index", "structopt_1_1_index.html", "structopt_1_1_index" ],
+    [ "VariantArg", "structopt_1_1_variant_arg.html", "structopt_1_1_variant_arg" ],
     [ "VariantArgumentType", "_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f", null ],
     [ "get", "_variant_argument_type_8hpp.html#a8723d0634e92526f4ca97fc8a93221ab", null ],
     [ "get_index", "_variant_argument_type_8hpp.html#ab0cbc1a34097e981ba67ffd4a2742a2d", null ],

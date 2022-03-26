@@ -1,26 +1,9 @@
 var searchData=
 [
-  ['va_5fopt_5fsupported_911',['VA_OPT_SUPPORTED',['../sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0',1,'sysarch.h']]],
-  ['va_5fopt_5fsupported_5fi_912',['VA_OPT_SUPPORTED_I',['../sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98',1,'sysarch.h']]],
-  ['validarg_913',['ValidArg',['../namespaceopt.html#af5a63481366bb7bf0406ff735e6b592f',1,'opt']]],
-  ['validargorcompound_914',['ValidArgOrCompound',['../namespaceopt.html#adf158337f8369478586d64f9162afead',1,'opt']]],
-  ['validargtype_915',['ValidArgType',['../namespaceopt.html#a5186e11563094f28ac3182224bfbc6d0',1,'opt']]],
-  ['validargtypeorcompound_916',['ValidArgTypeOrCompound',['../namespaceopt.html#ab813ec0eff2e375a9077ceffaae2f8a6',1,'opt']]],
-  ['validinputtype_917',['ValidInputType',['../namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1',1,'opt']]],
-  ['validvaluet_918',['ValidValueT',['../namespacefile_1_1ini.html#a696a61687f8419e973918d08bbd6ee65',1,'file::ini']]],
-  ['value_919',['value',['../structopt_1_1_variant_arg.html#a037e4b40d0e9b63f4a2faeefd5db99b4',1,'opt::VariantArg']]],
-  ['value_5ftype_920',['value_type',['../classterm_1_1palette.html#aed7b8cd933802708e8b6c42cec92b6ee',1,'term::palette']]],
-  ['var_921',['var',['../namespacevar.html',1,'']]],
-  ['var_2ehpp_922',['var.hpp',['../var_8hpp.html',1,'']]],
-  ['variableindentation_923',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str::VariableIndentation'],['../structstr_1_1_variable_indentation.html#a0b7ed36241b97b1ff080384c0e1ba4d3',1,'str::VariableIndentation::VariableIndentation()']]],
-  ['variablet_924',['VariableT',['../namespacefile_1_1ini.html#aa69516302ad141a002476d66d4bbd08f',1,'file::ini']]],
-  ['variadic_5fand_925',['variadic_and',['../namespacevar.html#acd4adc200dff50fed630c357d3b5fd16',1,'var']]],
-  ['variadic_5for_926',['variadic_or',['../namespacevar.html#aab48ef63e82c6fbb650f1b7af64c951a',1,'var']]],
-  ['variant_927',['variant',['../structopt_1_1token_1_1_parser_1_1_input.html#a53d4c67f3a1d8aa96fc8b667d67daa9f',1,'opt::token::Parser::Input']]],
-  ['variantarg_928',['VariantArg',['../structopt_1_1_variant_arg.html',1,'opt::VariantArg'],['../structopt_1_1_variant_arg.html#a1eca286831a426b488eb2ae4e1f0e9f1',1,'opt::VariantArg::VariantArg()']]],
-  ['variantargumenttype_929',['VariantArgumentType',['../namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]],
-  ['variantargumenttype_2ehpp_930',['VariantArgumentType.hpp',['../_variant_argument_type_8hpp.html',1,'']]],
-  ['vec_931',['vec',['../structopt_1_1_capture_list.html#ab3975dce15bf28ed21536c9f098625cc',1,'opt::CaptureList']]],
-  ['vectorize_932',['vectorize',['../namespaceopt.html#ab2a04d5b8af8ab1a4b5b4652723649e0',1,'opt']]],
-  ['vindent_933',['VIndent',['../namespacestr.html#a576148d382d024fc11d46dc0ef839cec',1,'str']]]
+  ['warning_562',['WARNING',['../structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e',1,'xlog::level']]],
+  ['what_563',['what',['../classex_1_1except.html#ad6e1ad112e7126e4d9b39998640d7ebf',1,'ex::except']]],
+  ['white_564',['white',['../color-values_8h.html#a84e5ca1ca60a23294347ec0c3a34c373',1,'color']]],
+  ['write_565',['write',['../structprocess_1_1_proc.html#a9b1401682e80ff728a3974a367ec79a8',1,'process::Proc::write()'],['../classxlog_1_1x_log.html#a45960d1e4b3b5dc7246ee4828956053f',1,'xlog::xLog::write()'],['../structprocess_1_1_mode.html#abfd9e4654085f06ae291dee9de602740',1,'process::Mode::WRITE()'],['../fileo_8hpp.html#a677d00eb29a467f18394236d2a60a97f',1,'file::write()']]],
+  ['write_5fto_566',['write_to',['../fileo_8hpp.html#adb16bb3233f8b03314c0a7cc8e174d30',1,'file::write_to(const std::filesystem::path &amp;, std::stringstream &amp;&amp;, openmode const &amp;=openmode::out|openmode::trunc)'],['../fileo_8hpp.html#aa8a0202eb7bc108b8094ace743ca3ec8',1,'file::write_to(const std::filesystem::path &amp;path, std::stringstream &amp;&amp;buffer, const bool &amp;append)']]],
+  ['wsequence_567',['wSequence',['../classcolor_1_1format_1_1_flag_base.html#a353a798970e17b18f2228cee132c187c',1,'color::format::FlagBase']]]
 ];
