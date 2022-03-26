@@ -9,13 +9,14 @@
 This is a collection of common libraries that I've created over the years.  
 It aims to provide a universal set of cross-platform C++ extensions to accomplish pretty much anything with ease.  
 
-# Support
+# Platform Support
 
 Currently supported operating systems:
  - Windows
  - Linux
  - macOS
-   - _Note: I can't test the macOS releases._
+
+This library was designed for x64 and x86 systems, but may work on other architectures.
 
 # Building from Source
 
@@ -71,5 +72,5 @@ The github pages site is automatically generated using Github Actions & Doxygen,
     `doxygen ./Doxyfile`
 
 
-To execute all of the above steps, you can use this incredibly long one-liner:  
+To execute all of the above steps _(The repository is cloned into your current working directory.)_, you can use this incredibly long one-liner:  
 `git clone https://github.com/radj307/307lib && cd 307lib && git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages && git submodule init && git submodule update && doxygen ./Doxyfile`  
