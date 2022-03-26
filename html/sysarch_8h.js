@@ -16,7 +16,10 @@ var sysarch_8h =
     [ "OS_NONE", "sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9", null ],
     [ "OS_NONE", "sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9", null ],
     [ "OS_WIN", "sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b", null ],
+    [ "PP_THIRD_ARG", "sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e", null ],
     [ "STRICT_POINTER_SAFETY", "sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff", null ],
     [ "STRINGIZE", "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb", null ],
+    [ "VA_OPT_SUPPORTED", "sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0", null ],
+    [ "VA_OPT_SUPPORTED_I", "sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98", null ],
     [ "WINCONSTEXPR", "sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960", null ]
 ];

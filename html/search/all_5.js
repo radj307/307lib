@@ -27,7 +27,7 @@ var searchData=
   ['disablecursorkeysmode_181',['DisableCursorKeysMode',['../namespaceterm.html#a3f30978394dd7cac1a38e110e9de346f',1,'term']]],
   ['disablekeypadapplicationmode_182',['DisableKeypadApplicationMode',['../namespaceterm.html#a9d8a0312c8f436c9b23fee1ac63edcfb',1,'term']]],
   ['disablelinedrawing_183',['DisableLineDrawing',['../namespaceterm.html#a1e768f0e163c777ac18d1cb57fc85f16',1,'term']]],
-  ['divider_184',['divider',['../namespaceopt.html#a4b432ae180b54ef2d396baba32f45d36',1,'opt::divider()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a711b8afd35852659719992fac8ccf66c',1,'token::DefaultDefs::DIVIDER()']]],
+  ['divider_184',['DIVIDER',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a711b8afd35852659719992fac8ccf66c',1,'token::DefaultDefs::DIVIDER()'],['../namespaceopt.html#a4b432ae180b54ef2d396baba32f45d36',1,'opt::divider()']]],
   ['do_5fgrouping_185',['do_grouping',['../classstr_1_1facet_1_1_number_grouping.html#afd13d6de46a276a8224167aa35238207',1,'str::facet::NumberGrouping']]],
   ['do_5fthousands_5fsep_186',['do_thousands_sep',['../classstr_1_1facet_1_1_number_grouping.html#a0c438e8597adda9c2c01455a5a309857',1,'str::facet::NumberGrouping']]],
   ['down_187',['down',['../structterm_1_1_cursor.html#a4314272d720fdaeb080116799868ff46',1,'term::Cursor']]],
