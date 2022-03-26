@@ -10,16 +10,26 @@
 #endif
 
 namespace color {
-	enum class Layer : bool {
-		F = false,
-		B = true,
-	};
-}
+	struct Layer {
+	protected:
+		bool _v;
+	public:
+		constexpr Layer(const bool& v) : _v{ v } {}
+		constexpr operator bool() const { return _v; }
 
-namespace term {
-	using color::Layer;
-	using color::format;
-	using color::FormatFlag;
+		friend std::ostream& operator<<(std::ostream& os, const Layer& lyr)
+		{
+			return os << (lyr._v ? 38 : 48);
+		}
+		friend std::wostream& operator<<(std::wostream& wos, const Layer& lyr)
+		{
+			return wos << (lyr._v ? 38 : 48);
+		}
+
+		static const Layer B, F;
+	};
+	inline constexpr const Layer Layer::B{ 0 };
+	inline constexpr const Layer Layer::F{ 1 };
 
 	/**
 	 * @brief		Acts as a wrapper and controller for SGR & RGB color codes, as well as certain SGR format codes.
@@ -41,7 +51,7 @@ namespace term {
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& SGR) const
 		{
 			using namespace ANSI;
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", SGR, END);
+			return make_sequence<SeqT>(CSI, lyr, ";5;", SGR, END);
 		}
 		/**
 		 * @brief		Build an RGB color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.
@@ -54,11 +64,11 @@ namespace term {
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
 		{
 			using namespace ANSI;
-			#ifdef SETCOLOR_NO_RGB
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", color::rgb_to_sgr(r, g, b), END);
-			#else
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;2;", r, ';', g, ';', b, END);
-			#endif
+#			ifdef SETCOLOR_NO_RGB
+			return make_sequence<SeqT>(CSI, lyr, ";5;", color::rgb_to_sgr(r, g, b), END);
+#			else
+			return make_sequence<SeqT>(CSI, lyr, ";2;", r, ';', g, ';', b, END);
+#			endif
 		}
 		/**
 		 * @brief			Build a color escape sequence using a given RGB tuple. This function calls the overloaded RGB function.
@@ -101,8 +111,6 @@ namespace term {
 		 * @returns	SeqT
 		 */
 		SeqT as_sequence_with_format() const { return as_sequence(true); }
-
-
 
 		/**
 		 * @brief	Calls as_sequence(true)
@@ -225,8 +233,11 @@ namespace term {
 	template<> inline const wsetcolor wsetcolor::intense_cyan{ color::intense_cyan };
 }
 
-namespace color {
-	using term::setcolor_seq;
-	using term::setcolor;
-	using term::wsetcolor;
+namespace term {
+	using color::Layer;
+	using color::format;
+	using color::FormatFlag;
+	using color::setcolor_seq;
+	using color::setcolor;
+	using color::wsetcolor;
 }
