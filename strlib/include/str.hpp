@@ -424,6 +424,18 @@ namespace str {
 	}
 
 	/**
+	 * @brief				Check if the given string starts with any of the given character sequences.
+	 * @param str			Input String.
+	 * @param ...suffixes	Any number of independent suffixes to check. Each variable is checked independently of the others.
+	 * @returns				bool
+	 */
+	template<var::Streamable<std::stringstream>... Ts>
+	inline WINCONSTEXPR bool startsWithAny(const std::string& str, Ts&&... prefixes)
+	{
+		return var::variadic_or(startsWith(str, prefixes)...);
+	}
+
+	/**
 	 * @brief				Check if the given string ends with the given characters.
 	 * @param str			Input String.
 	 * @param ...suffix		Any number of types that can be represented with a string to check for.
@@ -450,6 +462,18 @@ namespace str {
 			else return false;
 		}
 		return matches == comp.size();
+	}
+
+	/**
+	 * @brief				Check if the given string ends with any of the given character sequences.
+	 * @param str			Input String.
+	 * @param ...suffixes	Any number of independent suffixes to check. Each variable is checked independently of the others.
+	 * @returns				bool
+	 */
+	template<var::Streamable<std::stringstream>... Ts>
+	inline WINCONSTEXPR bool endsWithAny(const std::string& str, Ts&&... suffixes)
+	{
+		return var::variadic_or(endsWith(str, suffixes)...);
 	}
 
 	/**
