@@ -225,30 +225,54 @@
   
 #ifndef CONSTEXPR /** @def CONSTEXPR @brief Macro for C++17 constexpr. */
 #if LANG_CPP >= 17
+// C++17 inline is supported.
 #define INLINE inline
+// C++17 constexpr is supported.
 #define CONSTEXPR constexpr
 #else
+// C++17 inline is not supported.
 #define INLINE
+// C++17 constexpr is not supported.
 #define CONSTEXPR
 #endif
 #endif
 
 #if defined(COMPILER_MSVC) && defined(OS_WIN) /** @def WINCONSTEXPR @brief Macro for MSVC-constexpr extensions. */
+// windows-specific constexpr extensions are supported.
 #define WINCONSTEXPR CONSTEXPR
 #else
+// windows-specific constexpr extensions are not supported.
 #define WINCONSTEXPR
 #endif
 
 #ifndef CONSTEVAL
 #if LANG_CPP >= 20
+// consteval is supported.
 #define CONSTEVAL consteval
 #else
+// consteval is not supported.
 #define CONSTEVAL
 #endif
 #endif
 
 #if !defined(STRINGIZE) && !defined(_STRINGIZE_INTERNAL) /** @def STRINGIZE @brief Stringize the given preprocessor macro by enclosing it in quotes. */
+// This is used internally by the STRINGIZE macro, do not use this directly!
 #define _STRINGIZE_INTERNAL(x) #x
+// This is used to convert preprocessor macros into strings.
 #define STRINGIZE(x) _STRINGIZE_INTERNAL(x)
+#endif
+
+#if !defined(VA_OPT_SUPPORTED) && !defined(VA_OPT_SUPPORTED_I)&& !defined(PP_THIRD_ARG) /** @def VA_OPT_SUPPORTED @brief Portable \_\_VA\_OPT\_\_ support detection method. @author https://stackoverflow.com/a/48045656/8705305 */
+#if __cplusplus <= 201703L && defined(__GNUC__) && !defined(__clang__) && !defined(__EDG__)
+// The __VA_OPT__ macro is not supported on this version of gcc.
+#define VA_OPT_SUPPORTED false
+#else
+// This is used internally by the VA_OPT_SUPPORTED macro, do not use this directly!
+#define PP_THIRD_ARG(a,b,c,...) c
+// This is used internally by the VA_OPT_SUPPORTED macro, do not use this directly!
+#define VA_OPT_SUPPORTED_I(...) PP_THIRD_ARG(__VA_OPT__(,),true,false,)
+// This is true when __VA_OPT__ is supported.
+#define VA_OPT_SUPPORTED VA_OPT_SUPPORTED_I(?)
+#endif
 #endif
 
