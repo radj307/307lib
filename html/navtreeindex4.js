@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"structcolor_1_1setcolor__seq.html#a700f96a258f9aed0633c0792092ffeb1":[7,0,0,2,35],
 "structcolor_1_1setcolor__seq.html#a86af597366f4ae739722bf2b875a7e07":[7,0,0,2,37],
 "structcolor_1_1setcolor__seq.html#a8bcd1530269f9fc101965497bf964008":[7,0,0,2,4],
 "structcolor_1_1setcolor__seq.html#a9977b74e8ccdd4b9c2d029df2accbd72":[7,0,0,2,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structopt_1_1casting__optional.html":[7,0,5,5],
 "structopt_1_1casting__optional.html#a1ffc2c4569ba19c6f98d7d90818f6d0c":[7,0,5,5,7],
 "structopt_1_1casting__optional.html#a374a8aa545cec6797e453313853a2374":[7,0,5,5,3],
-"structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d":[7,0,5,5,4],
-"structopt_1_1casting__optional.html#a4117a1ff85371fd413ae30154b719f36":[7,0,5,5,8]
+"structopt_1_1casting__optional.html#a4022b619c3dca81266d3ed326b06286d":[7,0,5,5,4]
 };
