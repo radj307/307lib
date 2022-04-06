@@ -283,6 +283,21 @@ namespace str {
 	/**
 	 * @brief		Split a string into a pair of strings by finding the first occurrence of a given delimiter.
 	 * @param str	Input String to Split.
+	 * @param delim	List of delimiters to search for. Note that any character in the string may be used as the delimiter.
+	 * @returns		std::pair<std::string, std::string>
+	 */
+	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const std::string& delims, const unsigned& occurrence = 0ull)
+	{
+		unsigned matched{ 0u };
+		for (size_t pos{ str.find_first_of(delims) }; pos_valid(pos); pos = str.find_first_of(delims, pos + 1ull))
+			if (occurrence == matched++)
+				return{ str.substr(0ull, pos), str.substr(pos + 1ull) };
+		return{ str, {} };
+	}
+
+	/**
+	 * @brief		Split a string into a pair of strings by finding the first occurrence of a given delimiter.
+	 * @param str	Input String to Split.
 	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
 	 * @returns		std::pair<std::string, std::string>
 	 */
