@@ -124,6 +124,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa43d8142dc579280c7453fde6dfc9acb"><td class="memItemLeft" align="right" valign="top"><a id="aa43d8142dc579280c7453fde6dfc9acb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ParamsAPI2</b> (<a class="el" href="structopt_1_1_params_a_p_i2.html">ParamsAPI2</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:aa43d8142dc579280c7453fde6dfc9acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fcb8e5c21c4eeff8cd78b19a3c02fdf"><td class="memTemplParams" colspan="2">template&lt;typename RetType , CanHaveValueArgument Type, ValidInputType Name&gt; </td></tr>
+<tr class="memitem:a4fcb8e5c21c4eeff8cd78b19a3c02fdf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> std::same_as&lt; Type, <a class="el" href="classopt_1_1_arg.html">Option</a> &gt; constexpr const std::same_as&lt; Type, <a class="el" href="classopt_1_1_arg.html">Flag</a> &gt; std::optional&lt; RetType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a4fcb8e5c21c4eeff8cd78b19a3c02fdf">castgetv</a> (const std::function&lt; RetType(std::string)&gt; &amp;converter, const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept(false)</td></tr>
+<tr class="memdesc:a4fcb8e5c21c4eeff8cd78b19a3c02fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the captured argument of the specified option or flag, and cast it to the specified type using a given conversion function.  <a href="structopt_1_1_params_a_p_i2.html#a4fcb8e5c21c4eeff8cd78b19a3c02fdf">More...</a><br /></td></tr>
+<tr class="separator:a4fcb8e5c21c4eeff8cd78b19a3c02fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef86ae355adde4870a7a724f10be781"><td class="memTemplParams" colspan="2">template&lt;typename RetType , std::same_as&lt; Parameter &gt; Type, ValidInputType... Names&gt; </td></tr>
+<tr class="memitem:a8ef86ae355adde4870a7a724f10be781"><td class="memTemplItemLeft" align="right" valign="top">constexpr const std::vector&lt; RetType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a8ef86ae355adde4870a7a724f10be781">castgetv_all</a> (const std::function&lt; RetType(std::string)&gt; &amp;converter, const Names &amp;... names) const</td></tr>
+<tr class="memdesc:a8ef86ae355adde4870a7a724f10be781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of the typegetv_all function that allows retrieval of Parameter arguments with the same syntax. <br  />
+ Rather than retrieving captured values, this function retrieves the names of the parameters, and casts them to the specified type using a given conversion function.  <a href="structopt_1_1_params_a_p_i2.html#a8ef86ae355adde4870a7a724f10be781">More...</a><br /></td></tr>
+<tr class="separator:a8ef86ae355adde4870a7a724f10be781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b48262b03bcde44b4bcc6e63c2b7a8"><td class="memTemplParams" colspan="2">template&lt;typename RetType , CanHaveValueArgument... Types, ValidInputType... Names&gt; </td></tr>
+<tr class="memitem:a14b48262b03bcde44b4bcc6e63c2b7a8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::not_same&lt; <a class="el" href="classopt_1_1_arg.html">Parameter</a>, Types... &gt; std::vector&lt; RetType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a14b48262b03bcde44b4bcc6e63c2b7a8">castgetv_all</a> (const std::function&lt; RetType(std::string)&gt; &amp;converter, const Names &amp;... names) const</td></tr>
+<tr class="memdesc:a14b48262b03bcde44b4bcc6e63c2b7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the captured values of all specified arguments, casted to the specified type.  <a href="structopt_1_1_params_a_p_i2.html#a14b48262b03bcde44b4bcc6e63c2b7a8">More...</a><br /></td></tr>
+<tr class="separator:a14b48262b03bcde44b4bcc6e63c2b7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9bf65380cefc2651334301c1338d30"><td class="memTemplParams" colspan="2">template&lt;typename RetType , CanHaveValueArgument... Types, ValidInputType... Names&gt; </td></tr>
+<tr class="memitem:aab9bf65380cefc2651334301c1338d30"><td class="memTemplItemLeft" align="right" valign="top">constexpr const std::optional&lt; RetType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#aab9bf65380cefc2651334301c1338d30">castgetv_any</a> (const std::function&lt; RetType(std::string)&gt; &amp;converter, const Names &amp;... names) const</td></tr>
+<tr class="memdesc:aab9bf65380cefc2651334301c1338d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the capture argument of the first matching argument in the list, and cast it to the specified type using a given conversion function.  <a href="structopt_1_1_params_a_p_i2.html#aab9bf65380cefc2651334301c1338d30">More...</a><br /></td></tr>
+<tr class="separator:aab9bf65380cefc2651334301c1338d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207a2c03cc062c7237aa32aa4e5f91d0"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a207a2c03cc062c7237aa32aa4e5f91d0">checkflag</a> (const char &amp;flag) const</td></tr>
 <tr class="memdesc:a207a2c03cc062c7237aa32aa4e5f91d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given Flag was specified.  <a href="structopt_1_1_params_a_p_i2.html#a207a2c03cc062c7237aa32aa4e5f91d0">More...</a><br /></td></tr>
 <tr class="separator:a207a2c03cc062c7237aa32aa4e5f91d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,17 +164,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e0d7fa6c94ea465367985a150343ea9"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Name&gt; </td></tr>
 <tr class="memitem:a4e0d7fa6c94ea465367985a150343ea9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::at_least_one&lt; Name... &gt; std::optional&lt; <a class="el" href="classopt_1_1_arg.html">CompoundFlag</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a4e0d7fa6c94ea465367985a150343ea9">typeget</a> (const Name &amp;... name) const noexcept</td></tr>
 <tr class="memdesc:a4e0d7fa6c94ea465367985a150343ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a CompoundFlag. <br  />
- This function accepts variadic chars instead of a string.  <a href="structopt_1_1_params_a_p_i2.html#a4e0d7fa6c94ea465367985a150343ea9">More...</a><br /></td></tr>
+ This function accepts variadic chars instead of a string, <code>begin()</code> &amp; <code>end()</code> are passed to the typeget function as <code>off</code> &amp; <code>end</code>, respectively.  <a href="structopt_1_1_params_a_p_i2.html#a4e0d7fa6c94ea465367985a150343ea9">More...</a><br /></td></tr>
 <tr class="separator:a4e0d7fa6c94ea465367985a150343ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e7335e5811b6fb90902c38844b7e74d"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </td></tr>
 <tr class="memitem:a9e7335e5811b6fb90902c38844b7e74d"><td class="memTemplItemLeft" align="right" valign="top">constexpr const std::optional&lt; <a class="el" href="classopt_1_1_arg.html">CompoundFlag</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a9e7335e5811b6fb90902c38844b7e74d">typeget</a> (const std::string &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept</td></tr>
 <tr class="memdesc:a9e7335e5811b6fb90902c38844b7e74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a CompoundFlag.  <a href="structopt_1_1_params_a_p_i2.html#a9e7335e5811b6fb90902c38844b7e74d">More...</a><br /></td></tr>
 <tr class="separator:a9e7335e5811b6fb90902c38844b7e74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff442a6bfeb300aefef4ed20394edc36"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Name&gt; </td></tr>
-<tr class="memitem:aff442a6bfeb300aefef4ed20394edc36"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::at_least_one&lt; Name... &gt; std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#aff442a6bfeb300aefef4ed20394edc36">typegetv</a> (const Name &amp;... name) const noexcept</td></tr>
-<tr class="memdesc:aff442a6bfeb300aefef4ed20394edc36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the captured argument from a CompoundFlag. <br  />
- This function accepts variadic chars instead of a string.  <a href="structopt_1_1_params_a_p_i2.html#aff442a6bfeb300aefef4ed20394edc36">More...</a><br /></td></tr>
-<tr class="separator:aff442a6bfeb300aefef4ed20394edc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5271623e065d1b1f8df30fd2c89dae"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Names&gt; </td></tr>
+<tr class="memitem:a3f5271623e065d1b1f8df30fd2c89dae"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::at_least_one&lt; Names... &gt; std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a3f5271623e065d1b1f8df30fd2c89dae">typegetv</a> (const Names &amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a3f5271623e065d1b1f8df30fd2c89dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the captured argument from a CompoundFlag. <br  />
+ This function accepts variadic chars instead of a string.  <a href="structopt_1_1_params_a_p_i2.html#a3f5271623e065d1b1f8df30fd2c89dae">More...</a><br /></td></tr>
+<tr class="separator:a3f5271623e065d1b1f8df30fd2c89dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b84dae7e057f52695800ef29bc8ed0"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </td></tr>
 <tr class="memitem:a26b84dae7e057f52695800ef29bc8ed0"><td class="memTemplItemLeft" align="right" valign="top">constexpr const std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_params_a_p_i2.html#a26b84dae7e057f52695800ef29bc8ed0">typegetv</a> (const std::string &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept</td></tr>
 <tr class="memdesc:a26b84dae7e057f52695800ef29bc8ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the captured argument from a CompoundFlag.  <a href="structopt_1_1_params_a_p_i2.html#a26b84dae7e057f52695800ef29bc8ed0">More...</a><br /></td></tr>
@@ -480,6 +497,287 @@ template&lt;ValidInputType... VT&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4fcb8e5c21c4eeff8cd78b19a3c02fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fcb8e5c21c4eeff8cd78b19a3c02fdf">&#9670;&nbsp;</a></span>castgetv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RetType , CanHaveValueArgument Type, ValidInputType Name&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> std::same_as&lt;Type, <a class="el" href="classopt_1_1_arg.html">Option</a>&gt; constexpr const std::same_as&lt;Type, <a class="el" href="classopt_1_1_arg.html">Flag</a>&gt; std::optional&lt;RetType&gt; opt::ParamsAPI2::castgetv </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; RetType(std::string)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Name &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the captured argument of the specified option or flag, and cast it to the specified type using a given conversion function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RetType</td><td>Type to cast the result to before returning it. </td></tr>
+    <tr><td class="paramname">Type</td><td>Option or Flag type. </td></tr>
+    <tr><td class="paramname">Name</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> name type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A function that can perform the conversion from <code>std::string</code> =&gt; <code>RetType</code>. This is only called if the argument was found. </td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> name to search for. </td></tr>
+    <tr><td class="paramname">off</td><td>Optional begin iterator position. If not specified, defaults to begin(). </td></tr>
+    <tr><td class="paramname">end</td><td>Optional end iterator position. If not specified, defaults to end(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; <br  />
+ Value is std::nullopt when no match was found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00232">232</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a4fcb8e5c21c4eeff8cd78b19a3c02fdf_cgraph.svg" width="466" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8ef86ae355adde4870a7a724f10be781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef86ae355adde4870a7a724f10be781">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RetType , std::same_as&lt; Parameter &gt; Type, ValidInputType... Names&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const std::vector&lt;RetType&gt; opt::ParamsAPI2::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; RetType(std::string)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Names &amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of the typegetv_all function that allows retrieval of Parameter arguments with the same syntax. <br  />
+ Rather than retrieving captured values, this function retrieves the names of the parameters, and casts them to the specified type using a given conversion function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RetType</td><td>Type to cast the result to before returning it. </td></tr>
+    <tr><td class="paramname">Type</td><td>Parameter type. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. (string/char) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A function that can perform the conversion from <code>std::string</code> =&gt; <code>RetType</code>. This is only called if the argument was found. </td></tr>
+    <tr><td class="paramname">names</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> name(s) to search for. If no names are included, all arguments of the specified type will be returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00326">326</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a8ef86ae355adde4870a7a724f10be781_cgraph.svg" width="488" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a14b48262b03bcde44b4bcc6e63c2b7a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b48262b03bcde44b4bcc6e63c2b7a8">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RetType , CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::not_same&lt;<a class="el" href="classopt_1_1_arg.html">Parameter</a>, Types...&gt; std::vector&lt;RetType&gt; opt::ParamsAPI2::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; RetType(std::string)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Names &amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the captured values of all specified arguments, casted to the specified type. </p>
+<dl class="section attention"><dt>Attention</dt><dd>When writing conversion functions, keep in mind that in addition to the captured values of types <code>Option</code> &amp; <code>Flag</code>, the names of <code>Parameter</code>-type arguments may be passed to the converter, if the <code>Parameter</code> type is included in 'Types...'. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RetType</td><td>Type to cast the result to before returning it. </td></tr>
+    <tr><td class="paramname">Types...</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> Types to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. (string/char) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A function that can perform the conversion from <code>std::string</code> =&gt; <code>RetType</code>. This is only called if the argument was found. </td></tr>
+    <tr><td class="paramname">names</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> name(s) to search for. If no names are included, all arguments of the specified type will be returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; <br  />
+ Vector is empty if no matches were found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00392">392</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a14b48262b03bcde44b4bcc6e63c2b7a8_cgraph.svg" width="226" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a14b48262b03bcde44b4bcc6e63c2b7a8_icgraph.svg" width="499" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aab9bf65380cefc2651334301c1338d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9bf65380cefc2651334301c1338d30">&#9670;&nbsp;</a></span>castgetv_any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RetType , CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const std::optional&lt;RetType&gt; opt::ParamsAPI2::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; RetType(std::string)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Names &amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the capture argument of the first matching argument in the list, and cast it to the specified type using a given conversion function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RetType</td><td>Type to cast the result to before returning it. </td></tr>
+    <tr><td class="paramname">Types...</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> type(s) to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Variadic argument name type(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A function that can perform the conversion from <code>std::string</code> =&gt; <code>RetType</code>. This is only called if the argument was found. </td></tr>
+    <tr><td class="paramname">names</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> name(s) to search for. If no names are specified, arguments with any name are considered valid matches. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; <br  />
+ Value is std::nullopt when no match was found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00276">276</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_aab9bf65380cefc2651334301c1338d30_cgraph.svg" width="496" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a207a2c03cc062c7237aa32aa4e5f91d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a207a2c03cc062c7237aa32aa4e5f91d0">&#9670;&nbsp;</a></span>checkflag()</h2>
 
@@ -639,7 +937,7 @@ template&lt;ValidArg Type, ValidInputType Name&gt; </div>
 <p>Retrieve any arguments of a specified type as its actual type; not as a variant. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Type</td><td>Type to search for &amp; return as. </td></tr>
-    <tr><td class="paramname">Names</td><td>Input argument name types. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. </td></tr>
   </table>
   </dd>
 </dl>
@@ -653,7 +951,7 @@ template&lt;ValidArg Type, ValidInputType Name&gt; </div>
 <p>Retrieve all arguments of a specified type, as their actual type; not as a variant. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Type</td><td>Type to search for &amp; return as. </td></tr>
-    <tr><td class="paramname">Names</td><td>Input argument name types. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. </td></tr>
   </table>
   </dd>
 </dl>
@@ -686,7 +984,8 @@ template&lt;ValidArg Type, ValidInputType Name&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a7882be7620fb069b9047cc3b3359a385_cgraph.svg" width="466" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a7882be7620fb069b9047cc3b3359a385_cgraph.svg" width="463" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -718,7 +1017,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 </div><div class="memdoc">
 
 <p>Retrieve a CompoundFlag. <br  />
- This function accepts variadic chars instead of a string. </p>
+ This function accepts variadic chars instead of a string, <code>begin()</code> &amp; <code>end()</code> are passed to the typeget function as <code>off</code> &amp; <code>end</code>, respectively. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Type</td><td>Compound Flag Type. </td></tr>
@@ -738,7 +1037,8 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a4e0d7fa6c94ea465367985a150343ea9_cgraph.svg" width="463" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a4e0d7fa6c94ea465367985a150343ea9_cgraph.svg" width="460" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -806,22 +1106,22 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
 
 </div>
 </div>
-<a id="aff442a6bfeb300aefef4ed20394edc36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff442a6bfeb300aefef4ed20394edc36">&#9670;&nbsp;</a></span>typegetv() <span class="overload">[1/2]</span></h2>
+<a id="a3f5271623e065d1b1f8df30fd2c89dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5271623e065d1b1f8df30fd2c89dae">&#9670;&nbsp;</a></span>typegetv() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Name&gt; </div>
+template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Names&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::at_least_one&lt;Name...&gt; std::optional&lt;std::string&gt; opt::ParamsAPI2::typegetv </td>
+          <td class="memname"><a class="el" href="structopt_1_1_params_a_p_i2.html#a7882be7620fb069b9047cc3b3359a385">requires</a> constexpr const var::at_least_one&lt;Names...&gt; std::optional&lt;std::string&gt; opt::ParamsAPI2::typegetv </td>
           <td>(</td>
-          <td class="paramtype">const Name &amp;...&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const Names &amp;...&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -837,7 +1137,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Type</td><td>Compound Flag Type. </td></tr>
-    <tr><td class="paramname">Name...</td><td>At least one char type. </td></tr>
+    <tr><td class="paramname">Names...</td><td>At least one char type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -853,7 +1153,8 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_aff442a6bfeb300aefef4ed20394edc36_cgraph.svg" width="471" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a3f5271623e065d1b1f8df30fd2c89dae_cgraph.svg" width="468" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -921,7 +1222,8 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a26b84dae7e057f52695800ef29bc8ed0_cgraph.svg" width="471" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a26b84dae7e057f52695800ef29bc8ed0_cgraph.svg" width="468" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -957,7 +1259,7 @@ template&lt;std::same_as&lt; Parameter &gt; Type, ValidInputType... Names&gt; </
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Type</td><td>Parameter type. </td></tr>
-    <tr><td class="paramname">Names</td><td>Input argument name types. (string/char) </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. (string/char) </td></tr>
   </table>
   </dd>
 </dl>
@@ -969,11 +1271,12 @@ template&lt;std::same_as&lt; Parameter &gt; Type, ValidInputType... Names&gt; </
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00255">255</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00305">305</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a9ef311d793959d44f29462a8aeed7411_cgraph.svg" width="494" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a9ef311d793959d44f29462a8aeed7411_cgraph.svg" width="491" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1008,8 +1311,8 @@ template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
  If a Parameter type is specified, the parameter itself is returned instead of a capture value. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Types</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> Types to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
-    <tr><td class="paramname">Names</td><td>Input argument name types. (string/char) </td></tr>
+    <tr><td class="paramname">Types...</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> Types to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Input argument name types. (string/char) </td></tr>
   </table>
   </dd>
 </dl>
@@ -1022,16 +1325,12 @@ template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; <br  />
  Vector is empty if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00275">275</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00346">346</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_afc62e7501f93b9c631ebfa6bf5d55c7c_cgraph.svg" width="228" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_afc62e7501f93b9c631ebfa6bf5d55c7c_cgraph.svg" width="491" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_afc62e7501f93b9c631ebfa6bf5d55c7c_icgraph.svg" width="502" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1065,8 +1364,8 @@ template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
 <p>Retrieve the capture argument of the first matching argument in the list. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Types</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> type(s) to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
-    <tr><td class="paramname">Names</td><td>Variadic argument name type(s). </td></tr>
+    <tr><td class="paramname">Types...</td><td><a class="el" href="classopt_1_1_argument.html">Argument</a> type(s) to search for. If no types are specified, arguments of any type are considered valid matches. </td></tr>
+    <tr><td class="paramname">Names...</td><td>Variadic argument name type(s). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1079,11 +1378,12 @@ template&lt;CanHaveValueArgument... Types, ValidInputType... Names&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; <br  />
  Value is std::nullopt when no match was found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00228">228</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00248">248</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a2e63ee6962343e8e43c6abef51fb9e78_cgraph.svg" width="502" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_params_a_p_i2_a2e63ee6962343e8e43c6abef51fb9e78_cgraph.svg" width="499" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

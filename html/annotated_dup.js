@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "color", null, [
+      [ "basic_color", "structcolor_1_1basic__color.html", "structcolor_1_1basic__color" ],
       [ "format", "structcolor_1_1format.html", "structcolor_1_1format" ],
       [ "Layer", "structcolor_1_1_layer.html", "structcolor_1_1_layer" ],
       [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ]

@@ -89,6 +89,9 @@ var hierarchy =
     ] ],
     [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
+    [ "tuple", null, [
+      [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
+    ] ],
     [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],

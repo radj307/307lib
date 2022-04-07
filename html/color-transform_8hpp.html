@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('color-transform_8hpp.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -116,38 +117,45 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="color-transform_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1basic__color.html">color::basic_color&lt; T, Ts &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable-channel color wrapper object that inherits from std::tuple.  <a href="structcolor_1_1basic__color.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af2826c17236b522b3dc49be41cfb294e"><td class="memItemLeft" align="right" valign="top"><a id="af2826c17236b522b3dc49be41cfb294e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>color::ColorT</b> = short</td></tr>
-<tr class="separator:af2826c17236b522b3dc49be41cfb294e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28a4461e704efd1f226754e225e35cb"><td class="memTemplParams" colspan="2"><a id="af28a4461e704efd1f226754e225e35cb"></a>
+<tr class="memitem:a77c7c19b2fd85ccfa730999d98e96fdb"><td class="memItemLeft" align="right" valign="top"><a id="a77c7c19b2fd85ccfa730999d98e96fdb"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>color::ColorT</b> = unsigned char</td></tr>
+<tr class="separator:a77c7c19b2fd85ccfa730999d98e96fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a69314ac9592b108f46b97fdce27140"><td class="memTemplParams" colspan="2"><a id="a9a69314ac9592b108f46b97fdce27140"></a>
 template&lt;std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:af28a4461e704efd1f226754e225e35cb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>color::RGB</b> = std::tuple&lt; T, T, T &gt;</td></tr>
-<tr class="separator:af28a4461e704efd1f226754e225e35cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a69314ac9592b108f46b97fdce27140"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a9a69314ac9592b108f46b97fdce27140">color::RGB</a> = basic_color&lt; T, T, T &gt;</td></tr>
+<tr class="memdesc:a9a69314ac9592b108f46b97fdce27140"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3-channel RGB color. <br /></td></tr>
+<tr class="separator:a9a69314ac9592b108f46b97fdce27140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab0b7fb80b9814385210173a50ad8add6"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:ab0b7fb80b9814385210173a50ad8add6"><td class="memTemplParams" colspan="2">template&lt;std::integral ReturnType&gt; </td></tr>
 <tr class="memitem:ab0b7fb80b9814385210173a50ad8add6"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#ab0b7fb80b9814385210173a50ad8add6">color::hex_to_int</a> (const char &amp;ch)</td></tr>
 <tr class="memdesc:ab0b7fb80b9814385210173a50ad8add6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal character to an integral value.  <a href="color-transform_8hpp.html#ab0b7fb80b9814385210173a50ad8add6">More...</a><br /></td></tr>
 <tr class="separator:ab0b7fb80b9814385210173a50ad8add6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c815104e3c97e98c79f06975c154869"><td class="memTemplParams" colspan="2">template&lt;::std::integral ReturnType&gt; </td></tr>
+<tr class="memitem:a9c815104e3c97e98c79f06975c154869"><td class="memTemplParams" colspan="2">template&lt;std::integral ReturnType&gt; </td></tr>
 <tr class="memitem:a9c815104e3c97e98c79f06975c154869"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a9c815104e3c97e98c79f06975c154869">color::hex_to_int</a> (const std::string &amp;hex_str) noexcept</td></tr>
 <tr class="memdesc:a9c815104e3c97e98c79f06975c154869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a single hexadecimal value to an integral.  <a href="color-transform_8hpp.html#a9c815104e3c97e98c79f06975c154869">More...</a><br /></td></tr>
 <tr class="separator:a9c815104e3c97e98c79f06975c154869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88efe56b901a020eb070171598fe6e17"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:a88efe56b901a020eb070171598fe6e17"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR RGB&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a88efe56b901a020eb070171598fe6e17">color::hex_to_rgb</a> (const ::std::string &amp;hex) noexcept</td></tr>
-<tr class="memdesc:a88efe56b901a020eb070171598fe6e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value to an RGB color value.  <a href="color-transform_8hpp.html#a88efe56b901a020eb070171598fe6e17">More...</a><br /></td></tr>
-<tr class="separator:a88efe56b901a020eb070171598fe6e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12822c7a730aaa1431b63f98fe764c17"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:a12822c7a730aaa1431b63f98fe764c17"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a12822c7a730aaa1431b63f98fe764c17">color::hex_to_sgr</a> (const ::std::string &amp;hex) noexcept</td></tr>
-<tr class="memdesc:a12822c7a730aaa1431b63f98fe764c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal string to an SGR color value.  <a href="color-transform_8hpp.html#a12822c7a730aaa1431b63f98fe764c17">More...</a><br /></td></tr>
-<tr class="separator:a12822c7a730aaa1431b63f98fe764c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:a31844abff93283d5e4c632cb829d931d"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a31844abff93283d5e4c632cb829d931d">color::int_to_hex</a> (const T &amp;v, const bool &amp;uppercase=true) noexcept</td></tr>
-<tr class="memdesc:a31844abff93283d5e4c632cb829d931d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer value to hexadecimal.  <a href="color-transform_8hpp.html#a31844abff93283d5e4c632cb829d931d">More...</a><br /></td></tr>
-<tr class="separator:a31844abff93283d5e4c632cb829d931d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c59c95ff5cde77e52a22ff75b977604"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a8c59c95ff5cde77e52a22ff75b977604"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR RGB&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a8c59c95ff5cde77e52a22ff75b977604">color::hex_to_rgb</a> (const std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:a8c59c95ff5cde77e52a22ff75b977604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value to an RGB color value.  <a href="color-transform_8hpp.html#a8c59c95ff5cde77e52a22ff75b977604">More...</a><br /></td></tr>
+<tr class="separator:a8c59c95ff5cde77e52a22ff75b977604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc932589339f45a1b57d5f9a8ed948b"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a2cc932589339f45a1b57d5f9a8ed948b"><td class="memTemplItemLeft" align="right" valign="top">static CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a2cc932589339f45a1b57d5f9a8ed948b">color::hex_to_sgr</a> (const std::string &amp;hex) noexcept</td></tr>
+<tr class="memdesc:a2cc932589339f45a1b57d5f9a8ed948b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal string to an SGR color value.  <a href="color-transform_8hpp.html#a2cc932589339f45a1b57d5f9a8ed948b">More...</a><br /></td></tr>
+<tr class="separator:a2cc932589339f45a1b57d5f9a8ed948b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52310cc4749a22c89eb823b7a3f9544f"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a52310cc4749a22c89eb823b7a3f9544f"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a52310cc4749a22c89eb823b7a3f9544f">color::int_to_hex</a> (const T &amp;v, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:a52310cc4749a22c89eb823b7a3f9544f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer value to hexadecimal.  <a href="color-transform_8hpp.html#a52310cc4749a22c89eb823b7a3f9544f">More...</a><br /></td></tr>
+<tr class="separator:a52310cc4749a22c89eb823b7a3f9544f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="memItemLeft" align="right" valign="top">static CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a0436cfd097ec1f1c89f3185f2f1311a2">color::ishexnum</a> (const char &amp;ch)</td></tr>
 <tr class="memdesc:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid hexadecimal value. (Range: 0 - 9 | a - f | A - F)  <a href="color-transform_8hpp.html#a0436cfd097ec1f1c89f3185f2f1311a2">More...</a><br /></td></tr>
 <tr class="separator:a0436cfd097ec1f1c89f3185f2f1311a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,11 +163,11 @@ Functions</h2></td></tr>
 template&lt;std::integral T = ColorT&gt; </td></tr>
 <tr class="memitem:ada0a983aea79add67c44e074b62e632b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>color::parse_hex_to_sgr</b> (std::string hex)</td></tr>
 <tr class="separator:ada0a983aea79add67c44e074b62e632b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#ae3a2d5ea64178e79d236c1e5d133b1ed">color::rgb_to_hex</a> (const RGB&lt; T &gt; &amp;rgb, const bool &amp;uppercase=true) noexcept</td></tr>
-<tr class="memdesc:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB color value to hexadecimal.  <a href="color-transform_8hpp.html#ae3a2d5ea64178e79d236c1e5d133b1ed">More...</a><br /></td></tr>
-<tr class="separator:ae3a2d5ea64178e79d236c1e5d133b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77587e603476ce7019972101aa570e7f"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:af7f1c1e481b8a01019fea3e15bf32996"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:af7f1c1e481b8a01019fea3e15bf32996"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#af7f1c1e481b8a01019fea3e15bf32996">color::rgb_to_hex</a> (const RGB&lt; T &gt; &amp;rgb, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:af7f1c1e481b8a01019fea3e15bf32996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB color value to hexadecimal.  <a href="color-transform_8hpp.html#af7f1c1e481b8a01019fea3e15bf32996">More...</a><br /></td></tr>
+<tr class="separator:af7f1c1e481b8a01019fea3e15bf32996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77587e603476ce7019972101aa570e7f"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
 <tr class="memitem:a77587e603476ce7019972101aa570e7f"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f">color::rgb_to_sgr</a> (const RGB&lt; T &gt; &amp;rgb_color) noexcept</td></tr>
 <tr class="memdesc:a77587e603476ce7019972101aa570e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to an SGR value.  <a href="color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f">More...</a><br /></td></tr>
 <tr class="separator:a77587e603476ce7019972101aa570e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,15 +176,15 @@ template&lt;std::integral T = ColorT&gt; </td></tr>
 <tr class="memdesc:abb7692aee3ffa41815309ca473a5e906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value. <br  />
  <a href="https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces">https://github.com/chadj2/bash-ui/blob/master/COLORS.md#xterm-colorspaces</a>.  <a href="color-transform_8hpp.html#abb7692aee3ffa41815309ca473a5e906">More...</a><br /></td></tr>
 <tr class="separator:abb7692aee3ffa41815309ca473a5e906"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44f766e4e31e348305331478f46b63b4"><td class="memTemplParams" colspan="2">template&lt;::std::floating_point T&gt; </td></tr>
+<tr class="memitem:a44f766e4e31e348305331478f46b63b4"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
 <tr class="memitem:a44f766e4e31e348305331478f46b63b4"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR ColorT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a44f766e4e31e348305331478f46b63b4">color::rgb_to_sgr</a> (const T &amp;r, const T &amp;g, const T &amp;b) noexcept</td></tr>
 <tr class="memdesc:a44f766e4e31e348305331478f46b63b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an RGB value to a SGR color value.  <a href="color-transform_8hpp.html#a44f766e4e31e348305331478f46b63b4">More...</a><br /></td></tr>
 <tr class="separator:a44f766e4e31e348305331478f46b63b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
-<tr class="memitem:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memTemplItemLeft" align="right" valign="top">::std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#ac7b6e5fac8b837a753114c11a37b77a6">color::sgr_to_hex</a> (const T &amp;sgr, const bool &amp;uppercase=true) noexcept</td></tr>
-<tr class="memdesc:ac7b6e5fac8b837a753114c11a37b77a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value to hexadecimal.  <a href="color-transform_8hpp.html#ac7b6e5fac8b837a753114c11a37b77a6">More...</a><br /></td></tr>
-<tr class="separator:ac7b6e5fac8b837a753114c11a37b77a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8551d3b9a96f515b04877eb5e93edf20"><td class="memTemplParams" colspan="2">template&lt;::std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a2080307c19e6b6341f40839d02615373"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
+<tr class="memitem:a2080307c19e6b6341f40839d02615373"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a2080307c19e6b6341f40839d02615373">color::sgr_to_hex</a> (const T &amp;sgr, const bool &amp;uppercase=true) noexcept</td></tr>
+<tr class="memdesc:a2080307c19e6b6341f40839d02615373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value to hexadecimal.  <a href="color-transform_8hpp.html#a2080307c19e6b6341f40839d02615373">More...</a><br /></td></tr>
+<tr class="separator:a2080307c19e6b6341f40839d02615373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8551d3b9a96f515b04877eb5e93edf20"><td class="memTemplParams" colspan="2">template&lt;std::integral T = ColorT&gt; </td></tr>
 <tr class="memitem:a8551d3b9a96f515b04877eb5e93edf20"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR RGB&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="color-transform_8hpp.html#a8551d3b9a96f515b04877eb5e93edf20">color::sgr_to_rgb</a> (const T &amp;sgr_color)</td></tr>
 <tr class="memdesc:a8551d3b9a96f515b04877eb5e93edf20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an SGR color value into an RGB color value.  <a href="color-transform_8hpp.html#a8551d3b9a96f515b04877eb5e93edf20">More...</a><br /></td></tr>
 <tr class="separator:a8551d3b9a96f515b04877eb5e93edf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,7 +201,7 @@ template&lt;std::integral T = ColorT&gt; </td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral ReturnType&gt; </div>
+template&lt;std::integral ReturnType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -228,7 +236,7 @@ template&lt;::std::integral ReturnType&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ReturnType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00132">132</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00308">308</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -238,7 +246,7 @@ template&lt;::std::integral ReturnType&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral ReturnType&gt; </div>
+template&lt;std::integral ReturnType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -274,17 +282,17 @@ template&lt;::std::integral ReturnType&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ReturnType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00151">151</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00327">327</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a88efe56b901a020eb070171598fe6e17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88efe56b901a020eb070171598fe6e17">&#9670;&nbsp;</a></span>hex_to_rgb()</h2>
+<a id="a8c59c95ff5cde77e52a22ff75b977604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c59c95ff5cde77e52a22ff75b977604">&#9670;&nbsp;</a></span>hex_to_rgb()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -292,7 +300,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
         <tr>
           <td class="memname">static CONSTEXPR RGB&lt;T&gt; color::hex_to_rgb </td>
           <td>(</td>
-          <td class="paramtype">const ::std::string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>hex</em></td><td>)</td>
           <td></td>
         </tr>
@@ -320,17 +328,17 @@ template&lt;::std::integral T = ColorT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RGB&lt;T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00174">174</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00350">350</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a12822c7a730aaa1431b63f98fe764c17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12822c7a730aaa1431b63f98fe764c17">&#9670;&nbsp;</a></span>hex_to_sgr()</h2>
+<a id="a2cc932589339f45a1b57d5f9a8ed948b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc932589339f45a1b57d5f9a8ed948b">&#9670;&nbsp;</a></span>hex_to_sgr()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -338,7 +346,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
         <tr>
           <td class="memname">static CONSTEXPR T color::hex_to_sgr </td>
           <td>(</td>
-          <td class="paramtype">const ::std::string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>hex</em></td><td>)</td>
           <td></td>
         </tr>
@@ -374,23 +382,23 @@ template&lt;::std::integral T = ColorT&gt; </div>
 </table>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00195">195</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00371">371</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a31844abff93283d5e4c632cb829d931d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31844abff93283d5e4c632cb829d931d">&#9670;&nbsp;</a></span>int_to_hex()</h2>
+<a id="a52310cc4749a22c89eb823b7a3f9544f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52310cc4749a22c89eb823b7a3f9544f">&#9670;&nbsp;</a></span>int_to_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">::std::string color::int_to_hex </td>
+          <td class="memname">static std::string color::int_to_hex </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -428,9 +436,9 @@ template&lt;::std::integral T = ColorT&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00210">210</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00386">386</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -467,25 +475,25 @@ template&lt;::std::integral T = ColorT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00094">94</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00270">270</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae3a2d5ea64178e79d236c1e5d133b1ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3a2d5ea64178e79d236c1e5d133b1ed">&#9670;&nbsp;</a></span>rgb_to_hex()</h2>
+<a id="af7f1c1e481b8a01019fea3e15bf32996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f1c1e481b8a01019fea3e15bf32996">&#9670;&nbsp;</a></span>rgb_to_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">::std::string color::rgb_to_hex </td>
+          <td class="memname">static std::string color::rgb_to_hex </td>
           <td>(</td>
-          <td class="paramtype">const RGB&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="color-transform_8hpp.html#a9a69314ac9592b108f46b97fdce27140">RGB</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>rgb</em>, </td>
         </tr>
         <tr>
@@ -521,9 +529,9 @@ template&lt;::std::integral T = ColorT&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00225">225</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00401">401</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -533,7 +541,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -541,7 +549,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
         <tr>
           <td class="memname">const CONSTEXPR T color::rgb_to_sgr </td>
           <td>(</td>
-          <td class="paramtype">const RGB&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="color-transform_8hpp.html#a9a69314ac9592b108f46b97fdce27140">RGB</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>rgb_color</em></td><td>)</td>
           <td></td>
         </tr>
@@ -568,7 +576,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00063">63</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00239">239</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -632,7 +640,7 @@ template&lt;std::integral T = ColorT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00033">33</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00209">209</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -642,7 +650,7 @@ template&lt;std::integral T = ColorT&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::floating_point T&gt; </div>
+template&lt;std::floating_point T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -695,23 +703,23 @@ template&lt;::std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ColorT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00047">47</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00223">223</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac7b6e5fac8b837a753114c11a37b77a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7b6e5fac8b837a753114c11a37b77a6">&#9670;&nbsp;</a></span>sgr_to_hex()</h2>
+<a id="a2080307c19e6b6341f40839d02615373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2080307c19e6b6341f40839d02615373">&#9670;&nbsp;</a></span>sgr_to_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">::std::string color::sgr_to_hex </td>
+          <td class="memname">static std::string color::sgr_to_hex </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>sgr</em>, </td>
@@ -749,9 +757,9 @@ template&lt;::std::integral T = ColorT&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00239">239</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00415">415</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -761,7 +769,7 @@ template&lt;::std::integral T = ColorT&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;::std::integral T = ColorT&gt; </div>
+template&lt;std::integral T = ColorT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -794,9 +802,9 @@ template&lt;::std::integral T = ColorT&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>::std::tuple&lt;T, T, T&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::tuple&lt;T, T, T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00075">75</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00251">251</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
