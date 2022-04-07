@@ -15,10 +15,186 @@
 #include <iomanip>
 
 namespace color {
-	using ColorT = short;
+	/**
+	 * @struct			basic_color
+	 * @brief			Variable-channel color wrapper object that inherits from std::tuple.
+	 * @tparam T		Any integral type. All variadic arguments must be the same type as this.
+	 * @tparam Ts...	Any number of additional channels.
+	 */
+	template<std::integral T, std::integral... Ts> requires var::all_same<T, Ts...>
+	struct basic_color final : public std::tuple<T, Ts...> {
+		using base = std::tuple<T, Ts...>;
+		using value = T;
+	private:
+		size_t channels;
+
+	public:
+		constexpr basic_color() : base(std::make_index_sequence<1ull + sizeof...(Ts)>()), channels{ 1ull + sizeof...(Ts) } {}
+		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...), channels{ 1ull + sizeof...(Ts) } {}
+		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...), channels{ 1ull + sizeof...(Ts) } {}
+
+		/**
+		 * @brief	Retrieve the number of independent color channels, which is always equal to the number of template arguments.
+		 * @returns	size_t with the number of independent color channels.
+		 */
+		constexpr size_t channel_count() const { return channels; }
+
+		/**
+		 * @brief			Get the current value of the specified color channel.
+		 * @tparam Index	The index in the underlying tuple type to retrieve.
+		 * @returns			value with the current value of the channel with the specified Index.
+		 */
+		template<size_t Index> [[nodiscard]] constexpr value get() const
+		{
+			static_assert(Index < channels, "Index is out-of-range for a color with this number of channels.");
+			return std::get<Index>(*this);
+		}
+		/**
+		 * @brief			Get the current value of the specified color channel. This overload returns a mutable reference.
+		 * @tparam Index	The index in the underlying tuple type to retrieve.
+		 * @returns			value with the current value of the channel with the specified Index.
+		 */
+		template<size_t Index> [[nodiscard]] constexpr value& get()
+		{
+			static_assert(Index < channels, "Index is out-of-range for a color with this number of channels.");
+			return std::get<Index>(*this);
+		}
+
+		/**
+		 * @brief			Static function that applies a given lambda to each channel in 2 colors, and returns the result.
+		 * @tparam Index	This is used internally for template recursion.
+		 * @param l			Left-side operand, of type `basic_color<T, Ts...>&`.
+		 * @param r			Right-side operand, of type `basic_color<T, Ts...> const&`.
+		 * @param oper		An operator lambda.
+		 * @returns			`basic_color<T, Ts...>&` with the result.
+		 */
+		template<size_t Index = 0ull>
+		friend constexpr basic_color<T, Ts...>& transform(basic_color<T, Ts...>& l, basic_color<T, Ts...> const& r, const std::function<value(value, value)>& oper)
+		{
+			static_assert(Index < l.channels, "Index is out-of-range for a color with this number of channels.");
+			l.get<Index>() = oper(l.get<Index>(), r.get<Index>());
+			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
+			return l;
+		}
+		/**
+		 * @brief			Static function that applies a given lambda to each channel of a color and a single value of any integral type, and returns the result.
+		 * @tparam U		Any integral type.
+		 * @tparam Index	This is used internally for template recursion.
+		 * @param l			Left-side operand, of type `basic_color<T, Ts...>&`
+		 * @param r			Right-side operand, of type `U`.
+		 * @param oper		An operator lambda.
+		 * @returns			`basic_color<T, Ts...>&` with the result.
+		 */
+		template<std::integral U, size_t Index = 0ull>
+		friend constexpr basic_color<T, Ts...>& transform(basic_color<T, Ts...>& l, U const& r, const std::function<value(value, value)>& oper)
+		{
+			static_assert(Index < l.channels, "Index is out-of-range for a color with this number of channels.");
+			l.get<Index>() = oper(l.get<Index>(), r);
+			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
+			return l;
+		}
+
+		// addition
+		/**
+		 * @brief	Addition Operator
+		 * @param o	Another color instance with the same number of channels.
+		 * @returns basic_color<T, Ts...>
+		 */
+		constexpr basic_color<T, Ts...> operator+(basic_color<T, Ts...>&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) + std::forward<value>(r); });
+		}
+		constexpr basic_color<T, Ts...>& operator+=(basic_color<T, Ts...>&& o)
+		{
+			return *this = transform(*this, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) + std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...> operator+(U&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) + std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...>& operator+=(U&& o)
+		{
+			return *this = transform(*this, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) + std::forward<value>(r); });
+		}
+		// subtraction
+		constexpr basic_color<T, Ts...> operator-(basic_color<T, Ts...>&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) - std::forward<value>(r); });
+		}
+		constexpr basic_color<T, Ts...>& operator-=(basic_color<T, Ts...>&& o)
+		{
+			return *this = transform(*this, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) - std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...> operator-(U&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) - std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...>& operator-=(U&& o)
+		{
+			return *this = transform(*this, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) - std::forward<value>(r); });
+		}
+		// multiplication
+		constexpr basic_color<T, Ts...> operator*(basic_color<T, Ts...>&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) * std::forward<value>(r); });
+		}
+		constexpr basic_color<T, Ts...>& operator*=(basic_color<T, Ts...>&& o)
+		{
+			return *this = transform(*this, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) * std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...> operator*(U&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) * std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...>& operator*=(U&& o)
+		{
+			return *this = transform(*this, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) * std::forward<value>(r); });
+		}
+		// division
+		constexpr basic_color<T, Ts...> operator/(basic_color<T, Ts...>&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) / std::forward<value>(r); });
+		}
+		constexpr basic_color<T, Ts...>& operator/=(basic_color<T, Ts...>&& o)
+		{
+			return *this = transform(*this, std::forward<basic_color<T, Ts...>>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) / std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...> operator/(U&& o) const
+		{
+			basic_color<T, Ts...> out{ *this };
+			return transform(out, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) / std::forward<value>(r); });
+		}
+		template<std::integral U>
+		constexpr basic_color<T, Ts...>& operator/=(U&& o)
+		{
+			return *this = transform(*this, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) / std::forward<value>(r); });
+		}
+	};
+
+	using ColorT = unsigned char;
+
+	/// @brief	A 3-channel RGB color.
 	template<std::integral T = ColorT>
-	using RGB = 
-		std::tuple<T, T, T>;
+	using RGB = basic_color<T, T, T>;
+
+	// original:
+	//using ColorT = short;
+	//template<std::integral T = ColorT>
+	//using RGB = std::tuple<T, T, T>;
 
 	/**
 	 * @brief		Convert an RGB value to a SGR color value.
@@ -43,12 +219,12 @@ namespace color {
 	 * @param b		Blue value. (Range: 0.0 - 1.0)
 	 * @returns		ColorT
 	 */
-	template<::std::floating_point T>
+	template<std::floating_point T>
 	inline CONSTEXPR const ColorT rgb_to_sgr(const T& r, const T& g, const T& b) noexcept
 	{
 		T max{ var::largest<std::remove_cvref_t<T>>(r, g, b) };
 		const auto translatef{ [&max](const auto& fp) -> ColorT {
-			return static_cast<ColorT>(::std::round(fp / max * static_cast<T>(5.0)));
+			return static_cast<ColorT>(std::round(fp / max * static_cast<T>(5.0)));
 		} };
 		return rgb_to_sgr<ColorT>(translatef(r), translatef(g), translatef(b));
 	}
@@ -59,19 +235,19 @@ namespace color {
 	 * @param rgb_color		Input RGB color value.
 	 * @returns				T
 	 */
-	template<::std::integral T = ColorT>
+	template<std::integral T = ColorT>
 	inline CONSTEXPR const T rgb_to_sgr(const RGB<T>& rgb_color) noexcept
 	{
-		return rgb_to_sgr<T>(::std::get<0>(rgb_color), ::std::get<1>(rgb_color), ::std::get<2>(rgb_color));
+		return rgb_to_sgr<T>(rgb_color.get<0>(), rgb_color.get<1>(), rgb_color.get<2>());
 	}
 
 	/**
 	 * @brief				Convert an SGR color value into an RGB color value.
 	 * @tparam T			Any integral type.
 	 * @param sgr_color		An SGR color value.
-	 * @returns				::std::tuple<T, T, T>
+	 * @returns				std::tuple<T, T, T>
 	 */
-	template<::std::integral T = ColorT>
+	template<std::integral T = ColorT>
 	inline CONSTEXPR const RGB<T> sgr_to_rgb(const T& sgr_color)
 	{
 		T tmp{ sgr_color - static_cast<T>(16) };
@@ -128,7 +304,7 @@ namespace color {
 	 * @param ch			A single valid hexadecimal character. (Range: 0 - F)
 	 * @returns				ReturnType
 	 */
-	template<::std::integral ReturnType>
+	template<std::integral ReturnType>
 	inline static CONSTEXPR ReturnType hex_to_int(const char& ch)
 	{
 		if (isdigit(ch))
@@ -147,7 +323,7 @@ namespace color {
 	 *\n					Note that this CANNOT contain prefix characters like '#' or "0x"
 	 * @returns				ReturnType
 	 */
-	template<::std::integral ReturnType>
+	template<std::integral ReturnType>
 	inline static CONSTEXPR ReturnType hex_to_int(const std::string& hex_str) noexcept
 	{
 		if (hex_str.empty())
@@ -170,13 +346,13 @@ namespace color {
 	 *\n			Note that this CANNOT contain prefix characters like '#' or "0x"
 	 * @returns		RGB<T>
 	 */
-	template<::std::integral T = ColorT>
-	inline static CONSTEXPR RGB<T> hex_to_rgb(const ::std::string& hex) noexcept
+	template<std::integral T = ColorT>
+	inline static CONSTEXPR RGB<T> hex_to_rgb(const std::string& hex) noexcept
 	{
 		return{
-			math::normalize(hex_to_int<T>(hex.substr(0ull, 2ull)), { 0, 255 }, {0, 5}),
-			math::normalize(hex_to_int<T>(hex.substr(2ull, 2ull)), { 0, 255 }, {0, 5}),
-			math::normalize(hex_to_int<T>(hex.substr(4ull, 2ull)), { 0, 255 }, {0, 5})
+			math::normalize(hex_to_int<T>(hex.substr(0ull, 2ull)), { 0, 255 }, { 0, 5 }),
+			math::normalize(hex_to_int<T>(hex.substr(2ull, 2ull)), { 0, 255 }, { 0, 5 }),
+			math::normalize(hex_to_int<T>(hex.substr(4ull, 2ull)), { 0, 255 }, { 0, 5 })
 		};
 	}
 
@@ -191,10 +367,10 @@ namespace color {
 	 *				| 0     | Invalid Input |
 	 *				| 0-255 | Output Value  |
 	 */
-	template<::std::integral T = ColorT>
-	inline static CONSTEXPR T hex_to_sgr(const ::std::string& hex) noexcept
+	template<std::integral T = ColorT>
+	inline static CONSTEXPR T hex_to_sgr(const std::string& hex) noexcept
 	{
-		if (!hex.empty() && ::std::all_of(hex.begin(), hex.end(), ishexnum))
+		if (!hex.empty() && std::all_of(hex.begin(), hex.end(), ishexnum))
 			return rgb_to_sgr(hex_to_rgb(hex));
 		return 0;
 	}
@@ -204,13 +380,13 @@ namespace color {
 	 * @tparam T		Integral Type.
 	 * @param v			Input Value.
 	 * @param uppercase	When true, the returned hexadecimal string will use uppercase letters rather than lowercase.
-	 * @returns			::std::string
+	 * @returns			std::string
 	 */
-	template<::std::integral T = ColorT>
-	inline static ::std::string int_to_hex(const T& v, const bool& uppercase = true) noexcept
+	template<std::integral T = ColorT>
+	inline static std::string int_to_hex(const T& v, const bool& uppercase = true) noexcept
 	{
-		::std::ostringstream buffer;
-		buffer << ::std::hex << ::std::setfill('0') << (uppercase ? ::std::uppercase : ::std::nouppercase) << v;
+		std::ostringstream buffer;
+		buffer << std::hex << std::setfill('0') << (uppercase ? std::uppercase : std::nouppercase) << v;
 		return buffer.str();
 	}
 
@@ -219,13 +395,13 @@ namespace color {
 	 * @tparam T		Integral Type.
 	 * @param rgb		Input RGB Color Value.
 	 * @param uppercase	When true, the returned hexadecimal string will use uppercase letters rather than lowercase.
-	 * @returns			::std::string
+	 * @returns			std::string
 	 */
-	template<::std::integral T = ColorT>
-	inline static ::std::string rgb_to_hex(const RGB<T>& rgb, const bool& uppercase = true) noexcept
+	template<std::integral T = ColorT>
+	inline static std::string rgb_to_hex(const RGB<T>& rgb, const bool& uppercase = true) noexcept
 	{
-		using namespace ::std::string_literals;
-		return{ "0x"s + int_to_hex<T>(::std::get<0>(rgb)) + int_to_hex<T>(::std::get<1>(rgb)) + int_to_hex<T>(::std::get<2>(rgb)) };
+		using namespace std::string_literals;
+		return{ "0x"s + int_to_hex<T>(rgb.get<0>()) + int_to_hex<T>(rgb.get<1>()) + int_to_hex<T>(rgb.get<2>()) };
 	}
 
 	/**
@@ -233,10 +409,10 @@ namespace color {
 	 * @tparam T		Integral Type.
 	 * @param sgr		Input SGR color value.
 	 * @param uppercase	When true, the returned hexadecimal string will use uppercase letters rather than lowercase.
-	 * @returns			::std::string
+	 * @returns			std::string
 	 */
-	template<::std::integral T = ColorT>
-	inline static ::std::string sgr_to_hex(const T& sgr, const bool& uppercase = true) noexcept
+	template<std::integral T = ColorT>
+	inline static std::string sgr_to_hex(const T& sgr, const bool& uppercase = true) noexcept
 	{
 		return rgb_to_hex<T>(sgr_to_rgb<T>(sgr), uppercase);
 	}
