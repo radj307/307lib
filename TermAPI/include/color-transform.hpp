@@ -22,8 +22,9 @@ namespace color {
 	 * @tparam Ts...	Any number of additional channels.
 	 */
 	template<std::integral T, std::integral... Ts> requires var::all_same<T, Ts...>
-	struct basic_color final : public std::tuple<T, Ts...> {
+	struct basic_color : public std::tuple<T, Ts...> {
 		using base = std::tuple<T, Ts...>;
+		/// @brief	The value type used by each channel.
 		using value = T;
 	private:
 		size_t channels;
@@ -46,7 +47,7 @@ namespace color {
 		 */
 		template<size_t Index> [[nodiscard]] constexpr value get() const
 		{
-			static_assert(Index < channels, "Index is out-of-range for a color with this number of channels.");
+			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			return std::get<Index>(*this);
 		}
 		/**
@@ -56,7 +57,7 @@ namespace color {
 		 */
 		template<size_t Index> [[nodiscard]] constexpr value& get()
 		{
-			static_assert(Index < channels, "Index is out-of-range for a color with this number of channels.");
+			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			return std::get<Index>(*this);
 		}
 
@@ -71,7 +72,7 @@ namespace color {
 		template<size_t Index = 0ull>
 		friend constexpr basic_color<T, Ts...>& transform(basic_color<T, Ts...>& l, basic_color<T, Ts...> const& r, const std::function<value(value, value)>& oper)
 		{
-			static_assert(Index < l.channels, "Index is out-of-range for a color with this number of channels.");
+			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			l.get<Index>() = oper(l.get<Index>(), r.get<Index>());
 			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
 			return l;
@@ -88,7 +89,7 @@ namespace color {
 		template<std::integral U, size_t Index = 0ull>
 		friend constexpr basic_color<T, Ts...>& transform(basic_color<T, Ts...>& l, U const& r, const std::function<value(value, value)>& oper)
 		{
-			static_assert(Index < l.channels, "Index is out-of-range for a color with this number of channels.");
+			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			l.get<Index>() = oper(l.get<Index>(), r);
 			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
 			return l;
@@ -185,16 +186,73 @@ namespace color {
 		}
 	};
 
+	/// @brief	Default type used to store color channel values.
 	using ColorT = unsigned char;
 
-	/// @brief	A 3-channel RGB color.
+	/**
+	 * @struct		RGB
+	 * @brief		A 3-channel RGB color type.
+	 * @details		Channels:  Red, Green, Blue
+	 * @tparam T	Any integral type. This is used as the value type for each color channel.
+	 */
 	template<std::integral T = ColorT>
-	using RGB = basic_color<T, T, T>;
+	struct RGB : basic_color<T, T, T> {
+		/// @brief	Base/Parent object.
+		using base = basic_color<T, T, T>;
+		using base::base;
+		using value = base::value;
 
-	// original:
-	//using ColorT = short;
-	//template<std::integral T = ColorT>
-	//using RGB = std::tuple<T, T, T>;
+		/// @brief	Red channel value.
+		constexpr value r() const { return this->get<0>(); }
+		/// @brief	Green channel value.
+		constexpr value g() const { return this->get<1>(); }
+		/// @brief	Blue channel value.
+		constexpr value b() const { return this->get<2>(); }
+
+		/// @brief	Red channel reference.
+		constexpr value& r() { return this->get<0>(); }
+		/// @brief	Green channel reference.
+		constexpr value& g() { return this->get<1>(); }
+		/// @brief	Blue channel reference.
+		constexpr value& b() { return this->get<2>(); }
+	};
+
+	/**
+	 * @struct		RGBA
+	 * @brief		A 4-channel RGBA color type capable of storing RGB colors with transparency.
+	 * @details		Channels:  Red, Green, Blue, Alpha (Transparency)
+	 * @tparam T	Any integral type. This is used as the value type for each color channel.
+	 */
+	template<std::integral T = ColorT>
+	struct RGBA : basic_color<T, T, T, T> {
+		/// @brief	Base/Parent object.
+		using base = basic_color<T, T, T, T>;
+		using base::base;
+		using value = base::value;
+
+		/// @brief	Red channel value.
+		constexpr value r() const { return this->get<0>(); }
+		/// @brief	Green channel value.
+		constexpr value g() const { return this->get<1>(); }
+		/// @brief	Blue channel value.
+		constexpr value b() const { return this->get<2>(); }
+		/// @brief	Alpha channel value.
+		constexpr value a() const { return this->get<3>(); }
+
+		/// @brief	Red channel reference.
+		constexpr value& r() { return this->get<0>(); }
+		/// @brief	Green channel reference.
+		constexpr value& g() { return this->get<1>(); }
+		/// @brief	Blue channel reference.
+		constexpr value& b() { return this->get<2>(); }
+		/// @brief	Alpha channel reference.
+		constexpr value& a() { return this->get<3>(); }
+		/**
+		 * @brief	Explicit conversion operator for RGB values without an alpha channel.
+		 * @returns	RGB
+		 */
+		constexpr explicit operator RGB<T>() const { return RGB{ r(), g(), b() }; }
+	};
 
 	/**
 	 * @brief		Convert an RGB value to a SGR color value.
