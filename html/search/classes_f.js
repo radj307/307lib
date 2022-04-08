@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['xlog_656',['xLog',['../classxlog_1_1x_log.html',1,'xlog']]],
-  ['xlog_3c_20std_3a_3aostream_20_3e_657',['xLog&lt; std::ostream &gt;',['../classxlog_1_1x_log.html',1,'xlog']]],
-  ['xlogs_658',['xLogs',['../classxlog_1_1x_logs.html',1,'xlog']]],
-  ['xrand_659',['xRand',['../structrng_1_1x_rand.html',1,'rng']]]
+  ['variableindentation_668',['VariableIndentation',['../structstr_1_1_variable_indentation.html',1,'str']]],
+  ['variantarg_669',['VariantArg',['../structopt_1_1_variant_arg.html',1,'opt']]]
 ];

@@ -90,6 +90,12 @@ var hierarchy =
     [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "tuple", null, [
+      [ "color::basic_color< ColorT, ColorT, ColorT >", "structcolor_1_1basic__color.html", [
+        [ "color::RGB< T >", "structcolor_1_1_r_g_b.html", null ]
+      ] ],
+      [ "color::basic_color< ColorT, ColorT, ColorT, ColorT >", "structcolor_1_1basic__color.html", [
+        [ "color::RGBA< T >", "structcolor_1_1_r_g_b_a.html", null ]
+      ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
     [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],

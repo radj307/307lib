@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('structcolor_1_1setcolor__seq.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes. <br  />
+<p>Acts as a wrapper and controller for SGR &amp; <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color codes, as well as certain SGR format codes. <br  />
  Uses the ostream operator&lt;&lt; to insert escape sequences into streams.  
  <a href="structcolor_1_1setcolor__seq.html#details">More...</a></p>
 
@@ -221,14 +221,14 @@ static const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:acd7e064e1512924744284aa98641790b"><td class="memItemLeft" align="right" valign="top">virtual SeqT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#acd7e064e1512924744284aa98641790b">makeColorSequence</a> (const <a class="el" href="structcolor_1_1_layer.html">Layer</a> &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const</td></tr>
-<tr class="memdesc:acd7e064e1512924744284aa98641790b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an RGB color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.  <a href="structcolor_1_1setcolor__seq.html#acd7e064e1512924744284aa98641790b">More...</a><br /></td></tr>
+<tr class="memdesc:acd7e064e1512924744284aa98641790b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.  <a href="structcolor_1_1setcolor__seq.html#acd7e064e1512924744284aa98641790b">More...</a><br /></td></tr>
 <tr class="separator:acd7e064e1512924744284aa98641790b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d86ed6ebfc89713ce0f128c2c242493"><td class="memItemLeft" align="right" valign="top">virtual SeqT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a9d86ed6ebfc89713ce0f128c2c242493">makeColorSequence</a> (const <a class="el" href="structcolor_1_1_layer.html">Layer</a> &amp;lyr, const short &amp;SGR) const</td></tr>
 <tr class="memdesc:a9d86ed6ebfc89713ce0f128c2c242493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence from an SGR (color) code. <br  />
  If using Windows or if SETCOLOR_NO_RGB is defined, this function is automatically always used instead.  <a href="structcolor_1_1setcolor__seq.html#a9d86ed6ebfc89713ce0f128c2c242493">More...</a><br /></td></tr>
 <tr class="separator:a9d86ed6ebfc89713ce0f128c2c242493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafad060af746592dd94e5e128da11569"><td class="memItemLeft" align="right" valign="top">virtual SeqT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#aafad060af746592dd94e5e128da11569">makeColorSequence</a> (const <a class="el" href="structcolor_1_1_layer.html">Layer</a> &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const</td></tr>
-<tr class="memdesc:aafad060af746592dd94e5e128da11569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence using a given RGB tuple. This function calls the overloaded RGB function.  <a href="structcolor_1_1setcolor__seq.html#aafad060af746592dd94e5e128da11569">More...</a><br /></td></tr>
+<tr class="memdesc:aafad060af746592dd94e5e128da11569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence using a given <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> tuple. This function calls the overloaded <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> function.  <a href="structcolor_1_1setcolor__seq.html#aafad060af746592dd94e5e128da11569">More...</a><br /></td></tr>
 <tr class="separator:aafad060af746592dd94e5e128da11569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -250,7 +250,7 @@ Friends</h2></td></tr>
 <div class="textblock"><h3>template&lt;var::any_same&lt; ANSI::Sequence, ANSI::wSequence &gt; SeqT = ANSI::Sequence&gt;<br />
 struct color::setcolor_seq&lt; SeqT &gt;</h3>
 
-<p>Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes. <br  />
+<p>Acts as a wrapper and controller for SGR &amp; <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color codes, as well as certain SGR format codes. <br  />
  Uses the ostream operator&lt;&lt; to insert escape sequences into streams. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -380,7 +380,7 @@ template&lt;var::any_same&lt; ANSI::Sequence, ANSI::wSequence &gt; SeqT = ANSI::
 </table>
 </div><div class="memdoc">
 
-<p>Build an RGB color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences. </p>
+<p>Build an <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lyr</td><td>Target <a class="el" href="structcolor_1_1_layer.html">Layer</a>. (Foreground/Background) </td></tr>
@@ -483,11 +483,11 @@ template&lt;var::any_same&lt; ANSI::Sequence, ANSI::wSequence &gt; SeqT = ANSI::
 </table>
 </div><div class="memdoc">
 
-<p>Build a color escape sequence using a given RGB tuple. This function calls the overloaded RGB function. </p>
+<p>Build a color escape sequence using a given <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> tuple. This function calls the overloaded <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lyr</td><td>Target <a class="el" href="structcolor_1_1_layer.html">Layer</a>. (Foreground/Background) </td></tr>
-    <tr><td class="paramname">rgb_color</td><td>An RGB color code as a tuple. Values can range from 0 to 255. </td></tr>
+    <tr><td class="paramname">rgb_color</td><td>An <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color code as a tuple. Values can range from 0 to 255. </td></tr>
   </table>
   </dd>
 </dl>

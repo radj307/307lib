@@ -1,8 +1,9 @@
 var color_transform_8hpp =
 [
     [ "basic_color", "structcolor_1_1basic__color.html", "structcolor_1_1basic__color" ],
+    [ "RGB", "structcolor_1_1_r_g_b.html", "structcolor_1_1_r_g_b" ],
+    [ "RGBA", "structcolor_1_1_r_g_b_a.html", "structcolor_1_1_r_g_b_a" ],
     [ "ColorT", "color-transform_8hpp.html#a77c7c19b2fd85ccfa730999d98e96fdb", null ],
-    [ "RGB", "color-transform_8hpp.html#a9a69314ac9592b108f46b97fdce27140", null ],
     [ "hex_to_int", "color-transform_8hpp.html#ab0b7fb80b9814385210173a50ad8add6", null ],
     [ "hex_to_int", "color-transform_8hpp.html#a9c815104e3c97e98c79f06975c154869", null ],
     [ "hex_to_rgb", "color-transform_8hpp.html#a8c59c95ff5cde77e52a22ff75b977604", null ],
