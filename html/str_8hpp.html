@@ -88,8 +88,6 @@ $(document).ready(function(){initNavTree('str_8hpp.html',''); initResizable(); }
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -103,17 +101,22 @@ $(document).ready(function(){initNavTree('str_8hpp.html',''); initResizable(); }
 <code>#include &lt;<a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="strlocale_8hpp_source.html">strlocale.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="strmath_8hpp_source.html">strmath.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for str.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="str_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="str_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -123,27 +126,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_printable.html">str::Printable&lt; VT &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic wrapper for any number of any types. Allows functions to return an inline-printable value so the function can be used in an output stream operator&lt;&lt; statement.  <a href="structstr_1_1_printable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstr_1_1_variable_indentation.html">str::VariableIndentation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the std::setw() function to create a variable amount of indentation in an output stream.  <a href="structstr_1_1_variable_indentation.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacestr"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html">str</a></td></tr>
 <tr class="memdesc:namespacestr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains various string manipulation, conversion, and parsing functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a65bc2f112d723a2d6e8492077a63318c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8hpp.html#a65bc2f112d723a2d6e8492077a63318c">DISABLE_STR_LITERALS</a></td></tr>
-<tr class="memdesc:a65bc2f112d723a2d6e8492077a63318c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.  <a href="str_8hpp.html#a65bc2f112d723a2d6e8492077a63318c">More...</a><br /></td></tr>
-<tr class="separator:a65bc2f112d723a2d6e8492077a63318c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a576148d382d024fc11d46dc0ef839cec"><td class="memItemLeft" align="right" valign="top"><a id="a576148d382d024fc11d46dc0ef839cec"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>str::VIndent</b> = VariableIndentation</td></tr>
-<tr class="separator:a576148d382d024fc11d46dc0ef839cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -155,29 +143,6 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:acd4ee543bc885f863faf20217f7142fe"><td class="memTemplItemLeft" align="right" valign="top">requires std::convertible_to&lt; T1, std::string &gt; &amp;&amp;static std::convertible_to&lt; T2, std::string &gt; bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acd4ee543bc885f863faf20217f7142fe">str::compare</a> (T1 left, T2 right, const bool case_sensitive=true)</td></tr>
 <tr class="memdesc:acd4ee543bc885f863faf20217f7142fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare 2 strings.  <a href="namespacestr.html#acd4ee543bc885f863faf20217f7142fe">More...</a><br /></td></tr>
 <tr class="separator:acd4ee543bc885f863faf20217f7142fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">str::endsWith</a> (const std::string &amp;str, Ts &amp;&amp;... suffix)</td></tr>
-<tr class="memdesc:a25dcad1131572f82cbb30a06c81006b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with the given characters.  <a href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">More...</a><br /></td></tr>
-<tr class="separator:a25dcad1131572f82cbb30a06c81006b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">str::endsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... suffixes)</td></tr>
-<tr class="memdesc:afe1efa734a2a1e8106138ce3b5995874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with any of the given character sequences.  <a href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">More...</a><br /></td></tr>
-<tr class="separator:afe1efa734a2a1e8106138ce3b5995874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplParams" colspan="2">template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">str::equalsAny</a> (const std::string &amp;str, Ts &amp;&amp;... compare)</td></tr>
-<tr class="memdesc:ac0941f8566d99a99085690ce06c8eec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">More...</a><br /></td></tr>
-<tr class="separator:ac0941f8566d99a99085690ce06c8eec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memTemplParams" colspan="2">template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstring, char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">str::equalsAny</a> (const std::wstring &amp;str, Ts &amp;&amp;... compare)</td></tr>
-<tr class="memdesc:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">More...</a><br /></td></tr>
-<tr class="separator:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae828e40bdc8eec39773e1a4dac9d7ed3"><td class="memTemplParams" colspan="2">template&lt;class Ch , class Tr , class A , var::same_or_convertible&lt; Ch &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:ae828e40bdc8eec39773e1a4dac9d7ed3"><td class="memTemplItemLeft" align="right" valign="top">std::basic_istream&lt; Ch, Tr &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae828e40bdc8eec39773e1a4dac9d7ed3">str::getline</a> (std::basic_istream&lt; Ch, Tr &gt; &amp;is, std::basic_string&lt; Ch, Tr, A &gt; &amp;str, DelimT const &amp;... delims)</td></tr>
-<tr class="memdesc:ae828e40bdc8eec39773e1a4dac9d7ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variadic variant of the getline function.  <a href="namespacestr.html#ae828e40bdc8eec39773e1a4dac9d7ed3">More...</a><br /></td></tr>
-<tr class="separator:ae828e40bdc8eec39773e1a4dac9d7ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa415d1d4d4888d8486edf353a9405d9f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f">isquote</a> (const char c)</td></tr>
-<tr class="memdesc:aa415d1d4d4888d8486edf353a9405d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test that checks if a given char is a quotation mark. (Accepts single or double quotes.)  <a href="str_8hpp.html#aa415d1d4d4888d8486edf353a9405d9f">More...</a><br /></td></tr>
-<tr class="separator:aa415d1d4d4888d8486edf353a9405d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplParams" colspan="2">template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::Streamable... VT&gt; </td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr static const std::convertible_to&lt; ElemT, std::string &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf8be91baa116c4582e66f6278db959f">str::join</a> (const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;container, VT... separators)</td></tr>
 <tr class="separator:acf8be91baa116c4582e66f6278db959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,10 +162,6 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... Ts&gt; </td></tr>
 <tr class="memitem:a4e29c1c2f11c9fdba7e76bb2e3327c4b"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>str::longest</b> (const T &amp;fst, const Ts &amp;... strings)</td></tr>
 <tr class="separator:a4e29c1c2f11c9fdba7e76bb2e3327c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">str::matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
-<tr class="memdesc:a99874f5b703e388240420d5bec8557a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">More...</a><br /></td></tr>
-<tr class="separator:a99874f5b703e388240420d5bec8557a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68189011dff0dc860136f8606606169c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a68189011dff0dc860136f8606606169c">str::optional_find</a> (const std::string &amp;str, auto &amp;&amp;search)</td></tr>
 <tr class="memdesc:a68189011dff0dc860136f8606606169c"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::string::find function that returns an optional instead of std::string::npos  <a href="namespacestr.html#a68189011dff0dc860136f8606606169c">More...</a><br /></td></tr>
 <tr class="separator:a68189011dff0dc860136f8606606169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,9 +169,6 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 template&lt;typename... VT&gt; </td></tr>
 <tr class="memitem:ad35ece5b07dfe3a18235ccc6c0f563ba"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>str::requires</b> (sizeof...(VT) &gt; 0) static std</td></tr>
 <tr class="separator:ad35ece5b07dfe3a18235ccc6c0f563ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">str::rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:a69b4c7c470963c0be1a41227ccf6f86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">More...</a><br /></td></tr>
-<tr class="separator:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5890626349406d682c75bf7cded557d0"><td class="memTemplParams" colspan="2"><a id="a5890626349406d682c75bf7cded557d0"></a>
 template&lt;bool index, var::valid_string T, template&lt; class... &gt; class Cont&gt; </td></tr>
 <tr class="memitem:a5890626349406d682c75bf7cded557d0"><td class="memTemplItemLeft" align="right" valign="top">static Cont&lt; std::pair&lt; T, T &gt;, std::allocator&lt; std::pair&lt; T, T &gt; &gt; &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>str::shortest</b> (const Cont&lt; std::pair&lt; T, T &gt;, std::allocator&lt; std::pair&lt; T, T &gt;&gt;&gt; &amp;strings)</td></tr>
@@ -227,38 +185,6 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... Ts&gt; </td></tr>
 <tr class="memitem:a87c41dd852c1db4ba8b8f1d28e4728b5"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>str::shortest</b> (const T &amp;fst, const Ts &amp;... strings)</td></tr>
 <tr class="separator:a87c41dd852c1db4ba8b8f1d28e4728b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81d06e112031542961adc0b38bd0b2b"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">str::split</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:ab81d06e112031542961adc0b38bd0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">More...</a><br /></td></tr>
-<tr class="separator:ab81d06e112031542961adc0b38bd0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">str::split</a> (const std::string &amp;str, const size_t &amp;pos, const bool &amp;discard_pos=false)</td></tr>
-<tr class="memdesc:aba03dcb83941ed1d96f1ae269db82fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by position. This is a simple wrapper to return a string split operation as a pair of strings.  <a href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">More...</a><br /></td></tr>
-<tr class="separator:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8f17d783f53a8761d44c3304753da96"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">str::split</a> (const std::string &amp;str, const std::string &amp;delims, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:ab8f17d783f53a8761d44c3304753da96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">More...</a><br /></td></tr>
-<tr class="separator:ab8f17d783f53a8761d44c3304753da96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">str::startsWith</a> (const std::string &amp;str, Ts &amp;&amp;... prefix)</td></tr>
-<tr class="memdesc:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with the given characters.  <a href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">More...</a><br /></td></tr>
-<tr class="separator:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">str::startsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... prefixes)</td></tr>
-<tr class="memdesc:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with any of the given character sequences.  <a href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">More...</a><br /></td></tr>
-<tr class="separator:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">str::strip</a> (std::string s, const DelimT &amp;... delims)</td></tr>
-<tr class="memdesc:a333afe30699add89dd4b33e8f8e965af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">More...</a><br /></td></tr>
-<tr class="separator:a333afe30699add89dd4b33e8f8e965af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf63c00706c91be7da3f18b08a088224"><td class="memItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">str::strip</a> (std::string s, const std::string_view &amp;delims)</td></tr>
-<tr class="memdesc:acf63c00706c91be7da3f18b08a088224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">More...</a><br /></td></tr>
-<tr class="separator:acf63c00706c91be7da3f18b08a088224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a7fab88e397cd6251944c3d01a7438d"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:a4a7fab88e397cd6251944c3d01a7438d"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4a7fab88e397cd6251944c3d01a7438d">str::strip_preceeding</a> (const std::string &amp;str, const DelimT &amp;... delims)</td></tr>
-<tr class="memdesc:a4a7fab88e397cd6251944c3d01a7438d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a string.  <a href="namespacestr.html#a4a7fab88e397cd6251944c3d01a7438d">More...</a><br /></td></tr>
-<tr class="separator:a4a7fab88e397cd6251944c3d01a7438d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">str::strip_trailing</a> (const std::string &amp;str, const DelimT &amp;... delims)</td></tr>
-<tr class="memdesc:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a string.  <a href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">More...</a><br /></td></tr>
-<tr class="separator:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -272,65 +198,7 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a65bc2f112d723a2d6e8492077a63318c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65bc2f112d723a2d6e8492077a63318c">&#9670;&nbsp;</a></span>DISABLE_STR_LITERALS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DISABLE_STR_LITERALS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace. </p>
-<p>Disables the "using namespace std::string_literals;" from being declared in the global namespace. </p>
-
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00021">21</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aa415d1d4d4888d8486edf353a9405d9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa415d1d4d4888d8486edf353a9405d9f">&#9670;&nbsp;</a></span>isquote()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool isquote </td>
-          <td>(</td>
-          <td class="paramtype">const char&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Test that checks if a given char is a quotation mark. (Accepts single or double quotes.) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>- Input char </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00031">31</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

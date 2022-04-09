@@ -33,7 +33,7 @@ var hierarchy =
     [ "color::format::FlagBase< T >", "classcolor_1_1format_1_1_flag_base.html", null ],
     [ "str::FloatingBase", "structstr_1_1_floating_base.html", null ],
     [ "color::format", "structcolor_1_1format.html", null ],
-    [ "indentor< T, CharT >", "structindentor.html", null ],
+    [ "format::indentor< T, CharT >", "structformat_1_1indentor.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "file::ini::INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", [
       [ "file::ini::INI", "structfile_1_1ini_1_1_i_n_i.html", null ]
@@ -98,7 +98,6 @@ var hierarchy =
       ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
-    [ "str::VariableIndentation", "structstr_1_1_variable_indentation.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [

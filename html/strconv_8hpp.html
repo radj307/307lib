@@ -93,7 +93,9 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Contains string conversion functions that can be passed as a std::function as they are not overloaded.  
+<p>Contains char &amp; string conversion functions with signatures similar to the standard <code>atoi</code> &amp; <code>stoi</code> style functions, with additional type support. <br  />
+ This includes the <code>tolower</code> &amp; <code>toupper</code> functions that have stricter validation &amp; have overloads that accept whole strings rather than single characters. <br  />
+ Multiple 'generations' of these functions are available, but all have a common theme:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
@@ -105,12 +107,14 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strconv.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strconv_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -261,7 +265,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae2bfcfb51a1c131387fd6d08629aba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">More...</a><br /></td></tr>
 <tr class="separator:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93882029690e5c1836bd3c4678da2003"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">str::tolower</a> (const int &amp;c) noexcept</td></tr>
-<tr class="memdesc:a93882029690e5c1836bd3c4678da2003"><td class="mdescLeft">&#160;</td><td class="mdescRight">TOLOWER.  <a href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">More...</a><br /></td></tr>
+<tr class="memdesc:a93882029690e5c1836bd3c4678da2003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character stored in an int to lowercase.  <a href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">More...</a><br /></td></tr>
 <tr class="separator:a93882029690e5c1836bd3c4678da2003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a231522683b17634fae04118974b559"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5a231522683b17634fae04118974b559">str::tolower</a> (const wchar_t &amp;c) noexcept</td></tr>
 <tr class="memdesc:a5a231522683b17634fae04118974b559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a5a231522683b17634fae04118974b559">More...</a><br /></td></tr>
@@ -289,8 +293,16 @@ Functions</h2></td></tr>
 <tr class="separator:ae294fab98bc23e2063bda2780ea9ab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains string conversion functions that can be passed as a std::function as they are not overloaded. </p>
-<dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
+<div class="textblock"><p>Contains char &amp; string conversion functions with signatures similar to the standard <code>atoi</code> &amp; <code>stoi</code> style functions, with additional type support. <br  />
+ This includes the <code>tolower</code> &amp; <code>toupper</code> functions that have stricter validation &amp; have overloads that accept whole strings rather than single characters. <br  />
+ Multiple 'generations' of these functions are available, but all have a common theme: </p>
+<dl class="section author"><dt>Author</dt><dd>radj307<ul>
+<li>Remove the possibility of exceptions being thrown during conversion operations.</li>
+<li>Optimized for being passed as (pseudo)-lambdas to other functions, especially in an environment where exceptions are unwanted or unnecessary. </li>
+</ul>
+</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Make sure you carefully evaluate whether or not to use these functions outside of strlib, as in many cases the exception-avoidance measures taken by all of these functions may not be desirable. <br  />
+ This header is specifically designed to handle many potential errors behind-the-scenes without any indications, and may react unexpectedly when used as a drop-in replacement for standard library functions, despite their ability to do that. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -350,7 +362,7 @@ template&lt;typename CharType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00422">422</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00428">428</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -407,7 +419,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00351">351</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00357">357</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +489,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00255">255</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00261">261</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -517,7 +529,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00411">411</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00417">417</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -565,7 +577,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;double&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00383">383</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00389">389</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +625,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00603">603</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00609">609</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -661,7 +673,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;float&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00373">373</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00379">379</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -709,7 +721,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00591">591</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00597">597</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -765,7 +777,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;signed int&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00279">279</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00285">285</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -813,7 +825,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00495">495</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00501">501</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -869,7 +881,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00303">303</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00309">309</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -917,7 +929,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00531">531</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00537">537</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -965,7 +977,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long double&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00393">393</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00399">399</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1013,12 +1025,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00615">615</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a47632826bef1d3d645b95efb97963f75_icgraph.svg" width="323" height="494"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00621">621</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1074,7 +1081,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00327">327</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00333">333</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1122,7 +1129,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00543">543</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00549">549</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1170,7 +1177,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>short </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00507">507</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00513">513</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1226,7 +1233,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned int&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00291">291</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00297">297</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1274,7 +1281,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00519">519</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00525">525</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1330,7 +1337,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00315">315</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00321">321</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1378,7 +1385,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00555">555</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00561">561</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1434,7 +1441,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned long long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00339">339</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00345">345</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1482,7 +1489,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00567">567</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00573">573</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1530,7 +1537,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00579">579</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00585">585</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1569,7 +1576,7 @@ template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;bool&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00475">475</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00481">481</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>

@@ -22,6 +22,9 @@ var annotated_dup =
         [ "INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", "classfile_1_1ini_1_1_i_n_i_container" ]
       ] ]
     ] ],
+    [ "format", null, [
+      [ "indentor", "structformat_1_1indentor.html", "structformat_1_1indentor" ]
+    ] ],
     [ "matrix", null, [
       [ "basic_matrix", "structmatrix_1_1basic__matrix.html", "structmatrix_1_1basic__matrix" ],
       [ "nmatrix", "structmatrix_1_1nmatrix.html", "structmatrix_1_1nmatrix" ],
@@ -55,7 +58,6 @@ var annotated_dup =
     ] ],
     [ "var", "namespacevar.html", "namespacevar" ],
     [ "xlog", "namespacexlog.html", "namespacexlog" ],
-    [ "indentor", "structindentor.html", "structindentor" ],
     [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
     [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ]
 ];

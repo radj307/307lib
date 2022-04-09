@@ -13,14 +13,6 @@ var strmath_8hpp =
     [ "getNumberLength", "strmath_8hpp.html#a47b165f72dcf094c144c89e27861888a", null ],
     [ "hexToDecimal", "strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2", null ],
     [ "hexToDecimal", "strmath_8hpp.html#a42c6b6a3bd47743a574df997a0bb8c65", null ],
-    [ "isbinary", "strmath_8hpp.html#ae6e5ba0568ee7667816d0ec5535adcb6", null ],
-    [ "isbinarydigit", "strmath_8hpp.html#ae198f739f9fe6a95ba3d19dd14194031", null ],
-    [ "isdecimal", "strmath_8hpp.html#a043ca9b134b11dde323fbda2dc5992ae", null ],
-    [ "isdecimaldigit", "strmath_8hpp.html#aa292888850b3b32095c1e48d65b9c645", null ],
-    [ "ishex", "strmath_8hpp.html#a8150d7f427d4bf2eeccc7e56dfd35107", null ],
-    [ "ishexdigit", "strmath_8hpp.html#aa1c0401e167ff247a2ed60e76c99e959", null ],
-    [ "isoctal", "strmath_8hpp.html#a0bd79fa931f1d21cb03de4642d230d11", null ],
-    [ "isoctaldigit", "strmath_8hpp.html#a50f1cfbd61cff5c1c0975e2bc65c24e8", null ],
     [ "toAlphaNumeric", "strmath_8hpp.html#a4e6def114db6fedf6a5d8334dc6e48ca", null ],
     [ "toBase10", "strmath_8hpp.html#a462bac8b0d85ac958ab97f4e140d55ef", null ]
 ];

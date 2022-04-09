@@ -1,5 +1,5 @@
 var indentor_8hpp =
 [
-    [ "indentor", "structindentor.html", "structindentor" ],
-    [ "indent", "indentor_8hpp.html#a8c3ec20545425cd957ccf01b3085dc3f", null ]
+    [ "indentor", "structformat_1_1indentor.html", "structformat_1_1indentor" ],
+    [ "indent", "indentor_8hpp.html#a9d9c747224980cc98dbbf15a4a2b58fc", null ]
 ];

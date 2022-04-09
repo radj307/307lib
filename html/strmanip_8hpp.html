@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('strmanip_8hpp.html',''); initResizable
  This contains the majority of str namespace functions that do not use <br  />
  variadic templates or other more advanced concepts. (such as concepts)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;strutility.hpp&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
@@ -109,12 +109,14 @@ $(document).ready(function(){initNavTree('strmanip_8hpp.html',''); initResizable
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strmanip.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strmanip_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -199,10 +201,22 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9ef656ed2d8e17d0f1e68df1770058bc">str::reverse</a> (const std::string_view &amp;str)</td></tr>
 <tr class="memdesc:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the characters of a given string.  <a href="namespacestr.html#a9ef656ed2d8e17d0f1e68df1770058bc">More...</a><br /></td></tr>
 <tr class="separator:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">str::rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:a69b4c7c470963c0be1a41227ccf6f86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">More...</a><br /></td></tr>
+<tr class="separator:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba157b4f80912e0c19b9ad7676d2c8d1">str::sanitize</a> (std::string str, F pred) noexcept</td></tr>
 <tr class="memdesc:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanitize a string with a single predicate function. This is called by <a class="el" href="namespacestr.html#a30c7ac3d05115fd618a8779045def1c7" title="Inline wrapper for the erase-remove idiom that accepts a lambda predicate.">remove_all_of()</a>.  <a href="namespacestr.html#aba157b4f80912e0c19b9ad7676d2c8d1">More...</a><br /></td></tr>
 <tr class="separator:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81d06e112031542961adc0b38bd0b2b"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">str::split</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:ab81d06e112031542961adc0b38bd0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">More...</a><br /></td></tr>
+<tr class="separator:ab81d06e112031542961adc0b38bd0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">str::split</a> (const std::string &amp;str, const size_t &amp;pos, const bool &amp;discard_pos=false)</td></tr>
+<tr class="memdesc:aba03dcb83941ed1d96f1ae269db82fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by position. This is a simple wrapper to return a string split operation as a pair of strings.  <a href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">More...</a><br /></td></tr>
+<tr class="separator:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f17d783f53a8761d44c3304753da96"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">str::split</a> (const std::string &amp;str, const std::string &amp;delims, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:ab8f17d783f53a8761d44c3304753da96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">More...</a><br /></td></tr>
+<tr class="separator:ab8f17d783f53a8761d44c3304753da96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa4bf5f1b14b776ed8c1225f5c2870a92">str::split_by_words</a> (const std::string &amp;line)</td></tr>
 <tr class="memdesc:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string into a vector of strings, with one word per index.  <a href="namespacestr.html#aa4bf5f1b14b776ed8c1225f5c2870a92">More...</a><br /></td></tr>
 <tr class="separator:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,12 +224,27 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:a5bac9088e59d818dfcb958ca9fc1c673"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; CharT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5bac9088e59d818dfcb958ca9fc1c673">str::split_to_vector</a> (const std::basic_string&lt; CharT, Traits, std::allocator&lt; CharT &gt;&gt; &amp;str)</td></tr>
 <tr class="memdesc:a5bac9088e59d818dfcb958ca9fc1c673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a vector of characters.  <a href="namespacestr.html#a5bac9088e59d818dfcb958ca9fc1c673">More...</a><br /></td></tr>
 <tr class="separator:a5bac9088e59d818dfcb958ca9fc1c673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
+<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">str::strip</a> (std::string s, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:a333afe30699add89dd4b33e8f8e965af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">More...</a><br /></td></tr>
+<tr class="separator:a333afe30699add89dd4b33e8f8e965af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf63c00706c91be7da3f18b08a088224"><td class="memItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">str::strip</a> (std::string s, const std::string_view &amp;delims)</td></tr>
+<tr class="memdesc:acf63c00706c91be7da3f18b08a088224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">More...</a><br /></td></tr>
+<tr class="separator:acf63c00706c91be7da3f18b08a088224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">str::strip_line</a> (std::string str, const std::string &amp;comment_chars={}, const std::string &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
 <tr class="memdesc:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes comments and preceeding/trailing whitespace from a given string.  <a href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">More...</a><br /></td></tr>
 <tr class="separator:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab3d3b4fc0b12749a6a027d5b0e58be81">str::strip_line_multiCharComment</a> (std::string str, const std::vector&lt; std::string &gt; &amp;comment_del={}, const std::string_view &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
 <tr class="memdesc:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes more complex comments ( ex. C/JSON/html comments ) and preceeding/trailing whitespace from a given string.  <a href="namespacestr.html#ab3d3b4fc0b12749a6a027d5b0e58be81">More...</a><br /></td></tr>
 <tr class="separator:ab3d3b4fc0b12749a6a027d5b0e58be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7fab88e397cd6251944c3d01a7438d"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
+<tr class="memitem:a4a7fab88e397cd6251944c3d01a7438d"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4a7fab88e397cd6251944c3d01a7438d">str::strip_preceeding</a> (const std::string &amp;str, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:a4a7fab88e397cd6251944c3d01a7438d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a string.  <a href="namespacestr.html#a4a7fab88e397cd6251944c3d01a7438d">More...</a><br /></td></tr>
+<tr class="separator:a4a7fab88e397cd6251944c3d01a7438d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
+<tr class="memitem:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">str::strip_trailing</a> (const std::string &amp;str, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a string.  <a href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">More...</a><br /></td></tr>
+<tr class="separator:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88947ca78984e05f41dd36fb221d32d6"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">str::toMap</a> (std::stringstream &amp;data, const std::string &amp;delims, const char lineDelim='\n', const bool noSpace=true) noexcept</td></tr>
 <tr class="memdesc:a88947ca78984e05f41dd36fb221d32d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a stringstream to a map of string keys &amp; string vars.  <a href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">More...</a><br /></td></tr>
 <tr class="separator:a88947ca78984e05f41dd36fb221d32d6"><td class="memSeparator" colspan="2">&#160;</td></tr>

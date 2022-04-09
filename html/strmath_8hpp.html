@@ -96,16 +96,26 @@ $(document).ready(function(){initNavTree('strmath_8hpp.html',''); initResizable(
 <div class="contents">
 
 <p>Contains functions for performing mathematics conversions &amp; calculations on strings. <br  />
- Primarily focuses on converting between number bases like binary, octal, decimal, &amp; hexadecimal.  
+ Primarily focuses on converting between number bases like binary, octal, decimal, &amp; hexadecimal. <br  />
+ These functions are located.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;make_exception.hpp&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>&gt;</code><br />
+<code>#include &lt;make_exception.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strmath.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmath_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmath_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmath_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strmath_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -166,30 +176,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a42c6b6a3bd47743a574df997a0bb8c65"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a42c6b6a3bd47743a574df997a0bb8c65">str::hexToDecimal</a> (std::string const &amp;hex) noexcept(false)</td></tr>
 <tr class="memdesc:a42c6b6a3bd47743a574df997a0bb8c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from hexadecimal to decimal.  <a href="namespacestr.html#a42c6b6a3bd47743a574df997a0bb8c65">More...</a><br /></td></tr>
 <tr class="separator:a42c6b6a3bd47743a574df997a0bb8c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae6e5ba0568ee7667816d0ec5535adcb6">str::isbinary</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid binary digits.  <a href="namespacestr.html#ae6e5ba0568ee7667816d0ec5535adcb6">More...</a><br /></td></tr>
-<tr class="separator:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae198f739f9fe6a95ba3d19dd14194031"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae198f739f9fe6a95ba3d19dd14194031">str::isbinarydigit</a> (const char &amp;ch) noexcept</td></tr>
-<tr class="memdesc:ae198f739f9fe6a95ba3d19dd14194031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII character is a valid binary digit.  <a href="namespacestr.html#ae198f739f9fe6a95ba3d19dd14194031">More...</a><br /></td></tr>
-<tr class="separator:ae198f739f9fe6a95ba3d19dd14194031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043ca9b134b11dde323fbda2dc5992ae"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a043ca9b134b11dde323fbda2dc5992ae">str::isdecimal</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a043ca9b134b11dde323fbda2dc5992ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid decimal digits.  <a href="namespacestr.html#a043ca9b134b11dde323fbda2dc5992ae">More...</a><br /></td></tr>
-<tr class="separator:a043ca9b134b11dde323fbda2dc5992ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa292888850b3b32095c1e48d65b9c645"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa292888850b3b32095c1e48d65b9c645">str::isdecimaldigit</a> (const char &amp;ch)</td></tr>
-<tr class="memdesc:aa292888850b3b32095c1e48d65b9c645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid decimal digits.  <a href="namespacestr.html#aa292888850b3b32095c1e48d65b9c645">More...</a><br /></td></tr>
-<tr class="separator:aa292888850b3b32095c1e48d65b9c645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8150d7f427d4bf2eeccc7e56dfd35107">str::ishex</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid hexadecimal digits.  <a href="namespacestr.html#a8150d7f427d4bf2eeccc7e56dfd35107">More...</a><br /></td></tr>
-<tr class="separator:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c0401e167ff247a2ed60e76c99e959"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa1c0401e167ff247a2ed60e76c99e959">str::ishexdigit</a> (const char &amp;ch) noexcept</td></tr>
-<tr class="memdesc:aa1c0401e167ff247a2ed60e76c99e959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII character is a valid hexadecimal digit.  <a href="namespacestr.html#aa1c0401e167ff247a2ed60e76c99e959">More...</a><br /></td></tr>
-<tr class="separator:aa1c0401e167ff247a2ed60e76c99e959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bd79fa931f1d21cb03de4642d230d11"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0bd79fa931f1d21cb03de4642d230d11">str::isoctal</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a0bd79fa931f1d21cb03de4642d230d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid octal digits.  <a href="namespacestr.html#a0bd79fa931f1d21cb03de4642d230d11">More...</a><br /></td></tr>
-<tr class="separator:a0bd79fa931f1d21cb03de4642d230d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a50f1cfbd61cff5c1c0975e2bc65c24e8">str::isoctaldigit</a> (const char &amp;ch) noexcept</td></tr>
-<tr class="memdesc:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII character is a valid octal digit.  <a href="namespacestr.html#a50f1cfbd61cff5c1c0975e2bc65c24e8">More...</a><br /></td></tr>
-<tr class="separator:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">str::toAlphaNumeric</a> (const T &amp;n, const bool &amp;upper=true) noexcept(false)</td></tr>
 <tr class="memdesc:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert any number between 0(0) to 36(Z) to its alphanumeric representation.  <a href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">More...</a><br /></td></tr>
@@ -200,7 +186,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains functions for performing mathematics conversions &amp; calculations on strings. <br  />
- Primarily focuses on converting between number bases like binary, octal, decimal, &amp; hexadecimal. </p>
+ Primarily focuses on converting between number bases like binary, octal, decimal, &amp; hexadecimal. <br  />
+ These functions are located. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="strmath_8hpp_source.html">strmath.hpp</a>.</p>

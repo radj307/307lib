@@ -125,24 +125,23 @@ Process</h2>
 <li>First, Clone the repository: <br  />
  <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib</code></li>
 <li>Initialize &amp; update git submodules: <br  />
- <code>git submodule update --init --recursive</code></li>
-</ol>
-<ol type="1">
+ <code>git submodule update --init --recursive</code> <br  />
+</li>
 <li>Configure the project using cmake: <br  />
  <code>cmake -B ./out -S . -G Ninja</code></li>
 <li>Build the project using cmake: <br  />
- <code>cmake --build ./out</code></li>
+ <code>cmake --build ./out</code> <br  />
+</li>
 <li>Install the project using cmake: <br  />
  <code>cmake --install ./out</code></li>
 </ol>
 <h1><a class="anchor" id="autotoc_md15"></a>
 Generating Documentation</h1>
-<p>The github pages site is automatically generated using Github Actions &amp; Doxygen, so is as up-to-date as possible. <br  />
-</p>
+<p>The github pages site is automatically generated using Github Actions &amp; Doxygen using the following process:</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Pre-Requisites</h2>
 <ul>
-<li>git _(obviously)_</li>
+<li>git <em>(obviously)</em></li>
 <li><a href="https://github.com/doxygen/doxygen">Doxygen</a><ul>
 <li>This should be on your PATH, unless you're using the GUI version.</li>
 </ul>
@@ -156,17 +155,17 @@ Pre-Requisites</h2>
 Process</h2>
 <ol type="1">
 <li>Clone the repository &amp; <code>cd</code> to it. <br  />
- <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib</code></li>
+ <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib</code> <br  />
+</li>
 <li>Clone the <code>gh-pages</code> branch as a subdirectory of the main repository &amp; <code>cd</code> to it. <br  />
- <code>git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages</code></li>
+ <code>git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages</code> <br  />
+</li>
 <li>Initialize &amp; clone submodules. <br  />
- <code>git submodule init &amp;&amp; git submodule update</code></li>
+ <code>git submodule init &amp;&amp; git submodule update</code> <br  />
+</li>
 <li>Run doxygen. <br  />
- <code>doxygen ./Doxyfile</code></li>
+ <code>doxygen ./Doxyfile</code> </li>
 </ol>
-<p>To execute all of the above steps _(The repository is cloned into your current working directory.)_, you can use this incredibly long one-liner: <br  />
- <code>git clone <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> &amp;&amp; cd 307lib &amp;&amp; git clone --single-branch --branch gh-pages <a href="https://github.com/radj307/307lib">https://github.com/radj307/307lib</a> gh-pages &amp;&amp; cd gh-pages &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; doxygen ./Doxyfile</code> <br  />
- </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
