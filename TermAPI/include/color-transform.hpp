@@ -26,26 +26,24 @@ namespace color {
 		using base = std::tuple<T, Ts...>;
 		/// @brief	The value type used by each channel.
 		using value = T;
-	private:
-		size_t channels;
 
-	public:
-		constexpr basic_color() : base(std::make_index_sequence<1ull + sizeof...(Ts)>()), channels{ 1ull + sizeof...(Ts) } {}
-		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...), channels{ 1ull + sizeof...(Ts) } {}
-		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...), channels{ 1ull + sizeof...(Ts) } {}
+		constexpr basic_color() : base(std::make_index_sequence<1ull + sizeof...(Ts)>()) {}
+		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...) {}
+		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...) {}
 
 		/**
 		 * @brief	Retrieve the number of independent color channels, which is always equal to the number of template arguments.
 		 * @returns	size_t with the number of independent color channels.
 		 */
-		constexpr size_t channel_count() const { return channels; }
+		constexpr size_t channel_count() const { return 1ull + sizeof...(Ts); }
 
 		/**
 		 * @brief			Get the current value of the specified color channel.
 		 * @tparam Index	The index in the underlying tuple type to retrieve.
 		 * @returns			value with the current value of the channel with the specified Index.
 		 */
-		template<size_t Index> [[nodiscard]] constexpr value get() const
+		template<size_t Index>
+		[[nodiscard]] constexpr value get() const
 		{
 			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			return std::get<Index>(*this);
@@ -55,7 +53,8 @@ namespace color {
 		 * @tparam Index	The index in the underlying tuple type to retrieve.
 		 * @returns			value with the current value of the channel with the specified Index.
 		 */
-		template<size_t Index> [[nodiscard]] constexpr value& get()
+		template<size_t Index>
+		[[nodiscard]] constexpr value& get()
 		{
 			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			return std::get<Index>(*this);
@@ -74,7 +73,7 @@ namespace color {
 		{
 			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			l.get<Index>() = oper(l.get<Index>(), r.get<Index>());
-			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
+			if constexpr (Index + 1ull < 1ull + sizeof...(Ts)) return transform<Index + 1ull>(l, r, oper);
 			return l;
 		}
 		/**
@@ -91,7 +90,7 @@ namespace color {
 		{
 			static_assert(Index < 1ull + sizeof...(Ts), "Index is out-of-range for a color with this number of channels.");
 			l.get<Index>() = oper(l.get<Index>(), r);
-			if constexpr (Index + 1ull < channels) return transform<Index + 1ull>(l, r, oper);
+			if constexpr (Index + 1ull < 1ull + sizeof...(Ts)) return transform<Index + 1ull>(l, r, oper);
 			return l;
 		}
 
@@ -196,25 +195,25 @@ namespace color {
 	 * @tparam T	Any integral type. This is used as the value type for each color channel.
 	 */
 	template<std::integral T = ColorT>
-	struct RGB : basic_color<T, T, T> {
+	struct RGB : public basic_color<T, T, T> {
 		/// @brief	Base/Parent object.
 		using base = basic_color<T, T, T>;
 		using base::base;
 		using value = base::value;
 
 		/// @brief	Red channel value.
-		constexpr value r() const { return this->get<0>(); }
+		constexpr value r() const { return this->template get<0>(); }
 		/// @brief	Green channel value.
-		constexpr value g() const { return this->get<1>(); }
+		constexpr value g() const { return this->template get<1>(); }
 		/// @brief	Blue channel value.
-		constexpr value b() const { return this->get<2>(); }
+		constexpr value b() const { return this->template get<2>(); }
 
 		/// @brief	Red channel reference.
-		constexpr value& r() { return this->get<0>(); }
+		constexpr value& r() { return this->template get<0>(); }
 		/// @brief	Green channel reference.
-		constexpr value& g() { return this->get<1>(); }
+		constexpr value& g() { return this->template get<1>(); }
 		/// @brief	Blue channel reference.
-		constexpr value& b() { return this->get<2>(); }
+		constexpr value& b() { return this->template get<2>(); }
 	};
 
 	/**
@@ -224,29 +223,29 @@ namespace color {
 	 * @tparam T	Any integral type. This is used as the value type for each color channel.
 	 */
 	template<std::integral T = ColorT>
-	struct RGBA : basic_color<T, T, T, T> {
+	struct RGBA : public basic_color<T, T, T, T> {
 		/// @brief	Base/Parent object.
 		using base = basic_color<T, T, T, T>;
 		using base::base;
 		using value = base::value;
 
 		/// @brief	Red channel value.
-		constexpr value r() const { return this->get<0>(); }
+		constexpr value r() const { return this->template get<0>(); }
 		/// @brief	Green channel value.
-		constexpr value g() const { return this->get<1>(); }
+		constexpr value g() const { return this->template get<1>(); }
 		/// @brief	Blue channel value.
-		constexpr value b() const { return this->get<2>(); }
+		constexpr value b() const { return this->template get<2>(); }
 		/// @brief	Alpha channel value.
-		constexpr value a() const { return this->get<3>(); }
+		constexpr value a() const { return this->template get<3>(); }
 
 		/// @brief	Red channel reference.
-		constexpr value& r() { return this->get<0>(); }
+		constexpr value& r() { return this->template get<0>(); }
 		/// @brief	Green channel reference.
-		constexpr value& g() { return this->get<1>(); }
+		constexpr value& g() { return this->template get<1>(); }
 		/// @brief	Blue channel reference.
-		constexpr value& b() { return this->get<2>(); }
+		constexpr value& b() { return this->template get<2>(); }
 		/// @brief	Alpha channel reference.
-		constexpr value& a() { return this->get<3>(); }
+		constexpr value& a() { return this->template get<3>(); }
 		/**
 		 * @brief	Explicit conversion operator for RGB values without an alpha channel.
 		 * @returns	RGB
@@ -296,7 +295,7 @@ namespace color {
 	template<std::integral T = ColorT>
 	inline CONSTEXPR const T rgb_to_sgr(const RGB<T>& rgb_color) noexcept
 	{
-		return rgb_to_sgr<T>(rgb_color.get<0>(), rgb_color.get<1>(), rgb_color.get<2>());
+		return rgb_to_sgr<T>(rgb_color.template get<0>(), rgb_color.template get<1>(), rgb_color.template get<2>());
 	}
 
 	/**
@@ -459,7 +458,7 @@ namespace color {
 	inline static std::string rgb_to_hex(const RGB<T>& rgb, const bool& uppercase = true) noexcept
 	{
 		using namespace std::string_literals;
-		return{ "0x"s + int_to_hex<T>(rgb.get<0>()) + int_to_hex<T>(rgb.get<1>()) + int_to_hex<T>(rgb.get<2>()) };
+		return{ "0x"s + int_to_hex<T>(rgb.template get<0>()) + int_to_hex<T>(rgb.template get<1>()) + int_to_hex<T>(rgb.template get<2>()) };
 	}
 
 	/**
