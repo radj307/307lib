@@ -43,7 +43,7 @@ Building from source is easy and platform-independent.
 
 # Generating Documentation
 
-The github pages site is automatically generated using Github Actions & Doxygen, so is as up-to-date as possible.  
+The github pages site is automatically generated using Github Actions & Doxygen using the following process:
 
 ## Pre-Requisites
 
