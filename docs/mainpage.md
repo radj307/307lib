@@ -32,17 +32,13 @@ Building from source is easy and platform-independent.
 ## Process
  1. First, Clone the repository:  
     `git clone https://github.com/radj307/307lib && cd 307lib`
-
  2. Initialize & update git submodules:  
-    `git submodule update --init --recursive`
-    
- 2. Configure the project using cmake:  
+    `git submodule update --init --recursive`    
+ 3. Configure the project using cmake:  
     `cmake -B ./out -S . -G Ninja`
-
- 3. Build the project using cmake:  
-    `cmake --build ./out`
-    
- 4. Install the project using cmake:  
+ 4. Build the project using cmake:  
+    `cmake --build ./out`    
+ 5. Install the project using cmake:  
     `cmake --install ./out`
 
 # Generating Documentation
@@ -60,14 +56,11 @@ The github pages site is automatically generated using Github Actions & Doxygen,
 ## Process
 
  1. Clone the repository & `cd` to it.  
-    `git clone https://github.com/radj307/307lib && cd 307lib`
-    
+    `git clone https://github.com/radj307/307lib && cd 307lib`    
  2. Clone the `gh-pages` branch as a subdirectory of the main repository & `cd` to it.  
-    `git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages`
-    
+    `git clone --single-branch --branch gh-pages https://github.com/radj307/307lib gh-pages && cd gh-pages`    
  3. Initialize & clone submodules.  
-    `git submodule init && git submodule update`
-    
+    `git submodule init && git submodule update`    
  4. Run doxygen.  
     `doxygen ./Doxyfile`
 
