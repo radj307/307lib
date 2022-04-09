@@ -6,7 +6,7 @@ if (MSVC)
 endif()
 
 # Create shared project
-project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
+project("shared" VERSION "${307lib_VERSION}" LANGUAGES CXX)
 
 # Get headers & sources
 file(GLOB HEADERS

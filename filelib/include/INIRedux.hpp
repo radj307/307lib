@@ -177,7 +177,7 @@ namespace file::ini {
 						return static_cast<std::streamsize>(longest);
 					}() };
 					for (auto& [key, val] : section)
-						os << key << str::VIndent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';
+						os << key << format::indent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';
 					os << '\n';
 				}
 				break;
@@ -195,7 +195,7 @@ namespace file::ini {
 				for (auto& [header, section] : obj._cont) {
 					os << '[' << header << ']' << '\n';
 					for (auto& [key, value] : section)
-						os << key << str::VIndent(align_width + 2ll, key.size()) << "= " << to_string(value, true) << '\n';
+						os << key << format::indent(align_width + 2ll, key.size()) << "= " << to_string(value, true) << '\n';
 					os << '\n';
 				}
 				break;
@@ -581,7 +581,7 @@ namespace file::ini {
 		 * @brief	Tokenizes the contents of an INI config file.
 		 */
 		struct INITokenizer : token::base::TokenizerBase<LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token> {
-			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE) {}
+			INITokenizer(std::stringstream&& buffer) : TokenizerBase(std::move(buffer), LEXEME::WHITESPACE, LEXEME::_EOF) {}
 		protected:
 			TokenT getNext() override
 			{

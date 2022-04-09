@@ -1,8 +1,27 @@
+/**
+ * @file	strutility.hpp
+ * @author	radj307
+ * @brief	Contains various utility functions & operators from strlib.
+ *\n		This also contains 'global' scope additions from strlib, such as `usiang namespace std::string_literals;`, which can be disabled by defining `DISABLE_STR_LITERALS`.
+ */
 #pragma once
+#include <strconv.hpp>
+
 #include <ostream>
 #include <string>
 #include <sstream>
 #include <concepts>
+
+/// Define DISABLE_STR_LITERALS to disable adding std::string_literals to the global namespace.
+#ifndef DISABLE_STR_LITERALS
+/**
+ * @def		DISABLE_STR_LITERALS
+ * @brief	Disables the "using namespace std::string_literals;" from being declared in the global namespace.
+ */
+#define DISABLE_STR_LITERALS // for doxygen to see the definition
+#undef DISABLE_STR_LITERALS
+using namespace std::string_literals;
+#endif
 
 namespace str {
 	/**
@@ -73,5 +92,40 @@ namespace str {
 		size_t count{ 0ull };
 		for (std::string sbuf; std::getline(ss, sbuf, delim); ++count) {}
 		return count;
+	}
+
+	/**
+	 * @brief				Variadic variant of the getline function.
+	 * @tparam Ch			Char Type
+	 * @tparam Tr			Char Traits
+	 * @tparam A			Allocator Type
+	 * @tparam DelimT...	Any number of types that are the same or convertible to Ch
+	 * @param is			Input stream ref
+	 * @param str			Output string ref
+	 * @param delimiters	Any number of characters to use as delimiters.
+	 * @returns				basic_istream<Ch, Tr>&
+	 */
+	template<class Ch, class Tr, class A, var::same_or_convertible<Ch>... DelimT>
+	std::basic_istream<Ch, Tr>& getline(std::basic_istream<Ch, Tr>& is, std::basic_string<Ch, Tr, A>& str, DelimT const&... delims)
+	{
+		std::string::size_type nread{ 0 }; // number of characters read
+		if (std::istream::sentry(is, true)) {
+			std::streambuf* sbuf{ is.rdbuf() };
+			str.clear();
+			while (nread < str.max_size()) {
+				auto c1{ sbuf->sbumpc() };
+				if (Tr::eq_int_type(c1, Tr::eof())) {
+					is.setstate(std::istream::eofbit);
+					break;
+				}
+				++nread;
+				if (const Ch ch{ Tr::to_char_type(c1) }; !var::variadic_or(ch == delims...))
+					str.push_back(ch);
+				else break;
+			}
+		}
+		if (nread == 0 || nread >= str.max_size())
+			is.setstate(std::istream::failbit);
+		return is;
 	}
 }

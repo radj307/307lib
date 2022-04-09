@@ -3,111 +3,18 @@
  * @author	radj307
  * @brief	Contains functions for performing mathematics conversions & calculations on strings.
  *\n		Primarily focuses on converting between number bases like binary, octal, decimal, & hexadecimal.
+ *\n		These functions are located
  */
 #pragma once
+#include <strutility.hpp>
+#include <strcompare.hpp>
 #include <make_exception.hpp>
 #include <var.hpp>
-#include <str.hpp>
 
+#include <cmath>				// std::log10
 #include <concepts>
 
 namespace str {
-#	pragma region Predicates
-
-	/**
-	 * @brief		Check if the given ASCII character is a valid binary digit.
-	 * @param ch	Any ASCII character.
-	 * @returns		bool
-	 */
-	[[nodiscard]] constexpr inline bool isbinarydigit(const char& ch) noexcept
-	{
-		return (ch > 0b00000000 && ch < 0b11111111) && (ch == '0' || ch == '1');
-	}
-
-	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid binary digits.
-	 * @param str	Any ASCII string.
-	 * @returns		bool
-	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isbinary(const std::string& str) noexcept
-	{
-		for (auto it{ str.begin() + (str::startsWith(str, "0b") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!isbinarydigit(*it))
-				return false;
-		return true;
-	}
-
-	/**
-	 * @brief		Check if the given ASCII character is a valid octal digit.
-	 * @param ch	Any ASCII character.
-	 * @returns		bool
-	 */
-	[[nodiscard]] constexpr inline bool isoctaldigit(const char& ch) noexcept
-	{
-		return (ch > 0b00000000 && ch < 0b11111111) && (ch >= '0' && ch <= '7');
-	}
-
-	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid octal digits.
-	 * @param str	Any ASCII string.
-	 * @return		bool
-	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isoctal(const std::string& str) noexcept
-	{
-		for (auto it{ str.begin() + (str::startsWith(str, '\\') ? 1 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!isoctaldigit(*it))
-				return false;
-		return true;
-	}
-
-	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid decimal digits.
-	 * @param ch	Any ASCII character.
-	 * @returns		bool
-	 */
-	[[nodiscard]] constexpr inline bool isdecimaldigit(const char& ch)
-	{
-		return (ch > 0b00000000 && ch < 0b11111111) && (ch >= '0' && ch <= '9');
-	}
-
-	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid decimal digits.
-	 * @param str	Any ASCII string.
-	 * @return		bool
-	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isdecimal(const std::string& str) noexcept
-	{
-		for (const auto& ch : str)
-			if (!isdecimaldigit(ch))
-				return false;
-		return true;
-	}
-
-	/**
-	 * @brief		Check if the given ASCII character is a valid hexadecimal digit.
-	 * @param ch	Any ASCII character.
-	 * @returns		bool
-	 */
-	[[nodiscard]] constexpr inline bool ishexdigit(const char& ch) noexcept
-	{
-		return (ch > 0b00000000 && ch < 0b11111111) && ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F'));
-	}
-
-	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid hexadecimal digits.
-	 * @param str	Any ASCII string.
-	 * @returns		bool
-	 */
-	[[nodiscard]] WINCONSTEXPR inline bool ishex(const std::string& str) noexcept
-	{
-		for (auto it{ str.begin() + (str::startsWith(str, "0x") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!ishexdigit(*it))
-				return false;
-		return true;
-	}
-
-#	pragma endregion Predicates
-
 	/**
 	 * @brief			Get the length of the given integral number in digits.
 	 * @param integral	Input number.
@@ -171,7 +78,7 @@ namespace str {
 	 * @param fromBase		The base of the input number.
 	 * @returns				decimal
 	 */
-	WINCONSTEXPR decimal toBase10(std::string number, const int& fromBase) noexcept(false)
+	inline WINCONSTEXPR decimal toBase10(std::string number, const int& fromBase) noexcept(false)
 	{
 		if (number.empty())
 			return 0;
@@ -205,7 +112,7 @@ namespace str {
 	 * @param toBase		The target number base.
 	 * @returns				std::string
 	 */
-	WINCONSTEXPR std::string fromBase10(const decimal& number, const int& toBase) noexcept(false)
+	inline WINCONSTEXPR std::string fromBase10(const decimal& number, const int& toBase) noexcept(false)
 	{
 		if (toBase < 2 || toBase > 36)
 			throw make_exception("str::fromBase10() failed:  \'", toBase, "\' isn't a valid alphanumeric base in the range: (2 - 36)!");
@@ -239,7 +146,7 @@ namespace str {
 	 * @param toBase		The target number base.
 	 * @returns				std::string
 	 */
-	WINCONSTEXPR std::string fromBase10(const std::string& number, const int& toBase) noexcept(false)
+	inline WINCONSTEXPR std::string fromBase10(const std::string& number, const int& toBase) noexcept(false)
 	{
 		return fromBase10(str::stoll(number), toBase);
 	}

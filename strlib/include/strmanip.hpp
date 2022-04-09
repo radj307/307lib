@@ -165,11 +165,7 @@ namespace str {
 	 */
 	inline std::string remove_whitespace(std::string str) noexcept
 	{
-	#if defined(OS_LINUX) || LANG_CPP <= 17
 		str.erase(std::remove_if(str.begin(), str.end(), isspace), str.end());
-	#elif LANG_CPP >= 20
-		str.erase(std::ranges::remove_if(str, isspace).begin(), str.end());
-	#endif
 		return str;
 	}
 
@@ -296,11 +292,7 @@ namespace str {
 	 */
 	inline std::string remove_all(std::string str, const std::string& delims)
 	{
-	#if defined(OS_LINUX) || LANG_CPP <= 17
 		str.erase(std::remove_if(str.begin(), str.end(), [&delims](const char c) -> bool { return delims.find(c) != std::string::npos; }), str.end());
-	#elif LANG_CPP >= 20
-		str.erase(std::ranges::remove_if(str, [&delims](const char c) -> bool { return delims.find(c) != std::string::npos; }).begin(), str.end());
-	#endif
 		return str;
 	}
 
@@ -536,4 +528,110 @@ namespace str {
 		return std::move(longest);
 	}
 #pragma endregion longestLength
+	/**
+	 * @brief				Split a string into a pair of strings by position. This is a simple wrapper to return a string split operation as a pair of strings.
+	 * @param str			Input String to Split.
+	 * @param pos			Position in the string to split.
+	 * @param discard_pos	When true, the character at the given position is discarded, otherwise the character is the first character of the second return value.
+	 * @returns				std::pair<std::string, std::string>
+	 */
+	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const size_t& pos, const bool& discard_pos = false)
+	{
+		return{ str.substr(0ull, pos), str.substr(pos + !!discard_pos) };
+	}
+
+	/**
+	 * @brief		Split a string into a pair of strings by finding the first occurrence of a given delimiter.
+	 * @param str	Input String to Split.
+	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
+	 * @returns		std::pair<std::string, std::string>
+	 */
+	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	{
+		unsigned matched{ 0u };
+		for (size_t pos{ str.find(delim) }; pos_valid(pos); pos = str.find(delim, pos + 1ull))
+			if (occurrence == matched++)
+				return{ str.substr(0ull, pos), str.substr(pos + 1ull) };
+		return{ str, {} };
+	}
+
+	/**
+	 * @brief		Split a string into a pair of strings by finding the first occurrence of a given delimiter.
+	 * @param str	Input String to Split.
+	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
+	 * @returns		std::pair<std::string, std::string>
+	 */
+	inline WINCONSTEXPR const std::pair<std::string, std::string> rsplit(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	{
+		unsigned matched{ 0u };
+		for (size_t pos{ str.rfind(delim) }; pos_valid(pos); pos = str.rfind(delim, pos + 1ull))
+			if (occurrence == matched++)
+				return{ str.substr(0ull, pos), str.substr(pos + 1ull) };
+		return{ str, {} };
+	}
+
+	/**
+	 * @brief				Remove trailing characters from a string.
+	 * @tparam DelimT		Variadic Input Types.
+	 * @param float_str		Input String.
+	 * @param delims...		At least one character to remove from the end of the string. These are casted to char before comparing!
+	 * @returns				std::string_view
+	 */
+	template<std::same_as<char>... DelimT>
+	inline static std::string strip_trailing(const std::string& str, const DelimT&... delims)
+	{
+		static_assert(sizeof...(DelimT) > 0, "strip_trailing() requires at least one delimiter char!");
+		size_t i{ 0ull };
+		for (auto rit{ str.rbegin() }; rit != str.rend(); ++rit) {
+			if (var::variadic_or(*rit == static_cast<char>(delims)...))
+				++i;
+			else break;
+		}
+		return str.substr(0ull, str.size() - i);
+	}
+	/**
+	 * @brief				Remove preceeding characters from a string.
+	 * @tparam DelimT		Variadic Input Types.
+	 * @param float_str		Input String.
+	 * @param delims...		At least one character to remove from the beginning of the string. These are casted to char before comparing!
+	 * @returns				std::string_view
+	 */
+	template<std::same_as<char>... DelimT>
+	inline static std::string strip_preceeding(const std::string& str, const DelimT&... delims)
+	{
+		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
+		size_t i{ 0ull };
+		for (auto it{ str.begin() }; it != str.end(); ++it) {
+			if (var::variadic_or(*it == static_cast<char>(delims)...))
+				++i;
+			else break;
+		}
+		return str.substr(i);
+	}
+
+	/**
+	 * @brief			Remove all specified characters from the given string.
+	 * @param str		Input String
+	 * @param delims	A string containing all of the blacklisted characters.
+	 * @returns			std::string
+	 */
+	inline WINCONSTEXPR static std::string strip(std::string s, const std::string_view& delims)
+	{
+		if (!s.empty() && !delims.empty())
+			s.erase(std::remove_if(s.begin(), s.end(), [&delims](auto&& ch) {return delims.find(ch) != std::string::npos; }), s.end());
+		return s;
+	}
+
+	/**
+	 * @brief			Remove all specified characters from the given string.
+	 * @param str		Input String
+	 * @param ...delims	Any number of characters to remove from the given string.
+	 * @returns			std::string
+	 */
+	template<std::same_as<char>... DelimT>
+	inline WINCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
+	{
+		s.erase(std::remove_if(s.begin(), s.end(), [&delims...](auto&& ch) { return var::variadic_or(ch == delims...); }), s.end());
+		return s;
+	}
 }

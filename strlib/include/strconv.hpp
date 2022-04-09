@@ -1,7 +1,13 @@
 /**
- * @file strconv.hpp
- * @brief Contains string conversion functions that can be passed as a std::function as they are not overloaded.
- * @author radj307
+ * @file		strconv.hpp
+ * @author		radj307
+ * @brief		Contains char & string conversion functions with signatures similar to the standard `atoi` & `stoi` style functions, with additional type support.
+ *\n			This includes the `tolower` & `toupper` functions that have stricter validation & have overloads that accept whole strings rather than single characters.
+ *\n			Multiple 'generations' of these functions are available, but all have a common theme:
+ *				- Remove the possibility of exceptions being thrown during conversion operations.
+ *				- Optimized for being passed as (pseudo)-lambdas to other functions, especially in an environment where exceptions are unwanted or unnecessary.
+ * @attention	Make sure you carefully evaluate whether or not to use these functions outside of strlib, as in many cases the exception-avoidance measures taken by all of these functions may not be desirable.
+ *\n			This header is specifically designed to handle many potential errors behind-the-scenes without any indications, and may react unexpectedly when used as a drop-in replacement for standard library functions, despite their ability to do that.
  */
 #pragma once
 #include <sysarch.h>
@@ -19,7 +25,7 @@
   */
 namespace str {
 
-	/// TOLOWER
+	// TOLOWER
 
 	/**
 	 * @brief		Convert a character stored in an int to lowercase.
