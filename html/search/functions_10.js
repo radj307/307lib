@@ -14,7 +14,7 @@ var searchData=
   ['resolve_5fsplit_966',['resolve_split',['../classenv_1_1_p_a_t_h.html#a9c0b444116365a6cd6a203bb32db3de6',1,'env::PATH']]],
   ['reverse_967',['reverse',['../namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc',1,'var::reverse()'],['../namespacestr.html#a9ef656ed2d8e17d0f1e68df1770058bc',1,'str::reverse()']]],
   ['rgb_5fto_5fhex_968',['rgb_to_hex',['../color-transform_8hpp.html#af7f1c1e481b8a01019fea3e15bf32996',1,'color']]],
-  ['rgb_5fto_5fsgr_969',['rgb_to_sgr',['../color-transform_8hpp.html#abb7692aee3ffa41815309ca473a5e906',1,'color::rgb_to_sgr(const T &amp;r, const T &amp;g, const T &amp;b)'],['../color-transform_8hpp.html#a44f766e4e31e348305331478f46b63b4',1,'color::rgb_to_sgr(const T &amp;r, const T &amp;g, const T &amp;b) noexcept'],['../color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f',1,'color::rgb_to_sgr(const RGB&lt; T &gt; &amp;rgb_color) noexcept']]],
+  ['rgb_5fto_5fsgr_969',['rgb_to_sgr',['../color-transform_8hpp.html#abb7692aee3ffa41815309ca473a5e906',1,'color::rgb_to_sgr(const T &amp;r, const T &amp;g, const T &amp;b)'],['../color-transform_8hpp.html#ac187c76931dc3ec7c3c43e35b1d1e659',1,'color::rgb_to_sgr(const T &amp;r, const T &amp;g, const T &amp;b) noexcept'],['../color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f',1,'color::rgb_to_sgr(const RGB&lt; T &gt; &amp;rgb_color) noexcept']]],
   ['rollback_970',['rollback',['../classtoken_1_1base_1_1_tokenizer_base.html#abf05c5a2a558c3b2d1eb77cf94670c04',1,'token::base::TokenizerBase']]],
   ['rollback_5freset_971',['rollback_reset',['../classtoken_1_1base_1_1_tokenizer_base.html#a9e6bf0706ef98f0995c85d53a3e1684c',1,'token::base::TokenizerBase']]],
   ['rsplit_972',['rsplit',['../namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e',1,'str']]]
