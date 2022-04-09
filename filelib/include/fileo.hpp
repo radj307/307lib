@@ -45,7 +45,7 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
-	template<var::Streamable... Ts> inline bool write(const std::filesystem::path& path, Ts&&... data)
+	template<var::Streamable<std::ostream>... Ts> inline bool write(const std::filesystem::path& path, Ts&&... data)
 	{
 		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 		std::stringstream buffer;
