@@ -47,7 +47,7 @@ The github pages site is automatically generated using Github Actions & Doxygen 
 
 ## Pre-Requisites
 
- - git  _(obviously)_
+ - git  <i>(obviously)</i>
  - [Doxygen](https://github.com/doxygen/doxygen)
    - This should be on your PATH, unless you're using the GUI version.
  - [Graphviz](https://graphviz.org/download/)
