@@ -25,6 +25,5 @@ var structcolor_1_1basic__color =
     [ "operator/=", "structcolor_1_1basic__color.html#ae2d85162b18ea993d53ebc60040e060e", null ],
     [ "operator/=", "structcolor_1_1basic__color.html#a5ce00acf8a99dea61ffad2041020b7b9", null ],
     [ "transform", "structcolor_1_1basic__color.html#acfe964363cb84cead24d3e89c281bb6f", null ],
-    [ "transform", "structcolor_1_1basic__color.html#a3818b98b50e6ab439074a06b4abf726b", null ],
-    [ "channels", "structcolor_1_1basic__color.html#a852c5a4a348b83e662f16d059b725dc8", null ]
+    [ "transform", "structcolor_1_1basic__color.html#a3818b98b50e6ab439074a06b4abf726b", null ]
 ];

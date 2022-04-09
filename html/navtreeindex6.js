@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"structxlog_1_1level_1_1_log_level.html":[7,0,13,1,0],
 "structxlog_1_1level_1_1_log_level.html#a19147fab37d7e0827bcbdec2fe443e75":[7,0,13,1,0,3],
 "structxlog_1_1level_1_1_log_level.html#a3ee9df2f5d32d7613a768ae5acbfcce7":[7,0,13,1,0,0],
 "structxlog_1_1level_1_1_log_level.html#a8588a6f6ca0abf5f3945498f8b46edb2":[7,0,13,1,0,1],
