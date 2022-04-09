@@ -277,9 +277,13 @@ namespace color {
 	 * @returns		ColorT
 	 */
 	template<std::floating_point T>
-	inline CONSTEXPR const ColorT rgb_to_sgr(const T& r, const T& g, const T& b) noexcept
+	inline
+#ifndef OS_WIN
+		CONSTEXPR
+#endif
+		ColorT rgb_to_sgr(const T& r, const T& g, const T& b) noexcept
 	{
-		T max{ var::largest<std::remove_cvref_t<T>>(r, g, b) };
+		T max{ var::largest<T>(r, g, b) };
 		const auto translatef{ [&max](const auto& fp) -> ColorT {
 			return static_cast<ColorT>(std::round(fp / max * static_cast<T>(5.0)));
 		} };
