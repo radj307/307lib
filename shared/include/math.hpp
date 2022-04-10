@@ -45,25 +45,40 @@ namespace math {
 	template<std::integral T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept { return l == r; }
 
 	/**
+	 * @brief			This is a `constexpr` version of the pow function from \<cmath\>.
+	 * @tparam T		Any numeric type, including integrals and floating-points.
+	 * @param value		Input value.
+	 * @param power		Exponent value.
+	 * @returns T		The result of the expression ( value ^ power ). _(exponent, not XOR)_
+	 */
+	template<var::numeric T> [[nodiscard]] INLINE static CONSTEXPR T pow(const T& value, const T& power = static_cast<T>(2)) noexcept
+	{
+		T v{ value };
+		for (unsigned i{ 0u }, end{ static_cast<unsigned>(power) - 1u }; i < end; ++i)
+			v *= value;
+		return v;
+	}
+
+	/**
 	 * @brief			Calculate the result of a floating-point modulo operation.
 	 * @tparam T		Floating-Point Type
 	 * @param value		Input Floating-Point Value.
 	 * @param modulo	Input Floating-Point Modulo.
-	 * @returns			T
+	 * @returns	T		Resulting value of the modulo operation.
 	 */
 	template<std::floating_point T>
 	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
 	{
-#ifdef OS_WIN
+#		ifdef OS_WIN
 		if CONSTEXPR(std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
 		else if CONSTEXPR(std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
-#else
+#		else
 		return std::fmod(value, modulo);
-#endif
+#		endif
 	}
 
 	/**
