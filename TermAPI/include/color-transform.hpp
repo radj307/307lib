@@ -31,12 +31,24 @@ namespace color {
 		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...) {}
 		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...) {}
 
+	private:
+
+
+	public:
 		/**
 		 * @brief	Retrieve the number of independent color channels, which is always equal to the number of template arguments.
 		 * @returns	size_t with the number of independent color channels.
 		 */
 		constexpr size_t channel_count() const { return 1ull + sizeof...(Ts); }
+		/**
+		 * @brief	Retrieve the color code as a hex string.
+		 * @returns	std::string
+		 */
+		WINCONSTEXPR std::string str() const
+		{
+			constexpr const size_t digitsPerChannel{ sizeof(value) / 2 + 1 }; // get the number of hex digits per channel
 
+		}
 		/**
 		 * @brief			Get the current value of the specified color channel.
 		 * @tparam Index	The index in the underlying tuple type to retrieve.
@@ -182,6 +194,12 @@ namespace color {
 		constexpr basic_color<T, Ts...>& operator/=(U&& o)
 		{
 			return *this = transform(*this, std::forward<U>(o), [](value&& l, value&& r) -> value { return std::forward<value>(l) / std::forward<value>(r); });
+		}
+
+		friend std::ostream& operator<<(std::ostream& os, const basic_color<T, Ts...>& color)
+		{
+
+			return os;
 		}
 	};
 
@@ -408,12 +426,12 @@ namespace color {
 	 * @returns		RGB<T>
 	 */
 	template<std::integral T = ColorT>
-	inline static CONSTEXPR RGB<T> hex_to_rgb(const std::string& hex) noexcept
+	inline static CONSTEXPR RGB<T> hex_to_rgb(const std::string& hex, const std::pair<T, T>& outrange = { 0, 5 }) noexcept
 	{
 		return{
-			math::normalize(hex_to_int<T>(hex.substr(0ull, 2ull)), { 0, 255 }, { 0, 5 }),
-			math::normalize(hex_to_int<T>(hex.substr(2ull, 2ull)), { 0, 255 }, { 0, 5 }),
-			math::normalize(hex_to_int<T>(hex.substr(4ull, 2ull)), { 0, 255 }, { 0, 5 })
+			math::normalize(hex_to_int<T>(hex.substr(0ull, 2ull)), { 0, 255 }, outrange),
+			math::normalize(hex_to_int<T>(hex.substr(2ull, 2ull)), { 0, 255 }, outrange),
+			math::normalize(hex_to_int<T>(hex.substr(4ull, 2ull)), { 0, 255 }, outrange)
 		};
 	}
 
