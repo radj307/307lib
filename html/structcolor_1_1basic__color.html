@@ -195,9 +195,15 @@ constexpr <a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&
 template&lt;std::integral U&gt; </td></tr>
 <tr class="memitem:a5ce00acf8a99dea61ffad2041020b7b9"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&lt; T, Ts... &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator/=</b> (U &amp;&amp;o)</td></tr>
 <tr class="separator:a5ce00acf8a99dea61ffad2041020b7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9312278fda76f209c870d0858ad932ef"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1basic__color.html#a9312278fda76f209c870d0858ad932ef">str</a> () const</td></tr>
+<tr class="memdesc:a9312278fda76f209c870d0858ad932ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the color code as a hex string.  <a href="structcolor_1_1basic__color.html#a9312278fda76f209c870d0858ad932ef">More...</a><br /></td></tr>
+<tr class="separator:a9312278fda76f209c870d0858ad932ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
+<tr class="memitem:a60bfa5b0e15a43becd9e1f94c4ff143b"><td class="memItemLeft" align="right" valign="top"><a id="a60bfa5b0e15a43becd9e1f94c4ff143b"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&lt; T, Ts... &gt; &amp;color)</td></tr>
+<tr class="separator:a60bfa5b0e15a43becd9e1f94c4ff143b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfe964363cb84cead24d3e89c281bb6f"><td class="memTemplParams" colspan="2">template&lt;size_t Index = 0ull&gt; </td></tr>
 <tr class="memitem:acfe964363cb84cead24d3e89c281bb6f"><td class="memTemplItemLeft" align="right" valign="top">constexpr friend <a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&lt; T, Ts... &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcolor_1_1basic__color.html#acfe964363cb84cead24d3e89c281bb6f">transform</a> (<a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&lt; T, Ts... &gt; &amp;l, <a class="el" href="structcolor_1_1basic__color.html">basic_color</a>&lt; T, Ts... &gt; const &amp;r, const std::function&lt; <a class="el" href="structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83">value</a>(<a class="el" href="structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83">value</a>, <a class="el" href="structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83">value</a>)&gt; &amp;oper)</td></tr>
 <tr class="memdesc:acfe964363cb84cead24d3e89c281bb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static function that applies a given lambda to each channel in 2 colors, and returns the result.  <a href="structcolor_1_1basic__color.html#acfe964363cb84cead24d3e89c281bb6f">More...</a><br /></td></tr>
@@ -250,7 +256,7 @@ template&lt;std::integral T, std::integral... Ts&gt; </div>
 <p>Retrieve the number of independent color channels, which is always equal to the number of template arguments. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t with the number of independent color channels. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00038">38</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00042">42</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +296,7 @@ template&lt;size_t Index&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value with the current value of the channel with the specified Index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00057">57</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00069">69</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -330,7 +336,7 @@ template&lt;size_t Index&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value with the current value of the channel with the specified Index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00046">46</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00058">58</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +375,39 @@ template&lt;std::integral T, std::integral... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>basic_color&lt;T, Ts...&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00103">103</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00115">115</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9312278fda76f209c870d0858ad932ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9312278fda76f209c870d0858ad932ef">&#9670;&nbsp;</a></span>str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::integral T, std::integral... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::string <a class="el" href="structcolor_1_1basic__color.html">color::basic_color</a>&lt; T, Ts &gt;::str </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the color code as a hex string. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00047">47</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +473,7 @@ template&lt;size_t Index = 0ull&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="structcolor_1_1basic__color.html" title="Variable-channel color wrapper object that inherits from std::tuple.">basic_color</a>&lt;T, Ts...&gt;&amp;</code> with the result. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00072">72</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00084">84</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +539,7 @@ template&lt;std::integral U, size_t Index = 0ull&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="structcolor_1_1basic__color.html" title="Variable-channel color wrapper object that inherits from std::tuple.">basic_color</a>&lt;T, Ts...&gt;&amp;</code> with the result. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00089">89</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-transform_8hpp_source.html#l00101">101</a> of file <a class="el" href="color-transform_8hpp_source.html">color-transform.hpp</a>.</p>
 
 </div>
 </div>

@@ -842,60 +842,61 @@ $(document).ready(function(){initNavTree('_i_n_i_redux_8hpp_source.html',''); in
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                        <span class="keywordflow">if</span> (i == tokens.size()) <span class="comment">// if this EOF is the last element in the tokens vec.</span></div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                            <span class="keywordflow">return</span> map;</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    <span class="keywordflow">default</span>: <span class="comment">// throw unexpected token exception</span></div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                        throwEx(ln, <span class="stringliteral">&quot;Unexpected token type&quot;</span>);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                    }</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                }</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="comment">// throw missing EOF exception</span></div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                throwEx(ln, <span class="stringliteral">&quot;Missing Token: END / EOF&quot;</span>);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                <span class="keywordflow">return</span>{}; <span class="comment">// this will never be reached, but it prevents compiler warning</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            }</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        };</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    }</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="comment">     * @struct  INI</span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="comment">     * @brief   Contains a map of the headers, keys, and values of an INI file, or multiple INI files.</span></div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;<span class="comment">     *\n        Uses variadic templates</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno"><a class="line" href="structfile_1_1ini_1_1_i_n_i.html">  770</a></span>&#160;    <span class="keyword">struct</span> INI : <span class="keyword">public</span> <a class="code" href="classfile_1_1ini_1_1_i_n_i_container.html#ab5b0de2dd79a1782cc5a8802da8759ca">INIContainer</a> {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        INI() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        INI(INIContainer::Map&amp;&amp; map) : INIContainer(std::move(map)) {}</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 17</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        INI(<span class="keyword">const</span> std::filesystem::path&amp; filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">else</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        INI(<span class="keyword">const</span> std::string_view&amp; filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">endif</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;<span class="comment">         * @brief Read a specified file and merge its contents with the local INI map.</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;<span class="comment">         * @param filename              - Name and path to target INI file.</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;<span class="comment">         * @param overwrite_existing    - When true, any existing variables will have their values overwritten by the ones in the specified file.</span></div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno"><a class="line" href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">  784</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">read</a>(<span class="keyword">const</span> std::filesystem::path&amp; filename, <span class="keyword">const</span> <span class="keywordtype">bool</span> overwrite_existing = <span class="keyword">true</span>)</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            merge_container(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filename))).tokenize()), filename), overwrite_existing);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        }</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <span class="keyword">template</span>&lt;str::ConvertibleStringT... VT&gt; requires (<span class="keyword">sizeof</span>...(VT) &gt; 1) <span class="keywordtype">void</span> read(<span class="keyword">const</span> VT&amp;... filenames)</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        {</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; file : var::variadic_accumulate&lt;std::string&gt;(std::string{ filenames }...))</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                read(file);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        }</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="keywordtype">bool</span> write(<span class="keyword">const</span> std::filesystem::path&amp; filename) <span class="keyword">const</span></div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        {</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordflow">return</span> file::write(filename, *<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        }</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    };</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;}</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;<span class="keyword">namespace</span> file {</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="comment">/// @brief  An INI file object that can read, write, and interact with configuration values. Uses variadic templates heavily.</span></div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keyword">using</span> INI = ini::INI;</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;}</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    <span class="keywordflow">case</span> TokenType::COMMENT:<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <span class="keywordflow">default</span>: <span class="comment">// throw unexpected token exception</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                        throwEx(ln, <span class="stringliteral">&quot;Unexpected token type&quot;</span>);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    }</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                }</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <span class="comment">// throw missing EOF exception</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                throwEx(ln, <span class="stringliteral">&quot;Missing Token: END / EOF&quot;</span>);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                <span class="keywordflow">return</span>{}; <span class="comment">// this will never be reached, but it prevents compiler warning</span></div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            }</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        };</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    }</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="comment">     * @struct  INI</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;<span class="comment">     * @brief   Contains a map of the headers, keys, and values of an INI file, or multiple INI files.</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="comment">     *\n        Uses variadic templates</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno"><a class="line" href="structfile_1_1ini_1_1_i_n_i.html">  771</a></span>&#160;    <span class="keyword">struct</span> INI : <span class="keyword">public</span> <a class="code" href="classfile_1_1ini_1_1_i_n_i_container.html#ab5b0de2dd79a1782cc5a8802da8759ca">INIContainer</a> {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        INI() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        INI(INIContainer::Map&amp;&amp; map) : INIContainer(std::move(map)) {}</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">if</span> <a class="code" href="sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb">LANG_CPP</a> <span class="preprocessor">&gt;=</span> 17</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        INI(<span class="keyword">const</span> std::filesystem::path&amp; filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">else</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        INI(<span class="keyword">const</span> std::string_view&amp; filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="preprocessor">#</span>       <span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;<span class="comment">         * @brief Read a specified file and merge its contents with the local INI map.</span></div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;<span class="comment">         * @param filename              - Name and path to target INI file.</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="comment">         * @param overwrite_existing    - When true, any existing variables will have their values overwritten by the ones in the specified file.</span></div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00785"></a><span class="lineno"><a class="line" href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">  785</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">read</a>(<span class="keyword">const</span> std::filesystem::path&amp; filename, <span class="keyword">const</span> <span class="keywordtype">bool</span> overwrite_existing = <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        {</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            merge_container(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filename))).tokenize()), filename), overwrite_existing);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        }</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <span class="keyword">template</span>&lt;str::ConvertibleStringT... VT&gt; requires (<span class="keyword">sizeof</span>...(VT) &gt; 1) <span class="keywordtype">void</span> read(<span class="keyword">const</span> VT&amp;... filenames)</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; file : var::variadic_accumulate&lt;std::string&gt;(std::string{ filenames }...))</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                read(file);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        }</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordtype">bool</span> write(<span class="keyword">const</span> std::filesystem::path&amp; filename) <span class="keyword">const</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <span class="keywordflow">return</span> file::write(filename, *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        }</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    };</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;}</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160; </div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;<span class="keyword">namespace</span> file {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="comment">/// @brief  An INI file object that can read, write, and interact with configuration values. Uses variadic templates heavily.</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keyword">using</span> INI = ini::INI;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser_html_af750e29299cde5744fe7741ccb31df7d"><div class="ttname"><a href="structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html#af750e29299cde5744fe7741ccb31df7d">file::ini::tokenizer::INIParser::parse</a></div><div class="ttdeci">OutputT parse() const</div><div class="ttdoc">Parse the token container.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00657">INIRedux.hpp:657</a></div></div>
-<div class="ttc" id="astructfile_1_1ini_1_1_i_n_i_html_a64518ca7577217eda7845000c9c09ae5"><div class="ttname"><a href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">file::ini::INI::read</a></div><div class="ttdeci">void read(const std::filesystem::path &amp;filename, const bool overwrite_existing=true)</div><div class="ttdoc">Read a specified file and merge its contents with the local INI map.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00784">INIRedux.hpp:784</a></div></div>
+<div class="ttc" id="astructfile_1_1ini_1_1_i_n_i_html_a64518ca7577217eda7845000c9c09ae5"><div class="ttname"><a href="structfile_1_1ini_1_1_i_n_i.html#a64518ca7577217eda7845000c9c09ae5">file::ini::INI::read</a></div><div class="ttdeci">void read(const std::filesystem::path &amp;filename, const bool overwrite_existing=true)</div><div class="ttdoc">Read a specified file and merge its contents with the local INI map.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00785">INIRedux.hpp:785</a></div></div>
 <div class="ttc" id="a_i_n_i_redux_8hpp_html_aa86b3efdca35b91db3538f0f9cebaafe"><div class="ttname"><a href="_i_n_i_redux_8hpp.html#aa86b3efdca35b91db3538f0f9cebaafe">file::ini::AlignType</a></div><div class="ttdeci">AlignType</div><div class="ttdoc">Controls the alignment of = signs in INIContainer's operator&lt;&lt; output.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00036">INIRedux.hpp:36</a></div></div>
 <div class="ttc" id="a_i_n_i_redux_8hpp_html_a1b74058a9d772102b21d62b3071b747b"><div class="ttname"><a href="_i_n_i_redux_8hpp.html#a1b74058a9d772102b21d62b3071b747b">file::ini::to_string</a></div><div class="ttdeci">std::string to_string(const VariableT &amp;var, const bool &amp;use_quotes_for_string=false)</div><div class="ttdoc">Convert a VariableT to a std::string.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00049">INIRedux.hpp:49</a></div></div>
 <div class="ttc" id="aclassfile_1_1ini_1_1_i_n_i_container_html_a7e26330deb23c043665b623a579a485b"><div class="ttname"><a href="classfile_1_1ini_1_1_i_n_i_container.html#a7e26330deb23c043665b623a579a485b">file::ini::INIContainer::_cont</a></div><div class="ttdeci">Map _cont</div><div class="ttdoc">Local container.</div><div class="ttdef"><b>Definition:</b> <a href="_i_n_i_redux_8hpp_source.html#l00080">INIRedux.hpp:80</a></div></div>

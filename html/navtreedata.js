@@ -87,8 +87,8 @@ var NAVTREEINDEX =
 "classtoken_1_1base_1_1gen2_1_1_parser_base.html#a9472d11834db6867e0cbc330b25e0cd8",
 "namespacemembers_t.html",
 "structcolor_1_1basic__color.html#a32d0362de1467da75415bbc0aa500c69",
-"structopt_1_1_index.html#a9befc263c5f429a903fcd07d12668d8d",
-"structxlog_1_1level_1_1_log_level.html#a19147fab37d7e0827bcbdec2fe443e75"
+"structopt_1_1_index.html#a53d801b2b432dd0d6d36314abaaae557",
+"structxlog_1_1level.html#affc5880963f1019f5681f68e4e72446e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
