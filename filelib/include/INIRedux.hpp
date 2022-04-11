@@ -751,6 +751,7 @@ namespace file::ini {
 						if (i == tokens.size()) // if this EOF is the last element in the tokens vec.
 							return map;
 						break;
+					case TokenType::COMMENT:break;
 					default: // throw unexpected token exception
 						throwEx(ln, "Unexpected token type");
 					}
