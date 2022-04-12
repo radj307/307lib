@@ -93,6 +93,17 @@ namespace var {
 #	pragma region Concepts
 	////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
 #	pragma region DeclvalTest_Concepts
+	////////////////////////////////// BEGIN / Misc Concepts /////////////////////////////////////////////
+	/**
+	 * @concept		has_default
+	 * @brief		Check if the given type has a default value or default constructor.
+	 * @tparam T	Input Type.
+	 */
+	template<typename T>
+	concept has_default = std::constructible_from<T>;
+	////////////////////////////////// END / Misc Concepts /////////////////////////////////////////////
+#	pragma endregion DeclvalTest_Concepts
+#	pragma region DeclvalTest_Concepts
 	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
 	/**
 	 * @concept		Streamable
@@ -104,6 +115,14 @@ namespace var {
 	{
 		std::declval<StreamType&>() << obj;
 	};
+	/**
+	 * @concept			callable
+	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.
+	 * @tparam T		Input Type.
+	 * @tparam Args...	Optional argument types required by the callable.
+	 */
+	template<class T, typename... Args>
+	concept callable = std::invocable<T, Args...>;
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
 #	pragma region Equatable_Concepts
