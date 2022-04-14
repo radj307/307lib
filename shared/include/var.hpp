@@ -93,6 +93,17 @@ namespace var {
 #	pragma region Concepts
 	////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
 #	pragma region DeclvalTest_Concepts
+	////////////////////////////////// BEGIN / Misc Concepts /////////////////////////////////////////////
+	/**
+	 * @concept		has_default
+	 * @brief		Check if the given type has a default value or default constructor.
+	 * @tparam T	Input Type.
+	 */
+	template<typename T>
+	concept has_default = std::constructible_from<T>;
+	////////////////////////////////// END / Misc Concepts /////////////////////////////////////////////
+#	pragma endregion DeclvalTest_Concepts
+#	pragma region DeclvalTest_Concepts
 	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
 	/**
 	 * @concept		Streamable
@@ -104,8 +115,31 @@ namespace var {
 	{
 		std::declval<StreamType&>() << obj;
 	};
+	/**
+	 * @concept			callable
+	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.
+	 * @tparam T		Input Type.
+	 * @tparam Args...	Optional argument types required by the callable.
+	 */
+	template<class T, typename... Args>
+	concept callable = std::invocable<T, Args...>;
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
+#	pragma region Equatable_Concepts
+	////////////////////////////////// BEGIN / "Equatable Concepts" /////////////////////////////////////////////
+	/**
+	 * @concept			same_or_equatable
+	 * @brief			Check if the given types are the same type, or if they can be compared.
+	 *\n				Comparable check returns true if either ( Left::operator== ) or ( Right::operator== ) can perform the comparison.
+	 * @tparam Left:	First Input Type.
+	 * @tparam Right:	Second Input Type.
+	 */
+	template<typename Left, typename Right> concept same_or_equatable = requires (Left l, Right r)
+	{
+		std::same_as<Left, Right> || std::declval<Left>() == std::declval<Right>() || std::declval<Right>() == std::declval<Left>();
+	};
+	////////////////////////////////// END / "Equatable Concepts" /////////////////////////////////////////////
+#	pragma endregion Equatable_Concepts
 #	pragma region Type_Concepts	
 	////////////////////////////////// BEGIN / "Type Concepts" /////////////////////////////////////////////
 	/**
@@ -123,18 +157,30 @@ namespace var {
 	 */
 	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
 	/**
+	 * @concept		enumerator
+	 * @brief		Checks if the given type is an enum.
+	 * @tparam T	Input Type
+	 */
+	template<typename T> concept enumerator = std::is_enum_v<T>;
+	/**
 	 * @concept		arithmetic
 	 * @brief		Checks if the given type can be used in arithmetic operations.
 	 * @tparam T	Input Type
 	 */
 	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
 	/**
+	 * 
 	 * @concept		numeric
 	 * @brief		Checks if the given type can be used in arithmetic operations.
-	 *\n			This is an alias for the arithmetic concept.
 	 * @tparam T	Input Type
 	 */
 	template<typename T> concept numeric = arithmetic<T>;
+	/**
+	 * @concept		fundamental
+	 * @brief		Checks if the given type is a fundamental type.
+	 * @tparam T	Input Type
+	 */
+	template<typename T> concept fundamental = std::is_fundamental_v<T>;
 	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
 #	pragma endregion Type_Concepts
 #	pragma region Variadic_Count_Concepts
@@ -170,6 +216,20 @@ namespace var {
 #	pragma region VariadicType_Concepts
 	////////////////////////////////// BEGIN / Variadic "Type Concepts" /////////////////////////////////////////////
 	/**
+	 * @concept			derived_from_any
+	 * @brief			Concept that checks if the given type is derived from any of the specified types.
+	 * @tparam Type		Input Type (This is provided during template deduction).
+	 * @tparam Ts...	Potential base type(s).
+	 */
+	template<typename Type, typename... Ts> concept derived_from_any = ((std::derived_from<Type, Ts>) || ...);
+	/**
+	 * @concept			derived_from_all
+	 * @brief			Concept that checks if the given type is derived from all of the specified types.
+	 * @tparam Type		Input Type (This is provided during template deduction).
+	 * @tparam Ts...	Potential base type(s).
+	 */
+	template<typename Type, typename... Ts> concept derived_from_all = ((std::derived_from<Type, Ts>) && ...);
+	/**
 	 * @concept			not_same
 	 * @brief			Concept that checks if none of the given variadic types match a given type.
 	 * @tparam Type		Type that all variadic types must not match to pass.
@@ -190,6 +250,34 @@ namespace var {
 	 * @tparam Ts...	Variadic types to compare.
 	 */
 	template<typename Type, typename... Ts> concept any_same = (std::same_as<Type, Ts> || ...);
+	/**
+	 * @concept			convertible_from_all
+	 * @brief			Concept that checks if all given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from_all = ((std::convertible_to<From, To>) && ...);
+	/**
+	 * @concept			convertible_from_any
+	 * @brief			Concept that checks if any given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from_any = ((std::convertible_to<From, To>) || ...);
+	/**
+	 * @concept			convertible_from
+	 * @brief			Concept that checks if any given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept convertible_from = convertible_from_any<To, From...>;
+	/**
+	 * @concept			not_convertible_from
+	 * @brief			Concept that checks if none of the given input types can be converted to the specified output type.
+	 * @tparam To		This is provided at compile-time.
+	 * @tparam From...	These are provided during template resolution.
+	 */
+	template<typename To, typename... From> concept not_convertible_from = (!convertible_from_any<To, From...>);
 	/**
 	 * @concept			not_convertible
 	 * @brief			Concept that checks if a given input type cannot be converted to any of the given output types.
@@ -396,39 +484,75 @@ namespace var {
 	{
 		return ((booleans) && ...);
 	}
-
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
+	
+	template<typename T, template<class, class> class Container>
+	[[nodiscard]] inline static constexpr T largest(const Container<T, std::allocator<T>>& cont)
 	{
-		constexpr const auto max{ sizeof...(Ts) };
-		T largest{ base };
-		for (size_t i{ 0ull }; i < max; ++i)
-			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
-				largest = v;
+		if (cont.empty())
+			return static_cast<T>(0);
+		T largest{ cont.at(0ull) };
+		for (const auto& it : cont)
+			if (it > largest)
+				largest = it;
 		return largest;
 	}
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T largest(const Ts&... elements) { return largest<T>(std::make_tuple(elements...)); }
-
-	/**
-	 * @brief			Retrieve the smallest number in a tuple of arbitrary size.
-	 * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
-	 * @tparam Ts...	(implicit) Types stored in the tuple.
-	 * @param tpl		The tuple to operate on.
-	 * @returns			T
-	 */
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
+	template<typename T, std::same_as<T>... Ts>
+	[[nodiscard]] inline static constexpr T largest(const T& fst, const Ts&... values)
 	{
-		constexpr const auto max{ sizeof...(Ts) };
-		T smallest{ static_cast<T>(0) };
-		for (size_t i{ 0ull }; i < max; ++i)
-			if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
-				smallest = v;
+		return largest<T>(std::vector<T>{ fst, values... });
+	}
+	template<typename T, template<class, class> class Container>
+	[[nodiscard]] inline static constexpr T smallest(const Container<T, std::allocator<T>>& cont)
+	{
+		if (cont.empty())
+			return static_cast<T>(0);
+		T smallest{ cont.at(0ull) };
+		for (const auto& it : cont)
+			if (it < smallest)
+				smallest = it;
 		return smallest;
 	}
-	template<typename T, same_or_convertible<T>... Ts>
-	[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
+	template<typename T, std::same_as<T>... Ts>
+	[[nodiscard]] inline static constexpr T smallest(const T& fst, const Ts&... values)
+	{
+		return smallest<T>(std::vector<T>{ fst, values... });
+	}
+
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
+	//{
+	//	constexpr const auto max{ sizeof...(Ts) };
+	//	T largest{ base };
+	//	for (size_t i{ 0ull }; i < max; ++i)
+	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
+	//			largest = v;
+	//	return largest;
+	//}
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T largest(const T& fst, const Ts&... elements)
+	//{
+	//	return largest<T>(std::make_tuple(fst, elements...));
+	//}
+
+	///**
+	// * @brief			Retrieve the smallest number in a tuple of arbitrary size.
+	// * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
+	// * @tparam Ts...	(implicit) Types stored in the tuple.
+	// * @param tpl		The tuple to operate on.
+	// * @returns			T
+	// */
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
+	//{
+	//	constexpr const auto max{ sizeof...(Ts) };
+	//	T smallest{ static_cast<T>(0) };
+	//	for (size_t i{ 0ull }; i < max; ++i)
+	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
+	//			smallest = v;
+	//	return smallest;
+	//}
+	//template<typename T, same_or_equatable<T>... Ts>
+	//[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
 
 #	if LANG_CPP >= 20
 	/**

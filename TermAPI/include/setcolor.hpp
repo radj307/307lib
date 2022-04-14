@@ -4,24 +4,32 @@
 #include <color-values.h>
 #include <Sequence.hpp>
 #include <Segments.h>
+#include <color-transform.hpp>
 #ifdef OS_WIN
 #define SETCOLOR_NO_RGB
 #endif
-#ifdef SETCOLOR_NO_RGB
-#include <color-transform.hpp>
-#endif
 
 namespace color {
-	enum class Layer : bool {
-		F = false,
-		B = true,
-	};
-}
+	struct Layer {
+	protected:
+		bool _v;
+	public:
+		constexpr Layer(const bool& v) : _v{ v } {}
+		constexpr operator bool() const { return _v; }
 
-namespace term {
-	using color::Layer;
-	using color::format;
-	using color::FormatFlag;
+		friend std::ostream& operator<<(std::ostream& os, const Layer& lyr)
+		{
+			return os << (lyr._v ? 38 : 48);
+		}
+		friend std::wostream& operator<<(std::wostream& wos, const Layer& lyr)
+		{
+			return wos << (lyr._v ? 38 : 48);
+		}
+
+		static const Layer B, F;
+	};
+	inline constexpr const Layer Layer::B{ 0 };
+	inline constexpr const Layer Layer::F{ 1 };
 
 	/**
 	 * @brief		Acts as a wrapper and controller for SGR & RGB color codes, as well as certain SGR format codes.
@@ -43,7 +51,7 @@ namespace term {
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& SGR) const
 		{
 			using namespace ANSI;
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", SGR, END);
+			return make_sequence<SeqT>(CSI, lyr, ";5;", SGR, END);
 		}
 		/**
 		 * @brief		Build an RGB color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.
@@ -56,11 +64,11 @@ namespace term {
 		virtual SeqT makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
 		{
 			using namespace ANSI;
-			#ifdef SETCOLOR_NO_RGB
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;5;", color::rgb_to_sgr(r, g, b), END);
-			#else
-			return make_sequence<SeqT>(CSI, 3 + !!static_cast<bool>(lyr), "8;2;", r, ';', g, ';', b, END);
-			#endif
+#			ifdef SETCOLOR_NO_RGB
+			return make_sequence<SeqT>(CSI, lyr, ";5;", color::rgb_to_sgr(r, g, b), END);
+#			else
+			return make_sequence<SeqT>(CSI, lyr, ";2;", r, ';', g, ';', b, END);
+#			endif
 		}
 		/**
 		 * @brief			Build a color escape sequence using a given RGB tuple. This function calls the overloaded RGB function.
@@ -160,7 +168,11 @@ namespace term {
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.
-		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white, reset, reset_f, reset_b, placeholder;
+		static const setcolor_seq<SeqT> red, green, blue, yellow, magenta, cyan, black, white;
+		/// Declare static constant colors for the basic color utility sequences
+		static const setcolor_seq<SeqT> reset, reset_f, reset_b, reset_fmt, placeholder;
+		/// Declare static constant colors for the basic 16-bit color palette
+		static const setcolor_seq<SeqT> intense_red, intense_green, intense_blue, intense_yellow, intense_magenta, intense_cyan;
 	};
 
 	/// @brief	Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, & invert.
@@ -177,10 +189,19 @@ namespace term {
 	template<> inline const setcolor setcolor::cyan{ color::cyan };
 	template<> inline const setcolor setcolor::black{ color::black };
 	template<> inline const setcolor setcolor::white{ color::white };
+
 	template<> inline const setcolor setcolor::reset{ color::reset };
 	template<> inline const setcolor setcolor::reset_f{ color::reset_f };
 	template<> inline const setcolor setcolor::reset_b{ color::reset_b };
+	template<> inline const setcolor setcolor::reset_fmt{ color::reset_fmt };
 	template<> inline const setcolor setcolor::placeholder{ ANSI::Sequence() };
+
+	template<> inline const setcolor setcolor::intense_red{ color::intense_red };
+	template<> inline const setcolor setcolor::intense_green{ color::intense_green };
+	template<> inline const setcolor setcolor::intense_blue{ color::intense_blue };
+	template<> inline const setcolor setcolor::intense_yellow{ color::intense_yellow };
+	template<> inline const setcolor setcolor::intense_magenta{ color::intense_magenta };
+	template<> inline const setcolor setcolor::intense_cyan{ color::intense_cyan };
 	//setcolor::white{ color::white }, setcolor::reset{ color::reset }, setcolor::reset_f{ color::reset_f }, setcolor::reset_b{ color::reset_b };
 
 	/// @brief	Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, & invert.
@@ -197,14 +218,26 @@ namespace term {
 	template<> inline const wsetcolor wsetcolor::cyan{ color::cyan };
 	template<> inline const wsetcolor wsetcolor::black{ color::black };
 	template<> inline const wsetcolor wsetcolor::white{ color::white };
+
 	template<> inline const wsetcolor wsetcolor::reset{ color::wreset };
 	template<> inline const wsetcolor wsetcolor::reset_f{ color::wreset_f };
 	template<> inline const wsetcolor wsetcolor::reset_b{ color::wreset_b };
+	template<> inline const wsetcolor wsetcolor::reset_fmt{ color::wreset_fmt };
 	template<> inline const wsetcolor wsetcolor::placeholder{ ANSI::wSequence() };
+
+	template<> inline const wsetcolor wsetcolor::intense_red{ color::intense_red };
+	template<> inline const wsetcolor wsetcolor::intense_green{ color::intense_green };
+	template<> inline const wsetcolor wsetcolor::intense_blue{ color::intense_blue };
+	template<> inline const wsetcolor wsetcolor::intense_yellow{ color::intense_yellow };
+	template<> inline const wsetcolor wsetcolor::intense_magenta{ color::intense_magenta };
+	template<> inline const wsetcolor wsetcolor::intense_cyan{ color::intense_cyan };
 }
 
-namespace color {
-	using term::setcolor_seq;
-	using term::setcolor;
-	using term::wsetcolor;
+namespace term {
+	using color::Layer;
+	using color::format;
+	using color::FormatFlag;
+	using color::setcolor_seq;
+	using color::setcolor;
+	using color::wsetcolor;
 }

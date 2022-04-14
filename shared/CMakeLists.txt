@@ -6,7 +6,7 @@ if (MSVC)
 endif()
 
 # Create shared project
-project("shared" VERSION ${307lib_VERSION} LANGUAGES CXX)
+project("shared" VERSION "${307lib_VERSION}" LANGUAGES CXX)
 
 # Get headers & sources
 file(GLOB HEADERS
@@ -21,7 +21,7 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(shared STATIC "cpp.hint" ${SRCS})
+add_library(shared STATIC "${SRCS}" "../cpp.hint")
 
 # Set library properties
 set_property(TARGET shared PROPERTY CXX_STANDARD 20)
@@ -29,7 +29,7 @@ set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET shared PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(shared PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(shared PUBLIC "/Zc:__cplusplus")
+	target_compile_options(shared PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 include(PrependEach)

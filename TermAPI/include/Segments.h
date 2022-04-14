@@ -21,8 +21,8 @@ namespace ANSI {
 		SGR_NO_UNDERLINE{ "24" },// Resets Underline
 		SGR_NEGATIVE{ "7" },	// Invert
 		SGR_POSITIVE{ "27" },	// Reset Invert
-		SGR_DEFAULT_FORE{ "38;5;7" },	// Reset Color
-		SGR_DEFAULT_BACK{ "48;5;0" },	// Reset Color
+		SGR_DEFAULT_FORE{ "39" },	// Reset Color
+		SGR_DEFAULT_BACK{ "49" },	// Reset Color
 		SGR_RESET{ "0" };		// Reset all terminal settings
 	static const constexpr auto	// ## ENABLE/DISABLE SEGMENTS
 		ENABLE{ "h" },			// Used by some boolean options to enable them.

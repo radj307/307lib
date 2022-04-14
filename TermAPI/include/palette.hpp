@@ -2,29 +2,6 @@
  * @file palette.hpp
  * @author radj307
  * @brief Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program.
- *
- *	# Example Implementation: #
- *
- *	enum class MyKeyType {
- *		TYPE1,
- *		TYPE2,
- *		TYPE3,
- *	}
- *
- *	using Palette = color::ColorPalette<MyKeyType>;
- *
- *	Palette myPalette{
- *	{
- *		std::make_pair(MyKeyType::TYPE1, color::red),
- *		std::make_pair(MyKeyType::TYPE2, setcolor{ color::green, color::Layer::FOREGROUND, color::FormatFlags::BOLD | color::FormatFlags::UNDERLINE }),
- *		std::make_pair(MyKeyType::TYPE3, color::blue),
- *	}
- *	};
- *
- *	void example()
- *	{
- *		std::cout << myPalette(MyKeyType::TYPE1) << "red text" << myPalette();
- *	}
  */
 #pragma once
 #include <Segments.h>
@@ -40,7 +17,8 @@
 namespace term {
 	/**
 	 * @class		palette
-	 * @brief		Maps color sequences to a templated key type.
+	 * @brief		Associative binding container with additional helper methods & operators.
+	 *\n			Maps color sequences to a templated key type.
 	 *\n			Provides convenience methods for recalling color sequences by using keys.
 	 *\n			Very useful when you want to control the usage of escape sequences throughout your program.
 	 * @tparam Key	
@@ -58,7 +36,7 @@ namespace term {
 	protected:
 		container_type _palette;
 		bool _enable{ true };
-		ANSI::Sequence _reset_seq{ color::reset };
+		ANSI::Sequence _reset_seq{ color::reset + color::reset_fmt };
 
 		inline static ANSI::Sequence return_if_disabled(const char& c) { return{ std::string(1ull, c) }; }
 		inline static ANSI::Sequence return_if_disabled(const ANSI::Sequence& seq) { return seq; }

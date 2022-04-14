@@ -18,7 +18,7 @@ if(307lib_ENABLE_DEVELOPMENT)
 	set_property(TARGET testing PROPERTY CXX_STANDARD 20)
 	set_property(TARGET testing PROPERTY CXX_STANDARD_REQUIRED ON)
 	if (MSVC)
-		target_compile_options(testing PUBLIC "/Zc:__cplusplus")
+		target_compile_options(testing PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 	endif()
 
 	target_link_libraries(testing PUBLIC shared tokenlib TermAPI strlib optlib filelib xlog)

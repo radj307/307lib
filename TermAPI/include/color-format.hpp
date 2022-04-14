@@ -175,7 +175,7 @@ namespace color {
 		reset_f{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_FORE, ANSI::END) },
 		reset_b{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_DEFAULT_BACK, ANSI::END) },
 		reset_fmt{ ANSI::make_sequence(no_bold, no_underline, no_invert) },
-		reset{ ANSI::make_sequence(reset_f, reset_b, reset_fmt) },
+		reset{ ANSI::make_sequence(reset_f, reset_b) },
 		reset_all{ ANSI::make_sequence(ANSI::CSI, ANSI::SGR_RESET, ANSI::END) };
 
 	inline static const ANSI::wSequence

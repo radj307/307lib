@@ -33,7 +33,7 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
-	bool write_to(const std::filesystem::path& path, std::stringstream&& buffer, const bool& append = false);
+	bool write_to(const std::filesystem::path& path, std::stringstream&& buffer, const bool& append);
 	/**
 	 * @brief			Write any number of objects to a file.
 	 * @tparam APPEND	When true, appends the given types to the file instead of overwriting the file's previous contents.
@@ -45,7 +45,7 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
-	template<var::Streamable... Ts> inline bool write(const std::filesystem::path& path, Ts&&... data)
+	template<var::Streamable<std::ostream>... Ts> inline bool write(const std::filesystem::path& path, Ts&&... data)
 	{
 		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 		std::stringstream buffer;

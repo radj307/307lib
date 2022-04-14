@@ -98,11 +98,13 @@ namespace file {
 	}
 
 	/**
-	 * @brief Returns a vector of std::filesystem::directory_entry types, representing the contents of the given directory path.
-	 * @param path	- Target directory
-	 * @returns Directory
+	 * @brief		Returns a vector of std::filesystem::directory_entry types, representing the contents of the given directory path.
+	 * @tparam Path	Either a std::string type or a std::filesystem::path type.
+	 * @param path	Target directory
+	 * @returns		file::Directory
 	 */
-	inline Directory getDirectory(const std::string& path)
+	template<var::any_same<std::string, std::filesystem::path> Path>
+	inline Directory getDirectory(const Path& path)
 	{
 		Directory vec;
 		for (auto const& it : std::filesystem::directory_iterator{ path })
@@ -111,10 +113,10 @@ namespace file {
 	}
 
 	/**
-	 * @brief Retrieve all files from the given directory path with a given extension.
-	 * @param path		- Target Directory
-	 * @param extension	- Target Extension, must have '.' prefix!
-	 * @returns Directory
+	 * @brief			Retrieve all files from the given directory path with a given extension.
+	 * @param path		Target Directory
+	 * @param extension	Target Extension, must have '.' prefix!
+	 * @returns			file::Directory
 	 */
 	inline Directory getAllFilesWithExtension(std::string path, const std::string& extension)
 	{
@@ -135,10 +137,10 @@ namespace file {
 	}
 
 	/**
-	 * @brief Replace the extension of a given filename.
-	 * @param filename		- Input filename
-	 * @param new_extension	- New Extension
-	 * @returns std::string
+	 * @brief				Replace the extension of a given filename.
+	 * @param filename		Input filename
+	 * @param new_extension	New Extension
+	 * @returns				std::string
 	 */
 	inline std::filesystem::path replace_extension(std::filesystem::path filename, const std::filesystem::path& new_extension)
 	{
@@ -146,9 +148,9 @@ namespace file {
 	}
 
 	/**
-	 * @brief Convert a filesystem path to a std::string. All this does is call the path::generic_string() function for you.
-	 * @param path	- Input std::filesystem::path.
-	 * @returns std::string
+	 * @brief		Convert a filesystem path to a std::string. All this does is call the path::generic_string() function for you.
+	 * @param path	Input std::filesystem::path.
+	 * @returns		std::string
 	 */
 	inline std::string to_string(const std::filesystem::path& path)
 	{

@@ -14,14 +14,14 @@ file(GLOB HEADERS
 	CONFIGURE_DEPENDS
 	"include/*.h*"
 )
-file(GLOB SRC 
+file(GLOB SRCS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"src/*.c*"
 )
 
 # Create static library
-add_library(TermAPI STATIC ${SRC})
+add_library(TermAPI STATIC "${SRCS}" "../cpp.hint")
 
 # Set library properties
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
@@ -29,7 +29,7 @@ set_property(TARGET TermAPI PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET TermAPI PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(TermAPI PUBLIC cxx_std_20)
 if (MSVC)
-	target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus")
+	target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
 endif()
 
 # Specify library include dirs

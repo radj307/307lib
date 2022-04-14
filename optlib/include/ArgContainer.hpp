@@ -497,7 +497,7 @@ namespace opt {
 		WINCONSTEXPR const ArgContainerType get_range(ArgContainerIteratorType from, const std::optional<ArgContainerIteratorType>& to = std::nullopt, const bool& inclusive = true, const std::optional<std::function<bool(VariantArgumentType)>>& pred = std::nullopt) const noexcept(false)
 		{
 			if (empty())
-				make_exception("ArgContainer::get_range() failed because the container is empty!");
+				throw make_exception("ArgContainer::get_range() failed because the container is empty!");
 			if (const auto it_end{ to.value_or(_args.end()) }; inclusive ? it_end >= from : it_end > from) {
 				ArgContainerType vec;
 				vec.reserve(to.value_or(_args.end()) - from);

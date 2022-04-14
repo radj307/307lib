@@ -3,6 +3,8 @@
  * @author	radj307
  * @brief	New tokenization & parsing library providing superior abstraction capabilities and a much less confusing usage experience.
  *			For more information on tokenization, see: https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization
+ */
+/**
  * @page	TokenRedux
  *
  *			# TokenRedux
@@ -194,6 +196,7 @@ namespace token::base {
 	template<typename LexemeT, std::derived_from<LexemeDictBase<LexemeT>> Dictionary, typename TokenType, std::derived_from<TokenBase<TokenType>> Token = TokenBase<TokenType>>
 	class TokenizerBase {
 	public:
+		/// @brief	This is set to the type specified by the Token template parameter.
 		using TokenT = Token;
 	protected:
 		/// @brief	The stringstream containing the untokenized data.
@@ -203,7 +206,7 @@ namespace token::base {
 		/// @brief	Lexeme dictionary used to retrieve the lexeme associated with a given character.
 		Dictionary get_lexeme;
 		/// @brief	Lexeme associated with skippable whitespace.
-		LexemeT lexeme_whitespace;
+		LexemeT lexeme_whitespace, lexeme_eof;
 
 	public:
 		/**
@@ -211,7 +214,7 @@ namespace token::base {
 		 * @param ss			Stringstream rvalue reference containing the target data.
 		 * @param whitespace	The lexeme associated with whitespace characters. This is used by the getch() method to skip whitespace.
 		 */
-		TokenizerBase(std::stringstream&& ss, LexemeT whitespace) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace } {}
+		TokenizerBase(std::stringstream&& ss, LexemeT const& whitespace, LexemeT const& eof) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace }, lexeme_eof{ eof } {}
 	protected:
 		/// @brief	Virtual Destructor
 		virtual ~TokenizerBase() noexcept = default;
@@ -247,37 +250,61 @@ namespace token::base {
 		[[nodiscard]] bool eof() const { return ss.eof(); }
 
 		/**
+		 * @brief			Set the underlying stream's format flags.
+		 * @param format	The format flags to apply to the stream.
+		 * @returns			std::ios_base::fmtflags	: The previous format control flags.
+		 */
+		auto setf(std::ios_base::fmtflags const& format)
+		{
+			return ss.setf(format);
+		}
+		auto unsetf(std::ios_base::fmtflags const& mask)
+		{
+			ss.unsetf(mask);
+		}
+
+		[[nodiscard]] virtual std::string str() const
+		{
+			return ss.str();
+		}
+
+		/**
+		 * @protected
 		 * @brief Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream.
 		 * @returns bool
 		 */
-		[[nodiscard]] virtual bool hasMore() const
+		[[nodiscard]] virtual bool hasMore()
 		{
 			if (ss)
-				return true;
+				return getCurrentPos() != static_cast<size_t>(EOF);
 			return false;
 		}
 
 		/**
+		 * @protected
 		 * @brief					Get the next character from the stream, and move the getter position forward by one.
 		 *\n						This function sets lastPos to the current position before incrementing the getter.
 		 * @param allow_whitespace	When true, allows any character to be returned, including whitespace characters.
 		 * @returns					char
 		 */
-		[[nodiscard]] char getch(const bool allow_whitespace = false)
+		[[nodiscard]] virtual char getch(const bool allow_whitespace = false)
 		{
 			setLastPosHere();
-			if (allow_whitespace) // allow whitespace, return next character
-				return static_cast<char>(ss.get());
-			char c; // don't allow whitespace, read ahead until next non-whitespace character and return that
-			for (c = static_cast<char>(ss.get()); get_lexeme(c) == lexeme_whitespace; c = static_cast<char>(ss.get())) { setLastPosHere(); }
+			char c{ EOF };
+			ss.get(c);
+			if (allow_whitespace || get_lexeme(c) != lexeme_whitespace)
+				return c;
+			for (; get_lexeme(c) == lexeme_whitespace; ss.get(c))
+				setLastPosHere();
 			return c;
 		}
 
 		/**
+		 * @protected
 		 * @brief	Retrieve the next character from the stream, but don't advance the read pointer.
 		 * @returns char
 		 */
-		[[nodiscard]] char peek()
+		[[nodiscard]] virtual char peek()
 		{
 			if (!hasMore())
 				return '\0';
@@ -285,11 +312,12 @@ namespace token::base {
 		}
 
 		/**
+		 * @protected
 		 * @brief			Retrieve the next character from the stream, but don't advance the read pointer.
 		 * @throws except	There are no more tokens to peek at in the buffer.
 		 * @returns			LexemeT
 		 */
-		[[nodiscard]] LexemeT peeklex() noexcept(false)
+		[[nodiscard]] virtual LexemeT peeklex() noexcept(false)
 		{
 			if (!hasMore())
 				throw make_exception("peeklex() failed:  There are no remaining tokens!");
@@ -297,11 +325,12 @@ namespace token::base {
 		}
 
 		/**
+		 * @protected
 		 * @brief					Retrieve the next character from the stream, but don't advance the read pointer.
 		 * @param noTokensDefault	If there are no more tokens to peek at in the buffer, return this value instead of throwing like the parameterless variant of peeklex().
 		 * @returns					LexemeT
 		 */
-		[[nodiscard]] LexemeT peeklex(const LexemeT& noTokensDefault) noexcept
+		[[nodiscard]] virtual LexemeT peeklex(const LexemeT& noTokensDefault) noexcept
 		{
 			if (!hasMore())
 				return noTokensDefault;
@@ -309,29 +338,39 @@ namespace token::base {
 		}
 
 		/**
-		 * @brief			Eat (advance the read pos past) upcoming characters.
+		 * @protected
+		 * @brief			Eat any number of characters by advancing the read position by the given number of characters.
 		 * @param count		The number of characters to "eat".
 		 * @returns			bool
 		 *\n		true	There are more upcoming characters.
 		 *\n		false	Reached EOF while eating characters.
 		 */
-		bool eat(const size_t& count = 1ull) noexcept
+		virtual bool eat(const size_t& count = 1ull) noexcept
 		{
-			for (size_t i{ 0ull }; i < count; ++i) {
-				if (ss.good())
-					(void)ss.get();
-				else return false;
-			}
+			char* c{ nullptr };
+			if (ss.good())
+				ss.get(c, count);
 			return hasMore();
 		}
+
 		/**
-		 * @brief			Eat (advance the read pos past) the next character.
+		 * @protected
+		 * @brief			Eat the next character by advancing the read position by one.
 		 * @returns			bool
 		 *\n		true	There are more upcoming characters.
 		 *\n		false	Reached EOF while eating characters.
 		 */
-		bool eatnext() noexcept { return eat(1ull); }
+		virtual bool eatnext() noexcept { return eat(1ull); }
 
+		/**
+		 * @protected
+		 * @brief				Recurse into the given string using a copy of this tokenizer instance.
+		 * @tparam Tokenizer	Tokenizer type.
+		 * @param str			Input String
+		 * @param eof_tkn		EOF token type.
+		 * @param reserve_sz	Number of elements to reserve at a time. This is passed to the tokenize() function.
+		 * @returns				std::vector<TokenT>
+		 */
 		template<class Tokenizer = TokenizerBase<LexemeT, Dictionary, TokenType, Token>>
 		[[nodiscard]] std::vector<TokenT> recurseInto(const std::string& str, const std::optional<TokenT>& eof_tkn = std::nullopt, const size_t& reserve_sz = 256ull)
 		{
@@ -339,6 +378,7 @@ namespace token::base {
 		}
 
 		/**
+		 * @protected
 		 * @brief				Retrieve a string containing everything enclosed by the given bracket types, respecting bracket scope.
 		 * @param bracketOpen	The lexeme type associated with opening brackets, used to detect scope.
 		 * @param bracketClose	The lexeme type associated with closing brackets, used to detect scope & the ending delimiter.
@@ -368,6 +408,7 @@ namespace token::base {
 		}
 
 		/**
+		 * @protected
 		 * @brief				Get a string containing everything from the current stream getter position until a given delimiter.
 		 * @param delim			Stop reading ahead when this character is encountered
 		 * @param no_rollback	When true, the first delimiter reached will be eaten when returning. (You can still rollback manually.)
@@ -382,6 +423,7 @@ namespace token::base {
 			return line;
 		}
 		/**
+		 * @protected
 		 * @brief		Get a string containing a given number of characters from the current stream getter position.
 		 * @param count	The number of characters to read ahead. If the stream reaches the end, it will return early.
 		 * @returns		std::string
@@ -389,11 +431,15 @@ namespace token::base {
 		[[nodiscard]] virtual std::string getline(const size_t& count)
 		{
 			std::string line{};
-			for (size_t i{ 0 }; hasMore() && i < count; ++i)
-				line += ss.get();
+			char c;
+			for (size_t i{ 0 }; hasMore() && i < count; ++i) {
+				ss.get(c);
+				line += c;
+			}
 			return line;
 		}
 		/**
+		 * @protected
 		 * @brief				Get a string containing all characters from the current read position to the specified occurrence of the specified lexeme.
 		 * @param lex			The target lexeme type.
 		 * @param no_rollback	When true, the first delimiter reached will be eaten when returning. (You can still rollback manually.)
@@ -417,7 +463,38 @@ namespace token::base {
 			}
 			return line;
 		}
+
 		/**
+		 * @protected
+		 * @brief		Variation of the getline(count) function that returns true if the result matches a given comparison string.
+		 * @param count	The number of characters to read ahead.
+		 * @param comp	Comparison string, if the final value of str matches this (case-insensitive), the function will return true.
+		 * @param str	Reference of a string to use as output for getline.
+		 * @returns		bool
+		 */
+		[[nodiscard]] virtual bool getmatch(const size_t& count, const std::string& comp, std::string& str)
+		{
+			str = getline(count);
+			return str::tolower(str) == comp;
+		}
+
+		/**
+		 * @protected
+		 * @deprecated	This function uses an old naming convention that will be removed in a future release. Use the getmatch() method instead.
+		 *
+		 * @brief		Variation of the getline(count) function that returns true if the result matches a given comparison string.
+		 * @param count	The number of characters to read ahead.
+		 * @param comp	Comparison string, if the final value of str matches this (case-insensitive), the function will return true.
+		 * @param str	Reference of a string to use as output for getline.
+		 * @returns		bool
+		 */
+		[[nodiscard]] virtual bool getline_and_match(const size_t& count, const std::string& comp, std::string& str)
+		{
+			return getmatch(count, comp, str);
+		}
+
+		/**
+		 * @protected
 		 * @brief				Continue getting characters until the given predicate function returns false.
 		 * @tparam PredicateT	Predicate Function Type.
 		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
@@ -436,7 +513,9 @@ namespace token::base {
 				ss.seekg(ss.tellg() - 1ll); // rollback to eat predicate match
 			return s;
 		}
+
 		/**
+		 * @protected
 		 * @brief				Retrieve all of the characters from the current read pos until the first unescaped delimiter
 		 * @tparam PredicateT	Predicate Function Type.
 		 * @param pred			A predicate function that accepts a char as input, and returns a boolean. getuntil() ends when this function returns true.
@@ -445,10 +524,12 @@ namespace token::base {
 		 */
 		[[nodiscard]] virtual std::string getuntil_unescaped(const char& delim, const bool& no_rollback = true)
 		{
-			char prev{ '\0' };
+			char prev{ EOF };
 			return getuntil([&prev, &delim](auto&& ch) { return prev != '\\' && ch == delim; }, no_rollback);
 		}
+
 		/**
+		 * @protected
 		 * @brief			Continue reading ahead until a character with an unspecified type is reached, and return it as a string. The delimiter is not consumed.
 		 * @tparam ...Ts	Variadic Lexeme type(s).
 		 * @param ...type	At least one lexeme type.
@@ -463,7 +544,9 @@ namespace token::base {
 			ss.seekg(ss.tellg() - 1ll); // rollback by 1 to exclude delimiter
 			return str;
 		}
+
 		/**
+		 * @protected
 		 * @brief			Continue reading ahead until the first character whose type doesn't match at least one of the given lexeme types.
 		 * @param ...type	At least one lexeme type.
 		 * @returns			std::string
@@ -478,16 +561,12 @@ namespace token::base {
 			return str;
 		}
 
-		template<class Pred>
-		[[nodiscard]] std::string getsimilar(const Pred& predicate)
-		{
-			std::string str{};
-			for (char c{ getch(true) }; predicate(c) && hasMore(); c = getch(true))
-				str += c;
-			ss.seekg(ss.tellg() - 1ll);
-			return str;
-		}
-
+		/**
+		 * @protected
+		 * @brief				Continue reading ahead until the first character that isn't present in the given list of characters.
+		 * @param ...character	Any number of characters to match.
+		 * @returns				std::string
+		 */
 		template<std::same_as<char>... Ts>
 		[[nodiscard]] std::string getsimilar_ch(const Ts&... character)
 		{
@@ -499,6 +578,24 @@ namespace token::base {
 		}
 
 		/**
+		 * @protected
+		 * @brief				Continue reading ahead until the given predicate returns false.
+		 * @tparam Pred			Predicate Function Type. Must accept a char and return a boolean / implicit boolean.
+		 * @param predicate		Predicate Function.
+		 * @returns				std::string
+		 */
+		template<class Pred>
+		[[nodiscard]] std::string get_if(const Pred& predicate)
+		{
+			std::string str{};
+			for (char c{ getch(true) }; predicate(c) && hasMore(); c = getch(true))
+				str += c;
+			ss.seekg(ss.tellg() - 1ll);
+			return str;
+		}
+
+		/**
+		 * @protected
 		 * @brief Clears/Resets the internal stream buffer's _error state flags_.
 		 */
 		void clear()
@@ -507,8 +604,9 @@ namespace token::base {
 		}
 
 		/**
-		 * @brief Set the getter position to lastPos.
-		 * @returns std::streamoff	- The previous stream getter position.
+		 * @protected
+		 * @brief	Set the getter position to lastPos.
+		 * @returns std::streamoff	The previous stream getter position.
 		 */
 		virtual std::streamoff rollback()
 		{
@@ -519,8 +617,9 @@ namespace token::base {
 		}
 
 		/**
-		 * @brief Set the getter position to the beginning of the stream.
-		 * @returns std::streamoff	- The previous stream getter position.
+		 * @protected
+		 * @brief	Set the getter position to the beginning of the stream.
+		 * @returns std::streamoff	The previous stream getter position.
 		 */
 		virtual std::streamoff rollback_reset()
 		{
@@ -532,9 +631,46 @@ namespace token::base {
 		}
 
 		/**
-		 * @brief Set the value of lastPos directly.
-		 * @param pos				- Value to set as the last stream getter position.
-		 * @returns std::streamoff	- The previous stream getter position.
+		 * @protected
+		 * @brief	Retrieve the current stream read position. (character index)
+		 * @returns	std::streamoff : Current Read Position.
+		 */
+		virtual std::streampos getCurrentPos()
+		{
+			return ss.tellg();
+		}
+
+		/**
+		 * @protected
+		 * @brief	Get the total number of characters in the stream.
+		 * @returns	std::streamsize
+		 */
+		virtual std::streamsize getStreamSize()
+		{
+			const auto& currentPos{ getCurrentPos() };
+			ss.seekp(std::ios::end);
+			ss.seekg(std::ios::beg);
+			const auto& begPos{ ss.tellg() };
+			ss.seekg(currentPos);
+			return ss.tellp() - begPos;
+		}
+
+		/**
+		 * @protected
+		 * @brief	Get the remaining number of characters in the stream.
+		 * @returns	std::streamsize
+		 */
+		virtual std::streamsize getRemainingSize()
+		{
+			return getStreamSize() - getCurrentPos();
+		}
+
+		/**
+		 * @protected
+		 * @brief		Set (lastPos) to a specific read position.
+		 * @param pos	Input Read Position
+		 * @returns		std::streamoff
+		 *				This is the previous value of (lastPos).
 		 */
 		virtual std::streamoff setLastPos(const std::streamoff& pos)
 		{
@@ -543,63 +679,76 @@ namespace token::base {
 			return copy;
 		}
 
-		/// @brief Set the last position to the current position.
+		/**
+		 * @protected
+		 * @brief	Set (lastPos) to the current read position.
+		 * @returns	std::streamoff
+		 */
 		virtual std::streamoff setLastPosHere()
 		{
-			return setLastPos(ss.tellg());
+			return setLastPos(getCurrentPos());
 		}
 
 		/**
-		 * @brief Variation of the getline(count) function that returns true if the result matches a given comparison string.
-		 * @param count	- The number of characters to read ahead.
-		 * @param comp	- Comparison string, if the final value of str matches this (case-insensitive), the function will return true.
-		 * @param str	- Reference of a string to use as output for getline.
-		 * @returns bool
-		 */
-		[[nodiscard]] virtual bool getline_and_match(const size_t& count, const std::string& comp, std::string& str)
-		{
-			str = getline(count);
-			return str::tolower(str) == comp;
-		}
-
-		/**
-		 * @brief		Pure virtual function
-		 *\n			This is an alternative to the getNext(bool) function, and when this is overridden but getNext() is NOT, this is used for parsing instead.
-		 *\n			You can also override getNext(bool) to
+		 * @protected
+		 * @brief		Retrieve the next token from the stream.
+		 *\n			By default, this method always returns (TokenT::NullToken). This is to support overriding either this function, OR the getNext() function.
 		 *\n			This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
 		 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
 		 * @returns		TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNextToken(const char&) { return TokenT::NullToken; }
+		[[nodiscard]] virtual TokenT getNextToken(const char&)
+		{
+			return TokenT::NullToken;
+		}
 
 		/**
+		 * @protected
 		 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
 		 *\n						This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+		 *\n						By default, this function calls `return getNextToken(getch(allowWhitespace));`.
 		 * @param allowWhitespace	When true, whitespace may be passed to the getNext(char) overload.
 		 * @returns					TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNextChar(const bool& allowWhitespace) { return getNextToken(getch(allowWhitespace)); }
+		[[nodiscard]] virtual TokenT getNext(const bool& allowWhitespace)
+		{
+			return getNextToken(getch(allowWhitespace));
+		}
 
 		/**
-		 * @deprecated Use the getNextChar(bool) & getNextToken(char) functions instead.
+		 * @protected
+		 * @deprecated Directly overloading this function is deprecated, but still supported. It is recommended to override the getNextToken(const char&) method instead.
 		 *
+		 * @overload
 		 * @brief	Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
 		 *\n		This is implemented for backwards-compatibility, and is simply an alias for calling ` getNext(false); `.
 		 *\n		For improved getNext() alternatives, see the getNextChar(bool) & getNextToken(char) overloads.
 		 *\n		This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
 		 * @returns	TokenT
 		 */
-		[[nodiscard]] virtual TokenT getNext() { return getNextChar(false); }
+		[[nodiscard]] virtual TokenT getNext()
+		{
+			return getNext(false);
+		}
 
 	private:
+		/**
+		 * @private
+		 * @brief			Tokenizes the entire data stream.
+		 *\n				This function is called by tokenize().
+		 * @param reserve	The number of vector elements to reserve each time a reallocation is required.
+		 *\n				Increasing this may improve performance by preventing reallocations each time a new element is inserted.
+		 * @returns			std::vector<TokenT>
+		 */
 		[[nodiscard]] std::vector<TokenT> tokenize_internal(const size_t& reserve)
 		{
 			std::vector<TokenT> tokens;
 			tokens.reserve(reserve);
 			while (ss) { // tokenize the whole stream
 				tokens.emplace_back(std::move(getNext()));
-				if (tokens.size() >= tokens.capacity() - 1ull)
-					tokens.reserve(tokens.size() + reserve);
+				// allocate more memory if we're approaching the capacity limit:
+				if (tokens.size() >= (tokens.capacity() > 2ull ? tokens.capacity() - 2ull : 0ull))
+					tokens.reserve(tokens.capacity() + reserve);
 			}
 			tokens.shrink_to_fit();
 			return tokens;
@@ -607,6 +756,7 @@ namespace token::base {
 
 	public:
 		/**
+		 * @public
 		 * @brief				Tokenize the whole local stream and return it as a vector.
 		 * @param eof_tkn		An optional token to append to the end of the vector, if it doesn't already exist. If this is left blank, no EOF token is appended.
 		 * @param reserve_sz	Expand the vector's capacity by this number of elements each time the capacity limit is reached.
@@ -614,8 +764,8 @@ namespace token::base {
 		 */
 		[[nodiscard]] std::vector<TokenT> tokenize(const std::optional<TokenT>& eof_tkn = std::nullopt, const size_t& reserve_sz = 64ull)
 		{
-			auto vec{ tokenize_internal(reserve_sz) };
-			if (eof_tkn.has_value() && (vec.empty() || !vec.empty() && vec.back() != eof_tkn))
+			std::vector<TokenT> vec{ tokenize_internal(reserve_sz) };
+			if (eof_tkn.has_value() && (vec.empty() || (!vec.empty() && vec.back().type != eof_tkn.value().type)))
 				vec.emplace_back(eof_tkn.value());
 			return vec;
 		}
