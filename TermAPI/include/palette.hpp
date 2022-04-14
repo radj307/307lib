@@ -21,7 +21,7 @@ namespace term {
 	 *\n			Maps color sequences to a templated key type.
 	 *\n			Provides convenience methods for recalling color sequences by using keys.
 	 *\n			Very useful when you want to control the usage of escape sequences throughout your program.
-	 * @tparam Key	
+	 * @tparam Key
 	 */
 	template<typename Key>
 	class palette {
@@ -305,6 +305,8 @@ namespace term {
 		Message get_error() const noexcept { return term::get_error(_enable, MessageMarginSize); }
 		// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
 		Message get_crit() const noexcept { return term::get_crit(_enable, MessageMarginSize); }
+		// @brief	Returns [FATAL] header that uses colors only if the palette is enabled.
+		Message get_fatal() const noexcept { return term::get_fatal(_enable, MessageMarginSize); }
 		// @brief	Returns an empty space header the same size as a normal message's indentation.
 		Message get_placeholder() const noexcept { return term::placeholder; }
 #		pragma endregion MessageHeaders

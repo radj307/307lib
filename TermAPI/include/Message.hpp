@@ -48,6 +48,7 @@ namespace term {
 	INLINE CONSTEXPR const Message warn{ "[WARN]", MessageMarginSize };
 	INLINE CONSTEXPR const Message error{ "[ERROR]", MessageMarginSize };
 	INLINE CONSTEXPR const Message crit{ "[CRIT]", MessageMarginSize };
+	INLINE CONSTEXPR const Message fatal{ "[FATAL]", MessageMarginSize };
 	INLINE CONSTEXPR const Message placeholder{ "", MessageMarginSize };
 
 	INLINE CONSTEXPR const Message get_debug(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", indentation) : Message("[DEBUG]", indentation)); }
@@ -57,6 +58,7 @@ namespace term {
 	INLINE CONSTEXPR const Message get_warn(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", indentation) : Message("[WARN]", indentation)); }
 	INLINE CONSTEXPR const Message get_error(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", indentation) : Message("[ERROR]", indentation)); }
 	INLINE CONSTEXPR const Message get_crit(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", indentation) : Message("[CRIT]", indentation)); }
+	INLINE CONSTEXPR const Message get_fatal(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[FATAL]\033[38;5;7m", indentation) : Message("[FATAL]", indentation)); }
 
 	INLINE CONSTEXPR const Message get_placeholder(const bool& allow_color = true) noexcept { return placeholder; }
 }
