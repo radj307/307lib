@@ -21,6 +21,7 @@ var classterm_1_1palette =
     [ "get_crit", "classterm_1_1palette.html#a5a93fd933fd6dfc357141833ec762759", null ],
     [ "get_debug", "classterm_1_1palette.html#acac3b58c142ced80aae9bcd9a6dd7f28", null ],
     [ "get_error", "classterm_1_1palette.html#afec945d727ffbf141c907bbe5e343da2", null ],
+    [ "get_fatal", "classterm_1_1palette.html#a558c8a6980d5b891f68b04146d3a91bb", null ],
     [ "get_info", "classterm_1_1palette.html#a09ee84547536c9f00fe7be32775d2b2d", null ],
     [ "get_log", "classterm_1_1palette.html#adf4c40ac3309216674e889cb2188d5f7", null ],
     [ "get_msg", "classterm_1_1palette.html#a4aaf9c92f1b05784596ed99429e7ad41", null ],

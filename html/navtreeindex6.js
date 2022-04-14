@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0":[7,0,13,1,17],
+"structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285":[7,0,13,1,9],
+"structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5":[7,0,13,1,5],
 "structxlog_1_1level.html#affc5880963f1019f5681f68e4e72446e":[7,0,13,1,14],
 "structxlog_1_1level_1_1_log_level.html":[7,0,13,1,0],
 "structxlog_1_1level_1_1_log_level.html#a19147fab37d7e0827bcbdec2fe443e75":[7,0,13,1,0,3],
@@ -23,8 +26,8 @@ var NAVTREEINDEX6 =
 "sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116":[8,0,2,1,9,5],
 "sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960":[8,0,2,1,9,21],
 "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb":[8,0,2,1,9,18],
-"sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[8,0,2,1,9,1],
 "sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[8,0,2,1,9,2],
+"sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[8,0,2,1,9,1],
 "sysarch_8h.html#a69f1d54d0578e6b3400b774500973439":[8,0,2,1,9,6],
 "sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0":[8,0,2,1,9,19],
 "sysarch_8h.html#a9020686a7e116e040711b247d4f864ba":[8,0,2,1,9,3],

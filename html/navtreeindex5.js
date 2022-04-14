@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"structopt_1_1_index.html#a01e05b296ef4befacf1c320465cabd1d":[7,0,6,6,4],
+"structopt_1_1_index.html#a13151c7c2feb614020dac8b20fae6515":[7,0,6,6,7],
+"structopt_1_1_index.html#a3d78e6266e6d2c33bf07325037110491":[7,0,6,6,8],
 "structopt_1_1_index.html#a53d801b2b432dd0d6d36314abaaae557":[7,0,6,6,1],
 "structopt_1_1_index.html#a8e68012dcac9cb8cd9dac06c9a496f8b":[7,0,6,6,6],
 "structopt_1_1_index.html#a9befc263c5f429a903fcd07d12668d8d":[7,0,6,6,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "structxlog_1_1level.html#a8cc2512ac145dcc2eb59cad183cef382":[7,0,13,1,7],
 "structxlog_1_1level.html#a9ff200bbeb8431595aaf1d79152435d8":[7,0,13,1,4],
 "structxlog_1_1level.html#ab00ee258c013709823fa5f1f8ec6d5fb":[7,0,13,1,19],
-"structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee":[7,0,13,1,1],
-"structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0":[7,0,13,1,17],
-"structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285":[7,0,13,1,9],
-"structxlog_1_1level.html#adec00c7560400db04204534a5a9ba6a5":[7,0,13,1,5]
+"structxlog_1_1level.html#ab10a299dc9cebe183add8d98b53a36ee":[7,0,13,1,1]
 };
