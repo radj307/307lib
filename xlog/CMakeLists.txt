@@ -47,7 +47,7 @@ target_include_directories(xlog PUBLIC
 )
 
 # Link library dependencies
-target_link_libraries(xlog PUBLIC TermAPI strlib)
+target_link_libraries(xlog PUBLIC TermAPI strlib filelib)
 
 # Create library installation targets
 if (307lib_ENABLE_PACKAGING) # Include packaging

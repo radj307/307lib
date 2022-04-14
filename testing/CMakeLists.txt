@@ -21,7 +21,7 @@ if(307lib_ENABLE_DEVELOPMENT)
 		target_compile_options(testing PUBLIC "/Zc:__cplusplus")
 	endif()
 
-	target_link_libraries(testing PUBLIC shared TermAPI strlib optlib filelib)
+	target_link_libraries(testing PUBLIC shared tokenlib TermAPI strlib optlib filelib xlog)
 
 	target_sources(testing PUBLIC ${HEADERS} ${SRC})
 	target_include_directories(testing PUBLIC 

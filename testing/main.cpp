@@ -1,4 +1,4 @@
-#include <TermAPI.hpp>
+﻿#include <TermAPI.hpp>
 
 #include <fileio.hpp>
 #include <TokenRedux.hpp>
@@ -11,6 +11,9 @@
 #include <ArgumentRedux.hpp>
 
 #include <ParamsAPI2.hpp>
+
+#include <clogger.hpp>
+#include <strmath.hpp>
 
 struct LogCap {
 	std::stringstream stream;
@@ -69,13 +72,13 @@ int main(const int argc, char** argv)
 		using term::setcolor;
 
 		// CHECK ENV FOR TERM SUPPORT
-		#ifdef OS_WIN
-		//true
-		#elif OS_LINUX
+	#ifdef OS_WIN
+	//true
+	#elif OS_LINUX
 		if (const auto var{ env::getvar("TERM") }; var.has_value())
 			std::cout << setcolor::green << var.value() << setcolor::reset_f << std::endl;
 		else std::cout << setcolor::red << "[NOT FOUND]" << setcolor::reset_f << std::endl;
-		#endif
+	#endif
 		// CHECK ENV FOR TERM SUPPORT
 
 		return 0;
