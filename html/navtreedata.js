@@ -88,7 +88,7 @@ var NAVTREEINDEX =
 "namespacemembers_p.html",
 "structcolor_1_1basic__color.html#a16d88982b1acd24d55dd4f32e46f5485",
 "structopt_1_1_index.html#a01e05b296ef4befacf1c320465cabd1d",
-"structxlog_1_1level.html#abbba97d664cce1ae208f98570c95acc0"
+"structxlog_1_1level.html#a9ff200bbeb8431595aaf1d79152435d8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
