@@ -27,12 +27,9 @@ namespace color {
 		/// @brief	The value type used by each channel.
 		using value = T;
 
-		constexpr basic_color() : base(std::make_index_sequence<1ull + sizeof...(Ts)>()) {}
+		constexpr basic_color() = default;
 		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...) {}
 		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...) {}
-
-	private:
-
 
 	public:
 		/**
