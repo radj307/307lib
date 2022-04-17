@@ -22,6 +22,8 @@ var classfile_1_1ini_1_1_i_n_i_container =
     [ "erase", "classfile_1_1ini_1_1_i_n_i_container.html#a260d8fdeffd096c2941c45379a25e9f3", null ],
     [ "erase", "classfile_1_1ini_1_1_i_n_i_container.html#aa66abee0ad5438c060277e920aee236e", null ],
     [ "find", "classfile_1_1ini_1_1_i_n_i_container.html#a186fc813696c5acd8847a76de4357aa9", null ],
+    [ "getvs", "classfile_1_1ini_1_1_i_n_i_container.html#ad86f60cae5907a37498edbb6ee2acf1d", null ],
+    [ "getvs", "classfile_1_1ini_1_1_i_n_i_container.html#afa025509cd9039ccdc5f93a2edabc683", null ],
     [ "insert", "classfile_1_1ini_1_1_i_n_i_container.html#a65d2386a25ddf5b8e57d3036b1b0997c", null ],
     [ "insert", "classfile_1_1ini_1_1_i_n_i_container.html#ae24b38666d8aade62b0c75d6b666ea6a", null ],
     [ "insert", "classfile_1_1ini_1_1_i_n_i_container.html#a4624eab650eb406deede0834bf72f66d", null ],
@@ -39,6 +41,8 @@ var classfile_1_1ini_1_1_i_n_i_container =
     [ "operator[]", "classfile_1_1ini_1_1_i_n_i_container.html#a1c0c12f19c3f251f72f02139c6f6e754", null ],
     [ "set", "classfile_1_1ini_1_1_i_n_i_container.html#a3d7ad0ee1ea57eb4caf87b1044c3c4f8", null ],
     [ "set", "classfile_1_1ini_1_1_i_n_i_container.html#a8da1e16e932631c30c8f41458ee63497", null ],
+    [ "size", "classfile_1_1ini_1_1_i_n_i_container.html#ac581bd7da15f110274cabc9c058427e2", null ],
+    [ "sizeof", "classfile_1_1ini_1_1_i_n_i_container.html#ac3ee3ac88accf3baeabf235fc8a27b33", null ],
     [ "operator<<", "classfile_1_1ini_1_1_i_n_i_container.html#a597a845ecc997588f1a42b7aeea920ed", null ],
     [ "_align_output", "classfile_1_1ini_1_1_i_n_i_container.html#a72f3eed55002c5ef92f61141a739cbb5", null ],
     [ "_cont", "classfile_1_1ini_1_1_i_n_i_container.html#a7e26330deb23c043665b623a579a485b", null ]

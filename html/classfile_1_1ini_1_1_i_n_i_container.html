@@ -195,6 +195,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#a186fc813696c5acd8847a76de4357aa9">find</a> (auto &amp;&amp;header) const</td></tr>
 <tr class="memdesc:a186fc813696c5acd8847a76de4357aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an element with its header name. <br /></td></tr>
 <tr class="separator:a186fc813696c5acd8847a76de4357aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86f60cae5907a37498edbb6ee2acf1d"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#ad86f60cae5907a37498edbb6ee2acf1d">getvs</a> (const std::string &amp;p1) const</td></tr>
+<tr class="memdesc:ad86f60cae5907a37498edbb6ee2acf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding.  <a href="classfile_1_1ini_1_1_i_n_i_container.html#ad86f60cae5907a37498edbb6ee2acf1d">More...</a><br /></td></tr>
+<tr class="separator:ad86f60cae5907a37498edbb6ee2acf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa025509cd9039ccdc5f93a2edabc683"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#afa025509cd9039ccdc5f93a2edabc683">getvs</a> (const std::string &amp;p1, const std::string &amp;p2) const</td></tr>
+<tr class="memdesc:afa025509cd9039ccdc5f93a2edabc683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding.  <a href="classfile_1_1ini_1_1_i_n_i_container.html#afa025509cd9039ccdc5f93a2edabc683">More...</a><br /></td></tr>
+<tr class="separator:afa025509cd9039ccdc5f93a2edabc683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65d2386a25ddf5b8e57d3036b1b0997c"><td class="memTemplParams" colspan="2"><a id="a65d2386a25ddf5b8e57d3036b1b0997c"></a>
 template&lt;ValidValueT T&gt; </td></tr>
 <tr class="memitem:a65d2386a25ddf5b8e57d3036b1b0997c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#a65d2386a25ddf5b8e57d3036b1b0997c">insert</a> (const <a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#abe729a667c4b1da6ce21f1481412831a">HeaderKeyPair</a> &amp;hkpr, T value)</td></tr>
@@ -265,6 +271,14 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#a8da1e16e932631c30c8f41458ee63497">set</a> (auto &amp;&amp;header, auto &amp;&amp;key, auto &amp;&amp;value)</td></tr>
 <tr class="memdesc:a8da1e16e932631c30c8f41458ee63497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls insert_or_assign with the given forwarded parameters. <br /></td></tr>
 <tr class="separator:a8da1e16e932631c30c8f41458ee63497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac581bd7da15f110274cabc9c058427e2"><td class="memItemLeft" align="right" valign="top"><a id="ac581bd7da15f110274cabc9c058427e2"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#ac581bd7da15f110274cabc9c058427e2">size</a> () const</td></tr>
+<tr class="memdesc:ac581bd7da15f110274cabc9c058427e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of section in the container. <br /></td></tr>
+<tr class="separator:ac581bd7da15f110274cabc9c058427e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ee3ac88accf3baeabf235fc8a27b33"><td class="memTemplParams" colspan="2">template&lt;class... VT&gt; </td></tr>
+<tr class="memitem:ac3ee3ac88accf3baeabf235fc8a27b33"><td class="memTemplItemLeft" align="right" valign="top">requires std::conjunction_v&lt; std::is_same&lt; VT, std::string &gt;... &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#ac3ee3ac88accf3baeabf235fc8a27b33">sizeof</a> (VT) &gt; 1) bool check_all(const std</td></tr>
+<tr class="memdesc:ac3ee3ac88accf3baeabf235fc8a27b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any of an arbitrary number of keys exist in a given header.  <a href="classfile_1_1ini_1_1_i_n_i_container.html#ac3ee3ac88accf3baeabf235fc8a27b33">More...</a><br /></td></tr>
+<tr class="separator:ac3ee3ac88accf3baeabf235fc8a27b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -285,7 +299,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base container object for the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a> object. Contains all of the functions from the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a> format that are not related to file i/o. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00068">68</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00070">70</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adf108ce329ca6acb28432f168a1e3a4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf108ce329ca6acb28432f168a1e3a4e">&#9670;&nbsp;</a></span>INIContainer()</h2>
@@ -329,7 +343,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00090">90</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00092">92</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -366,11 +380,12 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00107">107</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00111">111</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a1c407840d7f6edadf5d1e09cd52f2bae_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a1c407840d7f6edadf5d1e09cd52f2bae_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -407,11 +422,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00103">103</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00107">107</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a2dd6aab11649e8c4e9efead1a12365fd_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a2dd6aab11649e8c4e9efead1a12365fd_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -458,11 +474,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00105">105</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00109">109</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ac3d742078be76180e4f198e1720674f7_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ac3d742078be76180e4f198e1720674f7_cgraph.svg" width="390" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -511,11 +528,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00312">312</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00316">316</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a117f7f806ca0b3d1dfc54ee3995082fb_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a117f7f806ca0b3d1dfc54ee3995082fb_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -553,11 +571,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00302">302</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00306">306</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a906d83ec3e3f0f544359fd48375e036c_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a906d83ec3e3f0f544359fd48375e036c_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -614,16 +633,12 @@ template&lt;var::same_or_convertible&lt; std::string &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00329">329</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00333">333</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ab5b0de2dd79a1782cc5a8802da8759ca_cgraph.svg" width="166" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ab5b0de2dd79a1782cc5a8802da8759ca_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ab5b0de2dd79a1782cc5a8802da8759ca_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -661,11 +676,12 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00293">293</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00297">297</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_abb84851366902ef7e3b30f06b2aa7500_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_abb84851366902ef7e3b30f06b2aa7500_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -696,11 +712,12 @@ Here is the call graph for this function:</div>
 <p>Retrieve the number of headers in the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00139">139</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00143">143</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a028bed6d889b1fba0600aeee47c9f8fd_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a028bed6d889b1fba0600aeee47c9f8fd_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -731,11 +748,115 @@ Here is the call graph for this function:</div>
 <p>Retrieve the number of keys in the <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00128">128</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00132">132</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a18652a13f9991aa99a8666204a5758da_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a18652a13f9991aa99a8666204a5758da_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad86f60cae5907a37498edbb6ee2acf1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86f60cae5907a37498edbb6ee2acf1d">&#9670;&nbsp;</a></span>getvs() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;std::string&gt; file::ini::INIContainer::getvs </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>p1</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>First argument (Header) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00571">571</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ad86f60cae5907a37498edbb6ee2acf1d_cgraph.svg" width="166" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ad86f60cae5907a37498edbb6ee2acf1d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afa025509cd9039ccdc5f93a2edabc683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa025509cd9039ccdc5f93a2edabc683">&#9670;&nbsp;</a></span>getvs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;std::string&gt; file::ini::INIContainer::getvs </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve a value from the map, and convert it to std::string. Uses perfect-forwarding. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>First argument (Header) </td></tr>
+    <tr><td class="paramname">p2</td><td>Second argument (key) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00555">555</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_afa025509cd9039ccdc5f93a2edabc683_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -783,11 +904,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00279">279</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00283">283</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_acb137f3d208c7106f8999aed373869a3_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_acb137f3d208c7106f8999aed373869a3_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -824,11 +946,227 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00153">153</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00157">157</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a1c0c12f19c3f251f72f02139c6f6e754_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_a1c0c12f19c3f251f72f02139c6f6e754_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac3ee3ac88accf3baeabf235fc8a27b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ee3ac88accf3baeabf235fc8a27b33">&#9670;&nbsp;</a></span>sizeof()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... VT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">requires std::conjunction_v&lt;std::is_same&lt;VT, std::string&gt;...&gt;&amp;&amp; file::ini::INIContainer::sizeof </td>
+          <td>(</td>
+          <td class="paramtype">VT&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if any of an arbitrary number of keys exist in a given header. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">...T</td><td>Variadic templated argument, should be of type std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The header name to search within. If the target keys are not located under a header, use std::nullopt. </td></tr>
+    <tr><td class="paramname">...keys</td><td>More than 1 key names to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+<p>Check the value of a key located in a given section. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The section name where the target key is located. </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the key to check. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to compare against the key value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+<p>Check the value of a key not located in a header. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The name of the key to check. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to compare against the key value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+<p>Get the value of a key as a string or its type, cast it using a given function, and return it. <br  />
+ Returns std::nullopt if it wasn't found </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CastType</td><td>The return type of the converter function. </td></tr>
+    <tr><td class="paramname">GetType</td><td>This is the input type for the converter function. It may be a VariableT type or a std::string (default). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the header where the target key is located. If the key isn't in a header, pass a blank string. </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key under the given header. </td></tr>
+    <tr><td class="paramname">converter</td><td>Conversion function that accepts GetType and returns CastType. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;CastType&gt;</dd></dl>
+<p>Get the value of a specified key. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The section to search within. </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt;</dd></dl>
+<p>Get the value of a specified key. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>- The section to search within. </td></tr>
+    <tr><td class="paramname">key</td><td>- The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt;</dd></dl>
+<p>Get the value of a specified key. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header_key_pair</td><td>- First element is the target header name, second element is the target key name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt;</dd></dl>
+<p>Retrieve &amp; cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RT</td><td>- Return Type, must be compliant with ValidValueT test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>- The name of the header where the target key is located. </td></tr>
+    <tr><td class="paramname">key</td><td>- The name of the key to retrieve the value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;RT&gt;</dd></dl>
+<p>Retrieve &amp; cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RT</td><td>- Return Type, must be compliant with ValidValueT test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>- The name of the header where the target key is located. </td></tr>
+    <tr><td class="paramname">key</td><td>- The name of the key to retrieve the value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;RT&gt;</dd></dl>
+<p>Retrieve &amp; cast a variable to the specified type. If the variable is not the specified type, std::nullopt is returned instead. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RT</td><td>- Return Type, must be compliant with ValidValueT test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hkpr</td><td>- Header-Key pair specifying the target value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;RT&gt;</dd></dl>
+<p>Retrieve a specified key's value, casted to a given type using a given function. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CastTo</td><td>A type to cast the value to using the given function, if the key exists. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The header to search within. </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">castFunction</td><td>A function or lambda capable of converting from (VariableT) =&gt; (CastTo) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;CastTo&gt;</dd></dl>
+<p>Retrieve a specified key's value, casted to a given type using a given function. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CastTo</td><td>A type to cast the value to using the given function, if the key exists. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hkpr</td><td>A header-key pair. </td></tr>
+    <tr><td class="paramname">castFunction</td><td>A function or lambda capable of converting from (VariableT) =&gt; (CastTo) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;CastTo&gt;</dd></dl>
+<p>Retrieve a specified key's value as a string, then cast it to a given type using a function. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CastTo</td><td>A type to cast the value to using the given function, if the key exists. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The header to search within. </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">castFunction</td><td>A function or lambda capable of converting from (std::string) =&gt; (CastTo) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;CastTo&gt;</dd></dl>
+<p>Retrieve a specified key's value as a string, then cast it to a given type using a function. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CastTo</td><td>A type to cast the value to using the given function, if the key exists. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hkpr</td><td>A header-key pair. </td></tr>
+    <tr><td class="paramname">castFunction</td><td>A function or lambda capable of converting from (std::string) =&gt; (CastTo) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;CastTo&gt;</dd></dl>
+<p>Retrieve a copy of a specified section. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>- The section to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unordered_map&lt;string, string&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00344">344</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_i_n_i_container_ac3ee3ac88accf3baeabf235fc8a27b33_cgraph.svg" width="368" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -878,7 +1216,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00164">164</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_n_i_redux_8hpp_source.html#l00168">168</a> of file <a class="el" href="_i_n_i_redux_8hpp_source.html">INIRedux.hpp</a>.</p>
 
 </div>
 </div>

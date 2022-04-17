@@ -2,7 +2,7 @@ var structcolor_1_1basic__color =
 [
     [ "base", "structcolor_1_1basic__color.html#a08a74f84248dc5f1068e6e0c0443c7d5", null ],
     [ "value", "structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83", null ],
-    [ "basic_color", "structcolor_1_1basic__color.html#a294de3cabf79b84fe1dc7fe7fa143da6", null ],
+    [ "basic_color", "structcolor_1_1basic__color.html#a6cf64323bbe4b060ac83a675acc5eacb", null ],
     [ "basic_color", "structcolor_1_1basic__color.html#a4ff7907a386535745e7dbb5b4392d4da", null ],
     [ "basic_color", "structcolor_1_1basic__color.html#ab4534fb304ee23ddcbf603806842e162", null ],
     [ "channel_count", "structcolor_1_1basic__color.html#a42d863b61e9f984e313de21f55641565", null ],

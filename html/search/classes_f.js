@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variantarg_671',['VariantArg',['../structopt_1_1_variant_arg.html',1,'opt']]]
+  ['unsafe_5foptional_697',['unsafe_optional',['../structopt_1_1unsafe__optional.html',1,'opt']]]
 ];

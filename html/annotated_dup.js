@@ -16,14 +16,23 @@ var annotated_dup =
       [ "ini", null, [
         [ "tokenizer", null, [
           [ "INIParser", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser" ],
-          [ "INITokenizer", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer" ]
+          [ "INITokenizer", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer" ],
+          [ "MINIParser", "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html", "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser" ]
         ] ],
+        [ "basic_container", "structfile_1_1ini_1_1basic__container.html", "structfile_1_1ini_1_1basic__container" ],
+        [ "basic_outer_container", "structfile_1_1ini_1_1basic__outer__container.html", "structfile_1_1ini_1_1basic__outer__container" ],
         [ "INI", "structfile_1_1ini_1_1_i_n_i.html", "structfile_1_1ini_1_1_i_n_i" ],
-        [ "INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", "classfile_1_1ini_1_1_i_n_i_container" ]
+        [ "INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", "classfile_1_1ini_1_1_i_n_i_container" ],
+        [ "MINI", "classfile_1_1ini_1_1_m_i_n_i.html", "classfile_1_1ini_1_1_m_i_n_i" ]
       ] ]
     ] ],
     [ "format", null, [
       [ "indentor", "structformat_1_1indentor.html", "structformat_1_1indentor" ]
+    ] ],
+    [ "json", null, [
+      [ "basic_number", "structjson_1_1basic__number.html", "structjson_1_1basic__number" ],
+      [ "kvpair", "structjson_1_1kvpair.html", "structjson_1_1kvpair" ],
+      [ "value_t", "structjson_1_1value__t.html", "structjson_1_1value__t" ]
     ] ],
     [ "matrix", null, [
       [ "basic_matrix", "structmatrix_1_1basic__matrix.html", "structmatrix_1_1basic__matrix" ],

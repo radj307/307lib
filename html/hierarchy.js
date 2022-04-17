@@ -6,6 +6,7 @@ var hierarchy =
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
+    [ "json::basic_number< IntType, RealType >", "structjson_1_1basic__number.html", null ],
     [ "std::basic_string_view< Char >", null, [
       [ "std::string_view", null, [
         [ "opt::Argument", "classopt_1_1_argument.html", null ]
@@ -43,6 +44,7 @@ var hierarchy =
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
+    [ "json::kvpair", "structjson_1_1kvpair.html", null ],
     [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
@@ -52,6 +54,12 @@ var hierarchy =
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
+    [ "std::map< K, T >", null, [
+      [ "file::ini::basic_container< Key, Value >", "structfile_1_1ini_1_1basic__container.html", null ],
+      [ "file::ini::basic_outer_container< Header, Section >", "structfile_1_1ini_1_1basic__outer__container.html", [
+        [ "file::ini::MINI", "classfile_1_1ini_1_1_m_i_n_i.html", null ]
+      ] ]
+    ] ],
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
     [ "matrix::nmatrix< T, SizeX, SizeY >", "structmatrix_1_1nmatrix.html", null ],
@@ -85,10 +93,12 @@ var hierarchy =
     ] ],
     [ "token::base::gen1::TokenParserBase< OutputType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", [
       [ "file::ini::tokenizer::INIParser", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html", null ],
+      [ "file::ini::tokenizer::MINIParser", "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html", null ],
       [ "opt::token::Parser", "classopt_1_1token_1_1_parser.html", null ]
     ] ],
     [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
+    [ "token::base::gen1::TokenParserBase< outer_container, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "tuple", null, [
       [ "color::basic_color< ColorT, ColorT, ColorT >", "structcolor_1_1basic__color.html", [
         [ "color::RGB< T >", "structcolor_1_1_r_g_b.html", null ]
@@ -98,6 +108,7 @@ var hierarchy =
       ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
+    [ "json::value_t", "structjson_1_1value__t.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [
