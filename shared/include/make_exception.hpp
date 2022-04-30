@@ -82,7 +82,7 @@ namespace ex {
 		 * @param ex	Constant Reference of an except object.
 		 * @returns		std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const except& ex) { return os << ex.what(); }
+		friend std::ostream& operator<<(std::ostream& os, const basic_except& ex) { return os << ex.what(); }
 	};
 
 	using except = basic_except;
