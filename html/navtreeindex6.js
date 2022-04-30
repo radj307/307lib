@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"structterm_1_1_cursor.html#a8b177b81c5a4c3ea53a91a1838930d72":[8,0,11,0,11],
 "structterm_1_1_cursor.html#a8e7beba1858b71a4c29eaaaf663609b5":[8,0,11,0,4],
 "structterm_1_1_cursor.html#ab4379e7827ebc4639dfd59ee36827554":[8,0,11,0,12],
 "structterm_1_1_cursor.html#ad16ceb48b83fd1ac3c695143814e41e6":[8,0,11,0,5],
@@ -110,8 +109,8 @@ var NAVTREEINDEX6 =
 "sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116":[9,0,2,1,9,5],
 "sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960":[9,0,2,1,9,21],
 "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb":[9,0,2,1,9,18],
-"sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[9,0,2,1,9,2],
 "sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[9,0,2,1,9,1],
+"sysarch_8h.html#a63e66b419dba650abc74240836e8447a":[9,0,2,1,9,2],
 "sysarch_8h.html#a69f1d54d0578e6b3400b774500973439":[9,0,2,1,9,6],
 "sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0":[9,0,2,1,9,19],
 "sysarch_8h.html#a9020686a7e116e040711b247d4f864ba":[9,0,2,1,9,3],
