@@ -38,15 +38,6 @@ namespace color {
 		 */
 		constexpr size_t channel_count() const { return 1ull + sizeof...(Ts); }
 		/**
-		 * @brief	Retrieve the color code as a hex string.
-		 * @returns	std::string
-		 */
-		WINCONSTEXPR std::string str() const
-		{
-			constexpr const size_t digitsPerChannel{ sizeof(value) / 2 + 1 }; // get the number of hex digits per channel
-
-		}
-		/**
 		 * @brief			Get the current value of the specified color channel.
 		 * @tparam Index	The index in the underlying tuple type to retrieve.
 		 * @returns			value with the current value of the channel with the specified Index.
