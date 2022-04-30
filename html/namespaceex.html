@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('namespaceex.html',''); initResizable()
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ex Namespace Reference</div>  </div>
@@ -98,13 +99,19 @@ $(document).ready(function(){initNavTree('namespaceex.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1except.html">except</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception object with a custom message stored as a member variable. <br  />
-<br  />
- A std::string pointer is used to bypass the constness of std::exception::what() <br  />
- in order to allow modification of the message by derived objects that implement <br  />
- an override for the virtual <a class="el" href="classex_1_1except.html#ad6e1ad112e7126e4d9b39998640d7ebf" title="Retrieve the message associated with this exception.">what()</a> method.  <a href="classex_1_1except.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1basic__except.html">basic_except</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">General-purpose std::exception wrapper object that adds useful features like constructors and mutable error messages. <br  />
+ This exception type can be caught by any <code>catch</code> statement for std::exception.  <a href="classex_1_1basic__except.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1except__with__id.html">except_with_id</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends the <a class="el" href="classex_1_1basic__except.html" title="General-purpose std::exception wrapper object that adds useful features like constructors and mutable...">basic_except</a> class with exception identifier numbers, commonly known as 'error codes'.  <a href="classex_1_1except__with__id.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a74901dd54033a06699cc197627a04120"><td class="memItemLeft" align="right" valign="top"><a id="a74901dd54033a06699cc197627a04120"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>except</b> = <a class="el" href="classex_1_1basic__except.html">basic_except</a></td></tr>
+<tr class="separator:a74901dd54033a06699cc197627a04120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -117,11 +124,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5cccd7262d57daafb09710d952aac1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a5cccd7262d57daafb09710d952aac1ea">More...</a><br /></td></tr>
 <tr class="separator:a5cccd7262d57daafb09710d952aac1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">make_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">make_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a79f6b6ae99ab47418dbb1805add3c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">More...</a><br /></td></tr>
 <tr class="separator:a79f6b6ae99ab47418dbb1805add3c489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::wostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a1e4f831cd8340b9b40499542c762b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message, using wide-characters. <br  />
  This function only accepts types using wchar_t instead of char, however all characters are <br  />
  converted to narrow chars before returning, as exception messages cannot contain wide chars.  <a href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">More...</a><br /></td></tr>
@@ -164,7 +171,7 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ReturnT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00101">101</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00134">134</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -207,7 +214,7 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ReturnT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00116">116</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00149">149</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -230,7 +237,7 @@ Here is the caller graph for this function:</div>
 template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a> ex::make_exception </td>
+          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exception </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -254,7 +261,7 @@ template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>except </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00128">128</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00161">161</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -272,7 +279,7 @@ Here is the call graph for this function:</div>
 template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::wostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a> ex::make_exeption </td>
+          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exeption </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -298,7 +305,7 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>except </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00143">143</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00176">176</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

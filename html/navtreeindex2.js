@@ -1,5 +1,12 @@
 var NAVTREEINDEX2 =
 {
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a5e5c97eaaefc0e6f06982dbfdc2e4d48":[8,0,12,0,1,0,10],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a6ce53d13cba9b733e7bc7950f40233ca":[8,0,12,0,1,0,6],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a8a62e6a3a7ca47901ed068b842f01301":[8,0,12,0,1,0,12],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a97905ca2c48f89212f02d0324e66904d":[8,0,12,0,1,0,7],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ab3c68656b7ed689fae75a5c4199fcd36":[8,0,12,0,1,0,5],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#acdcc6e13173da36969c2b4941252e7b3":[8,0,12,0,1,0,8],
+"classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a":[8,0,12,0,1,0,11],
 "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#add5a67384f05e812f74051fdab8d3022":[8,0,12,0,1,0,2],
 "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae0846ea009491b9187e1693a75f177cd":[8,0,12,0,1,0,4],
 "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html":[8,0,12,0,1,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX2 =
 "iter_8hpp_source.html":[9,0,2,1,3],
 "json_8hpp_source.html":[9,0,0,0,8],
 "level_8hpp_source.html":[9,0,6,0,0],
-"lineno-example.html":[10,0],
-"make__exception_8cpp_source.html":[9,0,2,2,1],
-"make__exception_8hpp_source.html":[9,0,2,1,4],
-"make__exception__example_8cpp_source.html":[9,0,2,0,0],
-"make_exception_8cpp-example.html":[10,1],
-"math_8hpp_source.html":[9,0,2,1,5],
-"md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html":[5],
-"namespace_query.html":[7,0,9]
+"lineno-example.html":[10,0]
 };

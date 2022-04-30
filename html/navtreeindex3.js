@@ -1,5 +1,12 @@
 var NAVTREEINDEX3 =
 {
+"make__exception_8cpp_source.html":[9,0,2,2,1],
+"make__exception_8hpp_source.html":[9,0,2,1,4],
+"make__exception__example_8cpp_source.html":[9,0,2,0,0],
+"make_exception_8cpp-example.html":[10,1],
+"math_8hpp_source.html":[9,0,2,1,5],
+"md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html":[5],
+"namespace_query.html":[7,0,9],
 "namespaceex.html":[7,0,0],
 "namespaceex.html":[8,0,2],
 "namespacefacet.html":[7,0,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX3 =
 "structcolor_1_1_layer.html":[8,0,0,2],
 "structcolor_1_1_layer.html#a0d28f4864dc5b27f23f8b74f066ffb4c":[8,0,0,2,2],
 "structcolor_1_1_layer.html#a10816623bbad6afa4a500f51be9e405b":[8,0,0,2,5],
-"structcolor_1_1_layer.html#a226df79efcfde1fdaaa1467f3b5cb8de":[8,0,0,2,6],
-"structcolor_1_1_layer.html#a4ebe8049107645ae9d309740e6582498":[8,0,0,2,4],
-"structcolor_1_1_layer.html#aab3471a4e4d7139a18e698f700faf5cd":[8,0,0,2,3],
-"structcolor_1_1_layer.html#ae1b3ec370f280d06f952291d368d6c79":[8,0,0,2,0],
-"structcolor_1_1_layer.html#ae3ae0f684206cc7e723d703776300dc7":[8,0,0,2,1],
-"structcolor_1_1_r_g_b.html":[8,0,0,3],
-"structcolor_1_1_r_g_b.html#a03468c7b1c684aab0f803c4c06ef910b":[8,0,0,3,8],
-"structcolor_1_1_r_g_b.html#a08a74f84248dc5f1068e6e0c0443c7d5":[8,0,0,3,1]
+"structcolor_1_1_layer.html#a226df79efcfde1fdaaa1467f3b5cb8de":[8,0,0,2,6]
 };

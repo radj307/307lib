@@ -26,7 +26,8 @@ var hierarchy =
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
     [ "std::exception", null, [
-      [ "ex::except", "classex_1_1except.html", [
+      [ "ex::basic_except", "classex_1_1basic__except.html", [
+        [ "ex::except_with_id", "classex_1_1except__with__id.html", null ],
         [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
