@@ -17,7 +17,7 @@ namespace ex {
 	 * @brief	General-purpose std::exception wrapper object that adds useful features like constructors and mutable error messages.
 	 *\n		This exception type can be caught by any `catch` statement for std::exception.
 	 */
-	class basic_except : std::exception {
+	class basic_except : public std::exception {
 		/**
 		 * @private
 		 * @var
@@ -91,7 +91,7 @@ namespace ex {
 	 * @class	except_with_id
 	 * @brief	Extends the basic_except class with exception identifier numbers, commonly known as 'error codes'.
 	 */
-	class except_with_id : basic_except {
+	class except_with_id : public basic_except {
 		using base = basic_except;
 		long long errorID{ 0 };
 
