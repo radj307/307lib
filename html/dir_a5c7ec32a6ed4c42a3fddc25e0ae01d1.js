@@ -1,5 +1,6 @@
 var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
 [
+    [ "basic_colors.hpp", "basic__colors_8hpp.html", "basic__colors_8hpp" ],
     [ "color-format.hpp", "color-format_8hpp_source.html", null ],
     [ "color-transform.hpp", "color-transform_8hpp.html", "color-transform_8hpp" ],
     [ "color-values.h", "color-values_8h.html", "color-values_8h" ],

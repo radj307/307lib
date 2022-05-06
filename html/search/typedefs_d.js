@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variantargumenttype_1189',['VariantArgumentType',['../namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]]
+  ['wcolors_1307',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]]
 ];

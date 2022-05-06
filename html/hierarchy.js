@@ -5,8 +5,10 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
+    [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
+      [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
+    ] ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
-    [ "json::basic_number< IntType, RealType >", "structjson_1_1basic__number.html", null ],
     [ "std::basic_string_view< Char >", null, [
       [ "std::string_view", null, [
         [ "opt::Argument", "classopt_1_1_argument.html", null ]
@@ -33,6 +35,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "color::format::FlagBase< T >", "classcolor_1_1format_1_1_flag_base.html", null ],
+    [ "color::format::FlagBase< unsigned char >", "classcolor_1_1format_1_1_flag_base.html", null ],
     [ "str::FloatingBase", "structstr_1_1_floating_base.html", null ],
     [ "color::format", "structcolor_1_1format.html", null ],
     [ "format::indentor< T, CharT >", "structformat_1_1indentor.html", null ],
@@ -45,7 +48,6 @@ var hierarchy =
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
-    [ "json::kvpair", "structjson_1_1kvpair.html", null ],
     [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
@@ -82,6 +84,7 @@ var hierarchy =
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "color::setcolor_seq< SeqT >", "structcolor_1_1setcolor__seq.html", null ],
+    [ "color::setcolor_seq< seq >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
     [ "token::base::TokenBase< TokenType >", "structtoken_1_1base_1_1_token_base.html", null ],
@@ -109,7 +112,6 @@ var hierarchy =
       ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
-    [ "json::value_t", "structjson_1_1value__t.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [

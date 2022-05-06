@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -99,6 +100,14 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1basic__colorpalette.html">basic_colorpalette</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple color palette object that allows some useful features like a global color toggle and global color synchronization. <br  />
+ Custom functionality can be added by deriving from this object as most methods are marked virtual.  <a href="classterm_1_1basic__colorpalette.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1basic__colors.html">basic_colors</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple color palette object that allows some useful features like a global color toggle, without the extra bulk of a key:color map. <br  />
+ Custom functionality can be added by deriving from this object as most methods are marked virtual.  <a href="classterm_1_1basic__colors.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_cursor.html">Cursor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the cursor blink effect.  <a href="structterm_1_1_cursor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,6 +123,25 @@ Classes</h2></td></tr>
  Provides convenience methods for recalling color sequences by using keys. <br  />
  Very useful when you want to control the usage of escape sequences throughout your program.  <a href="classterm_1_1palette.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:adb32a8d8dab0bfaf1c487ffa077e1ca9"><td class="memTemplParams" colspan="2"><a id="adb32a8d8dab0bfaf1c487ffa077e1ca9"></a>
+template&lt;std::integral KeyType&gt; </td></tr>
+<tr class="memitem:adb32a8d8dab0bfaf1c487ffa077e1ca9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>colorpalette</b> = <a class="el" href="classterm_1_1basic__colorpalette.html">basic_colorpalette</a>&lt; KeyType, ANSI::Sequence &gt;</td></tr>
+<tr class="separator:adb32a8d8dab0bfaf1c487ffa077e1ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5052eeffef9f98a67a93a61861c2e83"><td class="memItemLeft" align="right" valign="top"><a id="aa5052eeffef9f98a67a93a61861c2e83"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa5052eeffef9f98a67a93a61861c2e83">colors</a> = <a class="el" href="classterm_1_1basic__colors.html">basic_colors</a>&lt; ANSI::Sequence &gt;</td></tr>
+<tr class="memdesc:aa5052eeffef9f98a67a93a61861c2e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color sequences using char. <br /></td></tr>
+<tr class="separator:aa5052eeffef9f98a67a93a61861c2e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a163d0ae8116cb0b3e9ef990bf46a8"><td class="memTemplParams" colspan="2"><a id="a04a163d0ae8116cb0b3e9ef990bf46a8"></a>
+template&lt;std::integral KeyType&gt; </td></tr>
+<tr class="memitem:a04a163d0ae8116cb0b3e9ef990bf46a8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wcolorpalette</b> = <a class="el" href="classterm_1_1basic__colorpalette.html">basic_colorpalette</a>&lt; KeyType, ANSI::wSequence &gt;</td></tr>
+<tr class="separator:a04a163d0ae8116cb0b3e9ef990bf46a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96886af7c95b9f2baf792221496b889c"><td class="memItemLeft" align="right" valign="top"><a id="a96886af7c95b9f2baf792221496b889c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a96886af7c95b9f2baf792221496b889c">wcolors</a> = <a class="el" href="classterm_1_1basic__colors.html">basic_colors</a>&lt; ANSI::wSequence &gt;</td></tr>
+<tr class="memdesc:a96886af7c95b9f2baf792221496b889c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color sequences using wchar_t. <br /></td></tr>
+<tr class="separator:a96886af7c95b9f2baf792221496b889c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -178,33 +206,33 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d48bd75be8181d47c51c5e3703820fd"><td class="memTemplItemLeft" align="right" valign="top">Sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">EraseInLine</a> (const T &amp;erase_scope) noexcept(false)</td></tr>
 <tr class="memdesc:a0d48bd75be8181d47c51c5e3703820fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all text within the current line as specified by the given mode with space characters.  <a href="namespaceterm.html#a0d48bd75be8181d47c51c5e3703820fd">More...</a><br /></td></tr>
 <tr class="separator:a0d48bd75be8181d47c51c5e3703820fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec502dd2f559f2199624493c171337f"><td class="memItemLeft" align="right" valign="top"><a id="a4ec502dd2f559f2199624493c171337f"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_crit</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a4ec502dd2f559f2199624493c171337f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5afccc4766b9f6f3a8a27b117c963530"><td class="memItemLeft" align="right" valign="top"><a id="a5afccc4766b9f6f3a8a27b117c963530"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_debug</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a5afccc4766b9f6f3a8a27b117c963530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af968b2b78f82244432a43ba5348527ca"><td class="memItemLeft" align="right" valign="top"><a id="af968b2b78f82244432a43ba5348527ca"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_error</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:af968b2b78f82244432a43ba5348527ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f72f8d65a166bd9c998164e3f92ab5"><td class="memItemLeft" align="right" valign="top"><a id="a13f72f8d65a166bd9c998164e3f92ab5"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_fatal</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a13f72f8d65a166bd9c998164e3f92ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memItemLeft" align="right" valign="top"><a id="ac09ff0cafecb392091dfa6b01a0fb56d"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_info</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:ac09ff0cafecb392091dfa6b01a0fb56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memItemLeft" align="right" valign="top"><a id="a77d2dec7cf8b0647fed1258a7af870fc"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_log</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a77d2dec7cf8b0647fed1258a7af870fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adabf99de91b121935fd978e942d23549"><td class="memItemLeft" align="right" valign="top"><a id="adabf99de91b121935fd978e942d23549"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_msg</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:adabf99de91b121935fd978e942d23549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9e674dd845df27faf9c69cfc0d7076"><td class="memItemLeft" align="right" valign="top"><a id="a5c9e674dd845df27faf9c69cfc0d7076"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_placeholder</b> (const bool &amp;allow_color=true) noexcept</td></tr>
-<tr class="separator:a5c9e674dd845df27faf9c69cfc0d7076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7032043c360b734ce3d518087229d488"><td class="memItemLeft" align="right" valign="top"><a id="a7032043c360b734ce3d518087229d488"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_warn</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
-<tr class="separator:a7032043c360b734ce3d518087229d488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5237373909a35ae427b1db18f45899c2"><td class="memItemLeft" align="right" valign="top"><a id="a5237373909a35ae427b1db18f45899c2"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_crit</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a5237373909a35ae427b1db18f45899c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2df165d6498344c9ac0bb60b988ff5"><td class="memItemLeft" align="right" valign="top"><a id="a9f2df165d6498344c9ac0bb60b988ff5"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_debug</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a9f2df165d6498344c9ac0bb60b988ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d50bfac1a1dd1de14a3b76bd4c28800"><td class="memItemLeft" align="right" valign="top"><a id="a6d50bfac1a1dd1de14a3b76bd4c28800"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_error</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a6d50bfac1a1dd1de14a3b76bd4c28800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213f1f1525880f402fa8eadba5294a63"><td class="memItemLeft" align="right" valign="top"><a id="a213f1f1525880f402fa8eadba5294a63"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_fatal</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a213f1f1525880f402fa8eadba5294a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebf2def7ed50abb1d073cdb56384c0a"><td class="memItemLeft" align="right" valign="top"><a id="aeebf2def7ed50abb1d073cdb56384c0a"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_info</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:aeebf2def7ed50abb1d073cdb56384c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a3fbf035dc7666164a79858feb13e4"><td class="memItemLeft" align="right" valign="top"><a id="ac6a3fbf035dc7666164a79858feb13e4"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_log</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:ac6a3fbf035dc7666164a79858feb13e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2d160e10e2d27c4fa39e828e4f0781"><td class="memItemLeft" align="right" valign="top"><a id="aac2d160e10e2d27c4fa39e828e4f0781"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_msg</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:aac2d160e10e2d27c4fa39e828e4f0781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407e82c0b292ebbd78000b148beb5dac"><td class="memItemLeft" align="right" valign="top"><a id="a407e82c0b292ebbd78000b148beb5dac"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_placeholder</b> (const bool &amp;allow_color=true) noexcept</td></tr>
+<tr class="separator:a407e82c0b292ebbd78000b148beb5dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298daf918a557b6ee1afb1236063d4a9"><td class="memItemLeft" align="right" valign="top"><a id="a298daf918a557b6ee1afb1236063d4a9"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_warn</b> (const bool &amp;allow_color=true, const <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a> &amp;indentation=10) noexcept</td></tr>
+<tr class="separator:a298daf918a557b6ee1afb1236063d4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705b8e2f941f96208d459673c5a11b4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">getch</a> ()</td></tr>
 <tr class="memdesc:a705b8e2f941f96208d459673c5a11b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a single keypress from STDIN, without blocking. <br  />
  On windows, this uses _getch(), while on linux, it uses getchar_unlocked().  <a href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c">More...</a><br /></td></tr>
@@ -288,12 +316,12 @@ static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4df569ee83171a2d8f18c2b913127c74">ClearTabStops</a> { make_sequence(CSI, &quot;3g&quot;) }</td></tr>
 <tr class="memdesc:a4df569ee83171a2d8f18c2b913127c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all currently set tab stops. <br /></td></tr>
 <tr class="separator:a4df569ee83171a2d8f18c2b913127c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a73d34894a92cb4be71c922809a6e1b"><td class="memItemLeft" align="right" valign="top"><a id="a5a73d34894a92cb4be71c922809a6e1b"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crit</b> { &quot;[CRIT]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a5a73d34894a92cb4be71c922809a6e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memItemLeft" align="right" valign="top"><a id="ab3afbd59cc858b2c4bd0e56c35091344"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> { &quot;[DEBUG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:ab3afbd59cc858b2c4bd0e56c35091344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a48a8e51f7941a08f7db4c464b26f0"><td class="memItemLeft" align="right" valign="top"><a id="ad1a48a8e51f7941a08f7db4c464b26f0"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crit</b> { &quot;[CRIT]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:ad1a48a8e51f7941a08f7db4c464b26f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac781adb4a52d0656ebe54bcc419dc08b"><td class="memItemLeft" align="right" valign="top"><a id="ac781adb4a52d0656ebe54bcc419dc08b"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> { &quot;[DEBUG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:ac781adb4a52d0656ebe54bcc419dc08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="memItemLeft" align="right" valign="top"><a id="aa519b3c1affe13dc5981e9a54f1da5c3"></a>
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa519b3c1affe13dc5981e9a54f1da5c3">DisableAltScreenBuffer</a> { make_sequence(CSI, &quot;?1049&quot;, DISABLE) }</td></tr>
 <tr class="memdesc:aa519b3c1affe13dc5981e9a54f1da5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the alternate screen buffer. <br /></td></tr>
@@ -342,31 +370,31 @@ static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a27cc01e2e44e1add4fc78370f391206d">EnableLineDrawing</a> { make_sequence(OSC, '0') }</td></tr>
 <tr class="memdesc:a27cc01e2e44e1add4fc78370f391206d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DEC Line Drawing mode. <br /></td></tr>
 <tr class="separator:a27cc01e2e44e1add4fc78370f391206d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memItemLeft" align="right" valign="top"><a id="a1c834afe66ab8f7a76e9a9c0043dd5ec"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> { &quot;[ERROR]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a1c834afe66ab8f7a76e9a9c0043dd5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acee2502ef44198bfc41ab76094f305fb"><td class="memItemLeft" align="right" valign="top"><a id="acee2502ef44198bfc41ab76094f305fb"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fatal</b> { &quot;[FATAL]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:acee2502ef44198bfc41ab76094f305fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memItemLeft" align="right" valign="top"><a id="a9b78b820ff7f8d8d7c8df4b7465a6929"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>info</b> { &quot;[INFO]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a9b78b820ff7f8d8d7c8df4b7465a6929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3335c2e77bb0884fbd6a5a0b837e5e89"><td class="memItemLeft" align="right" valign="top"><a id="a3335c2e77bb0884fbd6a5a0b837e5e89"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> { &quot;[ERROR]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a3335c2e77bb0884fbd6a5a0b837e5e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824ba530ac0e444710fffc5eda20e708"><td class="memItemLeft" align="right" valign="top"><a id="a824ba530ac0e444710fffc5eda20e708"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fatal</b> { &quot;[FATAL]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a824ba530ac0e444710fffc5eda20e708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad339ed4f14f6be31b2de5975fd0c86c3"><td class="memItemLeft" align="right" valign="top"><a id="ad339ed4f14f6be31b2de5975fd0c86c3"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>info</b> { &quot;[INFO]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:ad339ed4f14f6be31b2de5975fd0c86c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad54e668aab8666e52c2575d653404537"><td class="memItemLeft" align="right" valign="top"><a id="ad54e668aab8666e52c2575d653404537"></a>
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad54e668aab8666e52c2575d653404537">LoadCursor</a> { make_sequence(ESC, '8') }</td></tr>
 <tr class="memdesc:ad54e668aab8666e52c2575d653404537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to the last saved position with SaveCursor. <br /></td></tr>
 <tr class="separator:ad54e668aab8666e52c2575d653404537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2114561969406531197a84083603f76d"><td class="memItemLeft" align="right" valign="top"><a id="a2114561969406531197a84083603f76d"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> { &quot;[LOG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a2114561969406531197a84083603f76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0ed174d3b17e83567591be1b53e0826"><td class="memItemLeft" align="right" valign="top"><a id="aa0ed174d3b17e83567591be1b53e0826"></a>
-INLINE const CONSTEXPR <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MessageMarginSize</b> { 10 }</td></tr>
-<tr class="separator:aa0ed174d3b17e83567591be1b53e0826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9df737c672d34383ec3e221b9a7c28bf"><td class="memItemLeft" align="right" valign="top"><a id="a9df737c672d34383ec3e221b9a7c28bf"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msg</b> { &quot;[MSG]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a9df737c672d34383ec3e221b9a7c28bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8d84b53b0720b2324367c93077b289"><td class="memItemLeft" align="right" valign="top"><a id="aea8d84b53b0720b2324367c93077b289"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>placeholder</b> { &quot;&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:aea8d84b53b0720b2324367c93077b289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c47e496981904d24f59be041a1d5919"><td class="memItemLeft" align="right" valign="top"><a id="a9c47e496981904d24f59be041a1d5919"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> { &quot;[LOG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a9c47e496981904d24f59be041a1d5919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9d670668f127c39dab7daca2e128d8"><td class="memItemLeft" align="right" valign="top"><a id="a3c9d670668f127c39dab7daca2e128d8"></a>
+const CONSTEXPR <a class="el" href="structformat_1_1indentor.html#a550586a0900f837fbbdfadb48fc905a7">indent::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MessageMarginSize</b> { 10 }</td></tr>
+<tr class="separator:a3c9d670668f127c39dab7daca2e128d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ee3082540c4969879f279d11cf0d8d"><td class="memItemLeft" align="right" valign="top"><a id="a26ee3082540c4969879f279d11cf0d8d"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msg</b> { &quot;[MSG]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a26ee3082540c4969879f279d11cf0d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3be8d1518a1811cd87569b9532e71c"><td class="memItemLeft" align="right" valign="top"><a id="aad3be8d1518a1811cd87569b9532e71c"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>placeholder</b> { &quot;&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:aad3be8d1518a1811cd87569b9532e71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="memItemLeft" align="right" valign="top"><a id="a054f91c7e4b38fd8481ff3cf4a9e8a01"></a>
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a054f91c7e4b38fd8481ff3cf4a9e8a01">ReportCursorPosition</a> { make_sequence(CSI, &quot;6n&quot;) }</td></tr>
 <tr class="memdesc:a054f91c7e4b38fd8481ff3cf4a9e8a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN. <br /></td></tr>
@@ -406,9 +434,9 @@ static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a811b5f940751a85357cd1336163dce2c">UnsetTabStop</a> { make_sequence(CSI, &quot;0g&quot;) }</td></tr>
 <tr class="memdesc:a811b5f940751a85357cd1336163dce2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets any tab stops in the current column from the SetTabStop command. <br /></td></tr>
 <tr class="separator:a811b5f940751a85357cd1336163dce2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memItemLeft" align="right" valign="top"><a id="a5a96ff1c90bfbbeac88d6663655f2368"></a>
-INLINE const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>warn</b> { &quot;[WARN]&quot;, MessageMarginSize }</td></tr>
-<tr class="separator:a5a96ff1c90bfbbeac88d6663655f2368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956fe6bf0c00ca6535cea6cd8a72aec6"><td class="memItemLeft" align="right" valign="top"><a id="a956fe6bf0c00ca6535cea6cd8a72aec6"></a>
+const CONSTEXPR <a class="el" href="structterm_1_1_message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>warn</b> { &quot;[WARN]&quot;, MessageMarginSize }</td></tr>
+<tr class="separator:a956fe6bf0c00ca6535cea6cd8a72aec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains pre-made ANSI sequences &amp; helper functions for making sequences. </p>
@@ -1656,7 +1684,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_aa8d9ccb9b1efdd2decee3585f305f4a7_icgraph.svg" width="202" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_aa8d9ccb9b1efdd2decee3585f305f4a7_icgraph.svg" width="391" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

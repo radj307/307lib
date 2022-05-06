@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['windowsnottoday_2eh_1158',['WindowsNotToday.h',['../_windows_not_today_8h.html',1,'']]]
+  ['xlog_2ehpp_783',['xlog.hpp',['../xlog_8hpp.html',1,'']]],
+  ['xrand_2ehpp_784',['xRand.hpp',['../x_rand_8hpp.html',1,'']]]
 ];
