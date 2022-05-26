@@ -57,12 +57,10 @@ namespace term {
 		palette(container_type&& palette, const bool& enable = true, const ANSI::Sequence& reset_seq = color::reset) : _palette{ std::move(palette) }, _enable{ enable }, _reset_seq{ reset_seq } {}
 
 		/**
-		 * @brief				Variadic Constructor
-		 * @tparam Ts...		Variadic color pair types.
-		 * @param ...colors		Any number of color pairs.
+		 * @brief				Initializer List Constructor
+		 * @param colors		Any number of color pairs.
 		 */
-		template<var::same_or_convertible<pair_type>... Ts>
-		palette(Ts&&... colors) : _palette{ std::forward<Ts>(colors)... } {}
+		palette(std::initializer_list<pair_type>&& colors) : _palette{ std::move(colors.begin()), std::move(colors.end()) } {}
 #		pragma endregion Constructors
 
 #		pragma region Functions
