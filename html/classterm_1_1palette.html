@@ -143,10 +143,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a18b028e2159f476e7bb9639f8af3db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1palette.html#a5a18b028e2159f476e7bb9639f8af3db">palette</a> (container_type &amp;&amp;<a class="el" href="classterm_1_1palette.html">palette</a>, const bool &amp;<a class="el" href="classterm_1_1palette.html#a5c3a4c0b27c7cb212b77abf73b77a21d">enable</a>=true, const ANSI::Sequence &amp;reset_seq=color::reset)</td></tr>
 <tr class="memdesc:a5a18b028e2159f476e7bb9639f8af3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classterm_1_1palette.html#a5a18b028e2159f476e7bb9639f8af3db">More...</a><br /></td></tr>
 <tr class="separator:a5a18b028e2159f476e7bb9639f8af3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6bff0e7f08ae47c984d57db5b85e86"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; pair_type &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a8b6bff0e7f08ae47c984d57db5b85e86"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classterm_1_1palette.html#a8b6bff0e7f08ae47c984d57db5b85e86">palette</a> (Ts &amp;&amp;... <a class="el" href="namespaceterm.html#aa5052eeffef9f98a67a93a61861c2e83">colors</a>)</td></tr>
-<tr class="memdesc:a8b6bff0e7f08ae47c984d57db5b85e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variadic Constructor.  <a href="classterm_1_1palette.html#a8b6bff0e7f08ae47c984d57db5b85e86">More...</a><br /></td></tr>
-<tr class="separator:a8b6bff0e7f08ae47c984d57db5b85e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd420fe5e5e872260484ef9f5129264f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1palette.html#afd420fe5e5e872260484ef9f5129264f">palette</a> (std::initializer_list&lt; pair_type &gt; &amp;&amp;<a class="el" href="namespaceterm.html#aa5052eeffef9f98a67a93a61861c2e83">colors</a>)</td></tr>
+<tr class="memdesc:afd420fe5e5e872260484ef9f5129264f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializer List Constructor.  <a href="classterm_1_1palette.html#afd420fe5e5e872260484ef9f5129264f">More...</a><br /></td></tr>
+<tr class="separator:afd420fe5e5e872260484ef9f5129264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e35775358488d1eb9e21cd283758be2"><td class="memItemLeft" align="right" valign="top"><a id="a5e35775358488d1eb9e21cd283758be2"></a>
 virtual const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1palette.html#a5e35775358488d1eb9e21cd283758be2">begin</a> () const</td></tr>
 <tr class="memdesc:a5e35775358488d1eb9e21cd283758be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator for the beginning of the palette container. <br /></td></tr>
@@ -411,15 +410,13 @@ template&lt;typename Key &gt; </div>
 
 </div>
 </div>
-<a id="a8b6bff0e7f08ae47c984d57db5b85e86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b6bff0e7f08ae47c984d57db5b85e86">&#9670;&nbsp;</a></span>palette() <span class="overload">[2/2]</span></h2>
+<a id="afd420fe5e5e872260484ef9f5129264f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd420fe5e5e872260484ef9f5129264f">&#9670;&nbsp;</a></span>palette() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Key &gt; </div>
-<div class="memtemplate">
-template&lt;var::same_or_convertible&lt; pair_type &gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -427,7 +424,7 @@ template&lt;var::same_or_convertible&lt; pair_type &gt;... Ts&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classterm_1_1palette.html">term::palette</a>&lt; Key &gt;::<a class="el" href="classterm_1_1palette.html">palette</a> </td>
           <td>(</td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramtype">std::initializer_list&lt; pair_type &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>colors</em></td><td>)</td>
           <td></td>
         </tr>
@@ -439,21 +436,15 @@ template&lt;var::same_or_convertible&lt; pair_type &gt;... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Variadic Constructor. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Ts...</td><td>Variadic color pair types. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Initializer List Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">...colors</td><td>Any number of color pairs. </td></tr>
+    <tr><td class="paramname">colors</td><td>Any number of color pairs. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00065">65</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00063">63</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -486,7 +477,7 @@ template&lt;typename Key &gt; </div>
 <p>Check if the palette is currently enabled. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00073">73</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00071">71</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -524,7 +515,7 @@ template&lt;typename Key &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence <br  />
  The current default reset sequence. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00127">127</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00125">125</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -557,7 +548,7 @@ template&lt;typename Key &gt; </div>
  This function exists for backwards-compatibility with previous versions of <a class="el" href="palette_8hpp.html" title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">palette.hpp</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00080">80</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00078">78</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -602,7 +593,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00135">135</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00133">133</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -640,7 +631,7 @@ template&lt;typename Key &gt; </div>
  If the palette is disabled, nothing happens. </p>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00282">282</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00280">280</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -680,7 +671,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00290">290</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00288">288</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -721,7 +712,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00265">265</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00263">263</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -778,7 +769,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00275">275</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00273">273</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -819,7 +810,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00256">256</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00254">254</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -857,7 +848,7 @@ template&lt;typename Key &gt; </div>
  If the palette is disabled, nothing happens. </p>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00194">194</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00192">192</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -898,7 +889,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00222">222</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00220">220</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -940,7 +931,7 @@ template&lt;var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00208">208</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00206">206</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -994,7 +985,7 @@ template&lt;var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00241">241</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00239">239</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -1035,7 +1026,7 @@ template&lt;typename Key &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00165">165</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00163">163</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1094,7 +1085,7 @@ template&lt;var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00182">182</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00180">180</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1140,7 +1131,7 @@ template&lt;typename Key &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>bool <br  />
  The previous enabled state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00102">102</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00100">100</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1185,7 +1176,7 @@ template&lt;typename Key &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>ANSI::Sequence <br  />
  The previous default reset sequence. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00115">115</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00113">113</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 
 </div>
 </div>
@@ -1225,7 +1216,7 @@ template&lt;typename Key &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>bool <br  />
  The previous enabled state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00088">88</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="palette_8hpp_source.html#l00086">86</a> of file <a class="el" href="palette_8hpp_source.html">palette.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

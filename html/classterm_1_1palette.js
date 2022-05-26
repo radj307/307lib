@@ -9,7 +9,7 @@ var classterm_1_1palette =
     [ "value_type", "classterm_1_1palette.html#aed7b8cd933802708e8b6c42cec92b6ee", null ],
     [ "palette", "classterm_1_1palette.html#a090943b7c4174dbefb657f5bd08d4f61", null ],
     [ "palette", "classterm_1_1palette.html#a5a18b028e2159f476e7bb9639f8af3db", null ],
-    [ "palette", "classterm_1_1palette.html#a8b6bff0e7f08ae47c984d57db5b85e86", null ],
+    [ "palette", "classterm_1_1palette.html#afd420fe5e5e872260484ef9f5129264f", null ],
     [ "begin", "classterm_1_1palette.html#a5e35775358488d1eb9e21cd283758be2", null ],
     [ "contains", "classterm_1_1palette.html#a840965ea9b5aa16e93fe1f5d81a81f84", null ],
     [ "disable", "classterm_1_1palette.html#ab7f4124b345be876cc81d53c2d2c24fa", null ],
