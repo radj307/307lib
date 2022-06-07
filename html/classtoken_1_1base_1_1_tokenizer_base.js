@@ -28,6 +28,7 @@ var classtoken_1_1base_1_1_tokenizer_base =
     [ "getStreamSize", "classtoken_1_1base_1_1_tokenizer_base.html#a1a58d39b4f0d45ab21286ef7422331d3", null ],
     [ "getuntil", "classtoken_1_1base_1_1_tokenizer_base.html#a7633bcfea1c909f0e5f5e3cc10080518", null ],
     [ "getuntil_unescaped", "classtoken_1_1base_1_1_tokenizer_base.html#a7df3224bd53a9d9da033fc29b53e33cc", null ],
+    [ "getuntil_unescaped", "classtoken_1_1base_1_1_tokenizer_base.html#aa7ee9df1b1c9c1b0b11cd01d18d48ca4", null ],
     [ "good", "classtoken_1_1base_1_1_tokenizer_base.html#ab25aec6e6117c8750979e801c5c958dc", null ],
     [ "hasMore", "classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e", null ],
     [ "operator const std::string", "classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"structmatrix_1_1nmatrix.html#a79a3cf72fa77775991701fb76fcb7e65":[8,0,5,1,27],
+"structmatrix_1_1nmatrix.html#a7e25c91609f7ae081ff9cbf8915346b7":[8,0,5,1,10],
 "structmatrix_1_1nmatrix.html#a88019de8cf34a7bc65fe91cb59d38214":[8,0,5,1,29],
 "structmatrix_1_1nmatrix.html#a889d88c85fa5bbbef90415afce350312":[8,0,5,1,37],
 "structmatrix_1_1nmatrix.html#a93ac5e1d06ae17d861a07bfefb6dd639":[8,0,5,1,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "structstr_1_1_set_locale.html#af4eba70c2ab301ec4277590d6108f678":[8,0,9,3,0],
 "structstr_1_1_set_locale.html#afd44c5a9b44702ee010903b0c957cb44":[8,0,9,3,4],
 "structstr_1_1_set_locale_facet.html":[8,0,9,4],
-"structstr_1_1_set_locale_facet.html#a05d427bf1faffbb7f9656b215a87d726":[8,0,9,4,0],
-"structstr_1_1_set_locale_facet.html#a2429a5af4204147b1b01701f875def09":[8,0,9,4,4],
-"structstr_1_1_set_locale_facet.html#a6728a1e7c754ec3e6fc094a15ee5212b":[8,0,9,4,2]
+"structstr_1_1_set_locale_facet.html#a05d427bf1faffbb7f9656b215a87d726":[8,0,9,4,0]
 };

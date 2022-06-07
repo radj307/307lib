@@ -506,6 +506,9 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9f9a7cdc58ff315c0dbdb4793171918f">toVector</a> (std::stringstream data, std::optional&lt; char &gt; delim=std::nullopt)</td></tr>
 <tr class="memdesc:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a stringstream to a vector of strings, where each string contains one line from the stream.  <a href="namespacestr.html#a9f9a7cdc58ff315c0dbdb4793171918f">More...</a><br /></td></tr>
 <tr class="separator:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d285a144a4f72cc7ac9fd1dd928f4e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae1d285a144a4f72cc7ac9fd1dd928f4e">trim</a> (std::string str, const std::string &amp;chars=&quot; \t\r\n\v&quot;)</td></tr>
+<tr class="memdesc:ae1d285a144a4f72cc7ac9fd1dd928f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding &amp; trailing characters from a given string.  <a href="namespacestr.html#ae1d285a144a4f72cc7ac9fd1dd928f4e">More...</a><br /></td></tr>
+<tr class="separator:ae1d285a144a4f72cc7ac9fd1dd928f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -561,7 +564,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00146">146</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00157">157</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -608,7 +611,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00305">305</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00316">316</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -756,7 +759,7 @@ template&lt;typename... T&gt; </div>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00129">129</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00140">140</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -804,7 +807,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00489">489</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00500">500</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -852,7 +855,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool - ( true = At least one delimiter was found ) ( false = None of the given delimiters exist in the string ) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00501">501</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00512">512</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1307,7 +1310,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional&lt;tuple&lt;string, string, string&gt;&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00471">471</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00482">482</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1355,7 +1358,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00435">435</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00446">446</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1410,7 +1413,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00394">394</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00405">405</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1465,7 +1468,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00423">423</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00434">434</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1527,7 +1530,7 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00453">453</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00464">464</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -1922,7 +1925,7 @@ template&lt;class Ch , class Tr , class A &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>basic_istream&lt;Ch, Tr&gt;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00218">218</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00229">229</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -2038,7 +2041,7 @@ template&lt;class Ch , class Tr , class A , class Pred &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>basic_istream&lt;Ch, Tr&gt;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00184">184</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00195">195</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2119,7 +2122,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>stringstream::pos_type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00375">375</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00386">386</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -2691,7 +2694,7 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string::size_type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00513">513</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00524">524</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -2902,7 +2905,7 @@ template&lt;template&lt; class, class &gt; class ContType&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00323">323</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00334">334</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -2990,7 +2993,8 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="248" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="248" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3039,7 +3043,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00293">293</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00304">304</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -3089,7 +3093,7 @@ template&lt;typename F &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00284">284</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00295">295</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -3126,7 +3130,7 @@ template&lt;typename F &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00166">166</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00177">177</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3222,7 +3226,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00579">579</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00590">590</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3283,7 +3287,7 @@ template&lt;typename F &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00268">268</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00279">279</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -3384,7 +3388,7 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00549">549</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00560">560</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3444,7 +3448,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00538">538</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00549">549</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -3498,7 +3502,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00564">564</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00575">575</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3540,7 +3544,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00249">249</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00260">260</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4383,7 +4387,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00647">647</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00658">658</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -4431,7 +4435,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00633">633</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00644">644</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -4486,7 +4490,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00088">88</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00105">105</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -4541,7 +4545,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00108">108</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00119">119</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -4597,7 +4601,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string_view </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00615">615</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00626">626</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -4653,7 +4657,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string_view </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00596">596</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00607">607</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 
 </div>
 </div>
@@ -5217,7 +5221,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>map&lt;string, string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00359">359</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00370">370</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5506,7 +5510,61 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00343">343</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00354">354</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae1d285a144a4f72cc7ac9fd1dd928f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d285a144a4f72cc7ac9fd1dd928f4e">&#9670;&nbsp;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string str::trim </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>chars</em> = <code>&quot;&#160;\t\r\n\v&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove preceeding &amp; trailing characters from a given string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input string. </td></tr>
+    <tr><td class="paramname">chars</td><td>Any number of characters to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String without preceeding or trailing whitespace. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00087">87</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae1d285a144a4f72cc7ac9fd1dd928f4e_cgraph.svg" width="243" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

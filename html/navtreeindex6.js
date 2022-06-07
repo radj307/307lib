@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"structstr_1_1_set_locale_facet.html#a2429a5af4204147b1b01701f875def09":[8,0,9,4,4],
+"structstr_1_1_set_locale_facet.html#a6728a1e7c754ec3e6fc094a15ee5212b":[8,0,9,4,2],
 "structstr_1_1_set_locale_facet.html#aa6951309df1a6c2e8ba2722215818b7f":[8,0,9,4,3],
 "structstr_1_1_set_locale_facet.html#afbd5a458688802faf02545937eb93820":[8,0,9,4,1],
 "structterm_1_1_cursor.html":[8,0,10,2],
@@ -131,8 +133,8 @@ var NAVTREEINDEX6 =
 "sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98":[9,0,2,1,9,20],
 "sysarch_8h.html#ae273c7db78098028c7a6b6b230ac0503":[9,0,2,1,9,11],
 "sysarch_8h.html#aed780a73afd13baec93bd08fbdae4ad7":[9,0,2,1,9,12],
-"sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9":[9,0,2,1,9,14],
 "sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9":[9,0,2,1,9,13],
+"sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9":[9,0,2,1,9,14],
 "sysarch_8h_source.html":[9,0,2,1,9],
 "term_8cpp_source.html":[9,0,4,2,4],
 "term_8hpp.html":[9,0,4,1,12],

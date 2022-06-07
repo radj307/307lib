@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['xlog_631',['xLog',['../classxlog_1_1x_log.html',1,'xlog::xLog&lt; StreamType &gt;'],['../namespacexlog.html',1,'xlog'],['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog::xLog()']]],
-  ['xlog_2ehpp_632',['xlog.hpp',['../xlog_8hpp.html',1,'']]],
-  ['xlog_3c_20std_3a_3aostream_20_3e_633',['xLog&lt; std::ostream &gt;',['../classxlog_1_1x_log.html',1,'xlog']]],
-  ['xlog_5finclude_5fself_634',['XLOG_INCLUDE_SELF',['../xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'xlog.hpp']]],
-  ['xlogs_635',['xLogs',['../classxlog_1_1x_logs.html',1,'xlog::xLogs&lt; StreamType &gt;'],['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs::xLogs()']]],
-  ['xrand_636',['xRand',['../structrng_1_1x_rand.html',1,'rng']]],
-  ['xrand_2ehpp_637',['xRand.hpp',['../x_rand_8hpp.html',1,'']]]
+  ['xlog_632',['xLog',['../classxlog_1_1x_log.html',1,'xlog::xLog&lt; StreamType &gt;'],['../namespacexlog.html',1,'xlog'],['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog::xLog()']]],
+  ['xlog_2ehpp_633',['xlog.hpp',['../xlog_8hpp.html',1,'']]],
+  ['xlog_3c_20std_3a_3aostream_20_3e_634',['xLog&lt; std::ostream &gt;',['../classxlog_1_1x_log.html',1,'xlog']]],
+  ['xlog_5finclude_5fself_635',['XLOG_INCLUDE_SELF',['../xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'xlog.hpp']]],
+  ['xlogs_636',['xLogs',['../classxlog_1_1x_logs.html',1,'xlog::xLogs&lt; StreamType &gt;'],['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs::xLogs()']]],
+  ['xrand_637',['xRand',['../structrng_1_1x_rand.html',1,'rng']]],
+  ['xrand_2ehpp_638',['xRand.hpp',['../x_rand_8hpp.html',1,'']]]
 ];

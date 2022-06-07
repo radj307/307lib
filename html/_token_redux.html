@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('_token_redux.html',''); initResizable(
     ## Building a Format Package
 
      1. Start by creating a new `Tokenizer`-derived type, filling in template arguments with the corresponding
-        object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
+         object provided by the _Definitions Package_ you're using, and override the `getNext()` function.
     ```cpp
     class Tokenizer : token::base::TokenizerBase&lt;Lexeme, LexemeDictionary, Token, Token&gt; {
         Token getNext() override
