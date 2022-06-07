@@ -48,10 +48,14 @@ var hierarchy =
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
+    [ "IteratingParserBase", null, [
+      [ "json::parser::Parser", "classjson_1_1parser_1_1_parser.html", null ]
+    ] ],
     [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
     [ "token::base::LexemeDictBase< LEXEME >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
+      [ "json::parser::LexemeDictionary", "structjson_1_1parser_1_1_lexeme_dictionary.html", null ],
       [ "opt::token::LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", null ],
       [ "token::DefaultDefs::LexemeDict", "structtoken_1_1_default_defs_1_1_lexeme_dict.html", null ]
     ] ],
@@ -66,6 +70,14 @@ var hierarchy =
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
     [ "matrix::nmatrix< T, SizeX, SizeY >", "structmatrix_1_1nmatrix.html", null ],
+    [ "json::Node", "structjson_1_1_node.html", null ],
+    [ "json::NodeType", "structjson_1_1_node_type.html", null ],
+    [ "json::NodeView< T >", "structjson_1_1_node_view.html", [
+      [ "json::ContainerNode< object_t >", "structjson_1_1_container_node.html", [
+        [ "json::ObjectNode", "structjson_1_1_object_node.html", null ]
+      ] ],
+      [ "json::ContainerNode< T >", "structjson_1_1_container_node.html", null ]
+    ] ],
     [ "numpunct", null, [
       [ "str::facet::NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", null ]
     ] ],
@@ -91,6 +103,9 @@ var hierarchy =
     [ "token::base::TokenizerBase< LexemeT, Dictionary, TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", null ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "file::ini::tokenizer::INITokenizer", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html", null ]
+    ] ],
+    [ "token::base::TokenizerBase< LEXEME, LexemeDictionary, TOKEN, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
+      [ "json::parser::Tokenizer", "classjson_1_1parser_1_1_tokenizer.html", null ]
     ] ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDictionary, Type, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "opt::token::Tokenizer", "classopt_1_1token_1_1_tokenizer.html", null ]

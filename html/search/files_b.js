@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['redirect_2ehpp_767',['redirect.hpp',['../redirect_8hpp.html',1,'']]]
+  ['palette_2ehpp_800',['palette.hpp',['../palette_8hpp.html',1,'']]],
+  ['process_2ehpp_801',['process.hpp',['../process_8hpp.html',1,'']]]
 ];

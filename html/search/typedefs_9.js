@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['parametertype_1294',['ParameterType',['../namespaceopt.html#aef25741f3063b9139b8440400ddf74da',1,'opt']]]
+  ['optional_1346',['optional',['../namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3',1,'opt']]],
+  ['optiontype_1347',['OptionType',['../namespaceopt.html#a8e7cc9a2010617a6b4f9e9707419bcdd',1,'opt']]]
 ];

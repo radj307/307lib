@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['term_744',['term',['../namespaceterm.html',1,'']]]
+  ['seq_776',['seq',['../namespaceseq.html',1,'']]],
+  ['str_777',['str',['../namespacestr.html',1,'']]]
 ];

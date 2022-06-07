@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['optional_1292',['optional',['../namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3',1,'opt']]],
-  ['optiontype_1293',['OptionType',['../namespaceopt.html#a8e7cc9a2010617a6b4f9e9707419bcdd',1,'opt']]]
+  ['null_5ft_1345',['null_t',['../namespacejson.html#a3abd0dc7f140a9c108ce60ff65555e78',1,'json']]]
 ];
