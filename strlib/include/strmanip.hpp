@@ -79,6 +79,23 @@ namespace str {
 	}
 
 	/**
+	 * @brief			Remove preceeding & trailing characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	inline std::string trim(std::string str, const std::string& chars = " \t\r\n\v")
+	{
+		const auto do_remove{ [&chars](const char c) { return pos_valid(chars.find(c)); } };
+		if (const int first{ static_cast<signed>(str.find_first_not_of(chars)) }; !str.empty() && pos_valid(first))
+			str.erase(std::remove_if(str.begin(), str.begin() + first, do_remove), str.begin() + first); // remove from beginning of string to 1 before first non-whitespace char
+		else return{};
+		if (const int last{ static_cast<signed>(str.find_last_not_of(chars)) }; !str.empty() && pos_valid(last))
+			str.erase(std::remove_if(str.begin() + last, str.end(), do_remove), str.end()); // remove from 1 after last non-whitespace char to the end of the string
+		return str;
+	}
+
+	/**
 	 * @brief					Removes comments and preceeding/trailing whitespace from a given string.
 	 * @param str				Input string.
 	 * @param comment_chars		Characters that should be treated as line comments, everything that appears after one of these characters is removed.
@@ -89,13 +106,7 @@ namespace str {
 	{
 		if (const int dPos{ static_cast<signed>(str.find_first_of(comment_chars)) }; !str.empty() && pos_valid(dPos)) // remove comments first
 			str.erase(str.begin() + dPos, str.end());
-		const auto is_whitespace{ [&whitespace_chars](const char c) { return pos_valid(whitespace_chars.find(c)); } };
-		if (const int first{ static_cast<signed>(str.find_first_not_of(whitespace_chars)) }; !str.empty() && pos_valid(first))
-			str.erase(std::remove_if(str.begin(), str.begin() + first, is_whitespace), str.begin() + first); // remove from beginning of string to 1 before first non-whitespace char
-		else return{};
-		if (const int last{ static_cast<signed>(str.find_last_not_of(whitespace_chars)) }; !str.empty() && pos_valid(last))
-			str.erase(std::remove_if(str.begin() + last, str.end(), is_whitespace), str.end()); // remove from 1 after last non-whitespace char to the end of the string
-		return str;
+		return trim(str);
 	}
 	/**
 	 * @function strip_line(std::string, const Param&)
