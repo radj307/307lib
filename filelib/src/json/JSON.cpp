@@ -106,63 +106,87 @@ Parser::OutputT json::parser::Parser::parse()
 		bool colon{ false };
 
 		const auto& insert_pr{ [&obj, &pr, &fst, &comma, &colon]() {
-			if (!obj.insert(pr).second) throw make_exception("Parser::parse() error:  Duplicated key '", pr.first, "' isn't valid!");
+			if (!obj.insert(pr).second)
+				throw make_exception("Parser::parse() error:  Duplicated key '", pr.first, "' isn't valid!");
 			fst = comma = colon = false;
 			pr = {};
 		} };
 
-		for (const auto& it : tokens) {
-			switch (it.type) {
+		for (auto it{ tokens.begin() }; it != tokens.end(); ++it) {
+			const auto& t{ *it };
+			switch (t.type) {
 			case TOKEN::ARRAY:
-				if (!fst && !comma) throw make_exception("Parser::parse() syntax error:  Missing comma!");
+				if (!fst && !comma)
+					throw make_exception("Parser::parse() syntax error:  Missing comma!");
 
 				if (fst && !colon && !comma)
-					return Parser(Tokenizer(it.str).tokenize(), NodeType::Array).parse();
-				else if (!colon) throw make_exception("Parser::parse() syntax error:  Cannot use array '", it.str, "' as a key; only string keys are allowed!");
+					return Parser(Tokenizer(t.str).tokenize(), NodeType::Array).parse();
+				else if (!colon) {
+					if (!pr.first.empty())
+						throw make_exception("Parser::parse() syntax error:  Duplicate keyname '", t.str, "'!");
+					throw make_exception("Parser::parse() syntax error:  Cannot use array '", t.str, "' as a key; only string keys are allowed!");
+				}
 				else {
-					pr.second = Parser(Tokenizer(it.str).tokenize(), NodeType::Array).parse();
+					pr.second = Parser(Tokenizer(t.str).tokenize(), NodeType::Array).parse();
 					insert_pr();
 				}
 				break;
 			case TOKEN::OBJECT:
-				if (!fst && !comma) throw make_exception("Parser::parse() syntax error:  Missing comma!");
+				if (!fst && !comma)
+					throw make_exception("Parser::parse() syntax error:  Missing comma!");
 
 				if (fst && !colon && !comma)
-					return Parser(Tokenizer(it.str).tokenize(), NodeType::Object).parse();
-				else if (!colon) throw make_exception("Parser::parse() syntax error:  Cannot use object '", it.str, "' as a key; only string keys are allowed!");
+					return Parser(Tokenizer(t.str).tokenize(), NodeType::Object).parse();
+				else if (!colon) {
+					if (!pr.first.empty())
+						throw make_exception("Parser::parse() syntax error:  Duplicate keyname '", t.str, "'!");
+					throw make_exception("Parser::parse() syntax error:  Cannot use object '", t.str, "' as a key; only string keys are allowed!");
+				}
 				else {
-					pr.second = Parser(Tokenizer(it.str).tokenize(), NodeType::Object).parse();
+					pr.second = Parser(Tokenizer(t.str).tokenize(), NodeType::Object).parse();
 					insert_pr();
 				}
 				break;
 			case TOKEN::NUMBER:
-				if (!fst && !comma) throw make_exception("Parser::parse() syntax error:  Missing comma!");
+				if (!fst && !comma)
+					throw make_exception("Parser::parse() syntax error:  Missing comma!");
 
-				if (!colon) throw make_exception("Parser::parse() syntax error:  Cannot use number '", it.str, "' as a key; only string keys are allowed!");
+				if (!colon) {
+					if (!pr.first.empty())
+						throw make_exception("Parser::parse() syntax error:  Duplicate keyname '", t.str, "'!");
+					throw make_exception("Parser::parse() syntax error:  Cannot use number '", t.str, "' as a key; only string keys are allowed!");
+				}
 				else {
-					if (str::contains(it.str, '.'))
-						pr.second = Node{ str::stold(it.str) };
+					if (str::contains(t.str, '.'))
+						pr.second = Node{ str::stold(t.str) };
 					else
-						pr.second = Node{ str::stoll(it.str) };
+						pr.second = Node{ str::stoll(t.str) };
 					insert_pr();
 				}
 				break;
 			case TOKEN::KEYWORD:
-				if (!fst && !comma) throw make_exception("Parser::parse() syntax error:  Missing comma!");
+				if (!fst && !comma)
+					throw make_exception("Parser::parse() syntax error:  Missing comma!");
 
-				if (!colon) throw make_exception("Parser::parse() syntax error:  Cannot use keyword '", it.str, "' as a key; only string keys are allowed!");
+				if (!colon) {
+					if (!pr.first.empty())
+						throw make_exception("Parser::parse() syntax error:  Duplicate keyname '", t.str, "'!");
+					throw make_exception("Parser::parse() syntax error:  Cannot use keyword '", t.str, "' as a key; only string keys are allowed!");
+				}
 				else {
-					pr.second = parseKeyword(it.str);
+					pr.second = parseKeyword(t.str);
 					insert_pr();
 				}
 				break;
 			case TOKEN::STRING:
-				if (!fst && !comma) throw make_exception("Parser::parse() syntax error:  Missing comma!");
+				if (!fst && !comma)
+					throw make_exception("Parser::parse() syntax error:  Missing comma!");
 
-				if (!colon)
-					pr.first = it.str;
+				if (!colon) {
+					pr.first = t.str;
+				}
 				else {
-					pr.second = Node{ it.str };
+					pr.second = Node{ t.str };
 					insert_pr();
 				}
 				break;
@@ -170,6 +194,8 @@ Parser::OutputT json::parser::Parser::parse()
 				colon = true;
 				break;
 			case TOKEN::COMMA:
+				if (colon)
+					insert_pr();
 				comma = true;
 				break;
 			}

@@ -13,6 +13,10 @@ namespace json {
 	namespace parser {
 		using uchar = unsigned char;
 
+		/**
+		 * @enum	LEXEME
+		 * @brief	Defines the most basic lexical types used by the JSON tokenizer.
+		 */
 		enum class LEXEME : uchar {
 			/// @brief	Null
 			NONE,
@@ -44,14 +48,18 @@ namespace json {
 			ALPHA,
 		};
 
+		/**
+		 * @struct	LexemeDictionary
+		 * @brief	Implements the LexemeDictBase struct for the JSON file format.
+		 */
 		struct LexemeDictionary : token::base::LexemeDictBase<LEXEME> {
 			LexemeT char_to_lexeme(const char& c) const noexcept
 			{
-				if (isalpha(c))
+				if (str::call_if_valid(isalpha, c))
 					return LEXEME::ALPHA;
-				else if (isdigit(c))
+				else if (str::call_if_valid(isdigit, c))
 					return LEXEME::DIGIT;
-				else if (isspace(c))
+				else if (str::call_if_valid(isspace, c))
 					return LEXEME::WHITESPACE;
 				else switch (c) {
 				case '.':
@@ -78,6 +86,10 @@ namespace json {
 			}
 		};
 
+		/**
+		 * @enum	TOKEN
+		 * @brief	Defines JSON token types.
+		 */
 		enum class TOKEN : uchar {
 			/// @brief	Null Token.
 			NONE,
@@ -91,33 +103,43 @@ namespace json {
 			STRING,
 			/// @brief	A number; this can be an integral or a real number.
 			NUMBER,
+			/// @brief	An array containing any number of nodes of any type.
 			ARRAY,
+			/// @brief	An object containing any number of key-node pairs.
 			OBJECT,
 		};
-
+		/// @brief	JSON Token.
 		using Token = token::base::TokenBase<TOKEN>;
 
+		/**
+		 * @class	Tokenizer
+		 * @brief	
+		 */
 		class Tokenizer : public token::base::TokenizerBase<LEXEME, LexemeDictionary, TOKEN, Token> {
+		protected:
+			/**
+			 * @brief	Retrieve the next token by tokenizing the given character.
+			 * @param c	The input character.
+			 * @returns	TokenT
+			 */
 			TokenT getNextToken(const char& c) override
 			{
-				LEXEME lexeme{ get_lexeme(c) };
-
-				switch (lexeme) {
+				switch (get_lexeme(c)) {
 				case LEXEME::BRACKET_OPEN:
 					return{ TOKEN::OBJECT, getBrackets(LEXEME::BRACKET_OPEN, LEXEME::BRACKET_CLOSE) };
 				case LEXEME::BRACKET_CLOSE:
-					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!");
+					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!  (", findCurrentPosString(true), ")");
 				case LEXEME::ARRAY_OPEN:
 					return{ TOKEN::ARRAY, getBrackets(LEXEME::ARRAY_OPEN, LEXEME::ARRAY_CLOSE) };
 				case LEXEME::ARRAY_CLOSE:
-					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!");
+					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!  (", findCurrentPosString(true), ")");
 				case LEXEME::COMMA:
 					return{ TOKEN::COMMA, c };
 				case LEXEME::PERIOD: [[fallthrough]];
 				case LEXEME::DIGIT:
 					return{ TOKEN::NUMBER, getsimilar(LEXEME::DIGIT, LEXEME::PERIOD) };
 				case LEXEME::QUOTE_SINGLE:
-					throw make_exception("Tokenizer::getNextToken() syntax error:  Single quotation marks aren't allowed!");
+					throw make_exception("Tokenizer::getNextToken() syntax error:  Single quotation marks aren't allowed!  (", findCurrentPosString(true), ")");
 				case LEXEME::QUOTE_DOUBLE:
 					return{ TOKEN::STRING, getuntil_unescaped(LEXEME::QUOTE_DOUBLE) };
 				case LEXEME::ALPHA: {
@@ -129,19 +151,37 @@ namespace json {
 				}
 				case LEXEME::COLON:
 					return{ TOKEN::COLON, c };
-				case LEXEME::WHITESPACE:// whitespace is never passed directly to this method since getNext(false) is the default call
-				default:
-					return{ TOKEN::NONE, c };
+				case LEXEME::WHITESPACE:
+				default:break;
 				}
+				return{ TOKEN::NONE, c };
 			}
 		public:
+			/**
+			 * @brief		Constructs a new JSON Tokenizer instance.
+			 * @param ss	Stringstream rvalue reference.
+			 *\n			This is used as the raw data stream to be tokenized.
+			 */
 			Tokenizer(std::stringstream&& ss) : TokenizerBase(std::forward<std::stringstream>(ss), LEXEME::WHITESPACE, LEXEME::NONE) {}
+			/**
+			 * @brief		Constructs a new JSON Tokenizer instance.
+			 * @param s		A string containing valid JSON data.
+			 */
 			Tokenizer(std::string const& s) : TokenizerBase(std::stringstream{ s }, LEXEME::WHITESPACE, LEXEME::NONE) {}
 		};
 
+		/**
+		 * @class	Parser
+		 * @brief	Implements the IteratingParserBase class for the JSON file format.
+		 */
 		class Parser : public token::base::IteratingParserBase<Node, TOKEN> {
 			NodeType node_type;
 
+			/**
+			 * @brief		Parses a JSON keyword, such as 'null', 'true', & 'false'.
+			 * @param kywd	A string containing the keyword to parse.
+			 * @returns		Node
+			 */
 			Node parseKeyword(std::string const& kywd)
 			{
 				if (str::equalsAny<true>(kywd, "null"))
@@ -153,29 +193,27 @@ namespace json {
 				else throw make_exception("Unrecognized keyword '", kywd, "'!");
 			}
 
-			static std::string removeEnclosing(std::string s, char open, char close, bool removeWhitespace = true)
-			{
-				s = str::trim(s);
-				if (s.empty())
-					return s;
-				if (s.front() == open) {
-					s.erase(s.begin());
-					if (s.back() == close)
-						s.erase(s.end() - 1ull);
-				}
-				return s;
-			}
-
 		public:
+			/**
+			 * @brief				Constructs a new JSON parser instance.
+			 * @param tokens		Input vector of tokens.
+			 * @param node_type		The type of root node to produce from the given tokens.
+			 *\n					This is usually either NodeType::Object or NodeType::Array.
+			 * @throws ex::except	node_type was NodeType::Undefined
+			 */
 			Parser(std::vector<Token>&& tokens, NodeType const& node_type = NodeType::Object) : ParserBase(std::forward<decltype(tokens)>(tokens)), node_type{ node_type }
 			{
-				if (node_type != NodeType::Array && node_type != NodeType::Object)
-					throw make_exception("Parser() error:  Unexpected node_type! (Must be Array/Object)");
+				if (node_type == NodeType::Undefined)
+					throw make_exception("Parser::parse() invalid operation:  Node type '", NodeType::Undefined, "' is never a valid parser output type!");
+				strip_tokens(TOKEN::NONE);
 			}
 
+			/**
+			 * @brief	Parse all tokens into the specified node type.
+			 * @returns	Node
+			 */
 			OutputT parse() override;
 		};
-	
 	}
 }
 

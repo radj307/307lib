@@ -259,14 +259,52 @@ namespace token {
 			{
 				return ss.setf(format);
 			}
-			auto unsetf(std::ios_base::fmtflags const& mask)
+			/**
+			 * @brief			Unset the underlying stream's format flags.
+			 * @param format	The format flags to remove from the stream.
+			 */
+			void unsetf(std::ios_base::fmtflags const& format)
 			{
-				ss.unsetf(mask);
+				ss.unsetf(format);
 			}
 
+			/**
+			 * @brief	Get the underlying stream as a string.
+			 *\n		Depending on the size of the stream, this operation may be extremely resource intensive.
+			 * @returns	std::string
+			 */
 			[[nodiscard]] virtual std::string str() const
 			{
 				return ss.str();
+			}
+
+			[[nodiscard]] virtual std::pair<size_t, size_t> findCurrentPos(bool lineIndexedByOne = false)
+			{
+				const size_t globalPos{ static_cast<size_t>(ss.tellg()) };
+				setLastPosHere();
+				ss.seekg(std::ios::beg);
+
+				size_t chCount{ 0 }, lnCount{ static_cast<size_t>(lineIndexedByOne) };
+				while (ss.tellg() != globalPos) {
+					switch (ss.get()) {
+					case (int)'\n':
+						++lnCount;
+						chCount = 0;
+						break;
+					default:
+						++chCount;
+						break;
+					}
+				}
+
+				rollback();
+
+				return{ lnCount, chCount };
+			}
+			[[nodiscard]] virtual std::string findCurrentPosString(bool lineIndexedByOne = false)
+			{
+				const auto& [ln, ch] {findCurrentPos(lineIndexedByOne) };
+				return str::stringify(ln, ':', ch);
 			}
 
 			/**
@@ -291,12 +329,13 @@ namespace token {
 			[[nodiscard]] virtual char getch(const bool allow_whitespace = false)
 			{
 				setLastPosHere();
-				char c{ EOF };
-				ss.get(c);
-				if (allow_whitespace || get_lexeme(c) != lexeme_whitespace)
-					return c;
-				for (; hasMore() && get_lexeme(c) == lexeme_whitespace; ss.get(c))
-					setLastPosHere();
+				char c;
+				while (ss.get(c)) {
+					if (get_lexeme(c) != lexeme_whitespace || allow_whitespace)
+						return c;
+					else
+						setLastPosHere();
+				}
 				return c;
 			}
 
@@ -336,6 +375,21 @@ namespace token {
 				if (!hasMore())
 					return noTokensDefault;
 				return get_lexeme(static_cast<char>(ss.peek()));
+			}
+
+			/**
+			 * @brief	Gets a character that is exactly n characters prior to the current read position.
+			 */
+			[[nodiscard]] virtual char peeklast(const size_t& n = 1ull)
+			{
+				ss.seekg(n, std::ios::beg);
+				char c{ getch(true) };
+				ss.seekg(n, std::ios::end);
+				return c;
+			}
+			[[nodiscard]] virtual LexemeT peeklastlex()
+			{
+				return get_lexeme(peeklast());
 			}
 
 			/**
@@ -525,7 +579,7 @@ namespace token {
 			[[nodiscard]] virtual std::string getuntil_unescaped(const char& delim, const bool& no_rollback = true)
 			{
 				char prev{ EOF };
-				return getuntil([&prev, &delim](auto&& ch) { 
+				return getuntil([&prev, &delim](auto&& ch) {
 					if (prev != '\\' && ch == delim)
 						return true;
 					else {
@@ -545,7 +599,7 @@ namespace token {
 			[[nodiscard]] virtual std::string getuntil_unescaped(const LexemeT& delim, const bool& no_rollback = true)
 			{
 				char prev{ EOF };
-				return getuntil([&prev, &delim, this](auto&& ch) { 
+				return getuntil([&prev, &delim, this](auto&& ch) {
 					if (prev != '\\' && get_lexeme(ch) == delim)
 						return true;
 					else {

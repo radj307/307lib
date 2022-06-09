@@ -60,8 +60,8 @@ namespace json {
 	template<typename T> concept json_container_type = var::any_same_or_convertible<T, array_t, object_t>;
 	template<typename T> concept json_type = json_raw_type<T> || json_container_type<T>;
 
+	// forward-declare functions:
 	template<json_type T> constexpr NodeType GetNodeTypeFrom() noexcept;
-
 	constexpr NodeType GetNodeTypeFrom(const size_t&) noexcept;
 
 	/**
@@ -140,46 +140,83 @@ namespace json {
 	 *\n		For nodes that expose STL methods for specific node types, see the NodeView family.
 	 */
 	struct Node {
+		/// @brief	Variant that can contain any type meeting the json_type constraint.
 		variant_t value;
+		/// @brief	The type of this Node. Changing this without changing the value will cause problems, so don't do that.
 		NodeType type;
 
 	public:
-		/// @brief	Null value constructor.
+		/// @brief	Constructs a new Node instance of type Null.
 		Node() : value{ null }, type{ NodeType::Null } {}
 		/**
-		 * @brief		Value constructor.
+		 * @brief		Constructs a new Node instance with the given value.
 		 * @param value	The value to assign to this node.
+		 *\n			This is used internally to determine the correct type.
 		 */
 		Node(variant_t&& value) noexcept : value{ std::move(value) }, type{ GetNodeTypeFrom(this->value.index()) } {}
 
+		/**
+		 * @brief			Checks if this Node instance is the same type as the given node type.
+		 * @param node_type	The NodeType to compare.
+		 * @returns			true when this Node is of type T; otherwise false.
+		 */
+		[[nodiscard]] constexpr bool is_type(const NodeType& node_type) const { return node_type == type; }
+		/**
+		 * @brief		Checks if this Node instance is the same type as the given node type; which is determined by the result of GetNodeTypeFrom<T>().
+		 * @tparam T	Any type meeting the json_type constraint.
+		 * @returns		true when this Node is of type T; otherwise false.
+		 */
 		template<json_type T>
-		[[nodiscard]] constexpr bool is_type() { return GetNodeTypeFrom<T>() == type; }
-		[[nodiscard]] constexpr bool is_null() { return is_type<null_t>(); }
-		[[nodiscard]] constexpr bool is_boolean() { return is_type<boolean_t>(); }
-		[[nodiscard]] constexpr bool is_number() { return is_type<integral_t>() || is_type<real_t>(); }
-		[[nodiscard]] constexpr bool is_array() { return is_type<array_t>(); }
-		[[nodiscard]] constexpr bool is_object() { return is_type<object_t>(); }
+		[[nodiscard]] constexpr bool is_type() const { return is_type(GetNodeTypeFrom<T>()); }
+		/// @brief	Checks if this Node is Null.
+		[[nodiscard]] constexpr bool is_null() const { return is_type<null_t>(); }
+		/// @brief	Checks if this Node is a Boolean.
+		[[nodiscard]] constexpr bool is_boolean() const { return is_type<boolean_t>(); }
+		/// @brief	Checks if this Node is a Number.
+		[[nodiscard]] constexpr bool is_number() const { return is_type<integral_t>() || is_type<real_t>(); }
+		/// @brief	Checks if this Node is an Array.
+		[[nodiscard]] constexpr bool is_array() const { return is_type<array_t>(); }
+		/// @brief	Checks if this Node is an Object.
+		[[nodiscard]] constexpr bool is_object() const { return is_type<object_t>(); }
 
-		template<json_type T>
-		Node& operator=(T&& v) noexcept
+		/**
+		 * @brief	Sets this Node's value to the given value.
+		 * @param v	Input Value.
+		 * @returns	Node&
+		 */
+		template<json_type T> Node& operator=(T&& v) noexcept
 		{
 			value = variant_t{ std::move(v) };
 			type = GetNodeTypeFrom<T>();
 			return *this;
 		}
-		template<json_type T>
-		Node& operator=(T const& v) noexcept
+		/**
+		 * @brief	Sets this Node's value to the given value.
+		 * @param v	Input Value.
+		 * @returns	Node&
+		 */
+		template<json_type T> Node& operator=(T const& v) noexcept
 		{
 			value = variant_t{ v };
 			type = GetNodeTypeFrom<T>();
 			return *this;
 		}
+		/**
+		 * @brief	Sets this Node's value to the given value.
+		 * @param v	Input Value.
+		 * @returns	Node&
+		 */
 		Node& operator=(variant_t const& v) noexcept
 		{
 			value = v;
 			type = GetNodeTypeFrom(value.index());
 			return *this;
 		}
+		/**
+		 * @brief	Sets this Node's value to the given value.
+		 * @param v	Input Value.
+		 * @returns	Node&
+		 */
 		Node& operator=(variant_t&& v) noexcept
 		{
 			value = std::move(v);
@@ -193,8 +230,12 @@ namespace json {
 	/// @brief	Stream insertion operator for the Node type.
 	std::ostream& operator<<(std::ostream&, const Node&);
 
-	template<json_type T>
-	constexpr NodeType GetNodeTypeFrom() noexcept
+	/**
+	 * @brief		Retrieves a NodeType instance from the raw typename specified by `T`.
+	 * @tparam T	Any type satisfying the `json_type` constraint.
+	 * @returns		NodeType
+	 */
+	template<json_type T> constexpr NodeType GetNodeTypeFrom() noexcept
 	{
 		if constexpr (std::same_as<T, boolean_t>)
 			return NodeType::Boolean;
@@ -208,6 +249,12 @@ namespace json {
 			return NodeType::Object;
 		return NodeType::Null;
 	}
+	/**
+	 * @brief		Retrieves a NodeType instance from a variant_t index value.
+	 * @param index The type index of a JSON `variant_t` type.
+	 *\n			This can be acquired by calling the `index()` method on a `variant_t` instance.
+	 * @returns		NodeType
+	 */
 	constexpr NodeType GetNodeTypeFrom(const size_t& index) noexcept
 	{
 		switch (index) {
