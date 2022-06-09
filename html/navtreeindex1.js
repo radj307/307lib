@@ -92,8 +92,7 @@ var NAVTREEINDEX1 =
 "classjson_1_1parser_1_1_parser.html#a6d73b7a0a4c28c2747b6107dae9cf21f":[8,0,5,0,1,2],
 "classjson_1_1parser_1_1_parser.html#a763425352cc7ba3cf627b02a9c7be069":[8,0,5,0,1,1],
 "classjson_1_1parser_1_1_parser.html#a8391dc55a2855ae069dd46795f26f1db":[8,0,5,0,1,0],
-"classjson_1_1parser_1_1_parser.html#a9f0b3f48d2e8a87bd6fd5475b1736783":[8,0,5,0,1,4],
-"classjson_1_1parser_1_1_parser.html#abd2e6d96b57541358dd0d6b531e70ded":[8,0,5,0,1,3],
+"classjson_1_1parser_1_1_parser.html#a9f0b3f48d2e8a87bd6fd5475b1736783":[8,0,5,0,1,3],
 "classjson_1_1parser_1_1_tokenizer.html":[8,0,5,0,2],
 "classjson_1_1parser_1_1_tokenizer.html#a1c8105a24a39a003d5cbc0b048ede8fe":[8,0,5,0,2,2],
 "classjson_1_1parser_1_1_tokenizer.html#a2e4c85856e2073f5387480cf20d09c13":[8,0,5,0,2,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "classterm_1_1palette.html#ae53f82ef57ed734eb2a75f9d03a8d1f5":[8,0,11,5,55],
 "classterm_1_1palette.html#aed4078d60e9cead4053a3482f5655ef3":[8,0,11,5,28],
 "classterm_1_1palette.html#aed7b8cd933802708e8b6c42cec92b6ee":[8,0,11,5,6],
-"classterm_1_1palette.html#aef11f425ae9e3c2443afe26e15e2cc06":[8,0,11,5,31]
+"classterm_1_1palette.html#aef11f425ae9e3c2443afe26e15e2cc06":[8,0,11,5,31],
+"classterm_1_1palette.html#afd420fe5e5e872260484ef9f5129264f":[8,0,11,5,9]
 };

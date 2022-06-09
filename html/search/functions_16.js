@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xlog_1191',['xLog',['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog']]],
-  ['xlogs_1192',['xLogs',['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs']]]
+  ['xlog_1211',['xLog',['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog']]],
+  ['xlogs_1212',['xLogs',['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs']]]
 ];

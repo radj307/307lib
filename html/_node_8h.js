@@ -11,7 +11,7 @@ var _node_8h =
     [ "uchar", "_node_8h.html#a038f0239803711b7f88b9441c4401d5e", null ],
     [ "variant_t", "_node_8h.html#a45b8acfdd697501e050ba08693eb0961", null ],
     [ "GetNodeTypeFrom", "_node_8h.html#a807beb0703c9513eb7b9097e71d3d11e", null ],
-    [ "GetNodeTypeFrom", "_node_8h.html#a02b2b3603c6a7c1be606ef23e9799202", null ],
+    [ "GetNodeTypeFrom", "_node_8h.html#a3e92027a2d16e545eda9c007690e0d9b", null ],
     [ "operator<<", "_node_8h.html#a796f6cab1b8343b0987bf2ead2e0b0c7", null ],
     [ "operator<<", "_node_8h.html#a3750495e1e916d8223982b2f19b580df", null ],
     [ "operator<<", "_node_8h.html#ac665e5a698f21393dd5b414c216bfc74", null ],

@@ -155,13 +155,13 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a807beb0703c9513eb7b9097e71d3d11e"><td class="memTemplParams" colspan="2"><a id="a807beb0703c9513eb7b9097e71d3d11e"></a>
-template&lt;json_type T&gt; </td></tr>
-<tr class="memitem:a807beb0703c9513eb7b9097e71d3d11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetNodeTypeFrom</b> () noexcept</td></tr>
+<tr class="memitem:a807beb0703c9513eb7b9097e71d3d11e"><td class="memTemplParams" colspan="2">template&lt;json_type T&gt; </td></tr>
+<tr class="memitem:a807beb0703c9513eb7b9097e71d3d11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacejson.html#a807beb0703c9513eb7b9097e71d3d11e">GetNodeTypeFrom</a> () noexcept</td></tr>
+<tr class="memdesc:a807beb0703c9513eb7b9097e71d3d11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a <a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> instance from the raw typename specified by <code>T</code>.  <a href="namespacejson.html#a807beb0703c9513eb7b9097e71d3d11e">More...</a><br /></td></tr>
 <tr class="separator:a807beb0703c9513eb7b9097e71d3d11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02b2b3603c6a7c1be606ef23e9799202"><td class="memItemLeft" align="right" valign="top"><a id="a02b2b3603c6a7c1be606ef23e9799202"></a>
-constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetNodeTypeFrom</b> (const size_t &amp;) noexcept</td></tr>
-<tr class="separator:a02b2b3603c6a7c1be606ef23e9799202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e92027a2d16e545eda9c007690e0d9b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejson.html#a3e92027a2d16e545eda9c007690e0d9b">GetNodeTypeFrom</a> (const size_t &amp;index) noexcept</td></tr>
+<tr class="memdesc:a3e92027a2d16e545eda9c007690e0d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a <a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> instance from a variant_t index value.  <a href="namespacejson.html#a3e92027a2d16e545eda9c007690e0d9b">More...</a><br /></td></tr>
+<tr class="separator:a3e92027a2d16e545eda9c007690e0d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796f6cab1b8343b0987bf2ead2e0b0c7"><td class="memItemLeft" align="right" valign="top"><a id="a796f6cab1b8343b0987bf2ead2e0b0c7"></a>
 std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejson.html#a796f6cab1b8343b0987bf2ead2e0b0c7">operator&lt;&lt;</a> (std::ostream &amp;, const <a class="el" href="structjson_1_1_node.html">Node</a> &amp;)</td></tr>
 <tr class="memdesc:a796f6cab1b8343b0987bf2ead2e0b0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator for the <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> type. <br /></td></tr>
@@ -224,6 +224,88 @@ static constexpr <a class="el" href="namespacejson.html#a3abd0dc7f140a9c108ce60f
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a807beb0703c9513eb7b9097e71d3d11e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807beb0703c9513eb7b9097e71d3d11e">&#9670;&nbsp;</a></span>GetNodeTypeFrom() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;json_type T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a> json::GetNodeTypeFrom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves a <a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> instance from the raw typename specified by <code>T</code>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any type satisfying the <code>json_type</code> constraint. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00238">238</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e92027a2d16e545eda9c007690e0d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e92027a2d16e545eda9c007690e0d9b">&#9670;&nbsp;</a></span>GetNodeTypeFrom() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structjson_1_1_node_type.html">NodeType</a> json::GetNodeTypeFrom </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves a <a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> instance from a variant_t index value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The type index of a JSON <code>variant_t</code> type. <br  />
+ This can be acquired by calling the <code>index()</code> method on a <code>variant_t</code> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00258">258</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacejson_a3e92027a2d16e545eda9c007690e0d9b_icgraph.svg" width="396" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a378df74ece16cd6ad8d26fa62b6d350a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a378df74ece16cd6ad8d26fa62b6d350a">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
 

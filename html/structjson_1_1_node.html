@@ -103,60 +103,69 @@ $(document).ready(function(){initNavTree('structjson_1_1_node.html',''); initRes
 <div class="dynheader">
 Collaboration diagram for json::Node:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structjson_1_1_node__coll__graph.svg" width="223" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structjson_1_1_node__coll__graph.svg" width="223" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac72f881e47e21811301364da42bdff10"><td class="memItemLeft" align="right" valign="top"><a id="ac72f881e47e21811301364da42bdff10"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#ac72f881e47e21811301364da42bdff10">Node</a> ()</td></tr>
-<tr class="memdesc:ac72f881e47e21811301364da42bdff10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null value constructor. <br /></td></tr>
+<tr class="memdesc:ac72f881e47e21811301364da42bdff10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance of type Null. <br /></td></tr>
 <tr class="separator:ac72f881e47e21811301364da42bdff10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e471db9d1b501692dabdddd97992ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#ad8e471db9d1b501692dabdddd97992ca">Node</a> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:ad8e471db9d1b501692dabdddd97992ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value constructor.  <a href="structjson_1_1_node.html#ad8e471db9d1b501692dabdddd97992ca">More...</a><br /></td></tr>
+<tr class="memitem:ad8e471db9d1b501692dabdddd97992ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#ad8e471db9d1b501692dabdddd97992ca">Node</a> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> &amp;&amp;<a class="el" href="structjson_1_1_node.html#a0f4b03dfe8e44613990980306161c13c">value</a>) noexcept</td></tr>
+<tr class="memdesc:ad8e471db9d1b501692dabdddd97992ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance with the given value.  <a href="structjson_1_1_node.html#ad8e471db9d1b501692dabdddd97992ca">More...</a><br /></td></tr>
 <tr class="separator:ad8e471db9d1b501692dabdddd97992ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0dadbe6af218a54973054930058babf"><td class="memItemLeft" align="right" valign="top"><a id="ae0dadbe6af218a54973054930058babf"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_array</b> ()</td></tr>
-<tr class="separator:ae0dadbe6af218a54973054930058babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e16ae43231dfb780d80ce2f21adce4a"><td class="memItemLeft" align="right" valign="top"><a id="a1e16ae43231dfb780d80ce2f21adce4a"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_boolean</b> ()</td></tr>
-<tr class="separator:a1e16ae43231dfb780d80ce2f21adce4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eecffed402d0bc52032e110c98b7e26"><td class="memItemLeft" align="right" valign="top"><a id="a7eecffed402d0bc52032e110c98b7e26"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_null</b> ()</td></tr>
-<tr class="separator:a7eecffed402d0bc52032e110c98b7e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1cd907d95a57be9a295336c634b916f"><td class="memItemLeft" align="right" valign="top"><a id="ab1cd907d95a57be9a295336c634b916f"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_number</b> ()</td></tr>
-<tr class="separator:ab1cd907d95a57be9a295336c634b916f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff8c76fdde53f3dd882a2af1089dabe6"><td class="memItemLeft" align="right" valign="top"><a id="aff8c76fdde53f3dd882a2af1089dabe6"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_object</b> ()</td></tr>
-<tr class="separator:aff8c76fdde53f3dd882a2af1089dabe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c41172fbe2737213e2c6ce0e14b0206"><td class="memTemplParams" colspan="2"><a id="a2c41172fbe2737213e2c6ce0e14b0206"></a>
-template&lt;json_type T&gt; </td></tr>
-<tr class="memitem:a2c41172fbe2737213e2c6ce0e14b0206"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_type</b> ()</td></tr>
-<tr class="separator:a2c41172fbe2737213e2c6ce0e14b0206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0a5c99a2d81995a739496b874a89f9"><td class="memTemplParams" colspan="2"><a id="aea0a5c99a2d81995a739496b874a89f9"></a>
-template&lt;json_type T&gt; </td></tr>
-<tr class="memitem:aea0a5c99a2d81995a739496b874a89f9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T &amp;&amp;v) noexcept</td></tr>
+<tr class="memitem:a9487250cb82e0b00804246449eea458f"><td class="memItemLeft" align="right" valign="top"><a id="a9487250cb82e0b00804246449eea458f"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a9487250cb82e0b00804246449eea458f">is_array</a> () const</td></tr>
+<tr class="memdesc:a9487250cb82e0b00804246449eea458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is an Array. <br /></td></tr>
+<tr class="separator:a9487250cb82e0b00804246449eea458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4fd5ef6192b49341ba4be87e90dcab"><td class="memItemLeft" align="right" valign="top"><a id="a9e4fd5ef6192b49341ba4be87e90dcab"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a9e4fd5ef6192b49341ba4be87e90dcab">is_boolean</a> () const</td></tr>
+<tr class="memdesc:a9e4fd5ef6192b49341ba4be87e90dcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is a Boolean. <br /></td></tr>
+<tr class="separator:a9e4fd5ef6192b49341ba4be87e90dcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491f934740ce86fb747f35d3c0699e7d"><td class="memItemLeft" align="right" valign="top"><a id="a491f934740ce86fb747f35d3c0699e7d"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a491f934740ce86fb747f35d3c0699e7d">is_null</a> () const</td></tr>
+<tr class="memdesc:a491f934740ce86fb747f35d3c0699e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is Null. <br /></td></tr>
+<tr class="separator:a491f934740ce86fb747f35d3c0699e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16783d8e2ca1528ef91673727a99515c"><td class="memItemLeft" align="right" valign="top"><a id="a16783d8e2ca1528ef91673727a99515c"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a16783d8e2ca1528ef91673727a99515c">is_number</a> () const</td></tr>
+<tr class="memdesc:a16783d8e2ca1528ef91673727a99515c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is a Number. <br /></td></tr>
+<tr class="separator:a16783d8e2ca1528ef91673727a99515c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9169009a58c35171504c1cb56d44814f"><td class="memItemLeft" align="right" valign="top"><a id="a9169009a58c35171504c1cb56d44814f"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a9169009a58c35171504c1cb56d44814f">is_object</a> () const</td></tr>
+<tr class="memdesc:a9169009a58c35171504c1cb56d44814f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is an Object. <br /></td></tr>
+<tr class="separator:a9169009a58c35171504c1cb56d44814f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eaca0eb364786aec85b38d1a5379224"><td class="memTemplParams" colspan="2">template&lt;json_type T&gt; </td></tr>
+<tr class="memitem:a1eaca0eb364786aec85b38d1a5379224"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a1eaca0eb364786aec85b38d1a5379224">is_type</a> () const</td></tr>
+<tr class="memdesc:a1eaca0eb364786aec85b38d1a5379224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance is the same type as the given node type; which is determined by the result of <a class="el" href="namespacejson.html#a807beb0703c9513eb7b9097e71d3d11e" title="Retrieves a NodeType instance from the raw typename specified by T.">GetNodeTypeFrom&lt;T&gt;()</a>.  <a href="structjson_1_1_node.html#a1eaca0eb364786aec85b38d1a5379224">More...</a><br /></td></tr>
+<tr class="separator:a1eaca0eb364786aec85b38d1a5379224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740263ea787082a42d61119000a113c6"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a740263ea787082a42d61119000a113c6">is_type</a> (const <a class="el" href="structjson_1_1_node_type.html">NodeType</a> &amp;node_type) const</td></tr>
+<tr class="memdesc:a740263ea787082a42d61119000a113c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance is the same type as the given node type.  <a href="structjson_1_1_node.html#a740263ea787082a42d61119000a113c6">More...</a><br /></td></tr>
+<tr class="separator:a740263ea787082a42d61119000a113c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0a5c99a2d81995a739496b874a89f9"><td class="memTemplParams" colspan="2">template&lt;json_type T&gt; </td></tr>
+<tr class="memitem:aea0a5c99a2d81995a739496b874a89f9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#aea0a5c99a2d81995a739496b874a89f9">operator=</a> (T &amp;&amp;v) noexcept</td></tr>
+<tr class="memdesc:aea0a5c99a2d81995a739496b874a89f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value.  <a href="structjson_1_1_node.html#aea0a5c99a2d81995a739496b874a89f9">More...</a><br /></td></tr>
 <tr class="separator:aea0a5c99a2d81995a739496b874a89f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d15195b892549ac7634c158fd87d2f0"><td class="memTemplParams" colspan="2"><a id="a4d15195b892549ac7634c158fd87d2f0"></a>
-template&lt;json_type T&gt; </td></tr>
-<tr class="memitem:a4d15195b892549ac7634c158fd87d2f0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T const &amp;v) noexcept</td></tr>
+<tr class="memitem:a4d15195b892549ac7634c158fd87d2f0"><td class="memTemplParams" colspan="2">template&lt;json_type T&gt; </td></tr>
+<tr class="memitem:a4d15195b892549ac7634c158fd87d2f0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a4d15195b892549ac7634c158fd87d2f0">operator=</a> (T const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a4d15195b892549ac7634c158fd87d2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value.  <a href="structjson_1_1_node.html#a4d15195b892549ac7634c158fd87d2f0">More...</a><br /></td></tr>
 <tr class="separator:a4d15195b892549ac7634c158fd87d2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e40b1f9b7f7511293299c7596d74eaa"><td class="memItemLeft" align="right" valign="top"><a id="a5e40b1f9b7f7511293299c7596d74eaa"></a>
-<a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> &amp;&amp;v) noexcept</td></tr>
+<tr class="memitem:a5e40b1f9b7f7511293299c7596d74eaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a5e40b1f9b7f7511293299c7596d74eaa">operator=</a> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> &amp;&amp;v) noexcept</td></tr>
+<tr class="memdesc:a5e40b1f9b7f7511293299c7596d74eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value.  <a href="structjson_1_1_node.html#a5e40b1f9b7f7511293299c7596d74eaa">More...</a><br /></td></tr>
 <tr class="separator:a5e40b1f9b7f7511293299c7596d74eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6ef78fb9d19400ed901e1665d0876c"><td class="memItemLeft" align="right" valign="top"><a id="abc6ef78fb9d19400ed901e1665d0876c"></a>
-<a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> const &amp;v) noexcept</td></tr>
+<tr class="memitem:abc6ef78fb9d19400ed901e1665d0876c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#abc6ef78fb9d19400ed901e1665d0876c">operator=</a> (<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> const &amp;v) noexcept</td></tr>
+<tr class="memdesc:abc6ef78fb9d19400ed901e1665d0876c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value.  <a href="structjson_1_1_node.html#abc6ef78fb9d19400ed901e1665d0876c">More...</a><br /></td></tr>
 <tr class="separator:abc6ef78fb9d19400ed901e1665d0876c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a46e7dc65cf6909d1d05a0bc167df246a"><td class="memItemLeft" align="right" valign="top"><a id="a46e7dc65cf6909d1d05a0bc167df246a"></a>
-<a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<a class="el" href="structjson_1_1_node_type.html">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a46e7dc65cf6909d1d05a0bc167df246a">type</a></td></tr>
+<tr class="memdesc:a46e7dc65cf6909d1d05a0bc167df246a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>. Changing this without changing the value will cause problems, so don't do that. <br /></td></tr>
 <tr class="separator:a46e7dc65cf6909d1d05a0bc167df246a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f4b03dfe8e44613990980306161c13c"><td class="memItemLeft" align="right" valign="top"><a id="a0f4b03dfe8e44613990980306161c13c"></a>
-<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1_node.html#a0f4b03dfe8e44613990980306161c13c">value</a></td></tr>
+<tr class="memdesc:a0f4b03dfe8e44613990980306161c13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variant that can contain any type meeting the json_type constraint. <br /></td></tr>
 <tr class="separator:a0f4b03dfe8e44613990980306161c13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -190,15 +199,244 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Value constructor. </p>
+<p>Constructs a new <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance with the given value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The value to assign to this node. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to assign to this node. <br  />
+ This is used internally to determine the correct type. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00153">153</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00156">156</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1eaca0eb364786aec85b38d1a5379224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eaca0eb364786aec85b38d1a5379224">&#9670;&nbsp;</a></span>is_type() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;json_type T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool json::Node::is_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance is the same type as the given node type; which is determined by the result of <a class="el" href="namespacejson.html#a807beb0703c9513eb7b9097e71d3d11e" title="Retrieves a NodeType instance from the raw typename specified by T.">GetNodeTypeFrom&lt;T&gt;()</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any type meeting the json_type constraint. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is of type T; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00170">170</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="a740263ea787082a42d61119000a113c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740263ea787082a42d61119000a113c6">&#9670;&nbsp;</a></span>is_type() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool json::Node::is_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structjson_1_1_node_type.html">NodeType</a> &amp;&#160;</td>
+          <td class="paramname"><em>node_type</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> instance is the same type as the given node type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_type</td><td>The <a class="el" href="structjson_1_1_node_type.html" title="Pseudo-enum struct whose value is used to determine the type contained within a Node....">NodeType</a> to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> is of type T; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00163">163</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="aea0a5c99a2d81995a739496b874a89f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0a5c99a2d81995a739496b874a89f9">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;json_type T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson_1_1_node.html">Node</a>&amp; json::Node::operator= </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00187">187</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d15195b892549ac7634c158fd87d2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d15195b892549ac7634c158fd87d2f0">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;json_type T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson_1_1_node.html">Node</a>&amp; json::Node::operator= </td>
+          <td>(</td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00198">198</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e40b1f9b7f7511293299c7596d74eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e40b1f9b7f7511293299c7596d74eaa">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson_1_1_node.html">Node</a>&amp; json::Node::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00220">220</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a id="abc6ef78fb9d19400ed901e1665d0876c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6ef78fb9d19400ed901e1665d0876c">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson_1_1_node.html">Node</a>&amp; json::Node::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacejson.html#a45b8acfdd697501e050ba08693eb0961">variant_t</a> const &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets this <a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>'s value to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Input Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a>&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_node_8h_source.html#l00209">209</a> of file <a class="el" href="_node_8h_source.html">Node.h</a>.</p>
 
 </div>
 </div>

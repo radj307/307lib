@@ -88,13 +88,17 @@ $(document).ready(function(){initNavTree('classjson_1_1parser_1_1_parser.html','
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classjson_1_1parser_1_1_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">json::parser::Parser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements the IteratingParserBase class for the JSON file format.  
+ <a href="classjson_1_1parser_1_1_parser.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for json::parser::Parser:</div>
 <div class="dyncontent">
@@ -110,24 +114,18 @@ Collaboration diagram for json::parser::Parser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8391dc55a2855ae069dd46795f26f1db"><td class="memItemLeft" align="right" valign="top"><a id="a8391dc55a2855ae069dd46795f26f1db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;&amp;tokens, <a class="el" href="structjson_1_1_node_type.html">NodeType</a> const &amp;node_type=<a class="el" href="structjson_1_1_node_type.html#a025ea27d003a991d210091203b07c306">NodeType::Object</a>)</td></tr>
+<tr class="memitem:a8391dc55a2855ae069dd46795f26f1db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1parser_1_1_parser.html#a8391dc55a2855ae069dd46795f26f1db">Parser</a> (std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;&amp;tokens, <a class="el" href="structjson_1_1_node_type.html">NodeType</a> const &amp;node_type=<a class="el" href="structjson_1_1_node_type.html#a025ea27d003a991d210091203b07c306">NodeType::Object</a>)</td></tr>
+<tr class="memdesc:a8391dc55a2855ae069dd46795f26f1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new JSON parser instance.  <a href="classjson_1_1parser_1_1_parser.html#a8391dc55a2855ae069dd46795f26f1db">More...</a><br /></td></tr>
 <tr class="separator:a8391dc55a2855ae069dd46795f26f1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a763425352cc7ba3cf627b02a9c7be069"><td class="memItemLeft" align="right" valign="top"><a id="a763425352cc7ba3cf627b02a9c7be069"></a>
-OutputT&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> () override</td></tr>
+<tr class="memitem:a763425352cc7ba3cf627b02a9c7be069"><td class="memItemLeft" align="right" valign="top">OutputT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1parser_1_1_parser.html#a763425352cc7ba3cf627b02a9c7be069">parse</a> () override</td></tr>
+<tr class="memdesc:a763425352cc7ba3cf627b02a9c7be069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse all tokens into the specified node type.  <a href="classjson_1_1parser_1_1_parser.html#a763425352cc7ba3cf627b02a9c7be069">More...</a><br /></td></tr>
 <tr class="separator:a763425352cc7ba3cf627b02a9c7be069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a6d73b7a0a4c28c2747b6107dae9cf21f"><td class="memItemLeft" align="right" valign="top"><a id="a6d73b7a0a4c28c2747b6107dae9cf21f"></a>
-<a class="el" href="structjson_1_1_node.html">Node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parseKeyword</b> (std::string const &amp;kywd)</td></tr>
+<tr class="memitem:a6d73b7a0a4c28c2747b6107dae9cf21f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson_1_1_node.html">Node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1parser_1_1_parser.html#a6d73b7a0a4c28c2747b6107dae9cf21f">parseKeyword</a> (std::string const &amp;kywd)</td></tr>
+<tr class="memdesc:a6d73b7a0a4c28c2747b6107dae9cf21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a JSON keyword, such as 'null', 'true', &amp; 'false'.  <a href="classjson_1_1parser_1_1_parser.html#a6d73b7a0a4c28c2747b6107dae9cf21f">More...</a><br /></td></tr>
 <tr class="separator:a6d73b7a0a4c28c2747b6107dae9cf21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:abd2e6d96b57541358dd0d6b531e70ded"><td class="memItemLeft" align="right" valign="top"><a id="abd2e6d96b57541358dd0d6b531e70ded"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>removeEnclosing</b> (std::string s, char open, char close, bool removeWhitespace=true)</td></tr>
-<tr class="separator:abd2e6d96b57541358dd0d6b531e70ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -136,9 +134,133 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9f0b3f48d2e8a87bd6fd5475b1736783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_j_s_o_n_8hpp_source.html#l00142">142</a> of file <a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Implements the IteratingParserBase class for the JSON file format. </p>
+
+<p class="definition">Definition at line <a class="el" href="_j_s_o_n_8hpp_source.html#l00177">177</a> of file <a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8391dc55a2855ae069dd46795f26f1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8391dc55a2855ae069dd46795f26f1db">&#9670;&nbsp;</a></span>Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">json::parser::Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtoken_1_1base_1_1_token_base.html">Token</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>tokens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjson_1_1_node_type.html">NodeType</a> const &amp;&#160;</td>
+          <td class="paramname"><em>node_type</em> = <code><a class="el" href="structjson_1_1_node_type.html#a025ea27d003a991d210091203b07c306">NodeType::Object</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a new JSON parser instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tokens</td><td>Input vector of tokens. </td></tr>
+    <tr><td class="paramname">node_type</td><td>The type of root node to produce from the given tokens. <br  />
+ This is usually either <a class="el" href="structjson_1_1_node_type.html#a025ea27d003a991d210091203b07c306" title="Object type; contains a list of key-value pairs where the key type is always a string and the value t...">NodeType::Object</a> or <a class="el" href="structjson_1_1_node_type.html#a548a9c380bb56866552b501541ecea7d" title="Array type; contains a variable-length array of Nodes.">NodeType::Array</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ex::except</td><td>node_type was <a class="el" href="structjson_1_1_node_type.html#aeb84a5d1aba0e7f2d61e9d4dc8af9aee" title="Undefined type; indicates an error.">NodeType::Undefined</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_j_s_o_n_8hpp_source.html#l00204">204</a> of file <a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a763425352cc7ba3cf627b02a9c7be069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763425352cc7ba3cf627b02a9c7be069">&#9670;&nbsp;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::OutputT json::parser::Parser::parse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse all tokens into the specified node type. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_j_s_o_n_8cpp_source.html#l00033">33</a> of file <a class="el" href="_j_s_o_n_8cpp_source.html">JSON.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6d73b7a0a4c28c2747b6107dae9cf21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d73b7a0a4c28c2747b6107dae9cf21f">&#9670;&nbsp;</a></span>parseKeyword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson_1_1_node.html">Node</a> json::parser::Parser::parseKeyword </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>kywd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses a JSON keyword, such as 'null', 'true', &amp; 'false'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kywd</td><td>A string containing the keyword to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structjson_1_1_node.html" title="A singular JSON Node capable of containing any valid type.   Nodes are containers that store a single...">Node</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_j_s_o_n_8hpp_source.html#l00185">185</a> of file <a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/307lib/307lib/filelib/include/json/<a class="el" href="_j_s_o_n_8hpp_source.html">JSON.hpp</a></li>
 <li>/home/runner/work/307lib/307lib/filelib/src/json/<a class="el" href="_j_s_o_n_8cpp_source.html">JSON.cpp</a></li>
 </ul>

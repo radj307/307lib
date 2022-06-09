@@ -1,5 +1,6 @@
 var strcompare_8hpp =
 [
+    [ "call_if_valid", "strcompare_8hpp.html#a7b68d63cd59ffc34da698c59859da13e", null ],
     [ "endsWith", "strcompare_8hpp.html#a25dcad1131572f82cbb30a06c81006b0", null ],
     [ "endsWithAny", "strcompare_8hpp.html#afe1efa734a2a1e8106138ce3b5995874", null ],
     [ "equalsAny", "strcompare_8hpp.html#ac0941f8566d99a99085690ce06c8eec1", null ],
