@@ -20,6 +20,15 @@ Arguments are assigned 'types' depending on their prefix.
 | **Flag**  <br/> *(short-opt)* | `-`    | These are single-character arguments that may be chained together using a single prefix.                                     | **Unchained:** When allowed by the implementation.<br/>**Chained:** When allowed by the implementation, but only when last in the chain. | No |
 | **Parameter**                 |        | Any argument that isn't an **Option** or **Flag**.                                                                           | Never | Yes |
 
+Here's an example of argument type deduction from [ARRCON](https://github.com/radj307/ARRCON):
+ ```
+            Parameter
+                v
+ ARRCON -H 192.168.0.53 --port=25555
+         ^                    ^
+        Flag          Option with capture
+ ```
+
 ## Argument Capturing
 
 An argument's type determines whether it is *capable* of capturing other arguments, but whether it actually does is determined by a few factors:
@@ -31,6 +40,9 @@ An argument's type determines whether it is *capable* of capturing other argumen
   - A string that is directly appended to the argument, seperated by a single equals sign `=`.  
     Strings that include space characters can also be specified as long as they are enclosed with quotation marks, i.e. `="my string"`
   - A **Parameter** immediately following the argument. *(Options and flags can never be captured)*  
+
+Arguments that are not specifically allowed to capture *cannot capture under any circumstances.*  
+In the event that a user attempts to force a non-capturing option or flag to capture a string by appending `=...` to it, the string is inserted into the argument list as a Parameter instead.  
 
 #### Note for Developers
 
