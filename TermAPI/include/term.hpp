@@ -1,9 +1,11 @@
 /**
  * @file	term.hpp
  * @author	radj307
- * @brief	Contains ANSI escape sequence functors derived from the Sequence type.
- *\n		Covers most/all of the virtual sequences documented by microsoft here:
+ * @brief	Contains a wide variety of cross-platform ANSI escape sequences for every occasion.
+ *
+ *\n		Covers most of the 'virtual sequences' documented by microsoft here:
  *\n		https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences
+ *\n		All of the sequences listed at the above link are usable on both Windows & UNIX-based operating systems.
  */
 #pragma once
 #include <sysarch.h>
@@ -21,7 +23,7 @@
 #include <string>
 
 #ifdef OS_WIN
-#include <conio.h>
+#include <conio.h> //< For Windows-specific `_kbhit()` & `_getch()` functions.
 #endif
 
  /**
@@ -53,7 +55,7 @@ namespace term {
 
 	/**
 	 * @brief			Check if a key was pressed.
-	 *\n				On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().
+	 *\n				On windows, this uses `_kbhit`, while on linux, it uses `hasPendingDataSTDIN` (which uses `select()`).
 	 * @returns	bool:	True when a key was pressed and there is data waiting in STDIN.
 	 */
 	inline bool kbhit()

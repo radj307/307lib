@@ -16,17 +16,18 @@
 #endif
 
  /**
- * @brief	Checks if there is a pending read operation on the STDIN stream.
- *\n		This function works on both POSIX & Windows.
- * @returns	bool
- *\n		true	There is pending data in the STDIN stream.
- *\n		false	The STDIN stream is empty.
+ * @brief		Checks if there is a pending read operation on the STDIN stream.
+ *\n			This function works on both POSIX & Windows.
+ * @attention	Do not use this function for checking if the user has pressed a key on ___windows only___!
+ * @returns		bool
+ *\n			- true		There is pending data in the STDIN stream.
+ *\n			- false		The STDIN stream is empty.
  */
 [[nodiscard]] INLINE bool hasPendingDataSTDIN()
 {
 #	if defined(OS_WIN)
-	// Return true when the STDIN file descriptor is waiting
-	return !_isatty(_fileno(__acrt_iob_func(0)));
+	// Return true when the STDIN file descriptor hasn't been redirected to a file
+	return !_isatty(_fileno(stdin));
 #	elif defined(OS_LINUX) || defined(OS_MAC) // POSIX
 	struct timespec timeout { 0l, 0l };
 	fd_set fds{};

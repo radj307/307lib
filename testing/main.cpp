@@ -1,92 +1,57 @@
-﻿#include <TermAPI.hpp>
+﻿#include <iostream>
+#include <vector>
+#include <string>
 
-#include <fileio.hpp>
-#include <TokenRedux.hpp>
-#include <TokenReduxDefaultDefs.hpp>
-#include <INIRedux.hpp>
-#include <env.hpp>
+using namespace std;
 
-#include <iostream>
-
-#include <ArgumentRedux.hpp>
-
-#include <ParamsAPI2.hpp>
-
-#include <clogger.hpp>
-#include <strmath.hpp>
-
-struct LogCap {
-	std::stringstream stream;
-
-	std::streambuf* rdbuf() { return stream.rdbuf(); }
-	std::streambuf* rdbuf(auto&& buf) { return stream.rdbuf(std::forward<decltype(buf)>(buf)); }
-};
-
-using CLK = std::chrono::steady_clock;
-using DUR = std::chrono::duration<double, std::micro>;
-using TIMECONT = std::vector<std::chrono::steady_clock::time_point>;
-#define TIMEP(test_number, object_name, identifier) t##test_number##_##object_name##_##identifier{ CLK::now() }
-#define MAKE_DUR(test_number, object_name) t##test_number##_##object_name##_dur{ t##test_number##_##object_name##_##end - t##test_number##_##object_name##_##begin }
-#define GET_DUR(test_number, object_name) t##test_number##_##object_name##_dur
-
-int main(const int argc, char** argv)
+bool isAscOrder(vector<int> arr)
 {
-	try {
-		const auto TIMEP(0, v2, begin); // BEGIN
-		opt::ParamsAPI2 args_v2{ argc, argv, "precision", "align-to" };
-		const auto TIMEP(0, v2, end); // END
-		const DUR MAKE_DUR(0, v2);
+    int size_array = arr.size()-1;
+    int min = 0;
+    int max = 0;
+    for (int j = 0; j < size_array; j++)
+    {
+        if (min == 0)
+        {
+            min = arr[j];
+            max = arr[j];
+        }
 
-		const auto TIMEP(0, v3, begin); // BEGIN
-		opt::ParamsAPI3 args_v3{ argc, argv, "precision", "align-to" };
-		const auto TIMEP(0, v3, end); // BEGIN
-		const DUR MAKE_DUR(0, v3);
+        if (arr[j] > min)
+        {
+            return true;
+        }
+        if(arr[j]<min)
+        {
+            return false;
+        }
+    }
+    return false;
+}
 
-		const auto TIMEP(1, v2, begin); // BEGIN
-		const auto v2_parameters{ args_v2.typegetv_all<opt::Parameter>() };
-		const auto TIMEP(1, v2, end); // END
-		const DUR MAKE_DUR(1, v2);
+int main()
+{
+	vector<int> inAscOrder_1 = { 1, 2, 4, 7, 19 }; // returns true
+	vector<int> inAscOrder_2 = { 1, 2, 3, 4, 5 }; // returns true
+	vector<int> inAscOrder_3 = { 1, 6, 10, 18, 2, 4, 20 }; // returns false
+	vector<int> inAscOrder_4 = { 9, 8, 7, 6, 5, 4, 3, 2, 1 }; // returns false because the numbers are in DESCENDING order
 
-		const auto TIMEP(1, v3, begin); // BEGIN
-		const auto v3_parameters{ args_v3.typegetv_all<opt::Parameter>() };
-		const auto TIMEP(1, v3, end); // END
-		const DUR MAKE_DUR(1, v3);
 
-		if (v2_parameters.size() != v3_parameters.size())
-			throw make_exception("Vector sizes do not match, outcome is not deterministic!");
+	//test 1
 
-		std::cout
-			<< "Initialization Speed:\n"
-			<< "  " << "[v2]:    " << GET_DUR(0, v2).count() << " us" << '\n'
-			<< "  " << "[v3]:    " << GET_DUR(0, v3).count() << " us" << '\n'
-			<< "  " << "Diff:    " << math::difference<double, std::micro>(GET_DUR(0, v2), GET_DUR(0, v3)).count() << " us" << '\n'
-			<< "  " << "Winner:  " << (GET_DUR(0, v2).count() < GET_DUR(0, v3).count() ? "[v2]" : "[v3]")
-			<< "\nTime to retrieve and iterate through all parameters:\n"
-			<< "  " << "[v2]:    " << GET_DUR(1, v2).count() << " us" << '\n'
-			<< "  " << "[v3]:    " << GET_DUR(1, v3).count() << " us" << '\n'
-			<< "  " << "Diff:    " << math::difference<double, std::micro>(GET_DUR(1, v2), GET_DUR(1, v3)).count() << " us" << '\n'
-			<< "  " << "Winner:  " << (GET_DUR(1, v2).count() < GET_DUR(1, v3).count() ? "[v2]" : "[v3]")
-			<< "\n\n"
-			;
-
-		using term::setcolor;
-
-		// CHECK ENV FOR TERM SUPPORT
-	#ifdef OS_WIN
-	//true
-	#elif OS_LINUX
-		if (const auto var{ env::getvar("TERM") }; var.has_value())
-			std::cout << setcolor::green << var.value() << setcolor::reset_f << std::endl;
-		else std::cout << setcolor::red << "[NOT FOUND]" << setcolor::reset_f << std::endl;
-	#endif
-		// CHECK ENV FOR TERM SUPPORT
-
-		return 0;
-	} catch (const std::exception& ex) {
-		std::cerr << term::error << ex.what() << std::endl;
-		return -1;
-	} catch (...) {
-		std::cerr << term::error << "An unknown exception occurred!" << std::endl;
-		return -2;
+	if (isAscOrder(inAscOrder_1) == true) {
+		cout << "test #1 passed! " << endl;;
 	}
+	if (isAscOrder(inAscOrder_2) == true) {
+		cout << "test #2 passed! " << endl;
+	}
+	if (isAscOrder(inAscOrder_3) == false) {
+		cout << "test #3 passed! " << endl;
+	}
+	if (isAscOrder(inAscOrder_4) == false) {
+		cout << "test #4 passed! ";
+	}
+
+
+	return 0;
 }
