@@ -4,54 +4,29 @@
 
 using namespace std;
 
-bool isAscOrder(vector<int> arr)
+#include <fileio.hpp>
+#include <xml/XML.h>
+
+int main(const int argc, char** argv)
 {
-    int size_array = arr.size()-1;
-    int min = 0;
-    int max = 0;
-    for (int j = 0; j < size_array; j++)
-    {
-        if (min == 0)
-        {
-            min = arr[j];
-            max = arr[j];
-        }
+	try {
+		using namespace xml;
 
-        if (arr[j] > min)
-        {
-            return true;
-        }
-        if(arr[j]<min)
-        {
-            return false;
-        }
-    }
-    return false;
-}
+		XMLDocument::read("test2.xml").write("test2-out.xml");
 
-int main()
-{
-	vector<int> inAscOrder_1 = { 1, 2, 4, 7, 19 }; // returns true
-	vector<int> inAscOrder_2 = { 1, 2, 3, 4, 5 }; // returns true
-	vector<int> inAscOrder_3 = { 1, 6, 10, 18, 2, 4, 20 }; // returns false
-	vector<int> inAscOrder_4 = { 9, 8, 7, 6, 5, 4, 3, 2, 1 }; // returns false because the numbers are in DESCENDING order
+		auto in{ file::read("test2.xml").str() };
+		auto out{ file::read("test2-out.xml").str() };
+		if (in == out)
+			cout << "EQUAL" << endl;
+		else
+			cout << "NOT EQUAL" << endl;
 
-
-	//test 1
-
-	if (isAscOrder(inAscOrder_1) == true) {
-		cout << "test #1 passed! " << endl;;
+		return 0;
+	} catch (const std::exception& ex) {
+		cout << ex.what() << endl;
+		return 1;
+	} catch (...) {
+		cout << "An undefined exception occurred!" << endl;
+		return 1;
 	}
-	if (isAscOrder(inAscOrder_2) == true) {
-		cout << "test #2 passed! " << endl;
-	}
-	if (isAscOrder(inAscOrder_3) == false) {
-		cout << "test #3 passed! " << endl;
-	}
-	if (isAscOrder(inAscOrder_4) == false) {
-		cout << "test #4 passed! ";
-	}
-
-
-	return 0;
 }

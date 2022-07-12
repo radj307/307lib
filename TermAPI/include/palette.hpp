@@ -21,7 +21,7 @@ namespace term {
 	 *\n			Maps color sequences to a templated key type.
 	 *\n			Provides convenience methods for recalling color sequences by using keys.
 	 *\n			Very useful when you want to control the usage of escape sequences throughout your program.
-	 * @tparam Key	
+	 * @tparam Key
 	 */
 	template<typename Key>
 	class palette {
@@ -57,12 +57,10 @@ namespace term {
 		palette(container_type&& palette, const bool& enable = true, const ANSI::Sequence& reset_seq = color::reset) : _palette{ std::move(palette) }, _enable{ enable }, _reset_seq{ reset_seq } {}
 
 		/**
-		 * @brief				Variadic Constructor
-		 * @tparam Ts...		Variadic color pair types.
-		 * @param ...colors		Any number of color pairs.
+		 * @brief				Initializer List Constructor
+		 * @param colors		Any number of color pairs.
 		 */
-		template<var::same_or_convertible<pair_type>... Ts>
-		palette(Ts&&... colors) : _palette{ std::forward<Ts>(colors)... } {}
+		palette(std::initializer_list<pair_type>&& colors) : _palette{ std::move(colors.begin()), std::move(colors.end()) } {}
 #		pragma endregion Constructors
 
 #		pragma region Functions
@@ -101,9 +99,9 @@ namespace term {
 		 */
 		constexpr bool setActive(const bool& active) { return setEnabled(active); }
 
-		// @brief	Enable this color palette.
+		/// @brief	Enable this color palette.
 		constexpr void enable() { setEnabled(true); }
-		// @brief	Disable this color palette.
+		/// @brief	Disable this color palette.
 		constexpr void disable() { setEnabled(false); }
 
 		/**
@@ -135,21 +133,21 @@ namespace term {
 		virtual bool key_exists(key_type&& key) const { return contains(std::forward<key_type>(key)); }
 
 #		pragma region ContainerPassthroughFunctions
-		// @brief	Get an iterator to the specified key if it exists, or end if it doesn't.
+		/// @brief	Get an iterator to the specified key if it exists, or end if it doesn't.
 		virtual const_iterator find(key_type&& key) const { return _palette.find(std::forward<key_type>(key)); }
-		// @brief	Get an iterator for the beginning of the palette container.
+		/// @brief	Get an iterator for the beginning of the palette container.
 		virtual const_iterator begin() const { return _palette.begin(); }
-		// @brief	Get an iterator for the end of the palette container.
+		/// @brief	Get an iterator for the end of the palette container.
 		virtual const_iterator end() const { return _palette.end(); }
-		// @brief	Check if the palette has any registered color keys.
+		/// @brief	Check if the palette has any registered color keys.
 		virtual bool empty() const { return _palette.empty(); }
-		// @brief	Get the number of registered color keys.
+		/// @brief	Get the number of registered color keys.
 		virtual size_type size() const { return _palette.size(); }
-		// @brief	Check if the palette contains the specified color key.
+		/// @brief	Check if the palette contains the specified color key.
 		virtual bool contains(key_type&& key) const { return _palette.contains(std::forward<key_type>(key)); }
-		// @brief	Insert a new color key pair into the palette if one doesn't already exist.
+		/// @brief	Insert a new color key pair into the palette if one doesn't already exist.
 		auto&& insert(pair_type&& pr) { return _palette.insert(std::forward<pair_type>(pr)); }
-		// @brief	Insert a new color & key into the palette, or assign a key to the specified color if it already exists.
+		/// @brief	Insert a new color & key into the palette, or assign a key to the specified color if it already exists.
 		auto&& insert_or_assign(key_type&& key, value_type&& value) { return _palette.insert_or_assign(std::forward<key_type>(key), std::forward<value_type>(value)); }
 #		pragma endregion ContainerPassthroughFunctions
 #		pragma endregion Functions
@@ -291,21 +289,23 @@ namespace term {
 #		pragma endregion SequenceGetters
 
 #		pragma region MessageHeaders
-		// @brief	Returns [DEBUG] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [DEBUG] header that uses colors only if the palette is enabled.
 		Message get_debug() const noexcept { return term::get_debug(_enable, MessageMarginSize); }
-		// @brief	Returns [INFO] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [INFO] header that uses colors only if the palette is enabled.
 		Message get_info() const noexcept { return term::get_info(_enable, MessageMarginSize); }
-		// @brief	Returns [LOG] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [LOG] header that uses colors only if the palette is enabled.
 		Message get_log() const noexcept { return term::get_log(_enable, MessageMarginSize); }
-		// @brief	Returns [MSG] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [MSG] header that uses colors only if the palette is enabled.
 		Message get_msg() const noexcept { return term::get_msg(_enable, MessageMarginSize); }
-		// @brief	Returns [WARN] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [WARN] header that uses colors only if the palette is enabled.
 		Message get_warn() const noexcept { return term::get_warn(_enable, MessageMarginSize); }
-		// @brief	Returns [ERROR] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [ERROR] header that uses colors only if the palette is enabled.
 		Message get_error() const noexcept { return term::get_error(_enable, MessageMarginSize); }
-		// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
+		/// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
 		Message get_crit() const noexcept { return term::get_crit(_enable, MessageMarginSize); }
-		// @brief	Returns an empty space header the same size as a normal message's indentation.
+		/// @brief	Returns [FATAL] header that uses colors only if the palette is enabled.
+		Message get_fatal() const noexcept { return term::get_fatal(_enable, MessageMarginSize); }
+		/// @brief	Returns an empty space header the same size as a normal message's indentation.
 		Message get_placeholder() const noexcept { return term::placeholder; }
 #		pragma endregion MessageHeaders
 

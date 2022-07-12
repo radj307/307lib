@@ -66,5 +66,55 @@ namespace str {
 		return (ch > 0b00000000 && ch < 0b11111111) && ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F'));
 	}
 
+	/**
+	 * @namespace	stdpred
+	 * @brief		Contains improved overloads of predicate functions from the standard library, such as 'isspace', 'isdigit', and 'isalpha', among others
+	 */
+	namespace stdpred {
+		template<std::predicate<int> Func>
+		[[nodiscard]] inline bool is_(int const& c, Func const& predicate) noexcept
+		{
+			return (c >= -1 && c <= 255) && predicate(c);
+		}
+		/**
+		 * @brief	Check if the given character is any alphabetic character.
+		 * @param c	The character to check.
+		 * @returns true when the given character is alphabetic; otherwise false.
+		 */
+		[[nodiscard]] inline bool isalpha(int const& c) noexcept
+		{
+			return is_(c, ::isalpha);
+		}
+		/**
+		 * @brief	Check if the given character is any whitespace character.
+		 *\n		(' ', '\t', '\v', '\r', '\n')
+		 * @param c	The character to check.
+		 * @returns true when the given character is whitespace; otherwise false.
+		 */
+		[[nodiscard]] inline bool isspace(int const& c) noexcept
+		{
+			return is_(c, ::isspace);
+		}
+		/**
+		 * @brief	Check if the given character is any digit character.
+		 *\n		('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
+		 * @param c	The character to check.
+		 * @returns true when the given character is a digit; otherwise false.
+		 */
+		[[nodiscard]] inline bool isdigit(int const& c) noexcept
+		{
+			return is_(c, ::isdigit);
+		}
+		/**
+		 * @brief	Check if the given character is any alphanumeric character.
+		 * @param c	The character to check.
+		 * @returns true when the given character is alphanumeric; otherwise false.
+		 */
+		[[nodiscard]] inline bool isalnum(int const& c) noexcept
+		{
+			return is_(c, ::isalnum);
+		}
+	}
+
 #	pragma endregion Predicates
 }

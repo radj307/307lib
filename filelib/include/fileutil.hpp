@@ -49,7 +49,8 @@ namespace file {
 	inline WINCONSTEXPR bool hasTrailingSeparator(const std::string_view& path) { return !path.empty() && isPathSeparator(path.back()); }
 
 	/**
-	 * @brief			Check if the given filepath exists on the system. The given path must resolve to a file, not directory.
+	 * @brief			Check if the given filepath exists on the system.
+	 * @attention		The given path must resolve to a file, not directory.
 	 * @param filepath	The filepath to check
 	 * @returns			bool
 	 */

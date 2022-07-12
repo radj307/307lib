@@ -147,6 +147,21 @@ namespace str {
 #	pragma region Predicates
 
 	/**
+	 * @brief		Calls the given predicate function if the input character is within the specified range.
+	 * @details		This is intended as a wrapper around standard functions like `isalpha` that only accept characters in the range (-1 <= c <= 255).
+	 * @param func	The function to call, if the restrictions are met.
+	 * @param in	The input character.
+	 * @param min	The minimum value that can be passed to the given function.
+	 * @param max	The maximum value that can be passed to the given function.
+	 * @returns		bool
+	 */
+	template<std::predicate<char> Pred>
+	constexpr bool call_if_valid(const Pred& func, const char& in, const char& min = -1, const char& max = 255)
+	{
+		return (in >= min && in <= max) && func(in) != 0;
+	}
+
+	/**
 	 * @brief		Check if the given ASCII string is entirely composed of valid binary digits.
 	 * @param str	Any ASCII string.
 	 * @returns		bool

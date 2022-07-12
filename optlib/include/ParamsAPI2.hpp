@@ -225,7 +225,7 @@ namespace opt {
 		 * @param name		Argument name to search for.
 		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
 		 * @param end		Optional end iterator position. If not specified, defaults to end().
-		 * @returns			std::optional<std::string>
+		 * @returns			std::optional<RetType>
 		 *\n				Value is std::nullopt when no match was found.
 		 */
 		template<typename RetType, CanHaveValueArgument Type, ValidInputType Name> requires std::same_as<Type, Option> || std::same_as<Type, Flag>
@@ -233,6 +233,26 @@ namespace opt {
 		{
 			if (const auto target{ find<Type>(name, off, end) }; target != _args.end())
 				return converter(std::get<Type>(*target).getv());
+			return std::nullopt;
+		}
+
+		/**
+		 * @brief			Retrieve the captured argument of the specified option or flag as the specified type.
+		 *\n				This is an overload of the castgetv function for types that can be constructed from std::string.
+		 * @tparam RetType	Type to cast the result to before returning it. Must be constructible from a std::string.
+		 * @tparam Type		Option or Flag type.
+		 * @tparam Name		Argument name type.
+		 * @param name		Argument name to search for.
+		 * @param off		Optional begin iterator position. If not specified, defaults to begin().
+		 * @param end		Optional end iterator position. If not specified, defaults to end().
+		 * @returns			std::optional<RetType>
+		 *\n				Value is std::nullopt when no match was found.
+		 */
+		template<std::constructible_from<std::string> RetType, CanHaveValueArgument Type, ValidInputType Name> requires std::same_as<Type, Option> || std::same_as<Type, Flag>
+		[[nodiscard]] constexpr const std::optional<RetType> castgetv(const Name & name, const std::optional<ArgContainerIteratorType>&off = std::nullopt, const std::optional<ArgContainerIteratorType>&end = std::nullopt) const noexcept(false)
+		{
+			if (const auto target{ find<Type>(name, off, end) }; target != _args.end())
+				return RetType{ std::get<Type>(*target).getv() };
 			return std::nullopt;
 		}
 
@@ -269,7 +289,7 @@ namespace opt {
 		 * @tparam Names...	Variadic argument name type(s).
 		 * @param converter	A function that can perform the conversion from `std::string` => `RetType`. This is only called if the argument was found.
 		 * @param names		Argument name(s) to search for. If no names are specified, arguments with any name are considered valid matches.
-		 * @returns			std::optional<std::string>
+		 * @returns			std::optional<RetType>
 		 *\n				Value is std::nullopt when no match was found.
 		 */
 		template<typename RetType, CanHaveValueArgument... Types, ValidInputType... Names>
@@ -287,6 +307,37 @@ namespace opt {
 						if (is_type<Flag>(*target))
 							if (const auto& fl{ std::get<Flag>(*target) }; fl.hasv())
 								return converter(fl.getv().value());
+					}
+				}
+			}
+			return std::nullopt;
+		}
+
+		/**
+		 * @brief			Retrieve the capture argument of the first matching argument in the list as the specified type.
+		 *\n				This is an overload of the castgetv_any function for types that can be constructed from std::string.
+		 * @tparam RetType	Type to cast the result to before returning it. Must be constructible from a std::string.
+		 * @tparam Types...	Argument type(s) to search for. If no types are specified, arguments of any type are considered valid matches.
+		 * @tparam Names...	Variadic argument name type(s).
+		 * @param names		Argument name(s) to search for. If no names are specified, arguments with any name are considered valid matches.
+		 * @returns			std::optional<RetType>
+		 *\n				Value is std::nullopt when no match was found.
+		 */
+		template<std::constructible_from<std::string> RetType, CanHaveValueArgument... Types, ValidInputType... Names>
+		[[nodiscard]] constexpr const std::optional<RetType> castgetv_any(const Names&... names) const
+		{
+			constexpr const bool match_opts{ std::disjunction_v<std::is_same<Option, Types>...> }, match_flags{ std::disjunction_v<std::is_same<Flag, Types>...> }, match_any_name{ var::none<Names...> };
+			if (const auto target{ find_any<Types...>(names...) }; target != _args.end()) {
+				if (match_any_name || var::variadic_or(names == InputWrapper(get_name(*target))...)) {
+					if constexpr (match_opts) {
+						if (is_type<Option>(*target))
+							if (const auto& opt{ std::get<Option>(*target) }; opt.hasv())
+								return RetType{ opt.getv().value() };
+					}
+					if constexpr (match_flags) {
+						if (is_type<Flag>(*target))
+							if (const auto& fl{ std::get<Flag>(*target) }; fl.hasv())
+								return RetType{ fl.getv().value() };
 					}
 				}
 			}
@@ -385,7 +436,7 @@ namespace opt {
 		 * @tparam Names...	Input argument name types. (string/char)
 		 * @param converter	A function that can perform the conversion from `std::string` => `RetType`. This is only called if the argument was found.
 		 * @param names		Argument name(s) to search for. If no names are included, all arguments of the specified type will be returned.
-		 * @returns			std::vector<std::string>
+		 * @returns			std::vector<RetType>
 		 *\n				Vector is empty if no matches were found.
 		 */
 		template<typename RetType, CanHaveValueArgument... Types, ValidInputType... Names> requires var::not_same<Parameter, Types...>
@@ -413,6 +464,50 @@ namespace opt {
 					if constexpr (match_any_type || var::any_same<Parameter, Types...>) {
 						if (is_type<Parameter>(it)) {
 							vec.emplace_back(converter(name));
+							continue;
+						}
+					}
+				}
+			}
+			vec.shrink_to_fit();
+			return vec;
+		}
+
+		/**
+		 * @brief			Retrieve the captured values of all specified arguments as the specified type.
+		 *\n				This is an overload of the castgetv_all function for types that can be constructed from std::string.
+		 * @tparam RetType	Type to cast the result to before returning it. Must be constructible from a std::string.
+		 * @tparam Types...	Argument Types to search for. If no types are specified, arguments of any type are considered valid matches.
+		 * @tparam Names...	Input argument name types. (string/char)
+		 * @param names		Argument name(s) to search for. If no names are included, all arguments of the specified type will be returned.
+		 * @returns			std::vector<RetType>
+		 *\n				Vector is empty if no matches were found.
+		 */
+		template<std::constructible_from<std::string> RetType, CanHaveValueArgument... Types, ValidInputType... Names> requires var::not_same<Parameter, Types...>
+		[[nodiscard]] constexpr const std::vector<RetType> castgetv_all(const Names&... names) const
+		{
+			constexpr const bool match_any_type{ var::none<Types...> }, match_any_name{ var::none<Names...> };
+			std::vector<RetType> vec;
+			vec.reserve(_args.size());
+			for (auto& it : get_all<Types...>(names...)) {
+				if (const auto name{ get_name(it) };  match_any_name || var::variadic_or(InputWrapper(names) == name...)) {
+					if constexpr (match_any_type || var::any_same<Option, Types... >) {
+						if (is_type<Option>(it)) {
+							if (const auto ty{ std::get<Option>(it) }; ty.hasv())
+								vec.emplace_back(RetType{ ty.getv().value() });
+							continue;
+						}
+					}
+					if constexpr (match_any_type || var::any_same<Flag, Types...>) {
+						if (is_type<Flag>(it)) {
+							if (const auto ty{ std::get<Flag>(it) }; ty.hasv())
+								vec.emplace_back(RetType{ ty.getv().value() });
+							continue;
+						}
+					}
+					if constexpr (match_any_type || var::any_same<Parameter, Types...>) {
+						if (is_type<Parameter>(it)) {
+							vec.emplace_back(RetType{ name });
 							continue;
 						}
 					}

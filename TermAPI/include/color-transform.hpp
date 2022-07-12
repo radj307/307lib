@@ -27,12 +27,9 @@ namespace color {
 		/// @brief	The value type used by each channel.
 		using value = T;
 
-		constexpr basic_color() : base(std::make_index_sequence<1ull + sizeof...(Ts)>()) {}
+		constexpr basic_color() = default;
 		constexpr basic_color(const T& fst, const Ts&... rest) : base(fst, rest...) {}
 		constexpr basic_color(T&& fst, Ts&&... rest) : base(std::forward<T>(fst), std::forward<Ts>(rest)...) {}
-
-	private:
-
 
 	public:
 		/**
@@ -40,15 +37,6 @@ namespace color {
 		 * @returns	size_t with the number of independent color channels.
 		 */
 		constexpr size_t channel_count() const { return 1ull + sizeof...(Ts); }
-		/**
-		 * @brief	Retrieve the color code as a hex string.
-		 * @returns	std::string
-		 */
-		WINCONSTEXPR std::string str() const
-		{
-			constexpr const size_t digitsPerChannel{ sizeof(value) / 2 + 1 }; // get the number of hex digits per channel
-
-		}
 		/**
 		 * @brief			Get the current value of the specified color channel.
 		 * @tparam Index	The index in the underlying tuple type to retrieve.

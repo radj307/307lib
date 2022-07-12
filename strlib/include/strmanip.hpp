@@ -7,6 +7,7 @@
  */
 #pragma once
 #include <strutility.hpp>
+#include <strcompare.hpp>
 
 #include <algorithm>
 #include <functional>
@@ -79,6 +80,23 @@ namespace str {
 	}
 
 	/**
+	 * @brief			Remove preceeding & trailing characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	inline std::string trim(std::string str, const std::string& chars = " \t\r\n\v")
+	{
+		const auto do_remove{ [&chars](const char c) { return pos_valid(chars.find(c)); } };
+		if (const int first{ static_cast<signed>(str.find_first_not_of(chars)) }; !str.empty() && pos_valid(first))
+			str.erase(std::remove_if(str.begin(), str.begin() + first, do_remove), str.begin() + first); // remove from beginning of string to 1 before first non-whitespace char
+		else return{};
+		if (const int last{ static_cast<signed>(str.find_last_not_of(chars)) }; !str.empty() && pos_valid(last))
+			str.erase(std::remove_if(str.begin() + last, str.end(), do_remove), str.end()); // remove from 1 after last non-whitespace char to the end of the string
+		return str;
+	}
+
+	/**
 	 * @brief					Removes comments and preceeding/trailing whitespace from a given string.
 	 * @param str				Input string.
 	 * @param comment_chars		Characters that should be treated as line comments, everything that appears after one of these characters is removed.
@@ -89,13 +107,7 @@ namespace str {
 	{
 		if (const int dPos{ static_cast<signed>(str.find_first_of(comment_chars)) }; !str.empty() && pos_valid(dPos)) // remove comments first
 			str.erase(str.begin() + dPos, str.end());
-		const auto is_whitespace{ [&whitespace_chars](const char c) { return pos_valid(whitespace_chars.find(c)); } };
-		if (const int first{ static_cast<signed>(str.find_first_not_of(whitespace_chars)) }; !str.empty() && pos_valid(first))
-			str.erase(std::remove_if(str.begin(), str.begin() + first, is_whitespace), str.begin() + first); // remove from beginning of string to 1 before first non-whitespace char
-		else return{};
-		if (const int last{ static_cast<signed>(str.find_last_not_of(whitespace_chars)) }; !str.empty() && pos_valid(last))
-			str.erase(std::remove_if(str.begin() + last, str.end(), is_whitespace), str.end()); // remove from 1 after last non-whitespace char to the end of the string
-		return str;
+		return trim(str);
 	}
 	/**
 	 * @function strip_line(std::string, const Param&)
@@ -163,9 +175,9 @@ namespace str {
 	 * @param str	- Pass-by-value string
 	 * @returns string
 	 */
-	inline std::string remove_whitespace(std::string str) noexcept
+	INLINE WINCONSTEXPR std::string remove_whitespace(std::string str) noexcept
 	{
-		str.erase(std::remove_if(str.begin(), str.end(), isspace), str.end());
+		str.erase(std::remove_if(str.begin(), str.end(), stdpred::isspace), str.end());
 		return str;
 	}
 
@@ -250,7 +262,7 @@ namespace str {
 	{
 		std::vector<std::string> vec;
 		std::stringstream ss{ line };
-		for (std::string parse{}; getline_pred(ss, parse, isspace); parse.clear())
+		for (std::string parse{}; getline_pred(ss, parse, stdpred::isspace); parse.clear())
 			if (!parse.empty())
 				vec.emplace_back(std::move(parse));
 		return vec;
@@ -584,6 +596,56 @@ namespace str {
 				return{ str.substr(0ull, pos), str.substr(pos + 1ull) };
 		return{ str, {} };
 	}
+	/**
+	 * @brief				Splits a given string by all occurrences of any of the given delimiters.
+	 *\n					This method is similar to C#'s string.split method.
+	 * @param str			The string to split.
+	 * @param delims		Any number of characters to split str by.
+	 * @param ignoreCase	When true, character case is ignored.
+	 * @returns				A vector containing the substrings resulting from the split.
+	 */
+	inline WINCONSTEXPR const std::vector<std::string> split_all(const std::string& str, std::string delims, bool ignoreCase = false)
+	{
+		if (str.empty())
+			return{};
+		if (ignoreCase)
+			delims = tolower(delims);
+
+		std::vector<std::string> vec;
+		size_t iPrev{ 0ull };
+		for (size_t i{ str.find_first_of(delims) }; i != std::string::npos; iPrev = i + 1ull, i = str.find_first_of(delims, i + 1ull)) {
+			if (delims.find(tolower(str.at(i))) != std::string::npos) {
+				vec.emplace_back(str.substr(iPrev, i - iPrev));
+			}
+		}
+		vec.emplace_back(str.substr(iPrev));
+		return vec;
+	}	
+	/**
+	 * @brief				Splits a given string by all occurrences of the given delimiter.
+	 *\n					This method is similar to C#'s string.split method.
+	 * @param str			The string to split.
+	 * @param delim			A delimiter character to split str by.
+	 * @param ignoreCase	When true, character case is ignored.
+	 * @returns				A vector containing the substrings resulting from the split.
+	 */
+	inline WINCONSTEXPR const std::vector<std::string> split_all(const std::string& str, char delim, bool ignoreCase = false)
+	{
+		if (str.empty())
+			return{};
+		if (ignoreCase)
+			delim = tolower(delim);
+		std::vector<std::string> vec;
+		size_t iPrev{ 0ull };
+		for (size_t i{ str.find(delim) }; i != std::string::npos; iPrev = i + 1ull, i = str.find(delim, i + 1ull)) {
+			if (delim == tolower(str.at(i))) {
+				vec.emplace_back(str.substr(iPrev, i - iPrev));
+			}
+		}
+		vec.emplace_back(str.substr(iPrev));
+		return vec;
+	}
+
 
 	/**
 	 * @brief				Remove trailing characters from a string.

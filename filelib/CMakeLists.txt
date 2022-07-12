@@ -9,12 +9,13 @@ endif()
 project("filelib" VERSION ${307lib_VERSION} LANGUAGES CXX)
 
 # Retrieve headers & sources
-file(GLOB HEADERS
+file(GLOB_RECURSE HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"include/*.h*"
+	"include/ini/*.h*"
 )
-file(GLOB SRCS
+file(GLOB_RECURSE SRCS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"src/*.c*"
