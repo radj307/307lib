@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['longest_1035',['longest',['../namespacestr.html#a718e93d72455a6f9af50cca592378f99',1,'str']]],
-  ['longestlength_1036',['longestLength',['../namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9',1,'str']]]
+  ['longest_1092',['longest',['../namespacestr.html#a718e93d72455a6f9af50cca592378f99',1,'str']]],
+  ['longestlength_1093',['longestLength',['../namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9',1,'str']]]
 ];

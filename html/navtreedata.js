@@ -40,6 +40,13 @@ var NAVTREE =
       ] ]
     ] ],
     [ "README", "md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html", null ],
+    [ "Argument Parser", "_commandline.html", [
+      [ "Basic Concepts", "_commandline.html#autotoc_md12", [
+        [ "Argument Types", "_commandline.html#autotoc_md13", null ],
+        [ "Argument Capturing", "_commandline.html#autotoc_md14", null ],
+        [ "Argument Order", "_commandline.html#autotoc_md16", null ]
+      ] ]
+    ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -77,13 +84,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classenv_1_1_p_a_t_h.html#af15da7ddc8328ef1e3835f23cb900f52",
-"classterm_1_1palette.html#afec945d727ffbf141c907bbe5e343da2",
-"fileo_8hpp_source.html",
-"strconv_8hpp.html#ad3c45167debf1f2363f467b9e05f6ff2",
-"structjson_1_1_node.html#a491f934740ce86fb747f35d3c0699e7d",
-"structopt_1_1_variant_arg.html#a037e4b40d0e9b63f4a2faeefd5db99b4",
-"term_8hpp.html#a0d48bd75be8181d47c51c5e3703820fd"
+"classenv_1_1_p_a_t_h.html#a00dad07a6095f4d212dbe773e25e13d1",
+"classterm_1_1palette.html#aaf290bbe6d2538ac54a5cee1aa73b292",
+"dir_0f370597da718f425d39865e9f37f757.html",
+"strcompare_8hpp.html#a25dcad1131572f82cbb30a06c81006b0",
+"structfile_1_1ini_1_1basic__container.html#a2a2acd85c5c6b9b911557577f4007b2b",
+"structopt_1_1_capture_list.html#ab73e3b9f29a5a344be830aaef1b54ea1",
+"structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

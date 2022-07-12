@@ -63,6 +63,17 @@ var annotated_dup =
     ] ],
     [ "var", "namespacevar.html", "namespacevar" ],
     [ "xlog", "namespacexlog.html", "namespacexlog" ],
+    [ "xml", null, [
+      [ "parser", null, [
+        [ "LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", "structxml_1_1parser_1_1_lexeme_dict" ],
+        [ "XMLParser", "classxml_1_1parser_1_1_x_m_l_parser.html", "classxml_1_1parser_1_1_x_m_l_parser" ],
+        [ "XMLTokenizer", "classxml_1_1parser_1_1_x_m_l_tokenizer.html", "classxml_1_1parser_1_1_x_m_l_tokenizer" ]
+      ] ],
+      [ "ProcessingInstructions", "structxml_1_1_processing_instructions.html", "structxml_1_1_processing_instructions" ],
+      [ "XMLDocument", "structxml_1_1_x_m_l_document.html", "structxml_1_1_x_m_l_document" ],
+      [ "XMLElement", "structxml_1_1_x_m_l_element.html", "structxml_1_1_x_m_l_element" ],
+      [ "XMLPrinter", "structxml_1_1_x_m_l_printer.html", "structxml_1_1_x_m_l_printer" ]
+    ] ],
     [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
     [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ]
 ];

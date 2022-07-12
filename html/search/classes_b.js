@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rgb_751',['RGB',['../structcolor_1_1_r_g_b.html',1,'color']]],
-  ['rgba_752',['RGBA',['../structcolor_1_1_r_g_b_a.html',1,'color']]]
+  ['rgb_788',['RGB',['../structcolor_1_1_r_g_b.html',1,'color']]],
+  ['rgba_789',['RGBA',['../structcolor_1_1_r_g_b_a.html',1,'color']]]
 ];

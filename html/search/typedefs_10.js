@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wcolors_1388',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]]
+  ['wcolors_1455',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]]
 ];

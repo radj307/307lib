@@ -95,9 +95,7 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Contains ANSI escape sequence functors derived from the Sequence type. <br  />
- Covers most/all of the virtual sequences documented by microsoft here: <br  />
- <a href="https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences">https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences</a>.  
+<p>Contains a wide variety of cross-platform ANSI escape sequences for every occasion.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_segments_8h_source.html">Segments.h</a>&gt;</code><br />
@@ -114,12 +112,14 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for term.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="551" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="551" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="term_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -221,7 +221,7 @@ Functions</h2></td></tr>
 <tr class="separator:aef4592f5141a3d2a4915e85e0abc7a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">term::kbhit</a> ()</td></tr>
 <tr class="memdesc:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a key was pressed. <br  />
- On windows, this uses _kbhit(), while on linux, it uses hasPendingData() which uses select().  <a href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">More...</a><br /></td></tr>
+ On windows, this uses <code>_kbhit</code>, while on linux, it uses <code>hasPendingDataSTDIN</code> (which uses <code>select()</code>).  <a href="namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e">More...</a><br /></td></tr>
 <tr class="separator:ac221cc6f681f3214dc3be6ab2f9f079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ed28a553fcaeda1fb5843237462f51"><td class="memItemLeft" align="right" valign="top">static Sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a83ed28a553fcaeda1fb5843237462f51">term::NextTabStop</a> (const unsigned &amp;n=1u)</td></tr>
 <tr class="memdesc:a83ed28a553fcaeda1fb5843237462f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor to the next column with a tab stop. <br  />
@@ -372,10 +372,11 @@ static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <tr class="separator:a811b5f940751a85357cd1336163dce2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains ANSI escape sequence functors derived from the Sequence type. <br  />
- Covers most/all of the virtual sequences documented by microsoft here: <br  />
- <a href="https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences">https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences</a>. </p>
-<dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
+<div class="textblock"><p>Contains a wide variety of cross-platform ANSI escape sequences for every occasion. </p>
+<dl class="section author"><dt>Author</dt><dd>radj307 <br  />
+ Covers most of the 'virtual sequences' documented by microsoft here: <br  />
+ <a href="https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences">https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences</a> <br  />
+ All of the sequences listed at the above link are usable on both Windows &amp; UNIX-based operating systems. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -405,7 +406,7 @@ static const Sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>Receive a query response from STDIN, and return it as a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00043">43</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00045">45</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

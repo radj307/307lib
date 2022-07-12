@@ -45,11 +45,21 @@ var hierarchy =
     ] ],
     [ "opt::token::Parser::Input", "structopt_1_1token_1_1_parser_1_1_input.html", null ],
     [ "opt::InputWrapper", "structopt_1_1_input_wrapper.html", null ],
+    [ "std::ios_base", null, [
+      [ "std::basic_ios< Char >", null, [
+        [ "std::basic_ostream< Char >", null, [
+          [ "std::ostream", null, [
+            [ "xlog::basic_clogger< Char, CharTraits, StreamType >", "classxlog_1_1basic__clogger.html", null ]
+          ] ]
+        ] ]
+      ] ]
+    ] ],
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
     [ "IteratingParserBase", null, [
-      [ "json::parser::Parser", "classjson_1_1parser_1_1_parser.html", null ]
+      [ "json::parser::Parser", "classjson_1_1parser_1_1_parser.html", null ],
+      [ "xml::parser::XMLParser< T >", "classxml_1_1parser_1_1_x_m_l_parser.html", null ]
     ] ],
     [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
@@ -59,8 +69,12 @@ var hierarchy =
       [ "opt::token::LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", null ],
       [ "token::DefaultDefs::LexemeDict", "structtoken_1_1_default_defs_1_1_lexeme_dict.html", null ]
     ] ],
+    [ "token::base::LexemeDictBase< Lexeme >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
+      [ "xml::parser::LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", null ]
+    ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
+    [ "xlog::ManipulatorBase", "structxlog_1_1_manipulator_base.html", null ],
     [ "std::map< K, T >", null, [
       [ "file::ini::basic_container< Key, Value >", "structfile_1_1ini_1_1basic__container.html", null ],
       [ "file::ini::basic_outer_container< Header, Section >", "structfile_1_1ini_1_1basic__outer__container.html", [
@@ -95,14 +109,23 @@ var hierarchy =
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
+    [ "xml::ProcessingInstructions", "structxml_1_1_processing_instructions.html", null ],
     [ "color::setcolor_seq< SeqT >", "structcolor_1_1setcolor__seq.html", null ],
     [ "color::setcolor_seq< seq >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
+    [ "StreamType", null, [
+      [ "xlog::basic_clogger< char, std::char_traits< char >, std::ostream >", "classxlog_1_1basic__clogger.html", [
+        [ "xlog::clogger", "classxlog_1_1clogger.html", null ]
+      ] ]
+    ] ],
     [ "token::base::TokenBase< TokenType >", "structtoken_1_1base_1_1_token_base.html", null ],
     [ "token::base::TokenizerBase< LexemeT, Dictionary, TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", null ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDict, ::token::DefaultDefs::TokenType, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "file::ini::tokenizer::INITokenizer", "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html", null ]
+    ] ],
+    [ "token::base::TokenizerBase< Lexeme, LexemeDict, TokenType >", "classtoken_1_1base_1_1_tokenizer_base.html", [
+      [ "xml::parser::XMLTokenizer", "classxml_1_1parser_1_1_x_m_l_tokenizer.html", null ]
     ] ],
     [ "token::base::TokenizerBase< LEXEME, LexemeDictionary, TOKEN, Token >", "classtoken_1_1base_1_1_tokenizer_base.html", [
       [ "json::parser::Tokenizer", "classjson_1_1parser_1_1_tokenizer.html", null ]
@@ -132,5 +155,9 @@ var hierarchy =
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [
       [ "xlog::xLogs< StreamType >", "classxlog_1_1x_logs.html", null ]
     ] ],
+    [ "xml::XMLElement", "structxml_1_1_x_m_l_element.html", [
+      [ "xml::XMLDocument", "structxml_1_1_x_m_l_document.html", null ]
+    ] ],
+    [ "xml::XMLPrinter< T >", "structxml_1_1_x_m_l_printer.html", null ],
     [ "rng::xRand< Engine >", "structrng_1_1x_rand.html", null ]
 ];
