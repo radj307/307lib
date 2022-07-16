@@ -109,6 +109,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt_1_1_argument.html">Argument</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows configuration of the rules used when parsing arguments.  <a href="structopt_1_1_argument_parsing_rules.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html">CaptureList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt_1_1_capture_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,14 +196,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a14827521fec8e1c561ed24c2f151bc5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a14827521fec8e1c561ed24c2f151bc5f">can_capture_next</a> (StrVec::const_iterator &amp;here, const StrVec::const_iterator &amp;end)</td></tr>
-<tr class="memdesc:a14827521fec8e1c561ed24c2f151bc5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given iterator CAN capture the next argument by checking <br  />
- if the next argument is not prefixed with a '-' or is prefixed with '-' but is also a number. <br  />
- Does NOT check if the given iterator is present on the capturelist!  <a href="namespaceopt.html#a14827521fec8e1c561ed24c2f151bc5f">More...</a><br /></td></tr>
-<tr class="separator:a14827521fec8e1c561ed24c2f151bc5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cec335d3ad0b30de028267001ee9e1f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a9cec335d3ad0b30de028267001ee9e1f">count_prefix</a> (const std::string &amp;str, const size_t &amp;max_delims)</td></tr>
-<tr class="memdesc:a9cec335d3ad0b30de028267001ee9e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the number of characters at the beginning of a string.  <a href="namespaceopt.html#a9cec335d3ad0b30de028267001ee9e1f">More...</a><br /></td></tr>
-<tr class="separator:a9cec335d3ad0b30de028267001ee9e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a373c5a56e4d1774fc66862eb3a2559"><td class="memItemLeft" align="right" valign="top"><a id="a6a373c5a56e4d1774fc66862eb3a2559"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fromCFT</b> (const CompoundFlagType &amp;compoundFlag)</td></tr>
 <tr class="separator:a6a373c5a56e4d1774fc66862eb3a2559"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,12 +210,6 @@ template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:acf1fb4aca58dd467ca61ba5767236982"><td class="memItemLeft" align="right" valign="top"><a id="acf1fb4aca58dd467ca61ba5767236982"></a>
 const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> (const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
 <tr class="separator:acf1fb4aca58dd467ca61ba5767236982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae87116aac6d12df8ca8a223b9f4f10d3"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ae87116aac6d12df8ca8a223b9f4f10d3">is_delimiter</a> (const char &amp;c)</td></tr>
-<tr class="memdesc:ae87116aac6d12df8ca8a223b9f4f10d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.  <a href="namespaceopt.html#ae87116aac6d12df8ca8a223b9f4f10d3">More...</a><br /></td></tr>
-<tr class="separator:ae87116aac6d12df8ca8a223b9f4f10d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa297a02e7d112f878e200ef839a78605"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">is_number</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:aa297a02e7d112f878e200ef839a78605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.  <a href="namespaceopt.html#aa297a02e7d112f878e200ef839a78605">More...</a><br /></td></tr>
-<tr class="separator:aa297a02e7d112f878e200ef839a78605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memTemplParams" colspan="2"><a id="a81e37cea59bb7d8675fc517ef3d0e590"></a>
 template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_type</b> (const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
@@ -235,12 +224,8 @@ template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a2d7a38c94d8cdda8ce9f5f12e42b365e">paramVecToStrVec</a> (const std::vector&lt; <a class="el" href="classopt_1_1_arg.html">opt::Parameter</a> &gt; &amp;param_vec)</td></tr>
 <tr class="memdesc:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a vector of Parameters to a vector of strings.  <a href="namespaceopt.html#a2d7a38c94d8cdda8ce9f5f12e42b365e">More...</a><br /></td></tr>
 <tr class="separator:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc103cb3c943291e5f87bccf7df19651"><td class="memTemplParams" colspan="2">template&lt;ValidInputType... VT&gt; </td></tr>
-<tr class="memitem:abc103cb3c943291e5f87bccf7df19651"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">parse</a> (auto &amp;&amp;args, const VT &amp;... captures)</td></tr>
-<tr class="memdesc:abc103cb3c943291e5f87bccf7df19651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. This function accepts a variadic capture list.  <a href="namespaceopt.html#abc103cb3c943291e5f87bccf7df19651">More...</a><br /></td></tr>
-<tr class="separator:abc103cb3c943291e5f87bccf7df19651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4748ebaec4da7456a93cd981c205486d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a4748ebaec4da7456a93cd981c205486d">parse</a> (StrVec &amp;&amp;args, const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;captures)</td></tr>
-<tr class="memdesc:a4748ebaec4da7456a93cd981c205486d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
+<tr class="memitem:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af3dfa9b479bb49bacb8e5ab8b58c2c65">parse</a> (StrVec &amp;&amp;args, const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;captures, const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;parsingRules={})</td></tr>
+<tr class="memdesc:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
  <b><a class="el" href="classopt_1_1_argument.html">Argument</a> Types</b> <br  />
  - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
  - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
@@ -249,8 +234,8 @@ template&lt;ValidArg Type&gt; </td></tr>
  - Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix. <br  />
  - Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", &amp; "--opt" + "captured". <br  />
  - If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain. <br  />
- - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.  <a href="namespaceopt.html#a4748ebaec4da7456a93cd981c205486d">More...</a><br /></td></tr>
-<tr class="separator:a4748ebaec4da7456a93cd981c205486d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.  <a href="namespaceopt.html#af3dfa9b479bb49bacb8e5ab8b58c2c65">More...</a><br /></td></tr>
+<tr class="separator:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplParams" colspan="2">template&lt;typename IntegerT , IntegerT index&gt; </td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">requires</a> (index==static_cast&lt; IntegerT &gt;(0)) &amp;&amp;std</td></tr>
 <tr class="memdesc:aa2f10f2c576dc410b4cacf831c949d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a std::monostate type from a VariantArgumentType instance.  <a href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">More...</a><br /></td></tr>
@@ -259,9 +244,6 @@ template&lt;ValidArg Type&gt; </td></tr>
 template&lt;ValidArg... Type&gt; </td></tr>
 <tr class="memitem:a2159b287993f819a2fbadd4f5798d426"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>requires</b> (sizeof...(Type) &gt; 1) inline static const expr const bool is_type(const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
 <tr class="separator:a2159b287993f819a2fbadd4f5798d426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c659d3e86eb26fb94a5915b10cbb74d"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a7c659d3e86eb26fb94a5915b10cbb74d">strip_prefix</a> (const std::string &amp;str, const size_t &amp;max_delims)</td></tr>
-<tr class="memdesc:a7c659d3e86eb26fb94a5915b10cbb74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count &amp; remove prefix delimiters from a given string. Returns the stripped string &amp; the number of removed delimiters.  <a href="namespaceopt.html#a7c659d3e86eb26fb94a5915b10cbb74d">More...</a><br /></td></tr>
-<tr class="separator:a7c659d3e86eb26fb94a5915b10cbb74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2239544491f3103f7ba7e0fa4b631029"><td class="memItemLeft" align="right" valign="top"><a id="a2239544491f3103f7ba7e0fa4b631029"></a>
 CompoundFlagType&#160;</td><td class="memItemRight" valign="bottom"><b>toCFT</b> (const std::string &amp;s, const std::optional&lt; std::string &gt; &amp;capture=std::nullopt)</td></tr>
 <tr class="separator:a2239544491f3103f7ba7e0fa4b631029"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,15 +281,6 @@ struct {</td></tr>
 <tr class="memitem:a90c25f48273450116b3e78ecd10faf6f"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a90c25f48273450116b3e78ecd10faf6f">Settings_Arg</a></td></tr>
 <tr class="memdesc:a90c25f48273450116b3e78ecd10faf6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows changing some formatting when using the Arg::operator&lt;&lt; / Arg::operator&gt;&gt; methods. <br /></td></tr>
 <tr class="separator:a90c25f48273450116b3e78ecd10faf6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad24f650521129892e3c4c134660796"><td class="memItemLeft" ><a id="a1ad24f650521129892e3c4c134660796"></a>
-struct {</td></tr>
-<tr class="memitem:afe21f7e58c02453f73b0ea1343b5bba6"><td class="memItemLeft" >
-&#160;&#160;&#160;std::vector&lt; char &gt;&#160;&#160;&#160;<a class="el" href="namespaceopt.html#ae8c01003898064a3b55b55bf6674f58e">opt::delimiters</a> { '-' }</td></tr>
-<tr class="memdesc:afe21f7e58c02453f73b0ea1343b5bba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines valid argument prefix delimiters. By default, only '-' characters are accepted, however on windows forward-slash characters may be desired as well. <br /></td></tr>
-<tr class="separator:afe21f7e58c02453f73b0ea1343b5bba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad24f650521129892e3c4c134660796"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a1ad24f650521129892e3c4c134660796">Settings_ArgParser</a></td></tr>
-<tr class="memdesc:a1ad24f650521129892e3c4c134660796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static (non-const) settings structure. <br /></td></tr>
-<tr class="separator:a1ad24f650521129892e3c4c134660796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5a63481366bb7bf0406ff735e6b592f"><td class="memTemplParams" colspan="2"><a id="af5a63481366bb7bf0406ff735e6b592f"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:af5a63481366bb7bf0406ff735e6b592f"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af5a63481366bb7bf0406ff735e6b592f">ValidArg</a> = std::same_as&lt;T, <a class="el" href="classopt_1_1_arg.html">Parameter</a>&gt; || std::same_as&lt;T, <a class="el" href="classopt_1_1_arg.html">Option</a>&gt; || std::same_as&lt;T, <a class="el" href="classopt_1_1_arg.html">Flag</a>&gt;</td></tr>
@@ -362,210 +335,6 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a14827521fec8e1c561ed24c2f151bc5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14827521fec8e1c561ed24c2f151bc5f">&#9670;&nbsp;</a></span>can_capture_next()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool opt::can_capture_next </td>
-          <td>(</td>
-          <td class="paramtype">StrVec::const_iterator &amp;&#160;</td>
-          <td class="paramname"><em>here</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const StrVec::const_iterator &amp;&#160;</td>
-          <td class="paramname"><em>end</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if the given iterator CAN capture the next argument by checking <br  />
- if the next argument is not prefixed with a '-' or is prefixed with '-' but is also a number. <br  />
- Does NOT check if the given iterator is present on the capturelist! </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">here</td><td>The current iterator position. </td></tr>
-    <tr><td class="paramname">end</td><td>The position of the end of the iterable range. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00052">52</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a14827521fec8e1c561ed24c2f151bc5f_cgraph.svg" width="318" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a9cec335d3ad0b30de028267001ee9e1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cec335d3ad0b30de028267001ee9e1f">&#9670;&nbsp;</a></span>count_prefix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t opt::count_prefix </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>max_delims</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Count the number of characters at the beginning of a string. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">...DelimT</td><td>Variadic Template, accepts only char types. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>Input string. </td></tr>
-    <tr><td class="paramname">max_delims</td><td>Maximum number of delimiters to count before stopping, even if more delimiters exist. </td></tr>
-    <tr><td class="paramname">...delims</td><td>At least one char type to count. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00067">67</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a9cec335d3ad0b30de028267001ee9e1f_cgraph.svg" width="318" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a9cec335d3ad0b30de028267001ee9e1f_icgraph.svg" width="448" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ae87116aac6d12df8ca8a223b9f4f10d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae87116aac6d12df8ca8a223b9f4f10d3">&#9670;&nbsp;</a></span>is_delimiter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const WINCONSTEXPR bool opt::is_delimiter </td>
-          <td>(</td>
-          <td class="paramtype">const char &amp;&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if the given character is a valid delimiter, according to the static Settings_ArgParser object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Input Character </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00022">22</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_ae87116aac6d12df8ca8a223b9f4f10d3_icgraph.svg" width="624" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="aa297a02e7d112f878e200ef839a78605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa297a02e7d112f878e200ef839a78605">&#9670;&nbsp;</a></span>is_number()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool opt::is_number </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>Input String </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00032">32</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_aa297a02e7d112f878e200ef839a78605_icgraph.svg" width="344" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="a05f6625ec874e68c060b1e04795dbb18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05f6625ec874e68c060b1e04795dbb18">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
@@ -713,68 +482,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00529">529</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_params_a_p_i2_8hpp_source.html#l00544">544</a> of file <a class="el" href="_params_a_p_i2_8hpp_source.html">ParamsAPI2.hpp</a>.</p>
 
 </div>
 </div>
-<a id="abc103cb3c943291e5f87bccf7df19651"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc103cb3c943291e5f87bccf7df19651">&#9670;&nbsp;</a></span>parse() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;ValidInputType... VT&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto opt::parse </td>
-          <td>(</td>
-          <td class="paramtype">auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>args</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const VT &amp;...&#160;</td>
-          <td class="paramname"><em>captures</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. This function accepts a variadic capture list. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VT...</td><td>Variadic Templated Input Type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>Commandline arguments as a vector of strings, in order and including argv[0]. </td></tr>
-    <tr><td class="paramname">...captures</td><td>The names of any arguments that are allowed to capture additional arguments. If the user attempts to force capture an argument by appending "=..." but the argument is not on this list, the invalid capture will be added separately as a parameter instead. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00216">216</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4748ebaec4da7456a93cd981c205486d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4748ebaec4da7456a93cd981c205486d">&#9670;&nbsp;</a></span>parse() <span class="overload">[2/2]</span></h2>
+<a id="af3dfa9b479bb49bacb8e5ab8b58c2c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3dfa9b479bb49bacb8e5ab8b58c2c65">&#9670;&nbsp;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -792,7 +505,13 @@ template&lt;ValidInputType... VT&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;&#160;</td>
-          <td class="paramname"><em>captures</em>&#160;</td>
+          <td class="paramname"><em>captures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;&#160;</td>
+          <td class="paramname"><em>parsingRules</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -826,12 +545,7 @@ template&lt;ValidInputType... VT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00138">138</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a4748ebaec4da7456a93cd981c205486d_cgraph.svg" width="624" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00167">167</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
@@ -923,64 +637,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7c659d3e86eb26fb94a5915b10cbb74d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c659d3e86eb26fb94a5915b10cbb74d">&#9670;&nbsp;</a></span>strip_prefix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt;std::string, size_t&gt; opt::strip_prefix </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>max_delims</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Count &amp; remove prefix delimiters from a given string. Returns the stripped string &amp; the number of removed delimiters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>Input string. </td></tr>
-    <tr><td class="paramname">max_delims</td><td>Maximum number of delimiter prefixes to strip before stopping, even if there are more delimiters. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::string, size_t&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00084">84</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a7c659d3e86eb26fb94a5915b10cbb74d_cgraph.svg" width="490" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a7c659d3e86eb26fb94a5915b10cbb74d_icgraph.svg" width="270" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="ab2a04d5b8af8ab1a4b5b4652723649e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2a04d5b8af8ab1a4b5b4652723649e0">&#9670;&nbsp;</a></span>vectorize()</h2>
 
@@ -1032,7 +688,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>StrVec </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00224">224</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00245">245</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>

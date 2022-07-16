@@ -8,6 +8,7 @@ var namespaceopt =
     [ "Arg", "classopt_1_1_arg.html", "classopt_1_1_arg" ],
     [ "ArgContainer", "structopt_1_1_arg_container.html", "structopt_1_1_arg_container" ],
     [ "Argument", "classopt_1_1_argument.html", "classopt_1_1_argument" ],
+    [ "ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", "structopt_1_1_argument_parsing_rules" ],
     [ "CaptureList", "structopt_1_1_capture_list.html", "structopt_1_1_capture_list" ],
     [ "casting_optional", "structopt_1_1casting__optional.html", "structopt_1_1casting__optional" ],
     [ "Index", "structopt_1_1_index.html", "structopt_1_1_index" ],

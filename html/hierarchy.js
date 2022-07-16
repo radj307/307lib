@@ -5,6 +5,7 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
+    [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
     [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
