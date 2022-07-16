@@ -139,12 +139,12 @@ template&lt;var::any_same&lt; null_t, string_t, nodes_t &gt; T&gt; </td></tr>
 <tr class="memitem:a0b6baf6c60cb3409f372f252042bd4a3"><td class="memItemLeft" align="right" valign="top">std::optional&lt; string_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#a0b6baf6c60cb3409f372f252042bd4a3">getAttribute</a> (string_t const &amp;attrName) const</td></tr>
 <tr class="memdesc:a0b6baf6c60cb3409f372f252042bd4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the specified attribute on this <a class="el" href="structxml_1_1_x_m_l_element.html" title="Represents a single node in an XML document tree, which has a name, attributes, and a value whose typ...">XMLElement</a>.  <a href="structxml_1_1_x_m_l_element.html#a0b6baf6c60cb3409f372f252042bd4a3">More...</a><br /></td></tr>
 <tr class="separator:a0b6baf6c60cb3409f372f252042bd4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25df1bc6147220d71302477c068d57a8"><td class="memItemLeft" align="right" valign="top">CONSTEXPR container_t&lt; string_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#a25df1bc6147220d71302477c068d57a8">getScopedName</a> () const</td></tr>
-<tr class="memdesc:a25df1bc6147220d71302477c068d57a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this node's name and namespace/scope as a vector of substrings.  <a href="structxml_1_1_x_m_l_element.html#a25df1bc6147220d71302477c068d57a8">More...</a><br /></td></tr>
-<tr class="separator:a25df1bc6147220d71302477c068d57a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb460e29531d9fa4614275f565636cd7"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#afb460e29531d9fa4614275f565636cd7">getUnscopedName</a> () const</td></tr>
-<tr class="memdesc:afb460e29531d9fa4614275f565636cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this node's actual name after removing all scope-specifiers.  <a href="structxml_1_1_x_m_l_element.html#afb460e29531d9fa4614275f565636cd7">More...</a><br /></td></tr>
-<tr class="separator:afb460e29531d9fa4614275f565636cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80cea58c1939bb25c32f6b5838eece35"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR container_t&lt; string_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#a80cea58c1939bb25c32f6b5838eece35">getScopedName</a> () const</td></tr>
+<tr class="memdesc:a80cea58c1939bb25c32f6b5838eece35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this node's name and namespace/scope as a vector of substrings.  <a href="structxml_1_1_x_m_l_element.html#a80cea58c1939bb25c32f6b5838eece35">More...</a><br /></td></tr>
+<tr class="separator:a80cea58c1939bb25c32f6b5838eece35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494eb1571531d1a363d63756fac65865"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#a494eb1571531d1a363d63756fac65865">getUnscopedName</a> () const</td></tr>
+<tr class="memdesc:a494eb1571531d1a363d63756fac65865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this node's actual name after removing all scope-specifiers.  <a href="structxml_1_1_x_m_l_element.html#a494eb1571531d1a363d63756fac65865">More...</a><br /></td></tr>
+<tr class="separator:a494eb1571531d1a363d63756fac65865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee0ccdcf6db8ae2bab2b3399f6d0b11"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9ee0ccdcf6db8ae2bab2b3399f6d0b11"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structxml_1_1_x_m_l_element.html#a9ee0ccdcf6db8ae2bab2b3399f6d0b11">has_type</a> () const</td></tr>
 <tr class="memdesc:a9ee0ccdcf6db8ae2bab2b3399f6d0b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the type of the value field is the same as type T.  <a href="structxml_1_1_x_m_l_element.html#a9ee0ccdcf6db8ae2bab2b3399f6d0b11">More...</a><br /></td></tr>
@@ -220,8 +220,8 @@ variant_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 </div>
 </div>
-<a id="a25df1bc6147220d71302477c068d57a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25df1bc6147220d71302477c068d57a8">&#9670;&nbsp;</a></span>getScopedName()</h2>
+<a id="a80cea58c1939bb25c32f6b5838eece35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80cea58c1939bb25c32f6b5838eece35">&#9670;&nbsp;</a></span>getScopedName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +230,7 @@ variant_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR container_t&lt;string_t&gt; xml::XMLElement::getScopedName </td>
+          <td class="memname">WINCONSTEXPR container_t&lt;string_t&gt; xml::XMLElement::getScopedName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -250,13 +250,14 @@ variant_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structxml_1_1_x_m_l_element_a25df1bc6147220d71302477c068d57a8_cgraph.svg" width="590" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structxml_1_1_x_m_l_element_a80cea58c1939bb25c32f6b5838eece35_cgraph.svg" width="590" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="afb460e29531d9fa4614275f565636cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb460e29531d9fa4614275f565636cd7">&#9670;&nbsp;</a></span>getUnscopedName()</h2>
+<a id="a494eb1571531d1a363d63756fac65865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494eb1571531d1a363d63756fac65865">&#9670;&nbsp;</a></span>getUnscopedName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +266,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR std::string_view xml::XMLElement::getUnscopedName </td>
+          <td class="memname">WINCONSTEXPR std::string_view xml::XMLElement::getUnscopedName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
