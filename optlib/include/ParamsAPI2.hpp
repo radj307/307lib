@@ -16,15 +16,30 @@ namespace opt {
 		 * @param argv			Argument array from main.
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<ValidInputType... VT>
-		ParamsAPI2(const int argc, char** argv, const VT&... captures) : ArgContainer(parse(vectorize(argc, argv, 1), captures...), argv[0]) {}
+		template<ValidInputType... Ts>
+		ParamsAPI2(const int argc, char** argv, ArgumentParsingRules const& parsingRules, Ts&&... captures) : ArgContainer(parse(vectorize(argc, argv, 1), CaptureList{ std::forward<Ts>(captures)... }, parsingRules), argv[0]) {}
+		/**
+		 * @brief				Parsing Constructor.
+		 * @param argc			Argument array size from main.
+		 * @param argv			Argument array from main.
+		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
+		 */
+		template<ValidInputType... Ts>
+		ParamsAPI2(const int argc, char** argv, Ts&&... captures) : ArgContainer(parse(vectorize(argc, argv, 1), CaptureList{ std::forward<Ts>(captures)... }), argv[0]) {}
 		/**
 		 * @brief				Parsing Constructor.
 		 * @param args			Argument vector.
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<ValidInputType... VT>
-		ParamsAPI2(const std::vector<std::string>& args, const VT&... captures) : ArgContainer(parse(args, captures...)) {}
+		template<ValidInputType... Ts>
+		ParamsAPI2(const std::vector<std::string>& args, ArgumentParsingRules const& parsingRules, Ts&&... captures) : ArgContainer(parse(args, CaptureList{ std::forward<Ts>(captures)... }, parsingRules)) {}
+		/**
+		 * @brief				Parsing Constructor.
+		 * @param args			Argument vector.
+		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
+		 */
+		template<ValidInputType... Ts>
+		ParamsAPI2(const std::vector<std::string>& args, Ts&&... captures) : ArgContainer(parse(args, CaptureList{ std::forward<Ts>(captures)... })) {}
 
 		ParamsAPI2& operator=(const ParamsAPI2&) = default;
 		ParamsAPI2& operator=(ParamsAPI2&&) = default;

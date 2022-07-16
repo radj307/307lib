@@ -61,7 +61,7 @@ namespace ex {
 		 * @brief			Move Constructor
 		 * @param o			Another except object to move.
 		 */
-		basic_except(basic_except&& o) : message{ std::move(o.message) } {}
+		basic_except(basic_except&& o) noexcept : message{ std::move(o.message) } {}
 
 		/**
 		 * @brief		Retrieve the message associated with this exception.

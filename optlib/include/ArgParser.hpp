@@ -1,6 +1,7 @@
 #pragma once
 #include <ArgContainer.hpp>
 #include <str.hpp>
+#include <charcompare.hpp>
 #include <var.hpp>
 
 #include <vector>
@@ -9,83 +10,111 @@
 namespace opt {
 	using StrVec = std::vector<std::string>;
 
-	static struct {
-		/// @brief	Defines valid argument prefix delimiters. By default, only '-' characters are accepted, however on windows forward-slash characters may be desired as well.
+	/**
+	 * @struct	ArgumentParsingRules
+	 * @brief	Allows configuration of the rules used when parsing arguments.
+	 */
+	struct ArgumentParsingRules {
+		/**
+		 * @brief	This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
+		 *\n		When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
+		 *			 are assumed to be negative numbers; when false, numbers with a single dash prefix
+		 *			 are always considered flags instead of numbers.
+		 *\n		Default: true
+		 */
+		bool assumeNumericDashPrefixIsNegative{ true };
+		/**
+		 * @brief	List of characters that are considered valid argument prefixes.
+		 *\n		This defaults to just '-'; other commonly-used prefixes include '/' & '+',
+		 *			 but these must be added manually.
+		 */
 		std::vector<char> delimiters{ '-' };
-	} Settings_ArgParser; ///< @brief Static (non-const) settings structure.
 
-	/**
-	 * @brief		Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.
-	 * @param c		Input Character
-	 * @returns		bool
-	 */
-	inline WINCONSTEXPR const bool is_delimiter(const char& c)
-	{
-		return std::any_of(Settings_ArgParser.delimiters.begin(), Settings_ArgParser.delimiters.end(), [&c](auto&& delim) { return delim == c; });
-	}
+		/**
+		 * @brief	Default Constructor.
+		 */
+		ArgumentParsingRules() {}
+		/**
+		 * @brief										Constructor.
+		 * @param delimiters							List of characters that are considered valid argument prefixes.
+		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
+		 *\n											When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
+		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
+		 *												 are always considered flags instead of numbers.
+		 */
+		ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
+		/**
+		 * @brief										Constructor.
+		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
+		 *\n											When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
+		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
+		 *												 are always considered flags instead of numbers.
+		 */
+		ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
 
-	/**
-	 * @brief		Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.
-	 * @param str	Input String
-	 * @returns		bool
-	 */
-	inline bool is_number(const std::string& str)
-	{
-		if (str.empty())
-			return false;
-		const bool is_negative{ str.front() == '-' }, has_hex_prefix{ str.find("0x") == (is_negative ? 1ull : 0ull) };
-		return (
-			(has_hex_prefix
-			&& std::all_of(str.begin() + 2ull + !!is_negative, str.end(), [](auto&& ch) { return isdigit(ch) || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f'; }))
-			) // check if number is hexadecimal, short circuit the all_of check if a hex prefix wasn't found.
-			|| (std::all_of(str.begin() + !!is_negative, str.end(), [](auto&& ch) {  return isdigit(ch) || ch == '.'; })); // decimal number
-	}
-
-	/**
-	 * @brief		Check if the given iterator CAN capture the next argument by checking
-	 *\n			if the next argument is not prefixed with a '-' or is prefixed with '-' but is also a number.
-	 *\n			Does NOT check if the given iterator is present on the capturelist!
-	 * @param here	The current iterator position.
-	 * @param end	The position of the end of the iterable range.
-	 * @returns		bool
-	 */
-	inline bool can_capture_next(StrVec::const_iterator& here, const StrVec::const_iterator& end)
-	{
-		return (here != end - 1ll) // incrementing iterator won't go out-of-bounds
-			&& ((here + 1ll)->front() != '-' // AND next argument doesn't start with a dash
-				|| is_number(*(here + 1ll))); // OR next argument is a number
-	}
-
-	/**
-	 * @brief				Count the number of characters at the beginning of a string.
-	 * @tparam ...DelimT	Variadic Template, accepts only char types.
-	 * @param str			Input string.
-	 * @param max_delims	Maximum number of delimiters to count before stopping, even if more delimiters exist.
-	 * @param ...delims		At least one char type to count.
-	 * @returns				size_t
-	 */
-	[[nodiscard]] inline size_t count_prefix(const std::string& str, const size_t& max_delims)
-	{
-		size_t count{ 0ull };
-		for (size_t i{ 0ull }; i < str.size() && i < max_delims; ++i) {
-			if (is_delimiter(str.at(i)))
-				++count;
-			else break;
+	#pragma region Methods
+		/**
+		 * @brief		Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.
+		 * @param c		Input Character
+		 * @returns		bool
+		 */
+		[[nodiscard]] WINCONSTEXPR bool isDelimiter(const char& c) const
+		{
+			return std::any_of(delimiters.begin(), delimiters.end(), [&c](auto&& delim) { return delim == c; });
 		}
-		return count;
-	}
+		[[nodiscard]] size_t countPrefix(const std::string& str, const size_t& max_delims) const
+		{
+			size_t count{ 0ull };
+			for (size_t i{ 0ull }; i < str.size() && i < max_delims; ++i) {
+				if (isDelimiter(str.at(i)))
+					++count;
+				else break;
+			}
+			return count;
+		}
+		[[nodiscard]] std::pair<std::string, size_t> stripPrefix(const std::string& str, const size_t& max_delims) const
+		{
+			const auto count{ countPrefix(str, max_delims) };
+			return{ str.substr(count), count };
+		}
+		/**
+		 * @brief		Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.
+		 * @param str	Input String
+		 * @returns		bool
+		 */
+		[[nodiscard]] bool isNumber(std::string str) const
+		{
+			str = str::trim(str::strip(str, ','));
+			if (str.empty())
+				return false;
 
-	/**
-	 * @brief				Count & remove prefix delimiters from a given string. Returns the stripped string & the number of removed delimiters.
-	 * @param str			Input string.
-	 * @param max_delims	Maximum number of delimiter prefixes to strip before stopping, even if there are more delimiters.
-	 * @returns				std::pair<std::string, size_t>
-	 */
-	inline std::pair<std::string, size_t> strip_prefix(const std::string& str, const size_t& max_delims)
-	{
-		const auto count{ count_prefix(str, max_delims) };
-		return{ str.substr(count), count };
-	}
+			if (str.starts_with("0x")) {
+				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), str::ishexdigit);
+			}
+			else {
+				const bool is_negative{ str.starts_with('-') };
+				if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : str::stdpred::isdigit(c)); })) {
+					return assumeNumericDashPrefixIsNegative; //< when str is a valid number, return true when assuming it is a number and not a flag
+				} // else, return false
+			}
+			return false;
+		}
+		/**
+		 * @brief		Check if the given iterator CAN capture the next argument by checking
+		 *\n			if the next argument is not prefixed with a '-' or is prefixed with '-' but is also a number.
+		 *\n			Does NOT check if the given iterator is present on the capturelist!
+		 * @param here	The current iterator position.
+		 * @param end	The position of the end of the iterable range.
+		 * @returns		bool
+		 */
+		[[nodiscard]] bool canCaptureNext(StrVec::const_iterator& here, const StrVec::const_iterator& end) const
+		{
+			return (here != end - 1ll) // incrementing iterator won't go out-of-bounds
+				&& ((here + 1ll)->front() != '-' // AND next argument doesn't start with a dash
+					|| isNumber(*(here + 1ll))); // OR next argument is a number
+		}
+	#pragma endregion Methods
+	};
 
 	/**
 	 * @struct	CaptureList
@@ -135,7 +164,7 @@ namespace opt {
 	 * @param captures	A CaptureList instance specifying which arguments are allowed to capture other arguments as their parameters
 	 * @returns			ArgContainer
 	 */
-	inline ArgContainerType parse(StrVec&& args, const CaptureList& captures)
+	inline ArgContainerType parse(StrVec&& args, const CaptureList& captures, const ArgumentParsingRules& parsingRules = {})
 	{
 		// remove empty arguments, which are possible when passing arguments from automated testing applications
 		args.erase(std::remove_if(args.begin(), args.end(), [](auto&& s) { return s.empty(); }), args.end());
@@ -144,7 +173,7 @@ namespace opt {
 		cont.reserve(args.size());
 
 		for (StrVec::const_iterator it{ args.begin() }; it != args.end(); ++it) {
-			auto [arg, d_count] { strip_prefix(*it, 2ull) };
+			auto [arg, d_count] { parsingRules.stripPrefix(*it, 2ull) };
 			switch (d_count) {
 			case 2ull: // Option
 				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign
@@ -159,15 +188,15 @@ namespace opt {
 						}
 					}
 				}
-				else if (captures.is_present(arg) && can_capture_next(it, args.end())) // argument can capture next arg
+				else if (captures.is_present(arg) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
 					cont.emplace_back(opt::Option(std::make_pair(arg, *++it)));
 				else
 					cont.emplace_back(opt::Option(std::make_pair(arg, std::nullopt)));
 				break;
 			case 1ull: // Flag
-				if (!is_number(arg)) { // single-dash prefix is not a number
+				if (!parsingRules.isNumber(arg)) { // single-dash prefix is not a number
 					std::optional<opt::Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
-					std::string invCap{}; // for invalid captures that should be treated as parameters
+					std::string invCap{}; //< for invalid captures that should be treated as parameters
 					if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
 						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
 						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; captures.is_present(flag)) {
@@ -181,7 +210,7 @@ namespace opt {
 					// iterate through characters in arg
 					for (auto fl{ arg.begin() }; fl != arg.end(); ++fl) {
 						// If this is the last char, and it can capture
-						if (fl == arg.end() - 1ll && captures.is_present(std::string(1ull, *fl)) && can_capture_next(it, args.end()))
+						if (fl == arg.end() - 1ll && captures.is_present(std::string(1ull, *fl)) && parsingRules.canCaptureNext(it, args.end()))
 							cont.emplace_back(opt::Flag(std::make_pair(*fl, *++it)));
 						else // not last char, or can't capture
 							cont.emplace_back(opt::Flag(std::make_pair(*fl, std::nullopt)));
@@ -206,14 +235,6 @@ namespace opt {
 		cont.shrink_to_fit();
 		return cont;
 	}
-	/**
-	 * @brief				Parse commandline arguments into an ArgContainer instance. This function accepts a variadic capture list.
-	 * @tparam VT...		Variadic Templated Input Type
-	 * @param args			Commandline arguments as a vector of strings, in order and including argv[0].
-	 * @param ...captures	The names of any arguments that are allowed to capture additional arguments. If the user attempts to force capture an argument by appending "=..." but the argument is not on this list, the invalid capture will be added separately as a parameter instead.
-	 * @returns				ArgContainer
-	 */
-	template<ValidInputType... VT> inline static auto parse(auto&& args, const VT&... captures) { return parse(std::forward<decltype(args)>(args), CaptureList(captures...)); }
 	/**
 	 * @brief		Make a std::vector of std::strings from a char** array.
 	 * @param sz	Size of the array.
