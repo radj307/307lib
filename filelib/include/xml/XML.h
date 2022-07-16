@@ -117,7 +117,7 @@ namespace xml {
 		 * @brief		Get this node's actual name after removing all scope-specifiers.
 		 * @returns		This node's name, excluding all scope-specifiers.
 		 */
-		CONSTEXPR std::string_view getUnscopedName() const
+		WINCONSTEXPR std::string_view getUnscopedName() const
 		{
 			if (const auto& lastSeperator{ name.find_last_of(XML_SCOPE_DELIMITERS) }; lastSeperator != std::string::npos)
 				return { name.begin() + lastSeperator + 1, name.end() };
@@ -127,7 +127,7 @@ namespace xml {
 		 * @brief		Get this node's name and namespace/scope as a vector of substrings.
 		 * @returns		This node's full scoped name in sequential order. (Order of appearance)
 		 */
-		CONSTEXPR container_t<string_t> getScopedName() const { return str::split_all(name, XML_SCOPE_DELIMITERS); }
+		WINCONSTEXPR container_t<string_t> getScopedName() const { return str::split_all(name, XML_SCOPE_DELIMITERS); }
 	#pragma endregion name
 
 	#pragma region value
@@ -604,11 +604,11 @@ namespace xml {
 							}
 							else {
 								std::visit([&s, &name, &attributes, &nodeStack](auto&& top) {
-									using T = std::decay_t<decltype(top)>;
+									using U = std::decay_t<decltype(top)>;
 
-									if constexpr (std::same_as<T, null_t>)
+									if constexpr (std::same_as<U, null_t>)
 										nodeStack.top()->value = nodes_t{ XMLElement{ name, attributes } };
-									else if constexpr (std::same_as<T, nodes_t>)
+									else if constexpr (std::same_as<U, nodes_t>)
 										top.emplace_back(XMLElement{ name, attributes });
 									else throw make_exception("XMLParser::parse() syntax error:  Illegal characters '", s, '\'');
 								}, nodeStack.top()->value);
@@ -619,11 +619,11 @@ namespace xml {
 					}
 					case TokenType::Value: {
 						std::visit([&s, &nodeStack](auto&& top) {
-							using T = std::decay_t<decltype(top)>;
+							using U = std::decay_t<decltype(top)>;
 
-							if constexpr (std::same_as<T, null_t>)
+							if constexpr (std::same_as<U, null_t>)
 								nodeStack.top()->value = s;
-							else if constexpr (std::same_as<T, string_t>)
+							else if constexpr (std::same_as<U, string_t>)
 								top += s;
 							else throw make_exception("XMLParser::parse() syntax error:  Unexpected value '", s, "'");
 						}, nodeStack.top()->value);

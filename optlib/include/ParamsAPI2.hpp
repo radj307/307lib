@@ -32,14 +32,14 @@ namespace opt {
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
 		template<ValidInputType... Ts>
-		ParamsAPI2(const std::vector<std::string>& args, ArgumentParsingRules const& parsingRules, Ts&&... captures) : ArgContainer(parse(args, CaptureList{ std::forward<Ts>(captures)... }, parsingRules)) {}
+		ParamsAPI2(std::vector<std::string>&& args, ArgumentParsingRules const& parsingRules, Ts&&... captures) : ArgContainer(parse(std::forward<std::vector<std::string>>(args), CaptureList{ std::forward<Ts>(captures)... }, parsingRules)) {}
 		/**
 		 * @brief				Parsing Constructor.
 		 * @param args			Argument vector.
 		 * @param ...captures	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
 		template<ValidInputType... Ts>
-		ParamsAPI2(const std::vector<std::string>& args, Ts&&... captures) : ArgContainer(parse(args, CaptureList{ std::forward<Ts>(captures)... })) {}
+		ParamsAPI2(std::vector<std::string>&& args, Ts&&... captures) : ArgContainer(parse(std::forward<std::vector<std::string>>(args), CaptureList{ std::forward<Ts>(captures)... })) {}
 
 		ParamsAPI2& operator=(const ParamsAPI2&) = default;
 		ParamsAPI2& operator=(ParamsAPI2&&) = default;
