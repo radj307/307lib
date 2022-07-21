@@ -115,6 +115,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa87cdbabc115fa73e19f3686893747ba"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#aa87cdbabc115fa73e19f3686893747ba">file::read</a> (const std::filesystem::path &amp;, const openmode &amp;=openmode::in) noexcept</td></tr>
 <tr class="memdesc:aa87cdbabc115fa73e19f3686893747ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#aa87cdbabc115fa73e19f3686893747ba">More...</a><br /></td></tr>
 <tr class="separator:aa87cdbabc115fa73e19f3686893747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#a9d3aaa13028568e440b8a0f66ef1ac1d">file::read</a> (const std::filesystem::path &amp;, const std::ios_base::openmode &amp;) noexcept</td></tr>
+<tr class="memdesc:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#a9d3aaa13028568e440b8a0f66ef1ac1d">More...</a><br /></td></tr>
+<tr class="separator:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains file input functions. </p>
@@ -123,7 +126,7 @@ Functions</h2></td></tr>
 <p class="definition">Definition in file <a class="el" href="filei_8hpp_source.html">filei.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="aa87cdbabc115fa73e19f3686893747ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87cdbabc115fa73e19f3686893747ba">&#9670;&nbsp;</a></span>read()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87cdbabc115fa73e19f3686893747ba">&#9670;&nbsp;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,13 +162,62 @@ Functions</h2></td></tr>
 <p>Read the contents of a file to a stringstream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Target Filepath </td></tr>
+    <tr><td class="paramname">path</td><td>The location of the target file. </td></tr>
+    <tr><td class="paramname">mode</td><td>The mode to use when opening the file. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::stringstream&amp;&amp; </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="filei_8cpp_source.html#l00005">5</a> of file <a class="el" href="filei_8cpp_source.html">filei.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9d3aaa13028568e440b8a0f66ef1ac1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3aaa13028568e440b8a0f66ef1ac1d">&#9670;&nbsp;</a></span>read() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stringstream file::read </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::ios_base::openmode &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read the contents of a file to a stringstream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The location of the target file. </td></tr>
+    <tr><td class="paramname">mode</td><td>The mode to use when opening the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::stringstream&amp;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filei_8cpp_source.html#l00013">13</a> of file <a class="el" href="filei_8cpp_source.html">filei.cpp</a>.</p>
 
 </div>
 </div>

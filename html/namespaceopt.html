@@ -115,6 +115,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html">CaptureList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt_1_1_capture_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_style.html">CaptureStyle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pseudo-enum bitfield that defines argument capturing rules.  <a href="structopt_1_1_capture_style.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends the <a class="el" href="structopt_1_1_input_wrapper.html" title="Acts as a wrapper for char &amp; std::string input types, to allow variadic functions to receive either c...">InputWrapper</a> struct with the ability to require specific arguments.  <a href="structopt_1_1_capture_wrapper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1casting__optional.html">casting_optional</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for std::optional that includes several helpful typecasting functions. <br  />
  This inherits &amp; forwards most of its functionality from std::optional. <br  />
@@ -189,6 +195,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="memitem:ae49449e838a7675e67e0859a749f3bdb"><td class="memItemLeft" align="right" valign="top"><a id="ae49449e838a7675e67e0859a749f3bdb"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>StrVec</b> = std::vector&lt; std::string &gt;</td></tr>
 <tr class="separator:ae49449e838a7675e67e0859a749f3bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948885e85561e17e2b285f65307eeecc"><td class="memItemLeft" align="right" valign="top"><a id="a948885e85561e17e2b285f65307eeecc"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>uchar</b> = unsigned char</td></tr>
+<tr class="separator:a948885e85561e17e2b285f65307eeecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="memItemLeft" align="right" valign="top"><a id="af96ecf1c473dc1d8a07674fd1858fe4f"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> = std::variant&lt; std::monostate, <a class="el" href="classopt_1_1_arg.html">Parameter</a>, <a class="el" href="classopt_1_1_arg.html">Option</a>, <a class="el" href="classopt_1_1_arg.html">Flag</a> &gt;</td></tr>
 <tr class="memdesc:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variant type that allows std::monostate (null/all), Parameter, Option, &amp; Flag types, in that order. <br /></td></tr>
@@ -221,11 +230,19 @@ template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a8e94744bdbabe51bbb6262321407d0ed"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a8e94744bdbabe51bbb6262321407d0ed">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;varg)</td></tr>
 <tr class="memdesc:a8e94744bdbabe51bbb6262321407d0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">VariantArgumentType output stream insertion operator.  <a href="namespaceopt.html#a8e94744bdbabe51bbb6262321407d0ed">More...</a><br /></td></tr>
 <tr class="separator:a8e94744bdbabe51bbb6262321407d0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564c5d4e2a6d094fd3ee98a220bcd738"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:a564c5d4e2a6d094fd3ee98a220bcd738"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738">optCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
+<tr class="memdesc:a564c5d4e2a6d094fd3ee98a220bcd738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not require captured input while also providing additional context.  <a href="namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738">More...</a><br /></td></tr>
+<tr class="separator:a564c5d4e2a6d094fd3ee98a220bcd738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac082ca4ad3daf5fc3d4b98ff95c57b18"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:ac082ca4ad3daf5fc3d4b98ff95c57b18"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#ac082ca4ad3daf5fc3d4b98ff95c57b18">optCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
+<tr class="memdesc:ac082ca4ad3daf5fc3d4b98ff95c57b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not require captured input while also providing additional context.  <a href="namespaceopt.html#ac082ca4ad3daf5fc3d4b98ff95c57b18">More...</a><br /></td></tr>
+<tr class="separator:ac082ca4ad3daf5fc3d4b98ff95c57b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a2d7a38c94d8cdda8ce9f5f12e42b365e">paramVecToStrVec</a> (const std::vector&lt; <a class="el" href="classopt_1_1_arg.html">opt::Parameter</a> &gt; &amp;param_vec)</td></tr>
 <tr class="memdesc:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a vector of Parameters to a vector of strings.  <a href="namespaceopt.html#a2d7a38c94d8cdda8ce9f5f12e42b365e">More...</a><br /></td></tr>
 <tr class="separator:a2d7a38c94d8cdda8ce9f5f12e42b365e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af3dfa9b479bb49bacb8e5ab8b58c2c65">parse</a> (StrVec &amp;&amp;args, const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;captures, const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;parsingRules={})</td></tr>
-<tr class="memdesc:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
+<tr class="memitem:a4748ebaec4da7456a93cd981c205486d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a4748ebaec4da7456a93cd981c205486d">parse</a> (StrVec &amp;&amp;args, const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;captures)</td></tr>
+<tr class="memdesc:a4748ebaec4da7456a93cd981c205486d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance. <br  />
  <b><a class="el" href="classopt_1_1_argument.html">Argument</a> Types</b> <br  />
  - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
  - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
@@ -234,8 +251,16 @@ template&lt;ValidArg Type&gt; </td></tr>
  - Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix. <br  />
  - Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", &amp; "--opt" + "captured". <br  />
  - If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain. <br  />
- - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.  <a href="namespaceopt.html#af3dfa9b479bb49bacb8e5ab8b58c2c65">More...</a><br /></td></tr>
-<tr class="separator:af3dfa9b479bb49bacb8e5ab8b58c2c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.  <a href="namespaceopt.html#a4748ebaec4da7456a93cd981c205486d">More...</a><br /></td></tr>
+<tr class="separator:a4748ebaec4da7456a93cd981c205486d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c1dbc43b7009a1667525c39eb6d8ac"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:a30c1dbc43b7009a1667525c39eb6d8ac"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a30c1dbc43b7009a1667525c39eb6d8ac">reqCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
+<tr class="memdesc:a30c1dbc43b7009a1667525c39eb6d8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument requires captured input while also providing additional context.  <a href="namespaceopt.html#a30c1dbc43b7009a1667525c39eb6d8ac">More...</a><br /></td></tr>
+<tr class="separator:a30c1dbc43b7009a1667525c39eb6d8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8570f8756750d665cccf0da99475cf26"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:a8570f8756750d665cccf0da99475cf26"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a8570f8756750d665cccf0da99475cf26">reqCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
+<tr class="memdesc:a8570f8756750d665cccf0da99475cf26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument requires captured input while also providing additional context.  <a href="namespaceopt.html#a8570f8756750d665cccf0da99475cf26">More...</a><br /></td></tr>
+<tr class="separator:a8570f8756750d665cccf0da99475cf26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplParams" colspan="2">template&lt;typename IntegerT , IntegerT index&gt; </td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">requires</a> (index==static_cast&lt; IntegerT &gt;(0)) &amp;&amp;std</td></tr>
 <tr class="memdesc:aa2f10f2c576dc410b4cacf831c949d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a std::monostate type from a VariantArgumentType instance.  <a href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">More...</a><br /></td></tr>
@@ -300,6 +325,10 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab813ec0eff2e375a9077ceffaae2f8a6"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ValidArgTypeOrCompound</b> = <a class="el" href="namespaceopt.html#a5186e11563094f28ac3182224bfbc6d0">ValidArgType</a>&lt;T&gt; || std::same_as&lt;T, CompoundFlagType&gt;</td></tr>
 <tr class="separator:ab813ec0eff2e375a9077ceffaae2f8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489d23e5ee230f80af16f9fb7e559b76"><td class="memTemplParams" colspan="2"><a id="a489d23e5ee230f80af16f9fb7e559b76"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a489d23e5ee230f80af16f9fb7e559b76"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ValidCaptureInputType</b> = std::derived_from&lt;T, <a class="el" href="structopt_1_1_input_wrapper.html">InputWrapper</a>&gt; || <a class="el" href="namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1">ValidInputType</a>&lt;T&gt;</td></tr>
+<tr class="separator:a489d23e5ee230f80af16f9fb7e559b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ec060dbd6131b7d040118d88d50f6f1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a0ec060dbd6131b7d040118d88d50f6f1"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1">ValidInputType</a> = std::same_as&lt;T, <a class="el" href="structopt_1_1_input_wrapper.html">InputWrapper</a>&gt; || std::same_as&lt;T, std::string&gt; || std::same_as&lt;T, char&gt; || std::convertible_to&lt;T, char&gt; || std::convertible_to&lt;T, std::string&gt;</td></tr>
 <tr class="memdesc:a0ec060dbd6131b7d040118d88d50f6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept that allows <a class="el" href="structopt_1_1_input_wrapper.html" title="Acts as a wrapper for char &amp; std::string input types, to allow variadic functions to receive either c...">InputWrapper</a>, char, std::string, or any types that are implicitly convertible to char or std::string.  <a href="namespaceopt.html#a0ec060dbd6131b7d040118d88d50f6f1">More...</a><br /></td></tr>
@@ -449,6 +478,133 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a564c5d4e2a6d094fd3ee98a220bcd738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564c5d4e2a6d094fd3ee98a220bcd738">&#9670;&nbsp;</a></span>optCapture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::optCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument does not require captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MAX</td><td>Limits the number of times this argument may be specified legally. </td></tr>
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00279">279</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a564c5d4e2a6d094fd3ee98a220bcd738_cgraph.svg" width="336" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac082ca4ad3daf5fc3d4b98ff95c57b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac082ca4ad3daf5fc3d4b98ff95c57b18">&#9670;&nbsp;</a></span>optCapture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::optCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument does not require captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00292">292</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_ac082ca4ad3daf5fc3d4b98ff95c57b18_cgraph.svg" width="336" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a2d7a38c94d8cdda8ce9f5f12e42b365e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d7a38c94d8cdda8ce9f5f12e42b365e">&#9670;&nbsp;</a></span>paramVecToStrVec()</h2>
 
@@ -486,8 +642,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af3dfa9b479bb49bacb8e5ab8b58c2c65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3dfa9b479bb49bacb8e5ab8b58c2c65">&#9670;&nbsp;</a></span>parse()</h2>
+<a id="a4748ebaec4da7456a93cd981c205486d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4748ebaec4da7456a93cd981c205486d">&#9670;&nbsp;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,13 +661,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structopt_1_1_capture_list.html">CaptureList</a> &amp;&#160;</td>
-          <td class="paramname"><em>captures</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;&#160;</td>
-          <td class="paramname"><em>parsingRules</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>captures</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -545,7 +695,140 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00167">167</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00362">362</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespaceopt_a4748ebaec4da7456a93cd981c205486d_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a30c1dbc43b7009a1667525c39eb6d8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c1dbc43b7009a1667525c39eb6d8ac">&#9670;&nbsp;</a></span>reqCapture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::reqCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument requires captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MAX</td><td>Limits the number of times this argument may be specified legally. </td></tr>
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00252">252</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a30c1dbc43b7009a1667525c39eb6d8ac_cgraph.svg" width="336" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8570f8756750d665cccf0da99475cf26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8570f8756750d665cccf0da99475cf26">&#9670;&nbsp;</a></span>reqCapture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::reqCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument requires captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00265">265</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a8570f8756750d665cccf0da99475cf26_cgraph.svg" width="336" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -688,7 +971,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>StrVec </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00245">245</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00477">477</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>

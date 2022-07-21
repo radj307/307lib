@@ -1,5 +1,6 @@
 var dir_f017f8d1aea2530cee9690020bbdf1df =
 [
+    [ "basic_variant_map.hpp", "basic__variant__map_8hpp.html", "basic__variant__map_8hpp" ],
     [ "env.hpp", "env_8hpp.html", "env_8hpp" ],
     [ "hasPendingDataSTDIN.h", "has_pending_data_s_t_d_i_n_8h.html", "has_pending_data_s_t_d_i_n_8h" ],
     [ "indentor.hpp", "indentor_8hpp.html", "indentor_8hpp" ],

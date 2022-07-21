@@ -9,6 +9,7 @@ var namespaces_dup =
     [ "legacy", "namespacelegacy.html", null ],
     [ "op", "namespaceop.html", null ],
     [ "opt", "namespaceopt.html", null ],
+    [ "opt_literals", "namespaceopt__literals.html", null ],
     [ "optional", "namespaceoptional.html", null ],
     [ "parser", "namespaceparser.html", null ],
     [ "Query", "namespace_query.html", null ],

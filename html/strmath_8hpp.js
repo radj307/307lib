@@ -14,5 +14,5 @@ var strmath_8hpp =
     [ "hexToDecimal", "strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2", null ],
     [ "hexToDecimal", "strmath_8hpp.html#a42c6b6a3bd47743a574df997a0bb8c65", null ],
     [ "toAlphaNumeric", "strmath_8hpp.html#a4e6def114db6fedf6a5d8334dc6e48ca", null ],
-    [ "toBase10", "strmath_8hpp.html#a462bac8b0d85ac958ab97f4e140d55ef", null ]
+    [ "toBase10", "strmath_8hpp.html#ae51dc4e9d23dcdd8def538424933d5df", null ]
 ];

@@ -39,5 +39,9 @@ var strmanip_8hpp =
     [ "strip_trailing", "strmanip_8hpp.html#a45c1b11a2e282a4fc8d38548eaf45f3c", null ],
     [ "toMap", "strmanip_8hpp.html#a88947ca78984e05f41dd36fb221d32d6", null ],
     [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ],
-    [ "trim", "strmanip_8hpp.html#ae1d285a144a4f72cc7ac9fd1dd928f4e", null ]
+    [ "trim", "strmanip_8hpp.html#ae08aac1680da8afe0bb6a06c2b129487", null ],
+    [ "trim_preceeding", "strmanip_8hpp.html#a663cf5e6a2789f130f7bca9b2bc139b1", null ],
+    [ "trim_preceeding", "strmanip_8hpp.html#ab9aa2445b504ba751cfd01ffff800516", null ],
+    [ "trim_trailing", "strmanip_8hpp.html#ae62653424221ea585a928a2dd1c7dbd6", null ],
+    [ "trim_trailing", "strmanip_8hpp.html#aac4273bb692df476dc585a89a67f3729", null ]
 ];

@@ -10,6 +10,8 @@ var namespaceopt =
     [ "Argument", "classopt_1_1_argument.html", "classopt_1_1_argument" ],
     [ "ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", "structopt_1_1_argument_parsing_rules" ],
     [ "CaptureList", "structopt_1_1_capture_list.html", "structopt_1_1_capture_list" ],
+    [ "CaptureStyle", "structopt_1_1_capture_style.html", "structopt_1_1_capture_style" ],
+    [ "CaptureWrapper", "structopt_1_1_capture_wrapper.html", "structopt_1_1_capture_wrapper" ],
     [ "casting_optional", "structopt_1_1casting__optional.html", "structopt_1_1casting__optional" ],
     [ "Index", "structopt_1_1_index.html", "structopt_1_1_index" ],
     [ "InputWrapper", "structopt_1_1_input_wrapper.html", "structopt_1_1_input_wrapper" ],

@@ -15,6 +15,7 @@ var hierarchy =
         [ "opt::Argument", "classopt_1_1_argument.html", null ]
       ] ]
     ] ],
+    [ "var::basic_variant_map< TMap, TKey, Ts >", "classvar_1_1basic__variant__map.html", null ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
         [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
@@ -25,6 +26,7 @@ var hierarchy =
     ] ],
     [ "xlog::BufferManager", "classxlog_1_1_buffer_manager.html", null ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
+    [ "opt::CaptureStyle", "structopt_1_1_capture_style.html", null ],
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
@@ -45,7 +47,9 @@ var hierarchy =
       [ "file::ini::INI", "structfile_1_1ini_1_1_i_n_i.html", null ]
     ] ],
     [ "opt::token::Parser::Input", "structopt_1_1token_1_1_parser_1_1_input.html", null ],
-    [ "opt::InputWrapper", "structopt_1_1_input_wrapper.html", null ],
+    [ "opt::InputWrapper", "structopt_1_1_input_wrapper.html", [
+      [ "opt::CaptureWrapper", "structopt_1_1_capture_wrapper.html", null ]
+    ] ],
     [ "std::ios_base", null, [
       [ "std::basic_ios< Char >", null, [
         [ "std::basic_ostream< Char >", null, [

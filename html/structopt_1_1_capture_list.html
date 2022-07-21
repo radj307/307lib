@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('structopt_1_1_capture_list.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structopt_1_1_capture_list-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -101,42 +102,59 @@ $(document).ready(function(){initNavTree('structopt_1_1_capture_list.html',''); 
 <div class="dynheader">
 Collaboration diagram for opt::CaptureList:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_capture_list__coll__graph.svg" width="250" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_capture_list__coll__graph.svg" width="634" height="519"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="memTemplParams" colspan="2">template&lt;ValidInputType... VT&gt; </td></tr>
-<tr class="memitem:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#ab73e3b9f29a5a344be830aaef1b54ea1">CaptureList</a> (const VT &amp;... capturing_arguments)</td></tr>
-<tr class="memdesc:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="structopt_1_1_capture_list.html#ab73e3b9f29a5a344be830aaef1b54ea1">More...</a><br /></td></tr>
-<tr class="separator:ab73e3b9f29a5a344be830aaef1b54ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="memTemplParams" colspan="2">template&lt;var::all_same&lt; char &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#adfe7ff1e725fe2c3a592dbb2fae27d03">is_present</a> (const std::string &amp;name, const DelimT &amp;... delims) const</td></tr>
-<tr class="memdesc:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given argument appears in the capture list. Names are case-sensitive.  <a href="structopt_1_1_capture_list.html#adfe7ff1e725fe2c3a592dbb2fae27d03">More...</a><br /></td></tr>
-<tr class="separator:adfe7ff1e725fe2c3a592dbb2fae27d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e31e5405937be0c11c26f8e4b88bdec"><td class="memItemLeft" align="right" valign="top"><a id="a6e31e5405937be0c11c26f8e4b88bdec"></a>
-WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>operator const std::vector&lt; InputWrapper &gt;</b> () const</td></tr>
-<tr class="separator:a6e31e5405937be0c11c26f8e4b88bdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb34059c493282040fbf3cb682e4971d"><td class="memTemplParams" colspan="2">template&lt;ValidCaptureInputType... Ts&gt; </td></tr>
+<tr class="memitem:acb34059c493282040fbf3cb682e4971d"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#acb34059c493282040fbf3cb682e4971d">CaptureList</a> (<a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> const &amp;parsingRules, Ts &amp;&amp;... capturing_arguments)</td></tr>
+<tr class="memdesc:acb34059c493282040fbf3cb682e4971d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="structopt_1_1_capture_list.html#acb34059c493282040fbf3cb682e4971d">More...</a><br /></td></tr>
+<tr class="separator:acb34059c493282040fbf3cb682e4971d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0655d0d66af065b2efd8607b47d5ea"><td class="memTemplParams" colspan="2"><a id="a6e0655d0d66af065b2efd8607b47d5ea"></a>
+template&lt;ValidCaptureInputType... Ts&gt; </td></tr>
+<tr class="memitem:a6e0655d0d66af065b2efd8607b47d5ea"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>CaptureList</b> (Ts &amp;&amp;... capturing_arguments)</td></tr>
+<tr class="separator:a6e0655d0d66af065b2efd8607b47d5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7593774075730dae12ae327ff6098a0c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#a7593774075730dae12ae327ff6098a0c">get</a> (std::string const &amp;name) const</td></tr>
+<tr class="memdesc:a7593774075730dae12ae327ff6098a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given argument appears in the capture list, and returns the associated <a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> object.  <a href="structopt_1_1_capture_list.html#a7593774075730dae12ae327ff6098a0c">More...</a><br /></td></tr>
+<tr class="separator:a7593774075730dae12ae327ff6098a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a39a323ab80b576ec14e6676fe5f892"><td class="memItemLeft" align="right" valign="top"><a id="a3a39a323ab80b576ec14e6676fe5f892"></a>
+<a class="el" href="structopt_1_1_capture_style.html">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_capture_style</b> (std::string const &amp;name) const</td></tr>
+<tr class="separator:a3a39a323ab80b576ec14e6676fe5f892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27a0671c0ed4745413ff4e7926dc832"><td class="memItemLeft" align="right" valign="top"><a id="aa27a0671c0ed4745413ff4e7926dc832"></a>
+WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>operator const std::vector&lt; CaptureWrapper &gt;</b> () const</td></tr>
+<tr class="separator:aa27a0671c0ed4745413ff4e7926dc832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a05cdbf5994b91aa9257198f641da12b9"><td class="memTemplParams" colspan="2"><a id="a05cdbf5994b91aa9257198f641da12b9"></a>
+template&lt;ValidCaptureInputType T&gt; </td></tr>
+<tr class="memitem:a05cdbf5994b91aa9257198f641da12b9"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_wrapper</b> (const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;parsingRules, T &amp;&amp;item)</td></tr>
+<tr class="separator:a05cdbf5994b91aa9257198f641da12b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab3975dce15bf28ed21536c9f098625cc"><td class="memItemLeft" align="right" valign="top"><a id="ab3975dce15bf28ed21536c9f098625cc"></a>
-const std::vector&lt; <a class="el" href="structopt_1_1_input_wrapper.html">InputWrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#ab3975dce15bf28ed21536c9f098625cc">vec</a></td></tr>
-<tr class="memdesc:ab3975dce15bf28ed21536c9f098625cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of input wrapper strings that contains the argument names. <br /></td></tr>
-<tr class="separator:ab3975dce15bf28ed21536c9f098625cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4626a4883d357eea470df21d6a3ccfec"><td class="memItemLeft" align="right" valign="top"><a id="a4626a4883d357eea470df21d6a3ccfec"></a>
+const <a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parsingRules</b></td></tr>
+<tr class="separator:a4626a4883d357eea470df21d6a3ccfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f75ece2439ef463a5558c3a31bd5174"><td class="memItemLeft" align="right" valign="top"><a id="a8f75ece2439ef463a5558c3a31bd5174"></a>
+const std::vector&lt; <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_capture_list.html#a8f75ece2439ef463a5558c3a31bd5174">vec</a></td></tr>
+<tr class="memdesc:a8f75ece2439ef463a5558c3a31bd5174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of input wrapper strings that contains the argument names. <br /></td></tr>
+<tr class="separator:a8f75ece2439ef463a5558c3a31bd5174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function. </p>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00123">123</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00303">303</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab73e3b9f29a5a344be830aaef1b54ea1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab73e3b9f29a5a344be830aaef1b54ea1">&#9670;&nbsp;</a></span>CaptureList()</h2>
+<a id="acb34059c493282040fbf3cb682e4971d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb34059c493282040fbf3cb682e4971d">&#9670;&nbsp;</a></span>CaptureList()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;ValidInputType... VT&gt; </div>
+template&lt;ValidCaptureInputType... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -144,9 +162,19 @@ template&lt;ValidInputType... VT&gt; </div>
         <tr>
           <td class="memname">constexpr opt::CaptureList::CaptureList </td>
           <td>(</td>
-          <td class="paramtype">const VT &amp;...&#160;</td>
-          <td class="paramname"><em>capturing_arguments</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structopt_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> const &amp;&#160;</td>
+          <td class="paramname"><em>parsingRules</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>capturing_arguments</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -170,64 +198,45 @@ template&lt;ValidInputType... VT&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00131">131</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00323">323</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adfe7ff1e725fe2c3a592dbb2fae27d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe7ff1e725fe2c3a592dbb2fae27d03">&#9670;&nbsp;</a></span>is_present()</h2>
+<a id="a7593774075730dae12ae327ff6098a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7593774075730dae12ae327ff6098a0c">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;var::all_same&lt; char &gt;... DelimT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool opt::CaptureList::is_present </td>
+          <td class="memname">std::optional&lt;<a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&gt; opt::CaptureList::get </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const DelimT &amp;...&#160;</td>
-          <td class="paramname"><em>delims</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if a given argument appears in the capture list. Names are case-sensitive. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Variadic</td><td>Templated Type. (char) </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Checks if a given argument appears in the capture list, and returns the associated <a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Input <a class="el" href="classopt_1_1_argument.html">Argument</a> Name. </td></tr>
-    <tr><td class="paramname">...delims</td><td>Optional list of delimiters to remove from the given name. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the target argument. (Note that preceeding delimiters are stripped automatically) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> object associated with the given name, or std::nullopt if none were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00141">141</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00331">331</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['magenta_1349',['magenta',['../color-values_8h.html#a4d9a8dfa7552ebe5422d8ddeb562588d',1,'color']]],
-  ['manipulator_1350',['manipulator',['../namespacexlog.html#ad2d673aa668f9c7b14f8fc7f3f05f01c',1,'xlog']]],
-  ['message_1351',['MESSAGE',['../structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a',1,'xlog::level']]]
+  ['magenta_1376',['magenta',['../color-values_8h.html#a4d9a8dfa7552ebe5422d8ddeb562588d',1,'color']]],
+  ['manipulator_1377',['manipulator',['../namespacexlog.html#ad2d673aa668f9c7b14f8fc7f3f05f01c',1,'xlog']]],
+  ['message_1378',['MESSAGE',['../structxlog_1_1level.html#a7516167f83ebb4a7bae702559cdc771a',1,'xlog::level']]]
 ];
