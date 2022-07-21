@@ -80,20 +80,62 @@ namespace str {
 	}
 
 	/**
+	 * @brief			Remove preceeding characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	inline std::string trim_preceeding(std::string str, const std::string& chars)
+	{
+		if (const auto& beg{ str.find_first_not_of(chars) }; beg != std::string::npos)
+			return str.substr(beg);
+		return str;
+	}
+	/**
+	 * @brief			Remove preceeding characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	template<var::same_or_convertible<char>... Ts>
+	std::string trim_preceeding(std::string const& str, Ts&&... chars)
+	{
+		return trim_preceeding(str, std::string{ std::forward<Ts>(chars)... });
+	}
+
+	/**
+	 * @brief			Remove trailing characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	inline std::string trim_trailing(std::string str, const std::string& chars)
+	{
+		if (const auto& end{ str.find_last_not_of(chars) }; end != std::string::npos)
+			return str.substr(0ull, end + 1ull);
+		return str;
+	}
+	/**
+	 * @brief			Remove trailing characters from a given string.
+	 * @param str		Input string.
+	 * @param chars		Any number of characters to remove.
+	 * @returns			String without preceeding or trailing whitespace.
+	 */
+	template<var::same_or_convertible<char>... Ts>
+	std::string trim_trailing(std::string const& str, Ts&&... chars)
+	{
+		return trim_trailing(str, std::string{ std::forward<Ts>(chars)... });
+	}
+
+	/**
 	 * @brief			Remove preceeding & trailing characters from a given string.
 	 * @param str		Input string.
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceeding or trailing whitespace.
 	 */
-	inline std::string trim(std::string str, const std::string& chars = " \t\r\n\v")
+	inline std::string trim(std::string const& str, const std::string& chars = " \t\r\n\v")
 	{
-		const auto do_remove{ [&chars](const char c) { return pos_valid(chars.find(c)); } };
-		if (const int first{ static_cast<signed>(str.find_first_not_of(chars)) }; !str.empty() && pos_valid(first))
-			str.erase(std::remove_if(str.begin(), str.begin() + first, do_remove), str.begin() + first); // remove from beginning of string to 1 before first non-whitespace char
-		else return{};
-		if (const int last{ static_cast<signed>(str.find_last_not_of(chars)) }; !str.empty() && pos_valid(last))
-			str.erase(std::remove_if(str.begin() + last, str.end(), do_remove), str.end()); // remove from 1 after last non-whitespace char to the end of the string
-		return str;
+		return trim_trailing(trim_preceeding(str, chars), chars);
 	}
 
 	/**
@@ -620,7 +662,7 @@ namespace str {
 		}
 		vec.emplace_back(str.substr(iPrev));
 		return vec;
-	}	
+	}
 	/**
 	 * @brief				Splits a given string by all occurrences of the given delimiter.
 	 *\n					This method is similar to C#'s string.split method.

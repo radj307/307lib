@@ -21,7 +21,7 @@ namespace opt {
 	 * @brief	Acts as a wrapper for char & std::string input types, to allow variadic functions to receive either chars or strings as input, and contains some helpful methods of its own.
 	 */
 	struct InputWrapper {
-		const std::string _input;
+		std::string _input;
 		WINCONSTEXPR InputWrapper(const std::string& input) : _input{ input } {}
 		WINCONSTEXPR InputWrapper(char input) : _input{ std::move(std::string(1u, input)) } {}
 		WINCONSTEXPR InputWrapper(const InputWrapper& o) = default;

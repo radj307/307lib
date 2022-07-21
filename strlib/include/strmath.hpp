@@ -47,11 +47,11 @@ namespace str {
 	constexpr decimal fromAlphaNumeric(const char& ch) noexcept(false)
 	{
 		if (ch >= '0' && ch <= '9')
-			return static_cast<decimal>(ch - '0');
+			return static_cast<decimal>(ch) - static_cast<decimal>('0');
 
 		const char& c = str::toupper(ch);
 		if (c >= 'A' && c <= 'F')
-			return static_cast<decimal>(c - 'A') + 10ll;
+			return static_cast<decimal>(c) - static_cast<decimal>('A') + 10ll;
 
 		throw make_exception("str::fromAlphaNumeric() failed:  \'", c, "\' ", (c != ch ? ("(\'"s + ch + "\') ") : ""), "isn't a valid alphanumeric digit character in the range ( 0 - Z(36) )");
 	}
@@ -74,11 +74,13 @@ namespace str {
 
 	/**
 	 * @brief				Convert a number from an arbitrary base to base 10 (decimal).
+	 * @tparam TReturn		The integral type to return the index value as.
 	 * @param number		Input number as a string.
 	 * @param fromBase		The base of the input number.
 	 * @returns				decimal
 	 */
-	inline WINCONSTEXPR decimal toBase10(std::string number, const int& fromBase) noexcept(false)
+	template<std::integral TReturn = decimal>
+	inline WINCONSTEXPR TReturn toBase10(std::string number, const int& fromBase) noexcept(false)
 	{
 		if (number.empty())
 			return 0;
@@ -103,7 +105,7 @@ namespace str {
 
 		if (negative)
 			value = -value;
-		return value;
+		return static_cast<TReturn>(value);
 	}
 
 	/**
