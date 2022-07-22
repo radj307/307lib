@@ -17,11 +17,10 @@ var searchData=
   ['flagbase_3c_20unsigned_20char_20_3e_194',['FlagBase&lt; unsigned char &gt;',['../classcolor_1_1format_1_1_flag_base.html',1,'color::format']]],
   ['flagtype_195',['FlagType',['../namespaceopt.html#a26b17b9a781806db5683836e034cb85b',1,'opt']]],
   ['float_196',['Float',['../_i_n_i_redux_8hpp.html#a2fca167a45a2d1354dc11f032e985b31',1,'file::ini']]],
-  ['floatingbase_197',['FloatingBase',['../structstr_1_1_floating_base.html',1,'str']]],
-  ['format_198',['format',['../structcolor_1_1format.html',1,'color::format'],['../structmy__advanced__custom__except.html#a3b2508422fd34aefd5f25bc8e53433de',1,'my_advanced_custom_except::format()'],['../classex_1_1basic__except.html#a4e0b823404197a270d566c07d848a703',1,'ex::basic_except::format()'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()']]],
-  ['from1d_199',['from1D',['../structmatrix_1_1basic__matrix.html#a8aa29a86207f0ffbff216f87a7577706',1,'matrix::basic_matrix::from1D()'],['../structmatrix_1_1nmatrix.html#a5d090edd8ee5c2829f0b08f0b89d1a61',1,'matrix::nmatrix::from1D()']]],
-  ['from_5findex_200',['from_index',['../structjson_1_1_node_type.html#a71151ab34b76fad51f7d3cbd3c502243',1,'json::NodeType']]],
-  ['from_5ftype_201',['from_type',['../structjson_1_1_node_type.html#a8444c9e596082de505f2d41e78b92262',1,'json::NodeType']]],
-  ['fromalphanumeric_202',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
-  ['frombase10_203',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]]
+  ['format_197',['format',['../structcolor_1_1format.html',1,'color::format'],['../structmy__advanced__custom__except.html#a3b2508422fd34aefd5f25bc8e53433de',1,'my_advanced_custom_except::format()'],['../classex_1_1basic__except.html#a4e0b823404197a270d566c07d848a703',1,'ex::basic_except::format()'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()']]],
+  ['from1d_198',['from1D',['../structmatrix_1_1basic__matrix.html#a8aa29a86207f0ffbff216f87a7577706',1,'matrix::basic_matrix::from1D()'],['../structmatrix_1_1nmatrix.html#a5d090edd8ee5c2829f0b08f0b89d1a61',1,'matrix::nmatrix::from1D()']]],
+  ['from_5findex_199',['from_index',['../structjson_1_1_node_type.html#a71151ab34b76fad51f7d3cbd3c502243',1,'json::NodeType']]],
+  ['from_5ftype_200',['from_type',['../structjson_1_1_node_type.html#a8444c9e596082de505f2d41e78b92262',1,'json::NodeType']]],
+  ['fromalphanumeric_201',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
+  ['frombase10_202',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]]
 ];

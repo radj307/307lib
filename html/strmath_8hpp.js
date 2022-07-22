@@ -1,6 +1,5 @@
 var strmath_8hpp =
 [
-    [ "FloatingBase", "structstr_1_1_floating_base.html", "structstr_1_1_floating_base" ],
     [ "decimal", "strmath_8hpp.html#ae18803e8fa7864102754552a83b08887", null ],
     [ "binaryToDecimal", "strmath_8hpp.html#a1f82a58e884afa2d7f6dcbe3ad884bab", null ],
     [ "decimalToBinary", "strmath_8hpp.html#afc4713722f92ec455251092937a2540b", null ],
