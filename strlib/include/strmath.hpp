@@ -153,63 +153,6 @@ namespace str {
 		return fromBase10(str::stoll(number), toBase);
 	}
 
-	struct FloatingBase {
-	protected:
-		int base;
-
-	public:
-		std::string number;
-
-		template<std::integral T>
-		FloatingBase(const T& number) : base{ 10 }, number{ std::to_string(number) } {}
-
-		FloatingBase(const std::string& number, const int& base) : base{ base }, number{ number } {}
-
-		FloatingBase(const int& base) : base{ base }, number{ "0" } {}
-
-		/**
-		 * @brief		Get the current base.
-		 * @returns		int
-		 */
-		int getBase() const { return base; }
-
-		/**
-		 * @brief		Set the numeric base to a new value, and convert the number.
-		 * @param base	The base to convert the current number to.
-		 * @returns		int
-		 *\n			The previous base.
-		 */
-		int setBase(const int& base) { const int copy{ base }; convertBase(base); return copy; }
-
-		[[nodiscard]] std::string convertedToBase(const int& tBase) const
-		{
-			if (base == tBase)
-				return number;
-			if (base == 10) // convert from decimal
-				return fromBase10(str::stoll(number), tBase);
-			else if (tBase == 10) // convert to decimal
-				return std::to_string(toBase10(number, base));
-			else // convert current base to decimal, then convert to the target base
-				return fromBase10(toBase10(number, base), tBase);
-			return{ "0" };
-		}
-
-		void convertBase(const int& tBase)
-		{
-			if (base == tBase)
-				return;
-			number = convertedToBase(tBase);
-			base = tBase;
-		}
-
-		friend std::ostream& operator<<(std::ostream& os, const FloatingBase& fb)
-		{
-			return os << fb.number;
-		}
-	};
-
-
-
 #	pragma region Converters
 
 	/**
@@ -253,10 +196,10 @@ namespace str {
 	 */
 	inline long long hexToDecimal(const char ch) noexcept(false)
 	{
-		if (isdigit(ch))
-			return static_cast<long long>(ch - '0');
+		if (str::stdpred::isdigit(ch))
+			return static_cast<long long>(ch) - static_cast<long long>('0');
 		else if ((ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F'))
-			return (static_cast<long long>(str::toupper(ch) - 'A') + 10);
+			return (static_cast<long long>(str::toupper(ch)) - static_cast<long long>('A') + 10);
 		throw make_exception("getHexValue()\tFailed to convert \'", ch, "\' to hexadecimal!");
 	}
 
