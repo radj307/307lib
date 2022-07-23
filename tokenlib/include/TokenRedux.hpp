@@ -199,6 +199,15 @@ namespace token {
 		public:
 			/// @brief	This is set to the type specified by the Token template parameter.
 			using TokenT = Token;
+
+			/**
+			 * @brief				Default Constructor.
+			 * @param ss			Stringstream rvalue reference containing the target data.
+			 * @param whitespace	The lexeme associated with whitespace characters. This is used by the getch() method to skip whitespace.
+			 */
+			TokenizerBase(std::stringstream&& ss, LexemeT const& whitespace, LexemeT const& eof) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace }, lexeme_eof{ eof } {}
+			virtual ~TokenizerBase() noexcept = default;
+
 		protected:
 			/// @brief	The stringstream containing the untokenized data.
 			std::stringstream ss;
@@ -209,16 +218,49 @@ namespace token {
 			/// @brief	Lexeme associated with skippable whitespace.
 			LexemeT lexeme_whitespace, lexeme_eof;
 
-		public:
+		#pragma region GetNext
 			/**
-			 * @brief				Default Constructor.
-			 * @param ss			Stringstream rvalue reference containing the target data.
-			 * @param whitespace	The lexeme associated with whitespace characters. This is used by the getch() method to skip whitespace.
+			 * @protected
+			 * @brief		Retrieve the next token from the stream.
+			 *\n			By default, this method always returns (TokenT::NullToken). This is to support overriding either this function, OR the getNext() function.
+			 *\n			This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+			 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
+			 * @returns		TokenT
 			 */
-			TokenizerBase(std::stringstream&& ss, LexemeT const& whitespace, LexemeT const& eof) : ss{ std::move(ss) }, lastPos{ 0ull }, lexeme_whitespace{ whitespace }, lexeme_eof{ eof } {}
-		protected:
-			/// @brief	Virtual Destructor
-			virtual ~TokenizerBase() noexcept = default;
+			[[nodiscard]] virtual TokenT getNextToken(const char&)
+			{
+				return TokenT::NullToken;
+			}
+
+			/**
+			 * @protected
+			 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
+			 *\n						This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+			 *\n						By default, this function calls `return getNextToken(getch(allowWhitespace));`.
+			 * @param allowWhitespace	When true, whitespace may be passed to the getNext(char) overload.
+			 * @returns					TokenT
+			 */
+			[[nodiscard]] virtual TokenT getNext(const bool& allowWhitespace)
+			{
+				return getNextToken(getch(allowWhitespace));
+			}
+
+			/**
+			 * @protected
+			 * @deprecated Directly overloading this function is deprecated, but still supported. It is recommended to override the getNextToken(const char&) method instead.
+			 *
+			 * @overload
+			 * @brief	Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
+			 *\n		This is implemented for backwards-compatibility, and is simply an alias for calling ` getNext(false); `.
+			 *\n		For improved getNext() alternatives, see the getNextChar(bool) & getNextToken(char) overloads.
+			 *\n		This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
+			 * @returns	TokenT
+			 */
+			[[nodiscard]] virtual TokenT getNext()
+			{
+				return getNext(false);
+			}
+		#pragma endregion GetNext
 
 			/**
 			 * @brief String operator, returns the result local stream's str() function.
@@ -326,14 +368,15 @@ namespace token {
 			 * @param allow_whitespace	When true, allows any character to be returned, including whitespace characters.
 			 * @returns					char
 			 */
-			[[nodiscard]] virtual char getch(const bool allow_whitespace = false)
+			[[nodiscard]] virtual char getch(const bool allow_whitespace = false, const bool setLastPos = true)
 			{
-				setLastPosHere();
+				if (setLastPos)
+					setLastPosHere();
 				char c;
 				while (ss.get(c)) {
 					if (get_lexeme(c) != lexeme_whitespace || allow_whitespace)
 						return c;
-					else
+					else if (setLastPos)
 						setLastPosHere();
 				}
 				return c;
@@ -768,48 +811,6 @@ namespace token {
 			virtual std::streamoff setLastPosHere()
 			{
 				return setLastPos(getCurrentPos());
-			}
-
-			/**
-			 * @protected
-			 * @brief		Retrieve the next token from the stream.
-			 *\n			By default, this method always returns (TokenT::NullToken). This is to support overriding either this function, OR the getNext() function.
-			 *\n			This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
-			 * @param ch	Automatically called by the BASE getNext() function. Depending on the getNext(bool) overload, this may or may not be whitespace.
-			 * @returns		TokenT
-			 */
-			[[nodiscard]] virtual TokenT getNextToken(const char&)
-			{
-				return TokenT::NullToken;
-			}
-
-			/**
-			 * @protected
-			 * @brief					Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
-			 *\n						This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
-			 *\n						By default, this function calls `return getNextToken(getch(allowWhitespace));`.
-			 * @param allowWhitespace	When true, whitespace may be passed to the getNext(char) overload.
-			 * @returns					TokenT
-			 */
-			[[nodiscard]] virtual TokenT getNext(const bool& allowWhitespace)
-			{
-				return getNextToken(getch(allowWhitespace));
-			}
-
-			/**
-			 * @protected
-			 * @deprecated Directly overloading this function is deprecated, but still supported. It is recommended to override the getNextToken(const char&) method instead.
-			 *
-			 * @overload
-			 * @brief	Pure virtual function that is used to retrieve the next-in-line TokenT from the local stream.
-			 *\n		This is implemented for backwards-compatibility, and is simply an alias for calling ` getNext(false); `.
-			 *\n		For improved getNext() alternatives, see the getNextChar(bool) & getNextToken(char) overloads.
-			 *\n		This function should be overridden for each file format, and should be a self-contained token parser using recursion if necessary.
-			 * @returns	TokenT
-			 */
-			[[nodiscard]] virtual TokenT getNext()
-			{
-				return getNext(false);
 			}
 
 		private:
