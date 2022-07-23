@@ -13,7 +13,7 @@ var classtoken_1_1base_1_1_tokenizer_base =
     [ "findCurrentPosString", "classtoken_1_1base_1_1_tokenizer_base.html#a5175476810358ed4d88ac53564370323", null ],
     [ "get_if", "classtoken_1_1base_1_1_tokenizer_base.html#aa3560099fc89b201167e1735eb4df52b", null ],
     [ "getBrackets", "classtoken_1_1base_1_1_tokenizer_base.html#a6e56a917f92d9b27605fcffe70d068ca", null ],
-    [ "getch", "classtoken_1_1base_1_1_tokenizer_base.html#ac5673718fea9a4e88aa227075f777a13", null ],
+    [ "getch", "classtoken_1_1base_1_1_tokenizer_base.html#a3ffabbda5d36adaf9bd37e6aed64a830", null ],
     [ "getCurrentPos", "classtoken_1_1base_1_1_tokenizer_base.html#a726cf1b9cd00a7d62bb2d85cb7878b14", null ],
     [ "getline", "classtoken_1_1base_1_1_tokenizer_base.html#a8537aaf07b56dd68b2d21e580672a905", null ],
     [ "getline", "classtoken_1_1base_1_1_tokenizer_base.html#a33a60326ff0e7840784cee9bdd29c9e4", null ],
