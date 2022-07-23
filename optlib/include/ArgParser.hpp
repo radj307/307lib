@@ -29,7 +29,7 @@ namespace opt {
 			return *this;
 		}
 
-		constexpr bool isDisabled() const { return (_value & Disabled) != 0; }
+		constexpr bool isDisabled() const { return _value == 0; }
 		constexpr bool isEqualsOnly() const { return (_value & EqualsOnly) != 0; }
 		constexpr bool isDisabledOrEqualsOnly() const { return isDisabled() || isEqualsOnly(); }
 		constexpr bool isRequired() const { return (_value & Required) != 0; }
@@ -340,7 +340,7 @@ namespace opt {
 		{
 			if (const auto& wrapper{ get(name) }; wrapper.has_value())
 				return wrapper.value().captureStyle.value_or(parsingRules.defaultCaptureStyle);
-			return parsingRules.defaultCaptureStyle;
+			return CaptureStyle::Disabled;
 		}
 	};
 
