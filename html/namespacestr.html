@@ -426,10 +426,10 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a18758598172725d265bdab25d48f5836"><td class="memTemplItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a18758598172725d265bdab25d48f5836">streamify</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a18758598172725d265bdab25d48f5836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.  <a href="namespacestr.html#a18758598172725d265bdab25d48f5836">More...</a><br /></td></tr>
 <tr class="separator:a18758598172725d265bdab25d48f5836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724f84184c0c1cd75e91b4ac95f40768"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a724f84184c0c1cd75e91b4ac95f40768"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">stringify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a724f84184c0c1cd75e91b4ac95f40768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768">More...</a><br /></td></tr>
-<tr class="separator:a724f84184c0c1cd75e91b4ac95f40768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b3eede028c9846fe44990a987d8cc2"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a64b3eede028c9846fe44990a987d8cc2"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2">stringify</a> (Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a64b3eede028c9846fe44990a987d8cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2">More...</a><br /></td></tr>
+<tr class="separator:a64b3eede028c9846fe44990a987d8cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplParams" colspan="2">template&lt;var::Streamable T&gt; </td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">stringify_split</a> (const char &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
 <tr class="memdesc:ac564c68f61fc9cb1018753365dfd9e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">More...</a><br /></td></tr>
@@ -462,7 +462,7 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::stringstream &gt; T, var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt, Ts &amp;&amp;... additionalFmt)</td></tr>
 <tr class="memdesc:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from any valid streamable type to a string. <br  />
- This function is a wrapper around <a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions.  <a href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">More...</a><br /></td></tr>
+ This function is a wrapper around <a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions.  <a href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">More...</a><br /></td></tr>
 <tr class="separator:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplParams" colspan="2">template&lt;var::numeric T&gt; </td></tr>
 <tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt=std::ios_base::fixed)</td></tr>
@@ -2860,7 +2860,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -4402,19 +4403,19 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a724f84184c0c1cd75e91b4ac95f40768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a724f84184c0c1cd75e91b4ac95f40768">&#9670;&nbsp;</a></span>stringify()</h2>
+<a id="a64b3eede028c9846fe44990a987d8cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b3eede028c9846fe44990a987d8cc2">&#9670;&nbsp;</a></span>stringify()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable... Ts&gt; </div>
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static const std::string str::stringify </td>
+          <td class="memname">constexpr static const std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -4447,7 +4448,8 @@ template&lt;var::Streamable... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a724f84184c0c1cd75e91b4ac95f40768_cgraph.svg" width="294" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a64b3eede028c9846fe44990a987d8cc2_cgraph.svg" width="294" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4934,7 +4936,7 @@ template&lt;var::Streamable&lt; std::stringstream &gt; T, var::Streamable&lt; st
 </div><div class="memdoc">
 
 <p>Convert from any valid streamable type to a string. <br  />
- This function is a wrapper around <a class="el" href="namespacestr.html#a724f84184c0c1cd75e91b4ac95f40768" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions. </p>
+ This function is a wrapper around <a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>A streamable input type. </td></tr>

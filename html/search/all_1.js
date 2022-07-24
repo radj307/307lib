@@ -6,7 +6,7 @@ var searchData=
   ['aligntype_5',['AlignType',['../_i_n_i_redux_8hpp.html#aa86b3efdca35b91db3538f0f9cebaafe',1,'file::ini']]],
   ['all_6',['All',['../structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7',1,'xlog::level']]],
   ['alldebug_7',['AllDebug',['../structxlog_1_1level.html#a00290bb7e21a1d0cb0f0e4ce3eebefd5',1,'xlog::level']]],
-  ['append_8',['append',['../fileo_8hpp.html#a1432480e7d992958086d355a6be5904b',1,'file']]],
+  ['append_8',['append',['../fileo_8hpp.html#a9bf2c858130f5e478ed78d0cbe928cdc',1,'file']]],
   ['apply_9',['apply',['../structmatrix_1_1nmatrix.html#aa557a11a52e64fb5368f6b5b4074a3b9',1,'matrix::nmatrix::apply(const std::function&lt; T(T)&gt; &amp;f)'],['../structmatrix_1_1nmatrix.html#a05e36be29227140d5dc73315630c2aed',1,'matrix::nmatrix::apply(const std::function&lt; T(T, T)&gt; &amp;f, const matrix&lt; T, SizeX, SizeY &gt; &amp;mtx)'],['../structmatrix_1_1nmatrix.html#af6eed16a2a059f6f7e013e191b0da1ca',1,'matrix::nmatrix::apply(const std::function&lt; T(T)&gt; &amp;f) const'],['../structmatrix_1_1nmatrix.html#af996d23f60c9b585b82beb8c3c8c0f7f',1,'matrix::nmatrix::apply(const std::function&lt; T(T, T)&gt; &amp;f, const matrix&lt; T, SizeX, SizeY &gt; &amp;mtx) const']]],
   ['apply_5fto_5feach_10',['apply_to_each',['../namespacestr.html#a82f6e6378f1869b65cce94f28f31d665',1,'str']]],
   ['arch_11',['ARCH',['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h'],['../sysarch_8h.html#a63e66b419dba650abc74240836e8447a',1,'ARCH():&#160;sysarch.h']]],

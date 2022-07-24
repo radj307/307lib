@@ -4,7 +4,5 @@ var classxml_1_1parser_1_1_x_m_l_parser =
     [ "XMLParser", "classxml_1_1parser_1_1_x_m_l_parser.html#acf0b75800c588891ad140cdc9f5bc954", null ],
     [ "getTagTypeOf", "classxml_1_1parser_1_1_x_m_l_parser.html#ac61fce1198eb6c1daa74442947f1b133", null ],
     [ "parse", "classxml_1_1parser_1_1_x_m_l_parser.html#ad8f19ab275030ec73bbfbbb6b9c27cd0", null ],
-    [ "parseAttributes", "classxml_1_1parser_1_1_x_m_l_parser.html#aaeef9c43c3b34286a2695f2fccf19b20", null ],
-    [ "parseTag", "classxml_1_1parser_1_1_x_m_l_parser.html#a1fcb90cc90c5268e90611f54267600d7", null ],
     [ "throwex", "classxml_1_1parser_1_1_x_m_l_parser.html#af7752c7c88b9007040a4ddcc12a2f634", null ]
 ];

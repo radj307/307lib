@@ -108,27 +108,30 @@ Include dependency graph for fileo.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="fileo_8hpp__dep__incl.svg" width="627" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="fileo_8hpp__dep__incl.svg" width="627" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="fileo_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1432480e7d992958086d355a6be5904b"><td class="memTemplParams" colspan="2">template&lt;var::Streamable... Ts&gt; </td></tr>
-<tr class="memitem:a1432480e7d992958086d355a6be5904b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#a1432480e7d992958086d355a6be5904b">file::append</a> (const std::filesystem::path &amp;path, Ts &amp;&amp;... data)</td></tr>
-<tr class="memdesc:a1432480e7d992958086d355a6be5904b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append any number of objects to the end of a file.  <a href="fileo_8hpp.html#a1432480e7d992958086d355a6be5904b">More...</a><br /></td></tr>
-<tr class="separator:a1432480e7d992958086d355a6be5904b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677d00eb29a467f18394236d2a60a97f"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a677d00eb29a467f18394236d2a60a97f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#a677d00eb29a467f18394236d2a60a97f">file::write</a> (const std::filesystem::path &amp;path, Ts &amp;&amp;... data)</td></tr>
-<tr class="memdesc:a677d00eb29a467f18394236d2a60a97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write any number of objects to a file.  <a href="fileo_8hpp.html#a677d00eb29a467f18394236d2a60a97f">More...</a><br /></td></tr>
-<tr class="separator:a677d00eb29a467f18394236d2a60a97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb16bb3233f8b03314c0a7cc8e174d30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#adb16bb3233f8b03314c0a7cc8e174d30">file::write_to</a> (const std::filesystem::path &amp;, std::stringstream &amp;&amp;, openmode const &amp;=openmode::out|openmode::trunc)</td></tr>
-<tr class="memdesc:adb16bb3233f8b03314c0a7cc8e174d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="fileo_8hpp.html#adb16bb3233f8b03314c0a7cc8e174d30">More...</a><br /></td></tr>
-<tr class="separator:adb16bb3233f8b03314c0a7cc8e174d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a0202eb7bc108b8094ace743ca3ec8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#aa8a0202eb7bc108b8094ace743ca3ec8">file::write_to</a> (const std::filesystem::path &amp;path, std::stringstream &amp;&amp;buffer, const bool &amp;append)</td></tr>
-<tr class="memdesc:aa8a0202eb7bc108b8094ace743ca3ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="fileo_8hpp.html#aa8a0202eb7bc108b8094ace743ca3ec8">More...</a><br /></td></tr>
-<tr class="separator:aa8a0202eb7bc108b8094ace743ca3ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf2c858130f5e478ed78d0cbe928cdc"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_ofstream&lt; TChar, TCharTraits &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a9bf2c858130f5e478ed78d0cbe928cdc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#a9bf2c858130f5e478ed78d0cbe928cdc">file::append</a> (const std::filesystem::path &amp;path, Ts &amp;&amp;... data)</td></tr>
+<tr class="memdesc:a9bf2c858130f5e478ed78d0cbe928cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append any number of objects to the end of a file.  <a href="fileo_8hpp.html#a9bf2c858130f5e478ed78d0cbe928cdc">More...</a><br /></td></tr>
+<tr class="separator:a9bf2c858130f5e478ed78d0cbe928cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5794fe53e34c960c01867e343d3ab1fd"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_ofstream&lt; TChar, TCharTraits &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5794fe53e34c960c01867e343d3ab1fd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#a5794fe53e34c960c01867e343d3ab1fd">file::write</a> (const std::filesystem::path &amp;path, Ts &amp;&amp;... data)</td></tr>
+<tr class="memdesc:a5794fe53e34c960c01867e343d3ab1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write any number of objects to a file.  <a href="fileo_8hpp.html#a5794fe53e34c960c01867e343d3ab1fd">More...</a><br /></td></tr>
+<tr class="separator:a5794fe53e34c960c01867e343d3ab1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f93c637cfcfa42446ef765c86d7b35e"><td class="memTemplParams" colspan="2">template&lt;typename TChar , typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a8f93c637cfcfa42446ef765c86d7b35e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#a8f93c637cfcfa42446ef765c86d7b35e">file::write_to</a> (const std::filesystem::path &amp;path, std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;buffer, const bool &amp;append)</td></tr>
+<tr class="memdesc:a8f93c637cfcfa42446ef765c86d7b35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="fileo_8hpp.html#a8f93c637cfcfa42446ef765c86d7b35e">More...</a><br /></td></tr>
+<tr class="separator:a8f93c637cfcfa42446ef765c86d7b35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace8e069f80f7da90d8df3f543a9a454"><td class="memTemplParams" colspan="2">template&lt;typename TChar , typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:aace8e069f80f7da90d8df3f543a9a454"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="fileo_8hpp.html#aace8e069f80f7da90d8df3f543a9a454">file::write_to</a> (const std::filesystem::path &amp;path, std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;buffer, openmode const &amp;mode=openmode::out|openmode::trunc)</td></tr>
+<tr class="memdesc:aace8e069f80f7da90d8df3f543a9a454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the contents of a stringstream buffer to a file.  <a href="fileo_8hpp.html#aace8e069f80f7da90d8df3f543a9a454">More...</a><br /></td></tr>
+<tr class="separator:aace8e069f80f7da90d8df3f543a9a454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains file output functions. </p>
@@ -136,13 +139,13 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a1432480e7d992958086d355a6be5904b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1432480e7d992958086d355a6be5904b">&#9670;&nbsp;</a></span>append()</h2>
+<a id="a9bf2c858130f5e478ed78d0cbe928cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf2c858130f5e478ed78d0cbe928cdc">&#9670;&nbsp;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable... Ts&gt; </div>
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_ofstream&lt; TChar, TCharTraits &gt;&gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -191,17 +194,17 @@ template&lt;var::Streamable... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00067">67</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00081">81</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a677d00eb29a467f18394236d2a60a97f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a677d00eb29a467f18394236d2a60a97f">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a5794fe53e34c960c01867e343d3ab1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5794fe53e34c960c01867e343d3ab1fd">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_ofstream&lt; TChar, TCharTraits &gt;&gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -251,15 +254,17 @@ template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00048">48</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00061">61</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 
 </div>
 </div>
-<a id="adb16bb3233f8b03314c0a7cc8e174d30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb16bb3233f8b03314c0a7cc8e174d30">&#9670;&nbsp;</a></span>write_to() <span class="overload">[1/2]</span></h2>
+<a id="a8f93c637cfcfa42446ef765c86d7b35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f93c637cfcfa42446ef765c86d7b35e">&#9670;&nbsp;</a></span>write_to() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar , typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool file::write_to </td>
@@ -270,56 +275,7 @@ template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::stringstream &amp;&amp;&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="openmode_8h.html#a4172803d88f79140493760c26cbf1ea4">openmode</a> const &amp;&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>openmode::out&#160;|&#160;openmode::trunc</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Write the contents of a stringstream buffer to a file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Target filepath </td></tr>
-    <tr><td class="paramname">buffer</td><td>Stringstream rvalue reference. </td></tr>
-    <tr><td class="paramname">mode</td><td>Open mode flags that control how the stream operates. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool <br  />
- true Successfully wrote all data to file without error. <br  />
- false Failed to write all data to file because of an error. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fileo_8cpp_source.html#l00005">5</a> of file <a class="el" href="fileo_8cpp_source.html">fileo.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa8a0202eb7bc108b8094ace743ca3ec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8a0202eb7bc108b8094ace743ca3ec8">&#9670;&nbsp;</a></span>write_to() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool file::write_to </td>
-          <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::stringstream &amp;&amp;&#160;</td>
+          <td class="paramtype">std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
@@ -349,7 +305,58 @@ template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
  true Successfully wrote all data to file without error. <br  />
  false Failed to write all data to file because of an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fileo_8cpp_source.html#l00011">11</a> of file <a class="el" href="fileo_8cpp_source.html">fileo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00043">43</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aace8e069f80f7da90d8df3f543a9a454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace8e069f80f7da90d8df3f543a9a454">&#9670;&nbsp;</a></span>write_to() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar , typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file::write_to </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="openmode_8h.html#a4172803d88f79140493760c26cbf1ea4">openmode</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>openmode::out&#160;|&#160;openmode::trunc</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the contents of a stringstream buffer to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Target filepath </td></tr>
+    <tr><td class="paramname">buffer</td><td>Stringstream rvalue reference. </td></tr>
+    <tr><td class="paramname">mode</td><td>Open mode flags that control how the stream operates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <br  />
+ true Successfully wrote all data to file without error. <br  />
+ false Failed to write all data to file because of an error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fileo_8hpp_source.html#l00027">27</a> of file <a class="el" href="fileo_8hpp_source.html">fileo.hpp</a>.</p>
 
 </div>
 </div>

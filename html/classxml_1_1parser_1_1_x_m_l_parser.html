@@ -131,12 +131,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac61fce1198eb6c1daa74442947f1b133"><td class="memItemLeft" align="right" valign="top">TagType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html#ac61fce1198eb6c1daa74442947f1b133">getTagTypeOf</a> (string_t const &amp;tag_str) const</td></tr>
 <tr class="memdesc:ac61fce1198eb6c1daa74442947f1b133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the TagType that describes the given XML tag string.  <a href="classxml_1_1parser_1_1_x_m_l_parser.html#ac61fce1198eb6c1daa74442947f1b133">More...</a><br /></td></tr>
 <tr class="separator:ac61fce1198eb6c1daa74442947f1b133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeef9c43c3b34286a2695f2fccf19b20"><td class="memItemLeft" align="right" valign="top">attribute_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html#aaeef9c43c3b34286a2695f2fccf19b20">parseAttributes</a> (string_t const &amp;attributesString) const</td></tr>
-<tr class="memdesc:aaeef9c43c3b34286a2695f2fccf19b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the attributes portion of a.  <a href="classxml_1_1parser_1_1_x_m_l_parser.html#aaeef9c43c3b34286a2695f2fccf19b20">More...</a><br /></td></tr>
-<tr class="separator:aaeef9c43c3b34286a2695f2fccf19b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fcb90cc90c5268e90611f54267600d7"><td class="memItemLeft" align="right" valign="top">std::smatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html#a1fcb90cc90c5268e90611f54267600d7">parseTag</a> (string_t const &amp;tagString) const</td></tr>
-<tr class="memdesc:a1fcb90cc90c5268e90611f54267600d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given XML tag using regular expressions.  <a href="classxml_1_1parser_1_1_x_m_l_parser.html#a1fcb90cc90c5268e90611f54267600d7">More...</a><br /></td></tr>
-<tr class="separator:a1fcb90cc90c5268e90611f54267600d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -158,7 +152,7 @@ class xml::parser::XMLParser&lt; T &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00454">454</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00512">512</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac61fce1198eb6c1daa74442947f1b133"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac61fce1198eb6c1daa74442947f1b133">&#9670;&nbsp;</a></span>getTagTypeOf()</h2>
@@ -195,7 +189,7 @@ template&lt;var::derived_from_any&lt; XMLNode &gt; T = XMLDocument&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TagType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00468">468</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00526">526</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -232,99 +226,12 @@ template&lt;var::derived_from_any&lt; XMLNode &gt; T = XMLDocument&gt; </div>
 <p>Parses the entire stringstream supplied in the <a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html" title="Parses tokenized XML data into a usable object.">XMLParser</a> constructor. </p>
 <dl class="section return"><dt>Returns</dt><dd>An object of type T that represents the input XML data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00527">527</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00544">544</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classxml_1_1parser_1_1_x_m_l_parser_ad8f19ab275030ec73bbfbbb6b9c27cd0_cgraph.svg" width="403" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classxml_1_1parser_1_1_x_m_l_parser_ad8f19ab275030ec73bbfbbb6b9c27cd0_cgraph.svg" width="403" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-
-</div>
-</div>
-<a id="aaeef9c43c3b34286a2695f2fccf19b20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaeef9c43c3b34286a2695f2fccf19b20">&#9670;&nbsp;</a></span>parseAttributes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::derived_from_any&lt; XMLNode &gt; T = XMLDocument&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">attribute_container <a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html">xml::parser::XMLParser</a>&lt; T &gt;::parseAttributes </td>
-          <td>(</td>
-          <td class="paramtype">string_t const &amp;&#160;</td>
-          <td class="paramname"><em>attributesString</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Parses the attributes portion of a. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">attributesString</td><td>Any number of serialized XML attributes to parse. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An attribute_container of all of the attributes present in attributesString </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00482">482</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classxml_1_1parser_1_1_x_m_l_parser_aaeef9c43c3b34286a2695f2fccf19b20_icgraph.svg" width="403" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a1fcb90cc90c5268e90611f54267600d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fcb90cc90c5268e90611f54267600d7">&#9670;&nbsp;</a></span>parseTag()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::derived_from_any&lt; XMLNode &gt; T = XMLDocument&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::smatch <a class="el" href="classxml_1_1parser_1_1_x_m_l_parser.html">xml::parser::XMLParser</a>&lt; T &gt;::parseTag </td>
-          <td>(</td>
-          <td class="paramtype">string_t const &amp;&#160;</td>
-          <td class="paramname"><em>tagString</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Parses the given XML tag using regular expressions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tagString</td><td>The XML tag to parse, as a string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The std::smatch object resulting from the regular expression search operation. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_x_m_l_8h_source.html#l00503">503</a> of file <a class="el" href="_x_m_l_8h_source.html">XML.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classxml_1_1parser_1_1_x_m_l_parser_a1fcb90cc90c5268e90611f54267600d7_icgraph.svg" width="403" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

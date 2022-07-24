@@ -105,19 +105,22 @@ Include dependency graph for filei.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="filei_8hpp__dep__incl.svg" width="627" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="filei_8hpp__dep__incl.svg" width="627" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="filei_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa87cdbabc115fa73e19f3686893747ba"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#aa87cdbabc115fa73e19f3686893747ba">file::read</a> (const std::filesystem::path &amp;, const openmode &amp;=openmode::in) noexcept</td></tr>
-<tr class="memdesc:aa87cdbabc115fa73e19f3686893747ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#aa87cdbabc115fa73e19f3686893747ba">More...</a><br /></td></tr>
-<tr class="separator:aa87cdbabc115fa73e19f3686893747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#a9d3aaa13028568e440b8a0f66ef1ac1d">file::read</a> (const std::filesystem::path &amp;, const std::ios_base::openmode &amp;) noexcept</td></tr>
-<tr class="memdesc:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#a9d3aaa13028568e440b8a0f66ef1ac1d">More...</a><br /></td></tr>
-<tr class="separator:a9d3aaa13028568e440b8a0f66ef1ac1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949515276ee2ce762b81f18f2768257e"><td class="memTemplParams" colspan="2">template&lt;class TChar  = char, class TCharTraits  = std::char_traits&lt;TChar&gt;, class TAlloc  = std::allocator&lt;TChar&gt;, template&lt; class, class, class &gt; class TStream = std::basic_stringstream&gt; </td></tr>
+<tr class="memitem:a949515276ee2ce762b81f18f2768257e"><td class="memTemplItemLeft" align="right" valign="top">TStream&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#a949515276ee2ce762b81f18f2768257e">file::read</a> (const std::filesystem::path &amp;path, const openmode &amp;mode=openmode::in) noexcept</td></tr>
+<tr class="memdesc:a949515276ee2ce762b81f18f2768257e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#a949515276ee2ce762b81f18f2768257e">More...</a><br /></td></tr>
+<tr class="separator:a949515276ee2ce762b81f18f2768257e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b652d1ae5b2a99c7e1c4489b6935c0"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, template&lt; class, class, class &gt; class TStream = std::basic_stringstream&gt; </td></tr>
+<tr class="memitem:a85b652d1ae5b2a99c7e1c4489b6935c0"><td class="memTemplItemLeft" align="right" valign="top">TStream&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="filei_8hpp.html#a85b652d1ae5b2a99c7e1c4489b6935c0">file::read</a> (const std::filesystem::path &amp;path, const std::ios_base::openmode &amp;mode) noexcept</td></tr>
+<tr class="memdesc:a85b652d1ae5b2a99c7e1c4489b6935c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the contents of a file to a stringstream.  <a href="filei_8hpp.html#a85b652d1ae5b2a99c7e1c4489b6935c0">More...</a><br /></td></tr>
+<tr class="separator:a85b652d1ae5b2a99c7e1c4489b6935c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains file input functions. </p>
@@ -125,17 +128,19 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="filei_8hpp_source.html">filei.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aa87cdbabc115fa73e19f3686893747ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87cdbabc115fa73e19f3686893747ba">&#9670;&nbsp;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="a949515276ee2ce762b81f18f2768257e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949515276ee2ce762b81f18f2768257e">&#9670;&nbsp;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class TChar  = char, class TCharTraits  = std::char_traits&lt;TChar&gt;, class TAlloc  = std::allocator&lt;TChar&gt;, template&lt; class, class, class &gt; class TStream = std::basic_stringstream&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::stringstream file::read </td>
+          <td class="memname">TStream&lt;TChar, TCharTraits, TAlloc&gt; file::read </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -169,21 +174,23 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::stringstream&amp;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filei_8cpp_source.html#l00005">5</a> of file <a class="el" href="filei_8cpp_source.html">filei.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filei_8hpp_source.html#l00024">24</a> of file <a class="el" href="filei_8hpp_source.html">filei.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9d3aaa13028568e440b8a0f66ef1ac1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d3aaa13028568e440b8a0f66ef1ac1d">&#9670;&nbsp;</a></span>read() <span class="overload">[2/2]</span></h2>
+<a id="a85b652d1ae5b2a99c7e1c4489b6935c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b652d1ae5b2a99c7e1c4489b6935c0">&#9670;&nbsp;</a></span>read() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, template&lt; class, class, class &gt; class TStream = std::basic_stringstream&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::stringstream file::read </td>
+          <td class="memname">TStream&lt;TChar, TCharTraits, TAlloc&gt; file::read </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -217,7 +224,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::stringstream&amp;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filei_8cpp_source.html#l00013">13</a> of file <a class="el" href="filei_8cpp_source.html">filei.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filei_8hpp_source.html#l00039">39</a> of file <a class="el" href="filei_8hpp_source.html">filei.hpp</a>.</p>
 
 </div>
 </div>
