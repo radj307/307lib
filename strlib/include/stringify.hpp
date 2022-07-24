@@ -34,12 +34,12 @@ namespace str {
 	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
 	 * @returns std::string
 	 */
-	template<var::Streamable... Ts>
-	[[nodiscard]] constexpr static const std::string stringify(Ts&&... args)
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static const std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
 	{
 		if constexpr (var::none<Ts...>)
 			return{};
-		std::stringstream buffer;	// init stringstream
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;	// init stringstream
 		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
 		return std::move(buffer.str());		// return as string
 	}

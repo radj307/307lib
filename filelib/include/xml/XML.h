@@ -279,7 +279,7 @@ namespace xml {
 					os << XMLPrinter(node, p); //< recurse
 			}
 			//	else static_assert(false, "XMLPrinter Value visitor does not handle all potential variant types!");
-		}, p.node.value);
+				   }, p.node.value);
 
 		if (doCloseTag) // Closing Tag:
 			os << "</" << p.node.name << '>';
@@ -444,6 +444,64 @@ namespace xml {
 			SelfClose,
 		};
 
+
+		/**
+		 * @brief					Parses the attributes portion of a
+		 * @param attributesString	Any number of serialized XML attributes to parse.
+		 * @returns					An attribute_container of all of the attributes present in attributesString
+		 */
+		inline attribute_container parseAttributes(string_t const& attributesString)
+		{
+			if (attributesString.empty())
+				return{};
+
+			static const std::regex regexParseAttribute{ "([:\\.\\w·-]+)=\\\"(.*?)\\\"", std::regex_constants::optimize };
+
+			attribute_container map;
+
+			// keep parsing the string until we've reached the end:
+			for (std::sregex_iterator iter{ attributesString.begin(), attributesString.end(), regexParseAttribute }, end; iter != end; ++iter)
+				if (const auto& [existing, added] {map.insert(std::make_pair((*iter)[1], (*iter)[2]))}; !added)
+					throw make_exception("XMLParser::parseAttributes() error:  Duplicate attribute '", iter->str(), '\''); // if the attribute name is a duplicate, throw an exception
+
+			return map;
+		}
+		/**
+		 * @brief				Parses the given XML tag string using regular expressions.
+		 *\n					Note that this string must contain ONLY the tag itself!
+		 * @param tagString		The XML tag to parse, as a string.
+		 * @returns				The std::smatch object resulting from the regular expression search operation.
+		 */
+		inline std::smatch parseTag(string_t const& tagString)
+		{
+			if (tagString.empty())
+				return{};
+
+			static const std::regex regexParseTagName{ "<[\\/\\?]{0,1}?([:\\.\\w·-]+)\\s*(.*?)[\\/\\?]{0,1}?>", std::regex_constants::optimize };
+
+			std::smatch matches;
+
+			if (!std::regex_search(tagString, matches, regexParseTagName))
+				throw make_exception("XMLParser::parse() syntax error:  Malformed tag '", tagString, "'");
+
+			return matches;
+		}
+		/**
+		 * @brief		Parses any number of XML tags from the given string using regular expressions.
+		 *\n			This is not used by the XMLParser, but is available as a static function.
+		 * @param s		Input string.
+		 * @returns		Vector of all tags located within the given string.
+		 */
+		inline std::vector<std::smatch> parseTags(string_t const& s)
+		{
+			if (s.empty())
+				return{};
+
+			static const std::regex regexParseTagName{ "<[\\/\\?]{0,1}?([:\\.\\w·-]+)\\s*(.*?)[\\/\\?]{0,1}?>", std::regex_constants::optimize };
+
+			return{ std::sregex_iterator{ s.begin(), s.end(), regexParseTagName }, std::sregex_iterator{} };
+		}
+
 		/**
 		 * @class		XMLParser
 		 * @brief		Parses tokenized XML data into a usable object.
@@ -472,47 +530,6 @@ namespace xml {
 				else if (tag_str.ends_with("/>"))
 					return TagType::SelfClose;
 				return TagType::Open;
-			}
-
-			/**
-			 * @brief					Parses the attributes portion of a
-			 * @param attributesString	Any number of serialized XML attributes to parse.
-			 * @returns					An attribute_container of all of the attributes present in attributesString
-			 */
-			attribute_container parseAttributes(string_t const& attributesString) const
-			{
-				if (attributesString.empty())
-					return{};
-
-				static const std::regex regexParseAttribute{ "([:\\.\\w·-]+)=\\\"(.*?)\\\"", std::regex_constants::optimize };
-
-				attribute_container map;
-
-				// keep parsing the string until we've reached the end:
-				for (std::sregex_iterator iter{ attributesString.begin(), attributesString.end(), regexParseAttribute }, end; iter != end; ++iter)
-					if (const auto& [existing, added] {map.insert(std::make_pair((*iter)[1], (*iter)[2]))}; !added)
-						throwex("parseAttributes", "error", "Duplicate attribute '", iter->str(), '\''); // if the attribute name is a duplicate, throw an exception
-
-				return map;
-			}
-			/**
-			 * @brief				Parses the given XML tag using regular expressions.
-			 * @param tagString		The XML tag to parse, as a string.
-			 * @returns				The std::smatch object resulting from the regular expression search operation.
-			 */
-			std::smatch parseTag(string_t const& tagString) const
-			{
-				if (tagString.empty())
-					return{};
-
-				static const std::regex regexParseTagName{ "<[\\/\\?]{0,1}?([:\\.\\w·-]+)\\s*(.*?)[\\/\\?]{0,1}?>", std::regex_constants::optimize };
-
-				std::smatch matches;
-
-				if (!std::regex_search(tagString, matches, regexParseTagName))
-					throw make_exception("XMLParser::parse() syntax error:  Malformed tag '", tagString, "'");
-
-				return matches;
 			}
 
 		protected:
@@ -577,7 +594,7 @@ namespace xml {
 										value.emplace_back(XMLElement{ name, std::move(attributes) });
 									else
 										throwex("parse", "syntax error", "Elements with value types cannot contain sub-elements!");
-								}, nodeStack.top()->value);
+										   }, nodeStack.top()->value);
 
 								if (auto* p = std::get_if<nodes_t>(&nodeStack.top()->value))
 									nodeStack.push(&p->back());
@@ -611,7 +628,7 @@ namespace xml {
 									else if constexpr (std::same_as<U, nodes_t>)
 										top.emplace_back(XMLElement{ name, attributes });
 									else throw make_exception("XMLParser::parse() syntax error:  Illegal characters '", s, '\'');
-								}, nodeStack.top()->value);
+										   }, nodeStack.top()->value);
 							}
 							break;
 						}
@@ -626,7 +643,7 @@ namespace xml {
 							else if constexpr (std::same_as<U, string_t>)
 								top += s;
 							else throw make_exception("XMLParser::parse() syntax error:  Unexpected value '", s, "'");
-						}, nodeStack.top()->value);
+								   }, nodeStack.top()->value);
 						break;
 					}
 					case TokenType::Eof:
