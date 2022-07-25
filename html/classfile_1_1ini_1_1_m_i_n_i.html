@@ -131,6 +131,78 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::map&
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0af36cb8f2b8da4ca1f3bba074798a69"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:a0af36cb8f2b8da4ca1f3bba074798a69"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a0af36cb8f2b8da4ca1f3bba074798a69">castgetv</a> (const Header &amp;header, const Key &amp;key) const &amp;</td></tr>
+<tr class="memdesc:a0af36cb8f2b8da4ca1f3bba074798a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a0af36cb8f2b8da4ca1f3bba074798a69">More...</a><br /></td></tr>
+<tr class="separator:a0af36cb8f2b8da4ca1f3bba074798a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50adc45706eabc9dedf31fb466412371"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a50adc45706eabc9dedf31fb466412371"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a50adc45706eabc9dedf31fb466412371">castgetv</a> (const Header &amp;header, const Key &amp;key, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a50adc45706eabc9dedf31fb466412371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a50adc45706eabc9dedf31fb466412371">More...</a><br /></td></tr>
+<tr class="separator:a50adc45706eabc9dedf31fb466412371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428d35bfb9b43a81f94b333cc75ecf83"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:a428d35bfb9b43a81f94b333cc75ecf83"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a428d35bfb9b43a81f94b333cc75ecf83">castgetv_all</a> (const Key &amp;key) const &amp;</td></tr>
+<tr class="memdesc:a428d35bfb9b43a81f94b333cc75ecf83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a428d35bfb9b43a81f94b333cc75ecf83">More...</a><br /></td></tr>
+<tr class="separator:a428d35bfb9b43a81f94b333cc75ecf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac269afcd9f12c761da89f842ffaf23"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:a8ac269afcd9f12c761da89f842ffaf23"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a8ac269afcd9f12c761da89f842ffaf23">castgetv_all</a> (const Key &amp;key, const std::function&lt; bool(Header, Value)&gt; &amp;pred) const &amp;</td></tr>
+<tr class="memdesc:a8ac269afcd9f12c761da89f842ffaf23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a8ac269afcd9f12c761da89f842ffaf23">More...</a><br /></td></tr>
+<tr class="separator:a8ac269afcd9f12c761da89f842ffaf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d7c0bbb0cad6b40a2890d1766e1d01"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a35d7c0bbb0cad6b40a2890d1766e1d01"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a35d7c0bbb0cad6b40a2890d1766e1d01">castgetv_all</a> (const Key &amp;key, const std::function&lt; bool(Header, Value)&gt; &amp;pred, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a35d7c0bbb0cad6b40a2890d1766e1d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a35d7c0bbb0cad6b40a2890d1766e1d01">More...</a><br /></td></tr>
+<tr class="separator:a35d7c0bbb0cad6b40a2890d1766e1d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b46bb4d6b65ffdac76ed8d90e80ef39"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:a8b46bb4d6b65ffdac76ed8d90e80ef39"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a8b46bb4d6b65ffdac76ed8d90e80ef39">castgetv_all</a> (const Key &amp;key, const std::function&lt; bool(Value)&gt; &amp;pred) const &amp;</td></tr>
+<tr class="memdesc:a8b46bb4d6b65ffdac76ed8d90e80ef39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a8b46bb4d6b65ffdac76ed8d90e80ef39">More...</a><br /></td></tr>
+<tr class="separator:a8b46bb4d6b65ffdac76ed8d90e80ef39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087ab853436a27637690520b06fa2cfa"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a087ab853436a27637690520b06fa2cfa"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a087ab853436a27637690520b06fa2cfa">castgetv_all</a> (const Key &amp;key, const std::function&lt; bool(Value)&gt; &amp;pred, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a087ab853436a27637690520b06fa2cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a087ab853436a27637690520b06fa2cfa">More...</a><br /></td></tr>
+<tr class="separator:a087ab853436a27637690520b06fa2cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942e06980d9905ab8c475b76b82c4a8a"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a942e06980d9905ab8c475b76b82c4a8a"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a942e06980d9905ab8c475b76b82c4a8a">castgetv_all</a> (const Key &amp;key, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a942e06980d9905ab8c475b76b82c4a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of every matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a942e06980d9905ab8c475b76b82c4a8a">More...</a><br /></td></tr>
+<tr class="separator:a942e06980d9905ab8c475b76b82c4a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9c53ecc70307c2e2a6ad1657d4de47"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:a5a9c53ecc70307c2e2a6ad1657d4de47"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a5a9c53ecc70307c2e2a6ad1657d4de47">castgetv_any</a> (const Key &amp;key) const &amp;</td></tr>
+<tr class="memdesc:a5a9c53ecc70307c2e2a6ad1657d4de47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a5a9c53ecc70307c2e2a6ad1657d4de47">More...</a><br /></td></tr>
+<tr class="separator:a5a9c53ecc70307c2e2a6ad1657d4de47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79796dd49cdc58bb2fdf54fe4621566"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:aa79796dd49cdc58bb2fdf54fe4621566"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#aa79796dd49cdc58bb2fdf54fe4621566">castgetv_any</a> (const Key &amp;key, const std::function&lt; bool(Header, Value)&gt; &amp;pred) const &amp;</td></tr>
+<tr class="memdesc:aa79796dd49cdc58bb2fdf54fe4621566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#aa79796dd49cdc58bb2fdf54fe4621566">More...</a><br /></td></tr>
+<tr class="separator:aa79796dd49cdc58bb2fdf54fe4621566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace37aa3e81094752fb05df0b934ef92c"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:ace37aa3e81094752fb05df0b934ef92c"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#ace37aa3e81094752fb05df0b934ef92c">castgetv_any</a> (const Key &amp;key, const std::function&lt; bool(Header, Value)&gt; &amp;pred, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:ace37aa3e81094752fb05df0b934ef92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#ace37aa3e81094752fb05df0b934ef92c">More...</a><br /></td></tr>
+<tr class="separator:ace37aa3e81094752fb05df0b934ef92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8972973bbf8d3aea0bb930cd761fd10"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:af8972973bbf8d3aea0bb930cd761fd10"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#af8972973bbf8d3aea0bb930cd761fd10">castgetv_any</a> (const Key &amp;key, const std::function&lt; bool(Value)&gt; &amp;pred) const &amp;</td></tr>
+<tr class="memdesc:af8972973bbf8d3aea0bb930cd761fd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#af8972973bbf8d3aea0bb930cd761fd10">More...</a><br /></td></tr>
+<tr class="separator:af8972973bbf8d3aea0bb930cd761fd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ccb4c6ee04628ae3cc5491af1632cd3"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a5ccb4c6ee04628ae3cc5491af1632cd3"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a5ccb4c6ee04628ae3cc5491af1632cd3">castgetv_any</a> (const Key &amp;key, const std::function&lt; bool(Value)&gt; &amp;pred, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a5ccb4c6ee04628ae3cc5491af1632cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a5ccb4c6ee04628ae3cc5491af1632cd3">More...</a><br /></td></tr>
+<tr class="separator:a5ccb4c6ee04628ae3cc5491af1632cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ebabb32f844759d7e45be6a29f0d03"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:af1ebabb32f844759d7e45be6a29f0d03"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#af1ebabb32f844759d7e45be6a29f0d03">castgetv_any</a> (const Key &amp;key, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:af1ebabb32f844759d7e45be6a29f0d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the value(s) of the first matching key in all headers as the specified type.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#af1ebabb32f844759d7e45be6a29f0d03">More...</a><br /></td></tr>
+<tr class="separator:af1ebabb32f844759d7e45be6a29f0d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e1b305a1e28703079ae99858e6acb3"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:af5e1b305a1e28703079ae99858e6acb3"><td class="memTemplItemLeft" align="right" valign="top">TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#af5e1b305a1e28703079ae99858e6acb3">castgetv_or</a> (const Header &amp;header, const Key &amp;key, const TReturn &amp;def) const &amp;</td></tr>
+<tr class="memdesc:af5e1b305a1e28703079ae99858e6acb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#af5e1b305a1e28703079ae99858e6acb3">More...</a><br /></td></tr>
+<tr class="separator:af5e1b305a1e28703079ae99858e6acb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c1c4ddb6d3d40694db56e55e0b2aa0"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:a13c1c4ddb6d3d40694db56e55e0b2aa0"><td class="memTemplItemLeft" align="right" valign="top">TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#a13c1c4ddb6d3d40694db56e55e0b2aa0">castgetv_or</a> (const Header &amp;header, const Key &amp;key, const TReturn &amp;def, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:a13c1c4ddb6d3d40694db56e55e0b2aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#a13c1c4ddb6d3d40694db56e55e0b2aa0">More...</a><br /></td></tr>
+<tr class="separator:a13c1c4ddb6d3d40694db56e55e0b2aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30cede9c75d9fb0c1dd9f2d91ac3334"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </td></tr>
+<tr class="memitem:ae30cede9c75d9fb0c1dd9f2d91ac3334"><td class="memTemplItemLeft" align="right" valign="top">TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#ae30cede9c75d9fb0c1dd9f2d91ac3334">castgetv_or</a> (const Header &amp;header, const Key &amp;key, const Value &amp;def) const &amp;</td></tr>
+<tr class="memdesc:ae30cede9c75d9fb0c1dd9f2d91ac3334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#ae30cede9c75d9fb0c1dd9f2d91ac3334">More...</a><br /></td></tr>
+<tr class="separator:ae30cede9c75d9fb0c1dd9f2d91ac3334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa77c9b81a88b21891e2cf6f9b4124ab4"><td class="memTemplParams" colspan="2">template&lt;typename TReturn &gt; </td></tr>
+<tr class="memitem:aa77c9b81a88b21891e2cf6f9b4124ab4"><td class="memTemplItemLeft" align="right" valign="top">TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#aa77c9b81a88b21891e2cf6f9b4124ab4">castgetv_or</a> (const Header &amp;header, const Key &amp;key, const Value &amp;def, const std::function&lt; TReturn(Value)&gt; &amp;converter) const &amp;</td></tr>
+<tr class="memdesc:aa77c9b81a88b21891e2cf6f9b4124ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#aa77c9b81a88b21891e2cf6f9b4124ab4">More...</a><br /></td></tr>
+<tr class="separator:aa77c9b81a88b21891e2cf6f9b4124ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede0eb2e4c285b8801547ee9d047f618"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfile_1_1ini_1_1_m_i_n_i.html#aede0eb2e4c285b8801547ee9d047f618">checkv</a> (const Header &amp;header, const Key &amp;key, const Value &amp;value) const</td></tr>
 <tr class="memdesc:aede0eb2e4c285b8801547ee9d047f618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the specified value is the same as a given value.  <a href="classfile_1_1ini_1_1_m_i_n_i.html#aede0eb2e4c285b8801547ee9d047f618">More...</a><br /></td></tr>
 <tr class="separator:aede0eb2e4c285b8801547ee9d047f618"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,8 +263,1130 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Contains a map of the headers, keys, and values of an <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a> file, or multiple <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a> files. <br  />
  This <a class="el" href="structfile_1_1ini_1_1_i_n_i.html" title="Contains a map of the headers, keys, and values of an INI file, or multiple INI files....">INI</a> variant uses monotype values, and uses the upgraded container types. </p>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00271">271</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00272">272</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0af36cb8f2b8da4ca1f3bba074798a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af36cb8f2b8da4ca1f3bba074798a69">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00289">289</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a50adc45706eabc9dedf31fb466412371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50adc45706eabc9dedf31fb466412371">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00305">305</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a428d35bfb9b43a81f94b333cc75ecf83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428d35bfb9b43a81f94b333cc75ecf83">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00479">479</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a428d35bfb9b43a81f94b333cc75ecf83_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8ac269afcd9f12c761da89f842ffaf23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac269afcd9f12c761da89f842ffaf23">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Header, Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function that accepts both a value, and the header that it belongs to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00562">562</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a8ac269afcd9f12c761da89f842ffaf23_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a35d7c0bbb0cad6b40a2890d1766e1d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d7c0bbb0cad6b40a2890d1766e1d01">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Header, Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function that accepts both a value, and the header that it belongs to. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00584">584</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a35d7c0bbb0cad6b40a2890d1766e1d01_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8b46bb4d6b65ffdac76ed8d90e80ef39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b46bb4d6b65ffdac76ed8d90e80ef39">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00520">520</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a8b46bb4d6b65ffdac76ed8d90e80ef39_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a087ab853436a27637690520b06fa2cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087ab853436a27637690520b06fa2cfa">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00542">542</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a087ab853436a27637690520b06fa2cfa_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a942e06980d9905ab8c475b76b82c4a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942e06980d9905ab8c475b76b82c4a8a">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;TReturn&gt; file::ini::MINI::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of every matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00500">500</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a942e06980d9905ab8c475b76b82c4a8a_cgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5a9c53ecc70307c2e2a6ad1657d4de47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a9c53ecc70307c2e2a6ad1657d4de47">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00384">384</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa79796dd49cdc58bb2fdf54fe4621566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79796dd49cdc58bb2fdf54fe4621566">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Header, Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function that accepts both a value, and the header that it belongs to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00449">449</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ace37aa3e81094752fb05df0b934ef92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace37aa3e81094752fb05df0b934ef92c">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Header, Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function that accepts both a value, and the header that it belongs to. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00465">465</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af8972973bbf8d3aea0bb930cd761fd10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8972973bbf8d3aea0bb930cd761fd10">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00413">413</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5ccb4c6ee04628ae3cc5491af1632cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccb4c6ee04628ae3cc5491af1632cd3">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pred</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt;</dd></dl>
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">pred</td><td>Predicate function. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00435">435</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af1ebabb32f844759d7e45be6a29f0d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ebabb32f844759d7e45be6a29f0d03">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;TReturn&gt; file::ini::MINI::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the value(s) of the first matching key in all headers as the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Target Key. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00399">399</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af5e1b305a1e28703079ae99858e6acb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e1b305a1e28703079ae99858e6acb3">&#9670;&nbsp;</a></span>castgetv_or() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TReturn file::ini::MINI::castgetv_or </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TReturn &amp;&#160;</td>
+          <td class="paramname"><em>def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+    <tr><td class="paramname">def</td><td>A value to return in the event that the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00321">321</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a13c1c4ddb6d3d40694db56e55e0b2aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c1c4ddb6d3d40694db56e55e0b2aa0">&#9670;&nbsp;</a></span>castgetv_or() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TReturn file::ini::MINI::castgetv_or </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TReturn &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+    <tr><td class="paramname">def</td><td>A value to return in the event that the specified key doesn't exist. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00353">353</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae30cede9c75d9fb0c1dd9f2d91ac3334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30cede9c75d9fb0c1dd9f2d91ac3334">&#9670;&nbsp;</a></span>castgetv_or() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; Value &gt; TReturn&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TReturn file::ini::MINI::castgetv_or </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value &amp;&#160;</td>
+          <td class="paramname"><em>def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+    <tr><td class="paramname">def</td><td>A value to return in the event that the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00336">336</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa77c9b81a88b21891e2cf6f9b4124ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa77c9b81a88b21891e2cf6f9b4124ab4">&#9670;&nbsp;</a></span>castgetv_or() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TReturn file::ini::MINI::castgetv_or </td>
+          <td>(</td>
+          <td class="paramtype">const Header &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; TReturn(Value)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>Return type that is implicitly convertible from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>Target Header </td></tr>
+    <tr><td class="paramname">key</td><td>Target Key </td></tr>
+    <tr><td class="paramname">def</td><td>A value to return in the event that the specified key doesn't exist. </td></tr>
+    <tr><td class="paramname">converter</td><td>A function that converts from (std::string) to (TReturn). <br  />
+ This is only required for types that are not directly castable from std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;TReturn&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00370">370</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+
+</div>
+</div>
 <a id="aede0eb2e4c285b8801547ee9d047f618"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aede0eb2e4c285b8801547ee9d047f618">&#9670;&nbsp;</a></span>checkv() <span class="overload">[1/2]</span></h2>
 
@@ -248,7 +1442,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00401">401</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00719">719</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +1504,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Comparison function return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00415">415</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00733">733</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +1557,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00430">430</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00748">748</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +1613,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Predicate return value or false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00446">446</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00764">764</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -467,7 +1661,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00286">286</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00604">604</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +1698,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00349">349</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00667">667</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a6e9c9ecaa8c3d803e7c320e8c85650af_icgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -552,7 +1752,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00381">381</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00699">699</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_a0167a5ce86bda6df7df0e6c76c49e71e_icgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -600,7 +1806,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00365">365</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00683">683</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfile_1_1ini_1_1_m_i_n_i_ae84f4d1c01469298eac391ea8a47018a_icgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -637,7 +1849,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00310">310</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00628">628</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -685,7 +1897,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00336">336</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00654">654</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -733,7 +1945,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;Value&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00323">323</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00641">641</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -788,7 +2000,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00300">300</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00618">618</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -835,7 +2047,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00460">460</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00778">778</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -876,7 +2088,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00482">482</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00800">800</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -930,7 +2142,7 @@ template&lt;var::same_or_convertible&lt; string &gt;... Headers&gt; </div>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00492">492</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_i_n_i_8hpp_source.html#l00810">810</a> of file <a class="el" href="_m_i_n_i_8hpp_source.html">MINI.hpp</a>.</p>
 
 </div>
 </div>
