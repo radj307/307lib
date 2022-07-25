@@ -62,7 +62,7 @@ namespace file {
 	{
 		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
-		(buffer << ... << std::move(data));
+		(buffer << ... << std::forward<Ts>(data));
 		return write_to(path, std::move(buffer), openmode::out | openmode::trunc);
 		#pragma warning (default:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 	}

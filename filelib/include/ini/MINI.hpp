@@ -252,6 +252,7 @@ namespace file::ini {
 							return map;
 						break;
 					case TokenType::COMMENT:break;
+					case TokenType::NULL_TYPE:break;
 					default: // throw unexpected token exception
 						throwEx(ln, "Unexpected token type");
 					}
@@ -276,6 +277,323 @@ namespace file::ini {
 		using Header = string;
 		using Key = string;
 		using Value = string;
+
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::optional<TReturn> castgetv(const Header& header, const Key& key) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<typename TReturn>
+		std::optional<TReturn> castgetv(const Header& header, const Key& key, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @param def		A value to return in the event that the specified key doesn't exist.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		TReturn castgetv_or(const Header& header, const Key& key, const TReturn& def) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return def;
+		}
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @param def		A value to return in the event that the specified key doesn't exist.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		TReturn castgetv_or(const Header& header, const Key& key, const Value& def) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return static_cast<TReturn>(def);
+		}
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @param def		A value to return in the event that the specified key doesn't exist.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<typename TReturn>
+		TReturn castgetv_or(const Header& header, const Key& key, const TReturn& def, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return converter(v.value());
+			return def;
+		}
+		/**
+		 * @brief			Retrieve the specified key from the specified header as the specified type, or a default value if it doesn't exist.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param header	Target Header
+		 * @param key		Target Key
+		 * @param def		A value to return in the event that the specified key doesn't exist.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<typename TReturn>
+		TReturn castgetv_or(const Header& header, const Key& key, const Value& def, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv(header, key) }; v.has_value())
+				return converter(v.value());
+			return converter(def);
+		}
+
+		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key) const&
+		{
+			if (const auto& v{ getv_any(key) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<typename TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv_any(key) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key, const std::function<bool(Value)>& pred) const&
+		{
+			if (const auto& v{ getv_any(key, pred) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function.
+		 * @returns			std::optional<TReturn>
+		 */
+		 /**
+		  * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		  * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		  * @param key		Target Key.
+		  * @param pred		Predicate function.
+		  * @param converter	A function that converts from (std::string) to (TReturn).
+		  *\n				This is only required for types that are not directly castable from std::string.
+		  * @returns			std::optional<TReturn>
+		  */
+		template<typename TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key, const std::function<bool(Value)>& pred, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv_any(key, pred) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function that accepts both a value, and the header that it belongs to.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key, const std::function<bool(Header, Value)>& pred) const&
+		{
+			if (const auto& v{ getv_any(key, pred) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of the first matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function that accepts both a value, and the header that it belongs to.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::optional<TReturn>
+		 */
+		template<typename TReturn>
+		std::optional<TReturn> castgetv_any(const Key& key, const std::function<bool(Header, Value)>& pred, const std::function<TReturn(Value)>& converter) const&
+		{
+			if (const auto& v{ getv_any(key, pred) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key) const&
+		{
+			const auto& keys{ getv_all(key) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(static_cast<TReturn>(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<typename TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key, const std::function<TReturn(Value)>& converter) const&
+		{
+			const auto& keys{ getv_all(key) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(converter(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key, const std::function<bool(Value)>& pred) const&
+		{
+			const auto& keys{ getv_all(key, pred) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(static_cast<TReturn>(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers as the specified type.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<typename TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key, const std::function<bool(Value)>& pred, const std::function<TReturn(Value)>& converter) const&
+		{
+			const auto& keys{ getv_all(key, pred) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(converter(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function that accepts both a value, and the header that it belongs to.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<var::convertible_from<Value> TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key, const std::function<bool(Header, Value)>& pred) const&
+		{
+			const auto& keys{ getv_all(key, pred) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(static_cast<TReturn>(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief			Retrieve the value(s) of every matching key in all headers.
+		 * @tparam TReturn	Return type that is implicitly convertible from std::string.
+		 * @param key		Target Key.
+		 * @param pred		Predicate function that accepts both a value, and the header that it belongs to.
+		 * @param converter	A function that converts from (std::string) to (TReturn).
+		 *\n				This is only required for types that are not directly castable from std::string.
+		 * @returns			std::vector<TReturn>
+		 */
+		template<typename TReturn>
+		std::vector<TReturn> castgetv_all(const Key& key, const std::function<bool(Header, Value)>& pred, const std::function<TReturn(Value)>& converter) const&
+		{
+			const auto& keys{ getv_all(key, pred) };
+			std::vector<TReturn> vec;
+			if (keys.empty())
+				return vec;
+			vec.reserve(keys.size());
+			for (const auto& it : keys)
+				vec.emplace_back(converter(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+
 
 		/**
 		 * @brief			Retrieve the specified key from the specified header.
@@ -459,7 +777,7 @@ namespace file::ini {
 		 */
 		void read(path const& file, const bool& overwriteExistingKeys = true)
 		{
-			for (const auto& [header, section] : tokenizer::MINIParser(std::move(tokenizer::INITokenizer(std::move(file::read(file))).tokenize())).parse()) {
+			for (const auto& [header, section] : tokenizer::MINIParser(std::move(tokenizer::INITokenizer(std::move(file::read(file))).tokenize(token::DefaultDefs::TokenType::END))).parse()) {
 				if (auto existing{ this->find(header) }; existing == this->end())
 					this->insert_or_assign(header, section);
 				else {
