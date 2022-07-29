@@ -93,9 +93,9 @@ namespace opt {
 		WINCONSTEXPR auto emplace_back(auto&& argument) noexcept(false) { return _args.emplace_back(std::forward<decltype(argument)>(argument)); }
 		WINCONSTEXPR auto push_back(auto&& argument) noexcept(false) { return _args.push_back(std::forward<decltype(argument)>(argument)); }
 		/// @brief Remove & return the element at the back of the container. @returns VariantArgumentType
-		auto pop_back() noexcept(false) { const auto back{ _args.back() }; _args.pop_back(); return back; }
+		CONSTEXPR auto pop_back() noexcept(false) { const auto back{ _args.back() }; _args.pop_back(); return back; }
 		/// @brief Remove & return the element at the front of the container. @returns VariantArgumentType
-		auto pop_front() noexcept(false)
+		CONSTEXPR auto pop_front() noexcept(false)
 		{
 			const auto front{ _args.front() };
 			for (auto pos{ _args.begin() }, endit{ _args.end() - 1ll }; pos != endit; ++pos)
@@ -103,6 +103,10 @@ namespace opt {
 			_args.pop_back();
 			return front;
 		}
+		/// @brief	Returns the first element in the argument list if it exists; otherwise throws an exception.
+		CONSTEXPR auto front() const noexcept(false) { return _args.front(); }
+		/// @brief	Returns the last element in the argument list if it exists; otherwise throws an exception.
+		CONSTEXPR auto back() const noexcept(false) { return _args.back(); }
 	#pragma endregion ForwardVectorFunctions
 
 		/// @brief Retrieve the optional argv[0] argument. @returns std::optional<std::string>
