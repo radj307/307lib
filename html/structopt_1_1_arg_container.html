@@ -132,6 +132,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a858c85802a222f64ea68f7092e29389c"><td class="memItemLeft" align="right" valign="top"><a id="a858c85802a222f64ea68f7092e29389c"></a>
 const WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>at</b> (auto &amp;&amp;pos) const</td></tr>
 <tr class="separator:a858c85802a222f64ea68f7092e29389c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32168e5cda375cba4d7dc71ea7e3cc05"><td class="memItemLeft" align="right" valign="top"><a id="a32168e5cda375cba4d7dc71ea7e3cc05"></a>
+CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a32168e5cda375cba4d7dc71ea7e3cc05">back</a> () const noexcept(false)</td></tr>
+<tr class="memdesc:a32168e5cda375cba4d7dc71ea7e3cc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element in the argument list if it exists; otherwise throws an exception. <br /></td></tr>
+<tr class="separator:a32168e5cda375cba4d7dc71ea7e3cc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d11daad0d6e1e6d410e50509ec90678"><td class="memItemLeft" align="right" valign="top"><a id="a2d11daad0d6e1e6d410e50509ec90678"></a>
 WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
 <tr class="separator:a2d11daad0d6e1e6d410e50509ec90678"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,6 +234,10 @@ WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> 
 <tr class="memitem:addbb70047ee7064e657364e6f85e1cf3"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#addbb70047ee7064e657364e6f85e1cf3">find_any</a> (const std::tuple&lt; Names... &gt; &amp;names, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;first, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;last) const</td></tr>
 <tr class="memdesc:addbb70047ee7064e657364e6f85e1cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find any argument with at least one matching criteria, within the specified range.  <a href="structopt_1_1_arg_container.html#addbb70047ee7064e657364e6f85e1cf3">More...</a><br /></td></tr>
 <tr class="separator:addbb70047ee7064e657364e6f85e1cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1d989de81e2069cbbdbd7bbeec81e0"><td class="memItemLeft" align="right" valign="top"><a id="aaf1d989de81e2069cbbdbd7bbeec81e0"></a>
+CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#aaf1d989de81e2069cbbdbd7bbeec81e0">front</a> () const noexcept(false)</td></tr>
+<tr class="memdesc:aaf1d989de81e2069cbbdbd7bbeec81e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element in the argument list if it exists; otherwise throws an exception. <br /></td></tr>
+<tr class="separator:aaf1d989de81e2069cbbdbd7bbeec81e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
 <tr class="memitem:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a99d49a294746cfacc7da93cb2cb7dddb">get</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept</td></tr>
 <tr class="memdesc:a99d49a294746cfacc7da93cb2cb7dddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specified argument from within the container. This function is the equivalent of safely dereferencing the result of <a class="el" href="structopt_1_1_arg_container.html#a50bb15be4d8f2362a9e8be66953136ea" title="Find an argument in the container.">find()</a> and returning it as an optional.  <a href="structopt_1_1_arg_container.html#a99d49a294746cfacc7da93cb2cb7dddb">More...</a><br /></td></tr>
@@ -264,12 +272,12 @@ WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator
 <tr class="memitem:af1f836e44ddd4ae1fdcb70d7c8d96408"><td class="memItemLeft" align="right" valign="top"><a id="af1f836e44ddd4ae1fdcb70d7c8d96408"></a>
 WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a> &amp;o) const</td></tr>
 <tr class="separator:af1f836e44ddd4ae1fdcb70d7c8d96408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86b37b4732e634799cf592b259da5fa2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a86b37b4732e634799cf592b259da5fa2">pop_back</a> () noexcept(false)</td></tr>
-<tr class="memdesc:a86b37b4732e634799cf592b259da5fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove &amp; return the element at the back of the container.  <a href="structopt_1_1_arg_container.html#a86b37b4732e634799cf592b259da5fa2">More...</a><br /></td></tr>
-<tr class="separator:a86b37b4732e634799cf592b259da5fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05e9c6ee3eaa5154f789ece481657943"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a05e9c6ee3eaa5154f789ece481657943">pop_front</a> () noexcept(false)</td></tr>
-<tr class="memdesc:a05e9c6ee3eaa5154f789ece481657943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove &amp; return the element at the front of the container.  <a href="structopt_1_1_arg_container.html#a05e9c6ee3eaa5154f789ece481657943">More...</a><br /></td></tr>
-<tr class="separator:a05e9c6ee3eaa5154f789ece481657943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5708c1acacd08b1270c2417bae6f843"><td class="memItemLeft" align="right" valign="top">CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#ac5708c1acacd08b1270c2417bae6f843">pop_back</a> () noexcept(false)</td></tr>
+<tr class="memdesc:ac5708c1acacd08b1270c2417bae6f843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove &amp; return the element at the back of the container.  <a href="structopt_1_1_arg_container.html#ac5708c1acacd08b1270c2417bae6f843">More...</a><br /></td></tr>
+<tr class="separator:ac5708c1acacd08b1270c2417bae6f843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9010159925c595a2a329680dafc59ac5"><td class="memItemLeft" align="right" valign="top">CONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9010159925c595a2a329680dafc59ac5">pop_front</a> () noexcept(false)</td></tr>
+<tr class="memdesc:a9010159925c595a2a329680dafc59ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove &amp; return the element at the front of the container.  <a href="structopt_1_1_arg_container.html#a9010159925c595a2a329680dafc59ac5">More...</a><br /></td></tr>
+<tr class="separator:a9010159925c595a2a329680dafc59ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8127beacfefe1c5934f618ff8a88732"><td class="memItemLeft" align="right" valign="top"><a id="ac8127beacfefe1c5934f618ff8a88732"></a>
 WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>push_back</b> (auto &amp;&amp;argument) noexcept(false)</td></tr>
 <tr class="separator:ac8127beacfefe1c5934f618ff8a88732"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -421,7 +429,7 @@ Here is the call graph for this function:</div>
 <p>Retrieve the optional argv[0] argument. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00109">109</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00113">113</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -457,7 +465,7 @@ Here is the call graph for this function:</div>
 <p>Set the value of the optional argv[0] argument, and return the previous value. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00112">112</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00116">116</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -500,7 +508,7 @@ template&lt;ValidArg... Types&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00346">346</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00350">350</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -569,7 +577,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00325">325</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00329">329</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -621,7 +629,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00382">382</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00386">386</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -671,7 +679,7 @@ template&lt;ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00369">369</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00373">373</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -724,7 +732,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00411">411</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00415">415</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -793,7 +801,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00339">339</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00343">343</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -844,7 +852,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00358">358</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00362">362</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -898,7 +906,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00396">396</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00400">400</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -965,7 +973,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00536">536</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00540">540</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -974,7 +982,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_a02361fcbabb45bc169dd0d2d0718a32e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_a02361fcbabb45bc169dd0d2d0718a32e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -1057,7 +1066,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00191">191</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00195">195</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1126,7 +1135,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00125">125</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00129">129</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1195,7 +1204,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00179">179</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00183">183</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1263,7 +1272,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00143">143</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00147">147</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1317,7 +1326,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorContainerType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00271">271</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00275">275</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1386,7 +1395,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorContainerType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00297">297</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00301">301</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1440,7 +1449,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00223">223</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00227">227</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1510,7 +1519,7 @@ template&lt;ValidArg... Types, ValidInputType Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00207">207</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00211">211</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1579,7 +1588,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerIteratorType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00246">246</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00250">250</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1648,7 +1657,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;VariantArgumentType&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00429">429</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00433">433</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1699,7 +1708,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00474">474</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00478">478</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1768,7 +1777,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;VariantArgumentType&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00446">446</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00450">450</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1819,7 +1828,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;VariantArgumentType&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00459">459</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00463">463</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1886,7 +1895,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00497">497</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00501">501</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1953,7 +1962,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainerType </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00521">521</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_container_8hpp_source.html#l00525">525</a> of file <a class="el" href="_arg_container_8hpp_source.html">ArgContainer.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1962,8 +1971,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a86b37b4732e634799cf592b259da5fa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86b37b4732e634799cf592b259da5fa2">&#9670;&nbsp;</a></span>pop_back()</h2>
+<a id="ac5708c1acacd08b1270c2417bae6f843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5708c1acacd08b1270c2417bae6f843">&#9670;&nbsp;</a></span>pop_back()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1972,7 +1981,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto opt::ArgContainer::pop_back </td>
+          <td class="memname">CONSTEXPR auto opt::ArgContainer::pop_back </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1992,13 +2001,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_a86b37b4732e634799cf592b259da5fa2_cgraph.svg" width="347" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_ac5708c1acacd08b1270c2417bae6f843_cgraph.svg" width="347" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a05e9c6ee3eaa5154f789ece481657943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e9c6ee3eaa5154f789ece481657943">&#9670;&nbsp;</a></span>pop_front()</h2>
+<a id="a9010159925c595a2a329680dafc59ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9010159925c595a2a329680dafc59ac5">&#9670;&nbsp;</a></span>pop_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2007,7 +2017,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto opt::ArgContainer::pop_front </td>
+          <td class="memname">CONSTEXPR auto opt::ArgContainer::pop_front </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2027,7 +2037,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_a05e9c6ee3eaa5154f789ece481657943_cgraph.svg" width="347" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt_1_1_arg_container_a9010159925c595a2a329680dafc59ac5_cgraph.svg" width="347" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
