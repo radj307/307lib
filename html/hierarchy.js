@@ -37,9 +37,6 @@ var hierarchy =
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
     ] ],
-    [ "color::format::FlagBase< T >", "classcolor_1_1format_1_1_flag_base.html", null ],
-    [ "color::format::FlagBase< unsigned char >", "classcolor_1_1format_1_1_flag_base.html", null ],
-    [ "color::format", "structcolor_1_1format.html", null ],
     [ "format::indentor< T, CharT >", "structformat_1_1indentor.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "file::ini::INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", [
@@ -65,7 +62,6 @@ var hierarchy =
       [ "json::parser::Parser", "classjson_1_1parser_1_1_parser.html", null ],
       [ "xml::parser::XMLParser< T >", "classxml_1_1parser_1_1_x_m_l_parser.html", null ]
     ] ],
-    [ "color::Layer", "structcolor_1_1_layer.html", null ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
     [ "token::base::LexemeDictBase< LEXEME >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
@@ -109,12 +105,12 @@ var hierarchy =
     [ "pair", null, [
       [ "matrix::point< T >", "structmatrix_1_1point.html", null ]
     ] ],
-    [ "term::palette< Key >", "classterm_1_1palette.html", null ],
+    [ "term::palette< TKey, TChar, TCharTraits, TAlloc >", "classterm_1_1palette.html", null ],
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "xml::ProcessingInstructions", "structxml_1_1_processing_instructions.html", null ],
-    [ "color::setcolor_seq< SeqT >", "structcolor_1_1setcolor__seq.html", null ],
+    [ "color::setcolor_seq< TChar, TCharTraits, TAlloc >", "structcolor_1_1setcolor__seq.html", null ],
     [ "color::setcolor_seq< seq >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],

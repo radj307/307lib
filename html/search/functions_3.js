@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['decimaltobinary_952',['decimalToBinary',['../namespacestr.html#afc4713722f92ec455251092937a2540b',1,'str']]],
-  ['decimaltohex_953',['decimalToHex',['../namespacestr.html#a8059cb6dea85450291ef813056734a8e',1,'str::decimalToHex(long long const &amp;dec, Ts &amp;&amp;... fmt) noexcept'],['../namespacestr.html#a64641d820fe5e4997387b75be9df3b97',1,'str::decimalToHex(std::string const &amp;dec, Ts &amp;&amp;... fmt) noexcept']]],
-  ['deletechar_954',['DeleteChar',['../namespaceterm.html#a2aae015be66e78986b5736ad2653268e',1,'term']]],
-  ['deleteline_955',['DeleteLine',['../namespaceterm.html#a6183118ec8512e645891f7a6c690b7d2',1,'term']]],
-  ['disable_956',['disable',['../classterm_1_1palette.html#ab7f4124b345be876cc81d53c2d2c24fa',1,'term::palette']]],
-  ['duplicate_5frange_957',['duplicate_range',['../structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e',1,'opt::ArgContainer']]]
+  ['decimaltobinary_938',['decimalToBinary',['../namespacestr.html#afc4713722f92ec455251092937a2540b',1,'str']]],
+  ['decimaltohex_939',['decimalToHex',['../namespacestr.html#a8059cb6dea85450291ef813056734a8e',1,'str::decimalToHex(long long const &amp;dec, Ts &amp;&amp;... fmt) noexcept'],['../namespacestr.html#a64641d820fe5e4997387b75be9df3b97',1,'str::decimalToHex(std::string const &amp;dec, Ts &amp;&amp;... fmt) noexcept']]],
+  ['deletechar_940',['DeleteChar',['../namespaceterm.html#af5fd277ab5da54e2f8c60c4fd26f226f',1,'term']]],
+  ['deleteline_941',['DeleteLine',['../namespaceterm.html#a6157ec7f67cdb0d36c67d31369a76858',1,'term']]],
+  ['disable_942',['disable',['../classterm_1_1palette.html#a7d999ed496e663107e4a10a724fa3c8e',1,'term::palette']]],
+  ['duplicate_5frange_943',['duplicate_range',['../structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e',1,'opt::ArgContainer']]]
 ];

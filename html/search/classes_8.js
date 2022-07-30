@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['nmatrix_784',['nmatrix',['../structmatrix_1_1nmatrix.html',1,'matrix']]],
-  ['node_785',['Node',['../structjson_1_1_node.html',1,'json']]],
-  ['nodetype_786',['NodeType',['../structjson_1_1_node_type.html',1,'json']]],
-  ['nodeview_787',['NodeView',['../structjson_1_1_node_view.html',1,'json']]],
-  ['numbergrouping_788',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
+  ['objectnode_776',['ObjectNode',['../structjson_1_1_object_node.html',1,'json']]],
+  ['outputtarget_777',['OutputTarget',['../structxlog_1_1_output_target.html',1,'xlog']]],
+  ['outputtarget_3c_20std_3a_3aostream_20_3e_778',['OutputTarget&lt; std::ostream &gt;',['../structxlog_1_1_output_target.html',1,'xlog']]]
 ];

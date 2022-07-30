@@ -116,19 +116,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a9c1c8df11c51500db7d1c5485c39e547"><td class="memItemLeft" align="right" valign="top"><a id="a9c1c8df11c51500db7d1c5485c39e547"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ANSI::Sequence</b> = std::string</td></tr>
-<tr class="separator:a9c1c8df11c51500db7d1c5485c39e547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633c6ee6fc2019fbf19dc788ce70f4f3"><td class="memItemLeft" align="right" valign="top"><a id="a633c6ee6fc2019fbf19dc788ce70f4f3"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ANSI::wSequence</b> = std::wstring</td></tr>
-<tr class="separator:a633c6ee6fc2019fbf19dc788ce70f4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e3c17f9a64d76655c12f00f15e8a92"><td class="memTemplParams" colspan="2"><a id="a90e3c17f9a64d76655c12f00f15e8a92"></a>
+template&lt;var::valid_char TChar, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a90e3c17f9a64d76655c12f00f15e8a92"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ANSI::basic_sequence</b> = std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
+<tr class="separator:a90e3c17f9a64d76655c12f00f15e8a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e64fd1a1af0baea593d1e2e93eda124"><td class="memItemLeft" align="right" valign="top"><a id="a9e64fd1a1af0baea593d1e2e93eda124"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ANSI::sequence</b> = basic_sequence&lt; char &gt;</td></tr>
+<tr class="separator:a9e64fd1a1af0baea593d1e2e93eda124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb6b5002b25db1165110256614da05e"><td class="memItemLeft" align="right" valign="top"><a id="a9cb6b5002b25db1165110256614da05e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ANSI::wsequence</b> = basic_sequence&lt; wchar_t &gt;</td></tr>
+<tr class="separator:a9cb6b5002b25db1165110256614da05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memTemplParams" colspan="2"><a id="a89f2c7ec9c0e17e7bcbbd0141a291c35"></a>
-template&lt;std::same_as&lt; Sequence &gt; Type = Sequence, var::Streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memTemplItemLeft" align="right" valign="top">const Type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ANSI::make_sequence</b> (const Ts &amp;... segments) noexcept</td></tr>
-<tr class="separator:a89f2c7ec9c0e17e7bcbbd0141a291c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea46cb1e0360944cf084df25031eab2"><td class="memTemplParams" colspan="2"><a id="aaea46cb1e0360944cf084df25031eab2"></a>
+template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::Streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:aaea46cb1e0360944cf084df25031eab2"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR basic_sequence&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ANSI::make_sequence</b> (Ts &amp;&amp;... segments) noexcept</td></tr>
+<tr class="separator:aaea46cb1e0360944cf084df25031eab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the ANSI::Sequence object. </p>

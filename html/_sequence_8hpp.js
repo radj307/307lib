@@ -1,6 +1,7 @@
 var _sequence_8hpp =
 [
-    [ "Sequence", "_sequence_8hpp.html#a9c1c8df11c51500db7d1c5485c39e547", null ],
-    [ "wSequence", "_sequence_8hpp.html#a633c6ee6fc2019fbf19dc788ce70f4f3", null ],
-    [ "make_sequence", "_sequence_8hpp.html#a89f2c7ec9c0e17e7bcbbd0141a291c35", null ]
+    [ "basic_sequence", "_sequence_8hpp.html#a90e3c17f9a64d76655c12f00f15e8a92", null ],
+    [ "sequence", "_sequence_8hpp.html#a9e64fd1a1af0baea593d1e2e93eda124", null ],
+    [ "wsequence", "_sequence_8hpp.html#a9cb6b5002b25db1165110256614da05e", null ],
+    [ "make_sequence", "_sequence_8hpp.html#aaea46cb1e0360944cf084df25031eab2", null ]
 ];

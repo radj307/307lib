@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['manipulatorbase_777',['ManipulatorBase',['../structxlog_1_1_manipulator_base.html',1,'xlog']]],
-  ['message_778',['Message',['../structterm_1_1_message.html',1,'term']]],
-  ['mini_779',['MINI',['../classfile_1_1ini_1_1_m_i_n_i.html',1,'file::ini']]],
-  ['miniparser_780',['MINIParser',['../structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html',1,'file::ini::tokenizer']]],
-  ['missing_5farguments_5fexcept_781',['missing_arguments_except',['../structmissing__arguments__except.html',1,'']]],
-  ['mode_782',['Mode',['../structprocess_1_1_mode.html',1,'process']]],
-  ['my_5fadvanced_5fcustom_5fexcept_783',['my_advanced_custom_except',['../structmy__advanced__custom__except.html',1,'']]]
+  ['nmatrix_771',['nmatrix',['../structmatrix_1_1nmatrix.html',1,'matrix']]],
+  ['node_772',['Node',['../structjson_1_1_node.html',1,'json']]],
+  ['nodetype_773',['NodeType',['../structjson_1_1_node_type.html',1,'json']]],
+  ['nodeview_774',['NodeView',['../structjson_1_1_node_view.html',1,'json']]],
+  ['numbergrouping_775',['NumberGrouping',['../classstr_1_1facet_1_1_number_grouping.html',1,'str::facet']]]
 ];

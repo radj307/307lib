@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['layer_769',['Layer',['../structcolor_1_1_layer.html',1,'color']]],
-  ['level_770',['level',['../structxlog_1_1level.html',1,'xlog']]],
-  ['lexemedict_771',['LexemeDict',['../structxml_1_1parser_1_1_lexeme_dict.html',1,'xml::parser::LexemeDict'],['../structtoken_1_1_default_defs_1_1_lexeme_dict.html',1,'token::DefaultDefs::LexemeDict']]],
-  ['lexemedictbase_772',['LexemeDictBase',['../structtoken_1_1base_1_1_lexeme_dict_base.html',1,'token::base']]],
-  ['lexemedictbase_3c_20lexeme_20_3e_773',['LexemeDictBase&lt; LEXEME &gt;',['../structtoken_1_1base_1_1_lexeme_dict_base.html',1,'token::base::LexemeDictBase&lt; LEXEME &gt;'],['../structtoken_1_1base_1_1_lexeme_dict_base.html',1,'token::base::LexemeDictBase&lt; Lexeme &gt;']]],
-  ['lexemedictionary_774',['LexemeDictionary',['../structopt_1_1token_1_1_lexeme_dictionary.html',1,'opt::token::LexemeDictionary'],['../structjson_1_1parser_1_1_lexeme_dictionary.html',1,'json::parser::LexemeDictionary']]],
-  ['linecharacter_775',['LineCharacter',['../structterm_1_1_line_character.html',1,'term']]],
-  ['loglevel_776',['LogLevel',['../structxlog_1_1level_1_1_log_level.html',1,'xlog::level']]]
+  ['manipulatorbase_764',['ManipulatorBase',['../structxlog_1_1_manipulator_base.html',1,'xlog']]],
+  ['message_765',['Message',['../structterm_1_1_message.html',1,'term']]],
+  ['mini_766',['MINI',['../classfile_1_1ini_1_1_m_i_n_i.html',1,'file::ini']]],
+  ['miniparser_767',['MINIParser',['../structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html',1,'file::ini::tokenizer']]],
+  ['missing_5farguments_5fexcept_768',['missing_arguments_except',['../structmissing__arguments__except.html',1,'']]],
+  ['mode_769',['Mode',['../structprocess_1_1_mode.html',1,'process']]],
+  ['my_5fadvanced_5fcustom_5fexcept_770',['my_advanced_custom_except',['../structmy__advanced__custom__except.html',1,'']]]
 ];
