@@ -204,25 +204,20 @@ using ex::make_exception;
 #define MAKE_EXCEPTION_SIMPLE
 #undef MAKE_EXCEPTION_SIMPLE
 
-
-
-
-
  /**
-  * @def			DEFINE_EXCEPTION
+  * @def			$DEFINE_EXCEPT
   * @brief			Creates a new exception object derived from ex::except that can be used in a multi-catch statement (see try-catch) to handle different exceptions created with make_custom_exception.
   * @param name		The name to use for the exception object, which will be appended to "except_" as the name of a struct definition.
   *\n				DO NOT PASS A QUOTE-ENCLOSED STRING HERE!
   */
-#define DEFINE_EXCEPTION(name) struct except_##name : ::ex::except { using base = ::ex::except; using base::base; };
-
+#define $DEFINE_EXCEPT(name) struct except_##name : ::ex::except { using base = ::ex::except; using base::base; };
   /**
-   * @def			GET_EXCEPTION
+   * @def			$EXCEPT
    * @brief			Gets the name of an exception object that was previously-defined with DEFINE_EXCEPTION.
    * @param name	The name of a previously-created exception object.
    *\n				DO NOT PASS A QUOTE-ENCLOSED STRING HERE!
    */
-#define GET_EXCEPTION(name) except_##name
+#define $EXCEPT(name) except_##name
 
 #endif
 
