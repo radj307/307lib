@@ -13,25 +13,18 @@
 #include <concepts>
 
 namespace ANSI {
-	using Sequence = std::string;
-	using wSequence = std::wstring;
+	template<var::valid_char TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
+	using basic_sequence = std::basic_string<TChar, TCharTraits, TAlloc>;
+
+	using sequence = basic_sequence<char>;
+	using wsequence = basic_sequence<wchar_t>;
 
 	// char
-	template<std::same_as<Sequence> Type = Sequence, var::Streamable<std::stringstream>... Ts>
-	const Type make_sequence(const Ts&... segments) noexcept
+	template<var::valid_char TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	CONSTEXPR basic_sequence<TChar, TCharTraits, TAlloc> make_sequence(Ts&&... segments) noexcept
 	{
-		if constexpr (sizeof...(segments) > 0ull)
-			if (std::stringstream buffer; (buffer << ... << segments))
-				return buffer.str();
-		return{};
-	}
-	// wide char
-	template<std::same_as<wSequence> Type, var::Streamable<std::wstringstream>... Ts>
-	const Type make_sequence(const Ts&... segments) noexcept
-	{
-		if constexpr (sizeof...(segments) > 0ull)
-			if (std::wstringstream buffer; (buffer << ... << segments))
-				return buffer.str();
-		return{};
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
+		(buffer << ... << std::forward<Ts>(segments));
+		return buffer.str();
 	}
 }

@@ -21,12 +21,12 @@ namespace term {
 	 *\n			Maps color sequences to a templated key type.
 	 *\n			Provides convenience methods for recalling color sequences by using keys.
 	 *\n			Very useful when you want to control the usage of escape sequences throughout your program.
-	 * @tparam Key
+	 * @tparam TKey
 	 */
-	template<typename Key>
+	template<typename TKey, var::valid_char TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
 	class palette {
 	public:
-		using key_type = Key;
+		using key_type = TKey;
 		using value_type = setcolor;
 		using pair_type = std::pair<key_type, value_type>;
 		using container_type = std::map<key_type, value_type>;
@@ -36,10 +36,10 @@ namespace term {
 	protected:
 		container_type _palette;
 		bool _enable{ true };
-		ANSI::Sequence _reset_seq{ color::reset + color::reset_fmt };
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> _reset_seq{ color::reset + color::reset_fmt };
 
-		inline static ANSI::Sequence return_if_disabled(const char& c) { return{ std::string(1ull, c) }; }
-		inline static ANSI::Sequence return_if_disabled(const ANSI::Sequence& seq) { return seq; }
+		inline static ANSI::basic_sequence<TChar, TCharTraits, TAlloc> return_if_disabled(const char& c) { return{ std::string(1ull, c) }; }
+		inline static ANSI::basic_sequence<TChar, TCharTraits, TAlloc> return_if_disabled(const ANSI::basic_sequence<TChar, TCharTraits, TAlloc>& seq) { return seq; }
 
 	public:
 #		pragma region Constructors
@@ -54,7 +54,7 @@ namespace term {
 		 * @param enable		When true, escape sequences are enabled.
 		 * @param reset_seq		The escape sequence used by the reset functions.
 		 */
-		palette(container_type&& palette, const bool& enable = true, const ANSI::Sequence& reset_seq = color::reset) : _palette{ std::move(palette) }, _enable{ enable }, _reset_seq{ reset_seq } {}
+		palette(container_type&& palette, const bool& enable = true, const ANSI::basic_sequence<TChar, TCharTraits, TAlloc>& reset_seq = color::reset) : _palette{ std::move(palette) }, _enable{ enable }, _reset_seq{ reset_seq } {}
 
 		/**
 		 * @brief				Initializer List Constructor
@@ -107,10 +107,10 @@ namespace term {
 		/**
 		 * @brief		Change the default sequence used to reset terminal colors & formatting, when an override isn't specified.
 		 * @param seq	The sequence to use as the default reset sequence.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 *\n			The previous default reset sequence.
 		 */
-		virtual ANSI::Sequence setDefaultResetSequence(const ANSI::Sequence& seq)
+		virtual ANSI::basic_sequence<TChar, TCharTraits, TAlloc> setDefaultResetSequence(const ANSI::basic_sequence<TChar, TCharTraits, TAlloc>& seq)
 		{
 			const auto copy{ _reset_seq };
 			_reset_seq = seq;
@@ -119,10 +119,10 @@ namespace term {
 
 		/**
 		 * @brief		Get the default sequence used to reset terminal colors & formatting.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 *\n			The current default reset sequence.
 		 */
-		virtual ANSI::Sequence getDefaultResetSequence() const { return _reset_seq; }
+		virtual ANSI::basic_sequence<TChar, TCharTraits, TAlloc> getDefaultResetSequence() const { return _reset_seq; }
 
 		/**
 		 * @brief		Check if a given key exists in the palette.
@@ -158,9 +158,9 @@ namespace term {
 		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
 		 *\n			If the palette is disabled, nothing happens.
 		 * @param key	The key associated with the desired color.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence set(key_type&& key) const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> set(key_type&& key) const noexcept
 		{
 			if (_enable)
 				if (const auto it{ find(std::forward<key_type>(key)) }; it != end())
@@ -174,10 +174,10 @@ namespace term {
 		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
 		 * @param key			The key associated with the desired color.
 		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
-		 * @returns				ANSI::Sequence
+		 * @returns				ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
 		template<var::any_same_or_convertible<std::string, char> T>
-		ANSI::Sequence set_or(key_type&& key, const T& if_disabled) const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> set_or(key_type&& key, const T& if_disabled) const noexcept
 		{
 			if (_enable)
 				return set(std::forward<key_type>(key));
@@ -187,9 +187,9 @@ namespace term {
 		/**
 		 * @brief		Return a sequence that will reset the current console output color using the default reset sequence.
 		 *\n			If the palette is disabled, nothing happens.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence reset() const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> reset() const noexcept
 		{
 			if (_enable)
 				return _reset_seq;
@@ -200,10 +200,10 @@ namespace term {
 		 * @brief				Return a sequence that will reset the current console output color using the default reset sequence.
 		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
 		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
-		 * @returns				ANSI::Sequence
+		 * @returns				ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
 		template<var::any_same_or_convertible<std::string, char> T>
-		ANSI::Sequence reset_or(const T& if_disabled) const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> reset_or(const T& if_disabled) const noexcept
 		{
 			if (_enable)
 				return reset();
@@ -215,9 +215,9 @@ namespace term {
 		 *\n			If the palette is enabled and the key doesn't exist, only the reset sequence is returned.
 		 *\n			If the palette is disabled, nothing happens.
 		 * @param key	The key associated with the desired color.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence reset(key_type&& key) const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> reset(key_type&& key) const noexcept
 		{
 			if (_enable) {
 				if (const auto it{ find(std::forward<key_type>(key)) }; it != end())
@@ -233,10 +233,10 @@ namespace term {
 		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
 		 * @param key			The key associated with the desired color.
 		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
-		 * @returns				ANSI::Sequence
+		 * @returns				ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		*/
 		template<var::any_same_or_convertible<std::string, char> T>
-		ANSI::Sequence reset_or(key_type&& key, const T& if_disabled) const noexcept
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> reset_or(key_type&& key, const T& if_disabled) const noexcept
 		{
 			if (_enable)
 				return reset(std::forward<key_type>(key));
@@ -249,18 +249,18 @@ namespace term {
 		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
 		 *\n			If the palette is disabled, nothing happens.
 		 * @param key	The key associated with the desired color.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence operator[](key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> operator[](key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
 
 		/**
 		 * @brief		Return a sequence that will set the current console output color to the one associated with a specified key.
 		 *\n			If the palette is enabled and the key doesn't exist, nothing happens and an empty placeholder is returned.
 		 *\n			If the palette is disabled, nothing happens.
 		 * @param key	The key associated with the desired color.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence operator()(key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> operator()(key_type&& key) const noexcept { return set(std::forward<key_type>(key)); }
 
 		/**
 		 * @brief				Return a sequence that will set the current console output color to the one associated with a specified key.
@@ -268,24 +268,24 @@ namespace term {
 		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
 		 * @param key			The key associated with the desired color.
 		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
-		 * @returns				ANSI::Sequence
+		 * @returns				ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence operator()(key_type&& key, auto&& if_disabled) const noexcept { return set_or(std::forward<key_type>(key), std::forward<decltype(if_disabled)>(if_disabled)); }
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> operator()(key_type&& key, auto&& if_disabled) const noexcept { return set_or(std::forward<key_type>(key), std::forward<decltype(if_disabled)>(if_disabled)); }
 
 		/**
 		 * @brief		Return a sequence that will reset the current console output color using the default reset sequence.
 		 *\n			If the palette is disabled, nothing happens.
-		 * @returns		ANSI::Sequence
+		 * @returns		ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence operator()() const noexcept { return reset(); }
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> operator()() const noexcept { return reset(); }
 
 		/**
 		 * @brief				Return a sequence that will reset the current console output color using the default reset sequence.
 		 *\n					If the palette is disabled, the string or char specified by "if_disabled" is returned instead.
 		 * @param if_disabled	Any string or character to return instead if the palette is currently disabled.
-		 * @returns				ANSI::Sequence
+		 * @returns				ANSI::basic_sequence<TChar, TCharTraits, TAlloc>
 		 */
-		ANSI::Sequence operator()(auto&& if_disabled) const noexcept { return reset_or(if_disabled); }
+		ANSI::basic_sequence<TChar, TCharTraits, TAlloc> operator()(auto&& if_disabled) const noexcept { return reset_or(if_disabled); }
 #		pragma endregion SequenceGetters
 
 #		pragma region MessageHeaders

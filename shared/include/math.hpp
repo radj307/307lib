@@ -107,6 +107,19 @@ namespace math {
 	{
 		return static_cast<RT>(new_range.first) + (static_cast<RT>(value) - static_cast<RT>(old_range.first)) * static_cast<RT>(static_cast<RT>(new_range.second) - static_cast<RT>(new_range.first)) / (static_cast<RT>(old_range.second) - static_cast<RT>(old_range.first));
 	}
+	/**
+	 * @brief				Scale a given value from its current range to a new one.
+	 * @tparam T			Any number type.
+	 * @param value			Input Value.
+	 * @param old_range		The number range to translate the given value from.
+	 * @param new_range		The number range to translate the given value to.
+	 * @returns				T
+	 */
+	template<var::numeric T, var::numeric RT = T>
+	[[nodiscard]] static CONSTEXPR RT scale(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
+	{
+		return normalize(value, old_range, new_range);
+	}
 
 	template<typename T> [[nodiscard]] static CONSTEXPR T max_value()
 	{
