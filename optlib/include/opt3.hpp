@@ -79,11 +79,13 @@ namespace opt3 {
 		CONSTEXPR basic_arg_t(T const& value) : _value{ value } {}
 
 		/// @brief	Get the name of this argument.
-		WINCONSTEXPR std::string name() const requires (std::same_as<T, parameter_t>) { return _value; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, parameter_t>) { return _value; }
 		/// @brief	Get the name of this argument.
-		WINCONSTEXPR std::string name() const requires (std::same_as<T, flag_t>) { return vstring{ _value.first }; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, flag_t>) { return vstring{ _value.first }; }
 		/// @brief	Get the name of this argument.
-		WINCONSTEXPR std::string name() const requires (std::same_as<T, option_t>) { return{ _value.first }; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, option_t>) { return{ _value.first }; }
+
+		CONSTEXPR std::optional<std::string> getValue() const requires(var::any_same<T, flag_t, option_t>) { return _value.second; }
 
 		/// @brief	Check if this argument has a captured value. (always returns false for parameters)
 		CONSTEXPR bool has_value() const requires (std::same_as<T, parameter_t>) { return false; }
@@ -95,13 +97,13 @@ namespace opt3 {
 		 * @param defaultValue	A string to return when a capture value is not available.
 		 * @returns				The captured value of this argument or defaultValue if one wasn't available.
 		 */
-		WINCONSTEXPR std::string value_or(std::string const& defaultValue) const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value_or(defaultValue); }
+		CONSTEXPR std::string value_or(std::string const& defaultValue) const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value_or(defaultValue); }
 		/**
 		 * @brief				Retrieve the capture value of this argument.
 		 * @returns				The captured value of this argument.
 		 * @throws ex::except	This argument does not contain a captured value.
 		 */
-		WINCONSTEXPR std::string value() const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value(); }
+		CONSTEXPR std::string value() const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value(); }
 	};
 
 	/// @brief	Constraint that allows any types derived from base_arg.
@@ -123,12 +125,21 @@ namespace opt3 {
 		using base = std::variant<Parameter, Flag, Option>;
 		using base::base;
 
-		WINCONSTEXPR bool compare_name(vstring const& name) const
+		/**
+		 * @brief		Compare the name of this argument to the given name.
+		 * @param name	The name to compare this argument to.
+		 * @returns		true when names match; otherwise false.
+		 */
+		WINCONSTEXPR bool compare_name(vstring const& name) const noexcept
 		{
 			return this->name() == name;
 		}
 
-		WINCONSTEXPR std::string name() const
+		/**
+		 * @brief	Gets the name of this argument.
+		 * @returns	The name of this argument, excluding any prefixes that were stripped during parsing.
+		 */
+		WINCONSTEXPR std::string name() const noexcept
 		{
 			return std::visit([](auto&& value) -> std::string {
 				using T = std::decay_t<decltype(value)>;
@@ -139,11 +150,32 @@ namespace opt3 {
 					return value.name();
 				else if constexpr (std::same_as<T, Option>)
 					return value.name();
-				else static_assert(false, "Visitor doesn't handle all possible types!");
+				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 							  }, *this);
 		}
+		/**
+		 * @brief		Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types.
+		 * @returns		The captured value of this argument if it has one; otherwise std::nullopt.
+		 */
+		CONSTEXPR std::optional<std::string> getValue() const noexcept
+		{
+			return std::visit([](auto&& value) -> std::optional<std::string> {
+				using T = std::decay_t<decltype(value)>;
 
-		CONSTEXPR bool has_value() const
+				if constexpr (std::same_as<T, Parameter>)
+					return std::nullopt;
+				else if constexpr (std::same_as<T, Flag>)
+					return value.getValue();
+				else if constexpr (std::same_as<T, Option>)
+					return value.getValue();
+				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+							  }, *this);
+		}
+		/**
+		 * @brief		Checks if this argument has a captured value.
+		 * @returns		true when this argument has a captured value; otherwise false.
+		 */
+		CONSTEXPR bool has_value() const noexcept
 		{
 			return std::visit([](auto&& value) -> bool {
 				using T = std::decay_t<decltype(value)>;
@@ -154,12 +186,15 @@ namespace opt3 {
 					return value.has_value();
 				else if constexpr (std::same_as<T, Option>)
 					return value.has_value();
-				else static_assert(false, "Visitor doesn't handle all possible types!");
-
+				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 							  }, *this);
 		}
-
-		WINCONSTEXPR std::string value_or(std::string const& defaultValue) const
+		/**
+		 * @brief				Gets the capture value of this argument if it exists; otherwise returns the given string instead.
+		 * @param defaultValue	The default string value to return when this argument doesn't have a capture value.
+		 * @returns				std::string
+		 */
+		WINCONSTEXPR std::string value_or(std::string const& defaultValue) const noexcept
 		{
 			return std::visit([&defaultValue](auto&& value) -> std::string {
 				using T = std::decay_t<decltype(value)>;
@@ -170,27 +205,31 @@ namespace opt3 {
 					return value.value_or(defaultValue);
 				else if constexpr (std::same_as<T, Option>)
 					return value.value_or(defaultValue);
-				else static_assert(false, "Visitor doesn't handle all possible types!");
+				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 							  }, *this);
 		}
-
-		WINCONSTEXPR std::string value() const
+		/**
+		 * @brief				Gets the capture value of this argument.
+		 * @returns				The capture value of this argument.
+		 * @throws
+		 */
+		WINCONSTEXPR std::string value() const noexcept(false)
 		{
 			return std::visit([](auto&& value) -> std::string {
 				using T = std::decay_t<decltype(value)>;
 
 				if constexpr (std::same_as<T, Parameter>)
-					throw make_exception("Cannot retrieve capture value from an argument of type parameter!");
+					throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
 				else if constexpr (std::same_as<T, Flag>)
 					return value.value();
 				else if constexpr (std::same_as<T, Option>)
 					return value.value();
-				else static_assert(false, "Visitor doesn't handle all possible types!");
+				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 							  }, *this);
 		}
 
-		template<valid_arg T> CONSTEXPR bool is_type() const { return std::holds_alternative<T>(*this); }
-		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
+		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
+		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
 	};
 
 	/**
