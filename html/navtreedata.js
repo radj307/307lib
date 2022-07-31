@@ -54,7 +54,8 @@ var NAVTREE =
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -87,10 +88,11 @@ var NAVTREEINDEX =
 "classes.html",
 "classterm_1_1palette.html#ac3396af59d8050ab711e7c0fdb403521",
 "color-values_8h.html#ac8cf093e96967abc35d1d201ceb4b332",
-"str_8hpp.html#aab273e18c3896683954b42ea222129f4",
-"structfile_1_1ini_1_1basic__outer__container.html#a3f4e31196817fe9acb847328f170263d",
-"structopt_1_1_argument_parsing_rules.html#aab1fdc61fc2dfb67ebb897050ac45c23",
-"structtoken_1_1base_1_1_token_base.html#a0ccc3e922886932f7e8a02ea1ff2e8f7"
+"opt3_8hpp.html#acfb4da1787b43b9dcf1ca8107f52215b",
+"structcolor_1_1setcolor__seq.html#a4564b4ceef8fa2d5fbf531f13a757b52",
+"structopt3_1_1_capture_list.html#a136862a1cc65edcb82550fe97463074b",
+"structopt_1_1_params_a_p_i2.html#ae6478b7be9347ccd592a4c9163f2aa81",
+"strutility_8hpp.html#a65bc2f112d723a2d6e8492077a63318c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

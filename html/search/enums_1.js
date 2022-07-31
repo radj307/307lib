@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openmode_1461',['openmode',['../openmode_8h.html#a4172803d88f79140493760c26cbf1ea4',1,'file']]]
+  ['capturestyle_1548',['CaptureStyle',['../namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8',1,'opt3']]]
 ];

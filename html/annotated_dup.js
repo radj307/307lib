@@ -34,6 +34,7 @@ var annotated_dup =
       [ "point", "structmatrix_1_1point.html", "structmatrix_1_1point" ]
     ] ],
     [ "opt", "namespaceopt.html", "namespaceopt" ],
+    [ "opt3", "namespaceopt3.html", "namespaceopt3" ],
     [ "process", null, [
       [ "Mode", "structprocess_1_1_mode.html", "structprocess_1_1_mode" ],
       [ "Proc", "structprocess_1_1_proc.html", "structprocess_1_1_proc" ]

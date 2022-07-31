@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tokentype_1391',['TokenType',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799',1,'token::DefaultDefs']]]
+  ['openmode_1549',['openmode',['../openmode_8h.html#a4172803d88f79140493760c26cbf1ea4',1,'file']]]
 ];

@@ -6,10 +6,19 @@ var hierarchy =
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
     [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
+    [ "opt3::ArgumentParsingRules", "structopt3_1_1_argument_parsing_rules.html", null ],
+    [ "opt3::base_arg", "structopt3_1_1base__arg.html", [
+      [ "opt3::basic_arg_t< T >", "structopt3_1_1basic__arg__t.html", null ]
+    ] ],
+    [ "opt3::basic_capture_wrapper< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__capture__wrapper.html", null ],
     [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
+    [ "std::basic_string< Char >", null, [
+      [ "opt3::basic_vstring< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structopt3_1_1basic__vstring.html", null ],
+      [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ]
+    ] ],
     [ "std::basic_string_view< Char >", null, [
       [ "std::string_view", null, [
         [ "opt::Argument", "classopt_1_1_argument.html", null ]
@@ -26,6 +35,7 @@ var hierarchy =
     ] ],
     [ "xlog::BufferManager", "classxlog_1_1_buffer_manager.html", null ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
+    [ "opt3::CaptureList", "structopt3_1_1_capture_list.html", null ],
     [ "opt::CaptureStyle", "structopt_1_1_capture_style.html", null ],
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
@@ -150,7 +160,15 @@ var hierarchy =
       ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
+    [ "variant", null, [
+      [ "opt3::variantarg", "structopt3_1_1variantarg.html", null ]
+    ] ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
+    [ "std::vector< T >", null, [
+      [ "opt3::arg_container", "structopt3_1_1arg__container.html", [
+        [ "opt3::arg_manager", "structopt3_1_1arg__manager.html", null ]
+      ] ]
+    ] ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [
       [ "xlog::xLogs< StreamType >", "classxlog_1_1x_logs.html", null ]

@@ -223,6 +223,14 @@ const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom
 template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_type</b> (const <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;arg)</td></tr>
 <tr class="separator:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4dd33147a174408cdc188a3db45099"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:a7b4dd33147a174408cdc188a3db45099"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099">noCapture</a> (T &amp;&amp;input)</td></tr>
+<tr class="memdesc:a7b4dd33147a174408cdc188a3db45099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not accept captured input while also providing additional context.  <a href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099">More...</a><br /></td></tr>
+<tr class="separator:a7b4dd33147a174408cdc188a3db45099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3437647dd32766f83e85e986f4d460d3"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
+<tr class="memitem:a3437647dd32766f83e85e986f4d460d3"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a3437647dd32766f83e85e986f4d460d3">noCapture</a> (T &amp;&amp;input)</td></tr>
+<tr class="memdesc:a3437647dd32766f83e85e986f4d460d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not accept captured input while also providing additional context.  <a href="namespaceopt.html#a3437647dd32766f83e85e986f4d460d3">More...</a><br /></td></tr>
+<tr class="separator:a3437647dd32766f83e85e986f4d460d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f6625ec874e68c060b1e04795dbb18"><td class="memTemplParams" colspan="2">template&lt;ValidArgType T&gt; </td></tr>
 <tr class="memitem:a05f6625ec874e68c060b1e04795dbb18"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classopt_1_1_arg.html">Arg</a>&lt; T &gt; &amp;arg)</td></tr>
 <tr class="memdesc:a05f6625ec874e68c060b1e04795dbb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator for the <a class="el" href="classopt_1_1_arg.html" title="Polymorphic argument wrapper class that exposes helper functions.">Arg</a> class. See the Settings_Arg static struct for changing output format settings.  <a href="namespaceopt.html#a05f6625ec874e68c060b1e04795dbb18">More...</a><br /></td></tr>
@@ -364,6 +372,111 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7b4dd33147a174408cdc188a3db45099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4dd33147a174408cdc188a3db45099">&#9670;&nbsp;</a></span>noCapture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::noCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument does not accept captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00305">305</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a7b4dd33147a174408cdc188a3db45099_cgraph.svg" width="332" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3437647dd32766f83e85e986f4d460d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3437647dd32766f83e85e986f4d460d3">&#9670;&nbsp;</a></span>noCapture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt_1_1_capture_wrapper.html">CaptureWrapper</a> opt::noCapture </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specify that an argument does not accept captured input while also providing additional context. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MAX</td><td>Requires that this argument be specified no more than this many times. (Default: std::nullopt) </td></tr>
+    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
+    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_capture_wrapper.html" title="Extends the InputWrapper struct with the ability to require specific arguments.">CaptureWrapper</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00318">318</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt_a3437647dd32766f83e85e986f4d460d3_cgraph.svg" width="332" height="76"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a05f6625ec874e68c060b1e04795dbb18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05f6625ec874e68c060b1e04795dbb18">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
@@ -693,7 +806,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00362">362</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00388">388</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -966,7 +1079,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>StrVec </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00477">477</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00503">503</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>

@@ -97,6 +97,12 @@ $(document).ready(function(){initNavTree('namespaceopt__literals.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5c3b0d1f72678e357dc9452b820a67d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_capture_wrapper.html">opt::CaptureWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt__literals.html#a5c3b0d1f72678e357dc9452b820a67d6">operator&quot;&quot;_nocap</a> (char c)</td></tr>
+<tr class="memdesc:a5c3b0d1f72678e357dc9452b820a67d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099" title="Specify that an argument does not accept captured input while also providing additional context.">opt::noCapture</a>.  <a href="namespaceopt__literals.html#a5c3b0d1f72678e357dc9452b820a67d6">More...</a><br /></td></tr>
+<tr class="separator:a5c3b0d1f72678e357dc9452b820a67d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb22792cbe2780dbb9fb13350b60c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_capture_wrapper.html">opt::CaptureWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt__literals.html#aadb22792cbe2780dbb9fb13350b60c63">operator&quot;&quot;_nocap</a> (const char *s, size_t)</td></tr>
+<tr class="memdesc:aadb22792cbe2780dbb9fb13350b60c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099" title="Specify that an argument does not accept captured input while also providing additional context.">opt::noCapture</a>.  <a href="namespaceopt__literals.html#aadb22792cbe2780dbb9fb13350b60c63">More...</a><br /></td></tr>
+<tr class="separator:aadb22792cbe2780dbb9fb13350b60c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f5199961e111bc473174a2ac34deb72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt_1_1_capture_wrapper.html">opt::CaptureWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt__literals.html#a3f5199961e111bc473174a2ac34deb72">operator&quot;&quot;_opt</a> (char c)</td></tr>
 <tr class="memdesc:a3f5199961e111bc473174a2ac34deb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738" title="Specify that an argument does not require captured input while also providing additional context.">opt::optCapture</a>.  <a href="namespaceopt__literals.html#a3f5199961e111bc473174a2ac34deb72">More...</a><br /></td></tr>
 <tr class="separator:a3f5199961e111bc473174a2ac34deb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +122,62 @@ Functions</h2></td></tr>
 Usage</h1>
 <p>``` using namespace <a class="el" href="namespaceopt__literals.html" title="Contains literal operator equivalents for types and methods from the opt namespace.">opt_literals</a>; <a class="el" href="structopt_1_1_params_a_p_i2.html">opt::ParamsAPI2</a> args{ argc, argv, 'h'_opt, "help"_opt, 's'_req, "set"_req }; ``` </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a5c3b0d1f72678e357dc9452b820a67d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c3b0d1f72678e357dc9452b820a67d6">&#9670;&nbsp;</a></span>operator&quot;&quot;_nocap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt_1_1_capture_wrapper.html">opt::CaptureWrapper</a> opt_literals::operator&quot;&quot;_nocap </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099" title="Specify that an argument does not accept captured input while also providing additional context.">opt::noCapture</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Flag that does not accept any capture input. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00567">567</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aadb22792cbe2780dbb9fb13350b60c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadb22792cbe2780dbb9fb13350b60c63">&#9670;&nbsp;</a></span>operator&quot;&quot;_nocap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt_1_1_capture_wrapper.html">opt::CaptureWrapper</a> opt_literals::operator&quot;&quot;_nocap </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a7b4dd33147a174408cdc188a3db45099" title="Specify that an argument does not accept captured input while also providing additional context.">opt::noCapture</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Option that does not accept any capture input. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00543">543</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a3f5199961e111bc473174a2ac34deb72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f5199961e111bc473174a2ac34deb72">&#9670;&nbsp;</a></span>operator&quot;&quot;_opt() <span class="overload">[1/2]</span></h2>
 
@@ -135,7 +197,7 @@ Usage</h1>
 <p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738" title="Specify that an argument does not require captured input while also providing additional context.">opt::optCapture</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Flag that does not require capture input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00525">525</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00559">559</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
@@ -168,7 +230,7 @@ Usage</h1>
 <p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738" title="Specify that an argument does not require captured input while also providing additional context.">opt::optCapture</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Option that does not require capture input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00509">509</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00535">535</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
@@ -191,7 +253,7 @@ Usage</h1>
 <p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a30c1dbc43b7009a1667525c39eb6d8ac" title="Specify that an argument requires captured input while also providing additional context.">opt::reqCapture</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Flag that requires capture input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00517">517</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00551">551</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +286,7 @@ Usage</h1>
 <p>String literal operator that is the equivalent of <a class="el" href="namespaceopt.html#a30c1dbc43b7009a1667525c39eb6d8ac" title="Specify that an argument requires captured input while also providing additional context.">opt::reqCapture</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A CaptureWrapper object for an opt::Option that requires capture input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00501">501</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_arg_parser_8hpp_source.html#l00527">527</a> of file <a class="el" href="_arg_parser_8hpp_source.html">ArgParser.hpp</a>.</p>
 
 </div>
 </div>
