@@ -294,6 +294,32 @@ namespace opt {
 		return{ std::forward<T>(input), (equalsOnly ? (CaptureStyle::Optional | CaptureStyle::EqualsOnly) : CaptureStyle::Optional), MIN };
 	}
 
+	/**
+	 * @brief				Specify that an argument does not accept captured input while also providing additional context.
+	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
+	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
+	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
+	 * @returns				CaptureWrapper
+	 */
+	template<size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
+	inline WINCONSTEXPR CaptureWrapper noCapture(T&& input)
+	{
+		return{ std::forward<T>(input), CaptureStyle::Disabled, MIN };
+	}
+	/**
+	 * @brief				Specify that an argument does not accept captured input while also providing additional context.
+	 * @tparam MAX			Requires that this argument be specified no more than this many times. (Default: std::nullopt)
+	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
+	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
+	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
+	 * @returns				CaptureWrapper
+	 */
+	template<size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
+	inline WINCONSTEXPR CaptureWrapper noCapture(T&& input)
+	{
+		return{ std::forward<T>(input), CaptureStyle::Disabled, MIN, MAX };
+	}
+
 	template<typename T> concept ValidCaptureInputType = std::derived_from<T, InputWrapper> || ValidInputType<T>;
 
 	/**
@@ -511,6 +537,14 @@ namespace opt_literals {
 		return opt::optCapture(std::string{ s });
 	}
 	/**
+	 * @brief		String literal operator that is the equivalent of opt::noCapture
+	 * @returns		A CaptureWrapper object for an opt::Option that does not accept any capture input.
+	 */
+	opt::CaptureWrapper operator""_nocap(const char* s, size_t)
+	{
+		return opt::noCapture(s);
+	}
+	/**
 	 * @brief		String literal operator that is the equivalent of opt::reqCapture
 	 * @returns		A CaptureWrapper object for an opt::Flag that requires capture input.
 	 */
@@ -525,5 +559,13 @@ namespace opt_literals {
 	opt::CaptureWrapper operator ""_opt(char c)
 	{
 		return opt::optCapture(c);
+	}
+	/**
+	 * @brief		String literal operator that is the equivalent of opt::noCapture
+	 * @returns		A CaptureWrapper object for an opt::Flag that does not accept any capture input.
+	 */
+	opt::CaptureWrapper operator""_nocap(char c)
+	{
+		return opt::noCapture(c);
 	}
 }
