@@ -1,11 +1,12 @@
 var structopt3_1_1variantarg =
 [
     [ "base", "structopt3_1_1variantarg.html#a5e37f880db79a6b153094c02a1918199", null ],
-    [ "compare_name", "structopt3_1_1variantarg.html#ad850041bc1e26dd66123adf3d659be59", null ],
-    [ "has_value", "structopt3_1_1variantarg.html#ae052f6d86bc1b4ab2a3c0fba32db9a32", null ],
-    [ "is_any_type", "structopt3_1_1variantarg.html#a0edfd308d668a32392709cb754fb728c", null ],
-    [ "is_type", "structopt3_1_1variantarg.html#a25ac4890cdd01bb45de6869e67a6316a", null ],
-    [ "name", "structopt3_1_1variantarg.html#af569bc4cb6034732b1948355840040db", null ],
-    [ "value", "structopt3_1_1variantarg.html#a9bd59272ddc4e01f042b96a1044f79cc", null ],
-    [ "value_or", "structopt3_1_1variantarg.html#a12cecf851835143b4395612cb4576ec1", null ]
+    [ "compare_name", "structopt3_1_1variantarg.html#ad334fcfd6827b2225f510141d9b0ca0c", null ],
+    [ "getValue", "structopt3_1_1variantarg.html#acf8c06486009f256a85eed0d5cdfbce4", null ],
+    [ "has_value", "structopt3_1_1variantarg.html#ae5a3ae2c0c65d9e7abe090c4bfb64960", null ],
+    [ "is_any_type", "structopt3_1_1variantarg.html#a7446b3328847b8eb1172297a7d88e99f", null ],
+    [ "is_type", "structopt3_1_1variantarg.html#aa13d90e2a75d622f77baeb4ba7f92292", null ],
+    [ "name", "structopt3_1_1variantarg.html#a5587b5cb876d5c00f45374949d964ee2", null ],
+    [ "value", "structopt3_1_1variantarg.html#a882290b908b6251d72d6385277e99f31", null ],
+    [ "value_or", "structopt3_1_1variantarg.html#a17815e9808d1b1a8837580348130384e", null ]
 ];

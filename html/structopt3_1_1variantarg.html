@@ -102,14 +102,12 @@ $(document).ready(function(){initNavTree('structopt3_1_1variantarg.html',''); in
 <div class="dynheader">
 Inheritance diagram for opt3::variantarg:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg__inherit__graph.svg" width="194" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg__inherit__graph.svg" width="194" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for opt3::variantarg:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg__coll__graph.svg" width="194" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg__coll__graph.svg" width="194" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -120,36 +118,258 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::vari
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad850041bc1e26dd66123adf3d659be59"><td class="memItemLeft" align="right" valign="top"><a id="ad850041bc1e26dd66123adf3d659be59"></a>
-WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>compare_name</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="separator:ad850041bc1e26dd66123adf3d659be59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae052f6d86bc1b4ab2a3c0fba32db9a32"><td class="memItemLeft" align="right" valign="top"><a id="ae052f6d86bc1b4ab2a3c0fba32db9a32"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_value</b> () const</td></tr>
-<tr class="separator:ae052f6d86bc1b4ab2a3c0fba32db9a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edfd308d668a32392709cb754fb728c"><td class="memTemplParams" colspan="2"><a id="a0edfd308d668a32392709cb754fb728c"></a>
+<tr class="memitem:ad334fcfd6827b2225f510141d9b0ca0c"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#ad334fcfd6827b2225f510141d9b0ca0c">compare_name</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;<a class="el" href="structopt3_1_1variantarg.html#a5587b5cb876d5c00f45374949d964ee2">name</a>) const noexcept</td></tr>
+<tr class="memdesc:ad334fcfd6827b2225f510141d9b0ca0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the name of this argument to the given name.  <a href="structopt3_1_1variantarg.html#ad334fcfd6827b2225f510141d9b0ca0c">More...</a><br /></td></tr>
+<tr class="separator:ad334fcfd6827b2225f510141d9b0ca0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8c06486009f256a85eed0d5cdfbce4"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#acf8c06486009f256a85eed0d5cdfbce4">getValue</a> () const noexcept</td></tr>
+<tr class="memdesc:acf8c06486009f256a85eed0d5cdfbce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types.  <a href="structopt3_1_1variantarg.html#acf8c06486009f256a85eed0d5cdfbce4">More...</a><br /></td></tr>
+<tr class="separator:acf8c06486009f256a85eed0d5cdfbce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a3ae2c0c65d9e7abe090c4bfb64960"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#ae5a3ae2c0c65d9e7abe090c4bfb64960">has_value</a> () const noexcept</td></tr>
+<tr class="memdesc:ae5a3ae2c0c65d9e7abe090c4bfb64960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this argument has a captured value.  <a href="structopt3_1_1variantarg.html#ae5a3ae2c0c65d9e7abe090c4bfb64960">More...</a><br /></td></tr>
+<tr class="separator:ae5a3ae2c0c65d9e7abe090c4bfb64960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7446b3328847b8eb1172297a7d88e99f"><td class="memTemplParams" colspan="2"><a id="a7446b3328847b8eb1172297a7d88e99f"></a>
 template&lt;valid_arg... Ts&gt; </td></tr>
-<tr class="memitem:a0edfd308d668a32392709cb754fb728c"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_any_type</b> () const</td></tr>
-<tr class="separator:a0edfd308d668a32392709cb754fb728c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25ac4890cdd01bb45de6869e67a6316a"><td class="memTemplParams" colspan="2"><a id="a25ac4890cdd01bb45de6869e67a6316a"></a>
+<tr class="memitem:a7446b3328847b8eb1172297a7d88e99f"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_any_type</b> () const noexcept</td></tr>
+<tr class="separator:a7446b3328847b8eb1172297a7d88e99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13d90e2a75d622f77baeb4ba7f92292"><td class="memTemplParams" colspan="2"><a id="aa13d90e2a75d622f77baeb4ba7f92292"></a>
 template&lt;valid_arg T&gt; </td></tr>
-<tr class="memitem:a25ac4890cdd01bb45de6869e67a6316a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_type</b> () const</td></tr>
-<tr class="separator:a25ac4890cdd01bb45de6869e67a6316a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af569bc4cb6034732b1948355840040db"><td class="memItemLeft" align="right" valign="top"><a id="af569bc4cb6034732b1948355840040db"></a>
-WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> () const</td></tr>
-<tr class="separator:af569bc4cb6034732b1948355840040db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bd59272ddc4e01f042b96a1044f79cc"><td class="memItemLeft" align="right" valign="top"><a id="a9bd59272ddc4e01f042b96a1044f79cc"></a>
-WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () const</td></tr>
-<tr class="separator:a9bd59272ddc4e01f042b96a1044f79cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12cecf851835143b4395612cb4576ec1"><td class="memItemLeft" align="right" valign="top"><a id="a12cecf851835143b4395612cb4576ec1"></a>
-WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><b>value_or</b> (std::string const &amp;defaultValue) const</td></tr>
-<tr class="separator:a12cecf851835143b4395612cb4576ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13d90e2a75d622f77baeb4ba7f92292"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_type</b> () const noexcept</td></tr>
+<tr class="separator:aa13d90e2a75d622f77baeb4ba7f92292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5587b5cb876d5c00f45374949d964ee2"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#a5587b5cb876d5c00f45374949d964ee2">name</a> () const noexcept</td></tr>
+<tr class="memdesc:a5587b5cb876d5c00f45374949d964ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of this argument.  <a href="structopt3_1_1variantarg.html#a5587b5cb876d5c00f45374949d964ee2">More...</a><br /></td></tr>
+<tr class="separator:a5587b5cb876d5c00f45374949d964ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882290b908b6251d72d6385277e99f31"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#a882290b908b6251d72d6385277e99f31">value</a> () const noexcept(false)</td></tr>
+<tr class="memdesc:a882290b908b6251d72d6385277e99f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the capture value of this argument.  <a href="structopt3_1_1variantarg.html#a882290b908b6251d72d6385277e99f31">More...</a><br /></td></tr>
+<tr class="separator:a882290b908b6251d72d6385277e99f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17815e9808d1b1a8837580348130384e"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#a17815e9808d1b1a8837580348130384e">value_or</a> (std::string const &amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:a17815e9808d1b1a8837580348130384e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the capture value of this argument if it exists; otherwise returns the given string instead.  <a href="structopt3_1_1variantarg.html#a17815e9808d1b1a8837580348130384e">More...</a><br /></td></tr>
+<tr class="separator:a17815e9808d1b1a8837580348130384e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstraction wrapper around std::variant that directly exposes methods from the underlying <a class="el" href="structopt3_1_1basic__arg__t.html" title="Basic argument wrapper object that contains a templated variable type with some useful methods.">basic_arg_t</a> struct. <br  />
  This allows the programmer to interact with std::variant argument types as if they weren't actually variants. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00122">122</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00124">124</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad334fcfd6827b2225f510141d9b0ca0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad334fcfd6827b2225f510141d9b0ca0c">&#9670;&nbsp;</a></span>compare_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR bool opt3::variantarg::compare_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compare the name of this argument to the given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to compare this argument to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when names match; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00133">133</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acf8c06486009f256a85eed0d5cdfbce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf8c06486009f256a85eed0d5cdfbce4">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;std::string&gt; opt3::variantarg::getValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types. </p>
+<dl class="section return"><dt>Returns</dt><dd>The captured value of this argument if it has one; otherwise std::nullopt. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00160">160</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae5a3ae2c0c65d9e7abe090c4bfb64960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a3ae2c0c65d9e7abe090c4bfb64960">&#9670;&nbsp;</a></span>has_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool opt3::variantarg::has_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if this argument has a captured value. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when this argument has a captured value; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00178">178</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg_ae5a3ae2c0c65d9e7abe090c4bfb64960_icgraph.svg" width="364" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5587b5cb876d5c00f45374949d964ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5587b5cb876d5c00f45374949d964ee2">&#9670;&nbsp;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::string opt3::variantarg::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of this argument. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of this argument, excluding any prefixes that were stripped during parsing. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00142">142</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg_a5587b5cb876d5c00f45374949d964ee2_icgraph.svg" width="378" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a882290b908b6251d72d6385277e99f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882290b908b6251d72d6385277e99f31">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::string opt3::variantarg::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the capture value of this argument. </p>
+<dl class="section return"><dt>Returns</dt><dd>The capture value of this argument. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00216">216</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg_a882290b908b6251d72d6385277e99f31_icgraph.svg" width="378" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a17815e9808d1b1a8837580348130384e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17815e9808d1b1a8837580348130384e">&#9670;&nbsp;</a></span>value_or()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::string opt3::variantarg::value_or </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the capture value of this argument if it exists; otherwise returns the given string instead. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>The default string value to return when this argument doesn't have a capture value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00197">197</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/optlib/include/<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a></li>
 </ul>
 </div><!-- contents -->
