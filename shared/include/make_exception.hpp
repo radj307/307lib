@@ -130,7 +130,7 @@ namespace ex {
 	 * @param ...message	The message shown when calling the what() function.
 	 * @returns				ReturnT
 	 */
-	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts> requires std::constructible_from<ReturnT, std::string>
+	template<std::derived_from<except> ReturnT, var::streamable<std::ostream>... Ts> requires std::constructible_from<ReturnT, std::string>
 	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
 	{
 		std::stringstream ss;
@@ -145,7 +145,7 @@ namespace ex {
 	 * @param ...message	The message shown when calling the what() function.
 	 * @returns				ReturnT
 	 */
-	template<std::derived_from<except> ReturnT, var::Streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...>&& std::constructible_from<ReturnT, Ts...>
+	template<std::derived_from<except> ReturnT, var::streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...>&& std::constructible_from<ReturnT, Ts...>
 	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
 	{
 		return ReturnT{ std::forward<Ts>(message)... };
@@ -157,7 +157,7 @@ namespace ex {
 	 * @param message	Any number of printable variables/objects.
 	 * @returns			except
 	 */
-	template<var::Streamable<std::ostream>... Ts>
+	template<var::streamable<std::ostream>... Ts>
 	[[nodiscard]] WINCONSTEXPR except make_exception(Ts&&... message)
 	{
 		return ex::make_custom_exception<ex::except>(std::forward<Ts>(message)...);
@@ -172,7 +172,7 @@ namespace ex {
 	 * @param message	Any number of printable variables/objects.
 	 * @returns			except
 	 */
-	template<std::derived_from<except> ReturnT, var::Streamable<std::wostream>... Ts>
+	template<std::derived_from<except> ReturnT, var::streamable<std::wostream>... Ts>
 	[[nodiscard]] WINCONSTEXPR except make_exeption(Ts&&... message)
 	{
 		std::wstring wstr;

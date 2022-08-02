@@ -4,10 +4,10 @@
  * @brief Contains constant variables used to map hexadecimal color codes to recognizable words.
  */
 #pragma once
-/**
- * @namespace	seq
- * @brief		Contains hard-coded macrolike definitions for the SGR 
- */
+ /**
+  * @namespace	seq
+  * @brief		Contains hard-coded macrolike definitions for the SGR
+  */
 namespace color {
 	static constexpr const short
 		red{ 0x01 },				///< @brief Red color.
@@ -31,13 +31,18 @@ namespace color {
 		// non-16-bit-palette:
 		orange{ 0xD0 },				///< @brief Orange color.
 		dark_blue{ 0x12 },
-		light_blue{ 0x1A },
+		light_blue{ 0x27 },
 		dark_red{ 0x58 },
 		dark_green{ 0x16 },
 		dark_cyan{ 0x21 },
 		dark_purple{ 0x36 },
 		gold{ 0xB2 },
 		dark_gray{ 0xEB },
-		light_purple{ 0x63 }
+		light_purple{ 0x63 },
+		lighter_purple{ 0x69 },
+		light_green{ 0x46 },
+		pink{ 0xD4 },
+		light_pink{ 0xDB },
+		hot_pink{ 0xC9 }
 	;
 }

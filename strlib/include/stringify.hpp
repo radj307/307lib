@@ -20,7 +20,7 @@ namespace str {
 	 * @param ...args	Arguments to insert into the stream, in order.
 	 * @returns		std::stringstream
 	 */
-	template<var::Streamable... Ts>
+	template<var::streamable... Ts>
 	[[nodiscard]] static std::stringstream streamify(Ts&&... args)
 	{
 		std::stringstream buffer;
@@ -34,7 +34,7 @@ namespace str {
 	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
 	 * @returns std::string
 	 */
-	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 	[[nodiscard]] constexpr static const std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
 	{
 		if constexpr (var::none<Ts...>)
@@ -53,7 +53,7 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<var::Streamable... Ts>
+	template<var::streamable... Ts>
 	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const char& delimiter, Ts&&... args)
 	{
 		std::stringstream buffer;
@@ -73,7 +73,7 @@ namespace str {
 	 * @param ...args		- Arguments to insert into the stream in sequential order.
 	 * @returns std::vector<std::string>
 	 */
-	template<var::Streamable T>
+	template<var::streamable T>
 	[[nodiscard]] constexpr static const std::vector<std::string> stringify_split(const char& delimiter, const std::vector<T>& args)
 	{
 		std::stringstream buffer;

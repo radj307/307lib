@@ -33,6 +33,7 @@
 namespace term {
 	using namespace std::chrono_literals;
 	using namespace ::ANSI;
+
 	/**
 	 * @namespace	Query
 	 * @brief		Contains query functions used internally by some term functions.
@@ -407,7 +408,7 @@ namespace term {
 		return make_sequence(CSI, erase_scope, 'K');
 	}
 
-	template<var::Streamable... Ts>
+	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SGR(const Ts&... modes)
 	{
 #		ifdef OS_WIN
@@ -417,7 +418,7 @@ namespace term {
 #		endif
 	}
 
-	template<var::Streamable... Ts>
+	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SelectGraphicsRendition(const Ts&... modes)
 	{
 		return SGR(modes...);
@@ -480,7 +481,7 @@ namespace term {
 	 * @param yLineCount:	Number of vertical lines.
 	 * @returns				sequence
 	 */
-	template<std::integral T> requires var::Streamable<T, std::stringstream>
+	template<std::integral T> requires var::streamable<T, std::stringstream>
 	[[nodiscard]] inline static sequence setScreenBufferSize(const T& columnCount, const T& lineCount)
 	{
 		return make_sequence(CSI, "8;", lineCount, ';', columnCount, 't');
@@ -492,7 +493,7 @@ namespace term {
 	 * @param yLineCount:	Number of vertical lines.
 	 * @returns				sequence
 	 */
-	template<std::integral T> requires var::Streamable<T, std::stringstream>
+	template<std::integral T> requires var::streamable<T, std::stringstream>
 	[[nodiscard]] inline static sequence setScreenBufferSize(const std::pair<T, T> colRowPair)
 	{
 		return make_sequence(CSI, "8;", colRowPair.second, ';', colRowPair.first, 't');

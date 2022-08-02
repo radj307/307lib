@@ -19,7 +19,7 @@ namespace str {
 	 * @param ...prefix		Any number of types that can be represented with a string to check for.
 	 * @returns				bool
 	 */
-	template<var::Streamable<std::ostream>... Ts>
+	template<var::streamable<std::ostream>... Ts>
 	inline WINCONSTEXPR bool startsWith(const std::string& str, Ts&&... prefix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
@@ -47,7 +47,7 @@ namespace str {
 	 * @param ...suffixes	Any number of independent suffixes to check. Each variable is checked independently of the others.
 	 * @returns				bool
 	 */
-	template<var::Streamable<std::ostream>... Ts>
+	template<var::streamable<std::ostream>... Ts>
 	inline WINCONSTEXPR bool startsWithAny(const std::string& str, Ts&&... prefixes)
 	{
 		return var::variadic_or(startsWith(str, prefixes)...);
@@ -60,7 +60,7 @@ namespace str {
 	 *\n					The resolved strings are checked in reverse sequential order.
 	 * @returns				bool
 	 */
-	template<var::Streamable<std::ostream>... Ts>
+	template<var::streamable<std::ostream>... Ts>
 	inline WINCONSTEXPR bool endsWith(const std::string& str, Ts&&... suffix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
@@ -88,7 +88,7 @@ namespace str {
 	 * @param ...suffixes	Any number of independent suffixes to check. Each variable is checked independently of the others.
 	 * @returns				bool
 	 */
-	template<var::Streamable<std::ostream>... Ts>
+	template<var::streamable<std::ostream>... Ts>
 	inline WINCONSTEXPR bool endsWithAny(const std::string& str, Ts&&... suffixes)
 	{
 		return var::variadic_or(endsWith(str, suffixes)...);

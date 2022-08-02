@@ -26,5 +26,5 @@
 #define _STRINGIZE_INTERNAL
 #define STRINGIZE
 
-#define $DEFINE_EXCEPT
-#define $EXCEPT
+#define $DEFINE_EXCEPT(name)
+#define $EXCEPT(name)

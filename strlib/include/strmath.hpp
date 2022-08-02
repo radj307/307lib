@@ -234,7 +234,7 @@ namespace str {
 	 *\n				 Ex: std::uppercase, std::nouppercase, etc.
 	 * @returns			std::string
 	 */
-	template<var::Streamable<std::stringstream>... Ts>
+	template<var::streamable<std::stringstream>... Ts>
 	inline std::string decimalToHex(long long const& dec, Ts&&... fmt) noexcept
 	{
 		return str::stringify(
@@ -251,7 +251,7 @@ namespace str {
 	 *\n				 Ex: std::uppercase, std::nouppercase, etc.
 	 * @returns			std::string
 	 */
-	template<var::Streamable<std::stringstream>... Ts>
+	template<var::streamable<std::stringstream>... Ts>
 	inline std::string decimalToHex(std::string const& dec, Ts&&... fmt) noexcept
 	{
 		return str::stringify(

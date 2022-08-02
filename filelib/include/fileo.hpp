@@ -57,7 +57,7 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
-	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_ofstream<TChar, TCharTraits>>... Ts>
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_ofstream<TChar, TCharTraits>>... Ts>
 	inline bool write(const std::filesystem::path& path, Ts&&... data)
 	{
 		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
@@ -77,7 +77,7 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
-	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_ofstream<TChar, TCharTraits>>... Ts>
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_ofstream<TChar, TCharTraits>>... Ts>
 	inline bool append(const std::filesystem::path& path, Ts&&... data)
 	{
 		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."

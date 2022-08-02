@@ -512,7 +512,7 @@ namespace xml {
 		class XMLParser : public token::base::IteratingParserBase<T, TokenType> {
 			using base = token::base::IteratingParserBase<T, TokenType>;
 
-			template<var::Streamable... Ts>
+			template<var::streamable... Ts>
 			static void throwex(string_t const& fromMethod, string_t const& error_type, Ts const&... message)
 			{
 				throw make_exception("XMLParser::", fromMethod, (fromMethod.ends_with("()") ? "" : "()"), ' ', error_type, ":  ", message...);

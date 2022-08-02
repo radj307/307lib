@@ -111,10 +111,12 @@ namespace var {
 	 * @tparam T	A type to attempt to insert into the stream.
 	 */
 	template<typename T, class StreamType = std::stringstream>
-	concept Streamable = requires(T obj)
+	concept streamable = requires(T obj)
 	{
 		std::declval<StreamType&>() << obj;
 	};
+	//template<typename T, typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
+	//concept streamable = streamable<T, std::basic_stringstream<TChar, TCharTraits, TAlloc>>;
 	/**
 	 * @concept			callable
 	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.

@@ -156,7 +156,7 @@ namespace xlog {
 		 * @param ...message	The message to write to the log.
 		 * @returns				bool
 		 */
-		template<var::Streamable... VT>
+		template<var::streamable... VT>
 		bool self_log(const VT&... message) const
 		{
 			return _log_self && currentLevelContains(level::DEBUG) && log(level::DEBUG, message...);
@@ -282,7 +282,7 @@ namespace xlog {
 		 * @param oxl	(implicit) xLogs instance.
 		 * @param m		(implicit) Message type.
 		 */
-		template<var::Streamable T>
+		template<var::streamable T>
 		friend xLogs<StreamType>& operator<<(xLogs<StreamType>& oxl, const T& m)
 		{
 			if constexpr (std::same_as<T, level::LogLevel>)

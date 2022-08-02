@@ -253,7 +253,7 @@ namespace matrix {
 		 * @param v2d:	Matrix instance.
 		 * @returns		std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const matrix<T, SizeX, SizeY>& v2d) requires var::Streamable<T, std::ostream>
+		friend std::ostream& operator<<(std::ostream& os, const matrix<T, SizeX, SizeY>& v2d) requires var::streamable<T, std::ostream>
 		{
 			for (size_t y{ 0ull }; y < SizeY; ++y) {
 				for (size_t x{ 0ull }; x < SizeX; ++x) {
@@ -560,7 +560,7 @@ namespace matrix {
 		 * @param v2d:	Matrix instance.
 		 * @returns		std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const matrix<T, SizeX, SizeY>& v2d) requires var::Streamable<T, std::ostream>
+		friend std::ostream& operator<<(std::ostream& os, const matrix<T, SizeX, SizeY>& v2d) requires var::streamable<T, std::ostream>
 		{
 			for (size_t y{ 0ull }; y < SizeY; ++y) {
 				for (size_t x{ 0ull }; x < SizeX; ++x) {

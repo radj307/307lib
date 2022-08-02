@@ -20,7 +20,7 @@ namespace ANSI {
 	using wsequence = basic_sequence<wchar_t>;
 
 	// char
-	template<var::valid_char TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::Streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	template<var::valid_char TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 	CONSTEXPR basic_sequence<TChar, TCharTraits, TAlloc> make_sequence(Ts&&... segments) noexcept
 	{
 		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;

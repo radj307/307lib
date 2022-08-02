@@ -79,7 +79,7 @@ namespace color {
 		WINCONSTEXPR setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) } {}
 		WINCONSTEXPR setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) } {}
 
-		//template<var::Streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+		//template<var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 		//WINCONSTEXPR setcolor_seq(Ts&&... sequence_components) : _seq{ ANSI::make_sequence<TChar, TCharTraits, TAlloc>(std::forward<Ts>(sequence_components)...) } {}
 
 		/**
@@ -207,6 +207,8 @@ namespace color {
 }
 
 namespace term {
+	using color::Layer;
+	using color::FormatFlag;
 	using color::setcolor_seq;
 	using color::setcolor;
 	using color::wsetcolor;

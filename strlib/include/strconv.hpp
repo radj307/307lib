@@ -753,7 +753,7 @@ namespace str {
 	 * @param ...additionalFmt:	Additional stream formatting functions to apply after the given fmtflags.
 	 * @returns					const std::string
 	 */
-	template<var::Streamable<std::stringstream> T, var::Streamable<std::stringstream>... Ts>
+	template<var::streamable<std::stringstream> T, var::streamable<std::stringstream>... Ts>
 	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::ios_base::fmtflags& fmt, Ts&&... additionalFmt)
 	{
 		std::stringstream ss;

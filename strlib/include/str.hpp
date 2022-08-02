@@ -27,7 +27,7 @@ namespace str {
 	 * @param ...separators	- Any number of separators. These are inserted in order between every element. This can be used to apply formatting, insert spaces, or anything else. Note that separators are only inserted BETWEEN elements, and will never be trailing!
 	 * @returns std::string
 	 */
-	template<template<class, class> class ContainerT, class ElemT, var::Streamable... VT> requires std::convertible_to<ElemT, std::string>
+	template<template<class, class> class ContainerT, class ElemT, var::streamable... VT> requires std::convertible_to<ElemT, std::string>
 	[[nodiscard]] constexpr static const std::string join(const ContainerT<ElemT, std::allocator<ElemT>>& container, VT... separators)
 	{
 		std::stringstream buffer;

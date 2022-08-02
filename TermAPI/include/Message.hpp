@@ -15,12 +15,12 @@ namespace term {
 	 */
 	struct Message {
 		const char* const body;
-		const indent::size_type margin_sz;
+		const size_t margin_sz;
 		/// @brief	When true, uses regular expressions to only count displayable characters when calculating message lengths.
 		const bool use_regex_indent{ true };
 
 		CONSTEXPR Message() : body{ nullptr }, margin_sz{ 10ull } {}
-		explicit CONSTEXPR Message(const char* body, const indent::size_type& marginSize = 10ull) : body{ body }, margin_sz{ marginSize } {}
+		explicit CONSTEXPR Message(const char* body, const size_t& marginSize = 10ull) : body{ body }, margin_sz{ marginSize } {}
 
 		explicit operator const char* const() const { return body; }
 		operator std::string() const { return{ body }; }
@@ -40,7 +40,7 @@ namespace term {
 		}
 	};
 
-	CONSTEXPR const indent::size_type MessageMarginSize{ 10 };
+	CONSTEXPR const size_t MessageMarginSize{ 10 };
 
 	CONSTEXPR const Message debug{ "[DEBUG]", MessageMarginSize };
 	CONSTEXPR const Message info{ "[INFO]", MessageMarginSize };
@@ -52,14 +52,14 @@ namespace term {
 	CONSTEXPR const Message fatal{ "[FATAL]", MessageMarginSize };
 	CONSTEXPR const Message placeholder{ "", MessageMarginSize };
 
-	CONSTEXPR const Message get_debug(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", indentation) : Message("[DEBUG]", indentation)); }
-	CONSTEXPR const Message get_info(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", indentation) : Message("[INFO]", indentation)); }
-	CONSTEXPR const Message get_log(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;7m[LOG]\033[38;5;7m", indentation) : Message("[LOG]", indentation)); }
-	CONSTEXPR const Message get_msg(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;2m[MSG]\033[38;5;7m", indentation) : Message("[MSG]", indentation)); }
-	CONSTEXPR const Message get_warn(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", indentation) : Message("[WARN]", indentation)); }
-	CONSTEXPR const Message get_error(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", indentation) : Message("[ERROR]", indentation)); }
-	CONSTEXPR const Message get_crit(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", indentation) : Message("[CRIT]", indentation)); }
-	CONSTEXPR const Message get_fatal(const bool& allow_color = true, const indent::size_type& indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[FATAL]\033[38;5;7m", indentation) : Message("[FATAL]", indentation)); }
+	CONSTEXPR const Message get_debug(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;99m[DEBUG]\033[38;5;7m", indentation) : Message("[DEBUG]", indentation)); }
+	CONSTEXPR const Message get_info(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;246m[INFO]\033[38;5;7m", indentation) : Message("[INFO]", indentation)); }
+	CONSTEXPR const Message get_log(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;7m[LOG]\033[38;5;7m", indentation) : Message("[LOG]", indentation)); }
+	CONSTEXPR const Message get_msg(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;2m[MSG]\033[38;5;7m", indentation) : Message("[MSG]", indentation)); }
+	CONSTEXPR const Message get_warn(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;208m[WARN]\033[38;5;7m", indentation) : Message("[WARN]", indentation)); }
+	CONSTEXPR const Message get_error(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;1m[ERROR]\033[38;5;7m", indentation) : Message("[ERROR]", indentation)); }
+	CONSTEXPR const Message get_crit(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[CRIT]\033[38;5;7m", indentation) : Message("[CRIT]", indentation)); }
+	CONSTEXPR const Message get_fatal(const bool& allow_color = true, const size_t indentation = 10) noexcept { return(allow_color ? Message("\033[38;5;88m[FATAL]\033[38;5;7m", indentation) : Message("[FATAL]", indentation)); }
 
 	CONSTEXPR const Message get_placeholder(const bool& allow_color = true) noexcept { return placeholder; }
 }

@@ -12,51 +12,57 @@
 #include <iomanip>
 
 namespace format {
-	/**
-	 * @struct		indentor
-	 * @brief		Handles calculating variable indentation for strings or output streams.
-	 * @tparam T	The integral type to use for the size values.
-	 */
-	template<std::integral T = std::streamsize, typename CharT = char>
-	struct indentor {
-		/// @brief	The size type used.
-		using size_type = T;
-		/// @brief	The character width to use.
-		using char_type = CharT;
-		/// @brief	The string type associated with the given char_type.
-		using string_type = std::basic_string<char_type, std::char_traits<char_type>, std::allocator<char_type>>;
+	template<typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
+	struct basic_indentor {
+		using string_t = std::basic_string<TChar, TCharTraits, TAlloc>;
+
 	protected:
-		/// @brief	The calculated size of the indentation, in characters.
-		const size_type sz;
+		size_t _size;
+		TChar _fill_char;
+
 	public:
 		/**
 		 * @brief		Constructor
 		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
 		 * @param used	The number of characters that are already printed and should be accounted for before printing the indentation.
 		 */
-		CONSTEXPR indentor(size_type const& size, size_type const& used = static_cast<size_type>(0)) : sz{ (size < used) ? static_cast<size_type>(0) : (size - used) } {}
+		CONSTEXPR basic_indentor(const size_t size, const size_t used = 0ull) : _size{ (size <= used) ? 0ull : (size - used) }, _fill_char{ ' ' } {}
+		/**
+		 * @brief		Constructor
+		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
+		 * @param used	The number of characters that are already printed and should be accounted for before printing the indentation.
+		 * @param fill	The character to use for indentation. (Default: ' ')
+		 */
+		CONSTEXPR basic_indentor(const size_t size, const size_t used, const char fill) : _size{ (size <= used) ? 0ull : (size - used) }, _fill_char{ fill } {}
 
 		/**
 		 * @brief		Retrieve the size in characters of the indentation.
-		 * @returns		size_type
+		 * @returns		The size of the indentation space.
 		 */
-		CONSTEXPR size_type size() const { return sz; }
+		CONSTEXPR size_t size() const
+		{
+			return this->_size;
+		}
+
 		/**
 		 * @brief		Retrieve the indentation as a string of given characters, or spaces by default.
-		 * @param c		The character to use for the indentation string.
-		 * @returns		string_type
+		 * @returns		string_t
 		 */
-		WINCONSTEXPR string_type toString(const char& c = ' ') const { return string_type(c, sz); }
+		CONSTEXPR string_t toString() const
+		{
+			return string_t(this->_size, this->_fill_char);
+		}
+
 		/**
 		 * @brief		Retrieve the indentation as a string.
-		 * @returns		string_type
+		 * @returns		string_t
 		 */
-		WINCONSTEXPR operator string_type() const { return toString(); }
+		CONSTEXPR operator string_t() const { return toString(); }
 		/**
 		 * @brief		Retrieve the size of the indentation in characters.
-		 * @returns		size_type
+		 * @returns		size_t
 		 */
-		CONSTEXPR operator size_type() const { return sz; }
+		CONSTEXPR operator size_t() const { return _size; }
 
 		/**
 		 * @brief		Output stream insertion operator.
@@ -66,15 +72,17 @@ namespace format {
 		 * @param ind	Indentor instance.
 		 * @returns		std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const indentor<T, CharT>& ind)
+		friend std::ostream& operator<<(std::ostream& os, const basic_indentor<TChar, TCharTraits, TAlloc>& ind)
 		{
-			if (ind.sz == static_cast<T>(0))
+			if (ind._size == 0ull)
 				return os;
-			return os << std::setw(static_cast<std::streamsize>(ind.sz - static_cast<T>(1))) << ' ';
+			return os << std::setfill(ind._fill_char) << std::setw(static_cast<std::streamsize>(ind._size)) << ind._fill_char;
 		}
 	};
+	using indentor = basic_indentor<char, std::char_traits<char>, std::allocator<char>>;
+	using windentor = basic_indentor<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>;
 	/// @brief	Variable on-demand indentation for output streams. 
-	using indent = indentor<std::streamsize>;
+	using indent = indentor;
 }
 
 #ifndef INDENTOR_HPP_NOGLOBAL
