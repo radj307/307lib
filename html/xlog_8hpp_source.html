@@ -247,7 +247,7 @@ $(document).ready(function(){initNavTree('xlog_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">         * @param ...message    The message to write to the log.</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">         * @returns             bool</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">template</span>&lt;var::Streamable... VT&gt;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">template</span>&lt;var::streamable... VT&gt;</div>
 <div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classxlog_1_1x_log.html#a19d9482c1c94a18c3255c53a25c1838c">  160</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classxlog_1_1x_log.html#a19d9482c1c94a18c3255c53a25c1838c">self_log</a>(<span class="keyword">const</span> VT&amp;... message) <span class="keyword">const</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">return</span> _log_self &amp;&amp; currentLevelContains(level::DEBUG) &amp;&amp; log(level::DEBUG, message...);</div>
@@ -373,7 +373,7 @@ $(document).ready(function(){initNavTree('xlog_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">         * @param oxl   (implicit) xLogs instance.</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">         * @param m     (implicit) Message type.</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">template</span>&lt;var::Streamable T&gt;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">template</span>&lt;var::streamable T&gt;</div>
 <div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classxlog_1_1x_logs.html#ae9da36b15d64d757ef52ba8476599b58">  286</a></span>&#160;        <span class="keyword">friend</span> <a class="code" href="classxlog_1_1x_logs.html">xLogs</a>&lt;StreamType&gt;&amp; <a class="code" href="classxlog_1_1x_logs.html#ae9da36b15d64d757ef52ba8476599b58">operator</a>&lt;&lt;(<a class="code" href="classxlog_1_1x_logs.html">xLogs</a>&lt;StreamType&gt;&amp; oxl, <span class="keyword">const</span> T&amp; m)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::same_as&lt;T, level::LogLevel&gt;)</div>

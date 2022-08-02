@@ -325,7 +325,7 @@ $(document).ready(function(){initNavTree('strmath_8hpp_source.html',''); initRes
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">     *\n                 Ex: std::uppercase, std::nouppercase, etc.</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">     * @returns         std::string</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::stringstream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::stringstream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="namespacestr.html#a8059cb6dea85450291ef813056734a8e">  238</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a8059cb6dea85450291ef813056734a8e">decimalToHex</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keyword">const</span>&amp; dec, Ts&amp;&amp;... fmt) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> str::stringify(</div>
@@ -342,7 +342,7 @@ $(document).ready(function(){initNavTree('strmath_8hpp_source.html',''); initRes
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">     *\n                 Ex: std::uppercase, std::nouppercase, etc.</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">     * @returns         std::string</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::stringstream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::stringstream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="namespacestr.html#a64641d820fe5e4997387b75be9df3b97">  255</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a64641d820fe5e4997387b75be9df3b97">decimalToHex</a>(std::string <span class="keyword">const</span>&amp; dec, Ts&amp;&amp;... fmt) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> str::stringify(</div>

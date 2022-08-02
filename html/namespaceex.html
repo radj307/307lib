@@ -115,19 +115,19 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>except</b> = <a clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; ReturnT, std::string &gt; WINCONSTEXPR ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a56b249bc94ccdfbc96b5b12de3f27db2">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a56b249bc94ccdfbc96b5b12de3f27db2">More...</a><br /></td></tr>
 <tr class="separator:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cccd7262d57daafb09710d952aac1ea"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5cccd7262d57daafb09710d952aac1ea"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a5cccd7262d57daafb09710d952aac1ea"><td class="memTemplItemLeft" align="right" valign="top">requires var::more_than&lt; 1ull, Ts... &gt; &amp;&amp;std::constructible_from&lt; ReturnT, Ts... &gt; WINCONSTEXPR ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a5cccd7262d57daafb09710d952aac1ea">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a5cccd7262d57daafb09710d952aac1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a5cccd7262d57daafb09710d952aac1ea">More...</a><br /></td></tr>
 <tr class="separator:a5cccd7262d57daafb09710d952aac1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplParams" colspan="2">template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">make_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a79f6b6ae99ab47418dbb1805add3c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">More...</a><br /></td></tr>
 <tr class="separator:a79f6b6ae99ab47418dbb1805add3c489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::wostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::wostream &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a1e4f831cd8340b9b40499542c762b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message, using wide-characters. <br  />
  This function only accepts types using wchar_t instead of char, however all characters are <br  />
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">requires std::constructible_from&lt;ReturnT, std::string&gt; WINCONSTEXPR ReturnT ex::make_custom_exception </td>
@@ -186,7 +186,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">requires var::more_than&lt;1ull, Ts...&gt;&amp;&amp; std::constructible_from&lt;ReturnT, Ts...&gt; WINCONSTEXPR ReturnT ex::make_custom_exception </td>
@@ -234,7 +234,7 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::Streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exception </td>
@@ -276,7 +276,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::Streamable&lt; std::wostream &gt;... Ts&gt; </div>
+template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::wostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exeption </td>

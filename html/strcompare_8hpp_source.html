@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('strcompare_8hpp_source.html',''); init
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">     * @param ...prefix     Any number of types that can be represented with a string to check for.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * @returns             bool</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::ostream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::ostream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">   23</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">startsWith</a>(<span class="keyword">const</span> std::string&amp; str, Ts&amp;&amp;... prefix)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Ts) == 0ull)</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('strcompare_8hpp_source.html',''); init
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @param ...suffixes   Any number of independent suffixes to check. Each variable is checked independently of the others.</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @returns             bool</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::ostream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::ostream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">   51</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">startsWithAny</a>(<span class="keyword">const</span> std::string&amp; str, Ts&amp;&amp;... prefixes)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> var::variadic_or(startsWith(str, prefixes)...);</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('strcompare_8hpp_source.html',''); init
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     *\n                    The resolved strings are checked in reverse sequential order.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @returns             bool</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::ostream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::ostream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">   64</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">endsWith</a>(<span class="keyword">const</span> std::string&amp; str, Ts&amp;&amp;... suffix)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Ts) == 0ull)</div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('strcompare_8hpp_source.html',''); init
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     * @param ...suffixes   Any number of independent suffixes to check. Each variable is checked independently of the others.</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * @returns             bool</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span>&lt;var::Streamable&lt;std::ostream&gt;... Ts&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span>&lt;var::streamable&lt;std::ostream&gt;... Ts&gt;</div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">   92</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960">WINCONSTEXPR</a> <span class="keywordtype">bool</span> <a class="code" href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">endsWithAny</a>(<span class="keyword">const</span> std::string&amp; str, Ts&amp;&amp;... suffixes)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> var::variadic_or(endsWith(str, suffixes)...);</div>

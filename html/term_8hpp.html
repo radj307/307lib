@@ -243,7 +243,7 @@ sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:a185fbb6b77e3409d8b30173eec7d6837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up by inserting lines from the bottom. <br /></td></tr>
 <tr class="separator:a185fbb6b77e3409d8b30173eec7d6837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76bdc9ff790f0d73d345967253b0653"><td class="memTemplParams" colspan="2"><a id="ab76bdc9ff790f0d73d345967253b0653"></a>
-template&lt;var::Streamable... Ts&gt; </td></tr>
+template&lt;var::streamable... Ts&gt; </td></tr>
 <tr class="memitem:ab76bdc9ff790f0d73d345967253b0653"><td class="memTemplItemLeft" align="right" valign="top">static sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><b>term::SelectGraphicsRendition</b> (const Ts &amp;... modes)</td></tr>
 <tr class="separator:ab76bdc9ff790f0d73d345967253b0653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60142cc1e234128d0f2030966aedf363"><td class="memTemplParams" colspan="2">template&lt;std::integral Tx, std::integral Ty&gt; </td></tr>
@@ -254,16 +254,16 @@ template&lt;var::Streamable... Ts&gt; </td></tr>
 <tr class="memitem:abddd8198c4829b6f4bda21fb52936936"><td class="memTemplItemLeft" align="right" valign="top">sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abddd8198c4829b6f4bda21fb52936936">term::setCursorPosition</a> (const Tx &amp;x_column, const Ty &amp;y_row)</td></tr>
 <tr class="memdesc:abddd8198c4829b6f4bda21fb52936936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#abddd8198c4829b6f4bda21fb52936936">More...</a><br /></td></tr>
 <tr class="separator:abddd8198c4829b6f4bda21fb52936936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e7986d5b8a75d272a78e2e19b6e7eb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:a76e7986d5b8a75d272a78e2e19b6e7eb"><td class="memTemplItemLeft" align="right" valign="top">requires static var::Streamable&lt; T, std::stringstream &gt; sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a76e7986d5b8a75d272a78e2e19b6e7eb">term::setScreenBufferSize</a> (const std::pair&lt; T, T &gt; colRowPair)</td></tr>
-<tr class="memdesc:a76e7986d5b8a75d272a78e2e19b6e7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#a76e7986d5b8a75d272a78e2e19b6e7eb">More...</a><br /></td></tr>
-<tr class="separator:a76e7986d5b8a75d272a78e2e19b6e7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8d264a70e520f768d39ba13ae1f4cc4"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:ac8d264a70e520f768d39ba13ae1f4cc4"><td class="memTemplItemLeft" align="right" valign="top">requires static var::Streamable&lt; T, std::stringstream &gt; sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac8d264a70e520f768d39ba13ae1f4cc4">term::setScreenBufferSize</a> (const T &amp;columnCount, const T &amp;lineCount)</td></tr>
-<tr class="memdesc:ac8d264a70e520f768d39ba13ae1f4cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#ac8d264a70e520f768d39ba13ae1f4cc4">More...</a><br /></td></tr>
-<tr class="separator:ac8d264a70e520f768d39ba13ae1f4cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e442c14372ea984cee723baaaf247eb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:a8e442c14372ea984cee723baaaf247eb"><td class="memTemplItemLeft" align="right" valign="top">requires static var::streamable&lt; T, std::stringstream &gt; sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a8e442c14372ea984cee723baaaf247eb">term::setScreenBufferSize</a> (const std::pair&lt; T, T &gt; colRowPair)</td></tr>
+<tr class="memdesc:a8e442c14372ea984cee723baaaf247eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#a8e442c14372ea984cee723baaaf247eb">More...</a><br /></td></tr>
+<tr class="separator:a8e442c14372ea984cee723baaaf247eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a283c231b03067979f678dbd23104c0eb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:a283c231b03067979f678dbd23104c0eb"><td class="memTemplItemLeft" align="right" valign="top">requires static var::streamable&lt; T, std::stringstream &gt; sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a283c231b03067979f678dbd23104c0eb">term::setScreenBufferSize</a> (const T &amp;columnCount, const T &amp;lineCount)</td></tr>
+<tr class="memdesc:a283c231b03067979f678dbd23104c0eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#a283c231b03067979f678dbd23104c0eb">More...</a><br /></td></tr>
+<tr class="separator:a283c231b03067979f678dbd23104c0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb3b7f7464f5ecd7a251cd1becd28d7"><td class="memTemplParams" colspan="2"><a id="a1eb3b7f7464f5ecd7a251cd1becd28d7"></a>
-template&lt;var::Streamable... Ts&gt; </td></tr>
+template&lt;var::streamable... Ts&gt; </td></tr>
 <tr class="memitem:a1eb3b7f7464f5ecd7a251cd1becd28d7"><td class="memTemplItemLeft" align="right" valign="top">static sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><b>term::SGR</b> (const Ts &amp;... modes)</td></tr>
 <tr class="separator:a1eb3b7f7464f5ecd7a251cd1becd28d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -404,7 +404,7 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>Receive a query response from STDIN, and return it as a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00045">45</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00046">46</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

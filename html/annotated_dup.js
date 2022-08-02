@@ -25,7 +25,7 @@ var annotated_dup =
       ] ]
     ] ],
     [ "format", null, [
-      [ "indentor", "structformat_1_1indentor.html", "structformat_1_1indentor" ]
+      [ "basic_indentor", "structformat_1_1basic__indentor.html", "structformat_1_1basic__indentor" ]
     ] ],
     [ "json", "namespacejson.html", "namespacejson" ],
     [ "matrix", null, [

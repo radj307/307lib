@@ -14,6 +14,7 @@ var hierarchy =
     [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
+    [ "format::basic_indentor< TChar, TCharTraits, TAlloc >", "structformat_1_1basic__indentor.html", null ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
     [ "std::basic_string< Char >", null, [
       [ "opt3::basic_vstring< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structopt3_1_1basic__vstring.html", null ],
@@ -47,7 +48,6 @@ var hierarchy =
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
     ] ],
-    [ "format::indentor< T, CharT >", "structformat_1_1indentor.html", null ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "file::ini::INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", [
       [ "file::ini::INI", "structfile_1_1ini_1_1_i_n_i.html", null ]
