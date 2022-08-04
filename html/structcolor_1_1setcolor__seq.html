@@ -117,36 +117,50 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>seq_t</b> = std::bas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59c4409b86bef15f44bcebd693ce2217"><td class="memItemLeft" align="right" valign="top"><a id="a59c4409b86bef15f44bcebd693ce2217"></a>
-WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const seq_t &amp;sequence={})</td></tr>
-<tr class="separator:a59c4409b86bef15f44bcebd693ce2217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeba5935e87f4add996953d07110c8808"><td class="memItemLeft" align="right" valign="top"><a id="aeba5935e87f4add996953d07110c8808"></a>
-WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const short &amp;r, const short &amp;g, const short &amp;b, const Layer &amp;layer=Layer::F)</td></tr>
-<tr class="separator:aeba5935e87f4add996953d07110c8808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30150dd5086bb2a1bbeb8c2815fa253e"><td class="memItemLeft" align="right" valign="top"><a id="a30150dd5086bb2a1bbeb8c2815fa253e"></a>
-WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const short &amp;sgr_color, const Layer &amp;layer=Layer::F)</td></tr>
-<tr class="separator:a30150dd5086bb2a1bbeb8c2815fa253e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55cf2c124991f5b27e7a2c20d28321d2"><td class="memItemLeft" align="right" valign="top"><a id="a55cf2c124991f5b27e7a2c20d28321d2"></a>
-WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const std::tuple&lt; short, short, short &gt; &amp;rgb_color, const Layer &amp;layer=Layer::F)</td></tr>
-<tr class="separator:a55cf2c124991f5b27e7a2c20d28321d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5d82b5f454a037bb799098540ee8c5c"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#ab5d82b5f454a037bb799098540ee8c5c">as_sequence</a> () const</td></tr>
-<tr class="memdesc:ab5d82b5f454a037bb799098540ee8c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the sequence associated with this setcolor instance, and optionally include format sequences.  <a href="structcolor_1_1setcolor__seq.html#ab5d82b5f454a037bb799098540ee8c5c">More...</a><br /></td></tr>
-<tr class="separator:ab5d82b5f454a037bb799098540ee8c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7758ba06ef162cedbd4552d7b9180047"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a7758ba06ef162cedbd4552d7b9180047">operator seq_t</a> () const</td></tr>
-<tr class="memdesc:a7758ba06ef162cedbd4552d7b9180047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls as_sequence(true)  <a href="structcolor_1_1setcolor__seq.html#a7758ba06ef162cedbd4552d7b9180047">More...</a><br /></td></tr>
-<tr class="separator:a7758ba06ef162cedbd4552d7b9180047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a542bfa3f8f12e1c5a77857b346bcb0a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a542bfa3f8f12e1c5a77857b346bcb0a0">operator!=</a> (auto &amp;&amp;o) const</td></tr>
-<tr class="memdesc:a542bfa3f8f12e1c5a77857b346bcb0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality comparison operator between two setcolor instances. This forwards the argument to operator==, and inverts the result.  <a href="structcolor_1_1setcolor__seq.html#a542bfa3f8f12e1c5a77857b346bcb0a0">More...</a><br /></td></tr>
-<tr class="separator:a542bfa3f8f12e1c5a77857b346bcb0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae69a58c89c7761ff2cd106011016b214"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#ae69a58c89c7761ff2cd106011016b214">operator+</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
-<tr class="memdesc:ae69a58c89c7761ff2cd106011016b214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine the escape sequences of two setcolor instances, as well as their format flags.  <a href="structcolor_1_1setcolor__seq.html#ae69a58c89c7761ff2cd106011016b214">More...</a><br /></td></tr>
-<tr class="separator:ae69a58c89c7761ff2cd106011016b214"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf11502d478afbb7aea5362bf8c9008a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#acf11502d478afbb7aea5362bf8c9008a">operator+=</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
-<tr class="memdesc:acf11502d478afbb7aea5362bf8c9008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append another setcolor instance's sequence onto this one.  <a href="structcolor_1_1setcolor__seq.html#acf11502d478afbb7aea5362bf8c9008a">More...</a><br /></td></tr>
-<tr class="separator:acf11502d478afbb7aea5362bf8c9008a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a766ceee2d6551db973becf38d27dd152"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a766ceee2d6551db973becf38d27dd152">operator==</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
-<tr class="memdesc:a766ceee2d6551db973becf38d27dd152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality comparison operator between two setcolor instances.  <a href="structcolor_1_1setcolor__seq.html#a766ceee2d6551db973becf38d27dd152">More...</a><br /></td></tr>
-<tr class="separator:a766ceee2d6551db973becf38d27dd152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce81169effcb5d6273eea83eb47d7fe"><td class="memItemLeft" align="right" valign="top"><a id="a4ce81169effcb5d6273eea83eb47d7fe"></a>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const seq_t &amp;sequence={})</td></tr>
+<tr class="separator:a4ce81169effcb5d6273eea83eb47d7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a83a54ce662e779b4b93f65a07844e"><td class="memItemLeft" align="right" valign="top"><a id="a15a83a54ce662e779b4b93f65a07844e"></a>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const short &amp;r, const short &amp;g, const short &amp;b, const Layer &amp;layer=Layer::F)</td></tr>
+<tr class="separator:a15a83a54ce662e779b4b93f65a07844e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7088fac233bee2fc2a88661c0ef1f963"><td class="memItemLeft" align="right" valign="top"><a id="a7088fac233bee2fc2a88661c0ef1f963"></a>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const short &amp;sgr_color, const Layer &amp;layer=Layer::F)</td></tr>
+<tr class="separator:a7088fac233bee2fc2a88661c0ef1f963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe18282e026bac4549877cd7ec9e2ee"><td class="memItemLeft" align="right" valign="top"><a id="aefe18282e026bac4549877cd7ec9e2ee"></a>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>setcolor_seq</b> (const std::tuple&lt; short, short, short &gt; &amp;rgb_color, const Layer &amp;layer=Layer::F)</td></tr>
+<tr class="separator:aefe18282e026bac4549877cd7ec9e2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51d921fd059f6a5bd4f22ed08d8643d"><td class="memItemLeft" align="right" valign="top">CONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#ae51d921fd059f6a5bd4f22ed08d8643d">as_sequence</a> () const</td></tr>
+<tr class="memdesc:ae51d921fd059f6a5bd4f22ed08d8643d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the sequence associated with this setcolor instance, and optionally include format sequences.  <a href="structcolor_1_1setcolor__seq.html#ae51d921fd059f6a5bd4f22ed08d8643d">More...</a><br /></td></tr>
+<tr class="separator:ae51d921fd059f6a5bd4f22ed08d8643d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0531086efed5c9ecd871bcfabd18e4a2"><td class="memItemLeft" align="right" valign="top">CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a0531086efed5c9ecd871bcfabd18e4a2">operator seq_t</a> () const</td></tr>
+<tr class="memdesc:a0531086efed5c9ecd871bcfabd18e4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls as_sequence(true)  <a href="structcolor_1_1setcolor__seq.html#a0531086efed5c9ecd871bcfabd18e4a2">More...</a><br /></td></tr>
+<tr class="separator:a0531086efed5c9ecd871bcfabd18e4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559b7b47fe5faebf46ebba31926a44c5"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a559b7b47fe5faebf46ebba31926a44c5">operator!=</a> (auto &amp;&amp;o) const</td></tr>
+<tr class="memdesc:a559b7b47fe5faebf46ebba31926a44c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality comparison operator between two setcolor instances. This forwards the argument to operator==, and inverts the result.  <a href="structcolor_1_1setcolor__seq.html#a559b7b47fe5faebf46ebba31926a44c5">More...</a><br /></td></tr>
+<tr class="separator:a559b7b47fe5faebf46ebba31926a44c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf95158cfef5b74e1cf70040733e594"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a8cf95158cfef5b74e1cf70040733e594">operator+</a> (const ANSI::basic_sequence&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
+<tr class="memdesc:a8cf95158cfef5b74e1cf70040733e594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> instance where another sequence is appended onto this instance's sequence.  <a href="structcolor_1_1setcolor__seq.html#a8cf95158cfef5b74e1cf70040733e594">More...</a><br /></td></tr>
+<tr class="separator:a8cf95158cfef5b74e1cf70040733e594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468185dfcf498b1f467bd12d6f98af9b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a468185dfcf498b1f467bd12d6f98af9b">operator+</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
+<tr class="memdesc:a468185dfcf498b1f467bd12d6f98af9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine the escape sequences of two setcolor instances, as well as their format flags.  <a href="structcolor_1_1setcolor__seq.html#a468185dfcf498b1f467bd12d6f98af9b">More...</a><br /></td></tr>
+<tr class="separator:a468185dfcf498b1f467bd12d6f98af9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3752292bab012d73ee47dd88811b27d1"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt; T&gt; </td></tr>
+<tr class="memitem:a3752292bab012d73ee47dd88811b27d1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a3752292bab012d73ee47dd88811b27d1">operator+</a> (const T &amp;o) const</td></tr>
+<tr class="memdesc:a3752292bab012d73ee47dd88811b27d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> instance with the given variable appended to this instance's sequence.  <a href="structcolor_1_1setcolor__seq.html#a3752292bab012d73ee47dd88811b27d1">More...</a><br /></td></tr>
+<tr class="separator:a3752292bab012d73ee47dd88811b27d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7265bbfa839e445d6066899976afdfa"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#af7265bbfa839e445d6066899976afdfa">operator+=</a> (const ANSI::basic_sequence&lt; TChar, TCharTraits, TAlloc &gt; &amp;o)</td></tr>
+<tr class="memdesc:af7265bbfa839e445d6066899976afdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append another sequence onto this one.  <a href="structcolor_1_1setcolor__seq.html#af7265bbfa839e445d6066899976afdfa">More...</a><br /></td></tr>
+<tr class="separator:af7265bbfa839e445d6066899976afdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4e2405a66010ae636d86ef1f16822c"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a0b4e2405a66010ae636d86ef1f16822c">operator+=</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o)</td></tr>
+<tr class="memdesc:a0b4e2405a66010ae636d86ef1f16822c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append another setcolor instance's sequence onto this one.  <a href="structcolor_1_1setcolor__seq.html#a0b4e2405a66010ae636d86ef1f16822c">More...</a><br /></td></tr>
+<tr class="separator:a0b4e2405a66010ae636d86ef1f16822c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ff9cd1cb73dfadab17ab7be0288205"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt; T&gt; </td></tr>
+<tr class="memitem:a08ff9cd1cb73dfadab17ab7be0288205"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a08ff9cd1cb73dfadab17ab7be0288205">operator+=</a> (const T &amp;o)</td></tr>
+<tr class="memdesc:a08ff9cd1cb73dfadab17ab7be0288205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append any type with a valid operator&lt;&lt; to the sequence.  <a href="structcolor_1_1setcolor__seq.html#a08ff9cd1cb73dfadab17ab7be0288205">More...</a><br /></td></tr>
+<tr class="separator:a08ff9cd1cb73dfadab17ab7be0288205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f83955c59c49ed6d08fd3ddef4dda6f"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a2f83955c59c49ed6d08fd3ddef4dda6f">operator==</a> (const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;o) const</td></tr>
+<tr class="memdesc:a2f83955c59c49ed6d08fd3ddef4dda6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality comparison operator between two setcolor instances.  <a href="structcolor_1_1setcolor__seq.html#a2f83955c59c49ed6d08fd3ddef4dda6f">More...</a><br /></td></tr>
+<tr class="separator:a2f83955c59c49ed6d08fd3ddef4dda6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -212,16 +226,16 @@ static const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a92399551f02243b31903e1f5bdfe79d8"><td class="memItemLeft" align="right" valign="top">virtual WINCONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a92399551f02243b31903e1f5bdfe79d8">makeColorSequence</a> (const Layer &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const</td></tr>
-<tr class="memdesc:a92399551f02243b31903e1f5bdfe79d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.  <a href="structcolor_1_1setcolor__seq.html#a92399551f02243b31903e1f5bdfe79d8">More...</a><br /></td></tr>
-<tr class="separator:a92399551f02243b31903e1f5bdfe79d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36b956bd9843637686d86112cc4b1efa"><td class="memItemLeft" align="right" valign="top">virtual WINCONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a36b956bd9843637686d86112cc4b1efa">makeColorSequence</a> (const Layer &amp;lyr, const short &amp;SGR) const</td></tr>
-<tr class="memdesc:a36b956bd9843637686d86112cc4b1efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence from an SGR (color) code. <br  />
- If using Windows or if SETCOLOR_NO_RGB is defined, this function is automatically always used instead.  <a href="structcolor_1_1setcolor__seq.html#a36b956bd9843637686d86112cc4b1efa">More...</a><br /></td></tr>
-<tr class="separator:a36b956bd9843637686d86112cc4b1efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd58f08fb20ec84d539a05f55a0041bb"><td class="memItemLeft" align="right" valign="top">virtual WINCONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#afd58f08fb20ec84d539a05f55a0041bb">makeColorSequence</a> (const Layer &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const</td></tr>
-<tr class="memdesc:afd58f08fb20ec84d539a05f55a0041bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence using a given <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> tuple. This function calls the overloaded <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> function.  <a href="structcolor_1_1setcolor__seq.html#afd58f08fb20ec84d539a05f55a0041bb">More...</a><br /></td></tr>
-<tr class="separator:afd58f08fb20ec84d539a05f55a0041bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae479004323c7c8b0b8df98af02647ef8"><td class="memItemLeft" align="right" valign="top">virtual CONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#ae479004323c7c8b0b8df98af02647ef8">makeColorSequence</a> (const Layer &amp;lyr, const short &amp;r, const short &amp;g, const short &amp;b) const</td></tr>
+<tr class="memdesc:ae479004323c7c8b0b8df98af02647ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color escape sequence, or if using Windows / SETCOLOR_NO_RGB is defined, it is first converted to SGR sequences.  <a href="structcolor_1_1setcolor__seq.html#ae479004323c7c8b0b8df98af02647ef8">More...</a><br /></td></tr>
+<tr class="separator:ae479004323c7c8b0b8df98af02647ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f8890c428ff757aca11aa03e0b199b"><td class="memItemLeft" align="right" valign="top">virtual CONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a16f8890c428ff757aca11aa03e0b199b">makeColorSequence</a> (const Layer &amp;lyr, const short &amp;SGR) const</td></tr>
+<tr class="memdesc:a16f8890c428ff757aca11aa03e0b199b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence from an SGR (color) code. <br  />
+ If using Windows or if SETCOLOR_NO_RGB is defined, this function is automatically always used instead.  <a href="structcolor_1_1setcolor__seq.html#a16f8890c428ff757aca11aa03e0b199b">More...</a><br /></td></tr>
+<tr class="separator:a16f8890c428ff757aca11aa03e0b199b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5370c34aa21bdf266456779af78586e5"><td class="memItemLeft" align="right" valign="top">virtual CONSTEXPR seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html#a5370c34aa21bdf266456779af78586e5">makeColorSequence</a> (const Layer &amp;lyr, const std::tuple&lt; short, short, short &gt; &amp;rgb_color) const</td></tr>
+<tr class="memdesc:a5370c34aa21bdf266456779af78586e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a color escape sequence using a given <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> tuple. This function calls the overloaded <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> function.  <a href="structcolor_1_1setcolor__seq.html#a5370c34aa21bdf266456779af78586e5">More...</a><br /></td></tr>
+<tr class="separator:a5370c34aa21bdf266456779af78586e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -250,8 +264,8 @@ struct color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00033">33</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab5d82b5f454a037bb799098540ee8c5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5d82b5f454a037bb799098540ee8c5c">&#9670;&nbsp;</a></span>as_sequence()</h2>
+<a id="ae51d921fd059f6a5bd4f22ed08d8643d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51d921fd059f6a5bd4f22ed08d8643d">&#9670;&nbsp;</a></span>as_sequence()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +276,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::as_sequence </td>
+          <td class="memname">CONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::as_sequence </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -282,8 +296,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="a92399551f02243b31903e1f5bdfe79d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92399551f02243b31903e1f5bdfe79d8">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[1/3]</span></h2>
+<a id="ae479004323c7c8b0b8df98af02647ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae479004323c7c8b0b8df98af02647ef8">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +308,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual WINCONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
+          <td class="memname">virtual CONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
           <td>(</td>
           <td class="paramtype">const Layer &amp;&#160;</td>
           <td class="paramname"><em>lyr</em>, </td>
@@ -346,8 +360,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="a36b956bd9843637686d86112cc4b1efa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36b956bd9843637686d86112cc4b1efa">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[2/3]</span></h2>
+<a id="a16f8890c428ff757aca11aa03e0b199b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f8890c428ff757aca11aa03e0b199b">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +372,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual WINCONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
+          <td class="memname">virtual CONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
           <td>(</td>
           <td class="paramtype">const Layer &amp;&#160;</td>
           <td class="paramname"><em>lyr</em>, </td>
@@ -397,8 +411,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="afd58f08fb20ec84d539a05f55a0041bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd58f08fb20ec84d539a05f55a0041bb">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[3/3]</span></h2>
+<a id="a5370c34aa21bdf266456779af78586e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5370c34aa21bdf266456779af78586e5">&#9670;&nbsp;</a></span>makeColorSequence() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -409,7 +423,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual WINCONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
+          <td class="memname">virtual CONSTEXPR seq_t <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::makeColorSequence </td>
           <td>(</td>
           <td class="paramtype">const Layer &amp;&#160;</td>
           <td class="paramname"><em>lyr</em>, </td>
@@ -447,8 +461,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="a7758ba06ef162cedbd4552d7b9180047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7758ba06ef162cedbd4552d7b9180047">&#9670;&nbsp;</a></span>operator seq_t()</h2>
+<a id="a0531086efed5c9ecd871bcfabd18e4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0531086efed5c9ecd871bcfabd18e4a2">&#9670;&nbsp;</a></span>operator seq_t()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,7 +473,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator seq_t </td>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator seq_t </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -479,8 +493,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="a542bfa3f8f12e1c5a77857b346bcb0a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a542bfa3f8f12e1c5a77857b346bcb0a0">&#9670;&nbsp;</a></span>operator!=()</h2>
+<a id="a559b7b47fe5faebf46ebba31926a44c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a559b7b47fe5faebf46ebba31926a44c5">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -491,7 +505,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator!= </td>
+          <td class="memname">CONSTEXPR bool <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator!= </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&amp;&#160;</td>
           <td class="paramname"><em>o</em></td><td>)</td>
@@ -518,8 +532,8 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="ae69a58c89c7761ff2cd106011016b214"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae69a58c89c7761ff2cd106011016b214">&#9670;&nbsp;</a></span>operator+()</h2>
+<a id="a8cf95158cfef5b74e1cf70040733e594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf95158cfef5b74e1cf70040733e594">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,7 +544,46 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+ </td>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const ANSI::basic_sequence&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a new <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> instance where another sequence is appended onto this instance's sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Another sequence instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>setcolor_seq&lt;TChar, TCharTraits, TAlloc&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00137">137</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a468185dfcf498b1f467bd12d6f98af9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468185dfcf498b1f467bd12d6f98af9b">&#9670;&nbsp;</a></span>operator+() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td>
           <td class="paramname"><em>o</em></td><td>)</td>
@@ -557,8 +610,49 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="acf11502d478afbb7aea5362bf8c9008a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf11502d478afbb7aea5362bf8c9008a">&#9670;&nbsp;</a></span>operator+=()</h2>
+<a id="a3752292bab012d73ee47dd88811b27d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3752292bab012d73ee47dd88811b27d1">&#9670;&nbsp;</a></span>operator+() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a new <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> instance with the given variable appended to this instance's sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Any object with a valid operator&lt;&lt; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>setcolor_seq&lt;TChar, TCharTraits, TAlloc&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00157">157</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af7265bbfa839e445d6066899976afdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7265bbfa839e445d6066899976afdfa">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -569,11 +663,50 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+= </td>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const ANSI::basic_sequence&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Append another sequence onto this one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Another sequence instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>setcolor_seq&lt;TChar, TCharTraits, TAlloc&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00146">146</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b4e2405a66010ae636d86ef1f16822c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4e2405a66010ae636d86ef1f16822c">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td>
           <td class="paramname"><em>o</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -596,8 +729,49 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 
 </div>
 </div>
-<a id="a766ceee2d6551db973becf38d27dd152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a766ceee2d6551db973becf38d27dd152">&#9670;&nbsp;</a></span>operator==()</h2>
+<a id="a08ff9cd1cb73dfadab17ab7be0288205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ff9cd1cb73dfadab17ab7be0288205">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt; T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Append any type with a valid operator&lt;&lt; to the sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Any object with a valid operator&lt;&lt; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>setcolor_seq&lt;TChar, TCharTraits, TAlloc&gt;&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00169">169</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f83955c59c49ed6d08fd3ddef4dda6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f83955c59c49ed6d08fd3ddef4dda6f">&#9670;&nbsp;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -608,7 +782,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator== </td>
+          <td class="memname">CONSTEXPR bool <a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt;::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structcolor_1_1setcolor__seq.html">setcolor_seq</a>&lt; TChar, TCharTraits, TAlloc &gt; &amp;&#160;</td>
           <td class="paramname"><em>o</em></td><td>)</td>
@@ -682,7 +856,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00138">138</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00182">182</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 
 </div>
 </div>
@@ -710,7 +884,7 @@ template&lt;var::valid_char TChar = char, typename TCharTraits  = std::char_trai
 <p>Declare static constant colors for the basic 8-bit color palette. </p>
 <p>Define static constant colors for the basic 8-bit color palette. </p>
 
-<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00144">144</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="setcolor_8hpp_source.html#l00188">188</a> of file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
 
 </div>
 </div>

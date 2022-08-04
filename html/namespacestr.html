@@ -459,20 +459,11 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">strip_trailing</a> (const std::string &amp;str, const DelimT &amp;... delims)</td></tr>
 <tr class="memdesc:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a string.  <a href="namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c">More...</a><br /></td></tr>
 <tr class="separator:a45c1b11a2e282a4fc8d38548eaf45f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::stringstream &gt; T, var::streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt, Ts &amp;&amp;... additionalFmt)</td></tr>
-<tr class="memdesc:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from any valid streamable type to a string. <br  />
- This function is a wrapper around <a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions.  <a href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">More...</a><br /></td></tr>
-<tr class="separator:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplParams" colspan="2">template&lt;var::numeric T&gt; </td></tr>
-<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt=std::ios_base::fixed)</td></tr>
-<tr class="memdesc:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert numeric types to string.  <a href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">More...</a><br /></td></tr>
-<tr class="separator:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
-<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool &amp;force_decimal=false)</td></tr>
-<tr class="memdesc:aa560642b42f72dd03b56c5b60f918d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
- This is a legacy support function.  <a href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">More...</a><br /></td></tr>
-<tr class="separator:aa560642b42f72dd03b56c5b60f918d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
+<tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
+<tr class="memdesc:a6105bd49aaec3b49512cc92722cf4339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
+ This is a legacy support function.  <a href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">More...</a><br /></td></tr>
+<tr class="separator:a6105bd49aaec3b49512cc92722cf4339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">toAlphaNumeric</a> (const T &amp;n, const bool &amp;upper=true) noexcept(false)</td></tr>
 <tr class="memdesc:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert any number between 0(0) to 36(Z) to its alphanumeric representation.  <a href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">More...</a><br /></td></tr>
@@ -992,7 +983,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00090">90</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00088">88</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1918,7 +1909,7 @@ template&lt;std::integral RT, template&lt; class, class &gt; class Cont&gt; </di
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00075">75</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00073">73</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
 
 </div>
 </div>
@@ -2072,7 +2063,7 @@ template&lt;class Ch , class Tr , class A , var::same_or_convertible&lt; Ch &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>basic_istream&lt;Ch, Tr&gt;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00109">109</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00107">107</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
 
 </div>
 </div>
@@ -3088,7 +3079,7 @@ template&lt;class T &gt; </div>
  true - The given position is NOT equal to std::string::npos <br  />
  false - The given position is equal to std::string::npos, and is invalid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00061">61</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strutility_8hpp_source.html#l00059">59</a> of file <a class="el" href="strutility_8hpp_source.html">strutility.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -4891,123 +4882,8 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 
 </div>
 </div>
-<a id="a0d7b7e4aa9a634e2c97fda1bacf22e9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7b7e4aa9a634e2c97fda1bacf22e9b">&#9670;&nbsp;</a></span>to_string() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::streamable&lt; std::stringstream &gt; T, var::streamable&lt; std::stringstream &gt;... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const CONSTEXPR std::string str::to_string </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::ios_base::fmtflags &amp;&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>additionalFmt</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert from any valid streamable type to a string. <br  />
- This function is a wrapper around <a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>A streamable input type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The input value. </td></tr>
-    <tr><td class="paramname">fmt</td><td>Format flags to apply to the stream. </td></tr>
-    <tr><td class="paramname">...additionalFmt</td><td>Additional stream formatting functions to apply after the given fmtflags. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>const std::string </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00757">757</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abf3d6c1b751e80fb651cf8f2fa2f7c32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf3d6c1b751e80fb651cf8f2fa2f7c32">&#9670;&nbsp;</a></span>to_string() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;var::numeric T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const CONSTEXPR std::string str::to_string </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::ios_base::fmtflags &amp;&#160;</td>
-          <td class="paramname"><em>fmt</em> = <code>std::ios_base::fixed</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert numeric types to string. </p>
-<p>Convert a boolean to a string.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The input value. </td></tr>
-    <tr><td class="paramname">fmt</td><td>Format flags to apply to the stream. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>const std::string </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00773">773</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa560642b42f72dd03b56c5b60f918d43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa560642b42f72dd03b56c5b60f918d43">&#9670;&nbsp;</a></span>to_string() <span class="overload">[3/3]</span></h2>
+<a id="a6105bd49aaec3b49512cc92722cf4339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6105bd49aaec3b49512cc92722cf4339">&#9670;&nbsp;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5032,7 +4908,7 @@ template&lt;std::floating_point T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>force_decimal</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -5060,7 +4936,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00787">787</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00756">756</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"structxml_1_1_x_m_l_element.html#a972a50585e27f791a34b2e50d53906de":[9,0,16,3,12],
+"structxml_1_1_x_m_l_element.html#a9ee0ccdcf6db8ae2bab2b3399f6d0b11":[9,0,16,3,10],
+"structxml_1_1_x_m_l_element.html#aa5023a429c05599ef7ce5e9f7a064a76":[9,0,16,3,4],
 "structxml_1_1_x_m_l_element.html#ab04952c871ca50fd980517a9bf701d93":[9,0,16,3,0],
 "structxml_1_1_x_m_l_element.html#acacc41fbf5be633c7cb63a1c0d642cf3":[9,0,16,3,1],
 "structxml_1_1_x_m_l_element.html#aee6ee6c3db932ed07da57e12be898c6e":[9,0,16,3,6],

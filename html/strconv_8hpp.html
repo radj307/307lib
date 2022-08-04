@@ -107,12 +107,14 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strconv.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strconv_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -245,20 +247,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplItemLeft" align="right" valign="top">requires std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0799a6e0dcea7f2552d98ecff33a4b91">str::legacy::string_to_bool</a> (std::string str)</td></tr>
 <tr class="memdesc:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="strconv_8hpp.html#a0799a6e0dcea7f2552d98ecff33a4b91">More...</a><br /></td></tr>
 <tr class="separator:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::stringstream &gt; T, var::streamable&lt; std::stringstream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">str::to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt, Ts &amp;&amp;... additionalFmt)</td></tr>
-<tr class="memdesc:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from any valid streamable type to a string. <br  />
- This function is a wrapper around <a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2" title="Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the ...">stringify()</a>, with a focus on (numeric) =&gt; (string) conversions.  <a href="namespacestr.html#a0d7b7e4aa9a634e2c97fda1bacf22e9b">More...</a><br /></td></tr>
-<tr class="separator:a0d7b7e4aa9a634e2c97fda1bacf22e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplParams" colspan="2">template&lt;var::numeric T&gt; </td></tr>
-<tr class="memitem:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">str::to_string</a> (const T &amp;value, const std::ios_base::fmtflags &amp;fmt=std::ios_base::fixed)</td></tr>
-<tr class="memdesc:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert numeric types to string.  <a href="namespacestr.html#abf3d6c1b751e80fb651cf8f2fa2f7c32">More...</a><br /></td></tr>
-<tr class="separator:abf3d6c1b751e80fb651cf8f2fa2f7c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
-<tr class="memitem:aa560642b42f72dd03b56c5b60f918d43"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">str::to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool &amp;force_decimal=false)</td></tr>
-<tr class="memdesc:aa560642b42f72dd03b56c5b60f918d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
- This is a legacy support function.  <a href="namespacestr.html#aa560642b42f72dd03b56c5b60f918d43">More...</a><br /></td></tr>
-<tr class="separator:aa560642b42f72dd03b56c5b60f918d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
+<tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">str::to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
+<tr class="memdesc:a6105bd49aaec3b49512cc92722cf4339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
+ This is a legacy support function.  <a href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">More...</a><br /></td></tr>
+<tr class="separator:a6105bd49aaec3b49512cc92722cf4339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">str::tolower</a> (const char &amp;c) noexcept</td></tr>
 <tr class="memdesc:ae2bfcfb51a1c131387fd6d08629aba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">More...</a><br /></td></tr>
 <tr class="separator:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
