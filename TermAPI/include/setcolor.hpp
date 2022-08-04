@@ -41,7 +41,7 @@ namespace color {
 		 * @param SGR	An SGR color code value.
 		 * @returns		seq_t
 		 */
-		virtual WINCONSTEXPR seq_t makeColorSequence(const Layer& lyr, const short& SGR) const
+		virtual CONSTEXPR seq_t makeColorSequence(const Layer& lyr, const short& SGR) const
 		{
 			return ANSI::make_sequence<TChar, TCharTraits>(ANSI::CSI, lyr, ";5;", SGR, ANSI::END);
 		}
@@ -53,7 +53,7 @@ namespace color {
 		 * @param b		Blue color axis
 		 * @returns		seq_t
 		 */
-		virtual WINCONSTEXPR seq_t makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
+		virtual CONSTEXPR seq_t makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
 		{
 			using namespace ANSI;
 #			ifdef SETCOLOR_NO_RGB
@@ -68,16 +68,16 @@ namespace color {
 		 * @param rgb_color	An RGB color code as a tuple. Values can range from 0 to 255.
 		 * @returns			seq_t
 		 */
-		virtual WINCONSTEXPR seq_t makeColorSequence(const Layer& lyr, const std::tuple<short, short, short>& rgb_color) const
+		virtual CONSTEXPR seq_t makeColorSequence(const Layer& lyr, const std::tuple<short, short, short>& rgb_color) const
 		{
 			return makeColorSequence(lyr, std::get<0>(rgb_color), std::get<1>(rgb_color), std::get<2>(rgb_color));
 		}
 
 	public:
-		WINCONSTEXPR setcolor_seq(const seq_t& sequence = {}) : _seq{ sequence } {}
-		WINCONSTEXPR setcolor_seq(const short& sgr_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, sgr_color) } {}
-		WINCONSTEXPR setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) } {}
-		WINCONSTEXPR setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) } {}
+		CONSTEXPR setcolor_seq(const seq_t& sequence = {}) : _seq{ sequence } {}
+		CONSTEXPR setcolor_seq(const short& sgr_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, sgr_color) } {}
+		CONSTEXPR setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) } {}
+		CONSTEXPR setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) } {}
 
 		//template<var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 		//WINCONSTEXPR setcolor_seq(Ts&&... sequence_components) : _seq{ ANSI::make_sequence<TChar, TCharTraits, TAlloc>(std::forward<Ts>(sequence_components)...) } {}
@@ -86,7 +86,7 @@ namespace color {
 		 * @brief			Retrieve the sequence associated with this setcolor instance, and optionally include format sequences.
 		 * @returns			seq_t
 		 */
-		WINCONSTEXPR seq_t as_sequence() const
+		CONSTEXPR seq_t as_sequence() const
 		{
 			return _seq;
 		}
@@ -95,27 +95,27 @@ namespace color {
 		 * @brief	Calls as_sequence(true)
 		 * @returns	seq_t
 		 */
-		WINCONSTEXPR operator seq_t() const { return as_sequence(); }
+		CONSTEXPR operator seq_t() const { return as_sequence(); }
 
 		/**
 		 * @brief	Equality comparison operator between two setcolor instances.
 		 * @param o	Another setcolor instance. Both the sequence & format flags are checked.
 		 * @returns	bool
 		 */
-		bool operator==(const setcolor_seq<TChar, TCharTraits, TAlloc>& o) const { return _seq == o._seq; }
+		CONSTEXPR bool operator==(const setcolor_seq<TChar, TCharTraits, TAlloc>& o) const { return _seq == o._seq; }
 		/**
 		 * @brief	Inequality comparison operator between two setcolor instances. This forwards the argument to operator==, and inverts the result.
 		 * @param o	Perfectly-forwarded type that has a valid equality comparison overload.
 		 * @returns	bool
 		 */
-		bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
+		CONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
 
 		/**
 		 * @brief	Combine the escape sequences of two setcolor instances, as well as their format flags.
 		 * @param o	Another setcolor instance.
 		 * @returns	setcolor_seq<TChar, TCharTraits, TAlloc>
 		 */
-		setcolor_seq<TChar, TCharTraits, TAlloc> operator+(const setcolor_seq<TChar, TCharTraits, TAlloc>& o) const
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc> operator+(const setcolor_seq<TChar, TCharTraits, TAlloc>& o) const
 		{
 			return setcolor_seq<TChar, TCharTraits, TAlloc>{ _seq + o._seq };
 		}
@@ -124,9 +124,53 @@ namespace color {
 		 * @param o	Another setcolor instance.
 		 * @returns	setcolor_seq<TChar, TCharTraits, TAlloc>&
 		 */
-		setcolor_seq<TChar, TCharTraits, TAlloc>& operator+=(const setcolor_seq<TChar, TCharTraits, TAlloc>& o) const
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc>& operator+=(const setcolor_seq<TChar, TCharTraits, TAlloc>& o)
 		{
 			_seq += o._seq;
+			return *this;
+		}
+		/**
+		 * @brief	Returns a new setcolor_seq instance where another sequence is appended onto this instance's sequence.
+		 * @param o	Another sequence instance.
+		 * @returns	setcolor_seq<TChar, TCharTraits, TAlloc>&
+		 */
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc> operator+(const ANSI::basic_sequence<TChar, TCharTraits, TAlloc>& o) const
+		{
+			return setcolor_seq<TChar, TCharTraits, TAlloc>{ _seq + o };
+		}
+		/**
+		 * @brief	Append another sequence onto this one.
+		 * @param o	Another sequence instance.
+		 * @returns	setcolor_seq<TChar, TCharTraits, TAlloc>&
+		 */
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc>& operator+=(const ANSI::basic_sequence<TChar, TCharTraits, TAlloc>& o)
+		{
+			_seq += o;
+			return *this;
+		}
+		/**
+		 * @brief		Returns a new setcolor_seq instance with the given variable appended to this instance's sequence.
+		 * @param o		Any object with a valid operator<<
+		 * @returns		setcolor_seq<TChar, TCharTraits, TAlloc>
+		 */
+		template<var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>> T>
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc> operator+(const T& o) const
+		{
+			std::basic_stringstream<TChar, TCharTraits, TAlloc> ss;
+			ss << o;
+			return setcolor_seq<TChar, TCharTraits, TAlloc>{ _seq + ss.str() };
+		}
+		/**
+		 * @brief		Append any type with a valid operator<< to the sequence.
+		 * @param o		Any object with a valid operator<<
+		 * @returns		setcolor_seq<TChar, TCharTraits, TAlloc>&
+		 */
+		template<var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>> T>
+		CONSTEXPR setcolor_seq<TChar, TCharTraits, TAlloc>& operator+=(const T& o)
+		{
+			std::basic_stringstream<TChar, TCharTraits, TAlloc> ss;
+			ss << o;
+			_seq += ss.str();
 			return *this;
 		}
 		/**
