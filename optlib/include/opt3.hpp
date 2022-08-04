@@ -135,102 +135,119 @@ namespace opt3 {
 			return this->name() == name;
 		}
 
+		template<typename TVisitor>
+		WINCONSTEXPR auto visit(const TVisitor& visitor) const noexcept
+		{
+			return std::visit(visitor, static_cast<base>(*this));
+		}
+
 		/**
 		 * @brief	Gets the name of this argument.
 		 * @returns	The name of this argument, excluding any prefixes that were stripped during parsing.
 		 */
-		WINCONSTEXPR std::string name() const noexcept
-		{
-			return std::visit([](auto&& value) -> std::string {
-				using T = std::decay_t<decltype(value)>;
-
-				if constexpr (std::same_as<T, Parameter>)
-					return value.name();
-				else if constexpr (std::same_as<T, Flag>)
-					return value.name();
-				else if constexpr (std::same_as<T, Option>)
-					return value.name();
-				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
-							  }, *this);
-		}
+		std::string name() const noexcept;
 		/**
 		 * @brief		Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types.
 		 * @returns		The captured value of this argument if it has one; otherwise std::nullopt.
 		 */
-		CONSTEXPR std::optional<std::string> getValue() const noexcept
-		{
-			return std::visit([](auto&& value) -> std::optional<std::string> {
-				using T = std::decay_t<decltype(value)>;
-
-				if constexpr (std::same_as<T, Parameter>)
-					return std::nullopt;
-				else if constexpr (std::same_as<T, Flag>)
-					return value.getValue();
-				else if constexpr (std::same_as<T, Option>)
-					return value.getValue();
-				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
-							  }, *this);
-		}
+		std::optional<std::string> getValue() const noexcept;
 		/**
 		 * @brief		Checks if this argument has a captured value.
 		 * @returns		true when this argument has a captured value; otherwise false.
 		 */
-		CONSTEXPR bool has_value() const noexcept
-		{
-			return std::visit([](auto&& value) -> bool {
-				using T = std::decay_t<decltype(value)>;
-
-				if constexpr (std::same_as<T, Parameter>)
-					return value.has_value();
-				else if constexpr (std::same_as<T, Flag>)
-					return value.has_value();
-				else if constexpr (std::same_as<T, Option>)
-					return value.has_value();
-				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
-							  }, *this);
-		}
+		bool has_value() const noexcept;
 		/**
 		 * @brief				Gets the capture value of this argument if it exists; otherwise returns the given string instead.
 		 * @param defaultValue	The default string value to return when this argument doesn't have a capture value.
 		 * @returns				std::string
 		 */
-		WINCONSTEXPR std::string value_or(std::string const& defaultValue) const noexcept
-		{
-			return std::visit([&defaultValue](auto&& value) -> std::string {
-				using T = std::decay_t<decltype(value)>;
-
-				if constexpr (std::same_as<T, Parameter>)
-					return defaultValue;
-				else if constexpr (std::same_as<T, Flag>)
-					return value.value_or(defaultValue);
-				else if constexpr (std::same_as<T, Option>)
-					return value.value_or(defaultValue);
-				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
-							  }, *this);
-		}
+		std::string value_or(std::string const&) const noexcept;
 		/**
 		 * @brief				Gets the capture value of this argument.
 		 * @returns				The capture value of this argument.
 		 * @throws
 		 */
-		WINCONSTEXPR std::string value() const noexcept(false)
-		{
-			return std::visit([](auto&& value) -> std::string {
-				using T = std::decay_t<decltype(value)>;
-
-				if constexpr (std::same_as<T, Parameter>)
-					throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
-				else if constexpr (std::same_as<T, Flag>)
-					return value.value();
-				else if constexpr (std::same_as<T, Option>)
-					return value.value();
-				else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
-							  }, *this);
-		}
+		std::string value() const noexcept(false);
 
 		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
 		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
 	};
+	std::string variantarg::name() const noexcept
+	{
+		return this->visit([](auto&& value) -> std::string {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, Parameter>)
+				return value.name();
+			else if constexpr (std::same_as<T, Flag>)
+				return value.name();
+			else if constexpr (std::same_as<T, Option>)
+				return value.name();
+			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+						   });
+	}
+	std::optional<std::string> variantarg::getValue() const noexcept
+	{
+		return this->visit([](auto&& value) -> std::optional<std::string> {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, Parameter>)
+				return std::nullopt;
+			else if constexpr (std::same_as<T, Flag>)
+				return value.getValue();
+			else if constexpr (std::same_as<T, Option>)
+				return value.getValue();
+			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+						   });
+	}
+	bool variantarg::has_value() const noexcept
+	{
+		return this->visit([](auto&& value) -> bool {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, Parameter>)
+				return value.has_value();
+			else if constexpr (std::same_as<T, Flag>)
+				return value.has_value();
+			else if constexpr (std::same_as<T, Option>)
+				return value.has_value();
+			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+						   });
+	}
+	std::string variantarg::value_or(std::string const& defaultValue) const noexcept
+	{
+		return this->visit([&defaultValue](auto&& value) -> std::string {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, Parameter>)
+				return defaultValue;
+			else if constexpr (std::same_as<T, Flag>)
+				return value.value_or(defaultValue);
+			else if constexpr (std::same_as<T, Option>)
+				return value.value_or(defaultValue);
+			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+						   });
+	}
+	std::string variantarg::value() const noexcept(false)
+	{
+		return this->visit([](auto&& value) -> std::string {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, Parameter>)
+				throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
+			else if constexpr (std::same_as<T, Flag>)
+				return value.value();
+			else if constexpr (std::same_as<T, Option>)
+				return value.value();
+			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+						   });
+	}
+
+
+
+
+
+
 
 	/**
 	 * @brief				Instantiates a variantarg of the specified type, with the given values.
@@ -290,7 +307,7 @@ namespace opt3 {
 		 * @param end		(Exclusive) An iterator pointing to the element AFTER the last element in the subvec.
 		 * @returns			A new arg_container instance containing the specified segment.
 		 */
-		CONSTEXPR arg_container subvec(const std::vector<variantarg>::const_iterator& begin, const std::vector<variantarg>::const_iterator& end) const
+		WINCONSTEXPR arg_container subvec(const std::vector<variantarg>::const_iterator& begin, const std::vector<variantarg>::const_iterator& end) const
 		{
 			return arg_container{ begin, end };
 		}
@@ -300,7 +317,7 @@ namespace opt3 {
 		 * @param count		The total number of elements to include in the subvec. (Must be greater than 0; Default: 1)
 		 * @returns			A new arg_container instance containing the specified segment.
 		 */
-		CONSTEXPR arg_container subvec(const size_t& off, const size_t& count = 1ull) const
+		WINCONSTEXPR arg_container subvec(const size_t& off, const size_t& count = 1ull) const
 		{
 			if (count == 0ull)
 				throw make_exception("subvec() failed:  Cannot create a subvec with a total of 0 elements!");
@@ -362,7 +379,7 @@ namespace opt3 {
 		 * @returns			An iterator to the first matching element, or the ending iterator if no matches were found.
 		 */
 		template<valid_arg... TFilterTypes, std::predicate<variantarg> TPredicate>
-		WINCONSTEXPR std::vector<variantarg>::const_iterator rfind_if(const TPredicate& pred) const
+		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind_if(const TPredicate& pred) const
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
@@ -370,7 +387,7 @@ namespace opt3 {
 					return it;
 				}
 			}
-			return this->end();
+			return this->rend();
 		}
 		/**
 		 * @brief			Finds the first element for which any of the given predicates return true.
@@ -378,13 +395,13 @@ namespace opt3 {
 		 * @returns			An iterator to the first matching element, or the ending iterator if no matches were found.
 		 */
 		template<valid_arg... TFilterTypes, std::predicate<variantarg>... TPredicates>
-		WINCONSTEXPR std::vector<variantarg>::const_iterator rfind_if_any(const TPredicates&... preds) const
+		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind_if_any(const TPredicates&... preds) const
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it)
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && var::variadic_or(preds(*it)...))
 					return it;
-			return this->end();
+			return this->rend();
 		}
 		/**
 		 * @brief			Finds the first element for which all of the given predicates return true.
@@ -392,13 +409,13 @@ namespace opt3 {
 		 * @returns			An iterator to the first matching element, or the ending iterator if no matches were found.
 		 */
 		template<valid_arg... TFilterTypes, std::predicate<variantarg>... TPredicates>
-		WINCONSTEXPR std::vector<variantarg>::const_iterator rfind_if_all(const TPredicates&... preds) const
+		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind_if_all(const TPredicates&... preds) const
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it)
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && var::variadic_and(preds(*it)...))
 					return it;
-			return this->end();
+			return this->rend();
 		}
 	#pragma endregion rfind_if
 
@@ -479,7 +496,7 @@ namespace opt3 {
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
 				match_any_name{ sizeof...(Ts) == 0ull };
-			std::vector<std::vector<variantarg>::const_iterator> vec;
+			std::vector<std::vector<variantarg>::const_reverse_iterator> vec;
 			constexpr size_t block_size{ sizeof...(names) };
 			vec.reserve(block_size);
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
@@ -871,7 +888,7 @@ namespace opt3 {
 		/**
 		 * @brief	Default Constructor.
 		 */
-		CONSTEXPR ArgumentParsingRules() {}
+		WINCONSTEXPR ArgumentParsingRules() {}
 		/**
 		 * @brief										Constructor.
 		 * @param defaultCaptureStyle					Determines the default capture style used for arguments present in the capture list that do not specify a capture style themselves.
@@ -881,7 +898,7 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		CONSTEXPR ArgumentParsingRules(CaptureStyle const& defaultCaptureStyle, std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : defaultCaptureStyle{ defaultCaptureStyle }, assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
+		WINCONSTEXPR ArgumentParsingRules(CaptureStyle const& defaultCaptureStyle, std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : defaultCaptureStyle{ defaultCaptureStyle }, assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
 		/**
 		 * @brief										Constructor.
 		 * @param delimiters							List of characters that are considered valid argument prefixes.
@@ -890,7 +907,7 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		CONSTEXPR ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
+		WINCONSTEXPR ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
 		/**
 		 * @brief										Constructor.
 		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
@@ -898,10 +915,10 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		CONSTEXPR ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
+		WINCONSTEXPR ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
 
 	#pragma region Methods
-		[[nodiscard]] CONSTEXPR std::string getDelimitersAsString() const
+		[[nodiscard]] WINCONSTEXPR std::string getDelimitersAsString() const
 		{
 			std::string s;
 			s.reserve(delimiters.size());
@@ -915,11 +932,11 @@ namespace opt3 {
 		 * @param c		Input Character
 		 * @returns		bool
 		 */
-		[[nodiscard]] CONSTEXPR bool isDelimiter(const char& c) const
+		[[nodiscard]] WINCONSTEXPR bool isDelimiter(const char& c) const
 		{
 			return std::any_of(delimiters.begin(), delimiters.end(), [&c](auto&& delim) { return delim == c; });
 		}
-		[[nodiscard]] CONSTEXPR size_t countPrefix(const std::string& str, const size_t& max_delims) const
+		[[nodiscard]] WINCONSTEXPR size_t countPrefix(const std::string& str, const size_t& max_delims) const
 		{
 			size_t count{ 0ull };
 			for (size_t i{ 0ull }; i < str.size() && i < max_delims; ++i) {
@@ -929,7 +946,7 @@ namespace opt3 {
 			}
 			return count;
 		}
-		[[nodiscard]] CONSTEXPR std::pair<std::string, size_t> stripPrefix(const std::string& str, const size_t& max_delims = 2ull) const
+		[[nodiscard]] WINCONSTEXPR std::pair<std::string, size_t> stripPrefix(const std::string& str, const size_t& max_delims = 2ull) const
 		{
 			const auto count{ countPrefix(str, max_delims) };
 			return{ str.substr(count), count };
@@ -939,7 +956,7 @@ namespace opt3 {
 		 * @param str	Input String
 		 * @returns		bool
 		 */
-		[[nodiscard]] CONSTEXPR bool isNumber(std::string str) const
+		[[nodiscard]] WINCONSTEXPR bool isNumber(std::string str) const
 		{
 			str = str::trim(str::strip(str, ','));
 			if (str.empty())
@@ -1269,14 +1286,14 @@ namespace opt3 {
 		std::unordered_map<std::string, size_t> counts;
 
 		for (const auto& varg : cont) {
-			std::visit([&counts](auto&& value) {
+			varg.visit([&counts](auto&& value) {
 				using T = std::decay_t<decltype(value)>;
 
 				if constexpr (std::same_as<T, Option>)
 					++counts[value.name()];
 				else if constexpr (std::same_as<T, Flag>)
 					++counts[value.name()];
-					   }, varg);
+					   });
 		}
 
 		// validate argument count limits:
@@ -1324,7 +1341,7 @@ namespace opt3 {
 		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
 		template<var::any_same_or_convertible<capture_wrapper, vstring>... TCaptures>
-		CONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
+		WINCONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
 
 		/**
 		 * @brief					Parsing Constructor.
@@ -1334,13 +1351,13 @@ namespace opt3 {
 		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
 		template<var::any_same_or_convertible<capture_wrapper, vstring>... TCaptures>
-		CONSTEXPR arg_manager(const int argc, char** argv, const ArgumentParsingRules& ruleset, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ ruleset, capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
+		WINCONSTEXPR arg_manager(const int argc, char** argv, const ArgumentParsingRules& ruleset, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ ruleset, capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
 
 		/**
 		 * @brief			Value-Move Constructor.
 		 * @param args		rvalue reference of an arg_container instance to move to this instance.
 		 */
-		CONSTEXPR explicit arg_manager(arg_container&& args) : base(std::move(args)) {}
+		WINCONSTEXPR explicit arg_manager(arg_container&& args) : base(std::move(args)) {}
 
 		/**
 		 * @brief				Parse the given rvalue references into a new arg_manager instance.
