@@ -59,6 +59,6 @@ var searchData=
   ['strip_5fpreceeding_1310',['strip_preceeding',['../namespacestr.html#a4a7fab88e397cd6251944c3d01a7438d',1,'str']]],
   ['strip_5ftokens_1311',['strip_tokens',['../classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ad0d37086a77b21daf92faa7b598f058a',1,'token::base::gen2::BasicCoreParserBase']]],
   ['strip_5ftrailing_1312',['strip_trailing',['../namespacestr.html#a45c1b11a2e282a4fc8d38548eaf45f3c',1,'str']]],
-  ['subvec_1313',['subvec',['../structopt3_1_1arg__container.html#a5d532236a8cf0c42a9df14d210a08bd7',1,'opt3::arg_container::subvec(const std::vector&lt; variantarg &gt;::const_iterator &amp;begin, const std::vector&lt; variantarg &gt;::const_iterator &amp;end) const'],['../structopt3_1_1arg__container.html#a3d3fcd0943da923c54d31ae760e2ae58',1,'opt3::arg_container::subvec(const size_t &amp;off, const size_t &amp;count=1ull) const']]],
+  ['subvec_1313',['subvec',['../structopt3_1_1arg__container.html#a232584a84848a724671ece6dc00ad45d',1,'opt3::arg_container::subvec(const std::vector&lt; variantarg &gt;::const_iterator &amp;begin, const std::vector&lt; variantarg &gt;::const_iterator &amp;end) const'],['../structopt3_1_1arg__container.html#ae51484a7ebcc7537165c05b06e005063',1,'opt3::arg_container::subvec(const size_t &amp;off, const size_t &amp;count=1ull) const']]],
   ['swap_5fbuffer_1314',['swap_buffer',['../namespacexlog.html#ae0ca6a61194cc2173ac16a64a7349fd1',1,'xlog']]]
 ];

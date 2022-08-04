@@ -83,7 +83,7 @@ var searchData=
   ['strmanip_2ehpp_650',['strmanip.hpp',['../strmanip_8hpp.html',1,'']]],
   ['strmath_2ehpp_651',['strmath.hpp',['../strmath_8hpp.html',1,'']]],
   ['strutility_2ehpp_652',['strutility.hpp',['../strutility_8hpp.html',1,'']]],
-  ['subvec_653',['subvec',['../structopt3_1_1arg__container.html#a5d532236a8cf0c42a9df14d210a08bd7',1,'opt3::arg_container::subvec(const std::vector&lt; variantarg &gt;::const_iterator &amp;begin, const std::vector&lt; variantarg &gt;::const_iterator &amp;end) const'],['../structopt3_1_1arg__container.html#a3d3fcd0943da923c54d31ae760e2ae58',1,'opt3::arg_container::subvec(const size_t &amp;off, const size_t &amp;count=1ull) const']]],
+  ['subvec_653',['subvec',['../structopt3_1_1arg__container.html#a232584a84848a724671ece6dc00ad45d',1,'opt3::arg_container::subvec(const std::vector&lt; variantarg &gt;::const_iterator &amp;begin, const std::vector&lt; variantarg &gt;::const_iterator &amp;end) const'],['../structopt3_1_1arg__container.html#ae51484a7ebcc7537165c05b06e005063',1,'opt3::arg_container::subvec(const size_t &amp;off, const size_t &amp;count=1ull) const']]],
   ['swap_5fbuffer_654',['swap_buffer',['../namespacexlog.html#ae0ca6a61194cc2173ac16a64a7349fd1',1,'xlog']]],
   ['sysarch_2eh_655',['sysarch.h',['../sysarch_8h.html',1,'']]]
 ];

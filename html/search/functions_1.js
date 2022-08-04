@@ -1,7 +1,7 @@
 var searchData=
 [
   ['b_940',['b',['../structcolor_1_1_r_g_b.html#aedb5e2eaa96c21fd434c0f2376fd60cd',1,'color::RGB::b() const'],['../structcolor_1_1_r_g_b.html#a9b2438ad8bb0c7fe61b2bcc2fd9815ab',1,'color::RGB::b()'],['../structcolor_1_1_r_g_b_a.html#ae1ff43b5f34608d8adee52d7dce09fac',1,'color::RGBA::b() const'],['../structcolor_1_1_r_g_b_a.html#a5b5555b118553cbaa735ecec0224dc04',1,'color::RGBA::b()']]],
-  ['back_941',['back',['../structopt_1_1_arg_container.html#a32168e5cda375cba4d7dc71ea7e3cc05',1,'opt::ArgContainer']]],
+  ['back_941',['back',['../structopt_1_1_arg_container.html#a2749f259810f77b327bc1008c7b331e6',1,'opt::ArgContainer']]],
   ['bad_942',['bad',['../classtoken_1_1base_1_1_tokenizer_base.html#ac797564b27f30193941fd599cbbca154',1,'token::base::TokenizerBase']]],
   ['basic_5farg_5ft_943',['basic_arg_t',['../structopt3_1_1basic__arg__t.html#ab0c88bb60df1786ed649153670cf2cd7',1,'opt3::basic_arg_t::basic_arg_t() noexcept requires(std'],['../structopt3_1_1basic__arg__t.html#adb1259bc10258aa8e27b3b5e17b1ec3b',1,'opt3::basic_arg_t::basic_arg_t(T &amp;&amp;value) noexcept'],['../structopt3_1_1basic__arg__t.html#a0af6f5593c22ec8436d60619d8167c15',1,'opt3::basic_arg_t::basic_arg_t(T const &amp;value)']]],
   ['basic_5fcolors_944',['basic_colors',['../classterm_1_1basic__colors.html#a740b76409a1946438723025a496a12c1',1,'term::basic_colors']]],
