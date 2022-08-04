@@ -698,7 +698,8 @@ namespace file::ini {
 						break;
 					case TokenType::COMMENT:break;
 					default: // throw unexpected token exception
-						throwEx(ln, "Unexpected token type");
+						//throwEx(ln, "Unexpected token type");
+						break;
 					}
 				}
 				// throw missing EOF exception

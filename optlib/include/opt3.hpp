@@ -33,6 +33,11 @@ namespace opt3 {
 
 		CONSTEXPR bool is_single_char() const { return this->size() == 1ull; }
 		CONSTEXPR char get_single_char() const { return this->front(); }
+
+		CONSTEXPR operator std::basic_string<TChar, TCharTraits, TAlloc>() const noexcept { return *this; }
+	#ifdef _FILESYSTEM_
+		CONSTEXPR operator std::filesystem::path() const noexcept { return std::filesystem::path{ this->operator std::basic_string<TChar, TCharTraits, TAlloc>() }; }
+	#endif
 	};
 	/// @brief	Narrow-char width string type.
 	using vstring = basic_vstring<char, std::char_traits<char>, std::allocator<char>>;
@@ -764,6 +769,208 @@ namespace opt3 {
 		}
 	#pragma endregion rgetv
 
+	#pragma region castget
+		/**
+		 * @brief					Get the specified argument casted to the specified type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param name				The name of the target argument.
+		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<var::convertible_from<variantarg> TReturn, valid_arg... TFilterTypes>
+		CONSTEXPR std::optional<TReturn> castget(vstring const& name) const noexcept
+		{
+			if (const auto& v{ this->get<TFilterTypes...>(name) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param name				The name of the target argument.
+		 * @param converter			A conversion function that accepts type variantarg and returns type TReturn.
+		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes>
+		CONSTEXPR std::optional<TReturn> castget(const std::function<TReturn(variantarg)>& converter, vstring const& name) const noexcept
+		{
+			if (const auto& v{ this->get<TFilterTypes...>(name) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument casted to the specified type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param name				The name of the target argument.
+		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<var::convertible_from<variantarg> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castget_any(Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->get_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param converter			A conversion function that accepts type variantarg and returns type TReturn.
+		 * @param name				The name of the target argument.
+		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castget_any(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->get_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get all of the specified argument(s), casted to the specified type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					A vector containing all matching arguments.
+		 */
+		template<var::convertible_from<variantarg> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::vector<TReturn> castget_all(Ts&&... names) const noexcept
+		{
+			std::vector<TReturn> vec;
+			const auto& all{ this->get_all<TFilterTypes...>(std::forward<Ts>(names)...) };
+			vec.reserve(all.size());
+			for (const auto& it : all)
+				vec.emplace_back(static_cast<TReturn>(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief					Get all of the specified argument(s), casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param converter			A conversion function that accepts type variantarg and returns type TReturn.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					A vector containing all matching arguments.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::vector<TReturn> castget_all(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const noexcept
+		{
+			std::vector<TReturn> vec;
+			const auto& all{ this->get_all<TFilterTypes...>(std::forward<Ts>(names)...) };
+			vec.reserve(all.size());
+			for (const auto& it : all)
+				vec.emplace_back(converter(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+	#pragma endregion castget
+
+	#pragma region castgetv
+		/**
+		 * @brief					Get the specified argument's capture value, casted to the specified type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param name				The name of the target argument.
+		 * @returns					The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value.
+		 */
+		template<var::convertible_from<vstring> TReturn, valid_arg... TFilterTypes>
+		CONSTEXPR std::optional<TReturn> castgetv(vstring const& name) const noexcept
+		{
+			if (const auto& v{ this->getv<TFilterTypes...>(name) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument's capture value, casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param name				The name of the target argument.
+		 * @param converter			A conversion function that accepts type vstring and returns type TReturn.
+		 * @returns					The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes>
+		CONSTEXPR std::optional<TReturn> castgetv(const std::function<TReturn(vstring)>& converter, vstring const& name) const noexcept
+		{
+			if (const auto& v{ this->getv<TFilterTypes...>(name) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument's capture value, casted to the specified type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<var::convertible_from<vstring> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castgetv_any(Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument's capture value, casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param converter			A conversion function that accepts type vstring and returns type TReturn.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castgetv_any(const std::function<TReturn(vstring)>& converter, Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return converter(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get all of the specified arguments' capture value(s).
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					A vector containing the capture value(s) of all matches.
+		 */
+		template<var::convertible_from<vstring> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::vector<TReturn> castgetv_all(Ts&&... names) const noexcept
+		{
+			std::vector<TReturn> vec;
+			const auto& all{ this->getv_all<TFilterTypes...>(std::forward<Ts>(names)...) };
+			vec.reserve(all.size());
+			for (const auto& it : all)
+				vec.emplace_back(static_cast<TReturn>(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+		/**
+		 * @brief					Get the specified argument casted to the specified type.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param converter			A conversion function that accepts type vstring and returns type TReturn.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					A vector containing the capture value(s) of all matches.
+		 */
+		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::vector<TReturn> castgetv_all(const std::function<TReturn(vstring)>& converter, Ts&&... names) const noexcept
+		{
+			std::vector<TReturn> vec;
+			const auto& all{ this->getv_all<TFilterTypes...>(std::forward<Ts>(names)...) };
+			vec.reserve(all.size());
+			for (const auto& it : all)
+				vec.emplace_back(converter(it));
+			vec.shrink_to_fit();
+			return vec;
+		}
+	#pragma endregion castgetv
+
 	#pragma region check
 		/**
 		 * @brief			Checks if the specified argument was included or not.
@@ -796,6 +1003,24 @@ namespace opt3 {
 			std::vector<vstring> nameVec{ std::forward<Ts>(names)... };
 			return std::all_of(nameVec.begin(), nameVec.end(), [this](auto&& name) { return check(std::forward<decltype(name)>(name)); });
 		}
+		/**
+		 * @brief		Checks if the specified Option was included.
+		 * @param name	The name to check for.
+		 * @returns		true when the Option was included; otherwise false.
+		 */
+		CONSTEXPR bool checkopt(vstring const& name) { return this->check<Option>(name); }
+		/**
+		 * @brief		Checks if the specified Flag was included.
+		 * @param name	The name to check for.
+		 * @returns		true when the Flag was included; otherwise false.
+		 */
+		CONSTEXPR bool checkflag(vstring const& name) { return this->check<Flag>(name); }
+		/**
+		 * @brief		Checks if the specified Parameter was included.
+		 * @param name	The name to check for.
+		 * @returns		true when the Parameter was included; otherwise false.
+		 */
+		CONSTEXPR bool checkparam(vstring const& name) { return this->check<Parameter>(name); }
 	#pragma endregion check
 
 	#pragma region checkv
@@ -837,10 +1062,6 @@ namespace opt3 {
 			return true;
 		}
 	#pragma endregion checkv
-
-		CONSTEXPR bool checkopt(vstring const& name) { return this->check<Option>(name); }
-		CONSTEXPR bool checkflag(vstring const& name) { return this->check<Flag>(name); }
-		CONSTEXPR bool checkparam(vstring const& name) { return this->check<Parameter>(name); }
 	};
 
 
