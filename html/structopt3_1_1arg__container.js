@@ -1,6 +1,18 @@
 var structopt3_1_1arg__container =
 [
     [ "base", "structopt3_1_1arg__container.html#a78b6555615eab45018bf05c25a013bb4", null ],
+    [ "castget", "structopt3_1_1arg__container.html#af3a0fa8677ffe22586d1c5d86a2e3bba", null ],
+    [ "castget", "structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681", null ],
+    [ "castget_all", "structopt3_1_1arg__container.html#a8ef63215143c9ac52d7bf3355f17fc66", null ],
+    [ "castget_all", "structopt3_1_1arg__container.html#a3af99daa13c2a8cb2232b1fbac599f44", null ],
+    [ "castget_any", "structopt3_1_1arg__container.html#a717aff7de021bf29e9385ec489391f65", null ],
+    [ "castget_any", "structopt3_1_1arg__container.html#a0915de34b2e699f49690591e722e19f0", null ],
+    [ "castgetv", "structopt3_1_1arg__container.html#a2aebffd4eaf0b0b2fd8c772f20edcf7a", null ],
+    [ "castgetv", "structopt3_1_1arg__container.html#a86cd1efe7ab4ad85b2139993f6c94138", null ],
+    [ "castgetv_all", "structopt3_1_1arg__container.html#a5d72c472fa0ebd62196aec22fd055596", null ],
+    [ "castgetv_all", "structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647", null ],
+    [ "castgetv_any", "structopt3_1_1arg__container.html#aec044990e1fd96fa021f0d6052215891", null ],
+    [ "castgetv_any", "structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1", null ],
     [ "check", "structopt3_1_1arg__container.html#a2fdf2b3217a56b312ed4a9df98e7402a", null ],
     [ "check_all", "structopt3_1_1arg__container.html#afb0e6d2eaab6623e826442f64b9987cf", null ],
     [ "check_any", "structopt3_1_1arg__container.html#a880547d0462548b3459ab1e7047e7034", null ],

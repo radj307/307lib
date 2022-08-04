@@ -118,6 +118,60 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::vect
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#af3a0fa8677ffe22586d1c5d86a2e3bba">castget</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#af3a0fa8677ffe22586d1c5d86a2e3bba">More...</a><br /></td></tr>
+<tr class="separator:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">castget</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a8a4f3752c3c047d82b2499bacc0ca681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">More...</a><br /></td></tr>
+<tr class="separator:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8ef63215143c9ac52d7bf3355f17fc66">castget_all</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a8ef63215143c9ac52d7bf3355f17fc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified argument(s), casted to the specified type.  <a href="structopt3_1_1arg__container.html#a8ef63215143c9ac52d7bf3355f17fc66">More...</a><br /></td></tr>
+<tr class="separator:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a3af99daa13c2a8cb2232b1fbac599f44">castget_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a3af99daa13c2a8cb2232b1fbac599f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified argument(s), casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a3af99daa13c2a8cb2232b1fbac599f44">More...</a><br /></td></tr>
+<tr class="separator:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717aff7de021bf29e9385ec489391f65"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a717aff7de021bf29e9385ec489391f65"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a717aff7de021bf29e9385ec489391f65">castget_any</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a717aff7de021bf29e9385ec489391f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#a717aff7de021bf29e9385ec489391f65">More...</a><br /></td></tr>
+<tr class="separator:a717aff7de021bf29e9385ec489391f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0915de34b2e699f49690591e722e19f0"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a0915de34b2e699f49690591e722e19f0"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a0915de34b2e699f49690591e722e19f0">castget_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a0915de34b2e699f49690591e722e19f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a0915de34b2e699f49690591e722e19f0">More...</a><br /></td></tr>
+<tr class="separator:a0915de34b2e699f49690591e722e19f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a2aebffd4eaf0b0b2fd8c772f20edcf7a">castgetv</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#a2aebffd4eaf0b0b2fd8c772f20edcf7a">More...</a><br /></td></tr>
+<tr class="separator:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a86cd1efe7ab4ad85b2139993f6c94138">castgetv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a86cd1efe7ab4ad85b2139993f6c94138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#a86cd1efe7ab4ad85b2139993f6c94138">More...</a><br /></td></tr>
+<tr class="separator:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d72c472fa0ebd62196aec22fd055596"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5d72c472fa0ebd62196aec22fd055596"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a5d72c472fa0ebd62196aec22fd055596">castgetv_all</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a5d72c472fa0ebd62196aec22fd055596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#a5d72c472fa0ebd62196aec22fd055596">More...</a><br /></td></tr>
+<tr class="separator:a5d72c472fa0ebd62196aec22fd055596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e6071d9ce058dc80decae94c82f647"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a50e6071d9ce058dc80decae94c82f647"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647">castgetv_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a50e6071d9ce058dc80decae94c82f647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified arguments' capture value(s). <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647">More...</a><br /></td></tr>
+<tr class="separator:a50e6071d9ce058dc80decae94c82f647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec044990e1fd96fa021f0d6052215891"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:aec044990e1fd96fa021f0d6052215891"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#aec044990e1fd96fa021f0d6052215891">castgetv_any</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:aec044990e1fd96fa021f0d6052215891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#aec044990e1fd96fa021f0d6052215891">More...</a><br /></td></tr>
+<tr class="separator:aec044990e1fd96fa021f0d6052215891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1">castgetv_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:af9a95c6e60c73112229b851dfb7ee1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1">More...</a><br /></td></tr>
+<tr class="separator:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a2fdf2b3217a56b312ed4a9df98e7402a">check</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
 <tr class="memdesc:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a2fdf2b3217a56b312ed4a9df98e7402a">More...</a><br /></td></tr>
@@ -130,14 +184,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a880547d0462548b3459ab1e7047e7034"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a880547d0462548b3459ab1e7047e7034">check_any</a> (Ts &amp;&amp;... names) const</td></tr>
 <tr class="memdesc:a880547d0462548b3459ab1e7047e7034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a880547d0462548b3459ab1e7047e7034">More...</a><br /></td></tr>
 <tr class="separator:a880547d0462548b3459ab1e7047e7034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cdd7a964e981fb2be39005279613c5a"><td class="memItemLeft" align="right" valign="top"><a id="a8cdd7a964e981fb2be39005279613c5a"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkflag</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memitem:a8cdd7a964e981fb2be39005279613c5a"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8cdd7a964e981fb2be39005279613c5a">checkflag</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memdesc:a8cdd7a964e981fb2be39005279613c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Flag was included.  <a href="structopt3_1_1arg__container.html#a8cdd7a964e981fb2be39005279613c5a">More...</a><br /></td></tr>
 <tr class="separator:a8cdd7a964e981fb2be39005279613c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a9bd234f4108d5a160853579e573928"><td class="memItemLeft" align="right" valign="top"><a id="a7a9bd234f4108d5a160853579e573928"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkopt</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memitem:a7a9bd234f4108d5a160853579e573928"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7a9bd234f4108d5a160853579e573928">checkopt</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memdesc:a7a9bd234f4108d5a160853579e573928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Option was included.  <a href="structopt3_1_1arg__container.html#a7a9bd234f4108d5a160853579e573928">More...</a><br /></td></tr>
 <tr class="separator:a7a9bd234f4108d5a160853579e573928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="memItemLeft" align="right" valign="top"><a id="addabbfa1aeab2a9b65ae33f790d68a6b"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkparam</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memitem:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#addabbfa1aeab2a9b65ae33f790d68a6b">checkparam</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memdesc:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Parameter was included.  <a href="structopt3_1_1arg__container.html#addabbfa1aeab2a9b65ae33f790d68a6b">More...</a><br /></td></tr>
 <tr class="separator:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8b4d798f93dd748fb5c8604b24c8b9ea">checkv</a> (std::string const &amp;value, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
@@ -264,8 +318,632 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <div class="textblock"><p>A container type derived directly from std::vector that exposes utility methods for managing &amp; interacting with argument lists. <br  />
  This object contains the bulk of the code in the entire <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> library. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00300">300</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00305">305</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af3a0fa8677ffe22586d1c5d86a2e3bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a0fa8677ffe22586d1c5d86a2e3bba">&#9670;&nbsp;</a></span>castget() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castget </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type variantarg and returns type TReturn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00797">797</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a4f3752c3c047d82b2499bacc0ca681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4f3752c3c047d82b2499bacc0ca681">&#9670;&nbsp;</a></span>castget() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00782">782</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ef63215143c9ac52d7bf3355f17fc66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef63215143c9ac52d7bf3355f17fc66">&#9670;&nbsp;</a></span>castget_all() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::vector&lt;TReturn&gt; opt3::arg_container::castget_all </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all of the specified argument(s), casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type variantarg and returns type TReturn. </td></tr>
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00861">861</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3af99daa13c2a8cb2232b1fbac599f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af99daa13c2a8cb2232b1fbac599f44">&#9670;&nbsp;</a></span>castget_all() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::vector&lt;TReturn&gt; opt3::arg_container::castget_all </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all of the specified argument(s), casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00842">842</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a717aff7de021bf29e9385ec489391f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717aff7de021bf29e9385ec489391f65">&#9670;&nbsp;</a></span>castget_any() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castget_any </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type variantarg and returns type TReturn. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00827">827</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0915de34b2e699f49690591e722e19f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0915de34b2e699f49690591e722e19f0">&#9670;&nbsp;</a></span>castget_any() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castget_any </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00812">812</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2aebffd4eaf0b0b2fd8c772f20edcf7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aebffd4eaf0b0b2fd8c772f20edcf7a">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castgetv </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument's capture value, casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type vstring and returns type TReturn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00898">898</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a86cd1efe7ab4ad85b2139993f6c94138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86cd1efe7ab4ad85b2139993f6c94138">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castgetv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument's capture value, casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the target argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00883">883</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d72c472fa0ebd62196aec22fd055596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d72c472fa0ebd62196aec22fd055596">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::vector&lt;TReturn&gt; opt3::arg_container::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type vstring and returns type TReturn. </td></tr>
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00962">962</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a50e6071d9ce058dc80decae94c82f647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e6071d9ce058dc80decae94c82f647">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::vector&lt;TReturn&gt; opt3::arg_container::castgetv_all </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all of the specified arguments' capture value(s). <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00943">943</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aec044990e1fd96fa021f0d6052215891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec044990e1fd96fa021f0d6052215891">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>converter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument's capture value, casted to the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A conversion function that accepts type vstring and returns type TReturn. </td></tr>
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00928">928</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af9a95c6e60c73112229b851dfb7ee1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a95c6e60c73112229b851dfb7ee1e1">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR std::optional&lt;TReturn&gt; opt3::arg_container::castgetv_any </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified argument's capture value, casted to the specified type. <br  />
+ This overload is only available when TReturn specifies a type that is implicitly convertible from vstring. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReturn</td><td>The desired return type. </td></tr>
+    <tr><td class="paramname">TFilterTypes...</td><td>Any number of types to limit the returned result types to. When left empty, all types are considered matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">names</td><td>The name(s) of the target argument(s). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00913">913</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a2fdf2b3217a56b312ed4a9df98e7402a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fdf2b3217a56b312ed4a9df98e7402a">&#9670;&nbsp;</a></span>check()</h2>
 
@@ -301,7 +979,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00774">774</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00981">981</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -340,7 +1018,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00794">794</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01001">1001</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +1057,118 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00784">784</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00991">991</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8cdd7a964e981fb2be39005279613c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cdd7a964e981fb2be39005279613c5a">&#9670;&nbsp;</a></span>checkflag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool opt3::arg_container::checkflag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the specified Flag was included. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to check for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the Flag was included; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01017">1017</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7a9bd234f4108d5a160853579e573928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9bd234f4108d5a160853579e573928">&#9670;&nbsp;</a></span>checkopt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool opt3::arg_container::checkopt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the specified Option was included. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to check for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the Option was included; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01011">1011</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="addabbfa1aeab2a9b65ae33f790d68a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addabbfa1aeab2a9b65ae33f790d68a6b">&#9670;&nbsp;</a></span>checkparam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool opt3::arg_container::checkparam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the specified Parameter was included. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to check for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the Parameter was included; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01023">1023</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +1217,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00808">808</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01033">1033</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +1266,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00832">832</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01057">1057</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +1315,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00820">820</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01045">1045</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -565,7 +1354,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00336">336</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00341">341</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -604,7 +1393,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00366">366</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00371">371</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -643,7 +1432,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00352">352</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00357">357</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +1477,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00523">523</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00528">528</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -734,7 +1523,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00551">551</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00556">556</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -780,7 +1569,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00537">537</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00542">542</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +1615,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00620">620</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00625">625</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -872,12 +1661,11 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00666">666</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00671">671</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a6993342a7d927b4edcb4da78ebe7c31d_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a6993342a7d927b4edcb4da78ebe7c31d_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -924,7 +1712,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00642">642</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00647">647</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -963,7 +1751,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00383">383</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00388">388</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1002,7 +1790,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00413">413</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00418">418</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1041,7 +1829,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00399">399</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00404">404</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1874,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00571">571</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00576">576</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1920,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00599">599</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00604">604</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1966,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00585">585</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00590">590</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1224,7 +2012,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00699">699</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00704">704</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1270,12 +2058,11 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00743">743</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00748">748</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a046d3b26e21cd4e856bef82bbd460f39_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a046d3b26e21cd4e856bef82bbd460f39_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1322,7 +2109,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00720">720</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00725">725</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1370,7 +2157,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00321">321</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00326">326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1418,7 +2205,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00311">311</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00316">316</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
