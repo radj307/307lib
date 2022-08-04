@@ -28,7 +28,8 @@ namespace opt3 {
 	struct basic_vstring : public std::basic_string<TChar, TCharTraits, TAlloc> {
 		using base = std::basic_string<TChar, TCharTraits, TAlloc>;
 		using base::base;
-		WINCONSTEXPR basic_vstring(const TChar& c) : base(1ull, c) {}
+		CONSTEXPR basic_vstring(const TChar& c) : base(1ull, c) {}
+		CONSTEXPR basic_vstring(const std::basic_string<TChar, TCharTraits, TAlloc>& s) : base(s) {}
 
 		CONSTEXPR bool is_single_char() const { return this->size() == 1ull; }
 		CONSTEXPR char get_single_char() const { return this->front(); }

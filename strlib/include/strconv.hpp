@@ -745,37 +745,6 @@ namespace str {
 	}
 
 	/**
-	 * @brief					Convert from any valid streamable type to a string.
-	 *\n						This function is a wrapper around stringify(), with a focus on (numeric) => (string) conversions.
-	 * @tparam T:				A streamable input type.
-	 * @param value:			The input value.
-	 * @param fmt:				Format flags to apply to the stream.
-	 * @param ...additionalFmt:	Additional stream formatting functions to apply after the given fmtflags.
-	 * @returns					const std::string
-	 */
-	template<var::streamable<std::stringstream> T, var::streamable<std::stringstream>... Ts>
-	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::ios_base::fmtflags& fmt, Ts&&... additionalFmt)
-	{
-		std::stringstream ss;
-		ss.setf(fmt);
-		(ss << ... << additionalFmt);
-		ss << value;
-		return ss.str();
-	}
-
-	/**
-	 * @brief			Convert numeric types to string.
-	 * @param value:	The input value.
-	 * @param fmt:		Format flags to apply to the stream.
-	 * @returns			const std::string
-	 */
-	template<var::numeric T>
-	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::ios_base::fmtflags& fmt = std::ios_base::fixed)
-	{
-		return to_string<T>(value, fmt);
-	}
-
-	/**
 	 * @brief					Convert a floating-point number to a string, with variable precision and automatic truncation.
 	 *\n						This is a legacy support function.
 	 * @param value:			The input value.
@@ -784,26 +753,14 @@ namespace str {
 	 * @returns					std::string
 	*/
 	template<std::floating_point T>
-	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::streamsize& precision = 8, const bool& force_decimal = false)
+	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::streamsize& precision = 8, const bool force_decimal = false)
 	{
-		std::string s{ to_string<T>(value, std::ios_base::fixed, std::setprecision(precision)) };
+		auto s{ str::stringify(std::fixed, std::setprecision(precision), value) };
 		if (const auto& pos{ s.find_last_of(".") }; pos < s.size()) {
 			if (const auto& lastNonZero{ s.find_last_not_of("123456789", pos) }; lastNonZero < s.size())
 				s = s.substr(0ull, lastNonZero + 1ull);
 			else s = s.substr(0ull, pos);
 		}
 		return s;
-	}
-
-	/**
-	 * @brief			Convert a boolean to a string.
-	 * @param value:	The input value.
-	 * @param fmt:		Format flags to apply to the stream.
-	 * @returns			const std::string
-	 */
-	template<std::same_as<bool> T>
-	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::ios_base::fmtflags& fmt = std::ios_base::boolalpha)
-	{
-		return to_string<T>(value, fmt);
 	}
 }

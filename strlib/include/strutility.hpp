@@ -5,8 +5,6 @@
  *\n		This also contains 'global' scope additions from strlib, such as `usiang namespace std::string_literals;`, which can be disabled by defining `DISABLE_STR_LITERALS`.
  */
 #pragma once
-#include <strconv.hpp>
-
 #include <ostream>
 #include <string>
 #include <sstream>
