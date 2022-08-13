@@ -266,12 +266,20 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a50f1cfbd61cff5c1c0975e2bc65c24e8">isoctaldigit</a> (const char &amp;ch) noexcept</td></tr>
 <tr class="memdesc:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII character is a valid octal digit.  <a href="namespacestr.html#a50f1cfbd61cff5c1c0975e2bc65c24e8">More...</a><br /></td></tr>
 <tr class="separator:a50f1cfbd61cff5c1c0975e2bc65c24e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee442fd63b5198985d3bd6a126f1d399"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aee442fd63b5198985d3bd6a126f1d399">isquote</a> (const char c)</td></tr>
+<tr class="memitem:aee442fd63b5198985d3bd6a126f1d399"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aee442fd63b5198985d3bd6a126f1d399">isquote</a> (const char <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>)</td></tr>
 <tr class="memdesc:aee442fd63b5198985d3bd6a126f1d399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test that checks if a given char is a quotation mark. (Accepts single or double quotes.)  <a href="namespacestr.html#aee442fd63b5198985d3bd6a126f1d399">More...</a><br /></td></tr>
 <tr class="separator:aee442fd63b5198985d3bd6a126f1d399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplParams" colspan="2">template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::streamable... VT&gt; </td></tr>
 <tr class="memitem:acf8be91baa116c4582e66f6278db959f"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr static const std::convertible_to&lt; ElemT, std::string &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf8be91baa116c4582e66f6278db959f">join</a> (const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;container, VT... separators)</td></tr>
 <tr class="separator:acf8be91baa116c4582e66f6278db959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ac6f2d084b34914281f50722fe85ff"><td class="memTemplParams" colspan="2"><a id="a90ac6f2d084b34914281f50722fe85ff"></a>
+template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a90ac6f2d084b34914281f50722fe85ff"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>join_with_delimiter</b> (const TChar *prefix, const TChar *suffix, const TChar *delimiter, Ts &amp;&amp;... s)</td></tr>
+<tr class="separator:a90ac6f2d084b34914281f50722fe85ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89dea28a2858d6b0e99ba55171d220b"><td class="memTemplParams" colspan="2"><a id="ae89dea28a2858d6b0e99ba55171d220b"></a>
+template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:ae89dea28a2858d6b0e99ba55171d220b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>join_with_delimiter</b> (std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; const &amp;prefix, std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; const &amp;suffix, std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; const &amp;delimiter, Ts &amp;&amp;... s)</td></tr>
+<tr class="separator:ae89dea28a2858d6b0e99ba55171d220b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d5f5ddec852ee6650d85fcd45c3030"><td class="memTemplParams" colspan="2"><a id="af0d5f5ddec852ee6650d85fcd45c3030"></a>
 template&lt;bool index, var::valid_string T, template&lt; class... &gt; class Cont&gt; </td></tr>
 <tr class="memitem:af0d5f5ddec852ee6650d85fcd45c3030"><td class="memTemplItemLeft" align="right" valign="top">static Cont&lt; std::pair&lt; T, T &gt;, std::allocator&lt; std::pair&lt; T, T &gt; &gt; &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>longest</b> (const Cont&lt; std::pair&lt; T, T &gt;, std::allocator&lt; std::pair&lt; T, T &gt;&gt;&gt; &amp;strings)</td></tr>
@@ -426,10 +434,10 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a18758598172725d265bdab25d48f5836"><td class="memTemplItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a18758598172725d265bdab25d48f5836">streamify</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a18758598172725d265bdab25d48f5836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.  <a href="namespacestr.html#a18758598172725d265bdab25d48f5836">More...</a><br /></td></tr>
 <tr class="separator:a18758598172725d265bdab25d48f5836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b3eede028c9846fe44990a987d8cc2"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a64b3eede028c9846fe44990a987d8cc2"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2">stringify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a64b3eede028c9846fe44990a987d8cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a64b3eede028c9846fe44990a987d8cc2">More...</a><br /></td></tr>
-<tr class="separator:a64b3eede028c9846fe44990a987d8cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">stringify</a> (Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">More...</a><br /></td></tr>
+<tr class="separator:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplParams" colspan="2">template&lt;var::streamable T&gt; </td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">stringify_split</a> (const char &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
 <tr class="memdesc:ac564c68f61fc9cb1018753365dfd9e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">More...</a><br /></td></tr>
@@ -472,13 +480,13 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:ae51dc4e9d23dcdd8def538424933d5df"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">toBase10</a> (std::string number, const int &amp;fromBase) noexcept(false)</td></tr>
 <tr class="memdesc:ae51dc4e9d23dcdd8def538424933d5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from an arbitrary base to base 10 (decimal).  <a href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">More...</a><br /></td></tr>
 <tr class="separator:ae51dc4e9d23dcdd8def538424933d5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a> (const char &amp;c) noexcept</td></tr>
+<tr class="memitem:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a> (const char &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:ae2bfcfb51a1c131387fd6d08629aba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">More...</a><br /></td></tr>
 <tr class="separator:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93882029690e5c1836bd3c4678da2003"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">tolower</a> (const int &amp;c) noexcept</td></tr>
+<tr class="memitem:a93882029690e5c1836bd3c4678da2003"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">tolower</a> (const int &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a93882029690e5c1836bd3c4678da2003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character stored in an int to lowercase.  <a href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">More...</a><br /></td></tr>
 <tr class="separator:a93882029690e5c1836bd3c4678da2003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a231522683b17634fae04118974b559"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5a231522683b17634fae04118974b559">tolower</a> (const wchar_t &amp;c) noexcept</td></tr>
+<tr class="memitem:a5a231522683b17634fae04118974b559"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5a231522683b17634fae04118974b559">tolower</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a5a231522683b17634fae04118974b559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a5a231522683b17634fae04118974b559">More...</a><br /></td></tr>
 <tr class="separator:a5a231522683b17634fae04118974b559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8411c2e7a2695f935f975cc9abcbc783"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8411c2e7a2695f935f975cc9abcbc783">tolower</a> (std::string str) noexcept</td></tr>
@@ -490,13 +498,13 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a88947ca78984e05f41dd36fb221d32d6"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">toMap</a> (std::stringstream &amp;data, const std::string &amp;delims, const char lineDelim='\n', const bool noSpace=true) noexcept</td></tr>
 <tr class="memdesc:a88947ca78984e05f41dd36fb221d32d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a stringstream to a map of string keys &amp; string vars.  <a href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">More...</a><br /></td></tr>
 <tr class="separator:a88947ca78984e05f41dd36fb221d32d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae017529a0116f69b6d0edf9d9ea7f96"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aae017529a0116f69b6d0edf9d9ea7f96">toupper</a> (const char &amp;c) noexcept</td></tr>
+<tr class="memitem:aae017529a0116f69b6d0edf9d9ea7f96"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aae017529a0116f69b6d0edf9d9ea7f96">toupper</a> (const char &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:aae017529a0116f69b6d0edf9d9ea7f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to uppercase.  <a href="namespacestr.html#aae017529a0116f69b6d0edf9d9ea7f96">More...</a><br /></td></tr>
 <tr class="separator:aae017529a0116f69b6d0edf9d9ea7f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16fb669c01ac6edd91ed062f90069635"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a16fb669c01ac6edd91ed062f90069635">toupper</a> (const int &amp;c) noexcept</td></tr>
+<tr class="memitem:a16fb669c01ac6edd91ed062f90069635"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a16fb669c01ac6edd91ed062f90069635">toupper</a> (const int &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a16fb669c01ac6edd91ed062f90069635"><td class="mdescLeft">&#160;</td><td class="mdescRight">TOUPPER.  <a href="namespacestr.html#a16fb669c01ac6edd91ed062f90069635">More...</a><br /></td></tr>
 <tr class="separator:a16fb669c01ac6edd91ed062f90069635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">toupper</a> (const wchar_t &amp;c) noexcept</td></tr>
+<tr class="memitem:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">toupper</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a4cfbac05c04a1a2028714d8e1674ef71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">More...</a><br /></td></tr>
 <tr class="separator:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d1751d71d4ad832f648e305c9e3b40"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a37d1751d71d4ad832f648e305c9e3b40">toupper</a> (std::string str) noexcept</td></tr>
@@ -792,7 +800,7 @@ template&lt;class T1 , class T2 &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00140">140</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00152">152</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2747,7 +2755,7 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cont::const_iterator </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00102">102</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00114">114</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -2851,7 +2859,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -2938,7 +2947,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;size_t&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00189">189</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00201">201</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -3428,7 +3437,7 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cont::const_iterator </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00120">120</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00132">132</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>
@@ -4393,8 +4402,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a64b3eede028c9846fe44990a987d8cc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64b3eede028c9846fe44990a987d8cc2">&#9670;&nbsp;</a></span>stringify()</h2>
+<a id="a31ed6d7d8f4a9a12aaf145f3f4520440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ed6d7d8f4a9a12aaf145f3f4520440">&#9670;&nbsp;</a></span>stringify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4405,7 +4414,7 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static const std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify </td>
+          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -4438,7 +4447,8 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a64b3eede028c9846fe44990a987d8cc2_cgraph.svg" width="294" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a31ed6d7d8f4a9a12aaf145f3f4520440_cgraph.svg" width="294" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5899,7 +5909,7 @@ template&lt;class... T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00152">152</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8hpp_source.html#l00164">164</a> of file <a class="el" href="str_8hpp_source.html">str.hpp</a>.</p>
 
 </div>
 </div>

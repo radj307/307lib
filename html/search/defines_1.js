@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['disable_5fstr_5fliterals_1560',['DISABLE_STR_LITERALS',['../strutility_8hpp.html#a65bc2f112d723a2d6e8492077a63318c',1,'strutility.hpp']]]
+  ['c_1578',['c',['../sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1',1,'sysarch.h']]]
 ];

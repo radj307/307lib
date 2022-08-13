@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['lang_5fc_1562',['LANG_C',['../sysarch_8h.html#a69f1d54d0578e6b3400b774500973439',1,'sysarch.h']]],
-  ['lang_5fcpp_1563',['LANG_CPP',['../sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb',1,'sysarch.h']]],
-  ['lang_5fcppcli_1564',['LANG_CPPCLI',['../sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49',1,'sysarch.h']]]
+  ['env_5fdefault_5freturn_5ftype_1580',['ENV_DEFAULT_RETURN_TYPE',['../envpath_8hpp.html#a510f766a796ee27683bfe0335bfc085c',1,'envpath.hpp']]]
 ];

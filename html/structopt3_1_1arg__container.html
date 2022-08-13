@@ -118,105 +118,105 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::vect
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#af3a0fa8677ffe22586d1c5d86a2e3bba">castget</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
-<tr class="memdesc:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#af3a0fa8677ffe22586d1c5d86a2e3bba">More...</a><br /></td></tr>
-<tr class="separator:af3a0fa8677ffe22586d1c5d86a2e3bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae868529795623ef1bc8c70d1eacc3bdc"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:ae868529795623ef1bc8c70d1eacc3bdc"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ae868529795623ef1bc8c70d1eacc3bdc">castget</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memdesc:ae868529795623ef1bc8c70d1eacc3bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#ae868529795623ef1bc8c70d1eacc3bdc">More...</a><br /></td></tr>
+<tr class="separator:ae868529795623ef1bc8c70d1eacc3bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">castget</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
 <tr class="memdesc:a8a4f3752c3c047d82b2499bacc0ca681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type. <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">More...</a><br /></td></tr>
 <tr class="separator:a8a4f3752c3c047d82b2499bacc0ca681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8ef63215143c9ac52d7bf3355f17fc66">castget_all</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:a8ef63215143c9ac52d7bf3355f17fc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified argument(s), casted to the specified type.  <a href="structopt3_1_1arg__container.html#a8ef63215143c9ac52d7bf3355f17fc66">More...</a><br /></td></tr>
-<tr class="separator:a8ef63215143c9ac52d7bf3355f17fc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d64a53ed101131ae76c4ce3fea6d18f"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5d64a53ed101131ae76c4ce3fea6d18f"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a5d64a53ed101131ae76c4ce3fea6d18f">castget_all</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const</td></tr>
+<tr class="memdesc:a5d64a53ed101131ae76c4ce3fea6d18f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified argument(s), casted to the specified type.  <a href="structopt3_1_1arg__container.html#a5d64a53ed101131ae76c4ce3fea6d18f">More...</a><br /></td></tr>
+<tr class="separator:a5d64a53ed101131ae76c4ce3fea6d18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a3af99daa13c2a8cb2232b1fbac599f44">castget_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:a3af99daa13c2a8cb2232b1fbac599f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified argument(s), casted to the specified type. <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a3af99daa13c2a8cb2232b1fbac599f44">More...</a><br /></td></tr>
 <tr class="separator:a3af99daa13c2a8cb2232b1fbac599f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a717aff7de021bf29e9385ec489391f65"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a717aff7de021bf29e9385ec489391f65"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a717aff7de021bf29e9385ec489391f65">castget_any</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:a717aff7de021bf29e9385ec489391f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#a717aff7de021bf29e9385ec489391f65">More...</a><br /></td></tr>
-<tr class="separator:a717aff7de021bf29e9385ec489391f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072a39dd8bcb4f6dff086e40aa1a2d16"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a072a39dd8bcb4f6dff086e40aa1a2d16"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a072a39dd8bcb4f6dff086e40aa1a2d16">castget_any</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const</td></tr>
+<tr class="memdesc:a072a39dd8bcb4f6dff086e40aa1a2d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#a072a39dd8bcb4f6dff086e40aa1a2d16">More...</a><br /></td></tr>
+<tr class="separator:a072a39dd8bcb4f6dff086e40aa1a2d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0915de34b2e699f49690591e722e19f0"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a0915de34b2e699f49690591e722e19f0"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a0915de34b2e699f49690591e722e19f0">castget_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:a0915de34b2e699f49690591e722e19f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type. <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a0915de34b2e699f49690591e722e19f0">More...</a><br /></td></tr>
 <tr class="separator:a0915de34b2e699f49690591e722e19f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a2aebffd4eaf0b0b2fd8c772f20edcf7a">castgetv</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#a2aebffd4eaf0b0b2fd8c772f20edcf7a">More...</a><br /></td></tr>
-<tr class="separator:a2aebffd4eaf0b0b2fd8c772f20edcf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0855f3f19ad9bac6d3ef4bacce22bd6a"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a0855f3f19ad9bac6d3ef4bacce22bd6a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a0855f3f19ad9bac6d3ef4bacce22bd6a">castgetv</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memdesc:a0855f3f19ad9bac6d3ef4bacce22bd6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#a0855f3f19ad9bac6d3ef4bacce22bd6a">More...</a><br /></td></tr>
+<tr class="separator:a0855f3f19ad9bac6d3ef4bacce22bd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a86cd1efe7ab4ad85b2139993f6c94138">castgetv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
 <tr class="memdesc:a86cd1efe7ab4ad85b2139993f6c94138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type. <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#a86cd1efe7ab4ad85b2139993f6c94138">More...</a><br /></td></tr>
 <tr class="separator:a86cd1efe7ab4ad85b2139993f6c94138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d72c472fa0ebd62196aec22fd055596"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a5d72c472fa0ebd62196aec22fd055596"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a5d72c472fa0ebd62196aec22fd055596">castgetv_all</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:a5d72c472fa0ebd62196aec22fd055596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#a5d72c472fa0ebd62196aec22fd055596">More...</a><br /></td></tr>
-<tr class="separator:a5d72c472fa0ebd62196aec22fd055596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1d13c1066248a23857aafabcc2105a"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:adc1d13c1066248a23857aafabcc2105a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#adc1d13c1066248a23857aafabcc2105a">castgetv_all</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const</td></tr>
+<tr class="memdesc:adc1d13c1066248a23857aafabcc2105a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type.  <a href="structopt3_1_1arg__container.html#adc1d13c1066248a23857aafabcc2105a">More...</a><br /></td></tr>
+<tr class="separator:adc1d13c1066248a23857aafabcc2105a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e6071d9ce058dc80decae94c82f647"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a50e6071d9ce058dc80decae94c82f647"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647">castgetv_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:a50e6071d9ce058dc80decae94c82f647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the specified arguments' capture value(s). <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647">More...</a><br /></td></tr>
 <tr class="separator:a50e6071d9ce058dc80decae94c82f647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec044990e1fd96fa021f0d6052215891"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:aec044990e1fd96fa021f0d6052215891"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#aec044990e1fd96fa021f0d6052215891">castgetv_any</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:aec044990e1fd96fa021f0d6052215891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#aec044990e1fd96fa021f0d6052215891">More...</a><br /></td></tr>
-<tr class="separator:aec044990e1fd96fa021f0d6052215891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31b8cc1ea0d1a6c7ded2bb6f81e2866"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ad31b8cc1ea0d1a6c7ded2bb6f81e2866"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ad31b8cc1ea0d1a6c7ded2bb6f81e2866">castgetv_any</a> (const std::function&lt; TReturn(<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const</td></tr>
+<tr class="memdesc:ad31b8cc1ea0d1a6c7ded2bb6f81e2866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type.  <a href="structopt3_1_1arg__container.html#ad31b8cc1ea0d1a6c7ded2bb6f81e2866">More...</a><br /></td></tr>
+<tr class="separator:ad31b8cc1ea0d1a6c7ded2bb6f81e2866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1">castgetv_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:af9a95c6e60c73112229b851dfb7ee1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument's capture value, casted to the specified type. <br  />
  This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.  <a href="structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1">More...</a><br /></td></tr>
 <tr class="separator:af9a95c6e60c73112229b851dfb7ee1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a2fdf2b3217a56b312ed4a9df98e7402a">check</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a2fdf2b3217a56b312ed4a9df98e7402a">More...</a><br /></td></tr>
-<tr class="separator:a2fdf2b3217a56b312ed4a9df98e7402a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0e6d2eaab6623e826442f64b9987cf"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:afb0e6d2eaab6623e826442f64b9987cf"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#afb0e6d2eaab6623e826442f64b9987cf">check_all</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:afb0e6d2eaab6623e826442f64b9987cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#afb0e6d2eaab6623e826442f64b9987cf">More...</a><br /></td></tr>
-<tr class="separator:afb0e6d2eaab6623e826442f64b9987cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a880547d0462548b3459ab1e7047e7034"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a880547d0462548b3459ab1e7047e7034"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a880547d0462548b3459ab1e7047e7034">check_any</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a880547d0462548b3459ab1e7047e7034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a880547d0462548b3459ab1e7047e7034">More...</a><br /></td></tr>
-<tr class="separator:a880547d0462548b3459ab1e7047e7034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cdd7a964e981fb2be39005279613c5a"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8cdd7a964e981fb2be39005279613c5a">checkflag</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
-<tr class="memdesc:a8cdd7a964e981fb2be39005279613c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Flag was included.  <a href="structopt3_1_1arg__container.html#a8cdd7a964e981fb2be39005279613c5a">More...</a><br /></td></tr>
-<tr class="separator:a8cdd7a964e981fb2be39005279613c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a9bd234f4108d5a160853579e573928"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7a9bd234f4108d5a160853579e573928">checkopt</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
-<tr class="memdesc:a7a9bd234f4108d5a160853579e573928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Option was included.  <a href="structopt3_1_1arg__container.html#a7a9bd234f4108d5a160853579e573928">More...</a><br /></td></tr>
-<tr class="separator:a7a9bd234f4108d5a160853579e573928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#addabbfa1aeab2a9b65ae33f790d68a6b">checkparam</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
-<tr class="memdesc:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Parameter was included.  <a href="structopt3_1_1arg__container.html#addabbfa1aeab2a9b65ae33f790d68a6b">More...</a><br /></td></tr>
-<tr class="separator:addabbfa1aeab2a9b65ae33f790d68a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8b4d798f93dd748fb5c8604b24c8b9ea">checkv</a> (std::string const &amp;value, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a8b4d798f93dd748fb5c8604b24c8b9ea">More...</a><br /></td></tr>
-<tr class="separator:a8b4d798f93dd748fb5c8604b24c8b9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a3a0049a072066e11e49613b1e1499"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a70a3a0049a072066e11e49613b1e1499"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a70a3a0049a072066e11e49613b1e1499">checkv_all</a> (std::string const &amp;value, Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a70a3a0049a072066e11e49613b1e1499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a70a3a0049a072066e11e49613b1e1499">More...</a><br /></td></tr>
-<tr class="separator:a70a3a0049a072066e11e49613b1e1499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd5502fcb507a5bb33d14bc43d3ecea"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a1dd5502fcb507a5bb33d14bc43d3ecea"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a1dd5502fcb507a5bb33d14bc43d3ecea">checkv_any</a> (std::string const &amp;value, Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a1dd5502fcb507a5bb33d14bc43d3ecea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a1dd5502fcb507a5bb33d14bc43d3ecea">More...</a><br /></td></tr>
-<tr class="separator:a1dd5502fcb507a5bb33d14bc43d3ecea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e86fb86c3020770373ecdd0f285afc"><td class="memTemplParams" colspan="2"><a id="a63e86fb86c3020770373ecdd0f285afc"></a>
+<tr class="memitem:a686d6571318aae77d59524aef42e218e"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a686d6571318aae77d59524aef42e218e"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a686d6571318aae77d59524aef42e218e">check</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a686d6571318aae77d59524aef42e218e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a686d6571318aae77d59524aef42e218e">More...</a><br /></td></tr>
+<tr class="separator:a686d6571318aae77d59524aef42e218e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52716edbccb679dca5149f60930e9b51"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a52716edbccb679dca5149f60930e9b51"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a52716edbccb679dca5149f60930e9b51">check_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a52716edbccb679dca5149f60930e9b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a52716edbccb679dca5149f60930e9b51">More...</a><br /></td></tr>
+<tr class="separator:a52716edbccb679dca5149f60930e9b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7060604d1a29465ce34723f5dcf4216"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ac7060604d1a29465ce34723f5dcf4216"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216">check_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:ac7060604d1a29465ce34723f5dcf4216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216">More...</a><br /></td></tr>
+<tr class="separator:ac7060604d1a29465ce34723f5dcf4216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8353295a9d78b5dbf917fea58fc33bce"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8353295a9d78b5dbf917fea58fc33bce">checkflag</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a8353295a9d78b5dbf917fea58fc33bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Flag was included.  <a href="structopt3_1_1arg__container.html#a8353295a9d78b5dbf917fea58fc33bce">More...</a><br /></td></tr>
+<tr class="separator:a8353295a9d78b5dbf917fea58fc33bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac251e84dc1da71f503353c27bfc4f684"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac251e84dc1da71f503353c27bfc4f684">checkopt</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ac251e84dc1da71f503353c27bfc4f684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Option was included.  <a href="structopt3_1_1arg__container.html#ac251e84dc1da71f503353c27bfc4f684">More...</a><br /></td></tr>
+<tr class="separator:ac251e84dc1da71f503353c27bfc4f684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68bf0a5bc97a0408ade7a091dcf2c5d2"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a68bf0a5bc97a0408ade7a091dcf2c5d2">checkparam</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a68bf0a5bc97a0408ade7a091dcf2c5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Parameter was included.  <a href="structopt3_1_1arg__container.html#a68bf0a5bc97a0408ade7a091dcf2c5d2">More...</a><br /></td></tr>
+<tr class="separator:a68bf0a5bc97a0408ade7a091dcf2c5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48eadc0234a6c37abe5156b42632f100"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a48eadc0234a6c37abe5156b42632f100"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100">checkv</a> (std::string const &amp;value, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a48eadc0234a6c37abe5156b42632f100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100">More...</a><br /></td></tr>
+<tr class="separator:a48eadc0234a6c37abe5156b42632f100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae2185b17551ab032074953786bb0c"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ad4ae2185b17551ab032074953786bb0c"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c">checkv_all</a> (std::string const &amp;value, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:ad4ae2185b17551ab032074953786bb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c">More...</a><br /></td></tr>
+<tr class="separator:ad4ae2185b17551ab032074953786bb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e018c8dabeef85544cdacb688ed9d94"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a8e018c8dabeef85544cdacb688ed9d94"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94">checkv_any</a> (std::string const &amp;value, Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a8e018c8dabeef85544cdacb688ed9d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94">More...</a><br /></td></tr>
+<tr class="separator:a8e018c8dabeef85544cdacb688ed9d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768af276b59976e47e17bdf7cffc43f0"><td class="memTemplParams" colspan="2"><a id="a768af276b59976e47e17bdf7cffc43f0"></a>
 template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a63e86fb86c3020770373ecdd0f285afc"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="separator:a63e86fb86c3020770373ecdd0f285afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfaa743d22ba9f736bbc7761f53e08c"><td class="memTemplParams" colspan="2"><a id="acdfaa743d22ba9f736bbc7761f53e08c"></a>
+<tr class="memitem:a768af276b59976e47e17bdf7cffc43f0"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="separator:a768af276b59976e47e17bdf7cffc43f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada31cc7d7f026af5c14dc94b407948f5"><td class="memTemplParams" colspan="2"><a id="ada31cc7d7f026af5c14dc94b407948f5"></a>
 template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:acdfaa743d22ba9f736bbc7761f53e08c"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find_all</b> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="separator:acdfaa743d22ba9f736bbc7761f53e08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a111f1dd725eca32f428c55bd115e474f"><td class="memTemplParams" colspan="2"><a id="a111f1dd725eca32f428c55bd115e474f"></a>
+<tr class="memitem:ada31cc7d7f026af5c14dc94b407948f5"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find_all</b> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="separator:ada31cc7d7f026af5c14dc94b407948f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c5456a983753ed77ff03ca87e1e5cf"><td class="memTemplParams" colspan="2"><a id="a12c5456a983753ed77ff03ca87e1e5cf"></a>
 template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a111f1dd725eca32f428c55bd115e474f"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find_any</b> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="separator:a111f1dd725eca32f428c55bd115e474f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c5456a983753ed77ff03ca87e1e5cf"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find_any</b> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="separator:a12c5456a983753ed77ff03ca87e1e5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a375b575e3cd552015d5cddd26d7c4085"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredicate&gt; </td></tr>
 <tr class="memitem:a375b575e3cd552015d5cddd26d7c4085"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a375b575e3cd552015d5cddd26d7c4085">find_if</a> (const TPredicate &amp;pred) const</td></tr>
 <tr class="memdesc:a375b575e3cd552015d5cddd26d7c4085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first element for which the given predicate returns true.  <a href="structopt3_1_1arg__container.html#a375b575e3cd552015d5cddd26d7c4085">More...</a><br /></td></tr>
@@ -229,45 +229,45 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <tr class="memitem:a7ad349bffaa9e1116e0abba2f1854163"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7ad349bffaa9e1116e0abba2f1854163">find_if_any</a> (const TPredicates &amp;... preds) const</td></tr>
 <tr class="memdesc:a7ad349bffaa9e1116e0abba2f1854163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first element for which any of the given predicates return true.  <a href="structopt3_1_1arg__container.html#a7ad349bffaa9e1116e0abba2f1854163">More...</a><br /></td></tr>
 <tr class="separator:a7ad349bffaa9e1116e0abba2f1854163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addc6c030bbbe7d3ef8f87bc13a3b6dc1"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:addc6c030bbbe7d3ef8f87bc13a3b6dc1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#addc6c030bbbe7d3ef8f87bc13a3b6dc1">get</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:addc6c030bbbe7d3ef8f87bc13a3b6dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified argument of the specified type.  <a href="structopt3_1_1arg__container.html#addc6c030bbbe7d3ef8f87bc13a3b6dc1">More...</a><br /></td></tr>
-<tr class="separator:addc6c030bbbe7d3ef8f87bc13a3b6dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac32a33df8c7dc654152b50b3db8be2ab"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ac32a33df8c7dc654152b50b3db8be2ab"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac32a33df8c7dc654152b50b3db8be2ab">get_all</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:ac32a33df8c7dc654152b50b3db8be2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the specified arguments of the specified type(s).  <a href="structopt3_1_1arg__container.html#ac32a33df8c7dc654152b50b3db8be2ab">More...</a><br /></td></tr>
-<tr class="separator:ac32a33df8c7dc654152b50b3db8be2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1ee8dd98d68c14baab96df2b10331e5"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ae1ee8dd98d68c14baab96df2b10331e5"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ae1ee8dd98d68c14baab96df2b10331e5">get_any</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:ae1ee8dd98d68c14baab96df2b10331e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any of the specified arguments of the specified type(s).  <a href="structopt3_1_1arg__container.html#ae1ee8dd98d68c14baab96df2b10331e5">More...</a><br /></td></tr>
-<tr class="separator:ae1ee8dd98d68c14baab96df2b10331e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fdb32a5992921e89063e6c3d9d65ed0"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a0fdb32a5992921e89063e6c3d9d65ed0"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a0fdb32a5992921e89063e6c3d9d65ed0">getv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:a0fdb32a5992921e89063e6c3d9d65ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a0fdb32a5992921e89063e6c3d9d65ed0">More...</a><br /></td></tr>
-<tr class="separator:a0fdb32a5992921e89063e6c3d9d65ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6993342a7d927b4edcb4da78ebe7c31d"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a6993342a7d927b4edcb4da78ebe7c31d"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a6993342a7d927b4edcb4da78ebe7c31d">getv_all</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a6993342a7d927b4edcb4da78ebe7c31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a6993342a7d927b4edcb4da78ebe7c31d">More...</a><br /></td></tr>
-<tr class="separator:a6993342a7d927b4edcb4da78ebe7c31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0366e866335172285f6c3ccaa74aaa2d"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a0366e866335172285f6c3ccaa74aaa2d"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a0366e866335172285f6c3ccaa74aaa2d">getv_any</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a0366e866335172285f6c3ccaa74aaa2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a0366e866335172285f6c3ccaa74aaa2d">More...</a><br /></td></tr>
-<tr class="separator:a0366e866335172285f6c3ccaa74aaa2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a515e226a0c68ea7da4980aa1791b790c"><td class="memTemplParams" colspan="2"><a id="a515e226a0c68ea7da4980aa1791b790c"></a>
+<tr class="memitem:a8dda92287cd3808d77bd0d6e9937fd9b"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a8dda92287cd3808d77bd0d6e9937fd9b"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8dda92287cd3808d77bd0d6e9937fd9b">get</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a8dda92287cd3808d77bd0d6e9937fd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified argument of the specified type.  <a href="structopt3_1_1arg__container.html#a8dda92287cd3808d77bd0d6e9937fd9b">More...</a><br /></td></tr>
+<tr class="separator:a8dda92287cd3808d77bd0d6e9937fd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab170ead9a391a40ce76c1286905a264c"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ab170ead9a391a40ce76c1286905a264c"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ab170ead9a391a40ce76c1286905a264c">get_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:ab170ead9a391a40ce76c1286905a264c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the specified arguments of the specified type(s).  <a href="structopt3_1_1arg__container.html#ab170ead9a391a40ce76c1286905a264c">More...</a><br /></td></tr>
+<tr class="separator:ab170ead9a391a40ce76c1286905a264c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7706e281cf7a546a63d710386f84d5fb"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a7706e281cf7a546a63d710386f84d5fb"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7706e281cf7a546a63d710386f84d5fb">get_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a7706e281cf7a546a63d710386f84d5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any of the specified arguments of the specified type(s).  <a href="structopt3_1_1arg__container.html#a7706e281cf7a546a63d710386f84d5fb">More...</a><br /></td></tr>
+<tr class="separator:a7706e281cf7a546a63d710386f84d5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ad5b3c6b1f4cebe542e0ab0503ff5fba1">getv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#ad5b3c6b1f4cebe542e0ab0503ff5fba1">More...</a><br /></td></tr>
+<tr class="separator:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ea221536116b723733178beb403895"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a92ea221536116b723733178beb403895"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a92ea221536116b723733178beb403895">getv_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a92ea221536116b723733178beb403895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a92ea221536116b723733178beb403895">More...</a><br /></td></tr>
+<tr class="separator:a92ea221536116b723733178beb403895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81d2b891736ced72ff2aaadbd31e8d5"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ab81d2b891736ced72ff2aaadbd31e8d5"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ab81d2b891736ced72ff2aaadbd31e8d5">getv_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:ab81d2b891736ced72ff2aaadbd31e8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#ab81d2b891736ced72ff2aaadbd31e8d5">More...</a><br /></td></tr>
+<tr class="separator:ab81d2b891736ced72ff2aaadbd31e8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6861d1d919ab50422c24bb603b2158dc"><td class="memTemplParams" colspan="2"><a id="a6861d1d919ab50422c24bb603b2158dc"></a>
 template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a515e226a0c68ea7da4980aa1791b790c"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="separator:a515e226a0c68ea7da4980aa1791b790c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa023c3a454bf72e843c8a8ac8987b434"><td class="memTemplParams" colspan="2"><a id="aa023c3a454bf72e843c8a8ac8987b434"></a>
+<tr class="memitem:a6861d1d919ab50422c24bb603b2158dc"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="separator:a6861d1d919ab50422c24bb603b2158dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d635cacddb2e8dbbef5083b6774ab8"><td class="memTemplParams" colspan="2"><a id="a98d635cacddb2e8dbbef5083b6774ab8"></a>
 template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:aa023c3a454bf72e843c8a8ac8987b434"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind_all</b> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="separator:aa023c3a454bf72e843c8a8ac8987b434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa24265dc7615893dc15d46ad12333ac"><td class="memTemplParams" colspan="2"><a id="afa24265dc7615893dc15d46ad12333ac"></a>
+<tr class="memitem:a98d635cacddb2e8dbbef5083b6774ab8"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind_all</b> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="separator:a98d635cacddb2e8dbbef5083b6774ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1372a8f77399fe121fdb96c3c4900339"><td class="memTemplParams" colspan="2"><a id="a1372a8f77399fe121fdb96c3c4900339"></a>
 template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:afa24265dc7615893dc15d46ad12333ac"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind_any</b> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="separator:afa24265dc7615893dc15d46ad12333ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1372a8f77399fe121fdb96c3c4900339"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>rfind_any</b> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="separator:a1372a8f77399fe121fdb96c3c4900339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ab65bea92d823757664c6a647d62f52"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredicate&gt; </td></tr>
 <tr class="memitem:a1ab65bea92d823757664c6a647d62f52"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a1ab65bea92d823757664c6a647d62f52">rfind_if</a> (const TPredicate &amp;pred) const</td></tr>
 <tr class="memdesc:a1ab65bea92d823757664c6a647d62f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first element for which the given predicate returns true.  <a href="structopt3_1_1arg__container.html#a1ab65bea92d823757664c6a647d62f52">More...</a><br /></td></tr>
@@ -280,33 +280,33 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <tr class="memitem:a8f038b60ecc8af52a46cda0816f55802"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;::const_reverse_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8f038b60ecc8af52a46cda0816f55802">rfind_if_any</a> (const TPredicates &amp;... preds) const</td></tr>
 <tr class="memdesc:a8f038b60ecc8af52a46cda0816f55802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first element for which any of the given predicates return true.  <a href="structopt3_1_1arg__container.html#a8f038b60ecc8af52a46cda0816f55802">More...</a><br /></td></tr>
 <tr class="separator:a8f038b60ecc8af52a46cda0816f55802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bafbdd0ae474afc87073398afc299d8"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:a8bafbdd0ae474afc87073398afc299d8"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8bafbdd0ae474afc87073398afc299d8">rget</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:a8bafbdd0ae474afc87073398afc299d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified argument of the specified type. This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a8bafbdd0ae474afc87073398afc299d8">More...</a><br /></td></tr>
-<tr class="separator:a8bafbdd0ae474afc87073398afc299d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458d2c83dfd66c3cdf5335be50a75cff"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a458d2c83dfd66c3cdf5335be50a75cff"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a458d2c83dfd66c3cdf5335be50a75cff">rget_all</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a458d2c83dfd66c3cdf5335be50a75cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the specified arguments of the specified type(s). This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a458d2c83dfd66c3cdf5335be50a75cff">More...</a><br /></td></tr>
-<tr class="separator:a458d2c83dfd66c3cdf5335be50a75cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73310aa582180c8ae4ca3442c959badd"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a73310aa582180c8ae4ca3442c959badd"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a73310aa582180c8ae4ca3442c959badd">rget_any</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a73310aa582180c8ae4ca3442c959badd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any of the specified arguments of the specified type(s). This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a73310aa582180c8ae4ca3442c959badd">More...</a><br /></td></tr>
-<tr class="separator:a73310aa582180c8ae4ca3442c959badd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46a31f4e6650bc3fb3f065b427da59d"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
-<tr class="memitem:ac46a31f4e6650bc3fb3f065b427da59d"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac46a31f4e6650bc3fb3f065b427da59d">rgetv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
-<tr class="memdesc:ac46a31f4e6650bc3fb3f065b427da59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#ac46a31f4e6650bc3fb3f065b427da59d">More...</a><br /></td></tr>
-<tr class="separator:ac46a31f4e6650bc3fb3f065b427da59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a046d3b26e21cd4e856bef82bbd460f39"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a046d3b26e21cd4e856bef82bbd460f39"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a046d3b26e21cd4e856bef82bbd460f39">rgetv_all</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a046d3b26e21cd4e856bef82bbd460f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a046d3b26e21cd4e856bef82bbd460f39">More...</a><br /></td></tr>
-<tr class="separator:a046d3b26e21cd4e856bef82bbd460f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd193455b3b1b249a4cc86be56dbc57"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a5dd193455b3b1b249a4cc86be56dbc57"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a5dd193455b3b1b249a4cc86be56dbc57">rgetv_any</a> (Ts &amp;&amp;... names) const</td></tr>
-<tr class="memdesc:a5dd193455b3b1b249a4cc86be56dbc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
- Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#a5dd193455b3b1b249a4cc86be56dbc57">More...</a><br /></td></tr>
-<tr class="separator:a5dd193455b3b1b249a4cc86be56dbc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7faf7c8c9f2a472398115124d83f08da"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:a7faf7c8c9f2a472398115124d83f08da"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7faf7c8c9f2a472398115124d83f08da">rget</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a7faf7c8c9f2a472398115124d83f08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified argument of the specified type. This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a7faf7c8c9f2a472398115124d83f08da">More...</a><br /></td></tr>
+<tr class="separator:a7faf7c8c9f2a472398115124d83f08da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23910ae02f2b40652349ab360ed1c077"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a23910ae02f2b40652349ab360ed1c077"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a23910ae02f2b40652349ab360ed1c077">rget_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a23910ae02f2b40652349ab360ed1c077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the specified arguments of the specified type(s). This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a23910ae02f2b40652349ab360ed1c077">More...</a><br /></td></tr>
+<tr class="separator:a23910ae02f2b40652349ab360ed1c077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67cdeb5260ce9c02852aaf353fc53caf"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a67cdeb5260ce9c02852aaf353fc53caf"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a67cdeb5260ce9c02852aaf353fc53caf">rget_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:a67cdeb5260ce9c02852aaf353fc53caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any of the specified arguments of the specified type(s). This overload searches in reverse.  <a href="structopt3_1_1arg__container.html#a67cdeb5260ce9c02852aaf353fc53caf">More...</a><br /></td></tr>
+<tr class="separator:a67cdeb5260ce9c02852aaf353fc53caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafcc4a53edd5cb6c11d8309d80b17487"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
+<tr class="memitem:aafcc4a53edd5cb6c11d8309d80b17487"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#aafcc4a53edd5cb6c11d8309d80b17487">rgetv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:aafcc4a53edd5cb6c11d8309d80b17487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#aafcc4a53edd5cb6c11d8309d80b17487">More...</a><br /></td></tr>
+<tr class="separator:aafcc4a53edd5cb6c11d8309d80b17487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2da4d26a426b00bbf342b68683fcc56"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:af2da4d26a426b00bbf342b68683fcc56"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#af2da4d26a426b00bbf342b68683fcc56">rgetv_all</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:af2da4d26a426b00bbf342b68683fcc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#af2da4d26a426b00bbf342b68683fcc56">More...</a><br /></td></tr>
+<tr class="separator:af2da4d26a426b00bbf342b68683fcc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1adf1630f34af782a25a83932329f15"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:aa1adf1630f34af782a25a83932329f15"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#aa1adf1630f34af782a25a83932329f15">rgetv_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
+<tr class="memdesc:aa1adf1630f34af782a25a83932329f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
+ Only arguments with values are considered to be matching, all other arguments are skipped; including if their name does match.  <a href="structopt3_1_1arg__container.html#aa1adf1630f34af782a25a83932329f15">More...</a><br /></td></tr>
+<tr class="separator:aa1adf1630f34af782a25a83932329f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae51484a7ebcc7537165c05b06e005063"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1arg__container.html">arg_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ae51484a7ebcc7537165c05b06e005063">subvec</a> (const size_t &amp;off, const size_t &amp;count=1ull) const</td></tr>
 <tr class="memdesc:ae51484a7ebcc7537165c05b06e005063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves (copies) the specified segment of this argument container into a new instance.  <a href="structopt3_1_1arg__container.html#ae51484a7ebcc7537165c05b06e005063">More...</a><br /></td></tr>
 <tr class="separator:ae51484a7ebcc7537165c05b06e005063"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -318,10 +318,10 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <div class="textblock"><p>A container type derived directly from std::vector that exposes utility methods for managing &amp; interacting with argument lists. <br  />
  This object contains the bulk of the code in the entire <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> library. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00305">305</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00315">315</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af3a0fa8677ffe22586d1c5d86a2e3bba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3a0fa8677ffe22586d1c5d86a2e3bba">&#9670;&nbsp;</a></span>castget() <span class="overload">[1/2]</span></h2>
+<a id="ae868529795623ef1bc8c70d1eacc3bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae868529795623ef1bc8c70d1eacc3bdc">&#9670;&nbsp;</a></span>castget() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +351,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -373,7 +373,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00797">797</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00807">807</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -420,12 +420,12 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00782">782</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00792">792</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8ef63215143c9ac52d7bf3355f17fc66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ef63215143c9ac52d7bf3355f17fc66">&#9670;&nbsp;</a></span>castget_all() <span class="overload">[1/2]</span></h2>
+<a id="a5d64a53ed101131ae76c4ce3fea6d18f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d64a53ed101131ae76c4ce3fea6d18f">&#9670;&nbsp;</a></span>castget_all() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +455,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -477,7 +477,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00861">861</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00871">871</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -524,12 +524,12 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00842">842</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00852">852</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a717aff7de021bf29e9385ec489391f65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a717aff7de021bf29e9385ec489391f65">&#9670;&nbsp;</a></span>castget_any() <span class="overload">[1/2]</span></h2>
+<a id="a072a39dd8bcb4f6dff086e40aa1a2d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072a39dd8bcb4f6dff086e40aa1a2d16">&#9670;&nbsp;</a></span>castget_any() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -559,7 +559,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -581,7 +581,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00827">827</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00837">837</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -628,12 +628,12 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00812">812</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00822">822</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2aebffd4eaf0b0b2fd8c772f20edcf7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aebffd4eaf0b0b2fd8c772f20edcf7a">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[1/2]</span></h2>
+<a id="a0855f3f19ad9bac6d3ef4bacce22bd6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0855f3f19ad9bac6d3ef4bacce22bd6a">&#9670;&nbsp;</a></span>castgetv() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,7 +663,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -685,7 +685,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00898">898</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00908">908</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -732,12 +732,12 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00883">883</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00893">893</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a5d72c472fa0ebd62196aec22fd055596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d72c472fa0ebd62196aec22fd055596">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[1/2]</span></h2>
+<a id="adc1d13c1066248a23857aafabcc2105a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1d13c1066248a23857aafabcc2105a">&#9670;&nbsp;</a></span>castgetv_all() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -767,7 +767,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -789,7 +789,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00962">962</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00972">972</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -836,12 +836,12 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00943">943</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00953">953</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aec044990e1fd96fa021f0d6052215891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec044990e1fd96fa021f0d6052215891">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[1/2]</span></h2>
+<a id="ad31b8cc1ea0d1a6c7ded2bb6f81e2866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31b8cc1ea0d1a6c7ded2bb6f81e2866">&#9670;&nbsp;</a></span>castgetv_any() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -871,7 +871,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -893,7 +893,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00928">928</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00938">938</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -940,12 +940,12 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00913">913</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00923">923</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2fdf2b3217a56b312ed4a9df98e7402a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fdf2b3217a56b312ed4a9df98e7402a">&#9670;&nbsp;</a></span>check()</h2>
+<a id="a686d6571318aae77d59524aef42e218e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686d6571318aae77d59524aef42e218e">&#9670;&nbsp;</a></span>check()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -965,7 +965,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -979,12 +979,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00981">981</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00991">991</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="afb0e6d2eaab6623e826442f64b9987cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb0e6d2eaab6623e826442f64b9987cf">&#9670;&nbsp;</a></span>check_all()</h2>
+<a id="a52716edbccb679dca5149f60930e9b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52716edbccb679dca5149f60930e9b51">&#9670;&nbsp;</a></span>check_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1004,7 +1004,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1018,12 +1018,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01001">1001</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01011">1011</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a880547d0462548b3459ab1e7047e7034"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a880547d0462548b3459ab1e7047e7034">&#9670;&nbsp;</a></span>check_any()</h2>
+<a id="ac7060604d1a29465ce34723f5dcf4216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7060604d1a29465ce34723f5dcf4216">&#9670;&nbsp;</a></span>check_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1043,7 +1043,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1057,12 +1057,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00991">991</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01001">1001</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8cdd7a964e981fb2be39005279613c5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cdd7a964e981fb2be39005279613c5a">&#9670;&nbsp;</a></span>checkflag()</h2>
+<a id="a8353295a9d78b5dbf917fea58fc33bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8353295a9d78b5dbf917fea58fc33bce">&#9670;&nbsp;</a></span>checkflag()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,12 +1075,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1094,12 +1094,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Flag was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01017">1017</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01027">1027</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a7a9bd234f4108d5a160853579e573928"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a9bd234f4108d5a160853579e573928">&#9670;&nbsp;</a></span>checkopt()</h2>
+<a id="ac251e84dc1da71f503353c27bfc4f684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac251e84dc1da71f503353c27bfc4f684">&#9670;&nbsp;</a></span>checkopt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1112,12 +1112,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1131,12 +1131,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Option was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01011">1011</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01021">1021</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="addabbfa1aeab2a9b65ae33f790d68a6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addabbfa1aeab2a9b65ae33f790d68a6b">&#9670;&nbsp;</a></span>checkparam()</h2>
+<a id="a68bf0a5bc97a0408ade7a091dcf2c5d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68bf0a5bc97a0408ade7a091dcf2c5d2">&#9670;&nbsp;</a></span>checkparam()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1149,12 +1149,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1168,12 +1168,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Parameter was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01023">1023</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01033">1033</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8b4d798f93dd748fb5c8604b24c8b9ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b4d798f93dd748fb5c8604b24c8b9ea">&#9670;&nbsp;</a></span>checkv()</h2>
+<a id="a48eadc0234a6c37abe5156b42632f100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48eadc0234a6c37abe5156b42632f100">&#9670;&nbsp;</a></span>checkv()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1203,7 +1203,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1217,12 +1217,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01033">1033</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01043">1043</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a70a3a0049a072066e11e49613b1e1499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70a3a0049a072066e11e49613b1e1499">&#9670;&nbsp;</a></span>checkv_all()</h2>
+<a id="ad4ae2185b17551ab032074953786bb0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae2185b17551ab032074953786bb0c">&#9670;&nbsp;</a></span>checkv_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1252,7 +1252,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1266,12 +1266,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01057">1057</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01067">1067</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1dd5502fcb507a5bb33d14bc43d3ecea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dd5502fcb507a5bb33d14bc43d3ecea">&#9670;&nbsp;</a></span>checkv_any()</h2>
+<a id="a8e018c8dabeef85544cdacb688ed9d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e018c8dabeef85544cdacb688ed9d94">&#9670;&nbsp;</a></span>checkv_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1301,7 +1301,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1315,7 +1315,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01045">1045</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01055">1055</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1354,7 +1354,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00341">341</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00351">351</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1393,7 +1393,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00371">371</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00381">381</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1432,12 +1432,12 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00357">357</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00367">367</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="addc6c030bbbe7d3ef8f87bc13a3b6dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addc6c030bbbe7d3ef8f87bc13a3b6dc1">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a8dda92287cd3808d77bd0d6e9937fd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dda92287cd3808d77bd0d6e9937fd9b">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1457,7 +1457,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1477,12 +1477,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00528">528</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00538">538</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac32a33df8c7dc654152b50b3db8be2ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac32a33df8c7dc654152b50b3db8be2ab">&#9670;&nbsp;</a></span>get_all()</h2>
+<a id="ab170ead9a391a40ce76c1286905a264c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab170ead9a391a40ce76c1286905a264c">&#9670;&nbsp;</a></span>get_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1502,7 +1502,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1523,12 +1523,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00556">556</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00566">566</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae1ee8dd98d68c14baab96df2b10331e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1ee8dd98d68c14baab96df2b10331e5">&#9670;&nbsp;</a></span>get_any()</h2>
+<a id="a7706e281cf7a546a63d710386f84d5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7706e281cf7a546a63d710386f84d5fb">&#9670;&nbsp;</a></span>get_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1548,7 +1548,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1569,12 +1569,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00542">542</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00552">552</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a0fdb32a5992921e89063e6c3d9d65ed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fdb32a5992921e89063e6c3d9d65ed0">&#9670;&nbsp;</a></span>getv()</h2>
+<a id="ad5b3c6b1f4cebe542e0ab0503ff5fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b3c6b1f4cebe542e0ab0503ff5fba1">&#9670;&nbsp;</a></span>getv()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1594,7 +1594,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1615,12 +1615,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00625">625</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00635">635</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a6993342a7d927b4edcb4da78ebe7c31d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6993342a7d927b4edcb4da78ebe7c31d">&#9670;&nbsp;</a></span>getv_all()</h2>
+<a id="a92ea221536116b723733178beb403895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ea221536116b723733178beb403895">&#9670;&nbsp;</a></span>getv_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1640,7 +1640,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1661,17 +1661,18 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00671">671</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00681">681</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a6993342a7d927b4edcb4da78ebe7c31d_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a92ea221536116b723733178beb403895_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a0366e866335172285f6c3ccaa74aaa2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0366e866335172285f6c3ccaa74aaa2d">&#9670;&nbsp;</a></span>getv_any()</h2>
+<a id="ab81d2b891736ced72ff2aaadbd31e8d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81d2b891736ced72ff2aaadbd31e8d5">&#9670;&nbsp;</a></span>getv_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1691,7 +1692,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1712,7 +1713,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00647">647</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00657">657</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1751,7 +1752,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00388">388</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00398">398</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1790,7 +1791,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00418">418</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00428">428</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1829,12 +1830,12 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00404">404</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00414">414</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8bafbdd0ae474afc87073398afc299d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bafbdd0ae474afc87073398afc299d8">&#9670;&nbsp;</a></span>rget()</h2>
+<a id="a7faf7c8c9f2a472398115124d83f08da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faf7c8c9f2a472398115124d83f08da">&#9670;&nbsp;</a></span>rget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1854,7 +1855,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1874,12 +1875,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00576">576</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00586">586</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a458d2c83dfd66c3cdf5335be50a75cff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a458d2c83dfd66c3cdf5335be50a75cff">&#9670;&nbsp;</a></span>rget_all()</h2>
+<a id="a23910ae02f2b40652349ab360ed1c077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23910ae02f2b40652349ab360ed1c077">&#9670;&nbsp;</a></span>rget_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1899,7 +1900,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1920,12 +1921,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00604">604</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00614">614</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a73310aa582180c8ae4ca3442c959badd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73310aa582180c8ae4ca3442c959badd">&#9670;&nbsp;</a></span>rget_any()</h2>
+<a id="a67cdeb5260ce9c02852aaf353fc53caf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67cdeb5260ce9c02852aaf353fc53caf">&#9670;&nbsp;</a></span>rget_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1945,7 +1946,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1966,12 +1967,12 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00590">590</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00600">600</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac46a31f4e6650bc3fb3f065b427da59d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac46a31f4e6650bc3fb3f065b427da59d">&#9670;&nbsp;</a></span>rgetv()</h2>
+<a id="aafcc4a53edd5cb6c11d8309d80b17487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcc4a53edd5cb6c11d8309d80b17487">&#9670;&nbsp;</a></span>rgetv()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1991,7 +1992,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2012,12 +2013,12 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00704">704</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00714">714</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a046d3b26e21cd4e856bef82bbd460f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a046d3b26e21cd4e856bef82bbd460f39">&#9670;&nbsp;</a></span>rgetv_all()</h2>
+<a id="af2da4d26a426b00bbf342b68683fcc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2da4d26a426b00bbf342b68683fcc56">&#9670;&nbsp;</a></span>rgetv_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2037,7 +2038,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2058,17 +2059,18 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00748">748</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00758">758</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_a046d3b26e21cd4e856bef82bbd460f39_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container_af2da4d26a426b00bbf342b68683fcc56_cgraph.svg" width="378" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a5dd193455b3b1b249a4cc86be56dbc57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dd193455b3b1b249a4cc86be56dbc57">&#9670;&nbsp;</a></span>rgetv_any()</h2>
+<a id="aa1adf1630f34af782a25a83932329f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1adf1630f34af782a25a83932329f15">&#9670;&nbsp;</a></span>rgetv_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2088,7 +2090,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2109,7 +2111,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00725">725</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00735">735</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2157,7 +2159,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00326">326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00336">336</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2205,7 +2207,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00316">316</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00326">326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

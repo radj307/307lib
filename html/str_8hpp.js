@@ -4,6 +4,8 @@ var str_8hpp =
     [ "compare", "str_8hpp.html#ab58e4fd600a73d4ffbdea3d65c5bdabd", null ],
     [ "compare", "str_8hpp.html#acd4ee543bc885f863faf20217f7142fe", null ],
     [ "join", "str_8hpp.html#acf8be91baa116c4582e66f6278db959f", null ],
+    [ "join_with_delimiter", "str_8hpp.html#a90ac6f2d084b34914281f50722fe85ff", null ],
+    [ "join_with_delimiter", "str_8hpp.html#ae89dea28a2858d6b0e99ba55171d220b", null ],
     [ "longest", "str_8hpp.html#af0d5f5ddec852ee6650d85fcd45c3030", null ],
     [ "longest", "str_8hpp.html#a718e93d72455a6f9af50cca592378f99", null ],
     [ "longest", "str_8hpp.html#aab273e18c3896683954b42ea222129f4", null ],

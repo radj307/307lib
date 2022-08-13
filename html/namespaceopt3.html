@@ -122,7 +122,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends vstring with the ability to require specific arguments.  <a href="structopt3_1_1basic__capture__wrapper.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__vstring.html">basic_vstring</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">'virtual' string object that has a constructor overload that accepts a single character.  <a href="structopt3_1_1basic__vstring.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable-string object with constructor overloads that accept a single character, c-strings, &amp; strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed.  <a href="structopt3_1_1basic__vstring.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1_capture_list.html">CaptureList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt3_1_1_capture_list.html#details">More...</a><br /></td></tr>
@@ -175,31 +175,31 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="memItemLeft" align="right" valign="top"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> : uchar { <b>Disabled</b> = 0, 
-<b>EqualsOnly</b> = 1, 
-<b>Optional</b> = 2, 
-<b>Required</b> = 4
+<tr class="memitem:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> : uchar { <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241">CaptureStyle::Disabled</a> = 0, 
+<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa">CaptureStyle::EqualsOnly</a> = 1, 
+<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd">CaptureStyle::Optional</a> = 2, 
+<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2">CaptureStyle::Required</a> = 4
  }</td></tr>
-<tr class="memdesc:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various capture styles. <br /></td></tr>
+<tr class="memdesc:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various capture styles.  <a href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">More...</a><br /></td></tr>
 <tr class="separator:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a27141d767d26acda793fba486e5e0363"><td class="memItemLeft" align="right" valign="top"><a id="a27141d767d26acda793fba486e5e0363"></a>
 CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a27141d767d26acda793fba486e5e0363">CaptureIsDisabled</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a27141d767d26acda793fba486e5e0363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle is set to CaptureStyle::Disabled. <br /></td></tr>
+<tr class="memdesc:a27141d767d26acda793fba486e5e0363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle is set to <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241" title="No captures are allowed under any circumstances. If a capture is appended using an equals (&#39;=&#39;) sign,...">CaptureStyle::Disabled</a>. <br /></td></tr>
 <tr class="separator:a27141d767d26acda793fba486e5e0363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="memItemLeft" align="right" valign="top"><a id="a17c8ba285f33cc14fd2ff0c7bdd848fb"></a>
 CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a17c8ba285f33cc14fd2ff0c7bdd848fb">CaptureIsDisabledOrEqualsOnly</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains CaptureStyle::Disabled and/or CaptureStyle::EqualsOnly. <br /></td></tr>
+<tr class="memdesc:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241" title="No captures are allowed under any circumstances. If a capture is appended using an equals (&#39;=&#39;) sign,...">CaptureStyle::Disabled</a> and/or <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa" title="Captures are only allowed when appended to the argument using an equals (&#39;=&#39;) sign....">CaptureStyle::EqualsOnly</a>. <br /></td></tr>
 <tr class="separator:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8309f651b77f31f8617f2d2bdfe558c"><td class="memItemLeft" align="right" valign="top"><a id="ad8309f651b77f31f8617f2d2bdfe558c"></a>
 CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ad8309f651b77f31f8617f2d2bdfe558c">CaptureIsEqualsOnly</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:ad8309f651b77f31f8617f2d2bdfe558c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains CaptureStyle::EqualsOnly. <br /></td></tr>
+<tr class="memdesc:ad8309f651b77f31f8617f2d2bdfe558c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa" title="Captures are only allowed when appended to the argument using an equals (&#39;=&#39;) sign....">CaptureStyle::EqualsOnly</a>. <br /></td></tr>
 <tr class="separator:ad8309f651b77f31f8617f2d2bdfe558c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a941327ed552047dfce9dfd80a1706e33"><td class="memItemLeft" align="right" valign="top"><a id="a941327ed552047dfce9dfd80a1706e33"></a>
 CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a941327ed552047dfce9dfd80a1706e33">CaptureIsRequired</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a941327ed552047dfce9dfd80a1706e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains CaptureStyle::Required. <br /></td></tr>
+<tr class="memdesc:a941327ed552047dfce9dfd80a1706e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2" title="Requires capture input. If a capture is not provided, an exception is thrown by the parser that inclu...">CaptureStyle::Required</a>. <br /></td></tr>
 <tr class="separator:a941327ed552047dfce9dfd80a1706e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </td></tr>
 <tr class="memitem:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1variantarg.html">variantarg</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae4ed85fd3aa84a9ec6899bea27da600f">make_argument</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> &amp;&amp;name, std::optional&lt; std::string &gt; &amp;&amp;capture=std::nullopt) noexcept(false)</td></tr>
@@ -213,6 +213,30 @@ CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memitem:ae09f9dd3af2cf1800f3391fde82dd789"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae09f9dd3af2cf1800f3391fde82dd789">noCapture</a> (T &amp;&amp;input)</td></tr>
 <tr class="memdesc:ae09f9dd3af2cf1800f3391fde82dd789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not accept captured input while also providing additional context.  <a href="namespaceopt3.html#ae09f9dd3af2cf1800f3391fde82dd789">More...</a><br /></td></tr>
 <tr class="separator:ae09f9dd3af2cf1800f3391fde82dd789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="memItemLeft" align="right" valign="top"><a id="a915dd3cc63f0241d3a9efcd9ef73aa64"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a915dd3cc63f0241d3a9efcd9ef73aa64">operator&amp;</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise AND operation. <br /></td></tr>
+<tr class="separator:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7498e59f451658fb9af25fc647c8fb"><td class="memItemLeft" align="right" valign="top"><a id="aaa7498e59f451658fb9af25fc647c8fb"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#aaa7498e59f451658fb9af25fc647c8fb">operator&amp;=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:aaa7498e59f451658fb9af25fc647c8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise AND-equals operation. <br /></td></tr>
+<tr class="separator:aaa7498e59f451658fb9af25fc647c8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5845c5e65e384be9451e815996ba20ec"><td class="memItemLeft" align="right" valign="top"><a id="a5845c5e65e384be9451e815996ba20ec"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a5845c5e65e384be9451e815996ba20ec">operator^</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:a5845c5e65e384be9451e815996ba20ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise XOR operation. <br /></td></tr>
+<tr class="separator:a5845c5e65e384be9451e815996ba20ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab72768716f03d3bc92d3f73f798bbb"><td class="memItemLeft" align="right" valign="top"><a id="a1ab72768716f03d3bc92d3f73f798bbb"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a1ab72768716f03d3bc92d3f73f798bbb">operator^=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:a1ab72768716f03d3bc92d3f73f798bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise XOR-equals operation. <br /></td></tr>
+<tr class="separator:a1ab72768716f03d3bc92d3f73f798bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="memItemLeft" align="right" valign="top"><a id="a32ae71d068e4b38dbd09ade1bdcb033c"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a32ae71d068e4b38dbd09ade1bdcb033c">operator|</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise OR operation. <br /></td></tr>
+<tr class="separator:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fd909f6ace5540f390590ec37c7e5e"><td class="memItemLeft" align="right" valign="top"><a id="a01fd909f6ace5540f390590ec37c7e5e"></a>
+constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a01fd909f6ace5540f390590ec37c7e5e">operator|=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
+<tr class="memdesc:a01fd909f6ace5540f390590ec37c7e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise OR-equals operation. <br /></td></tr>
+<tr class="separator:a01fd909f6ace5540f390590ec37c7e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a364fad60d5806e5485babfaaa67e1d73"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
 <tr class="memitem:a364fad60d5806e5485babfaaa67e1d73"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a364fad60d5806e5485babfaaa67e1d73">optionalCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
 <tr class="memdesc:a364fad60d5806e5485babfaaa67e1d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not require captured input while also providing additional context.  <a href="namespaceopt3.html#a364fad60d5806e5485babfaaa67e1d73">More...</a><br /></td></tr>
@@ -255,7 +279,44 @@ template&lt;typename T &gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains a commandline argument parser &amp; container object. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="af513b9aedbc0b93786e13aa7e9b6e8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af513b9aedbc0b93786e13aa7e9b6e8b8">&#9670;&nbsp;</a></span>CaptureStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">opt3::CaptureStyle</a> : <a class="el" href="namespaceopt3.html#a2b6ee3497cef008123109807aee8ceb6">uchar</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Defines various capture styles. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241"></a>Disabled&#160;</td><td class="fielddoc"><p>No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa"></a>EqualsOnly&#160;</td><td class="fielddoc"><p>Captures are only allowed when appended to the argument using an equals ('=') sign. Since CaptureStyle is a bitfield, this may be combined with <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd" title="Captures whenever possible, but does not require capture input. Arguments of type Flag &amp; Option are n...">CaptureStyle::Optional</a> or <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2" title="Requires capture input. If a capture is not provided, an exception is thrown by the parser that inclu...">CaptureStyle::Required</a> to force them to only accept input via appending with an equals sign ('='). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd"></a>Optional&#160;</td><td class="fielddoc"><p>Captures whenever possible, but does not require capture input. Arguments of type Flag &amp; Option are never captured by other flags or options. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2"></a>Required&#160;</td><td class="fielddoc"><p>Requires capture input. If a capture is not provided, an exception is thrown by the parser that includes the name of the argument, and a brief message informing the user to provide a capture argument. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01086">1086</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ae4ed85fd3aa84a9ec6899bea27da600f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4ed85fd3aa84a9ec6899bea27da600f">&#9670;&nbsp;</a></span>make_argument()</h2>
 
@@ -328,7 +389,7 @@ template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </di
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A variantarg containing an argument of the specified type. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00268">268</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00278">278</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +435,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01324">1324</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01352">1352</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +482,7 @@ template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01337">1337</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01365">1365</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -479,7 +540,7 @@ template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01298">1298</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01326">1326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -536,7 +597,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01311">1311</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01339">1339</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -593,7 +654,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainer </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01426">1426</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01454">1454</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -661,7 +722,7 @@ template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01271">1271</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01299">1299</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +779,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01284">1284</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01312">1312</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -773,7 +834,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01541">1541</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01569">1569</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

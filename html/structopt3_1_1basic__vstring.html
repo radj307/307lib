@@ -94,19 +94,21 @@ $(document).ready(function(){initNavTree('structopt3_1_1basic__vstring.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>'virtual' string object that has a constructor overload that accepts a single character.  
+<p>Variable-string object with constructor overloads that accept a single character, c-strings, &amp; strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed.  
  <a href="structopt3_1_1basic__vstring.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for opt3::basic_vstring&lt; TChar, TCharTraits, TAlloc &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__vstring__inherit__graph.svg" width="194" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__vstring__inherit__graph.svg" width="194" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for opt3::basic_vstring&lt; TChar, TCharTraits, TAlloc &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__vstring__coll__graph.svg" width="194" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__vstring__coll__graph.svg" width="194" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -118,11 +120,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::basi
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5e0677a744637905341cf65029a03ffb"><td class="memItemLeft" align="right" valign="top"><a id="a5e0677a744637905341cf65029a03ffb"></a>
-CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>basic_vstring</b> (const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; &amp;s)</td></tr>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__vstring.html#a5e0677a744637905341cf65029a03ffb">basic_vstring</a> (const std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; &amp;s)</td></tr>
+<tr class="memdesc:a5e0677a744637905341cf65029a03ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a string of TChars. <br /></td></tr>
 <tr class="separator:a5e0677a744637905341cf65029a03ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58f27c81995e3ecb63aaf2da42f1f345"><td class="memItemLeft" align="right" valign="top"><a id="a58f27c81995e3ecb63aaf2da42f1f345"></a>
-CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>basic_vstring</b> (const TChar &amp;c)</td></tr>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__vstring.html#a58f27c81995e3ecb63aaf2da42f1f345">basic_vstring</a> (const TChar &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>)</td></tr>
+<tr class="memdesc:a58f27c81995e3ecb63aaf2da42f1f345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a single character of type TChar. <br /></td></tr>
 <tr class="separator:a58f27c81995e3ecb63aaf2da42f1f345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3ea6d890c5440f1f34c1da95213a37"><td class="memItemLeft" align="right" valign="top"><a id="a7d3ea6d890c5440f1f34c1da95213a37"></a>
+CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__vstring.html#a7d3ea6d890c5440f1f34c1da95213a37">basic_vstring</a> (const TChar *cs)</td></tr>
+<tr class="memdesc:a7d3ea6d890c5440f1f34c1da95213a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a c-string of TChars. <br /></td></tr>
+<tr class="separator:a7d3ea6d890c5440f1f34c1da95213a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a476bf8ab016c52bdbd283026bed28fd0"><td class="memItemLeft" align="right" valign="top"><a id="a476bf8ab016c52bdbd283026bed28fd0"></a>
 CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><b>get_single_char</b> () const</td></tr>
 <tr class="separator:a476bf8ab016c52bdbd283026bed28fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,9 +145,9 @@ CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::ba
 <div class="textblock"><h3>template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt;<br />
 struct opt3::basic_vstring&lt; TChar, TCharTraits, TAlloc &gt;</h3>
 
-<p>'virtual' string object that has a constructor overload that accepts a single character. </p>
+<p>Variable-string object with constructor overloads that accept a single character, c-strings, &amp; strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00028">28</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00027">27</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/optlib/include/<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a></li>
 </ul>

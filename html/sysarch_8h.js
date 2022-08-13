@@ -3,6 +3,7 @@ var sysarch_8h =
     [ "_STRINGIZE_INTERNAL", "sysarch_8h.html#ad1512bd26ba3ed605e470cd2f2bb83f9", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
+    [ "c", "sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1", null ],
     [ "CONSTEVAL", "sysarch_8h.html#a9020686a7e116e040711b247d4f864ba", null ],
     [ "CONSTEXPR", "sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280", null ],
     [ "INLINE", "sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116", null ],
