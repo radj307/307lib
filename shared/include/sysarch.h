@@ -276,3 +276,11 @@
 #endif
 #endif
 
+/**
+ * @define		$c
+ * @brief		Macro that calls static_cast with the given typename & variable.
+ * @param type	Output type of the cast expression.
+ * @param var	Input value of the cast expression.
+ * @returns		Result of calling static_cast<type>(var)
+ */
+#define $c(type, var) static_cast<type>(var)
