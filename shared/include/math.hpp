@@ -98,8 +98,8 @@ namespace math {
 	 * @brief				Normalize a given value from its current range to a new one.
 	 * @tparam T			Any number type.
 	 * @param value			Input Value.
-	 * @param old_range		The number range to translate the given value from.
-	 * @param new_range		The number range to translate the given value to.
+	 * @param old_range		The number range to translate the given value from. (Inclusive)
+	 * @param new_range		The number range to translate the given value to. (Inclusive)
 	 * @returns				T
 	 */
 	template<var::numeric T, var::numeric RT = T>
@@ -111,8 +111,8 @@ namespace math {
 	 * @brief				Scale a given value from its current range to a new one.
 	 * @tparam T			Any number type.
 	 * @param value			Input Value.
-	 * @param old_range		The number range to translate the given value from.
-	 * @param new_range		The number range to translate the given value to.
+	 * @param old_range		The number range to translate the given value from. (Inclusive)
+	 * @param new_range		The number range to translate the given value to. (Inclusive)
 	 * @returns				T
 	 */
 	template<var::numeric T, var::numeric RT = T>

@@ -13,11 +13,11 @@
  */
 namespace ex {
 	/**
-	 * @class	basic_except
+	 * @class	except
 	 * @brief	General-purpose std::exception wrapper object that adds useful features like constructors and mutable error messages.
 	 *\n		This exception type can be caught by any `catch` statement for std::exception.
 	 */
-	class basic_except : public std::exception {
+	class except : public std::exception {
 		/**
 		 * @private
 		 * @var
@@ -46,22 +46,22 @@ namespace ex {
 		/**
 		 * @brief	Default constructor with a blank message.
 		 */
-		basic_except() = default;
+		except() = default;
 		/**
 		 * @brief			Constructor with a message.
 		 * @param message	A string to print when calling the what() method.
 		 */
-		basic_except(std::string&& message) : message{ std::move(std::make_unique<std::string>(std::move(message))) } {}
+		except(std::string&& message) : message{ std::move(std::make_unique<std::string>(std::move(message))) } {}
 		/**
 		 * @brief			Constructor with a message.
 		 * @param message	A string to print when calling the what() method.
 		 */
-		basic_except(const std::string& message) : message{ std::move(std::make_unique<std::string>(message)) } {}
+		except(const std::string& message) : message{ std::move(std::make_unique<std::string>(message)) } {}
 		/**
 		 * @brief			Move Constructor
 		 * @param o			Another except object to move.
 		 */
-		basic_except(basic_except&& o) noexcept : message{ std::move(o.message) } {}
+		except(except&& o) noexcept : message{ std::move(o.message) } {}
 
 		/**
 		 * @brief		Retrieve the message associated with this exception.
@@ -82,73 +82,35 @@ namespace ex {
 		 * @param ex	Constant Reference of an except object.
 		 * @returns		std::ostream&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const basic_except& ex) { return os << ex.what(); }
-	};
-
-	using except = basic_except;
-
-	/**
-	 * @class	except_with_id
-	 * @brief	Extends the basic_except class with exception identifier numbers, commonly known as 'error codes'.
-	 */
-	class except_with_id : public basic_except {
-		using base = basic_except;
-		long long errorID{ 0 };
-
-	public:
-		/**
-		 * @brief			Constructor
-		 * @param message	A string to print when calling the what() method.
-		 * @param errorID	An error code to associate with this exception.
-		 */
-		except_with_id(std::string&& message, const long long& errorID) : base(std::move(message)), errorID{ errorID } {}
-		/**
-		 * @brief			Constructor
-		 * @param message	A string to print when calling the what() method.
-		 * @param errorID	An error code to associate with this exception.
-		 */
-		except_with_id(const std::string& message, const long long& errorID) : base(message), errorID{ errorID } {}
-		using base::base; //< inherit base constructors
-
-		/**
-		 * @brief		Retrieve the error code associated with this exception.
-		 * @returns		The error code associated with this exception.
-		 */
-		[[nodiscard]] virtual constexpr long long error_code() const noexcept { return this->operator long long(); }
-
-		/**
-		 * @brief		Allows implicit conversion to the error code type.
-		 * @returns		The error code associated with this exception.
-		 */
-		[[nodiscard]] constexpr operator long long() const noexcept { return errorID; }
+		friend std::ostream& operator<<(std::ostream& os, const except& ex) { return os << ex.what(); }
 	};
 
 	/**
 	 * @brief				Create a custom exception type with the given arguments as a message.
-	 * @tparam ReturnT		The type of exception to return.
+	 * @tparam TReturn		The type of exception to return.
 	 * @tparam ...Ts		Variadic Templated Types.
 	 * @param ...message	The message shown when calling the what() function.
-	 * @returns				ReturnT
+	 * @returns				TReturn
 	 */
-	template<std::derived_from<except> ReturnT, var::streamable<std::ostream>... Ts> requires std::constructible_from<ReturnT, std::string>
-	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
+	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires std::constructible_from<TReturn, std::string>
+	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception(Ts&&... message)
 	{
 		std::stringstream ss;
 		(ss << ... << std::forward<Ts>(message));
-		return ReturnT{ ss.str() };
+		return TReturn{ ss.str() };
 	}
 
 	/**
 	 * @brief				Create a custom exception type with the given arguments as a message.
-	 * @tparam ReturnT		The type of exception to return.
+	 * @tparam TReturn		The type of exception to return.
 	 * @tparam ...Ts		Variadic Templated Types.
 	 * @param ...message	The message shown when calling the what() function.
-	 * @returns				ReturnT
+	 * @returns				TReturn
 	 */
-	template<std::derived_from<except> ReturnT, var::streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...>&& std::constructible_from<ReturnT, Ts...>
-	[[nodiscard]] WINCONSTEXPR ReturnT make_custom_exception(Ts&&... message)
+	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...>&& std::constructible_from<TReturn, Ts...>
+	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception(Ts&&... message)
 	{
-		return ReturnT{ std::forward<Ts>(message)... };
+		return TReturn{ std::forward<Ts>(message)... };
 	}
 
 	/**
@@ -160,31 +122,7 @@ namespace ex {
 	template<var::streamable<std::ostream>... Ts>
 	[[nodiscard]] WINCONSTEXPR except make_exception(Ts&&... message)
 	{
-		return ex::make_custom_exception<ex::except>(std::forward<Ts>(message)...);
-	}
-
-	/**
-	 * @overload
-	 * @brief			Create an exception with a given message, using wide-characters.
-	 *\n				This function only accepts types using wchar_t instead of char, however all characters are
-	 *\n				 converted to narrow chars before returning, as exception messages cannot contain wide chars.
-	 * @tparam ...Ts	Any number of types with an overloaded operator<< for std::wostream.
-	 * @param message	Any number of printable variables/objects.
-	 * @returns			except
-	 */
-	template<std::derived_from<except> ReturnT, var::streamable<std::wostream>... Ts>
-	[[nodiscard]] WINCONSTEXPR except make_exeption(Ts&&... message)
-	{
-		std::wstring wstr;
-		{
-			std::wstringstream ss;
-			(ss << ... << std::forward<Ts>(message));
-			wstr = ss.str();
-		}
-		std::string str;
-		for (auto& wch : wstr)
-			str += static_cast<char>(wch);
-		return { str.c_str() };
+		return make_custom_exception<ex::except>(std::forward<Ts>(message)...);
 	}
 }
 

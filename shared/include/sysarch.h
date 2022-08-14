@@ -276,3 +276,21 @@
 #endif
 #endif
 
+#ifndef $SYSARCH_NO_FUNCTIONS
+
+#include <string>
+
+/**
+ * @def			$nameof
+ * @brief		Gets the unqualified, string representation of a given variable, type, object, or function.
+ * @param obj	A fully or partially-qualified name; do not include semicolons, brackets, or parameters.
+ * @returns		The stringized, unqualified name of obj.
+ */
+#define $nameof(obj) \
+([](std::string&& str) -> std::string {\
+	if (const size_t pos{ str.find_last_of(":.->")}; pos < str.size())\
+		return str.substr(pos + 1ull);\
+	return str;\
+}(#obj))
+
+#endif

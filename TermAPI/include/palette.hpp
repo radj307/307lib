@@ -1,7 +1,7 @@
 /**
- * @file palette.hpp
- * @author radj307
- * @brief Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program.
+ * @file	palette.hpp
+ * @author	radj307
+ * @brief	Contains the ColorPalette struct, which provides a convenient API for applying consistent colors throughout a program.
  */
 #pragma once
 #include <Segments.h>
@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <map>
 
-namespace term {
+namespace color {
 	/**
 	 * @class		palette
 	 * @brief		Associative binding container with additional helper methods & operators.
@@ -321,23 +321,23 @@ namespace term {
 
 #		pragma region MessageHeaders
 		/// @brief	Returns [DEBUG] header that uses colors only if the palette is enabled.
-		Message get_debug() const noexcept { return term::get_debug(_enable, MessageMarginSize); }
+		term::Message get_debug() const noexcept { return term::get_debug(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [INFO] header that uses colors only if the palette is enabled.
-		Message get_info() const noexcept { return term::get_info(_enable, MessageMarginSize); }
+		term::Message get_info() const noexcept { return term::get_info(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [LOG] header that uses colors only if the palette is enabled.
-		Message get_log() const noexcept { return term::get_log(_enable, MessageMarginSize); }
+		term::Message get_log() const noexcept { return term::get_log(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [MSG] header that uses colors only if the palette is enabled.
-		Message get_msg() const noexcept { return term::get_msg(_enable, MessageMarginSize); }
+		term::Message get_msg() const noexcept { return term::get_msg(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [WARN] header that uses colors only if the palette is enabled.
-		Message get_warn() const noexcept { return term::get_warn(_enable, MessageMarginSize); }
+		term::Message get_warn() const noexcept { return term::get_warn(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [ERROR] header that uses colors only if the palette is enabled.
-		Message get_error() const noexcept { return term::get_error(_enable, MessageMarginSize); }
+		term::Message get_error() const noexcept { return term::get_error(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [CRIT] header that uses colors only if the palette is enabled.
-		Message get_crit() const noexcept { return term::get_crit(_enable, MessageMarginSize); }
+		term::Message get_crit() const noexcept { return term::get_crit(_enable, term::MessageMarginSize); }
 		/// @brief	Returns [FATAL] header that uses colors only if the palette is enabled.
-		Message get_fatal() const noexcept { return term::get_fatal(_enable, MessageMarginSize); }
+		term::Message get_fatal() const noexcept { return term::get_fatal(_enable, term::MessageMarginSize); }
 		/// @brief	Returns an empty space header the same size as a normal message's indentation.
-		Message get_placeholder() const noexcept { return term::placeholder; }
+		term::Message get_placeholder() const noexcept { return term::placeholder; }
 #		pragma endregion MessageHeaders
 
 #		pragma region FileIO
@@ -388,4 +388,4 @@ namespace term {
 	};
 }
 
-namespace color { using term::palette; }
+namespace term { using color::palette; }
