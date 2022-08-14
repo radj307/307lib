@@ -35,7 +35,7 @@ namespace str {
 	 * @returns std::string
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static const std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
+	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
 	{
 		if constexpr (var::none<Ts...>)
 			return{};

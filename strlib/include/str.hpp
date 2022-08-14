@@ -38,6 +38,18 @@ namespace str {
 		}
 		return std::move(buffer.str());
 	}
+
+	template<var::valid_char TChar = char, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static const std::basic_string<TChar, TCharTraits, TAlloc> join_with_delimiter(std::basic_string<TChar, TCharTraits, TAlloc> const& prefix, std::basic_string<TChar, TCharTraits, TAlloc> const& suffix, std::basic_string<TChar, TCharTraits, TAlloc> const& delimiter, Ts&&... s)
+	{
+		return join(std::vector<std::basic_string<TChar, TCharTraits, TAlloc>>{ str::stringify<TChar, TCharTraits, TAlloc>(prefix, std::forward<Ts>(s), suffix)... }, delimiter);
+	}
+	template<var::valid_char TChar = char, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static const std::basic_string<TChar, TCharTraits, TAlloc> join_with_delimiter(const TChar* prefix, const TChar* suffix, const TChar* delimiter, Ts&&... s)
+	{
+		return join(std::vector<std::basic_string<TChar, TCharTraits, TAlloc>>{ str::stringify<TChar, TCharTraits, TAlloc>(prefix, std::forward<Ts>(s), suffix)... }, delimiter);
+	}
+
 	template<var::valid_string_or_convertible T, class Pred, var::valid_string_or_convertible... Ts>
 	static T compare(const Pred& predicate, const T& fst, const Ts&... strings)
 	{

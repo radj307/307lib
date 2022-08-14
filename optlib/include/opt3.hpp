@@ -7,7 +7,6 @@
  */
 #include <sysarch.h>
 #include <str.hpp>
-#include <vstring.hpp>
 
 #include <concepts>
 #include <compare>
@@ -20,8 +19,39 @@
   * @brief		Contains a commandline argument parser & container object.
   */
 namespace opt3 {
-	using shared::basic_vstring;
-	using shared::vstring;
+	/**
+	 * @struct	basic_vstring
+	 * @brief	Variable-string object with constructor overloads that accept a single character, c-strings, & strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed.
+	 */
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
+	struct basic_vstring : public std::basic_string<TChar, TCharTraits, TAlloc> {
+		using base = std::basic_string<TChar, TCharTraits, TAlloc>;
+		using base::base;
+		/// @brief	Accepts a single character of type TChar
+		CONSTEXPR basic_vstring(const TChar& c) : base(1ull, c) {}
+		/// @brief	Accepts a string of TChars
+		CONSTEXPR basic_vstring(const std::basic_string<TChar, TCharTraits, TAlloc>& s) : base(s) {}
+		/// @brief	Accepts a c-string of TChars
+		CONSTEXPR basic_vstring(const TChar* cs) : base(cs) {}
+	#ifdef _FILESYSTEM_
+		CONSTEXPR basic_vstring(const std::filesystem::path& p) requires var::any_same<TChar, char, signed char, unsigned char> : base(p.generic_string()) {}
+		CONSTEXPR basic_vstring(const std::filesystem::path& p) requires std::same_as<TChar, wchar_t> : base(p.generic_wstring()) {}
+		CONSTEXPR basic_vstring(const std::filesystem::path& p) requires std::same_as<TChar, char8_t> : base(p.generic_u8string()) {}
+		CONSTEXPR basic_vstring(const std::filesystem::path& p) requires std::same_as<TChar, char16_t> : base(p.generic_u16string()) {}
+		CONSTEXPR basic_vstring(const std::filesystem::path& p) requires std::same_as<TChar, char32_t> : base(p.generic_u32string()) {}
+	#endif
+
+		CONSTEXPR bool is_single_char() const { return this->size() == 1ull; }
+		CONSTEXPR char get_single_char() const { return this->front(); }
+
+		CONSTEXPR operator std::basic_string<TChar, TCharTraits, TAlloc>() const noexcept { return *this; }
+	#ifdef _FILESYSTEM_
+		CONSTEXPR operator std::filesystem::path() const noexcept { return std::filesystem::path{ this->operator std::basic_string<TChar, TCharTraits, TAlloc>() }; }
+	#endif
+	};
+	/// @brief	Narrow-char width string type.
+	using vstring = basic_vstring<char, std::char_traits<char>, std::allocator<char>>;
+
 
 	/// @brief	The underlying value type of Parameters.
 	using parameter_t = std::string;
@@ -407,7 +437,7 @@ namespace opt3 {
 
 	#pragma region find
 		template<valid_arg... TFilterTypes>
-		WINCONSTEXPR std::vector<variantarg>::const_iterator find(vstring const& name) const
+		WINCONSTEXPR std::vector<variantarg>::const_iterator find(vstring const& name) const noexcept
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
@@ -418,7 +448,7 @@ namespace opt3 {
 			return this->end();
 		}
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		WINCONSTEXPR std::vector<variantarg>::const_iterator find_any(Ts&&... names) const
+		WINCONSTEXPR std::vector<variantarg>::const_iterator find_any(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -431,7 +461,7 @@ namespace opt3 {
 			return this->end();
 		}
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		WINCONSTEXPR std::vector<std::vector<variantarg>::const_iterator> find_all(Ts&&... names) const
+		WINCONSTEXPR std::vector<std::vector<variantarg>::const_iterator> find_all(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -453,7 +483,7 @@ namespace opt3 {
 
 	#pragma region rfind
 		template<valid_arg... TFilterTypes>
-		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind(vstring const& name) const
+		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind(vstring const& name) const noexcept
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
@@ -464,7 +494,7 @@ namespace opt3 {
 			return this->rend();
 		}
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind_any(Ts&&... names) const
+		WINCONSTEXPR std::vector<variantarg>::const_reverse_iterator rfind_any(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -477,7 +507,7 @@ namespace opt3 {
 			return this->rend();
 		}
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		WINCONSTEXPR std::vector<std::vector<variantarg>::const_reverse_iterator> rfind_all(Ts&&... names) const
+		WINCONSTEXPR std::vector<std::vector<variantarg>::const_reverse_iterator> rfind_all(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -505,7 +535,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<variantarg> get(vstring const& name) const
+		CONSTEXPR std::optional<variantarg> get(vstring const& name) const noexcept
 		{
 			if (const auto& it{ this->find<TFilterTypes...>(name) }; it != this->end())
 				return *it;
@@ -519,7 +549,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<variantarg> get_any(Ts&&... names) const
+		CONSTEXPR std::optional<variantarg> get_any(Ts&&... names) const noexcept
 		{
 			if (const auto& it{ this->find_any<TFilterTypes...>(std::forward<Ts>(names)...) }; it != this->end())
 				return *it;
@@ -533,7 +563,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<variantarg> get_all(Ts&&... names) const
+		CONSTEXPR std::vector<variantarg> get_all(Ts&&... names) const noexcept
 		{
 			std::vector<variantarg> vec;
 			const auto& all{ this->find_all<TFilterTypes...>(std::forward<Ts>(names)...) };
@@ -553,7 +583,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<variantarg> rget(vstring const& name) const
+		CONSTEXPR std::optional<variantarg> rget(vstring const& name) const noexcept
 		{
 			if (const auto& it{ this->rfind<TFilterTypes...>(name) }; it != this->end())
 				return *it;
@@ -567,7 +597,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<variantarg> rget_any(Ts&&... names) const
+		CONSTEXPR std::optional<variantarg> rget_any(Ts&&... names) const noexcept
 		{
 			if (const auto& it{ this->rfind_any<TFilterTypes...>(std::forward<Ts>(names)...) }; it != this->end())
 				return *it;
@@ -581,7 +611,7 @@ namespace opt3 {
 		 * @returns					The first variantarg object with the given name if it exists; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<variantarg> rget_all(Ts&&... names) const
+		CONSTEXPR std::vector<variantarg> rget_all(Ts&&... names) const noexcept
 		{
 			std::vector<variantarg> vec;
 			const auto& all{ this->rfind_all<TFilterTypes...>(std::forward<Ts>(names)...) };
@@ -602,7 +632,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<std::string> getv(vstring const& name) const
+		CONSTEXPR std::optional<std::string> getv(vstring const& name) const noexcept
 		{
 			static_assert(!var::any_same<Parameter, TFilterTypes...>, "opt3::arg_container::getv() cannot be used to get non-Flags or non-Options!");
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
@@ -624,7 +654,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<std::string> getv_any(Ts&&... names) const
+		CONSTEXPR std::optional<std::string> getv_any(Ts&&... names) const noexcept
 		{
 			static_assert(!var::any_same<Parameter, TFilterTypes...>, "opt3::arg_container::getv() cannot be used to get non-Flags or non-Options!");
 			constexpr bool
@@ -648,7 +678,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<std::string> getv_all(Ts&&... names) const
+		CONSTEXPR std::vector<std::string> getv_all(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -681,7 +711,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<std::string> rgetv(vstring const& name) const
+		CONSTEXPR std::optional<std::string> rgetv(vstring const& name) const noexcept
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
@@ -702,7 +732,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<std::string> rgetv_any(Ts&&... names) const
+		CONSTEXPR std::optional<std::string> rgetv_any(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -725,7 +755,7 @@ namespace opt3 {
 		 * @returns					The capture value of the first matching argument if found; otherwise std::nullopt.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<std::string> rgetv_all(Ts&&... names) const
+		CONSTEXPR std::vector<std::string> rgetv_all(Ts&&... names) const noexcept
 		{
 			constexpr bool
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
@@ -774,7 +804,7 @@ namespace opt3 {
 		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<TReturn> castget(const std::function<TReturn(variantarg)>& converter, vstring const& name) const noexcept
+		CONSTEXPR std::optional<TReturn> castget(const std::function<TReturn(variantarg)>& converter, vstring const& name) const
 		{
 			if (const auto& v{ this->get<TFilterTypes...>(name) }; v.has_value())
 				return converter(v.value());
@@ -804,7 +834,7 @@ namespace opt3 {
 		 * @returns					The specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<TReturn> castget_any(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const noexcept
+		CONSTEXPR std::optional<TReturn> castget_any(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const
 		{
 			if (const auto& v{ this->get_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
 				return converter(v.value());
@@ -838,7 +868,7 @@ namespace opt3 {
 		 * @returns					A vector containing all matching arguments.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<TReturn> castget_all(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const noexcept
+		CONSTEXPR std::vector<TReturn> castget_all(const std::function<TReturn(variantarg)>& converter, Ts&&... names) const
 		{
 			std::vector<TReturn> vec;
 			const auto& all{ this->get_all<TFilterTypes...>(std::forward<Ts>(names)...) };
@@ -875,7 +905,7 @@ namespace opt3 {
 		 * @returns					The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes>
-		CONSTEXPR std::optional<TReturn> castgetv(const std::function<TReturn(vstring)>& converter, vstring const& name) const noexcept
+		CONSTEXPR std::optional<TReturn> castgetv(const std::function<TReturn(vstring)>& converter, vstring const& name) const
 		{
 			if (const auto& v{ this->getv<TFilterTypes...>(name) }; v.has_value())
 				return converter(v.value());
@@ -905,7 +935,7 @@ namespace opt3 {
 		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::optional<TReturn> castgetv_any(const std::function<TReturn(vstring)>& converter, Ts&&... names) const noexcept
+		CONSTEXPR std::optional<TReturn> castgetv_any(const std::function<TReturn(vstring)>& converter, Ts&&... names) const
 		{
 			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
 				return converter(v.value());
@@ -939,7 +969,7 @@ namespace opt3 {
 		 * @returns					A vector containing the capture value(s) of all matches.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR std::vector<TReturn> castgetv_all(const std::function<TReturn(vstring)>& converter, Ts&&... names) const noexcept
+		CONSTEXPR std::vector<TReturn> castgetv_all(const std::function<TReturn(vstring)>& converter, Ts&&... names) const
 		{
 			std::vector<TReturn> vec;
 			const auto& all{ this->getv_all<TFilterTypes...>(std::forward<Ts>(names)...) };
@@ -958,7 +988,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR bool check(vstring const& name) const
+		CONSTEXPR bool check(vstring const& name) const noexcept
 		{
 			return this->find<TFilterTypes...>(name) != this->end();
 		}
@@ -968,7 +998,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR bool check_any(Ts&&... names) const
+		CONSTEXPR bool check_any(Ts&&... names) const noexcept
 		{
 			return this->find_any<TFilterTypes...>(std::forward<Ts>(names)...) != this->end();
 		}
@@ -978,7 +1008,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR bool check_all(Ts&&... names) const
+		CONSTEXPR bool check_all(Ts&&... names) const noexcept
 		{
 			std::vector<vstring> nameVec{ std::forward<Ts>(names)... };
 			return std::all_of(nameVec.begin(), nameVec.end(), [this](auto&& name) { return check(std::forward<decltype(name)>(name)); });
@@ -988,19 +1018,19 @@ namespace opt3 {
 		 * @param name	The name to check for.
 		 * @returns		true when the Option was included; otherwise false.
 		 */
-		CONSTEXPR bool checkopt(vstring const& name) { return this->check<Option>(name); }
+		CONSTEXPR bool checkopt(vstring const& name) const noexcept { return this->check<Option>(name); }
 		/**
 		 * @brief		Checks if the specified Flag was included.
 		 * @param name	The name to check for.
 		 * @returns		true when the Flag was included; otherwise false.
 		 */
-		CONSTEXPR bool checkflag(vstring const& name) { return this->check<Flag>(name); }
+		CONSTEXPR bool checkflag(vstring const& name) const noexcept { return this->check<Flag>(name); }
 		/**
 		 * @brief		Checks if the specified Parameter was included.
 		 * @param name	The name to check for.
 		 * @returns		true when the Parameter was included; otherwise false.
 		 */
-		CONSTEXPR bool checkparam(vstring const& name) { return this->check<Parameter>(name); }
+		CONSTEXPR bool checkparam(vstring const& name) const noexcept { return this->check<Parameter>(name); }
 	#pragma endregion check
 
 	#pragma region checkv
@@ -1010,7 +1040,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes>
-		CONSTEXPR bool checkv(std::string const& value, vstring const& name) const
+		CONSTEXPR bool checkv(std::string const& value, vstring const& name) const noexcept
 		{
 			if (const auto& v{ this->getv<TFilterTypes...>(name) }; v.has_value())
 				return v.value() == value;
@@ -1022,7 +1052,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR bool checkv_any(std::string const& value, Ts&&... names) const
+		CONSTEXPR bool checkv_any(std::string const& value, Ts&&... names) const noexcept
 		{
 			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
 				return v.value() == value;
@@ -1034,7 +1064,7 @@ namespace opt3 {
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
-		CONSTEXPR bool checkv_all(std::string const& value, Ts&&... names) const
+		CONSTEXPR bool checkv_all(std::string const& value, Ts&&... names) const noexcept
 		{
 			for (const auto& it : this->get_all<TFilterTypes...>(std::forward<Ts>(names)...))
 				if (!it.has_value() || it.value() != value)
@@ -1054,12 +1084,30 @@ namespace opt3 {
 	 * @brief	Defines various capture styles
 	 */
 	enum class CaptureStyle : uchar {
+		///	@brief	No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline.
 		Disabled = 0,
+		/// @brief	Captures are only allowed when appended to the argument using an equals ('=') sign. Since CaptureStyle is a bitfield, this may be combined with CaptureStyle::Optional or CaptureStyle::Required to force them to only accept input via appending with an equals sign ('=').
 		EqualsOnly = 1,
+		/// @brief	Captures whenever possible, but does not require capture input. Arguments of type Flag & Option are never captured by other flags or options.
 		Optional = 2,
+		/// @brief	Requires capture input. If a capture is not provided, an exception is thrown by the parser that includes the name of the argument, and a brief message informing the user to provide a capture argument.
 		Required = 4,
 	};
 
+#pragma region CaptureStyleOperators
+	/// @brief	Bitwise OR operation.
+	constexpr CaptureStyle operator|(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) | $c(int, r))); }
+	/// @brief	Bitwise AND operation.
+	constexpr CaptureStyle operator&(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) & $c(int, r))); }
+	/// @brief	Bitwise XOR operation.
+	constexpr CaptureStyle operator^(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) ^ $c(int, r))); }
+	/// @brief	Bitwise OR-equals operation.
+	constexpr CaptureStyle& operator|=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) | $c(int, r))); }
+	/// @brief	Bitwise AND-equals operation.
+	constexpr CaptureStyle& operator&=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) & $c(int, r))); }
+	/// @brief	Bitwise XOR-equals operation.
+	constexpr CaptureStyle& operator^=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) ^ $c(int, r))); }
+#pragma endregion CaptureStyleOperators
 
 
 	/**
