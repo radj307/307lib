@@ -94,10 +94,18 @@ $(document).ready(function(){initNavTree('sysarch_8h.html',''); initResizable();
 
 <p>Contains preprocessor definitions useful for determining properties of the host system.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for sysarch.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sysarch_8h__incl.svg" width="200" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="sysarch_8h_source.html">Go to the source code of this file.</a></p>
@@ -140,6 +148,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:a0953a4caf523a36eafb8ff32b47d4b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, the system is capable of multithreading using C++ threads. <br  />
  minver: C++11. <br /></td></tr>
 <tr class="separator:a0953a4caf523a36eafb8ff32b47d4b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b5ede0ef0c14f0f7567d50724c3026"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>nameof</b>(obj)</td></tr>
+<tr class="separator:ae0b5ede0ef0c14f0f7567d50724c3026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a2f6d164420a9c9323e6842ed663bf3"><td class="memItemLeft" align="right" valign="top"><a id="a0a2f6d164420a9c9323e6842ed663bf3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a0a2f6d164420a9c9323e6842ed663bf3">OS_CYGWIN</a></td></tr>
 <tr class="memdesc:a0a2f6d164420a9c9323e6842ed663bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows Operating System with Cygwin. Value is set to ARCH. <br /></td></tr>
@@ -292,7 +302,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of calling static_cast&lt;type&gt;(var) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00286">286</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00303">303</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -368,8 +378,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ae0b5ede0ef0c14f0f7567d50724c3026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b5ede0ef0c14f0f7567d50724c3026">&#9670;&nbsp;</a></span>nameof</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define nameof</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">obj</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">([](std::string&amp;&amp; <a class="code" href="namespacestr.html">str</a>) -&gt; std::string {\</div>
+<div class="line">    if (<span class="keyword">const</span> <span class="keywordtype">size_t</span> pos{ <a class="code" href="namespacestr.html">str</a>.find_last_of(<span class="stringliteral">&quot;:.-&gt;&quot;</span>)}; pos &lt; <a class="code" href="namespacestr.html">str</a>.size())\</div>
+<div class="line">        return <a class="code" href="namespacestr.html">str</a>.substr(pos + 1ull);\</div>
+<div class="line">    return <a class="code" href="namespacestr.html">str</a>;\</div>
+<div class="line">}(#obj))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00289">289</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespacestr_html"><div class="ttname"><a href="namespacestr.html">str</a></div><div class="ttdoc">Contains various string manipulation, conversion, and parsing functions.</div><div class="ttdef"><b>Definition:</b> <a href="str_8hpp_source.html#l00020">str.hpp:20</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 555;
+var viewWidth = 709;
 var viewHeight = 284;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,157 +58,191 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Contains the Message object definition, and the constant pre&#45;defined message typesf.">
-<polygon fill="#bfbfbf" stroke="black" points="230.5,-234.5 230.5,-275.5 372.5,-275.5 372.5,-234.5 230.5,-234.5"/>
-<text text-anchor="start" x="238.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="238.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
-<text text-anchor="middle" x="301.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Message.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="294.5,-234.5 294.5,-275.5 436.5,-275.5 436.5,-234.5 294.5,-234.5"/>
+<text text-anchor="start" x="302.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="302.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="365.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Message.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="palette_8hpp.html" target="_top" xlink:title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">
-<polygon fill="none" stroke="black" points="64.5,-156.5 64.5,-197.5 206.5,-197.5 206.5,-156.5 64.5,-156.5"/>
-<text text-anchor="start" x="72.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="72.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
-<text text-anchor="middle" x="135.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/palette.hpp</text>
+<g id="a_node2"><a xlink:href="color-sync_8hpp.html" target="_top" xlink:title="Provides lightweight ANSI color sequence synchronization objects that are a keyless alternative to co...">
+<polygon fill="none" stroke="black" points="29.5,-156.5 29.5,-197.5 171.5,-197.5 171.5,-156.5 29.5,-156.5"/>
+<text text-anchor="start" x="37.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="37.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="100.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/color&#45;sync.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M249.49,-230.19C226.53,-219.67 199.87,-207.47 178.1,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="248.2,-233.45 258.75,-234.43 251.12,-227.08 248.2,-233.45"/>
+<path fill="none" stroke="midnightblue" d="M287.33,-231.58C249.61,-220.76 204.8,-207.91 168.51,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="286.68,-235.04 297.26,-234.43 288.61,-228.31 286.68,-235.04"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="term_8hpp.html" target="_top" xlink:title="Contains a wide variety of cross&#45;platform ANSI escape sequences for every occasion.">
-<polygon fill="none" stroke="black" points="230.5,-156.5 230.5,-197.5 372.5,-197.5 372.5,-156.5 230.5,-156.5"/>
-<text text-anchor="start" x="238.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="238.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
-<text text-anchor="middle" x="301.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/term.hpp</text>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="palette_8hpp.html" target="_top" xlink:title="Contains the ColorPalette struct, which provides a convenient API for applying consistent colors thro...">
+<polygon fill="none" stroke="black" points="214.5,-156.5 214.5,-197.5 356.5,-197.5 356.5,-156.5 214.5,-156.5"/>
+<text text-anchor="start" x="222.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="222.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="285.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/palette.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge7" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M301.5,-224.3C301.5,-215.3 301.5,-205.65 301.5,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="298,-224.43 301.5,-234.43 305,-224.43 298,-224.43"/>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node1&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M337.6,-227.49C327.22,-217.63 315.63,-206.63 306.03,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="335.24,-230.08 344.9,-234.43 340.06,-225 335.24,-230.08"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="basic__colors_8hpp.html" target="_top" xlink:title="Contains lighter alternatives to the palette object provided in &lt;palette.hpp&gt; that provide the same g...">
-<polygon fill="none" stroke="black" points="390.5,-156.5 390.5,-197.5 532.5,-197.5 532.5,-156.5 390.5,-156.5"/>
-<text text-anchor="start" x="398.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="398.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
-<text text-anchor="middle" x="461.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/basic_colors.hpp</text>
+<g id="a_node9"><a xlink:href="term_8hpp.html" target="_top" xlink:title="Contains a wide variety of cross&#45;platform ANSI escape sequences for every occasion.">
+<polygon fill="none" stroke="black" points="380.5,-156.5 380.5,-197.5 522.5,-197.5 522.5,-156.5 380.5,-156.5"/>
+<text text-anchor="start" x="388.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="388.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="451.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/term.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
-<g id="edge10" class="edge">
+<g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M351.92,-230.05C373.99,-219.57 399.55,-207.42 420.44,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="350.24,-226.98 342.7,-234.43 353.24,-233.3 350.24,-226.98"/>
+<path fill="none" stroke="midnightblue" d="M395.17,-227.78C406.41,-217.84 419.01,-206.72 429.43,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="392.82,-225.18 387.65,-234.43 397.46,-230.43 392.82,-225.18"/>
+</g>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="basic__colors_8hpp.html" target="_top" xlink:title="Contains lighter alternatives to the palette object provided in &lt;palette.hpp&gt; that provide the same g...">
+<polygon fill="none" stroke="black" points="540.5,-156.5 540.5,-197.5 682.5,-197.5 682.5,-156.5 540.5,-156.5"/>
+<text text-anchor="start" x="548.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="548.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="611.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/basic_colors.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node11 -->
+<g id="edge12" class="edge">
+<title>Node1&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M438.52,-231.44C473.43,-220.66 514.82,-207.87 548.36,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="437.37,-228.13 428.85,-234.43 439.44,-234.82 437.37,-228.13"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="palette__example_8cpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="0,-0.5 0,-41.5 143,-41.5 143,-0.5 0,-0.5"/>
-<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/examples</text>
-<text text-anchor="middle" x="71.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/palette_example.cpp</text>
+<g id="a_node3"><a xlink:href="color-sync__example_8cpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="0,-78.5 0,-119.5 143,-119.5 143,-78.5 0,-78.5"/>
+<text text-anchor="start" x="8" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="8" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/examples</text>
+<text text-anchor="middle" x="71.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/color&#45;sync_example.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M68.62,-151.57C55.42,-143.58 43.26,-133.24 35.5,-120 20.65,-94.67 39.01,-62.15 54.5,-41.69"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="66.97,-154.66 77.41,-156.49 70.39,-148.55 66.97,-154.66"/>
-</g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="_term_a_p_i_8hpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="230.5,-78.5 230.5,-119.5 372.5,-119.5 372.5,-78.5 230.5,-78.5"/>
-<text text-anchor="start" x="238.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="start" x="238.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
-<text text-anchor="middle" x="301.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/TermAPI.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M187.51,-152.19C210.47,-141.67 237.13,-129.47 258.9,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="185.88,-149.08 178.25,-156.43 188.8,-155.45 185.88,-149.08"/>
-</g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="palette_8cpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="45,-84 45,-114 212,-114 212,-84 45,-84"/>
-<text text-anchor="start" x="53" y="-102" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="middle" x="128.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/palette.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
-<title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M132.76,-146.28C131.75,-135.25 130.64,-123.25 129.81,-114.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="129.29,-146.79 133.7,-156.43 136.27,-146.15 129.29,-146.79"/>
-</g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M232.39,-75.17C199.93,-64.44 161.62,-51.78 130.53,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="231.68,-78.61 242.27,-78.43 233.87,-71.97 231.68,-78.61"/>
+<path fill="none" stroke="midnightblue" d="M89.39,-146.88C85.89,-137.72 82.12,-127.83 78.94,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="86.2,-148.33 93.03,-156.43 92.74,-145.84 86.2,-148.33"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="_term_a_p_i_8cpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="215,-6 215,-36 388,-36 388,-6 215,-6"/>
-<text text-anchor="start" x="223" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="middle" x="301.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/TermAPI.cpp</text>
+<g id="a_node5"><a xlink:href="palette__example_8cpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="154,-0.5 154,-41.5 297,-41.5 297,-0.5 154,-0.5"/>
+<text text-anchor="start" x="162" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="162" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/examples</text>
+<text text-anchor="middle" x="225.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/palette_example.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M301.5,-68.28C301.5,-57.25 301.5,-45.25 301.5,-36.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="298,-68.43 301.5,-78.43 305,-68.43 298,-68.43"/>
+<path fill="none" stroke="midnightblue" d="M221.48,-151.23C208.71,-143.24 196.96,-132.98 189.5,-120 174.88,-94.54 193.18,-62.06 208.59,-41.64"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="220.02,-154.43 230.43,-156.41 223.53,-148.37 220.02,-154.43"/>
 </g>
-<!-- Node7&#45;&gt;Node4 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M301.5,-146.3C301.5,-137.3 301.5,-127.65 301.5,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="298,-146.43 301.5,-156.43 305,-146.43 298,-146.43"/>
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="_term_a_p_i_8hpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="384.5,-78.5 384.5,-119.5 526.5,-119.5 526.5,-78.5 384.5,-78.5"/>
+<text text-anchor="start" x="392.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="start" x="392.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/include</text>
+<text text-anchor="middle" x="455.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/TermAPI.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node4&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M338.45,-152.33C362.04,-141.78 389.48,-129.51 411.87,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="336.98,-149.15 329.28,-156.43 339.84,-155.54 336.98,-149.15"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="term_8cpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="390.5,-84 390.5,-114 546.5,-114 546.5,-84 390.5,-84"/>
-<text text-anchor="start" x="398.5" y="-102" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
-<text text-anchor="middle" x="468.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/term.cpp</text>
+<g id="a_node8"><a xlink:href="palette_8cpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="199,-84 199,-114 366,-114 366,-84 199,-84"/>
+<text text-anchor="start" x="207" y="-102" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="middle" x="282.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/palette.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M353.62,-152.28C381.14,-139.76 413.99,-124.81 437.5,-114.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="352.16,-149.1 344.51,-156.43 355.06,-155.47 352.16,-149.1"/>
+<!-- Node4&#45;&gt;Node8 -->
+<g id="edge8" class="edge">
+<title>Node4&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M284.33,-146.28C283.89,-135.25 283.42,-123.25 283.06,-114.23"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="280.84,-146.57 284.73,-156.43 287.83,-146.3 280.84,-146.57"/>
+</g>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge6" class="edge">
+<title>Node6&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M386.39,-75.17C353.93,-64.44 315.62,-51.78 284.53,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="385.68,-78.61 396.27,-78.43 387.87,-71.97 385.68,-78.61"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="_term_a_p_i_8cpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="369,-6 369,-36 542,-36 542,-6 369,-6"/>
+<text text-anchor="start" x="377" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="middle" x="455.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/TermAPI.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge7" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M455.5,-68.28C455.5,-57.25 455.5,-45.25 455.5,-36.23"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="452,-68.43 455.5,-78.43 459,-68.43 452,-68.43"/>
+</g>
+<!-- Node9&#45;&gt;Node6 -->
+<g id="edge10" class="edge">
+<title>Node9&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M453.06,-146.3C453.54,-137.3 454.04,-127.65 454.47,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="449.56,-146.26 452.53,-156.43 456.55,-146.63 449.56,-146.26"/>
+</g>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="term_8cpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="544.5,-84 544.5,-114 700.5,-114 700.5,-84 544.5,-84"/>
+<text text-anchor="start" x="552.5" y="-102" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/307lib</text>
+<text text-anchor="middle" x="622.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">/307lib/TermAPI/src/term.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge11" class="edge">
+<title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M504.86,-152.28C533.05,-139.76 566.69,-124.81 590.76,-114.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="503.25,-149.17 495.54,-156.43 506.1,-155.57 503.25,-149.17"/>
 </g>
 </g>
 </svg>

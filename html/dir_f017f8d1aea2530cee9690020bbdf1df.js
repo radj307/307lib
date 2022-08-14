@@ -12,6 +12,7 @@ var dir_f017f8d1aea2530cee9690020bbdf1df =
     [ "pseudomatrix.hpp", "pseudomatrix_8hpp_source.html", null ],
     [ "sysarch.h", "sysarch_8h.html", "sysarch_8h" ],
     [ "var.hpp", "var_8hpp.html", "var_8hpp" ],
+    [ "vstring.hpp", "vstring_8hpp_source.html", null ],
     [ "WindowsNotToday.h", "_windows_not_today_8h_source.html", null ],
     [ "xRand.hpp", "x_rand_8hpp.html", "x_rand_8hpp" ]
 ];

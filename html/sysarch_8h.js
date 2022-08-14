@@ -11,6 +11,7 @@ var sysarch_8h =
     [ "LANG_CPP", "sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb", null ],
     [ "LANG_CPPCLI", "sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49", null ],
     [ "MULTITHREADING_CAPABLE", "sysarch_8h.html#a0953a4caf523a36eafb8ff32b47d4b79", null ],
+    [ "nameof", "sysarch_8h.html#ae0b5ede0ef0c14f0f7567d50724c3026", null ],
     [ "OS_CYGWIN", "sysarch_8h.html#a0a2f6d164420a9c9323e6842ed663bf3", null ],
     [ "OS_LINUX", "sysarch_8h.html#ae273c7db78098028c7a6b6b230ac0503", null ],
     [ "OS_MAC", "sysarch_8h.html#aed780a73afd13baec93bd08fbdae4ad7", null ],

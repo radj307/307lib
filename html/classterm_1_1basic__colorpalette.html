@@ -229,7 +229,7 @@ class term::basic_colorpalette&lt; KeyType, SequenceType &gt;</h3>
 
 <p>A simple color palette object that allows some useful features like a global color toggle and global color synchronization. <br  />
  Custom functionality can be added by deriving from this object as most methods are marked virtual. </p>
-<p>This is an alternative to the <a class="el" href="classterm_1_1palette.html" title="Associative binding container with additional helper methods &amp; operators.   Maps color sequences to a...">term::palette</a> object that is based on the <a class="el" href="classterm_1_1basic__colors.html" title="A simple color palette object that allows some useful features like a global color toggle,...">term::basic_colors</a> object instead. <br  />
+<p>This is an alternative to the term::palette object that is based on the <a class="el" href="classterm_1_1basic__colors.html" title="A simple color palette object that allows some useful features like a global color toggle,...">term::basic_colors</a> object instead. <br  />
  Use <code>operator[]</code> to access the colormap. Use <code>operator()</code> to access the default <a class="el" href="classterm_1_1basic__colors.html" title="A simple color palette object that allows some useful features like a global color toggle,...">basic_colors</a> operators. </p><dl class="section attention"><dt>Attention</dt><dd>This object's destructor automatically emits a reset escape sequence to the appropriate iostream for STDOUT. To disable this feature, set active to false before the object goes out-of-scope. </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">

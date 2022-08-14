@@ -4,6 +4,5 @@ var namespaceterm =
     [ "basic_colors", "classterm_1_1basic__colors.html", "classterm_1_1basic__colors" ],
     [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
     [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
-    [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
-    [ "palette", "classterm_1_1palette.html", "classterm_1_1palette" ]
+    [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ]
 ];

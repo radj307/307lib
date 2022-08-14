@@ -18,13 +18,15 @@ var hierarchy =
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
     [ "std::basic_string< Char >", null, [
       [ "opt3::basic_vstring< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structopt3_1_1basic__vstring.html", null ],
-      [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ]
+      [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ],
+      [ "shared::basic_vstring< TChar, TCharTraits, TAlloc >", "structshared_1_1basic__vstring.html", null ]
     ] ],
     [ "std::basic_string_view< Char >", null, [
       [ "std::string_view", null, [
         [ "opt::Argument", "classopt_1_1_argument.html", null ]
       ] ]
     ] ],
+    [ "color::basic_sync< TChar, TCharTraits, TAlloc >", "classcolor_1_1basic__sync.html", null ],
     [ "var::basic_variant_map< TMap, TKey, Ts >", "classvar_1_1basic__variant__map.html", null ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
@@ -42,8 +44,7 @@ var hierarchy =
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
     [ "std::exception", null, [
-      [ "ex::basic_except", "classex_1_1basic__except.html", [
-        [ "ex::except_with_id", "classex_1_1except__with__id.html", null ],
+      [ "ex::except", "classex_1_1except.html", [
         [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
@@ -115,13 +116,14 @@ var hierarchy =
     [ "pair", null, [
       [ "matrix::point< T >", "structmatrix_1_1point.html", null ]
     ] ],
-    [ "term::palette< TKey, TChar, TCharTraits, TAlloc >", "classterm_1_1palette.html", null ],
+    [ "color::palette< TKey, TChar, TCharTraits, TAlloc >", "classcolor_1_1palette.html", null ],
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "xml::ProcessingInstructions", "structxml_1_1_processing_instructions.html", null ],
     [ "color::setcolor_seq< TChar, TCharTraits, TAlloc >", "structcolor_1_1setcolor__seq.html", null ],
     [ "color::setcolor_seq< seq >", "structcolor_1_1setcolor__seq.html", null ],
+    [ "color::setcolor_seq< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structcolor_1_1setcolor__seq.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
     [ "StreamType", null, [

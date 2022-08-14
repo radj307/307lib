@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('namespaceex.html',''); initResizable()
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ex Namespace Reference</div>  </div>
@@ -99,54 +98,39 @@ $(document).ready(function(){initNavTree('namespaceex.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1basic__except.html">basic_except</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1except.html">except</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">General-purpose std::exception wrapper object that adds useful features like constructors and mutable error messages. <br  />
- This exception type can be caught by any <code>catch</code> statement for std::exception.  <a href="classex_1_1basic__except.html#details">More...</a><br /></td></tr>
+ This exception type can be caught by any <code>catch</code> statement for std::exception.  <a href="classex_1_1except.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classex_1_1except__with__id.html">except_with_id</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends the <a class="el" href="classex_1_1basic__except.html" title="General-purpose std::exception wrapper object that adds useful features like constructors and mutable...">basic_except</a> class with exception identifier numbers, commonly known as 'error codes'.  <a href="classex_1_1except__with__id.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a74901dd54033a06699cc197627a04120"><td class="memItemLeft" align="right" valign="top"><a id="a74901dd54033a06699cc197627a04120"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>except</b> = <a class="el" href="classex_1_1basic__except.html">basic_except</a></td></tr>
-<tr class="separator:a74901dd54033a06699cc197627a04120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; ReturnT, std::string &gt; WINCONSTEXPR ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a56b249bc94ccdfbc96b5b12de3f27db2">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a56b249bc94ccdfbc96b5b12de3f27db2">More...</a><br /></td></tr>
-<tr class="separator:a56b249bc94ccdfbc96b5b12de3f27db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cccd7262d57daafb09710d952aac1ea"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a5cccd7262d57daafb09710d952aac1ea"><td class="memTemplItemLeft" align="right" valign="top">requires var::more_than&lt; 1ull, Ts... &gt; &amp;&amp;std::constructible_from&lt; ReturnT, Ts... &gt; WINCONSTEXPR ReturnT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a5cccd7262d57daafb09710d952aac1ea">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:a5cccd7262d57daafb09710d952aac1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a5cccd7262d57daafb09710d952aac1ea">More...</a><br /></td></tr>
-<tr class="separator:a5cccd7262d57daafb09710d952aac1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; TReturn, std::string &gt; WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a2fa5e133ea01dd0519a12f9b749d8d3f">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memdesc:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a2fa5e133ea01dd0519a12f9b749d8d3f">More...</a><br /></td></tr>
+<tr class="separator:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a862a09c28d599f6bd97cf25a794a1118"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a862a09c28d599f6bd97cf25a794a1118"><td class="memTemplItemLeft" align="right" valign="top">requires var::more_than&lt; 1ull, Ts... &gt; &amp;&amp;std::constructible_from&lt; TReturn, Ts... &gt; WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a862a09c28d599f6bd97cf25a794a1118">make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memdesc:a862a09c28d599f6bd97cf25a794a1118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a862a09c28d599f6bd97cf25a794a1118">More...</a><br /></td></tr>
+<tr class="separator:a862a09c28d599f6bd97cf25a794a1118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">make_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memitem:a79f6b6ae99ab47418dbb1805add3c489"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">make_exception</a> (Ts &amp;&amp;... message)</td></tr>
 <tr class="memdesc:a79f6b6ae99ab47418dbb1805add3c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message.  <a href="namespaceex.html#a79f6b6ae99ab47418dbb1805add3c489">More...</a><br /></td></tr>
 <tr class="separator:a79f6b6ae99ab47418dbb1805add3c489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::wostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a1e4f831cd8340b9b40499542c762b18b"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">make_exeption</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:a1e4f831cd8340b9b40499542c762b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an exception with a given message, using wide-characters. <br  />
- This function only accepts types using wchar_t instead of char, however all characters are <br  />
- converted to narrow chars before returning, as exception messages cannot contain wide chars.  <a href="namespaceex.html#a1e4f831cd8340b9b40499542c762b18b">More...</a><br /></td></tr>
-<tr class="separator:a1e4f831cd8340b9b40499542c762b18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains objects &amp; functions used to conveniently create platform-agnostic derivatives of the std::exception object. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a56b249bc94ccdfbc96b5b12de3f27db2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56b249bc94ccdfbc96b5b12de3f27db2">&#9670;&nbsp;</a></span>make_custom_exception() <span class="overload">[1/2]</span></h2>
+<a id="a2fa5e133ea01dd0519a12f9b749d8d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa5e133ea01dd0519a12f9b749d8d3f">&#9670;&nbsp;</a></span>make_custom_exception() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires std::constructible_from&lt;ReturnT, std::string&gt; WINCONSTEXPR ReturnT ex::make_custom_exception </td>
+          <td class="memname">requires std::constructible_from&lt;TReturn, std::string&gt; WINCONSTEXPR TReturn ex::make_custom_exception </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -158,7 +142,7 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::
 <p>Create a custom exception type with the given arguments as a message. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">ReturnT</td><td>The type of exception to return. </td></tr>
+    <tr><td class="paramname">TReturn</td><td>The type of exception to return. </td></tr>
     <tr><td class="paramname">...Ts</td><td>Variadic Templated Types. </td></tr>
   </table>
   </dd>
@@ -169,27 +153,28 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ReturnT </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TReturn </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00134">134</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00096">96</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a56b249bc94ccdfbc96b5b12de3f27db2_cgraph.svg" width="475" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a2fa5e133ea01dd0519a12f9b749d8d3f_cgraph.svg" width="475" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a5cccd7262d57daafb09710d952aac1ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cccd7262d57daafb09710d952aac1ea">&#9670;&nbsp;</a></span>make_custom_exception() <span class="overload">[2/2]</span></h2>
+<a id="a862a09c28d599f6bd97cf25a794a1118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862a09c28d599f6bd97cf25a794a1118">&#9670;&nbsp;</a></span>make_custom_exception() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
+template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires var::more_than&lt;1ull, Ts...&gt;&amp;&amp; std::constructible_from&lt;ReturnT, Ts...&gt; WINCONSTEXPR ReturnT ex::make_custom_exception </td>
+          <td class="memname">requires var::more_than&lt;1ull, Ts...&gt;&amp;&amp; std::constructible_from&lt;TReturn, Ts...&gt; WINCONSTEXPR TReturn ex::make_custom_exception </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -201,7 +186,7 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::
 <p>Create a custom exception type with the given arguments as a message. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">ReturnT</td><td>The type of exception to return. </td></tr>
+    <tr><td class="paramname">TReturn</td><td>The type of exception to return. </td></tr>
     <tr><td class="paramname">...Ts</td><td>Variadic Templated Types. </td></tr>
   </table>
   </dd>
@@ -212,18 +197,20 @@ template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ReturnT </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TReturn </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00149">149</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00111">111</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a5cccd7262d57daafb09710d952aac1ea_cgraph.svg" width="219" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a862a09c28d599f6bd97cf25a794a1118_cgraph.svg" width="219" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a5cccd7262d57daafb09710d952aac1ea_icgraph.svg" width="475" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a862a09c28d599f6bd97cf25a794a1118_icgraph.svg" width="475" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -237,7 +224,7 @@ Here is the caller graph for this function:</div>
 template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exception </td>
+          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1except.html">except</a> ex::make_exception </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -261,55 +248,12 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>except </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00161">161</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00123">123</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a79f6b6ae99ab47418dbb1805add3c489_cgraph.svg" width="420" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a79f6b6ae99ab47418dbb1805add3c489_cgraph.svg" width="420" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-
-</div>
-</div>
-<a id="a1e4f831cd8340b9b40499542c762b18b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e4f831cd8340b9b40499542c762b18b">&#9670;&nbsp;</a></span>make_exeption()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::derived_from&lt; except &gt; ReturnT, var::streamable&lt; std::wostream &gt;... Ts&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="classex_1_1basic__except.html">except</a> ex::make_exeption </td>
-          <td>(</td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create an exception with a given message, using wide-characters. <br  />
- This function only accepts types using wchar_t instead of char, however all characters are <br  />
- converted to narrow chars before returning, as exception messages cannot contain wide chars. </p>
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">...Ts</td><td>Any number of types with an overloaded operator&lt;&lt; for std::wostream. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Any number of printable variables/objects. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>except </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="make__exception_8hpp_source.html#l00176">176</a> of file <a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceex_a1e4f831cd8340b9b40499542c762b18b_cgraph.svg" width="412" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

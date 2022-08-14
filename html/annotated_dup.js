@@ -2,6 +2,8 @@ var annotated_dup =
 [
     [ "color", null, [
       [ "basic_color", "structcolor_1_1basic__color.html", "structcolor_1_1basic__color" ],
+      [ "basic_sync", "classcolor_1_1basic__sync.html", "classcolor_1_1basic__sync" ],
+      [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ],
       [ "RGB", "structcolor_1_1_r_g_b.html", "structcolor_1_1_r_g_b" ],
       [ "RGBA", "structcolor_1_1_r_g_b_a.html", "structcolor_1_1_r_g_b_a" ],
       [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ]
@@ -40,6 +42,9 @@ var annotated_dup =
       [ "Proc", "structprocess_1_1_proc.html", "structprocess_1_1_proc" ]
     ] ],
     [ "rng", "namespacerng.html", "namespacerng" ],
+    [ "shared", null, [
+      [ "basic_vstring", "structshared_1_1basic__vstring.html", "structshared_1_1basic__vstring" ]
+    ] ],
     [ "str", "namespacestr.html", "namespacestr" ],
     [ "term", "namespaceterm.html", "namespaceterm" ],
     [ "token", null, [

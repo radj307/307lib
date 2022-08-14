@@ -2,6 +2,7 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
 [
     [ "basic_colors.hpp", "basic__colors_8hpp.html", "basic__colors_8hpp" ],
     [ "color-format.hpp", "color-format_8hpp_source.html", null ],
+    [ "color-sync.hpp", "color-sync_8hpp.html", "color-sync_8hpp" ],
     [ "color-transform.hpp", "color-transform_8hpp.html", "color-transform_8hpp" ],
     [ "color-values.h", "color-values_8h.html", "color-values_8h" ],
     [ "CursorOrigin.h", "_cursor_origin_8h_source.html", null ],
@@ -11,7 +12,7 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
     ] ],
     [ "Message.hpp", "_message_8hpp.html", "_message_8hpp" ],
     [ "palette.hpp", "palette_8hpp.html", [
-      [ "palette", "classterm_1_1palette.html", "classterm_1_1palette" ]
+      [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ]
     ] ],
     [ "Segments.h", "_segments_8h.html", "_segments_8h" ],
     [ "Sequence.hpp", "_sequence_8hpp.html", "_sequence_8hpp" ],
