@@ -7,21 +7,13 @@
 #pragma once
 #include <sysarch.h>
 #include <make_exception.hpp>
+#include <var.hpp>
 
 #include <istream>
 #include <ostream>
 
 namespace term {
 	#ifdef OS_WIN
-	/**
-	 * @brief		Enable ANSI escape sequences for std file descriptor streams (STDIN, STDOUT, STDERR).
-	 * @param hndl	File Descriptor Handle. (See _GetStdHandle_)
-	 * @returns		bool
-	 *\n			true	Success
-	 *\n			false	Failure
-	 */
-	bool enable_fd_modes(void*, const unsigned long&) noexcept;
-
 	/**
 	 * @brief	Handle file descriptors
 	 */
@@ -30,16 +22,17 @@ namespace term {
 		STDOUT,
 		STDERR,
 	};
-
-	bool enable_fd(const HandleFD&) noexcept;
+	void enable_fd(const HandleFD&) noexcept;
 	#endif // OS_WIN
 
 	/**
-	 * @brief		Enable ANSI output sequences for STDOUT & STDERR.
+	 * @brief		Enable ANSI output sequences for STDOUT & STDERR. Uses an internal synchronization object to ensure it is only called once.
+	 *\n			This method does nothing if it wasn't compiled for Windows.
 	 * @param os	Target Output Stream
-	 * @returns		std::ostream&
+	 * @returns		std::basic_ostream<TChar, TCharTraits>&
 	 */
-	inline std::ostream& EnableANSI(std::ostream& os) noexcept
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>>
+	std::basic_ostream<TChar, TCharTraits>& EnableANSI(std::basic_ostream<TChar, TCharTraits>& os) noexcept
 	{
 		#ifdef OS_WIN
 		enable_fd(HandleFD::STDOUT);
@@ -49,15 +42,34 @@ namespace term {
 	}
 
 	/**
-	 * @brief		Enable ANSI output sequences for STDIN.
+	 * @brief		Enable ANSI output sequences for STDIN. Uses an internal synchronization object to ensure it is only called once.
+	 *\n			This method does nothing if it wasn't compiled for Windows.
 	 * @param os	Target Output Stream
-	 * @returns		std::ostream&
+	 * @returns		std::basic_ostream<TChar, TCharTraits>&
 	 */
-	inline std::istream& EnableANSI(std::istream& is) noexcept
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>>
+	std::basic_istream<TChar, TCharTraits>& EnableANSI(std::basic_istream<TChar, TCharTraits>& is) noexcept
 	{
 		#ifdef OS_WIN
 		enable_fd(HandleFD::STDIN);
 		#endif
 		return is;
+	}
+
+	/**
+	 * @brief		Enable ANSI output sequences for STDIN, STDOUT, & STDERR. Uses an internal synchronization object to ensure it is only called once.
+	 *\n			This method does nothing if it wasn't compiled for Windows.
+	 * @param os	Target Input/Output Stream
+	 * @returns		std::basic_iostream<TChar, TCharTraits>&
+	 */
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>>
+	std::basic_iostream<TChar, TCharTraits>& EnableANSI(std::basic_iostream<TChar, TCharTraits>& ios) noexcept
+	{
+	#ifdef OS_WIN
+		enable_fd(HandleFD::STDIN);
+		enable_fd(HandleFD::STDOUT);
+		enable_fd(HandleFD::STDERR);
+	#endif
+		return ios;
 	}
 }

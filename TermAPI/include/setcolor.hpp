@@ -5,8 +5,19 @@
 #include <Sequence.hpp>
 #include <Segments.h>
 #include <color-transform.hpp>
+
+/**
+ * @def		SETCOLOR_NO_RGB
+ * @brief	Disables the direct-RGB ANSI escape sequence for operating systems that don't support it, such as Windows.
+ *\n		Enabled by default on Windows, disabled by default on all other platforms.
+ */
+#define SETCOLOR_NO_RGB
+#undef SETCOLOR_NO_RGB
+
 #ifdef OS_WIN
 #define SETCOLOR_NO_RGB
+
+#include <EnableANSI.hpp>
 #endif
 
 namespace color {
@@ -56,11 +67,11 @@ namespace color {
 		virtual CONSTEXPR seq_t makeColorSequence(const Layer& lyr, const short& r, const short& g, const short& b) const
 		{
 			using namespace ANSI;
-#			ifdef SETCOLOR_NO_RGB
+		#			ifdef SETCOLOR_NO_RGB
 			return make_sequence<TChar, TCharTraits>(CSI, lyr, ";5;", color::rgb_to_sgr(r, g, b), END);
-#			else
+		#			else
 			return make_sequence<TChar, TCharTraits>(CSI, lyr, ";2;", r, ';', g, ';', b, END);
-#			endif
+		#			endif
 		}
 		/**
 		 * @brief			Build a color escape sequence using a given RGB tuple. This function calls the overloaded RGB function.
@@ -174,14 +185,33 @@ namespace color {
 			return *this;
 		}
 		/**
-		 * @brief		Insert this escape sequence into
-		 * @param os
-		 * @param color
-		 * @returns		std::ostream&
+		 * @brief		Insert this escape sequence into an output stream.
+		 *\n			When compiled for Windows, this method will automatically enable ANSI sequences in the virtual terminal for STDOUT & STDERR. To disable this behaviour, define 'SETCOLOR_NO_AUTOINIT' before including this header.
+		 * @returns		std::basic_ostream<TChar, TCharTraits>&
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const setcolor_seq<TChar, TCharTraits, TAlloc>& color)
+		friend std::basic_ostream<TChar, TCharTraits>& operator<<(std::basic_ostream<TChar, TCharTraits>& os, const setcolor_seq<TChar, TCharTraits, TAlloc>& color)
 		{
+		#if defined(OS_WIN) && !defined(SETCOLOR_NO_AUTOINIT)
+			return os << term::EnableANSI << color.as_sequence();
+		#else
 			return os << color.as_sequence();
+		#endif
+		}
+
+		/**
+		 * @brief		Extract characters from an input stream into the sequence.
+		 *\n			When compiled for Windows, this method will automatically enable ANSI sequences in the virtual terminal for STDIN. To disable this behaviour, define 'SETCOLOR_NO_AUTOINIT' before including this header.
+		 * @param is 
+		 * @param s 
+		 * @returns		std::basic_istream<TChar, TCharTraits>&
+		 */
+		friend std::basic_istream<TChar, TCharTraits>& operator>>(std::basic_istream<TChar, TCharTraits>& is, setcolor_seq<TChar, TCharTraits, TAlloc>& s)
+		{
+		#if defined(OS_WIN) && !defined(SETCOLOR_NO_AUTOINIT)
+			return is >> term::EnableANSI >> s._seq;
+		#else
+			return is >> s._seq;
+		#endif
 		}
 
 		/// Declare static constant colors for the basic 8-bit color palette.

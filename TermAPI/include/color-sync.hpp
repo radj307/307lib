@@ -17,7 +17,7 @@ namespace color {
 	 * @tparam TChar			Char type
 	 * @tparam TCharTraits		Char traits type for TChar
 	 * @tparam TAlloc			Allocator type for TChar
-	 * @brief					Base color synchronization object.
+	 * @brief					Color synchronization functor that creates ad-hoc `setcolor_seq` instances when enabled, or nothing when disabled. This allows the program to globally enable or disable all ANSI sequences; so long as the program doesn't insert any `setcolor_seq` instances into streams without passing them through this class' `operator()` first.
 	 */
 	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>>TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
 	class basic_sync {
@@ -31,6 +31,7 @@ namespace color {
 		/**
 		 * @brief			Default Constructor
 		 * @param enable	When true, color sequences are enabled; otherwise color sequences are disabled.
+		 * @param reset_seq		Default sequence that the color synchronizer should use when resetting terminal colors to default.
 		 */
 		constexpr basic_sync(const bool enable = true, const seq_t& reset_seq = seq_t::reset) : _enable{ enable }, _reset_seq{ reset_seq } {}
 
