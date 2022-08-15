@@ -103,8 +103,7 @@ Include dependency graph for sysarch.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="sysarch_8h_source.html">Go to the source code of this file.</a></p>
@@ -129,6 +128,9 @@ Macros</h2></td></tr>
 <tr class="memitem:acaa06fbc27c59926a41e7575667e5280"><td class="memItemLeft" align="right" valign="top"><a id="acaa06fbc27c59926a41e7575667e5280"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONSTEXPR</b></td></tr>
 <tr class="separator:acaa06fbc27c59926a41e7575667e5280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712e0b2ac2c1a949029e7ca0e3bdc5e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8">fwd</a>(var)&#160;&#160;&#160;::std::forward&lt;decltype(var)&gt;(var)</td></tr>
+<tr class="memdesc:a712e0b2ac2c1a949029e7ca0e3bdc5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that calls std::forward with the given variable.  <a href="sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8">More...</a><br /></td></tr>
+<tr class="separator:a712e0b2ac2c1a949029e7ca0e3bdc5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memItemLeft" align="right" valign="top"><a id="a2eb6f9e0395b47b8d5e3eeae4fe0c116"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>INLINE</b></td></tr>
 <tr class="separator:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +144,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49">LANG_CPPCLI</a></td></tr>
 <tr class="memdesc:a234ea0547bdb520101dd92b72e394e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, C++/CLI Language extension is present. <br /></td></tr>
 <tr class="separator:a234ea0547bdb520101dd92b72e394e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addcb9344752d502a3fab510ede85a247"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_bitflag</b>(enumName)</td></tr>
+<tr class="separator:addcb9344752d502a3fab510ede85a247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb08a5b4d219e3f2d5275701980214e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_simple_bitflag</b>(enumName)</td></tr>
+<tr class="separator:afb08a5b4d219e3f2d5275701980214e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0953a4caf523a36eafb8ff32b47d4b79"><td class="memItemLeft" align="right" valign="top"><a id="a0953a4caf523a36eafb8ff32b47d4b79"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a0953a4caf523a36eafb8ff32b47d4b79">MULTITHREADING_CAPABLE</a></td></tr>
 <tr class="memdesc:a0953a4caf523a36eafb8ff32b47d4b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, the system is capable of multithreading using C++ threads. <br  />
@@ -305,6 +311,35 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a712e0b2ac2c1a949029e7ca0e3bdc5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712e0b2ac2c1a949029e7ca0e3bdc5e8">&#9670;&nbsp;</a></span>fwd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define fwd</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">var</td><td>)</td>
+          <td>&#160;&#160;&#160;::std::forward&lt;decltype(var)&gt;(var)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro that calls std::forward with the given variable. </p>
+<p>@define $fwd </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>The variable to forward. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result of calling ::std::forward&lt;decltype(var)&gt;(var) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00311">311</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+
+</div>
+</div>
 <a id="a69f1d54d0578e6b3400b774500973439"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69f1d54d0578e6b3400b774500973439">&#9670;&nbsp;</a></span>LANG_C</h2>
 
@@ -374,6 +409,53 @@ Macros</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00072">72</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+
+</div>
+</div>
+<a id="addcb9344752d502a3fab510ede85a247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addcb9344752d502a3fab510ede85a247">&#9670;&nbsp;</a></span>make_bitflag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define make_bitflag</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enumName</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">$make_simple_bitflag(enumName)                                                               \</div>
+<div class="line">inline enumName&amp; operator|=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">inline enumName&amp; operator&amp;=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">inline enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00330">330</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+
+</div>
+</div>
+<a id="afb08a5b4d219e3f2d5275701980214e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb08a5b4d219e3f2d5275701980214e2">&#9670;&nbsp;</a></span>make_simple_bitflag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define make_simple_bitflag</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enumName</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">inline</span> enumName operator|(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">inline enumName operator&amp;(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">inline enumName operator^(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00319">319</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
