@@ -98,12 +98,14 @@ $(document).ready(function(){initNavTree('_enable_a_n_s_i_8hpp.html',''); initRe
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;make_exception.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;istream&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EnableANSI.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_enable_a_n_s_i_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_enable_a_n_s_i_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -121,12 +123,21 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad95364d7fbd84a90684a350948fb5c33"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">term::EnableANSI</a> (std::istream &amp;is) noexcept</td></tr>
-<tr class="memdesc:ad95364d7fbd84a90684a350948fb5c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDIN.  <a href="namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33">More...</a><br /></td></tr>
-<tr class="separator:ad95364d7fbd84a90684a350948fb5c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae36fb322471abc5481fc5a34da3922c0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">term::EnableANSI</a> (std::ostream &amp;os) noexcept</td></tr>
-<tr class="memdesc:ae36fb322471abc5481fc5a34da3922c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDOUT &amp; STDERR.  <a href="namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0">More...</a><br /></td></tr>
-<tr class="separator:ae36fb322471abc5481fc5a34da3922c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5edb08f94e69f4928671c94efb383bb1"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a5edb08f94e69f4928671c94efb383bb1"><td class="memTemplItemLeft" align="right" valign="top">std::basic_iostream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a5edb08f94e69f4928671c94efb383bb1">term::EnableANSI</a> (std::basic_iostream&lt; TChar, TCharTraits &gt; &amp;ios) noexcept</td></tr>
+<tr class="memdesc:a5edb08f94e69f4928671c94efb383bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDIN, STDOUT, &amp; STDERR. Uses an internal synchronization object to ensure it is only called once. <br  />
+ This method does nothing if it wasn't compiled for Windows.  <a href="namespaceterm.html#a5edb08f94e69f4928671c94efb383bb1">More...</a><br /></td></tr>
+<tr class="separator:a5edb08f94e69f4928671c94efb383bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c2898a37c02de9703d5f7446b94154"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a54c2898a37c02de9703d5f7446b94154"><td class="memTemplItemLeft" align="right" valign="top">std::basic_istream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a54c2898a37c02de9703d5f7446b94154">term::EnableANSI</a> (std::basic_istream&lt; TChar, TCharTraits &gt; &amp;is) noexcept</td></tr>
+<tr class="memdesc:a54c2898a37c02de9703d5f7446b94154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDIN. Uses an internal synchronization object to ensure it is only called once. <br  />
+ This method does nothing if it wasn't compiled for Windows.  <a href="namespaceterm.html#a54c2898a37c02de9703d5f7446b94154">More...</a><br /></td></tr>
+<tr class="separator:a54c2898a37c02de9703d5f7446b94154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a560f2079e43a1468e4ea63c83f7418"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a6a560f2079e43a1468e4ea63c83f7418"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a6a560f2079e43a1468e4ea63c83f7418">term::EnableANSI</a> (std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;os) noexcept</td></tr>
+<tr class="memdesc:a6a560f2079e43a1468e4ea63c83f7418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ANSI output sequences for STDOUT &amp; STDERR. Uses an internal synchronization object to ensure it is only called once. <br  />
+ This method does nothing if it wasn't compiled for Windows.  <a href="namespaceterm.html#a6a560f2079e43a1468e4ea63c83f7418">More...</a><br /></td></tr>
+<tr class="separator:a6a560f2079e43a1468e4ea63c83f7418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains functions for enabling ANSI sequences on Windows. <br  />

@@ -95,34 +95,47 @@ $(document).ready(function(){initNavTree('_enable_a_n_s_i_8cpp_source.html','');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">WIN32_LEAN_AND_MEAN</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">Windows</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span> <span class="comment">// include windows.h in the source file to prevent pollution</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">bool</span> term::enable_fd_modes(<span class="keywordtype">void</span>* hndl, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>&amp; modes) <span class="keyword">noexcept</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    DWORD mode{ 0ul };</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> (</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        hndl != <span class="keywordtype">nullptr</span> <span class="comment">// don&#39;t allow null handles</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        &amp;&amp; GetConsoleMode(hndl, &amp;mode) <span class="comment">// short-circuit and return false if GetConsoleMode fails</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        &amp;&amp; (</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        (mode &amp; ENABLE_VIRTUAL_TERMINAL_PROCESSING) != 0 <span class="comment">// return true if ANSI sequences are already enabled</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        || SetConsoleMode(hndl, mode | modes) <span class="comment">// return true if SetConsoleMode is successful</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        )</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">bool</span> term::enable_fd(<span class="keyword">const</span> term::HandleFD&amp; handle_fd) <span class="keyword">noexcept</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">using</span> <span class="keyword">enum</span> HandleFD;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">switch</span> (handle_fd) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">case</span> STDIN:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> enable_fd_modes(GetStdHandle(STD_INPUT_HANDLE), ENABLE_VIRTUAL_TERMINAL_INPUT);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">case</span> STDOUT:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> enable_fd_modes(GetStdHandle(STD_OUTPUT_HANDLE), ENABLE_VIRTUAL_TERMINAL_PROCESSING);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">case</span> STDERR:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> enable_fd_modes(GetStdHandle(STD_ERROR_HANDLE), ENABLE_VIRTUAL_TERMINAL_PROCESSING);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">mutex</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// @brief  std::once_flag instance for the STDOUT handle</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">static</span> std::once_flag $_STDOUT_$;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/// @brief  std::once_flag instance for the STDERR handle</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">static</span> std::once_flag $_STDERR_$;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/// @brief  std::once_flag instance for the STDIN handle</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">static</span> std::once_flag $_STDIN_$;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">$_vtOUTPUTMODE_$</span> <span class="preprocessor">ENABLE_VIRTUAL_TERMINAL_PROCESSING</span> <span class="preprocessor">|</span> <span class="preprocessor">DISABLE_NEWLINE_AUTO_RETURN</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">$_vtINPUTMODE_$</span> <span class="preprocessor">ENABLE_VIRTUAL_TERMINAL_INPUT</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> enable_fd_modes(<span class="keywordtype">void</span>* hndl, <span class="keyword">const</span> <span class="keywordtype">int</span> modes) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    DWORD mode{ 0ul };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> (</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        hndl != <span class="keywordtype">nullptr</span> <span class="comment">// don&#39;t allow null handles</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        &amp;&amp; GetConsoleMode(hndl, &amp;mode) <span class="comment">// short-circuit and return false if GetConsoleMode fails</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        &amp;&amp; (</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        (mode &amp; ENABLE_VIRTUAL_TERMINAL_PROCESSING) != 0 <span class="comment">// return true if ANSI sequences are already enabled</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        || SetConsoleMode(hndl, mode | modes) <span class="comment">// return true if SetConsoleMode is successful</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> term::enable_fd(<span class="keyword">const</span> term::HandleFD&amp; handle_fd) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">switch</span> (handle_fd) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">case</span> HandleFD::STDIN:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::call_once($_STDIN_$, enable_fd_modes, GetStdHandle(STD_INPUT_HANDLE), $_vtINPUTMODE_$);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">case</span> HandleFD::STDOUT:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::call_once($_STDOUT_$, enable_fd_modes, GetStdHandle(STD_OUTPUT_HANDLE), $_vtOUTPUTMODE_$);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">case</span> HandleFD::STDERR:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::call_once($_STDERR_$, enable_fd_modes, GetStdHandle(STD_ERROR_HANDLE), $_vtOUTPUTMODE_$);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">default</span>:<span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

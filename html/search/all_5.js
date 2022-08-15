@@ -6,7 +6,7 @@ var searchData=
   ['empty_165',['empty',['../classcolor_1_1palette.html#a79f509dbe14fff9a1d4e7e5e7942f1ad',1,'color::palette::empty()'],['../classfile_1_1ini_1_1_i_n_i_container.html#a6560b96e9c12a92703703715b82042bb',1,'file::ini::INIContainer::empty()'],['../structmatrix_1_1basic__matrix.html#a8f47e9742b95e48a652b354709950def',1,'matrix::basic_matrix::empty()'],['../structmatrix_1_1nmatrix.html#adb2d1a86febda35efa9f6c4dd0186f08',1,'matrix::nmatrix::empty()']]],
   ['enable_166',['enable',['../classcolor_1_1palette.html#afecc3e000c6a0888133b42a1f9a47513',1,'color::palette']]],
   ['enablealtscreenbuffer_167',['EnableAltScreenBuffer',['../namespaceterm.html#a0040a7eb27e1cd8a909181b3b6496dce',1,'term']]],
-  ['enableansi_168',['EnableANSI',['../namespaceterm.html#ae36fb322471abc5481fc5a34da3922c0',1,'term::EnableANSI(std::ostream &amp;os) noexcept'],['../namespaceterm.html#ad95364d7fbd84a90684a350948fb5c33',1,'term::EnableANSI(std::istream &amp;is) noexcept']]],
+  ['enableansi_168',['EnableANSI',['../namespaceterm.html#a6a560f2079e43a1468e4ea63c83f7418',1,'term::EnableANSI(std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;os) noexcept'],['../namespaceterm.html#a54c2898a37c02de9703d5f7446b94154',1,'term::EnableANSI(std::basic_istream&lt; TChar, TCharTraits &gt; &amp;is) noexcept'],['../namespaceterm.html#a5edb08f94e69f4928671c94efb383bb1',1,'term::EnableANSI(std::basic_iostream&lt; TChar, TCharTraits &gt; &amp;ios) noexcept']]],
   ['enableansi_2ehpp_169',['EnableANSI.hpp',['../_enable_a_n_s_i_8hpp.html',1,'']]],
   ['enablecursor_170',['EnableCursor',['../namespaceterm.html#a79dffe9fec92363a4880fb1379a1cffc',1,'term']]],
   ['enablecursorblink_171',['EnableCursorBlink',['../namespaceterm.html#a2f2fb32da7983aa6fae62386241d35aa',1,'term']]],

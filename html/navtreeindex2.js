@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classopt_1_1token_1_1_tokenizer.html#ac4f39da77995a6823f34e8a7fc4edecb":[9,0,7,0,2,4],
 "classrng_1_1_engine_wrapper.html":[9,0,10,0],
 "classrng_1_1_engine_wrapper.html#a5a82ba601c73019d92fa16754230995b":[9,0,10,0,2],
 "classrng_1_1_engine_wrapper.html#a9879d8d2d676f68db1db75548bd89c4c":[9,0,10,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "color-transform_8hpp.html":[10,0,4,1,3],
 "color-transform_8hpp.html#a0436cfd097ec1f1c89f3185f2f1311a2":[10,0,4,1,3,9],
 "color-transform_8hpp.html#a2080307c19e6b6341f40839d02615373":[10,0,4,1,3,15],
-"color-transform_8hpp.html#a2cc932589339f45a1b57d5f9a8ed948b":[10,0,4,1,3,7],
-"color-transform_8hpp.html#a52310cc4749a22c89eb823b7a3f9544f":[10,0,4,1,3,8]
+"color-transform_8hpp.html#a2cc932589339f45a1b57d5f9a8ed948b":[10,0,4,1,3,7]
 };

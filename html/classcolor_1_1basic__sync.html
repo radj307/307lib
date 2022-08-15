@@ -95,14 +95,15 @@ $(document).ready(function(){initNavTree('classcolor_1_1basic__sync.html',''); i
 </div><!--header-->
 <div class="contents">
 
-<p>Base color synchronization object.  
+<p>Color synchronization functor that creates ad-hoc <code><a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a></code> instances when enabled, or nothing when disabled. This allows the program to globally enable or disable all ANSI sequences; so long as the program doesn't insert any <code><a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a></code> instances into streams without passing them through this class' <code>operator()</code> first.  
  <a href="classcolor_1_1basic__sync.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for color::basic_sync&lt; TChar, TCharTraits, TAlloc &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcolor_1_1basic__sync__coll__graph.svg" width="331" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcolor_1_1basic__sync__coll__graph.svg" width="331" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -190,7 +191,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>seq_t</b> = typename
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab6369a1a250d0890ad4c3750577da14d"><td class="memItemLeft" align="right" valign="top"><a id="ab6369a1a250d0890ad4c3750577da14d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1basic__sync.html#ab6369a1a250d0890ad4c3750577da14d">_enable</a></td></tr>
-<tr class="memdesc:ab6369a1a250d0890ad4c3750577da14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this is true, color sequences are emitted by <a class="el" href="classcolor_1_1basic__sync.html" title="Base color synchronization object.">basic_sync</a> methods; otherwise color sequences are disabled. <br /></td></tr>
+<tr class="memdesc:ab6369a1a250d0890ad4c3750577da14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this is true, color sequences are emitted by <a class="el" href="classcolor_1_1basic__sync.html" title="Color synchronization functor that creates ad-hoc setcolor_seq instances when enabled,...">basic_sync</a> methods; otherwise color sequences are disabled. <br /></td></tr>
 <tr class="separator:ab6369a1a250d0890ad4c3750577da14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af57da5af8d677ef85cb8470a467689a1"><td class="memItemLeft" align="right" valign="top"><a id="af57da5af8d677ef85cb8470a467689a1"></a>
 seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1basic__sync.html#af57da5af8d677ef85cb8470a467689a1">_reset_seq</a></td></tr>
@@ -201,7 +202,7 @@ seq_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <div class="textblock"><h3>template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt;<br />
 class color::basic_sync&lt; TChar, TCharTraits, TAlloc &gt;</h3>
 
-<p>Base color synchronization object. </p>
+<p>Color synchronization functor that creates ad-hoc <code><a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a></code> instances when enabled, or nothing when disabled. This allows the program to globally enable or disable all ANSI sequences; so long as the program doesn't insert any <code><a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a></code> instances into streams without passing them through this class' <code>operator()</code> first. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TChar</td><td>Char type </td></tr>
@@ -253,11 +254,12 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">enable</td><td>When true, color sequences are enabled; otherwise color sequences are disabled. </td></tr>
+    <tr><td class="paramname">reset_seq</td><td>Default sequence that the color synchronizer should use when resetting terminal colors to default. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00035">35</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00036">36</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +292,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 <p>Gets the default reset sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>The default reset sequence that is currently in-use. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00063">63</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00064">64</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>
@@ -322,7 +324,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 <p>Gets whether color sequences are emitted by this sync object or not. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when color sequences are enabled; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00046">46</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00047">47</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +354,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when the sync object is enabled; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00049">49</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00050">50</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>
@@ -391,7 +393,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>When the sync object is enabled, a sequence that resets the color of the specified layer(s) to default; otherwise an empty placeholder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00124">124</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00125">125</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -448,7 +450,7 @@ template&lt;size_t MAX = 5ull, std::integral TRed, std::integral TGreen, std::in
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>When the sync object is enabled, a sequence that sets the specified layer to the specified <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color; otherwise an empty placeholder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00115">115</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00116">116</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -505,7 +507,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>When the sync object is enabled, a sequence that sets the specified layer to the specified SGR color; otherwise an empty placeholder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00085">85</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00086">86</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -586,7 +588,7 @@ template&lt;size_t RANGE_MAX = 5ull, std::integral TRed, std::integral TGreen, s
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>When the sync object is enabled, a sequence that sets the specified layer to the specified <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color; otherwise an empty placeholder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00103">103</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00104">104</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -632,7 +634,7 @@ template&lt;var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>When the sync object is enabled, a sequence that is equal to all of the given sequences concatenated together, in order; otherwise an empty placeholder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00074">74</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00075">75</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -675,7 +677,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00055">55</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00056">56</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +715,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00041">41</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="color-sync_8hpp_source.html#l00042">42</a> of file <a class="el" href="color-sync_8hpp_source.html">color-sync.hpp</a>.</p>
 
 </div>
 </div>

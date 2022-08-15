@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"color-transform_8hpp.html#a52310cc4749a22c89eb823b7a3f9544f":[10,0,4,1,3,8],
 "color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f":[10,0,4,1,3,12],
 "color-transform_8hpp.html#a77c7c19b2fd85ccfa730999d98e96fdb":[10,0,4,1,3,3],
 "color-transform_8hpp.html#a8551d3b9a96f515b04877eb5e93edf20":[10,0,4,1,3,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "namespaceparser.html":[8,0,12],
 "namespacerng.html":[8,0,14],
 "namespacerng.html":[9,0,10],
-"namespaces.html":[8,0],
-"namespaceseq.html":[8,0,15]
+"namespaces.html":[8,0]
 };

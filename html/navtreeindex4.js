@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaceseq.html":[8,0,15],
 "namespacestdpred.html":[8,0,16],
 "namespacestr.html":[9,0,12],
 "namespacestr.html":[8,0,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "strmath_8hpp.html#a47b165f72dcf094c144c89e27861888a":[10,0,3,0,7,9],
 "strmath_8hpp.html#a4e6def114db6fedf6a5d8334dc6e48ca":[10,0,3,0,7,12],
 "strmath_8hpp.html#a51a5ecaec1b7efa91322b8b79949f551":[10,0,3,0,7,8],
-"strmath_8hpp.html#a64641d820fe5e4997387b75be9df3b97":[10,0,3,0,7,4],
-"strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2":[10,0,3,0,7,10]
+"strmath_8hpp.html#a64641d820fe5e4997387b75be9df3b97":[10,0,3,0,7,4]
 };
