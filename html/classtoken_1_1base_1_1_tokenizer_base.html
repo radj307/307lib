@@ -235,9 +235,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e">hasMore</a> ()</td></tr>
 <tr class="memdesc:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e">More...</a><br /></td></tr>
 <tr class="separator:ac6964a7ee13bc4f4b0c9b9f9b1b79b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64a991aa63481c801b5593c76c86c833"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833">operator const std::string</a> () const</td></tr>
-<tr class="memdesc:a64a991aa63481c801b5593c76c86c833"><td class="mdescLeft">&#160;</td><td class="mdescRight">String operator, returns the result local stream's <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88" title="Get the underlying stream as a string.   Depending on the size of the stream, this operation may be e...">str()</a> function.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833">More...</a><br /></td></tr>
-<tr class="separator:a64a991aa63481c801b5593c76c86c833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40784e120471114ebc82bb751ac78247"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a40784e120471114ebc82bb751ac78247">operator std::string</a> () const</td></tr>
+<tr class="memdesc:a40784e120471114ebc82bb751ac78247"><td class="mdescLeft">&#160;</td><td class="mdescRight">String operator, returns the result local stream's <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88" title="Get the underlying stream as a string.   Depending on the size of the stream, this operation may be e...">str()</a> function.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#a40784e120471114ebc82bb751ac78247">More...</a><br /></td></tr>
+<tr class="separator:a40784e120471114ebc82bb751ac78247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada07d69646fd5ab6f0967c0174b2a845"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#ada07d69646fd5ab6f0967c0174b2a845">peek</a> ()</td></tr>
 <tr class="memdesc:ada07d69646fd5ab6f0967c0174b2a845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next character from the stream, but don't advance the read pointer.  <a href="classtoken_1_1base_1_1_tokenizer_base.html#ada07d69646fd5ab6f0967c0174b2a845">More...</a><br /></td></tr>
 <tr class="separator:ada07d69646fd5ab6f0967c0174b2a845"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,7 +339,7 @@ class token::base::TokenizerBase&lt; LexemeT, Dictionary, TokenType, Token &gt;<
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00198">198</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00199">199</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9e51cd75648fb8f567c21ae1d491350b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e51cd75648fb8f567c21ae1d491350b">&#9670;&nbsp;</a></span>TokenizerBase()</h2>
@@ -392,7 +392,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00208">208</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00209">209</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -434,7 +434,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
  true There are more upcoming characters. <br  />
  false Reached EOF while eating characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00446">446</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00447">447</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +468,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
  true There are more upcoming characters. <br  />
  false Reached EOF while eating characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00461">461</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00462">462</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +515,7 @@ template&lt;class Pred &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00712">712</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00713">713</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00486">486</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00487">487</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +622,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00371">371</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00372">372</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -654,7 +654,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Retrieve the current stream read position. (character index) </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff : Current Read Position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00762">762</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00763">763</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -704,7 +704,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00515">515</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00516">516</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -761,7 +761,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00547">547</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00548">548</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -800,7 +800,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00529">529</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00530">530</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -858,7 +858,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00589">589</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00590">590</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -915,7 +915,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00573">573</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00574">574</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -953,7 +953,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Reimplemented in <a class="el" href="classopt_1_1token_1_1_tokenizer.html#ac203fbf32ec07e3848b489cd4aca8db5">opt::token::Tokenizer</a>, and <a class="el" href="structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566">file::ini::tokenizer::INITokenizer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00259">259</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00260">260</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -994,7 +994,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TokenT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00243">243</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00244">244</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1037,7 +1037,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 
 <p>Reimplemented in <a class="el" href="classxml_1_1parser_1_1_x_m_l_tokenizer.html#a87583a043ff30a9233c09e422895e906">xml::parser::XMLTokenizer</a>, and <a class="el" href="classjson_1_1parser_1_1_tokenizer.html#a1c8105a24a39a003d5cbc0b048ede8fe">json::parser::Tokenizer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00230">230</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00231">231</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1078,7 +1078,7 @@ template&lt;std::same_as&lt; LexemeT &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00679">679</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00680">680</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1110,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Get the remaining number of characters in the stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamsize </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00787">787</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00788">788</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1157,7 +1157,7 @@ template&lt;std::same_as&lt; LexemeT &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00663">663</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00664">664</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1198,7 +1198,7 @@ template&lt;std::same_as&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00695">695</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00696">696</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1230,7 +1230,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Get the total number of characters in the stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamsize </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00772">772</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00773">773</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1288,7 +1288,7 @@ template&lt;class PredicateT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00603">603</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00604">604</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1338,7 +1338,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00622">622</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00623">623</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1388,7 +1388,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00642">642</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00643">643</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1420,12 +1420,12 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Check if there are more valid characters ahead of the current stream getter position. Use this when looping until the end of stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00357">357</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00358">358</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a64a991aa63481c801b5593c76c86c833"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64a991aa63481c801b5593c76c86c833">&#9670;&nbsp;</a></span>operator const std::string()</h2>
+<a id="a40784e120471114ebc82bb751ac78247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40784e120471114ebc82bb751ac78247">&#9670;&nbsp;</a></span>operator std::string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1436,7 +1436,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::operator const std::string </td>
+          <td class="memname">virtual <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html">token::base::TokenizerBase</a>&lt; LexemeT, Dictionary, TokenType, Token &gt;::operator std::string </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1452,7 +1452,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>String operator, returns the result local stream's <a class="el" href="classtoken_1_1base_1_1_tokenizer_base.html#a1fdd8458587b872fff6e93477515ff88" title="Get the underlying stream as a string.   Depending on the size of the stream, this operation may be e...">str()</a> function. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00269">269</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00270">270</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1484,7 +1484,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Retrieve the next character from the stream, but don't advance the read pointer. </p>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00390">390</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00391">391</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1522,7 +1522,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LexemeT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00403">403</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00404">404</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1561,7 +1561,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LexemeT </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00416">416</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00417">417</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1626,7 +1626,7 @@ template&lt;class Tokenizer  = TokenizerBase&lt;LexemeT, Dictionary, TokenType, 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00473">473</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00474">474</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1658,7 +1658,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Set the getter position to lastPos. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00735">735</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00736">736</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1690,7 +1690,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Set the getter position to the beginning of the stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff The previous stream getter position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00748">748</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00749">749</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1729,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ios_base::fmtflags : The previous format control flags. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00300">300</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00301">301</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1768,7 +1768,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff This is the previous value of (lastPos). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00799">799</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00800">800</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1800,7 +1800,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 <p>Set (lastPos) to the current read position. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::streamoff </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00811">811</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00812">812</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1833,7 +1833,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
  Depending on the size of the stream, this operation may be extremely resource intensive. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00318">318</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00319">319</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1883,7 +1883,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00847">847</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00848">848</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1929,7 +1929,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TokenT&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00825">825</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00826">826</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>
@@ -1967,7 +1967,7 @@ template&lt;typename LexemeT , std::derived_from&lt; LexemeDictBase&lt; LexemeT 
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00308">308</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_token_redux_8hpp_source.html#l00309">309</a> of file <a class="el" href="_token_redux_8hpp_source.html">TokenRedux.hpp</a>.</p>
 
 </div>
 </div>

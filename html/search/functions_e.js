@@ -36,5 +36,5 @@ var searchData=
   ['optcapture_1232',['optCapture',['../namespaceopt.html#a564c5d4e2a6d094fd3ee98a220bcd738',1,'opt::optCapture(T &amp;&amp;input, const bool &amp;equalsOnly=false)'],['../namespaceopt.html#ac082ca4ad3daf5fc3d4b98ff95c57b18',1,'opt::optCapture(T &amp;&amp;input, const bool &amp;equalsOnly=false)']]],
   ['optional_5ffind_1233',['optional_find',['../namespacestr.html#a68189011dff0dc860136f8606606169c',1,'str']]],
   ['optionalcapture_1234',['optionalCapture',['../namespaceopt3.html#a364fad60d5806e5485babfaaa67e1d73',1,'opt3::optionalCapture(T &amp;&amp;input, const bool &amp;equalsOnly=false)'],['../namespaceopt3.html#a88d5f056ab19c34553aa6fe26a613790',1,'opt3::optionalCapture(T &amp;&amp;input, const bool &amp;equalsOnly=false)']]],
-  ['string_1235',['string',['../classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833',1,'token::base::TokenizerBase::string()'],['../classopt_1_1_arg.html#acba2c5fcbaac139957d705db9770379b',1,'opt::Arg::string()']]]
+  ['string_1235',['string',['../classopt_1_1_arg.html#acba2c5fcbaac139957d705db9770379b',1,'opt::Arg::string()'],['../classtoken_1_1base_1_1_tokenizer_base.html#a40784e120471114ebc82bb751ac78247',1,'token::base::TokenizerBase::string()']]]
 ];

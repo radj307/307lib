@@ -33,7 +33,7 @@ var classtoken_1_1base_1_1_tokenizer_base =
     [ "getuntil_unescaped", "classtoken_1_1base_1_1_tokenizer_base.html#aa7ee9df1b1c9c1b0b11cd01d18d48ca4", null ],
     [ "good", "classtoken_1_1base_1_1_tokenizer_base.html#ab25aec6e6117c8750979e801c5c958dc", null ],
     [ "hasMore", "classtoken_1_1base_1_1_tokenizer_base.html#ac6964a7ee13bc4f4b0c9b9f9b1b79b8e", null ],
-    [ "operator const std::string", "classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833", null ],
+    [ "operator std::string", "classtoken_1_1base_1_1_tokenizer_base.html#a40784e120471114ebc82bb751ac78247", null ],
     [ "peek", "classtoken_1_1base_1_1_tokenizer_base.html#ada07d69646fd5ab6f0967c0174b2a845", null ],
     [ "peeklast", "classtoken_1_1base_1_1_tokenizer_base.html#a29a7d2a4a5020afa630a6fa8f0915ee2", null ],
     [ "peeklastlex", "classtoken_1_1base_1_1_tokenizer_base.html#aa6748dc8505dfbcc0098680c9d062f9d", null ],

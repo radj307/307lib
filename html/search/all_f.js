@@ -63,5 +63,5 @@ var searchData=
   ['os_5fwin_502',['OS_WIN',['../sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b',1,'sysarch.h']]],
   ['outputtarget_503',['OutputTarget',['../structxlog_1_1_output_target.html',1,'xlog']]],
   ['outputtarget_3c_20std_3a_3aostream_20_3e_504',['OutputTarget&lt; std::ostream &gt;',['../structxlog_1_1_output_target.html',1,'xlog']]],
-  ['string_505',['string',['../classtoken_1_1base_1_1_tokenizer_base.html#a64a991aa63481c801b5593c76c86c833',1,'token::base::TokenizerBase::string()'],['../classopt_1_1_arg.html#acba2c5fcbaac139957d705db9770379b',1,'opt::Arg::string()']]]
+  ['string_505',['string',['../classopt_1_1_arg.html#acba2c5fcbaac139957d705db9770379b',1,'opt::Arg::string()'],['../classtoken_1_1base_1_1_tokenizer_base.html#a40784e120471114ebc82bb751ac78247',1,'token::base::TokenizerBase::string()']]]
 ];

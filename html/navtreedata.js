@@ -92,7 +92,7 @@ var NAVTREEINDEX =
 "strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2",
 "structmatrix_1_1nmatrix.html",
 "structopt_1_1_capture_list.html#a6e0655d0d66af065b2efd8607b47d5ea",
-"structtoken_1_1base_1_1_token_base.html#a0ccc3e922886932f7e8a02ea1ff2e8f7"
+"structtoken_1_1base_1_1_token_base.html#a1abf8724638777fd8b21402f3ed5f7fd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
