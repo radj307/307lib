@@ -294,12 +294,42 @@
 }(#obj))
 
  /**
-  * @define		$c
-  * @brief		Macro that calls static_cast with the given typename & variable.
-  * @param type	Output type of the cast expression.
-  * @param var	Input value of the cast expression.
+  * @define			$c
+  * @brief			Macro that calls static_cast with the given typename & variable.
+  * @param type		Output type of the cast expression.
+  * @param var		Input value of the cast expression.
   * @returns		Result of calling static_cast<type>(var)
   */
 #define $c(type, var) static_cast<type>(var)
+
+/**
+ * @define			$fwd
+ * @brief			Macro that calls std::forward with the given variable.
+ * @param var		The variable to forward.
+ * @returns			Result of calling ::std::forward<decltype(var)>(var)
+ */
+#define $fwd(var) ::std::forward<decltype(var)>(var)
+
+ /**
+  * @def			$make_simple_bitflag
+  * @brief			Defines basic bitwise operators for the given type. *( `operator|`, `operator&`, `operator^` )*
+  *\n				This was designed for `enum` types, but can be used on any types so long as they can be casted to `int`.
+  * @param enumName	The typename of the type to define operators for.
+  */
+#define $make_simple_bitflag(enumName)                                                                                       \
+inline enumName operator|(enumName const& l, enumName const& r) noexcept { return $c(enumName, ($c(int, l) | $c(int, r))); } \
+inline enumName operator&(enumName const& l, enumName const& r) noexcept { return $c(enumName, ($c(int, l) & $c(int, r))); } \
+inline enumName operator^(enumName const& l, enumName const& r) noexcept { return $c(enumName, ($c(int, l) ^ $c(int, r))); } \
+
+  /**
+   * @def			$make_bitflag
+   * @brief			Defines basic and reference bitwise operators for the given type. ( `operator|`, `operator&`, `operator^`, `operator|=`, `operator&=`, `operator^=` )
+   *\n				This was designed for `enum` types, but can be used on any types so long as they can be casted to `int`.
+   * @param enumName	The typename of the type to define operators for.
+   */
+#define $make_bitflag(enumName) $make_simple_bitflag(enumName)                                                               \
+inline enumName& operator|=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) | $c(int, r))); } \
+inline enumName& operator&=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) & $c(int, r))); } \
+inline enumName& operator^=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) ^ $c(int, r))); }
 
 #endif
