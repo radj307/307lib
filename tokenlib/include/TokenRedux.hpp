@@ -87,6 +87,7 @@
 #pragma once
 #include <sysarch.h>
 #include <make_exception.hpp>
+#include <utility>
 #include <var.hpp>
 #include <str.hpp>
 
@@ -144,8 +145,8 @@ namespace token {
 			/// @brief	Contains this token's string value.
 			std::string str;
 
-			[[nodiscard]] WINCONSTEXPR operator Type() const { return type; }
-			[[nodiscard]] operator std::string() const { return str; }
+			[[nodiscard]] explicit WINCONSTEXPR operator Type() const { return type; }
+			[[nodiscard]] explicit operator std::string() const { return str; }
 
 			[[nodiscard]] WINCONSTEXPR bool operator==(const TokenBase<Type>& o) const { return type == o.type && str == o.str; }
 			[[nodiscard]] WINCONSTEXPR bool operator!=(auto&& o) const { return !operator==(std::forward<decltype(o)>(o)); }
@@ -157,7 +158,7 @@ namespace token {
 			 * @param type	This token's type.
 			 * @param str	This token's string.
 			 */
-			WINCONSTEXPR TokenBase(const Type& type, const std::string& str = {}) : type{ type }, str{ str } {}
+			WINCONSTEXPR explicit TokenBase(const Type& type, std::string  str = {}) : type{ type }, str{std::move( str )} {}
 			/**
 			 * @brief		TokenBase Constructor.
 			 * @param type	This token's type.
@@ -169,7 +170,7 @@ namespace token {
 			 * @param str	This token's string.
 			 * @param type	This token's type.
 			 */
-			WINCONSTEXPR TokenBase(const std::string& str, const Type& type) : type{ type }, str{ str } {}
+			WINCONSTEXPR TokenBase(std::string  str, const Type& type) : type{ type }, str{std::move( str )} {}
 			/**
 			 * @brief		TokenBase Constructor.
 			 * @param ch	This token's character.
@@ -266,7 +267,7 @@ namespace token {
 			 * @brief String operator, returns the result local stream's str() function.
 			 * @returns std::string
 			 */
-			[[nodiscard]] virtual explicit operator const std::string() const { return ss.str(); }
+			[[nodiscard]] virtual explicit operator std::string() const { return ss.str(); }
 
 			/// @brief Stream extraction operator. Inserts the istream's read buffer into the local stream.
 			template<class T> requires std::derived_from<T, TokenizerBase>
@@ -926,9 +927,9 @@ namespace token {
 				/// @brief	A std::vector of TokenT instances.
 				using TokenCont = std::vector<TokenT>;
 				/// @brief	Mutable TokenCont iterator type.
-				using iterator = TokenCont::iterator;
+				using iterator = typename TokenCont::iterator;
 				/// @brief	Immutable TokenCont iterator type.
-				using const_iterator = TokenCont::const_iterator;
+				using const_iterator = typename TokenCont::const_iterator;
 
 			protected:
 				TokenCont tokens;
@@ -1008,8 +1009,8 @@ namespace token {
 			public:
 				/// @brief	The internal TokenType enum type used by Tokens.
 				using TokenTypeT = TokenType;
-				using const_iterator = BasicCoreParserBase<TokenType, Token>::const_iterator;
-				using TokenCont = BasicCoreParserBase<TokenType, Token>::TokenCont;
+				using const_iterator = typename BasicCoreParserBase<TokenType, Token>::const_iterator;
+				using TokenCont = typename BasicCoreParserBase<TokenType, Token>::TokenCont;
 
 			protected:
 				const_iterator readpos;
@@ -1145,14 +1146,14 @@ namespace token {
 				/// @brief	A std::vector of TokenT instances.
 				using TokenCont = std::vector<TokenT>;
 				/// @brief	Mutable TokenCont iterator type.
-				using iterator = TokenCont::iterator;
+				using iterator = typename TokenCont::iterator;
 				/// @brief	Immutable TokenCont iterator type.
-				using const_iterator = TokenCont::const_iterator;
+				using const_iterator = typename TokenCont::const_iterator;
 
 				using OutputT = Output;
 
-				ParserBase(TokenCont&& tkns) : ParserBaseT<TokenType, Token>(std::move(tkns)) {}
-				ParserBase(const TokenCont& tkns) : ParserBaseT<TokenType, Token>(tkns) {}
+				explicit ParserBase(TokenCont&& tkns) : ParserBaseT<TokenType, Token>(std::move(tkns)) {}
+				explicit ParserBase(const TokenCont& tkns) : ParserBaseT<TokenType, Token>(tkns) {}
 				virtual ~ParserBase() noexcept = default;
 
 				virtual OutputT parse() = 0;
