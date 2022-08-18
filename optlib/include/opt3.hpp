@@ -13,6 +13,8 @@
 #include <string>
 #include <variant>
 #include <optional>
+#include <set>
+#include <execution>
 
  /**
   * @namespace	opt3
@@ -52,13 +54,14 @@ namespace opt3 {
 	/// @brief	Narrow-char width string type.
 	using vstring = basic_vstring<char, std::char_traits<char>, std::allocator<char>>;
 
-
-	/// @brief	The underlying value type of Parameters.
-	using parameter_t = std::string;
-	/// @brief	The underlying value type of Flags.
-	using flag_t = std::pair<char, std::optional<std::string>>;
-	/// @brief	The underlying value type of Options.
-	using option_t = std::pair<std::string, std::optional<std::string>>;
+	namespace _internal {
+		/// @brief	The underlying value type of Parameters.
+		using parameter_t = std::string;
+		/// @brief	The underlying value type of Flags.
+		using flag_t = std::pair<char, std::optional<std::string>>;
+		/// @brief	The underlying value type of Options.
+		using option_t = std::pair<std::string, std::optional<std::string>>;
+	}
 
 	/**
 	 * @struct	base_arg
@@ -95,42 +98,43 @@ namespace opt3 {
 		CONSTEXPR basic_arg_t(T const& value) : _value{ value } {}
 
 		/// @brief	Get the name of this argument.
-		CONSTEXPR std::string name() const requires (std::same_as<T, parameter_t>) { return _value; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, _internal::parameter_t>) { return _value; }
 		/// @brief	Get the name of this argument.
-		CONSTEXPR std::string name() const requires (std::same_as<T, flag_t>) { return vstring{ _value.first }; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, _internal::flag_t>) { return vstring{ _value.first }; }
 		/// @brief	Get the name of this argument.
-		CONSTEXPR std::string name() const requires (std::same_as<T, option_t>) { return{ _value.first }; }
+		CONSTEXPR std::string name() const requires (std::same_as<T, _internal::option_t>) { return{ _value.first }; }
 
-		CONSTEXPR std::optional<std::string> getValue() const requires(var::any_same<T, flag_t, option_t>) { return _value.second; }
+		/// @brief	Get the capture value of this argument as its actual type.
+		CONSTEXPR std::optional<std::string> getValue() const requires(var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second; }
 
 		/// @brief	Check if this argument has a captured value. (always returns false for parameters)
-		CONSTEXPR bool has_value() const requires (std::same_as<T, parameter_t>) { return false; }
+		CONSTEXPR bool has_value() const requires (std::same_as<T, _internal::parameter_t>) { return false; }
 		/// @brief	Check if this argument has a captured value.
-		CONSTEXPR bool has_value() const requires (var::any_same<T, flag_t, option_t>) { return _value.second.has_value(); }
+		CONSTEXPR bool has_value() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.has_value(); }
 
 		/**
 		 * @brief				Retrieve the capture value of this argument if it exists; otherwise returns the given string instead.
 		 * @param defaultValue	A string to return when a capture value is not available.
 		 * @returns				The captured value of this argument or defaultValue if one wasn't available.
 		 */
-		CONSTEXPR std::string value_or(std::string const& defaultValue) const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value_or(defaultValue); }
+		CONSTEXPR std::string value_or(std::string const& defaultValue) const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value_or(defaultValue); }
 		/**
 		 * @brief				Retrieve the capture value of this argument.
 		 * @returns				The captured value of this argument.
 		 * @throws ex::except	This argument does not contain a captured value.
 		 */
-		CONSTEXPR std::string value() const requires (var::any_same<T, flag_t, option_t>) { return _value.second.value(); }
+		CONSTEXPR std::string value() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value(); }
 	};
 
 	/// @brief	Constraint that allows any types derived from base_arg.
 	template<typename T> concept valid_arg = std::derived_from<T, base_arg>;
 
 	/// @brief	Parameter argument type; these are any arguments without special meaning.
-	using Parameter = basic_arg_t<parameter_t>;
+	using Parameter = basic_arg_t<_internal::parameter_t>;
 	/// @brief	Flag argument type; these are single-character arguments that can be chained together and can capture values when enabled.
-	using Flag = basic_arg_t<flag_t>;
+	using Flag = basic_arg_t<_internal::flag_t>;
 	/// @brief	Option argument type; these are multi-character arguments that can capture values when enabled.
-	using Option = basic_arg_t<option_t>;
+	using Option = basic_arg_t<_internal::option_t>;
 
 	/**
 	 * @struct	variantarg
@@ -151,15 +155,21 @@ namespace opt3 {
 			return this->name() == name;
 		}
 
+		/**
+		 * @brief
+		 * @tparam TVisitor
+		 * @param visitor		A function or lambda to use as the visitor when calling ``
+		 * @returns				The value returned by the visitor function.
+		 */
 		template<typename TVisitor>
-		WINCONSTEXPR auto visit(const TVisitor& visitor) const noexcept
+		CONSTEXPR auto visit(const TVisitor& visitor) const noexcept
 		{
 			return std::visit(visitor, static_cast<base>(*this));
 		}
 
 		/**
-		 * @brief	Gets the name of this argument.
-		 * @returns	The name of this argument, excluding any prefixes that were stripped during parsing.
+		 * @brief		Gets the name of this argument.
+		 * @returns		The name of this argument, excluding any prefixes that were stripped during parsing.
 		 */
 		std::string name() const noexcept;
 		/**
@@ -260,29 +270,24 @@ namespace opt3 {
 	}
 
 
-
-
-
-
-
 	/**
 	 * @brief				Instantiates a variantarg of the specified type, with the given values.
 	 * @tparam TValue		The type of the underlying value.  This is passed to the templated basic_arg_t struct.
 	 * @tparam T			Any type that is the same as, or is implicitly convertible to, std::string or char
 	 * @param name			The name of the argument.
 	 * @param capture		An optional capture value for this argument.
-	 *\n					Note that when TReturn is parameter_t
+	 *\n					Note that when TReturn is _internal::parameter_t
 	 * @returns				A variantarg containing an argument of the specified type.
 	 */
-	template<var::any_same<parameter_t, flag_t, option_t> TValue>
+	template<var::any_same<_internal::parameter_t, _internal::flag_t, _internal::option_t> TValue>
 	WINCONSTEXPR variantarg make_argument(vstring&& name, std::optional<std::string>&& capture = std::nullopt) noexcept(false)
 	{
-		if constexpr (std::same_as<TValue, parameter_t>)
-			return{ basic_arg_t<parameter_t>{ std::forward<vstring>(name) } };
-		else if constexpr (std::same_as<TValue, flag_t>)
-			return{ basic_arg_t<flag_t>{ std::make_pair(std::forward<vstring>(name).get_single_char(), std::forward<std::optional<std::string>>(capture))  } };
-		else if constexpr (std::same_as<TValue, option_t>)
-			return{ basic_arg_t<option_t>{ std::make_pair(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture))} };
+		if constexpr (std::same_as<TValue, _internal::parameter_t>)
+			return{ basic_arg_t<_internal::parameter_t>{ std::forward<vstring>(name) } };
+		else if constexpr (std::same_as<TValue, _internal::flag_t>)
+			return{ basic_arg_t<_internal::flag_t>{ std::make_pair(std::forward<vstring>(name).get_single_char(), std::forward<std::optional<std::string>>(capture))  } };
+		else if constexpr (std::same_as<TValue, _internal::option_t>)
+			return{ basic_arg_t<_internal::option_t>{ std::make_pair(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture))} };
 		else throw make_exception("make_argument() failed:  Invalid target type specified!");
 	}
 	/**
@@ -292,18 +297,18 @@ namespace opt3 {
 	 * @tparam T			Any type that is the same as, or is implicitly convertible to, std::string or char
 	 * @param name			The name of the argument.
 	 * @param capture		An optional capture value for this argument.
-	 *\n					Note that when TReturn is parameter_t
+	 *\n					Note that when TReturn is _internal::parameter_t
 	 * @returns				A variantarg containing an argument of the specified type.
 	 */
 	template<var::any_same<Parameter, Flag, Option> TArgument>
 	WINCONSTEXPR variantarg make_argument(vstring&& name, std::optional<std::string>&& capture = std::nullopt) noexcept(false)
 	{
 		if constexpr (std::same_as<TArgument, Parameter>)
-			return make_argument<parameter_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
+			return make_argument<_internal::parameter_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
 		else if constexpr (std::same_as<TArgument, Flag>)
-			return make_argument<flag_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
+			return make_argument<_internal::flag_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
 		else if constexpr (std::same_as<TArgument, Option>)
-			return make_argument<option_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
+			return make_argument<_internal::option_t>(std::forward<vstring>(name), std::forward<std::optional<std::string>>(capture));
 		else throw make_exception("make_argument() failed:  Invalid target type specified!");
 	}
 
@@ -1072,43 +1077,485 @@ namespace opt3 {
 			return true;
 		}
 	#pragma endregion checkv
-	};
 
+	#pragma region get_duplicates
+		/**
+		 * @brief
+		 * @tparam TExecutionPolicy
+		 * @param equality_comparer
+		 * @returns						A subcontainer that contains all of the duplicate entries as determined by the given predicate.
+		 */
+		template<std::predicate<variantarg, variantarg> TCompare, typename TExecutionPolicy = std::execution::parallel_unsequenced_policy, std::derived_from<std::allocator<variantarg>> TAlloc = std::allocator<variantarg>>
+		CONSTEXPR arg_container get_duplicates(const TCompare& equality_comparer) const
+		{
+			const std::set<variantarg> distinct{ this->begin(), this->end() };
+			std::vector<variantarg> duplicates{};
+			duplicates.reserve(this->size());
+			std::set_difference<TExecutionPolicy>(TExecutionPolicy{}, this->begin(), this->end(), distinct.begin(), distinct.end(), duplicates.begin(), equality_comparer);
+			return arg_container{ duplicates.begin(), duplicates.end() };
+		}
+	#pragma endregion get_duplicates
+	};
 
 
 	/// @brief	unsigned char type
 	using uchar = unsigned char;
 
+#pragma region Enums
 	/**
 	 * @enum	CaptureStyle
 	 * @brief	Defines various capture styles
 	 */
-	enum class CaptureStyle : uchar {
-		///	@brief	No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline.
-		Disabled = 0,
-		/// @brief	Captures are only allowed when appended to the argument using an equals ('=') sign. Since CaptureStyle is a bitfield, this may be combined with CaptureStyle::Optional or CaptureStyle::Required to force them to only accept input via appending with an equals sign ('=').
-		EqualsOnly = 1,
-		/// @brief	Captures whenever possible, but does not require capture input. Arguments of type Flag & Option are never captured by other flags or options.
-		Optional = 2,
-		/// @brief	Requires capture input. If a capture is not provided, an exception is thrown by the parser that includes the name of the argument, and a brief message informing the user to provide a capture argument.
-		Required = 4,
+	$make_typed_bitfield(CaptureStyle, uchar,
+						 /// @brief	No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline.
+						 Disabled = 0,
+						 /// @brief	Captures are only allowed when appended to the argument using an equals ('=') sign. Since CaptureStyle is a bitfield, this may be combined with CaptureStyle::Optional or CaptureStyle::Required to force them to only accept input via appending with an equals sign ('=').
+						 EqualsOnly = 1,
+						 /// @brief	Captures whenever possible, but does not require capture input. Arguments of type Flag & Option are never captured by other flags or options.
+						 Optional = 2,
+						 /// @brief	Requires capture input. If a capture is not provided, an exception is thrown by the parser that includes the name of the argument, and a brief message informing the user to provide a capture argument.
+						 Required = 4,
+						 );
+
+	/**
+	 * @enum	ConflictStyle
+	 * @brief	Defines the circumstances in which two argument groups conflict with each other.
+	 */
+	enum class ConflictStyle : uchar {
+		/// @brief	Arguments do not conflict.
+		None = 0,
+		/// @brief	Both arguments can be present at the same time, but **only one** is allowed to capture, otherwise a conflict exception is thrown.
+		CapturesConflict = 1,
+		/// @brief	Only one of the arguments can be present at the same time.
+		Conflict = 2,
+	};
+#pragma endregion Enums
+
+	namespace _internal {
+		static struct {
+		private:
+			mutable size_t rolling{ 0 };
+		public:
+			/// @returns	Most recently-assigned ID number.
+			CONSTEXPR size_t last() noexcept { return rolling; }
+			/// @returns	Next unassigned ID number.
+			CONSTEXPR size_t next() noexcept { return rolling++; }
+		} arg_id_sequencer;
+	}
+
+	template<var::any_same<_internal::flag_t, _internal::option_t> T>
+	struct basic_arg_template : public base_arg {
+		vstring name;
+		std::optional<CaptureStyle> captureStyle;
+
+		CONSTEXPR basic_arg_template(vstring const& name, const std::optional<CaptureStyle>& captureStyle = std::nullopt) : name{ name }, captureStyle{ captureStyle } {}
 	};
 
-#pragma region CaptureStyleOperators
-	/// @brief	Bitwise OR operation.
-	constexpr CaptureStyle operator|(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) | $c(int, r))); }
-	/// @brief	Bitwise AND operation.
-	constexpr CaptureStyle operator&(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) & $c(int, r))); }
-	/// @brief	Bitwise XOR operation.
-	constexpr CaptureStyle operator^(const CaptureStyle& l, const CaptureStyle& r) { return $c(CaptureStyle, ($c(int, l) ^ $c(int, r))); }
-	/// @brief	Bitwise OR-equals operation.
-	constexpr CaptureStyle& operator|=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) | $c(int, r))); }
-	/// @brief	Bitwise AND-equals operation.
-	constexpr CaptureStyle& operator&=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) & $c(int, r))); }
-	/// @brief	Bitwise XOR-equals operation.
-	constexpr CaptureStyle& operator^=(CaptureStyle& l, const CaptureStyle& r) { return l = $c(CaptureStyle, ($c(int, l) ^ $c(int, r))); }
-#pragma endregion CaptureStyleOperators
+	/// @brief		An argument template for `Option`s.
+	using TemplateOption = basic_arg_template<_internal::option_t>;
+	/// @brief		An argument template for `Flag`s.
+	using TemplateFlag = basic_arg_template<_internal::flag_t>;
 
+	/**
+	 * @struct	variant_template
+	 * @brief	An abstraction wrapper around `basic_arg_template` that accepts types `TemplateOption` & `TemplateFlag`
+	 */
+	class variant_template : public std::variant<TemplateFlag, TemplateOption> {
+	protected:
+		using base_t = std::variant<TemplateFlag, TemplateOption>;
+
+	public:
+		template<typename... Ts> requires std::constructible_from<base_t, Ts...> CONSTEXPR variant_template(Ts&&... args) : base_t(std::forward<Ts>(args)...) {}
+
+		/**
+		 * @brief
+		 * @tparam TVisitor
+		 * @param visitor		A function or lambda to use as the visitor when calling ``
+		 * @returns				The value returned by the visitor function.
+		 */
+		template<typename TVisitor>
+		CONSTEXPR auto visit(const TVisitor& visitor) const noexcept
+		{
+			return std::visit(visitor, static_cast<base_t>(*this));
+		}
+
+		CONSTEXPR std::optional<CaptureStyle> getCaptureStyle() const;
+		WINCONSTEXPR vstring name() const;
+
+		template<typename T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
+		template<typename... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
+		CONSTEXPR bool is_flag() const noexcept { return is_type<TemplateFlag>(); }
+		CONSTEXPR bool is_option() const noexcept { return is_type<TemplateOption>(); }
+	};
+	inline CONSTEXPR std::optional<CaptureStyle> variant_template::getCaptureStyle() const
+	{
+		return this->visit([](auto&& value) -> std::optional<CaptureStyle> {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, TemplateFlag>)
+				return value.captureStyle;
+			else if constexpr (std::same_as<T, TemplateOption>)
+				return value.captureStyle;
+						   });
+	}
+	inline WINCONSTEXPR vstring variant_template::name() const
+	{
+		return this->visit([](auto&& value) -> std::string {
+			using T = std::decay_t<decltype(value)>;
+
+			if constexpr (std::same_as<T, TemplateFlag>)
+				return value.name;
+			else if constexpr (std::same_as<T, TemplateOption>)
+				return value.name;
+			return std::string{};
+						   });
+	}
+	inline std::ostream& operator<<(std::ostream& os, const variant_template& vt)
+	{
+		if (vt.is_option())
+			os << "--";
+		else if (vt.is_flag())
+			os << '-';
+		return os << vt.name();
+	}
+
+	namespace _internal {
+		/// @brief	Returns the given variant_template.
+		inline WINCONSTEXPR variant_template resolve_template(variant_template const& vt)
+		{
+			return vt;
+		}
+		/// @brief	Constructs a new variant_template instance from the given vstring. Single-character vstrings are parsed as flags, while multi-character vstrings are parsed as options.
+		inline WINCONSTEXPR variant_template resolve_template(vstring const& vs)
+		{
+			if (vs.is_single_char())
+				return variant_template{ TemplateFlag{ vs } };
+			else return variant_template{ TemplateOption{ vs } };
+		}
+	}
+
+	/**
+	 * @struct	arg_conflict
+	 * @brief	Simple container object for a single argument 'conflict'; a much simpler form of argument definition that includes a name & optional `ConflictStyle`.
+	 */
+	struct arg_conflict {
+		/// @brief	The name of the conflicting argument.
+		vstring name;
+		/// @brief	Optional conflict style override for this conflict only.
+		std::optional<ConflictStyle> style{ std::nullopt };
+
+		/**
+		 * @brief					Creates a new arg_conflict instance.
+		 * @param name				The name of the conflicting argument.
+		 * @param conflictStyle		An optional conflict style that overrides the group's default for this conflict only.
+		 */
+		WINCONSTEXPR arg_conflict(vstring const& name, std::optional<ConflictStyle> const& conflictStyle) : name{ name }, style{ conflictStyle } {}
+		/**
+		 * @brief					Creates a new arg_conflict instance.
+		 * @param name				The name of the conflicting argument.
+		 * @param conflictStyle		A conflict style that overrides the group's default for this conflict only.
+		 */
+		WINCONSTEXPR arg_conflict(vstring const& name, ConflictStyle const& conflictStyle) : name{ name }, style{ conflictStyle } {}
+		/**
+		 * @brief					Creates a new arg_conflict instance.
+		 * @param name				The name of the conflicting argument.
+		 */
+		WINCONSTEXPR arg_conflict(vstring const& name) : name{ name } {}
+
+		WINCONSTEXPR arg_conflict(arg_conflict const&) = default;
+		WINCONSTEXPR arg_conflict(arg_conflict&&) noexcept = default;
+		~arg_conflict() = default;
+		WINCONSTEXPR arg_conflict& operator=(arg_conflict const&) = default;
+		WINCONSTEXPR arg_conflict& operator=(arg_conflict&&) noexcept = default;
+
+		WINCONSTEXPR operator vstring() const noexcept { return name; }
+	};
+
+	/**
+	 * @struct	variant_template_group
+	 * @brief	Container object for a *group* of argument templates that all perform a similar function.
+	 *\n		A template group may also **conflict** with members of another template group; this is handled differently depending on the winning `ConflictStyle`
+	 */
+	struct variant_template_group {
+		using conflict_list_t = std::vector<arg_conflict>;
+
+		/// @brief	This argument group's identifier number.
+		size_t _id;
+		/// @brief	Argument templates defined by this group.
+		std::vector<variant_template> templates;
+		/// @brief	Default capture style for argument templates that don't override it.
+		CaptureStyle _defaultCaptureStyle{ CaptureStyle::Optional };
+		/// @brief	Default conflict style for conflict definitions that don't override it.
+		ConflictStyle _defaultConflictStyle{ ConflictStyle::Conflict };
+		/// @brief	An optional *(inclusive)* maximum argument count.
+		std::optional<size_t> _max{ std::nullopt };
+		/// @brief	An *(inclusive)* minimum argument count.
+		size_t _min{ 0ull };
+		/// @brief	Conflicting argument definitions for this template group.
+		conflict_list_t conflicts;
+
+		/**
+		 * @brief					Creates a new variant_template_group instance with the specified ID.
+		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
+		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
+		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with the specified ID.
+		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
+		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with the specified ID.
+		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
+		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const size_t& id, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with the specified ID.
+		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const size_t& id, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _min{ min }, _max{ max } {}
+
+		/**
+		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
+		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
+		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
+		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
+		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		/**
+		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
+		 * @param templates			Any number of `variant_template`s to include in the group
+		 */
+		WINCONSTEXPR variant_template_group(const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _min{ min }, _max{ max } {}
+
+		WINCONSTEXPR CaptureStyle get_capture_style_of(vstring const& name) const noexcept
+		{
+			if (const auto& it{ std::find_if(this->templates.begin(), this->templates.end(), [&name](auto&& vTemplate) { return vTemplate.name() == name; }) }; it != this->templates.end())
+				return it->getCaptureStyle().value_or(this->_defaultCaptureStyle);
+			else return this->_defaultCaptureStyle;
+		}
+		WINCONSTEXPR ConflictStyle get_conflict_style_of(vstring const& name) const noexcept
+		{
+			if (const auto& it{ std::find_if(this->conflicts.begin(), this->conflicts.end(), [&name](auto&& conflict) { return conflict.name == name; }) }; it != this->conflicts.end())
+				return it->style.value_or(this->_defaultConflictStyle);
+			else return this->_defaultConflictStyle;
+		}
+
+		/**
+		 * @brief		Sets the default capture style of this group.
+		 * @param cs	A default capture style for argument templates that don't override it.
+		 * @returns		The reference of this instance.
+		 */
+		CONSTEXPR variant_template_group& captureStyle(const CaptureStyle& cs) noexcept
+		{
+			_defaultCaptureStyle = cs;
+			return *this;
+		}
+		/**
+		 * @brief		Sets the default conflict style of this group.
+		 * @param cs	A default conflict style for conflict definitions that don't override it.
+		 * @returns		The reference of this instance.
+		 */
+		CONSTEXPR variant_template_group& conflictStyle(const ConflictStyle& cs) noexcept
+		{
+			_defaultConflictStyle = cs;
+			return *this;
+		}
+		/**
+		 * @brief		Sets the minimum number of arguments from this group that must be specified.
+		 * @param min	Minimum argument count.
+		 *\n			If the user doesn't specify (any) argument from this group at least this many times, an exception is thrown by the parser.
+		 * @returns		The reference of this instance.
+		 */
+		CONSTEXPR variant_template_group& min(const size_t min) noexcept
+		{
+			this->_min = min;
+			return *this;
+		}
+		/**
+		 * @brief		Sets the maximum number of arguments from this group that can be specified.
+		 * @param min	Optional maximum argument count.
+		 *\n			If the user specifies (any) argument from this group more than this many times, an exception is thrown by the parser.
+		 * @returns		The reference of this instance.
+		 */
+		CONSTEXPR variant_template_group& max(const std::optional<size_t>& max) noexcept
+		{
+			this->_max = max;
+			return *this;
+		}
+		/**
+		 * @brief		Specifies argument names that conflict with all arguments from this group.
+		 * @param names	Any number of argument names or arg_conflict definitions.
+		 * @returns		The reference of this instance.
+		 */
+		template<var::any_same_or_convertible<vstring, arg_conflict>... Ts>
+		CONSTEXPR variant_template_group& conflictsWith(Ts&&... names)
+		{
+			const conflict_list_t tmp{ arg_conflict{ std::forward<Ts>(names) }... };
+			conflicts.reserve(conflicts.size() + tmp.size());
+			conflicts.insert(conflicts.end(), tmp.begin(), tmp.end());
+			return *this;
+		}
+
+		/// @brief	Ostream insertion operator. Prints all argument templates with prefixes in the format '<FIRST> | <SECOND> | <THIRD>...'
+		friend std::ostream& operator<<(std::ostream& os, const variant_template_group& vtg)
+		{
+			bool fst{ true };
+			for (const auto& vt : vtg.templates) {
+				if (fst) fst = false;
+				else os << " | ";
+				os << vt;
+			}
+			return os;
+		}
+	};
+
+	/**
+	 * @brief					Creates a new variant_template_group instance.
+	 * @param captureStyle		Determines how arguments from this template group can capture input.
+	 * @param conflictStyle		Determines how multiple arguments with the same ID are handled.
+	 * @param templates			Any number of `variant_template`s to include in the group.
+	 * @returns					A new variant_template_group instance with the specified parameters.
+	 */
+	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
+	inline constexpr variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts&&... args)
+	{
+		return variant_template_group{
+			captureStyle,
+			conflictStyle,
+			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }
+		};
+	}
+	/**
+	 * @brief					Creates a new variant_template_group instance.
+	 * @param captureStyle		Determines how arguments from this template group can capture input.
+	 * @param templates			Any number of `variant_template`s to include in the group.
+	 * @returns					A new variant_template_group instance with the specified parameters.
+	 */
+	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
+	inline constexpr variant_template_group make_template(const CaptureStyle captureStyle, Ts&&... args)
+	{
+		return variant_template_group{
+			captureStyle,
+			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }
+		};
+	}
+	/**
+	 * @brief					Creates a new variant_template_group instance.
+	 * @param conflictStyle		Determines how multiple arguments with the same ID are handled.
+	 * @param templates			Any number of `variant_template`s to include in the group.
+	 * @returns					A new variant_template_group instance with the specified parameters.
+	 */
+	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
+	inline constexpr variant_template_group make_template(const ConflictStyle conflictStyle, Ts&&... args)
+	{
+		return variant_template_group{
+			conflictStyle,
+			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }
+		};
+	}
+	/**
+	 * @brief					Creates a new variant_template_group instance.
+	 * @param templates			Any number of `variant_template`s to include in the group
+	 * @returns					A new variant_template_group instance with the specified parameters.
+	 */
+	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
+	inline constexpr variant_template_group make_template(Ts&&... args)
+	{
+		return variant_template_group{
+			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }
+		};
+	}
+	/**
+	 * @brief					Creates a new variant_template_group instance.
+	 * @param g					A pre-constructed variant_template_group instance.
+	 * @returns					g
+	 */
+	inline WINCONSTEXPR variant_template_group make_template(variant_template_group const& g) { return g; }
+
+	template<typename T> concept valid_capture = var::any_same_or_convertible<T, variant_template, variant_template_group, vstring>;
+
+	struct capture_list : std::vector<variant_template_group> {
+		using base_t = std::vector<variant_template_group>;
+		using iterator_t = std::vector<variant_template_group>::iterator;
+		using const_iterator_t = std::vector<variant_template_group>::const_iterator;
+	private:
+		template<size_t IDX, valid_capture... Ts>
+		static base_t& build(base_t& vec, std::tuple<Ts...>&& tpl)
+		{
+			vec.reserve(vec.size() + 1ull);
+			vec.emplace_back(std::move(make_template(std::move(std::get<IDX>(tpl)))));
+
+			if constexpr (IDX + 1ull < sizeof...(Ts))
+				return build<IDX + 1ull>(vec, std::forward<std::tuple<Ts...>>(tpl));
+			else return vec;
+		}
+		template<valid_capture... Ts>
+		static base_t build(std::tuple<Ts...>&& tpl)
+		{
+			base_t vec;
+			vec = build<0ull>(vec, std::forward<std::tuple<Ts...>>(tpl));
+			return vec;
+		}
+	public:
+		template<valid_capture... Ts>
+		CONSTEXPR capture_list(Ts&&... captures) : base_t(build(std::make_tuple(std::forward<Ts>(captures)...))) {}
+
+		iterator_t get_group_of(vstring const& name)
+		{
+			if (const auto& it{ std::find_if(this->begin(), this->end(), [&name](auto&& v) { return std::any_of(v.templates.begin(), v.templates.end(), [&name](auto&& vtemplate) { return vtemplate.name() == name; }); }) }; it != this->end())
+				return it;
+			return this->end();
+		}
+
+		const_iterator_t get_group_of(vstring const& name) const
+		{
+			if (const auto& it{ std::find_if(this->begin(), this->end(), [&name](auto&& v) { return std::any_of(v.templates.begin(), v.templates.end(), [&name](auto&& vtemplate) { return vtemplate.name() == name; }); }) }; it != this->end())
+				return it;
+			return this->end();
+		}
+
+		iterator_t get_group_of(size_t const& id)
+		{
+			if (const auto& it{ std::find_if(this->begin(), this->end(), [&id](auto&& v) { return v._id == id; }) }; it != this->end())
+				return it;
+			return this->end();
+		}
+
+		const_iterator_t get_group_of(size_t const& id) const
+		{
+			if (const auto& it{ std::find_if(this->begin(), this->end(), [&id](auto&& v) { return v._id == id; }) }; it != this->end())
+				return it;
+			return this->end();
+		}
+
+		CaptureStyle get_capture_style_of(vstring const& name) const
+		{
+			if (const auto& group{ get_group_of(name) }; group != this->end())
+				return group->get_capture_style_of(name);
+			return CaptureStyle::Disabled;
+		}
+	};
 
 	/**
 	 * @struct	ArgumentParsingRules
@@ -1240,219 +1687,49 @@ namespace opt3 {
 	#pragma endregion Methods
 	};
 
-	/**
-	 * @struct	basic_capture_wrapper
-	 * @brief	Extends vstring with the ability to require specific arguments.
-	 */
-	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
-	struct basic_capture_wrapper {
-		basic_vstring<TChar, TCharTraits, TAlloc> _input;
-		std::optional<CaptureStyle> captureStyle;
-		std::optional<size_t> maxCount;
-		size_t minCount{ 0ull };
-
-		WINCONSTEXPR basic_capture_wrapper(const basic_vstring<TChar, TCharTraits, TAlloc>& input, const std::optional<CaptureStyle>& captureStyle = CaptureStyle::Optional, const size_t& minCount = 0ull, const std::optional<size_t>& maxCount = std::nullopt) : _input(input), captureStyle{ captureStyle }, minCount{ minCount }, maxCount{ maxCount } {}
-
-		WINCONSTEXPR basic_capture_wrapper(basic_capture_wrapper<TChar, TCharTraits, TAlloc>&& o) noexcept : _input{ std::move(o._input) }, captureStyle{ std::move(o.captureStyle) }, maxCount{ std::move(o.maxCount) }, minCount{ std::move(o.minCount) } {}
-		WINCONSTEXPR basic_capture_wrapper(basic_capture_wrapper<TChar, TCharTraits, TAlloc> const& o) noexcept : _input(o._input), captureStyle{ o.captureStyle }, maxCount{ o.maxCount }, minCount{ o.minCount } {}
-		~basic_capture_wrapper() = default;
-
-		WINCONSTEXPR basic_capture_wrapper<TChar, TCharTraits, TAlloc>& operator=(basic_capture_wrapper<TChar, TCharTraits, TAlloc>&& o) noexcept
+	namespace _internal {
+		/// @brief	Checks if captureStyle is set to CaptureStyle::Disabled
+		inline CONSTEXPR bool CaptureIsDisabled(const CaptureStyle& captureStyle)
 		{
-			_input = std::move(o._input);
-			captureStyle = std::move(o.captureStyle);
-			maxCount = std::move(o.maxCount);
-			minCount = std::move(o.minCount);
-			return *this;
+			return static_cast<uchar>(captureStyle) == static_cast<uchar>(CaptureStyle::Disabled);
 		}
-		WINCONSTEXPR basic_capture_wrapper<TChar, TCharTraits, TAlloc>& operator=(basic_capture_wrapper<TChar, TCharTraits, TAlloc> const& o) noexcept
+		/// @brief	Checks if captureStyle contains CaptureStyle::EqualsOnly
+		inline CONSTEXPR bool CaptureIsEqualsOnly(const CaptureStyle& captureStyle)
 		{
-			_input = o._input;
-			captureStyle = o.captureStyle;
-			maxCount = o.maxCount;
-			minCount = o.minCount;
-			return *this;
+			return (static_cast<uchar>(captureStyle) & static_cast<uchar>(CaptureStyle::EqualsOnly)) != 0;
 		}
-
-		WINCONSTEXPR basic_vstring<TChar, TCharTraits, TAlloc> name() const
+		/// @brief	Checks if captureStyle contains CaptureStyle::Disabled and/or CaptureStyle::EqualsOnly
+		inline CONSTEXPR bool CaptureIsDisabledOrEqualsOnly(const CaptureStyle& captureStyle)
 		{
-			return _input;
+			return CaptureIsDisabled(captureStyle) || CaptureIsEqualsOnly(captureStyle);
 		}
-
-		constexpr bool withinRequiredRange(size_t const& count) const
+		/// @brief	Checks if captureStyle contains CaptureStyle::Required
+		inline CONSTEXPR bool CaptureIsRequired(const CaptureStyle& captureStyle)
 		{
-			return count >= minCount && (!maxCount.has_value() || count < maxCount.value());
+			return (static_cast<uchar>(captureStyle) & static_cast<uchar>(CaptureStyle::Required)) != 0;
 		}
-	};
-	using capture_wrapper = basic_capture_wrapper<char, std::char_traits<char>, std::allocator<char>>;
-
-	/**
-	 * @brief				Specify that an argument requires captured input while also providing additional context.
-	 * @tparam MAX			Limits the number of times this argument may be specified legally.
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @param equalsOnly	When true, this argument may only capture input when directly appended with an equals sign.
-	 * @returns				capture_wrapper
-	 */
-	template<size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper requireCapture(T&& input, const bool& equalsOnly = false)
-	{
-		return{ std::forward<T>(input), (equalsOnly ? static_cast<CaptureStyle>(static_cast<uchar>(CaptureStyle::Required) | static_cast<uchar>(CaptureStyle::EqualsOnly)) : CaptureStyle::Required), MIN, MAX };
-	}
-	/**
-	 * @brief				Specify that an argument requires captured input while also providing additional context.
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @param equalsOnly	When true, this argument may only capture input when directly appended with an equals sign.
-	 * @returns				capture_wrapper
-	 */
-	template<size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper requireCapture(T&& input, const bool& equalsOnly = false)
-	{
-		return{ std::forward<T>(input), (equalsOnly ? static_cast<CaptureStyle>(static_cast<uchar>(CaptureStyle::Required) | static_cast<uchar>(CaptureStyle::EqualsOnly)) : CaptureStyle::Required), MIN };
-	}
-	/**
-	 * @brief				Specify that an argument does not require captured input while also providing additional context.
-	 * @tparam MAX			Limits the number of times this argument may be specified legally.
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @param equalsOnly	When true, this argument may only capture input when directly appended with an equals sign.
-	 * @returns				capture_wrapper
-	 */
-	template<size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper optionalCapture(T&& input, const bool& equalsOnly = false)
-	{
-		return{ std::forward<T>(input), (equalsOnly ? static_cast<CaptureStyle>(static_cast<uchar>(CaptureStyle::Optional) | static_cast<uchar>(CaptureStyle::EqualsOnly)) : CaptureStyle::Optional), MIN, MAX };
-	}
-	/**
-	 * @brief				Specify that an argument does not require captured input while also providing additional context.
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @param equalsOnly	When true, this argument may only capture input when directly appended with an equals sign.
-	 * @returns				capture_wrapper
-	 */
-	template<size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper optionalCapture(T&& input, const bool& equalsOnly = false)
-	{
-		return{ std::forward<T>(input), (equalsOnly ? static_cast<CaptureStyle>(static_cast<uchar>(CaptureStyle::Optional) | static_cast<uchar>(CaptureStyle::EqualsOnly)) : CaptureStyle::Optional), MIN };
 	}
 
 	/**
-	 * @brief				Specify that an argument does not accept captured input while also providing additional context.
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @returns				capture_wrapper
+	 * @brief				Parse commandline arguments into an ArgContainer instance.
+	 * @details				### Argument Types
+	 *						- Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type.
+	 *						- Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list.
+	 *						- Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments.
+	 *						### Capture Rules
+	 *						- Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix.
+	 *						- Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", & "--opt" + "captured".
+	 *						- If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain.
+	 *						- Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.
+	 * @param args			Commandline arguments as a vector of strings, in order and including argv[0].
+	 * @param captures		A `capture_list` instance specifying which arguments are allowed to capture other arguments as their parameters
+	 * @param parsingRules	An `ArgumentParsingRules` instance that provides the parser with a configuration
+	 * @returns				ArgContainer
 	 */
-	template<size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper noCapture(T&& input)
+	inline arg_container parse(std::vector<std::string>&& args, capture_list captures, const ArgumentParsingRules& parsingRules)
 	{
-		return{ std::forward<T>(input), CaptureStyle::Disabled, MIN };
-	}
-	/**
-	 * @brief				Specify that an argument does not accept captured input while also providing additional context.
-	 * @tparam MAX			Requires that this argument be specified no more than this many times. (Default: std::nullopt)
-	 * @tparam MIN			Requires that this argument be specified at least this many times. (Default: 0)
-	 * @tparam T			Any type that is a char or string, or is implicitly convertible to a char or string.
-	 * @param input			The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options.
-	 * @returns				capture_wrapper
-	 */
-	template<size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible<std::string, char> T>
-	inline WINCONSTEXPR capture_wrapper noCapture(T&& input)
-	{
-		return{ std::forward<T>(input), CaptureStyle::Disabled, MIN, MAX };
-	}
+		using namespace _internal;
 
-	/**
-	 * @struct	CaptureList
-	 * @brief	Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.
-	 */
-	struct CaptureList {
-		const ArgumentParsingRules parsingRules;
-		/// @brief Vector of input wrapper strings that contains the argument names.
-		const std::vector<capture_wrapper> vec;
-
-		template<var::any_same_or_convertible<capture_wrapper, vstring> T>
-		static capture_wrapper get_wrapper(const ArgumentParsingRules& parsingRules, T&& item)
-		{
-			if constexpr (std::same_as<T, capture_wrapper>)
-				return item;
-			else if constexpr (std::same_as<T, std::string>)
-				return capture_wrapper{ str::trim_preceeding(std::forward<T>(item), parsingRules.getDelimitersAsString()) };
-			return capture_wrapper{ std::forward<T>(item) };
-		}
-
-		/**
-		 * @brief							Default Constructor.
-		 * @tparam VT...					Variadic Templated Types.
-		 * @param ...capturing_arguments	Arguments that should be allowed to capture additional arguments. Names should not contain prefix delimiters, but if they do, they are removed.
-		 */
-		template<var::any_same_or_convertible<capture_wrapper, vstring>... Ts> constexpr CaptureList(ArgumentParsingRules const& parsingRules, Ts&&... capturing_arguments) : parsingRules{ parsingRules }, vec{ get_wrapper(parsingRules, capture_wrapper{ std::forward<Ts>(capturing_arguments) })... } {}
-		template<var::any_same_or_convertible<capture_wrapper, vstring>... Ts> constexpr CaptureList(Ts&&... capturing_arguments) : CaptureList(ArgumentParsingRules{}, capture_wrapper{ std::forward<Ts>(capturing_arguments) }...) {}
-		WINCONSTEXPR operator const std::vector<capture_wrapper>() const { return vec; }
-		/**
-		 * @brief				Checks if a given argument appears in the capture list, and returns the associated capture_wrapper object.
-		 * @param name			The name of the target argument. (Note that preceeding delimiters are stripped automatically)
-		 * @returns				The capture_wrapper object associated with the given name, or std::nullopt if none were found.
-		 */
-		std::optional<capture_wrapper> get(std::string const& name) const
-		{
-			const auto& [s, count] { parsingRules.stripPrefix(name) };
-			if (const auto& it{ std::find_if(vec.begin(), vec.end(), [&s](auto&& capwrap) { return capwrap.name() == s; }) }; it != vec.end())
-				return *it;
-			return std::nullopt;
-		}
-
-		CaptureStyle get_capture_style(std::string const& name) const
-		{
-			if (const auto& wrapper{ get(name) }; wrapper.has_value())
-				return wrapper.value().captureStyle.value_or(parsingRules.defaultCaptureStyle);
-			return CaptureStyle::Disabled;
-		}
-	};
-
-	/// @brief	Checks if captureStyle is set to CaptureStyle::Disabled
-	inline CONSTEXPR bool CaptureIsDisabled(const CaptureStyle& captureStyle)
-	{
-		return static_cast<uchar>(captureStyle) == static_cast<uchar>(CaptureStyle::Disabled);
-	}
-	/// @brief	Checks if captureStyle contains CaptureStyle::EqualsOnly
-	inline CONSTEXPR bool CaptureIsEqualsOnly(const CaptureStyle& captureStyle)
-	{
-		return (static_cast<uchar>(captureStyle) & static_cast<uchar>(CaptureStyle::EqualsOnly)) != 0;
-	}
-	/// @brief	Checks if captureStyle contains CaptureStyle::Disabled and/or CaptureStyle::EqualsOnly
-	inline CONSTEXPR bool CaptureIsDisabledOrEqualsOnly(const CaptureStyle& captureStyle)
-	{
-		return CaptureIsDisabled(captureStyle) || CaptureIsEqualsOnly(captureStyle);
-	}
-	/// @brief	Checks if captureStyle contains CaptureStyle::Required
-	inline CONSTEXPR bool CaptureIsRequired(const CaptureStyle& captureStyle)
-	{
-		return (static_cast<uchar>(captureStyle) & static_cast<uchar>(CaptureStyle::Required)) != 0;
-	}
-
-	/**
-	 * @brief			Parse commandline arguments into an ArgContainer instance.
-	 *\n				__Argument Types__
-	 *\n				- Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type.
-	 *\n				- Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list.
-	 *\n				- Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments.
-	 *\n				__Capture Rules__
-	 *\n				- Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix.
-	 *\n				- Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", & "--opt" + "captured".
-	 *\n				- If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain.
-	 *\n				- Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.
-	 * @param args		Commandline arguments as a vector of strings, in order and including argv[0].
-	 * @param captures	A CaptureList instance specifying which arguments are allowed to capture other arguments as their parameters
-	 * @returns			ArgContainer
-	 */
-	inline arg_container parse(std::vector<std::string>&& args, const CaptureList& captures)
-	{
 		// remove empty arguments, which are possible when passing arguments from automated testing applications
 		args.erase(std::remove_if(args.begin(), args.end(), [](auto&& s) { return s.empty(); }), args.end());
 
@@ -1460,14 +1737,14 @@ namespace opt3 {
 		cont.reserve(args.size());
 
 		for (std::vector<std::string>::const_iterator it{ args.begin() }; it != args.end(); ++it) {
-			auto [arg, d_count] { captures.parsingRules.stripPrefix(*it, 2ull) };
+			auto [arg, d_count] { parsingRules.stripPrefix(*it, 2ull) };
 
 			switch (d_count) {
 			case 2ull: // Option
 				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign
 					auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
 
-					if (const auto& captureStyle{ captures.get_capture_style(opt) }; !CaptureIsDisabled(captureStyle))
+					if (const auto& captureStyle{ captures.get_capture_style_of(opt) }; !CaptureIsDisabled(captureStyle))
 						cont.emplace_back(Option(std::make_pair(std::move(opt), std::move(cap))));
 					else {
 						if (CaptureIsRequired(captureStyle))
@@ -1479,7 +1756,7 @@ namespace opt3 {
 						}
 					}
 				}
-				else if (const auto& captureStyle{ captures.get_capture_style(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && captures.parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
+				else if (const auto& captureStyle{ captures.get_capture_style_of(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
 					cont.emplace_back(Option(std::make_pair(arg, *++it)));
 				else {
 					if (CaptureIsRequired(captureStyle))
@@ -1488,12 +1765,12 @@ namespace opt3 {
 				}
 				break;
 			case 1ull: // Flag
-				if (!captures.parsingRules.isNumber(arg)) { // single-dash prefix is not a number
+				if (!parsingRules.isNumber(arg)) { // single-dash prefix is not a number
 					std::optional<Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
 					std::string invCap{}; //< for invalid captures that should be treated as parameters
 					if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
 						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
-						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; !CaptureIsDisabled(captures.get_capture_style(flag))) {
+						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; !CaptureIsDisabled(captures.get_capture_style_of(flag))) {
 							capt = Flag{ std::make_pair(flag.front(), invCap) }; // push the capturing flag to capt, insert into vector once all other flags in this chain are parsed
 							arg = arg.substr(0ull, eqPos - 1ull); // remove last flag, '=', and captured string from arg
 							invCap.clear(); // flag can capture, clear invCap
@@ -1503,9 +1780,9 @@ namespace opt3 {
 					}
 					// iterate through characters in arg
 					for (auto fl{ arg.begin() }; fl != arg.end(); ++fl) {
-						const auto& captureStyle{ captures.get_capture_style(std::string(1ull, *fl)) };
+						const auto& captureStyle{ captures.get_capture_style_of(std::string(1ull, *fl)) };
 						// If this is the last char, and it can capture
-						if (fl == arg.end() - 1ll && !CaptureIsDisabledOrEqualsOnly(captureStyle) && captures.parsingRules.canCaptureNext(it, args.end()))
+						if (fl == arg.end() - 1ll && !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end()))
 							cont.emplace_back(Flag(std::make_pair(*fl, *++it)));
 						else {// not last char, or can't capture
 							if (CaptureIsRequired(captureStyle))
@@ -1532,31 +1809,60 @@ namespace opt3 {
 		}
 		cont.shrink_to_fit();
 
-		// count the number of each included argument:
-		std::unordered_map<std::string, size_t> counts;
-
+		// count each argument
+		std::map<capture_list::iterator_t, std::pair<size_t, size_t>> counts;
 		for (const auto& varg : cont) {
-			varg.visit([&counts](auto&& value) {
-				using T = std::decay_t<decltype(value)>;
+			if (auto groupOf{ captures.get_group_of(varg.name()) }; groupOf != captures.end()) {
+				auto& g{ counts[groupOf] };
 
-				if constexpr (std::same_as<T, Option>)
-					++counts[value.name()];
-				else if constexpr (std::same_as<T, Flag>)
-					++counts[value.name()];
-					   });
-		}
+				++g.first; //< increment arg counter
+				if (varg.has_value())
+					++g.second; //< increment capture counter
 
-		// validate argument count limits:
-		for (const auto& it : captures.vec) {
-			const auto& name{ it.name() };
-			if (const auto& count{ counts[name] }; !it.withinRequiredRange(count)) {
-				throw make_exception("Argument count ", count, " for '", name, "' is out-of-bounds! Expected (min: ", it.minCount, ", max: ", ([&it]() {
-					if (it.maxCount.has_value())
-						return std::to_string(it.maxCount.value());
-					return "(none)"s;
-									 }()), ')');
+				// validate max arg count limits
+				if (groupOf->_max.has_value() && g.first > groupOf->_max.value()) {
+					throw make_exception("Argument '", *groupOf, "' was specified too many times! (Expected a maximum of ", groupOf->_max.value(), ")");
+				}
 			}
 		}
+		for (const auto& [group, counters] : counts) {
+			// validate arg min limits
+			if (const auto& min{ group->_min }; counters.first < min)
+				throw make_exception("Expected argument '", *group, "' at least ", min, " time!", (min == 1 ? "" : "s"));
+
+			// validate arg conflicts
+			if (counters.first == 0 || group->conflicts.empty())
+				continue;
+
+			for (const auto& conflict : group->conflicts) {
+				if (const auto& conflictGroup{ captures.get_group_of(conflict.name) }; conflictGroup != captures.end() && counts.contains(conflictGroup)) {
+
+					const auto& conflictStyle{ conflict.style.value_or(group->_defaultConflictStyle) };
+					if (conflictStyle == ConflictStyle::None)
+						continue;
+
+					const auto& [argCount, capCount] { counts.at(conflictGroup) };
+
+					switch (conflictStyle) {
+					case ConflictStyle::CapturesConflict:
+						if (counters.second > 0ull && capCount > 0ull)
+							throw make_exception("Only one of the following arguments can accept input at the same time: [\n",
+												 indent(14), *group, '\n',
+												 indent(14), *conflictGroup, '\n',
+												 indent(10), ']');
+						break;
+					case ConflictStyle::Conflict:
+						if (counters.first > 0ull && argCount > 0ull)
+							throw make_exception("Argument        ( ", *group, " )\n",
+												 indent(10), "conflicts with: ( ", *conflictGroup, " )"
+							);
+						break;
+					default:break;
+					}
+				}
+			}
+		}
+
 		return cont;
 	}
 	/**
@@ -1577,8 +1883,8 @@ namespace opt3 {
 	}
 
 	/**
-	 * @struct	arg_manager
-	 * @brief	Implements the 3rd-generation commandline argument container & parser.
+	 * @struct	arg_manager2
+	 * @brief	Implements the generation 3.5 commandline argument container & parser.
 	 *\n		Use this with argc & argv to quickly & easily parse commandline arguments into a container for later use.
 	 */
 	struct arg_manager : arg_container {
@@ -1590,8 +1896,10 @@ namespace opt3 {
 		 * @param argv				Argument array from main.
 		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<var::any_same_or_convertible<capture_wrapper, vstring>... TCaptures>
-		WINCONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
+		template<valid_capture... TCaptures>
+		WINCONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) :
+			base(parse(vectorize(argc, argv, 1), capture_list{ make_template(std::forward<TCaptures>(captureArguments))... }, ArgumentParsingRules{}))
+		{}
 
 		/**
 		 * @brief					Parsing Constructor.
@@ -1600,8 +1908,10 @@ namespace opt3 {
 		 * @param ruleset			Used to define additional constraints & default settings for the argument parser.
 		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
 		 */
-		template<var::any_same_or_convertible<capture_wrapper, vstring>... TCaptures>
-		WINCONSTEXPR arg_manager(const int argc, char** argv, const ArgumentParsingRules& ruleset, TCaptures&&... captureArguments) : base(parse(vectorize(argc, argv, 1), CaptureList{ ruleset, capture_wrapper{ std::forward<TCaptures>(captureArguments) }... })) {}
+		template<valid_capture... TCaptures>
+		WINCONSTEXPR arg_manager(const int argc, char** argv, ArgumentParsingRules const& ruleset, TCaptures&&... captureArguments) :
+			base(parse(vectorize(argc, argv, 1), capture_list{ make_template(std::forward<TCaptures>(captureArguments))... }, ruleset))
+		{}
 
 		/**
 		 * @brief			Value-Move Constructor.
@@ -1615,61 +1925,63 @@ namespace opt3 {
 		 * @param captureList	The CaptureList instance that defines which arguments may capture & the ruleset to use when parsing.
 		 * @returns				An arg_manager instance containing the parsed arguments.
 		 */
-		static arg_manager parse(std::vector<std::string>&& arguments, CaptureList&& captureList)
+		static arg_manager parse(std::vector<std::string>&& arguments, capture_list&& captureList, ArgumentParsingRules const& ruleset = {})
 		{
-			return arg_manager{ ::opt3::parse(std::forward<std::vector<std::string>>(arguments), std::forward<CaptureList>(captureList)) };
+			return arg_manager{ ::opt3::parse(std::forward<std::vector<std::string>>(arguments), std::forward<capture_list>(captureList), ruleset) };
 		}
 	};
 
 	using ArgManager = arg_manager;
 }
 namespace opt3_literals {
-	opt3::capture_wrapper operator ""_requireCapture(const char* s, size_t)
+	opt3::variant_template operator ""_requireCapture(const char* s, size_t)
 	{
-		return opt3::requireCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Required } };
 	}
-	opt3::capture_wrapper operator ""_requireCapture(char c)
+	opt3::variant_template operator ""_requireCapture(char c)
 	{
-		return opt3::requireCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Required } };
 	}
-	opt3::capture_wrapper operator ""_reqcap(const char* s, size_t)
+	opt3::variant_template operator ""_reqcap(const char* s, size_t)
 	{
-		return opt3::requireCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Required } };
 	}
-	opt3::capture_wrapper operator ""_reqcap(char c)
+	opt3::variant_template operator ""_reqcap(char c)
 	{
-		return opt3::requireCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Required } };
 	}
-	opt3::capture_wrapper operator ""_optionalCapture(const char* s, size_t)
+
+	opt3::variant_template operator ""_optionalCapture(const char* s, size_t)
 	{
-		return opt3::optionalCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Optional } };
 	}
-	opt3::capture_wrapper operator ""_optionalCapture(char c)
+	opt3::variant_template operator ""_optionalCapture(char c)
 	{
-		return opt3::optionalCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Optional } };
 	}
-	opt3::capture_wrapper operator ""_optcap(const char* s, size_t)
+	opt3::variant_template operator ""_optcap(const char* s, size_t)
 	{
-		return opt3::optionalCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Optional } };
 	}
-	opt3::capture_wrapper operator ""_optcap(char c)
+	opt3::variant_template operator ""_optcap(char c)
 	{
-		return opt3::optionalCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Optional } };
 	}
-	opt3::capture_wrapper operator ""_noCapture(const char* s, size_t)
+
+	opt3::variant_template operator ""_noCapture(const char* s, size_t)
 	{
-		return opt3::noCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Disabled } };
 	}
-	opt3::capture_wrapper operator ""_noCapture(char c)
+	opt3::variant_template operator ""_noCapture(char c)
 	{
-		return opt3::noCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Disabled } };
 	}
-	opt3::capture_wrapper operator ""_nocap(const char* s, size_t)
+	opt3::variant_template operator ""_nocap(const char* s, size_t)
 	{
-		return opt3::noCapture(s);
+		return opt3::variant_template{ opt3::TemplateOption{ s, opt3::CaptureStyle::Disabled } };
 	}
-	opt3::capture_wrapper operator ""_nocap(char c)
+	opt3::variant_template operator ""_nocap(char c)
 	{
-		return opt3::noCapture(c);
+		return opt3::variant_template{ opt3::TemplateFlag{ c, opt3::CaptureStyle::Disabled } };
 	}
 }

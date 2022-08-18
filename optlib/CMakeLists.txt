@@ -30,16 +30,14 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(optlib STATIC "${SRCS}" "../cpp.hint")
+add_library(optlib STATIC "${SRCS}")
 
 # Set library properties
 set_property(TARGET optlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET optlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET optlib PROPERTY POSITION_INDEPENDENT_CODE ON)
-target_compile_features(optlib PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(optlib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(optlib PRIVATE "${307lib_compiler_commandline}")
 
 # Add headers
 include(PrependEach)

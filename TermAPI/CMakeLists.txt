@@ -21,16 +21,14 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(TermAPI STATIC "${SRCS}" "../cpp.hint")
+add_library(TermAPI STATIC "${SRCS}")
 
 # Set library properties
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET TermAPI PROPERTY POSITION_INDEPENDENT_CODE ON)
-target_compile_features(TermAPI PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(TermAPI PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(TermAPI PRIVATE "${307lib_compiler_commandline}")
 
 # Specify library include dirs
 target_include_directories(TermAPI PUBLIC 

@@ -214,5 +214,5 @@ namespace str {
 		return std::nullopt;
 	}
 
-	using format::indent;
+	using shared::indent;
 }

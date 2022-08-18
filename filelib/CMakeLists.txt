@@ -22,16 +22,15 @@ file(GLOB_RECURSE SRCS
 )
 
 # Create static library
-add_library(filelib STATIC "${SRCS}" "../cpp.hint")
+add_library(filelib STATIC "${SRCS}")
 
 # Set properties
 set_property(TARGET filelib PROPERTY CXX_STANDARD 20)
 set_property(TARGET filelib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET filelib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_compile_features(filelib PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(filelib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(filelib PRIVATE "${307lib_compiler_commandline}")
 
 # Set library sources & include dirs
 include(PrependEach)

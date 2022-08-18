@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <utility>
+#include <optional>
 
 namespace str {
 #	pragma warning (disable: 26800) // disable moved-from-object warning

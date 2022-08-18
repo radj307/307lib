@@ -19,15 +19,13 @@ file(GLOB SRCS
 	"src/*.c*"
 )
 
-add_library(strlib STATIC "${SRCS}" "../cpp.hint")
+add_library(strlib STATIC "${SRCS}")
 
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
 set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)
-target_compile_features(strlib PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(strlib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(strlib PRIVATE "${307lib_compiler_commandline}")
 
 include(PrependEach)
 PREPEND_EACH(HEADERS_ABS "${HEADERS}" "${CMAKE_CURRENT_SOURCE_DIR}/")

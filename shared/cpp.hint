@@ -1,0 +1,43 @@
+
+// <sysarch.h>
+
+#define ARCH
+#define OS_LINUX
+#define OS_CYGWIN
+#define OS_WIN
+#define OS_MAC
+#define OS_NONE
+
+#define LANG_CPPCLI
+#define LANG_CPP
+#define LANG_C
+
+#define STRICT_POINTER_SAFETY
+#define MULTITHREADING_CAPABLE
+
+#define INLINE
+
+#define CONSTEXPR
+#define WINCONSTEXPR
+
+#define CONSTEVAL
+
+#define STRINGIZE_I
+#define STRINGIZE
+
+#define PP_THIRD_ARG
+#define VA_OPT_SUPPORTED_I
+#define VA_OPT_SUPPORTED
+
+#define $nameof
+#define $c
+#define $fwd
+#define $_$unwrap
+#define $make_bitfield_operators
+#define $make_typed_bitfield
+#define $make_bitfield
+
+// <make_exception.hpp>
+
+#define MAKE_EXCEPTION_SIMPLE
+#define $DefineExcept

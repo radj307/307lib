@@ -27,6 +27,7 @@ namespace str {
 
 	// TOLOWER
 
+#pragma region ChangeCase_Lower
 	/**
 	 * @brief		Convert a character stored in an int to lowercase.
 	 * @param c		Input character.
@@ -39,7 +40,6 @@ namespace str {
 		return c;
 	}
 
-#pragma region ChangeCase_Lower
 	/**
 	 * @brief		Convert a character to lowercase.
 	 * @param c		Char to convert. If the character is not an uppercase letter, it will be returned unmodified.
@@ -491,13 +491,13 @@ namespace str {
 		}
 
 		// Functions that emulate STL string <-> type functions, except they don't throw exceptions and can be passed as std::function.
-#		pragma region change_type
-		/**
-		 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
-		 * @param str		String to convert
-		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
-		 * @returns			int
-		 */
+	#		pragma region change_type
+			/**
+			 * @brief			Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.
+			 * @param str		String to convert
+			 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
+			 * @returns			int
+			 */
 		[[nodiscard]] inline int stoi(const std::string& str, size_t* nextCh = nullptr) noexcept
 		{
 			try {
@@ -624,7 +624,7 @@ namespace str {
 				return std::stold(str, nextCh);
 			} catch (...) { return 0.0L; }
 		}
-#		pragma endregion change_type
+	#		pragma endregion change_type
 	}
 
 	using legacy::string_to_bool;

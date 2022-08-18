@@ -1,9 +1,9 @@
+#pragma once
 /**
  * @file	env.hpp
  * @author	radj307
  * @brief	Contains the env namespace's _getvar_ function, used to retrieve the value of a given environment variable.
  */
-#pragma once
 #include <sysarch.h>
 
 #include <string>

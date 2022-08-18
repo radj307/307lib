@@ -11,7 +11,7 @@
 #include <concepts>
 #include <iomanip>
 
-namespace format {
+namespace shared {
 	template<typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
 	struct basic_indentor {
 		using string_t = std::basic_string<TChar, TCharTraits, TAlloc>;
@@ -86,5 +86,7 @@ namespace format {
 }
 
 #ifndef INDENTOR_HPP_NOGLOBAL
-using namespace format;
+using shared::indentor;
+using shared::windentor;
+using shared::indent;
 #endif

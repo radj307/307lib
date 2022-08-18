@@ -22,16 +22,14 @@ file(GLOB SRCS
 )
 
 # Create a static library
-add_library(tokenlib STATIC "${SRCS}" "../cpp.hint")
+add_library(tokenlib STATIC "${SRCS}")
 
 # Set properties
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET tokenlib PROPERTY POSITION_INDEPENDENT_CODE ON)
-target_compile_features(tokenlib PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(tokenlib PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(tokenlib PRIVATE "${307lib_compiler_commandline}")
 
 # Include headers
 include(PrependEach)

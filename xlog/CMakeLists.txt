@@ -21,16 +21,14 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(xlog STATIC "${SRCS}" "../cpp.hint")
+add_library(xlog STATIC "${SRCS}")
 
 # Set library properties
 set_property(TARGET xlog PROPERTY CXX_STANDARD 20)
 set_property(TARGET xlog PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET xlog PROPERTY POSITION_INDEPENDENT_CODE ON)
-target_compile_features(xlog PUBLIC cxx_std_20)
-if (MSVC)
-	target_compile_options(xlog PUBLIC "/Zc:__cplusplus" "/Zc:preprocessor")
-endif()
+
+target_compile_options(xlog PRIVATE "${307lib_compiler_commandline}")
 
 # Set library headers
 include (PrependEach)

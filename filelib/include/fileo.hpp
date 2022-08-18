@@ -57,15 +57,15 @@ namespace file {
 	 *\n				true	Successfully wrote all data to file without error.
 	 *\n				false	Failed to write all data to file because of an error.
 	 */
+#	pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 	inline bool write(const std::filesystem::path& path, Ts&&... data)
 	{
-		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
 		(buffer << ... << std::forward<Ts>(data));
 		return write_to(path, std::move(buffer), openmode::out | openmode::trunc);
-		#pragma warning (default:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 	}
+#	pragma warning (default:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 
 	/**
 	 * @brief			Append any number of objects to the end of a file.

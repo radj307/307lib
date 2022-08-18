@@ -261,5 +261,20 @@ namespace str {
 		);
 	}
 
+	/**
+	 * @brief					Converts a string from base-2 (with '0b' prefix), base-8 (with '\' prefix), base-10 (no prefix), or base-16 (with '0x' prefix.)
+	 * @tparam TReturn			An integral type to return the value as.
+	 * @tparam TCharTraits 
+	 * @tparam TAlloc 
+	 * @tparam TChar 
+	 * @param str 
+	 * @return 
+	*/
+	template<std::integral TReturn, typename TChar, typename TCharTraits, typename TAlloc>
+	inline TReturn from_auto(std::basic_string<TChar, TCharTraits, TAlloc> const& str)
+	{
+
+	}
+
 #	pragma endregion Converters
 }

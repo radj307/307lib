@@ -1,4 +1,10 @@
 #pragma once
+/**
+ * @file	make_exception.hpp
+ * @author	radj307
+ * @brief	Provides system-agnostic exception objects with const-time formatting capabilities, as well as preprocessor definitions to quickly define new exception objects.
+ */
+#include <sysarch.h>
 #include <var.hpp>
 #include <indentor.hpp>
 
@@ -7,10 +13,10 @@
 #include <sstream>
 #include <exception>
 
-/**
- * @namespace	ex
- * @brief		Contains objects & functions used to conveniently create platform-agnostic derivatives of the std::exception object.
- */
+ /**
+  * @namespace	ex
+  * @brief		Contains objects & functions used to conveniently create platform-agnostic derivatives of the std::exception object.
+  */
 namespace ex {
 	/**
 	 * @class	except
@@ -101,16 +107,19 @@ namespace ex {
 	}
 
 	/**
-	 * @brief				Create a custom exception type with the given arguments as a message.
+	 * @brief				Create a custom exception type from the given arguments.
+	 * @details				This overload differs from `make_custom_exception` in that it passes the arguments ***directly*** to the TReturn type's constructor.
+	 *\n					Because of this, it is required that `TReturn` is constructible from the types specified in the order that they are specified.
 	 * @tparam TReturn		The type of exception to return.
 	 * @tparam ...Ts		Variadic Templated Types.
-	 * @param ...message	The message shown when calling the what() function.
-	 * @returns				TReturn
+	 * @param ...args		Arguments to pass to the constructor of `TReturn`.
+	 * @returns				A new `except`-derived instance of type `TReturn`, created using the constructor with the signature `Ts...`.
+	 *\n					If no such constructor exists, compilation fails.
 	 */
-	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires var::more_than<1ull, Ts...>&& std::constructible_from<TReturn, Ts...>
-	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception(Ts&&... message)
+	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires std::constructible_from<TReturn, Ts...>
+	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception_explicit(Ts&&... args)
 	{
-		return TReturn{ std::forward<Ts>(message)... };
+		return TReturn{ std::forward<Ts>(args)... };
 	}
 
 	/**
@@ -127,6 +136,7 @@ namespace ex {
 }
 
 #ifndef MAKE_EXCEPTION_NOGLOBAL
+using ex::make_custom_exception_explicit;
 using ex::make_custom_exception;
 using ex::make_exception;
 #endif
@@ -143,22 +153,22 @@ using ex::make_exception;
 #undef MAKE_EXCEPTION_SIMPLE
 
  /**
-  * @def			$DEFINE_EXCEPT
-  * @brief			Creates a new exception object derived from ex::except that can be used in a multi-catch statement (see try-catch) to handle different exceptions created with make_custom_exception.
-  * @param name		The name to use for the exception object, which will be appended to "except_" as the name of a struct definition.
-  *\n				DO NOT PASS A QUOTE-ENCLOSED STRING HERE!
+  * @def		$DefineExcept
+  * @brief		Creates a struct definition with the given typename and optionally, contents.
+  * @param name	The name to give to the exception instance.
+  * @param ...	Any number of lines of code to insert into the new exception instance.
+  *				You can use this to define constructors, methods, members, etc; the following code is always implicit:
+  *				```cpp
+  *				using this_t = $_$unwrap(name);
+  *				using base_t = ::ex::except;
+  *				using base_t::base_t;
+  *				```
+  *				Both `this_t` & `base_t` may be used by your code in this section. Note that the base `ex::except` constructors are also implicitly pulled !
   */
-#define $DEFINE_EXCEPT(name) struct except_##name : ::ex::except { using base = ::ex::except; using base::base; };
-  /**
-   * @def			$EXCEPT
-   * @brief			Gets the name of an exception object that was previously-defined with DEFINE_EXCEPTION.
-   * @param name	The name of a previously-created exception object.
-   *\n				DO NOT PASS A QUOTE-ENCLOSED STRING HERE!
-   */
-#define $EXCEPT(name) except_##name
+#define $DefineExcept(name, ...) struct $_$unwrap(name) : public ::ex::except { using this_t = $_$unwrap(name); using base_t = ::ex::except; using base_t::base_t; __VA_ARGS__ };
 
 #endif
 
 #ifndef MAKE_EXCEPTION_SIMPLE
- // TODO: Make specific exception type overrides for the set of std::exception derivatives available in the stdlib.
+  // TODO: Make specific exception type overrides for the set of std::exception derivatives available in the stdlib.
 #endif
