@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['va_5fopt_5fsupported_2050',['VA_OPT_SUPPORTED',['../sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0',1,'sysarch.h']]],
-  ['va_5fopt_5fsupported_5fi_2051',['VA_OPT_SUPPORTED_I',['../sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98',1,'sysarch.h']]]
+  ['xlog_5finclude_5fself_1659',['XLOG_INCLUDE_SELF',['../xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'xlog.hpp']]]
 ];

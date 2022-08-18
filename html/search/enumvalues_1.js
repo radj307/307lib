@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equalsonly_1586',['EqualsOnly',['../namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa',1,'opt3']]]
+  ['none_1632',['None',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754',1,'opt3']]]
 ];

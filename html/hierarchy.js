@@ -1,6 +1,8 @@
 var hierarchy =
 [
     [ "opt::Arg< T >", "classopt_1_1_arg.html", null ],
+    [ "opt3::arg_conflict", "structopt3_1_1arg__conflict.html", null ],
+    [ "arg_manager2", "structarg__manager2.html", null ],
     [ "opt::ArgContainer", "structopt_1_1_arg_container.html", [
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
@@ -8,16 +10,16 @@ var hierarchy =
     [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
     [ "opt3::ArgumentParsingRules", "structopt3_1_1_argument_parsing_rules.html", null ],
     [ "opt3::base_arg", "structopt3_1_1base__arg.html", [
-      [ "opt3::basic_arg_t< T >", "structopt3_1_1basic__arg__t.html", null ]
+      [ "opt3::basic_arg_t< T >", "structopt3_1_1basic__arg__t.html", null ],
+      [ "opt3::basic_arg_template< T >", "structopt3_1_1basic__arg__template.html", null ]
     ] ],
-    [ "opt3::basic_capture_wrapper< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__capture__wrapper.html", null ],
     [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
-    [ "format::basic_indentor< TChar, TCharTraits, TAlloc >", "structformat_1_1basic__indentor.html", null ],
+    [ "shared::basic_indentor< TChar, TCharTraits, TAlloc >", "structshared_1_1basic__indentor.html", null ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
     [ "std::basic_string< Char >", null, [
-      [ "opt3::basic_vstring< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structopt3_1_1basic__vstring.html", null ],
+      [ "opt3::basic_vstring< char, std::char_traits< char >, std::allocator< char > >", "structopt3_1_1basic__vstring.html", null ],
       [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ],
       [ "shared::basic_vstring< TChar, TCharTraits, TAlloc >", "structshared_1_1basic__vstring.html", null ]
     ] ],
@@ -38,7 +40,6 @@ var hierarchy =
     ] ],
     [ "xlog::BufferManager", "classxlog_1_1_buffer_manager.html", null ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
-    [ "opt3::CaptureList", "structopt3_1_1_capture_list.html", null ],
     [ "opt::CaptureStyle", "structopt_1_1_capture_style.html", null ],
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
@@ -163,13 +164,16 @@ var hierarchy =
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
     [ "variant", null, [
+      [ "opt3::variant_template", "classopt3_1_1variant__template.html", null ],
       [ "opt3::variantarg", "structopt3_1_1variantarg.html", null ]
     ] ],
+    [ "opt3::variant_template_group", "structopt3_1_1variant__template__group.html", null ],
     [ "opt::VariantArg", "structopt_1_1_variant_arg.html", null ],
     [ "std::vector< T >", null, [
       [ "opt3::arg_container", "structopt3_1_1arg__container.html", [
         [ "opt3::arg_manager", "structopt3_1_1arg__manager.html", null ]
-      ] ]
+      ] ],
+      [ "opt3::capture_list", "structopt3_1_1capture__list.html", null ]
     ] ],
     [ "xlog::xLog< StreamType >", "classxlog_1_1x_log.html", null ],
     [ "xlog::xLog< std::ostream >", "classxlog_1_1x_log.html", [

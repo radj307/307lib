@@ -1,6 +1,6 @@
 var sysarch_8h =
 [
-    [ "_STRINGIZE_INTERNAL", "sysarch_8h.html#ad1512bd26ba3ed605e470cd2f2bb83f9", null ],
+    [ "_", "sysarch_8h.html#ae4dfd7b0d66121016d6466d2ff10e8ba", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
     [ "ARCH", "sysarch_8h.html#a63e66b419dba650abc74240836e8447a", null ],
     [ "c", "sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1", null ],
@@ -11,8 +11,9 @@ var sysarch_8h =
     [ "LANG_C", "sysarch_8h.html#a69f1d54d0578e6b3400b774500973439", null ],
     [ "LANG_CPP", "sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb", null ],
     [ "LANG_CPPCLI", "sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49", null ],
-    [ "make_bitflag", "sysarch_8h.html#addcb9344752d502a3fab510ede85a247", null ],
-    [ "make_simple_bitflag", "sysarch_8h.html#afb08a5b4d219e3f2d5275701980214e2", null ],
+    [ "make_bitfield", "sysarch_8h.html#ac63303f125e7fc3e55ed269ad3e5a765", null ],
+    [ "make_bitfield_operators", "sysarch_8h.html#ab1dce8e20c9f97a577a0acac4271f48a", null ],
+    [ "make_typed_bitfield", "sysarch_8h.html#a497406d57c25f1a3af07d4ea66f470ed", null ],
     [ "MULTITHREADING_CAPABLE", "sysarch_8h.html#a0953a4caf523a36eafb8ff32b47d4b79", null ],
     [ "nameof", "sysarch_8h.html#ae0b5ede0ef0c14f0f7567d50724c3026", null ],
     [ "OS_CYGWIN", "sysarch_8h.html#a0a2f6d164420a9c9323e6842ed663bf3", null ],
@@ -24,6 +25,8 @@ var sysarch_8h =
     [ "PP_THIRD_ARG", "sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e", null ],
     [ "STRICT_POINTER_SAFETY", "sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff", null ],
     [ "STRINGIZE", "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb", null ],
+    [ "STRINGIZE_I", "sysarch_8h.html#ab4e71d83777b6ea26ef412cb90cab419", null ],
+    [ "SYSARCH_NO_FUNCTIONS", "sysarch_8h.html#a4cf387d01b7d8bfc4d501de9c37cdc93", null ],
     [ "VA_OPT_SUPPORTED", "sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0", null ],
     [ "VA_OPT_SUPPORTED_I", "sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98", null ],
     [ "WINCONSTEXPR", "sysarch_8h.html#a2fbf9b2640da245c6473f91b18781960", null ]

@@ -113,7 +113,7 @@ Collaboration diagram for opt3::variantarg:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a5e37f880db79a6b153094c02a1918199"><td class="memItemLeft" align="right" valign="top"><a id="a5e37f880db79a6b153094c02a1918199"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::variant&lt; <a class="el" href="namespaceopt3.html#abe057be708da2db3897b68180c2c3823">Parameter</a>, <a class="el" href="namespaceopt3.html#aacfec04d5c2f3b1b831b4808bfcff358">Flag</a>, <a class="el" href="namespaceopt3.html#a6317ba96b6a6b29706b9100103120170">Option</a> &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>base</b> = std::variant&lt; <a class="el" href="namespaceopt3.html#ae5d306b4c192f9b35513b2874c39c5f6">Parameter</a>, <a class="el" href="namespaceopt3.html#a77b420740d1a99b7542ae9ebb37c34e7">Flag</a>, <a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502">Option</a> &gt;</td></tr>
 <tr class="separator:a5e37f880db79a6b153094c02a1918199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -144,16 +144,15 @@ template&lt;valid_arg T&gt; </td></tr>
 <tr class="memitem:ae9decf912da3fadf47b2ff9e48f90719"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#ae9decf912da3fadf47b2ff9e48f90719">value_or</a> (std::string const &amp;) const noexcept</td></tr>
 <tr class="memdesc:ae9decf912da3fadf47b2ff9e48f90719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the capture value of this argument if it exists; otherwise returns the given string instead.  <a href="structopt3_1_1variantarg.html#ae9decf912da3fadf47b2ff9e48f90719">More...</a><br /></td></tr>
 <tr class="separator:ae9decf912da3fadf47b2ff9e48f90719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c86fadbb3ad27b096020648691d4539"><td class="memTemplParams" colspan="2"><a id="a5c86fadbb3ad27b096020648691d4539"></a>
-template&lt;typename TVisitor &gt; </td></tr>
-<tr class="memitem:a5c86fadbb3ad27b096020648691d4539"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>visit</b> (const TVisitor &amp;visitor) const noexcept</td></tr>
-<tr class="separator:a5c86fadbb3ad27b096020648691d4539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memTemplParams" colspan="2">template&lt;typename TVisitor &gt; </td></tr>
+<tr class="memitem:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#a8afe7ed5469e45a5e0685f20bb8c786b">visit</a> (const TVisitor &amp;visitor) const noexcept</td></tr>
+<tr class="separator:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstraction wrapper around std::variant that directly exposes methods from the underlying <a class="el" href="structopt3_1_1basic__arg__t.html" title="Basic argument wrapper object that contains a templated variable type with some useful methods.">basic_arg_t</a> struct. <br  />
  This allows the programmer to interact with std::variant argument types as if they weren't actually variants. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00140">140</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00144">144</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad334fcfd6827b2225f510141d9b0ca0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad334fcfd6827b2225f510141d9b0ca0c">&#9670;&nbsp;</a></span>compare_name()</h2>
@@ -188,7 +187,7 @@ template&lt;typename TVisitor &gt; </td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when names match; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00149">149</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00153">153</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +217,7 @@ template&lt;typename TVisitor &gt; </td></tr>
 <p>Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types. </p>
 <dl class="section return"><dt>Returns</dt><dd>The captured value of this argument if it has one; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00205">205</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00215">215</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +247,7 @@ template&lt;typename TVisitor &gt; </td></tr>
 <p>Checks if this argument has a captured value. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when this argument has a captured value; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00219">219</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00229">229</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -283,7 +282,7 @@ Here is the caller graph for this function:</div>
 <p>Gets the name of this argument. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of this argument, excluding any prefixes that were stripped during parsing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00191">191</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00201">201</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -324,7 +323,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00247">247</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00257">257</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -366,7 +365,50 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00233">233</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00243">243</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8afe7ed5469e45a5e0685f20bb8c786b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8afe7ed5469e45a5e0685f20bb8c786b">&#9670;&nbsp;</a></span>visit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TVisitor &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR auto opt3::variantarg::visit </td>
+          <td>(</td>
+          <td class="paramtype">const TVisitor &amp;&#160;</td>
+          <td class="paramname"><em>visitor</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TVisitor</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>A function or lambda to use as the visitor when calling `` </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value returned by the visitor function. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00165">165</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

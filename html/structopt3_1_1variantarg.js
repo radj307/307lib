@@ -9,5 +9,5 @@ var structopt3_1_1variantarg =
     [ "name", "structopt3_1_1variantarg.html#a2543297475db22c6efca7ee08461601e", null ],
     [ "value", "structopt3_1_1variantarg.html#a8b9a489245e93dda4c3976d065d88d52", null ],
     [ "value_or", "structopt3_1_1variantarg.html#ae9decf912da3fadf47b2ff9e48f90719", null ],
-    [ "visit", "structopt3_1_1variantarg.html#a5c86fadbb3ad27b096020648691d4539", null ]
+    [ "visit", "structopt3_1_1variantarg.html#a8afe7ed5469e45a5e0685f20bb8c786b", null ]
 ];

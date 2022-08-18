@@ -52,7 +52,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -85,14 +85,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classcolor_1_1basic__sync.html#ab6369a1a250d0890ad4c3750577da14d",
-"classopt_1_1token_1_1_tokenizer.html#ac4f39da77995a6823f34e8a7fc4edecb",
-"color-transform_8hpp.html#a52310cc4749a22c89eb823b7a3f9544f",
-"namespaceseq.html",
-"strmath_8hpp.html#a7afb39cb933e8727cfe4a84dbdad41c2",
-"structmatrix_1_1nmatrix.html",
-"structopt_1_1_capture_list.html#a6e0655d0d66af065b2efd8607b47d5ea",
-"structtoken_1_1base_1_1_token_base.html#a1abf8724638777fd8b21402f3ed5f7fd"
+"classcolor_1_1basic__sync.html#ac31f7c216f6bdf1f8d1d2b771a4d0037",
+"classopt_1_1token_1_1_parser.html#a85586f47a1a0e38f053702b6a49a696a",
+"color-sync_8hpp.html#a965f7dfef3a77ee1d84a9e14bd7cd4d2",
+"namespaceterm.html",
+"strmath_8hpp.html#ae18803e8fa7864102754552a83b08887",
+"structmatrix_1_1nmatrix.html#a5d799ea83c3f51ce7916403e6c6358dc",
+"structopt_1_1_argument_parsing_rules.html",
+"structterm_1_1_line_character.html#a80a99d42c3023167b6bd50b48ce99e06",
+"x_rand_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

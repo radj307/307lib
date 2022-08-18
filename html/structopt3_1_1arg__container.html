@@ -102,7 +102,8 @@ $(document).ready(function(){initNavTree('structopt3_1_1arg__container.html','')
 <div class="dynheader">
 Inheritance diagram for opt3::arg_container:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container__inherit__graph.svg" width="199" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1arg__container__inherit__graph.svg" width="199" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for opt3::arg_container:</div>
@@ -241,6 +242,9 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <tr class="memitem:a7706e281cf7a546a63d710386f84d5fb"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a7706e281cf7a546a63d710386f84d5fb">get_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:a7706e281cf7a546a63d710386f84d5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any of the specified arguments of the specified type(s).  <a href="structopt3_1_1arg__container.html#a7706e281cf7a546a63d710386f84d5fb">More...</a><br /></td></tr>
 <tr class="separator:a7706e281cf7a546a63d710386f84d5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a594c748dfa4d184dff64dcfffd2e0"><td class="memTemplParams" colspan="2">template&lt;std::predicate&lt; variantarg, variantarg &gt; TCompare, typename TExecutionPolicy  = std::execution::parallel_unsequenced_policy, std::derived_from&lt; std::allocator&lt; variantarg &gt;&gt; TAlloc = std::allocator&lt;variantarg&gt;&gt; </td></tr>
+<tr class="memitem:ac6a594c748dfa4d184dff64dcfffd2e0"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="structopt3_1_1arg__container.html">arg_container</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac6a594c748dfa4d184dff64dcfffd2e0">get_duplicates</a> (const TCompare &amp;equality_comparer) const</td></tr>
+<tr class="separator:ac6a594c748dfa4d184dff64dcfffd2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ad5b3c6b1f4cebe542e0ab0503ff5fba1">getv</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
 <tr class="memdesc:ad5b3c6b1f4cebe542e0ab0503ff5fba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the captured value from the first matching argument. <br  />
@@ -318,7 +322,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 <div class="textblock"><p>A container type derived directly from std::vector that exposes utility methods for managing &amp; interacting with argument lists. <br  />
  This object contains the bulk of the code in the entire <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> library. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00315">315</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00320">320</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae868529795623ef1bc8c70d1eacc3bdc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae868529795623ef1bc8c70d1eacc3bdc">&#9670;&nbsp;</a></span>castget() <span class="overload">[1/2]</span></h2>
@@ -373,7 +377,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00807">807</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00812">812</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +424,7 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00792">792</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00797">797</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +481,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00871">871</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00876">876</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -524,7 +528,7 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all matching arguments. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00852">852</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00857">857</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -581,7 +585,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00837">837</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00842">842</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -628,7 +632,7 @@ template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFil
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00822">822</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00827">827</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -685,7 +689,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00908">908</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00913">913</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -732,7 +736,7 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified argument's capture value, casted to the specified type; or std::nullopt if the argument wasn't found, or didn't have a capture value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00893">893</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00898">898</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -789,7 +793,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00972">972</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00977">977</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +840,7 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the capture value(s) of all matches. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00953">953</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00958">958</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -893,7 +897,7 @@ template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertib
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00938">938</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00943">943</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -940,7 +944,7 @@ template&lt;var::convertible_from&lt; vstring &gt; TReturn, valid_arg... TFilter
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first specified argument, casted to the specified type; or std::nullopt if it wasn't found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00923">923</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00928">928</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -979,7 +983,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00991">991</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00996">996</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1018,7 +1022,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01011">1011</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01016">1016</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1057,7 +1061,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01001">1001</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01006">1006</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1094,7 +1098,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Flag was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01027">1027</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01032">1032</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1131,7 +1135,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Option was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01021">1021</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01026">1026</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1168,7 +1172,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the Parameter was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01033">1033</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01038">1038</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1217,7 +1221,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01043">1043</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01048">1048</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1266,7 +1270,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01067">1067</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01072">1072</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1315,7 +1319,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when the argument was included; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01055">1055</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01060">1060</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1354,7 +1358,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00351">351</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00356">356</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1393,7 +1397,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00381">381</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00386">386</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1432,7 +1436,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00367">367</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00372">372</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1477,7 +1481,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00538">538</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00543">543</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1523,7 +1527,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00566">566</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00571">571</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1569,7 +1573,50 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00552">552</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00557">557</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac6a594c748dfa4d184dff64dcfffd2e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a594c748dfa4d184dff64dcfffd2e0">&#9670;&nbsp;</a></span>get_duplicates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::predicate&lt; variantarg, variantarg &gt; TCompare, typename TExecutionPolicy  = std::execution::parallel_unsequenced_policy, std::derived_from&lt; std::allocator&lt; variantarg &gt;&gt; TAlloc = std::allocator&lt;variantarg&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="structopt3_1_1arg__container.html">arg_container</a> opt3::arg_container::get_duplicates </td>
+          <td>(</td>
+          <td class="paramtype">const TCompare &amp;&#160;</td>
+          <td class="paramname"><em>equality_comparer</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TExecutionPolicy</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equality_comparer</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subcontainer that contains all of the duplicate entries as determined by the given predicate. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01089">1089</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1615,7 +1662,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00635">635</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00640">640</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1661,7 +1708,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00681">681</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00686">686</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1712,7 +1759,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00657">657</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00662">662</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1751,7 +1798,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt; TPredi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00398">398</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00403">403</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1790,7 +1837,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00428">428</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00433">433</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1829,7 +1876,7 @@ template&lt;valid_arg... TFilterTypes, std::predicate&lt; variantarg &gt;... TPr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the first matching element, or the ending iterator if no matches were found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00414">414</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00419">419</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1874,7 +1921,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00586">586</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00591">591</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1920,7 +1967,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00614">614</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00619">619</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1966,7 +2013,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first variantarg object with the given name if it exists; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00600">600</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00605">605</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2012,7 +2059,7 @@ template&lt;valid_arg... TFilterTypes&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00714">714</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00719">719</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2058,7 +2105,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00758">758</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00763">763</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2109,7 +2156,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The capture value of the first matching argument if found; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00735">735</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00740">740</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2157,7 +2204,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00336">336</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00341">341</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -2205,7 +2252,7 @@ template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1arg__container.html" title="A container type derived directly from std::vector that exposes utility methods for managing &amp; intera...">arg_container</a> instance containing the specified segment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00326">326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00331">331</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

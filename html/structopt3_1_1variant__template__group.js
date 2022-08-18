@@ -1,0 +1,27 @@
+var structopt3_1_1variant__template__group =
+[
+    [ "conflict_list_t", "structopt3_1_1variant__template__group.html#aa4314ff374800a028dc046bb6492279a", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a371a1c5eb48a9f1b6d23c984f8d3c7c0", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a9adcd58f8ff5e1bd6d629b2b1d689523", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a44d5a6d447c19bfb1575ecb12c0fc38b", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#acca1f66e6a6f64c3fa21d03444499545", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a53d73b0b95cb9fe40ab4681c4fd4ffdb", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a379d4dd31f67224a368a155f0cab9ef1", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#a86e54790346072b005b1e10080552d98", null ],
+    [ "variant_template_group", "structopt3_1_1variant__template__group.html#ae84343c62236fa74dea8b7b1143a02f9", null ],
+    [ "captureStyle", "structopt3_1_1variant__template__group.html#a3bb4fc0597cda7e2a972bdf8bb570411", null ],
+    [ "conflictStyle", "structopt3_1_1variant__template__group.html#adc1fb9a68499c737b9bd174124cef070", null ],
+    [ "conflictsWith", "structopt3_1_1variant__template__group.html#a6c8d1189043455eb500ef5c186a4135b", null ],
+    [ "get_capture_style_of", "structopt3_1_1variant__template__group.html#a89c8b255e037a8bcec3905660c408dd4", null ],
+    [ "get_conflict_style_of", "structopt3_1_1variant__template__group.html#acd1c3b2eefcd0c3569453c250b5ca9da", null ],
+    [ "max", "structopt3_1_1variant__template__group.html#a8f632ffd02f02e8be4253ef56c3ddbe6", null ],
+    [ "min", "structopt3_1_1variant__template__group.html#a54bb935fdd54952f6ccc38339091fd73", null ],
+    [ "operator<<", "structopt3_1_1variant__template__group.html#a9b85535c5eba0fdc35ee9ed3ff864494", null ],
+    [ "_defaultCaptureStyle", "structopt3_1_1variant__template__group.html#a33ccb1673c2627c06dbd020879a24cda", null ],
+    [ "_defaultConflictStyle", "structopt3_1_1variant__template__group.html#a128c154087fa442a6e4c843def319ce2", null ],
+    [ "_id", "structopt3_1_1variant__template__group.html#a3d92e954da54942e14f51972de72106a", null ],
+    [ "_max", "structopt3_1_1variant__template__group.html#a63397fe44107e5939f6ee7fe9f086839", null ],
+    [ "_min", "structopt3_1_1variant__template__group.html#a3330a80f0d59b3eb5c2d4358b1970d19", null ],
+    [ "conflicts", "structopt3_1_1variant__template__group.html#aef12b1052bcde6f1f7af9ac4a5d93420", null ],
+    [ "templates", "structopt3_1_1variant__template__group.html#a61f8240ce7bfade6f490ecf2d02d9527", null ]
+];

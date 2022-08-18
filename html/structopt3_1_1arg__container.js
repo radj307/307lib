@@ -31,6 +31,7 @@ var structopt3_1_1arg__container =
     [ "get", "structopt3_1_1arg__container.html#a8dda92287cd3808d77bd0d6e9937fd9b", null ],
     [ "get_all", "structopt3_1_1arg__container.html#ab170ead9a391a40ce76c1286905a264c", null ],
     [ "get_any", "structopt3_1_1arg__container.html#a7706e281cf7a546a63d710386f84d5fb", null ],
+    [ "get_duplicates", "structopt3_1_1arg__container.html#ac6a594c748dfa4d184dff64dcfffd2e0", null ],
     [ "getv", "structopt3_1_1arg__container.html#ad5b3c6b1f4cebe542e0ab0503ff5fba1", null ],
     [ "getv_all", "structopt3_1_1arg__container.html#a92ea221536116b723733178beb403895", null ],
     [ "getv_any", "structopt3_1_1arg__container.html#ab81d2b891736ced72ff2aaadbd31e8d5", null ],

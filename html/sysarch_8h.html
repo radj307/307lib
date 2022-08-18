@@ -103,16 +103,17 @@ Include dependency graph for sysarch.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="sysarch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad1512bd26ba3ed605e470cd2f2bb83f9"><td class="memItemLeft" align="right" valign="top"><a id="ad1512bd26ba3ed605e470cd2f2bb83f9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_STRINGIZE_INTERNAL</b>(x)&#160;&#160;&#160;#x</td></tr>
-<tr class="separator:ad1512bd26ba3ed605e470cd2f2bb83f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4dfd7b0d66121016d6466d2ff10e8ba"><td class="memItemLeft" align="right" valign="top"><a id="ae4dfd7b0d66121016d6466d2ff10e8ba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_</b>&#160;&#160;&#160;$unwrap(fst, ...) fst ##__VA_ARGS__</td></tr>
+<tr class="separator:ae4dfd7b0d66121016d6466d2ff10e8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63e66b419dba650abc74240836e8447a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a63e66b419dba650abc74240836e8447a">ARCH</a></td></tr>
 <tr class="memdesc:a63e66b419dba650abc74240836e8447a"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORWARD DOCUMENTATION FOR DOXYGEN.  <a href="sysarch_8h.html#a63e66b419dba650abc74240836e8447a">More...</a><br /></td></tr>
 <tr class="separator:a63e66b419dba650abc74240836e8447a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +133,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:a712e0b2ac2c1a949029e7ca0e3bdc5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that calls std::forward with the given variable.  <a href="sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8">More...</a><br /></td></tr>
 <tr class="separator:a712e0b2ac2c1a949029e7ca0e3bdc5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memItemLeft" align="right" valign="top"><a id="a2eb6f9e0395b47b8d5e3eeae4fe0c116"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>INLINE</b></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></td></tr>
+<tr class="memdesc:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feature Macros ///. <br /></td></tr>
 <tr class="separator:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69f1d54d0578e6b3400b774500973439"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a69f1d54d0578e6b3400b774500973439">LANG_C</a></td></tr>
 <tr class="memdesc:a69f1d54d0578e6b3400b774500973439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the version of C being used by the compiler. This is equal to ({ <b>STDC_VERSION</b> || <b>STDC</b> } &gt; [NONSTD_PREV_VERSION_VALUE]), note that the values set here are implementation defined and may not be accurate.  <a href="sysarch_8h.html#a69f1d54d0578e6b3400b774500973439">More...</a><br /></td></tr>
@@ -144,10 +146,14 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49">LANG_CPPCLI</a></td></tr>
 <tr class="memdesc:a234ea0547bdb520101dd92b72e394e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, C++/CLI Language extension is present. <br /></td></tr>
 <tr class="separator:a234ea0547bdb520101dd92b72e394e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addcb9344752d502a3fab510ede85a247"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_bitflag</b>(enumName)</td></tr>
-<tr class="separator:addcb9344752d502a3fab510ede85a247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb08a5b4d219e3f2d5275701980214e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_simple_bitflag</b>(enumName)</td></tr>
-<tr class="separator:afb08a5b4d219e3f2d5275701980214e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63303f125e7fc3e55ed269ad3e5a765"><td class="memItemLeft" align="right" valign="top"><a id="ac63303f125e7fc3e55ed269ad3e5a765"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_bitfield</b>(enumName, ...)&#160;&#160;&#160;$make_typed_bitfield(enumName, int, __VA_ARGS__)</td></tr>
+<tr class="separator:ac63303f125e7fc3e55ed269ad3e5a765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1dce8e20c9f97a577a0acac4271f48a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_bitfield_operators</b>(enumName,  enumType)</td></tr>
+<tr class="separator:ab1dce8e20c9f97a577a0acac4271f48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497406d57c25f1a3af07d4ea66f470ed"><td class="memItemLeft" align="right" valign="top"><a id="a497406d57c25f1a3af07d4ea66f470ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_typed_bitfield</b>(enumName,  enumType, ...)&#160;&#160;&#160;enum class $_$unwrap(enumName) : $_$unwrap(enumType) { __VA_ARGS__ }; $make_bitfield_operators(enumName, enumType)</td></tr>
+<tr class="separator:a497406d57c25f1a3af07d4ea66f470ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0953a4caf523a36eafb8ff32b47d4b79"><td class="memItemLeft" align="right" valign="top"><a id="a0953a4caf523a36eafb8ff32b47d4b79"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a0953a4caf523a36eafb8ff32b47d4b79">MULTITHREADING_CAPABLE</a></td></tr>
 <tr class="memdesc:a0953a4caf523a36eafb8ff32b47d4b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, the system is capable of multithreading using C++ threads. <br  />
@@ -182,7 +188,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:a1dfc36904b0d30482f6c7adb922cf11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows Operating System. Value is set to ARCH. <br /></td></tr>
 <tr class="separator:a1dfc36904b0d30482f6c7adb922cf11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7717dd958290d9822d42f803e87f16e"><td class="memItemLeft" align="right" valign="top"><a id="ab7717dd958290d9822d42f803e87f16e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PP_THIRD_ARG</b>(a,  b,  <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>, ...)&#160;&#160;&#160;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e">PP_THIRD_ARG</a>(a,  b,  <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>, ...)&#160;&#160;&#160;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a></td></tr>
+<tr class="memdesc:ab7717dd958290d9822d42f803e87f16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used internally by the VA_OPT_SUPPORTED macro, do not use this directly! <br /></td></tr>
 <tr class="separator:ab7717dd958290d9822d42f803e87f16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925368a5ba4c2c1079b14bee846409ff"><td class="memItemLeft" align="right" valign="top"><a id="a925368a5ba4c2c1079b14bee846409ff"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff">STRICT_POINTER_SAFETY</a></td></tr>
@@ -191,13 +198,21 @@ Macros</h2></td></tr>
  maxver: C++23. <br /></td></tr>
 <tr class="separator:a925368a5ba4c2c1079b14bee846409ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3428692efe6051ef30016ffde1a9f7bb"><td class="memItemLeft" align="right" valign="top"><a id="a3428692efe6051ef30016ffde1a9f7bb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIZE</b>(x)&#160;&#160;&#160;_STRINGIZE_INTERNAL(x)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIZE</b>(x)&#160;&#160;&#160;STRINGIZE_I(x)</td></tr>
 <tr class="separator:a3428692efe6051ef30016ffde1a9f7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e71d83777b6ea26ef412cb90cab419"><td class="memItemLeft" align="right" valign="top"><a id="ab4e71d83777b6ea26ef412cb90cab419"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIZE_I</b>(x)&#160;&#160;&#160;#x</td></tr>
+<tr class="separator:ab4e71d83777b6ea26ef412cb90cab419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf387d01b7d8bfc4d501de9c37cdc93"><td class="memItemLeft" align="right" valign="top"><a id="a4cf387d01b7d8bfc4d501de9c37cdc93"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYSARCH_NO_FUNCTIONS</b></td></tr>
+<tr class="separator:a4cf387d01b7d8bfc4d501de9c37cdc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e1c18ab802b34dd1aeacc0d68e689a0"><td class="memItemLeft" align="right" valign="top"><a id="a7e1c18ab802b34dd1aeacc0d68e689a0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>VA_OPT_SUPPORTED</b>&#160;&#160;&#160;VA_OPT_SUPPORTED_I(?)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0">VA_OPT_SUPPORTED</a>&#160;&#160;&#160;<a class="el" href="sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98">VA_OPT_SUPPORTED_I</a>(?)</td></tr>
+<tr class="memdesc:a7e1c18ab802b34dd1aeacc0d68e689a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is <code>true</code> when <b>VA_OPT</b> is supported. <br /></td></tr>
 <tr class="separator:a7e1c18ab802b34dd1aeacc0d68e689a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad73bed0b01fe1c94e4bebb0609b9cf98"><td class="memItemLeft" align="right" valign="top"><a id="ad73bed0b01fe1c94e4bebb0609b9cf98"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>VA_OPT_SUPPORTED_I</b>(...)&#160;&#160;&#160;PP_THIRD_ARG(__VA_OPT__(,),true,false,)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98">VA_OPT_SUPPORTED_I</a>(...)&#160;&#160;&#160;<a class="el" href="sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e">PP_THIRD_ARG</a>(__VA_OPT__(,),true,false,)</td></tr>
+<tr class="memdesc:ad73bed0b01fe1c94e4bebb0609b9cf98"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used internally by the VA_OPT_SUPPORTED macro, do not use this directly! <br /></td></tr>
 <tr class="separator:ad73bed0b01fe1c94e4bebb0609b9cf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fbf9b2640da245c6473f91b18781960"><td class="memItemLeft" align="right" valign="top"><a id="a2fbf9b2640da245c6473f91b18781960"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WINCONSTEXPR</b></td></tr>
@@ -236,7 +251,7 @@ Macros</h2></td></tr>
 <td class="markdownTableBodyCenter">64 </td><td class="markdownTableBodyLeft">64-bit Architecture  </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00109">109</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00111">111</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +282,7 @@ Macros</h2></td></tr>
 <td class="markdownTableBodyCenter">64 </td><td class="markdownTableBodyLeft">64-bit Architecture  </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00109">109</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00111">111</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +322,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of calling static_cast&lt;type&gt;(var) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00303">303</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00350">350</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -336,7 +351,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of calling ::std::forward&lt;decltype(var)&gt;(var) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00311">311</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00358">358</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -372,7 +387,7 @@ Macros</h2></td></tr>
 <td class="markdownTableBodyCenter"><code>20</code> </td><td class="markdownTableBodyLeft">Higher than C18 </td><td class="markdownTableBodyNone">v &gt; <code>201710L</code>  </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00087">87</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00088">88</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -408,54 +423,45 @@ Macros</h2></td></tr>
 <td class="markdownTableBodyCenter"><code>23</code> </td><td class="markdownTableBodyLeft">C++23 _(Or newer)_ </td><td class="markdownTableBodyLeft">v &gt; <code>202002L</code>  </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00072">72</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00073">73</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
-<a id="addcb9344752d502a3fab510ede85a247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addcb9344752d502a3fab510ede85a247">&#9670;&nbsp;</a></span>make_bitflag</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define make_bitflag</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">enumName</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">$make_simple_bitflag(enumName)                                                               \</div>
-<div class="line">inline enumName&amp; operator|=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">inline enumName&amp; operator&amp;=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">inline enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); }</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00330">330</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
-
-</div>
-</div>
-<a id="afb08a5b4d219e3f2d5275701980214e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb08a5b4d219e3f2d5275701980214e2">&#9670;&nbsp;</a></span>make_simple_bitflag</h2>
+<a id="ab1dce8e20c9f97a577a0acac4271f48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1dce8e20c9f97a577a0acac4271f48a">&#9670;&nbsp;</a></span>make_bitfield_operators</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define make_simple_bitflag</td>
+          <td class="memname">#define make_bitfield_operators</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">enumName</td><td>)</td>
+          <td class="paramname">enumName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enumType&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">inline</span> enumName operator|(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">inline enumName operator&amp;(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">inline enumName operator^(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> enumName operator|(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE enumName operator&amp;(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE enumName operator^(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE enumName&amp; operator|=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE enumName&amp; operator&amp;=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
+<div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator==(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) == r;}              \</div>
+<div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator!=(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) != r;}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00319">319</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00366">366</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -478,14 +484,15 @@ Macros</h2></td></tr>
 <div class="line">    if (<span class="keyword">const</span> <span class="keywordtype">size_t</span> pos{ <a class="code" href="namespacestr.html">str</a>.find_last_of(<span class="stringliteral">&quot;:.-&gt;&quot;</span>)}; pos &lt; <a class="code" href="namespacestr.html">str</a>.size())\</div>
 <div class="line">        return <a class="code" href="namespacestr.html">str</a>.substr(pos + 1ull);\</div>
 <div class="line">    return <a class="code" href="namespacestr.html">str</a>;\</div>
-<div class="line">}(#obj))</div>
+<div class="line">}(STRINGIZE(obj)))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00289">289</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00336">336</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="asysarch_8h_html_a2eb6f9e0395b47b8d5e3eeae4fe0c116"><div class="ttname"><a href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></div><div class="ttdeci">#define INLINE</div><div class="ttdoc">Feature Macros ///.</div><div class="ttdef"><b>Definition:</b> <a href="sysarch_8h_source.html#l00239">sysarch.h:239</a></div></div>
 <div class="ttc" id="anamespacestr_html"><div class="ttname"><a href="namespacestr.html">str</a></div><div class="ttdoc">Contains various string manipulation, conversion, and parsing functions.</div><div class="ttdef"><b>Definition:</b> <a href="str_8hpp_source.html#l00020">str.hpp:20</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

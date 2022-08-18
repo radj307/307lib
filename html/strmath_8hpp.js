@@ -5,6 +5,7 @@ var strmath_8hpp =
     [ "decimalToBinary", "strmath_8hpp.html#afc4713722f92ec455251092937a2540b", null ],
     [ "decimalToHex", "strmath_8hpp.html#a8059cb6dea85450291ef813056734a8e", null ],
     [ "decimalToHex", "strmath_8hpp.html#a64641d820fe5e4997387b75be9df3b97", null ],
+    [ "from_auto", "strmath_8hpp.html#ab959e734dfcacf721b9e5d9e8398d6ac", null ],
     [ "fromAlphaNumeric", "strmath_8hpp.html#ab6fe51c1830b934a4ee82e7a6f6e9571", null ],
     [ "fromBase10", "strmath_8hpp.html#ac02e5c31bf205b9b08d87b3c3c946baf", null ],
     [ "fromBase10", "strmath_8hpp.html#a041f49f2d8f911fcb5e47ed6ff691ab0", null ],

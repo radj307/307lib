@@ -101,13 +101,14 @@ $(document).ready(function(){initNavTree('namespaceopt3.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__conflict.html">arg_conflict</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple container object for a single argument 'conflict'; a much simpler form of argument definition that includes a name &amp; optional <code>ConflictStyle</code>.  <a href="structopt3_1_1arg__conflict.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html">arg_container</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container type derived directly from std::vector that exposes utility methods for managing &amp; interacting with argument lists. <br  />
  This object contains the bulk of the code in the entire <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> library.  <a href="structopt3_1_1arg__container.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__manager.html">arg_manager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the 3rd-generation commandline argument container &amp; parser. <br  />
- Use this with argc &amp; argv to quickly &amp; easily parse commandline arguments into a container for later use.  <a href="structopt3_1_1arg__manager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1_argument_parsing_rules.html">ArgumentParsingRules</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows configuration of the rules used when parsing arguments.  <a href="structopt3_1_1_argument_parsing_rules.html#details">More...</a><br /></td></tr>
@@ -118,14 +119,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic argument wrapper object that contains a templated variable type with some useful methods.  <a href="structopt3_1_1basic__arg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__capture__wrapper.html">basic_capture_wrapper</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends vstring with the ability to require specific arguments.  <a href="structopt3_1_1basic__capture__wrapper.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__template.html">basic_arg_template</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__vstring.html">basic_vstring</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable-string object with constructor overloads that accept a single character, c-strings, &amp; strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed.  <a href="structopt3_1_1basic__vstring.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1_capture_list.html">CaptureList</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of arguments that should be allowed to capture additional arguments. This is used by the parse function.  <a href="structopt3_1_1_capture_list.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html">capture_list</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopt3_1_1variant__template.html">variant_template</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstraction wrapper around <code><a class="el" href="structopt3_1_1basic__arg__template.html">basic_arg_template</a></code> that accepts types <code>TemplateOption</code> &amp; <code>TemplateFlag</code>  <a href="classopt3_1_1variant__template.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container object for a <em>group</em> of argument templates that all perform a similar function. <br  />
+ A template group may also <b>conflict</b> with members of another template group; this is handled differently depending on the winning <code>ConflictStyle</code>  <a href="structopt3_1_1variant__template__group.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html">variantarg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstraction wrapper around std::variant that directly exposes methods from the underlying <a class="el" href="structopt3_1_1basic__arg__t.html" title="Basic argument wrapper object that contains a templated variable type with some useful methods.">basic_arg_t</a> struct. <br  />
@@ -137,33 +143,26 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ab54137eb3e9fc519d99cae5f2cd3f1fc"><td class="memItemLeft" align="right" valign="top"><a id="ab54137eb3e9fc519d99cae5f2cd3f1fc"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ArgManager</b> = <a class="el" href="structopt3_1_1arg__manager.html">arg_manager</a></td></tr>
 <tr class="separator:ab54137eb3e9fc519d99cae5f2cd3f1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62af3026f4307c2e8e1fcf2c3f0b1f26"><td class="memItemLeft" align="right" valign="top"><a id="a62af3026f4307c2e8e1fcf2c3f0b1f26"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>capture_wrapper</b> = <a class="el" href="structopt3_1_1basic__capture__wrapper.html">basic_capture_wrapper</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
-<tr class="separator:a62af3026f4307c2e8e1fcf2c3f0b1f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacfec04d5c2f3b1b831b4808bfcff358"><td class="memItemLeft" align="right" valign="top"><a id="aacfec04d5c2f3b1b831b4808bfcff358"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#aacfec04d5c2f3b1b831b4808bfcff358">Flag</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="namespaceopt3.html#adb1092316c7f6aacab0dcfcfe5760ea2">flag_t</a> &gt;</td></tr>
-<tr class="memdesc:aacfec04d5c2f3b1b831b4808bfcff358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag argument type; these are single-character arguments that can be chained together and can capture values when enabled. <br /></td></tr>
-<tr class="separator:aacfec04d5c2f3b1b831b4808bfcff358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb1092316c7f6aacab0dcfcfe5760ea2"><td class="memItemLeft" align="right" valign="top"><a id="adb1092316c7f6aacab0dcfcfe5760ea2"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#adb1092316c7f6aacab0dcfcfe5760ea2">flag_t</a> = std::pair&lt; char, std::optional&lt; std::string &gt; &gt;</td></tr>
-<tr class="memdesc:adb1092316c7f6aacab0dcfcfe5760ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying value type of Flags. <br /></td></tr>
-<tr class="separator:adb1092316c7f6aacab0dcfcfe5760ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6317ba96b6a6b29706b9100103120170"><td class="memItemLeft" align="right" valign="top"><a id="a6317ba96b6a6b29706b9100103120170"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a6317ba96b6a6b29706b9100103120170">Option</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="namespaceopt3.html#a1a78c42eef575b49a3dfbe7fe2dbd499">option_t</a> &gt;</td></tr>
-<tr class="memdesc:a6317ba96b6a6b29706b9100103120170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option argument type; these are multi-character arguments that can capture values when enabled. <br /></td></tr>
-<tr class="separator:a6317ba96b6a6b29706b9100103120170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a78c42eef575b49a3dfbe7fe2dbd499"><td class="memItemLeft" align="right" valign="top"><a id="a1a78c42eef575b49a3dfbe7fe2dbd499"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a1a78c42eef575b49a3dfbe7fe2dbd499">option_t</a> = std::pair&lt; std::string, std::optional&lt; std::string &gt; &gt;</td></tr>
-<tr class="memdesc:a1a78c42eef575b49a3dfbe7fe2dbd499"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying value type of Options. <br /></td></tr>
-<tr class="separator:a1a78c42eef575b49a3dfbe7fe2dbd499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe057be708da2db3897b68180c2c3823"><td class="memItemLeft" align="right" valign="top"><a id="abe057be708da2db3897b68180c2c3823"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#abe057be708da2db3897b68180c2c3823">Parameter</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="namespaceopt3.html#a45d8edd2b0ccbe8c7ff33a4feafbdcc7">parameter_t</a> &gt;</td></tr>
-<tr class="memdesc:abe057be708da2db3897b68180c2c3823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter argument type; these are any arguments without special meaning. <br /></td></tr>
-<tr class="separator:abe057be708da2db3897b68180c2c3823"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d8edd2b0ccbe8c7ff33a4feafbdcc7"><td class="memItemLeft" align="right" valign="top"><a id="a45d8edd2b0ccbe8c7ff33a4feafbdcc7"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a45d8edd2b0ccbe8c7ff33a4feafbdcc7">parameter_t</a> = std::string</td></tr>
-<tr class="memdesc:a45d8edd2b0ccbe8c7ff33a4feafbdcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying value type of Parameters. <br /></td></tr>
-<tr class="separator:a45d8edd2b0ccbe8c7ff33a4feafbdcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b420740d1a99b7542ae9ebb37c34e7"><td class="memItemLeft" align="right" valign="top"><a id="a77b420740d1a99b7542ae9ebb37c34e7"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a77b420740d1a99b7542ae9ebb37c34e7">Flag</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="opt3_8hpp.html#a8d4383d6072cc2c62c901b0412300939">_internal::flag_t</a> &gt;</td></tr>
+<tr class="memdesc:a77b420740d1a99b7542ae9ebb37c34e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag argument type; these are single-character arguments that can be chained together and can capture values when enabled. <br /></td></tr>
+<tr class="separator:a77b420740d1a99b7542ae9ebb37c34e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84949361063f8e17bd768ef3bc0a502"><td class="memItemLeft" align="right" valign="top"><a id="ae84949361063f8e17bd768ef3bc0a502"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502">Option</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="opt3_8hpp.html#a311d34c6adc54432307c64109838e383">_internal::option_t</a> &gt;</td></tr>
+<tr class="memdesc:ae84949361063f8e17bd768ef3bc0a502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option argument type; these are multi-character arguments that can capture values when enabled. <br /></td></tr>
+<tr class="separator:ae84949361063f8e17bd768ef3bc0a502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d306b4c192f9b35513b2874c39c5f6"><td class="memItemLeft" align="right" valign="top"><a id="ae5d306b4c192f9b35513b2874c39c5f6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae5d306b4c192f9b35513b2874c39c5f6">Parameter</a> = <a class="el" href="structopt3_1_1basic__arg__t.html">basic_arg_t</a>&lt; <a class="el" href="opt3_8hpp.html#afe9454a8d26d64d526dc3bd470359e9f">_internal::parameter_t</a> &gt;</td></tr>
+<tr class="memdesc:ae5d306b4c192f9b35513b2874c39c5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter argument type; these are any arguments without special meaning. <br /></td></tr>
+<tr class="separator:ae5d306b4c192f9b35513b2874c39c5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4838c80518467c9c7ed16b681d283164"><td class="memItemLeft" align="right" valign="top"><a id="a4838c80518467c9c7ed16b681d283164"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a4838c80518467c9c7ed16b681d283164">TemplateFlag</a> = <a class="el" href="structopt3_1_1basic__arg__template.html">basic_arg_template</a>&lt; <a class="el" href="opt3_8hpp.html#a8d4383d6072cc2c62c901b0412300939">_internal::flag_t</a> &gt;</td></tr>
+<tr class="memdesc:a4838c80518467c9c7ed16b681d283164"><td class="mdescLeft">&#160;</td><td class="mdescRight">An argument template for <code>Flag</code>s. <br /></td></tr>
+<tr class="separator:a4838c80518467c9c7ed16b681d283164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9ddb9994af06e1e2c7ea0e88f0abc2"><td class="memItemLeft" align="right" valign="top"><a id="a9c9ddb9994af06e1e2c7ea0e88f0abc2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a9c9ddb9994af06e1e2c7ea0e88f0abc2">TemplateOption</a> = <a class="el" href="structopt3_1_1basic__arg__template.html">basic_arg_template</a>&lt; <a class="el" href="opt3_8hpp.html#a311d34c6adc54432307c64109838e383">_internal::option_t</a> &gt;</td></tr>
+<tr class="memdesc:a9c9ddb9994af06e1e2c7ea0e88f0abc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">An argument template for <code>Option</code>s. <br /></td></tr>
+<tr class="separator:a9c9ddb9994af06e1e2c7ea0e88f0abc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b6ee3497cef008123109807aee8ceb6"><td class="memItemLeft" align="right" valign="top"><a id="a2b6ee3497cef008123109807aee8ceb6"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a2b6ee3497cef008123109807aee8ceb6">uchar</a> = unsigned char</td></tr>
 <tr class="memdesc:a2b6ee3497cef008123109807aee8ceb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">unsigned char type <br /></td></tr>
@@ -175,96 +174,47 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> : uchar { <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241">CaptureStyle::Disabled</a> = 0, 
-<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa">CaptureStyle::EqualsOnly</a> = 1, 
-<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd">CaptureStyle::Optional</a> = 2, 
-<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2">CaptureStyle::Required</a> = 4
+<tr class="memitem:aed884f239ca32c2fe3dc2b12c399f142"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a> : uchar { <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754">ConflictStyle::None</a> = 0, 
+<a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a705153d878cb91983bfd5cf2930a18cc">ConflictStyle::CapturesConflict</a> = 1, 
+<a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142af1d4ac54357cc0932f385d56814ba7e4">ConflictStyle::Conflict</a> = 2
  }</td></tr>
-<tr class="memdesc:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various capture styles.  <a href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">More...</a><br /></td></tr>
-<tr class="separator:af513b9aedbc0b93786e13aa7e9b6e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aed884f239ca32c2fe3dc2b12c399f142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the circumstances in which two argument groups conflict with each other.  <a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">More...</a><br /></td></tr>
+<tr class="separator:aed884f239ca32c2fe3dc2b12c399f142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a27141d767d26acda793fba486e5e0363"><td class="memItemLeft" align="right" valign="top"><a id="a27141d767d26acda793fba486e5e0363"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a27141d767d26acda793fba486e5e0363">CaptureIsDisabled</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a27141d767d26acda793fba486e5e0363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle is set to <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241" title="No captures are allowed under any circumstances. If a capture is appended using an equals (&#39;=&#39;) sign,...">CaptureStyle::Disabled</a>. <br /></td></tr>
-<tr class="separator:a27141d767d26acda793fba486e5e0363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="memItemLeft" align="right" valign="top"><a id="a17c8ba285f33cc14fd2ff0c7bdd848fb"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a17c8ba285f33cc14fd2ff0c7bdd848fb">CaptureIsDisabledOrEqualsOnly</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241" title="No captures are allowed under any circumstances. If a capture is appended using an equals (&#39;=&#39;) sign,...">CaptureStyle::Disabled</a> and/or <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa" title="Captures are only allowed when appended to the argument using an equals (&#39;=&#39;) sign....">CaptureStyle::EqualsOnly</a>. <br /></td></tr>
-<tr class="separator:a17c8ba285f33cc14fd2ff0c7bdd848fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8309f651b77f31f8617f2d2bdfe558c"><td class="memItemLeft" align="right" valign="top"><a id="ad8309f651b77f31f8617f2d2bdfe558c"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ad8309f651b77f31f8617f2d2bdfe558c">CaptureIsEqualsOnly</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:ad8309f651b77f31f8617f2d2bdfe558c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa" title="Captures are only allowed when appended to the argument using an equals (&#39;=&#39;) sign....">CaptureStyle::EqualsOnly</a>. <br /></td></tr>
-<tr class="separator:ad8309f651b77f31f8617f2d2bdfe558c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a941327ed552047dfce9dfd80a1706e33"><td class="memItemLeft" align="right" valign="top"><a id="a941327ed552047dfce9dfd80a1706e33"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a941327ed552047dfce9dfd80a1706e33">CaptureIsRequired</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;captureStyle)</td></tr>
-<tr class="memdesc:a941327ed552047dfce9dfd80a1706e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if captureStyle contains <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2" title="Requires capture input. If a capture is not provided, an exception is thrown by the parser that inclu...">CaptureStyle::Required</a>. <br /></td></tr>
-<tr class="separator:a941327ed552047dfce9dfd80a1706e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </td></tr>
+<tr class="memitem:a32c1367e3fec6fae43cd4c38b5a60028"><td class="memItemLeft" align="right" valign="top"><a id="a32c1367e3fec6fae43cd4c38b5a60028"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$make_typed_bitfield</b> (CaptureStyle, <a class="el" href="namespaceopt3.html#a2b6ee3497cef008123109807aee8ceb6">uchar</a>, Disabled=0, EqualsOnly=1, Optional=2, Required=4,)</td></tr>
+<tr class="separator:a32c1367e3fec6fae43cd4c38b5a60028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memTemplParams" colspan="2">template&lt;var::any_same&lt; _internal::parameter_t, _internal::flag_t, _internal::option_t &gt; TValue&gt; </td></tr>
 <tr class="memitem:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1variantarg.html">variantarg</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae4ed85fd3aa84a9ec6899bea27da600f">make_argument</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> &amp;&amp;name, std::optional&lt; std::string &gt; &amp;&amp;capture=std::nullopt) noexcept(false)</td></tr>
 <tr class="memdesc:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates a variantarg of the specified type, with the given values.  <a href="namespaceopt3.html#ae4ed85fd3aa84a9ec6899bea27da600f">More...</a><br /></td></tr>
 <tr class="separator:ae4ed85fd3aa84a9ec6899bea27da600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4fb572a1c131646840e8d384ad59a5"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:adf4fb572a1c131646840e8d384ad59a5"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#adf4fb572a1c131646840e8d384ad59a5">noCapture</a> (T &amp;&amp;input)</td></tr>
-<tr class="memdesc:adf4fb572a1c131646840e8d384ad59a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not accept captured input while also providing additional context.  <a href="namespaceopt3.html#adf4fb572a1c131646840e8d384ad59a5">More...</a><br /></td></tr>
-<tr class="separator:adf4fb572a1c131646840e8d384ad59a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09f9dd3af2cf1800f3391fde82dd789"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:ae09f9dd3af2cf1800f3391fde82dd789"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae09f9dd3af2cf1800f3391fde82dd789">noCapture</a> (T &amp;&amp;input)</td></tr>
-<tr class="memdesc:ae09f9dd3af2cf1800f3391fde82dd789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not accept captured input while also providing additional context.  <a href="namespaceopt3.html#ae09f9dd3af2cf1800f3391fde82dd789">More...</a><br /></td></tr>
-<tr class="separator:ae09f9dd3af2cf1800f3391fde82dd789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="memItemLeft" align="right" valign="top"><a id="a915dd3cc63f0241d3a9efcd9ef73aa64"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a915dd3cc63f0241d3a9efcd9ef73aa64">operator&amp;</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise AND operation. <br /></td></tr>
-<tr class="separator:a915dd3cc63f0241d3a9efcd9ef73aa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa7498e59f451658fb9af25fc647c8fb"><td class="memItemLeft" align="right" valign="top"><a id="aaa7498e59f451658fb9af25fc647c8fb"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#aaa7498e59f451658fb9af25fc647c8fb">operator&amp;=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:aaa7498e59f451658fb9af25fc647c8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise AND-equals operation. <br /></td></tr>
-<tr class="separator:aaa7498e59f451658fb9af25fc647c8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5845c5e65e384be9451e815996ba20ec"><td class="memItemLeft" align="right" valign="top"><a id="a5845c5e65e384be9451e815996ba20ec"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a5845c5e65e384be9451e815996ba20ec">operator^</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:a5845c5e65e384be9451e815996ba20ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise XOR operation. <br /></td></tr>
-<tr class="separator:a5845c5e65e384be9451e815996ba20ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab72768716f03d3bc92d3f73f798bbb"><td class="memItemLeft" align="right" valign="top"><a id="a1ab72768716f03d3bc92d3f73f798bbb"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a1ab72768716f03d3bc92d3f73f798bbb">operator^=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:a1ab72768716f03d3bc92d3f73f798bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise XOR-equals operation. <br /></td></tr>
-<tr class="separator:a1ab72768716f03d3bc92d3f73f798bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="memItemLeft" align="right" valign="top"><a id="a32ae71d068e4b38dbd09ade1bdcb033c"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a32ae71d068e4b38dbd09ade1bdcb033c">operator|</a> (const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise OR operation. <br /></td></tr>
-<tr class="separator:a32ae71d068e4b38dbd09ade1bdcb033c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01fd909f6ace5540f390590ec37c7e5e"><td class="memItemLeft" align="right" valign="top"><a id="a01fd909f6ace5540f390590ec37c7e5e"></a>
-constexpr <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a01fd909f6ace5540f390590ec37c7e5e">operator|=</a> (<a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;l, const <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">CaptureStyle</a> &amp;r)</td></tr>
-<tr class="memdesc:a01fd909f6ace5540f390590ec37c7e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise OR-equals operation. <br /></td></tr>
-<tr class="separator:a01fd909f6ace5540f390590ec37c7e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a364fad60d5806e5485babfaaa67e1d73"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:a364fad60d5806e5485babfaaa67e1d73"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a364fad60d5806e5485babfaaa67e1d73">optionalCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
-<tr class="memdesc:a364fad60d5806e5485babfaaa67e1d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not require captured input while also providing additional context.  <a href="namespaceopt3.html#a364fad60d5806e5485babfaaa67e1d73">More...</a><br /></td></tr>
-<tr class="separator:a364fad60d5806e5485babfaaa67e1d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d5f056ab19c34553aa6fe26a613790"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:a88d5f056ab19c34553aa6fe26a613790"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a88d5f056ab19c34553aa6fe26a613790">optionalCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
-<tr class="memdesc:a88d5f056ab19c34553aa6fe26a613790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument does not require captured input while also providing additional context.  <a href="namespaceopt3.html#a88d5f056ab19c34553aa6fe26a613790">More...</a><br /></td></tr>
-<tr class="separator:a88d5f056ab19c34553aa6fe26a613790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a623006b735ad4edb9e545091fd403b2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt3_1_1arg__container.html">arg_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a623006b735ad4edb9e545091fd403b2b">parse</a> (std::vector&lt; std::string &gt; &amp;&amp;args, const <a class="el" href="structopt3_1_1_capture_list.html">CaptureList</a> &amp;captures)</td></tr>
-<tr class="memdesc:a623006b735ad4edb9e545091fd403b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an ArgContainer instance. <br  />
- <b>Argument Types</b> <br  />
- - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
- - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
- - Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. <br  />
- <b>Capture Rules</b> <br  />
- - Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix. <br  />
- - Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", &amp; "--opt" + "captured". <br  />
- - If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain. <br  />
- - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.  <a href="namespaceopt3.html#a623006b735ad4edb9e545091fd403b2b">More...</a><br /></td></tr>
-<tr class="separator:a623006b735ad4edb9e545091fd403b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0db35dddf29c4a73e1bd2c36b02007f1"><td class="memTemplParams" colspan="2">template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:a0db35dddf29c4a73e1bd2c36b02007f1"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a0db35dddf29c4a73e1bd2c36b02007f1">requireCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
-<tr class="memdesc:a0db35dddf29c4a73e1bd2c36b02007f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument requires captured input while also providing additional context.  <a href="namespaceopt3.html#a0db35dddf29c4a73e1bd2c36b02007f1">More...</a><br /></td></tr>
-<tr class="separator:a0db35dddf29c4a73e1bd2c36b02007f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac12c480f0806c77103a85abc0b8272b1"><td class="memTemplParams" colspan="2">template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </td></tr>
-<tr class="memitem:ac12c480f0806c77103a85abc0b8272b1"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ac12c480f0806c77103a85abc0b8272b1">requireCapture</a> (T &amp;&amp;input, const bool &amp;equalsOnly=false)</td></tr>
-<tr class="memdesc:ac12c480f0806c77103a85abc0b8272b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that an argument requires captured input while also providing additional context.  <a href="namespaceopt3.html#ac12c480f0806c77103a85abc0b8272b1">More...</a><br /></td></tr>
-<tr class="separator:ac12c480f0806c77103a85abc0b8272b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35e9f86022da18932b030f40186ce2c"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ab35e9f86022da18932b030f40186ce2c"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">make_template</a> (const CaptureStyle captureStyle, const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a> conflictStyle, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ab35e9f86022da18932b030f40186ce2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">More...</a><br /></td></tr>
+<tr class="separator:ab35e9f86022da18932b030f40186ce2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2ba4e76d558734fcc7769ba80b51e8"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:abb2ba4e76d558734fcc7769ba80b51e8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#abb2ba4e76d558734fcc7769ba80b51e8">make_template</a> (const CaptureStyle captureStyle, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:abb2ba4e76d558734fcc7769ba80b51e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#abb2ba4e76d558734fcc7769ba80b51e8">More...</a><br /></td></tr>
+<tr class="separator:abb2ba4e76d558734fcc7769ba80b51e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ba8a24b4bbe45f7ca29366131fb715"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a71ba8a24b4bbe45f7ca29366131fb715"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a71ba8a24b4bbe45f7ca29366131fb715">make_template</a> (const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a> conflictStyle, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a71ba8a24b4bbe45f7ca29366131fb715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#a71ba8a24b4bbe45f7ca29366131fb715">More...</a><br /></td></tr>
+<tr class="separator:a71ba8a24b4bbe45f7ca29366131fb715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05336ef2c447f5f39b5a9330f07c6e8"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ae05336ef2c447f5f39b5a9330f07c6e8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#ae05336ef2c447f5f39b5a9330f07c6e8">make_template</a> (Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ae05336ef2c447f5f39b5a9330f07c6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#ae05336ef2c447f5f39b5a9330f07c6e8">More...</a><br /></td></tr>
+<tr class="separator:ae05336ef2c447f5f39b5a9330f07c6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea34d330eb286847ca1a40b911c2afa"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#adea34d330eb286847ca1a40b911c2afa">make_template</a> (<a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> const &amp;g)</td></tr>
+<tr class="memdesc:adea34d330eb286847ca1a40b911c2afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#adea34d330eb286847ca1a40b911c2afa">More...</a><br /></td></tr>
+<tr class="separator:adea34d330eb286847ca1a40b911c2afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf933cbf05d9763e90322c14dbe8b52c"><td class="memItemLeft" align="right" valign="top"><a id="aaf933cbf05d9763e90322c14dbe8b52c"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classopt3_1_1variant__template.html">variant_template</a> &amp;vt)</td></tr>
+<tr class="separator:aaf933cbf05d9763e90322c14dbe8b52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89455c11b14cc4363e1ffa33ae726be3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt3_1_1arg__container.html">arg_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a89455c11b14cc4363e1ffa33ae726be3">parse</a> (std::vector&lt; std::string &gt; &amp;&amp;args, <a class="el" href="structopt3_1_1capture__list.html">capture_list</a> captures, const <a class="el" href="structopt3_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;parsingRules)</td></tr>
+<tr class="memdesc:a89455c11b14cc4363e1ffa33ae726be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an ArgContainer instance.  <a href="namespaceopt3.html#a89455c11b14cc4363e1ffa33ae726be3">More...</a><br /></td></tr>
+<tr class="separator:a89455c11b14cc4363e1ffa33ae726be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21a01dc4d609f8216b8a937a5041b955"><td class="memItemLeft" align="right" valign="top">static WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a21a01dc4d609f8216b8a937a5041b955">vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
 <tr class="memdesc:a21a01dc4d609f8216b8a937a5041b955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt3.html#a21a01dc4d609f8216b8a937a5041b955">More...</a><br /></td></tr>
 <tr class="separator:a21a01dc4d609f8216b8a937a5041b955"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,12 +226,16 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a615588f305359aeec65e45dbb4adafd3"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a615588f305359aeec65e45dbb4adafd3">valid_arg</a> = std::derived_from&lt;T, <a class="el" href="structopt3_1_1base__arg.html">base_arg</a>&gt;</td></tr>
 <tr class="memdesc:a615588f305359aeec65e45dbb4adafd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constraint that allows any types derived from <a class="el" href="structopt3_1_1base__arg.html" title="An empty struct that serves as the templateless base type for the basic_arg_t struct.">base_arg</a>. <br /></td></tr>
 <tr class="separator:a615588f305359aeec65e45dbb4adafd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe82f5494692ab94494ec5ad482d5139"><td class="memTemplParams" colspan="2"><a id="afe82f5494692ab94494ec5ad482d5139"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afe82f5494692ab94494ec5ad482d5139"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><b>valid_capture</b> = var::any_same_or_convertible&lt;T, <a class="el" href="classopt3_1_1variant__template.html">variant_template</a>, <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a>&gt;</td></tr>
+<tr class="separator:afe82f5494692ab94494ec5ad482d5139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains a commandline argument parser &amp; container object. </p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="af513b9aedbc0b93786e13aa7e9b6e8b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af513b9aedbc0b93786e13aa7e9b6e8b8">&#9670;&nbsp;</a></span>CaptureStyle</h2>
+<a id="aed884f239ca32c2fe3dc2b12c399f142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed884f239ca32c2fe3dc2b12c399f142">&#9670;&nbsp;</a></span>ConflictStyle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +244,7 @@ template&lt;typename T &gt; </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8">opt3::CaptureStyle</a> : <a class="el" href="namespaceopt3.html#a2b6ee3497cef008123109807aee8ceb6">uchar</a></td>
+          <td class="memname">enum <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a> : <a class="el" href="namespaceopt3.html#a2b6ee3497cef008123109807aee8ceb6">uchar</a></td>
         </tr>
       </table>
   </td>
@@ -300,19 +254,17 @@ template&lt;typename T &gt; </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Defines various capture styles. </p>
+<p>Defines the circumstances in which two argument groups conflict with each other. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8ab9f5c797ebbf55adccdd8539a65a0241"></a>Disabled&#160;</td><td class="fielddoc"><p>No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p>Arguments do not conflict. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8a9af82cb2f9b3140e96901cddeb824afa"></a>EqualsOnly&#160;</td><td class="fielddoc"><p>Captures are only allowed when appended to the argument using an equals ('=') sign. Since CaptureStyle is a bitfield, this may be combined with <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd" title="Captures whenever possible, but does not require capture input. Arguments of type Flag &amp; Option are n...">CaptureStyle::Optional</a> or <a class="el" href="namespaceopt3.html#af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2" title="Requires capture input. If a capture is not provided, an exception is thrown by the parser that inclu...">CaptureStyle::Required</a> to force them to only accept input via appending with an equals sign ('='). </p>
+<tr><td class="fieldname"><a id="aed884f239ca32c2fe3dc2b12c399f142a705153d878cb91983bfd5cf2930a18cc"></a>CapturesConflict&#160;</td><td class="fielddoc"><p>Both arguments can be present at the same time, but <b>only one</b> is allowed to capture, otherwise a conflict exception is thrown. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8aebb061953c0454b2c8ee7b0ac615ebcd"></a>Optional&#160;</td><td class="fielddoc"><p>Captures whenever possible, but does not require capture input. Arguments of type Flag &amp; Option are never captured by other flags or options. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af513b9aedbc0b93786e13aa7e9b6e8b8ab651efdb98a5d6bd2b3935d0c3f4a5e2"></a>Required&#160;</td><td class="fielddoc"><p>Requires capture input. If a capture is not provided, an exception is thrown by the parser that includes the name of the argument, and a brief message informing the user to provide a capture argument. </p>
+<tr><td class="fieldname"><a id="aed884f239ca32c2fe3dc2b12c399f142af1d4ac54357cc0932f385d56814ba7e4"></a>Conflict&#160;</td><td class="fielddoc"><p>Only one of the arguments can be present at the same time. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01086">1086</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01124">1124</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +275,7 @@ template&lt;typename T &gt; </td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </div>
+template&lt;var::any_same&lt; _internal::parameter_t, _internal::flag_t, _internal::option_t &gt; TValue&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -367,7 +319,7 @@ template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </di
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the argument. </td></tr>
     <tr><td class="paramname">capture</td><td>An optional capture value for this argument. <br  />
- Note that when TReturn is parameter_t </td></tr>
+ Note that when TReturn is _internal::parameter_t </td></tr>
   </table>
   </dd>
 </dl>
@@ -383,131 +335,44 @@ template&lt;var::any_same&lt; parameter_t, flag_t, option_t &gt; TValue&gt; </di
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the argument. </td></tr>
     <tr><td class="paramname">capture</td><td>An optional capture value for this argument. <br  />
- Note that when TReturn is parameter_t </td></tr>
+ Note that when TReturn is _internal::parameter_t </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A variantarg containing an argument of the specified type. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00278">278</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00283">283</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="adf4fb572a1c131646840e8d384ad59a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf4fb572a1c131646840e8d384ad59a5">&#9670;&nbsp;</a></span>noCapture() <span class="overload">[1/2]</span></h2>
+<a id="ab35e9f86022da18932b030f40186ce2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35e9f86022da18932b030f40186ce2c">&#9670;&nbsp;</a></span>make_template() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::noCapture </td>
+          <td class="memname">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify that an argument does not accept captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01352">1352</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ae09f9dd3af2cf1800f3391fde82dd789"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae09f9dd3af2cf1800f3391fde82dd789">&#9670;&nbsp;</a></span>noCapture() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::noCapture </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify that an argument does not accept captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MAX</td><td>Requires that this argument be specified no more than this many times. (Default: std::nullopt) </td></tr>
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01365">1365</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a364fad60d5806e5485babfaaa67e1d73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a364fad60d5806e5485babfaaa67e1d73">&#9670;&nbsp;</a></span>optionalCapture() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::optionalCapture </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
+          <td class="paramtype">const CaptureStyle&#160;</td>
+          <td class="paramname"><em>captureStyle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a>&#160;</td>
+          <td class="paramname"><em>conflictStyle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -517,55 +382,48 @@ template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std:
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Specify that an argument does not require captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MAX</td><td>Limits the number of times this argument may be specified legally. </td></tr>
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+    <tr><td class="paramname">captureStyle</td><td>Determines how arguments from this template group can capture input. </td></tr>
+    <tr><td class="paramname">conflictStyle</td><td>Determines how multiple arguments with the same ID are handled. </td></tr>
+    <tr><td class="paramname">templates</td><td>Any number of <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>s to include in the group. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01326">1326</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01441">1441</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a88d5f056ab19c34553aa6fe26a613790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88d5f056ab19c34553aa6fe26a613790">&#9670;&nbsp;</a></span>optionalCapture() <span class="overload">[2/2]</span></h2>
+<a id="abb2ba4e76d558734fcc7769ba80b51e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2ba4e76d558734fcc7769ba80b51e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
+template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::optionalCapture </td>
+          <td class="memname">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
+          <td class="paramtype">const CaptureStyle&#160;</td>
+          <td class="paramname"><em>captureStyle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -575,34 +433,153 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
       </table>
   </td>
   <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">captureStyle</td><td>Determines how arguments from this template group can capture input. </td></tr>
+    <tr><td class="paramname">templates</td><td>Any number of <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>s to include in the group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01456">1456</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a71ba8a24b4bbe45f7ca29366131fb715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ba8a24b4bbe45f7ca29366131fb715">&#9670;&nbsp;</a></span>make_template() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a>&#160;</td>
+          <td class="paramname"><em>conflictStyle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conflictStyle</td><td>Determines how multiple arguments with the same ID are handled. </td></tr>
+    <tr><td class="paramname">templates</td><td>Any number of <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>s to include in the group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01470">1470</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae05336ef2c447f5f39b5a9330f07c6e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05336ef2c447f5f39b5a9330f07c6e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">templates</td><td>Any number of <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>s to include in the group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01483">1483</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adea34d330eb286847ca1a40b911c2afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea34d330eb286847ca1a40b911c2afa">&#9670;&nbsp;</a></span>make_template() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> const &amp;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Specify that an argument does not require captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
+    <tr><td class="paramname">g</td><td>A pre-constructed <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>g </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01339">1339</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01494">1494</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a623006b735ad4edb9e545091fd403b2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a623006b735ad4edb9e545091fd403b2b">&#9670;&nbsp;</a></span>parse()</h2>
+<a id="a89455c11b14cc4363e1ffa33ae726be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89455c11b14cc4363e1ffa33ae726be3">&#9670;&nbsp;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,8 +596,14 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structopt3_1_1_capture_list.html">CaptureList</a> &amp;&#160;</td>
-          <td class="paramname"><em>captures</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structopt3_1_1capture__list.html">capture_list</a>&#160;</td>
+          <td class="paramname"><em>captures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structopt3_1_1_argument_parsing_rules.html">ArgumentParsingRules</a> &amp;&#160;</td>
+          <td class="paramname"><em>parsingRules</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -635,151 +618,37 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </table>
 </div><div class="memdoc">
 
-<p>Parse commandline arguments into an ArgContainer instance. <br  />
- <b>Argument Types</b> <br  />
- - Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type. <br  />
- - Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list. <br  />
- - Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. <br  />
- <b>Capture Rules</b> <br  />
- - Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix. <br  />
- - Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", &amp; "--opt" + "captured". <br  />
- - If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain. <br  />
- - Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Parse commandline arguments into an ArgContainer instance. </p>
+<p>### Argument Types</p><ul>
+<li>Parameters are any arguments that do not begin with a dash '-' character that were not captured by another argument type.</li>
+<li>Options are arguments that begin with 2 dash '-' characters, and can capture additional arguments if the option name appears in the capture list.</li>
+<li>Flags are arguments that begin with a single dash '-' character, are a single character in length, and can capture additional arguments. Flags can appear alone, or in "chains" where each character is treated as an individual flag. In a flag chain, only the last flag can capture additional arguments. </li>
+</ul>
+<h3><a class="anchor" id="autotoc_md18"></a>
+Capture Rules</h3>
+<ul>
+<li>Only options/flags specified in the capture list are allowed to capture additional arguments. Capture list entries should not include a delimiter prefix.</li>
+<li>Options/Flags cannot be captured under any circumstance. ex: "--opt --opt captured" results in "--opt", &amp; "--opt" + "captured".</li>
+<li>If a flag in a chain should capture an argument (either with an '=' delimiter or by context), it must appear at the end of the chain.</li>
+<li>Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">args</td><td>Commandline arguments as a vector of strings, in order and including argv[0]. </td></tr>
-    <tr><td class="paramname">captures</td><td>A <a class="el" href="structopt3_1_1_capture_list.html" title="Contains a list of arguments that should be allowed to capture additional arguments....">CaptureList</a> instance specifying which arguments are allowed to capture other arguments as their parameters </td></tr>
+    <tr><td class="paramname">captures</td><td>A <code><a class="el" href="structopt3_1_1capture__list.html">capture_list</a></code> instance specifying which arguments are allowed to capture other arguments as their parameters </td></tr>
+    <tr><td class="paramname">parsingRules</td><td>An <code><a class="el" href="structopt3_1_1_argument_parsing_rules.html" title="Allows configuration of the rules used when parsing arguments.">ArgumentParsingRules</a></code> instance that provides the parser with a configuration </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArgContainer </dd></dl>
+</li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01454">1454</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01729">1729</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt3_a623006b735ad4edb9e545091fd403b2b_cgraph.svg" width="552" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt3_a623006b735ad4edb9e545091fd403b2b_icgraph.svg" width="307" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceopt3_a89455c11b14cc4363e1ffa33ae726be3_cgraph.svg" width="552" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="a0db35dddf29c4a73e1bd2c36b02007f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0db35dddf29c4a73e1bd2c36b02007f1">&#9670;&nbsp;</a></span>requireCapture() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t MAX, size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::requireCapture </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify that an argument requires captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MAX</td><td>Limits the number of times this argument may be specified legally. </td></tr>
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01299">1299</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac12c480f0806c77103a85abc0b8272b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac12c480f0806c77103a85abc0b8272b1">&#9670;&nbsp;</a></span>requireCapture() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, char &gt; T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="structopt3_1_1basic__capture__wrapper.html">capture_wrapper</a> opt3::requireCapture </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>equalsOnly</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify that an argument requires captured input while also providing additional context. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">MIN</td><td>Requires that this argument be specified at least this many times. (Default: 0) </td></tr>
-    <tr><td class="paramname">T</td><td>Any type that is a char or string, or is implicitly convertible to a char or string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>The name of the argument, excluding prefixes. chars are interpreted as flags, while strings are interpreted as options. </td></tr>
-    <tr><td class="paramname">equalsOnly</td><td>When true, this argument may only capture input when directly appended with an equals sign. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>capture_wrapper </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01312">1312</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -834,7 +703,7 @@ template&lt;size_t MIN = 0ull, var::any_same_or_convertible&lt; std::string, cha
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01569">1569</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01875">1875</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

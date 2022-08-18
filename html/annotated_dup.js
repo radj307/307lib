@@ -26,9 +26,6 @@ var annotated_dup =
         [ "MINI", "classfile_1_1ini_1_1_m_i_n_i.html", "classfile_1_1ini_1_1_m_i_n_i" ]
       ] ]
     ] ],
-    [ "format", null, [
-      [ "basic_indentor", "structformat_1_1basic__indentor.html", "structformat_1_1basic__indentor" ]
-    ] ],
     [ "json", "namespacejson.html", "namespacejson" ],
     [ "matrix", null, [
       [ "basic_matrix", "structmatrix_1_1basic__matrix.html", "structmatrix_1_1basic__matrix" ],
@@ -43,6 +40,7 @@ var annotated_dup =
     ] ],
     [ "rng", "namespacerng.html", "namespacerng" ],
     [ "shared", null, [
+      [ "basic_indentor", "structshared_1_1basic__indentor.html", "structshared_1_1basic__indentor" ],
       [ "basic_vstring", "structshared_1_1basic__vstring.html", "structshared_1_1basic__vstring" ]
     ] ],
     [ "str", "namespacestr.html", "namespacestr" ],
@@ -78,6 +76,7 @@ var annotated_dup =
       [ "XMLElement", "structxml_1_1_x_m_l_element.html", "structxml_1_1_x_m_l_element" ],
       [ "XMLPrinter", "structxml_1_1_x_m_l_printer.html", "structxml_1_1_x_m_l_printer" ]
     ] ],
+    [ "arg_manager2", "structarg__manager2.html", null ],
     [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
     [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ]
 ];
