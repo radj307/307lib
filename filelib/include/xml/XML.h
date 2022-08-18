@@ -398,9 +398,9 @@ namespace xml {
 					s += getnotsimilar(Lexeme::BracketOpen, Lexeme::BracketClose);
 
 					if (std::all_of(s.begin(), s.end(), str::stdpred::isspace))
-						return{ TokenType::Whitespace, s };
+						return TokenT{ TokenType::Whitespace, s };
 					else
-						return{ TokenType::Value, s };
+						return TokenT{ TokenType::Value, s };
 				}
 				case Lexeme::BracketOpen: {
 					auto next{ peeklex() };
@@ -413,18 +413,18 @@ namespace xml {
 
 					switch (next) {
 					case Lexeme::Question: // processing instruction:
-						return{ TokenType::ProcessingInstructions, s };
+						return TokenT{ TokenType::ProcessingInstructions, s };
 					case Lexeme::Exclamation: // comment:
-						return{ TokenType::Comment, s };
+						return TokenT{ TokenType::Comment, s };
 					default: // tag:
-						return{ TokenType::Tag, s };
+						return TokenT{ TokenType::Tag, s };
 					}
 					break;
 				}
 				case Lexeme::BracketClose:
 					throw make_exception("XMLTokenizer::getNextToken() syntax error:  Unexpected closing bracket '", c, "' at character ", ss.tellg());
 				default:
-					return{ TokenType::None, c };
+					return TokenT{ TokenType::None, c };
 				}
 			}
 		public:

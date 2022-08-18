@@ -126,35 +126,35 @@ namespace json {
 			{
 				switch (get_lexeme(c)) {
 				case LEXEME::BRACKET_OPEN:
-					return{ TOKEN::OBJECT, getBrackets(LEXEME::BRACKET_OPEN, LEXEME::BRACKET_CLOSE) };
+					return TokenT{ TOKEN::OBJECT, getBrackets(LEXEME::BRACKET_OPEN, LEXEME::BRACKET_CLOSE) };
 				case LEXEME::BRACKET_CLOSE:
 					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!  (", findCurrentPosString(true), ")");
 				case LEXEME::ARRAY_OPEN:
-					return{ TOKEN::ARRAY, getBrackets(LEXEME::ARRAY_OPEN, LEXEME::ARRAY_CLOSE) };
+					return TokenT{ TOKEN::ARRAY, getBrackets(LEXEME::ARRAY_OPEN, LEXEME::ARRAY_CLOSE) };
 				case LEXEME::ARRAY_CLOSE:
 					throw make_exception("Tokenizer::getNextToken() syntax error:  Unmatched closing bracket '", c, "'!  (", findCurrentPosString(true), ")");
 				case LEXEME::COMMA:
-					return{ TOKEN::COMMA, c };
+					return TokenT{ TOKEN::COMMA, c };
 				case LEXEME::PERIOD: [[fallthrough]];
 				case LEXEME::DIGIT:
-					return{ TOKEN::NUMBER, getsimilar(LEXEME::DIGIT, LEXEME::PERIOD) };
+					return TokenT{ TOKEN::NUMBER, getsimilar(LEXEME::DIGIT, LEXEME::PERIOD) };
 				case LEXEME::QUOTE_SINGLE:
 					throw make_exception("Tokenizer::getNextToken() syntax error:  Single quotation marks aren't allowed!  (", findCurrentPosString(true), ")");
 				case LEXEME::QUOTE_DOUBLE:
-					return{ TOKEN::STRING, getuntil_unescaped(LEXEME::QUOTE_DOUBLE) };
+					return TokenT{ TOKEN::STRING, getuntil_unescaped(LEXEME::QUOTE_DOUBLE) };
 				case LEXEME::ALPHA: {
 					std::string s;
 					s += c;
 					s += getsimilar(LEXEME::ALPHA, LEXEME::DIGIT);
 					s = str::trim(s);
-					return{ TOKEN::KEYWORD, s };
+					return TokenT{ TOKEN::KEYWORD, s };
 				}
 				case LEXEME::COLON:
-					return{ TOKEN::COLON, c };
+					return TokenT{ TOKEN::COLON, c };
 				case LEXEME::WHITESPACE:
 				default:break;
 				}
-				return{ TOKEN::NONE, c };
+				return TokenT{ TOKEN::NONE, c };
 			}
 		public:
 			/**
