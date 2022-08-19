@@ -369,7 +369,9 @@ INLINE enumName operator&(enumName const& l, enumName const& r) noexcept { retur
 INLINE enumName operator^(enumName const& l, enumName const& r) noexcept { return $c(enumName, ($c(int, l) ^ $c(int, r))); } \
 INLINE enumName& operator|=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) | $c(int, r))); } \
 INLINE enumName& operator&=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) & $c(int, r))); } \
-INLINE enumName& operator^=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) ^ $c(int, r))); } \
+INLINE enumName& operator^=(enumName& l, enumName const& r) noexcept { return l = $c(enumName, ($c(int, l) ^ $c(int, r))); }
+
+#define $make_comparison_operators(enumName, enumType)																		 \
 INLINE CONSTEXPR bool operator==(enumName const& l, enumType const& r) noexcept { return $c(enumType, l) == r;}              \
 INLINE CONSTEXPR bool operator!=(enumName const& l, enumType const& r) noexcept { return $c(enumType, l) != r;}
 

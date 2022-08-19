@@ -100,9 +100,9 @@ namespace ini {
 		WINCONSTEXPR string_t commentChars() const noexcept
 		{
 			string_t chars{};
-			if ((commentStyle & CommentStyle::Pound) != 0)
+			if ((commentStyle & CommentStyle::Pound) != $c(CommentStyle, 0))
 				chars += $c(TChar, '#');
-			if ((commentStyle & CommentStyle::Semicolon) != 0)
+			if ((commentStyle & CommentStyle::Semicolon) != $c(CommentStyle, 0))
 				chars += $c(TChar, ';');
 			return chars;
 		}
@@ -256,16 +256,16 @@ namespace ini {
 	 */
 	template<var::valid_char TChar = char, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
 	class basic_ini : public ini_container<TChar, TCharTraits, TAlloc> {
-		using this_t = typename basic_ini<TChar, TCharTraits, TAlloc>;
-		using base_t = typename ini_container<TChar, TCharTraits, TAlloc>;
-		using string_t = typename std::basic_string < TChar, TCharTraits, TAlloc>;
-		using istream_t = typename std::basic_istream<TChar, TCharTraits>;
-		using config_t = typename ini_parser_config<TChar, TCharTraits, TAlloc>;
-		using section_t = typename ini_section<TChar, TCharTraits, TAlloc>;
+		using this_t = basic_ini<TChar, TCharTraits, TAlloc>;
+		using base_t = ini_container<TChar, TCharTraits, TAlloc>;
+		using string_t = std::basic_string < TChar, TCharTraits, TAlloc>;
+		using istream_t = std::basic_istream<TChar, TCharTraits>;
+		using config_t = ini_parser_config<TChar, TCharTraits, TAlloc>;
+		using section_t = ini_section<TChar, TCharTraits, TAlloc>;
 
 		using iterator = typename base_t::iterator;
 		using const_iterator = typename base_t::const_iterator;
-		
+
 		using inner_iterator = typename ini_section<TChar, TCharTraits, TAlloc>::iterator;
 		using inner_const_iterator = typename ini_section<TChar, TCharTraits, TAlloc>::const_iterator;
 
@@ -278,19 +278,21 @@ namespace ini {
 		 * @param config	Parser configuration instance.
 		 */
 		basic_ini(istream_t& istream, config_t const& config = {})
-			: base_t(parse<TChar, TCharTraits, TAlloc>(istream, config)) {}
+			: base_t(parse<TChar, TCharTraits, TAlloc>(istream, config))
+		{}
 		/**
 		 * @brief			Parsing ctor
 		 * @param istream	Input stream rvalue that contains the input data.
 		 * @param config	Parser configuration instance.
 		 */
 		basic_ini(istream_t&& istream, config_t const& config = {})
-			: base_t(parse<TChar, TCharTraits, TAlloc>(std::forward<istream_t>(istream), config)) {}
+			: base_t(parse<TChar, TCharTraits, TAlloc>(std::forward<istream_t>(istream), config))
+		{}
 		/**
 		 * @brief						Reading/Parsing ctor
 		 * @param path					The location of an INI file in the local filesystem.
 		 *\n							When the specified files exists, it is parsed into this instance.
-		 *\n							If the specified file doesn't exist, 
+		 *\n							If the specified file doesn't exist,
 		 * @param config				Parser configuration instance.
 		 * @param throwIfFileNotFound	When true & the specified file doesn't exist, an exception is thrown; otherwise when false, the object is initialized as an empty instance.
 		 */
@@ -299,80 +301,81 @@ namespace ini {
 			if (file::exists(path)) return parse<TChar, TCharTraits, TAlloc>(file::read<TChar, TCharTraits, TAlloc>(path, std::ios_base::binary), config);
 			else if (throwIfFileNotFound) throw make_custom_exception<ini_file_not_found_exception>("File Not Found:  ", path);
 			else return base_t{};
-			}(path, config, throwIfFileNotFound))
+					 }(path, config, throwIfFileNotFound))
 		{}
 
-		/// @brief	Base Container Move Ctor
-		basic_ini(base_t&& o) noexcept : base_t(std::move(o)) {}
-		/// @brief	Base Container Copy Ctor
-		basic_ini(base_t const& o) : base_t(o) {}
-		/// @brief	Base Container Move-Set Operator
-		basic_ini& operator=(base_t&& o) noexcept
-		{
-			this->clear();
-			this->merge(std::move(o));
-			return *this;
-		}
-		/// @brief	Base Container Copy-Set Operator
-		basic_ini& operator=(base_t const& o)
-		{
-			this->clear();
-			this->merge(o);
-			return *this;
-		}
+					 /// @brief	Base Container Move Ctor
+					 basic_ini(base_t&& o) noexcept : base_t(std::move(o)) {}
+					 /// @brief	Base Container Copy Ctor
+					 basic_ini(base_t const& o) : base_t(o) {}
+					 /// @brief	Base Container Move-Set Operator
+					 basic_ini& operator=(base_t&& o) noexcept
+					 {
+						 this->clear();
+						 this->merge(std::move(o));
+						 return *this;
+					 }
+					 /// @brief	Base Container Copy-Set Operator
+					 basic_ini& operator=(base_t const& o)
+					 {
+						 this->clear();
+						 this->merge(o);
+						 return *this;
+					 }
 
-		/// @brief	Default Move Ctor
-		basic_ini(basic_ini&&) noexcept = default;
-		/// @brief	Default Copy Ctor
-		basic_ini(basic_ini const&) = default;
-		/// @brief	Default Destructor
-		~basic_ini() = default;
-		/// @brief	Default Move-Set Operator
-		basic_ini& operator=(basic_ini&&) noexcept = default;
-		/// @brief	Default Copy-Set Operator
-		basic_ini& operator=(basic_ini const&) = default;
+					 /// @brief	Default Move Ctor
+					 basic_ini(basic_ini&&) noexcept = default;
+					 /// @brief	Default Copy Ctor
+					 basic_ini(basic_ini const&) = default;
+					 /// @brief	Default Destructor
+					 ~basic_ini() = default;
+					 /// @brief	Default Move-Set Operator
+					 basic_ini& operator=(basic_ini&&) noexcept = default;
+					 /// @brief	Default Copy-Set Operator
+					 basic_ini& operator=(basic_ini const&) = default;
 
-		template<var::same_or_convertible<std::pair<string_t, section_t>>... Ts>
-		basic_ini(Ts&&... sections) : base_t{ std::forward<Ts>(sections)... } {}
+					 template<var::same_or_convertible<std::pair<string_t, section_t>>... Ts>
+					 basic_ini(Ts&&... sections) : base_t{ std::forward<Ts>(sections)... } {}
 
-		this_t& operator+=(std::pair<string_t, section_t>&& section_pr)
-		{
-			return *this;
-		}
+					 this_t& operator+=(std::pair<string_t, section_t>&& section_pr) { return *this; }
 
-		/// @brief	Default comparison operators.
-		auto operator<=>(basic_ini const&) const = default;
+					 /// @brief	Default comparison operators.
+					 auto operator<=>(basic_ini<TChar, TCharTraits, TAlloc> const&) const = default;
 
-		this_t& deep_merge(base_t const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override)
-		{
-			for (const auto& [header, section] : other) {
-				if (auto& existing{ this->find(header) }; existing != this->end()) {
-					for (const auto& [key, value] : section) {
-						if (existing->contains(key)) {
-							switch (overrideStyle) {
-							case OverrideStyle::Override:
-								existing.at(key) = value;
-								break;
-							case OverrideStyle::Throw:
-								throw ex::make_custom_exception<ini_key_exception>("Duplicate keys aren't allowed; '", header, (header.empty() ? "" : "::"), key, "' already has value '", section.at(key), "'! (Incoming value: '", value, "')");
-							case OverrideStyle::Skip: [[fallthrough]];
-							default:break;
-							}
-						}
-						else existing[key] = value;
-					}
-				}
-				else this->insert(std::make_pair(header, section));
-			}
-			return *this;
-		}
+					 this_t& deep_merge(ini_container<TChar, TCharTraits, TAlloc> const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+					 {
+						 for (const auto& [header, section] : other) {
+							 if (const auto& existing{ this->find(header) }; existing != this->end()) {
+								 auto& [existingHeader, existingSection] { *existing };
+								 for (const auto& [key, value] : section) {
+									 if (existing->second.contains(key)) {
+										 switch (overrideStyle) {
+										 case OverrideStyle::Override:
+											 existingSection.at(key) = value;
+											 break;
+										 case OverrideStyle::Throw:
+											 throw ex::make_custom_exception<ini_key_exception>("Duplicate keys aren't allowed; '", header, (header.empty() ? "" : "::"), key, "' already has value '", section.at(key), "'! (Incoming value: '", value, "')");
+										 case OverrideStyle::Skip: [[fallthrough]];
+										 default:break;
+										 }
+									 }
+									 else existingSection[key] = value;
+								 }
+							 }
+							 else this->insert(std::make_pair(header, section));
+						 }
+						 return *this;
+					 }
 
-		void read(std::filesystem::path const& path) noexcept(false) { this->merge(parse<TChar, TCharTraits, TAlloc>(file::read<TChar, TCharTraits, TAlloc>(path))); }
-		bool write(std::filesystem::path const& path) noexcept(false)
-		{
-			using ::ini::operators::operator<<;
-			return file::write(path, *this);
-		}
+					 void read(std::filesystem::path const& path) noexcept(false)
+					 {
+						 this->deep_merge(parse<TChar, TCharTraits, TAlloc>(file::read<TChar, TCharTraits, TAlloc>(path)));
+					 }
+					 bool write(std::filesystem::path const& path) const noexcept(false)
+					 {
+						 using ::ini::operators::operator<<;
+						 return file::write(path, *this);
+					 }
 	};
 	/// @brief	basic_ini that uses narrow-width `char` types.
 	using INI = basic_ini<char, std::char_traits<char>, std::allocator<char>>;
