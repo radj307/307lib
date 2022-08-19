@@ -10,7 +10,7 @@ var searchData=
   ['op_479',['op',['../namespaceop.html',1,'']]],
   ['openmode_480',['openmode',['../openmode_8h.html#a4172803d88f79140493760c26cbf1ea4',1,'file']]],
   ['openmode_2eh_481',['openmode.h',['../openmode_8h.html',1,'']]],
-  ['operator_482',['operator',['../classini_1_1basic__ini.html#a6292f3ea4d420d36d0aec79af78ff65e',1,'ini::basic_ini']]],
+  ['operator_482',['operator',['../classini_1_1basic__ini.html#a76df536c85226aa2da4314c8cc0d22e3',1,'ini::basic_ini']]],
   ['operator_20base_483',['operator base',['../structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a',1,'opt::casting_optional::operator base()'],['../structopt_1_1unsafe__optional.html#a776d7e680725efac51996a30e8d56ee3',1,'opt::unsafe_optional::operator base()']]],
   ['operator_20base_20_26_484',['operator base &amp;',['../structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a',1,'opt::casting_optional::operator base &amp;()'],['../structopt_1_1unsafe__optional.html#a1ca806aff66f794275c047b13f2cf425',1,'opt::unsafe_optional::operator base &amp;()']]],
   ['operator_20bool_485',['operator bool',['../classcolor_1_1basic__sync.html#a89d9e03b500fdb1f31afae12024051d4',1,'color::basic_sync']]],

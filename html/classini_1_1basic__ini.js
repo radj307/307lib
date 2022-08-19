@@ -1,15 +1,15 @@
 var classini_1_1basic__ini =
 [
-    [ "base_t", "classini_1_1basic__ini.html#a6b559702cb373d285fca3d67f684ca82", null ],
-    [ "config_t", "classini_1_1basic__ini.html#ad00ef93a0904275b9d0bef2c10cb00b5", null ],
+    [ "base_t", "classini_1_1basic__ini.html#a055fc32a174b7fa6dd7bc867f26f1834", null ],
+    [ "config_t", "classini_1_1basic__ini.html#a9281c703d28a5e44fc61063caa33d846", null ],
     [ "const_iterator", "classini_1_1basic__ini.html#a48be7107ab050377ddfbdb7398d3ebef", null ],
     [ "inner_const_iterator", "classini_1_1basic__ini.html#a8cff5ef3fb49a5c415080e9f1ea0a469", null ],
     [ "inner_iterator", "classini_1_1basic__ini.html#a2de5e20a203fcdfdd5cbc525f4816aa8", null ],
-    [ "istream_t", "classini_1_1basic__ini.html#a45ee7eebf119b38432ed35f9b3c81661", null ],
+    [ "istream_t", "classini_1_1basic__ini.html#a60c6c4f07ce80cbf26f5e592a8a1c2d2", null ],
     [ "iterator", "classini_1_1basic__ini.html#a9a8bb09f32f465ac3b0e40bb455b0c9b", null ],
-    [ "section_t", "classini_1_1basic__ini.html#a85775e2cf281a799544ec679bc1295d8", null ],
-    [ "string_t", "classini_1_1basic__ini.html#afa12b0a076e3e36e04e7a7dc5af0aa10", null ],
-    [ "this_t", "classini_1_1basic__ini.html#a2e6c38ef1cc2e4ea51f4caba0c6f6452", null ],
+    [ "section_t", "classini_1_1basic__ini.html#a4bc7ae420603c43361dfefb22aab05f4", null ],
+    [ "string_t", "classini_1_1basic__ini.html#a57e17746237c1a963ef10f0c6fa29cd7", null ],
+    [ "this_t", "classini_1_1basic__ini.html#a31b934611c19279383030a1279ea4741", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a5925844a914c6fb043dce85be2eefd9f", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a46c6585ebe9599321225163d7973a3b1", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#ad0a6381ee73e02d858034300b7e68d55", null ],
@@ -20,13 +20,13 @@ var classini_1_1basic__ini =
     [ "basic_ini", "classini_1_1basic__ini.html#a0e71ccbaf5fc02b24d5efb57c3f0358a", null ],
     [ "~basic_ini", "classini_1_1basic__ini.html#a0deb2376359cafaed69784b1de40850b", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a45db9e414b5b971812a5055ebe437888", null ],
-    [ "deep_merge", "classini_1_1basic__ini.html#aeb8eeb63a9d4fa484966ed7528886088", null ],
-    [ "operator", "classini_1_1basic__ini.html#a6292f3ea4d420d36d0aec79af78ff65e", null ],
+    [ "deep_merge", "classini_1_1basic__ini.html#adb7025c4ee1e9e4236e66148a741f128", null ],
+    [ "operator", "classini_1_1basic__ini.html#a76df536c85226aa2da4314c8cc0d22e3", null ],
     [ "operator+=", "classini_1_1basic__ini.html#ac34c5e86d29b0128fe4a7ffcc8bf8c11", null ],
     [ "operator=", "classini_1_1basic__ini.html#a0df79f2fc259fb1c76041a834eb660d6", null ],
     [ "operator=", "classini_1_1basic__ini.html#a66311f14c70b77a6fdf3c40808563221", null ],
     [ "operator=", "classini_1_1basic__ini.html#aa8edb9aa5e945636384afd0cee738d3d", null ],
     [ "operator=", "classini_1_1basic__ini.html#a440fdfc514bae28ede87f83b17b51876", null ],
     [ "read", "classini_1_1basic__ini.html#a5633ea1ff53d6fc481ae34cf903375c2", null ],
-    [ "write", "classini_1_1basic__ini.html#a1506461dd44e872310899b535405da42", null ]
+    [ "write", "classini_1_1basic__ini.html#ab8128ca44a981716d7a67119167fcabc", null ]
 ];

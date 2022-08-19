@@ -13,6 +13,7 @@ var sysarch_8h =
     [ "LANG_CPPCLI", "sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49", null ],
     [ "make_bitfield", "sysarch_8h.html#ac63303f125e7fc3e55ed269ad3e5a765", null ],
     [ "make_bitfield_operators", "sysarch_8h.html#ab1dce8e20c9f97a577a0acac4271f48a", null ],
+    [ "make_comparison_operators", "sysarch_8h.html#aa317d7667b2a629809a976615f6c2260", null ],
     [ "make_typed_bitfield", "sysarch_8h.html#a497406d57c25f1a3af07d4ea66f470ed", null ],
     [ "MULTITHREADING_CAPABLE", "sysarch_8h.html#a0953a4caf523a36eafb8ff32b47d4b79", null ],
     [ "nameof", "sysarch_8h.html#ae0b5ede0ef0c14f0f7567d50724c3026", null ],

@@ -103,8 +103,7 @@ Include dependency graph for sysarch.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sysarch_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="sysarch_8h_source.html">Go to the source code of this file.</a></p>
@@ -151,6 +150,8 @@ Macros</h2></td></tr>
 <tr class="separator:ac63303f125e7fc3e55ed269ad3e5a765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1dce8e20c9f97a577a0acac4271f48a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_bitfield_operators</b>(enumName,  enumType)</td></tr>
 <tr class="separator:ab1dce8e20c9f97a577a0acac4271f48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa317d7667b2a629809a976615f6c2260"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>make_comparison_operators</b>(enumName,  enumType)</td></tr>
+<tr class="separator:aa317d7667b2a629809a976615f6c2260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a497406d57c25f1a3af07d4ea66f470ed"><td class="memItemLeft" align="right" valign="top"><a id="a497406d57c25f1a3af07d4ea66f470ed"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>make_typed_bitfield</b>(enumName,  enumType, ...)&#160;&#160;&#160;enum class $_$unwrap(enumName) : $_$unwrap(enumType) { __VA_ARGS__ }; $make_bitfield_operators(enumName, enumType)</td></tr>
 <tr class="separator:a497406d57c25f1a3af07d4ea66f470ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -457,11 +458,41 @@ Macros</h2></td></tr>
 <div class="line">INLINE enumName operator^(enumName <span class="keyword">const</span>&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
 <div class="line">INLINE enumName&amp; operator|=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) | $c(<span class="keywordtype">int</span>, r))); } \</div>
 <div class="line">INLINE enumName&amp; operator&amp;=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">INLINE enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); } \</div>
-<div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator==(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) == r;}              \</div>
-<div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator!=(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) != r;}</div>
+<div class="line">INLINE enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00366">366</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+
+</div>
+</div>
+<a id="aa317d7667b2a629809a976615f6c2260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa317d7667b2a629809a976615f6c2260">&#9670;&nbsp;</a></span>make_comparison_operators</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define make_comparison_operators</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enumName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enumType&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> CONSTEXPR <span class="keywordtype">bool</span> operator==(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) == r;}              \</div>
+<div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator!=(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) != r;}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00374">374</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>

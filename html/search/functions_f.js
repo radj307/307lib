@@ -2,7 +2,7 @@ var searchData=
 [
   ['locale_1268',['locale',['../structstr_1_1_set_locale.html#a1b93f9e0cc9c0c2a88898c07cd44cb41',1,'str::SetLocale']]],
   ['objectnode_1269',['ObjectNode',['../structjson_1_1_object_node.html#a914742cf0befd1ccff762627ba18bce1',1,'json::ObjectNode']]],
-  ['operator_1270',['operator',['../classini_1_1basic__ini.html#a6292f3ea4d420d36d0aec79af78ff65e',1,'ini::basic_ini']]],
+  ['operator_1270',['operator',['../classini_1_1basic__ini.html#a76df536c85226aa2da4314c8cc0d22e3',1,'ini::basic_ini']]],
   ['operator_20base_1271',['operator base',['../structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a',1,'opt::casting_optional::operator base()'],['../structopt_1_1unsafe__optional.html#a776d7e680725efac51996a30e8d56ee3',1,'opt::unsafe_optional::operator base()']]],
   ['operator_20base_20_26_1272',['operator base &amp;',['../structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a',1,'opt::casting_optional::operator base &amp;()'],['../structopt_1_1unsafe__optional.html#a1ca806aff66f794275c047b13f2cf425',1,'opt::unsafe_optional::operator base &amp;()']]],
   ['operator_20bool_1273',['operator bool',['../classcolor_1_1basic__sync.html#a89d9e03b500fdb1f31afae12024051d4',1,'color::basic_sync']]],
