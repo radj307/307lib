@@ -40,8 +40,15 @@ var strmanip_8hpp =
     [ "toMap", "strmanip_8hpp.html#a88947ca78984e05f41dd36fb221d32d6", null ],
     [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ],
     [ "trim", "strmanip_8hpp.html#ae08aac1680da8afe0bb6a06c2b129487", null ],
+    [ "trim", "strmanip_8hpp.html#a922b42c14f2696e7b7598127f2994874", null ],
+    [ "trim", "strmanip_8hpp.html#a65d75f0e774d1dc8435a8d23e7f2c7f2", null ],
+    [ "trim", "strmanip_8hpp.html#a46e66bef2ea5926128e48eb7290b4bcc", null ],
     [ "trim_preceeding", "strmanip_8hpp.html#a663cf5e6a2789f130f7bca9b2bc139b1", null ],
     [ "trim_preceeding", "strmanip_8hpp.html#ab9aa2445b504ba751cfd01ffff800516", null ],
+    [ "trim_preceeding", "strmanip_8hpp.html#a16d70395beb3eac2d1eb1d4db2239d3a", null ],
+    [ "trim_preceeding", "strmanip_8hpp.html#aab478eeb7dfa7d0d4fd175316412126f", null ],
     [ "trim_trailing", "strmanip_8hpp.html#ae62653424221ea585a928a2dd1c7dbd6", null ],
-    [ "trim_trailing", "strmanip_8hpp.html#aac4273bb692df476dc585a89a67f3729", null ]
+    [ "trim_trailing", "strmanip_8hpp.html#aac4273bb692df476dc585a89a67f3729", null ],
+    [ "trim_trailing", "strmanip_8hpp.html#acbeabeae95260fb81a833b977510d899", null ],
+    [ "trim_trailing", "strmanip_8hpp.html#a9afd3d15679280008373868b588955f5", null ]
 ];

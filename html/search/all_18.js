@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['xfile_2ehpp_779',['xfile.hpp',['../xfile_8hpp.html',1,'']]],
-  ['xlog_780',['xLog',['../classxlog_1_1x_log.html',1,'xlog::xLog&lt; StreamType &gt;'],['../namespacexlog.html',1,'xlog'],['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog::xLog()']]],
-  ['xlog_2ehpp_781',['xlog.hpp',['../xlog_8hpp.html',1,'']]],
-  ['xlog_3c_20std_3a_3aostream_20_3e_782',['xLog&lt; std::ostream &gt;',['../classxlog_1_1x_log.html',1,'xlog']]],
-  ['xlog_5finclude_5fself_783',['XLOG_INCLUDE_SELF',['../xlog_8hpp.html#acc1febc783d68bd3cc54d615f1107b38',1,'xlog.hpp']]],
-  ['xlogs_784',['xLogs',['../classxlog_1_1x_logs.html',1,'xlog::xLogs&lt; StreamType &gt;'],['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs::xLogs()']]],
-  ['xmldocument_785',['XMLDocument',['../structxml_1_1_x_m_l_document.html',1,'xml']]],
-  ['xmlelement_786',['XMLElement',['../structxml_1_1_x_m_l_element.html',1,'xml::XMLElement'],['../structxml_1_1_x_m_l_element.html#ab04952c871ca50fd980517a9bf701d93',1,'xml::XMLElement::XMLElement()']]],
-  ['xmlparser_787',['XMLParser',['../classxml_1_1parser_1_1_x_m_l_parser.html',1,'xml::parser']]],
-  ['xmlprinter_788',['XMLPrinter',['../structxml_1_1_x_m_l_printer.html',1,'xml']]],
-  ['xmltokenizer_789',['XMLTokenizer',['../classxml_1_1parser_1_1_x_m_l_tokenizer.html',1,'xml::parser']]],
-  ['xrand_790',['xRand',['../structrng_1_1x_rand.html',1,'rng']]],
-  ['xrand_2ehpp_791',['xRand.hpp',['../x_rand_8hpp.html',1,'']]]
+  ['warning_791',['WARNING',['../structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e',1,'xlog::level']]],
+  ['wcolors_792',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]],
+  ['what_793',['what',['../classex_1_1except.html#ad6e1ad112e7126e4d9b39998640d7ebf',1,'ex::except']]],
+  ['white_794',['white',['../color-values_8h.html#a84e5ca1ca60a23294347ec0c3a34c373',1,'color']]],
+  ['wini_795',['wINI',['../namespaceini.html#ad3c0772cbf16ea0f0f067c133bbb9c06',1,'ini']]],
+  ['write_796',['write',['../classfile_1_1ini_1_1_m_i_n_i.html#a53a8b73df5ae4009f18d8e3c1af37d0e',1,'file::ini::MINI::write()'],['../structxml_1_1_x_m_l_document.html#aac4b7286ac9d5e219fc827b2dd2af15a',1,'xml::XMLDocument::write(const std::string &amp;, XMLDocument &amp;&amp;)'],['../structxml_1_1_x_m_l_document.html#a22d54326f7502c90d0e20e0a1a8a5849',1,'xml::XMLDocument::write(const std::string &amp;)'],['../structprocess_1_1_proc.html#a9b1401682e80ff728a3974a367ec79a8',1,'process::Proc::write()'],['../classxlog_1_1x_log.html#a45960d1e4b3b5dc7246ee4828956053f',1,'xlog::xLog::write()'],['../structprocess_1_1_mode.html#abfd9e4654085f06ae291dee9de602740',1,'process::Mode::WRITE()'],['../fileo_8hpp.html#a5794fe53e34c960c01867e343d3ab1fd',1,'file::write()']]],
+  ['write_5fselective_797',['write_selective',['../classfile_1_1ini_1_1_m_i_n_i.html#a430adeac5557c2e2d528e5d6e7e09af0',1,'file::ini::MINI']]],
+  ['write_5fto_798',['write_to',['../fileo_8hpp.html#aace8e069f80f7da90d8df3f543a9a454',1,'file::write_to(const std::filesystem::path &amp;path, std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;buffer, openmode const &amp;mode=openmode::out|openmode::trunc)'],['../fileo_8hpp.html#a8f93c637cfcfa42446ef765c86d7b35e',1,'file::write_to(const std::filesystem::path &amp;path, std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt; &amp;&amp;buffer, const bool &amp;append)']]],
+  ['wsync_799',['wsync',['../color-sync_8hpp.html#abcdff50c2ea952d040d53048a0cadb9d',1,'color']]]
 ];

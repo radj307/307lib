@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['legacy_920',['legacy',['../namespacelegacy.html',1,'']]]
+  ['legacy_944',['legacy',['../namespacelegacy.html',1,'']]]
 ];

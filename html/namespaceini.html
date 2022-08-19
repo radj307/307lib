@@ -85,6 +85,11 @@ $(document).ready(function(){initNavTree('namespaceini.html',''); initResizable(
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ini Namespace Reference</div>  </div>
 </div><!--header-->
@@ -92,9 +97,332 @@ $(document).ready(function(){initNavTree('namespaceini.html',''); initResizable(
 
 <p>Contains everything used for tokenizing, parsing, storing, and interacting with INI configuration files.  
 <a href="namespaceini.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html">basic_ini</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inherits directly from ini_container, and provides extra methods for reading/writing, handling nested keys, and type conversions.  <a href="classini_1_1basic__ini.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes properties that can be used to configure the INI parser's behaviour.  <a href="structini_1_1ini__parser__config.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aa815c2597246569dec20bb2e817816c4"><td class="memItemLeft" align="right" valign="top"><a id="aa815c2597246569dec20bb2e817816c4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Container</b> = <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
+<tr class="separator:aa815c2597246569dec20bb2e817816c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada838d05b9972e788b5e186234e98b3"><td class="memItemLeft" align="right" valign="top"><a id="aada838d05b9972e788b5e186234e98b3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#aada838d05b9972e788b5e186234e98b3">INI</a> = <a class="el" href="classini_1_1basic__ini.html">basic_ini</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
+<tr class="memdesc:aada838d05b9972e788b5e186234e98b3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a> that uses narrow-width <code>char</code> types. <br /></td></tr>
+<tr class="separator:aada838d05b9972e788b5e186234e98b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779f085289b73c23882ba9099e1699ee"><td class="memTemplParams" colspan="2"><a id="a779f085289b73c23882ba9099e1699ee"></a>
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc&gt; </td></tr>
+<tr class="memitem:a779f085289b73c23882ba9099e1699ee"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a> = typename std::unordered_map&lt; std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;, <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt; &gt;</td></tr>
+<tr class="memdesc:a779f085289b73c23882ba9099e1699ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outer container of an INI storage object. <br /></td></tr>
+<tr class="separator:a779f085289b73c23882ba9099e1699ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3180c5e4ec888e6213a18a2f8529414e"><td class="memTemplParams" colspan="2"><a id="a3180c5e4ec888e6213a18a2f8529414e"></a>
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc&gt; </td></tr>
+<tr class="memitem:a3180c5e4ec888e6213a18a2f8529414e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a> = typename std::unordered_map&lt; std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;, std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; &gt;</td></tr>
+<tr class="memdesc:a3180c5e4ec888e6213a18a2f8529414e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An inner section of an INI storage object. <br /></td></tr>
+<tr class="separator:a3180c5e4ec888e6213a18a2f8529414e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7555a55451ec8deddcf3a675c327c1fd"><td class="memItemLeft" align="right" valign="top"><a id="a7555a55451ec8deddcf3a675c327c1fd"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Section</b> = <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
+<tr class="separator:a7555a55451ec8deddcf3a675c327c1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d92af685923da8696bf2a587af5b94"><td class="memItemLeft" align="right" valign="top"><a id="aa4d92af685923da8696bf2a587af5b94"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>wContainer</b> = <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
+<tr class="separator:aa4d92af685923da8696bf2a587af5b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c0772cbf16ea0f0f067c133bbb9c06"><td class="memItemLeft" align="right" valign="top"><a id="ad3c0772cbf16ea0f0f067c133bbb9c06"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#ad3c0772cbf16ea0f0f067c133bbb9c06">wINI</a> = <a class="el" href="classini_1_1basic__ini.html">basic_ini</a>&lt; wchar_t, std::char_traits&lt; wchar_t &gt;, std::allocator&lt; wchar_t &gt; &gt;</td></tr>
+<tr class="memdesc:ad3c0772cbf16ea0f0f067c133bbb9c06"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a> that uses wide-width <code>wchar_t</code> types. <br /></td></tr>
+<tr class="separator:ad3c0772cbf16ea0f0f067c133bbb9c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab107e1aee9693fe2118488ef822d5203"><td class="memItemLeft" align="right" valign="top"><a id="ab107e1aee9693fe2118488ef822d5203"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>wSection</b> = <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; char, std::char_traits&lt; char &gt;, std::allocator&lt; char &gt; &gt;</td></tr>
+<tr class="separator:ab107e1aee9693fe2118488ef822d5203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:afae6ae776ec6a5c0dd062337491be7cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> : unsigned char { <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f">OverrideStyle::Throw</a>, 
+<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, 
+<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda72ef2b9b6965d078e3c7f95487a82d1c">OverrideStyle::Skip</a>
+ }</td></tr>
+<tr class="memdesc:afae6ae776ec6a5c0dd062337491be7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle duplicate keys.  <a href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">More...</a><br /></td></tr>
+<tr class="separator:afae6ae776ec6a5c0dd062337491be7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb8db26b125d33be901f8a3c29b1a0a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">SyntaxErrorStyle</a> : unsigned char { <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f">SyntaxErrorStyle::Throw</a>, 
+<a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9">SyntaxErrorStyle::Ignore</a>
+ }</td></tr>
+<tr class="memdesc:abfb8db26b125d33be901f8a3c29b1a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle syntax errors on a line.  <a href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">More...</a><br /></td></tr>
+<tr class="separator:abfb8db26b125d33be901f8a3c29b1a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4c5625f3347e407e39599efc3bde3d54"><td class="memItemLeft" align="right" valign="top"><a id="a4c5625f3347e407e39599efc3bde3d54"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#a4c5625f3347e407e39599efc3bde3d54">$DefineExcept</a> (ini_file_not_found_exception)</td></tr>
+<tr class="memdesc:a4c5625f3347e407e39599efc3bde3d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI file wasn't found at the specified path. <br /></td></tr>
+<tr class="separator:a4c5625f3347e407e39599efc3bde3d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adacf494ae894985a62c1ad1358dee0dd"><td class="memItemLeft" align="right" valign="top"><a id="adacf494ae894985a62c1ad1358dee0dd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#adacf494ae894985a62c1ad1358dee0dd">$DefineExcept</a> (ini_key_exception)</td></tr>
+<tr class="memdesc:adacf494ae894985a62c1ad1358dee0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate INI key exception. <br /></td></tr>
+<tr class="separator:adacf494ae894985a62c1ad1358dee0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0779dcd93a14d160c0ff6347cb52112"><td class="memItemLeft" align="right" valign="top"><a id="aa0779dcd93a14d160c0ff6347cb52112"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#aa0779dcd93a14d160c0ff6347cb52112">$DefineExcept</a> (ini_syntax_exception)</td></tr>
+<tr class="memdesc:aa0779dcd93a14d160c0ff6347cb52112"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI syntax error exception. <br /></td></tr>
+<tr class="separator:aa0779dcd93a14d160c0ff6347cb52112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0822532e4d77f8b47cad1dafbeb743b"><td class="memItemLeft" align="right" valign="top"><a id="ab0822532e4d77f8b47cad1dafbeb743b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$make_typed_bitfield</b> (CommentStyle, char, None=0, Pound=1, Semicolon=2, Both=Pound|Semicolon,)</td></tr>
+<tr class="separator:ab0822532e4d77f8b47cad1dafbeb743b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d14010794aea44ba1daddbb57ef7b6"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::same_or_convertible&lt; std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&gt; THeader&gt; </td></tr>
+<tr class="memitem:a42d14010794aea44ba1daddbb57ef7b6"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;, <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a42d14010794aea44ba1daddbb57ef7b6">make_section</a> (THeader const &amp;header, <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;section)</td></tr>
+<tr class="memdesc:a42d14010794aea44ba1daddbb57ef7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of an INI section pair that can be passed to the constructor of <a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a>.  <a href="namespaceini.html#a42d14010794aea44ba1daddbb57ef7b6">More...</a><br /></td></tr>
+<tr class="separator:a42d14010794aea44ba1daddbb57ef7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0032664004d1aba4453a58a4da9281d"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:af0032664004d1aba4453a58a4da9281d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#af0032664004d1aba4453a58a4da9281d">parse</a> (std::basic_istream&lt; TChar, TCharTraits &gt; &amp;&amp;is, <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;config={}) noexcept(false)</td></tr>
+<tr class="memdesc:af0032664004d1aba4453a58a4da9281d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream rvalue into an INI container object.  <a href="namespaceini.html#af0032664004d1aba4453a58a4da9281d">More...</a><br /></td></tr>
+<tr class="separator:af0032664004d1aba4453a58a4da9281d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa262ce6e9733d084815ff6a859ec59"><td class="memTemplParams" colspan="2">template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:aafa262ce6e9733d084815ff6a859ec59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#aafa262ce6e9733d084815ff6a859ec59">parse</a> (std::basic_istream&lt; TChar, TCharTraits &gt; &amp;is, <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;config={}) noexcept(false)</td></tr>
+<tr class="memdesc:aafa262ce6e9733d084815ff6a859ec59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream into an INI container object.  <a href="namespaceini.html#aafa262ce6e9733d084815ff6a859ec59">More...</a><br /></td></tr>
+<tr class="separator:aafa262ce6e9733d084815ff6a859ec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains everything used for tokenizing, parsing, storing, and interacting with INI configuration files. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="afae6ae776ec6a5c0dd062337491be7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae6ae776ec6a5c0dd062337491be7cd">&#9670;&nbsp;</a></span>OverrideStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">ini::OverrideStyle</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines how to handle duplicate keys. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f"></a>Throw&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, throw an <code>ini_key_exception</code>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849"></a>Override&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, override the existing key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda72ef2b9b6965d078e3c7f95487a82d1c"></a>Skip&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, skip it. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00041">41</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abfb8db26b125d33be901f8a3c29b1a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb8db26b125d33be901f8a3c29b1a0a">&#9670;&nbsp;</a></span>SyntaxErrorStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">ini::SyntaxErrorStyle</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines how to handle syntax errors on a line. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f"></a>Throw&#160;</td><td class="fielddoc"><p>When the syntax on a line is invalid, throw an <code>ini_syntax_exception</code>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9"></a>Ignore&#160;</td><td class="fielddoc"><p>When the syntax on a line is invalid, ignore it and continue. Header lines may have preceding or trailing non-whitespace/comment characters, but they are not parsed! </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00053">53</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a42d14010794aea44ba1daddbb57ef7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d14010794aea44ba1daddbb57ef7b6">&#9670;&nbsp;</a></span>make_section()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::same_or_convertible&lt; std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&gt; THeader&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::basic_string&lt;TChar, TCharTraits, TAlloc&gt;, <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt;TChar, TCharTraits, TAlloc&gt; &gt; ini::make_section </td>
+          <td>(</td>
+          <td class="paramtype">THeader const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>section</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of an INI section pair that can be passed to the constructor of <a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The header name of the section. </td></tr>
+    <tr><td class="paramname">section</td><td>The contents of the section. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A key-section pair. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00389">389</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceini_a42d14010794aea44ba1daddbb57ef7b6_cgraph.svg" width="147" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceini_a42d14010794aea44ba1daddbb57ef7b6_icgraph.svg" width="147" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af0032664004d1aba4453a58a4da9281d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0032664004d1aba4453a58a4da9281d">&#9670;&nbsp;</a></span>parse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt;TChar, TCharTraits, TAlloc&gt; ini::parse </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_istream&lt; TChar, TCharTraits &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>config</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the given input stream rvalue into an INI container object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>The rvalue reference of an input stream to parse data from. </td></tr>
+    <tr><td class="paramname">config</td><td>Optional configuration object that changes the behaviour of the parser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An ini_container type that contains all headers, keys, and values from the input stream. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ini_syntax_exception</td><td>Input stream contains invalid syntax, and the syntaxErrorStyle specified by the config was <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f" title="When the syntax on a line is invalid, throw an ini_syntax_exception.">SyntaxErrorStyle::Throw</a> </td></tr>
+    <tr><td class="paramname">ini_key_exception</td><td>Input stream contains duplicate keys, and the overrideStyle specified by the config was <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f" title="When a duplicate key is encountered, throw an ini_key_exception.">OverrideStyle::Throw</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00223">223</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aafa262ce6e9733d084815ff6a859ec59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa262ce6e9733d084815ff6a859ec59">&#9670;&nbsp;</a></span>parse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt;TChar, TCharTraits, TAlloc&gt; ini::parse </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_istream&lt; TChar, TCharTraits &gt; &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>config</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the given input stream into an INI container object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>An input stream to parse data from. </td></tr>
+    <tr><td class="paramname">config</td><td>Optional configuration object that changes the behaviour of the parser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An ini_container type that contains all headers, keys, and values from the input stream. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ini_syntax_exception</td><td>Input stream contains invalid syntax, and the syntaxErrorStyle specified by the config was <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f" title="When the syntax on a line is invalid, throw an ini_syntax_exception.">SyntaxErrorStyle::Throw</a> </td></tr>
+    <tr><td class="paramname">ini_key_exception</td><td>Input stream contains duplicate keys, and the overrideStyle specified by the config was <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f" title="When a duplicate key is encountered, throw an ini_key_exception.">OverrideStyle::Throw</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00155">155</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

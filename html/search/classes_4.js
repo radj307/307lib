@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['index_839',['Index',['../structopt_1_1_index.html',1,'opt']]],
-  ['ini_840',['INI',['../structfile_1_1ini_1_1_i_n_i.html',1,'file::ini']]],
-  ['inicontainer_841',['INIContainer',['../classfile_1_1ini_1_1_i_n_i_container.html',1,'file::ini']]],
-  ['iniparser_842',['INIParser',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html',1,'file::ini::tokenizer']]],
-  ['initokenizer_843',['INITokenizer',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html',1,'file::ini::tokenizer']]],
-  ['input_844',['Input',['../structopt_1_1token_1_1_parser_1_1_input.html',1,'opt::token::Parser']]],
-  ['inputwrapper_845',['InputWrapper',['../structopt_1_1_input_wrapper.html',1,'opt']]],
-  ['is_5fless_5fthan_846',['is_less_than',['../structvar_1_1is__less__than.html',1,'var']]],
-  ['is_5fmore_5fthan_847',['is_more_than',['../structvar_1_1is__more__than.html',1,'var']]],
-  ['is_5fsame_5fas_848',['is_same_as',['../structvar_1_1is__same__as.html',1,'var']]],
-  ['iteratingcoreparserbase_849',['IteratingCoreParserBase',['../classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html',1,'token::base::gen2']]],
-  ['iteratingcoreparserbase_3c_20tokentype_2c_20tokenbase_3c_20tokentype_20_3e_20_3e_850',['IteratingCoreParserBase&lt; TokenType, TokenBase&lt; TokenType &gt; &gt;',['../classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html',1,'token::base::gen2']]]
+  ['index_862',['Index',['../structopt_1_1_index.html',1,'opt']]],
+  ['ini_863',['INI',['../structfile_1_1ini_1_1_i_n_i.html',1,'file::ini']]],
+  ['ini_5fparser_5fconfig_864',['ini_parser_config',['../structini_1_1ini__parser__config.html',1,'ini']]],
+  ['inicontainer_865',['INIContainer',['../classfile_1_1ini_1_1_i_n_i_container.html',1,'file::ini']]],
+  ['iniparser_866',['INIParser',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html',1,'file::ini::tokenizer']]],
+  ['initokenizer_867',['INITokenizer',['../structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html',1,'file::ini::tokenizer']]],
+  ['input_868',['Input',['../structopt_1_1token_1_1_parser_1_1_input.html',1,'opt::token::Parser']]],
+  ['inputwrapper_869',['InputWrapper',['../structopt_1_1_input_wrapper.html',1,'opt']]],
+  ['is_5fless_5fthan_870',['is_less_than',['../structvar_1_1is__less__than.html',1,'var']]],
+  ['is_5fmore_5fthan_871',['is_more_than',['../structvar_1_1is__more__than.html',1,'var']]],
+  ['is_5fsame_5fas_872',['is_same_as',['../structvar_1_1is__same__as.html',1,'var']]],
+  ['iteratingcoreparserbase_873',['IteratingCoreParserBase',['../classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html',1,'token::base::gen2']]],
+  ['iteratingcoreparserbase_3c_20tokentype_2c_20tokenbase_3c_20tokentype_20_3e_20_3e_874',['IteratingCoreParserBase&lt; TokenType, TokenBase&lt; TokenType &gt; &gt;',['../classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html',1,'token::base::gen2']]]
 ];

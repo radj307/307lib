@@ -26,6 +26,7 @@ var annotated_dup =
         [ "MINI", "classfile_1_1ini_1_1_m_i_n_i.html", "classfile_1_1ini_1_1_m_i_n_i" ]
       ] ]
     ] ],
+    [ "ini", "namespaceini.html", "namespaceini" ],
     [ "json", "namespacejson.html", "namespacejson" ],
     [ "matrix", null, [
       [ "basic_matrix", "structmatrix_1_1basic__matrix.html", "structmatrix_1_1basic__matrix" ],

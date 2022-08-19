@@ -51,6 +51,10 @@ var hierarchy =
       ] ]
     ] ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
+    [ "ini_container", null, [
+      [ "ini::basic_ini< TChar, TCharTraits, TAlloc >", "classini_1_1basic__ini.html", null ]
+    ] ],
+    [ "ini::ini_parser_config< TChar, TCharTraits, TAlloc >", "structini_1_1ini__parser__config.html", null ],
     [ "file::ini::INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", [
       [ "file::ini::INI", "structfile_1_1ini_1_1_i_n_i.html", null ]
     ] ],

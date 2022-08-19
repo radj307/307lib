@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['_7ebasiccoreparserbase_970',['~BasicCoreParserBase',['../classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#a97905ca2c48f89212f02d0324e66904d',1,'token::base::gen2::BasicCoreParserBase']]],
-  ['_7eflagbase_971',['~FlagBase',['../classcolor_1_1format_1_1_flag_base.html#a0afa2c37df194e1a63aeceeee3d48aaf',1,'color::format::FlagBase']]],
-  ['_7eiteratingcoreparserbase_972',['~IteratingCoreParserBase',['../classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html#a272c5f945876b91899f0fd22af2f1d27',1,'token::base::gen2::IteratingCoreParserBase']]],
-  ['_7elexemedictbase_973',['~LexemeDictBase',['../structtoken_1_1base_1_1_lexeme_dict_base.html#a93110b6c0908f98f3ac9a3e914714102',1,'token::base::LexemeDictBase']]],
-  ['_7eparserbase_974',['~ParserBase',['../classtoken_1_1base_1_1gen2_1_1_parser_base.html#a14707904f40838226478340b749a8042',1,'token::base::gen2::ParserBase']]],
-  ['_7eproc_975',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]],
-  ['_7etokenbase_976',['~TokenBase',['../structtoken_1_1base_1_1_token_base.html#a5c38603a86cd922391783326ed593f6f',1,'token::base::TokenBase']]],
-  ['_7etokenizerbase_977',['~TokenizerBase',['../classtoken_1_1base_1_1_tokenizer_base.html#a31911e275af4e0a6244c12b5e4b45bcb',1,'token::base::TokenizerBase']]],
-  ['_7etokenparserbase_978',['~TokenParserBase',['../classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab',1,'token::base::gen1::TokenParserBase']]]
+  ['_7ebasic_5fcolors_814',['~basic_colors',['../classterm_1_1basic__colors.html#a9f7dcaea24dc03ab60f3bcadc5cc8adb',1,'term::basic_colors']]],
+  ['_7ebasic_5fini_815',['~basic_ini',['../classini_1_1basic__ini.html#a0deb2376359cafaed69784b1de40850b',1,'ini::basic_ini']]],
+  ['_7econtainernode_816',['~ContainerNode',['../structjson_1_1_container_node.html#a2427fb60d8bde3c3797776dbe1304bac',1,'json::ContainerNode']]],
+  ['_7eproc_817',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]],
+  ['_7etokenbase_818',['~TokenBase',['../structtoken_1_1base_1_1_token_base.html#a5c38603a86cd922391783326ed593f6f',1,'token::base::TokenBase']]],
+  ['_7etokenparserbase_819',['~TokenParserBase',['../classtoken_1_1base_1_1gen1_1_1_token_parser_base.html#a90411a7d65d4ef9c6c26d0c4b857cbab',1,'token::base::gen1::TokenParserBase']]]
 ];

@@ -105,17 +105,20 @@ $(document).ready(function(){initNavTree('strmanip_8hpp.html',''); initResizable
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strmanip.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strmanip_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strmanip_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -261,6 +264,17 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:ae08aac1680da8afe0bb6a06c2b129487"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae08aac1680da8afe0bb6a06c2b129487">str::trim</a> (std::string const &amp;str, const std::string &amp;chars=&quot; \t\r\n\v&quot;)</td></tr>
 <tr class="memdesc:ae08aac1680da8afe0bb6a06c2b129487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding &amp; trailing characters from a given string.  <a href="namespacestr.html#ae08aac1680da8afe0bb6a06c2b129487">More...</a><br /></td></tr>
 <tr class="separator:ae08aac1680da8afe0bb6a06c2b129487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a922b42c14f2696e7b7598127f2994874"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a922b42c14f2696e7b7598127f2994874"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a922b42c14f2696e7b7598127f2994874">str::trim</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memdesc:a922b42c14f2696e7b7598127f2994874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding &amp; trailing characters from a given string.  <a href="namespacestr.html#a922b42c14f2696e7b7598127f2994874">More...</a><br /></td></tr>
+<tr class="separator:a922b42c14f2696e7b7598127f2994874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d75f0e774d1dc8435a8d23e7f2c7f2"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a65d75f0e774d1dc8435a8d23e7f2c7f2">str::trim</a> (std::string_view const &amp;str, const std::string &amp;chars=&quot; \t\r\n\v&quot;)</td></tr>
+<tr class="memdesc:a65d75f0e774d1dc8435a8d23e7f2c7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding &amp; trailing characters from a given string.  <a href="namespacestr.html#a65d75f0e774d1dc8435a8d23e7f2c7f2">More...</a><br /></td></tr>
+<tr class="separator:a65d75f0e774d1dc8435a8d23e7f2c7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e66bef2ea5926128e48eb7290b4bcc"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a46e66bef2ea5926128e48eb7290b4bcc"><td class="memTemplItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a46e66bef2ea5926128e48eb7290b4bcc">str::trim</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memdesc:a46e66bef2ea5926128e48eb7290b4bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding &amp; trailing characters from a given string.  <a href="namespacestr.html#a46e66bef2ea5926128e48eb7290b4bcc">More...</a><br /></td></tr>
+<tr class="separator:a46e66bef2ea5926128e48eb7290b4bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a663cf5e6a2789f130f7bca9b2bc139b1"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a663cf5e6a2789f130f7bca9b2bc139b1"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a663cf5e6a2789f130f7bca9b2bc139b1">str::trim_preceeding</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:a663cf5e6a2789f130f7bca9b2bc139b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a given string.  <a href="namespacestr.html#a663cf5e6a2789f130f7bca9b2bc139b1">More...</a><br /></td></tr>
@@ -268,6 +282,13 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:ab9aa2445b504ba751cfd01ffff800516"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab9aa2445b504ba751cfd01ffff800516">str::trim_preceeding</a> (std::string str, const std::string &amp;chars)</td></tr>
 <tr class="memdesc:ab9aa2445b504ba751cfd01ffff800516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a given string.  <a href="namespacestr.html#ab9aa2445b504ba751cfd01ffff800516">More...</a><br /></td></tr>
 <tr class="separator:ab9aa2445b504ba751cfd01ffff800516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d70395beb3eac2d1eb1d4db2239d3a"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a16d70395beb3eac2d1eb1d4db2239d3a"><td class="memTemplItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a16d70395beb3eac2d1eb1d4db2239d3a">str::trim_preceeding</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memdesc:a16d70395beb3eac2d1eb1d4db2239d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a given string_view.  <a href="namespacestr.html#a16d70395beb3eac2d1eb1d4db2239d3a">More...</a><br /></td></tr>
+<tr class="separator:a16d70395beb3eac2d1eb1d4db2239d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab478eeb7dfa7d0d4fd175316412126f"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aab478eeb7dfa7d0d4fd175316412126f">str::trim_preceeding</a> (std::string_view str, const std::string &amp;chars)</td></tr>
+<tr class="memdesc:aab478eeb7dfa7d0d4fd175316412126f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceeding characters from a given string_view.  <a href="namespacestr.html#aab478eeb7dfa7d0d4fd175316412126f">More...</a><br /></td></tr>
+<tr class="separator:aab478eeb7dfa7d0d4fd175316412126f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62653424221ea585a928a2dd1c7dbd6"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
 <tr class="memitem:ae62653424221ea585a928a2dd1c7dbd6"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae62653424221ea585a928a2dd1c7dbd6">str::trim_trailing</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:ae62653424221ea585a928a2dd1c7dbd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#ae62653424221ea585a928a2dd1c7dbd6">More...</a><br /></td></tr>
@@ -275,6 +296,13 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:aac4273bb692df476dc585a89a67f3729"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aac4273bb692df476dc585a89a67f3729">str::trim_trailing</a> (std::string str, const std::string &amp;chars)</td></tr>
 <tr class="memdesc:aac4273bb692df476dc585a89a67f3729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#aac4273bb692df476dc585a89a67f3729">More...</a><br /></td></tr>
 <tr class="separator:aac4273bb692df476dc585a89a67f3729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbeabeae95260fb81a833b977510d899"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
+<tr class="memitem:acbeabeae95260fb81a833b977510d899"><td class="memTemplItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acbeabeae95260fb81a833b977510d899">str::trim_trailing</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memdesc:acbeabeae95260fb81a833b977510d899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#acbeabeae95260fb81a833b977510d899">More...</a><br /></td></tr>
+<tr class="separator:acbeabeae95260fb81a833b977510d899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9afd3d15679280008373868b588955f5"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9afd3d15679280008373868b588955f5">str::trim_trailing</a> (std::string_view str, const std::string &amp;chars)</td></tr>
+<tr class="memdesc:a9afd3d15679280008373868b588955f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#a9afd3d15679280008373868b588955f5">More...</a><br /></td></tr>
+<tr class="separator:a9afd3d15679280008373868b588955f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains an assortment of string manipulation functions &amp; methods. <br  />

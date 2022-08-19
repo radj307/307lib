@@ -8,8 +8,8 @@ var dir_7e62b374f2d21189b905638bab9f8001 =
     [ "fileio.hpp", "fileio_8hpp.html", null ],
     [ "fileo.hpp", "fileo_8hpp.html", "fileo_8hpp" ],
     [ "fileutil.hpp", "fileutil_8hpp_source.html", null ],
-    [ "INI.hpp", "_i_n_i_8hpp_source.html", null ],
     [ "INIRedux.hpp", "_i_n_i_redux_8hpp.html", "_i_n_i_redux_8hpp" ],
     [ "openmode.h", "openmode_8h.html", "openmode_8h" ],
+    [ "simpleINI.hpp", "simple_i_n_i_8hpp.html", "simple_i_n_i_8hpp" ],
     [ "xfile.hpp", "xfile_8hpp.html", "xfile_8hpp" ]
 ];
