@@ -21,6 +21,13 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")	# clang
 	endif()
 endif()
 
+if (BUILD_SHARED_LIBS)
+	set(307lib_lib_type SHARED CACHE INTERNAL "")
+else()
+	set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+	set(307lib_lib_type STATIC CACHE INTERNAL "")
+endif()
+
 # Set a fallback version to use if the git tag couldn't be retrieved. (remote compiling, included as dependency, etc.)
 set(ENV{307lib_VERSION} "0.0.0")
 
@@ -78,7 +85,6 @@ add_library(307lib INTERFACE)
 # Set interface properties
 set_property(TARGET 307lib PROPERTY CXX_STANDARD 20)
 set_property(TARGET 307lib PROPERTY POSITION_INDEPENDENT_CODE ON)
-
 
 # Enables the testing library.
 option(307lib_build_testing "Enable the unstable development executable project in 307lib. This is not recommended." OFF)

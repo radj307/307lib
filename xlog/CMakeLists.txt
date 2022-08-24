@@ -1,13 +1,6 @@
 # 307lib/xlog
 cmake_minimum_required(VERSION 3.15)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-# Create project
-project(xlog VERSION ${307lib_VERSION} LANGUAGES CXX)
-
 # Get headers & sources
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -21,12 +14,13 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(xlog STATIC "${SRCS}")
+add_library(xlog ${307lib_lib_type} "${SRCS}")
 
 # Set library properties
 set_property(TARGET xlog PROPERTY CXX_STANDARD 20)
 set_property(TARGET xlog PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET xlog PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET xlog PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(xlog PRIVATE "${307lib_compiler_commandline}")
 

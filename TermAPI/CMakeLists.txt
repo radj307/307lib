@@ -1,13 +1,6 @@
 # 307lib/TermAPI
 cmake_minimum_required(VERSION 3.15)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-# Create TermAPI project
-project("TermAPI" VERSION ${307lib_VERSION} LANGUAGES CXX)
-
 # Get headers & sources
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -27,6 +20,7 @@ add_library(TermAPI STATIC "${SRCS}")
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET TermAPI PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET TermAPI PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(TermAPI PRIVATE "${307lib_compiler_commandline}")
 

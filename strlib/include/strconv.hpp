@@ -13,7 +13,9 @@
 #include <sysarch.h>
 #include <var.hpp>
 #include <stringify.hpp>
+#include <strcore.hpp>
 
+#include <concepts>
 #include <string>
 #include <sstream>
 #include <optional>
@@ -24,223 +26,9 @@
   * @brief Contains various string manipulation, conversion, and parsing functions
   */
 namespace str {
-
 	// TOLOWER
 
-#pragma region ChangeCase_Lower
-	/**
-	 * @brief		Convert a character stored in an int to lowercase.
-	 * @param c		Input character.
-	 * @returns		int
-	 */
-	inline CONSTEXPR int tolower(const int& c) noexcept
-	{
-		if (c >= static_cast<int>('A') && c <= static_cast<int>('Z'))
-			return c + 32;
-		return c;
-	}
-
-	/**
-	 * @brief		Convert a character to lowercase.
-	 * @param c		Char to convert. If the character is not an uppercase letter, it will be returned unmodified.
-	 * @returns		char
-	 */
-	[[nodiscard]] inline CONSTEXPR char tolower(const char& c) noexcept
-	{
-		if (c >= 'A' && c <= 'Z')
-			return c + static_cast<char>(32);
-		return c;
-	}
-
-	/**
-	 * @brief		Convert a convertible-character to lowercase.
-	 * @tparam T	Type that is convertible to char.
-	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
-	 * @returns		char
-	 */
-#if LANG_CPP >= 20 // v >= C++20
-	template<std::convertible_to<char> T>
-	[[nodiscard]] inline static CONSTEXPR char tolower(const T& c) noexcept
-	{
-		return tolower(static_cast<char>(c));
-	}
-#elif LANG_CPP >= 11 // C++11 <= v < C++20
-	template<typename T>
-	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, char> || std::is_convertible_v<T, char>, char> tolower(const T& c) noexcept
-	{
-		return tolower(std::move(static_cast<char>(c)));
-	}
-#endif
-
-	/**
-	 * @brief		Convert a whole string to lowercase.
-	 * @param str	String to convert.
-	 * @returns		std::string
-	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::string tolower(std::string str) noexcept
-	{
-		for (auto& ch : str)
-			ch = std::move(tolower(ch));
-		return str;
-	}
-
-#pragma endregion ChangeCase_Lower
-#pragma region ChangeCase_LowerWide
-
-	/**
-	 * @brief		Convert a character to lowercase.
-	 * @param c		Wide-char to convert. If the character is not an uppercase letter, it will be returned unmodified.
-	 * @returns		wchar_t
-	 */
-	[[nodiscard]] inline CONSTEXPR wchar_t tolower(const wchar_t& c) noexcept
-	{
-		if (c >= static_cast<wchar_t>('A') && c <= static_cast<wchar_t>('Z'))
-			return c + static_cast<wchar_t>(32);
-		return c;
-	}
-
-	/**
-	 * @brief		Convert a convertible-character to lowercase.
-	 * @tparam T	Type that is convertible to char.
-	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
-	 * @returns		char
-	 */
-#if LANG_CPP >= 20 // v >= C++20
-	template<std::convertible_to<wchar_t> T>
-	[[nodiscard]] inline static CONSTEXPR wchar_t tolower(const T& c) noexcept
-	{
-		return tolower(static_cast<wchar_t>(c));
-	}
-#elif LANG_CPP >= 11 // C++11 <= v < C++20
-	template<typename T>
-	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, wchar_t> || std::is_convertible_v<T, wchar_t>, wchar_t> tolower(const T& c) noexcept
-	{
-		return tolower(std::move(static_cast<wchar_t>(c)));
-	}
-#endif
-
-	/**
-	 * @brief		Convert a whole string to lowercase.
-	 * @param str	String to convert.
-	 * @returns		std::string
-	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::wstring tolower(std::wstring str) noexcept
-	{
-		for (auto& wch : str)
-			wch = std::move(tolower(wch));
-		return str;
-	}
-
-#pragma endregion ChangeCase_LowerWide
-
-	/// TOUPPER
-
-	/**
-	 * @brief		Convert a character stored in an int to uppercase.
-	 * @param c		Input character.
-	 * @returns		int
-	 */
-	inline CONSTEXPR int toupper(const int& c) noexcept
-	{
-		if (c >= static_cast<int>('a') && c <= static_cast<int>('a'))
-			return c - 32;
-		return c;
-	}
-
-#pragma region ChangeCase_Upper
-	/**
-	 * @brief Convert a character to uppercase.
-	 * @param c	- Char to convert. If the character is not a lowercase letter, it will be returned unmodified.
-	 * @returns char
-	 */
-	[[nodiscard]] inline CONSTEXPR char toupper(const char& c) noexcept
-	{
-		if (c >= 'a' && c <= 'z')
-			return c - static_cast<char>(32);
-		return c;
-	}
-
-	/**
-	 * @brief Convert a convertible-character to uppercase.
-	 * @tparam T	- Type that is convertible to char.
-	 * @param c		- Value to convert. If the value does not resolve to a lowercase letter, it will be returned as a character.
-	 * @returns char
-	 */
-#if LANG_CPP >= 20 // v >= C++20
-	template<typename T> requires std::convertible_to<T, char>
-	[[nodiscard]] inline static CONSTEXPR char toupper(const T& c) noexcept
-	{
-		return toupper(std::move(static_cast<char>(c)));
-	}
-#elif LANG_CPP >= 11 // C++11 <= v < C++20
-	template<typename T>
-	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_convertible_v<T, char>, char> toupper(const T& c)
-	{
-		return toupper(std::move(static_cast<char>(c)));
-	}
-#endif
-
-	/**
-	 * @brief Convert a whole string to lowercase.
-	 * @param str	- String to convert.
-	 * @returns std::string
-	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::string toupper(std::string str) noexcept
-	{
-		for (auto& ch : str)
-			ch = std::move(toupper(ch));
-		return str;
-	}
-
-#pragma endregion ChangeCase_Upper
-#pragma region ChangeCase_UpperWide
-
-	/**
-	 * @brief		Convert a character to lowercase.
-	 * @param c		Wide-char to convert. If the character is not an uppercase letter, it will be returned unmodified.
-	 * @returns		wchar_t
-	 */
-	[[nodiscard]] inline CONSTEXPR wchar_t toupper(const wchar_t& c) noexcept
-	{
-		if (c >= static_cast<wchar_t>('a') && c <= static_cast<wchar_t>('z'))
-			return c - static_cast<wchar_t>(32);
-		return c;
-	}
-
-	/**
-	 * @brief		Convert a convertible-character to lowercase.
-	 * @tparam T	Type that is convertible to char.
-	 * @param c		Value to convert. If the value does not resolve to an uppercase letter, it will be returned as a character.
-	 * @returns		char
-	 */
-#if LANG_CPP >= 20 // v >= C++20
-	template<std::convertible_to<wchar_t> T>
-	[[nodiscard]] inline static CONSTEXPR wchar_t toupper(const T& c) noexcept
-	{
-		return tolower(static_cast<wchar_t>(c));
-	}
-#elif LANG_CPP >= 11 // C++11 <= v < C++20
-	template<typename T>
-	[[nodiscard]] static CONSTEXPR std::enable_if_t<std::is_same_v<T, wchar_t> || std::is_convertible_v<T, wchar_t>, wchar_t> toupper(const T& c) noexcept
-	{
-		return tolower(std::move(static_cast<wchar_t>(c)));
-	}
-#endif
-
-	/**
-	 * @brief		Convert a whole string to lowercase.
-	 * @param str	String to convert.
-	 * @returns		std::string
-	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::wstring toupper(std::wstring str) noexcept
-	{
-		for (auto& wch : str)
-			wch = std::move(tolower(wch));
-		return str;
-	}
-
-#pragma endregion ChangeCase_UpperWide
-
+#pragma region StringNumericTypeConversions
 	/**
 	 * @namespace	optional
 	 * @brief		Contains string to numeric type converters that use optional wrapper
@@ -465,7 +253,7 @@ namespace str {
 		 * @param first_upper	When true, returns a string where the first letter is uppercase.
 		 * @returns				std::string
 		 */
-		[[nodiscard]] inline std::string bool_to_string(const bool& val, const bool& first_upper = false)
+		[[nodiscard]] inline CONSTEXPR const std::string bool_to_string(const bool& val, const bool& first_upper = false)
 		{
 			if (val)
 				return first_upper ? "True" : "true";
@@ -478,7 +266,7 @@ namespace str {
 		 * @returns		std::optional<bool>
 		 */
 		template<typename ReturnType = std::optional<bool>> requires std::same_as<ReturnType, bool> || std::same_as<ReturnType, std::optional<bool>>
-		[[nodiscard]] inline ReturnType string_to_bool(std::string str)
+		[[nodiscard]] CONSTEXPR ReturnType string_to_bool(std::string str)
 		{
 			str = tolower(str);
 			if (str == "true")
@@ -498,10 +286,10 @@ namespace str {
 			 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 			 * @returns			int
 			 */
-		[[nodiscard]] inline int stoi(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline int stoi(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return std::stoi(str, nextCh);
+				return std::stoi(str, nextCh, base);
 			} catch (...) { return 0; }
 		}
 		/**
@@ -510,10 +298,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			short
 		 */
-		[[nodiscard]] inline short stos(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline short stos(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return static_cast<short>(std::stoi(str, nextCh));
+				return static_cast<short>(std::stoi(str, nextCh, base));
 			} catch (...) { return static_cast<short>(0); }
 		}
 		/**
@@ -522,10 +310,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			unsigned int
 		 */
-		[[nodiscard]] inline unsigned int stoui(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline unsigned int stoui(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return static_cast<unsigned>(std::stoi(str, nextCh));
+				return static_cast<unsigned>(std::stoi(str, nextCh, base));
 			} catch (...) { return 0u; }
 		}
 		/**
@@ -534,10 +322,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			long
 		 */
-		[[nodiscard]] inline long stol(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline long stol(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return std::stol(str, nextCh);
+				return std::stol(str, nextCh, base);
 			} catch (...) { return 0l; }
 		}
 		/**
@@ -546,10 +334,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			long long
 		 */
-		[[nodiscard]] inline long long stoll(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline long long stoll(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return static_cast<long long>(std::stoll(str, nextCh));
+				return static_cast<long long>(std::stoll(str, nextCh, base));
 			} catch (...) { return 0ll; }
 		}
 		/**
@@ -558,10 +346,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			unsigned long
 		 */
-		[[nodiscard]] inline unsigned long stoul(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline unsigned long stoul(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return std::stoul(str, nextCh);
+				return std::stoul(str, nextCh, base);
 			} catch (...) { return 0ul; }
 		}
 		/**
@@ -570,10 +358,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			unsigned long
 		 */
-		[[nodiscard]] inline unsigned long long stoull(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline unsigned long long stoull(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return std::stoull(str, nextCh);
+				return std::stoull(str, nextCh, base);
 			} catch (...) { return 0ul; }
 		}
 		/**
@@ -582,10 +370,10 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			unsigned int
 		 */
-		[[nodiscard]] inline unsigned short stous(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline unsigned short stous(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
-				return static_cast<unsigned short>(std::stoi(str, nextCh));
+				return static_cast<unsigned short>(std::stoi(str, nextCh, base));
 			} catch (...) { return static_cast<unsigned short>(0); }
 		}
 		/**
@@ -594,7 +382,7 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns			float
 		 */
-		[[nodiscard]] inline float stof(const std::string& str, size_t* nextCh = nullptr) noexcept
+		[[nodiscard]] inline float stof(const std::string& str, size_t* nextCh = nullptr, int base = 10) noexcept
 		{
 			try {
 				return std::stof(str, nextCh);
@@ -763,4 +551,5 @@ namespace str {
 		}
 		return s;
 	}
+#pragma endregion StringNumericTypeConversions
 }

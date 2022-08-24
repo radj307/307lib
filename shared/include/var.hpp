@@ -92,41 +92,6 @@ namespace var {
 #	if LANG_CPP >= 20
 #	pragma region Concepts
 	////////////////////////////////// BEGIN / Concepts /////////////////////////////////////////////
-#	pragma region DeclvalTest_Concepts
-	////////////////////////////////// BEGIN / Misc Concepts /////////////////////////////////////////////
-	/**
-	 * @concept		has_default
-	 * @brief		Check if the given type has a default value or default constructor.
-	 * @tparam T	Input Type.
-	 */
-	template<typename T>
-	concept has_default = std::constructible_from<T>;
-	////////////////////////////////// END / Misc Concepts /////////////////////////////////////////////
-#	pragma endregion DeclvalTest_Concepts
-#	pragma region DeclvalTest_Concepts
-	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
-	/**
-	 * @concept		Streamable
-	 * @brief		Check if the given type can be inserted into an output stream.
-	 * @tparam T	A type to attempt to insert into the stream.
-	 */
-	template<typename T, class StreamType = std::stringstream>
-	concept streamable = requires(T obj)
-	{
-		std::declval<StreamType&>() << obj;
-	};
-	//template<typename T, typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
-	//concept streamable = streamable<T, std::basic_stringstream<TChar, TCharTraits, TAlloc>>;
-	/**
-	 * @concept			callable
-	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.
-	 * @tparam T		Input Type.
-	 * @tparam Args...	Optional argument types required by the callable.
-	 */
-	template<class T, typename... Args>
-	concept callable = std::invocable<T, Args...>;
-	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
-#	pragma endregion DeclvalTest_Concepts
 #	pragma region Equatable_Concepts
 	////////////////////////////////// BEGIN / "Equatable Concepts" /////////////////////////////////////////////
 	/**
@@ -138,7 +103,7 @@ namespace var {
 	 */
 	template<typename Left, typename Right> concept same_or_equatable = requires (Left l, Right r)
 	{
-		std::same_as<Left, Right> || std::declval<Left>() == std::declval<Right>() || std::declval<Right>() == std::declval<Left>();
+		requires std::same_as<Left, Right> || l == r || r == l;
 	};
 	////////////////////////////////// END / "Equatable Concepts" /////////////////////////////////////////////
 #	pragma endregion Equatable_Concepts
@@ -171,7 +136,7 @@ namespace var {
 	 */
 	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
 	/**
-	 * 
+	 *
 	 * @concept		numeric
 	 * @brief		Checks if the given type can be used in arithmetic operations.
 	 * @tparam T	Input Type
@@ -185,6 +150,78 @@ namespace var {
 	template<typename T> concept fundamental = std::is_fundamental_v<T>;
 	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
 #	pragma endregion Type_Concepts
+#	pragma region DeclvalTest_Concepts
+	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
+	/**
+	 * @concept		streamable
+	 * @brief		Check if the given type can be inserted into an output stream.
+	 * @tparam T	A type to test for a valid operator<< overload.
+	 */
+	template<typename T, class StreamType = std::stringstream>
+	concept streamable = requires(T inst)
+	{
+		{ std::declval<StreamType&>() << inst };
+	};
+	/**
+	 * @concept		istreamable
+	 * @brief		Check if the given type can extract from an input stream.
+	 * @tparam T	A type to test for a valid operator>> overload.
+	 */
+	template<typename T, class StreamType = std::stringstream>
+	concept istreamable = requires(T inst)
+	{
+		{ std::declval<StreamType&>() >> inst };
+	};
+	/**
+	 * @concept			callable
+	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.
+	 *\n				If you also want to check the return type, use var::function instead.
+	 * @tparam T		Input Type.
+	 * @tparam Args...	Optional argument types required by the callable.
+	 */
+	template<class T, typename... Args>
+	concept callable = std::invocable<T, Args...>;
+	/**
+	 * @concept			function
+	 * @brief			Tests if the given type is a function with the specified signature.
+	 *\n				For functions with `void` return types, use var::callable instead.
+	 * @tparam TFunc	A function type to test.
+	 * @tparam TReturn	The type that the function must return for the concept to pass. Any types that are implicitly convertible to this type are also allowed by this concept.
+	 * @tparam TArgs	The argument types that must be accepted by the function as parameters, in order.
+	 */
+	template<class TFunc, typename TReturn, typename... TArgs>
+	concept function = requires(const TFunc& f)
+	{
+		{ f(std::declval<TArgs>()...) } -> same_or_convertible<TReturn>;
+	};
+	/**
+	 * @concept					comparator
+	 * @brief					Uses the `std::predicate` concept to test if type `TComparator` is a predicate method that accepts two parameters of *(possibly different)* types `TCompareLeft` & `TCompareRight`, and returns a boolean.
+	 * @tparam TCompareLeft		The left-side comparison type.
+	 * @tparam TCompareRight	The right-side comparison type.
+	 * @tparam TComparator		The comparator type to test.
+	 */
+	template<typename TComparator, typename TCompareLeft, typename TCompareRight>
+	concept comparator = requires (TComparator comp, TCompareLeft l, TCompareRight r)
+	{
+		{ comp(l, r) } -> std::convertible_to<bool>;
+	};
+	/**
+	 * @concept					same_type_comparator
+	 * @brief					Uses the `var::comparator` concept to test if type `TComparator` is a predicate method that accepts two paramters of type `TCompare`, and returns a boolean.
+	 * @tparam TCompare			The type that is being compared.
+	 * @tparam TComparator		The comparator type to test.
+	 */
+	template<typename TComparator, typename TCompare>
+	concept same_type_comparator = comparator<TComparator, TCompare, TCompare>;
+
+	template<class T, typename TIterator> concept iterable = requires(T && inst)
+	{
+		{ inst.begin() } -> std::same_as<TIterator>;
+		{ inst.end() } -> std::same_as<TIterator>;
+	};
+	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
+#	pragma endregion DeclvalTest_Concepts
 #	pragma region Variadic_Count_Concepts
 	////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
 	/**
@@ -370,37 +407,37 @@ namespace var {
 	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
 	/**
 	 * @concept		same_size
-	 * @brief		Checks if the given types are the same size in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
+	 * @brief		Checks if the size in bytes of type L is equal to the size in bytes of type R.
+	 * @tparam L	Left side (Check if L is equal to R)
+	 * @tparam R	Right side (Check if L is equal to R)
 	 */
 	template<typename L, typename R> concept same_size = (sizeof(L) == sizeof(R));
 	/**
 	 * @concept		smaller_size
-	 * @brief		Checks if type 1 is smaller than type 2 in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
+	 * @brief		Checks if the size in bytes of type L is smaller than the size in bytes of type R.
+	 * @tparam L	Left side (Check if L is smaller than R)
+	 * @tparam R	Right side (Check if L is smaller than R)
 	 */
 	template<typename L, typename R> concept smaller_size = (sizeof(L) < sizeof(R));
 	/**
-	 * @concept		smaller_size
-	 * @brief		Checks if type 1 is larger than type 2 in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
+	 * @concept		larger_size
+	 * @brief		Checks if the size in bytes of type L is larger than the size in bytes of type R.
+	 * @tparam L	Left side (Check if L is larger than R)
+	 * @tparam R	Right side (Check if L is larger than R)
 	 */
 	template<typename L, typename R> concept larger_size = (sizeof(L) > sizeof(R));
 	/**
-	 * @concept		smaller_size
-	 * @brief		Checks if type 1 is smaller or equal than type 2 in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
+	 * @concept		smaller_equal_size
+	 * @brief		Checks if the size in bytes of type L is smaller or equal to the size in bytes of type R.
+	 * @tparam L	Left side (Check if L is smaller or equal to R)
+	 * @tparam R	Right side (Check if L is smaller or equal to R)
 	 */
 	template<typename L, typename R> concept smaller_equal_size = (sizeof(L) <= sizeof(R));
 	/**
-	 * @concept		smaller_size
-	 * @brief		Checks if type 1 is larger or equal than type 2 in bytes.
-	 * @tparam L	Input Type 1
-	 * @tparam R	Input Type 2
+	 * @concept		larger_equal_size
+	 * @brief		Checks if the size in bytes of type L is larger or equal to the size in bytes of type R.
+	 * @tparam L	Left side (Check if L is larger or equal to R)
+	 * @tparam R	Right side (Check if L is larger or equal to R)
 	 */
 	template<typename L, typename R> concept larger_equal_size = (sizeof(L) >= sizeof(R));
 	////////////////////////////////// BEGIN / ByteSize Concepts /////////////////////////////////////////////
@@ -486,7 +523,7 @@ namespace var {
 	{
 		return ((booleans) && ...);
 	}
-	
+
 	template<typename T, template<class, class> class Container>
 	[[nodiscard]] inline static constexpr T largest(const Container<T, std::allocator<T>>& cont)
 	{
@@ -519,43 +556,6 @@ namespace var {
 	{
 		return smallest<T>(std::vector<T>{ fst, values... });
 	}
-
-	//template<typename T, same_or_equatable<T>... Ts>
-	//[[nodiscard]] inline static constexpr T largest(const std::tuple<Ts...>& tpl, const T& base = static_cast<T>(0))
-	//{
-	//	constexpr const auto max{ sizeof...(Ts) };
-	//	T largest{ base };
-	//	for (size_t i{ 0ull }; i < max; ++i)
-	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v > largest)
-	//			largest = v;
-	//	return largest;
-	//}
-	//template<typename T, same_or_equatable<T>... Ts>
-	//[[nodiscard]] inline static constexpr T largest(const T& fst, const Ts&... elements)
-	//{
-	//	return largest<T>(std::make_tuple(fst, elements...));
-	//}
-
-	///**
-	// * @brief			Retrieve the smallest number in a tuple of arbitrary size.
-	// * @tparam T		The type of variable to operate on. All elements of the tuple must be the same as, or convertible to, this type.
-	// * @tparam Ts...	(implicit) Types stored in the tuple.
-	// * @param tpl		The tuple to operate on.
-	// * @returns			T
-	// */
-	//template<typename T, same_or_equatable<T>... Ts>
-	//[[nodiscard]] inline static constexpr T smallest(const std::tuple<Ts...>& tpl)
-	//{
-	//	constexpr const auto max{ sizeof...(Ts) };
-	//	T smallest{ static_cast<T>(0) };
-	//	for (size_t i{ 0ull }; i < max; ++i)
-	//		if (const auto& v{ static_cast<T>(std::get<i>(tpl)) }; v < smallest)
-	//			smallest = v;
-	//	return smallest;
-	//}
-	//template<typename T, same_or_equatable<T>... Ts>
-	//[[nodiscard]] inline static constexpr T smallest(const Ts&... elements) { return smallest<T>(std::make_tuple(elements...)); }
-
 #	if LANG_CPP >= 20
 	/**
 	 * @brief			Variadic templated helper function that returns a vector of templated element types.

@@ -1,13 +1,6 @@
 # 307lib/tokenlib
 cmake_minimum_required(VERSION 3.20)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-# Create a project
-project("tokenlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
-
 # Get a list of all headers
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -22,12 +15,13 @@ file(GLOB SRCS
 )
 
 # Create a static library
-add_library(tokenlib STATIC "${SRCS}")
+add_library(tokenlib ${307lib_lib_type} "${SRCS}")
 
 # Set properties
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET tokenlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET tokenlib PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET tokenlib PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(tokenlib PRIVATE "${307lib_compiler_commandline}")
 

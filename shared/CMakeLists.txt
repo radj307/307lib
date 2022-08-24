@@ -1,13 +1,6 @@
 # 307lib/shared
 cmake_minimum_required(VERSION 3.15)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-# Create shared project
-project("shared" VERSION "${307lib_VERSION}" LANGUAGES CXX)
-
 # Get headers & sources
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -21,12 +14,13 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(shared STATIC "${SRCS}" "cpp.hint")
+add_library(shared ${307lib_lib_type} "${SRCS}" "cpp.hint")
 
 # Set library properties
 set_property(TARGET shared PROPERTY CXX_STANDARD 20)
 set_property(TARGET shared PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET shared PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET shared PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(shared PRIVATE "${307lib_compiler_commandline}")
 

@@ -1,4 +1,9 @@
 #pragma once
+/**
+ * @file	setcolor.hpp
+ * @author	radj307
+ * @brief	Provides the setcolor_seq struct, a string-wrapper that entirely abstracts manual ANSI escape sequence handling away, allowing the developer to instead use 'colors' directly.
+ */
 #include <sysarch.h>
 #include <color-format.hpp>
 #include <color-values.h>
@@ -6,11 +11,11 @@
 #include <Segments.h>
 #include <color-transform.hpp>
 
-/**
- * @def		SETCOLOR_NO_RGB
- * @brief	Disables the direct-RGB ANSI escape sequence for operating systems that don't support it, such as Windows.
- *\n		Enabled by default on Windows, disabled by default on all other platforms.
- */
+ /**
+  * @def		SETCOLOR_NO_RGB
+  * @brief	Disables the direct-RGB ANSI escape sequence for operating systems that don't support it, such as Windows.
+  *\n		Enabled by default on Windows, disabled by default on all other platforms.
+  */
 #define SETCOLOR_NO_RGB
 #undef SETCOLOR_NO_RGB
 
@@ -21,18 +26,70 @@
 #endif
 
 namespace color {
-	enum class Layer {
-		B = 0,
-		F = 1,
+#pragma region setcolor_seq_state_manip
+	/**
+	 * @class	setcolor_seq_state_manip
+	 * @brief	iostream manipulator that can enable or disable all color sequences *(via setcolor_seq)* in any specific stream.
+	 */
+	class setcolor_seq_state_manip {
+		bool state;
+
+		void apply_to(auto& stream) const
+		{ // set an integer at IDX to the (inverse of the) desired state; this is checked by setcolor_seq's stream operators, and when false, they skip printing the sequence and instead do nothing.
+			stream.iword(IDX) = (int)!state;
+		}
+
+	public:
+
+		/** @brief	The index of this stream manipulator's value in the <ios> library's internal extensible array. * (see the documentation for std::ios_base::xalloc() : https://cplusplus.com/reference/ios/ios_base/xalloc/)* */
+		static const int IDX;
+
+		/**
+		 * @brief			Creates a new setcolor_seq_state_manip instance.
+		 * @param state		When true, colors are DISABLED; when false, colors are ENABLED.
+		 */
+		constexpr setcolor_seq_state_manip(const bool state) noexcept : state{ state } {}
+
+		/** @brief	Apply the manipulator instance to the given output stream. */
+		template<typename TChar, typename TCharTraits>
+		friend std::basic_ostream<TChar, TCharTraits>& operator<<(std::basic_ostream<TChar, TCharTraits>& os, const setcolor_seq_state_manip& manip)
+		{
+			manip.apply_to(os);
+			return os;
+		}
+		/** @brief	Apply the manipulator instance to the given input stream. */
+		template<typename TChar, typename TCharTraits>
+		friend std::basic_istream<TChar, TCharTraits>& operator>>(std::basic_istream<TChar, TCharTraits>& is, const setcolor_seq_state_manip& manip)
+		{
+			manip.apply_to(is);
+			return is;
+		}
+	};
+	inline const int setcolor_seq_state_manip::IDX{ std::ios_base::xalloc() };
+	/// @brief	Stream manipulator that enables ANSI color sequences via the setcolor_seq class in the target stream.
+	inline constexpr setcolor_seq_state_manip enable_setcolor() { return{ false }; }
+	/// @brief	Stream manipulator that disables ANSI color sequences via the setcolor_seq class in the target stream.
+	inline constexpr setcolor_seq_state_manip disable_setcolor() { return{ true }; }
+#pragma endregion setcolor_seq_state_manip
+
+	enum class Layer : int8_t {
+		/// @brief	Terminal Background
+		B = 48,
+		/// @brief	Terminal Foreground (Text)
+		F = 38,
+		/// @brief	Terminal Background
 		Back = B,
+		/// @brief	Terminal Foreground (Text)
 		Fore = F,
+		/// @brief	Terminal Background
 		Background = Back,
+		/// @brief	Terminal Foreground (Text)
 		Foreground = Fore,
 	};
 	template<var::valid_char TChar, typename TCharTraits = std::char_traits<TChar>>
 	inline std::basic_ostream<TChar, TCharTraits>& operator<<(std::basic_ostream<TChar, TCharTraits>& os, const Layer& l)
 	{
-		return os << (l == Layer::F ? 38 : 48);
+		return os << $c(int, l);
 	}
 
 	/**
@@ -89,9 +146,6 @@ namespace color {
 		CONSTEXPR setcolor_seq(const short& sgr_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, sgr_color) } {}
 		CONSTEXPR setcolor_seq(const short& r, const short& g, const short& b, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, r, g, b) } {}
 		CONSTEXPR setcolor_seq(const std::tuple<short, short, short>& rgb_color, const Layer& layer = Layer::F) : _seq{ makeColorSequence(layer, rgb_color) } {}
-
-		//template<var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-		//WINCONSTEXPR setcolor_seq(Ts&&... sequence_components) : _seq{ ANSI::make_sequence<TChar, TCharTraits, TAlloc>(std::forward<Ts>(sequence_components)...) } {}
 
 		/**
 		 * @brief			Retrieve the sequence associated with this setcolor instance, and optionally include format sequences.
@@ -191,6 +245,8 @@ namespace color {
 		 */
 		friend std::basic_ostream<TChar, TCharTraits>& operator<<(std::basic_ostream<TChar, TCharTraits>& os, const setcolor_seq<TChar, TCharTraits, TAlloc>& color)
 		{
+			// check whether sequences are enabled for this stream; if not, return early
+			if (((bool)os.iword(setcolor_seq_state_manip::IDX))) return os;
 		#if defined(OS_WIN) && !defined(SETCOLOR_NO_AUTOINIT)
 			return os << term::EnableANSI << color.as_sequence();
 		#else
@@ -201,12 +257,14 @@ namespace color {
 		/**
 		 * @brief		Extract characters from an input stream into the sequence.
 		 *\n			When compiled for Windows, this method will automatically enable ANSI sequences in the virtual terminal for STDIN. To disable this behaviour, define 'SETCOLOR_NO_AUTOINIT' before including this header.
-		 * @param is 
-		 * @param s 
+		 * @param is
+		 * @param s
 		 * @returns		std::basic_istream<TChar, TCharTraits>&
 		 */
 		friend std::basic_istream<TChar, TCharTraits>& operator>>(std::basic_istream<TChar, TCharTraits>& is, setcolor_seq<TChar, TCharTraits, TAlloc>& s)
 		{
+			// check whether sequences are enabled for this stream; if not, return early
+			if (((bool)is.iword(setcolor_seq_state_manip::IDX))) return is;
 		#if defined(OS_WIN) && !defined(SETCOLOR_NO_AUTOINIT)
 			return is >> term::EnableANSI >> s._seq;
 		#else

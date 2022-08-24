@@ -1,12 +1,6 @@
 ﻿# 307lib/strlib
 cmake_minimum_required (VERSION 3.13)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-project("strlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
-
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
@@ -19,11 +13,12 @@ file(GLOB SRCS
 	"src/*.c*"
 )
 
-add_library(strlib STATIC "${SRCS}")
+add_library(strlib ${307lib_lib_type} "${SRCS}")
 
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
 set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET strlib PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(strlib PRIVATE "${307lib_compiler_commandline}")
 

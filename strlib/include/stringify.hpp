@@ -1,12 +1,13 @@
+#pragma once
 /**
  * @file	stringify.hpp
  * @author	radj307
- * @brief	Contains the various stringify functions.
+ * @brief	Contains the various stringify variant functions.
  */
-#pragma once
 #include <sysarch.h>
 #include <var.hpp>
 #include <strutility.hpp>
+#include <strcore.hpp>
 
 #include <vector>
 #include <utility>
@@ -28,23 +29,6 @@ namespace str {
 		(buffer << ... << std::forward<Ts>(args));
 		return std::move(buffer);
 	}
-
-	/**
-	 * @brief Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.
-	 * @tparam ...Ts	- Variadic Templated Arguments.
-	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
-	 * @returns std::string
-	 */
-	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
-	{
-		if constexpr (var::none<Ts...>)
-			return{};
-		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;	// init stringstream
-		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
-		return std::move(buffer.str());		// return as string
-	}
-
 
 	/**
 	 * @brief Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.

@@ -337,7 +337,7 @@ namespace opt {
 			if constexpr (std::same_as<T, CaptureWrapper>)
 				return item;
 			else if constexpr (std::same_as<T, std::string>)
-				return CaptureWrapper{ str::trim_preceeding(std::forward<T>(item), parsingRules.getDelimitersAsString()) };
+				return CaptureWrapper{ str::trim_preceding(std::forward<T>(item), parsingRules.getDelimitersAsString()) };
 			return CaptureWrapper{ std::forward<T>(item) };
 		}
 

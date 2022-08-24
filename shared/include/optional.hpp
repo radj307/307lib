@@ -12,10 +12,10 @@
 #include <optional>
 
 /**
- * @namespace	opt
+ * @namespace	shared
  * @brief		Namespace containing functions & objects related to "optional" variables.
  */
-namespace opt {
+namespace shared {
 	/**
 	 * @struct		casting_optional
 	 * @brief		Wrapper for std::optional that includes several helpful typecasting functions.

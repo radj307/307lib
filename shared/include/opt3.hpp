@@ -6,7 +6,10 @@
  *\n		This is 307lib's 3rd-generation argument parser, and is intended to replace ParamsAPI2.
  */
 #include <sysarch.h>
-#include <str.hpp>
+#include <var.hpp>
+#include <make_exception.hpp>
+#include <predicate.hpp>
+#include <strcore.hpp>
 
 #include <concepts>
 #include <compare>
@@ -14,6 +17,7 @@
 #include <variant>
 #include <optional>
 #include <set>
+#include <map>
 #include <execution>
 
  /**
@@ -21,6 +25,29 @@
   * @brief		Contains a commandline argument parser & container object.
   */
 namespace opt3 {
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
+	std::basic_string<TChar, TCharTraits, TAlloc> trim_preceding(std::basic_string<TChar, TCharTraits, TAlloc> str, std::vector<TChar> const& chars)
+	{
+		std::basic_string<TChar, TCharTraits, TAlloc> chars_s;
+		for (const auto& it : chars) chars_s += it;
+		if (const auto& beg{ str.find_first_not_of(chars_s) }; beg < str.size())
+			return str.substr(beg);
+		return str;
+	}
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
+	std::basic_string<TChar, TCharTraits, TAlloc> trim_trailing(std::basic_string<TChar, TCharTraits, TAlloc> str, std::vector<TChar> const& chars)
+	{
+		std::basic_string<TChar, TCharTraits, TAlloc> chars_s;
+		for (const auto& it : chars) chars_s += it;
+		if (const auto& end{ str.find_last_not_of(chars_s) }; end < str.size())
+			return str.substr(0ull, end + 1ull);
+		return str;
+	}
+	template<var::valid_char TChar, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>>
+	std::basic_string<TChar, TCharTraits, TAlloc> trim(std::basic_string<TChar, TCharTraits, TAlloc> str, std::vector<TChar> const& chars = { $c(TChar, ' '), $c(TChar, '\t'), $c(TChar, '\v'), $c(TChar, '\r'), $c(TChar, '\n') })
+	{
+		return trim_trailing(trim_preceding(str, chars), chars);
+	}
 	/**
 	 * @struct	basic_vstring
 	 * @brief	Variable-string object with constructor overloads that accept a single character, c-strings, & strings. If the filesystem library is included (before this header), std::filesystem::path types are also allowed.
@@ -108,22 +135,22 @@ namespace opt3 {
 		CONSTEXPR std::optional<std::string> getValue() const requires(var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second; }
 
 		/// @brief	Check if this argument has a captured value. (always returns false for parameters)
-		CONSTEXPR bool has_value() const requires (std::same_as<T, _internal::parameter_t>) { return false; }
+		CONSTEXPR bool has_capture() const requires (std::same_as<T, _internal::parameter_t>) { return false; }
 		/// @brief	Check if this argument has a captured value.
-		CONSTEXPR bool has_value() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.has_value(); }
+		CONSTEXPR bool has_capture() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.has_value(); }
 
 		/**
 		 * @brief				Retrieve the capture value of this argument if it exists; otherwise returns the given string instead.
 		 * @param defaultValue	A string to return when a capture value is not available.
 		 * @returns				The captured value of this argument or defaultValue if one wasn't available.
 		 */
-		CONSTEXPR std::string value_or(std::string const& defaultValue) const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value_or(defaultValue); }
+		CONSTEXPR std::string capture_or(std::string const& defaultValue) const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value_or(defaultValue); }
 		/**
 		 * @brief				Retrieve the capture value of this argument.
 		 * @returns				The captured value of this argument.
 		 * @throws ex::except	This argument does not contain a captured value.
 		 */
-		CONSTEXPR std::string value() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value(); }
+		CONSTEXPR std::string capture() const requires (var::any_same<T, _internal::flag_t, _internal::option_t>) { return _value.second.value(); }
 	};
 
 	/// @brief	Constraint that allows any types derived from base_arg.
@@ -181,19 +208,19 @@ namespace opt3 {
 		 * @brief		Checks if this argument has a captured value.
 		 * @returns		true when this argument has a captured value; otherwise false.
 		 */
-		bool has_value() const noexcept;
+		bool has_capture() const noexcept;
 		/**
 		 * @brief				Gets the capture value of this argument if it exists; otherwise returns the given string instead.
 		 * @param defaultValue	The default string value to return when this argument doesn't have a capture value.
 		 * @returns				std::string
 		 */
-		std::string value_or(std::string const&) const noexcept;
+		std::string capture_or(std::string const&) const noexcept;
 		/**
 		 * @brief				Gets the capture value of this argument.
 		 * @returns				The capture value of this argument.
 		 * @throws
 		 */
-		std::string value() const noexcept(false);
+		std::string capture() const noexcept(false);
 
 		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
 		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
@@ -226,21 +253,21 @@ namespace opt3 {
 			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
-	bool variantarg::has_value() const noexcept
+	bool variantarg::has_capture() const noexcept
 	{
 		return this->visit([](auto&& value) -> bool {
 			using T = std::decay_t<decltype(value)>;
 
 			if constexpr (std::same_as<T, Parameter>)
-				return value.has_value();
+				return value.has_capture();
 			else if constexpr (std::same_as<T, Flag>)
-				return value.has_value();
+				return value.has_capture();
 			else if constexpr (std::same_as<T, Option>)
-				return value.has_value();
+				return value.has_capture();
 			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
-	std::string variantarg::value_or(std::string const& defaultValue) const noexcept
+	std::string variantarg::capture_or(std::string const& defaultValue) const noexcept
 	{
 		return this->visit([&defaultValue](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
@@ -248,13 +275,13 @@ namespace opt3 {
 			if constexpr (std::same_as<T, Parameter>)
 				return defaultValue;
 			else if constexpr (std::same_as<T, Flag>)
-				return value.value_or(defaultValue);
+				return value.capture_or(defaultValue);
 			else if constexpr (std::same_as<T, Option>)
-				return value.value_or(defaultValue);
+				return value.capture_or(defaultValue);
 			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
-	std::string variantarg::value() const noexcept(false)
+	std::string variantarg::capture() const noexcept(false)
 	{
 		return this->visit([](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
@@ -262,9 +289,9 @@ namespace opt3 {
 			if constexpr (std::same_as<T, Parameter>)
 				throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
 			else if constexpr (std::same_as<T, Flag>)
-				return value.value();
+				return value.capture();
 			else if constexpr (std::same_as<T, Option>)
-				return value.value();
+				return value.capture();
 			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
@@ -645,8 +672,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && it->compare_name(name)) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_value())
-						return it->value();
+					else if (it->has_capture())
+						return it->capture();
 				}
 			}
 			return std::nullopt;
@@ -669,8 +696,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_value())
-						return it->value();
+					else if (it->has_capture())
+						return it->capture();
 				}
 			}
 			return std::nullopt;
@@ -695,8 +722,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
-					else if (it->has_value())
-						vec.emplace_back(it->value());
+					else if (it->has_capture())
+						vec.emplace_back(it->capture());
 					else continue;
 					if (vec.size() == vec.capacity())
 						vec.reserve(vec.size() + block_size);
@@ -723,8 +750,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && it->compare_name(name)) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_value())
-						return it->value();
+					else if (it->has_capture())
+						return it->capture();
 				}
 			}
 			return std::nullopt;
@@ -746,8 +773,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_value())
-						return it->value();
+					else if (it->has_capture())
+						return it->capture();
 				}
 			}
 			return std::nullopt;
@@ -772,8 +799,8 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
-					else if (it->has_value())
-						vec.emplace_back(it->value());
+					else if (it->has_capture())
+						vec.emplace_back(it->capture());
 					else continue;
 					if (vec.size() == vec.capacity())
 						vec.reserve(vec.size() + block_size);
@@ -929,6 +956,36 @@ namespace opt3 {
 		{
 			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
 				return static_cast<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument's capture value, casted to the specified numeric type.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<var::numeric TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castgetv_any(Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return str::tonumber<TReturn>(v.value());
+			return std::nullopt;
+		}
+		/**
+		 * @brief					Get the specified argument's capture value, casted to bool.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
+		 * @tparam TReturn			The desired return type.
+		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
+		 * @param names				The name(s) of the target argument(s).
+		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
+		 */
+		template<std::same_as<bool> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
+		CONSTEXPR std::optional<TReturn> castgetv_any(Ts&&... names) const noexcept
+		{
+			if (const auto& v{ this->getv_any<TFilterTypes...>(std::forward<Ts>(names)...) }; v.has_value())
+				return str::tobool(str::trim(v.value()));
 			return std::nullopt;
 		}
 		/**
@@ -1366,7 +1423,7 @@ namespace opt3 {
 		 * @param cs	A default capture style for argument templates that don't override it.
 		 * @returns		The reference of this instance.
 		 */
-		CONSTEXPR variant_template_group& captureStyle(const CaptureStyle& cs) noexcept
+		CONSTEXPR variant_template_group& SetCaptureStyle(const CaptureStyle& cs) noexcept
 		{
 			_defaultCaptureStyle = cs;
 			return *this;
@@ -1376,7 +1433,7 @@ namespace opt3 {
 		 * @param cs	A default conflict style for conflict definitions that don't override it.
 		 * @returns		The reference of this instance.
 		 */
-		CONSTEXPR variant_template_group& conflictStyle(const ConflictStyle& cs) noexcept
+		CONSTEXPR variant_template_group& SetConflictStyle(const ConflictStyle& cs) noexcept
 		{
 			_defaultConflictStyle = cs;
 			return *this;
@@ -1387,7 +1444,7 @@ namespace opt3 {
 		 *\n			If the user doesn't specify (any) argument from this group at least this many times, an exception is thrown by the parser.
 		 * @returns		The reference of this instance.
 		 */
-		CONSTEXPR variant_template_group& min(const size_t min) noexcept
+		CONSTEXPR variant_template_group& SetMin(const size_t min) noexcept
 		{
 			this->_min = min;
 			return *this;
@@ -1398,7 +1455,7 @@ namespace opt3 {
 		 *\n			If the user specifies (any) argument from this group more than this many times, an exception is thrown by the parser.
 		 * @returns		The reference of this instance.
 		 */
-		CONSTEXPR variant_template_group& max(const std::optional<size_t>& max) noexcept
+		CONSTEXPR variant_template_group& SetMax(const std::optional<size_t>& max) noexcept
 		{
 			this->_max = max;
 			return *this;
@@ -1409,7 +1466,7 @@ namespace opt3 {
 		 * @returns		The reference of this instance.
 		 */
 		template<var::any_same_or_convertible<vstring, arg_conflict>... Ts>
-		CONSTEXPR variant_template_group& conflictsWith(Ts&&... names)
+		CONSTEXPR variant_template_group& SetConflicts(Ts&&... names)
 		{
 			const conflict_list_t tmp{ arg_conflict{ std::forward<Ts>(names) }... };
 			conflicts.reserve(conflicts.size() + tmp.size());
@@ -1655,16 +1712,17 @@ namespace opt3 {
 		 */
 		[[nodiscard]] WINCONSTEXPR bool isNumber(std::string str) const
 		{
-			str = str::trim(str::strip(str, ','));
+			str.erase(std::remove(str.begin(), str.end(), ','), str.end());
+			str = trim(str);
 			if (str.empty())
 				return false;
 
 			if (str.starts_with("0x")) {
-				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), str::ishexdigit);
+				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), [](auto&& ch) { return shared::isdigit(ch) || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f'; });
 			}
 			else {
 				const bool is_negative{ str.starts_with('-') };
-				if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : str::stdpred::isdigit(c)); })) {
+				if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : shared::isdigit(c)); })) {
 					return assumeNumericDashPrefixIsNegative; //< when str is a valid number, return true when assuming it is a number and not a flag
 				} // else, return false
 			}
@@ -1816,7 +1874,7 @@ namespace opt3 {
 				auto& g{ counts[groupOf] };
 
 				++g.first; //< increment arg counter
-				if (varg.has_value())
+				if (varg.has_capture())
 					++g.second; //< increment capture counter
 
 				// validate max arg count limits

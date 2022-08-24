@@ -20,7 +20,7 @@ namespace file {
 	 * @param mode	The mode to use when opening the file.
 	 * @returns		std::stringstream&&
 	 */
-	template<class TChar = char, class TCharTraits = std::char_traits<TChar>, class TAlloc = std::allocator<TChar>, template<class, class, class> class TStream = std::basic_stringstream>
+	template<class TChar = char, class TCharTraits = std::char_traits<TChar>, class TAlloc = std::allocator<TChar>, template<class, class, class> class TStream = std::basic_stringstream> requires std::constructible_from<TStream<TChar, TCharTraits, TAlloc>>
 	TStream<TChar, TCharTraits, TAlloc> read(const std::filesystem::path& path, const openmode& mode = openmode::in) noexcept
 	{
 		TStream<TChar, TCharTraits, TAlloc> buffer;
@@ -35,7 +35,7 @@ namespace file {
 	 * @param mode	The mode to use when opening the file.
 	 * @returns		std::stringstream&&
 	 */
-	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, template<class, class, class> class TStream = std::basic_stringstream>
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, template<class, class, class> class TStream = std::basic_stringstream> requires std::constructible_from<TStream<TChar, TCharTraits, TAlloc>>
 	TStream<TChar, TCharTraits, TAlloc> read(const std::filesystem::path& path, const std::ios_base::openmode& mode) noexcept
 	{
 		TStream<TChar, TCharTraits, TAlloc> buffer;

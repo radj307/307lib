@@ -69,6 +69,8 @@ namespace ex {
 		 */
 		except(except&& o) noexcept : message{ std::move(o.message) } {}
 
+		virtual ~except() = default;
+
 		/**
 		 * @brief		Retrieve the message associated with this exception.
 		 * @returns		const char*
@@ -98,10 +100,10 @@ namespace ex {
 	 * @param ...message	The message shown when calling the what() function.
 	 * @returns				TReturn
 	 */
-	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires std::constructible_from<TReturn, std::string>
+	template<std::derived_from<except> TReturn, var::valid_char TChar = char, std::derived_from<std::char_traits<TChar>> TCharTraits = std::char_traits<TChar>, std::derived_from<std::allocator<TChar>> TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts> requires std::constructible_from<TReturn, std::basic_string<TChar, TCharTraits, TAlloc>>
 	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception(Ts&&... message)
 	{
-		std::stringstream ss;
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> ss;
 		(ss << ... << std::forward<Ts>(message));
 		return TReturn{ ss.str() };
 	}
@@ -116,7 +118,7 @@ namespace ex {
 	 * @returns				A new `except`-derived instance of type `TReturn`, created using the constructor with the signature `Ts...`.
 	 *\n					If no such constructor exists, compilation fails.
 	 */
-	template<std::derived_from<except> TReturn, var::streamable<std::ostream>... Ts> requires std::constructible_from<TReturn, Ts...>
+	template<std::derived_from<except> TReturn, typename... Ts> requires std::constructible_from<TReturn, Ts...>
 	[[nodiscard]] WINCONSTEXPR TReturn make_custom_exception_explicit(Ts&&... args)
 	{
 		return TReturn{ std::forward<Ts>(args)... };
@@ -157,7 +159,7 @@ using ex::make_exception;
   * @brief		Creates a struct definition with the given typename and optionally, contents.
   * @param name	The name to give to the exception instance.
   * @param ...	Any number of lines of code to insert into the new exception instance.
-  *				You can use this to define constructors, methods, members, etc; the following code is always implicit:
+  *				You can use this to define constructors, methods, members, etc. Note that the following code is always implicitly included:
   *				```cpp
   *				using this_t = $_$unwrap(name);
   *				using base_t = ::ex::except;

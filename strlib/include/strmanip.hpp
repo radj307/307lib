@@ -8,6 +8,7 @@
 #pragma once
 #include <strutility.hpp>
 #include <strcompare.hpp>
+#include <strcore.hpp>
 
 #include <algorithm>
 #include <functional>
@@ -81,152 +82,10 @@ namespace str {
 	}
 
 	/**
-	 * @brief			Remove preceeding characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string trim_preceeding(std::string str, const std::string& chars)
-	{
-		if (const auto& beg{ str.find_first_not_of(chars) }; beg != std::string::npos)
-			return str.substr(beg);
-		return str;
-	}
-	/**
-	 * @brief			Remove preceeding characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	std::string trim_preceeding(std::string const& str, Ts&&... chars)
-	{
-		return trim_preceeding(str, std::string{ std::forward<Ts>(chars)... });
-	}
-
-	/**
-	 * @brief			Remove preceeding characters from a given string_view.
-	 * @param str		Input string_view.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string_view trim_preceeding(std::string_view str, const std::string& chars)
-	{
-		if (const auto& beg{ str.find_first_not_of(chars) }; beg != std::string::npos)
-			return str.substr(beg);
-		return str;
-	}
-	/**
-	 * @brief			Remove preceeding characters from a given string_view.
-	 * @param str		Input string_view.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	std::string_view trim_preceeding(std::string_view const& str, Ts&&... chars)
-	{
-		return trim_preceeding(str, std::string{ std::forward<Ts>(chars)... });
-	}
-
-	/**
-	 * @brief			Remove trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string trim_trailing(std::string str, const std::string& chars)
-	{
-		if (const auto& end{ str.find_last_not_of(chars) }; end != std::string::npos)
-			return str.substr(0ull, end + 1ull);
-		return str;
-	}
-	/**
-	 * @brief			Remove trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	std::string trim_trailing(std::string const& str, Ts&&... chars)
-	{
-		return trim_trailing(str, std::string{ std::forward<Ts>(chars)... });
-	}
-
-	/**
-	 * @brief			Remove trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string_view trim_trailing(std::string_view str, const std::string& chars)
-	{
-		if (const auto& end{ str.find_last_not_of(chars) }; end != std::string::npos)
-			return str.substr(0ull, end + 1ull);
-		return str;
-	}
-	/**
-	 * @brief			Remove trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	std::string_view trim_trailing(std::string_view const& str, Ts&&... chars)
-	{
-		return trim_trailing(str, std::string{ std::forward<Ts>(chars)... });
-	}
-
-	/**
-	 * @brief			Remove preceeding & trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string trim(std::string const& str, const std::string& chars = " \t\r\n\v")
-	{
-		return trim_trailing(trim_preceeding(str, chars), chars);
-	}
-
-	/**
-	 * @brief			Remove preceeding & trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	inline std::string trim(std::string const& str, Ts&&... chars)
-	{
-		return trim_trailing(trim_preceeding(str, std::forward<Ts>(chars)...), std::forward<Ts>(chars)...);
-	}
-
-	/**
-	 * @brief			Remove preceeding & trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	inline std::string_view trim(std::string_view const& str, const std::string& chars = " \t\r\n\v")
-	{
-		return trim_trailing(trim_preceeding(str, chars), chars);
-	}
-
-	/**
-	 * @brief			Remove preceeding & trailing characters from a given string.
-	 * @param str		Input string.
-	 * @param chars		Any number of characters to remove.
-	 * @returns			String without preceeding or trailing whitespace.
-	 */
-	template<var::same_or_convertible<char>... Ts>
-	inline std::string_view trim(std::string_view const& str, Ts&&... chars)
-	{
-		return trim_trailing(trim_preceeding(str, std::forward<Ts>(chars)...), std::forward<Ts>(chars)...);
-	}
-
-	/**
-	 * @brief					Removes comments and preceeding/trailing whitespace from a given string.
+	 * @brief					Removes comments and preceding/trailing whitespace from a given string.
 	 * @param str				Input string.
 	 * @param comment_chars		Characters that should be treated as line comments, everything that appears after one of these characters is removed.
-	 * @param whitespace_chars	Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
+	 * @param whitespace_chars	Characters that should be treated as whitespace, trailing/preceding whitespace is removed.
 	 * @returns					std::string
 	 */
 	inline std::string strip_line(std::string str, const std::string& comment_chars = {}, const std::string& whitespace_chars = " \t\r\n\v")
@@ -237,10 +96,10 @@ namespace str {
 	}
 	/**
 	 * @function strip_line(std::string, const Param&)
-	 * @brief Removes more complex comments ( ex. C/JSON/html comments ) and preceeding/trailing whitespace from a given string.
+	 * @brief Removes more complex comments ( ex. C/JSON/html comments ) and preceding/trailing whitespace from a given string.
 	 * @param str				- Input string.
 	 * @param comment_del		- String that should be treated as a comment.
-	 * @param whitespace_chars	- Characters that should be treated as whitespace, trailing/preceeding whitespace is removed.
+	 * @param whitespace_chars	- Characters that should be treated as whitespace, trailing/preceding whitespace is removed.
 	 * @returns std::string
 	 */
 	inline std::string strip_line_multiCharComment(std::string str, const std::vector<std::string>& comment_del = {}, const std::string_view& whitespace_chars = " \t\r\n\v")
@@ -793,16 +652,16 @@ namespace str {
 		return str.substr(0ull, str.size() - i);
 	}
 	/**
-	 * @brief				Remove preceeding characters from a string.
+	 * @brief				Remove preceding characters from a string.
 	 * @tparam DelimT		Variadic Input Types.
 	 * @param float_str		Input String.
 	 * @param delims...		At least one character to remove from the beginning of the string. These are casted to char before comparing!
 	 * @returns				std::string_view
 	 */
 	template<std::same_as<char>... DelimT>
-	inline static std::string strip_preceeding(const std::string& str, const DelimT&... delims)
+	inline static std::string strip_preceding(const std::string& str, const DelimT&... delims)
 	{
-		static_assert(sizeof...(DelimT) > 0, "strip_preceeding() requires at least one delimiter char!");
+		static_assert(sizeof...(DelimT) > 0, "strip_preceding() requires at least one delimiter char!");
 		size_t i{ 0ull };
 		for (auto it{ str.begin() }; it != str.end(); ++it) {
 			if (var::variadic_or(*it == static_cast<char>(delims)...))

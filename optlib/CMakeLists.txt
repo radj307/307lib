@@ -1,13 +1,6 @@
 # 307lib/optlib
 cmake_minimum_required(VERSION 3.13)
 
-if (MSVC)
-	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-# Create project
-project("optlib" VERSION ${307lib_VERSION} LANGUAGES CXX)
-
 # Get headers
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -30,12 +23,13 @@ file(GLOB SRCS
 )
 
 # Create static library
-add_library(optlib STATIC "${SRCS}")
+add_library(optlib ${307lib_lib_type} "${SRCS}")
 
 # Set library properties
 set_property(TARGET optlib PROPERTY CXX_STANDARD 20)
 set_property(TARGET optlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET optlib PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET optlib PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_compile_options(optlib PRIVATE "${307lib_compiler_commandline}")
 

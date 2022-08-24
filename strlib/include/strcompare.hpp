@@ -162,55 +162,76 @@ namespace str {
 	}
 
 	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid binary digits.
-	 * @param str	Any ASCII string.
-	 * @returns		bool
+	 * @brief					Checks if the given string represents a valid number. **Do not pass whitespace characters to this function.**
+	 * @param str				Input string.
+	 * @param base				The number base to use when checking if digits are valid.
+	 * @param allowDecimal		When true, one decimal point is allowed somewhere in the string.
+	 * @param allowNegatived	When true, one dash is allowed at the beginning of the string.
+	 * @returns					true when the given string represents a valid number; otherwise false.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isbinary(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base, const bool allowDecimal, const bool allowNegative)
 	{
-		for (auto it{ str.begin() + (str::startsWith(str, "0b") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!isbinarydigit(*it))
-				return false;
+		bool fst{ true }, found_decimal{ false };
+		for (const auto& ch : str) {
+			switch (ch) {
+			case '.':
+				if (!allowDecimal)
+					return false;
+				else if (found_decimal)
+					return false;
+				else
+					found_decimal = true;
+				break;
+			case '-':
+				if (!allowNegative)
+					return false;
+				else if (!fst)
+					return false;
+				break;
+			default:
+				if (!isdigit_base(ch, base))
+					return false;
+				break;
+			}
+
+			if (fst) fst = false;
+		}
 		return true;
 	}
-
 	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid octal digits.
-	 * @param str	Any ASCII string.
-	 * @return		bool
+	 * @brief		Checks if the given string represents a valid integral. This function automatically disallows the dash prefix (negative) character for unsigned integral types.
+	 * @param str	Input string.
+	 * @param base	The number base to use when checking if a character is a valid digit.
+	 * @returns		true when str specifies a valid integral number.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isoctal(const std::string& str) noexcept
+	template<std::integral T>
+	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
-		for (auto it{ str.begin() + (str::startsWith(str, '\\') ? 1 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!isoctaldigit(*it))
-				return false;
-		return true;
+		if constexpr (std::unsigned_integral<T>)
+			return isnumber(str, base, false, false);
+		else
+			return isnumber(str, base, false, true);
 	}
-
 	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid decimal digits.
-	 * @param str	Any ASCII string.
-	 * @return		bool
+	 * @brief		Checks if the given string represents a valid floating-point. Allows a maximum of 1 decimal and 1 dash, but only as a prefix.
+	 * @param str	Input string.
+	 * @param base	The number base to use when checking if a character is a valid digit.
+	 * @returns		true when str specifies a valid floating-point number.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isdecimal(const std::string& str) noexcept
+	template<std::floating_point T>
+	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
-		for (const auto& ch : str)
-			if (!isdecimaldigit(ch))
-				return false;
-		return true;
+		return isnumber(str, base, true, true);
 	}
-
 	/**
-	 * @brief		Check if the given ASCII string is entirely composed of valid hexadecimal digits.
-	 * @param str	Any ASCII string.
-	 * @returns		bool
+	 * @brief		Checks if the given string represents a valid floating-point. Allows a maximum of 1 decimal and 1 dash, but only as a prefix.
+	 * @param str	Input string.
+	 * @param base	The number base to use when checking if a character is a valid digit.
+	 * @returns		true when str specifies a valid floating-point number.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool ishex(const std::string& str) noexcept
+	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
-		for (auto it{ str.begin() + (str::startsWith(str, "0x") ? 2 : 0) }, endit{ str.end() }; it != endit; ++it)
-			if (!ishexdigit(*it))
-				return false;
-		return true;
+		return isnumber<float>(str, base);
 	}
 
 #	pragma endregion Predicates
