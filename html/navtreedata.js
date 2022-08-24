@@ -85,15 +85,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classcolor_1_1basic__sync.html#acdfc743073c64f57b58457f9696d335d",
-"classopt_1_1_argument.html#aa768cb4c2369a8b3b85ff5518fbc51e5",
-"classxlog_1_1x_log.html#ad8c767783e790e165b6610b45227e477",
-"namespacemembers_func_c.html",
-"strconv_8hpp.html#ad63ac649fec6f4afa4fb9103ec6ab1ae",
-"structjson_1_1_node.html#a9169009a58c35171504c1cb56d44814f",
-"structopt3_1_1capture__list.html#a1efe4dab90407add5d98750746badf75",
-"structprocess_1_1_mode.html#aaf3feb9a82779ba963d29b619d789b9e",
-"sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e"
+"classcolor_1_1basic__sync.html#a51b18e79424e13d2a4e317da6a14abe9",
+"classini_1_1basic__ini.html#ac0a15555df5669d7f92e86e8a4030513",
+"classopt_1_1token_1_1_parser.html#a754679fa498361473393480dc529c107",
+"classxlog_1_1x_log.html#aef2906528ebcb6b963fe33957d7952d6",
+"namespacemembers_b.html",
+"strcompare_8hpp.html#a99874f5b703e388240420d5bec8557a3",
+"structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a89a17fc28dd5623b104d7453520b45d3",
+"structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100",
+"structopt_1_1_input_wrapper.html#ad77ec74e3736a441f0f5577cbf7eccd9",
+"structxlog_1_1level.html#a6e5f0a2d19186b82c49bd5dc66c3236f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

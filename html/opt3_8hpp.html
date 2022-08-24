@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: /home/runner/work/307lib/307lib/optlib/include/opt3.hpp File Reference</title>
+<title>307Lib: /home/runner/work/307lib/307lib/shared/include/opt3.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,18 +101,23 @@ $(document).ready(function(){initNavTree('opt3_8hpp.html',''); initResizable(); 
  This is 307lib's 3rd-generation argument parser, and is intended to replace ParamsAPI2.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="predicate_8hpp_source.html">predicate.hpp</a>&gt;</code><br />
+<code>#include &lt;strcore.hpp&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;compare&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 <code>#include &lt;execution&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for opt3.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="opt3_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="opt3_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="opt3_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -311,6 +316,18 @@ WINCONSTEXPR variant_template&#160;</td><td class="memItemRight" valign="bottom"
 WINCONSTEXPR variant_template&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opt3_8hpp.html#a24d62fb79cc6a15af73b2c7c4cb04a04">opt3::_internal::resolve_template</a> (vstring const &amp;vs)</td></tr>
 <tr class="memdesc:a24d62fb79cc6a15af73b2c7c4cb04a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a> instance from the given vstring. Single-character vstrings are parsed as flags, while multi-character vstrings are parsed as options. <br /></td></tr>
 <tr class="separator:a24d62fb79cc6a15af73b2c7c4cb04a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d90b644061f6d6ed53990770a7514fd"><td class="memTemplParams" colspan="2"><a id="a8d90b644061f6d6ed53990770a7514fd"></a>
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a8d90b644061f6d6ed53990770a7514fd"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>opt3::trim</b> (std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; str, std::vector&lt; TChar &gt; const &amp;chars={ $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(TChar, ' '), $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(TChar, '\t'), $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(TChar, '\v'), $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(TChar, '\r'), $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(TChar, '\n') })</td></tr>
+<tr class="separator:a8d90b644061f6d6ed53990770a7514fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf194ac0720918d082fa618da2235fce"><td class="memTemplParams" colspan="2"><a id="acf194ac0720918d082fa618da2235fce"></a>
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:acf194ac0720918d082fa618da2235fce"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>opt3::trim_preceding</b> (std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; str, std::vector&lt; TChar &gt; const &amp;chars)</td></tr>
+<tr class="separator:acf194ac0720918d082fa618da2235fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f683d1e353835b0e44d1ba068f1aef4"><td class="memTemplParams" colspan="2"><a id="a0f683d1e353835b0e44d1ba068f1aef4"></a>
+template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a0f683d1e353835b0e44d1ba068f1aef4"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>opt3::trim_trailing</b> (std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; str, std::vector&lt; TChar &gt; const &amp;chars)</td></tr>
+<tr class="separator:a0f683d1e353835b0e44d1ba068f1aef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21a01dc4d609f8216b8a937a5041b955"><td class="memItemLeft" align="right" valign="top">static WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a21a01dc4d609f8216b8a937a5041b955">opt3::vectorize</a> (const int &amp;sz, char **arr, const int &amp;off=0)</td></tr>
 <tr class="memdesc:a21a01dc4d609f8216b8a937a5041b955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a std::vector of std::strings from a char** array.  <a href="namespaceopt3.html#a21a01dc4d609f8216b8a937a5041b955">More...</a><br /></td></tr>
 <tr class="separator:a21a01dc4d609f8216b8a937a5041b955"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,7 +362,7 @@ template&lt;typename T &gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_8a5e14e7985632d035ffd9350f48db82.html">optlib</a></li><li class="navelem"><a class="el" href="dir_ed4452f55a058c7bc8783773eb3d452e.html">include</a></li><li class="navelem"><a class="el" href="opt3_8hpp.html">opt3.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="dir_f017f8d1aea2530cee9690020bbdf1df.html">include</a></li><li class="navelem"><a class="el" href="opt3_8hpp.html">opt3.hpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

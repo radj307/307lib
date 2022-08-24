@@ -91,19 +91,17 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 <li>ObjectNode()
 : <a class="el" href="structjson_1_1_object_node.html#a914742cf0befd1ccff762627ba18bce1">json::ObjectNode</a>
 </li>
-<li>operator()
-: <a class="el" href="classini_1_1basic__ini.html#a76df536c85226aa2da4314c8cc0d22e3">ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt;</a>
-</li>
 <li>operator base()
-: <a class="el" href="structopt_1_1casting__optional.html#af592cf45c4f0ab7175c4b683116da78a">opt::casting_optional&lt; T &gt;</a>
-, <a class="el" href="structopt_1_1unsafe__optional.html#a776d7e680725efac51996a30e8d56ee3">opt::unsafe_optional&lt; T, Base &gt;</a>
+: <a class="el" href="structshared_1_1casting__optional.html#af3be49768b1282a0a2066a1e2fde8757">shared::casting_optional&lt; T &gt;</a>
+, <a class="el" href="structshared_1_1unsafe__optional.html#a0bd8d7ad8d3c10c691ad2d123a175321">shared::unsafe_optional&lt; T, Base &gt;</a>
 </li>
 <li>operator base &amp;()
-: <a class="el" href="structopt_1_1casting__optional.html#acf957842bf885c2af1ef2214e2539d5a">opt::casting_optional&lt; T &gt;</a>
-, <a class="el" href="structopt_1_1unsafe__optional.html#a1ca806aff66f794275c047b13f2cf425">opt::unsafe_optional&lt; T, Base &gt;</a>
+: <a class="el" href="structshared_1_1casting__optional.html#a53ee0bd996fd13531816456009d9a196">shared::casting_optional&lt; T &gt;</a>
+, <a class="el" href="structshared_1_1unsafe__optional.html#aa0337e9885b1c05121e5a82e48e1205e">shared::unsafe_optional&lt; T, Base &gt;</a>
 </li>
 <li>operator bool()
 : <a class="el" href="classcolor_1_1basic__sync.html#a89d9e03b500fdb1f31afae12024051d4">color::basic_sync&lt; TChar, TCharTraits, TAlloc &gt;</a>
+, <a class="el" href="classini_1_1ini__value.html#a189df81e634ba35197f963f47ed0d1b9">ini::ini_value</a>
 </li>
 <li>operator const std::locale()
 : <a class="el" href="structstr_1_1_set_locale.html#a1b93f9e0cc9c0c2a88898c07cd44cb41">str::SetLocale</a>
@@ -130,10 +128,11 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 : <a class="el" href="structshared_1_1basic__indentor.html#a050f5412f7e9578c9ddee8f1898c18f8">shared::basic_indentor&lt; TChar, TCharTraits, TAlloc &gt;</a>
 </li>
 <li>operator T()
-: <a class="el" href="structopt_1_1unsafe__optional.html#a0a1642e3ec3690e1006a8b489ad9a757">opt::unsafe_optional&lt; T, Base &gt;</a>
+: <a class="el" href="classini_1_1ini__value.html#a00405aaf754d4aeecb31c9af9dcdd551">ini::ini_value</a>
+, <a class="el" href="structshared_1_1unsafe__optional.html#a87da66dc38cb8cd5d3b7a9b0e5f05763">shared::unsafe_optional&lt; T, Base &gt;</a>
 </li>
 <li>operator T&amp;()
-: <a class="el" href="structopt_1_1unsafe__optional.html#aa76f16d3a279657089547bc11af848d1">opt::unsafe_optional&lt; T, Base &gt;</a>
+: <a class="el" href="structshared_1_1unsafe__optional.html#a10cdb1c73999f617355733dd26e977be">shared::unsafe_optional&lt; T, Base &gt;</a>
 </li>
 <li>operator!=()
 : <a class="el" href="structcolor_1_1setcolor__seq.html#a559b7b47fe5faebf46ebba31926a44c5">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
@@ -142,6 +141,7 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 <li>operator()()
 : <a class="el" href="classcolor_1_1basic__sync.html#a5c4cd0c843c8aa8cd420109d071b7cae">color::basic_sync&lt; TChar, TCharTraits, TAlloc &gt;</a>
 , <a class="el" href="classcolor_1_1palette.html#a58c511d70ecf2ba8b3769b2123a6358c">color::palette&lt; TKey, TChar, TCharTraits, TAlloc &gt;</a>
+, <a class="el" href="classini_1_1basic__ini.html#a2ae9887caaae07cbffe86411c86f8888">ini::basic_ini&lt; TKeyComparator &gt;</a>
 , <a class="el" href="structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895">rng::xRand&lt; Engine &gt;</a>
 , <a class="el" href="classterm_1_1basic__colors.html#a51541508f211f947e3bbb984d26a752d">term::basic_colors&lt; SequenceType &gt;</a>
 , <a class="el" href="structtoken_1_1base_1_1_lexeme_dict_base.html#ad5b601a2356efb9e3e2a4f1c67644b8f">token::base::LexemeDictBase&lt; LexemeType &gt;</a>
@@ -154,20 +154,19 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 </li>
 <li>operator+()
 : <a class="el" href="structcolor_1_1basic__color.html#a16d88982b1acd24d55dd4f32e46f5485">color::basic_color&lt; T, Ts &gt;</a>
-, <a class="el" href="structcolor_1_1setcolor__seq.html#a468185dfcf498b1f467bd12d6f98af9b">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
+, <a class="el" href="structcolor_1_1setcolor__seq.html#a8cf95158cfef5b74e1cf70040733e594">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
 </li>
 <li>operator+=()
-: <a class="el" href="structcolor_1_1setcolor__seq.html#a08ff9cd1cb73dfadab17ab7be0288205">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
+: <a class="el" href="structcolor_1_1setcolor__seq.html#a0b4e2405a66010ae636d86ef1f16822c">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
 , <a class="el" href="structmatrix_1_1nmatrix.html#a93ac5e1d06ae17d861a07bfefb6dd639">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
 </li>
 <li>operator-=()
 : <a class="el" href="structmatrix_1_1nmatrix.html#ad0d101b43c575141394e72dac02267f2">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
 </li>
 <li>operator=()
-: <a class="el" href="classini_1_1basic__ini.html#a440fdfc514bae28ede87f83b17b51876">ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt;</a>
-, <a class="el" href="structjson_1_1_node.html#aea0a5c99a2d81995a739496b874a89f9">json::Node</a>
-, <a class="el" href="structmatrix_1_1basic__matrix.html#ada2f879391526276b889ed2148fdb256">matrix::basic_matrix&lt; T, SizeX, SizeY &gt;</a>
-, <a class="el" href="structmatrix_1_1nmatrix.html#a67b82159dae50e1ec224b079bfe6336b">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
+: <a class="el" href="structjson_1_1_node.html#abc6ef78fb9d19400ed901e1665d0876c">json::Node</a>
+, <a class="el" href="structmatrix_1_1basic__matrix.html#afa622812a31983bd88fa79635150a26b">matrix::basic_matrix&lt; T, SizeX, SizeY &gt;</a>
+, <a class="el" href="structmatrix_1_1nmatrix.html#a0039edff66b21f049aad01dacf4eb829">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="structcolor_1_1setcolor__seq.html#a2f83955c59c49ed6d08fd3ddef4dda6f">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a>
@@ -177,9 +176,9 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 <li>operator[]()
 : <a class="el" href="classcolor_1_1palette.html#a0b4f230984e280965164df1c76187550">color::palette&lt; TKey, TChar, TCharTraits, TAlloc &gt;</a>
 , <a class="el" href="classfile_1_1ini_1_1_i_n_i_container.html#a1c0c12f19c3f251f72f02139c6f6e754">file::ini::INIContainer</a>
-, <a class="el" href="structjson_1_1_object_node.html#a83858d3c80d7bfa73ffb19943c41b09f">json::ObjectNode</a>
+, <a class="el" href="structjson_1_1_object_node.html#ae02afa4bf0bcaf543cf859afe0800570">json::ObjectNode</a>
 , <a class="el" href="structmatrix_1_1basic__matrix.html#ab78ace92f74867dc988a82695284fd60">matrix::basic_matrix&lt; T, SizeX, SizeY &gt;</a>
-, <a class="el" href="structmatrix_1_1nmatrix.html#acc94562720c5636250b7824cb35f82e3">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
+, <a class="el" href="structmatrix_1_1nmatrix.html#a79a3cf72fa77775991701fb76fcb7e65">matrix::nmatrix&lt; T, SizeX, SizeY &gt;</a>
 , <a class="el" href="classterm_1_1basic__colorpalette.html#a8f5c67235f81fd21f10a927971955c15">term::basic_colorpalette&lt; KeyType, SequenceType &gt;</a>
 </li>
 </ul>

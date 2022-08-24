@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['lastpos_1532',['lastPos',['../classtoken_1_1base_1_1_tokenizer_base.html#a4d5d3065b3e842f2c6a651709794f795',1,'token::base::TokenizerBase']]],
-  ['lexeme_5fwhitespace_1533',['lexeme_whitespace',['../classtoken_1_1base_1_1_tokenizer_base.html#a0fb8307ea5cd4ea4e548231174aa8ec6',1,'token::base::TokenizerBase']]],
-  ['light_5fgray_1534',['light_gray',['../color-values_8h.html#a8021362dc29dd9c36b2c4b51e20374b1',1,'color']]],
-  ['line_5fhorizontal_1535',['LINE_HORIZONTAL',['../structterm_1_1_line_character.html#afdb295573ea8aaa1ae71fe107e800705',1,'term::LineCharacter']]],
-  ['line_5fvertical_1536',['LINE_VERTICAL',['../structterm_1_1_line_character.html#aa7e1091b4ed6216a824bf588bd16f92b',1,'term::LineCharacter']]],
-  ['loadcursor_1537',['LoadCursor',['../namespaceterm.html#a76704fbf20bed965523b3d3df239293e',1,'term']]],
-  ['log_1538',['LOG',['../structxlog_1_1level.html#ad24240ad595ecd221160a32eae30c285',1,'xlog::level']]]
+  ['junction_5f3_5fway_5fbottom_1656',['JUNCTION_3_WAY_BOTTOM',['../structterm_1_1_line_character.html#ab190d4341b282d86c18e1ba9c8d7485c',1,'term::LineCharacter']]],
+  ['junction_5f3_5fway_5fleft_1657',['JUNCTION_3_WAY_LEFT',['../structterm_1_1_line_character.html#a80a99d42c3023167b6bd50b48ce99e06',1,'term::LineCharacter']]],
+  ['junction_5f3_5fway_5fright_1658',['JUNCTION_3_WAY_RIGHT',['../structterm_1_1_line_character.html#acbed94cd4ea03a25913994ace10df747',1,'term::LineCharacter']]],
+  ['junction_5f3_5fway_5ftop_1659',['JUNCTION_3_WAY_TOP',['../structterm_1_1_line_character.html#a3e97e08e21bb3b2f2eb797e965bd0417',1,'term::LineCharacter']]],
+  ['junction_5f4_5fway_1660',['JUNCTION_4_WAY',['../structterm_1_1_line_character.html#af4963809c521a430a413fb70d9ef1493',1,'term::LineCharacter']]]
 ];

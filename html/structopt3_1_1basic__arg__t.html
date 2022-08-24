@@ -116,24 +116,30 @@ CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="memdesc:ab0c88bb60df1786ed649153670cf2cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br  />
  Only available for types that do not require arguments to construct. <br /></td></tr>
 <tr class="separator:ab0c88bb60df1786ed649153670cf2cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb1259bc10258aa8e27b3b5e17b1ec3b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#adb1259bc10258aa8e27b3b5e17b1ec3b">basic_arg_t</a> (T &amp;&amp;<a class="el" href="structopt3_1_1basic__arg__t.html#a1740306e8d9e70dccbcb0ed9c259ca90">value</a>) noexcept</td></tr>
+<tr class="memitem:adb1259bc10258aa8e27b3b5e17b1ec3b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#adb1259bc10258aa8e27b3b5e17b1ec3b">basic_arg_t</a> (T &amp;&amp;value) noexcept</td></tr>
 <tr class="memdesc:adb1259bc10258aa8e27b3b5e17b1ec3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value-Move Constructor.  <a href="structopt3_1_1basic__arg__t.html#adb1259bc10258aa8e27b3b5e17b1ec3b">More...</a><br /></td></tr>
 <tr class="separator:adb1259bc10258aa8e27b3b5e17b1ec3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0af6f5593c22ec8436d60619d8167c15"><td class="memItemLeft" align="right" valign="top">CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a0af6f5593c22ec8436d60619d8167c15">basic_arg_t</a> (T const &amp;<a class="el" href="structopt3_1_1basic__arg__t.html#a1740306e8d9e70dccbcb0ed9c259ca90">value</a>)</td></tr>
+<tr class="memitem:a0af6f5593c22ec8436d60619d8167c15"><td class="memItemLeft" align="right" valign="top">CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a0af6f5593c22ec8436d60619d8167c15">basic_arg_t</a> (T const &amp;value)</td></tr>
 <tr class="memdesc:a0af6f5593c22ec8436d60619d8167c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value-Copy Constructor.  <a href="structopt3_1_1basic__arg__t.html#a0af6f5593c22ec8436d60619d8167c15">More...</a><br /></td></tr>
 <tr class="separator:a0af6f5593c22ec8436d60619d8167c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5375655b91d9ca1ed761abcc2df3dd3"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#ad5375655b91d9ca1ed761abcc2df3dd3">capture</a> () const requires(var</td></tr>
+<tr class="memdesc:ad5375655b91d9ca1ed761abcc2df3dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the capture value of this argument.  <a href="structopt3_1_1basic__arg__t.html#ad5375655b91d9ca1ed761abcc2df3dd3">More...</a><br /></td></tr>
+<tr class="separator:ad5375655b91d9ca1ed761abcc2df3dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ef6ee134afbe495af63c338d0ca7b3"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a37ef6ee134afbe495af63c338d0ca7b3">capture_or</a> (std::string const &amp;defaultValue) const requires(var</td></tr>
+<tr class="memdesc:a37ef6ee134afbe495af63c338d0ca7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the capture value of this argument if it exists; otherwise returns the given string instead.  <a href="structopt3_1_1basic__arg__t.html#a37ef6ee134afbe495af63c338d0ca7b3">More...</a><br /></td></tr>
+<tr class="separator:a37ef6ee134afbe495af63c338d0ca7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf7c282c1250fdd1b3589aef652829ce"><td class="memItemLeft" align="right" valign="top"><a id="adf7c282c1250fdd1b3589aef652829ce"></a>
 CONSTEXPR std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#adf7c282c1250fdd1b3589aef652829ce">getValue</a> () const requires(var</td></tr>
 <tr class="memdesc:adf7c282c1250fdd1b3589aef652829ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the capture value of this argument as its actual type. <br /></td></tr>
 <tr class="separator:adf7c282c1250fdd1b3589aef652829ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f931b5524d38a034214f8770ccb8ca5"><td class="memItemLeft" align="right" valign="top"><a id="a5f931b5524d38a034214f8770ccb8ca5"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a5f931b5524d38a034214f8770ccb8ca5">has_value</a> () const requires(std</td></tr>
-<tr class="memdesc:a5f931b5524d38a034214f8770ccb8ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this argument has a captured value. (always returns false for parameters) <br /></td></tr>
-<tr class="separator:a5f931b5524d38a034214f8770ccb8ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5191353c05d3630c6be55c86759b5c"><td class="memItemLeft" align="right" valign="top"><a id="aab5191353c05d3630c6be55c86759b5c"></a>
-CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#aab5191353c05d3630c6be55c86759b5c">has_value</a> () const requires(var</td></tr>
-<tr class="memdesc:aab5191353c05d3630c6be55c86759b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this argument has a captured value. <br /></td></tr>
-<tr class="separator:aab5191353c05d3630c6be55c86759b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcca5174aadc433673df19d6e301f8c9"><td class="memItemLeft" align="right" valign="top"><a id="afcca5174aadc433673df19d6e301f8c9"></a>
+CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#afcca5174aadc433673df19d6e301f8c9">has_capture</a> () const requires(std</td></tr>
+<tr class="memdesc:afcca5174aadc433673df19d6e301f8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this argument has a captured value. (always returns false for parameters) <br /></td></tr>
+<tr class="separator:afcca5174aadc433673df19d6e301f8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353f1cd54a8de6b194a1e39fd85f04e5"><td class="memItemLeft" align="right" valign="top"><a id="a353f1cd54a8de6b194a1e39fd85f04e5"></a>
+CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a353f1cd54a8de6b194a1e39fd85f04e5">has_capture</a> () const requires(var</td></tr>
+<tr class="memdesc:a353f1cd54a8de6b194a1e39fd85f04e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this argument has a captured value. <br /></td></tr>
+<tr class="separator:a353f1cd54a8de6b194a1e39fd85f04e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21434717c9b0aa528d8bbba6b7aae926"><td class="memItemLeft" align="right" valign="top"><a id="a21434717c9b0aa528d8bbba6b7aae926"></a>
 CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a21434717c9b0aa528d8bbba6b7aae926">name</a> () const requires(std</td></tr>
 <tr class="memdesc:a21434717c9b0aa528d8bbba6b7aae926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of this argument. <br /></td></tr>
@@ -146,12 +152,6 @@ CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a clas
 CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a21434717c9b0aa528d8bbba6b7aae926">name</a> () const requires(std</td></tr>
 <tr class="memdesc:a21434717c9b0aa528d8bbba6b7aae926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of this argument. <br /></td></tr>
 <tr class="separator:a21434717c9b0aa528d8bbba6b7aae926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1740306e8d9e70dccbcb0ed9c259ca90"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#a1740306e8d9e70dccbcb0ed9c259ca90">value</a> () const requires(var</td></tr>
-<tr class="memdesc:a1740306e8d9e70dccbcb0ed9c259ca90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the capture value of this argument.  <a href="structopt3_1_1basic__arg__t.html#a1740306e8d9e70dccbcb0ed9c259ca90">More...</a><br /></td></tr>
-<tr class="separator:a1740306e8d9e70dccbcb0ed9c259ca90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f0cfe749830e0f0256bbfcdf78f1c2"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1basic__arg__t.html#ad2f0cfe749830e0f0256bbfcdf78f1c2">value_or</a> (std::string const &amp;defaultValue) const requires(var</td></tr>
-<tr class="memdesc:ad2f0cfe749830e0f0256bbfcdf78f1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the capture value of this argument if it exists; otherwise returns the given string instead.  <a href="structopt3_1_1basic__arg__t.html#ad2f0cfe749830e0f0256bbfcdf78f1c2">More...</a><br /></td></tr>
-<tr class="separator:ad2f0cfe749830e0f0256bbfcdf78f1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -172,7 +172,7 @@ struct opt3::basic_arg_t&lt; T &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00078">78</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00105">105</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adb1259bc10258aa8e27b3b5e17b1ec3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb1259bc10258aa8e27b3b5e17b1ec3b">&#9670;&nbsp;</a></span>basic_arg_t() <span class="overload">[1/2]</span></h2>
@@ -208,11 +208,12 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00093">93</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00120">120</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_adb1259bc10258aa8e27b3b5e17b1ec3b_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_adb1259bc10258aa8e27b3b5e17b1ec3b_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -251,18 +252,19 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00098">98</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00125">125</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_a0af6f5593c22ec8436d60619d8167c15_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_a0af6f5593c22ec8436d60619d8167c15_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1740306e8d9e70dccbcb0ed9c259ca90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1740306e8d9e70dccbcb0ed9c259ca90">&#9670;&nbsp;</a></span>value()</h2>
+<a id="ad5375655b91d9ca1ed761abcc2df3dd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5375655b91d9ca1ed761abcc2df3dd3">&#9670;&nbsp;</a></span>capture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,7 +275,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR std::string <a class="el" href="structopt3_1_1basic__arg__t.html">opt3::basic_arg_t</a>&lt; T &gt;::value </td>
+          <td class="memname">CONSTEXPR std::string <a class="el" href="structopt3_1_1basic__arg__t.html">opt3::basic_arg_t</a>&lt; T &gt;::capture </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -295,17 +297,18 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00126">126</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00153">153</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_a1740306e8d9e70dccbcb0ed9c259ca90_icgraph.svg" width="379" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_ad5375655b91d9ca1ed761abcc2df3dd3_icgraph.svg" width="379" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ad2f0cfe749830e0f0256bbfcdf78f1c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2f0cfe749830e0f0256bbfcdf78f1c2">&#9670;&nbsp;</a></span>value_or()</h2>
+<a id="a37ef6ee134afbe495af63c338d0ca7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ef6ee134afbe495af63c338d0ca7b3">&#9670;&nbsp;</a></span>capture_or()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +319,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR std::string <a class="el" href="structopt3_1_1basic__arg__t.html">opt3::basic_arg_t</a>&lt; T &gt;::value_or </td>
+          <td class="memname">CONSTEXPR std::string <a class="el" href="structopt3_1_1basic__arg__t.html">opt3::basic_arg_t</a>&lt; T &gt;::capture_or </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>defaultValue</em></td><td>)</td>
@@ -339,17 +342,18 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The captured value of this argument or defaultValue if one wasn't available. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00120">120</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00147">147</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_ad2f0cfe749830e0f0256bbfcdf78f1c2_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1basic__arg__t_a37ef6ee134afbe495af63c338d0ca7b3_cgraph.svg" width="342" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/runner/work/307lib/307lib/optlib/include/<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a></li>
+<li>/home/runner/work/307lib/307lib/shared/include/<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

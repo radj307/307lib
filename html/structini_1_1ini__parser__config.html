@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: ini::ini_parser_config&lt; TChar, TCharTraits, TAlloc &gt; Struct Template Reference</title>
+<title>307Lib: ini::ini_parser_config&lt; TKeyComparator &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,10 +89,9 @@ $(document).ready(function(){initNavTree('structini_1_1ini__parser__config.html'
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="structini_1_1ini__parser__config-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ini::ini_parser_config&lt; TChar, TCharTraits, TAlloc &gt; Struct Template Reference</div>  </div>
+<div class="title">ini::ini_parser_config&lt; TKeyComparator &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -100,69 +99,329 @@ $(document).ready(function(){initNavTree('structini_1_1ini__parser__config.html'
  <a href="structini_1_1ini__parser__config.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for ini::ini_parser_config&lt; TKeyComparator &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structini_1_1ini__parser__config__coll__graph.svg" width="192" height="247"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7dd018d1d43294ba0a4d055ea5c4fc5d"><td class="memItemLeft" align="right" valign="top"><a id="a7dd018d1d43294ba0a4d055ea5c4fc5d"></a>
-WINCONSTEXPR string_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a7dd018d1d43294ba0a4d055ea5c4fc5d">format_value</a> (string_t value) const noexcept</td></tr>
-<tr class="memdesc:a7dd018d1d43294ba0a4d055ea5c4fc5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the current value of <code>stripEnclosingQuotes</code> to remove one set of enclosing quotes from the given value. <br /></td></tr>
-<tr class="separator:a7dd018d1d43294ba0a4d055ea5c4fc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae515348d3dbd551dff2046fc93daadbf"><td class="memItemLeft" align="right" valign="top"><a id="ae515348d3dbd551dff2046fc93daadbf"></a>
-WINCONSTEXPR string_view_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#ae515348d3dbd551dff2046fc93daadbf">strip_comments</a> (string_t const &amp;line) const noexcept</td></tr>
-<tr class="memdesc:ae515348d3dbd551dff2046fc93daadbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the current value of <code>commentStyle</code> to remove comments from the given line. <br /></td></tr>
-<tr class="separator:ae515348d3dbd551dff2046fc93daadbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c3c57f60a67f5005d4fb2aff5c9757"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::pair&lt; typename std::string::const_iterator, typename std::string::const_iterator &gt; _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#ac5c3c57f60a67f5005d4fb2aff5c9757">$findEnclosingQuotes</a> (std::string const &amp;value) const noexcept</td></tr>
+<tr class="separator:ac5c3c57f60a67f5005d4fb2aff5c9757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7bed3c26c54218c747caa6373b7fc9"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a2a7bed3c26c54218c747caa6373b7fc9">$isCommentChar</a> (const char <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) const noexcept</td></tr>
+<tr class="separator:a2a7bed3c26c54218c747caa6373b7fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a19eafed5e04fc0e2da7f6d2497a59"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#ad1a19eafed5e04fc0e2da7f6d2497a59">$isEscapeChar</a> (const char <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) const noexcept</td></tr>
+<tr class="separator:ad1a19eafed5e04fc0e2da7f6d2497a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a13374b75d159820b93078f8fdb1ca9"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a2a13374b75d159820b93078f8fdb1ca9">$maskIncludes</a> (const std::string &amp;header) const noexcept</td></tr>
+<tr class="separator:a2a13374b75d159820b93078f8fdb1ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d30514c5213e1b78f963d6e8a9d1dcb"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a3d30514c5213e1b78f963d6e8a9d1dcb">$maskIncludes</a> (const std::string &amp;header, const std::string &amp;key) const noexcept</td></tr>
+<tr class="separator:a3d30514c5213e1b78f963d6e8a9d1dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f83017478e51de72d5ca9f9b87a60a"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string_view _&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a23f83017478e51de72d5ca9f9b87a60a">$stripComments</a> (std::string const &amp;line) const noexcept</td></tr>
+<tr class="separator:a23f83017478e51de72d5ca9f9b87a60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94adad77b1a58f6a08409d4dd289c68"><td class="memItemLeft" align="right" valign="top"><a id="aa94adad77b1a58f6a08409d4dd289c68"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#aa94adad77b1a58f6a08409d4dd289c68">SetAddMaskToOutput</a> (bool const &amp;v) noexcept</td></tr>
+<tr class="memdesc:aa94adad77b1a58f6a08409d4dd289c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>addMaskToOutput</code> property. <br /></td></tr>
+<tr class="separator:aa94adad77b1a58f6a08409d4dd289c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cf504ea0b64c4b7895d505b7b1c029"><td class="memItemLeft" align="right" valign="top"><a id="ab4cf504ea0b64c4b7895d505b7b1c029"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#ab4cf504ea0b64c4b7895d505b7b1c029">SetCommentChars</a> (std::string const &amp;v) noexcept</td></tr>
+<tr class="memdesc:ab4cf504ea0b64c4b7895d505b7b1c029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>commentChars</code> property. <br /></td></tr>
+<tr class="separator:ab4cf504ea0b64c4b7895d505b7b1c029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b265fd08007a0c437aeac03de89089"><td class="memItemLeft" align="right" valign="top"><a id="a16b265fd08007a0c437aeac03de89089"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a16b265fd08007a0c437aeac03de89089">SetEscapeChars</a> (std::string const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a16b265fd08007a0c437aeac03de89089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>escapeChars</code> property. <br /></td></tr>
+<tr class="separator:a16b265fd08007a0c437aeac03de89089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfefd27a8e03d1eb37c5299df14c04c"><td class="memItemLeft" align="right" valign="top"><a id="a1bfefd27a8e03d1eb37c5299df14c04c"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a1bfefd27a8e03d1eb37c5299df14c04c">SetMask</a> (container_t const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a1bfefd27a8e03d1eb37c5299df14c04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>mask</code> property. <br /></td></tr>
+<tr class="separator:a1bfefd27a8e03d1eb37c5299df14c04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccfd3b89565d013780850081a63f196"><td class="memItemLeft" align="right" valign="top"><a id="a7ccfd3b89565d013780850081a63f196"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a7ccfd3b89565d013780850081a63f196">SetMaskStyle</a> (<a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41">MaskStyle</a> const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a7ccfd3b89565d013780850081a63f196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>maskStyle</code> property. <br /></td></tr>
+<tr class="separator:a7ccfd3b89565d013780850081a63f196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907710e873e6a889ce908f15883dd341"><td class="memItemLeft" align="right" valign="top"><a id="a907710e873e6a889ce908f15883dd341"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a907710e873e6a889ce908f15883dd341">SetOverrideStyle</a> (<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a907710e873e6a889ce908f15883dd341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>overrideStyle</code> property. <br /></td></tr>
+<tr class="separator:a907710e873e6a889ce908f15883dd341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8693e5b2442781d5c935198bb8851d2f"><td class="memItemLeft" align="right" valign="top"><a id="a8693e5b2442781d5c935198bb8851d2f"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a8693e5b2442781d5c935198bb8851d2f">SetStripEnclosingQuotes</a> (bool const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a8693e5b2442781d5c935198bb8851d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>stripEnclosingQuotes</code> property. <br /></td></tr>
+<tr class="separator:a8693e5b2442781d5c935198bb8851d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57dcf26eaa01e663e0c3090edad8c635"><td class="memItemLeft" align="right" valign="top"><a id="a57dcf26eaa01e663e0c3090edad8c635"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a57dcf26eaa01e663e0c3090edad8c635">SetStripWhitespaceFromHeaders</a> (bool const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a57dcf26eaa01e663e0c3090edad8c635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>stripWhitespaceFromHeaders</code> property. <br /></td></tr>
+<tr class="separator:a57dcf26eaa01e663e0c3090edad8c635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef9ae5ff56f83c3645af72df7c6b5f8"><td class="memItemLeft" align="right" valign="top"><a id="a0ef9ae5ff56f83c3645af72df7c6b5f8"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a0ef9ae5ff56f83c3645af72df7c6b5f8">SetStripWhitespaceFromValue</a> (bool const &amp;v) noexcept</td></tr>
+<tr class="memdesc:a0ef9ae5ff56f83c3645af72df7c6b5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>stripWhitespaceFromValue</code> property. <br /></td></tr>
+<tr class="separator:a0ef9ae5ff56f83c3645af72df7c6b5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af65d578e2ba905d175d9b61fd09cbba0"><td class="memItemLeft" align="right" valign="top"><a id="af65d578e2ba905d175d9b61fd09cbba0"></a>
+CONSTEXPR <a class="el" href="structini_1_1ini__parser__config.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#af65d578e2ba905d175d9b61fd09cbba0">SetSyntaxErrorStyle</a> (<a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">SyntaxErrorStyle</a> const &amp;v) noexcept</td></tr>
+<tr class="memdesc:af65d578e2ba905d175d9b61fd09cbba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipeline operator that sets the value of the <code>syntaxErrorStyle</code> property. <br /></td></tr>
+<tr class="separator:af65d578e2ba905d175d9b61fd09cbba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aea25dc73c9af3e8400a34b599da9c715"><td class="memItemLeft" align="right" valign="top"><a id="aea25dc73c9af3e8400a34b599da9c715"></a>
-CommentStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#aea25dc73c9af3e8400a34b599da9c715">commentStyle</a> { CommentStyle::Both }</td></tr>
-<tr class="memdesc:aea25dc73c9af3e8400a34b599da9c715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which characters to handle as line comments. <br /></td></tr>
-<tr class="separator:aea25dc73c9af3e8400a34b599da9c715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a058d53c1699217c664abfb1a95c51988"><td class="memItemLeft" align="right" valign="top"><a id="a058d53c1699217c664abfb1a95c51988"></a>
-<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a058d53c1699217c664abfb1a95c51988">overrideStyle</a> { <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a> }</td></tr>
-<tr class="memdesc:a058d53c1699217c664abfb1a95c51988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle duplicate key-value pairs. <br /></td></tr>
-<tr class="separator:a058d53c1699217c664abfb1a95c51988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2469467ddd4252cae842f85f8f1606af"><td class="memItemLeft" align="right" valign="top"><a id="a2469467ddd4252cae842f85f8f1606af"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a2469467ddd4252cae842f85f8f1606af">stripEnclosingQuotes</a> { true }</td></tr>
-<tr class="memdesc:a2469467ddd4252cae842f85f8f1606af"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, enclosing quotation marks are not included as part of value strings; otherwise the quotes are included in the value string. <br /></td></tr>
-<tr class="separator:a2469467ddd4252cae842f85f8f1606af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af213d0410e28c6dcba45a3d55d663b3c"><td class="memItemLeft" align="right" valign="top"><a id="af213d0410e28c6dcba45a3d55d663b3c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#af213d0410e28c6dcba45a3d55d663b3c">stripWhitespaceFromHeaders</a> { false }</td></tr>
-<tr class="memdesc:af213d0410e28c6dcba45a3d55d663b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, all preceding/trailing whitespace within header names is removed. <br /></td></tr>
-<tr class="separator:af213d0410e28c6dcba45a3d55d663b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a262f3f1690e461a510f0c0b31f9659bd"><td class="memItemLeft" align="right" valign="top"><a id="a262f3f1690e461a510f0c0b31f9659bd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a262f3f1690e461a510f0c0b31f9659bd">stripWhitespaceFromValue</a> { true }</td></tr>
-<tr class="memdesc:a262f3f1690e461a510f0c0b31f9659bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, preceding/trailing whitespace is removed from values. <br  />
+<tr class="memitem:a8479ed1f5fd34375b0148f05fbb51902"><td class="memItemLeft" align="right" valign="top"><a id="a8479ed1f5fd34375b0148f05fbb51902"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a8479ed1f5fd34375b0148f05fbb51902">addMaskToOutput</a> { true }</td></tr>
+<tr class="memdesc:a8479ed1f5fd34375b0148f05fbb51902"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, any mask headers/keys not present in the input are added to it by the parser. <br /></td></tr>
+<tr class="separator:a8479ed1f5fd34375b0148f05fbb51902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599bdf644723ea4e54f7a753c9b33d52"><td class="memItemLeft" align="right" valign="top"><a id="a599bdf644723ea4e54f7a753c9b33d52"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a599bdf644723ea4e54f7a753c9b33d52">commentChars</a> { std::string{ 1ull, $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(char, '#') } + std::string{ 1ull, $<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>(char, ';') } }</td></tr>
+<tr class="memdesc:a599bdf644723ea4e54f7a753c9b33d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all of the characters that *(individually)* indicate a line comment. <br /></td></tr>
+<tr class="separator:a599bdf644723ea4e54f7a753c9b33d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a38787e4d1a48eae486afb337dfcd04"><td class="memItemLeft" align="right" valign="top"><a id="a3a38787e4d1a48eae486afb337dfcd04"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a3a38787e4d1a48eae486afb337dfcd04">escapeChars</a> { 1ull, '\\' }</td></tr>
+<tr class="memdesc:a3a38787e4d1a48eae486afb337dfcd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all of the characters that *(individually)* act as escape characters. <br /></td></tr>
+<tr class="separator:a3a38787e4d1a48eae486afb337dfcd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f040a388a51a45f6dfcc7393e9f2815"><td class="memItemLeft" align="right" valign="top"><a id="a8f040a388a51a45f6dfcc7393e9f2815"></a>
+mask_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a8f040a388a51a45f6dfcc7393e9f2815">mask</a></td></tr>
+<tr class="memdesc:a8f040a388a51a45f6dfcc7393e9f2815"><td class="mdescLeft">&#160;</td><td class="mdescRight">An optional preconstructed container to use as a mask. <br /></td></tr>
+<tr class="separator:a8f040a388a51a45f6dfcc7393e9f2815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59390e7b6717fe77f12afcebed0680f6"><td class="memItemLeft" align="right" valign="top"><a id="a59390e7b6717fe77f12afcebed0680f6"></a>
+<a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41">MaskStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a59390e7b6717fe77f12afcebed0680f6">maskStyle</a> { <a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41a72ef2b9b6965d078e3c7f95487a82d1c">MaskStyle::Skip</a> }</td></tr>
+<tr class="memdesc:a59390e7b6717fe77f12afcebed0680f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how the optional mask is used. <br /></td></tr>
+<tr class="separator:a59390e7b6717fe77f12afcebed0680f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad4c71d5791365ae9458f6e8b4559472"><td class="memItemLeft" align="right" valign="top"><a id="aad4c71d5791365ae9458f6e8b4559472"></a>
+<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#aad4c71d5791365ae9458f6e8b4559472">overrideStyle</a> { <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a> }</td></tr>
+<tr class="memdesc:aad4c71d5791365ae9458f6e8b4559472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle duplicate key-value pairs. <br /></td></tr>
+<tr class="separator:aad4c71d5791365ae9458f6e8b4559472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e7a5244233f9a32bedb2acc125fddd"><td class="memItemLeft" align="right" valign="top"><a id="a51e7a5244233f9a32bedb2acc125fddd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a51e7a5244233f9a32bedb2acc125fddd">stripEnclosingQuotes</a> { true }</td></tr>
+<tr class="memdesc:a51e7a5244233f9a32bedb2acc125fddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, enclosing quotation marks are not included as part of value strings; otherwise the quotes are included in the value string. <br /></td></tr>
+<tr class="separator:a51e7a5244233f9a32bedb2acc125fddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eaf1164539dbd82930e1b8f8795fd4a"><td class="memItemLeft" align="right" valign="top"><a id="a7eaf1164539dbd82930e1b8f8795fd4a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a7eaf1164539dbd82930e1b8f8795fd4a">stripWhitespaceFromHeaders</a> { false }</td></tr>
+<tr class="memdesc:a7eaf1164539dbd82930e1b8f8795fd4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, all preceding/trailing whitespace within header names is removed. <br /></td></tr>
+<tr class="separator:a7eaf1164539dbd82930e1b8f8795fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d2bfe87e499e2798ad31868a86052c"><td class="memItemLeft" align="right" valign="top"><a id="a65d2bfe87e499e2798ad31868a86052c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a65d2bfe87e499e2798ad31868a86052c">stripWhitespaceFromValue</a> { true }</td></tr>
+<tr class="memdesc:a65d2bfe87e499e2798ad31868a86052c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, preceding/trailing whitespace is removed from values. <br  />
  (You can enclose values with a pair of single (') or double (") quotes to preserve whitespace located within the quotes.) <br /></td></tr>
-<tr class="separator:a262f3f1690e461a510f0c0b31f9659bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac312a2c557f3e6e7819962885b866129"><td class="memItemLeft" align="right" valign="top"><a id="ac312a2c557f3e6e7819962885b866129"></a>
-<a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">SyntaxErrorStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#ac312a2c557f3e6e7819962885b866129">syntaxErrorStyle</a> { <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9">SyntaxErrorStyle::Ignore</a> }</td></tr>
-<tr class="memdesc:ac312a2c557f3e6e7819962885b866129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how syntax errors are handled. <br /></td></tr>
-<tr class="separator:ac312a2c557f3e6e7819962885b866129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a65d2bfe87e499e2798ad31868a86052c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9633ebf96e1ba1bb57c984f4c7e31700"><td class="memItemLeft" align="right" valign="top"><a id="a9633ebf96e1ba1bb57c984f4c7e31700"></a>
+<a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">SyntaxErrorStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1ini__parser__config.html#a9633ebf96e1ba1bb57c984f4c7e31700">syntaxErrorStyle</a> { <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9">SyntaxErrorStyle::Ignore</a> }</td></tr>
+<tr class="memdesc:a9633ebf96e1ba1bb57c984f4c7e31700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how syntax errors are handled. <br /></td></tr>
+<tr class="separator:a9633ebf96e1ba1bb57c984f4c7e31700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:adadde3652d0124c4bd0d05cb898c0b9b"><td class="memItemLeft" align="right" valign="top"><a id="adadde3652d0124c4bd0d05cb898c0b9b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>string_t</b> = typename std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:adadde3652d0124c4bd0d05cb898c0b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c3b056e76248a1549036b9d00573039"><td class="memItemLeft" align="right" valign="top"><a id="a5c3b056e76248a1549036b9d00573039"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>string_view_t</b> = typename std::basic_string_view&lt; TChar, TCharTraits &gt;</td></tr>
-<tr class="separator:a5c3b056e76248a1549036b9d00573039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a9b7b2cc9c18e4311cfbc087d6f3134f7"><td class="memItemLeft" align="right" valign="top"><a id="a9b7b2cc9c18e4311cfbc087d6f3134f7"></a>
-WINCONSTEXPR string_t&#160;</td><td class="memItemRight" valign="bottom"><b>commentChars</b> () const noexcept</td></tr>
-<tr class="separator:a9b7b2cc9c18e4311cfbc087d6f3134f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ace16e552702999880a8925433e2a48"><td class="memItemLeft" align="right" valign="top"><a id="a9ace16e552702999880a8925433e2a48"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>container_t</b> = <a class="el" href="namespaceini.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini_container</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:a9ace16e552702999880a8925433e2a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626abc1af4d55b7ca69133528fb4d0b2"><td class="memItemLeft" align="right" valign="top"><a id="a626abc1af4d55b7ca69133528fb4d0b2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>mask_t</b> = ini_mask&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:a626abc1af4d55b7ca69133528fb4d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae518467993e0322c49105bcc443af94c"><td class="memItemLeft" align="right" valign="top"><a id="ae518467993e0322c49105bcc443af94c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>this_t</b> = <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ae518467993e0322c49105bcc443af94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt;<br />
-struct ini::ini_parser_config&lt; TChar, TCharTraits, TAlloc &gt;</h3>
+<div class="textblock"><h3>template&lt;class TKeyComparator = CaseInsensitiveCompare&gt;<br />
+struct ini::ini_parser_config&lt; TKeyComparator &gt;</h3>
 
 <p>Exposes properties that can be used to configure the INI parser's behaviour. </p>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00080">80</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00481">481</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac5c3c57f60a67f5005d4fb2aff5c9757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c3c57f60a67f5005d4fb2aff5c9757">&#9670;&nbsp;</a></span>$findEnclosingQuotes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::pair&lt;typename std::string::const_iterator, typename std::string::const_iterator&gt; _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$findEnclosingQuotes </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A pair of iterators pointing to enclosing *(must be matching &amp; both unescaped)* quotation marks in the given string. If no valid enclosing quotes are found, returns { value.end(), value.end() } instead. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00575">575</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2a7bed3c26c54218c747caa6373b7fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7bed3c26c54218c747caa6373b7fc9">&#9670;&nbsp;</a></span>$isCommentChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$isCommentChar </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true if the given character is a comment character; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00549">549</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad1a19eafed5e04fc0e2da7f6d2497a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a19eafed5e04fc0e2da7f6d2497a59">&#9670;&nbsp;</a></span>$isEscapeChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$isEscapeChar </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true if the given character is an escape character; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00544">544</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2a13374b75d159820b93078f8fdb1ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a13374b75d159820b93078f8fdb1ca9">&#9670;&nbsp;</a></span>$maskIncludes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR bool _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$maskIncludes </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when the mask contains the given header, or the mask is empty *(it wasn't specified)*; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00534">534</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3d30514c5213e1b78f963d6e8a9d1dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d30514c5213e1b78f963d6e8a9d1dcb">&#9670;&nbsp;</a></span>$maskIncludes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR bool _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$maskIncludes </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when the mask contains the given header/key, or the mask is empty *(it wasn't specified)*; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00539">539</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a23f83017478e51de72d5ca9f9b87a60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f83017478e51de72d5ca9f9b87a60a">&#9670;&nbsp;</a></span>$stripComments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINCONSTEXPR std::string_view _ <a class="el" href="structini_1_1ini__parser__config.html">ini::ini_parser_config</a>&lt; TKeyComparator &gt;::$stripComments </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A string_view of the parameter 'line' that excludes any line comments, as determined by the commentStyle &amp; some mild parsing. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00554">554</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/filelib/include/<a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a></li>
 </ul>
 </div><!-- contents -->

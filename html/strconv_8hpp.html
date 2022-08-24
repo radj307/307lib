@@ -100,6 +100,8 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="stringify_8hpp_source.html">stringify.hpp</a>&gt;</code><br />
+<code>#include &lt;strcore.hpp&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -107,12 +109,14 @@ $(document).ready(function(){initNavTree('strconv_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for strconv.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strconv_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strconv_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -163,27 +167,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ae47e8a6851499957d48fdef435cd982a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae47e8a6851499957d48fdef435cd982a">str::stof</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ae47e8a6851499957d48fdef435cd982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#ae47e8a6851499957d48fdef435cd982a">More...</a><br /></td></tr>
 <tr class="separator:ae47e8a6851499957d48fdef435cd982a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de9b4b7e754453871bde6e4937cf11e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a5de9b4b7e754453871bde6e4937cf11e">str::legacy::stof</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a5de9b4b7e754453871bde6e4937cf11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a5de9b4b7e754453871bde6e4937cf11e">More...</a><br /></td></tr>
-<tr class="separator:a5de9b4b7e754453871bde6e4937cf11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00b850f930f3b70f108914ae87198ed"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aa00b850f930f3b70f108914ae87198ed">str::legacy::stof</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:aa00b850f930f3b70f108914ae87198ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#aa00b850f930f3b70f108914ae87198ed">More...</a><br /></td></tr>
+<tr class="separator:aa00b850f930f3b70f108914ae87198ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a351517219af2a9c512f9a09554b5b530"><td class="memItemLeft" align="right" valign="top">std::optional&lt; signed int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a351517219af2a9c512f9a09554b5b530">str::optional::stoi</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:a351517219af2a9c512f9a09554b5b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a351517219af2a9c512f9a09554b5b530">More...</a><br /></td></tr>
 <tr class="separator:a351517219af2a9c512f9a09554b5b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad15a09e1f1896bc59792a58fe8e1fbe9">str::stoi</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#ad15a09e1f1896bc59792a58fe8e1fbe9">More...</a><br /></td></tr>
 <tr class="separator:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d6c146e834dd6c490265eec61969d35"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a1d6c146e834dd6c490265eec61969d35">str::legacy::stoi</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a1d6c146e834dd6c490265eec61969d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a1d6c146e834dd6c490265eec61969d35">More...</a><br /></td></tr>
-<tr class="separator:a1d6c146e834dd6c490265eec61969d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c816651aa499155ba4d494ddeb96e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a08c816651aa499155ba4d494ddeb96e7">str::legacy::stoi</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a08c816651aa499155ba4d494ddeb96e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a08c816651aa499155ba4d494ddeb96e7">More...</a><br /></td></tr>
+<tr class="separator:a08c816651aa499155ba4d494ddeb96e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#adb21e6334e41c8ed96da69eaf8d414ce">str::optional::stol</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:adb21e6334e41c8ed96da69eaf8d414ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#adb21e6334e41c8ed96da69eaf8d414ce">More...</a><br /></td></tr>
 <tr class="separator:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf4cc36f0f7fbc735d3a7a282b8d9684">str::stol</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#abf4cc36f0f7fbc735d3a7a282b8d9684">More...</a><br /></td></tr>
 <tr class="separator:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad228532e602a68da76e85d63242d0b5e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ad228532e602a68da76e85d63242d0b5e">str::legacy::stol</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:ad228532e602a68da76e85d63242d0b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#ad228532e602a68da76e85d63242d0b5e">More...</a><br /></td></tr>
-<tr class="separator:ad228532e602a68da76e85d63242d0b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79b6edd4c4183255114024e062096b15"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a79b6edd4c4183255114024e062096b15">str::legacy::stol</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a79b6edd4c4183255114024e062096b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a79b6edd4c4183255114024e062096b15">More...</a><br /></td></tr>
+<tr class="separator:a79b6edd4c4183255114024e062096b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a99dc990ff9a8b043727d3910202914"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a1a99dc990ff9a8b043727d3910202914">str::optional::stold</a> (const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
 <tr class="memdesc:a1a99dc990ff9a8b043727d3910202914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a floating-point number to a long double.  <a href="strconv_8hpp.html#a1a99dc990ff9a8b043727d3910202914">More...</a><br /></td></tr>
 <tr class="separator:a1a99dc990ff9a8b043727d3910202914"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,87 +203,57 @@ Functions</h2></td></tr>
 <tr class="memitem:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2eb07fec74c9d4fc331166f5c7320aa0">str::stoll</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a2eb07fec74c9d4fc331166f5c7320aa0">More...</a><br /></td></tr>
 <tr class="separator:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#acfe445496c4fe90cc1b336ef61ed6d5e">str::legacy::stoll</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#acfe445496c4fe90cc1b336ef61ed6d5e">More...</a><br /></td></tr>
-<tr class="separator:acfe445496c4fe90cc1b336ef61ed6d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b29653016755d886072f187805dfb2"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a08b29653016755d886072f187805dfb2">str::legacy::stoll</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a08b29653016755d886072f187805dfb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a08b29653016755d886072f187805dfb2">More...</a><br /></td></tr>
+<tr class="separator:a08b29653016755d886072f187805dfb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8faa23ca70522123e1c17746265b4c40"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8faa23ca70522123e1c17746265b4c40">str::stos</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a8faa23ca70522123e1c17746265b4c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a8faa23ca70522123e1c17746265b4c40">More...</a><br /></td></tr>
 <tr class="separator:a8faa23ca70522123e1c17746265b4c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ad63ac649fec6f4afa4fb9103ec6ab1ae">str::legacy::stos</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#ad63ac649fec6f4afa4fb9103ec6ab1ae">More...</a><br /></td></tr>
-<tr class="separator:ad63ac649fec6f4afa4fb9103ec6ab1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0d44a864d1ccf7ebe8af66ae1e36f00e">str::legacy::stos</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a0d44a864d1ccf7ebe8af66ae1e36f00e">More...</a><br /></td></tr>
+<tr class="separator:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aafed4845d5b2a67c29087eb33c4ab83a">str::optional::stoui</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:aafed4845d5b2a67c29087eb33c4ab83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#aafed4845d5b2a67c29087eb33c4ab83a">More...</a><br /></td></tr>
 <tr class="separator:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff81b4fb51f25b185a6e0f219023631b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aff81b4fb51f25b185a6e0f219023631b">str::stoui</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:aff81b4fb51f25b185a6e0f219023631b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#aff81b4fb51f25b185a6e0f219023631b">More...</a><br /></td></tr>
 <tr class="separator:aff81b4fb51f25b185a6e0f219023631b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a579069fd499f2475fba6fb2dce38fbec"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a579069fd499f2475fba6fb2dce38fbec">str::legacy::stoui</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a579069fd499f2475fba6fb2dce38fbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a579069fd499f2475fba6fb2dce38fbec">More...</a><br /></td></tr>
-<tr class="separator:a579069fd499f2475fba6fb2dce38fbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825c7c1cc5b99699c007bf36b1dc936d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a825c7c1cc5b99699c007bf36b1dc936d">str::legacy::stoui</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a825c7c1cc5b99699c007bf36b1dc936d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a825c7c1cc5b99699c007bf36b1dc936d">More...</a><br /></td></tr>
+<tr class="separator:a825c7c1cc5b99699c007bf36b1dc936d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c08701e978014060eb16ac475840dcb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a2c08701e978014060eb16ac475840dcb">str::optional::stoul</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:a2c08701e978014060eb16ac475840dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a2c08701e978014060eb16ac475840dcb">More...</a><br /></td></tr>
 <tr class="separator:a2c08701e978014060eb16ac475840dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad150ce9485904ee33e3593e783324b09"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad150ce9485904ee33e3593e783324b09">str::stoul</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ad150ce9485904ee33e3593e783324b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#ad150ce9485904ee33e3593e783324b09">More...</a><br /></td></tr>
 <tr class="separator:ad150ce9485904ee33e3593e783324b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d8c8099044b8a177f115fda517aa10"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a75d8c8099044b8a177f115fda517aa10">str::legacy::stoul</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a75d8c8099044b8a177f115fda517aa10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a75d8c8099044b8a177f115fda517aa10">More...</a><br /></td></tr>
-<tr class="separator:a75d8c8099044b8a177f115fda517aa10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2625dbabfa859e85f944706af41b01"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#abe2625dbabfa859e85f944706af41b01">str::legacy::stoul</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:abe2625dbabfa859e85f944706af41b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#abe2625dbabfa859e85f944706af41b01">More...</a><br /></td></tr>
+<tr class="separator:abe2625dbabfa859e85f944706af41b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3452a9c740a65e466e0b298924f993d5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a3452a9c740a65e466e0b298924f993d5">str::optional::stoull</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:a3452a9c740a65e466e0b298924f993d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a3452a9c740a65e466e0b298924f993d5">More...</a><br /></td></tr>
 <tr class="separator:a3452a9c740a65e466e0b298924f993d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a424d7e0db015c773dd069f863c2742e0"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a424d7e0db015c773dd069f863c2742e0">str::stoull</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a424d7e0db015c773dd069f863c2742e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a424d7e0db015c773dd069f863c2742e0">More...</a><br /></td></tr>
 <tr class="separator:a424d7e0db015c773dd069f863c2742e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a541bb9bcde3544000d74ee67bd12dd1c"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a541bb9bcde3544000d74ee67bd12dd1c">str::legacy::stoull</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a541bb9bcde3544000d74ee67bd12dd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a541bb9bcde3544000d74ee67bd12dd1c">More...</a><br /></td></tr>
-<tr class="separator:a541bb9bcde3544000d74ee67bd12dd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12444d66b02c351f7f0ea1c36ff6acf"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ac12444d66b02c351f7f0ea1c36ff6acf">str::legacy::stoull</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:ac12444d66b02c351f7f0ea1c36ff6acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#ac12444d66b02c351f7f0ea1c36ff6acf">More...</a><br /></td></tr>
+<tr class="separator:ac12444d66b02c351f7f0ea1c36ff6acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9abdc3487fffb1c2b871bf5b609081c8"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9abdc3487fffb1c2b871bf5b609081c8">str::stous</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a9abdc3487fffb1c2b871bf5b609081c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned short. Wrapper for static_cast&lt;unsigned short&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a9abdc3487fffb1c2b871bf5b609081c8">More...</a><br /></td></tr>
 <tr class="separator:a9abdc3487fffb1c2b871bf5b609081c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a9bb7536532fa08f39f49fbd6b4780a5f">str::legacy::stous</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
-<tr class="memdesc:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned short. Wrapper for static_cast&lt;unsigned short&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a9bb7536532fa08f39f49fbd6b4780a5f">More...</a><br /></td></tr>
-<tr class="separator:a9bb7536532fa08f39f49fbd6b4780a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
-<tr class="memitem:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memTemplItemLeft" align="right" valign="top">requires std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0799a6e0dcea7f2552d98ecff33a4b91">str::legacy::string_to_bool</a> (std::string str)</td></tr>
-<tr class="memdesc:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="strconv_8hpp.html#a0799a6e0dcea7f2552d98ecff33a4b91">More...</a><br /></td></tr>
-<tr class="separator:a0799a6e0dcea7f2552d98ecff33a4b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c31783392983e283633c4375096e50"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a78c31783392983e283633c4375096e50">str::legacy::stous</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
+<tr class="memdesc:a78c31783392983e283633c4375096e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned short. Wrapper for static_cast&lt;unsigned short&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a78c31783392983e283633c4375096e50">More...</a><br /></td></tr>
+<tr class="separator:a78c31783392983e283633c4375096e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e79ba6b3ada9c501377d8643d422d24"><td class="memTemplParams" colspan="2">template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </td></tr>
+<tr class="memitem:a8e79ba6b3ada9c501377d8643d422d24"><td class="memTemplItemLeft" align="right" valign="top">requires std::same_as&lt; ReturnType, bool &gt; std::same_as&lt; ReturnType, std::optional&lt; bool &gt; &gt; CONSTEXPR ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a8e79ba6b3ada9c501377d8643d422d24">str::legacy::string_to_bool</a> (std::string str)</td></tr>
+<tr class="memdesc:a8e79ba6b3ada9c501377d8643d422d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a boolean.  <a href="strconv_8hpp.html#a8e79ba6b3ada9c501377d8643d422d24">More...</a><br /></td></tr>
+<tr class="separator:a8e79ba6b3ada9c501377d8643d422d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplParams" colspan="2">template&lt;std::floating_point T&gt; </td></tr>
 <tr class="memitem:a6105bd49aaec3b49512cc92722cf4339"><td class="memTemplItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">str::to_string</a> (const T &amp;value, const std::streamsize &amp;precision=8, const bool force_decimal=false)</td></tr>
 <tr class="memdesc:a6105bd49aaec3b49512cc92722cf4339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a floating-point number to a string, with variable precision and automatic truncation. <br  />
  This is a legacy support function.  <a href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">More...</a><br /></td></tr>
 <tr class="separator:a6105bd49aaec3b49512cc92722cf4339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">str::tolower</a> (const char &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:ae2bfcfb51a1c131387fd6d08629aba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">More...</a><br /></td></tr>
-<tr class="separator:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93882029690e5c1836bd3c4678da2003"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">str::tolower</a> (const int &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:a93882029690e5c1836bd3c4678da2003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character stored in an int to lowercase.  <a href="namespacestr.html#a93882029690e5c1836bd3c4678da2003">More...</a><br /></td></tr>
-<tr class="separator:a93882029690e5c1836bd3c4678da2003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a231522683b17634fae04118974b559"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5a231522683b17634fae04118974b559">str::tolower</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:a5a231522683b17634fae04118974b559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a5a231522683b17634fae04118974b559">More...</a><br /></td></tr>
-<tr class="separator:a5a231522683b17634fae04118974b559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8411c2e7a2695f935f975cc9abcbc783"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8411c2e7a2695f935f975cc9abcbc783">str::tolower</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:a8411c2e7a2695f935f975cc9abcbc783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a8411c2e7a2695f935f975cc9abcbc783">More...</a><br /></td></tr>
-<tr class="separator:a8411c2e7a2695f935f975cc9abcbc783"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f102d5131f381c87ed58a37b12a477e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3f102d5131f381c87ed58a37b12a477e">str::tolower</a> (std::wstring str) noexcept</td></tr>
-<tr class="memdesc:a3f102d5131f381c87ed58a37b12a477e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a3f102d5131f381c87ed58a37b12a477e">More...</a><br /></td></tr>
-<tr class="separator:a3f102d5131f381c87ed58a37b12a477e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae017529a0116f69b6d0edf9d9ea7f96"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aae017529a0116f69b6d0edf9d9ea7f96">str::toupper</a> (const char &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:aae017529a0116f69b6d0edf9d9ea7f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to uppercase.  <a href="namespacestr.html#aae017529a0116f69b6d0edf9d9ea7f96">More...</a><br /></td></tr>
-<tr class="separator:aae017529a0116f69b6d0edf9d9ea7f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16fb669c01ac6edd91ed062f90069635"><td class="memItemLeft" align="right" valign="top">CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a16fb669c01ac6edd91ed062f90069635">str::toupper</a> (const int &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:a16fb669c01ac6edd91ed062f90069635"><td class="mdescLeft">&#160;</td><td class="mdescRight">TOUPPER.  <a href="namespacestr.html#a16fb669c01ac6edd91ed062f90069635">More...</a><br /></td></tr>
-<tr class="separator:a16fb669c01ac6edd91ed062f90069635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">str::toupper</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
-<tr class="memdesc:a4cfbac05c04a1a2028714d8e1674ef71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">More...</a><br /></td></tr>
-<tr class="separator:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d1751d71d4ad832f648e305c9e3b40"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a37d1751d71d4ad832f648e305c9e3b40">str::toupper</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:a37d1751d71d4ad832f648e305c9e3b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to uppercase.  <a href="namespacestr.html#a37d1751d71d4ad832f648e305c9e3b40">More...</a><br /></td></tr>
-<tr class="separator:a37d1751d71d4ad832f648e305c9e3b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae294fab98bc23e2063bda2780ea9ab55"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae294fab98bc23e2063bda2780ea9ab55">str::toupper</a> (std::wstring str) noexcept</td></tr>
-<tr class="memdesc:ae294fab98bc23e2063bda2780ea9ab55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#ae294fab98bc23e2063bda2780ea9ab55">More...</a><br /></td></tr>
-<tr class="separator:ae294fab98bc23e2063bda2780ea9ab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains char &amp; string conversion functions with signatures similar to the standard <code>atoi</code> &amp; <code>stoi</code> style functions, with additional type support. <br  />
@@ -351,7 +325,7 @@ template&lt;typename CharType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00428">428</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00216">216</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -408,7 +382,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00357">357</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00145">145</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -478,7 +452,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;T&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00261">261</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00049">49</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -518,7 +492,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00417">417</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00205">205</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -566,7 +540,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;double&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00389">389</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00177">177</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -614,7 +588,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00609">609</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00397">397</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a94952f508d5e64a43b48cb377eb5d472_icgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -662,12 +642,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;float&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00379">379</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00167">167</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a5de9b4b7e754453871bde6e4937cf11e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5de9b4b7e754453871bde6e4937cf11e">&#9670;&nbsp;</a></span>stof() <span class="overload">[2/2]</span></h2>
+<a id="aa00b850f930f3b70f108914ae87198ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00b850f930f3b70f108914ae87198ed">&#9670;&nbsp;</a></span>stof() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -685,7 +665,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -710,7 +696,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00597">597</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00385">385</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_aa00b850f930f3b70f108914ae87198ed_icgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -766,12 +758,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;signed int&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00285">285</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00073">73</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1d6c146e834dd6c490265eec61969d35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d6c146e834dd6c490265eec61969d35">&#9670;&nbsp;</a></span>stoi() <span class="overload">[2/2]</span></h2>
+<a id="a08c816651aa499155ba4d494ddeb96e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c816651aa499155ba4d494ddeb96e7">&#9670;&nbsp;</a></span>stoi() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -789,7 +781,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -814,7 +812,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00501">501</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00289">289</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a08c816651aa499155ba4d494ddeb96e7_icgraph.svg" width="263" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -870,12 +874,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00309">309</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00097">97</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad228532e602a68da76e85d63242d0b5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad228532e602a68da76e85d63242d0b5e">&#9670;&nbsp;</a></span>stol() <span class="overload">[2/2]</span></h2>
+<a id="a79b6edd4c4183255114024e062096b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b6edd4c4183255114024e062096b15">&#9670;&nbsp;</a></span>stol() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -893,7 +897,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -918,7 +928,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00537">537</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00325">325</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a79b6edd4c4183255114024e062096b15_icgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -966,7 +982,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long double&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00399">399</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00187">187</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1014,7 +1030,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00621">621</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00409">409</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a47632826bef1d3d645b95efb97963f75_icgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -1070,12 +1092,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00333">333</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00121">121</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="acfe445496c4fe90cc1b336ef61ed6d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfe445496c4fe90cc1b336ef61ed6d5e">&#9670;&nbsp;</a></span>stoll() <span class="overload">[2/2]</span></h2>
+<a id="a08b29653016755d886072f187805dfb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b29653016755d886072f187805dfb2">&#9670;&nbsp;</a></span>stoll() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1093,7 +1115,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1118,12 +1146,18 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00549">549</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00337">337</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a08b29653016755d886072f187805dfb2_icgraph.svg" width="434" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
-<a id="ad63ac649fec6f4afa4fb9103ec6ab1ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad63ac649fec6f4afa4fb9103ec6ab1ae">&#9670;&nbsp;</a></span>stos()</h2>
+<a id="a0d44a864d1ccf7ebe8af66ae1e36f00e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d44a864d1ccf7ebe8af66ae1e36f00e">&#9670;&nbsp;</a></span>stos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1141,7 +1175,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1166,7 +1206,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>short </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00513">513</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00301">301</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1222,12 +1262,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned int&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00297">297</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00085">85</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a579069fd499f2475fba6fb2dce38fbec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a579069fd499f2475fba6fb2dce38fbec">&#9670;&nbsp;</a></span>stoui() <span class="overload">[2/2]</span></h2>
+<a id="a825c7c1cc5b99699c007bf36b1dc936d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825c7c1cc5b99699c007bf36b1dc936d">&#9670;&nbsp;</a></span>stoui() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1245,7 +1285,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1270,7 +1316,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00525">525</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00313">313</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -1326,12 +1372,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00321">321</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00109">109</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a75d8c8099044b8a177f115fda517aa10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75d8c8099044b8a177f115fda517aa10">&#9670;&nbsp;</a></span>stoul() <span class="overload">[2/2]</span></h2>
+<a id="abe2625dbabfa859e85f944706af41b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2625dbabfa859e85f944706af41b01">&#9670;&nbsp;</a></span>stoul() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1349,7 +1395,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1374,7 +1426,13 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00561">561</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00349">349</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_abe2625dbabfa859e85f944706af41b01_icgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -1430,12 +1488,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;unsigned long long&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00345">345</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00133">133</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a541bb9bcde3544000d74ee67bd12dd1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a541bb9bcde3544000d74ee67bd12dd1c">&#9670;&nbsp;</a></span>stoull() <span class="overload">[2/2]</span></h2>
+<a id="ac12444d66b02c351f7f0ea1c36ff6acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12444d66b02c351f7f0ea1c36ff6acf">&#9670;&nbsp;</a></span>stoull() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1453,7 +1511,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1478,12 +1542,18 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00573">573</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00361">361</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_ac12444d66b02c351f7f0ea1c36ff6acf_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
-<a id="a9bb7536532fa08f39f49fbd6b4780a5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bb7536532fa08f39f49fbd6b4780a5f">&#9670;&nbsp;</a></span>stous()</h2>
+<a id="a78c31783392983e283633c4375096e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c31783392983e283633c4375096e50">&#9670;&nbsp;</a></span>stous()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1501,7 +1571,13 @@ template&lt;std::integral T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>nextCh</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1526,34 +1602,26 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00585">585</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00373">373</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a0799a6e0dcea7f2552d98ecff33a4b91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0799a6e0dcea7f2552d98ecff33a4b91">&#9670;&nbsp;</a></span>string_to_bool()</h2>
+<a id="a8e79ba6b3ada9c501377d8643d422d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e79ba6b3ada9c501377d8643d422d24">&#9670;&nbsp;</a></span>string_to_bool()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires std::same_as&lt;ReturnType, bool&gt; std::same_as&lt;ReturnType, std::optional&lt;bool&gt; &gt; ReturnType str::legacy::string_to_bool </td>
+          <td class="memname">requires std::same_as&lt;ReturnType, bool&gt; std::same_as&lt;ReturnType, std::optional&lt;bool&gt; &gt; CONSTEXPR ReturnType str::legacy::string_to_bool </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Convert a string to a boolean. </p>
@@ -1565,7 +1633,13 @@ template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;bool&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00481">481</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00269">269</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a8e79ba6b3ada9c501377d8643d422d24_icgraph.svg" width="451" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

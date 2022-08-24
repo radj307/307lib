@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9dde4462308b7860bee5f0f9ef756d51">ArgContainer</a> ()=default</td></tr>
 <tr class="memdesc:a9dde4462308b7860bee5f0f9ef756d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
 <tr class="separator:a9dde4462308b7860bee5f0f9ef756d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43502ce176bdd38396afad174d98d7bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a43502ce176bdd38396afad174d98d7bc">ArgContainer</a> (<a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a> &amp;&amp;args, std::optional&lt; std::string &gt; <a class="el" href="structopt_1_1_arg_container.html#ae0284072d1003b832089eab2679ee4a9">arg0</a>=std::nullopt)</td></tr>
+<tr class="memitem:a43502ce176bdd38396afad174d98d7bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a43502ce176bdd38396afad174d98d7bc">ArgContainer</a> (ArgContainerType &amp;&amp;args, std::optional&lt; std::string &gt; <a class="el" href="structopt_1_1_arg_container.html#ae0284072d1003b832089eab2679ee4a9">arg0</a>=std::nullopt)</td></tr>
 <tr class="memdesc:a43502ce176bdd38396afad174d98d7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="structopt_1_1_arg_container.html#a43502ce176bdd38396afad174d98d7bc">More...</a><br /></td></tr>
 <tr class="separator:a43502ce176bdd38396afad174d98d7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4ad7dffaa0f656cae181f3ede2f3d7"><td class="memTemplParams" colspan="2">template&lt;ValidArg... VT&gt; </td></tr>
@@ -147,7 +147,7 @@ WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>capacity
 <tr class="memdesc:a96c9133a3121735e5767018f99e8e7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any arguments of a given type were included on the commandline.  <a href="structopt_1_1_arg_container.html#a96c9133a3121735e5767018f99e8e7f2">More...</a><br /></td></tr>
 <tr class="separator:a96c9133a3121735e5767018f99e8e7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9173b572ff08e76d010f04fb45b1d2"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
-<tr class="memitem:a3e9173b572ff08e76d010f04fb45b1d2"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a3e9173b572ff08e76d010f04fb45b1d2">check</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const</td></tr>
+<tr class="memitem:a3e9173b572ff08e76d010f04fb45b1d2"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a3e9173b572ff08e76d010f04fb45b1d2">check</a> (const Name &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const</td></tr>
 <tr class="memdesc:a3e9173b572ff08e76d010f04fb45b1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given argument was included on the commandline.  <a href="structopt_1_1_arg_container.html#a3e9173b572ff08e76d010f04fb45b1d2">More...</a><br /></td></tr>
 <tr class="separator:a3e9173b572ff08e76d010f04fb45b1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a805c64bf79e2e624e817556c33ed7ff4"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </td></tr>
@@ -165,7 +165,7 @@ WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>capacity
  This function differs from non-compound-flag functions in that it requires a non-empty name.  <a href="structopt_1_1_arg_container.html#a371612496239eeee2046ab906b54980c">More...</a><br /></td></tr>
 <tr class="separator:a371612496239eeee2046ab906b54980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c0ebf8146a110d78a724b3b93b25fa"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
-<tr class="memitem:ac6c0ebf8146a110d78a724b3b93b25fa"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#ac6c0ebf8146a110d78a724b3b93b25fa">check_any</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const</td></tr>
+<tr class="memitem:ac6c0ebf8146a110d78a724b3b93b25fa"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#ac6c0ebf8146a110d78a724b3b93b25fa">check_any</a> (const Name &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const</td></tr>
 <tr class="memdesc:ac6c0ebf8146a110d78a724b3b93b25fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given argument was included on the commandline.  <a href="structopt_1_1_arg_container.html#ac6c0ebf8146a110d78a724b3b93b25fa">More...</a><br /></td></tr>
 <tr class="separator:ac6c0ebf8146a110d78a724b3b93b25fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2fcbe8975ea1e120e013fb4fb86052"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
@@ -177,7 +177,7 @@ WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>capacity
 <tr class="memdesc:a2e2fcbe8975ea1e120e013fb4fb86052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any of the given compound flags were included on the commandline. <br  />
  This function differs from non-compound-flag functions in that it requires a non-empty name.  <a href="structopt_1_1_arg_container.html#a2e2fcbe8975ea1e120e013fb4fb86052">More...</a><br /></td></tr>
 <tr class="separator:a2e2fcbe8975ea1e120e013fb4fb86052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02361fcbabb45bc169dd0d2d0718a32e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e">duplicate_range</a> (const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;from, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const</td></tr>
+<tr class="memitem:a02361fcbabb45bc169dd0d2d0718a32e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e">duplicate_range</a> (const ArgContainerIteratorType &amp;from, const std::optional&lt; ArgContainerIteratorType &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const</td></tr>
 <tr class="memdesc:a02361fcbabb45bc169dd0d2d0718a32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a range of arguments from the list, with an optional predicate function for filtering. Returns an <a class="el" href="structopt_1_1_arg_container.html" title="A container for storing and interacting with parsed commandline arguments.   The container itself is ...">ArgContainer</a> instance.  <a href="structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e">More...</a><br /></td></tr>
 <tr class="separator:a02361fcbabb45bc169dd0d2d0718a32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadd081fe09b3146de132f4e912993825"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#aadd081fe09b3146de132f4e912993825">emplace_back</a> (auto &amp;&amp;argument) noexcept(false)</td></tr>
@@ -190,48 +190,48 @@ WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b
 WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
 <tr class="separator:abf42f002e8023fee9b7027a25680a405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85740fe5417da36f495871992324ec4d"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Name&gt; </td></tr>
-<tr class="memitem:a85740fe5417da36f495871992324ec4d"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a85740fe5417da36f495871992324ec4d">find</a> (const Name &amp;... compoundFlags) const</td></tr>
+<tr class="memitem:a85740fe5417da36f495871992324ec4d"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a85740fe5417da36f495871992324ec4d">find</a> (const Name &amp;... compoundFlags) const</td></tr>
 <tr class="memdesc:a85740fe5417da36f495871992324ec4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the starting position of the specified compound flag.  <a href="structopt_1_1_arg_container.html#a85740fe5417da36f495871992324ec4d">More...</a><br /></td></tr>
 <tr class="separator:a85740fe5417da36f495871992324ec4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50bb15be4d8f2362a9e8be66953136ea"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
-<tr class="memitem:a50bb15be4d8f2362a9e8be66953136ea"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a50bb15be4d8f2362a9e8be66953136ea">find</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const</td></tr>
+<tr class="memitem:a50bb15be4d8f2362a9e8be66953136ea"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a50bb15be4d8f2362a9e8be66953136ea">find</a> (const Name &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const</td></tr>
 <tr class="memdesc:a50bb15be4d8f2362a9e8be66953136ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an argument in the container.  <a href="structopt_1_1_arg_container.html#a50bb15be4d8f2362a9e8be66953136ea">More...</a><br /></td></tr>
 <tr class="separator:a50bb15be4d8f2362a9e8be66953136ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4d209c0c71838166cc6bb6a31f45c7"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt; char &gt;... Name&gt; </td></tr>
-<tr class="memitem:a8e4d209c0c71838166cc6bb6a31f45c7"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a8e4d209c0c71838166cc6bb6a31f45c7">find</a> (const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt, const Name &amp;... compoundFlags) const</td></tr>
+<tr class="memitem:a8e4d209c0c71838166cc6bb6a31f45c7"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a8e4d209c0c71838166cc6bb6a31f45c7">find</a> (const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt, const Name &amp;... compoundFlags) const</td></tr>
 <tr class="memdesc:a8e4d209c0c71838166cc6bb6a31f45c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the starting position of the specified compound flag within the given range.  <a href="structopt_1_1_arg_container.html#a8e4d209c0c71838166cc6bb6a31f45c7">More...</a><br /></td></tr>
 <tr class="separator:a8e4d209c0c71838166cc6bb6a31f45c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee7050cd86944539fe72a819d2dedcb"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </td></tr>
-<tr class="memitem:a9ee7050cd86944539fe72a819d2dedcb"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9ee7050cd86944539fe72a819d2dedcb">find</a> (const std::string &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const</td></tr>
+<tr class="memitem:a9ee7050cd86944539fe72a819d2dedcb"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9ee7050cd86944539fe72a819d2dedcb">find</a> (const std::string &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const</td></tr>
 <tr class="memdesc:a9ee7050cd86944539fe72a819d2dedcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the starting position of the specified compound flag within the given range.  <a href="structopt_1_1_arg_container.html#a9ee7050cd86944539fe72a819d2dedcb">More...</a><br /></td></tr>
 <tr class="separator:a9ee7050cd86944539fe72a819d2dedcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbee9d4aee466b6e0c4a7885b31c4950"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:acbee9d4aee466b6e0c4a7885b31c4950"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR <a class="el" href="namespaceopt.html#a8048bb6c81102ec4e6d0e267f620f928">ArgContainerIteratorContainerType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#acbee9d4aee466b6e0c4a7885b31c4950">find_all</a> (const Names &amp;... names) const</td></tr>
+<tr class="memitem:acbee9d4aee466b6e0c4a7885b31c4950"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR ArgContainerIteratorContainerType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#acbee9d4aee466b6e0c4a7885b31c4950">find_all</a> (const Names &amp;... names) const</td></tr>
 <tr class="memdesc:acbee9d4aee466b6e0c4a7885b31c4950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all arguments with matching criteria. <br  />
  To be considered a valid match, an argument must have a matching type AND a matching name. <br  />
  If at least one type is included, arguments must have (any) of the specified types to be considered a match. If no types are specified, any type may be considered a match. <br  />
  If at least one name is included, arguments must have (any) of the specified names to be considered a match. If no names are specified, any name may be considered a match.  <a href="structopt_1_1_arg_container.html#acbee9d4aee466b6e0c4a7885b31c4950">More...</a><br /></td></tr>
 <tr class="separator:acbee9d4aee466b6e0c4a7885b31c4950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a32a5883d58b6d9946f5393e5f8a9e1"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:a2a32a5883d58b6d9946f5393e5f8a9e1"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR <a class="el" href="namespaceopt.html#a8048bb6c81102ec4e6d0e267f620f928">ArgContainerIteratorContainerType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a2a32a5883d58b6d9946f5393e5f8a9e1">find_all</a> (const std::tuple&lt; Names... &gt; &amp;names, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;first, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;last) const</td></tr>
+<tr class="memitem:a2a32a5883d58b6d9946f5393e5f8a9e1"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR ArgContainerIteratorContainerType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a2a32a5883d58b6d9946f5393e5f8a9e1">find_all</a> (const std::tuple&lt; Names... &gt; &amp;names, const ArgContainerIteratorType &amp;first, const ArgContainerIteratorType &amp;last) const</td></tr>
 <tr class="memdesc:a2a32a5883d58b6d9946f5393e5f8a9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all arguments with matching criteria within the specified range.  <a href="structopt_1_1_arg_container.html#a2a32a5883d58b6d9946f5393e5f8a9e1">More...</a><br /></td></tr>
 <tr class="separator:a2a32a5883d58b6d9946f5393e5f8a9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa957afb66e38fb9c66000050a2e66ba"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:afa957afb66e38fb9c66000050a2e66ba"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#afa957afb66e38fb9c66000050a2e66ba">find_any</a> (const Names &amp;... names) const</td></tr>
+<tr class="memitem:afa957afb66e38fb9c66000050a2e66ba"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#afa957afb66e38fb9c66000050a2e66ba">find_any</a> (const Names &amp;... names) const</td></tr>
 <tr class="memdesc:afa957afb66e38fb9c66000050a2e66ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find any argument with at least one matching criteria. <br  />
  To be considered a valid match, an argument must have a matching type AND a matching name. <br  />
  If at least one type is included, arguments must have (any) of the specified types to be considered a match. If no types are specified, any type may be considered a match. <br  />
  If at least one name is included, arguments must have (any) of the specified names to be considered a match. If no names are specified, any name may be considered a match.  <a href="structopt_1_1_arg_container.html#afa957afb66e38fb9c66000050a2e66ba">More...</a><br /></td></tr>
 <tr class="separator:afa957afb66e38fb9c66000050a2e66ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19bf0e985109a3d355f589652c5a568"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Names&gt; </td></tr>
-<tr class="memitem:ac19bf0e985109a3d355f589652c5a568"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#ac19bf0e985109a3d355f589652c5a568">find_any</a> (const Names &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const</td></tr>
+<tr class="memitem:ac19bf0e985109a3d355f589652c5a568"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#ac19bf0e985109a3d355f589652c5a568">find_any</a> (const Names &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const</td></tr>
 <tr class="memdesc:ac19bf0e985109a3d355f589652c5a568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find any argument with at least one matching criteria. <br  />
  To be considered a valid match, an argument must have a matching type AND a matching name. <br  />
  If at least one type is included, arguments must have (any) of the specified types to be considered a match. If no types are specified, any type may be considered a match. <br  />
  If at least one name is included, arguments must have (any) of the specified names to be considered a match. If no names are specified, any name may be considered a match.  <a href="structopt_1_1_arg_container.html#ac19bf0e985109a3d355f589652c5a568">More...</a><br /></td></tr>
 <tr class="separator:ac19bf0e985109a3d355f589652c5a568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addbb70047ee7064e657364e6f85e1cf3"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:addbb70047ee7064e657364e6f85e1cf3"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#addbb70047ee7064e657364e6f85e1cf3">find_any</a> (const std::tuple&lt; Names... &gt; &amp;names, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;first, const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;last) const</td></tr>
+<tr class="memitem:addbb70047ee7064e657364e6f85e1cf3"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR ArgContainerIteratorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#addbb70047ee7064e657364e6f85e1cf3">find_any</a> (const std::tuple&lt; Names... &gt; &amp;names, const ArgContainerIteratorType &amp;first, const ArgContainerIteratorType &amp;last) const</td></tr>
 <tr class="memdesc:addbb70047ee7064e657364e6f85e1cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find any argument with at least one matching criteria, within the specified range.  <a href="structopt_1_1_arg_container.html#addbb70047ee7064e657364e6f85e1cf3">More...</a><br /></td></tr>
 <tr class="separator:addbb70047ee7064e657364e6f85e1cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a516f2248bfafb022ca4524b7d3f22ffa"><td class="memItemLeft" align="right" valign="top"><a id="a516f2248bfafb022ca4524b7d3f22ffa"></a>
@@ -239,25 +239,25 @@ WINCONSTEXPR auto&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memdesc:a516f2248bfafb022ca4524b7d3f22ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element in the argument list if it exists; otherwise throws an exception. <br /></td></tr>
 <tr class="separator:a516f2248bfafb022ca4524b7d3f22ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
-<tr class="memitem:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a99d49a294746cfacc7da93cb2cb7dddb">get</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept</td></tr>
+<tr class="memitem:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a99d49a294746cfacc7da93cb2cb7dddb">get</a> (const Name &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const noexcept</td></tr>
 <tr class="memdesc:a99d49a294746cfacc7da93cb2cb7dddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specified argument from within the container. This function is the equivalent of safely dereferencing the result of <a class="el" href="structopt_1_1_arg_container.html#a50bb15be4d8f2362a9e8be66953136ea" title="Find an argument in the container.">find()</a> and returning it as an optional.  <a href="structopt_1_1_arg_container.html#a99d49a294746cfacc7da93cb2cb7dddb">More...</a><br /></td></tr>
 <tr class="separator:a99d49a294746cfacc7da93cb2cb7dddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2955db7e260cfa73b7274080cbb843d"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:af2955db7e260cfa73b7274080cbb843d"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#af2955db7e260cfa73b7274080cbb843d">get_all</a> (const Names &amp;... names) const noexcept</td></tr>
+<tr class="memitem:af2955db7e260cfa73b7274080cbb843d"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR ArgContainerType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#af2955db7e260cfa73b7274080cbb843d">get_all</a> (const Names &amp;... names) const noexcept</td></tr>
 <tr class="memdesc:af2955db7e260cfa73b7274080cbb843d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get any argument with matching criteria. This function is the equivalent of dereferencing each element of the result from <a class="el" href="structopt_1_1_arg_container.html#acbee9d4aee466b6e0c4a7885b31c4950" title="Find all arguments with matching criteria.   To be considered a valid match, an argument must have a ...">find_all()</a>.  <a href="structopt_1_1_arg_container.html#af2955db7e260cfa73b7274080cbb843d">More...</a><br /></td></tr>
 <tr class="separator:af2955db7e260cfa73b7274080cbb843d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69bebeea9b38d932edbf8130d7af1ab2"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType Name&gt; </td></tr>
-<tr class="memitem:a69bebeea9b38d932edbf8130d7af1ab2"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a69bebeea9b38d932edbf8130d7af1ab2">get_any</a> (const Name &amp;name, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;off=std::nullopt, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;end=std::nullopt) const noexcept</td></tr>
+<tr class="memitem:a69bebeea9b38d932edbf8130d7af1ab2"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a69bebeea9b38d932edbf8130d7af1ab2">get_any</a> (const Name &amp;name, const std::optional&lt; ArgContainerIteratorType &gt; &amp;off=std::nullopt, const std::optional&lt; ArgContainerIteratorType &gt; &amp;end=std::nullopt) const noexcept</td></tr>
 <tr class="memdesc:a69bebeea9b38d932edbf8130d7af1ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specified argument from within the container. This function is the equivalent of safely dereferencing the result of <a class="el" href="structopt_1_1_arg_container.html#ac19bf0e985109a3d355f589652c5a568" title="Find any argument with at least one matching criteria.   To be considered a valid match,...">find_any()</a> and returning it as an optional.  <a href="structopt_1_1_arg_container.html#a69bebeea9b38d932edbf8130d7af1ab2">More...</a><br /></td></tr>
 <tr class="separator:a69bebeea9b38d932edbf8130d7af1ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1715ff5c0e3d6bb1b62158c51cd3cc62"><td class="memTemplParams" colspan="2">template&lt;ValidArg... Types, ValidInputType... Names&gt; </td></tr>
-<tr class="memitem:a1715ff5c0e3d6bb1b62158c51cd3cc62"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a1715ff5c0e3d6bb1b62158c51cd3cc62">get_any</a> (const Names &amp;... names) const noexcept</td></tr>
+<tr class="memitem:a1715ff5c0e3d6bb1b62158c51cd3cc62"><td class="memTemplItemLeft" align="right" valign="top">const WINCONSTEXPR std::optional&lt; <a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a1715ff5c0e3d6bb1b62158c51cd3cc62">get_any</a> (const Names &amp;... names) const noexcept</td></tr>
 <tr class="memdesc:a1715ff5c0e3d6bb1b62158c51cd3cc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get any argument with matching criteria. This function is the equivalent of safely dereferencing the result of <a class="el" href="structopt_1_1_arg_container.html#ac19bf0e985109a3d355f589652c5a568" title="Find any argument with at least one matching criteria.   To be considered a valid match,...">find_any()</a> and returning it as an optional.  <a href="structopt_1_1_arg_container.html#a1715ff5c0e3d6bb1b62158c51cd3cc62">More...</a><br /></td></tr>
 <tr class="separator:a1715ff5c0e3d6bb1b62158c51cd3cc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9180d51052e1790faac228ea212138ae"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9180d51052e1790faac228ea212138ae">get_range</a> (<a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> from, const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const noexcept(false)</td></tr>
+<tr class="memitem:a9180d51052e1790faac228ea212138ae"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR ArgContainerType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9180d51052e1790faac228ea212138ae">get_range</a> (ArgContainerIteratorType from, const std::optional&lt; ArgContainerIteratorType &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const noexcept(false)</td></tr>
 <tr class="memdesc:a9180d51052e1790faac228ea212138ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a range of arguments from the list, with an optional predicate function for filtering.  <a href="structopt_1_1_arg_container.html#a9180d51052e1790faac228ea212138ae">More...</a><br /></td></tr>
 <tr class="separator:a9180d51052e1790faac228ea212138ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9572ec0bdf10389a8e35110de48e609d"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9572ec0bdf10389a8e35110de48e609d">get_range</a> (const size_t &amp;from, const std::optional&lt; size_t &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const noexcept(false)</td></tr>
+<tr class="memitem:a9572ec0bdf10389a8e35110de48e609d"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR ArgContainerType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_arg_container.html#a9572ec0bdf10389a8e35110de48e609d">get_range</a> (const size_t &amp;from, const std::optional&lt; size_t &gt; &amp;to=std::nullopt, const bool &amp;inclusive=true, const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;pred=std::nullopt) const noexcept(false)</td></tr>
 <tr class="memdesc:a9572ec0bdf10389a8e35110de48e609d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a range of arguments from the list, with an optional predicate function for filtering.  <a href="structopt_1_1_arg_container.html#a9572ec0bdf10389a8e35110de48e609d">More...</a><br /></td></tr>
 <tr class="separator:a9572ec0bdf10389a8e35110de48e609d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b1b62996683808f1e5c4331396f9ad4"><td class="memItemLeft" align="right" valign="top"><a id="a8b1b62996683808f1e5c4331396f9ad4"></a>
@@ -303,7 +303,7 @@ Protected Attributes</h2></td></tr>
 std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_arg0</b></td></tr>
 <tr class="separator:a6771631ff222bdf2f387c2b2c7c9215e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c5d3d94fe9ae4102f69dc4e6001f71"><td class="memItemLeft" align="right" valign="top"><a id="a59c5d3d94fe9ae4102f69dc4e6001f71"></a>
-<a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_args</b></td></tr>
+ArgContainerType&#160;</td><td class="memItemRight" valign="bottom"><b>_args</b></td></tr>
 <tr class="separator:a59c5d3d94fe9ae4102f69dc4e6001f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -324,7 +324,7 @@ std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bo
         <tr>
           <td class="memname">opt::ArgContainer::ArgContainer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">ArgContainerType &amp;&amp;&#160;</td>
           <td class="paramname"><em>args</em>, </td>
         </tr>
         <tr>
@@ -537,13 +537,13 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -761,13 +761,13 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -927,13 +927,13 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">virtual <a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a> opt::ArgContainer::duplicate_range </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;&#160;</td>
+          <td class="paramtype">const ArgContainerIteratorType &amp;&#160;</td>
           <td class="paramname"><em>from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>to</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
@@ -945,7 +945,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>pred</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1035,7 +1035,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find </td>
           <td>(</td>
           <td class="paramtype">const Name &amp;...&#160;</td>
           <td class="paramname"><em>compoundFlags</em></td><td>)</td>
@@ -1086,7 +1086,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find </td>
           <td>(</td>
           <td class="paramtype">const Name &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -1094,13 +1094,13 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1155,15 +1155,15 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type, var::same_or_convertible&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find </td>
           <td>(</td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
@@ -1224,7 +1224,7 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -1232,13 +1232,13 @@ template&lt;std::same_as&lt; CompoundFlag &gt; Type&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1292,7 +1292,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR <a class="el" href="namespaceopt.html#a8048bb6c81102ec4e6d0e267f620f928">ArgContainerIteratorContainerType</a> opt::ArgContainer::find_all </td>
+          <td class="memname">const WINCONSTEXPR ArgContainerIteratorContainerType opt::ArgContainer::find_all </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;...&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
@@ -1346,7 +1346,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR <a class="el" href="namespaceopt.html#a8048bb6c81102ec4e6d0e267f620f928">ArgContainerIteratorContainerType</a> opt::ArgContainer::find_all </td>
+          <td class="memname">const WINCONSTEXPR ArgContainerIteratorContainerType opt::ArgContainer::find_all </td>
           <td>(</td>
           <td class="paramtype">const std::tuple&lt; Names... &gt; &amp;&#160;</td>
           <td class="paramname"><em>names</em>, </td>
@@ -1354,13 +1354,13 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;&#160;</td>
+          <td class="paramtype">const ArgContainerIteratorType &amp;&#160;</td>
           <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;&#160;</td>
+          <td class="paramtype">const ArgContainerIteratorType &amp;&#160;</td>
           <td class="paramname"><em>last</em>&#160;</td>
         </tr>
         <tr>
@@ -1415,7 +1415,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find_any </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find_any </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;...&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
@@ -1469,7 +1469,7 @@ template&lt;ValidArg... Types, ValidInputType Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find_any </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find_any </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -1477,13 +1477,13 @@ template&lt;ValidArg... Types, ValidInputType Names&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1539,7 +1539,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> opt::ArgContainer::find_any </td>
+          <td class="memname">WINCONSTEXPR ArgContainerIteratorType opt::ArgContainer::find_any </td>
           <td>(</td>
           <td class="paramtype">const std::tuple&lt; Names... &gt; &amp;&#160;</td>
           <td class="paramname"><em>names</em>, </td>
@@ -1547,13 +1547,13 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;&#160;</td>
+          <td class="paramtype">const ArgContainerIteratorType &amp;&#160;</td>
           <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &amp;&#160;</td>
+          <td class="paramtype">const ArgContainerIteratorType &amp;&#160;</td>
           <td class="paramname"><em>last</em>&#160;</td>
         </tr>
         <tr>
@@ -1608,7 +1608,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get </td>
+          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get </td>
           <td>(</td>
           <td class="paramtype">const Name &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -1616,13 +1616,13 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1677,7 +1677,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a> opt::ArgContainer::get_all </td>
+          <td class="memname">const WINCONSTEXPR ArgContainerType opt::ArgContainer::get_all </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;...&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
@@ -1728,7 +1728,7 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get_any </td>
+          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get_any </td>
           <td>(</td>
           <td class="paramtype">const Name &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -1736,13 +1736,13 @@ template&lt;ValidArg... Types, ValidInputType Name&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>off</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>end</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1797,7 +1797,7 @@ template&lt;ValidArg... Types, ValidInputType... Names&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get_any </td>
+          <td class="memname">const WINCONSTEXPR std::optional&lt;<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>&gt; opt::ArgContainer::get_any </td>
           <td>(</td>
           <td class="paramtype">const Names &amp;...&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
@@ -1846,15 +1846,15 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a> opt::ArgContainer::get_range </td>
+          <td class="memname">const WINCONSTEXPR ArgContainerType opt::ArgContainer::get_range </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a>&#160;</td>
+          <td class="paramtype">ArgContainerIteratorType&#160;</td>
           <td class="paramname"><em>from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; <a class="el" href="namespaceopt.html#ac8ea4d4fea9f5e3c6d46ababc4463b6c">ArgContainerIteratorType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; ArgContainerIteratorType &gt; &amp;&#160;</td>
           <td class="paramname"><em>to</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
@@ -1866,7 +1866,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>pred</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -1913,7 +1913,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR <a class="el" href="namespaceopt.html#adfe78d40b04433e531b74164cade6e80">ArgContainerType</a> opt::ArgContainer::get_range </td>
+          <td class="memname">const WINCONSTEXPR ArgContainerType opt::ArgContainer::get_range </td>
           <td>(</td>
           <td class="paramtype">const size_t &amp;&#160;</td>
           <td class="paramname"><em>from</em>, </td>
@@ -1933,7 +1933,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; std::function&lt; bool(<a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a>)&gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>pred</em> = <code>std::nullopt</code>&#160;</td>
         </tr>
         <tr>
@@ -2083,7 +2083,7 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceopt.html">opt</a></li><li class="navelem"><a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a></li>
+    <li class="navelem"><b>opt</b></li><li class="navelem"><a class="el" href="structopt_1_1_arg_container.html">ArgContainer</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

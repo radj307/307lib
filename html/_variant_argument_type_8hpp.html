@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('_variant_argument_type_8hpp.html','');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -103,7 +102,8 @@ $(document).ready(function(){initNavTree('_variant_argument_type_8hpp.html','');
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for VariantArgumentType.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_variant_argument_type_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_variant_argument_type_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -121,16 +121,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt_1_1_variant_arg.html">opt::VariantArg</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceopt"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html">opt</a></td></tr>
-<tr class="memdesc:namespaceopt"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing functions &amp; objects related to "optional" variables. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="memItemLeft" align="right" valign="top"><a id="af96ecf1c473dc1d8a07674fd1858fe4f"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#af96ecf1c473dc1d8a07674fd1858fe4f">opt::VariantArgumentType</a> = std::variant&lt; std::monostate, Parameter, Option, Flag &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">opt::VariantArgumentType</a> = std::variant&lt; std::monostate, Parameter, Option, Flag &gt;</td></tr>
 <tr class="memdesc:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variant type that allows std::monostate (null/all), Parameter, Option, &amp; Flag types, in that order. <br /></td></tr>
 <tr class="separator:af96ecf1c473dc1d8a07674fd1858fe4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -151,12 +145,12 @@ const WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom
 template&lt;ValidArg Type&gt; </td></tr>
 <tr class="memitem:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>opt::is_type</b> (const VariantArgumentType &amp;arg)</td></tr>
 <tr class="separator:a81e37cea59bb7d8675fc517ef3d0e590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e94744bdbabe51bbb6262321407d0ed"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt.html#a8e94744bdbabe51bbb6262321407d0ed">opt::operator&lt;&lt;</a> (std::ostream &amp;os, const VariantArgumentType &amp;varg)</td></tr>
-<tr class="memdesc:a8e94744bdbabe51bbb6262321407d0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">VariantArgumentType output stream insertion operator.  <a href="namespaceopt.html#a8e94744bdbabe51bbb6262321407d0ed">More...</a><br /></td></tr>
+<tr class="memitem:a8e94744bdbabe51bbb6262321407d0ed"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_variant_argument_type_8hpp.html#a8e94744bdbabe51bbb6262321407d0ed">opt::operator&lt;&lt;</a> (std::ostream &amp;os, const VariantArgumentType &amp;varg)</td></tr>
+<tr class="memdesc:a8e94744bdbabe51bbb6262321407d0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">VariantArgumentType output stream insertion operator.  <a href="_variant_argument_type_8hpp.html#a8e94744bdbabe51bbb6262321407d0ed">More...</a><br /></td></tr>
 <tr class="separator:a8e94744bdbabe51bbb6262321407d0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplParams" colspan="2">template&lt;typename IntegerT , IntegerT index&gt; </td></tr>
-<tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">opt::requires</a> (index==static_cast&lt; IntegerT &gt;(0)) &amp;&amp;std</td></tr>
-<tr class="memdesc:aa2f10f2c576dc410b4cacf831c949d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a std::monostate type from a VariantArgumentType instance.  <a href="namespaceopt.html#aa2f10f2c576dc410b4cacf831c949d09">More...</a><br /></td></tr>
+<tr class="memitem:aa2f10f2c576dc410b4cacf831c949d09"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_variant_argument_type_8hpp.html#aa2f10f2c576dc410b4cacf831c949d09">opt::requires</a> (index==static_cast&lt; IntegerT &gt;(0)) &amp;&amp;std</td></tr>
+<tr class="memdesc:aa2f10f2c576dc410b4cacf831c949d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a std::monostate type from a VariantArgumentType instance.  <a href="_variant_argument_type_8hpp.html#aa2f10f2c576dc410b4cacf831c949d09">More...</a><br /></td></tr>
 <tr class="separator:aa2f10f2c576dc410b4cacf831c949d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2159b287993f819a2fbadd4f5798d426"><td class="memTemplParams" colspan="2"><a id="a2159b287993f819a2fbadd4f5798d426"></a>
 template&lt;ValidArg... Type&gt; </td></tr>
@@ -168,7 +162,139 @@ template&lt;ValidArg... Type&gt; </td></tr>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_variant_argument_type_8hpp_source.html">VariantArgumentType.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a8e94744bdbabe51bbb6262321407d0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e94744bdbabe51bbb6262321407d0ed">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; opt::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f">VariantArgumentType</a> &amp;&#160;</td>
+          <td class="paramname"><em>varg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>VariantArgumentType output stream insertion operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>- (implicit) Output Stream Reference. </td></tr>
+    <tr><td class="paramname">varg</td><td>- (implicit) VariantArgumentType instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_variant_argument_type_8hpp_source.html#l00149">149</a> of file <a class="el" href="_variant_argument_type_8hpp_source.html">VariantArgumentType.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa2f10f2c576dc410b4cacf831c949d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f10f2c576dc410b4cacf831c949d09">&#9670;&nbsp;</a></span>requires()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntegerT , IntegerT index&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">opt::requires </td>
+          <td>(</td>
+          <td class="paramtype">index&#160;</td>
+          <td class="paramname"> = <code>=&#160;static_cast&lt;IntegerT&gt;(0)</code></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve a std::monostate type from a VariantArgumentType instance. </p>
+<p>Retrieve a Flag type from a VariantArgumentType instance.</p>
+<p>Retrieve an Option type from a VariantArgumentType instance.</p>
+<p>Retrieve a Parameter type from a VariantArgumentType instance.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntegerT</td><td>- Integer type </td></tr>
+    <tr><td class="paramname">index</td><td>- The index number of the type to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>- The argument to retrieve a type from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::monostate</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntegerT</td><td>- Integer type </td></tr>
+    <tr><td class="paramname">index</td><td>- The index number of the type to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>- The argument to retrieve a type from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Parameter</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntegerT</td><td>- Integer type </td></tr>
+    <tr><td class="paramname">index</td><td>- The index number of the type to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>- The argument to retrieve a type from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Option</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntegerT</td><td>- Integer type </td></tr>
+    <tr><td class="paramname">index</td><td>- The index number of the type to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>- The argument to retrieve a type from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_variant_argument_type_8hpp_source.html#l00095">95</a> of file <a class="el" href="_variant_argument_type_8hpp_source.html">VariantArgumentType.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

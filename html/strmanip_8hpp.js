@@ -35,20 +35,8 @@ var strmanip_8hpp =
     [ "strip", "strmanip_8hpp.html#acf63c00706c91be7da3f18b08a088224", null ],
     [ "strip_line", "strmanip_8hpp.html#a7346dfeb6d8d2d04a563649f4bf3cbca", null ],
     [ "strip_line_multiCharComment", "strmanip_8hpp.html#ab3d3b4fc0b12749a6a027d5b0e58be81", null ],
-    [ "strip_preceeding", "strmanip_8hpp.html#a4a7fab88e397cd6251944c3d01a7438d", null ],
+    [ "strip_preceding", "strmanip_8hpp.html#a33423022c6b7a682fa51e69e4e61d95e", null ],
     [ "strip_trailing", "strmanip_8hpp.html#a45c1b11a2e282a4fc8d38548eaf45f3c", null ],
     [ "toMap", "strmanip_8hpp.html#a88947ca78984e05f41dd36fb221d32d6", null ],
-    [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ],
-    [ "trim", "strmanip_8hpp.html#ae08aac1680da8afe0bb6a06c2b129487", null ],
-    [ "trim", "strmanip_8hpp.html#a922b42c14f2696e7b7598127f2994874", null ],
-    [ "trim", "strmanip_8hpp.html#a65d75f0e774d1dc8435a8d23e7f2c7f2", null ],
-    [ "trim", "strmanip_8hpp.html#a46e66bef2ea5926128e48eb7290b4bcc", null ],
-    [ "trim_preceeding", "strmanip_8hpp.html#a663cf5e6a2789f130f7bca9b2bc139b1", null ],
-    [ "trim_preceeding", "strmanip_8hpp.html#ab9aa2445b504ba751cfd01ffff800516", null ],
-    [ "trim_preceeding", "strmanip_8hpp.html#a16d70395beb3eac2d1eb1d4db2239d3a", null ],
-    [ "trim_preceeding", "strmanip_8hpp.html#aab478eeb7dfa7d0d4fd175316412126f", null ],
-    [ "trim_trailing", "strmanip_8hpp.html#ae62653424221ea585a928a2dd1c7dbd6", null ],
-    [ "trim_trailing", "strmanip_8hpp.html#aac4273bb692df476dc585a89a67f3729", null ],
-    [ "trim_trailing", "strmanip_8hpp.html#acbeabeae95260fb81a833b977510d899", null ],
-    [ "trim_trailing", "strmanip_8hpp.html#a9afd3d15679280008373868b588955f5", null ]
+    [ "toVector", "strmanip_8hpp.html#a9f9a7cdc58ff315c0dbdb4793171918f", null ]
 ];

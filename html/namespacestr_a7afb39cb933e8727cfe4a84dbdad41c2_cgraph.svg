@@ -12,46 +12,46 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Converts a given hexadecimal character to its decimal equivalent.">
-<polygon fill="#bfbfbf" stroke="black" points="0,-28.5 0,-47.5 104,-47.5 104,-28.5 0,-28.5"/>
-<text text-anchor="middle" x="52" y="-35.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::hexToDecimal</text>
+<polygon fill="#bfbfbf" stroke="black" points="0,-19.5 0,-38.5 104,-38.5 104,-19.5 0,-19.5"/>
+<text text-anchor="middle" x="52" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::hexToDecimal</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="charcompare_8hpp.html#a3dd0252a3e16c5f76723bca4e215bf1b" target="_top" xlink:title="Check if the given character is any digit character. &#160;&#160;(&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;,...">
-<polygon fill="none" stroke="black" points="140,-56.5 140,-75.5 248,-75.5 248,-56.5 140,-56.5"/>
-<text text-anchor="middle" x="194" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isdigit</text>
+<g id="a_node2"><a xlink:href="namespacestr.html#a68e649ab0e89eb23dfeba29811be4020" target="_top" xlink:title="Converts a bool to string.">
+<polygon fill="none" stroke="black" points="154,-38.5 154,-57.5 234,-57.5 234,-38.5 154,-38.5"/>
+<text text-anchor="middle" x="194" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::frombool</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M100.79,-47.56C111.94,-49.79 123.93,-52.19 135.45,-54.49"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="134.93,-57.96 145.43,-56.49 136.31,-51.09 134.93,-57.96"/>
+<path fill="none" stroke="midnightblue" d="M104.34,-35.97C117.27,-37.72 131.12,-39.6 143.93,-41.34"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="143.57,-44.82 153.95,-42.7 144.51,-37.89 143.57,-44.82"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="namespacestr.html#a99874f5b703e388240420d5bec8557a3" target="_top" xlink:title="Check if a given string matches any of a list of strings.">
-<polygon fill="none" stroke="black" points="143.5,-0.5 143.5,-19.5 244.5,-19.5 244.5,-0.5 143.5,-0.5"/>
-<text text-anchor="middle" x="194" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::matches_any</text>
+<g id="a_node3"><a xlink:href="charcompare_8hpp.html#a3dd0252a3e16c5f76723bca4e215bf1b" target="_top" xlink:title="Check if the given character is any digit character. &#160;&#160;(&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;,...">
+<polygon fill="none" stroke="black" points="140,-0.5 140,-19.5 248,-19.5 248,-0.5 140,-0.5"/>
+<text text-anchor="middle" x="194" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isdigit</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
-<title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M100.79,-28.44C111.94,-26.21 123.93,-23.81 135.45,-21.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="136.31,-24.91 145.43,-19.51 134.93,-18.04 136.31,-24.91"/>
-</g>
-<!-- Node3&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M172.11,-19.76C161.47,-28.57 168.76,-38 194,-38 210.56,-38 219.4,-33.94 220.51,-28.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="223.6,-27.02 215.89,-19.76 217.39,-30.24 223.6,-27.02"/>
+<title>Node1&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M104.34,-22.03C112.64,-20.91 121.32,-19.73 129.86,-18.57"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="130.35,-22.03 139.79,-17.22 129.41,-15.1 130.35,-22.03"/>
+</g>
+<!-- Node2&#45;&gt;Node2 -->
+<g id="edge2" class="edge">
+<title>Node2&#45;&gt;Node2</title>
+<path fill="none" stroke="midnightblue" d="M172.11,-57.76C161.47,-66.57 168.76,-76 194,-76 210.56,-76 219.4,-71.94 220.51,-66.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="223.6,-65.02 215.89,-57.76 217.39,-68.24 223.6,-65.02"/>
 </g>
 </g>
 </svg>

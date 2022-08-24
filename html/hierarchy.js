@@ -16,12 +16,21 @@ var hierarchy =
     [ "term::basic_colors< SequenceType >", "classterm_1_1basic__colors.html", [
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
+    [ "shared::basic_event_args", "structshared_1_1basic__event__args.html", [
+      [ "ini::basic_ini< TKeyComparator >::onReadArgs", "structini_1_1basic__ini_1_1on_read_args.html", null ],
+      [ "ini::basic_ini< TKeyComparator >::onWriteArgs", "structini_1_1basic__ini_1_1on_write_args.html", null ],
+      [ "myEventArgs", "structmy_event_args.html", null ],
+      [ "shared::tuple_event_args< TArgs >", "structshared_1_1tuple__event__args.html", null ]
+    ] ],
+    [ "shared::basic_event_handler", "structshared_1_1basic__event__handler.html", [
+      [ "shared::callback_event_handler", "structshared_1_1callback__event__handler.html", null ]
+    ] ],
     [ "shared::basic_indentor< TChar, TCharTraits, TAlloc >", "structshared_1_1basic__indentor.html", null ],
+    [ "ini::basic_ini< TKeyComparator >", "classini_1_1basic__ini.html", null ],
     [ "matrix::basic_matrix< T, SizeX, SizeY >", "structmatrix_1_1basic__matrix.html", null ],
     [ "std::basic_string< Char >", null, [
       [ "opt3::basic_vstring< char, std::char_traits< char >, std::allocator< char > >", "structopt3_1_1basic__vstring.html", null ],
-      [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ],
-      [ "shared::basic_vstring< TChar, TCharTraits, TAlloc >", "structshared_1_1basic__vstring.html", null ]
+      [ "opt3::basic_vstring< TChar, TCharTraits, TAlloc >", "structopt3_1_1basic__vstring.html", null ]
     ] ],
     [ "std::basic_string_view< Char >", null, [
       [ "std::string_view", null, [
@@ -29,7 +38,6 @@ var hierarchy =
       ] ]
     ] ],
     [ "color::basic_sync< TChar, TCharTraits, TAlloc >", "classcolor_1_1basic__sync.html", null ],
-    [ "var::basic_variant_map< TMap, TKey, Ts >", "classvar_1_1basic__variant__map.html", null ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
         [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
@@ -41,9 +49,17 @@ var hierarchy =
     [ "xlog::BufferManager", "classxlog_1_1_buffer_manager.html", null ],
     [ "opt::CaptureList", "structopt_1_1_capture_list.html", null ],
     [ "opt::CaptureStyle", "structopt_1_1_capture_style.html", null ],
+    [ "ini::CaseInsensitiveCompare", "structini_1_1_case_insensitive_compare.html", null ],
+    [ "ini::CaseSensitiveCompare", "structini_1_1_case_sensitive_compare.html", null ],
     [ "term::Cursor", "structterm_1_1_cursor.html", null ],
     [ "rng::EngineWrapper< Engine >", "classrng_1_1_engine_wrapper.html", null ],
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
+    [ "shared::eventdef< TArgs >", "classshared_1_1eventdef.html", null ],
+    [ "shared::eventdef< EventArgs >", "classshared_1_1eventdef.html", null ],
+    [ "shared::eventdef< ini::basic_ini::onReadArgs >", "classshared_1_1eventdef.html", null ],
+    [ "shared::eventdef< ini::basic_ini::onWriteArgs >", "classshared_1_1eventdef.html", null ],
+    [ "shared::eventdef< myEventArgs >", "classshared_1_1eventdef.html", null ],
+    [ "shared::eventdef< shared::basic_event_args >", "classshared_1_1eventdef.html", null ],
     [ "std::exception", null, [
       [ "ex::except", "classex_1_1except.html", [
         [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
@@ -51,10 +67,9 @@ var hierarchy =
       ] ]
     ] ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
-    [ "ini_container", null, [
-      [ "ini::basic_ini< TChar, TCharTraits, TAlloc >", "classini_1_1basic__ini.html", null ]
-    ] ],
-    [ "ini::ini_parser_config< TChar, TCharTraits, TAlloc >", "structini_1_1ini__parser__config.html", null ],
+    [ "ini::ini_parser_config< TKeyComparator >", "structini_1_1ini__parser__config.html", null ],
+    [ "ini::ini_printer< TKeyComparator >", "structini_1_1ini__printer.html", null ],
+    [ "ini::ini_value", "classini_1_1ini__value.html", null ],
     [ "file::ini::INIContainer", "classfile_1_1ini_1_1_i_n_i_container.html", [
       [ "file::ini::INI", "structfile_1_1ini_1_1_i_n_i.html", null ]
     ] ],
@@ -97,6 +112,7 @@ var hierarchy =
         [ "file::ini::MINI", "classfile_1_1ini_1_1_m_i_n_i.html", null ]
       ] ]
     ] ],
+    [ "MeaninglessIndirection", "struct_meaningless_indirection.html", null ],
     [ "term::Message", "structterm_1_1_message.html", null ],
     [ "process::Mode", "structprocess_1_1_mode.html", null ],
     [ "matrix::nmatrix< T, SizeX, SizeY >", "structmatrix_1_1nmatrix.html", null ],
@@ -112,8 +128,8 @@ var hierarchy =
       [ "str::facet::NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", null ]
     ] ],
     [ "optional", null, [
-      [ "opt::casting_optional< T >", "structopt_1_1casting__optional.html", [
-        [ "opt::unsafe_optional< T, Base >", "structopt_1_1unsafe__optional.html", null ]
+      [ "shared::casting_optional< T >", "structshared_1_1casting__optional.html", [
+        [ "shared::unsafe_optional< T, Base >", "structshared_1_1unsafe__optional.html", null ]
       ] ]
     ] ],
     [ "xlog::OutputTarget< StreamType >", "structxlog_1_1_output_target.html", null ],
@@ -126,9 +142,11 @@ var hierarchy =
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "xml::ProcessingInstructions", "structxml_1_1_processing_instructions.html", null ],
+    [ "shared::semversion< T >", "classshared_1_1semversion.html", null ],
     [ "color::setcolor_seq< TChar, TCharTraits, TAlloc >", "structcolor_1_1setcolor__seq.html", null ],
     [ "color::setcolor_seq< seq >", "structcolor_1_1setcolor__seq.html", null ],
     [ "color::setcolor_seq< TChar, std::char_traits< TChar >, std::allocator< TChar > >", "structcolor_1_1setcolor__seq.html", null ],
+    [ "color::setcolor_seq_state_manip", "classcolor_1_1setcolor__seq__state__manip.html", null ],
     [ "str::SetLocale", "structstr_1_1_set_locale.html", null ],
     [ "str::SetLocaleFacet< Facet >", "structstr_1_1_set_locale_facet.html", null ],
     [ "StreamType", null, [

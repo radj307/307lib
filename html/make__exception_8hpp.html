@@ -112,7 +112,8 @@ Include dependency graph for make_exception.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="make__exception_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="make__exception_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -141,11 +142,11 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; TReturn, std::string &gt; WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#a2fa5e133ea01dd0519a12f9b749d8d3f">ex::make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
-<tr class="memdesc:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#a2fa5e133ea01dd0519a12f9b749d8d3f">More...</a><br /></td></tr>
-<tr class="separator:a2fa5e133ea01dd0519a12f9b749d8d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1423fe0416db98f3e2c71c263c2d8e2"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:afbc8499616a2ad2796cb8060c6fa417e"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:afbc8499616a2ad2796cb8060c6fa417e"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; TReturn, std::basic_string&lt; TChar, TCharTraits, TAlloc &gt; &gt; WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#afbc8499616a2ad2796cb8060c6fa417e">ex::make_custom_exception</a> (Ts &amp;&amp;... message)</td></tr>
+<tr class="memdesc:afbc8499616a2ad2796cb8060c6fa417e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type with the given arguments as a message.  <a href="namespaceex.html#afbc8499616a2ad2796cb8060c6fa417e">More...</a><br /></td></tr>
+<tr class="separator:afbc8499616a2ad2796cb8060c6fa417e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1423fe0416db98f3e2c71c263c2d8e2"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; except &gt; TReturn, typename... Ts&gt; </td></tr>
 <tr class="memitem:af1423fe0416db98f3e2c71c263c2d8e2"><td class="memTemplItemLeft" align="right" valign="top">requires std::constructible_from&lt; TReturn, Ts... &gt; WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceex.html#af1423fe0416db98f3e2c71c263c2d8e2">ex::make_custom_exception_explicit</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:af1423fe0416db98f3e2c71c263c2d8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a custom exception type from the given arguments.  <a href="namespaceex.html#af1423fe0416db98f3e2c71c263c2d8e2">More...</a><br /></td></tr>
 <tr class="separator:af1423fe0416db98f3e2c71c263c2d8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -1,14 +1,7 @@
 var searchData=
 [
-  ['read_1562',['READ',['../structprocess_1_1_mode.html#a636e70e25eb0cbb39b2282367f0eaf44',1,'process::Mode']]],
-  ['red_1563',['red',['../structcolor_1_1setcolor__seq.html#a166df43fec9ae21487034734b65f54c8',1,'color::setcolor_seq::red()'],['../color-values_8h.html#ac8cf093e96967abc35d1d201ceb4b332',1,'color::red()']]],
-  ['reportcursorposition_1564',['ReportCursorPosition',['../namespaceterm.html#ac763ccf04e02bc17a680611541b8dca2',1,'term']]],
-  ['reportdeviceattributes_1565',['ReportDeviceAttributes',['../namespaceterm.html#aec3af84c6a853c31fdaffbf50ec24e3f',1,'term']]],
-  ['required_1566',['Required',['../structopt_1_1_capture_style.html#abd96544a92719ca346b3840339c23946',1,'opt::CaptureStyle']]],
-  ['reset_1567',['reset',['../structcolor_1_1setcolor__seq.html#aeb7ab92025545085ceeb4a74caba3b62',1,'color::setcolor_seq::reset()'],['../classterm_1_1basic__colors.html#a3b597c42ee346c2714d92c312f91634f',1,'term::basic_colors::reset()'],['../namespaceterm.html#acebdad8f4466e7d50959cffec1709a90',1,'term::Reset()']]],
-  ['reset_5ffmt_1568',['reset_fmt',['../classterm_1_1basic__colors.html#a0f3af5e41aa4c36ba5b1ac179c6b71d1',1,'term::basic_colors']]],
-  ['resetbackcolor_1569',['ResetBackColor',['../namespaceterm.html#ad33c8c6f2041e0d6d1338a554c192ad5',1,'term']]],
-  ['resetcolor_1570',['ResetColor',['../namespaceterm.html#a070e87d130e671680e47917aa7e70694',1,'term']]],
-  ['resettabstops_1571',['ResetTabStops',['../namespaceterm.html#a468d7079b334350aa0420e7a2de3b9a4',1,'term']]],
-  ['resettextcolor_1572',['ResetTextColor',['../namespaceterm.html#a16e5637fcc72e3831be8d0221868e323',1,'term']]]
+  ['path_5fvar_1696',['path_var',['../classenv_1_1_p_a_t_h.html#a1153822aa22114138b1ca58be69b61c7',1,'env::PATH']]],
+  ['placeholder_1697',['placeholder',['../classterm_1_1basic__colors.html#ad81bf1a0ed79de07ceb6fbbba575e4c8',1,'term::basic_colors']]],
+  ['program_5fpath_1698',['program_path',['../classenv_1_1_p_a_t_h.html#a52a0f68409ac9b713d091fcd14c47f8c',1,'env::PATH']]],
+  ['purple_1699',['purple',['../color-values_8h.html#ad3054056a3f586375ba838bc838dfa85',1,'color']]]
 ];

@@ -88,15 +88,20 @@ $(document).ready(function(){initNavTree('setcolor_8hpp.html',''); initResizable
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">setcolor.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides the setcolor_seq struct, a string-wrapper that entirely abstracts manual ANSI escape sequence handling away, allowing the developer to instead use 'colors' directly.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="color-format_8hpp_source.html">color-format.hpp</a>&gt;</code><br />
+<code>#include &lt;color-format.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="color-values_8h_source.html">color-values.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_segments_8h_source.html">Segments.h</a>&gt;</code><br />
@@ -104,57 +109,99 @@ $(document).ready(function(){initNavTree('setcolor_8hpp.html',''); initResizable
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for setcolor.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="setcolor_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="setcolor_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="setcolor_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="setcolor_8hpp__dep__incl.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="setcolor_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1setcolor__seq.html">term::setcolor_seq&lt; SeqT &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes. <br  />
- Uses the ostream operator&lt;&lt; to insert escape sequences into streams.  <a href="structterm_1_1setcolor__seq.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolor_1_1setcolor__seq.html">color::setcolor_seq&lt; TChar, TCharTraits, TAlloc &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acts as a wrapper and controller for SGR &amp; <a class="el" href="structcolor_1_1_r_g_b.html" title="A 3-channel RGB color type.">RGB</a> color codes, as well as certain SGR format codes. <br  />
+ Uses the ostream operator&lt;&lt; to insert escape sequences into streams.  <a href="structcolor_1_1setcolor__seq.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1setcolor__seq__state__manip.html">color::setcolor_seq_state_manip</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">iostream manipulator that can enable or disable all color sequences *(via <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a>)* in any specific stream.  <a href="classcolor_1_1setcolor__seq__state__manip.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacecolor"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html">color</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceterm"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html">term</a></td></tr>
-<tr class="memdesc:namespaceterm"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains pre-made <a class="el" href="namespace_a_n_s_i.html">ANSI</a> sequences &amp; helper functions for making sequences. <br /></td></tr>
+<tr class="memdesc:namespaceterm"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains pre-made ANSI sequences &amp; helper functions for making sequences. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9c022d13fef1bdce1abbfb1545e28e3f"><td class="memItemLeft" align="right" valign="top"><a id="a9c022d13fef1bdce1abbfb1545e28e3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#a9c022d13fef1bdce1abbfb1545e28e3f">SETCOLOR_NO_RGB</a></td></tr>
+<tr class="memdesc:a9c022d13fef1bdce1abbfb1545e28e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the direct-RGB ANSI escape sequence for operating systems that don't support it, such as Windows. <br  />
+ Enabled by default on Windows, disabled by default on all other platforms. <br /></td></tr>
+<tr class="separator:a9c022d13fef1bdce1abbfb1545e28e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">term::setcolor</a> = setcolor_seq&lt; <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a> &gt;</td></tr>
-<tr class="memdesc:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, &amp; invert.  <a href="namespaceterm.html#a3cf3ddf954d07bcb593ca74f0c636e50">More...</a><br /></td></tr>
-<tr class="separator:a3cf3ddf954d07bcb593ca74f0c636e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16bb0ca9938c4b43be74d9934120047b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">term::wsetcolor</a> = setcolor_seq&lt; <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a> &gt;</td></tr>
-<tr class="memdesc:a16bb0ca9938c4b43be74d9934120047b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, &amp; invert.  <a href="namespaceterm.html#a16bb0ca9938c4b43be74d9934120047b">More...</a><br /></td></tr>
-<tr class="separator:a16bb0ca9938c4b43be74d9934120047b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111f5f1b19f6bbe6806bc049153b5375"><td class="memItemLeft" align="right" valign="top"><a id="a111f5f1b19f6bbe6806bc049153b5375"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#a111f5f1b19f6bbe6806bc049153b5375">color::setcolor</a> = setcolor_seq&lt; char &gt;</td></tr>
+<tr class="memdesc:a111f5f1b19f6bbe6806bc049153b5375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color. It can also set formatting flags like bold, underline, &amp; invert. <br /></td></tr>
+<tr class="separator:a111f5f1b19f6bbe6806bc049153b5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8106132e5b035c4478412f62d9ab19d"><td class="memItemLeft" align="right" valign="top"><a id="ae8106132e5b035c4478412f62d9ab19d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#ae8106132e5b035c4478412f62d9ab19d">color::wsetcolor</a> = setcolor_seq&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:ae8106132e5b035c4478412f62d9ab19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground or background color to the specified color, for use with wchar_t types. It can also set formatting flags like bold, underline, &amp; invert. <br /></td></tr>
+<tr class="separator:ae8106132e5b035c4478412f62d9ab19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a7a090e7139f762b631ad1d98b4451a10"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10">color::Layer</a> : bool { <a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a800618943025315f869e4e1f09471012">color::Layer::F</a> = false, 
-<a class="el" href="namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a9d5ed678fe57bcca610140957afab571">color::Layer::B</a> = true
+<tr class="memitem:a9282a806b4d9fef9144432322d12e832"><td class="memItemLeft" align="right" valign="top"><a id="a9282a806b4d9fef9144432322d12e832"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Layer</b> : int8_t { <br />
+&#160;&#160;<b>color::Layer::B</b> = 48, 
+<b>color::Layer::F</b> = 38, 
+<b>color::Layer::Back</b> = B, 
+<b>color::Layer::Fore</b> = F, 
+<br />
+&#160;&#160;<b>color::Layer::Background</b> = Back, 
+<b>color::Layer::Foreground</b> = Fore
+<br />
  }</td></tr>
-<tr class="separator:a7a090e7139f762b631ad1d98b4451a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a9282a806b4d9fef9144432322d12e832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aeb7dd43cb9f25ec7d733f4c6d908bd99"><td class="memItemLeft" align="right" valign="top"><a id="aeb7dd43cb9f25ec7d733f4c6d908bd99"></a>
+constexpr setcolor_seq_state_manip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#aeb7dd43cb9f25ec7d733f4c6d908bd99">color::disable_setcolor</a> ()</td></tr>
+<tr class="memdesc:aeb7dd43cb9f25ec7d733f4c6d908bd99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream manipulator that disables ANSI color sequences via the <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> class in the target stream. <br /></td></tr>
+<tr class="separator:aeb7dd43cb9f25ec7d733f4c6d908bd99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d2691bf4d0a3ee443acd849ee497ac"><td class="memItemLeft" align="right" valign="top"><a id="ae1d2691bf4d0a3ee443acd849ee497ac"></a>
+constexpr setcolor_seq_state_manip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#ae1d2691bf4d0a3ee443acd849ee497ac">color::enable_setcolor</a> ()</td></tr>
+<tr class="memdesc:ae1d2691bf4d0a3ee443acd849ee497ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream manipulator that enables ANSI color sequences via the <a class="el" href="structcolor_1_1setcolor__seq.html" title="Acts as a wrapper and controller for SGR &amp; RGB color codes, as well as certain SGR format codes....">setcolor_seq</a> class in the target stream. <br /></td></tr>
+<tr class="separator:ae1d2691bf4d0a3ee443acd849ee497ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9973c0f20ca14ed3b3c04b6f79bf120e"><td class="memTemplParams" colspan="2"><a id="a9973c0f20ca14ed3b3c04b6f79bf120e"></a>
+template&lt;var::valid_char TChar, typename TCharTraits  = std::char_traits&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a9973c0f20ca14ed3b3c04b6f79bf120e"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>color::operator&lt;&lt;</b> (std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;os, const Layer &amp;l)</td></tr>
+<tr class="separator:a9973c0f20ca14ed3b3c04b6f79bf120e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad39d7cb04941ff840e4199fbf3288bb2"><td class="memItemLeft" align="right" valign="top">static const setcolor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ad39d7cb04941ff840e4199fbf3288bb2">term::setcolor_placeholder</a> { <a class="el" href="namespace_a_n_s_i.html#a9c1c8df11c51500db7d1c5485c39e547">ANSI::Sequence</a>{}, format::NONE }</td></tr>
-<tr class="memdesc:ad39d7cb04941ff840e4199fbf3288bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions.  <a href="namespaceterm.html#ad39d7cb04941ff840e4199fbf3288bb2">More...</a><br /></td></tr>
-<tr class="separator:ad39d7cb04941ff840e4199fbf3288bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4111eb93e15079e7d1dd6566d7889a6f"><td class="memItemLeft" align="right" valign="top">static const wsetcolor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a4111eb93e15079e7d1dd6566d7889a6f">term::wsetcolor_placeholder</a> { <a class="el" href="namespace_a_n_s_i.html#a633c6ee6fc2019fbf19dc788ce70f4f3">ANSI::wSequence</a>{}, format::NONE }</td></tr>
-<tr class="memdesc:a4111eb93e15079e7d1dd6566d7889a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions.  <a href="namespaceterm.html#a4111eb93e15079e7d1dd6566d7889a6f">More...</a><br /></td></tr>
-<tr class="separator:a4111eb93e15079e7d1dd6566d7889a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="memItemLeft" align="right" valign="top"><a id="a6a1f450cb0752eb5cbfd0bb882f14795"></a>
+static const setcolor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#a6a1f450cb0752eb5cbfd0bb882f14795">color::setcolor_placeholder</a> {}</td></tr>
+<tr class="memdesc:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions. <br /></td></tr>
+<tr class="separator:a6a1f450cb0752eb5cbfd0bb882f14795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8427e0abdba26374e98d3fc1c2f650d2"><td class="memItemLeft" align="right" valign="top"><a id="a8427e0abdba26374e98d3fc1c2f650d2"></a>
+static const wsetcolor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="setcolor_8hpp.html#a8427e0abdba26374e98d3fc1c2f650d2">color::wsetcolor_placeholder</a> {}</td></tr>
+<tr class="memdesc:a8427e0abdba26374e98d3fc1c2f650d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A setcolor instance that does nothing, for use with ternary expressions. <br /></td></tr>
+<tr class="separator:a8427e0abdba26374e98d3fc1c2f650d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides the setcolor_seq struct, a string-wrapper that entirely abstracts manual ANSI escape sequence handling away, allowing the developer to instead use 'colors' directly. </p>
+<dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="setcolor_8hpp_source.html">setcolor.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

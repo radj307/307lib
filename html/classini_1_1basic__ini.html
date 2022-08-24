@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt; Class Template Reference</title>
+<title>307Lib: ini::basic_ini&lt; TKeyComparator &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,11 +86,16 @@ $(document).ready(function(){initNavTree('classini_1_1basic__ini.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classini_1_1basic__ini-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt; Class Template Reference</div>  </div>
+<div class="title">ini::basic_ini&lt; TKeyComparator &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -99,142 +104,219 @@ $(document).ready(function(){initNavTree('classini_1_1basic__ini.html',''); init
 
 <p><code>#include &lt;<a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt;:</div>
+Collaboration diagram for ini::basic_ini&lt; TKeyComparator &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini__inherit__graph.svg" width="184" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt;:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini__coll__graph.svg" width="184" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini__coll__graph.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1basic__ini_1_1on_read_args.html">onReadArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event arguments for the onRead event.  <a href="structini_1_1basic__ini_1_1on_read_args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1basic__ini_1_1on_write_args.html">onWriteArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event arguments for the onWrite event.  <a href="structini_1_1basic__ini_1_1on_write_args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab17ff63a60c6673a10261c4dc5fce898"><td class="memItemLeft" align="right" valign="top"><a id="ab17ff63a60c6673a10261c4dc5fce898"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ParserConfig</b> = <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ab17ff63a60c6673a10261c4dc5fce898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a15555df5669d7f92e86e8a4030513"><td class="memItemLeft" align="right" valign="top"><a id="ac0a15555df5669d7f92e86e8a4030513"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Printer</b> = <a class="el" href="structini_1_1ini__printer.html">ini_printer</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ac0a15555df5669d7f92e86e8a4030513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5925844a914c6fb043dce85be2eefd9f"><td class="memItemLeft" align="right" valign="top"><a id="a5925844a914c6fb043dce85be2eefd9f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a5925844a914c6fb043dce85be2eefd9f">basic_ini</a> ()</td></tr>
-<tr class="memdesc:a5925844a914c6fb043dce85be2eefd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default ctor. <br /></td></tr>
-<tr class="separator:a5925844a914c6fb043dce85be2eefd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18365de2e2c74ef8dfd26e5a195d9381"><td class="memItemLeft" align="right" valign="top"><a id="a18365de2e2c74ef8dfd26e5a195d9381"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a18365de2e2c74ef8dfd26e5a195d9381">basic_ini</a> (base_t &amp;&amp;o) noexcept</td></tr>
-<tr class="memdesc:a18365de2e2c74ef8dfd26e5a195d9381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Container Move Ctor. <br /></td></tr>
-<tr class="separator:a18365de2e2c74ef8dfd26e5a195d9381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51658dcfc2fdc246e9e8f13209785c01"><td class="memItemLeft" align="right" valign="top"><a id="a51658dcfc2fdc246e9e8f13209785c01"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a51658dcfc2fdc246e9e8f13209785c01">basic_ini</a> (base_t const &amp;o)</td></tr>
-<tr class="memdesc:a51658dcfc2fdc246e9e8f13209785c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Container Copy Ctor. <br /></td></tr>
-<tr class="separator:a51658dcfc2fdc246e9e8f13209785c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a056e165fb98cb675cfd8390d02193"><td class="memItemLeft" align="right" valign="top"><a id="a59a056e165fb98cb675cfd8390d02193"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a59a056e165fb98cb675cfd8390d02193">basic_ini</a> (<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&amp;) noexcept=default</td></tr>
-<tr class="memdesc:a59a056e165fb98cb675cfd8390d02193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Move Ctor. <br /></td></tr>
-<tr class="separator:a59a056e165fb98cb675cfd8390d02193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e71ccbaf5fc02b24d5efb57c3f0358a"><td class="memItemLeft" align="right" valign="top"><a id="a0e71ccbaf5fc02b24d5efb57c3f0358a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a0e71ccbaf5fc02b24d5efb57c3f0358a">basic_ini</a> (<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> const &amp;)=default</td></tr>
-<tr class="memdesc:a0e71ccbaf5fc02b24d5efb57c3f0358a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Copy Ctor. <br /></td></tr>
-<tr class="separator:a0e71ccbaf5fc02b24d5efb57c3f0358a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0a6381ee73e02d858034300b7e68d55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ad0a6381ee73e02d858034300b7e68d55">basic_ini</a> (istream_t &amp;&amp;istream, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={})</td></tr>
-<tr class="memdesc:ad0a6381ee73e02d858034300b7e68d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing ctor.  <a href="classini_1_1basic__ini.html#ad0a6381ee73e02d858034300b7e68d55">More...</a><br /></td></tr>
-<tr class="separator:ad0a6381ee73e02d858034300b7e68d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46c6585ebe9599321225163d7973a3b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a46c6585ebe9599321225163d7973a3b1">basic_ini</a> (istream_t &amp;istream, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={})</td></tr>
-<tr class="memdesc:a46c6585ebe9599321225163d7973a3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing ctor.  <a href="classini_1_1basic__ini.html#a46c6585ebe9599321225163d7973a3b1">More...</a><br /></td></tr>
-<tr class="separator:a46c6585ebe9599321225163d7973a3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89b92c371405c9d6e2e1b442a1f6aff0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a89b92c371405c9d6e2e1b442a1f6aff0">basic_ini</a> (std::filesystem::path const &amp;path, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={}, const bool throwIfFileNotFound=false)</td></tr>
-<tr class="memdesc:a89b92c371405c9d6e2e1b442a1f6aff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reading/Parsing ctor.  <a href="classini_1_1basic__ini.html#a89b92c371405c9d6e2e1b442a1f6aff0">More...</a><br /></td></tr>
-<tr class="separator:a89b92c371405c9d6e2e1b442a1f6aff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45db9e414b5b971812a5055ebe437888"><td class="memTemplParams" colspan="2"><a id="a45db9e414b5b971812a5055ebe437888"></a>
-template&lt;var::same_or_convertible&lt; std::pair&lt; string_t, section_t &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a45db9e414b5b971812a5055ebe437888"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>basic_ini</b> (Ts &amp;&amp;... sections)</td></tr>
-<tr class="separator:a45db9e414b5b971812a5055ebe437888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0deb2376359cafaed69784b1de40850b"><td class="memItemLeft" align="right" valign="top"><a id="a0deb2376359cafaed69784b1de40850b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a0deb2376359cafaed69784b1de40850b">~basic_ini</a> ()=default</td></tr>
-<tr class="memdesc:a0deb2376359cafaed69784b1de40850b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Destructor. <br /></td></tr>
-<tr class="separator:a0deb2376359cafaed69784b1de40850b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7025c4ee1e9e4236e66148a741f128"><td class="memItemLeft" align="right" valign="top"><a id="adb7025c4ee1e9e4236e66148a741f128"></a>
-<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>deep_merge</b> (<a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;other, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
-<tr class="separator:adb7025c4ee1e9e4236e66148a741f128"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76df536c85226aa2da4314c8cc0d22e3"><td class="memItemLeft" align="right" valign="top"><a id="a76df536c85226aa2da4314c8cc0d22e3"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a76df536c85226aa2da4314c8cc0d22e3">operator</a> (<a class="el" href="classini_1_1basic__ini.html">basic_ini</a>&lt; TChar, TCharTraits, TAlloc &gt; const &amp;) const =default</td></tr>
-<tr class="memdesc:a76df536c85226aa2da4314c8cc0d22e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default comparison operators. <br /></td></tr>
-<tr class="separator:a76df536c85226aa2da4314c8cc0d22e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac34c5e86d29b0128fe4a7ffcc8bf8c11"><td class="memItemLeft" align="right" valign="top"><a id="ac34c5e86d29b0128fe4a7ffcc8bf8c11"></a>
-<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (std::pair&lt; string_t, section_t &gt; &amp;&amp;section_pr)</td></tr>
-<tr class="separator:ac34c5e86d29b0128fe4a7ffcc8bf8c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df79f2fc259fb1c76041a834eb660d6"><td class="memItemLeft" align="right" valign="top"><a id="a0df79f2fc259fb1c76041a834eb660d6"></a>
-<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a0df79f2fc259fb1c76041a834eb660d6">operator=</a> (base_t &amp;&amp;o) noexcept</td></tr>
-<tr class="memdesc:a0df79f2fc259fb1c76041a834eb660d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Container Move-Set Operator. <br /></td></tr>
-<tr class="separator:a0df79f2fc259fb1c76041a834eb660d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66311f14c70b77a6fdf3c40808563221"><td class="memItemLeft" align="right" valign="top"><a id="a66311f14c70b77a6fdf3c40808563221"></a>
-<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a66311f14c70b77a6fdf3c40808563221">operator=</a> (base_t const &amp;o)</td></tr>
-<tr class="memdesc:a66311f14c70b77a6fdf3c40808563221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Container Copy-Set Operator. <br /></td></tr>
-<tr class="separator:a66311f14c70b77a6fdf3c40808563221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8edb9aa5e945636384afd0cee738d3d"><td class="memItemLeft" align="right" valign="top"><a id="aa8edb9aa5e945636384afd0cee738d3d"></a>
-<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa8edb9aa5e945636384afd0cee738d3d">operator=</a> (<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&amp;) noexcept=default</td></tr>
-<tr class="memdesc:aa8edb9aa5e945636384afd0cee738d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Move-Set Operator. <br /></td></tr>
-<tr class="separator:aa8edb9aa5e945636384afd0cee738d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a440fdfc514bae28ede87f83b17b51876"><td class="memItemLeft" align="right" valign="top"><a id="a440fdfc514bae28ede87f83b17b51876"></a>
-<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a440fdfc514bae28ede87f83b17b51876">operator=</a> (<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> const &amp;)=default</td></tr>
-<tr class="memdesc:a440fdfc514bae28ede87f83b17b51876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Copy-Set Operator. <br /></td></tr>
-<tr class="separator:a440fdfc514bae28ede87f83b17b51876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5633ea1ff53d6fc481ae34cf903375c2"><td class="memItemLeft" align="right" valign="top"><a id="a5633ea1ff53d6fc481ae34cf903375c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (std::filesystem::path const &amp;path) noexcept(false)</td></tr>
-<tr class="separator:a5633ea1ff53d6fc481ae34cf903375c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8128ca44a981716d7a67119167fcabc"><td class="memItemLeft" align="right" valign="top"><a id="ab8128ca44a981716d7a67119167fcabc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (std::filesystem::path const &amp;path) const noexcept(false)</td></tr>
-<tr class="separator:ab8128ca44a981716d7a67119167fcabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bc89f94881406b1fc9c311448e0e8f9"><td class="memItemLeft" align="right" valign="top"><a id="a3bc89f94881406b1fc9c311448e0e8f9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a3bc89f94881406b1fc9c311448e0e8f9">basic_ini</a> ()</td></tr>
+<tr class="memdesc:a3bc89f94881406b1fc9c311448e0e8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default ctor. <br /></td></tr>
+<tr class="separator:a3bc89f94881406b1fc9c311448e0e8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7623d78a96b7df210f948c748ed6c4cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a7623d78a96b7df210f948c748ed6c4cd">basic_ini</a> (istream_t &amp;&amp;istream, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={})</td></tr>
+<tr class="memdesc:a7623d78a96b7df210f948c748ed6c4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing ctor.  <a href="classini_1_1basic__ini.html#a7623d78a96b7df210f948c748ed6c4cd">More...</a><br /></td></tr>
+<tr class="separator:a7623d78a96b7df210f948c748ed6c4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c13588cae6050900ffe35e2e48c6b6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a5c13588cae6050900ffe35e2e48c6b6e">basic_ini</a> (istream_t &amp;istream, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={})</td></tr>
+<tr class="memdesc:a5c13588cae6050900ffe35e2e48c6b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing ctor.  <a href="classini_1_1basic__ini.html#a5c13588cae6050900ffe35e2e48c6b6e">More...</a><br /></td></tr>
+<tr class="separator:a5c13588cae6050900ffe35e2e48c6b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ad13701c892b7bfbab7f7873276bec0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a1ad13701c892b7bfbab7f7873276bec0">basic_ini</a> (std::filesystem::path const &amp;path, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={}, const bool throwIfFileNotFound=false)</td></tr>
+<tr class="memdesc:a1ad13701c892b7bfbab7f7873276bec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reading/Parsing ctor.  <a href="classini_1_1basic__ini.html#a1ad13701c892b7bfbab7f7873276bec0">More...</a><br /></td></tr>
+<tr class="separator:a1ad13701c892b7bfbab7f7873276bec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046ddb0e34a20d4751cf9007c55407f4"><td class="memTemplParams" colspan="2"><a id="a046ddb0e34a20d4751cf9007c55407f4"></a>
+template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a046ddb0e34a20d4751cf9007c55407f4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>basic_ini</b> (Ts &amp;&amp;... sections)</td></tr>
+<tr class="separator:a046ddb0e34a20d4751cf9007c55407f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4514406be53038e74354edca10e4259"><td class="memItemLeft" align="right" valign="top"><a id="af4514406be53038e74354edca10e4259"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af4514406be53038e74354edca10e4259">~basic_ini</a> () noexcept</td></tr>
+<tr class="memdesc:af4514406be53038e74354edca10e4259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Destructor. Triggers the <code>onDestruct</code> event. <br /></td></tr>
+<tr class="separator:af4514406be53038e74354edca10e4259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259f9f099321501678c506be218ff6dd"><td class="memItemLeft" align="right" valign="top">const section_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">at</a> (std::string const &amp;header) const noexcept(false)</td></tr>
+<tr class="memdesc:a259f9f099321501678c506be218ff6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an immutable reference to the section with the given header.  <a href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">More...</a><br /></td></tr>
+<tr class="separator:a259f9f099321501678c506be218ff6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360fe0f1a2a62ec070cb394181d52d75"><td class="memItemLeft" align="right" valign="top">section_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a360fe0f1a2a62ec070cb394181d52d75">at</a> (std::string const &amp;header) noexcept(false)</td></tr>
+<tr class="memdesc:a360fe0f1a2a62ec070cb394181d52d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a mutable reference to the section with the given header.  <a href="classini_1_1basic__ini.html#a360fe0f1a2a62ec070cb394181d52d75">More...</a><br /></td></tr>
+<tr class="separator:a360fe0f1a2a62ec070cb394181d52d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2769cac3498312acdd748dcd39b26a7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af2769cac3498312acdd748dcd39b26a7">at</a> (std::string const &amp;header, std::string const &amp;key) const noexcept(false)</td></tr>
+<tr class="memdesc:af2769cac3498312acdd748dcd39b26a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an immutable reference to the value of a specified key.  <a href="classini_1_1basic__ini.html#af2769cac3498312acdd748dcd39b26a7">More...</a><br /></td></tr>
+<tr class="separator:af2769cac3498312acdd748dcd39b26a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0d183dc353f5c234e77bf47d10f32a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a9a0d183dc353f5c234e77bf47d10f32a">at</a> (std::string const &amp;header, std::string const &amp;key) noexcept(false)</td></tr>
+<tr class="memdesc:a9a0d183dc353f5c234e77bf47d10f32a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a mutable reference to the value of a specified key.  <a href="classini_1_1basic__ini.html#a9a0d183dc353f5c234e77bf47d10f32a">More...</a><br /></td></tr>
+<tr class="separator:a9a0d183dc353f5c234e77bf47d10f32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3563bbd24b4a89d680f5183a34dd1b5f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a3563bbd24b4a89d680f5183a34dd1b5f">begin</a> () const noexcept</td></tr>
+<tr class="separator:a3563bbd24b4a89d680f5183a34dd1b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd373f45b47031eb893899df1534db2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a6cd373f45b47031eb893899df1534db2">begin</a> () noexcept</td></tr>
+<tr class="separator:a6cd373f45b47031eb893899df1534db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ec74e3a0a2fc8109678e51a0d68fad"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a05ec74e3a0a2fc8109678e51a0d68fad">cbegin</a> () const noexcept</td></tr>
+<tr class="separator:a05ec74e3a0a2fc8109678e51a0d68fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951c8a19af162f408973e95a773e9648"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a951c8a19af162f408973e95a773e9648">cend</a> () const noexcept</td></tr>
+<tr class="separator:a951c8a19af162f408973e95a773e9648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5565442956933176c910afb9ede9b78f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a5565442956933176c910afb9ede9b78f">contains</a> (auto &amp;&amp;header) const noexcept</td></tr>
+<tr class="separator:a5565442956933176c910afb9ede9b78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af836c89ec0cc099ce431bffa686eb8f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af836c89ec0cc099ce431bffa686eb8f7">contains</a> (auto &amp;&amp;header, auto &amp;&amp;key) const noexcept</td></tr>
+<tr class="separator:af836c89ec0cc099ce431bffa686eb8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="memItemLeft" align="right" valign="top"><a id="a42f4dcdffdae372bc20e8fe3aaf88e8c"></a>
+<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a42f4dcdffdae372bc20e8fe3aaf88e8c">deep_merge</a> (container_t const &amp;other, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
+<tr class="memdesc:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="namespaceini.html#a18bb172511c546450834b0cd93b9151c" title="Performs a recursive merge of two given INI containers.">ini::deep_merge</a>. <br /></td></tr>
+<tr class="separator:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7718f28e806449885179614729bb91"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aae7718f28e806449885179614729bb91">empty</a> () const noexcept</td></tr>
+<tr class="separator:aae7718f28e806449885179614729bb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f7adf7d971683ab736d6de2d953c25"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ab9f7adf7d971683ab736d6de2d953c25">end</a> () const noexcept</td></tr>
+<tr class="separator:ab9f7adf7d971683ab736d6de2d953c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c977cc22b4a46cf53eb8258d78429e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa9c977cc22b4a46cf53eb8258d78429e">end</a> () noexcept</td></tr>
+<tr class="separator:aa9c977cc22b4a46cf53eb8258d78429e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa230510f7d1aa562145c7b0bd1a6a718"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa230510f7d1aa562145c7b0bd1a6a718">find</a> (auto &amp;&amp;header) const noexcept</td></tr>
+<tr class="separator:aa230510f7d1aa562145c7b0bd1a6a718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0d68665a7f6a0e081df4fddbf164d6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a6c0d68665a7f6a0e081df4fddbf164d6">find_if</a> (auto &amp;&amp;predicate) const</td></tr>
+<tr class="separator:a6c0d68665a7f6a0e081df4fddbf164d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a252b8d0d265c6e7d79fcf6539c4771f2">get</a> (std::string &amp;&amp;header, std::string &amp;&amp;key) const noexcept</td></tr>
+<tr class="memdesc:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#a252b8d0d265c6e7d79fcf6539c4771f2">More...</a><br /></td></tr>
+<tr class="separator:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1660e149a5c9153b93942fae692c6ff6"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a1660e149a5c9153b93942fae692c6ff6">get</a> (std::string const &amp;header, std::string const &amp;key) const noexcept</td></tr>
+<tr class="memdesc:a1660e149a5c9153b93942fae692c6ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#a1660e149a5c9153b93942fae692c6ff6">More...</a><br /></td></tr>
+<tr class="separator:a1660e149a5c9153b93942fae692c6ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">mask</a> (const mask_t &amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
+<tr class="memdesc:a212e0a2936a217ec53b2f81d64c44e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">More...</a><br /></td></tr>
+<tr class="separator:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dff6939adc1de1c933b011708e3ff35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35">mask</a> (const <a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;cfg)</td></tr>
+<tr class="memdesc:a5dff6939adc1de1c933b011708e3ff35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35">More...</a><br /></td></tr>
+<tr class="separator:a5dff6939adc1de1c933b011708e3ff35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">mask</a> (mask_t &amp;&amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
+<tr class="memdesc:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">More...</a><br /></td></tr>
+<tr class="separator:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f105d31d068c5662355c7fc8b9941f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a9f105d31d068c5662355c7fc8b9941f2">mask</a> (<a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;&amp;cfg)</td></tr>
+<tr class="memdesc:a9f105d31d068c5662355c7fc8b9941f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a9f105d31d068c5662355c7fc8b9941f2">More...</a><br /></td></tr>
+<tr class="separator:a9f105d31d068c5662355c7fc8b9941f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486b81afa055ee0248fc722dd80cc272"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a486b81afa055ee0248fc722dd80cc272">max_size</a> () const noexcept</td></tr>
+<tr class="separator:a486b81afa055ee0248fc722dd80cc272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a168ba4692af74967f36355372d6cadf4"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a168ba4692af74967f36355372d6cadf4">operator()</a> (const std::string &amp;header, const std::string &amp;key) const noexcept(false)</td></tr>
+<tr class="memdesc:a168ba4692af74967f36355372d6cadf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or throws an exception if it doesn't exist.  <a href="classini_1_1basic__ini.html#a168ba4692af74967f36355372d6cadf4">More...</a><br /></td></tr>
+<tr class="separator:a168ba4692af74967f36355372d6cadf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae9887caaae07cbffe86411c86f8888"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a2ae9887caaae07cbffe86411c86f8888">operator()</a> (const std::string &amp;header, const std::string &amp;key) noexcept</td></tr>
+<tr class="memdesc:a2ae9887caaae07cbffe86411c86f8888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or creates it if it doesn't exist.  <a href="classini_1_1basic__ini.html#a2ae9887caaae07cbffe86411c86f8888">More...</a><br /></td></tr>
+<tr class="separator:a2ae9887caaae07cbffe86411c86f8888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123ec6ba8bcc8ab0c07e7df89d44fb31"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a123ec6ba8bcc8ab0c07e7df89d44fb31">operator()</a> (std::string &amp;&amp;header, std::string &amp;&amp;key) const noexcept(false)</td></tr>
+<tr class="memdesc:a123ec6ba8bcc8ab0c07e7df89d44fb31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or throws an exception if it doesn't exist.  <a href="classini_1_1basic__ini.html#a123ec6ba8bcc8ab0c07e7df89d44fb31">More...</a><br /></td></tr>
+<tr class="separator:a123ec6ba8bcc8ab0c07e7df89d44fb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a0b5bf01bb0e147a553b091a44ed95"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a15a0b5bf01bb0e147a553b091a44ed95">operator()</a> (std::string &amp;&amp;header, std::string &amp;&amp;key) noexcept</td></tr>
+<tr class="memdesc:a15a0b5bf01bb0e147a553b091a44ed95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or creates it if it doesn't exist.  <a href="classini_1_1basic__ini.html#a15a0b5bf01bb0e147a553b091a44ed95">More...</a><br /></td></tr>
+<tr class="separator:a15a0b5bf01bb0e147a553b091a44ed95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58774ac54613a17e93774119efe4a2ab"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a58774ac54613a17e93774119efe4a2ab">operator()</a> (std::string &amp;&amp;header, std::string &amp;&amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&amp;expected_value) const noexcept</td></tr>
+<tr class="memdesc:a58774ac54613a17e93774119efe4a2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current value of the specified key to the given expected_value.  <a href="classini_1_1basic__ini.html#a58774ac54613a17e93774119efe4a2ab">More...</a><br /></td></tr>
+<tr class="separator:a58774ac54613a17e93774119efe4a2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00be68a3dfe14fc119706b9432592f7b"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a00be68a3dfe14fc119706b9432592f7b">operator()</a> (std::string const &amp;header, std::string const &amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;expected_value) const noexcept</td></tr>
+<tr class="memdesc:a00be68a3dfe14fc119706b9432592f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current value of the specified key to the given expected_value.  <a href="classini_1_1basic__ini.html#a00be68a3dfe14fc119706b9432592f7b">More...</a><br /></td></tr>
+<tr class="separator:a00be68a3dfe14fc119706b9432592f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e2c56efd748bbf774beb317136e64c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa4e2c56efd748bbf774beb317136e64c">read</a> (std::filesystem::path const &amp;path, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>) noexcept(false)</td></tr>
+<tr class="memdesc:aa4e2c56efd748bbf774beb317136e64c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle.  <a href="classini_1_1basic__ini.html#aa4e2c56efd748bbf774beb317136e64c">More...</a><br /></td></tr>
+<tr class="separator:aa4e2c56efd748bbf774beb317136e64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa159a11a90d4cc8e98c236b4807c3f4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa159a11a90d4cc8e98c236b4807c3f4b">read</a> (std::filesystem::path const &amp;path, <a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> const &amp;config, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>) noexcept(false)</td></tr>
+<tr class="memdesc:aa159a11a90d4cc8e98c236b4807c3f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle.  <a href="classini_1_1basic__ini.html#aa159a11a90d4cc8e98c236b4807c3f4b">More...</a><br /></td></tr>
+<tr class="separator:aa159a11a90d4cc8e98c236b4807c3f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab808163ccd91ecdf52809158307219a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aab808163ccd91ecdf52809158307219a">size</a> () const noexcept</td></tr>
+<tr class="separator:aab808163ccd91ecdf52809158307219a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524">write</a> (std::filesystem::path const &amp;path) const noexcept(false)</td></tr>
+<tr class="memdesc:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle.  <a href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524">More...</a><br /></td></tr>
+<tr class="separator:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a435c59455e91b087fa585aa974b20876"><td class="memItemLeft" align="right" valign="top"><a id="a435c59455e91b087fa585aa974b20876"></a>
+<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structshared_1_1basic__event__args.html">shared::basic_event_args</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a435c59455e91b087fa585aa974b20876">onDestruct</a></td></tr>
+<tr class="memdesc:a435c59455e91b087fa585aa974b20876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when this instance's destructor is called. <br /></td></tr>
+<tr class="separator:a435c59455e91b087fa585aa974b20876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="memItemLeft" align="right" valign="top"><a id="ad7db8c4dd2759b000b4bc3a94fa02b06"></a>
+<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structshared_1_1basic__event__args.html">shared::basic_event_args</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ad7db8c4dd2759b000b4bc3a94fa02b06">onMerge</a></td></tr>
+<tr class="memdesc:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when another INI container or mask is merged into this instance using <a class="el" href="classini_1_1basic__ini.html#a42f4dcdffdae372bc20e8fe3aaf88e8c" title="See ini::deep_merge.">deep_merge()</a>. <br /></td></tr>
+<tr class="separator:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8674cff776626f78139e88682c41f4c0"><td class="memItemLeft" align="right" valign="top"><a id="a8674cff776626f78139e88682c41f4c0"></a>
+<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structini_1_1basic__ini_1_1on_read_args.html">onReadArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a8674cff776626f78139e88682c41f4c0">onRead</a></td></tr>
+<tr class="memdesc:a8674cff776626f78139e88682c41f4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when the INI is read from disk using <a class="el" href="classini_1_1basic__ini.html#aa159a11a90d4cc8e98c236b4807c3f4b" title="Reads the specified INI config file and merges its contents into this instance according to the given...">read()</a>. <br /></td></tr>
+<tr class="separator:a8674cff776626f78139e88682c41f4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7897fe4ce3121eae468149b20433cd6c"><td class="memItemLeft" align="right" valign="top"><a id="a7897fe4ce3121eae468149b20433cd6c"></a>
+<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structini_1_1basic__ini_1_1on_write_args.html">onWriteArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a7897fe4ce3121eae468149b20433cd6c">onWrite</a></td></tr>
+<tr class="memdesc:a7897fe4ce3121eae468149b20433cd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when the INI is written to disk using <a class="el" href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524" title="Reads the specified INI config file and merges its contents into this instance according to the given...">write()</a>. <br /></td></tr>
+<tr class="separator:a7897fe4ce3121eae468149b20433cd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aaad6f341fd557b0466ef54a294e7ac9c"><td class="memItemLeft" align="right" valign="top"><a id="aaad6f341fd557b0466ef54a294e7ac9c"></a>
+container_t&#160;</td><td class="memItemRight" valign="bottom"><b>map</b></td></tr>
+<tr class="separator:aaad6f341fd557b0466ef54a294e7ac9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a055fc32a174b7fa6dd7bc867f26f1834"><td class="memItemLeft" align="right" valign="top"><a id="a055fc32a174b7fa6dd7bc867f26f1834"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>base_t</b> = <a class="el" href="namespaceini.html#a779f085289b73c23882ba9099e1699ee">ini_container</a>&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:a055fc32a174b7fa6dd7bc867f26f1834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9281c703d28a5e44fc61063caa33d846"><td class="memItemLeft" align="right" valign="top"><a id="a9281c703d28a5e44fc61063caa33d846"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>config_t</b> = <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:a9281c703d28a5e44fc61063caa33d846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48be7107ab050377ddfbdb7398d3ebef"><td class="memItemLeft" align="right" valign="top"><a id="a48be7107ab050377ddfbdb7398d3ebef"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> = typename base_t::const_iterator</td></tr>
-<tr class="separator:a48be7107ab050377ddfbdb7398d3ebef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cff5ef3fb49a5c415080e9f1ea0a469"><td class="memItemLeft" align="right" valign="top"><a id="a8cff5ef3fb49a5c415080e9f1ea0a469"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>inner_const_iterator</b> = typename <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt;::const_iterator</td></tr>
-<tr class="separator:a8cff5ef3fb49a5c415080e9f1ea0a469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de5e20a203fcdfdd5cbc525f4816aa8"><td class="memItemLeft" align="right" valign="top"><a id="a2de5e20a203fcdfdd5cbc525f4816aa8"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>inner_iterator</b> = typename <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt;::iterator</td></tr>
-<tr class="separator:a2de5e20a203fcdfdd5cbc525f4816aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c6c4f07ce80cbf26f5e592a8a1c2d2"><td class="memItemLeft" align="right" valign="top"><a id="a60c6c4f07ce80cbf26f5e592a8a1c2d2"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>istream_t</b> = std::basic_istream&lt; TChar, TCharTraits &gt;</td></tr>
-<tr class="separator:a60c6c4f07ce80cbf26f5e592a8a1c2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a8bb09f32f465ac3b0e40bb455b0c9b"><td class="memItemLeft" align="right" valign="top"><a id="a9a8bb09f32f465ac3b0e40bb455b0c9b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b> = typename base_t::iterator</td></tr>
-<tr class="separator:a9a8bb09f32f465ac3b0e40bb455b0c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc7ae420603c43361dfefb22aab05f4"><td class="memItemLeft" align="right" valign="top"><a id="a4bc7ae420603c43361dfefb22aab05f4"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>section_t</b> = <a class="el" href="namespaceini.html#a3180c5e4ec888e6213a18a2f8529414e">ini_section</a>&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:a4bc7ae420603c43361dfefb22aab05f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57e17746237c1a963ef10f0c6fa29cd7"><td class="memItemLeft" align="right" valign="top"><a id="a57e17746237c1a963ef10f0c6fa29cd7"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>string_t</b> = std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:a57e17746237c1a963ef10f0c6fa29cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31b934611c19279383030a1279ea4741"><td class="memItemLeft" align="right" valign="top"><a id="a31b934611c19279383030a1279ea4741"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>this_t</b> = <a class="el" href="classini_1_1basic__ini.html">basic_ini</a>&lt; TChar, TCharTraits, TAlloc &gt;</td></tr>
-<tr class="separator:a31b934611c19279383030a1279ea4741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b0a82af87f7a647e0ec00a57a05a0f"><td class="memItemLeft" align="right" valign="top"><a id="ad8b0a82af87f7a647e0ec00a57a05a0f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>config_t</b> = <a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ad8b0a82af87f7a647e0ec00a57a05a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec8e28ba9cd287e6f76e4524c02b9db"><td class="memItemLeft" align="right" valign="top"><a id="a0ec8e28ba9cd287e6f76e4524c02b9db"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>container_t</b> = <a class="el" href="namespaceini.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini_container</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:a0ec8e28ba9cd287e6f76e4524c02b9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c65b0edd4606697c1d191c9365d4b4f"><td class="memItemLeft" align="right" valign="top"><a id="a4c65b0edd4606697c1d191c9365d4b4f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>istream_t</b> = std::istream</td></tr>
+<tr class="separator:a4c65b0edd4606697c1d191c9365d4b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70161bb672c9040f4b58a62e6ef141c"><td class="memItemLeft" align="right" valign="top"><a id="ac70161bb672c9040f4b58a62e6ef141c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>mask_t</b> = ini_mask&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ac70161bb672c9040f4b58a62e6ef141c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8976264f4ad27c78c1b83947466bee1"><td class="memItemLeft" align="right" valign="top"><a id="ab8976264f4ad27c78c1b83947466bee1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>section_t</b> = <a class="el" href="namespaceini.html#ab19d8cece53690166e28f28a35bd3d1a">ini_section</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:ab8976264f4ad27c78c1b83947466bee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cfc1501fd91293b5dce7c3c4a3a648d"><td class="memItemLeft" align="right" valign="top"><a id="a0cfc1501fd91293b5dce7c3c4a3a648d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>this_t</b> = <a class="el" href="classini_1_1basic__ini.html">basic_ini</a>&lt; TKeyComparator &gt;</td></tr>
+<tr class="separator:a0cfc1501fd91293b5dce7c3c4a3a648d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aeb765d18ef1dcbc615fc4e4d1b4f064d"><td class="memItemLeft" align="right" valign="top"><a id="aeb765d18ef1dcbc615fc4e4d1b4f064d"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aeb765d18ef1dcbc615fc4e4d1b4f064d">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;ini)</td></tr>
+<tr class="memdesc:aeb765d18ef1dcbc615fc4e4d1b4f064d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the plaintext data contained by ini into the output stream in the correct format using <a class="el" href="structini_1_1ini__printer.html" title="Prints INI container objects to an output stream, with configurable formatting.">ini_printer</a>. <br /></td></tr>
+<tr class="separator:aeb765d18ef1dcbc615fc4e4d1b4f064d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4ac365fd13d256f6d2461f5087d728"><td class="memItemLeft" align="right" valign="top"><a id="a1f4ac365fd13d256f6d2461f5087d728"></a>
+std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a1f4ac365fd13d256f6d2461f5087d728">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;ini)</td></tr>
+<tr class="memdesc:a1f4ac365fd13d256f6d2461f5087d728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the data contained by the std::istream and parses it, storing the result in the given ini instance. <b>Note that using this means you can't use a parser config!</b> <br /></td></tr>
+<tr class="separator:a1f4ac365fd13d256f6d2461f5087d728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt;<br />
-class ini::basic_ini&lt; TChar, TCharTraits, TAlloc &gt;</h3>
+<div class="textblock"><h3>template&lt;class TKeyComparator = CaseInsensitiveCompare&gt;<br />
+class ini::basic_ini&lt; TKeyComparator &gt;</h3>
 
 <p>Inherits directly from ini_container, and provides extra methods for reading/writing, handling nested keys, and type conversions. </p>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00258">258</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00840">840</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a46c6585ebe9599321225163d7973a3b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46c6585ebe9599321225163d7973a3b1">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[1/3]</span></h2>
+<a id="a5c13588cae6050900ffe35e2e48c6b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c13588cae6050900ffe35e2e48c6b6e">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </div>
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TChar, TCharTraits, TAlloc &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
           <td>(</td>
           <td class="paramtype">istream_t &amp;&#160;</td>
           <td class="paramname"><em>istream</em>, </td>
@@ -267,23 +349,23 @@ template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00280">280</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00889">889</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad0a6381ee73e02d858034300b7e68d55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0a6381ee73e02d858034300b7e68d55">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[2/3]</span></h2>
+<a id="a7623d78a96b7df210f948c748ed6c4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7623d78a96b7df210f948c748ed6c4cd">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </div>
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TChar, TCharTraits, TAlloc &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
           <td>(</td>
           <td class="paramtype">istream_t &amp;&amp;&#160;</td>
           <td class="paramname"><em>istream</em>, </td>
@@ -316,23 +398,23 @@ template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00288">288</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00897">897</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a89b92c371405c9d6e2e1b442a1f6aff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89b92c371405c9d6e2e1b442a1f6aff0">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[3/3]</span></h2>
+<a id="a1ad13701c892b7bfbab7f7873276bec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad13701c892b7bfbab7f7873276bec0">&#9670;&nbsp;</a></span>basic_ini() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;&gt; </div>
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TChar, TCharTraits, TAlloc &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::<a class="el" href="classini_1_1basic__ini.html">basic_ini</a> </td>
           <td>(</td>
           <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -374,7 +456,1362 @@ template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00299">299</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00908">908</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a259f9f099321501678c506be218ff6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259f9f099321501678c506be218ff6dd">&#9670;&nbsp;</a></span>at() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const section_t&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an immutable reference to the section with the given header. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the section with the given header. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">An</td><td>out-of-range exception is thrown when the specified header doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01089">1089</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a360fe0f1a2a62ec070cb394181d52d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360fe0f1a2a62ec070cb394181d52d75">&#9670;&nbsp;</a></span>at() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">section_t&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a mutable reference to the section with the given header. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the section with the given header. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">An</td><td>out-of-range exception is thrown when the specified header doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01079">1079</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af2769cac3498312acdd748dcd39b26a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2769cac3498312acdd748dcd39b26a7">&#9670;&nbsp;</a></span>at() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classini_1_1ini__value.html">ini_value</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an immutable reference to the value of a specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the value of the specified key. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">An</td><td>out-of-range exception is thrown when the specified header or key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01111">1111</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9a0d183dc353f5c234e77bf47d10f32a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0d183dc353f5c234e77bf47d10f32a">&#9670;&nbsp;</a></span>at() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1ini__value.html">ini_value</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a mutable reference to the value of a specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the value of the specified key. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">An</td><td>out-of-range exception is thrown when the specified header or key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01100">1100</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3563bbd24b4a89d680f5183a34dd1b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3563bbd24b4a89d680f5183a34dd1b5f">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A const_iterator to the beginning of the range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01044">1044</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6cd373f45b47031eb893899df1534db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd373f45b47031eb893899df1534db2">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01040">1040</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a05ec74e3a0a2fc8109678e51a0d68fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ec74e3a0a2fc8109678e51a0d68fad">&#9670;&nbsp;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the read-only range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01048">1048</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a951c8a19af162f408973e95a773e9648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951c8a19af162f408973e95a773e9648">&#9670;&nbsp;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the read-only range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01050">1050</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5565442956933176c910afb9ede9b78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5565442956933176c910afb9ede9b78f">&#9670;&nbsp;</a></span>contains() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01062">1062</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af836c89ec0cc099ce431bffa686eb8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af836c89ec0cc099ce431bffa686eb8f7">&#9670;&nbsp;</a></span>contains() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01064">1064</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aae7718f28e806449885179614729bb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7718f28e806449885179614729bb91">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when there are no header-section pairs in th map. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01056">1056</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab9f7adf7d971683ab736d6de2d953c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f7adf7d971683ab736d6de2d953c25">&#9670;&nbsp;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A const_iterator to the end of the range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01046">1046</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa9c977cc22b4a46cf53eb8258d78429e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c977cc22b4a46cf53eb8258d78429e">&#9670;&nbsp;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the range of headers &amp; sections. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01042">1042</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa230510f7d1aa562145c7b0bd1a6a718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa230510f7d1aa562145c7b0bd1a6a718">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01058">1058</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6c0d68665a7f6a0e081df4fddbf164d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0d68665a7f6a0e081df4fddbf164d6">&#9670;&nbsp;</a></span>find_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::find_if </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01060">1060</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a252b8d0d265c6e7d79fcf6539c4771f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252b8d0d265c6e7d79fcf6539c4771f2">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classini_1_1ini__value.html">ini_value</a>&gt; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01141">1141</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1660e149a5c9153b93942fae692c6ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1660e149a5c9153b93942fae692c6ff6">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classini_1_1ini__value.html">ini_value</a>&gt; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01124">1124</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a212e0a2936a217ec53b2f81d64c44e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212e0a2936a217ec53b2f81d64c44e7e">&#9670;&nbsp;</a></span>mask() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype">const mask_t &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given mask to this instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>An ini_mask container. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00976">976</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_a212e0a2936a217ec53b2f81d64c44e7e_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5dff6939adc1de1c933b011708e3ff35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dff6939adc1de1c933b011708e3ff35">&#9670;&nbsp;</a></span>mask() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given mask to this instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cfg</td><td>An <a class="el" href="structini_1_1ini__parser__config.html" title="Exposes properties that can be used to configure the INI parser&#39;s behaviour.">ini_parser_config</a> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00994">994</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa4e5e809d33b8e32ed3d1e0b7f9a5e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">&#9670;&nbsp;</a></span>mask() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype">mask_t &amp;&amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given mask to this instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>An ini_mask container. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00966">966</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_aa4e5e809d33b8e32ed3d1e0b7f9a5e45_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9f105d31d068c5662355c7fc8b9941f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f105d31d068c5662355c7fc8b9941f2">&#9670;&nbsp;</a></span>mask() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given mask to this instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cfg</td><td>An <a class="el" href="structini_1_1ini__parser__config.html" title="Exposes properties that can be used to configure the INI parser&#39;s behaviour.">ini_parser_config</a> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00985">985</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a486b81afa055ee0248fc722dd80cc272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486b81afa055ee0248fc722dd80cc272">&#9670;&nbsp;</a></span>max_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::max_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The maximum number of header-section pairs that the map is able to hold. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01054">1054</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a168ba4692af74967f36355372d6cadf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168ba4692af74967f36355372d6cadf4">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or throws an exception if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01267">1267</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2ae9887caaae07cbffe86411c86f8888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae9887caaae07cbffe86411c86f8888">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or creates it if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01253">1253</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a123ec6ba8bcc8ab0c07e7df89d44fb31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a123ec6ba8bcc8ab0c07e7df89d44fb31">&#9670;&nbsp;</a></span>operator()() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or throws an exception if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01274">1274</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a15a0b5bf01bb0e147a553b091a44ed95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a0b5bf01bb0e147a553b091a44ed95">&#9670;&nbsp;</a></span>operator()() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or creates it if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01260">1260</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a58774ac54613a17e93774119efe4a2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58774ac54613a17e93774119efe4a2ab">&#9670;&nbsp;</a></span>operator()() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>expected_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the current value of the specified key to the given expected_value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">expected_value</td><td>An <a class="el" href="classini_1_1ini__value.html" title="Wraps the std::string class, and adds additional functionality such as automatic type-casting.">ini_value</a> to compare to the current value of the specified key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01290">1290</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a00be68a3dfe14fc119706b9432592f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00be68a3dfe14fc119706b9432592f7b">&#9670;&nbsp;</a></span>operator()() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONSTEXPR bool <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;&#160;</td>
+          <td class="paramname"><em>expected_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the current value of the specified key to the given expected_value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">expected_value</td><td>An <a class="el" href="classini_1_1ini__value.html" title="Wraps the std::string class, and adds additional functionality such as automatic type-casting.">ini_value</a> to compare to the current value of the specified key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01282">1282</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa4e2c56efd748bbf774beb317136e64c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e2c56efd748bbf774beb317136e64c">&#9670;&nbsp;</a></span>read() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The location of the config file. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The OverrideStyle to use when deep merging the parsed data into this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01017">1017</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa159a11a90d4cc8e98c236b4807c3f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa159a11a90d4cc8e98c236b4807c3f4b">&#9670;&nbsp;</a></span>read() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> const &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The location of the config file. </td></tr>
+    <tr><td class="paramname">config</td><td>An optional <a class="el" href="structini_1_1ini__parser__config.html" title="Exposes properties that can be used to configure the INI parser&#39;s behaviour.">ini_parser_config</a> instance to use when parsing the file. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The OverrideStyle to use when deep merging the parsed data into this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01007">1007</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aab808163ccd91ecdf52809158307219a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab808163ccd91ecdf52809158307219a">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The current number of header-section pairs in the map. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01052">1052</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad2fd7c1fb9c304188fc05030ab4a6524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fd7c1fb9c304188fc05030ab4a6524">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::write </td>
+          <td>(</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The location of the config file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the file was successfully written to; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01030">1030</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>

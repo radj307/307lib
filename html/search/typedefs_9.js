@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['option_1635',['Option',['../namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502',1,'opt3']]],
-  ['option_5ft_1636',['option_t',['../opt3_8hpp.html#a311d34c6adc54432307c64109838e383',1,'opt3::_internal']]],
-  ['optional_1637',['optional',['../namespaceopt.html#af479aa967940ddaafb0bffd528f37bb3',1,'opt']]],
-  ['optiontype_1638',['OptionType',['../namespaceopt.html#a8e7cc9a2010617a6b4f9e9707419bcdd',1,'opt']]]
+  ['null_5ft_1774',['null_t',['../namespacejson.html#a3abd0dc7f140a9c108ce60ff65555e78',1,'json']]]
 ];

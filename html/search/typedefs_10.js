@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['wcolors_1665',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]],
-  ['wini_1666',['wINI',['../namespaceini.html#ad3c0772cbf16ea0f0f067c133bbb9c06',1,'ini']]],
-  ['wsync_1667',['wsync',['../color-sync_8hpp.html#abcdff50c2ea952d040d53048a0cadb9d',1,'color']]]
+  ['value_1799',['value',['../structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83',1,'color::basic_color']]],
+  ['variant_5ft_1800',['variant_t',['../namespacejson.html#a45b8acfdd697501e050ba08693eb0961',1,'json']]],
+  ['variantargumenttype_1801',['VariantArgumentType',['../_variant_argument_type_8hpp.html#af96ecf1c473dc1d8a07674fd1858fe4f',1,'opt']]],
+  ['vstring_1802',['vstring',['../namespaceopt3.html#a702940d28c661e65df03e476bbf675f6',1,'opt3']]]
 ];

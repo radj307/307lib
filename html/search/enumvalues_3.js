@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['override_1677',['Override',['../namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849',1,'ini']]]
+  ['none_1817',['None',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754',1,'opt3::None()'],['../namespaceshared.html#a8b92563f254758484d45f9257995945da6adf97f83acf6453d4a6a4b1070f3754',1,'shared::None()']]]
 ];

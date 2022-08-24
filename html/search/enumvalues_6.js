@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['f_1943',['F',['../namespacecolor.html#a7a090e7139f762b631ad1d98b4451a10a800618943025315f869e4e1f09471012',1,'color']]],
-  ['flag_1944',['FLAG',['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0fa0f4d0db3668dd58cabb9eb409657eaa8',1,'opt::token']]]
+  ['releasecandidate_1821',['ReleaseCandidate',['../namespaceshared.html#a8b92563f254758484d45f9257995945dad51e7d58a0cd2de144621030dcae1337',1,'shared']]],
+  ['revision_1822',['Revision',['../namespaceshared.html#a8b92563f254758484d45f9257995945da32c676ac5296556c0573a301ef5ab07b',1,'shared']]]
 ];

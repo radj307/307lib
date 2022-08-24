@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['null_5ft_1634',['null_t',['../namespacejson.html#a3abd0dc7f140a9c108ce60ff65555e78',1,'json']]]
+  ['map_1773',['Map',['../classfile_1_1ini_1_1_i_n_i_container.html#acd056f85c0bbe3cc8f4582aeab8dae29',1,'file::ini::INIContainer']]]
 ];

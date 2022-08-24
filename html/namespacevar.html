@@ -100,10 +100,6 @@ $(document).ready(function(){initNavTree('namespacevar.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvar_1_1basic__variant__map.html">basic_variant_map</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
-  <a href="classvar_1_1basic__variant__map.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvar_1_1is__less__than.html">is_less_than</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variadic templated type has less arguments than a given number.  <a href="structvar_1_1is__less__than.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,10 +141,6 @@ template&lt;class &gt; </td></tr>
 <tr class="memitem:acab1408bc96243070e634538e35db53f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#acab1408bc96243070e634538e35db53f">true_t</a> = std::true_type</td></tr>
 <tr class="memdesc:acab1408bc96243070e634538e35db53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Always true type. <br /></td></tr>
 <tr class="separator:acab1408bc96243070e634538e35db53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97bf11d1d90ec7d4cc715247de1bf14a"><td class="memTemplParams" colspan="2"><a id="a97bf11d1d90ec7d4cc715247de1bf14a"></a>
-template&lt;typename TKey , var::not_same&lt; std::monostate &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a97bf11d1d90ec7d4cc715247de1bf14a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>variant_map</b> = <a class="el" href="classvar_1_1basic__variant__map.html">basic_variant_map</a>&lt; std::map, TKey, Ts... &gt;</td></tr>
-<tr class="separator:a97bf11d1d90ec7d4cc715247de1bf14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -169,7 +161,7 @@ template&lt;typename T , std::same_as&lt; T &gt;... Ts&gt; </td></tr>
 <tr class="separator:a8dc45aca25e4f1c6b9b62bb7e3f8d15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplParams" colspan="2">template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </td></tr>
 <tr class="memitem:a3c51dee573904e0882f2fb72103dddea"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">requires</a> (std::equality_comparable_with&lt; CompareType, TupleTypes &gt; &amp;&amp;...) const expr bool <a class="el" href="namespacevar.html#a232d8fe90138010e09ccce0d56e3bb3c">tuple_or</a>(const std</td></tr>
-<tr class="memdesc:a3c51dee573904e0882f2fb72103dddea"><td class="mdescLeft">&#160;</td><td class="mdescRight">&zwj;**  <a href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">More...</a><br /></td></tr>
+<tr class="memdesc:a3c51dee573904e0882f2fb72103dddea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare each element in a tuple against a given variable.  <a href="namespacevar.html#a3c51dee573904e0882f2fb72103dddea">More...</a><br /></td></tr>
 <tr class="separator:a3c51dee573904e0882f2fb72103dddea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="memTemplParams" colspan="2">template&lt;class T , class AllocT  = std::allocator&lt;T&gt;&gt; </td></tr>
 <tr class="memitem:a8df8ae33fd372f8c6dd08b6c1395f5cc"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T, AllocT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacevar.html#a8df8ae33fd372f8c6dd08b6c1395f5cc">reverse</a> (std::vector&lt; T, AllocT &gt; const &amp;vec)</td></tr>
@@ -350,8 +342,8 @@ template&lt;size_t i = 0, typename CompareType , typename... TupleTypes&gt; </di
       </table>
 </div><div class="memdoc">
 
-<p>&zwj;** </p>
-<p>Compare each element in a tuple against a given variable. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Compare each element in a tuple against a given variable. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CompareType</td><td>Type that can be compared to all elements in the tuple. </td></tr>
     <tr><td class="paramname">...TupleTypes</td><td>Types in the given tuple. </td></tr>
@@ -564,7 +556,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00485">485</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00522">522</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +602,7 @@ template&lt;typename... T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00474">474</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="var_8hpp_source.html#l00511">511</a> of file <a class="el" href="var_8hpp_source.html">var.hpp</a>.</p>
 
 </div>
 </div>

@@ -13,6 +13,8 @@ var structopt3_1_1arg__container =
     [ "castgetv_all", "structopt3_1_1arg__container.html#a50e6071d9ce058dc80decae94c82f647", null ],
     [ "castgetv_any", "structopt3_1_1arg__container.html#ad31b8cc1ea0d1a6c7ded2bb6f81e2866", null ],
     [ "castgetv_any", "structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1", null ],
+    [ "castgetv_any", "structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1", null ],
+    [ "castgetv_any", "structopt3_1_1arg__container.html#af9a95c6e60c73112229b851dfb7ee1e1", null ],
     [ "check", "structopt3_1_1arg__container.html#a686d6571318aae77d59524aef42e218e", null ],
     [ "check_all", "structopt3_1_1arg__container.html#a52716edbccb679dca5149f60930e9b51", null ],
     [ "check_any", "structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216", null ],

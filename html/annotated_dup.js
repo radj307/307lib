@@ -6,7 +6,8 @@ var annotated_dup =
       [ "palette", "classcolor_1_1palette.html", "classcolor_1_1palette" ],
       [ "RGB", "structcolor_1_1_r_g_b.html", "structcolor_1_1_r_g_b" ],
       [ "RGBA", "structcolor_1_1_r_g_b_a.html", "structcolor_1_1_r_g_b_a" ],
-      [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ]
+      [ "setcolor_seq", "structcolor_1_1setcolor__seq.html", "structcolor_1_1setcolor__seq" ],
+      [ "setcolor_seq_state_manip", "classcolor_1_1setcolor__seq__state__manip.html", "classcolor_1_1setcolor__seq__state__manip" ]
     ] ],
     [ "env", null, [
       [ "PATH", "classenv_1_1_p_a_t_h.html", "classenv_1_1_p_a_t_h" ]
@@ -33,17 +34,32 @@ var annotated_dup =
       [ "nmatrix", "structmatrix_1_1nmatrix.html", "structmatrix_1_1nmatrix" ],
       [ "point", "structmatrix_1_1point.html", "structmatrix_1_1point" ]
     ] ],
-    [ "opt", "namespaceopt.html", "namespaceopt" ],
+    [ "opt", null, [
+      [ "token", null, [
+        [ "LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", "structopt_1_1token_1_1_lexeme_dictionary" ],
+        [ "Parser", "classopt_1_1token_1_1_parser.html", "classopt_1_1token_1_1_parser" ],
+        [ "Tokenizer", "classopt_1_1token_1_1_tokenizer.html", "classopt_1_1token_1_1_tokenizer" ]
+      ] ],
+      [ "Arg", "classopt_1_1_arg.html", "classopt_1_1_arg" ],
+      [ "ArgContainer", "structopt_1_1_arg_container.html", "structopt_1_1_arg_container" ],
+      [ "Argument", "classopt_1_1_argument.html", "classopt_1_1_argument" ],
+      [ "ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", "structopt_1_1_argument_parsing_rules" ],
+      [ "CaptureList", "structopt_1_1_capture_list.html", "structopt_1_1_capture_list" ],
+      [ "CaptureStyle", "structopt_1_1_capture_style.html", "structopt_1_1_capture_style" ],
+      [ "CaptureWrapper", "structopt_1_1_capture_wrapper.html", "structopt_1_1_capture_wrapper" ],
+      [ "Index", "structopt_1_1_index.html", "structopt_1_1_index" ],
+      [ "InputWrapper", "structopt_1_1_input_wrapper.html", "structopt_1_1_input_wrapper" ],
+      [ "ParamsAPI2", "structopt_1_1_params_a_p_i2.html", "structopt_1_1_params_a_p_i2" ],
+      [ "ParamsAPI3", "classopt_1_1_params_a_p_i3.html", "classopt_1_1_params_a_p_i3" ],
+      [ "VariantArg", "structopt_1_1_variant_arg.html", "structopt_1_1_variant_arg" ]
+    ] ],
     [ "opt3", "namespaceopt3.html", "namespaceopt3" ],
     [ "process", null, [
       [ "Mode", "structprocess_1_1_mode.html", "structprocess_1_1_mode" ],
       [ "Proc", "structprocess_1_1_proc.html", "structprocess_1_1_proc" ]
     ] ],
     [ "rng", "namespacerng.html", "namespacerng" ],
-    [ "shared", null, [
-      [ "basic_indentor", "structshared_1_1basic__indentor.html", "structshared_1_1basic__indentor" ],
-      [ "basic_vstring", "structshared_1_1basic__vstring.html", "structshared_1_1basic__vstring" ]
-    ] ],
+    [ "shared", "namespaceshared.html", "namespaceshared" ],
     [ "str", "namespacestr.html", "namespacestr" ],
     [ "term", "namespaceterm.html", "namespaceterm" ],
     [ "token", null, [
@@ -78,6 +94,8 @@ var annotated_dup =
       [ "XMLPrinter", "structxml_1_1_x_m_l_printer.html", "structxml_1_1_x_m_l_printer" ]
     ] ],
     [ "arg_manager2", "structarg__manager2.html", null ],
+    [ "MeaninglessIndirection", "struct_meaningless_indirection.html", "struct_meaningless_indirection" ],
     [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
-    [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ]
+    [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", "structmy__advanced__custom__except" ],
+    [ "myEventArgs", "structmy_event_args.html", "structmy_event_args" ]
 ];

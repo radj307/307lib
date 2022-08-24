@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['none_1676',['None',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754',1,'opt3']]]
+  ['ignore_1816',['Ignore',['../namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9',1,'ini']]]
 ];

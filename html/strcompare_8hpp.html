@@ -107,7 +107,8 @@ Include dependency graph for strcompare.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strcompare_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="strcompare_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="strcompare_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -140,18 +141,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">str::equalsAny</a> (const std::wstring &amp;str, Ts &amp;&amp;... compare)</td></tr>
 <tr class="memdesc:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">More...</a><br /></td></tr>
 <tr class="separator:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae6e5ba0568ee7667816d0ec5535adcb6">str::isbinary</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid binary digits.  <a href="namespacestr.html#ae6e5ba0568ee7667816d0ec5535adcb6">More...</a><br /></td></tr>
-<tr class="separator:ae6e5ba0568ee7667816d0ec5535adcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043ca9b134b11dde323fbda2dc5992ae"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a043ca9b134b11dde323fbda2dc5992ae">str::isdecimal</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a043ca9b134b11dde323fbda2dc5992ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid decimal digits.  <a href="namespacestr.html#a043ca9b134b11dde323fbda2dc5992ae">More...</a><br /></td></tr>
-<tr class="separator:a043ca9b134b11dde323fbda2dc5992ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8150d7f427d4bf2eeccc7e56dfd35107">str::ishex</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid hexadecimal digits.  <a href="namespacestr.html#a8150d7f427d4bf2eeccc7e56dfd35107">More...</a><br /></td></tr>
-<tr class="separator:a8150d7f427d4bf2eeccc7e56dfd35107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bd79fa931f1d21cb03de4642d230d11"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0bd79fa931f1d21cb03de4642d230d11">str::isoctal</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a0bd79fa931f1d21cb03de4642d230d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given ASCII string is entirely composed of valid octal digits.  <a href="namespacestr.html#a0bd79fa931f1d21cb03de4642d230d11">More...</a><br /></td></tr>
-<tr class="separator:a0bd79fa931f1d21cb03de4642d230d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a37ffa8e9036b412b718c5a3d274f2"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a67a37ffa8e9036b412b718c5a3d274f2">str::isnumber</a> (const std::string &amp;str, const uint8_t base, const bool allowDecimal, const bool allowNegative)</td></tr>
+<tr class="memdesc:a67a37ffa8e9036b412b718c5a3d274f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid number. <b>Do not pass whitespace characters to this function.</b>  <a href="namespacestr.html#a67a37ffa8e9036b412b718c5a3d274f2">More...</a><br /></td></tr>
+<tr class="separator:a67a37ffa8e9036b412b718c5a3d274f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab1c7500c085a2e6b996b1c8b56dcf726">str::isnumber</a> (const std::string &amp;str, const uint8_t base=10)</td></tr>
+<tr class="memdesc:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid integral. This function automatically disallows the dash prefix (negative) character for unsigned integral types.  <a href="namespacestr.html#ab1c7500c085a2e6b996b1c8b56dcf726">More...</a><br /></td></tr>
+<tr class="separator:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">str::matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
 <tr class="memdesc:a99874f5b703e388240420d5bec8557a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">More...</a><br /></td></tr>

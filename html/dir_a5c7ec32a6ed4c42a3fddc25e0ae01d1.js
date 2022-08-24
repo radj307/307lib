@@ -16,7 +16,7 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
     ] ],
     [ "Segments.h", "_segments_8h.html", "_segments_8h" ],
     [ "Sequence.hpp", "_sequence_8hpp.html", "_sequence_8hpp" ],
-    [ "setcolor.hpp", "setcolor_8hpp_source.html", null ],
+    [ "setcolor.hpp", "setcolor_8hpp.html", "setcolor_8hpp" ],
     [ "term.hpp", "term_8hpp.html", "term_8hpp" ],
     [ "TermAPI.hpp", "_term_a_p_i_8hpp_source.html", null ]
 ];

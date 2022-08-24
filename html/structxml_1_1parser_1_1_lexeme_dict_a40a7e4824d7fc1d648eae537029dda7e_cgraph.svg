@@ -12,77 +12,77 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Override this function to select a lexeme type given a single character.">
-<polygon fill="#bfbfbf" stroke="black" points="0,-70 0,-100 136,-100 136,-70 0,-70"/>
-<text text-anchor="start" x="8" y="-88" font-family="Helvetica,sans-Serif" font-size="10.00">xml::parser::LexemeDict</text>
-<text text-anchor="middle" x="68" y="-77" font-family="Helvetica,sans-Serif" font-size="10.00">::char_to_lexeme</text>
+<polygon fill="#bfbfbf" stroke="black" points="0,-52 0,-82 136,-82 136,-52 0,-52"/>
+<text text-anchor="start" x="8" y="-70" font-family="Helvetica,sans-Serif" font-size="10.00">xml::parser::LexemeDict</text>
+<text text-anchor="middle" x="68" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">::char_to_lexeme</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="charcompare_8hpp.html#a8303677d05d66c2d1760f1dd8d159aeb" target="_top" xlink:title="Check if the given character is any alphabetic character.">
-<polygon fill="none" stroke="black" points="173,-132.5 173,-151.5 286,-151.5 286,-132.5 173,-132.5"/>
-<text text-anchor="middle" x="229.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isalpha</text>
+<g id="a_node2"><a xlink:href="namespacestr.html#a68e649ab0e89eb23dfeba29811be4020" target="_top" xlink:title="Converts a bool to string.">
+<polygon fill="none" stroke="black" points="189.5,-114.5 189.5,-133.5 269.5,-133.5 269.5,-114.5 189.5,-114.5"/>
+<text text-anchor="middle" x="229.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::frombool</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M109.01,-100.07C128.04,-107.16 151.15,-115.65 172,-123 177.75,-125.03 183.85,-127.13 189.83,-129.16"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="189.11,-132.61 199.7,-132.5 191.35,-125.98 189.11,-132.61"/>
+<path fill="none" stroke="midnightblue" d="M109.01,-82.07C128.04,-89.16 151.15,-97.65 172,-105 177.75,-107.03 183.85,-109.13 189.83,-111.16"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="189.11,-114.61 199.7,-114.5 191.35,-107.98 189.11,-114.61"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="charcompare_8hpp.html#a3dd0252a3e16c5f76723bca4e215bf1b" target="_top" xlink:title="Check if the given character is any digit character. &#160;&#160;(&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;,...">
-<polygon fill="none" stroke="black" points="175.5,-94.5 175.5,-113.5 283.5,-113.5 283.5,-94.5 175.5,-94.5"/>
-<text text-anchor="middle" x="229.5" y="-101.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isdigit</text>
+<g id="a_node3"><a xlink:href="charcompare_8hpp.html#a8303677d05d66c2d1760f1dd8d159aeb" target="_top" xlink:title="Check if the given character is any alphabetic character.">
+<polygon fill="none" stroke="black" points="173,-76.5 173,-95.5 286,-95.5 286,-76.5 173,-76.5"/>
+<text text-anchor="middle" x="229.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isalpha</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M136.18,-93C145.81,-94.15 155.69,-95.33 165.24,-96.46"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="165.1,-99.97 175.44,-97.68 165.93,-93.02 165.1,-99.97"/>
+<path fill="none" stroke="midnightblue" d="M136.18,-75C144.99,-76.05 154.01,-77.13 162.8,-78.17"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="162.64,-81.68 172.98,-79.39 163.46,-74.73 162.64,-81.68"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="charcompare_8hpp.html#a4f3d7ebb5df1e8e6a4dd319049ffe95b" target="_top" xlink:title="Check if the given character is any whitespace character. &#160;&#160;(&#39; &#39;, &#39;\t&#39;, &#39;\v&#39;, &#39;\r&#39;,...">
-<polygon fill="none" stroke="black" points="172,-56.5 172,-75.5 287,-75.5 287,-56.5 172,-56.5"/>
-<text text-anchor="middle" x="229.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isspace</text>
+<g id="a_node4"><a xlink:href="charcompare_8hpp.html#a3dd0252a3e16c5f76723bca4e215bf1b" target="_top" xlink:title="Check if the given character is any digit character. &#160;&#160;(&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;,...">
+<polygon fill="none" stroke="black" points="175.5,-38.5 175.5,-57.5 283.5,-57.5 283.5,-38.5 175.5,-38.5"/>
+<text text-anchor="middle" x="229.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isdigit</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M136.18,-77C144.65,-75.99 153.32,-74.96 161.79,-73.95"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="162.47,-77.39 171.99,-72.73 161.65,-70.44 162.47,-77.39"/>
+<path fill="none" stroke="midnightblue" d="M136.18,-59C145.81,-57.85 155.69,-56.67 165.24,-55.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="165.93,-58.98 175.44,-54.32 165.1,-52.03 165.93,-58.98"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="namespacestr.html#a99874f5b703e388240420d5bec8557a3" target="_top" xlink:title="Check if a given string matches any of a list of strings.">
-<polygon fill="none" stroke="black" points="179,-0.5 179,-19.5 280,-19.5 280,-0.5 179,-0.5"/>
-<text text-anchor="middle" x="229.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::matches_any</text>
+<g id="a_node5"><a xlink:href="charcompare_8hpp.html#a4f3d7ebb5df1e8e6a4dd319049ffe95b" target="_top" xlink:title="Check if the given character is any whitespace character. &#160;&#160;(&#39; &#39;, &#39;\t&#39;, &#39;\v&#39;, &#39;\r&#39;,...">
+<polygon fill="none" stroke="black" points="172,-0.5 172,-19.5 287,-19.5 287,-0.5 172,-0.5"/>
+<text text-anchor="middle" x="229.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">str::stdpred::isspace</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M101.28,-69.82C129.78,-56.42 170.99,-37.04 198.72,-24"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="200.36,-27.1 207.92,-19.68 197.38,-20.77 200.36,-27.1"/>
-</g>
-<!-- Node5&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M204.84,-19.76C192.84,-28.57 201.06,-38 229.5,-38 248.61,-38 258.59,-33.74 259.44,-28.27"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="262.4,-26.41 254.16,-19.76 256.45,-30.1 262.4,-26.41"/>
+<title>Node1&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M109.01,-51.93C128.04,-44.84 151.15,-36.35 172,-29 177.75,-26.97 183.85,-24.87 189.83,-22.84"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="191.35,-26.02 199.7,-19.5 189.11,-19.39 191.35,-26.02"/>
+</g>
+<!-- Node2&#45;&gt;Node2 -->
+<g id="edge2" class="edge">
+<title>Node2&#45;&gt;Node2</title>
+<path fill="none" stroke="midnightblue" d="M204.84,-133.76C192.84,-142.57 201.06,-152 229.5,-152 248.61,-152 258.59,-147.74 259.44,-142.27"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="262.4,-140.41 254.16,-133.76 256.45,-144.1 262.4,-140.41"/>
 </g>
 </g>
 </svg>
