@@ -253,7 +253,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::string tolower(std::string str) noexcept
+	[[nodiscard]] inline CONSTEXPR const std::string tolower(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(tolower(ch));
@@ -300,7 +300,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::wstring tolower(std::wstring str) noexcept
+	[[nodiscard]] inline CONSTEXPR const std::wstring tolower(std::wstring str) noexcept
 	{
 		for (auto& wch : str)
 			wch = std::move(tolower(wch));
@@ -363,7 +363,7 @@ namespace str {
 	 * @param str	- String to convert.
 	 * @returns std::string
 	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::string toupper(std::string str) noexcept
+	[[nodiscard]] inline CONSTEXPR const std::string toupper(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(toupper(ch));
@@ -410,7 +410,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline WINCONSTEXPR const std::wstring toupper(std::wstring str) noexcept
+	[[nodiscard]] inline CONSTEXPR const std::wstring toupper(std::wstring str) noexcept
 	{
 		for (auto& wch : str)
 			wch = std::move(tolower(wch));
