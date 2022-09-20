@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"structopt_1_1_input_wrapper.html#ad538182b7d19594418ae5881ad114b73":[9,0,7,9,6],
 "structopt_1_1_input_wrapper.html#ad77ec74e3736a441f0f5577cbf7eccd9":[9,0,7,9,1],
 "structopt_1_1_input_wrapper.html#ae7e07d01ee92a17420adc5387d61c3d4":[9,0,7,9,5],
 "structopt_1_1_params_a_p_i2.html":[9,0,7,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7":[9,0,16,3,2],
 "structxlog_1_1level.html#a4065c1901ee75d4c913d4ee438bf1979":[9,0,16,3,13],
 "structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b":[9,0,16,3,8],
-"structxlog_1_1level.html#a56f0e0e289842d38336b5e2f0a32f654":[9,0,16,3,11],
-"structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e":[9,0,16,3,20]
+"structxlog_1_1level.html#a56f0e0e289842d38336b5e2f0a32f654":[9,0,16,3,11]
 };
