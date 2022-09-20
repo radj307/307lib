@@ -1575,8 +1575,10 @@ namespace opt3 {
 			return vec;
 		}
 	public:
-		template<valid_capture... Ts>
+		template<valid_capture... Ts> requires var::more_than<0, Ts...>
 		CONSTEXPR capture_list(Ts&&... captures) : base_t(build(std::make_tuple(std::forward<Ts>(captures)...))) {}
+
+		CONSTEXPR capture_list() : base_t() {}
 
 		iterator_t get_group_of(vstring const& name)
 		{
