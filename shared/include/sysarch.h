@@ -248,6 +248,16 @@
 #	endif
 #endif
 
+#ifdef __GNUC__
+#	if __GNUC__ >= 12
+#		define STRCONSTEXPR CONSTEXPR
+#	else
+#		define STRCONSTEXPR
+#	endif
+#else
+#	define STRCONSTEXPR CONSTEXPR
+#endif
+
 
 #pragma region CONSTEXPR
 #ifndef CONSTEXPR /** @def CONSTEXPR @brief Macro for C++17 constexpr. */

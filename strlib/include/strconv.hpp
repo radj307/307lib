@@ -253,7 +253,7 @@ namespace str {
 		 * @param first_upper	When true, returns a string where the first letter is uppercase.
 		 * @returns				std::string
 		 */
-		[[nodiscard]] inline CONSTEXPR const std::string bool_to_string(const bool& val, const bool& first_upper = false)
+		[[nodiscard]] inline STRCONSTEXPR std::string bool_to_string(const bool& val, const bool& first_upper = false)
 		{
 			if (val)
 				return first_upper ? "True" : "true";

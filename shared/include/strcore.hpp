@@ -253,7 +253,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline CONSTEXPR const std::string tolower(std::string str) noexcept
+	[[nodiscard]] inline STRCONSTEXPR std::string tolower(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(tolower(ch));
@@ -300,7 +300,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline CONSTEXPR const std::wstring tolower(std::wstring str) noexcept
+	[[nodiscard]] inline STRCONSTEXPR std::wstring tolower(std::wstring str) noexcept
 	{
 		for (auto& wch : str)
 			wch = std::move(tolower(wch));
@@ -363,7 +363,7 @@ namespace str {
 	 * @param str	- String to convert.
 	 * @returns std::string
 	 */
-	[[nodiscard]] inline CONSTEXPR const std::string toupper(std::string str) noexcept
+	[[nodiscard]] inline STRCONSTEXPR std::string toupper(std::string str) noexcept
 	{
 		for (auto& ch : str)
 			ch = std::move(toupper(ch));
@@ -410,7 +410,7 @@ namespace str {
 	 * @param str	String to convert.
 	 * @returns		std::string
 	 */
-	[[nodiscard]] inline CONSTEXPR const std::wstring toupper(std::wstring str) noexcept
+	[[nodiscard]] inline STRCONSTEXPR std::wstring toupper(std::wstring str) noexcept
 	{
 		for (auto& wch : str)
 			wch = std::move(tolower(wch));
@@ -427,7 +427,7 @@ namespace str {
 	 *				Recognized values for false include "false", "0", "off", & "no".
 	 * @returns		true when s was one of the recognized values for true; false when s was one of the recognized values for false; otherwise std::nullopt if s was invalid.
 	 */
-	inline CONSTEXPR std::optional<bool> tobool(std::string const& s) noexcept
+	inline STRCONSTEXPR std::optional<bool> tobool(std::string const& s) noexcept
 	{
 		const auto& lower{ tolower(s) };
 		if (lower == "true" || lower == "1" || lower == "on" || lower == "yes")
@@ -441,7 +441,7 @@ namespace str {
 	 * @param b		Input bool.
 	 * @returns		The string representation of the given boolean; "true" or "false".
 	 */
-	inline CONSTEXPR std::string frombool(const bool b) noexcept
+	inline STRCONSTEXPR std::string frombool(const bool b) noexcept
 	{
 		if (b) return "true"; else return "false";
 	}
