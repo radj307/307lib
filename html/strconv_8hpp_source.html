@@ -634,16 +634,27 @@ $(document).ready(function(){initNavTree('strconv_8hpp_source.html',''); initRes
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keyword">template</span>&lt;std::floating_point T&gt;</div>
 <div class="line"><a name="l00544"></a><span class="lineno"><a class="line" href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">  544</a></span>&#160;    [[nodiscard]] <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <span class="keyword">const</span> std::string <a class="code" href="namespacestr.html#a6105bd49aaec3b49512cc92722cf4339">to_string</a>(<span class="keyword">const</span> T&amp; value, <span class="keyword">const</span> std::streamsize&amp; precision = 8, <span class="keyword">const</span> <span class="keywordtype">bool</span> force_decimal = <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    {</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <span class="keyword">auto</span> s{ str::stringify(std::fixed, std::setprecision(precision), value) };</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pos{ s.find_last_of(<span class="stringliteral">&quot;.&quot;</span>) }; pos &lt; s.size()) {</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lastNonZero{ s.find_last_not_of(<span class="stringliteral">&quot;123456789&quot;</span>, pos) }; lastNonZero &lt; s.size())</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                s = s.substr(0ull, lastNonZero + 1ull);</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            <span class="keywordflow">else</span> s = s.substr(0ull, pos);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">StringNumericTypeConversions</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;}</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        std::string s{ str::stringify(std::fixed, std::setprecision(precision), value) };</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        <span class="keyword">const</span> size_t decimalPos{ s.rfind(<span class="stringliteral">&#39;.&#39;</span>) };</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        <span class="keywordflow">if</span> (decimalPos &lt; s.size()) {</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;            <span class="keyword">const</span> size_t lastNonZeroPos{ s.find_last_not_of(<span class="stringliteral">&quot;0&quot;</span>) };</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <span class="keywordflow">if</span> (lastNonZeroPos &gt;= s.size() - 1)</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lastNonZeroPos &gt; decimalPos) {</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                s.erase(s.begin() + (lastNonZeroPos + 1ull), s.end());</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            }</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                s.erase(s.begin() + (decimalPos + 2ull), s.end());</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            }</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        }</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    }</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">endregion</span> <span class="preprocessor">StringNumericTypeConversions</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacestr_html_ad15a09e1f1896bc59792a58fe8e1fbe9"><div class="ttname"><a href="namespacestr.html#ad15a09e1f1896bc59792a58fe8e1fbe9">str::stoi</a></div><div class="ttdeci">int stoi(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts string to int. Wrapper for std::stoi that can be passed as std::function....</div><div class="ttdef"><b>Definition:</b> <a href="strconv_8hpp_source.html#l00430">strconv.hpp:430</a></div></div>
