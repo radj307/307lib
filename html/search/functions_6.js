@@ -16,6 +16,6 @@ var searchData=
   ['from_5ftype_1233',['from_type',['../structjson_1_1_node_type.html#a8444c9e596082de505f2d41e78b92262',1,'json::NodeType']]],
   ['fromalphanumeric_1234',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
   ['frombase10_1235',['fromBase10',['../namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]],
-  ['frombool_1236',['frombool',['../namespacestr.html#a68e649ab0e89eb23dfeba29811be4020',1,'str']]],
+  ['frombool_1236',['frombool',['../namespacestr.html#a678c130f6e170b05d57e1499138db3de',1,'str']]],
   ['front_1237',['front',['../structopt_1_1_arg_container.html#a516f2248bfafb022ca4524b7d3f22ffa',1,'opt::ArgContainer']]]
 ];

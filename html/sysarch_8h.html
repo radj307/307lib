@@ -192,6 +192,9 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e">PP_THIRD_ARG</a>(a,  b,  <a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>, ...)&#160;&#160;&#160;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a></td></tr>
 <tr class="memdesc:ab7717dd958290d9822d42f803e87f16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used internally by the VA_OPT_SUPPORTED macro, do not use this directly! <br /></td></tr>
 <tr class="separator:ab7717dd958290d9822d42f803e87f16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b0638953e091366d2d4f09080dae78"><td class="memItemLeft" align="right" valign="top"><a id="a71b0638953e091366d2d4f09080dae78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRCONSTEXPR</b>&#160;&#160;&#160;CONSTEXPR</td></tr>
+<tr class="separator:a71b0638953e091366d2d4f09080dae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925368a5ba4c2c1079b14bee846409ff"><td class="memItemLeft" align="right" valign="top"><a id="a925368a5ba4c2c1079b14bee846409ff"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff">STRICT_POINTER_SAFETY</a></td></tr>
 <tr class="memdesc:a925368a5ba4c2c1079b14bee846409ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">When defined, the implementation has strict std::pointer_safety. <br  />
@@ -323,7 +326,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of calling static_cast&lt;type&gt;(var) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00350">350</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00360">360</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -352,7 +355,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of calling ::std::forward&lt;decltype(var)&gt;(var) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00358">358</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00368">368</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -460,7 +463,7 @@ Macros</h2></td></tr>
 <div class="line">INLINE enumName&amp; operator&amp;=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) &amp; $c(<span class="keywordtype">int</span>, r))); } \</div>
 <div class="line">INLINE enumName&amp; operator^=(enumName&amp; l, enumName <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> l = $c(enumName, ($c(<span class="keywordtype">int</span>, l) ^ $c(<span class="keywordtype">int</span>, r))); }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00366">366</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00376">376</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -492,7 +495,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> CONSTEXPR <span class="keywordtype">bool</span> operator==(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) == r;}              \</div>
 <div class="line">INLINE CONSTEXPR <span class="keywordtype">bool</span> operator!=(enumName <span class="keyword">const</span>&amp; l, enumType <span class="keyword">const</span>&amp; r) noexcept { <span class="keywordflow">return</span> $c(enumType, l) != r;}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00374">374</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00384">384</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>
@@ -517,7 +520,7 @@ Macros</h2></td></tr>
 <div class="line">    return <a class="code" href="namespacestr.html">str</a>;\</div>
 <div class="line">}(STRINGIZE(obj)))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00336">336</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sysarch_8h_source.html#l00346">346</a> of file <a class="el" href="sysarch_8h_source.html">sysarch.h</a>.</p>
 
 </div>
 </div>

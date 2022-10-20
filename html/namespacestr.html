@@ -213,9 +213,9 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0">fromBase10</a> (const std::string &amp;number, const int &amp;toBase) noexcept(false)</td></tr>
 <tr class="memdesc:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from base 10 (decimal) to an arbitrary base.  <a href="namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0">More...</a><br /></td></tr>
 <tr class="separator:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e649ab0e89eb23dfeba29811be4020"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a68e649ab0e89eb23dfeba29811be4020">frombool</a> (const bool b) noexcept</td></tr>
-<tr class="memdesc:a68e649ab0e89eb23dfeba29811be4020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a bool to string.  <a href="namespacestr.html#a68e649ab0e89eb23dfeba29811be4020">More...</a><br /></td></tr>
-<tr class="separator:a68e649ab0e89eb23dfeba29811be4020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678c130f6e170b05d57e1499138db3de"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">frombool</a> (const bool b) noexcept</td></tr>
+<tr class="memdesc:a678c130f6e170b05d57e1499138db3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a bool to string.  <a href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">More...</a><br /></td></tr>
+<tr class="separator:a678c130f6e170b05d57e1499138db3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac833e4f5138a5dd64fb8985361215835"><td class="memTemplParams" colspan="2">template&lt;std::integral RT, template&lt; class, class &gt; class Cont&gt; </td></tr>
 <tr class="memitem:ac833e4f5138a5dd64fb8985361215835"><td class="memTemplItemLeft" align="right" valign="top">RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">get_longest_string</a> (const Cont&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;cont, RT offset=static_cast&lt; RT &gt;(0))</td></tr>
 <tr class="memdesc:ac833e4f5138a5dd64fb8985361215835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the length of the longest string in a given STL container.  <a href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">More...</a><br /></td></tr>
@@ -493,9 +493,9 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:ae51dc4e9d23dcdd8def538424933d5df"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">toBase10</a> (std::string number, const int &amp;fromBase) noexcept(false)</td></tr>
 <tr class="memdesc:ae51dc4e9d23dcdd8def538424933d5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from an arbitrary base to base 10 (decimal).  <a href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">More...</a><br /></td></tr>
 <tr class="separator:ae51dc4e9d23dcdd8def538424933d5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae540e0cee1fc10ec50f9e5582092e041"><td class="memItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae540e0cee1fc10ec50f9e5582092e041">tobool</a> (std::string const &amp;s) noexcept</td></tr>
-<tr class="memdesc:ae540e0cee1fc10ec50f9e5582092e041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to bool.  <a href="namespacestr.html#ae540e0cee1fc10ec50f9e5582092e041">More...</a><br /></td></tr>
-<tr class="separator:ae540e0cee1fc10ec50f9e5582092e041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb7e9cfe504bc154662f277aa75be51"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8cb7e9cfe504bc154662f277aa75be51">tobool</a> (std::string const &amp;s) noexcept</td></tr>
+<tr class="memdesc:a8cb7e9cfe504bc154662f277aa75be51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to bool.  <a href="namespacestr.html#a8cb7e9cfe504bc154662f277aa75be51">More...</a><br /></td></tr>
+<tr class="separator:a8cb7e9cfe504bc154662f277aa75be51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memItemLeft" align="right" valign="top">CONSTEXPR char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a> (const char &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:ae2bfcfb51a1c131387fd6d08629aba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">More...</a><br /></td></tr>
 <tr class="separator:ae2bfcfb51a1c131387fd6d08629aba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -505,12 +505,12 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a5a231522683b17634fae04118974b559"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5a231522683b17634fae04118974b559">tolower</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a5a231522683b17634fae04118974b559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a5a231522683b17634fae04118974b559">More...</a><br /></td></tr>
 <tr class="separator:a5a231522683b17634fae04118974b559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06950febb3ec88345ac35129e41da6ad"><td class="memItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a06950febb3ec88345ac35129e41da6ad">tolower</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:a06950febb3ec88345ac35129e41da6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a06950febb3ec88345ac35129e41da6ad">More...</a><br /></td></tr>
-<tr class="separator:a06950febb3ec88345ac35129e41da6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a579c3f77d9cae6a6ff17df0c4850d437"><td class="memItemLeft" align="right" valign="top">const CONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a579c3f77d9cae6a6ff17df0c4850d437">tolower</a> (std::wstring str) noexcept</td></tr>
-<tr class="memdesc:a579c3f77d9cae6a6ff17df0c4850d437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a579c3f77d9cae6a6ff17df0c4850d437">More...</a><br /></td></tr>
-<tr class="separator:a579c3f77d9cae6a6ff17df0c4850d437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af6bca50e9e01a71168c209fc80f3a5"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8af6bca50e9e01a71168c209fc80f3a5">tolower</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:a8af6bca50e9e01a71168c209fc80f3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#a8af6bca50e9e01a71168c209fc80f3a5">More...</a><br /></td></tr>
+<tr class="separator:a8af6bca50e9e01a71168c209fc80f3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49232565c4dbd164b86678352ecafa4"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac49232565c4dbd164b86678352ecafa4">tolower</a> (std::wstring str) noexcept</td></tr>
+<tr class="memdesc:ac49232565c4dbd164b86678352ecafa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#ac49232565c4dbd164b86678352ecafa4">More...</a><br /></td></tr>
+<tr class="separator:ac49232565c4dbd164b86678352ecafa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88947ca78984e05f41dd36fb221d32d6"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">toMap</a> (std::stringstream &amp;data, const std::string &amp;delims, const char lineDelim='\n', const bool noSpace=true) noexcept</td></tr>
 <tr class="memdesc:a88947ca78984e05f41dd36fb221d32d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a stringstream to a map of string keys &amp; string vars.  <a href="namespacestr.html#a88947ca78984e05f41dd36fb221d32d6">More...</a><br /></td></tr>
 <tr class="separator:a88947ca78984e05f41dd36fb221d32d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -533,12 +533,12 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memItemLeft" align="right" valign="top">CONSTEXPR wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">toupper</a> (const wchar_t &amp;<a class="el" href="sysarch_8h.html#ab80f02f8ff37d1be951f69a8f5b3c7a1">c</a>) noexcept</td></tr>
 <tr class="memdesc:a4cfbac05c04a1a2028714d8e1674ef71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a character to lowercase.  <a href="namespacestr.html#a4cfbac05c04a1a2028714d8e1674ef71">More...</a><br /></td></tr>
 <tr class="separator:a4cfbac05c04a1a2028714d8e1674ef71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf24bd192ac5274758b02bed261e2778"><td class="memItemLeft" align="right" valign="top">const CONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aaf24bd192ac5274758b02bed261e2778">toupper</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:aaf24bd192ac5274758b02bed261e2778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to uppercase.  <a href="namespacestr.html#aaf24bd192ac5274758b02bed261e2778">More...</a><br /></td></tr>
-<tr class="separator:aaf24bd192ac5274758b02bed261e2778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad7f10bf6c2669610bf85fa1cb03cab9"><td class="memItemLeft" align="right" valign="top">const CONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aad7f10bf6c2669610bf85fa1cb03cab9">toupper</a> (std::wstring str) noexcept</td></tr>
-<tr class="memdesc:aad7f10bf6c2669610bf85fa1cb03cab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#aad7f10bf6c2669610bf85fa1cb03cab9">More...</a><br /></td></tr>
-<tr class="separator:aad7f10bf6c2669610bf85fa1cb03cab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03593e910685ed072b06c30af18531ff"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a03593e910685ed072b06c30af18531ff">toupper</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:a03593e910685ed072b06c30af18531ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to uppercase.  <a href="namespacestr.html#a03593e910685ed072b06c30af18531ff">More...</a><br /></td></tr>
+<tr class="separator:a03593e910685ed072b06c30af18531ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba18c84849caba6e9d0e5b5ec6e5d4b2"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba18c84849caba6e9d0e5b5ec6e5d4b2">toupper</a> (std::wstring str) noexcept</td></tr>
+<tr class="memdesc:aba18c84849caba6e9d0e5b5ec6e5d4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a convertible-character to lowercase.  <a href="namespacestr.html#aba18c84849caba6e9d0e5b5ec6e5d4b2">More...</a><br /></td></tr>
+<tr class="separator:aba18c84849caba6e9d0e5b5ec6e5d4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9f9a7cdc58ff315c0dbdb4793171918f">toVector</a> (std::stringstream data, std::optional&lt; char &gt; delim=std::nullopt)</td></tr>
 <tr class="memdesc:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a stringstream to a vector of strings, where each string contains one line from the stream.  <a href="namespacestr.html#a9f9a7cdc58ff315c0dbdb4793171918f">More...</a><br /></td></tr>
 <tr class="separator:a9f9a7cdc58ff315c0dbdb4793171918f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -898,7 +898,8 @@ template&lt;class T1 , class T2 &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd4ee543bc885f863faf20217f7142fe_cgraph.svg" width="270" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acd4ee543bc885f863faf20217f7142fe_cgraph.svg" width="270" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -2010,13 +2011,14 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a041f49f2d8f911fcb5e47ed6ff691ab0_cgraph.svg" width="495" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a041f49f2d8f911fcb5e47ed6ff691ab0_cgraph.svg" width="495" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a68e649ab0e89eb23dfeba29811be4020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68e649ab0e89eb23dfeba29811be4020">&#9670;&nbsp;</a></span>frombool()</h2>
+<a id="a678c130f6e170b05d57e1499138db3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678c130f6e170b05d57e1499138db3de">&#9670;&nbsp;</a></span>frombool()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2025,7 +2027,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR std::string str::frombool </td>
+          <td class="memname">STRCONSTEXPR std::string str::frombool </td>
           <td>(</td>
           <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
@@ -2052,12 +2054,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a68e649ab0e89eb23dfeba29811be4020_cgraph.svg" width="118" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a678c130f6e170b05d57e1499138db3de_cgraph.svg" width="118" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a68e649ab0e89eb23dfeba29811be4020_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a678c130f6e170b05d57e1499138db3de_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -2440,7 +2444,8 @@ template&lt;std::integral T&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7afb39cb933e8727cfe4a84dbdad41c2_cgraph.svg" width="342" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7afb39cb933e8727cfe4a84dbdad41c2_cgraph.svg" width="342" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2487,7 +2492,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a42c6b6a3bd47743a574df997a0bb8c65_cgraph.svg" width="528" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a42c6b6a3bd47743a574df997a0bb8c65_cgraph.svg" width="528" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3051,7 +3057,8 @@ template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acf8be91baa116c4582e66f6278db959f_cgraph.svg" width="236" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acf8be91baa116c4582e66f6278db959f_cgraph.svg" width="236" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3198,7 +3205,8 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_cgraph.svg" width="300" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_cgraph.svg" width="300" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4340,7 +4348,8 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a1c5f7adb1945d04eb55b0910ca01d09f_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a1c5f7adb1945d04eb55b0910ca01d09f_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4383,7 +4392,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae47e8a6851499957d48fdef435cd982a_cgraph.svg" width="266" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae47e8a6851499957d48fdef435cd982a_cgraph.svg" width="266" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4426,7 +4436,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad15a09e1f1896bc59792a58fe8e1fbe9_cgraph.svg" width="264" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad15a09e1f1896bc59792a58fe8e1fbe9_cgraph.svg" width="264" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4469,7 +4480,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abf4cc36f0f7fbc735d3a7a282b8d9684_cgraph.svg" width="264" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abf4cc36f0f7fbc735d3a7a282b8d9684_cgraph.svg" width="264" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4512,7 +4524,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_af3ddec4fea92d79d63cd6caa33d084e5_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_af3ddec4fea92d79d63cd6caa33d084e5_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4555,7 +4568,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4603,7 +4617,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8faa23ca70522123e1c17746265b4c40_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8faa23ca70522123e1c17746265b4c40_cgraph.svg" width="268" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4646,7 +4661,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aff81b4fb51f25b185a6e0f219023631b_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aff81b4fb51f25b185a6e0f219023631b_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4689,7 +4705,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad150ce9485904ee33e3593e783324b09_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad150ce9485904ee33e3593e783324b09_cgraph.svg" width="272" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4732,7 +4749,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a424d7e0db015c773dd069f863c2742e0_cgraph.svg" width="276" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a424d7e0db015c773dd069f863c2742e0_cgraph.svg" width="276" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4775,7 +4793,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9abdc3487fffb1c2b871bf5b609081c8_cgraph.svg" width="276" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9abdc3487fffb1c2b871bf5b609081c8_cgraph.svg" width="276" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4825,7 +4844,8 @@ template&lt;var::streamable... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a18758598172725d265bdab25d48f5836_cgraph.svg" width="275" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a18758598172725d265bdab25d48f5836_cgraph.svg" width="275" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4875,7 +4895,8 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a31ed6d7d8f4a9a12aaf145f3f4520440_cgraph.svg" width="266" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a31ed6d7d8f4a9a12aaf145f3f4520440_cgraph.svg" width="266" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5483,13 +5504,14 @@ template&lt;std::integral TReturn = decimal&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae51dc4e9d23dcdd8def538424933d5df_cgraph.svg" width="520" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae51dc4e9d23dcdd8def538424933d5df_cgraph.svg" width="520" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ae540e0cee1fc10ec50f9e5582092e041"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae540e0cee1fc10ec50f9e5582092e041">&#9670;&nbsp;</a></span>tobool()</h2>
+<a id="a8cb7e9cfe504bc154662f277aa75be51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb7e9cfe504bc154662f277aa75be51">&#9670;&nbsp;</a></span>tobool()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5498,7 +5520,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CONSTEXPR std::optional&lt;bool&gt; str::tobool </td>
+          <td class="memname">STRCONSTEXPR std::optional&lt;bool&gt; str::tobool </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
@@ -5525,7 +5547,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae540e0cee1fc10ec50f9e5582092e041_cgraph.svg" width="254" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8cb7e9cfe504bc154662f277aa75be51_cgraph.svg" width="254" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5567,7 +5590,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae2bfcfb51a1c131387fd6d08629aba53_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae2bfcfb51a1c131387fd6d08629aba53_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5609,7 +5633,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93882029690e5c1836bd3c4678da2003_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a93882029690e5c1836bd3c4678da2003_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5651,13 +5676,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a5a231522683b17634fae04118974b559_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a5a231522683b17634fae04118974b559_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a06950febb3ec88345ac35129e41da6ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06950febb3ec88345ac35129e41da6ad">&#9670;&nbsp;</a></span>tolower() <span class="overload">[4/5]</span></h2>
+<a id="a8af6bca50e9e01a71168c209fc80f3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af6bca50e9e01a71168c209fc80f3a5">&#9670;&nbsp;</a></span>tolower() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5666,7 +5692,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const CONSTEXPR std::string str::tolower </td>
+          <td class="memname">STRCONSTEXPR std::string str::tolower </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -5706,13 +5732,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a06950febb3ec88345ac35129e41da6ad_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8af6bca50e9e01a71168c209fc80f3a5_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a579c3f77d9cae6a6ff17df0c4850d437"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a579c3f77d9cae6a6ff17df0c4850d437">&#9670;&nbsp;</a></span>tolower() <span class="overload">[5/5]</span></h2>
+<a id="ac49232565c4dbd164b86678352ecafa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49232565c4dbd164b86678352ecafa4">&#9670;&nbsp;</a></span>tolower() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5721,7 +5748,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const CONSTEXPR std::wstring str::tolower </td>
+          <td class="memname">STRCONSTEXPR std::wstring str::tolower </td>
           <td>(</td>
           <td class="paramtype">std::wstring&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -5761,7 +5788,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a579c3f77d9cae6a6ff17df0c4850d437_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ac49232565c4dbd164b86678352ecafa4_cgraph.svg" width="262" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5972,7 +6000,8 @@ template&lt;std::floating_point T&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aae017529a0116f69b6d0edf9d9ea7f96_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aae017529a0116f69b6d0edf9d9ea7f96_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6014,7 +6043,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a16fb669c01ac6edd91ed062f90069635_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a16fb669c01ac6edd91ed062f90069635_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6056,13 +6086,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a4cfbac05c04a1a2028714d8e1674ef71_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a4cfbac05c04a1a2028714d8e1674ef71_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="aaf24bd192ac5274758b02bed261e2778"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf24bd192ac5274758b02bed261e2778">&#9670;&nbsp;</a></span>toupper() <span class="overload">[4/5]</span></h2>
+<a id="a03593e910685ed072b06c30af18531ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03593e910685ed072b06c30af18531ff">&#9670;&nbsp;</a></span>toupper() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6071,7 +6102,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const CONSTEXPR std::string str::toupper </td>
+          <td class="memname">STRCONSTEXPR std::string str::toupper </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -6111,13 +6142,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aaf24bd192ac5274758b02bed261e2778_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a03593e910685ed072b06c30af18531ff_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="aad7f10bf6c2669610bf85fa1cb03cab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7f10bf6c2669610bf85fa1cb03cab9">&#9670;&nbsp;</a></span>toupper() <span class="overload">[5/5]</span></h2>
+<a id="aba18c84849caba6e9d0e5b5ec6e5d4b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba18c84849caba6e9d0e5b5ec6e5d4b2">&#9670;&nbsp;</a></span>toupper() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6126,7 +6158,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const CONSTEXPR std::wstring str::toupper </td>
+          <td class="memname">STRCONSTEXPR std::wstring str::toupper </td>
           <td>(</td>
           <td class="paramtype">std::wstring&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -6166,7 +6198,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aad7f10bf6c2669610bf85fa1cb03cab9_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aba18c84849caba6e9d0e5b5ec6e5d4b2_cgraph.svg" width="263" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6267,7 +6300,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae08aac1680da8afe0bb6a06c2b129487_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae08aac1680da8afe0bb6a06c2b129487_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6322,7 +6356,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a922b42c14f2696e7b7598127f2994874_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a922b42c14f2696e7b7598127f2994874_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6375,7 +6410,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a65d75f0e774d1dc8435a8d23e7f2c7f2_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a65d75f0e774d1dc8435a8d23e7f2c7f2_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6430,7 +6466,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a46e66bef2ea5926128e48eb7290b4bcc_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a46e66bef2ea5926128e48eb7290b4bcc_cgraph.svg" width="240" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6567,7 +6604,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa8d0b7781e16e6637610c4ba488301ff_cgraph.svg" width="311" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa8d0b7781e16e6637610c4ba488301ff_cgraph.svg" width="311" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6620,7 +6658,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a123ab7e278cfb0f59d3bed690c2bf380_cgraph.svg" width="311" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a123ab7e278cfb0f59d3bed690c2bf380_cgraph.svg" width="311" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6667,7 +6706,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae62653424221ea585a928a2dd1c7dbd6_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae62653424221ea585a928a2dd1c7dbd6_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6720,7 +6760,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aac4273bb692df476dc585a89a67f3729_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aac4273bb692df476dc585a89a67f3729_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6767,7 +6808,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acbeabeae95260fb81a833b977510d899_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_acbeabeae95260fb81a833b977510d899_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6820,7 +6862,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9afd3d15679280008373868b588955f5_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9afd3d15679280008373868b588955f5_cgraph.svg" width="292" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

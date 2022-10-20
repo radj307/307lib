@@ -24,6 +24,7 @@ var sysarch_8h =
     [ "OS_NONE", "sysarch_8h.html#aee70138f33aba6d0a7f273d869a705e9", null ],
     [ "OS_WIN", "sysarch_8h.html#a1dfc36904b0d30482f6c7adb922cf11b", null ],
     [ "PP_THIRD_ARG", "sysarch_8h.html#ab7717dd958290d9822d42f803e87f16e", null ],
+    [ "STRCONSTEXPR", "sysarch_8h.html#a71b0638953e091366d2d4f09080dae78", null ],
     [ "STRICT_POINTER_SAFETY", "sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff", null ],
     [ "STRINGIZE", "sysarch_8h.html#a3428692efe6051ef30016ffde1a9f7bb", null ],
     [ "STRINGIZE_I", "sysarch_8h.html#ab4e71d83777b6ea26ef412cb90cab419", null ],
