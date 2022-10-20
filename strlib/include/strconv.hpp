@@ -543,12 +543,23 @@ namespace str {
 	template<std::floating_point T>
 	[[nodiscard]] inline CONSTEXPR const std::string to_string(const T& value, const std::streamsize& precision = 8, const bool force_decimal = false)
 	{
-		auto s{ str::stringify(std::fixed, std::setprecision(precision), value) };
-		if (const auto& pos{ s.find_last_of(".") }; pos < s.size()) {
-			if (const auto& lastNonZero{ s.find_last_not_of("123456789", pos) }; lastNonZero < s.size())
-				s = s.substr(0ull, lastNonZero + 1ull);
-			else s = s.substr(0ull, pos);
+		std::string s{ str::stringify(std::fixed, std::setprecision(precision), value) };
+
+		const size_t decimalPos{ s.rfind('.') };
+
+		if (decimalPos < s.size()) {
+			const size_t lastNonZeroPos{ s.find_last_not_of("0") };
+
+			if (lastNonZeroPos >= s.size() - 1)
+				return s;
+			else if (lastNonZeroPos > decimalPos) {
+				s.erase(s.begin() + (lastNonZeroPos + 1ull), s.end());
+			}
+			else {
+				s.erase(s.begin() + (decimalPos + 2ull), s.end());
+			}
 		}
+
 		return s;
 	}
 #pragma endregion StringNumericTypeConversions

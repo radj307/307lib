@@ -1954,7 +1954,7 @@ namespace opt3 {
 		 * @brief					Parsing Constructor.
 		 * @param argc				Argument array size from main.
 		 * @param argv				Argument array from main.
-		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
+		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.\n Argument types must meet the `valid_capture` requirement.
 		 */
 		template<valid_capture... TCaptures>
 		WINCONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) :
@@ -1966,7 +1966,7 @@ namespace opt3 {
 		 * @param argc				Argument array size from main.
 		 * @param argv				Argument array from main.
 		 * @param ruleset			Used to define additional constraints & default settings for the argument parser.
-		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.
+		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.\n Argument types must meet the `valid_capture` requirement.
 		 */
 		template<valid_capture... TCaptures>
 		WINCONSTEXPR arg_manager(const int argc, char** argv, ArgumentParsingRules const& ruleset, TCaptures&&... captureArguments) :

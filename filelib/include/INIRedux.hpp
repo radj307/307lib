@@ -181,7 +181,7 @@ namespace file::ini {
 						return static_cast<std::streamsize>(longest);
 					}() };
 					for (auto& [key, val] : section)
-						os << key << format::indent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';
+						os << key << shared::indent(align_width + 2ll, key.size()) << "= " << to_string(val) << '\n';
 					os << '\n';
 				}
 				break;
@@ -199,7 +199,7 @@ namespace file::ini {
 				for (auto& [header, section] : obj._cont) {
 					os << '[' << header << ']' << '\n';
 					for (auto& [key, value] : section)
-						os << key << format::indent(align_width + 2ll, key.size()) << "= " << to_string(value, true) << '\n';
+						os << key << shared::indent(align_width + 2ll, key.size()) << "= " << to_string(value, true) << '\n';
 					os << '\n';
 				}
 				break;
@@ -718,7 +718,7 @@ namespace file::ini {
 		INI() = default;
 		INI(INIContainer::Map&& map) : INIContainer(std::move(map)) {}
 #		if LANG_CPP >= 17
-		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
+		INI(const std::filesystem::path& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::Token{ token::DefaultDefs::TokenType::END })), filepath).operator INIContainer::Map()) {}
 #		else
 		INI(const std::string_view& filepath) : INI(tokenizer::INIParser(std::move(tokenizer::INITokenizer(std::move(file::read(filepath))).tokenize(token::DefaultDefs::TokenType::END)), filepath).operator INIContainer::Map()) {}
 #		endif
