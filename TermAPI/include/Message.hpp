@@ -20,7 +20,7 @@ namespace term {
 		const bool use_regex_indent{ true };
 
 		CONSTEXPR Message() : body{ nullptr }, margin_sz{ 10ull } {}
-		explicit CONSTEXPR Message(const char* body, const size_t& marginSize = 10ull) : body{ body }, margin_sz{ marginSize } {}
+		explicit CONSTEXPR Message(const char* body, const size_t& marginSize = 10ull, const bool useRegexIndent = true) : body{ body }, margin_sz{ marginSize }, use_regex_indent{ useRegexIndent } {}
 
 		explicit operator const char* const() const { return body; }
 		operator std::string() const { return{ body }; }

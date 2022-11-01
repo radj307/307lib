@@ -68,8 +68,25 @@ namespace ex {
 		 * @param o			Another except object to move.
 		 */
 		except(except&& o) noexcept : message{ std::move(o.message) } {}
+		/**
+		 * @brief			Copy Constructor
+		 * @param o			Another except object to copy.
+		 */
+		except(const except& o) noexcept : message{ o.message.get() == nullptr ? nullptr : new std::string(*o.message.get()) } {}
 
 		virtual ~except() = default;
+
+		except& operator=(const except& o)
+		{
+			auto* p = o.message.get();
+			std::copy(p, p + sizeof(p), message.get());
+			return *this;
+		}
+		except& operator=(except&& o)
+		{
+			message = std::move(o.message);
+			return *this;
+		}
 
 		/**
 		 * @brief		Retrieve the message associated with this exception.
