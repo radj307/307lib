@@ -86,15 +86,15 @@ var NAVTREEINDEX =
 [
 ".html",
 "classcolor_1_1basic__sync.html#a51b18e79424e13d2a4e317da6a14abe9",
-"classini_1_1basic__ini.html#ac0a15555df5669d7f92e86e8a4030513",
-"classopt_1_1token_1_1_parser.html#a754679fa498361473393480dc529c107",
-"classxlog_1_1x_log.html#aef2906528ebcb6b963fe33957d7952d6",
-"namespacemembers_b.html",
-"strcompare_8hpp.html#a99874f5b703e388240420d5bec8557a3",
-"structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a89a17fc28dd5623b104d7453520b45d3",
-"structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100",
-"structopt_1_1_input_wrapper.html#ad538182b7d19594418ae5881ad114b73",
-"structxlog_1_1level.html#a670a5a95a8d893ee2c09e45b0d44f81e"
+"classini_1_1basic__ini.html#ab17ff63a60c6673a10261c4dc5fce898",
+"classopt_1_1token_1_1_parser.html#a40e9b89ae78a52813fffd32050d9dd7a",
+"classxlog_1_1x_log.html#ad0c78646bd02c91f163febf5580c0f25",
+"namespacemembers.html",
+"strcompare_8hpp.html#a67a37ffa8e9036b412b718c5a3d274f2",
+"structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a1f330550fde7eac669537abb8a9291ed",
+"structopt3_1_1arg__container.html#a375b575e3cd552015d5cddd26d7c4085",
+"structopt_1_1_input_wrapper.html#a974278dc977477619b3b91bcdf7c9175",
+"structxlog_1_1level.html#a4065c1901ee75d4c913d4ee438bf1979"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"classxlog_1_1x_log.html#ad0c78646bd02c91f163febf5580c0f25":[9,0,16,6,17],
+"classxlog_1_1x_log.html#ad8c767783e790e165b6610b45227e477":[9,0,16,6,3],
+"classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6":[9,0,16,6,0],
 "classxlog_1_1x_log.html#aef2906528ebcb6b963fe33957d7952d6":[9,0,16,6,9],
 "classxlog_1_1x_logs.html":[9,0,16,7],
 "classxlog_1_1x_logs.html#a1c2d5316a1733e7fc418f712b03b30eb":[9,0,16,7,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceini.html":[8,0,4],
 "namespacejson.html":[9,0,5],
 "namespacejson.html":[8,0,5],
-"namespacelegacy.html":[8,0,6],
-"namespacemembers.html":[8,1,0],
-"namespacemembers.html":[8,1,0,0],
-"namespacemembers_a.html":[8,1,0,1]
+"namespacelegacy.html":[8,0,6]
 };

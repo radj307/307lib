@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"structopt_1_1_input_wrapper.html#a974278dc977477619b3b91bcdf7c9175":[9,0,7,9,8],
+"structopt_1_1_input_wrapper.html#ac99164a475b1494f388798d3b8250db1":[9,0,7,9,0],
+"structopt_1_1_input_wrapper.html#acd6e2abe67c17ad61f93c6e09074c93f":[9,0,7,9,11],
 "structopt_1_1_input_wrapper.html#ad538182b7d19594418ae5881ad114b73":[9,0,7,9,6],
 "structopt_1_1_input_wrapper.html#ad77ec74e3736a441f0f5577cbf7eccd9":[9,0,7,9,1],
 "structopt_1_1_input_wrapper.html#ae7e07d01ee92a17420adc5387d61c3d4":[9,0,7,9,5],
@@ -80,8 +83,8 @@ var NAVTREEINDEX9 =
 "structrng_1_1x_rand.html#a141cfcfc998afb5e7ead974c97de2a2d":[9,0,10,1,1],
 "structrng_1_1x_rand.html#a38fde7268db76d8d7b458e5a1f6623f5":[9,0,10,1,4],
 "structrng_1_1x_rand.html#a562d90df590cb6025ec25b0cb5317605":[9,0,10,1,0],
-"structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50":[9,0,10,1,13],
 "structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50":[9,0,10,1,12],
+"structrng_1_1x_rand.html#a5bc2d755f3de13f65386a0de11249e50":[9,0,10,1,13],
 "structrng_1_1x_rand.html#a5ff8448ded9db28b54b4a39d58e03feb":[9,0,10,1,6],
 "structrng_1_1x_rand.html#a7b4cb8d44b220b655bcafc9bdd02a895":[9,0,10,1,9],
 "structrng_1_1x_rand.html#a8b3e4533fc52a7913a932a4b43e49e42":[9,0,10,1,7],
@@ -199,8 +202,8 @@ var NAVTREEINDEX9 =
 "structterm_1_1_message.html":[9,0,13,4],
 "structterm_1_1_message.html#a0263ac25c2e3a0d5b947c23f2b4db041":[9,0,13,4,2],
 "structterm_1_1_message.html#a208e9161020ccc1d6cb45618f28a1a52":[9,0,13,4,4],
+"structterm_1_1_message.html#a277bc45d3b0cf7cb8cbfa3b8a92791fa":[9,0,13,4,1],
 "structterm_1_1_message.html#a957d2f36f5eb0183db3ed5c96c866654":[9,0,13,4,0],
-"structterm_1_1_message.html#a9f3e5346dbbbb5883abe4040b7f45e25":[9,0,13,4,1],
 "structterm_1_1_message.html#aa22ac98cf98b3775fcc85ac0ae875e43":[9,0,13,4,7],
 "structterm_1_1_message.html#aaf20f988929b31b6fb723e6e3bb282a5":[9,0,13,4,3],
 "structterm_1_1_message.html#abd91e7c810e685cc67c7de34916a7bd0":[9,0,13,4,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "structxlog_1_1level.html":[9,0,16,3],
 "structxlog_1_1level.html#a00290bb7e21a1d0cb0f0e4ce3eebefd5":[9,0,16,3,3],
 "structxlog_1_1level.html#a1ea82679755f988c1534601c3c732c0b":[9,0,16,3,15],
-"structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7":[9,0,16,3,2],
-"structxlog_1_1level.html#a4065c1901ee75d4c913d4ee438bf1979":[9,0,16,3,13],
-"structxlog_1_1level.html#a4755db4cac57ab496803f96bfaffef6b":[9,0,16,3,8],
-"structxlog_1_1level.html#a56f0e0e289842d38336b5e2f0a32f654":[9,0,16,3,11]
+"structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7":[9,0,16,3,2]
 };
