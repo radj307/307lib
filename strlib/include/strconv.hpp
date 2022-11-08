@@ -202,7 +202,7 @@ namespace str {
 		 * @param nextCh	Optional pointer that is set to the index of the next character in the string after the number.
 		 * @returns		bool
 		 */
-		[[nodiscard]] inline WINCONSTEXPR bool stob(std::string str) noexcept
+		[[nodiscard]] inline STRCONSTEXPR bool stob(std::string str) noexcept
 		{
 			return str::tolower(str) == "true";
 		}

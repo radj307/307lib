@@ -31,7 +31,7 @@ namespace color {
 		/**
 		 * @brief			Default Constructor
 		 * @param enable	When true, color sequences are enabled; otherwise color sequences are disabled.
-		 * @param reset_seq		Default sequence that the color synchronizer should use when resetting terminal colors to default.
+		 * @param reset_seq	Default sequence that the color synchronizer should use when resetting terminal colors to default.
 		 */
 		constexpr basic_sync(const bool enable = true, const seq_t& reset_seq = seq_t::reset) : _enable{ enable }, _reset_seq{ reset_seq } {}
 

@@ -82,11 +82,11 @@ namespace opt3 {
 	using vstring = basic_vstring<char, std::char_traits<char>, std::allocator<char>>;
 
 	namespace _internal {
-		/// @brief	The underlying value type of Parameters.
+		/// @brief	The underlying value type in opt3::Parameter.
 		using parameter_t = std::string;
-		/// @brief	The underlying value type of Flags.
+		/// @brief	The underlying value type in opt3::Flag.
 		using flag_t = std::pair<char, std::optional<std::string>>;
-		/// @brief	The underlying value type of Options.
+		/// @brief	The underlying value type in opt3::Option.
 		using option_t = std::pair<std::string, std::optional<std::string>>;
 	}
 
@@ -1154,7 +1154,6 @@ namespace opt3 {
 	#pragma endregion get_duplicates
 	};
 
-
 	/// @brief	unsigned char type
 	using uchar = unsigned char;
 
@@ -1187,18 +1186,6 @@ namespace opt3 {
 		Conflict = 2,
 	};
 #pragma endregion Enums
-
-	namespace _internal {
-		static struct {
-		private:
-			mutable size_t rolling{ 0 };
-		public:
-			/// @returns	Most recently-assigned ID number.
-			CONSTEXPR size_t last() noexcept { return rolling; }
-			/// @returns	Next unassigned ID number.
-			CONSTEXPR size_t next() noexcept { return rolling++; }
-		} arg_id_sequencer;
-	}
 
 	template<var::any_same<_internal::flag_t, _internal::option_t> T>
 	struct basic_arg_template : public base_arg {
@@ -1328,6 +1315,18 @@ namespace opt3 {
 		WINCONSTEXPR operator vstring() const noexcept { return name; }
 	};
 
+	namespace _internal {
+		static struct {
+		private:
+			mutable size_t rolling{ 0 };
+		public:
+			/// @returns	Next unassigned ID number.
+			CONSTEXPR size_t next() const noexcept { return rolling++; }
+			/// @brief		Resets the sequencer to 0.
+			CONSTEXPR void reset() const noexcept { rolling = 0; }
+		} arg_id_sequencer;
+	}
+
 	/**
 	 * @struct	variant_template_group
 	 * @brief	Container object for a *group* of argument templates that all perform a similar function.
@@ -1404,6 +1403,7 @@ namespace opt3 {
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
 		WINCONSTEXPR variant_template_group(const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _min{ min }, _max{ max } {}
+
 
 		WINCONSTEXPR CaptureStyle get_capture_style_of(vstring const& name) const noexcept
 		{
@@ -1550,8 +1550,17 @@ namespace opt3 {
 	 */
 	inline WINCONSTEXPR variant_template_group make_template(variant_template_group const& g) { return g; }
 
+	/**
+	 * @concept		valid_capture
+	 * @brief		Constraint that only allows types that constitute a valid argument capture definition, such as `variant_template`, `variant_template_group`, or `vstring`.
+	 */
 	template<typename T> concept valid_capture = var::any_same_or_convertible<T, variant_template, variant_template_group, vstring>;
 
+	/**
+	 * @struct	capture_list
+	 * @brief	A small wrapper object that inherits from a std::vector.  
+	 *			TODO: Implement this properly instead of inheriting from std::vector.
+	 */
 	struct capture_list : std::vector<variant_template_group> {
 		using base_t = std::vector<variant_template_group>;
 		using iterator_t = std::vector<variant_template_group>::iterator;

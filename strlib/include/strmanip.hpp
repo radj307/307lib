@@ -160,7 +160,7 @@ namespace str {
 	 * @param str	- Pass-by-value string
 	 * @returns string
 	 */
-	INLINE WINCONSTEXPR std::string remove_whitespace(std::string str) noexcept
+	INLINE STRCONSTEXPR std::string remove_whitespace(std::string str) noexcept
 	{
 		str.erase(std::remove_if(str.begin(), str.end(), stdpred::isspace), str.end());
 		return str;
@@ -532,7 +532,7 @@ namespace str {
 	 * @param discard_pos	When true, the character at the given position is discarded, otherwise the character is the first character of the second return value.
 	 * @returns				std::pair<std::string, std::string>
 	 */
-	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const size_t& pos, const bool& discard_pos = false)
+	inline STRCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const size_t& pos, const bool& discard_pos = false)
 	{
 		return{ str.substr(0ull, pos), str.substr(pos + !!discard_pos) };
 	}
@@ -543,7 +543,7 @@ namespace str {
 	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
 	 * @returns		std::pair<std::string, std::string>
 	 */
-	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	inline STRCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
 	{
 		unsigned matched{ 0u };
 		for (size_t pos{ str.find(delim) }; pos_valid(pos); pos = str.find(delim, pos + 1ull))
@@ -558,7 +558,7 @@ namespace str {
 	 * @param delim	List of delimiters to search for. Note that any character in the string may be used as the delimiter.
 	 * @returns		std::pair<std::string, std::string>
 	 */
-	inline WINCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const std::string& delims, const unsigned& occurrence = 0ull)
+	inline STRCONSTEXPR const std::pair<std::string, std::string> split(const std::string& str, const std::string& delims, const unsigned& occurrence = 0ull)
 	{
 		unsigned matched{ 0u };
 		for (size_t pos{ str.find_first_of(delims) }; pos_valid(pos); pos = str.find_first_of(delims, pos + 1ull))
@@ -573,7 +573,7 @@ namespace str {
 	 * @param delim	Delimiter to search for. The delimiter is discarded from the string.
 	 * @returns		std::pair<std::string, std::string>
 	 */
-	inline WINCONSTEXPR const std::pair<std::string, std::string> rsplit(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
+	inline STRCONSTEXPR const std::pair<std::string, std::string> rsplit(const std::string& str, const char& delim, const unsigned& occurrence = 0ull)
 	{
 		unsigned matched{ 0u };
 		for (size_t pos{ str.rfind(delim) }; pos_valid(pos); pos = str.rfind(delim, pos + 1ull))
@@ -589,7 +589,7 @@ namespace str {
 	 * @param ignoreCase	When true, character case is ignored.
 	 * @returns				A vector containing the substrings resulting from the split.
 	 */
-	inline WINCONSTEXPR const std::vector<std::string> split_all(const std::string& str, std::string delims, bool ignoreCase = false)
+	inline STRCONSTEXPR const std::vector<std::string> split_all(const std::string& str, std::string delims, bool ignoreCase = false)
 	{
 		if (str.empty())
 			return{};
@@ -614,7 +614,7 @@ namespace str {
 	 * @param ignoreCase	When true, character case is ignored.
 	 * @returns				A vector containing the substrings resulting from the split.
 	 */
-	inline WINCONSTEXPR const std::vector<std::string> split_all(const std::string& str, char delim, bool ignoreCase = false)
+	inline STRCONSTEXPR const std::vector<std::string> split_all(const std::string& str, char delim, bool ignoreCase = false)
 	{
 		if (str.empty())
 			return{};
@@ -677,7 +677,7 @@ namespace str {
 	 * @param delims	A string containing all of the blacklisted characters.
 	 * @returns			std::string
 	 */
-	inline WINCONSTEXPR static std::string strip(std::string s, const std::string_view& delims)
+	inline STRCONSTEXPR static std::string strip(std::string s, const std::string_view& delims)
 	{
 		if (!s.empty() && !delims.empty())
 			s.erase(std::remove_if(s.begin(), s.end(), [&delims](auto&& ch) {return delims.find(ch) != std::string::npos; }), s.end());
@@ -691,7 +691,7 @@ namespace str {
 	 * @returns			std::string
 	 */
 	template<std::same_as<char>... DelimT>
-	inline WINCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
+	inline STRCONSTEXPR static std::string strip(std::string s, const DelimT&... delims)
 	{
 		s.erase(std::remove_if(s.begin(), s.end(), [&delims...](auto&& ch) { return var::variadic_or(ch == delims...); }), s.end());
 		return s;

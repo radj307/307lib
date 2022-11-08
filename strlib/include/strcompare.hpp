@@ -20,7 +20,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::streamable<std::ostream>... Ts>
-	inline WINCONSTEXPR bool startsWith(const std::string& str, Ts&&... prefix)
+	inline STRCONSTEXPR bool startsWith(const std::string& str, Ts&&... prefix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
 			return false;
@@ -48,7 +48,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::streamable<std::ostream>... Ts>
-	inline WINCONSTEXPR bool startsWithAny(const std::string& str, Ts&&... prefixes)
+	inline STRCONSTEXPR bool startsWithAny(const std::string& str, Ts&&... prefixes)
 	{
 		return var::variadic_or(startsWith(str, prefixes)...);
 	}
@@ -61,7 +61,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::streamable<std::ostream>... Ts>
-	inline WINCONSTEXPR bool endsWith(const std::string& str, Ts&&... suffix)
+	inline STRCONSTEXPR bool endsWith(const std::string& str, Ts&&... suffix)
 	{
 		if constexpr (sizeof...(Ts) == 0ull)
 			return false;
@@ -89,7 +89,7 @@ namespace str {
 	 * @returns				bool
 	 */
 	template<var::streamable<std::ostream>... Ts>
-	inline WINCONSTEXPR bool endsWithAny(const std::string& str, Ts&&... suffixes)
+	inline STRCONSTEXPR bool endsWithAny(const std::string& str, Ts&&... suffixes)
 	{
 		return var::variadic_or(endsWith(str, suffixes)...);
 	}
@@ -100,10 +100,10 @@ namespace str {
 	 * @param ...compare	Comparison Strings.
 	 * @returns				bool
 	 */
-	template<bool IGNORE_CASE = false, var::all_same_or_convertible<std::string>... Ts>
-	inline WINCONSTEXPR bool equalsAny(const std::string& str, Ts&&... compare)
+	template<bool MatchCase = true, var::all_same_or_convertible<std::string>... Ts>
+	inline STRCONSTEXPR bool equalsAny(const std::string& str, Ts&&... compare)
 	{
-		if constexpr (IGNORE_CASE) {
+		if constexpr (!MatchCase) {
 			const auto& lc{ str::tolower(str) };
 			return var::variadic_or(lc == str::tolower(compare)...);
 		}
@@ -115,10 +115,10 @@ namespace str {
 	 * @param ...compare	Comparison Strings.
 	 * @returns				bool
 	 */
-	template<bool IGNORE_CASE = false, var::all_same_or_convertible<std::wstring, char>... Ts>
-	inline WINCONSTEXPR bool equalsAny(const std::wstring& str, Ts&&... compare)
+	template<bool MatchCase = true, var::all_same_or_convertible<std::wstring, char>... Ts>
+	inline STRCONSTEXPR bool equalsAny(const std::wstring& str, Ts&&... compare)
 	{
-		if constexpr (IGNORE_CASE) {
+		if constexpr (!MatchCase) {
 			const auto& lc{ str::tolower(str) };
 			return var::variadic_or(lc == str::tolower(compare)...);
 		}
@@ -135,11 +135,30 @@ namespace str {
 	 * @returns bool
 	 */
 	template<bool MatchCase = true, var::valid_string StrT, var::same_or_convertible<StrT>... Ts> requires var::at_least_one<Ts...>
-	inline WINCONSTEXPR bool matches_any(const StrT& str, const Ts&... matches)
+	inline STRCONSTEXPR bool matches_any(const StrT& str, const Ts&... matches)
 	{
 		if constexpr (!MatchCase)
 			return var::variadic_or((str::tolower(str) == str::tolower(matches))...);
 		return var::variadic_or((str == matches)...);
+	}
+
+	/**
+	 * @brief				Checks if the given string is equal to, or contains a given substring.
+	 * @tparam MatchCase	When true, matching is case-sensitive; otherwise it is case-insensitive.
+	 * @param str			Input string.
+	 * @param substr		Substring to search for within the str param.
+	 * @param off			Optionally specify a starting index in the string. Defaults to 0.
+	 * @returns				bool
+	 */
+	template<bool MatchCase = true>
+	inline STRCONSTEXPR bool contains_substr(std::string str, std::string substr, const size_t off = 0)
+	{
+		if constexpr (!MatchCase) {
+			str = str::tolower(str);
+			substr = str::tolower(substr);
+		}
+		return (str.size() == substr.size() && str == substr)
+			|| str.find(substr, off) != std::string::npos;
 	}
 
 #	pragma endregion Comparison
@@ -169,7 +188,7 @@ namespace str {
 	 * @param allowNegatived	When true, one dash is allowed at the beginning of the string.
 	 * @returns					true when the given string represents a valid number; otherwise false.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base, const bool allowDecimal, const bool allowNegative)
+	[[nodiscard]] STRCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base, const bool allowDecimal, const bool allowNegative)
 	{
 		bool fst{ true }, found_decimal{ false };
 		for (const auto& ch : str) {
@@ -205,7 +224,7 @@ namespace str {
 	 * @returns		true when str specifies a valid integral number.
 	 */
 	template<std::integral T>
-	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
+	[[nodiscard]] STRCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
 		if constexpr (std::unsigned_integral<T>)
 			return isnumber(str, base, false, false);
@@ -219,7 +238,7 @@ namespace str {
 	 * @returns		true when str specifies a valid floating-point number.
 	 */
 	template<std::floating_point T>
-	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
+	[[nodiscard]] STRCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
 		return isnumber(str, base, true, true);
 	}
@@ -229,7 +248,7 @@ namespace str {
 	 * @param base	The number base to use when checking if a character is a valid digit.
 	 * @returns		true when str specifies a valid floating-point number.
 	 */
-	[[nodiscard]] WINCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
+	[[nodiscard]] STRCONSTEXPR inline bool isnumber(const std::string& str, const uint8_t base = 10)
 	{
 		return isnumber<float>(str, base);
 	}
