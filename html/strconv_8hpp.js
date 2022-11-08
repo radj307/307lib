@@ -3,7 +3,7 @@ var strconv_8hpp =
     [ "requires", "strconv_8hpp.html#aad135677615582774e2f6c4076a7dc87", null ],
     [ "sto", "strconv_8hpp.html#ad3c45167debf1f2363f467b9e05f6ff2", null ],
     [ "sto", "strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc", null ],
-    [ "stob", "strconv_8hpp.html#ad6f63431313d7591f070b95bb5dc047f", null ],
+    [ "stob", "strconv_8hpp.html#ae4586985e468461709dc187788868135", null ],
     [ "stod", "strconv_8hpp.html#aa2060a7dff48c5c09b55c2aba12900ec", null ],
     [ "stod", "strconv_8hpp.html#a1c5f7adb1945d04eb55b0910ca01d09f", null ],
     [ "stod", "strconv_8hpp.html#a94952f508d5e64a43b48cb377eb5d472", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html":[9,0,3,0,0,2],
 "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a1f330550fde7eac669537abb8a9291ed":[9,0,3,0,0,2,2],
 "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a4feeea09dfce89d0ad1aaa0eaf5fdb68":[9,0,3,0,0,2,0],
 "structfile_1_1ini_1_1tokenizer_1_1_m_i_n_i_parser.html#a7acb8dfce3f6be549716e4707d474682":[9,0,3,0,0,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "structopt3_1_1arg__container.html#a12c5456a983753ed77ff03ca87e1e5cf":[9,0,8,1,26],
 "structopt3_1_1arg__container.html#a1372a8f77399fe121fdb96c3c4900339":[9,0,8,1,39],
 "structopt3_1_1arg__container.html#a1ab65bea92d823757664c6a647d62f52":[9,0,8,1,40],
-"structopt3_1_1arg__container.html#a232584a84848a724671ece6dc00ad45d":[9,0,8,1,50],
-"structopt3_1_1arg__container.html#a23910ae02f2b40652349ab360ed1c077":[9,0,8,1,44]
+"structopt3_1_1arg__container.html#a232584a84848a724671ece6dc00ad45d":[9,0,8,1,50]
 };

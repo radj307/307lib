@@ -149,6 +149,10 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:a0ca8ec530dc360aeabadf2aa97423980"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0ca8ec530dc360aeabadf2aa97423980">contains</a> (const std::string &amp;str, const std::string &amp;delims) noexcept</td></tr>
 <tr class="memdesc:a0ca8ec530dc360aeabadf2aa97423980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any of a list of delimiters is present in a given string.  <a href="namespacestr.html#a0ca8ec530dc360aeabadf2aa97423980">More...</a><br /></td></tr>
 <tr class="separator:a0ca8ec530dc360aeabadf2aa97423980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb24c3cb5832ebca8fb8c3c327150400"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true&gt; </td></tr>
+<tr class="memitem:abb24c3cb5832ebca8fb8c3c327150400"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#abb24c3cb5832ebca8fb8c3c327150400">contains_substr</a> (std::string str, std::string substr, const size_t off=0)</td></tr>
+<tr class="memdesc:abb24c3cb5832ebca8fb8c3c327150400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is equal to, or contains a given substring.  <a href="namespacestr.html#abb24c3cb5832ebca8fb8c3c327150400">More...</a><br /></td></tr>
+<tr class="separator:abb24c3cb5832ebca8fb8c3c327150400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a8c67ed7c199414fca456eef77b60e7"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">count</a> (std::stringstream &amp;ss, char delim)</td></tr>
 <tr class="memdesc:a8a8c67ed7c199414fca456eef77b60e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the number of delimiters that occur within a given stringstream.  <a href="namespacestr.html#a8a8c67ed7c199414fca456eef77b60e7">More...</a><br /></td></tr>
 <tr class="separator:a8a8c67ed7c199414fca456eef77b60e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,22 +167,22 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:a64641d820fe5e4997387b75be9df3b97"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a64641d820fe5e4997387b75be9df3b97">decimalToHex</a> (std::string const &amp;dec, Ts &amp;&amp;... fmt) noexcept</td></tr>
 <tr class="memdesc:a64641d820fe5e4997387b75be9df3b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from decimal to hexadecimal.  <a href="namespacestr.html#a64641d820fe5e4997387b75be9df3b97">More...</a><br /></td></tr>
 <tr class="separator:a64641d820fe5e4997387b75be9df3b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a25dcad1131572f82cbb30a06c81006b0"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">endsWith</a> (const std::string &amp;str, Ts &amp;&amp;... suffix)</td></tr>
-<tr class="memdesc:a25dcad1131572f82cbb30a06c81006b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with the given characters.  <a href="namespacestr.html#a25dcad1131572f82cbb30a06c81006b0">More...</a><br /></td></tr>
-<tr class="separator:a25dcad1131572f82cbb30a06c81006b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:afe1efa734a2a1e8106138ce3b5995874"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">endsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... suffixes)</td></tr>
-<tr class="memdesc:afe1efa734a2a1e8106138ce3b5995874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with any of the given character sequences.  <a href="namespacestr.html#afe1efa734a2a1e8106138ce3b5995874">More...</a><br /></td></tr>
-<tr class="separator:afe1efa734a2a1e8106138ce3b5995874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplParams" colspan="2">template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ac0941f8566d99a99085690ce06c8eec1"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">equalsAny</a> (const std::string &amp;str, Ts &amp;&amp;... compare)</td></tr>
-<tr class="memdesc:ac0941f8566d99a99085690ce06c8eec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ac0941f8566d99a99085690ce06c8eec1">More...</a><br /></td></tr>
-<tr class="separator:ac0941f8566d99a99085690ce06c8eec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memTemplParams" colspan="2">template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstring, char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">equalsAny</a> (const std::wstring &amp;str, Ts &amp;&amp;... compare)</td></tr>
-<tr class="memdesc:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ad5a0bf2d97851e9b37bad14d9ed8d224">More...</a><br /></td></tr>
-<tr class="separator:ad5a0bf2d97851e9b37bad14d9ed8d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6b80787edc3b29e75ab1896a00ab16"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a2b6b80787edc3b29e75ab1896a00ab16"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2b6b80787edc3b29e75ab1896a00ab16">endsWith</a> (const std::string &amp;str, Ts &amp;&amp;... suffix)</td></tr>
+<tr class="memdesc:a2b6b80787edc3b29e75ab1896a00ab16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with the given characters.  <a href="namespacestr.html#a2b6b80787edc3b29e75ab1896a00ab16">More...</a><br /></td></tr>
+<tr class="separator:a2b6b80787edc3b29e75ab1896a00ab16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b67b511a73cc1600877405b6827de48"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5b67b511a73cc1600877405b6827de48"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5b67b511a73cc1600877405b6827de48">endsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... suffixes)</td></tr>
+<tr class="memdesc:a5b67b511a73cc1600877405b6827de48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string ends with any of the given character sequences.  <a href="namespacestr.html#a5b67b511a73cc1600877405b6827de48">More...</a><br /></td></tr>
+<tr class="separator:a5b67b511a73cc1600877405b6827de48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63c257dedf3a3b3f958410430f7aaea"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ac63c257dedf3a3b3f958410430f7aaea"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac63c257dedf3a3b3f958410430f7aaea">equalsAny</a> (const std::string &amp;str, Ts &amp;&amp;... compare)</td></tr>
+<tr class="memdesc:ac63c257dedf3a3b3f958410430f7aaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#ac63c257dedf3a3b3f958410430f7aaea">More...</a><br /></td></tr>
+<tr class="separator:ac63c257dedf3a3b3f958410430f7aaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc1f9fdc52b072b60bbb2b4a9027600"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::wstring, char &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a8dc1f9fdc52b072b60bbb2b4a9027600"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8dc1f9fdc52b072b60bbb2b4a9027600">equalsAny</a> (const std::wstring &amp;str, Ts &amp;&amp;... compare)</td></tr>
+<tr class="memdesc:a8dc1f9fdc52b072b60bbb2b4a9027600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string is equal to at least one other string.  <a href="namespacestr.html#a8dc1f9fdc52b072b60bbb2b4a9027600">More...</a><br /></td></tr>
+<tr class="separator:a8dc1f9fdc52b072b60bbb2b4a9027600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2842f64da212ac392e6c3385eb54a3e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::tuple&lt; std::string, std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad2842f64da212ac392e6c3385eb54a3e">extractAllStrings</a> (const std::string &amp;line, const std::pair&lt; const char, const char &gt; delim, const bool forward, const bool includeDelim=false) noexcept</td></tr>
 <tr class="memdesc:ad2842f64da212ac392e6c3385eb54a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 3 substr, the first being the string until the first delim, the second being between the given delims, and the 3rd being the remaining string after the second delim.  <a href="namespacestr.html#ad2842f64da212ac392e6c3385eb54a3e">More...</a><br /></td></tr>
 <tr class="separator:ad2842f64da212ac392e6c3385eb54a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,12 +211,12 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:ab6fe51c1830b934a4ee82e7a6f6e9571"><td class="memItemLeft" align="right" valign="top">constexpr decimal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571">fromAlphaNumeric</a> (const char &amp;ch) noexcept(false)</td></tr>
 <tr class="memdesc:ab6fe51c1830b934a4ee82e7a6f6e9571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an alphanumeric representation of a number to its decimal equivalent.  <a href="namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571">More...</a><br /></td></tr>
 <tr class="separator:ab6fe51c1830b934a4ee82e7a6f6e9571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac02e5c31bf205b9b08d87b3c3c946baf"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf">fromBase10</a> (const decimal &amp;number, const int &amp;toBase) noexcept(false)</td></tr>
-<tr class="memdesc:ac02e5c31bf205b9b08d87b3c3c946baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from base 10 (decimal) to an arbitrary base.  <a href="namespacestr.html#ac02e5c31bf205b9b08d87b3c3c946baf">More...</a><br /></td></tr>
-<tr class="separator:ac02e5c31bf205b9b08d87b3c3c946baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0">fromBase10</a> (const std::string &amp;number, const int &amp;toBase) noexcept(false)</td></tr>
-<tr class="memdesc:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from base 10 (decimal) to an arbitrary base.  <a href="namespacestr.html#a041f49f2d8f911fcb5e47ed6ff691ab0">More...</a><br /></td></tr>
-<tr class="separator:a041f49f2d8f911fcb5e47ed6ff691ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb828e52d194971f85405fef2368be3"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aaeb828e52d194971f85405fef2368be3">fromBase10</a> (const decimal &amp;number, const int &amp;toBase) noexcept(false)</td></tr>
+<tr class="memdesc:aaeb828e52d194971f85405fef2368be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from base 10 (decimal) to an arbitrary base.  <a href="namespacestr.html#aaeb828e52d194971f85405fef2368be3">More...</a><br /></td></tr>
+<tr class="separator:aaeb828e52d194971f85405fef2368be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17630aad0ede89508dbe7709c62849bc"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a17630aad0ede89508dbe7709c62849bc">fromBase10</a> (const std::string &amp;number, const int &amp;toBase) noexcept(false)</td></tr>
+<tr class="memdesc:a17630aad0ede89508dbe7709c62849bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from base 10 (decimal) to an arbitrary base.  <a href="namespacestr.html#a17630aad0ede89508dbe7709c62849bc">More...</a><br /></td></tr>
+<tr class="separator:a17630aad0ede89508dbe7709c62849bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a678c130f6e170b05d57e1499138db3de"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">frombool</a> (const bool b) noexcept</td></tr>
 <tr class="memdesc:a678c130f6e170b05d57e1499138db3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a bool to string.  <a href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">More...</a><br /></td></tr>
 <tr class="separator:a678c130f6e170b05d57e1499138db3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,13 +266,13 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="separator:a57c8cc84f0c8ad3178a5dd056809840f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fdcf5f87c4a4dcf2dbf00a2980f0097"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6fdcf5f87c4a4dcf2dbf00a2980f0097">ishexdigit</a> (const char &amp;ch) noexcept</td></tr>
 <tr class="separator:a6fdcf5f87c4a4dcf2dbf00a2980f0097"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67a37ffa8e9036b412b718c5a3d274f2"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a67a37ffa8e9036b412b718c5a3d274f2">isnumber</a> (const std::string &amp;str, const uint8_t base, const bool allowDecimal, const bool allowNegative)</td></tr>
-<tr class="memdesc:a67a37ffa8e9036b412b718c5a3d274f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid number. <b>Do not pass whitespace characters to this function.</b>  <a href="namespacestr.html#a67a37ffa8e9036b412b718c5a3d274f2">More...</a><br /></td></tr>
-<tr class="separator:a67a37ffa8e9036b412b718c5a3d274f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab1c7500c085a2e6b996b1c8b56dcf726">isnumber</a> (const std::string &amp;str, const uint8_t base=10)</td></tr>
-<tr class="memdesc:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid integral. This function automatically disallows the dash prefix (negative) character for unsigned integral types.  <a href="namespacestr.html#ab1c7500c085a2e6b996b1c8b56dcf726">More...</a><br /></td></tr>
-<tr class="separator:ab1c7500c085a2e6b996b1c8b56dcf726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3704d7fb30ac8239cf1eca646096a32"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae3704d7fb30ac8239cf1eca646096a32">isnumber</a> (const std::string &amp;str, const uint8_t base, const bool allowDecimal, const bool allowNegative)</td></tr>
+<tr class="memdesc:ae3704d7fb30ac8239cf1eca646096a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid number. <b>Do not pass whitespace characters to this function.</b>  <a href="namespacestr.html#ae3704d7fb30ac8239cf1eca646096a32">More...</a><br /></td></tr>
+<tr class="separator:ae3704d7fb30ac8239cf1eca646096a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264ae9a138c64900012cd97711e1e872"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:a264ae9a138c64900012cd97711e1e872"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a264ae9a138c64900012cd97711e1e872">isnumber</a> (const std::string &amp;str, const uint8_t base=10)</td></tr>
+<tr class="memdesc:a264ae9a138c64900012cd97711e1e872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string represents a valid integral. This function automatically disallows the dash prefix (negative) character for unsigned integral types.  <a href="namespacestr.html#a264ae9a138c64900012cd97711e1e872">More...</a><br /></td></tr>
+<tr class="separator:a264ae9a138c64900012cd97711e1e872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade6fbbc42b781ebb9d235c57d4b73ac5"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ade6fbbc42b781ebb9d235c57d4b73ac5">isoctaldigit</a> (const char &amp;ch) noexcept</td></tr>
 <tr class="separator:ade6fbbc42b781ebb9d235c57d4b73ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2028ae62fc122086cb3bbb7b21281924"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2028ae62fc122086cb3bbb7b21281924">isquarternarydigit</a> (const char &amp;ch) noexcept</td></tr>
@@ -312,10 +316,10 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:aff70a0416ef1eed4ca4968378d46f9a9"><td class="memItemLeft" align="right" valign="top">std::string::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9">longestLength</a> (const std::vector&lt; std::string &gt; &amp;vec) noexcept</td></tr>
 <tr class="memdesc:aff70a0416ef1eed4ca4968378d46f9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the longest string in a vector.  <a href="namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9">More...</a><br /></td></tr>
 <tr class="separator:aff70a0416ef1eed4ca4968378d46f9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a99874f5b703e388240420d5bec8557a3"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
-<tr class="memdesc:a99874f5b703e388240420d5bec8557a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a99874f5b703e388240420d5bec8557a3">More...</a><br /></td></tr>
-<tr class="separator:a99874f5b703e388240420d5bec8557a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04c604c3f6a3c605970ff878a021246"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ad04c604c3f6a3c605970ff878a021246"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad04c604c3f6a3c605970ff878a021246">matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
+<tr class="memdesc:ad04c604c3f6a3c605970ff878a021246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#ad04c604c3f6a3c605970ff878a021246">More...</a><br /></td></tr>
+<tr class="separator:ad04c604c3f6a3c605970ff878a021246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5247d873952449905ce03aca93e5661d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5247d873952449905ce03aca93e5661d">NumberGrouping</a> (std::ostream &amp;os)</td></tr>
 <tr class="memdesc:a5247d873952449905ce03aca93e5661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically insert commas between thousands when printing numbers. <br  />
  Example: "1000000" =&gt; "1,000,000".  <a href="namespacestr.html#a5247d873952449905ce03aca93e5661d">More...</a><br /></td></tr>
@@ -341,9 +345,9 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:a30c7ac3d05115fd618a8779045def1c7"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30c7ac3d05115fd618a8779045def1c7">remove_all_of</a> (std::string str, F pred) noexcept</td></tr>
 <tr class="memdesc:a30c7ac3d05115fd618a8779045def1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline wrapper for the erase-remove idiom that accepts a lambda predicate.  <a href="namespacestr.html#a30c7ac3d05115fd618a8779045def1c7">More...</a><br /></td></tr>
 <tr class="separator:a30c7ac3d05115fd618a8779045def1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f810c5539314de1afaded8b835bee46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3f810c5539314de1afaded8b835bee46">remove_whitespace</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:a3f810c5539314de1afaded8b835bee46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline wrapper for the erase-remove idiom that removes spaces.  <a href="namespacestr.html#a3f810c5539314de1afaded8b835bee46">More...</a><br /></td></tr>
-<tr class="separator:a3f810c5539314de1afaded8b835bee46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbf5db5a8d6d063ecd6fb4c9e6a826ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#abbf5db5a8d6d063ecd6fb4c9e6a826ff">remove_whitespace</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:abbf5db5a8d6d063ecd6fb4c9e6a826ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline wrapper for the erase-remove idiom that removes spaces.  <a href="namespacestr.html#abbf5db5a8d6d063ecd6fb4c9e6a826ff">More...</a><br /></td></tr>
+<tr class="separator:abbf5db5a8d6d063ecd6fb4c9e6a826ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc23eec5ee5f5f502c11cd79e1f01dd8"><td class="memTemplParams" colspan="2">template&lt;uint8_t BASE&gt; </td></tr>
 <tr class="memitem:afc23eec5ee5f5f502c11cd79e1f01dd8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> (BASE &gt;=<a class="el" href="namespacestr.html#a5c1b6bcbb44f4879c0851520860b8953">MIN_BASE</a> &amp;&amp;BASE&lt;=<a class="el" href="namespacestr.html#a2d93ffb26cb63a9b0920534e2606c466">MAX_BASE</a>) WINCONSTEXPR inline bool <a class="el" href="namespacestr.html#aa9b46ad107247fe74562a32205bb899c">isdigit_base</a>(const char &amp;ch) noexcept</td></tr>
 <tr class="memdesc:afc23eec5ee5f5f502c11cd79e1f01dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given character is a valid digit in the specified number base.  <a href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">More...</a><br /></td></tr>
@@ -355,9 +359,9 @@ template&lt;typename... VT&gt; </td></tr>
 <tr class="memitem:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9ef656ed2d8e17d0f1e68df1770058bc">reverse</a> (const std::string_view &amp;str)</td></tr>
 <tr class="memdesc:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the characters of a given string.  <a href="namespacestr.html#a9ef656ed2d8e17d0f1e68df1770058bc">More...</a><br /></td></tr>
 <tr class="separator:a9ef656ed2d8e17d0f1e68df1770058bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:a69b4c7c470963c0be1a41227ccf6f86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a69b4c7c470963c0be1a41227ccf6f86e">More...</a><br /></td></tr>
-<tr class="separator:a69b4c7c470963c0be1a41227ccf6f86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121b261fac78773780c6cfcf778ce28d"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a121b261fac78773780c6cfcf778ce28d">rsplit</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:a121b261fac78773780c6cfcf778ce28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a121b261fac78773780c6cfcf778ce28d">More...</a><br /></td></tr>
+<tr class="separator:a121b261fac78773780c6cfcf778ce28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="memTemplItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba157b4f80912e0c19b9ad7676d2c8d1">sanitize</a> (std::string str, F pred) noexcept</td></tr>
 <tr class="memdesc:aba157b4f80912e0c19b9ad7676d2c8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanitize a string with a single predicate function. This is called by <a class="el" href="namespacestr.html#a30c7ac3d05115fd618a8779045def1c7" title="Inline wrapper for the erase-remove idiom that accepts a lambda predicate.">remove_all_of()</a>.  <a href="namespacestr.html#aba157b4f80912e0c19b9ad7676d2c8d1">More...</a><br /></td></tr>
@@ -378,23 +382,23 @@ template&lt;var::valid_string T, template&lt; class, class &gt; class Cont&gt; <
 template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible... Ts&gt; </td></tr>
 <tr class="memitem:a87c41dd852c1db4ba8b8f1d28e4728b5"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>shortest</b> (const T &amp;fst, const Ts &amp;... strings)</td></tr>
 <tr class="separator:a87c41dd852c1db4ba8b8f1d28e4728b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81d06e112031542961adc0b38bd0b2b"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">split</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:ab81d06e112031542961adc0b38bd0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab81d06e112031542961adc0b38bd0b2b">More...</a><br /></td></tr>
-<tr class="separator:ab81d06e112031542961adc0b38bd0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">split</a> (const std::string &amp;str, const size_t &amp;pos, const bool &amp;discard_pos=false)</td></tr>
-<tr class="memdesc:aba03dcb83941ed1d96f1ae269db82fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by position. This is a simple wrapper to return a string split operation as a pair of strings.  <a href="namespacestr.html#aba03dcb83941ed1d96f1ae269db82fc0">More...</a><br /></td></tr>
-<tr class="separator:aba03dcb83941ed1d96f1ae269db82fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8f17d783f53a8761d44c3304753da96"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">split</a> (const std::string &amp;str, const std::string &amp;delims, const unsigned &amp;occurrence=0ull)</td></tr>
-<tr class="memdesc:ab8f17d783f53a8761d44c3304753da96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ab8f17d783f53a8761d44c3304753da96">More...</a><br /></td></tr>
-<tr class="separator:ab8f17d783f53a8761d44c3304753da96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae965369de7a22220e0363276cb7c6957"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae965369de7a22220e0363276cb7c6957">split_all</a> (const std::string &amp;str, char delim, bool ignoreCase=false)</td></tr>
-<tr class="memdesc:ae965369de7a22220e0363276cb7c6957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string by all occurrences of the given delimiter. <br  />
- This method is similar to C#'s string.split method.  <a href="namespacestr.html#ae965369de7a22220e0363276cb7c6957">More...</a><br /></td></tr>
-<tr class="separator:ae965369de7a22220e0363276cb7c6957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d372544cdb1446c0a7ee4a60e6e2e09"><td class="memItemLeft" align="right" valign="top">const WINCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a1d372544cdb1446c0a7ee4a60e6e2e09">split_all</a> (const std::string &amp;str, std::string delims, bool ignoreCase=false)</td></tr>
-<tr class="memdesc:a1d372544cdb1446c0a7ee4a60e6e2e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string by all occurrences of any of the given delimiters. <br  />
- This method is similar to C#'s string.split method.  <a href="namespacestr.html#a1d372544cdb1446c0a7ee4a60e6e2e09">More...</a><br /></td></tr>
-<tr class="separator:a1d372544cdb1446c0a7ee4a60e6e2e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0588f7c0b51451a283d291532f5e000"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae0588f7c0b51451a283d291532f5e000">split</a> (const std::string &amp;str, const char &amp;delim, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:ae0588f7c0b51451a283d291532f5e000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#ae0588f7c0b51451a283d291532f5e000">More...</a><br /></td></tr>
+<tr class="separator:ae0588f7c0b51451a283d291532f5e000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbd98fa95f540a9cb995f64b0a5ecdf"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aacbd98fa95f540a9cb995f64b0a5ecdf">split</a> (const std::string &amp;str, const size_t &amp;pos, const bool &amp;discard_pos=false)</td></tr>
+<tr class="memdesc:aacbd98fa95f540a9cb995f64b0a5ecdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by position. This is a simple wrapper to return a string split operation as a pair of strings.  <a href="namespacestr.html#aacbd98fa95f540a9cb995f64b0a5ecdf">More...</a><br /></td></tr>
+<tr class="separator:aacbd98fa95f540a9cb995f64b0a5ecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227d97647d91514ea2aca02b29a7f15e"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a227d97647d91514ea2aca02b29a7f15e">split</a> (const std::string &amp;str, const std::string &amp;delims, const unsigned &amp;occurrence=0ull)</td></tr>
+<tr class="memdesc:a227d97647d91514ea2aca02b29a7f15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a pair of strings by finding the first occurrence of a given delimiter.  <a href="namespacestr.html#a227d97647d91514ea2aca02b29a7f15e">More...</a><br /></td></tr>
+<tr class="separator:a227d97647d91514ea2aca02b29a7f15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ccd0d73ab01898106a3479b97ce3a5"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a45ccd0d73ab01898106a3479b97ce3a5">split_all</a> (const std::string &amp;str, char delim, bool ignoreCase=false)</td></tr>
+<tr class="memdesc:a45ccd0d73ab01898106a3479b97ce3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string by all occurrences of the given delimiter. <br  />
+ This method is similar to C#'s string.split method.  <a href="namespacestr.html#a45ccd0d73ab01898106a3479b97ce3a5">More...</a><br /></td></tr>
+<tr class="separator:a45ccd0d73ab01898106a3479b97ce3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91af8f3a1230715b8a32fb70caa6dd20"><td class="memItemLeft" align="right" valign="top">const STRCONSTEXPR std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a91af8f3a1230715b8a32fb70caa6dd20">split_all</a> (const std::string &amp;str, std::string delims, bool ignoreCase=false)</td></tr>
+<tr class="memdesc:a91af8f3a1230715b8a32fb70caa6dd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string by all occurrences of any of the given delimiters. <br  />
+ This method is similar to C#'s string.split method.  <a href="namespacestr.html#a91af8f3a1230715b8a32fb70caa6dd20">More...</a><br /></td></tr>
+<tr class="separator:a91af8f3a1230715b8a32fb70caa6dd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aa4bf5f1b14b776ed8c1225f5c2870a92">split_by_words</a> (const std::string &amp;line)</td></tr>
 <tr class="memdesc:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a given string into a vector of strings, with one word per index.  <a href="namespacestr.html#aa4bf5f1b14b776ed8c1225f5c2870a92">More...</a><br /></td></tr>
 <tr class="separator:aa4bf5f1b14b776ed8c1225f5c2870a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -402,14 +406,14 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a5bac9088e59d818dfcb958ca9fc1c673"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; CharT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5bac9088e59d818dfcb958ca9fc1c673">split_to_vector</a> (const std::basic_string&lt; CharT, Traits, std::allocator&lt; CharT &gt;&gt; &amp;str)</td></tr>
 <tr class="memdesc:a5bac9088e59d818dfcb958ca9fc1c673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a vector of characters.  <a href="namespacestr.html#a5bac9088e59d818dfcb958ca9fc1c673">More...</a><br /></td></tr>
 <tr class="separator:a5bac9088e59d818dfcb958ca9fc1c673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">startsWith</a> (const std::string &amp;str, Ts &amp;&amp;... prefix)</td></tr>
-<tr class="memdesc:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with the given characters.  <a href="namespacestr.html#ad50e9ee8aa4a8666ec47aefff8fa4bca">More...</a><br /></td></tr>
-<tr class="separator:ad50e9ee8aa4a8666ec47aefff8fa4bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">startsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... prefixes)</td></tr>
-<tr class="memdesc:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with any of the given character sequences.  <a href="namespacestr.html#a6ccb7cb4dfd45bb24e56b297a5cbe276">More...</a><br /></td></tr>
-<tr class="separator:a6ccb7cb4dfd45bb24e56b297a5cbe276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9acc1aa0ba62ee0e9bc69426b6e101"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a0b9acc1aa0ba62ee0e9bc69426b6e101"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a0b9acc1aa0ba62ee0e9bc69426b6e101">startsWith</a> (const std::string &amp;str, Ts &amp;&amp;... prefix)</td></tr>
+<tr class="memdesc:a0b9acc1aa0ba62ee0e9bc69426b6e101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with the given characters.  <a href="namespacestr.html#a0b9acc1aa0ba62ee0e9bc69426b6e101">More...</a><br /></td></tr>
+<tr class="separator:a0b9acc1aa0ba62ee0e9bc69426b6e101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ebb6ad3c78618a951d1af41bfbe22c"><td class="memTemplParams" colspan="2">template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </td></tr>
+<tr class="memitem:ac6ebb6ad3c78618a951d1af41bfbe22c"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac6ebb6ad3c78618a951d1af41bfbe22c">startsWithAny</a> (const std::string &amp;str, Ts &amp;&amp;... prefixes)</td></tr>
+<tr class="memdesc:ac6ebb6ad3c78618a951d1af41bfbe22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given string starts with any of the given character sequences.  <a href="namespacestr.html#ac6ebb6ad3c78618a951d1af41bfbe22c">More...</a><br /></td></tr>
+<tr class="separator:ac6ebb6ad3c78618a951d1af41bfbe22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5f7adb1945d04eb55b0910ca01d09f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a1c5f7adb1945d04eb55b0910ca01d09f">stod</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a1c5f7adb1945d04eb55b0910ca01d09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a1c5f7adb1945d04eb55b0910ca01d09f">More...</a><br /></td></tr>
 <tr class="separator:a1c5f7adb1945d04eb55b0910ca01d09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -459,13 +463,13 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a30d969c8ad087fcf6a701f1241503eab"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">stringify_split</a> (const char &amp;delimiter, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a30d969c8ad087fcf6a701f1241503eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#a30d969c8ad087fcf6a701f1241503eab">More...</a><br /></td></tr>
 <tr class="separator:a30d969c8ad087fcf6a701f1241503eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
-<tr class="memitem:a333afe30699add89dd4b33e8f8e965af"><td class="memTemplItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">strip</a> (std::string s, const DelimT &amp;... delims)</td></tr>
-<tr class="memdesc:a333afe30699add89dd4b33e8f8e965af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#a333afe30699add89dd4b33e8f8e965af">More...</a><br /></td></tr>
-<tr class="separator:a333afe30699add89dd4b33e8f8e965af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf63c00706c91be7da3f18b08a088224"><td class="memItemLeft" align="right" valign="top">static WINCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">strip</a> (std::string s, const std::string_view &amp;delims)</td></tr>
-<tr class="memdesc:acf63c00706c91be7da3f18b08a088224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#acf63c00706c91be7da3f18b08a088224">More...</a><br /></td></tr>
-<tr class="separator:acf63c00706c91be7da3f18b08a088224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9282321886911babbadc3fb321915b6e"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; char &gt;... DelimT&gt; </td></tr>
+<tr class="memitem:a9282321886911babbadc3fb321915b6e"><td class="memTemplItemLeft" align="right" valign="top">static STRCONSTEXPR std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9282321886911babbadc3fb321915b6e">strip</a> (std::string s, const DelimT &amp;... delims)</td></tr>
+<tr class="memdesc:a9282321886911babbadc3fb321915b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#a9282321886911babbadc3fb321915b6e">More...</a><br /></td></tr>
+<tr class="separator:a9282321886911babbadc3fb321915b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97bcc651368e4abf64e7c63272cef49d"><td class="memItemLeft" align="right" valign="top">static STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a97bcc651368e4abf64e7c63272cef49d">strip</a> (std::string s, const std::string_view &amp;delims)</td></tr>
+<tr class="memdesc:a97bcc651368e4abf64e7c63272cef49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all specified characters from the given string.  <a href="namespacestr.html#a97bcc651368e4abf64e7c63272cef49d">More...</a><br /></td></tr>
+<tr class="separator:a97bcc651368e4abf64e7c63272cef49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">strip_line</a> (std::string str, const std::string &amp;comment_chars={}, const std::string &amp;whitespace_chars=&quot; \t\r\n\v&quot;)</td></tr>
 <tr class="memdesc:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes comments and preceding/trailing whitespace from a given string.  <a href="namespacestr.html#a7346dfeb6d8d2d04a563649f4bf3cbca">More...</a><br /></td></tr>
 <tr class="separator:a7346dfeb6d8d2d04a563649f4bf3cbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -489,10 +493,10 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">toAlphaNumeric</a> (const T &amp;n, const bool &amp;upper=true) noexcept(false)</td></tr>
 <tr class="memdesc:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert any number between 0(0) to 36(Z) to its alphanumeric representation.  <a href="namespacestr.html#a4e6def114db6fedf6a5d8334dc6e48ca">More...</a><br /></td></tr>
 <tr class="separator:a4e6def114db6fedf6a5d8334dc6e48ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae51dc4e9d23dcdd8def538424933d5df"><td class="memTemplParams" colspan="2">template&lt;std::integral TReturn = decimal&gt; </td></tr>
-<tr class="memitem:ae51dc4e9d23dcdd8def538424933d5df"><td class="memTemplItemLeft" align="right" valign="top">WINCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">toBase10</a> (std::string number, const int &amp;fromBase) noexcept(false)</td></tr>
-<tr class="memdesc:ae51dc4e9d23dcdd8def538424933d5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from an arbitrary base to base 10 (decimal).  <a href="namespacestr.html#ae51dc4e9d23dcdd8def538424933d5df">More...</a><br /></td></tr>
-<tr class="separator:ae51dc4e9d23dcdd8def538424933d5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e852510d13333d08d87945b8dce867"><td class="memTemplParams" colspan="2">template&lt;std::integral TReturn = decimal&gt; </td></tr>
+<tr class="memitem:a65e852510d13333d08d87945b8dce867"><td class="memTemplItemLeft" align="right" valign="top">STRCONSTEXPR TReturn&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a65e852510d13333d08d87945b8dce867">toBase10</a> (std::string number, const int &amp;fromBase) noexcept(false)</td></tr>
+<tr class="memdesc:a65e852510d13333d08d87945b8dce867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a number from an arbitrary base to base 10 (decimal).  <a href="namespacestr.html#a65e852510d13333d08d87945b8dce867">More...</a><br /></td></tr>
+<tr class="separator:a65e852510d13333d08d87945b8dce867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cb7e9cfe504bc154662f277aa75be51"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a8cb7e9cfe504bc154662f277aa75be51">tobool</a> (std::string const &amp;s) noexcept</td></tr>
 <tr class="memdesc:a8cb7e9cfe504bc154662f277aa75be51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to bool.  <a href="namespacestr.html#a8cb7e9cfe504bc154662f277aa75be51">More...</a><br /></td></tr>
 <tr class="separator:a8cb7e9cfe504bc154662f277aa75be51"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -830,7 +834,7 @@ template&lt;std::predicate&lt; char &gt; Pred&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00159">159</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00178">178</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -1041,6 +1045,69 @@ template&lt;typename... T&gt; </div>
 
 </div>
 </div>
+<a id="abb24c3cb5832ebca8fb8c3c327150400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb24c3cb5832ebca8fb8c3c327150400">&#9670;&nbsp;</a></span>contains_substr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool MatchCase = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">STRCONSTEXPR bool str::contains_substr </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>substr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the given string is equal to, or contains a given substring. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MatchCase</td><td>When true, matching is case-sensitive; otherwise it is case-insensitive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input string. </td></tr>
+    <tr><td class="paramname">substr</td><td>Substring to search for within the str param. </td></tr>
+    <tr><td class="paramname">off</td><td>Optionally specify a starting index in the string. Defaults to 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00154">154</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a8a8c67ed7c199414fca456eef77b60e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a8c67ed7c199414fca456eef77b60e7">&#9670;&nbsp;</a></span>count()</h2>
 
@@ -1233,8 +1300,8 @@ template&lt;var::streamable&lt; std::stringstream &gt;... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a25dcad1131572f82cbb30a06c81006b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25dcad1131572f82cbb30a06c81006b0">&#9670;&nbsp;</a></span>endsWith()</h2>
+<a id="a2b6b80787edc3b29e75ab1896a00ab16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b6b80787edc3b29e75ab1896a00ab16">&#9670;&nbsp;</a></span>endsWith()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1245,7 +1312,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::endsWith </td>
+          <td class="memname">STRCONSTEXPR bool str::endsWith </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -1284,8 +1351,8 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 
 </div>
 </div>
-<a id="afe1efa734a2a1e8106138ce3b5995874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe1efa734a2a1e8106138ce3b5995874">&#9670;&nbsp;</a></span>endsWithAny()</h2>
+<a id="a5b67b511a73cc1600877405b6827de48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b67b511a73cc1600877405b6827de48">&#9670;&nbsp;</a></span>endsWithAny()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1296,7 +1363,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::endsWithAny </td>
+          <td class="memname">STRCONSTEXPR bool str::endsWithAny </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -1334,19 +1401,19 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 
 </div>
 </div>
-<a id="ac0941f8566d99a99085690ce06c8eec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0941f8566d99a99085690ce06c8eec1">&#9670;&nbsp;</a></span>equalsAny() <span class="overload">[1/2]</span></h2>
+<a id="ac63c257dedf3a3b3f958410430f7aaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac63c257dedf3a3b3f958410430f7aaea">&#9670;&nbsp;</a></span>equalsAny() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </div>
+template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::string &gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::equalsAny </td>
+          <td class="memname">STRCONSTEXPR bool str::equalsAny </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -1384,19 +1451,19 @@ template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::stri
 
 </div>
 </div>
-<a id="ad5a0bf2d97851e9b37bad14d9ed8d224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5a0bf2d97851e9b37bad14d9ed8d224">&#9670;&nbsp;</a></span>equalsAny() <span class="overload">[2/2]</span></h2>
+<a id="a8dc1f9fdc52b072b60bbb2b4a9027600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc1f9fdc52b072b60bbb2b4a9027600">&#9670;&nbsp;</a></span>equalsAny() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;bool IGNORE_CASE = false, var::all_same_or_convertible&lt; std::wstring, char &gt;... Ts&gt; </div>
+template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::wstring, char &gt;... Ts&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::equalsAny </td>
+          <td class="memname">STRCONSTEXPR bool str::equalsAny </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -1904,13 +1971,14 @@ template&lt;std::integral TReturn, typename TChar , typename TCharTraits , typen
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab6fe51c1830b934a4ee82e7a6f6e9571_icgraph.svg" width="338" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab6fe51c1830b934a4ee82e7a6f6e9571_icgraph.svg" width="338" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ac02e5c31bf205b9b08d87b3c3c946baf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac02e5c31bf205b9b08d87b3c3c946baf">&#9670;&nbsp;</a></span>fromBase10() <span class="overload">[1/2]</span></h2>
+<a id="aaeb828e52d194971f85405fef2368be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb828e52d194971f85405fef2368be3">&#9670;&nbsp;</a></span>fromBase10() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1919,7 +1987,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR std::string str::fromBase10 </td>
+          <td class="memname">STRCONSTEXPR std::string str::fromBase10 </td>
           <td>(</td>
           <td class="paramtype">const decimal &amp;&#160;</td>
           <td class="paramname"><em>number</em>, </td>
@@ -1957,13 +2025,14 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ac02e5c31bf205b9b08d87b3c3c946baf_icgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aaeb828e52d194971f85405fef2368be3_icgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a041f49f2d8f911fcb5e47ed6ff691ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a041f49f2d8f911fcb5e47ed6ff691ab0">&#9670;&nbsp;</a></span>fromBase10() <span class="overload">[2/2]</span></h2>
+<a id="a17630aad0ede89508dbe7709c62849bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17630aad0ede89508dbe7709c62849bc">&#9670;&nbsp;</a></span>fromBase10() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1972,7 +2041,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR std::string str::fromBase10 </td>
+          <td class="memname">STRCONSTEXPR std::string str::fromBase10 </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>number</em>, </td>
@@ -2010,7 +2079,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a041f49f2d8f911fcb5e47ed6ff691ab0_cgraph.svg" width="495" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a17630aad0ede89508dbe7709c62849bc_cgraph.svg" width="495" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -2057,7 +2127,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a678c130f6e170b05d57e1499138db3de_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_a678c130f6e170b05d57e1499138db3de_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -2642,7 +2713,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_aa9b46ad107247fe74562a32205bb899c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacestr_aa9b46ad107247fe74562a32205bb899c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -2720,8 +2792,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a67a37ffa8e9036b412b718c5a3d274f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67a37ffa8e9036b412b718c5a3d274f2">&#9670;&nbsp;</a></span>isnumber() <span class="overload">[1/2]</span></h2>
+<a id="ae3704d7fb30ac8239cf1eca646096a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3704d7fb30ac8239cf1eca646096a32">&#9670;&nbsp;</a></span>isnumber() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2730,7 +2802,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::isnumber </td>
+          <td class="memname">STRCONSTEXPR bool str::isnumber </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -2778,22 +2850,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the given string represents a valid number; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00172">172</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00191">191</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a67a37ffa8e9036b412b718c5a3d274f2_cgraph.svg" width="292" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae3704d7fb30ac8239cf1eca646096a32_cgraph.svg" width="292" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a67a37ffa8e9036b412b718c5a3d274f2_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae3704d7fb30ac8239cf1eca646096a32_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ab1c7500c085a2e6b996b1c8b56dcf726"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1c7500c085a2e6b996b1c8b56dcf726">&#9670;&nbsp;</a></span>isnumber() <span class="overload">[2/2]</span></h2>
+<a id="a264ae9a138c64900012cd97711e1e872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a264ae9a138c64900012cd97711e1e872">&#9670;&nbsp;</a></span>isnumber() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2804,7 +2878,7 @@ template&lt;std::integral T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::isnumber </td>
+          <td class="memname">STRCONSTEXPR bool str::isnumber </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -2847,11 +2921,12 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when str specifies a valid floating-point number. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00208">208</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00227">227</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab1c7500c085a2e6b996b1c8b56dcf726_cgraph.svg" width="448" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a264ae9a138c64900012cd97711e1e872_cgraph.svg" width="448" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3140,8 +3215,8 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 
 </div>
 </div>
-<a id="a99874f5b703e388240420d5bec8557a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99874f5b703e388240420d5bec8557a3">&#9670;&nbsp;</a></span>matches_any()</h2>
+<a id="ad04c604c3f6a3c605970ff878a021246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04c604c3f6a3c605970ff878a021246">&#9670;&nbsp;</a></span>matches_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3152,7 +3227,7 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; WINCONSTEXPR bool str::matches_any </td>
+          <td class="memname">requires var::at_least_one&lt;Ts...&gt; STRCONSTEXPR bool str::matches_any </td>
           <td>(</td>
           <td class="paramtype">const StrT &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3198,7 +3273,8 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a99874f5b703e388240420d5bec8557a3_cgraph.svg" width="300" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad04c604c3f6a3c605970ff878a021246_cgraph.svg" width="300" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3430,7 +3506,8 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="248" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a26bf9f8189aea4146e003477d8b7a62d_icgraph.svg" width="248" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3533,8 +3610,8 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a id="a3f810c5539314de1afaded8b835bee46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f810c5539314de1afaded8b835bee46">&#9670;&nbsp;</a></span>remove_whitespace()</h2>
+<a id="abbf5db5a8d6d063ecd6fb4c9e6a826ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf5db5a8d6d063ecd6fb4c9e6a826ff">&#9670;&nbsp;</a></span>remove_whitespace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3543,7 +3620,7 @@ template&lt;typename F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> WINCONSTEXPR std::string str::remove_whitespace </td>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> STRCONSTEXPR std::string str::remove_whitespace </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -3570,12 +3647,14 @@ template&lt;typename F &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a3f810c5539314de1afaded8b835bee46_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abbf5db5a8d6d063ecd6fb4c9e6a826ff_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a3f810c5539314de1afaded8b835bee46_icgraph.svg" width="326" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abbf5db5a8d6d063ecd6fb4c9e6a826ff_icgraph.svg" width="326" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3662,8 +3741,8 @@ template&lt;uint8_t BASE&gt; </div>
 
 </div>
 </div>
-<a id="a69b4c7c470963c0be1a41227ccf6f86e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69b4c7c470963c0be1a41227ccf6f86e">&#9670;&nbsp;</a></span>rsplit()</h2>
+<a id="a121b261fac78773780c6cfcf778ce28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121b261fac78773780c6cfcf778ce28d">&#9670;&nbsp;</a></span>rsplit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3672,7 +3751,7 @@ template&lt;uint8_t BASE&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::pair&lt;std::string, std::string&gt; str::rsplit </td>
+          <td class="memname">const STRCONSTEXPR std::pair&lt;std::string, std::string&gt; str::rsplit </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3716,7 +3795,8 @@ template&lt;uint8_t BASE&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a69b4c7c470963c0be1a41227ccf6f86e_cgraph.svg" width="248" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a121b261fac78773780c6cfcf778ce28d_cgraph.svg" width="248" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -3824,8 +3904,8 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 
 </div>
 </div>
-<a id="ab81d06e112031542961adc0b38bd0b2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81d06e112031542961adc0b38bd0b2b">&#9670;&nbsp;</a></span>split() <span class="overload">[1/3]</span></h2>
+<a id="ae0588f7c0b51451a283d291532f5e000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0588f7c0b51451a283d291532f5e000">&#9670;&nbsp;</a></span>split() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3834,7 +3914,7 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
+          <td class="memname">const STRCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3878,13 +3958,14 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab81d06e112031542961adc0b38bd0b2b_cgraph.svg" width="243" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae0588f7c0b51451a283d291532f5e000_cgraph.svg" width="243" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="aba03dcb83941ed1d96f1ae269db82fc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba03dcb83941ed1d96f1ae269db82fc0">&#9670;&nbsp;</a></span>split() <span class="overload">[2/3]</span></h2>
+<a id="aacbd98fa95f540a9cb995f64b0a5ecdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbd98fa95f540a9cb995f64b0a5ecdf">&#9670;&nbsp;</a></span>split() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3893,7 +3974,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
+          <td class="memname">const STRCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3938,8 +4019,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ab8f17d783f53a8761d44c3304753da96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8f17d783f53a8761d44c3304753da96">&#9670;&nbsp;</a></span>split() <span class="overload">[3/3]</span></h2>
+<a id="a227d97647d91514ea2aca02b29a7f15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227d97647d91514ea2aca02b29a7f15e">&#9670;&nbsp;</a></span>split() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3948,7 +4029,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
+          <td class="memname">const STRCONSTEXPR std::pair&lt;std::string, std::string&gt; str::split </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3992,13 +4073,14 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab8f17d783f53a8761d44c3304753da96_cgraph.svg" width="243" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a227d97647d91514ea2aca02b29a7f15e_cgraph.svg" width="243" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ae965369de7a22220e0363276cb7c6957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae965369de7a22220e0363276cb7c6957">&#9670;&nbsp;</a></span>split_all() <span class="overload">[1/2]</span></h2>
+<a id="a45ccd0d73ab01898106a3479b97ce3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ccd0d73ab01898106a3479b97ce3a5">&#9670;&nbsp;</a></span>split_all() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4007,7 +4089,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::vector&lt;std::string&gt; str::split_all </td>
+          <td class="memname">const STRCONSTEXPR std::vector&lt;std::string&gt; str::split_all </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -4053,8 +4135,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a1d372544cdb1446c0a7ee4a60e6e2e09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d372544cdb1446c0a7ee4a60e6e2e09">&#9670;&nbsp;</a></span>split_all() <span class="overload">[2/2]</span></h2>
+<a id="a91af8f3a1230715b8a32fb70caa6dd20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91af8f3a1230715b8a32fb70caa6dd20">&#9670;&nbsp;</a></span>split_all() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4063,7 +4145,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const WINCONSTEXPR std::vector&lt;std::string&gt; str::split_all </td>
+          <td class="memname">const STRCONSTEXPR std::vector&lt;std::string&gt; str::split_all </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -4109,7 +4191,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a1d372544cdb1446c0a7ee4a60e6e2e09_icgraph.svg" width="410" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a91af8f3a1230715b8a32fb70caa6dd20_icgraph.svg" width="410" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4202,8 +4285,8 @@ template&lt;typename CharT , typename Traits &gt; </div>
 
 </div>
 </div>
-<a id="ad50e9ee8aa4a8666ec47aefff8fa4bca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad50e9ee8aa4a8666ec47aefff8fa4bca">&#9670;&nbsp;</a></span>startsWith()</h2>
+<a id="a0b9acc1aa0ba62ee0e9bc69426b6e101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9acc1aa0ba62ee0e9bc69426b6e101">&#9670;&nbsp;</a></span>startsWith()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4214,7 +4297,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::startsWith </td>
+          <td class="memname">STRCONSTEXPR bool str::startsWith </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -4252,8 +4335,8 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a6ccb7cb4dfd45bb24e56b297a5cbe276"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ccb7cb4dfd45bb24e56b297a5cbe276">&#9670;&nbsp;</a></span>startsWithAny()</h2>
+<a id="ac6ebb6ad3c78618a951d1af41bfbe22c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ebb6ad3c78618a951d1af41bfbe22c">&#9670;&nbsp;</a></span>startsWithAny()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4264,7 +4347,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::startsWithAny </td>
+          <td class="memname">STRCONSTEXPR bool str::startsWithAny </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -4560,7 +4643,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_icgraph.svg" width="260" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_icgraph.svg" width="260" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4999,8 +5083,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a333afe30699add89dd4b33e8f8e965af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a333afe30699add89dd4b33e8f8e965af">&#9670;&nbsp;</a></span>strip() <span class="overload">[1/2]</span></h2>
+<a id="a9282321886911babbadc3fb321915b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9282321886911babbadc3fb321915b6e">&#9670;&nbsp;</a></span>strip() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5011,7 +5095,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static WINCONSTEXPR std::string str::strip </td>
+          <td class="memname">static STRCONSTEXPR std::string str::strip </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>s</em>, </td>
@@ -5049,8 +5133,8 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 
 </div>
 </div>
-<a id="acf63c00706c91be7da3f18b08a088224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf63c00706c91be7da3f18b08a088224">&#9670;&nbsp;</a></span>strip() <span class="overload">[2/2]</span></h2>
+<a id="a97bcc651368e4abf64e7c63272cef49d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97bcc651368e4abf64e7c63272cef49d">&#9670;&nbsp;</a></span>strip() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5059,7 +5143,7 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static WINCONSTEXPR std::string str::strip </td>
+          <td class="memname">static STRCONSTEXPR std::string str::strip </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>s</em>, </td>
@@ -5427,8 +5511,8 @@ template&lt;std::integral T&gt; </div>
 
 </div>
 </div>
-<a id="ae51dc4e9d23dcdd8def538424933d5df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae51dc4e9d23dcdd8def538424933d5df">&#9670;&nbsp;</a></span>toBase10()</h2>
+<a id="a65e852510d13333d08d87945b8dce867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e852510d13333d08d87945b8dce867">&#9670;&nbsp;</a></span>toBase10()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5439,7 +5523,7 @@ template&lt;std::integral TReturn = decimal&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR TReturn str::toBase10 </td>
+          <td class="memname">STRCONSTEXPR TReturn str::toBase10 </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>number</em>, </td>
@@ -5483,7 +5567,8 @@ template&lt;std::integral TReturn = decimal&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae51dc4e9d23dcdd8def538424933d5df_cgraph.svg" width="520" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a65e852510d13333d08d87945b8dce867_cgraph.svg" width="520" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5828,7 +5913,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a88947ca78984e05f41dd36fb221d32d6_cgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a88947ca78984e05f41dd36fb221d32d6_cgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

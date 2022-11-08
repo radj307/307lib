@@ -145,11 +145,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a0215db0125fa67b33ab8529511b504bc"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc">str::optional::sto</a> (const std::function&lt; T(const char *, char **, int)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
 <tr class="memdesc:a0215db0125fa67b33ab8529511b504bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given string to an integer type.  <a href="strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc">More...</a><br /></td></tr>
 <tr class="separator:a0215db0125fa67b33ab8529511b504bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f63431313d7591f070b95bb5dc047f"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ad6f63431313d7591f070b95bb5dc047f">str::legacy::stob</a> (std::string str) noexcept</td></tr>
-<tr class="memdesc:ad6f63431313d7591f070b95bb5dc047f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
+<tr class="memitem:ae4586985e468461709dc187788868135"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ae4586985e468461709dc187788868135">str::legacy::stob</a> (std::string str) noexcept</td></tr>
+<tr class="memdesc:ae4586985e468461709dc187788868135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
  - Returns true if the input string is (case-insensitive) equal to "true". <br  />
- - Otherwise, returns false.  <a href="strconv_8hpp.html#ad6f63431313d7591f070b95bb5dc047f">More...</a><br /></td></tr>
-<tr class="separator:ad6f63431313d7591f070b95bb5dc047f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ - Otherwise, returns false.  <a href="strconv_8hpp.html#ae4586985e468461709dc187788868135">More...</a><br /></td></tr>
+<tr class="separator:ae4586985e468461709dc187788868135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2060a7dff48c5c09b55c2aba12900ec"><td class="memItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aa2060a7dff48c5c09b55c2aba12900ec">str::optional::stod</a> (const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
 <tr class="memdesc:aa2060a7dff48c5c09b55c2aba12900ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a floating-point number to a double.  <a href="strconv_8hpp.html#aa2060a7dff48c5c09b55c2aba12900ec">More...</a><br /></td></tr>
 <tr class="separator:aa2060a7dff48c5c09b55c2aba12900ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,8 +454,8 @@ template&lt;std::integral T&gt; </div>
 
 </div>
 </div>
-<a id="ad6f63431313d7591f070b95bb5dc047f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6f63431313d7591f070b95bb5dc047f">&#9670;&nbsp;</a></span>stob()</h2>
+<a id="ae4586985e468461709dc187788868135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4586985e468461709dc187788868135">&#9670;&nbsp;</a></span>stob()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -464,7 +464,7 @@ template&lt;std::integral T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WINCONSTEXPR bool str::legacy::stob </td>
+          <td class="memname">STRCONSTEXPR bool str::legacy::stob </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -1143,7 +1143,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a08b29653016755d886072f187805dfb2_icgraph.svg" width="434" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a08b29653016755d886072f187805dfb2_icgraph.svg" width="434" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1627,7 +1628,8 @@ template&lt;typename ReturnType  = std::optional&lt;bool&gt;&gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a8e79ba6b3ada9c501377d8643d422d24_icgraph.svg" width="451" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="strconv_8hpp_a8e79ba6b3ada9c501377d8643d422d24_icgraph.svg" width="451" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
