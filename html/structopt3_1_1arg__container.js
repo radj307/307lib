@@ -18,6 +18,7 @@ var structopt3_1_1arg__container =
     [ "check", "structopt3_1_1arg__container.html#a686d6571318aae77d59524aef42e218e", null ],
     [ "check_all", "structopt3_1_1arg__container.html#a52716edbccb679dca5149f60930e9b51", null ],
     [ "check_any", "structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216", null ],
+    [ "checkcap", "structopt3_1_1arg__container.html#a3976adeec9442d111bf0f67502486dd8", null ],
     [ "checkflag", "structopt3_1_1arg__container.html#a8353295a9d78b5dbf917fea58fc33bce", null ],
     [ "checkopt", "structopt3_1_1arg__container.html#ac251e84dc1da71f503353c27bfc4f684", null ],
     [ "checkparam", "structopt3_1_1arg__container.html#a68bf0a5bc97a0408ade7a091dcf2c5d2", null ],

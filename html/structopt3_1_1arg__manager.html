@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2">template&lt;var::convertible_from&lt; variantarg &gt; TReturn, valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a8a4f3752c3c047d82b2499bacc0ca681 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">castget</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
 <tr class="memdesc:a8a4f3752c3c047d82b2499bacc0ca681 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified argument casted to the specified type. <br  />
- This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.  <a href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">More...</a><br /></td></tr>
+ This overload is only available when TReturn specifies a type that is implicitly convertible from <code>variantarg</code>.  <a href="structopt3_1_1arg__container.html#a8a4f3752c3c047d82b2499bacc0ca681">More...</a><br /></td></tr>
 <tr class="separator:a8a4f3752c3c047d82b2499bacc0ca681 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d64a53ed101131ae76c4ce3fea6d18f inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2">template&lt;typename TReturn , valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a5d64a53ed101131ae76c4ce3fea6d18f inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::vector&lt; TReturn &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a5d64a53ed101131ae76c4ce3fea6d18f">castget_all</a> (const std::function&lt; TReturn(<a class="el" href="structopt3_1_1variantarg.html">variantarg</a>)&gt; &amp;converter, Ts &amp;&amp;... names) const</td></tr>
@@ -205,6 +205,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7060604d1a29465ce34723f5dcf4216 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216">check_any</a> (Ts &amp;&amp;... names) const noexcept</td></tr>
 <tr class="memdesc:ac7060604d1a29465ce34723f5dcf4216 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216">More...</a><br /></td></tr>
 <tr class="separator:ac7060604d1a29465ce34723f5dcf4216 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3976adeec9442d111bf0f67502486dd8 inherit pub_methods_structopt3_1_1arg__container"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a3976adeec9442d111bf0f67502486dd8">checkcap</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a3976adeec9442d111bf0f67502486dd8 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified capturing option (Flag or Option) was included.  <a href="structopt3_1_1arg__container.html#a3976adeec9442d111bf0f67502486dd8">More...</a><br /></td></tr>
+<tr class="separator:a3976adeec9442d111bf0f67502486dd8 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8353295a9d78b5dbf917fea58fc33bce inherit pub_methods_structopt3_1_1arg__container"><td class="memItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8353295a9d78b5dbf917fea58fc33bce">checkflag</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
 <tr class="memdesc:a8353295a9d78b5dbf917fea58fc33bce inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified Flag was included.  <a href="structopt3_1_1arg__container.html#a8353295a9d78b5dbf917fea58fc33bce">More...</a><br /></td></tr>
 <tr class="separator:a8353295a9d78b5dbf917fea58fc33bce inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,15 +219,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a68bf0a5bc97a0408ade7a091dcf2c5d2 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48eadc0234a6c37abe5156b42632f100 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes&gt; </td></tr>
 <tr class="memitem:a48eadc0234a6c37abe5156b42632f100 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100">checkv</a> (std::string const &amp;value, <a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a48eadc0234a6c37abe5156b42632f100 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100">More...</a><br /></td></tr>
+<tr class="memdesc:a48eadc0234a6c37abe5156b42632f100 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included AND captured an argument.  <a href="structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100">More...</a><br /></td></tr>
 <tr class="separator:a48eadc0234a6c37abe5156b42632f100 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ae2185b17551ab032074953786bb0c inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:ad4ae2185b17551ab032074953786bb0c inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c">checkv_all</a> (std::string const &amp;value, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:ad4ae2185b17551ab032074953786bb0c inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c">More...</a><br /></td></tr>
+<tr class="memdesc:ad4ae2185b17551ab032074953786bb0c inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if all of the specified arguments were included AND captured an argument.  <a href="structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c">More...</a><br /></td></tr>
 <tr class="separator:ad4ae2185b17551ab032074953786bb0c inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e018c8dabeef85544cdacb688ed9d94 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2">template&lt;valid_arg... TFilterTypes, var::same_or_convertible&lt; vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a8e018c8dabeef85544cdacb688ed9d94 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94">checkv_any</a> (std::string const &amp;value, Ts &amp;&amp;... names) const noexcept</td></tr>
-<tr class="memdesc:a8e018c8dabeef85544cdacb688ed9d94 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified argument was included or not.  <a href="structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94">More...</a><br /></td></tr>
+<tr class="memdesc:a8e018c8dabeef85544cdacb688ed9d94 inherit pub_methods_structopt3_1_1arg__container"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any of the specified arguments were included AND captured an argument.  <a href="structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94">More...</a><br /></td></tr>
 <tr class="separator:a8e018c8dabeef85544cdacb688ed9d94 inherit pub_methods_structopt3_1_1arg__container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a768af276b59976e47e17bdf7cffc43f0 inherit pub_methods_structopt3_1_1arg__container"><td class="memTemplParams" colspan="2"><a id="a768af276b59976e47e17bdf7cffc43f0"></a>
 template&lt;valid_arg... TFilterTypes&gt; </td></tr>
@@ -346,7 +349,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01959">1959</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01970">1970</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac6947ed2fa9bdb163c405ba05692f93a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6947ed2fa9bdb163c405ba05692f93a">&#9670;&nbsp;</a></span>arg_manager() <span class="overload">[1/3]</span></h2>
@@ -401,7 +404,7 @@ template&lt;valid_capture... TCaptures&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01969">1969</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01980">1980</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -475,7 +478,7 @@ template&lt;valid_capture... TCaptures&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01981">1981</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01992">1992</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -521,7 +524,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01989">1989</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l02000">2000</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -576,7 +579,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="structopt3_1_1arg__manager.html">arg_manager</a> instance containing the parsed arguments. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01997">1997</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l02008">2008</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
