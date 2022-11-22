@@ -343,6 +343,7 @@ namespace opt3 {
 	 * @struct	arg_container
 	 * @brief	A container type derived directly from std::vector that exposes utility methods for managing & interacting with argument lists.
 	 *\n		This object contains the bulk of the code in the entire opt3 library.
+	 *\n		Additionally, this object and all derived types may be declared `const` without any loss of functionality, since commandline arguments are only parsed once.
 	 */
 	struct arg_container : public std::vector<variantarg> {
 		using base = std::vector<variantarg>;
@@ -669,10 +670,11 @@ namespace opt3 {
 			static_assert(!var::any_same<Parameter, TFilterTypes...>, "opt3::arg_container::getv() cannot be used to get non-Flags or non-Options!");
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && it->compare_name(name)) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_capture())
+					else
 						return it->capture();
 				}
 			}
@@ -693,10 +695,11 @@ namespace opt3 {
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
 				match_any_name{ sizeof...(Ts) == 0ull };
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_capture())
+					else
 						return it->capture();
 				}
 			}
@@ -719,12 +722,12 @@ namespace opt3 {
 			constexpr size_t block_size{ sizeof...(Ts) };
 			vec.reserve(block_size);
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
-					else if (it->has_capture())
+					else 
 						vec.emplace_back(it->capture());
-					else continue;
 					if (vec.size() == vec.capacity())
 						vec.reserve(vec.size() + block_size);
 				}
@@ -747,10 +750,11 @@ namespace opt3 {
 		{
 			constexpr bool match_any_type{ sizeof...(TFilterTypes) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && it->compare_name(name)) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_capture())
+					else
 						return it->capture();
 				}
 			}
@@ -770,10 +774,11 @@ namespace opt3 {
 				match_any_type{ sizeof...(TFilterTypes) == 0ull },
 				match_any_name{ sizeof...(Ts) == 0ull };
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						return it->name();
-					else if (it->has_capture())
+					else
 						return it->capture();
 				}
 			}
@@ -796,12 +801,12 @@ namespace opt3 {
 			constexpr size_t block_size{ sizeof...(Ts) };
 			vec.reserve(block_size);
 			for (auto it{ this->rbegin() }, end{ this->rend() }; it != end; ++it) {
+				if (!it->has_capture()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
-					else if (it->has_capture())
+					else
 						vec.emplace_back(it->capture());
-					else continue;
 					if (vec.size() == vec.capacity())
 						vec.reserve(vec.size() + block_size);
 				}
@@ -814,7 +819,7 @@ namespace opt3 {
 	#pragma region castget
 		/**
 		 * @brief					Get the specified argument casted to the specified type.
-		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.
+		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from `variantarg`.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
 		 * @param name				The name of the target argument.
@@ -877,7 +882,7 @@ namespace opt3 {
 		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from variantarg.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					A vector containing all matching arguments.
 		 */
 		template<var::convertible_from<variantarg> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -896,7 +901,7 @@ namespace opt3 {
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
 		 * @param converter			A conversion function that accepts type variantarg and returns type TReturn.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					A vector containing all matching arguments.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -948,7 +953,7 @@ namespace opt3 {
 		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<var::convertible_from<vstring> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -963,7 +968,7 @@ namespace opt3 {
 		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<var::numeric TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -978,7 +983,7 @@ namespace opt3 {
 		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<std::same_as<bool> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -993,7 +998,7 @@ namespace opt3 {
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
 		 * @param converter			A conversion function that accepts type vstring and returns type TReturn.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					The first specified argument, casted to the specified type; or std::nullopt if it wasn't found.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1008,7 +1013,7 @@ namespace opt3 {
 		 *\n						This overload is only available when TReturn specifies a type that is implicitly convertible from vstring.
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					A vector containing the capture value(s) of all matches.
 		 */
 		template<var::convertible_from<vstring> TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1027,7 +1032,7 @@ namespace opt3 {
 		 * @tparam TReturn			The desired return type.
 		 * @tparam TFilterTypes...	Any number of types to limit the returned result types to.  When left empty, all types are considered matching.
 		 * @param converter			A conversion function that accepts type vstring and returns type TReturn.
-		 * @param names				The name(s) of the target argument(s).
+		 * @param names				The name(s) of the target argument(s) (Excluding prefix dashes).
 		 * @returns					A vector containing the capture value(s) of all matches.
 		 */
 		template<typename TReturn, valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1046,7 +1051,7 @@ namespace opt3 {
 	#pragma region check
 		/**
 		 * @brief			Checks if the specified argument was included or not.
-		 * @param name		The name of the argument to check for.
+		 * @param name		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes>
@@ -1056,7 +1061,7 @@ namespace opt3 {
 		}
 		/**
 		 * @brief			Checks if the specified argument was included or not.
-		 * @param names		The name of the argument to check for.
+		 * @param names		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1066,7 +1071,7 @@ namespace opt3 {
 		}
 		/**
 		 * @brief			Checks if the specified argument was included or not.
-		 * @param names		The name of the argument to check for.
+		 * @param names		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1077,28 +1082,34 @@ namespace opt3 {
 		}
 		/**
 		 * @brief		Checks if the specified Option was included.
-		 * @param name	The name to check for.
+		 * @param name	The name to check for (Excluding prefix dashes).
 		 * @returns		true when the Option was included; otherwise false.
 		 */
 		CONSTEXPR bool checkopt(vstring const& name) const noexcept { return this->check<Option>(name); }
 		/**
 		 * @brief		Checks if the specified Flag was included.
-		 * @param name	The name to check for.
+		 * @param name	The name to check for (Excluding prefix dashes).
 		 * @returns		true when the Flag was included; otherwise false.
 		 */
 		CONSTEXPR bool checkflag(vstring const& name) const noexcept { return this->check<Flag>(name); }
 		/**
 		 * @brief		Checks if the specified Parameter was included.
-		 * @param name	The name to check for.
+		 * @param name	The name to check for (Excluding prefix dashes).
 		 * @returns		true when the Parameter was included; otherwise false.
 		 */
 		CONSTEXPR bool checkparam(vstring const& name) const noexcept { return this->check<Parameter>(name); }
+		/**
+		 * @brief		Checks if the specified capturing option (Flag or Option) was included.
+		 * @param name	The name to check for (Excluding prefix dashes).
+		 * @returns		true when the specified name was included; otherwise false.
+		 */
+		CONSTEXPR bool checkcap(vstring const& name) const noexcept { return this->check<Flag, Option>(name); }
 	#pragma endregion check
 
 	#pragma region checkv
 		/**
-		 * @brief			Checks if the specified argument was included or not.
-		 * @param name		The name of the argument to check for.
+		 * @brief			Checks if the specified argument was included AND captured an argument.
+		 * @param name		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes>
@@ -1109,8 +1120,8 @@ namespace opt3 {
 			return false;
 		}
 		/**
-		 * @brief			Checks if the specified argument was included or not.
-		 * @param names		The name of the argument to check for.
+		 * @brief			Checks if any of the specified arguments were included AND captured an argument.
+		 * @param names		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
@@ -1121,8 +1132,8 @@ namespace opt3 {
 			return false;
 		}
 		/**
-		 * @brief			Checks if the specified argument was included or not.
-		 * @param names		The name of the argument to check for.
+		 * @brief			Checks if all of the specified arguments were included AND captured an argument.
+		 * @param names		The name of the argument to check for (Excluding prefix dashes).
 		 * @returns			True when the argument was included; otherwise false.
 		 */
 		template<valid_arg... TFilterTypes, var::same_or_convertible<vstring>... Ts>
