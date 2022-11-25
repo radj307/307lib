@@ -36,6 +36,7 @@ var opt3_8hpp =
     [ "make_argument", "opt3_8hpp.html#ae4ed85fd3aa84a9ec6899bea27da600f", null ],
     [ "make_template", "opt3_8hpp.html#ab35e9f86022da18932b030f40186ce2c", null ],
     [ "make_template", "opt3_8hpp.html#abb2ba4e76d558734fcc7769ba80b51e8", null ],
+    [ "make_template", "opt3_8hpp.html#a0bd6ab9614bbb9790b25fc0f85bca7d9", null ],
     [ "make_template", "opt3_8hpp.html#a71ba8a24b4bbe45f7ca29366131fb715", null ],
     [ "make_template", "opt3_8hpp.html#ae05336ef2c447f5f39b5a9330f07c6e8", null ],
     [ "make_template", "opt3_8hpp.html#adea34d330eb286847ca1a40b911c2afa", null ],

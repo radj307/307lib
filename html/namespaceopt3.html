@@ -201,6 +201,10 @@ Functions</h2></td></tr>
 <tr class="memitem:abb2ba4e76d558734fcc7769ba80b51e8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#abb2ba4e76d558734fcc7769ba80b51e8">make_template</a> (const CaptureStyle captureStyle, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:abb2ba4e76d558734fcc7769ba80b51e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#abb2ba4e76d558734fcc7769ba80b51e8">More...</a><br /></td></tr>
 <tr class="separator:abb2ba4e76d558734fcc7769ba80b51e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd6ab9614bbb9790b25fc0f85bca7d9"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a0bd6ab9614bbb9790b25fc0f85bca7d9"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a0bd6ab9614bbb9790b25fc0f85bca7d9">make_template</a> (const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a> conflictStyle, const CaptureStyle captureStyle, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a0bd6ab9614bbb9790b25fc0f85bca7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#a0bd6ab9614bbb9790b25fc0f85bca7d9">More...</a><br /></td></tr>
+<tr class="separator:a0bd6ab9614bbb9790b25fc0f85bca7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ba8a24b4bbe45f7ca29366131fb715"><td class="memTemplParams" colspan="2">template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </td></tr>
 <tr class="memitem:a71ba8a24b4bbe45f7ca29366131fb715"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a71ba8a24b4bbe45f7ca29366131fb715">make_template</a> (const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a> conflictStyle, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a71ba8a24b4bbe45f7ca29366131fb715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance.  <a href="namespaceopt3.html#a71ba8a24b4bbe45f7ca29366131fb715">More...</a><br /></td></tr>
@@ -361,7 +365,7 @@ template&lt;var::any_same&lt; _internal::parameter_t, _internal::flag_t, _intern
 </div>
 </div>
 <a id="ab35e9f86022da18932b030f40186ce2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab35e9f86022da18932b030f40186ce2c">&#9670;&nbsp;</a></span>make_template() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35e9f86022da18932b030f40186ce2c">&#9670;&nbsp;</a></span>make_template() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +422,7 @@ template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... T
 </div>
 </div>
 <a id="abb2ba4e76d558734fcc7769ba80b51e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb2ba4e76d558734fcc7769ba80b51e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2ba4e76d558734fcc7769ba80b51e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,12 +467,69 @@ template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... T
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01524">1524</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01540">1540</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0bd6ab9614bbb9790b25fc0f85bca7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd6ab9614bbb9790b25fc0f85bca7d9">&#9670;&nbsp;</a></span>make_template() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structopt3_1_1variant__template__group.html">variant_template_group</a> opt3::make_template </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">ConflictStyle</a>&#160;</td>
+          <td class="paramname"><em>conflictStyle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CaptureStyle&#160;</td>
+          <td class="paramname"><em>captureStyle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conflictStyle</td><td>Determines how multiple arguments with the same ID are handled. </td></tr>
+    <tr><td class="paramname">captureStyle</td><td>Determines how arguments from this template group can capture input. </td></tr>
+    <tr><td class="paramname">templates</td><td>Any number of <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>s to include in the group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01525">1525</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a71ba8a24b4bbe45f7ca29366131fb715"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71ba8a24b4bbe45f7ca29366131fb715">&#9670;&nbsp;</a></span>make_template() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ba8a24b4bbe45f7ca29366131fb715">&#9670;&nbsp;</a></span>make_template() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -513,12 +574,12 @@ template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... T
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01538">1538</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01554">1554</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ae05336ef2c447f5f39b5a9330f07c6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae05336ef2c447f5f39b5a9330f07c6e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05336ef2c447f5f39b5a9330f07c6e8">&#9670;&nbsp;</a></span>make_template() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -552,12 +613,12 @@ template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... T
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a> instance with the specified parameters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01551">1551</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01567">1567</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
 <a id="adea34d330eb286847ca1a40b911c2afa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adea34d330eb286847ca1a40b911c2afa">&#9670;&nbsp;</a></span>make_template() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adea34d330eb286847ca1a40b911c2afa">&#9670;&nbsp;</a></span>make_template() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -589,7 +650,7 @@ template&lt;var::any_same_or_convertible&lt; variant_template, vstring &gt;... T
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>g </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01562">1562</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01578">1578</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -657,7 +718,7 @@ Capture Rules</h3>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01809">1809</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01825">1825</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -717,7 +778,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01955">1955</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01971">1971</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -739,7 +800,7 @@ template&lt;typename T &gt; </div>
 <p>Constraint that only allows types that constitute a valid argument capture definition, such as <code><a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a></code>, <code><a class="el" href="structopt3_1_1variant__template__group.html" title="Container object for a group of argument templates that all perform a similar function....">variant_template_group</a></code>, or <code>vstring</code>. </p>
 <p>@concept valid_capture </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01568">1568</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01584">1584</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>

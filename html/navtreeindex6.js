@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"strcompare_8hpp.html#a0b9acc1aa0ba62ee0e9bc69426b6e101":[10,0,3,0,2,9],
 "strcompare_8hpp.html#a264ae9a138c64900012cd97711e1e872":[10,0,3,0,2,7],
 "strcompare_8hpp.html#a2b6b80787edc3b29e75ab1896a00ab16":[10,0,3,0,2,2],
 "strcompare_8hpp.html#a5b67b511a73cc1600877405b6827de48":[10,0,3,0,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html#ae8bc4f5d2f7386d3271252032c54acdb":[9,0,3,0,0,0,0],
 "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_parser.html#af750e29299cde5744fe7741ccb31df7d":[9,0,3,0,0,0,1],
 "structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html":[9,0,3,0,0,1],
-"structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566":[9,0,3,0,0,1,1],
-"structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a6fb875cd2bba5fce14988f9fb508100d":[9,0,3,0,0,1,0]
+"structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a18ceea4f77e433831861d3f050386566":[9,0,3,0,0,1,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"structxlog_1_1level.html#a00290bb7e21a1d0cb0f0e4ce3eebefd5":[9,0,16,3,3],
 "structxlog_1_1level.html#a1ea82679755f988c1534601c3c732c0b":[9,0,16,3,15],
 "structxlog_1_1level.html#a37bd7c30f0f542990d048bfc44904fc7":[9,0,16,3,2],
 "structxlog_1_1level.html#a4065c1901ee75d4c913d4ee438bf1979":[9,0,16,3,13],
