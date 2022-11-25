@@ -1516,6 +1516,22 @@ namespace opt3 {
 	}
 	/**
 	 * @brief					Creates a new variant_template_group instance.
+	 * @param conflictStyle		Determines how multiple arguments with the same ID are handled.
+	 * @param captureStyle		Determines how arguments from this template group can capture input.
+	 * @param templates			Any number of `variant_template`s to include in the group.
+	 * @returns					A new variant_template_group instance with the specified parameters.
+	 */
+	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
+	inline constexpr variant_template_group make_template(const ConflictStyle conflictStyle, const CaptureStyle captureStyle, Ts&&... args)
+	{
+		return variant_template_group{
+			captureStyle,
+			conflictStyle,
+			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }
+		};
+	}
+	/**
+	 * @brief					Creates a new variant_template_group instance.
 	 * @param captureStyle		Determines how arguments from this template group can capture input.
 	 * @param templates			Any number of `variant_template`s to include in the group.
 	 * @returns					A new variant_template_group instance with the specified parameters.
