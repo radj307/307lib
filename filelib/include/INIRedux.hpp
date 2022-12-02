@@ -305,7 +305,7 @@ namespace file::ini {
 		 */
 		[[nodiscard]] bool check(const std::string& header_or_key) const
 		{
-			return _cont.contains(header_or_key) || _cont.contains("") && _cont.at("").contains(header_or_key);
+			return _cont.contains(header_or_key) || (_cont.contains("") && _cont.at("").contains(header_or_key));
 		}
 		/**
 		 * @brief			Check if a given key exists in a given header.
@@ -355,7 +355,7 @@ namespace file::ini {
 		 */
 		[[nodiscard]] bool checkv(const std::string& header, const std::string& key, const std::string& value, const bool& case_sensitive = true) const
 		{
-			const auto comp{ [&case_sensitive](const auto& l, const auto& r) {return l == r || !case_sensitive && str::tolower(l) == str::tolower(r); } };
+			const auto comp{ [&case_sensitive](const auto& l, const auto& r) {return l == r || (!case_sensitive && str::tolower(l) == str::tolower(r)); }};
 			return check(header, key) && comp(to_string(_cont.at(header).at(key)), value);
 		}
 

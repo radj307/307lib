@@ -726,7 +726,7 @@ namespace opt3 {
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
-					else 
+					else
 						vec.emplace_back(it->capture());
 					if (vec.size() == vec.capacity())
 						vec.reserve(vec.size() + block_size);
@@ -1351,13 +1351,13 @@ namespace opt3 {
 		/// @brief	Argument templates defined by this group.
 		std::vector<variant_template> templates;
 		/// @brief	Default capture style for argument templates that don't override it.
-		CaptureStyle _defaultCaptureStyle{ CaptureStyle::Optional };
+		CaptureStyle _defaultCaptureStyle;
 		/// @brief	Default conflict style for conflict definitions that don't override it.
-		ConflictStyle _defaultConflictStyle{ ConflictStyle::Conflict };
+		ConflictStyle _defaultConflictStyle;
 		/// @brief	An optional *(inclusive)* maximum argument count.
-		std::optional<size_t> _max{ std::nullopt };
+		std::optional<size_t> _max;
 		/// @brief	An *(inclusive)* minimum argument count.
-		size_t _min{ 0ull };
+		size_t _min;
 		/// @brief	Conflicting argument definitions for this template group.
 		conflict_list_t conflicts;
 
@@ -1368,27 +1368,51 @@ namespace opt3 {
 		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ id },
+			templates{ templates },
+			_defaultCaptureStyle{ defaultCaptureStyle },
+			_defaultConflictStyle{ defaultConflictStyle },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
 		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const size_t& id, const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ id },
+			templates{ templates },
+			_defaultCaptureStyle{ defaultCaptureStyle },
+			_defaultConflictStyle{ ConflictStyle::Conflict },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
 		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const size_t& id, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const size_t& id, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ id },
+			templates{ templates },
+			_defaultCaptureStyle{ CaptureStyle::Optional },
+			_defaultConflictStyle{ defaultConflictStyle },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const size_t& id, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ id }, templates{ templates }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const size_t& id, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ id },
+			templates{ templates },
+			_defaultCaptureStyle{ CaptureStyle::Optional },
+			_defaultConflictStyle{ ConflictStyle::Conflict },
+			_max{ max },
+			_min{ min } {}
 
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
@@ -1396,24 +1420,48 @@ namespace opt3 {
 		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ _internal::arg_id_sequencer.next() },
+			templates{ templates },
+			_defaultCaptureStyle{ defaultCaptureStyle },
+			_defaultConflictStyle{ defaultConflictStyle },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultCaptureStyle{ defaultCaptureStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const CaptureStyle& defaultCaptureStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ _internal::arg_id_sequencer.next() },
+			templates{ templates },
+			_defaultCaptureStyle{ defaultCaptureStyle },
+			_defaultConflictStyle{ ConflictStyle::Conflict },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _defaultConflictStyle{ defaultConflictStyle }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const ConflictStyle& defaultConflictStyle, const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ _internal::arg_id_sequencer.next() },
+			templates{ templates },
+			_defaultCaptureStyle{ CaptureStyle::Optional },
+			_defaultConflictStyle{ defaultConflictStyle },
+			_max{ max },
+			_min{ min } {}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param templates			Any number of `variant_template`s to include in the group
 		 */
-		WINCONSTEXPR variant_template_group(const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) : _id{ _internal::arg_id_sequencer.next() }, templates{ templates }, _min{ min }, _max{ max } {}
+		WINCONSTEXPR variant_template_group(const std::vector<variant_template>& templates, const size_t& min = 0, const std::optional<size_t> max = std::nullopt) :
+			_id{ _internal::arg_id_sequencer.next() },
+			templates{ templates },
+			_defaultCaptureStyle{ CaptureStyle::Optional },
+			_defaultConflictStyle{ ConflictStyle::Conflict },
+			_max{ max },
+			_min{ min } {}
 
 
 		WINCONSTEXPR CaptureStyle get_capture_style_of(vstring const& name) const noexcept
@@ -1585,7 +1633,7 @@ namespace opt3 {
 
 	/**
 	 * @struct	capture_list
-	 * @brief	A small wrapper object that inherits from a std::vector.  
+	 * @brief	A small wrapper object that inherits from a std::vector.
 	 *			TODO: Implement this properly instead of inheriting from std::vector.
 	 */
 	struct capture_list : std::vector<variant_template_group> {
@@ -1690,7 +1738,10 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		WINCONSTEXPR ArgumentParsingRules(CaptureStyle const& defaultCaptureStyle, std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : defaultCaptureStyle{ defaultCaptureStyle }, assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
+		WINCONSTEXPR ArgumentParsingRules(CaptureStyle const& defaultCaptureStyle, std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) :
+			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative },
+			delimiters{ std::forward<std::vector<char>>(delimiters) },
+			defaultCaptureStyle{ defaultCaptureStyle } {}
 		/**
 		 * @brief										Constructor.
 		 * @param delimiters							List of characters that are considered valid argument prefixes.
@@ -1699,7 +1750,9 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		WINCONSTEXPR ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative }, delimiters{ std::forward<std::vector<char>>(delimiters) } {}
+		WINCONSTEXPR ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) :
+			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative },
+			delimiters{ std::forward<std::vector<char>>(delimiters) } {}
 		/**
 		 * @brief										Constructor.
 		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
@@ -1707,7 +1760,8 @@ namespace opt3 {
 		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *												 are always considered flags instead of numbers.
 		 */
-		WINCONSTEXPR ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) : assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
+		WINCONSTEXPR ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) :
+			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
 
 	#pragma region Methods
 		[[nodiscard]] WINCONSTEXPR std::string getDelimitersAsString() const
@@ -1756,7 +1810,7 @@ namespace opt3 {
 				return false;
 
 			if (str.starts_with("0x")) {
-				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), [](auto&& ch) { return shared::isdigit(ch) || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f'; });
+				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), [](auto&& ch) { return shared::isdigit(ch) || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f'); });
 			}
 			else {
 				const bool is_negative{ str.starts_with('-') };

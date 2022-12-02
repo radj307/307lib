@@ -26,7 +26,7 @@ namespace file {
 		TStream<TChar, TCharTraits, TAlloc> buffer;
 		if (std::basic_ifstream<TChar, TCharTraits> ifs(path, static_cast<std::ios_base::openmode>(mode)); ifs.is_open())
 			buffer << ifs.rdbuf();
-		return std::move(buffer);
+		return buffer;
 	}
 
 	/**

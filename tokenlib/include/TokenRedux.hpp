@@ -323,7 +323,7 @@ namespace token {
 
 			[[nodiscard]] virtual std::pair<size_t, size_t> findCurrentPos(bool lineIndexedByOne = false)
 			{
-				const size_t globalPos{ static_cast<size_t>(ss.tellg()) };
+				const auto globalPos{ ss.tellg() };
 				setLastPosHere();
 				ss.seekg(std::ios::beg);
 
@@ -358,7 +358,7 @@ namespace token {
 			[[nodiscard]] virtual bool hasMore()
 			{
 				if (ss)
-					return getCurrentPos() != static_cast<size_t>(EOF);
+					return getCurrentPos() != static_cast<std::streampos>(EOF);
 				return false;
 			}
 

@@ -399,9 +399,10 @@ namespace str {
 			}(0u)
 			};
 			if (const auto d2{ [&line, &delims](const std::string::size_type off) -> std::string::size_type {
-				if (const auto dPos{ line.find_first_of(delims.second, off) }; dPos != std::string::npos)
+				if (const auto dPos{ line.find_first_of(delims.second, off) }; dPos != std::string::npos) {
 					return dPos;
-					return line.size();
+				}
+				return line.size();
 				}(d1 + 1u)
 				}; d1 != std::string::npos && d2 != std::string::npos && d1 < d2)
 				return std::string{ line.substr(d1 + !includeDelim, d2 - d1 - !includeDelim) };
