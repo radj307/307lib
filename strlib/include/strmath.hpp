@@ -80,7 +80,7 @@ namespace str {
 	 * @returns				decimal
 	 */
 	template<std::integral TReturn = decimal>
-	inline STRCONSTEXPR TReturn toBase10(std::string number, const int& fromBase) noexcept(false)
+	inline TReturn toBase10(std::string number, const int& fromBase) noexcept(false)
 	{
 		if (number.empty())
 			return 0;
@@ -114,7 +114,7 @@ namespace str {
 	 * @param toBase		The target number base.
 	 * @returns				std::string
 	 */
-	inline STRCONSTEXPR std::string fromBase10(const decimal& number, const int& toBase) noexcept(false)
+	inline std::string fromBase10(const decimal& number, const int& toBase) noexcept(false)
 	{
 		if (toBase < 2 || toBase > 36)
 			throw make_exception("str::fromBase10() failed:  \'", toBase, "\' isn't a valid alphanumeric base in the range: (2 - 36)!");
@@ -148,7 +148,7 @@ namespace str {
 	 * @param toBase		The target number base.
 	 * @returns				std::string
 	 */
-	inline STRCONSTEXPR std::string fromBase10(const std::string& number, const int& toBase) noexcept(false)
+	inline std::string fromBase10(const std::string& number, const int& toBase) noexcept(false)
 	{
 		return fromBase10(str::stoll(number), toBase);
 	}
