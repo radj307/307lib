@@ -59,7 +59,7 @@ namespace var {
 		using type = std::conditional<(sizeof...(Ts) == compsize), std::true_type, std::false_type>;
 	};
 	/// @brief	is_same_as::type macro.
-	template<auto compsize, typename... Ts> using is_same_as_t = is_same_as<compsize, Ts...>::type;
+	template<auto compsize, typename... Ts> using is_same_as_t = typename is_same_as<compsize, Ts...>::type;
 
 	/**
 	 * @brief			Check if a variadic templated type has more arguments than a given number.
@@ -71,7 +71,7 @@ namespace var {
 		using type = std::conditional<(sizeof...(Ts) > compsize), std::true_type, std::false_type>;
 	};
 	/// @brief	is_more_than::type macro.
-	template<auto compsize, typename... Ts> using is_more_than_t = is_more_than<compsize, Ts...>::type;
+	template<auto compsize, typename... Ts> using is_more_than_t = typename is_more_than<compsize, Ts...>::type;
 
 	template<typename... Ts> using is_more_than_one = is_more_than_t<1ull, Ts...>;
 
@@ -85,7 +85,7 @@ namespace var {
 		using type = std::conditional<(sizeof...(Ts) < compsize), std::true_type, std::false_type>;
 	};
 	/// @brief	is_less_than::type macro.
-	template<auto compsize, typename... Ts> using is_less_than_t = is_less_than<compsize, Ts...>::type;
+	template<auto compsize, typename... Ts> using is_less_than_t = typename is_less_than<compsize, Ts...>::type;
 	////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////
 #	pragma endregion ConstexprTests
 
@@ -593,7 +593,7 @@ namespace var {
 	template<valid_string StrT, valid_char... T>
 	[[nodiscard]] inline static constexpr const StrT string_accumulate(const T&... ch)
 	{
-		return StrT{ static_cast<StrT::value_type>(ch)... };
+		return StrT{ static_cast<typename StrT::value_type>(ch)... };
 	}
 #	endif
 
