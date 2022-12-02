@@ -12,9 +12,9 @@ var color_transform_8hpp =
     [ "ishexnum", "color-transform_8hpp.html#a0436cfd097ec1f1c89f3185f2f1311a2", null ],
     [ "parse_hex_to_sgr", "color-transform_8hpp.html#ada0a983aea79add67c44e074b62e632b", null ],
     [ "rgb_to_hex", "color-transform_8hpp.html#af7f1c1e481b8a01019fea3e15bf32996", null ],
-    [ "rgb_to_sgr", "color-transform_8hpp.html#a77587e603476ce7019972101aa570e7f", null ],
-    [ "rgb_to_sgr", "color-transform_8hpp.html#abb7692aee3ffa41815309ca473a5e906", null ],
+    [ "rgb_to_sgr", "color-transform_8hpp.html#aea368bb3ab9f4599f979a98e21639489", null ],
+    [ "rgb_to_sgr", "color-transform_8hpp.html#a3040cf6eb45eed908ffc3e519fc4d37c", null ],
     [ "rgb_to_sgr", "color-transform_8hpp.html#ac187c76931dc3ec7c3c43e35b1d1e659", null ],
     [ "sgr_to_hex", "color-transform_8hpp.html#a2080307c19e6b6341f40839d02615373", null ],
-    [ "sgr_to_rgb", "color-transform_8hpp.html#a8551d3b9a96f515b04877eb5e93edf20", null ]
+    [ "sgr_to_rgb", "color-transform_8hpp.html#a89482c63ac08a5bf56b34ea0818476c1", null ]
 ];

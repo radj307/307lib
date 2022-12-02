@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['newline_1952',['NEWLINE',['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6a80c8c6b1bcf9ad27b73d5aaa56ed4ff3',1,'token::DefaultDefs::NEWLINE()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a80c8c6b1bcf9ad27b73d5aaa56ed4ff3',1,'token::DefaultDefs::NEWLINE()']]],
-  ['none_1953',['none',['../namespacefile.html#a4172803d88f79140493760c26cbf1ea4a334c4a4c42fdb79d7ebc3e73b517e6f8',1,'file::none()'],['../namespacefile_1_1ini.html#aa86b3efdca35b91db3538f0f9cebaafeab50339a10e1de285ac99d4c3990b8693',1,'file::ini::NONE()']]],
-  ['null_5ftype_1954',['NULL_TYPE',['../namespaceopt_1_1token.html#ae9ed3673ecfe41fccfa0be205485675dabadc789d64efa09e2be666a687efeb5d',1,'opt::token::NULL_TYPE()'],['../namespaceopt_1_1token.html#a039ce2aaab1ec2f27956ccdad2483d0fabadc789d64efa09e2be666a687efeb5d',1,'opt::token::NULL_TYPE()'],['../namespacetoken_1_1_default_defs.html#a57c7401279cdddb2e9deb3ef6b8244d6abadc789d64efa09e2be666a687efeb5d',1,'token::DefaultDefs::NULL_TYPE()'],['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799abadc789d64efa09e2be666a687efeb5d',1,'token::DefaultDefs::NULL_TYPE()']]],
-  ['number_1955',['NUMBER',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799a34f55eca38e0605a84f169ff61a2a396',1,'token::DefaultDefs']]],
-  ['number_5fint_1956',['NUMBER_INT',['../namespacetoken_1_1_default_defs.html#a46232a64a80980d8da8b2742397f8799ac14369ef03743b996b987053bfb9368a',1,'token::DefaultDefs']]]
+  ['newline_1946',['NEWLINE',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a80c8c6b1bcf9ad27b73d5aaa56ed4ff3',1,'NEWLINE()token::DefaultDefs'],['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799a80c8c6b1bcf9ad27b73d5aaa56ed4ff3',1,'NEWLINE()token::DefaultDefs']]],
+  ['none_1947',['None',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754',1,'opt3::None()'],['../namespaceshared.html#a8b92563f254758484d45f9257995945da6adf97f83acf6453d4a6a4b1070f3754',1,'shared::None()']]],
+  ['none_1948',['NONE',['../_i_n_i_redux_8hpp.html#aa86b3efdca35b91db3538f0f9cebaafeab50339a10e1de285ac99d4c3990b8693',1,'file::ini']]],
+  ['null_5ftype_1949',['NULL_TYPE',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6abadc789d64efa09e2be666a687efeb5d',1,'NULL_TYPE()token::DefaultDefs'],['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799abadc789d64efa09e2be666a687efeb5d',1,'NULL_TYPE()token::DefaultDefs']]],
+  ['number_1950',['NUMBER',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799a34f55eca38e0605a84f169ff61a2a396',1,'token::DefaultDefs']]],
+  ['number_5fint_1951',['NUMBER_INT',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799ac14369ef03743b996b987053bfb9368a',1,'token::DefaultDefs']]]
 ];

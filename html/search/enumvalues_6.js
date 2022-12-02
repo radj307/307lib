@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['releasecandidate_1827',['ReleaseCandidate',['../namespaceshared.html#a8b92563f254758484d45f9257995945dad51e7d58a0cd2de144621030dcae1337',1,'shared']]],
-  ['revision_1828',['Revision',['../namespaceshared.html#a8b92563f254758484d45f9257995945da32c676ac5296556c0573a301ef5ab07b',1,'shared']]]
+  ['f_1938',['F',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a800618943025315f869e4e1f09471012',1,'color']]],
+  ['fore_1939',['Fore',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a1de3ed66ddce05aabfce7311f6f7b2ba',1,'color']]],
+  ['foreground_1940',['Foreground',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a45bd1d5b32931106efbf1a82fe6a732f',1,'color']]]
 ];

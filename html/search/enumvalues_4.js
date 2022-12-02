@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['onlyblank_1824',['OnlyBlank',['../namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda77b5ce8bdd4431c91682aff9f3e0b4f1',1,'ini']]],
-  ['override_1825',['Override',['../namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849',1,'ini']]]
+  ['digit_1931',['DIGIT',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a999bbbf1d86bc7611397c77222e076db',1,'token::DefaultDefs']]],
+  ['disable_1932',['Disable',['../namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41abcfaccebf745acfd5e75351095a5394a',1,'ini']]],
+  ['divider_1933',['DIVIDER',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799a711b8afd35852659719992fac8ccf66c',1,'token::DefaultDefs']]]
 ];

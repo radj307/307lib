@@ -7,8 +7,8 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
-    [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
     [ "opt3::ArgumentParsingRules", "structopt3_1_1_argument_parsing_rules.html", null ],
+    [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
     [ "opt3::base_arg", "structopt3_1_1base__arg.html", [
       [ "opt3::basic_arg_t< T >", "structopt3_1_1basic__arg__t.html", null ],
       [ "opt3::basic_arg_template< T >", "structopt3_1_1basic__arg__template.html", null ]
@@ -89,7 +89,7 @@ var hierarchy =
     [ "var::is_less_than< compsize, Ts >", "structvar_1_1is__less__than.html", null ],
     [ "var::is_more_than< compsize, Ts >", "structvar_1_1is__more__than.html", null ],
     [ "var::is_same_as< compsize, Ts >", "structvar_1_1is__same__as.html", null ],
-    [ "IteratingParserBase", null, [
+    [ "token::base::IteratingParserBase", null, [
       [ "json::parser::Parser", "classjson_1_1parser_1_1_parser.html", null ],
       [ "xml::parser::XMLParser< T >", "classxml_1_1parser_1_1_x_m_l_parser.html", null ]
     ] ],
@@ -124,17 +124,17 @@ var hierarchy =
       ] ],
       [ "json::ContainerNode< T >", "structjson_1_1_container_node.html", null ]
     ] ],
-    [ "numpunct", null, [
+    [ "std::numpunct", null, [
       [ "str::facet::NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", null ]
     ] ],
-    [ "optional", null, [
+    [ "std::optional", null, [
       [ "shared::casting_optional< T >", "structshared_1_1casting__optional.html", [
         [ "shared::unsafe_optional< T, Base >", "structshared_1_1unsafe__optional.html", null ]
       ] ]
     ] ],
     [ "xlog::OutputTarget< StreamType >", "structxlog_1_1_output_target.html", null ],
     [ "xlog::OutputTarget< std::ostream >", "structxlog_1_1_output_target.html", null ],
-    [ "pair", null, [
+    [ "std::pair", null, [
       [ "matrix::point< T >", "structmatrix_1_1point.html", null ]
     ] ],
     [ "color::palette< TKey, TChar, TCharTraits, TAlloc >", "classcolor_1_1palette.html", null ],
@@ -176,7 +176,7 @@ var hierarchy =
     [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< outer_container, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
-    [ "tuple", null, [
+    [ "std::tuple", null, [
       [ "color::basic_color< ColorT, ColorT, ColorT >", "structcolor_1_1basic__color.html", [
         [ "color::RGB< T >", "structcolor_1_1_r_g_b.html", null ]
       ] ],
@@ -185,7 +185,7 @@ var hierarchy =
       ] ],
       [ "color::basic_color< T, Ts >", "structcolor_1_1basic__color.html", null ]
     ] ],
-    [ "variant", null, [
+    [ "std::variant", null, [
       [ "opt3::variant_template", "classopt3_1_1variant__template.html", null ],
       [ "opt3::variantarg", "structopt3_1_1variantarg.html", null ]
     ] ],

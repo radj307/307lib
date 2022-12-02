@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['capturesconflict_1819',['CapturesConflict',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a705153d878cb91983bfd5cf2930a18cc',1,'opt3']]],
-  ['conflict_1820',['Conflict',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142af1d4ac54357cc0932f385d56814ba7e4',1,'opt3']]]
+  ['_5feof_1913',['_EOF',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6aeb7076becd9b9973e6b08024597db564',1,'token::DefaultDefs']]]
 ];

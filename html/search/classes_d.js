@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unsafe_5foptional_1019',['unsafe_optional',['../structshared_1_1unsafe__optional.html',1,'shared']]]
+  ['unsafe_5foptional_1103',['unsafe_optional',['../structshared_1_1unsafe__optional.html',1,'shared']]]
 ];

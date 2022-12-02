@@ -3,7 +3,7 @@ var str_8hpp =
     [ "Printable", "structstr_1_1_printable.html", "structstr_1_1_printable" ],
     [ "compare", "str_8hpp.html#ab58e4fd600a73d4ffbdea3d65c5bdabd", null ],
     [ "compare", "str_8hpp.html#acd4ee543bc885f863faf20217f7142fe", null ],
-    [ "join", "str_8hpp.html#acf8be91baa116c4582e66f6278db959f", null ],
+    [ "join", "str_8hpp.html#a969c7cce8d3290223f2764ea2d70a917", null ],
     [ "join_with_delimiter", "str_8hpp.html#a90ac6f2d084b34914281f50722fe85ff", null ],
     [ "join_with_delimiter", "str_8hpp.html#ae89dea28a2858d6b0e99ba55171d220b", null ],
     [ "longest", "str_8hpp.html#af0d5f5ddec852ee6650d85fcd45c3030", null ],

@@ -8,7 +8,7 @@ var classshared_1_1semversion =
     [ "~semversion", "classshared_1_1semversion.html#afe75df34fd5b0a40d79a764295f36520", null ],
     [ "semversion", "classshared_1_1semversion.html#a39cd422fde2fe205f0f216d35c86a016", null ],
     [ "semversion", "classshared_1_1semversion.html#ac1b90a8f4918cfe5ff0aedfc8c5ab2e0", null ],
-    [ "operator", "classshared_1_1semversion.html#a90189f557bfbff11a9a7cffc3cd4c147", null ],
+    [ "operator<=>", "classshared_1_1semversion.html#a498f0120afe5c462d0d5e03aaa0d6e50", null ],
     [ "operator=", "classshared_1_1semversion.html#afc7d6daa6775192306e11e764ee9ded7", null ],
     [ "operator=", "classshared_1_1semversion.html#a57c8f481ab5a4d6c3ebdc4d8cfb7ff5c", null ],
     [ "parse", "classshared_1_1semversion.html#a0d8466efb6e824e988b8f113c58b6b56", null ],

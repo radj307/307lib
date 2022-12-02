@@ -22,6 +22,6 @@ var var_8hpp =
     [ "tuple_or", "var_8hpp.html#a060dae79f908e9ec94f42175a42c45b1", null ],
     [ "variadic_and", "var_8hpp.html#acd4adc200dff50fed630c357d3b5fd16", null ],
     [ "variadic_or", "var_8hpp.html#aab48ef63e82c6fbb650f1b7af64c951a", null ],
-    [ "false_v", "var_8hpp.html#a941e67bbf70f7289a4f50eab1ed7324c", null ],
-    [ "true_v", "var_8hpp.html#af85ba36b30b1c828f7a4c611c3681375", null ]
+    [ "false_v", "var_8hpp.html#a62ab7f07408eb876ebad2bc2c01b13e6", null ],
+    [ "true_v", "var_8hpp.html#acaae8e7a15f7350e03aecd344d81fc05", null ]
 ];

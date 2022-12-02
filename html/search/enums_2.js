@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['maskstyle_1814',['MaskStyle',['../namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41',1,'ini']]]
+  ['layer_1905',['Layer',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832',1,'color']]],
+  ['lexeme_1906',['LEXEME',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6',1,'token::DefaultDefs']]]
 ];

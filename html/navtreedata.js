@@ -1,50 +1,52 @@
 /*
-@licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2019 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of version 2 of the GNU General Public License as published by
-the Free Software Foundation
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
   [ "307Lib", "index.html", [
-    [ "Platform Support", "index.html#autotoc_md5", null ],
-    [ "Building from Source", "index.html#autotoc_md6", [
-      [ "Pre-Requisities", "index.html#autotoc_md7", null ],
-      [ "Process", "index.html#autotoc_md8", null ]
+    [ "Platform Support", "index.html#autotoc_md3", null ],
+    [ "Building from Source", "index.html#autotoc_md4", [
+      [ "Pre-Requisities", "index.html#autotoc_md5", null ],
+      [ "Process", "index.html#autotoc_md6", null ]
     ] ],
-    [ "Generating Documentation", "index.html#autotoc_md9", [
-      [ "Pre-Requisites", "index.html#autotoc_md10", null ],
-      [ "Process", "index.html#autotoc_md11", null ]
+    [ "Generating Documentation", "index.html#autotoc_md7", [
+      [ "Pre-Requisites", "index.html#autotoc_md8", null ],
+      [ "Process", "index.html#autotoc_md9", null ]
     ] ],
     [ "TokenRedux", "_token_redux.html", null ],
     [ "307modules", "307modules.html", [
-      [ "307modules", "307modules.html#autotoc_md2", [
-        [ "Usage", "307modules.html#autotoc_md3", null ],
-        [ "Modules", "307modules.html#autotoc_md4", null ]
+      [ "307modules", "307modules.html#autotoc_md0", [
+        [ "Usage", "307modules.html#autotoc_md1", null ],
+        [ "Modules", "307modules.html#autotoc_md2", null ]
       ] ]
     ] ],
     [ "README", "md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html", null ],
     [ "Argument Parser", "_commandline.html", [
-      [ "Basic Concepts", "_commandline.html#autotoc_md12", [
-        [ "Argument Types", "_commandline.html#autotoc_md13", null ],
-        [ "Argument Capturing", "_commandline.html#autotoc_md14", null ],
-        [ "Argument Order", "_commandline.html#autotoc_md16", null ]
+      [ "Basic Concepts", "_commandline.html#autotoc_md10", [
+        [ "Argument Types", "_commandline.html#autotoc_md11", null ],
+        [ "Argument Capturing", "_commandline.html#autotoc_md12", null ],
+        [ "Argument Order", "_commandline.html#autotoc_md14", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
@@ -84,17 +86,21 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-".html",
-"classcolor_1_1basic__sync.html#a51b18e79424e13d2a4e317da6a14abe9",
-"classini_1_1basic__ini.html#ab17ff63a60c6673a10261c4dc5fce898",
-"classopt_1_1token_1_1_parser.html#a40e9b89ae78a52813fffd32050d9dd7a",
-"classxlog_1_1x_log.html#ad0c78646bd02c91f163febf5580c0f25",
-"namespacemembers.html",
-"strcompare_8hpp.html#a0b9acc1aa0ba62ee0e9bc69426b6e101",
-"structfile_1_1ini_1_1tokenizer_1_1_i_n_i_tokenizer.html#a6fb875cd2bba5fce14988f9fb508100d",
-"structopt3_1_1arg__container.html#a232584a84848a724671ece6dc00ad45d",
-"structopt_1_1_input_wrapper.html#a394e14d1a0bad3cb67736652c8953c89",
-"structxlog_1_1level.html#a00290bb7e21a1d0cb0f0e4ce3eebefd5"
+"307modules.html",
+"_token_redux_8hpp.html#a2ed88184cb9b36061413a1f07c93b2df",
+"classcolor_1_1palette.html#a16ebfc05ba8134637aebd517d8cc6aca",
+"classini_1_1ini__value.html#a16ed15fc016cbe2c09632fda11cae737",
+"classshared_1_1eventdef.html#a14fc2ead50bedc49c84873a9aa6708a7",
+"color-format_8hpp.html#a020904458fa1fda318d758811ff69aaf",
+"functions_d.html",
+"namespacerng.html#ab3340f6ed3c3cb00408289bf714a7583",
+"namespaceterm.html#ac7aa68b649adb67f4a337b8dc321a460",
+"simple_i_n_i_8hpp.html#a4c5625f3347e407e39599efc3bde3d54",
+"structcolor_1_1basic__color.html#ab4534fb304ee23ddcbf603806842e162",
+"structmatrix_1_1nmatrix.html#a67b82159dae50e1ec224b079bfe6336b",
+"structopt_1_1_arg_container.html#ae0284072d1003b832089eab2679ee4a9",
+"structterm_1_1_cursor.html#a2f876f140a431a5794113f45f4e0c9c9",
+"var_8hpp.html#a060dae79f908e9ec94f42175a42c45b1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 521;
+var viewWidth = 515;
 var viewHeight = 100;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="344,-45 344,-64 513,-64 513,-45 344,-45"/>
-<text text-anchor="middle" x="428.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::basic_arg_template&lt; T &gt;</text>
+<polygon fill="#bfbfbf" stroke="black" points="338,-45 338,-64 507,-64 507,-45 338,-45"/>
+<text text-anchor="middle" x="422.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::basic_arg_template&lt; T &gt;</text>
 </a>
 </g>
 </g>
@@ -67,52 +67,51 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="structopt3_1_1base__arg.html" target="_top" xlink:title="An empty struct that serves as the templateless base type for the basic_arg_t struct.">
-<polygon fill="none" stroke="black" points="167.5,-72 167.5,-91 256.5,-91 256.5,-72 167.5,-72"/>
-<text text-anchor="middle" x="212" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::base_arg</text>
+<polygon fill="none" stroke="black" points="161.5,-72 161.5,-91 250.5,-91 250.5,-72 161.5,-72"/>
+<text text-anchor="middle" x="206" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::base_arg</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M266.6,-74.75C292.35,-71.51 323.64,-67.57 351.77,-64.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="266.15,-71.28 256.67,-76 267.02,-78.23 266.15,-71.28"/>
+<path fill="none" stroke="midnightblue" d="M260.6,-74.75C286.35,-71.51 317.64,-67.57 345.77,-64.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="260.15,-71.28 250.67,-76 261.02,-78.23 260.15,-71.28"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="structopt3_1_1basic__vstring.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="147,-0.5 147,-52.5 277,-52.5 277,-0.5 147,-0.5"/>
-<text text-anchor="start" x="155" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::basic_vstring</text>
-<text text-anchor="start" x="155" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char, std::char_traits</text>
-<text text-anchor="start" x="155" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char &gt;, std::allocator</text>
-<text text-anchor="middle" x="212" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char &gt; &gt;</text>
+<polygon fill="none" stroke="black" points="141,-0.5 141,-52.5 271,-52.5 271,-0.5 141,-0.5"/>
+<text text-anchor="start" x="149" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">opt3::basic_vstring</text>
+<text text-anchor="start" x="149" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char, std::char_traits</text>
+<text text-anchor="start" x="149" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char &gt;, std::allocator</text>
+<text text-anchor="middle" x="206" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char &gt; &gt;</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M287.22,-36.19C308.96,-39.03 332.69,-42.12 354.36,-44.95"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="287.44,-32.69 277.07,-34.86 286.53,-39.63 287.44,-32.69"/>
-<text text-anchor="middle" x="310.5" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00"> name</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M281.22,-36.19C302.96,-39.03 326.69,-42.12 348.36,-44.95"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="281.44,-32.69 271.07,-34.86 280.53,-39.63 281.44,-32.69"/>
+<text text-anchor="middle" x="304.5" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00"> name</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:title="STL class.">
-<polygon fill="none" stroke="#bfbfbf" points="0,-6 0,-47 110,-47 110,-6 0,-6"/>
-<text text-anchor="start" x="8" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">std::basic_string&lt;</text>
-<text text-anchor="start" x="8" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"> TChar, TCharTraits,</text>
-<text text-anchor="middle" x="55" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"> TAlloc &gt;</text>
+<g id="a_node4"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="0,-11.5 0,-41.5 104,-41.5 104,-11.5 0,-11.5"/>
+<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">std::basic_string&lt;</text>
+<text text-anchor="middle" x="52" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Char &gt;</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M120.39,-26.5C129.18,-26.5 138.2,-26.5 146.98,-26.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="120.21,-23 110.21,-26.5 120.21,-30 120.21,-23"/>
+<path fill="none" stroke="midnightblue" d="M114.19,-26.5C122.97,-26.5 132.03,-26.5 140.87,-26.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="114.04,-23 104.04,-26.5 114.04,-30 114.04,-23"/>
 </g>
 </g>
 </svg>
