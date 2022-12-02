@@ -2,7 +2,7 @@ var structcolor_1_1_r_g_b_a =
 [
     [ "base", "structcolor_1_1_r_g_b_a.html#ad1eaa02519f9af3e686ff99634dbc0ea", null ],
     [ "base", "structcolor_1_1_r_g_b_a.html#a08a74f84248dc5f1068e6e0c0443c7d5", null ],
-    [ "value", "structcolor_1_1_r_g_b_a.html#ae95635e740868c76d7c06638280de984", null ],
+    [ "value", "structcolor_1_1_r_g_b_a.html#a1044f63eb55b436f395317823276ea20", null ],
     [ "a", "structcolor_1_1_r_g_b_a.html#aeb3f3c279d8611ffd77a4a227c9b5725", null ],
     [ "a", "structcolor_1_1_r_g_b_a.html#a70248b8e6a6c163c9a98a5488749aeee", null ],
     [ "b", "structcolor_1_1_r_g_b_a.html#a5b5555b118553cbaa735ecec0224dc04", null ],

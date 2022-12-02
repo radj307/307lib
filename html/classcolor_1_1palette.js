@@ -1,14 +1,14 @@
 var classcolor_1_1palette =
 [
     [ "_reset_seq", "classcolor_1_1palette.html#a3e7ec407362b893730ca05a443bc3911", null ],
-    [ "const_iterator", "classcolor_1_1palette.html#a4f4797b4d8503e537e5f337429658bb4", null ],
+    [ "const_iterator", "classcolor_1_1palette.html#ae5a70b0f26063c5c8bb7048309816d20", null ],
     [ "container_type", "classcolor_1_1palette.html#a1ed3352fd449253d9f7f9ef14749b558", null ],
     [ "ifstream_type", "classcolor_1_1palette.html#ac95171d1cf7d5d651db727f5023366b7", null ],
-    [ "iterator", "classcolor_1_1palette.html#aa9981f6de40027e71e1b516141fdbd30", null ],
+    [ "iterator", "classcolor_1_1palette.html#a58379e27ba84165c18c3c7ec99422cb4", null ],
     [ "key_type", "classcolor_1_1palette.html#a6a091f14775d71ecd2a73ddca4991ae6", null ],
     [ "ofstream_type", "classcolor_1_1palette.html#a4f2ecf366b8bd1e4da8230ed0ab96981", null ],
     [ "pair_type", "classcolor_1_1palette.html#a99236166977e510590fca13cf185bea9", null ],
-    [ "size_type", "classcolor_1_1palette.html#a24ad369d06eecd8fb46884a109fcb7d9", null ],
+    [ "size_type", "classcolor_1_1palette.html#a5d35f96a43c5fbcef821299f35cd9e79", null ],
     [ "string_type", "classcolor_1_1palette.html#a7d38148ebe4d0ab5a340ba0a14079037", null ],
     [ "value_type", "classcolor_1_1palette.html#a299dee8924e2322f93ecd6200a884cae", null ],
     [ "palette", "classcolor_1_1palette.html#ab60c646979936e99077ea5c1db2145f2", null ],
