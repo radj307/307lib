@@ -33,9 +33,9 @@ namespace color {
 		using value_type = setcolor;
 		using pair_type = std::pair<key_type, value_type>;
 		using container_type = std::map<key_type, value_type>;
-		using size_type = container_type::size_type;
-		using iterator = container_type::iterator;
-		using const_iterator = container_type::const_iterator;
+		using size_type = typename container_type::size_type;
+		using iterator = typename container_type::iterator;
+		using const_iterator = typename container_type::const_iterator;
 	protected:
 		container_type _palette;
 		bool _enable{ true };

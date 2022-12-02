@@ -205,7 +205,7 @@ namespace color {
 		/// @brief	Base/Parent object.
 		using base = basic_color<T, T, T>;
 		using base::base;
-		using value = base::value;
+		using value = typename base::value;
 
 		/// @brief	Red channel value.
 		constexpr value r() const { return this->template get<0>(); }
@@ -233,7 +233,7 @@ namespace color {
 		/// @brief	Base/Parent object.
 		using base = basic_color<T, T, T, T>;
 		using base::base;
-		using value = base::value;
+		using value = typename base::value;
 
 		/// @brief	Red channel value.
 		constexpr value r() const { return this->template get<0>(); }
