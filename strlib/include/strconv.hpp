@@ -214,7 +214,7 @@ namespace str {
 		 * @returns string
 		 */
 		template<typename CharType> requires (sizeof(CharType) <= sizeof(wchar_t) && sizeof(CharType) >= 0ull && !std::is_same_v<CharType, bool> && !std::is_same_v<CharType, short>)
-			inline CONSTEXPR const std::string ctos(CharType c) noexcept
+			inline STRCONSTEXPR std::string ctos(CharType c) noexcept
 		{
 			return std::string(1ull, std::move(c));
 		}

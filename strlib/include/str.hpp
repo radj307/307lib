@@ -65,7 +65,7 @@ namespace str {
 	static T shortest(const T& fst, const Ts&... strings) { return compare<T>([](const T& l, const T& r) { return l.size() > r.size(); }, fst, strings...); }
 
 	template<var::valid_string T, template<class, class> class Cont>
-	static Cont<T, std::allocator<T>>::const_iterator longest(const Cont<T, std::allocator<T>>& strings)
+	static typename Cont<T, std::allocator<T>>::const_iterator longest(const Cont<T, std::allocator<T>>& strings)
 	{
 		auto longest{ strings.end() };
 		for (auto str{ strings.begin() }; str != strings.end(); ++str)
@@ -74,7 +74,7 @@ namespace str {
 		return longest;
 	}
 	template<var::valid_string T, template<class, class> class Cont>
-	static Cont<T, std::allocator<T>>::const_iterator shortest(const Cont<T, std::allocator<T>>& strings)
+	static typename Cont<T, std::allocator<T>>::const_iterator shortest(const Cont<T, std::allocator<T>>& strings)
 	{
 		auto shortest{ strings.end() };
 		for (auto str{ strings.begin() }; str != strings.end(); ++str)
@@ -84,7 +84,7 @@ namespace str {
 	}
 
 	template<bool index, var::valid_string T, template<class...> class Cont>
-	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator longest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
+	static typename Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator longest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto longest{ strings.end() };
 		for (auto strpr{ strings.begin() }; strpr != strings.end(); ++strpr)
@@ -93,7 +93,7 @@ namespace str {
 		return longest;
 	}
 	template<bool index, var::valid_string T, template<class...> class Cont>
-	static Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator shortest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
+	static typename Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>::const_iterator shortest(const Cont<std::pair<T, T>, std::allocator<std::pair<T, T>>>& strings)
 	{
 		auto shortest{ strings.end() };
 		for (auto strpr{ strings.begin() }; strpr != strings.end(); ++strpr)
@@ -111,7 +111,7 @@ namespace str {
 	 * @returns			Cont::const_iterator
 	 */
 	template<size_t index, var::valid_string... Ts, template<class...> class Cont>
-	static Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator longest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
+	static typename Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator longest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
 	{
 		static_assert(index < sizeof...(Ts), "str::longest()\tCannot specify out-of-bounds index!");
 		auto longest{ strings.end() };
@@ -129,7 +129,7 @@ namespace str {
 	 * @returns			Cont::const_iterator
 	 */
 	template<size_t index, var::valid_string... Ts, template<class...> class Cont>
-	static Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator shortest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
+	static typename Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>::const_iterator shortest(const Cont<std::tuple<Ts...>, std::allocator<std::tuple<Ts...>>>& strings)
 	{
 		static_assert(index < sizeof...(Ts), "str::longest()\tCannot specify out-of-bounds index!");
 		auto shortest{ strings.end() };
