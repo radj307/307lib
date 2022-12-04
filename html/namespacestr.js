@@ -4,7 +4,7 @@ var namespacestr =
       [ "NumberGrouping", "classstr_1_1facet_1_1_number_grouping.html", "classstr_1_1facet_1_1_number_grouping" ]
     ] ],
     [ "legacy", null, [
-      [ "requires", "strconv_8hpp.html#aad135677615582774e2f6c4076a7dc87", null ],
+      [ "requires", "strconv_8hpp.html#af4629a20168e107072809efc2e6f2463", null ],
       [ "stob", "strconv_8hpp.html#ae4586985e468461709dc187788868135", null ],
       [ "stod", "strconv_8hpp.html#a94952f508d5e64a43b48cb377eb5d472", null ],
       [ "stof", "strconv_8hpp.html#aa00b850f930f3b70f108914ae87198ed", null ],
