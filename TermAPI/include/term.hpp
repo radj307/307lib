@@ -24,6 +24,9 @@
 
 #ifdef OS_WIN
 #include <conio.h> //< For Windows-specific `_kbhit()` & `_getch()` functions.
+#else
+#include <termios.h>
+#include <stdio.h>
 #endif
 
  /**
@@ -54,6 +57,28 @@ namespace term {
 		}
 	}
 
+#ifndef OS_WIN
+	static struct termios old, current;
+
+	// Changes the terminal settings; disables buffered I/O, and optionally enables echo when a key is pressed.
+	void initTermios(bool echo = false)
+	{
+		tcgetattr(0, &old);
+		current = old;
+		current.c_lflag &= ~ICANON; //< disable buffered I/O
+		if (echo)
+			current.c_lflag |= ECHO;
+		else
+			current.c_lflag &= ~ECHO;
+		tcsetattr(0, TCSANOW, &current);
+	}
+	// Resets the terminal settings to their default, pre-`initTermios` state.
+	void resetTermios()
+	{
+		tcsetattr(0, TCSANOW, &old);
+	}
+#endif
+
 	/**
 	 * @brief			Check if a key was pressed.
 	 *\n				On windows, this uses `_kbhit`, while on linux, it uses `hasPendingDataSTDIN` (which uses `select()`).
@@ -61,27 +86,38 @@ namespace term {
 	 */
 	inline bool kbhit()
 	{
-#		ifdef OS_WIN
+	#ifdef OS_WIN
 		return _kbhit() != 0;
-#		else
-		return hasPendingDataSTDIN();
-#		endif
+	#else
+		initTermios();  //< disable buffered I/O
+		const auto hasData{ hasPendingDataSTDIN() };
+		resetTermios(); //< reset
+		return hasData;
+	#endif
 	}
 
 	/**
 	 * @brief			Get a single keypress from STDIN, without blocking.
-	 *\n				On windows, this uses _getch(), while on linux, it uses getchar_unlocked().
+	 *\n				On windows, this uses _getch(), while on linux, it uses getchar() or getchar_unlocked().
 	 * @returns	int:	The key code of the pressed key.
 	 *\n				Note that function & arrow keys will insert 2 characters into the STDIN
 	 *					 buffer, and will require calling getch() twice to retrieve both characters.
 	 */
 	inline int getch()
 	{
-#		ifdef OS_WIN
+	#ifdef OS_WIN
 		return _getch();
-#		else
-		return getchar_unlocked();
-#		endif
+	#else
+		char c;
+		initTermios(); //< disable buffered I/O
+	#ifdef MULTITHREADING_CAPABLE
+		c = getchar(); //< reset
+	#else
+		c = getchar_unlocked(); //< this is faster but isn't thread-safe
+	#endif
+		resetTermios();
+		return c;
+	#endif
 	}
 
 	/// @brief	Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.
@@ -411,11 +447,11 @@ namespace term {
 	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SGR(const Ts&... modes)
 	{
-#		ifdef OS_WIN
+	#		ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
-#		else
+	#		else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
-#		endif
+	#		endif
 	}
 
 	template<var::streamable... Ts>
