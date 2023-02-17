@@ -49,7 +49,7 @@ struct MeaninglessIndirection {
 			}
 		}
 		// notify the 'onContainsPunctuationCalled' event with the results:
-		onCall.notify(nameContainsPunctation, name);
+		onContainsPunctuationCalled.notify(nameContainsPunctation, name);
 	}
 
 };
@@ -68,7 +68,7 @@ inline void ExampleHandlerFunction(void* sender, EventArgs* const ev_args)
 
 void example_use()
 {
-	MeaninglessIndirection::onInstanceCreated.add(CallbackEventHandler([](void* sender, EventArgs* const ev_args) {	//< Create an rvalue callback handler using a lambda.
+	MeaninglessIndirection::onInstanceCreated.add(CallbackEventHandler([](void* sender, EventArgs* const ev_args) {	//< Create a callback handler using a lambda.
 		std::cout << "New Instance of type `MeaninglessIndirection` created." << std::endl;
 	}));
 
@@ -76,7 +76,7 @@ void example_use()
 
 	foo.onContainsPunctuationCalled += CallbackEventHandler(ExampleHandlerFunction);
 
-	foo.call("Hello");																					//< ExampleHandlerFunction is called
+	foo.ContainsPunctuation("Hello");																	//< ExampleHandlerFunction is called
 
-	foo.call("World!");
-}																										//< The lambda callback handler we added to the onInstanceCreated event is removed because it goes out-of-scope.
+	foo.ContainsPunctuation("World!");																	//< ExampleHandlerFunction is called again
+}																										//< The callback handler we added to the onInstanceCreated event is removed because it goes out-of-scope.
