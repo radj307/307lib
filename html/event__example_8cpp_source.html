@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('event__example_8cpp_source.html',''); 
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// notify the &#39;onContainsPunctuationCalled&#39; event with the results:</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        onCall.notify(nameContainsPunctation, name);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        onContainsPunctuationCalled.notify(nameContainsPunctation, name);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('event__example_8cpp_source.html',''); 
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> example_use()</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    MeaninglessIndirection::onInstanceCreated.add(CallbackEventHandler([](<span class="keywordtype">void</span>* sender, EventArgs* <span class="keyword">const</span> ev_args) { <span class="comment">//&lt; Create an rvalue callback handler using a lambda.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    MeaninglessIndirection::onInstanceCreated.add(CallbackEventHandler([](<span class="keywordtype">void</span>* sender, EventArgs* <span class="keyword">const</span> ev_args) { <span class="comment">//&lt; Create a callback handler using a lambda.</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;New Instance of type `MeaninglessIndirection` created.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -167,10 +167,10 @@ $(document).ready(function(){initNavTree('event__example_8cpp_source.html',''); 
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    foo.onContainsPunctuationCalled += CallbackEventHandler(ExampleHandlerFunction);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    foo.call(<span class="stringliteral">&quot;Hello&quot;</span>);                                                                                  <span class="comment">//&lt; ExampleHandlerFunction is called</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    foo.ContainsPunctuation(<span class="stringliteral">&quot;Hello&quot;</span>);                                                                   <span class="comment">//&lt; ExampleHandlerFunction is called</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    foo.call(<span class="stringliteral">&quot;World!&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}                                                                                                       <span class="comment">//&lt; The lambda callback handler we added to the onInstanceCreated event is removed because it goes out-of-scope.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    foo.ContainsPunctuation(<span class="stringliteral">&quot;World!&quot;</span>);                                                                  <span class="comment">//&lt; ExampleHandlerFunction is called again</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}                                                                                                       <span class="comment">//&lt; The callback handler we added to the onInstanceCreated event is removed because it goes out-of-scope.</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -17,8 +17,6 @@ var hierarchy =
       [ "term::basic_colorpalette< KeyType, SequenceType >", "classterm_1_1basic__colorpalette.html", null ]
     ] ],
     [ "shared::basic_event_args", "structshared_1_1basic__event__args.html", [
-      [ "ini::basic_ini< TKeyComparator >::onReadArgs", "structini_1_1basic__ini_1_1on_read_args.html", null ],
-      [ "ini::basic_ini< TKeyComparator >::onWriteArgs", "structini_1_1basic__ini_1_1on_write_args.html", null ],
       [ "myEventArgs", "structmy_event_args.html", null ],
       [ "shared::tuple_event_args< TArgs >", "structshared_1_1tuple__event__args.html", null ]
     ] ],
@@ -56,10 +54,7 @@ var hierarchy =
     [ "rng::EngineWrapper< std::mt19937 >", "classrng_1_1_engine_wrapper.html", null ],
     [ "shared::eventdef< TArgs >", "classshared_1_1eventdef.html", null ],
     [ "shared::eventdef< EventArgs >", "classshared_1_1eventdef.html", null ],
-    [ "shared::eventdef< ini::basic_ini::onReadArgs >", "classshared_1_1eventdef.html", null ],
-    [ "shared::eventdef< ini::basic_ini::onWriteArgs >", "classshared_1_1eventdef.html", null ],
     [ "shared::eventdef< myEventArgs >", "classshared_1_1eventdef.html", null ],
-    [ "shared::eventdef< shared::basic_event_args >", "classshared_1_1eventdef.html", null ],
     [ "std::exception", null, [
       [ "ex::except", "classex_1_1except.html", [
         [ "missing_arguments_except", "structmissing__arguments__except.html", null ],
@@ -95,13 +90,13 @@ var hierarchy =
     ] ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
+    [ "token::base::LexemeDictBase< Lexeme >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
+      [ "xml::parser::LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", null ]
+    ] ],
     [ "token::base::LexemeDictBase< LEXEME >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
       [ "json::parser::LexemeDictionary", "structjson_1_1parser_1_1_lexeme_dictionary.html", null ],
       [ "opt::token::LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", null ],
       [ "token::DefaultDefs::LexemeDict", "structtoken_1_1_default_defs_1_1_lexeme_dict.html", null ]
-    ] ],
-    [ "token::base::LexemeDictBase< Lexeme >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
-      [ "xml::parser::LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", null ]
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],

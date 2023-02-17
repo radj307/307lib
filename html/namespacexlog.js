@@ -11,7 +11,6 @@ var namespacexlog =
     [ "Buffer", "namespacexlog.html#a4eae54f1c095fe3028ff66ef28f62513", null ],
     [ "msg_break_t", "namespacexlog.html#a436882d6f9c6e3403fec2e65c4b89dc2", null ],
     [ "include_all_below", "namespacexlog.html#a84387da6f1581d51c44e0c66e1167c71", null ],
-    [ "message_to_level", "namespacexlog.html#a4d1127726a029820f89465d469cafcc3", null ],
     [ "swap_buffer", "namespacexlog.html#ae0ca6a61194cc2173ac16a64a7349fd1", null ],
     [ "swap_buffer", "namespacexlog.html#ac687798f75e93c5c1adb49552730ec4e", null ],
     [ "crit", "namespacexlog.html#a5df9b16f9b63148db36881baca811818", null ],

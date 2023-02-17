@@ -24,16 +24,16 @@ var namespacestr =
     ] ],
     [ "optional", null, [
       [ "sto", "strconv_8hpp.html#ad3c45167debf1f2363f467b9e05f6ff2", null ],
-      [ "sto", "strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc", null ],
+      [ "sto", "strconv_8hpp.html#afb9923acda0cb9cab62c89d94a63df13", null ],
       [ "stod", "strconv_8hpp.html#aa2060a7dff48c5c09b55c2aba12900ec", null ],
       [ "stof", "strconv_8hpp.html#a1676f79b9905e77f5b9be7f4befd523d", null ],
-      [ "stoi", "strconv_8hpp.html#a351517219af2a9c512f9a09554b5b530", null ],
-      [ "stol", "strconv_8hpp.html#adb21e6334e41c8ed96da69eaf8d414ce", null ],
+      [ "stoi", "strconv_8hpp.html#a81b7c79b79bdc6959d171678610787eb", null ],
+      [ "stol", "strconv_8hpp.html#acc4547f86cc5847baa1eed30b8d91cb3", null ],
       [ "stold", "strconv_8hpp.html#a1a99dc990ff9a8b043727d3910202914", null ],
-      [ "stoll", "strconv_8hpp.html#ab7da731bb16960ab119048356e14eac1", null ],
-      [ "stoui", "strconv_8hpp.html#aafed4845d5b2a67c29087eb33c4ab83a", null ],
-      [ "stoul", "strconv_8hpp.html#a2c08701e978014060eb16ac475840dcb", null ],
-      [ "stoull", "strconv_8hpp.html#a3452a9c740a65e466e0b298924f993d5", null ]
+      [ "stoll", "strconv_8hpp.html#a64fbf3b00d9992824496266cd9f578c6", null ],
+      [ "stoui", "strconv_8hpp.html#aacfcda67966e6bac34927bae5410b3ac", null ],
+      [ "stoul", "strconv_8hpp.html#add49a4da384b4071fefaed7d4728b359", null ],
+      [ "stoull", "strconv_8hpp.html#ac9946106deaa27a459566d7fda096dc5", null ]
     ] ],
     [ "stdpred", null, [
       [ "is_", "charcompare_8hpp.html#af3f15b466455ba4074c694e7f6f93f70", null ],

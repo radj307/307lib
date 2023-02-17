@@ -141,10 +141,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ad3c45167debf1f2363f467b9e05f6ff2"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ad3c45167debf1f2363f467b9e05f6ff2">str::optional::sto</a> (const std::function&lt; T(const char *, char **)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr)</td></tr>
 <tr class="memdesc:ad3c45167debf1f2363f467b9e05f6ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of a decimal floating-point number to a floating-point number.  <a href="strconv_8hpp.html#ad3c45167debf1f2363f467b9e05f6ff2">More...</a><br /></td></tr>
 <tr class="separator:ad3c45167debf1f2363f467b9e05f6ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0215db0125fa67b33ab8529511b504bc"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:a0215db0125fa67b33ab8529511b504bc"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc">str::optional::sto</a> (const std::function&lt; T(const char *, char **, int)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:a0215db0125fa67b33ab8529511b504bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given string to an integer type.  <a href="strconv_8hpp.html#a0215db0125fa67b33ab8529511b504bc">More...</a><br /></td></tr>
-<tr class="separator:a0215db0125fa67b33ab8529511b504bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb9923acda0cb9cab62c89d94a63df13"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
+<tr class="memitem:afb9923acda0cb9cab62c89d94a63df13"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#afb9923acda0cb9cab62c89d94a63df13">str::optional::sto</a> (const std::function&lt; T(const char *, char **, int)&gt; &amp;converter, const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:afb9923acda0cb9cab62c89d94a63df13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given string to an integer type.  <a href="strconv_8hpp.html#afb9923acda0cb9cab62c89d94a63df13">More...</a><br /></td></tr>
+<tr class="separator:afb9923acda0cb9cab62c89d94a63df13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4586985e468461709dc187788868135"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ae4586985e468461709dc187788868135">str::legacy::stob</a> (std::string str) noexcept</td></tr>
 <tr class="memdesc:ae4586985e468461709dc187788868135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a non-optional boolean with the following rules: <br  />
  - Returns true if the input string is (case-insensitive) equal to "true". <br  />
@@ -168,18 +168,18 @@ Functions</h2></td></tr>
 <tr class="memitem:aa00b850f930f3b70f108914ae87198ed"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aa00b850f930f3b70f108914ae87198ed">str::legacy::stof</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
 <tr class="memdesc:aa00b850f930f3b70f108914ae87198ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to float. Wrapper for std::stof that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#aa00b850f930f3b70f108914ae87198ed">More...</a><br /></td></tr>
 <tr class="separator:aa00b850f930f3b70f108914ae87198ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351517219af2a9c512f9a09554b5b530"><td class="memItemLeft" align="right" valign="top">std::optional&lt; signed int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a351517219af2a9c512f9a09554b5b530">str::optional::stoi</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:a351517219af2a9c512f9a09554b5b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a351517219af2a9c512f9a09554b5b530">More...</a><br /></td></tr>
-<tr class="separator:a351517219af2a9c512f9a09554b5b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b7c79b79bdc6959d171678610787eb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; signed int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a81b7c79b79bdc6959d171678610787eb">str::optional::stoi</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a81b7c79b79bdc6959d171678610787eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a81b7c79b79bdc6959d171678610787eb">More...</a><br /></td></tr>
+<tr class="separator:a81b7c79b79bdc6959d171678610787eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad15a09e1f1896bc59792a58fe8e1fbe9">str::stoi</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#ad15a09e1f1896bc59792a58fe8e1fbe9">More...</a><br /></td></tr>
 <tr class="separator:ad15a09e1f1896bc59792a58fe8e1fbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08c816651aa499155ba4d494ddeb96e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a08c816651aa499155ba4d494ddeb96e7">str::legacy::stoi</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
 <tr class="memdesc:a08c816651aa499155ba4d494ddeb96e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to int. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a08c816651aa499155ba4d494ddeb96e7">More...</a><br /></td></tr>
 <tr class="separator:a08c816651aa499155ba4d494ddeb96e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#adb21e6334e41c8ed96da69eaf8d414ce">str::optional::stol</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:adb21e6334e41c8ed96da69eaf8d414ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#adb21e6334e41c8ed96da69eaf8d414ce">More...</a><br /></td></tr>
-<tr class="separator:adb21e6334e41c8ed96da69eaf8d414ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4547f86cc5847baa1eed30b8d91cb3"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#acc4547f86cc5847baa1eed30b8d91cb3">str::optional::stol</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:acc4547f86cc5847baa1eed30b8d91cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#acc4547f86cc5847baa1eed30b8d91cb3">More...</a><br /></td></tr>
+<tr class="separator:acc4547f86cc5847baa1eed30b8d91cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#abf4cc36f0f7fbc735d3a7a282b8d9684">str::stol</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#abf4cc36f0f7fbc735d3a7a282b8d9684">More...</a><br /></td></tr>
 <tr class="separator:abf4cc36f0f7fbc735d3a7a282b8d9684"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +195,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a47632826bef1d3d645b95efb97963f75"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a47632826bef1d3d645b95efb97963f75">str::legacy::stold</a> (const std::string &amp;str, size_t *nextCh=nullptr) noexcept</td></tr>
 <tr class="memdesc:a47632826bef1d3d645b95efb97963f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to double. Wrapper for std::stod that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a47632826bef1d3d645b95efb97963f75">More...</a><br /></td></tr>
 <tr class="separator:a47632826bef1d3d645b95efb97963f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7da731bb16960ab119048356e14eac1"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ab7da731bb16960ab119048356e14eac1">str::optional::stoll</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:ab7da731bb16960ab119048356e14eac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#ab7da731bb16960ab119048356e14eac1">More...</a><br /></td></tr>
-<tr class="separator:ab7da731bb16960ab119048356e14eac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64fbf3b00d9992824496266cd9f578c6"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a64fbf3b00d9992824496266cd9f578c6">str::optional::stoll</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:a64fbf3b00d9992824496266cd9f578c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a64fbf3b00d9992824496266cd9f578c6">More...</a><br /></td></tr>
+<tr class="separator:a64fbf3b00d9992824496266cd9f578c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2eb07fec74c9d4fc331166f5c7320aa0">str::stoll</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to long long. Wrapper for std::stol that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a2eb07fec74c9d4fc331166f5c7320aa0">More...</a><br /></td></tr>
 <tr class="separator:a2eb07fec74c9d4fc331166f5c7320aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,27 +210,27 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a0d44a864d1ccf7ebe8af66ae1e36f00e">str::legacy::stos</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
 <tr class="memdesc:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to short. Wrapper for std::stoi that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a0d44a864d1ccf7ebe8af66ae1e36f00e">More...</a><br /></td></tr>
 <tr class="separator:a0d44a864d1ccf7ebe8af66ae1e36f00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aafed4845d5b2a67c29087eb33c4ab83a">str::optional::stoui</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:aafed4845d5b2a67c29087eb33c4ab83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#aafed4845d5b2a67c29087eb33c4ab83a">More...</a><br /></td></tr>
-<tr class="separator:aafed4845d5b2a67c29087eb33c4ab83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfcda67966e6bac34927bae5410b3ac"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#aacfcda67966e6bac34927bae5410b3ac">str::optional::stoui</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:aacfcda67966e6bac34927bae5410b3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#aacfcda67966e6bac34927bae5410b3ac">More...</a><br /></td></tr>
+<tr class="separator:aacfcda67966e6bac34927bae5410b3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff81b4fb51f25b185a6e0f219023631b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aff81b4fb51f25b185a6e0f219023631b">str::stoui</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:aff81b4fb51f25b185a6e0f219023631b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#aff81b4fb51f25b185a6e0f219023631b">More...</a><br /></td></tr>
 <tr class="separator:aff81b4fb51f25b185a6e0f219023631b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825c7c1cc5b99699c007bf36b1dc936d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a825c7c1cc5b99699c007bf36b1dc936d">str::legacy::stoui</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
 <tr class="memdesc:a825c7c1cc5b99699c007bf36b1dc936d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned int. Wrapper for static_cast&lt;unsigned&gt;(std::stoi) that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#a825c7c1cc5b99699c007bf36b1dc936d">More...</a><br /></td></tr>
 <tr class="separator:a825c7c1cc5b99699c007bf36b1dc936d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c08701e978014060eb16ac475840dcb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a2c08701e978014060eb16ac475840dcb">str::optional::stoul</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:a2c08701e978014060eb16ac475840dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a2c08701e978014060eb16ac475840dcb">More...</a><br /></td></tr>
-<tr class="separator:a2c08701e978014060eb16ac475840dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add49a4da384b4071fefaed7d4728b359"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#add49a4da384b4071fefaed7d4728b359">str::optional::stoul</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:add49a4da384b4071fefaed7d4728b359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#add49a4da384b4071fefaed7d4728b359">More...</a><br /></td></tr>
+<tr class="separator:add49a4da384b4071fefaed7d4728b359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad150ce9485904ee33e3593e783324b09"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad150ce9485904ee33e3593e783324b09">str::stoul</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ad150ce9485904ee33e3593e783324b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#ad150ce9485904ee33e3593e783324b09">More...</a><br /></td></tr>
 <tr class="separator:ad150ce9485904ee33e3593e783324b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe2625dbabfa859e85f944706af41b01"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#abe2625dbabfa859e85f944706af41b01">str::legacy::stoul</a> (const std::string &amp;str, size_t *nextCh=nullptr, int base=10) noexcept</td></tr>
 <tr class="memdesc:abe2625dbabfa859e85f944706af41b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="strconv_8hpp.html#abe2625dbabfa859e85f944706af41b01">More...</a><br /></td></tr>
 <tr class="separator:abe2625dbabfa859e85f944706af41b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3452a9c740a65e466e0b298924f993d5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#a3452a9c740a65e466e0b298924f993d5">str::optional::stoull</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const size_t &amp;base=10ull) noexcept</td></tr>
-<tr class="memdesc:a3452a9c740a65e466e0b298924f993d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#a3452a9c740a65e466e0b298924f993d5">More...</a><br /></td></tr>
-<tr class="separator:a3452a9c740a65e466e0b298924f993d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9946106deaa27a459566d7fda096dc5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strconv_8hpp.html#ac9946106deaa27a459566d7fda096dc5">str::optional::stoull</a> (const std::string &amp;s, size_t *nextAfter=nullptr, const int &amp;base=10ull) noexcept</td></tr>
+<tr class="memdesc:ac9946106deaa27a459566d7fda096dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string representation of an integer in any base to a decimal integer type.  <a href="strconv_8hpp.html#ac9946106deaa27a459566d7fda096dc5">More...</a><br /></td></tr>
+<tr class="separator:ac9946106deaa27a459566d7fda096dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a424d7e0db015c773dd069f863c2742e0"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a424d7e0db015c773dd069f863c2742e0">str::stoull</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a424d7e0db015c773dd069f863c2742e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long. Wrapper for std::stoul that can be passed as std::function. Does not throw exceptions.  <a href="namespacestr.html#a424d7e0db015c773dd069f863c2742e0">More...</a><br /></td></tr>
 <tr class="separator:a424d7e0db015c773dd069f863c2742e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -384,8 +384,8 @@ template&lt;std::floating_point T&gt; </div>
 
 </div>
 </div>
-<a id="a0215db0125fa67b33ab8529511b504bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0215db0125fa67b33ab8529511b504bc">&#9670;&nbsp;</a></span>sto() <span class="overload">[2/2]</span></h2>
+<a id="afb9923acda0cb9cab62c89d94a63df13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9923acda0cb9cab62c89d94a63df13">&#9670;&nbsp;</a></span>sto() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +416,7 @@ template&lt;std::integral T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -702,8 +702,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a351517219af2a9c512f9a09554b5b530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a351517219af2a9c512f9a09554b5b530">&#9670;&nbsp;</a></span>stoi() <span class="overload">[1/2]</span></h2>
+<a id="a81b7c79b79bdc6959d171678610787eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b7c79b79bdc6959d171678610787eb">&#9670;&nbsp;</a></span>stoi() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,7 +726,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -817,8 +817,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="adb21e6334e41c8ed96da69eaf8d414ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb21e6334e41c8ed96da69eaf8d414ce">&#9670;&nbsp;</a></span>stol() <span class="overload">[1/2]</span></h2>
+<a id="acc4547f86cc5847baa1eed30b8d91cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4547f86cc5847baa1eed30b8d91cb3">&#9670;&nbsp;</a></span>stol() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,7 +841,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -1033,8 +1033,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ab7da731bb16960ab119048356e14eac1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7da731bb16960ab119048356e14eac1">&#9670;&nbsp;</a></span>stoll() <span class="overload">[1/2]</span></h2>
+<a id="a64fbf3b00d9992824496266cd9f578c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64fbf3b00d9992824496266cd9f578c6">&#9670;&nbsp;</a></span>stoll() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1057,7 +1057,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -1202,8 +1202,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aafed4845d5b2a67c29087eb33c4ab83a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafed4845d5b2a67c29087eb33c4ab83a">&#9670;&nbsp;</a></span>stoui() <span class="overload">[1/2]</span></h2>
+<a id="aacfcda67966e6bac34927bae5410b3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfcda67966e6bac34927bae5410b3ac">&#9670;&nbsp;</a></span>stoui() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1226,7 +1226,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -1312,8 +1312,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2c08701e978014060eb16ac475840dcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c08701e978014060eb16ac475840dcb">&#9670;&nbsp;</a></span>stoul() <span class="overload">[1/2]</span></h2>
+<a id="add49a4da384b4071fefaed7d4728b359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add49a4da384b4071fefaed7d4728b359">&#9670;&nbsp;</a></span>stoul() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1336,7 +1336,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>
@@ -1427,8 +1427,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3452a9c740a65e466e0b298924f993d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3452a9c740a65e466e0b298924f993d5">&#9670;&nbsp;</a></span>stoull() <span class="overload">[1/2]</span></h2>
+<a id="ac9946106deaa27a459566d7fda096dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9946106deaa27a459566d7fda096dc5">&#9670;&nbsp;</a></span>stoull() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1451,7 +1451,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>base</em> = <code>10ull</code>&#160;</td>
         </tr>
         <tr>

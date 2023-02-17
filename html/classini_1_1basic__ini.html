@@ -86,10 +86,8 @@ $(document).ready(function(){initNavTree('classini_1_1basic__ini.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -103,21 +101,7 @@ $(document).ready(function(){initNavTree('classini_1_1basic__ini.html',''); init
  <a href="classini_1_1basic__ini.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for ini::basic_ini&lt; TKeyComparator &gt;:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini__coll__graph.svg" width="568" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1basic__ini_1_1on_read_args.html">onReadArgs</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event arguments for the onRead event.  <a href="structini_1_1basic__ini_1_1on_read_args.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structini_1_1basic__ini_1_1on_write_args.html">onWriteArgs</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event arguments for the onWrite event.  <a href="structini_1_1basic__ini_1_1on_write_args.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab17ff63a60c6673a10261c4dc5fce898"><td class="memItemLeft" align="right" valign="top"><a id="ab17ff63a60c6673a10261c4dc5fce898"></a>
@@ -146,10 +130,6 @@ Public Member Functions</h2></td></tr>
 template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &gt;&gt;... Ts&gt; </td></tr>
 <tr class="memitem:a046ddb0e34a20d4751cf9007c55407f4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>basic_ini</b> (Ts &amp;&amp;... sections)</td></tr>
 <tr class="separator:a046ddb0e34a20d4751cf9007c55407f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4514406be53038e74354edca10e4259"><td class="memItemLeft" align="right" valign="top"><a id="af4514406be53038e74354edca10e4259"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af4514406be53038e74354edca10e4259">~basic_ini</a> () noexcept</td></tr>
-<tr class="memdesc:af4514406be53038e74354edca10e4259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Destructor. Triggers the <code>onDestruct</code> event. <br /></td></tr>
-<tr class="separator:af4514406be53038e74354edca10e4259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a259f9f099321501678c506be218ff6dd"><td class="memItemLeft" align="right" valign="top">const section_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">at</a> (std::string const &amp;header) const noexcept(false)</td></tr>
 <tr class="memdesc:a259f9f099321501678c506be218ff6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an immutable reference to the section with the given header.  <a href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">More...</a><br /></td></tr>
 <tr class="separator:a259f9f099321501678c506be218ff6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,9 +171,30 @@ template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &g
 <tr class="memitem:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a252b8d0d265c6e7d79fcf6539c4771f2">get</a> (std::string &amp;&amp;header, std::string &amp;&amp;key) const noexcept</td></tr>
 <tr class="memdesc:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#a252b8d0d265c6e7d79fcf6539c4771f2">More...</a><br /></td></tr>
 <tr class="separator:a252b8d0d265c6e7d79fcf6539c4771f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af621139af646a3bb64cdb495ed4aa540"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af621139af646a3bb64cdb495ed4aa540">get</a> (std::string &amp;&amp;header, std::string const &amp;key) const noexcept</td></tr>
+<tr class="memdesc:af621139af646a3bb64cdb495ed4aa540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#af621139af646a3bb64cdb495ed4aa540">More...</a><br /></td></tr>
+<tr class="separator:af621139af646a3bb64cdb495ed4aa540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fb4bd734a7ed21b0a9b8205aec381fa"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a7fb4bd734a7ed21b0a9b8205aec381fa">get</a> (std::string const &amp;header, std::string &amp;&amp;key) const noexcept</td></tr>
+<tr class="memdesc:a7fb4bd734a7ed21b0a9b8205aec381fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#a7fb4bd734a7ed21b0a9b8205aec381fa">More...</a><br /></td></tr>
+<tr class="separator:a7fb4bd734a7ed21b0a9b8205aec381fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1660e149a5c9153b93942fae692c6ff6"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classini_1_1ini__value.html">ini_value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a1660e149a5c9153b93942fae692c6ff6">get</a> (std::string const &amp;header, std::string const &amp;key) const noexcept</td></tr>
 <tr class="memdesc:a1660e149a5c9153b93942fae692c6ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key.  <a href="classini_1_1basic__ini.html#a1660e149a5c9153b93942fae692c6ff6">More...</a><br /></td></tr>
 <tr class="separator:a1660e149a5c9153b93942fae692c6ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8eb466697ed0175424b2f7c1d36ea49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af8eb466697ed0175424b2f7c1d36ea49">get_or</a> (std::string &amp;&amp;header, std::string &amp;&amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:af8eb466697ed0175424b2f7c1d36ea49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or a default value if it doesn't exist.  <a href="classini_1_1basic__ini.html#af8eb466697ed0175424b2f7c1d36ea49">More...</a><br /></td></tr>
+<tr class="separator:af8eb466697ed0175424b2f7c1d36ea49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d4b3d88dd6c643b01d1d5875a1cb37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ac4d4b3d88dd6c643b01d1d5875a1cb37">get_or</a> (std::string &amp;&amp;header, std::string const &amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:ac4d4b3d88dd6c643b01d1d5875a1cb37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or a default value if it doesn't exist.  <a href="classini_1_1basic__ini.html#ac4d4b3d88dd6c643b01d1d5875a1cb37">More...</a><br /></td></tr>
+<tr class="separator:ac4d4b3d88dd6c643b01d1d5875a1cb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992b774b9f69cf0faf46d217b479080a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a992b774b9f69cf0faf46d217b479080a">get_or</a> (std::string const &amp;header, std::string &amp;&amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:a992b774b9f69cf0faf46d217b479080a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or a default value if it doesn't exist.  <a href="classini_1_1basic__ini.html#a992b774b9f69cf0faf46d217b479080a">More...</a><br /></td></tr>
+<tr class="separator:a992b774b9f69cf0faf46d217b479080a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e13beb5e778938d198b04eefed36fe5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a9e13beb5e778938d198b04eefed36fe5">get_or</a> (std::string const &amp;header, std::string const &amp;key, <a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:a9e13beb5e778938d198b04eefed36fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the specified key, or a default value if it doesn't exist.  <a href="classini_1_1basic__ini.html#a9e13beb5e778938d198b04eefed36fe5">More...</a><br /></td></tr>
+<tr class="separator:a9e13beb5e778938d198b04eefed36fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23e95469e2b663013814e523b2a199e"><td class="memItemLeft" align="right" valign="top"><a id="ac23e95469e2b663013814e523b2a199e"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>insert_or_assign</b> (auto &amp;&amp;header, auto &amp;&amp;key, auto &amp;&amp;value)</td></tr>
+<tr class="separator:ac23e95469e2b663013814e523b2a199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">mask</a> (const mask_t &amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
 <tr class="memdesc:a212e0a2936a217ec53b2f81d64c44e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">More...</a><br /></td></tr>
 <tr class="separator:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,25 +238,6 @@ template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &g
 <tr class="memitem:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524">write</a> (std::filesystem::path const &amp;path) const noexcept(false)</td></tr>
 <tr class="memdesc:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle.  <a href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524">More...</a><br /></td></tr>
 <tr class="separator:ad2fd7c1fb9c304188fc05030ab4a6524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a435c59455e91b087fa585aa974b20876"><td class="memItemLeft" align="right" valign="top"><a id="a435c59455e91b087fa585aa974b20876"></a>
-<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structshared_1_1basic__event__args.html">shared::basic_event_args</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a435c59455e91b087fa585aa974b20876">onDestruct</a></td></tr>
-<tr class="memdesc:a435c59455e91b087fa585aa974b20876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when this instance's destructor is called. <br /></td></tr>
-<tr class="separator:a435c59455e91b087fa585aa974b20876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="memItemLeft" align="right" valign="top"><a id="ad7db8c4dd2759b000b4bc3a94fa02b06"></a>
-<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structshared_1_1basic__event__args.html">shared::basic_event_args</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ad7db8c4dd2759b000b4bc3a94fa02b06">onMerge</a></td></tr>
-<tr class="memdesc:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when another INI container or mask is merged into this instance using <a class="el" href="classini_1_1basic__ini.html#a42f4dcdffdae372bc20e8fe3aaf88e8c" title="See ini::deep_merge.">deep_merge()</a>. <br /></td></tr>
-<tr class="separator:ad7db8c4dd2759b000b4bc3a94fa02b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8674cff776626f78139e88682c41f4c0"><td class="memItemLeft" align="right" valign="top"><a id="a8674cff776626f78139e88682c41f4c0"></a>
-<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structini_1_1basic__ini_1_1on_read_args.html">onReadArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a8674cff776626f78139e88682c41f4c0">onRead</a></td></tr>
-<tr class="memdesc:a8674cff776626f78139e88682c41f4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when the INI is read from disk using <a class="el" href="classini_1_1basic__ini.html#aa159a11a90d4cc8e98c236b4807c3f4b" title="Reads the specified INI config file and merges its contents into this instance according to the given...">read()</a>. <br /></td></tr>
-<tr class="separator:a8674cff776626f78139e88682c41f4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7897fe4ce3121eae468149b20433cd6c"><td class="memItemLeft" align="right" valign="top"><a id="a7897fe4ce3121eae468149b20433cd6c"></a>
-<a class="el" href="classshared_1_1eventdef.html">shared::eventdef</a>&lt; <a class="el" href="structini_1_1basic__ini_1_1on_write_args.html">onWriteArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a7897fe4ce3121eae468149b20433cd6c">onWrite</a></td></tr>
-<tr class="memdesc:a7897fe4ce3121eae468149b20433cd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback triggered when the INI is written to disk using <a class="el" href="classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524" title="Reads the specified INI config file and merges its contents into this instance according to the given...">write()</a>. <br /></td></tr>
-<tr class="separator:a7897fe4ce3121eae468149b20433cd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -348,7 +330,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00889">889</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00865">865</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +379,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00897">897</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00873">873</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +437,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00908">908</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00884">884</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +483,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01089">1089</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01055">1055</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -546,7 +528,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01079">1079</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01045">1045</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -602,7 +584,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01111">1111</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01077">1077</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +640,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01100">1100</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01066">1066</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +670,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A const_iterator to the beginning of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01044">1044</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01006">1006</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +700,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01040">1040</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01002">1002</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -748,7 +730,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the read-only range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01048">1048</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01010">1010</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -778,7 +760,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the read-only range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01050">1050</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01012">1012</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -809,7 +791,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01062">1062</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01024">1024</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -850,7 +832,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01064">1064</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01026">1026</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -880,7 +862,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when there are no header-section pairs in th map. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01056">1056</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01018">1018</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -910,7 +892,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A const_iterator to the end of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01046">1046</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01008">1008</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -940,7 +922,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01042">1042</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01004">1004</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -971,7 +953,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01058">1058</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01020">1020</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1002,12 +984,12 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01060">1060</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01022">1022</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a252b8d0d265c6e7d79fcf6539c4771f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a252b8d0d265c6e7d79fcf6539c4771f2">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a252b8d0d265c6e7d79fcf6539c4771f2">&#9670;&nbsp;</a></span>get() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1056,8 +1038,108 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 
 </div>
 </div>
+<a id="af621139af646a3bb64cdb495ed4aa540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af621139af646a3bb64cdb495ed4aa540">&#9670;&nbsp;</a></span>get() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classini_1_1ini__value.html">ini_value</a>&gt; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01124">1124</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7fb4bd734a7ed21b0a9b8205aec381fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb4bd734a7ed21b0a9b8205aec381fa">&#9670;&nbsp;</a></span>get() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classini_1_1ini__value.html">ini_value</a>&gt; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01107">1107</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a1660e149a5c9153b93942fae692c6ff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1660e149a5c9153b93942fae692c6ff6">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1660e149a5c9153b93942fae692c6ff6">&#9670;&nbsp;</a></span>get() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1102,7 +1184,235 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01124">1124</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01090">1090</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af8eb466697ed0175424b2f7c1d36ea49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8eb466697ed0175424b2f7c1d36ea49">&#9670;&nbsp;</a></span>get_or() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get_or </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or a default value if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>A default value or string that will be returned if the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01195">1195</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac4d4b3d88dd6c643b01d1d5875a1cb37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4d4b3d88dd6c643b01d1d5875a1cb37">&#9670;&nbsp;</a></span>get_or() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get_or </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or a default value if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>A default value or string that will be returned if the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01184">1184</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a992b774b9f69cf0faf46d217b479080a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992b774b9f69cf0faf46d217b479080a">&#9670;&nbsp;</a></span>get_or() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get_or </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or a default value if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>A default value or string that will be returned if the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01173">1173</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9e13beb5e778938d198b04eefed36fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e13beb5e778938d198b04eefed36fe5">&#9670;&nbsp;</a></span>get_or() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1ini__value.html">ini_value</a> <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::get_or </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classini_1_1ini__value.html">ini_value</a> const &amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the specified key, or a default value if it doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The name of the target header. (Leave blank for global) </td></tr>
+    <tr><td class="paramname">key</td><td>The name of the target key. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>A default value or string that will be returned if the specified key doesn't exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01162">1162</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1462,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00976">976</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00941">941</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1196,7 +1506,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00994">994</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00959">959</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1246,7 +1556,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00966">966</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00931">931</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1290,7 +1600,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00985">985</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00950">950</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1320,7 +1630,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The maximum number of header-section pairs that the map is able to hold. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01054">1054</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01016">1016</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1370,7 +1680,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01267">1267</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01314">1314</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1420,7 +1730,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01253">1253</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01300">1300</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1470,7 +1780,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01274">1274</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01321">1321</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1520,7 +1830,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01260">1260</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01307">1307</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1577,7 +1887,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01290">1290</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01337">1337</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1944,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01282">1282</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01329">1329</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1683,7 +1993,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01017">1017</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00981">981</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1739,7 +2049,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01007">1007</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00972">972</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1769,7 +2079,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The current number of header-section pairs in the map. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01052">1052</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01014">1014</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1808,7 +2118,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the file was successfully written to; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01030">1030</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00993">993</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>

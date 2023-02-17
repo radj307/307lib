@@ -1,7 +1,5 @@
 var classini_1_1basic__ini =
 [
-    [ "onReadArgs", "structini_1_1basic__ini_1_1on_read_args.html", "structini_1_1basic__ini_1_1on_read_args" ],
-    [ "onWriteArgs", "structini_1_1basic__ini_1_1on_write_args.html", "structini_1_1basic__ini_1_1on_write_args" ],
     [ "config_t", "classini_1_1basic__ini.html#ad8b0a82af87f7a647e0ec00a57a05a0f", null ],
     [ "container_t", "classini_1_1basic__ini.html#a0ec8e28ba9cd287e6f76e4524c02b9db", null ],
     [ "istream_t", "classini_1_1basic__ini.html#a4c65b0edd4606697c1d191c9365d4b4f", null ],
@@ -15,7 +13,6 @@ var classini_1_1basic__ini =
     [ "basic_ini", "classini_1_1basic__ini.html#a7623d78a96b7df210f948c748ed6c4cd", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a1ad13701c892b7bfbab7f7873276bec0", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a046ddb0e34a20d4751cf9007c55407f4", null ],
-    [ "~basic_ini", "classini_1_1basic__ini.html#af4514406be53038e74354edca10e4259", null ],
     [ "at", "classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd", null ],
     [ "at", "classini_1_1basic__ini.html#a360fe0f1a2a62ec070cb394181d52d75", null ],
     [ "at", "classini_1_1basic__ini.html#af2769cac3498312acdd748dcd39b26a7", null ],
@@ -33,7 +30,14 @@ var classini_1_1basic__ini =
     [ "find", "classini_1_1basic__ini.html#aa230510f7d1aa562145c7b0bd1a6a718", null ],
     [ "find_if", "classini_1_1basic__ini.html#a6c0d68665a7f6a0e081df4fddbf164d6", null ],
     [ "get", "classini_1_1basic__ini.html#a252b8d0d265c6e7d79fcf6539c4771f2", null ],
+    [ "get", "classini_1_1basic__ini.html#af621139af646a3bb64cdb495ed4aa540", null ],
+    [ "get", "classini_1_1basic__ini.html#a7fb4bd734a7ed21b0a9b8205aec381fa", null ],
     [ "get", "classini_1_1basic__ini.html#a1660e149a5c9153b93942fae692c6ff6", null ],
+    [ "get_or", "classini_1_1basic__ini.html#af8eb466697ed0175424b2f7c1d36ea49", null ],
+    [ "get_or", "classini_1_1basic__ini.html#ac4d4b3d88dd6c643b01d1d5875a1cb37", null ],
+    [ "get_or", "classini_1_1basic__ini.html#a992b774b9f69cf0faf46d217b479080a", null ],
+    [ "get_or", "classini_1_1basic__ini.html#a9e13beb5e778938d198b04eefed36fe5", null ],
+    [ "insert_or_assign", "classini_1_1basic__ini.html#ac23e95469e2b663013814e523b2a199e", null ],
     [ "mask", "classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e", null ],
     [ "mask", "classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35", null ],
     [ "mask", "classini_1_1basic__ini.html#aa4e5e809d33b8e32ed3d1e0b7f9a5e45", null ],
@@ -51,9 +55,5 @@ var classini_1_1basic__ini =
     [ "write", "classini_1_1basic__ini.html#ad2fd7c1fb9c304188fc05030ab4a6524", null ],
     [ "operator<<", "classini_1_1basic__ini.html#aeb765d18ef1dcbc615fc4e4d1b4f064d", null ],
     [ "operator>>", "classini_1_1basic__ini.html#a1f4ac365fd13d256f6d2461f5087d728", null ],
-    [ "map", "classini_1_1basic__ini.html#aaad6f341fd557b0466ef54a294e7ac9c", null ],
-    [ "onDestruct", "classini_1_1basic__ini.html#a435c59455e91b087fa585aa974b20876", null ],
-    [ "onMerge", "classini_1_1basic__ini.html#ad7db8c4dd2759b000b4bc3a94fa02b06", null ],
-    [ "onRead", "classini_1_1basic__ini.html#a8674cff776626f78139e88682c41f4c0", null ],
-    [ "onWrite", "classini_1_1basic__ini.html#a7897fe4ce3121eae468149b20433cd6c", null ]
+    [ "map", "classini_1_1basic__ini.html#aaad6f341fd557b0466ef54a294e7ac9c", null ]
 ];

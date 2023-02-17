@@ -21,6 +21,7 @@ var classxlog_1_1x_log =
     [ "operator>>", "classxlog_1_1x_log.html#a77d523d16879b78e14dc2da02ae68ed9", null ],
     [ "_add_prefix", "classxlog_1_1x_log.html#aa411f0dfaa95eefb1d71796d2afab045", null ],
     [ "_allow_color", "classxlog_1_1x_log.html#a69ef0f8f51da1dc813a8e11ec1c7f9ba", null ],
+    [ "_indent_size", "classxlog_1_1x_log.html#a62b83b238f70094b3ad853cb7a6df084", null ],
     [ "_level", "classxlog_1_1x_log.html#a3bec37d62ae2239506c6051df501d058", null ],
     [ "_log_self", "classxlog_1_1x_log.html#a112933d8089d181eb9b4aefa93b844f6", null ],
     [ "_target", "classxlog_1_1x_log.html#a92e818044e57cfa60c7e0eb462c40fce", null ]

@@ -141,9 +141,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a84387da6f1581d51c44e0c66e1167c71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a84387da6f1581d51c44e0c66e1167c71">include_all_below</a> (<a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> lvl)</td></tr>
 <tr class="memdesc:a84387da6f1581d51c44e0c66e1167c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the bitwise OR operation to merge the given level with all levels below it.  <a href="namespacexlog.html#a84387da6f1581d51c44e0c66e1167c71">More...</a><br /></td></tr>
 <tr class="separator:a84387da6f1581d51c44e0c66e1167c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1127726a029820f89465d469cafcc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexlog.html#a4d1127726a029820f89465d469cafcc3">message_to_level</a> (const char *msg)</td></tr>
-<tr class="memdesc:a4d1127726a029820f89465d469cafcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a Message instance to its equivalent xlog level. This is hardcoded.  <a href="namespacexlog.html#a4d1127726a029820f89465d469cafcc3">More...</a><br /></td></tr>
-<tr class="separator:a4d1127726a029820f89465d469cafcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0ca6a61194cc2173ac16a64a7349fd1"><td class="memTemplParams" colspan="2">template&lt;typename Char , class CharTraits  = std::char_traits&lt;Char&gt;&gt; </td></tr>
 <tr class="memitem:ae0ca6a61194cc2173ac16a64a7349fd1"><td class="memTemplItemLeft" align="right" valign="top">std::basic_streambuf&lt; Char, CharTraits &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacexlog.html#ae0ca6a61194cc2173ac16a64a7349fd1">swap_buffer</a> (std::basic_ostream&lt; Char, CharTraits &gt; &amp;os, std::basic_streambuf&lt; Char, CharTraits &gt; *buf)</td></tr>
 <tr class="memdesc:ae0ca6a61194cc2173ac16a64a7349fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the read buffer of an output stream to a different one, and return the previous buffer.  <a href="namespacexlog.html#ae0ca6a61194cc2173ac16a64a7349fd1">More...</a><br /></td></tr>
@@ -241,43 +238,6 @@ constexpr const msg_break_t&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">level::LogLevel</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlog_8hpp_source.html#l00049">49</a> of file <a class="el" href="xlog_8hpp_source.html">xlog.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4d1127726a029820f89465d469cafcc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1127726a029820f89465d469cafcc3">&#9670;&nbsp;</a></span>message_to_level()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structxlog_1_1level_1_1_log_level.html">level::LogLevel</a> xlog::message_to_level </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert a Message instance to its equivalent xlog level. This is hardcoded. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">msg</td><td>Input Message Type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structxlog_1_1level_1_1_log_level.html" title="Represents a message flag system that allows the programmer or user to only show specific message typ...">level::LogLevel</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="level_8hpp_source.html#l00123">123</a> of file <a class="el" href="level_8hpp_source.html">level.hpp</a>.</p>
 
 </div>
 </div>

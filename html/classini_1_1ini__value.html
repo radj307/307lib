@@ -206,14 +206,6 @@ CONSTEXPR <a class="el" href="classini_1_1ini__value.html">this_t</a> &amp;&#160
 template&lt;std::same_as&lt; std::string &gt; T&gt; </td></tr>
 <tr class="memitem:a1e8837105a87f77104801c80b4dd5751"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>as</b> () const noexcept</td></tr>
 <tr class="separator:a1e8837105a87f77104801c80b4dd5751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e8837105a87f77104801c80b4dd5751"><td class="memTemplParams" colspan="2"><a id="a1e8837105a87f77104801c80b4dd5751"></a>
-template&lt;var::convertible_from&lt; std::string &gt; T&gt; </td></tr>
-<tr class="memitem:a1e8837105a87f77104801c80b4dd5751"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>as</b> () const noexcept</td></tr>
-<tr class="separator:a1e8837105a87f77104801c80b4dd5751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b3900e07a23afbe7023339178b88401"><td class="memTemplParams" colspan="2"><a id="a4b3900e07a23afbe7023339178b88401"></a>
-template&lt;typename T , var::function&lt; T, std::string &gt; TConverter&gt; </td></tr>
-<tr class="memitem:a4b3900e07a23afbe7023339178b88401"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>as</b> (const TConverter &amp;converter_function) const noexcept</td></tr>
-<tr class="separator:a4b3900e07a23afbe7023339178b88401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37b438f82324541ff3ab269b21e0c577"><td class="memTemplParams" colspan="2"><a id="a37b438f82324541ff3ab269b21e0c577"></a>
 template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:a37b438f82324541ff3ab269b21e0c577"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>as</b> (const uint8_t base=10) const noexcept</td></tr>
@@ -585,6 +577,10 @@ template&lt;typename T , var::function&lt; std::string, T &gt; TConverter&gt; </
 template&lt;typename T , var::function&lt; std::string, T &gt; TConverter&gt; </td></tr>
 <tr class="memitem:a16ed15fc016cbe2c09632fda11cae737"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>requires</b> (!std::convertible_to&lt; T, std::string &gt;) <a class="el" href="classini_1_1ini__value.html">this_t</a> &amp;set(T &amp;&amp;v</td></tr>
 <tr class="separator:a16ed15fc016cbe2c09632fda11cae737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c76c4879ce218d617e79cf80fafb1d"><td class="memTemplParams" colspan="2"><a id="a75c76c4879ce218d617e79cf80fafb1d"></a>
+template&lt;var::convertible_from&lt; std::string &gt; T&gt; </td></tr>
+<tr class="memitem:a75c76c4879ce218d617e79cf80fafb1d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>requires</b> (!std::same_as&lt; std::string, T &gt;) CONSTEXPR std</td></tr>
+<tr class="separator:a75c76c4879ce218d617e79cf80fafb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e323d5578d99b0dcb0000688ee758ea"><td class="memTemplParams" colspan="2"><a id="a5e323d5578d99b0dcb0000688ee758ea"></a>
 template&lt;std::convertible_to&lt; std::string &gt; T&gt; </td></tr>
 <tr class="memitem:a5e323d5578d99b0dcb0000688ee758ea"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>requires</b> (!std::same_as&lt; std::string, T &gt;) <a class="el" href="classini_1_1ini__value.html">this_t</a> &amp;operator</td></tr>
@@ -690,10 +686,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_value</b></td
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:abd51805f266d640a357b0be6e6974152"><td class="memTemplParams" colspan="2"><a id="abd51805f266d640a357b0be6e6974152"></a>
-template&lt;typename TChar , typename TCharTraits &gt; </td></tr>
-<tr class="memitem:abd51805f266d640a357b0be6e6974152"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::basic_ostream&lt; TChar, TCharTraits &gt; &amp;os, const <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;v)</td></tr>
-<tr class="separator:abd51805f266d640a357b0be6e6974152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a854f38bd87ff8f086d90994b59e97584"><td class="memTemplParams" colspan="2"><a id="a854f38bd87ff8f086d90994b59e97584"></a>
 template&lt;typename TChar , typename TCharTraits &gt; </td></tr>
 <tr class="memitem:a854f38bd87ff8f086d90994b59e97584"><td class="memTemplItemLeft" align="right" valign="top">std::basic_istream&lt; TChar, TCharTraits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&gt;&gt;</b> (std::basic_istream&lt; TChar, TCharTraits &gt; &amp;is, <a class="el" href="classini_1_1ini__value.html">ini_value</a> &amp;v)</td></tr>

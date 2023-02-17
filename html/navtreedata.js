@@ -86,21 +86,21 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"_segments_8h.html#ad527dafbd86a4c61633be26dba7ed45d",
-"classcolor_1_1basic__sync.html#a1e69bc48531c3cdebcbaabf28da8c0ed",
-"classini_1_1basic__ini.html#aab808163ccd91ecdf52809158307219a",
-"classopt_1_1token_1_1_parser.html#a3ce6fd4f8a0f5bede434ee584447639b",
-"classxlog_1_1x_log.html#a951c90a9e341206a7b83806ac0b19c40",
-"fileio_8hpp.html",
-"namespaceopt3.html#a8d90b644061f6d6ed53990770a7514fd",
-"namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c",
-"setcolor_8hpp.html#a8427e0abdba26374e98d3fc1c2f650d2",
-"structcolor_1_1_r_g_b_a.html#a46bfa3d3bced3db91ffd12f586439bef",
-"structmatrix_1_1basic__matrix.html#a8f47e9742b95e48a652b354709950def",
-"structopt_1_1_arg_container.html#a4ba96f42a857c9ec802bf4dc71e6b69e",
-"structshared_1_1tuple__event__args.html#a286e73dc2110a404c25d346a80733ed4",
-"term_8hpp.html#a7afee5eaae96821aae2cb1b078173d31"
+"307modules.html",
+"_token_redux_8hpp.html#a2ed88184cb9b36061413a1f07c93b2df",
+"classcolor_1_1palette.html#a16ebfc05ba8134637aebd517d8cc6aca",
+"classini_1_1ini__value.html#a162bec61d350047fa6010e3636918088",
+"classshared_1_1eventdef.html#a14fc2ead50bedc49c84873a9aa6708a7",
+"clogger_8hpp_source.html",
+"functions_c.html",
+"namespacerng.html#a7b5fe6482dd0d33df064d0616b329eb0",
+"namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e",
+"simple_i_n_i_8hpp.html#a14a58d38eb514904292097e0ded4cfe0",
+"structcolor_1_1basic__color.html#a99f548e5e92839e8c5bb5e4e39070e60",
+"structmatrix_1_1nmatrix.html#a7952f2e08a30fe17a1f083c9392454ea",
+"structopt_1_1_arg_container.html#afa957afb66e38fb9c66000050a2e66ba",
+"structterm_1_1_cursor.html#a5d6191f4ecdf67311263f20a1fed92a0",
+"var_8hpp.html#a07e936aa3182fb0b067fbc33e8b1579b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

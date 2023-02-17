@@ -6,8 +6,6 @@ var simple_i_n_i_8hpp =
     [ "ini_parser_config", "structini_1_1ini__parser__config.html", "structini_1_1ini__parser__config" ],
     [ "ini_printer", "structini_1_1ini__printer.html", "structini_1_1ini__printer" ],
     [ "ini_value", "classini_1_1ini__value.html", "classini_1_1ini__value" ],
-    [ "onReadArgs", "structini_1_1basic__ini_1_1on_read_args.html", "structini_1_1basic__ini_1_1on_read_args" ],
-    [ "onWriteArgs", "structini_1_1basic__ini_1_1on_write_args.html", "structini_1_1basic__ini_1_1on_write_args" ],
     [ "cContainer", "simple_i_n_i_8hpp.html#af2f833d849d9459dc5341de666c2448a", null ],
     [ "cINI", "simple_i_n_i_8hpp.html#afe3b5f62616f09fa2567d61baf7cc702", null ],
     [ "Container", "simple_i_n_i_8hpp.html#a4f2d125ee9aea8f6dcc0c8c3e63b9499", null ],
