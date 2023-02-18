@@ -126,10 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ad13701c892b7bfbab7f7873276bec0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a1ad13701c892b7bfbab7f7873276bec0">basic_ini</a> (std::filesystem::path const &amp;path, <a class="el" href="structini_1_1ini__parser__config.html">config_t</a> const &amp;config={}, const bool throwIfFileNotFound=false)</td></tr>
 <tr class="memdesc:a1ad13701c892b7bfbab7f7873276bec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reading/Parsing ctor.  <a href="classini_1_1basic__ini.html#a1ad13701c892b7bfbab7f7873276bec0">More...</a><br /></td></tr>
 <tr class="separator:a1ad13701c892b7bfbab7f7873276bec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a046ddb0e34a20d4751cf9007c55407f4"><td class="memTemplParams" colspan="2"><a id="a046ddb0e34a20d4751cf9007c55407f4"></a>
-template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a046ddb0e34a20d4751cf9007c55407f4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>basic_ini</b> (Ts &amp;&amp;... sections)</td></tr>
-<tr class="separator:a046ddb0e34a20d4751cf9007c55407f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943ad54a445942b8a710a900267534fe"><td class="memItemLeft" align="right" valign="top"><a id="a943ad54a445942b8a710a900267534fe"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>basic_ini</b> (std::initializer_list&lt; std::pair&lt; std::string, section_t &gt;&gt; sections)</td></tr>
+<tr class="separator:a943ad54a445942b8a710a900267534fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a259f9f099321501678c506be218ff6dd"><td class="memItemLeft" align="right" valign="top">const section_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">at</a> (std::string const &amp;header) const noexcept(false)</td></tr>
 <tr class="memdesc:a259f9f099321501678c506be218ff6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an immutable reference to the section with the given header.  <a href="classini_1_1basic__ini.html#a259f9f099321501678c506be218ff6dd">More...</a><br /></td></tr>
 <tr class="separator:a259f9f099321501678c506be218ff6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,10 +153,10 @@ template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &g
 <tr class="separator:a5565442956933176c910afb9ede9b78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af836c89ec0cc099ce431bffa686eb8f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#af836c89ec0cc099ce431bffa686eb8f7">contains</a> (auto &amp;&amp;header, auto &amp;&amp;key) const noexcept</td></tr>
 <tr class="separator:af836c89ec0cc099ce431bffa686eb8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="memItemLeft" align="right" valign="top"><a id="a42f4dcdffdae372bc20e8fe3aaf88e8c"></a>
-<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a42f4dcdffdae372bc20e8fe3aaf88e8c">deep_merge</a> (container_t const &amp;other, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
-<tr class="memdesc:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="namespaceini.html#a18bb172511c546450834b0cd93b9151c" title="Performs a recursive merge of two given INI containers.">ini::deep_merge</a>. <br /></td></tr>
-<tr class="separator:a42f4dcdffdae372bc20e8fe3aaf88e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec47043f28b38179e3e62206b6f4867"><td class="memItemLeft" align="right" valign="top"><a id="abec47043f28b38179e3e62206b6f4867"></a>
+<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#abec47043f28b38179e3e62206b6f4867">deep_merge</a> (container_t const &amp;other, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, bool maskRemovesExisting=false)</td></tr>
+<tr class="memdesc:abec47043f28b38179e3e62206b6f4867"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="namespaceini.html#a18bb172511c546450834b0cd93b9151c" title="Performs a recursive merge of two given INI containers.">ini::deep_merge</a>. <br /></td></tr>
+<tr class="separator:abec47043f28b38179e3e62206b6f4867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7718f28e806449885179614729bb91"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aae7718f28e806449885179614729bb91">empty</a> () const noexcept</td></tr>
 <tr class="separator:aae7718f28e806449885179614729bb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9f7adf7d971683ab736d6de2d953c25"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#ab9f7adf7d971683ab736d6de2d953c25">end</a> () const noexcept</td></tr>
@@ -195,18 +194,24 @@ template&lt;var::same_or_convertible&lt; std::pair&lt; std::string, section_t &g
 <tr class="memitem:ac23e95469e2b663013814e523b2a199e"><td class="memItemLeft" align="right" valign="top"><a id="ac23e95469e2b663013814e523b2a199e"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>insert_or_assign</b> (auto &amp;&amp;header, auto &amp;&amp;key, auto &amp;&amp;value)</td></tr>
 <tr class="separator:ac23e95469e2b663013814e523b2a199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">mask</a> (const mask_t &amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
-<tr class="memdesc:a212e0a2936a217ec53b2f81d64c44e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a212e0a2936a217ec53b2f81d64c44e7e">More...</a><br /></td></tr>
-<tr class="separator:a212e0a2936a217ec53b2f81d64c44e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4d5255b6ee33bd1f51ae541977631e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a6a4d5255b6ee33bd1f51ae541977631e">mask</a> (const mask_t &amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, bool maskRemovesExisting=true)</td></tr>
+<tr class="memdesc:a6a4d5255b6ee33bd1f51ae541977631e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#a6a4d5255b6ee33bd1f51ae541977631e">More...</a><br /></td></tr>
+<tr class="separator:a6a4d5255b6ee33bd1f51ae541977631e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dff6939adc1de1c933b011708e3ff35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35">mask</a> (const <a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;cfg)</td></tr>
-<tr class="memdesc:a5dff6939adc1de1c933b011708e3ff35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35">More...</a><br /></td></tr>
+<tr class="memdesc:a5dff6939adc1de1c933b011708e3ff35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#a5dff6939adc1de1c933b011708e3ff35">More...</a><br /></td></tr>
 <tr class="separator:a5dff6939adc1de1c933b011708e3ff35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">mask</a> (mask_t &amp;&amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>)</td></tr>
-<tr class="memdesc:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">More...</a><br /></td></tr>
-<tr class="separator:aa4e5e809d33b8e32ed3d1e0b7f9a5e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7a835ba057fd65295cd305531a6835"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#afa7a835ba057fd65295cd305531a6835">mask</a> (const <a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, bool maskRemovesExisting=true)</td></tr>
+<tr class="memdesc:afa7a835ba057fd65295cd305531a6835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given INI as a mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#afa7a835ba057fd65295cd305531a6835">More...</a><br /></td></tr>
+<tr class="separator:afa7a835ba057fd65295cd305531a6835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c6da8c7e986f3776726b22b950f9cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a60c6da8c7e986f3776726b22b950f9cc">mask</a> (mask_t &amp;&amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, bool maskRemovesExisting=true)</td></tr>
+<tr class="memdesc:a60c6da8c7e986f3776726b22b950f9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#a60c6da8c7e986f3776726b22b950f9cc">More...</a><br /></td></tr>
+<tr class="separator:a60c6da8c7e986f3776726b22b950f9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f105d31d068c5662355c7fc8b9941f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a9f105d31d068c5662355c7fc8b9941f2">mask</a> (<a class="el" href="structini_1_1ini__parser__config.html">ParserConfig</a> &amp;&amp;cfg)</td></tr>
-<tr class="memdesc:a9f105d31d068c5662355c7fc8b9941f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance.  <a href="classini_1_1basic__ini.html#a9f105d31d068c5662355c7fc8b9941f2">More...</a><br /></td></tr>
+<tr class="memdesc:a9f105d31d068c5662355c7fc8b9941f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#a9f105d31d068c5662355c7fc8b9941f2">More...</a><br /></td></tr>
 <tr class="separator:a9f105d31d068c5662355c7fc8b9941f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3b6c476d6b4ba93f6235d2ead51e73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#add3b6c476d6b4ba93f6235d2ead51e73">mask</a> (<a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&amp;mask, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;overrideStyle=<a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a>, bool maskRemovesExisting=true)</td></tr>
+<tr class="memdesc:add3b6c476d6b4ba93f6235d2ead51e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given INI as a mask to this instance, removing or adding sections/keys.  <a href="classini_1_1basic__ini.html#add3b6c476d6b4ba93f6235d2ead51e73">More...</a><br /></td></tr>
+<tr class="separator:add3b6c476d6b4ba93f6235d2ead51e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a486b81afa055ee0248fc722dd80cc272"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a486b81afa055ee0248fc722dd80cc272">max_size</a> () const noexcept</td></tr>
 <tr class="separator:a486b81afa055ee0248fc722dd80cc272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a168ba4692af74967f36355372d6cadf4"><td class="memItemLeft" align="right" valign="top">CONSTEXPR <a class="el" href="classini_1_1ini__value.html">ini_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classini_1_1basic__ini.html#a168ba4692af74967f36355372d6cadf4">operator()</a> (const std::string &amp;header, const std::string &amp;key) const noexcept(false)</td></tr>
@@ -483,7 +488,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01055">1055</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01088">1088</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +533,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01045">1045</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01078">1078</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -584,7 +589,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01077">1077</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01110">1110</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -640,7 +645,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01066">1066</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01099">1099</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -670,7 +675,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A const_iterator to the beginning of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01006">1006</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01039">1039</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -700,7 +705,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01002">1002</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01035">1035</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -730,7 +735,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the read-only range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01010">1010</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01043">1043</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +765,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the read-only range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01012">1012</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01045">1045</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -791,7 +796,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01024">1024</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01057">1057</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -832,7 +837,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when the map contains the specified header; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01026">1026</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01059">1059</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -862,7 +867,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when there are no header-section pairs in th map. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01018">1018</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01051">1051</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -892,7 +897,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A const_iterator to the end of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01008">1008</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01041">1041</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -922,7 +927,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the range of headers &amp; sections. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01004">1004</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01037">1037</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -953,7 +958,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01020">1020</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01053">1053</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -984,7 +989,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An iterator to the header-section pair with a matching header. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01022">1022</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01055">1055</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1034,7 +1039,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01141">1141</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01174">1174</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1084,7 +1089,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01124">1124</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01157">1157</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1139,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01107">1107</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01140">1140</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1184,7 +1189,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or std::nullopt if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01090">1090</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01123">1123</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1241,7 +1246,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01195">1195</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01228">1228</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1298,7 +1303,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01184">1184</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01217">1217</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1355,7 +1360,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01173">1173</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01206">1206</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1412,12 +1417,12 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified key, or defaultValue if the specified header or key doesn't exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01162">1162</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01195">1195</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a212e0a2936a217ec53b2f81d64c44e7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a212e0a2936a217ec53b2f81d64c44e7e">&#9670;&nbsp;</a></span>mask() <span class="overload">[1/4]</span></h2>
+<a id="a6a4d5255b6ee33bd1f51ae541977631e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4d5255b6ee33bd1f51ae541977631e">&#9670;&nbsp;</a></span>mask() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1437,7 +1442,13 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
-          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>maskRemovesExisting</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1452,27 +1463,29 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Applies the given mask to this instance. </p>
+<p>Applies the given mask to this instance, removing or adding sections/keys. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mask</td><td>An ini_mask container. </td></tr>
     <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+    <tr><td class="paramname">maskRemovesExisting</td><td>When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00941">941</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00952">952</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_a212e0a2936a217ec53b2f81d64c44e7e_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_a6a4d5255b6ee33bd1f51ae541977631e_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <a id="a5dff6939adc1de1c933b011708e3ff35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dff6939adc1de1c933b011708e3ff35">&#9670;&nbsp;</a></span>mask() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dff6939adc1de1c933b011708e3ff35">&#9670;&nbsp;</a></span>mask() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1497,7 +1510,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Applies the given mask to this instance. </p>
+<p>Applies the given mask to this instance, removing or adding sections/keys. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cfg</td><td>An <a class="el" href="structini_1_1ini__parser__config.html" title="Exposes properties that can be used to configure the INI parser&#39;s behaviour.">ini_parser_config</a> instance. </td></tr>
@@ -1506,12 +1519,75 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00959">959</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00992">992</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa4e5e809d33b8e32ed3d1e0b7f9a5e45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4e5e809d33b8e32ed3d1e0b7f9a5e45">&#9670;&nbsp;</a></span>mask() <span class="overload">[3/4]</span></h2>
+<a id="afa7a835ba057fd65295cd305531a6835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7a835ba057fd65295cd305531a6835">&#9670;&nbsp;</a></span>mask() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>maskRemovesExisting</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given INI as a mask to this instance, removing or adding sections/keys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>Another <a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a> container. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+    <tr><td class="paramname">maskRemovesExisting</td><td>When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00974">974</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_afa7a835ba057fd65295cd305531a6835_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a60c6da8c7e986f3776726b22b950f9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60c6da8c7e986f3776726b22b950f9cc">&#9670;&nbsp;</a></span>mask() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1531,7 +1607,13 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
-          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>maskRemovesExisting</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1546,27 +1628,29 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Applies the given mask to this instance. </p>
+<p>Applies the given mask to this instance, removing or adding sections/keys. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mask</td><td>An ini_mask container. </td></tr>
     <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+    <tr><td class="paramname">maskRemovesExisting</td><td>When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00931">931</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00941">941</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_aa4e5e809d33b8e32ed3d1e0b7f9a5e45_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_a60c6da8c7e986f3776726b22b950f9cc_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <a id="a9f105d31d068c5662355c7fc8b9941f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f105d31d068c5662355c7fc8b9941f2">&#9670;&nbsp;</a></span>mask() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f105d31d068c5662355c7fc8b9941f2">&#9670;&nbsp;</a></span>mask() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1591,7 +1675,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Applies the given mask to this instance. </p>
+<p>Applies the given mask to this instance, removing or adding sections/keys. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cfg</td><td>An <a class="el" href="structini_1_1ini__parser__config.html" title="Exposes properties that can be used to configure the INI parser&#39;s behaviour.">ini_parser_config</a> instance. </td></tr>
@@ -1600,7 +1684,70 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00950">950</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00983">983</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="add3b6c476d6b4ba93f6235d2ead51e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3b6c476d6b4ba93f6235d2ead51e73">&#9670;&nbsp;</a></span>mask() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classini_1_1basic__ini.html">this_t</a>&amp; <a class="el" href="classini_1_1basic__ini.html">ini::basic_ini</a>&lt; TKeyComparator &gt;::mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classini_1_1basic__ini.html">this_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>maskRemovesExisting</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the given INI as a mask to this instance, removing or adding sections/keys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>Another <a class="el" href="classini_1_1basic__ini.html" title="Inherits directly from ini_container, and provides extra methods for reading/writing,...">basic_ini</a> container. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The override style to use when merging the mask into this instance's map. </td></tr>
+    <tr><td class="paramname">maskRemovesExisting</td><td>When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of this instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00963">963</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classini_1_1basic__ini_add3b6c476d6b4ba93f6235d2ead51e73_cgraph.svg" width="348" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -1630,7 +1777,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The maximum number of header-section pairs that the map is able to hold. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01016">1016</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01049">1049</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1680,7 +1827,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01314">1314</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01347">1347</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1730,7 +1877,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01300">1300</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01333">1333</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1780,7 +1927,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01321">1321</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01354">1354</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1830,7 +1977,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value of the target key. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01307">1307</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01340">1340</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1887,7 +2034,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01337">1337</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01370">1370</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1944,7 +2091,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01329">1329</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01362">1362</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -1993,7 +2140,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00981">981</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01014">1014</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -2049,7 +2196,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00972">972</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01005">1005</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -2079,7 +2226,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The current number of header-section pairs in the map. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01014">1014</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01047">1047</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>
@@ -2118,7 +2265,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the file was successfully written to; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00993">993</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l01026">1026</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
 
 </div>
 </div>

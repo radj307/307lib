@@ -4,7 +4,7 @@ var searchData=
   ['decimal_192',['DECIMAL',['../namespacestr.html#ad45f834310171b4656fa30f728c0d253',1,'str']]],
   ['decimaltobinary_193',['decimalToBinary',['../namespacestr.html#afc4713722f92ec455251092937a2540b',1,'str']]],
   ['decimaltohex_194',['decimalToHex',['../namespacestr.html#a64641d820fe5e4997387b75be9df3b97',1,'str::decimalToHex(std::string const &amp;dec, Ts &amp;&amp;... fmt) noexcept'],['../namespacestr.html#a8059cb6dea85450291ef813056734a8e',1,'str::decimalToHex(long long const &amp;dec, Ts &amp;&amp;... fmt) noexcept']]],
-  ['deep_5fmerge_195',['deep_merge',['../classini_1_1basic__ini.html#a42f4dcdffdae372bc20e8fe3aaf88e8c',1,'ini::basic_ini::deep_merge()'],['../namespaceini.html#a18bb172511c546450834b0cd93b9151c',1,'ini::deep_merge()']]],
+  ['deep_5fmerge_195',['deep_merge',['../classini_1_1basic__ini.html#abec47043f28b38179e3e62206b6f4867',1,'ini::basic_ini::deep_merge()'],['../namespaceini.html#a18bb172511c546450834b0cd93b9151c',1,'ini::deep_merge()']]],
   ['default_196',['Default',['../structxlog_1_1level.html#a85c6c191186524f096908e9063b309fa',1,'xlog::level']]],
   ['defaultcapturestyle_197',['defaultCaptureStyle',['../structopt_1_1_argument_parsing_rules.html#a5efa4cf38a4803dd47fcfa9eedf220a5',1,'opt::ArgumentParsingRules::defaultCaptureStyle()'],['../structopt3_1_1_argument_parsing_rules.html#a5b0ee0be2f9bef501f902f53640edbea',1,'opt3::ArgumentParsingRules::defaultCaptureStyle()']]],
   ['deletechar_198',['DeleteChar',['../namespaceterm.html#af5fd277ab5da54e2f8c60c4fd26f226f',1,'term']]],
