@@ -885,17 +885,26 @@ namespace ini {
 			: map([](auto&& path, auto&& config, auto&& throwIfFileNotFound) { if (file::exists(path)) return parse<TKeyComparator>(file::read(path, std::ios_base::binary), config); else if (throwIfFileNotFound) throw make_custom_exception<ini_file_not_found_exception>("File Not Found:  ", path); else return container_t{}; }(path, config, throwIfFileNotFound))
 		{}
 
-		template<var::same_or_convertible<std::pair<std::string, section_t>>... Ts>
-		basic_ini(Ts&&... sections) : map{ std::forward<Ts>(sections)... } {}
+		basic_ini(std::initializer_list<std::pair<std::string, section_t>> sections)
+		{
+			for (const auto& it : sections) {
+				map.insert_or_assign(it.first, it.second);
+			}
+		}
 	#pragma endregion constructors
 
 	#pragma region deep_merge
 		/// @brief	See ::ini::deep_merge
-		this_t& deep_merge(container_t const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& deep_merge(container_t const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = false)
 		{
 			for (const auto& [header, section] : other) {
 				if (const auto& existing{ this->map.find(header) }; existing != this->map.end()) {
 					auto& [existingHeader, existingSection] { *existing };
+					if (maskRemovesExisting) {
+						std::erase_if(existingSection, [&section](auto&& item) {
+							return !section.contains(item.first);
+						});
+					}
 					for (const auto& [key, value] : section) {
 						if (existingSection.contains(key)) {
 							switch (overrideStyle) {
@@ -923,27 +932,51 @@ namespace ini {
 
 	#pragma region mask
 		/**
-		 * @brief					Applies the given mask to this instance.
-		 * @param mask				An ini_mask container.
-		 * @param overrideStyle		The override style to use when merging the mask into this instance's map.
-		 * @returns					The reference of this instance.
+		 * @brief						Applies the given mask to this instance, removing or adding sections/keys.
+		 * @param mask					An ini_mask container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
 		 */
-		this_t& mask(mask_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& mask(mask_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
 		{
-			return deep_merge(std::move(mask), overrideStyle);
+			return deep_merge($fwd(mask), overrideStyle, maskRemovesExisting);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
-		 * @param mask				An ini_mask container.
-		 * @param overrideStyle		The override style to use when merging the mask into this instance's map.
-		 * @returns					The reference of this instance.
+		 * @brief						Applies the given mask to this instance, removing or adding sections/keys.
+		 * @param mask					An ini_mask container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
 		 */
-		this_t& mask(const mask_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& mask(const mask_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
 		{
-			return deep_merge(mask, overrideStyle);
+			return deep_merge(mask, overrideStyle, maskRemovesExisting);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
+		 * @brief						Applies the given INI as a mask to this instance, removing or adding sections/keys.
+		 * @param mask					Another basic_ini container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
+		 */
+		this_t& mask(this_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
+		{
+			return deep_merge($fwd(mask).map, overrideStyle, maskRemovesExisting);
+		}
+		/**
+		 * @brief						Applies the given INI as a mask to this instance, removing or adding sections/keys.
+		 * @param mask					Another basic_ini container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
+		 */
+		this_t& mask(const this_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
+		{
+			return deep_merge(mask.map, overrideStyle, maskRemovesExisting);
+		}
+		/**
+		 * @brief					Applies the given mask to this instance, removing or adding sections/keys.
 		 * @param cfg				An ini_parser_config instance.
 		 * @returns					The reference of this instance.
 		 */
@@ -952,7 +985,7 @@ namespace ini {
 			return this->mask($fwd(cfg).mask, $fwd(cfg).overrideStyle);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
+		 * @brief					Applies the given mask to this instance, removing or adding sections/keys.
 		 * @param cfg				An ini_parser_config instance.
 		 * @returns					The reference of this instance.
 		 */
