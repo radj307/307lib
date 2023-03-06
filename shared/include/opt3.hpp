@@ -233,7 +233,9 @@ namespace opt3 {
 		 */
 		friend bool operator==(const variantarg& l, const variantarg& r)
 		{
-			return l.compare_name(r.name()) && l.has_capture() == r.has_capture() && l.has_capture() ? l.capture() == r.capture() : true;
+			return l.compare_name(r.name())
+				&& l.has_capture() == r.has_capture()
+				&& (l.has_capture() ? l.capture() == r.capture() : true);
 		}
 	};
 	std::string variantarg::name() const noexcept
