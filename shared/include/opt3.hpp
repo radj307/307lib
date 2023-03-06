@@ -224,6 +224,17 @@ namespace opt3 {
 
 		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
 		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
+
+		/**
+		 * @brief		Comparison Operator
+		 * @param l		A variantarg instance to compare
+		 * @param r		Another variantarg instance to compare to
+		 * @returns		true when both l and r have the same name and capture value; otherwise false.
+		 */
+		friend bool operator==(const variantarg& l, const variantarg& r)
+		{
+			return l.compare_name(r.name()) && l.has_capture() == r.has_capture() && l.has_capture() ? l.capture() == r.capture() : true;
+		}
 	};
 	std::string variantarg::name() const noexcept
 	{
@@ -722,7 +733,7 @@ namespace opt3 {
 			constexpr size_t block_size{ sizeof...(Ts) };
 			vec.reserve(block_size);
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
-				if (!it->has_capture()) continue;
+				if (!it->has_capture() && !it->is_type<Parameter>()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
