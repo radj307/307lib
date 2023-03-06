@@ -9,5 +9,6 @@ var structopt3_1_1variantarg =
     [ "is_any_type", "structopt3_1_1variantarg.html#a7446b3328847b8eb1172297a7d88e99f", null ],
     [ "is_type", "structopt3_1_1variantarg.html#aa13d90e2a75d622f77baeb4ba7f92292", null ],
     [ "name", "structopt3_1_1variantarg.html#a2543297475db22c6efca7ee08461601e", null ],
-    [ "visit", "structopt3_1_1variantarg.html#a8afe7ed5469e45a5e0685f20bb8c786b", null ]
+    [ "visit", "structopt3_1_1variantarg.html#a8afe7ed5469e45a5e0685f20bb8c786b", null ],
+    [ "operator==", "structopt3_1_1variantarg.html#aea1fe511d91ba90d8e3ee715ca8a8f4a", null ]
 ];

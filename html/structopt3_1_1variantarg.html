@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('structopt3_1_1variantarg.html',''); in
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structopt3_1_1variantarg-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">opt3::variantarg Struct Reference</div>  </div>
@@ -147,6 +148,12 @@ template&lt;valid_arg T&gt; </td></tr>
 <tr class="memitem:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memTemplParams" colspan="2">template&lt;typename TVisitor &gt; </td></tr>
 <tr class="memitem:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memTemplItemLeft" align="right" valign="top">CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#a8afe7ed5469e45a5e0685f20bb8c786b">visit</a> (const TVisitor &amp;visitor) const noexcept</td></tr>
 <tr class="separator:a8afe7ed5469e45a5e0685f20bb8c786b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aea1fe511d91ba90d8e3ee715ca8a8f4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1variantarg.html#aea1fe511d91ba90d8e3ee715ca8a8f4a">operator==</a> (const <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &amp;l, const <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &amp;r)</td></tr>
+<tr class="memdesc:aea1fe511d91ba90d8e3ee715ca8a8f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison Operator.  <a href="structopt3_1_1variantarg.html#aea1fe511d91ba90d8e3ee715ca8a8f4a">More...</a><br /></td></tr>
+<tr class="separator:aea1fe511d91ba90d8e3ee715ca8a8f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstraction wrapper around std::variant that directly exposes methods from the underlying <a class="el" href="structopt3_1_1basic__arg__t.html" title="Basic argument wrapper object that contains a templated variable type with some useful methods.">basic_arg_t</a> struct. <br  />
@@ -186,7 +193,7 @@ template&lt;valid_arg T&gt; </td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00284">284</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00295">295</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -233,7 +240,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00270">270</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00281">281</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -305,7 +312,7 @@ Here is the call graph for this function:</div>
 <p>Directly gets the capture value of this argument as the type it is stored as; or std::nullopt for Parameter types. </p>
 <dl class="section return"><dt>Returns</dt><dd>The captured value of this argument if it has one; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00242">242</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00253">253</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +342,7 @@ Here is the call graph for this function:</div>
 <p>Checks if this argument has a captured value. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when this argument has a captured value; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00256">256</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00267">267</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -375,7 +382,7 @@ Here is the caller graph for this function:</div>
 <p>Gets the name of this argument. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of this argument, excluding any prefixes that were stripped during parsing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00228">228</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00239">239</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -434,6 +441,55 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structopt3_1_1variantarg_a8afe7ed5469e45a5e0685f20bb8c786b_icgraph.svg" width="620" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aea1fe511d91ba90d8e3ee715ca8a8f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1fe511d91ba90d8e3ee715ca8a8f4a">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structopt3_1_1variantarg.html">variantarg</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Comparison Operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>A variantarg instance to compare </td></tr>
+    <tr><td class="paramname">r</td><td>Another variantarg instance to compare to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when both l and r have the same name and capture value; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l00234">234</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
 
 </div>
 </div>
