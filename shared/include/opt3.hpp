@@ -222,7 +222,17 @@ namespace opt3 {
 		 */
 		std::string capture() const noexcept(false);
 
+		/**
+		 * @brief		Check if this variantarg instance's type is the same as a given type.
+		 * @tparam T	A valid_arg type to compare to.
+		 * @returns		true when this variantarg's type is the same as type T; otherwise false.
+		 */
 		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
+		/**
+		 * @brief		Check if this variantarg instance's type is the same as any of the given types.
+		 * @tparam Ts	Any number of valid_arg types to compare to.
+		 * @returns		true when this variantarg's type is the same as any of the given types; otherwise false.
+		 */
 		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
 
 		/**
