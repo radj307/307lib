@@ -3,7 +3,7 @@
 <p align="center"><a href="https://github.com/radj307/307lib"><img alt="307lib Banner" src="https://i.imgur.com/ygAstMw.png"></a></p>
 <h1 align="center">C++ 20 Common Libraries</h1>
 <p align="center"><a href="https://github.com/radj307/307lib/releases"><img alt="Latest Github Tag" src="https://img.shields.io/github/v/tag/radj307/307lib?color=e8e8e7&label=Latest%20Version&logo=github&logoColor=e8e8e7&style=for-the-badge"></a>
- <a href="https://github.com/radj307/307lib/actions/workflows/update-documentation.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/radj307/307lib/Update%20Documentation?color=e8e8e7&label=Auto-Doxygen&logo=github&logoColor=e8e8e7&style=for-the-badge"></a>
+ <a href="https://github.com/radj307/307lib/actions/workflows/update-documentation.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/radj307/307lib/update-documentation.yml?color=e8e8e7&label=Doxygen%20Action&logo=github&logoColor=e8e8e7&style=for-the-badge"></a>
 </p>
  
 This is a collection of common libraries that I've created over the years.  
