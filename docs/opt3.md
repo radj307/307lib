@@ -84,4 +84,23 @@ The `CaptureStyle` bitfield enum defines capturing rules for a specific argument
 - Required  
   - An exception is thrown if this argument does not specify a capture value.
 
+### Argument Parsing Rules
+
+You can use the `ArgumentParsingRules` structure to get more control over the argument parsing process.  
+It is highly recommended that you do not call any of this object's methods yourself; they are intended for internal use only.
+
+The following members are available:
+
+- `delimiters`
+  - Defines the list of characters (`char`) that are considered valid Flag/Option prefixes.
+  - Default: { '-' }
+- `allowNumericFlags`  
+  - Determines whether digits are allowed to be considered flags. This fixes a potential bug where Parameters are interpreted as Flags when entering negative numbers followed by alphanumeric characters in the same string, ex: `-200.0F`.
+  - Does nothing if `-` is not a delimiter.
+  - Default: false
+- `assumeValidNumberWithDashPrefixIsNegative`
+  - A valid negative number *(ex: `-30`)* would normally be treated like a Flag and interpreted as `-3 -0`. When this is true, valid negative numbers are interpreted as Parameters instead of flags.
+  - Does nothing if `-` is not a delimiter.
+  - Default: true
+
 # *WIP*
