@@ -1914,7 +1914,8 @@ namespace opt3 {
 		WINCONSTEXPR bool isValidFlag(std::string const& str) const
 		{
 			if (isDelimiter('-')) {
-				if (!allowNumericFlags && std::any_of(str.begin(), str.end(), [](auto&& ch) { return shared::isdigit(ch); }))
+				const auto eqPos{ str.find('=') };
+				if (!allowNumericFlags && std::any_of(str.begin(), eqPos == std::string::npos ? str.end() : (str.begin() + eqPos), [](auto&& ch) { return shared::isdigit(ch); }))
 					return false; //< allowNumericFlags is false and any character is a number
 				return !isNumber(str);
 			}
