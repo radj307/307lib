@@ -7,7 +7,7 @@ var hierarchy =
       [ "opt::ParamsAPI2", "structopt_1_1_params_a_p_i2.html", null ],
       [ "opt::ParamsAPI3", "classopt_1_1_params_a_p_i3.html", null ]
     ] ],
-    [ "opt3::ArgumentParsingRules", "structopt3_1_1_argument_parsing_rules.html", null ],
+    [ "opt3::ArgParsingRules", "structopt3_1_1_arg_parsing_rules.html", null ],
     [ "opt::ArgumentParsingRules", "structopt_1_1_argument_parsing_rules.html", null ],
     [ "opt3::base_arg", "structopt3_1_1base__arg.html", [
       [ "opt3::basic_arg_t< T >", "structopt3_1_1basic__arg__t.html", null ],

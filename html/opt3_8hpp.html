@@ -133,8 +133,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1_argument_parsing_rules.html">opt3::ArgumentParsingRules</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows configuration of the rules used when parsing arguments.  <a href="structopt3_1_1_argument_parsing_rules.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1_arg_parsing_rules.html">opt3::ArgParsingRules</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows configuration of the rules used when parsing arguments. <br  />
+ It is highly recommended that you do not call this object's methods as they are intended for use by only the <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> argument parser.  <a href="structopt3_1_1_arg_parsing_rules.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1base__arg.html">opt3::base_arg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An empty struct that serves as the templateless base type for the <a class="el" href="structopt3_1_1basic__arg__t.html" title="Basic argument wrapper object that contains a templated variable type with some useful methods.">basic_arg_t</a> struct.  <a href="structopt3_1_1base__arg.html#details">More...</a><br /></td></tr>
@@ -220,11 +221,14 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a705153d878cb91983bfd5cf2930a18cc">opt3::CapturesConflict</a> = 1
 , <a class="el" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142af1d4ac54357cc0932f385d56814ba7e4">opt3::Conflict</a> = 2
  }</td></tr>
-<tr class="memdesc:aed884f239ca32c2fe3dc2b12c399f142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the circumstances in which two argument groups conflict with each other.  <a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">More...</a><br /></td></tr>
+<tr class="memdesc:aed884f239ca32c2fe3dc2b12c399f142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the circumstances in which two arguments from the same template group will conflict with each other.  <a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">More...</a><br /></td></tr>
 <tr class="separator:aed884f239ca32c2fe3dc2b12c399f142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a61c98b80be68ee221938ec64662aee69"><td class="memItemLeft" align="right" valign="top"><a id="a61c98b80be68ee221938ec64662aee69"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>opt3::$DefineExcept</b> (invalid_argument_exception, std::string argument_name;invalid_argument_exception(std::string const &amp;argument_name, std::string const &amp;argument_typename) :<a class="el" href="classex_1_1except.html">ex::except</a>(<a class="el" href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">str::stringify</a>(&quot;Argument '&quot;, argument_name, &quot;' is not a recognized &quot;, argument_typename, '.')), argument_name{ argument_name } {})</td></tr>
+<tr class="separator:a61c98b80be68ee221938ec64662aee69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c1367e3fec6fae43cd4c38b5a60028"><td class="memItemLeft" align="right" valign="top"><a id="a32c1367e3fec6fae43cd4c38b5a60028"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>opt3::$make_typed_bitfield</b> (CaptureStyle, uchar, Disabled=0, EqualsOnly=1, Optional=2, Required=4,)</td></tr>
 <tr class="separator:a32c1367e3fec6fae43cd4c38b5a60028"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -310,9 +314,9 @@ CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memitem:aaf933cbf05d9763e90322c14dbe8b52c"><td class="memItemLeft" align="right" valign="top"><a id="aaf933cbf05d9763e90322c14dbe8b52c"></a>
 std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>opt3::operator&lt;&lt;</b> (std::ostream &amp;os, const variant_template &amp;vt)</td></tr>
 <tr class="separator:aaf933cbf05d9763e90322c14dbe8b52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89455c11b14cc4363e1ffa33ae726be3"><td class="memItemLeft" align="right" valign="top">arg_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a89455c11b14cc4363e1ffa33ae726be3">opt3::parse</a> (std::vector&lt; std::string &gt; &amp;&amp;args, capture_list captures, const ArgumentParsingRules &amp;parsingRules)</td></tr>
-<tr class="memdesc:a89455c11b14cc4363e1ffa33ae726be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an ArgContainer instance.  <a href="namespaceopt3.html#a89455c11b14cc4363e1ffa33ae726be3">More...</a><br /></td></tr>
-<tr class="separator:a89455c11b14cc4363e1ffa33ae726be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc5f3bf4aa2961c3962cbde28ee51b3"><td class="memItemLeft" align="right" valign="top">arg_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceopt3.html#a5dc5f3bf4aa2961c3962cbde28ee51b3">opt3::parse</a> (std::vector&lt; std::string &gt; &amp;&amp;args, capture_list captures, const ArgParsingRules &amp;parsingRules)</td></tr>
+<tr class="memdesc:a5dc5f3bf4aa2961c3962cbde28ee51b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse commandline arguments into an ArgContainer instance.  <a href="namespaceopt3.html#a5dc5f3bf4aa2961c3962cbde28ee51b3">More...</a><br /></td></tr>
+<tr class="separator:a5dc5f3bf4aa2961c3962cbde28ee51b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2dcb43d727b9b559f7013f3e25e03f"><td class="memItemLeft" align="right" valign="top"><a id="a6d2dcb43d727b9b559f7013f3e25e03f"></a>
 WINCONSTEXPR variant_template&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opt3_8hpp.html#a6d2dcb43d727b9b559f7013f3e25e03f">opt3::_internal::resolve_template</a> (variant_template const &amp;vt)</td></tr>
 <tr class="memdesc:a6d2dcb43d727b9b559f7013f3e25e03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the given <a class="el" href="classopt3_1_1variant__template.html" title="An abstraction wrapper around basic_arg_template that accepts types TemplateOption &amp; TemplateFlag">variant_template</a>. <br /></td></tr>

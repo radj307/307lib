@@ -124,25 +124,32 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator_t</b> = std
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="memTemplParams" colspan="2"><a id="a85ec3b2d7f7e72b5167dca61ef12c6a1"></a>
-template&lt;valid_capture... Ts&gt; </td></tr>
-<tr class="memitem:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="memTemplItemLeft" align="right" valign="top">requires var::more_than&lt; 0, Ts... &gt; STRCONSTEXPR&#160;</td><td class="memTemplItemRight" valign="bottom"><b>capture_list</b> (Ts &amp;&amp;... captures)</td></tr>
+<tr class="memitem:af32d7afd5127d3b581705844e0371be6"><td class="memItemLeft" align="right" valign="top"><a id="af32d7afd5127d3b581705844e0371be6"></a>
+STRCONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#af32d7afd5127d3b581705844e0371be6">capture_list</a> ()</td></tr>
+<tr class="memdesc:af32d7afd5127d3b581705844e0371be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1capture__list.html" title="A small wrapper object that inherits from a std::vector. TODO: Implement this properly instead of inh...">capture_list</a> instance with no entries. <br /></td></tr>
+<tr class="separator:af32d7afd5127d3b581705844e0371be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="memTemplParams" colspan="2">template&lt;valid_capture... Ts&gt; </td></tr>
+<tr class="memitem:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="memTemplItemLeft" align="right" valign="top">requires var::more_than&lt; 0, Ts... &gt; STRCONSTEXPR&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a85ec3b2d7f7e72b5167dca61ef12c6a1">capture_list</a> (Ts &amp;&amp;... captures)</td></tr>
+<tr class="memdesc:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="structopt3_1_1capture__list.html" title="A small wrapper object that inherits from a std::vector. TODO: Implement this properly instead of inh...">capture_list</a> instance with the given entries.  <a href="structopt3_1_1capture__list.html#a85ec3b2d7f7e72b5167dca61ef12c6a1">More...</a><br /></td></tr>
 <tr class="separator:a85ec3b2d7f7e72b5167dca61ef12c6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ca5cd40115737503d5eece5d336061"><td class="memItemLeft" align="right" valign="top"><a id="a15ca5cd40115737503d5eece5d336061"></a>
-CaptureStyle&#160;</td><td class="memItemRight" valign="bottom"><b>get_capture_style_of</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memitem:a15ca5cd40115737503d5eece5d336061"><td class="memItemLeft" align="right" valign="top">CaptureStyle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a15ca5cd40115737503d5eece5d336061">get_capture_style_of</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memdesc:a15ca5cd40115737503d5eece5d336061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the CaptureStyle associated with a given argument.  <a href="structopt3_1_1capture__list.html#a15ca5cd40115737503d5eece5d336061">More...</a><br /></td></tr>
 <tr class="separator:a15ca5cd40115737503d5eece5d336061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f009c19b76f6c75a8f83a33f243037"><td class="memItemLeft" align="right" valign="top"><a id="a66f009c19b76f6c75a8f83a33f243037"></a>
-iterator_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_group_of</b> (size_t const &amp;id)</td></tr>
+<tr class="memitem:a66f009c19b76f6c75a8f83a33f243037"><td class="memItemLeft" align="right" valign="top">iterator_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a66f009c19b76f6c75a8f83a33f243037">get_group_of</a> (size_t const &amp;id)</td></tr>
+<tr class="memdesc:a66f009c19b76f6c75a8f83a33f243037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator pointing to the capture group with the given id.  <a href="structopt3_1_1capture__list.html#a66f009c19b76f6c75a8f83a33f243037">More...</a><br /></td></tr>
 <tr class="separator:a66f009c19b76f6c75a8f83a33f243037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a3ca6e5d9a0b3fb1d8eec3e623c44d"><td class="memItemLeft" align="right" valign="top"><a id="a22a3ca6e5d9a0b3fb1d8eec3e623c44d"></a>
-const_iterator_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_group_of</b> (size_t const &amp;id) const</td></tr>
+<tr class="memitem:a22a3ca6e5d9a0b3fb1d8eec3e623c44d"><td class="memItemLeft" align="right" valign="top">const_iterator_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a22a3ca6e5d9a0b3fb1d8eec3e623c44d">get_group_of</a> (size_t const &amp;id) const</td></tr>
+<tr class="memdesc:a22a3ca6e5d9a0b3fb1d8eec3e623c44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator pointing to the capture group with the given id.  <a href="structopt3_1_1capture__list.html#a22a3ca6e5d9a0b3fb1d8eec3e623c44d">More...</a><br /></td></tr>
 <tr class="separator:a22a3ca6e5d9a0b3fb1d8eec3e623c44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1efe4dab90407add5d98750746badf75"><td class="memItemLeft" align="right" valign="top"><a id="a1efe4dab90407add5d98750746badf75"></a>
-iterator_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_group_of</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memitem:a1efe4dab90407add5d98750746badf75"><td class="memItemLeft" align="right" valign="top">iterator_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a1efe4dab90407add5d98750746badf75">get_group_of</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name)</td></tr>
+<tr class="memdesc:a1efe4dab90407add5d98750746badf75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator pointing to the capture group that contains an argument with the given name.  <a href="structopt3_1_1capture__list.html#a1efe4dab90407add5d98750746badf75">More...</a><br /></td></tr>
 <tr class="separator:a1efe4dab90407add5d98750746badf75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa694c9ad73833ee94dd81e55fe93afe"><td class="memItemLeft" align="right" valign="top"><a id="aaa694c9ad73833ee94dd81e55fe93afe"></a>
-const_iterator_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_group_of</b> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memitem:aaa694c9ad73833ee94dd81e55fe93afe"><td class="memItemLeft" align="right" valign="top">const_iterator_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#aaa694c9ad73833ee94dd81e55fe93afe">get_group_of</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memdesc:aaa694c9ad73833ee94dd81e55fe93afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator pointing to the capture group that contains an argument with the given name.  <a href="structopt3_1_1capture__list.html#aaa694c9ad73833ee94dd81e55fe93afe">More...</a><br /></td></tr>
 <tr class="separator:aaa694c9ad73833ee94dd81e55fe93afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b471a4f88378abf051e02699fe7440"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structopt3_1_1capture__list.html#a94b471a4f88378abf051e02699fe7440">is_present</a> (<a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;name) const</td></tr>
+<tr class="memdesc:a94b471a4f88378abf051e02699fe7440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given Option/Flag name was specified in the capture list.  <a href="structopt3_1_1capture__list.html#a94b471a4f88378abf051e02699fe7440">More...</a><br /></td></tr>
+<tr class="separator:a94b471a4f88378abf051e02699fe7440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -158,8 +165,270 @@ template&lt;valid_capture... Ts&gt; </td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A small wrapper object that inherits from a std::vector. TODO: Implement this properly instead of inheriting from std::vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01662">1662</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01676">1676</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a85ec3b2d7f7e72b5167dca61ef12c6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ec3b2d7f7e72b5167dca61ef12c6a1">&#9670;&nbsp;</a></span>capture_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;valid_capture... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">requires var::more_than&lt;0, Ts...&gt; STRCONSTEXPR opt3::capture_list::capture_list </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>captures</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="structopt3_1_1capture__list.html" title="A small wrapper object that inherits from a std::vector. TODO: Implement this properly instead of inh...">capture_list</a> instance with the given entries. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">captures</td><td>Any number of valid argument names as strings or chars. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01710">1710</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a15ca5cd40115737503d5eece5d336061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ca5cd40115737503d5eece5d336061">&#9670;&nbsp;</a></span>get_capture_style_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CaptureStyle opt3::capture_list::get_capture_style_of </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the CaptureStyle associated with a given argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Input argument name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The CaptureStyle associated with the given argument name. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01763">1763</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a66f009c19b76f6c75a8f83a33f243037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f009c19b76f6c75a8f83a33f243037">&#9670;&nbsp;</a></span>get_group_of() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">iterator_t opt3::capture_list::get_group_of </td>
+          <td>(</td>
+          <td class="paramtype">size_t const &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator pointing to the capture group with the given id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Input capture group ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the capture group with the given id if one was found; otherwise an iterator pointing to the end position of the capture list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01740">1740</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a22a3ca6e5d9a0b3fb1d8eec3e623c44d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a3ca6e5d9a0b3fb1d8eec3e623c44d">&#9670;&nbsp;</a></span>get_group_of() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const_iterator_t opt3::capture_list::get_group_of </td>
+          <td>(</td>
+          <td class="paramtype">size_t const &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator pointing to the capture group with the given id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Input capture group ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the capture group with the given id if one was found; otherwise an iterator pointing to the end position of the capture list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01751">1751</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1efe4dab90407add5d98750746badf75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1efe4dab90407add5d98750746badf75">&#9670;&nbsp;</a></span>get_group_of() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">iterator_t opt3::capture_list::get_group_of </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator pointing to the capture group that contains an argument with the given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Input argument name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the first capture group that contains the given argument name if one was found; otherwise an iterator pointing to the end position of the capture list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01717">1717</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aaa694c9ad73833ee94dd81e55fe93afe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa694c9ad73833ee94dd81e55fe93afe">&#9670;&nbsp;</a></span>get_group_of() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const_iterator_t opt3::capture_list::get_group_of </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator pointing to the capture group that contains an argument with the given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Input argument name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the first capture group that contains the given argument name if one was found; otherwise an iterator pointing to the end position of the capture list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01728">1728</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a94b471a4f88378abf051e02699fe7440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b471a4f88378abf051e02699fe7440">&#9670;&nbsp;</a></span>is_present()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool opt3::capture_list::is_present </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceopt3.html#a702940d28c661e65df03e476bbf675f6">vstring</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the given Option/Flag name was specified in the capture list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of an Option/Flag to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the given name is present somewhere in the capture list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opt3_8hpp_source.html#l01775">1775</a> of file <a class="el" href="opt3_8hpp_source.html">opt3.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/307lib/307lib/shared/include/<a class="el" href="opt3_8hpp_source.html">opt3.hpp</a></li>
 </ul>
 </div><!-- contents -->

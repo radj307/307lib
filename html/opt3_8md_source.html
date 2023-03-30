@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('opt3_8md.html',''); initResizable(); }
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;### Argument Types</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;One of three *argument types* is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted.</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;One of three *argument types* is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted.  </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;- Option  </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  - Always preceded by two delimiters `--`.</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('opt3_8md.html',''); initResizable(); }
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;#### *Explicit* vs. *Implicit* Capture</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;A capture can be classified as either explicit or implicit. An explicit capture involves appending an equals sign `=` followed by a string. On the other hand, an implicit capture captures a Parameter that is separated by at least one space character.  </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;A capture argument can be specified explicitly or implicitly. An explicit capture involves appending an equals sign `=` followed by a string. On the other hand, an implicit capture captures a Parameter that is separated by at least one space character.  </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;- Explicit: `--arg=&quot;Hello World!&quot;`  </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;- Implicit: `--arg &quot;Hello World!&quot;`  </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -177,24 +177,51 @@ $(document).ready(function(){initNavTree('opt3_8md.html',''); initResizable(); }
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;### Argument Parsing Rules</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;You can use the `ArgumentParsingRules` structure to get more control over the argument parsing process.  </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;It is highly recommended that you do not call any of this object&#39;s methods yourself; they are intended for internal use only.</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;The following members are available:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;- `delimiters`</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  - Defines the list of characters (`char`) that are considered valid Flag/Option prefixes.</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  - Default: { &#39;-&#39; }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;- `allowNumericFlags`  </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  - Determines whether digits are allowed to be considered flags. This fixes a potential bug where Parameters are interpreted as Flags when entering negative numbers followed by alphanumeric characters in the same string, ex: `-200.0F`.</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  - Does nothing if `-` is not a delimiter.</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  - Default: false</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;- `assumeValidNumberWithDashPrefixIsNegative`</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  - A valid negative number *(ex: `-30`)* would normally be treated like a Flag and interpreted as `-3 -0`. When this is true, valid negative numbers are interpreted as Parameters instead of flags.</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  - Does nothing if `-` is not a delimiter.</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  - Default: true</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;If you want to change the way that opt3 parses commandline input, you can use the `ArgParsingRules` struct.  </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;The `ArgManager` constructor accepts an `ArgParsingRules` instance as the third parameter.</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;```cpp</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;int main(const int argc, char** argv)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  opt3::ArgParsingRules rules;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  rules.allowUnexpectedArgs = false;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  opt3::ArgManager args{ argc, argv, rules,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    &#39;h&#39;,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    &quot;help&quot;,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;```</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;The following settings are exposed via `ArgParsingRules`:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;# *WIP*</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;- `delimiters`</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  - Defines the list of characters that are considered valid Flag/Option prefixes.</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  - Default: `{ &#39;-&#39; }`</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;- `allowNumericFlags`  </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  - Determines whether digits are allowed to be considered flags. This fixes a potential bug where Parameters are interpreted as Flags when entering negative numbers followed by alphanumeric characters in the same string, ex: `-200.0F`.</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  - This is ignored when `-` is not a delimiter.</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  - Default: `false`</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;- `assumeValidNumberWithDashPrefixIsNegative`</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  - A valid negative number *(ex: `-30`)* would normally be treated like a Flag and interpreted as `-3 -0`. When this is true, valid negative numbers are interpreted as Parameters instead of flags.</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  - This is ignored when `-` is not a delimiter.</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  - Default: `true`</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;- `defaultCaptureStyle`</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  - Determines the default capture style for arguments/templates in the capture list that did not have a capture style explicitly defined.</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  - Default: `Optional`</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;- `allowUnexpectedArgs`</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  - Determines what happens when the user enters an Option or Flag that wasn&#39;t explicitly defined in the capture list.</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  - When `true`, syntactically correct Options &amp; Flags are always allowed regardless of whether or not they were defined in the capture list. When `false`, only Options &amp; Flags that were explicitly defined in the capture list are allowed.</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  - The action taken for disallowed arguments depends on the value of `convertUnexpectedArgsToParameters`.</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  - Default: `true`</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;- `convertUnexpectedArgsToParameters`</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  - Determines what happens when unexpected arguments aren&#39;t allowed and an unexpected argument was entered by the user.</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  - When `true`, unexpected Options &amp; Flags are converted to Parameters instead of triggering an exception. When `false`, unexpected arguments will cause an exception to be thrown by the parser.</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  - Disallowed arguments that were converted to Parameters will include prefix delimiters.  </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    For example, in a project that expects `-h` but does **not** expect `-F`, the argument `-hF` would be interpreted as a Parameter with the value `-hF`.</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  - This is ignored when `allowUnexpectedArgs` is `true`.</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  - Default: `false`</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;# *WIP*</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -97,7 +97,8 @@ opt3</h1>
 Basic Concepts</h2>
 <h3><a class="anchor" id="autotoc_md12"></a>
 Argument Types</h3>
-<p>One of three <em>argument types</em> is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted.</p>
+<p>One of three <em>argument types</em> is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted. <br  />
+</p>
 <ul>
 <li>Option <br  />
 <ul>
@@ -134,7 +135,7 @@ Defining Capturing Arguments</h4>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv, <span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span> };</div>
 <div class="line">}</div>
-<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02063">opt3.hpp:2063</a></div></div>
+<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02179">opt3.hpp:2179</a></div></div>
 </div><!-- fragment --><p> You can force a specific Flag or Option to <em>require</em> capture input by using custom string literals: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">using namespace </span>opt3_literals;</div>
@@ -152,11 +153,11 @@ Defining Capturing Arguments</h4>
 <div class="line">    <a class="code" href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">opt3::make_template</a>(opt3::CaptureStyle::Optional, <a class="code" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a>::, <span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>)</div>
 <div class="line">  };</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceopt3_html_ab35e9f86022da18932b030f40186ce2c"><div class="ttname"><a href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">opt3::make_template</a></div><div class="ttdeci">constexpr variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts &amp;&amp;... args)</div><div class="ttdoc">Creates a new variant_template_group instance.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01580">opt3.hpp:1580</a></div></div>
-<div class="ttc" id="anamespaceopt3_html_aed884f239ca32c2fe3dc2b12c399f142"><div class="ttname"><a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a></div><div class="ttdeci">ConflictStyle</div><div class="ttdoc">Defines the circumstances in which two argument groups conflict with each other.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01214">opt3.hpp:1214</a></div></div>
+<div class="ttc" id="anamespaceopt3_html_ab35e9f86022da18932b030f40186ce2c"><div class="ttname"><a href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">opt3::make_template</a></div><div class="ttdeci">constexpr variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts &amp;&amp;... args)</div><div class="ttdoc">Creates a new variant_template_group instance.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01593">opt3.hpp:1593</a></div></div>
+<div class="ttc" id="anamespaceopt3_html_aed884f239ca32c2fe3dc2b12c399f142"><div class="ttname"><a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a></div><div class="ttdeci">ConflictStyle</div><div class="ttdoc">Determines the circumstances in which two arguments from the same template group will conflict with e...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01214">opt3.hpp:1214</a></div></div>
 </div><!-- fragment --><h4><a class="anchor" id="autotoc_md15"></a>
 &lt;em&gt;Explicit&lt;/em&gt; vs. &lt;em&gt;Implicit&lt;/em&gt; Capture</h4>
-<p>A capture can be classified as either explicit or implicit. An explicit capture involves appending an equals sign <code>=</code> followed by a string. On the other hand, an implicit capture captures a Parameter that is separated by at least one space character. <br  />
+<p>A capture argument can be specified explicitly or implicitly. An explicit capture involves appending an equals sign <code>=</code> followed by a string. On the other hand, an implicit capture captures a Parameter that is separated by at least one space character. <br  />
 </p><ul>
 <li>Explicit: <code>--arg="Hello World!"</code> <br  />
 </li>
@@ -187,26 +188,48 @@ Capture Style</h4>
 </ul>
 <h3><a class="anchor" id="autotoc_md17"></a>
 Argument Parsing Rules</h3>
-<p>You can use the <code>ArgumentParsingRules</code> structure to get more control over the argument parsing process. <br  />
- It is highly recommended that you do not call any of this object's methods yourself; they are intended for internal use only.</p>
-<p>The following members are available:</p>
+<p>If you want to change the way that <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> parses commandline input, you can use the <code>ArgParsingRules</code> struct. <br  />
+ The <code>ArgManager</code> constructor accepts an <code>ArgParsingRules</code> instance as the third parameter. </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line">{</div>
+<div class="line">  <a class="code" href="structopt3_1_1_arg_parsing_rules.html">opt3::ArgParsingRules</a> rules;</div>
+<div class="line">  rules.<a class="code" href="structopt3_1_1_arg_parsing_rules.html#a0ebdf11e91b0a9082e78b7403b667690">allowUnexpectedArgs</a> = <span class="keyword">false</span>;</div>
+<div class="line">  </div>
+<div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv, rules,</div>
+<div class="line">    <span class="charliteral">&#39;h&#39;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;help&quot;</span>,</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="ttc" id="astructopt3_1_1_arg_parsing_rules_html"><div class="ttname"><a href="structopt3_1_1_arg_parsing_rules.html">opt3::ArgParsingRules</a></div><div class="ttdoc">Allows configuration of the rules used when parsing arguments.   It is highly recommended that you do...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01790">opt3.hpp:1790</a></div></div>
+<div class="ttc" id="astructopt3_1_1_arg_parsing_rules_html_a0ebdf11e91b0a9082e78b7403b667690"><div class="ttname"><a href="structopt3_1_1_arg_parsing_rules.html#a0ebdf11e91b0a9082e78b7403b667690">opt3::ArgParsingRules::allowUnexpectedArgs</a></div><div class="ttdeci">bool allowUnexpectedArgs</div><div class="ttdoc">Determines whether options/flags that aren't present in the capture_list are allowed or not....</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01819">opt3.hpp:1819</a></div></div>
+</div><!-- fragment --><p>The following settings are exposed via <code>ArgParsingRules</code>:</p>
 <ul>
 <li><code>delimiters</code><ul>
-<li>Defines the list of characters (<code>char</code>) that are considered valid Flag/Option prefixes.</li>
-<li>Default: { '-' }</li>
+<li>Defines the list of characters that are considered valid Flag/Option prefixes.</li>
+<li>Default: &lsquo;{ &rsquo;-' }<code> -</code>allowNumericFlags<code>&lt;br&gt;</code></li>
+<li><code>Determines whether digits are allowed to be considered flags. This fixes a potential bug where Parameters are interpreted as Flags when entering negative numbers followed by alphanumeric characters in the same string, ex:</code>-200.0F<code>.</code></li>
+<li><code>This is ignored when</code>-<code>is not a delimiter.</code></li>
+<li><code>Default:</code>false<code> -</code>assumeValidNumberWithDashPrefixIsNegative<code></code></li>
+<li><code>A valid negative number *(ex:</code>-30<code>)* would normally be treated like a Flag and interpreted as</code>-3 -0<code>. When this is true, valid negative numbers are interpreted as Parameters instead of flags.</code></li>
+<li><code>This is ignored when</code>-<code>is not a delimiter.</code></li>
+<li><code>Default:</code>true<code> -</code>defaultCaptureStyle`</li>
+<li>Determines the default capture style for arguments/templates in the capture list that did not have a capture style explicitly defined.</li>
+<li>Default: <code>Optional</code></li>
 </ul>
 </li>
-<li><code>allowNumericFlags</code> <br  />
-<ul>
-<li>Determines whether digits are allowed to be considered flags. This fixes a potential bug where Parameters are interpreted as Flags when entering negative numbers followed by alphanumeric characters in the same string, ex: <code>-200.0F</code>.</li>
-<li>Does nothing if <code>-</code> is not a delimiter.</li>
-<li>Default: false</li>
+<li><code>allowUnexpectedArgs</code><ul>
+<li>Determines what happens when the user enters an Option or Flag that wasn't explicitly defined in the capture list.</li>
+<li>When <code>true</code>, syntactically correct Options &amp; Flags are always allowed regardless of whether or not they were defined in the capture list. When <code>false</code>, only Options &amp; Flags that were explicitly defined in the capture list are allowed.</li>
+<li>The action taken for disallowed arguments depends on the value of <code>convertUnexpectedArgsToParameters</code>.</li>
+<li>Default: <code>true</code></li>
 </ul>
 </li>
-<li><code>assumeValidNumberWithDashPrefixIsNegative</code><ul>
-<li>A valid negative number *(ex: <code>-30</code>)* would normally be treated like a Flag and interpreted as <code>-3 -0</code>. When this is true, valid negative numbers are interpreted as Parameters instead of flags.</li>
-<li>Does nothing if <code>-</code> is not a delimiter.</li>
-<li>Default: true</li>
+<li><code>convertUnexpectedArgsToParameters</code><ul>
+<li>Determines what happens when unexpected arguments aren't allowed and an unexpected argument was entered by the user.</li>
+<li>When <code>true</code>, unexpected Options &amp; Flags are converted to Parameters instead of triggering an exception. When <code>false</code>, unexpected arguments will cause an exception to be thrown by the parser.</li>
+<li>Disallowed arguments that were converted to Parameters will include prefix delimiters. <br  />
+ For example, in a project that expects <code>-h</code> but does <b>not</b> expect <code>-F</code>, the argument <code>-hF</code> would be interpreted as a Parameter with the value <code>-hF</code>.</li>
+<li>This is ignored when <code>allowUnexpectedArgs</code> is <code>true</code>.</li>
+<li>Default: <code>false</code></li>
 </ul>
 </li>
 </ul>

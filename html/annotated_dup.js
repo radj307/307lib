@@ -77,7 +77,7 @@ var annotated_dup =
       [ "arg_conflict", "structopt3_1_1arg__conflict.html", "structopt3_1_1arg__conflict" ],
       [ "arg_container", "structopt3_1_1arg__container.html", "structopt3_1_1arg__container" ],
       [ "arg_manager", "structopt3_1_1arg__manager.html", "structopt3_1_1arg__manager" ],
-      [ "ArgumentParsingRules", "structopt3_1_1_argument_parsing_rules.html", "structopt3_1_1_argument_parsing_rules" ],
+      [ "ArgParsingRules", "structopt3_1_1_arg_parsing_rules.html", "structopt3_1_1_arg_parsing_rules" ],
       [ "base_arg", "structopt3_1_1base__arg.html", null ],
       [ "basic_arg_t", "structopt3_1_1basic__arg__t.html", "structopt3_1_1basic__arg__t" ],
       [ "basic_arg_template", "structopt3_1_1basic__arg__template.html", "structopt3_1_1basic__arg__template" ],
