@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('_commandline.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><p>The commandline argument parser is designed to be as flexible as possible while retaining similar syntax and usage styles to most GNU CLI programs. <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Basic Concepts</h1>
 <p>Take note of the terminology used by <code>optlib</code> documentation: <br  />
 </p><ul>
@@ -99,7 +99,7 @@ Basic Concepts</h1>
 <li>The word *'option'* can mean different things depending on where it is used. When it appears as output from the program, *(i.e. from a <code>--help</code> command)*, 'option' means either a <em>long-opt</em> or a <em>short-opt</em>. *(See <a href="#argument-types">Argument Types</a>)* <br  />
  Otherwise, it refers to the <code>optlib</code> implementation of a long-opt.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Argument Types</h2>
 <p>Arguments are assigned 'types' depending on their prefix. <br  />
 </p>
@@ -121,7 +121,7 @@ Argument Types</h2>
 <div class="line">ARRCON -H 192.168.0.53 --port=25555</div>
 <div class="line">        ^                    ^</div>
 <div class="line">       Flag          Option with capture</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
 Argument Capturing</h2>
 <p>An argument's type determines whether it is <em>capable</em> of capturing other arguments, but whether it actually does is determined by a few factors:</p>
 <ul>
@@ -140,11 +140,11 @@ Argument Capturing</h2>
 <p>Arguments that are not specifically allowed to capture <em>cannot capture under any circumstances.</em> <br  />
  In the event that a user attempts to force a non-capturing option or flag to capture a string by appending <code>=...</code> to it, the string is inserted into the argument list as a Parameter instead. <br  />
 </p>
-<h4><a class="anchor" id="autotoc_md13"></a>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Note for Developers</h4>
 <p>Parameters are removed from the argument list if they are captured by an option or flag, and as such will not be present when accessing arguments by index, or when iterating over the list. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Argument Order</h2>
 <p><code>optlib</code> is designed to provide an order-agnostic* interface for developers, but does provide ways for developers to enforce their own ordering schemes. <br  />
  Consequently, whether the order of arguments is important or not should be considered to be <em>implementation-defined.</em></p>

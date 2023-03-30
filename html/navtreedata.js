@@ -42,11 +42,25 @@ var NAVTREE =
       ] ]
     ] ],
     [ "README", "md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html", null ],
+    [ "Commandline Argument Manager", "opt3.html", [
+      [ "opt3", "opt3.html#autotoc_md10", [
+        [ "Basic Concepts", "opt3.html#autotoc_md11", [
+          [ "Argument Types", "opt3.html#autotoc_md12", null ],
+          [ "Capturing Arguments", "opt3.html#autotoc_md13", [
+            [ "Defining Capturing Arguments", "opt3.html#autotoc_md14", null ],
+            [ "<em>Explicit</em> vs. <em>Implicit</em> Capture", "opt3.html#autotoc_md15", null ],
+            [ "Capture Style", "opt3.html#autotoc_md16", null ]
+          ] ],
+          [ "Argument Parsing Rules", "opt3.html#autotoc_md17", null ]
+        ] ]
+      ] ],
+      [ "<em>WIP</em>", "opt3.html#autotoc_md18", null ]
+    ] ],
     [ "Argument Parser", "_commandline.html", [
-      [ "Basic Concepts", "_commandline.html#autotoc_md10", [
-        [ "Argument Types", "_commandline.html#autotoc_md11", null ],
-        [ "Argument Capturing", "_commandline.html#autotoc_md12", null ],
-        [ "Argument Order", "_commandline.html#autotoc_md14", null ]
+      [ "Basic Concepts", "_commandline.html#autotoc_md19", [
+        [ "Argument Types", "_commandline.html#autotoc_md20", null ],
+        [ "Argument Capturing", "_commandline.html#autotoc_md21", null ],
+        [ "Argument Order", "_commandline.html#autotoc_md23", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
@@ -86,21 +100,21 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"307modules.html",
-"_token_redux_8hpp.html#a2ed88184cb9b36061413a1f07c93b2df",
-"classcolor_1_1palette.html#a16ebfc05ba8134637aebd517d8cc6aca",
-"classini_1_1ini__value.html#a0e54cea0423d54b5e45b5a3c9bb63fc4",
-"classshared_1_1eventdef.html",
-"clogger_8hpp.html#ad2d673aa668f9c7b14f8fc7f3f05f01c",
-"functions_a.html",
-"namespaceparser.html",
-"namespaceterm.html#abc913e81c48bba59648476c7664f89ed",
-"simple_i_n_i_8hpp.html",
-"structcolor_1_1basic__color.html#a806464061d194ace95900c1ec6370431",
-"structmatrix_1_1nmatrix.html#a6cf759659115cbc09a9be8cc0e07b627",
-"structopt_1_1_arg_container.html#aee2f5503e473f25959397debe0c316ee",
-"structterm_1_1_cursor.html#a3b8e415312fbfc9e152d7307cc5e5f1e",
-"term_8hpp_source.html"
+"",
+"_segments_8h.html#ad527dafbd86a4c61633be26dba7ed45d",
+"classcolor_1_1basic__sync.html#a1e69bc48531c3cdebcbaabf28da8c0ed",
+"classini_1_1basic__ini.html#aae7718f28e806449885179614729bb91",
+"classopt_1_1token_1_1_parser.html#a23123ef1d83f676fb75ff9ff41bef1c2",
+"classxlog_1_1x_log.html#a7447b40a19554dc4141c68357974118f",
+"filei_8hpp.html#a253e4e204c4867d33b13c1d9eeef0fad",
+"namespaceopt3.html#a71ba8a24b4bbe45f7ca29366131fb715",
+"namespaceterm.html#a6a560f2079e43a1468e4ea63c83f7418",
+"redirect_8hpp.html",
+"structcolor_1_1_r_g_b.html#a4db59239bcb601fc93d7db9592e0960c",
+"structmatrix_1_1basic__matrix.html#a7a73344e305f6440d66220cea14a2bcd",
+"structopt_1_1_arg_container.html#a2d11daad0d6e1e6d410e50509ec90678",
+"structshared_1_1casting__optional.html#aa8bb523e0a21923399db56644a04d747",
+"term_8hpp.html#a6894fec1f764bcd4ef01bf3977b24054"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
