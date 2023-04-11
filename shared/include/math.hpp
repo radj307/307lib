@@ -21,7 +21,7 @@ namespace math {
 	 * @returns		T
 	 */
 	template<std::floating_point T>
-	INLINE CONSTEXPR T getEpsilon() noexcept { return std::numeric_limits<T>::epsilon(); }
+	CONSTEXPR T getEpsilon() noexcept { return std::numeric_limits<T>::epsilon(); }
 
 	/**
 	 * @brief		Checks if the given floating-point numbers are closer to being equal than the machine epsilon value.
@@ -30,7 +30,8 @@ namespace math {
 	 * @param r		Second comparison value.
 	 * @returns		T
 	 */
-	template<std::floating_point T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept
+	template<std::floating_point T>
+	[[nodiscard]] CONSTEXPR bool equal(T const& l, T const& r) noexcept
 	{
 		const T diff{ l - r };
 		return (diff < static_cast<T>(0.0) ? -diff : diff) < getEpsilon<T>();
@@ -42,7 +43,8 @@ namespace math {
 	 * @param r		Second comparison value.
 	 * @returns		T
 	 */
-	template<std::integral T> [[nodiscard]] INLINE static CONSTEXPR bool equal(T const& l, T const& r) noexcept { return l == r; }
+	template<std::integral T>
+	[[nodiscard]] CONSTEXPR bool equal(T const& l, T const& r) noexcept { return l == r; }
 
 	/**
 	 * @brief			This is a `constexpr` version of the pow function from \<cmath\>.
@@ -51,7 +53,8 @@ namespace math {
 	 * @param power		Exponent value.
 	 * @returns T		The result of the expression ( value ^ power ). _(exponent, not XOR)_
 	 */
-	template<var::numeric T> [[nodiscard]] INLINE static CONSTEXPR T pow(const T& value, const T& power = static_cast<T>(2)) noexcept
+	template<var::numeric T>
+	[[nodiscard]] CONSTEXPR T pow(const T& value, const T& power = static_cast<T>(2)) noexcept
 	{
 		T v{ value };
 		for (unsigned i{ 0u }, end{ static_cast<unsigned>(power) - 1u }; i < end; ++i)
@@ -67,18 +70,18 @@ namespace math {
 	 * @returns	T		Resulting value of the modulo operation.
 	 */
 	template<std::floating_point T>
-	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
+	[[nodiscard]] CONSTEXPR T mod(const T& value, const T& modulo)
 	{
-#		ifdef OS_WIN
+	#		ifdef OS_WIN
 		if CONSTEXPR(std::same_as<T, long double>) // long double
 			return std::fmodl(value, modulo);
 		else if CONSTEXPR(std::same_as<T, double>) // double
 			return std::fmod(value, modulo);
 		else // float
 			return std::fmodf(value, modulo);
-#		else
+	#		else
 		return std::fmod(value, modulo);
-#		endif
+	#		endif
 	}
 
 	/**
@@ -89,7 +92,7 @@ namespace math {
 	 * @returns			T
 	 */
 	template<std::integral T>
-	[[nodiscard]] CONSTEXPR static T mod(const T& value, const T& modulo)
+	[[nodiscard]] CONSTEXPR T mod(const T& value, const T& modulo)
 	{
 		return value % modulo;
 	}
@@ -103,7 +106,7 @@ namespace math {
 	 * @returns				T
 	 */
 	template<var::numeric T, var::numeric RT = T>
-	[[nodiscard]] static CONSTEXPR RT normalize(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
+	[[nodiscard]] CONSTEXPR RT normalize(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
 	{
 		return static_cast<RT>(new_range.first) + (static_cast<RT>(value) - static_cast<RT>(old_range.first)) * static_cast<RT>(static_cast<RT>(new_range.second) - static_cast<RT>(new_range.first)) / (static_cast<RT>(old_range.second) - static_cast<RT>(old_range.first));
 	}
@@ -116,12 +119,13 @@ namespace math {
 	 * @returns				T
 	 */
 	template<var::numeric T, var::numeric RT = T>
-	[[nodiscard]] static CONSTEXPR RT scale(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
+	[[nodiscard]] CONSTEXPR RT scale(const T& value, const std::pair<T, T>& old_range, const std::pair<T, T>& new_range = { 1, 1 })
 	{
 		return normalize(value, old_range, new_range);
 	}
 
-	template<typename T> [[nodiscard]] static CONSTEXPR T max_value()
+	template<typename T>
+	[[nodiscard]] CONSTEXPR T max_value()
 	{
 		if CONSTEXPR(std::unsigned_integral<T>)
 			return{ 255 * sizeof(T) };
@@ -134,7 +138,8 @@ namespace math {
 	 * @param val	Input Value
 	 * @returns		T
 	 */
-	template<var::arithmetic T> [[nodiscard]] static CONSTEXPR T abs(const T& val) { return val > 0 ? val : -val; }
+	template<var::arithmetic T>
+	[[nodiscard]] CONSTEXPR T abs(const T& val) { return val > 0 ? val : -val; }
 
 #if LANG_CPP >= 17
 #define MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) std::reduce(begin, end)
@@ -148,7 +153,8 @@ namespace math {
 	 * @returns		T
 	 *\n			The average of all of the numbers in the vector.
 	 */
-	template<var::arithmetic T, typename IteratorT> [[nodiscard]] static CONSTEXPR T average(const IteratorT& begin, const IteratorT& end)
+	template<var::arithmetic T, typename IteratorT>
+	[[nodiscard]] CONSTEXPR T average(const IteratorT& begin, const IteratorT& end)
 	{
 		return MATH_HPP_AVERAGE_FUNCTION_SIG(begin, end) / static_cast<T>(std::distance(begin, end));
 	}
@@ -159,7 +165,8 @@ namespace math {
 	 * @returns		T
 	 *\n			The average of all of the numbers in the vector.
 	 */
-	template<var::arithmetic T, std::same_as<T>... Ts> [[nodiscard]] static CONSTEXPR T average(T&& fst, Ts&&... rest)
+	template<var::arithmetic T, std::same_as<T>... Ts>
+	[[nodiscard]] CONSTEXPR T average(T&& fst, Ts&&... rest)
 	{
 		return average<T>(std::vector<T>{ std::forward<T>(fst), std::forward<Ts>(rest)... });
 	}
@@ -173,7 +180,7 @@ namespace math {
 	 * @returns				DurationT
 	 */
 	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::same_as<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
-	[[nodiscard]] static CONSTEXPR DurationT average(const std::vector<DurationT>& durations)
+	[[nodiscard]] CONSTEXPR DurationT average(const std::vector<DurationT>& durations)
 	{
 		const DurationT sum{ MATH_HPP_AVERAGE_FUNCTION_SIG(durations.begin(), durations.end()) };
 		return sum / durations.size();
@@ -189,7 +196,7 @@ namespace math {
 	 * @returns				DurationT
 	*/
 	template<typename Rep, typename Period = std::ratio<1L, 1L>, std::derived_from<std::chrono::duration<Rep, Period>> DurationT = std::chrono::duration<Rep, Period>>
-	[[nodiscard]] static CONSTEXPR DurationT difference(DurationT const& left, DurationT const& right)
+	[[nodiscard]] CONSTEXPR DurationT difference(DurationT const& left, DurationT const& right)
 	{
 		return DurationT{ std::abs(left.count() - right.count()) };
 	}
@@ -205,7 +212,7 @@ namespace math {
 	 *\n				  second:	Low-order Byte(s).
 	 */
 	template<typename Output, typename Input> requires (sizeof(Output) == sizeof(Input) / 2)
-		inline CONSTEXPR std::pair<Output, Output> byteSplit(const Input& value) noexcept
+		CONSTEXPR std::pair<Output, Output> byteSplit(const Input& value) noexcept
 	{
 		return{ *((Output*)&(value)+1), *((Output*)&(value)+0) };
 	}
@@ -220,7 +227,7 @@ namespace math {
 	 * @returns				Output
 	 */
 	template<typename Output, typename Input> requires (sizeof(Output) == sizeof(Input) * 2)
-		inline CONSTEXPR Output byteJoin(const Input& hiBytes, const Input& loBytes) noexcept
+		CONSTEXPR Output byteJoin(const Input& hiBytes, const Input& loBytes) noexcept
 	{
 		Output value{ 0 };
 		*((Input*)&(value)+1) = hiBytes;
@@ -238,8 +245,34 @@ namespace math {
 	 * @returns				Output
 	 */
 	template<typename Output, typename Input> requires (sizeof(Output) == sizeof(Input) * 2)
-		inline CONSTEXPR Output byteJoin(const std::pair<Input, Input>& bytes) noexcept
+		CONSTEXPR Output byteJoin(const std::pair<Input, Input>& bytes) noexcept
 	{
 		return join<Output, Input>(bytes.first, bytes.second);
+	}
+	/**
+	 * @brief			Rounds the given value up to the nearest multiple of the given mult value.
+	 * @tparam T		Value type
+	 * @param value		Input value
+	 * @param mult		Base multiplier
+	 * @returns			value rounded up to the nearest multiple of mult.
+	 */
+	template<typename T>
+	CONSTEXPR T CeilToNearestMultiple(T const value, T const mult)
+	{
+		if (const auto nil{ static_cast<T>(0) }; mult == nil) return nil;
+		return static_cast<T>(std::ceil(static_cast<long double>(value) / static_cast<long double>(mult)) * static_cast<long double>(mult));
+	}
+	/**
+	 * @brief			Rounds the given value down to the nearest multiple of the given mult value.
+	 * @tparam T		Value type
+	 * @param value		Input value
+	 * @param mult		Base multiplier
+	 * @returns			value rounded down to the nearest multiple of mult.
+	 */
+	template<typename T>
+	CONSTEXPR T FloorToNearestMultiple(T const value, T const mult)
+	{
+		if (const auto nil{ static_cast<T>(0) }; mult == nil) return nil;
+		return static_cast<T>(std::floor(static_cast<long double>(value) / static_cast<long double>(mult)) * static_cast<long double>(mult));
 	}
 }
