@@ -58,24 +58,26 @@ namespace term {
 	}
 
 #ifndef OS_WIN
-	static struct termios old, current;
+	namespace _internal {
+		static struct termios old, current;
 
-	// Changes the terminal settings; disables buffered I/O, and optionally enables echo when a key is pressed.
-	void initTermios(bool echo = false)
-	{
-		tcgetattr(0, &old);
-		current = old;
-		current.c_lflag &= ~ICANON; //< disable buffered I/O
-		if (echo)
-			current.c_lflag |= ECHO;
-		else
-			current.c_lflag &= ~ECHO;
-		tcsetattr(0, TCSANOW, &current);
-	}
-	// Resets the terminal settings to their default, pre-`initTermios` state.
-	void resetTermios()
-	{
-		tcsetattr(0, TCSANOW, &old);
+		// Changes the terminal settings; disables buffered I/O, and optionally enables echo when a key is pressed.
+		void initTermiosForInstantInput(bool echo = false)
+		{
+			tcgetattr(0, &old);
+			current = old;
+			current.c_lflag &= ~ICANON; //< disable buffered I/O
+			if (echo)
+				current.c_lflag |= ECHO;
+			else
+				current.c_lflag &= ~ECHO;
+			tcsetattr(0, TCSANOW, &current);
+		}
+		// Resets the terminal settings to their default, pre-`initTermios` state.
+		void resetTermios()
+		{
+			tcsetattr(0, TCSANOW, &old);
+		}
 	}
 #endif
 
@@ -89,9 +91,9 @@ namespace term {
 	#ifdef OS_WIN
 		return _kbhit() != 0;
 	#else
-		initTermios();  //< disable buffered I/O
+		_internal::initTermiosForInstantInput();  //< disable buffered I/O
 		const auto hasData{ hasPendingDataSTDIN() };
-		resetTermios(); //< reset
+		_internal::resetTermios(); //< reset
 		return hasData;
 	#endif
 	}
@@ -109,27 +111,27 @@ namespace term {
 		return _getch();
 	#else
 		char c;
-		initTermios(); //< disable buffered I/O
+		_internal::initTermiosForInstantInput(); //< disable buffered I/O
 	#ifdef MULTITHREADING_CAPABLE
 		c = getchar(); //< reset
 	#else
 		c = getchar_unlocked(); //< this is faster but isn't thread-safe
 	#endif
-		resetTermios();
+		_internal::resetTermios();
 		return c;
 	#endif
 	}
 
-	/// @brief	Prints the escape sequence for DECXCPR(Report Cursor Position).Not thread - safe when multiple threads are printing / reading from STDOUT / STDIN.
+	/// @brief	Gets the escape sequence for DECXCPR(Report Cursor Position).
 	inline static const sequence ReportCursorPosition{ make_sequence(CSI, "6n") };
 
 	/**
 	 * @brief		Retrieve the current position of the cursor, measured in characters of the screen buffer.
 	 * @tparam RT	Return Type.
-	 * @returns		std::pair<RT, RT>
+	 * @returns			A pair of type RT that represent the X and Y coordinates of the cursor, respectively.
 	 */
-	template<std::integral RT = size_t>
-	inline std::pair<RT, RT> getCursorPosition() noexcept(false)
+	template<std::integral RT>
+	std::pair<RT, RT> getCursorPosition() noexcept(false)
 	{
 		const auto stoull{ [](auto&& str) { try { return std::stoull(std::forward<decltype(str)>(str)); } catch (...) { return 0ull; } } };
 		std::cout << ReportCursorPosition;
@@ -169,6 +171,14 @@ namespace term {
 			}
 		}
 		throw make_exception("getCursorPosition()\tDidn't receive expected escape sequence! No ending character found!");
+	}
+	/**
+	 * @brief		Retrieve the current position of the cursor, measured in characters of the screen buffer.
+	 * @returns		A pair of integrals that represent the X and Y coordinates of the cursor, respectively.
+	 */
+	inline std::pair<size_t, size_t> getCursorPosition() noexcept(false)
+	{
+		return getCursorPosition<size_t>();
 	}
 
 	/// @brief	Report device attributes to STDIN.
@@ -452,7 +462,7 @@ namespace term {
 	#		else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
 	#		endif
-	}
+}
 
 	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SelectGraphicsRendition(const Ts&... modes)
