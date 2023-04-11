@@ -531,12 +531,12 @@ namespace ini {
 
 	#pragma region Methods
 		/// @returns	true when the mask contains the given header, or the mask is empty *(it wasn't specified)*; otherwise false.
-		WINCONSTEXPR bool _$maskIncludes(const std::string& header) const noexcept
+		STRCONSTEXPR bool _$maskIncludes(const std::string& header) const noexcept
 		{
 			return mask.empty() || mask.contains(header);
 		}
 		/// @returns	true when the mask contains the given header/key, or the mask is empty *(it wasn't specified)*; otherwise false.
-		WINCONSTEXPR bool _$maskIncludes(const std::string& header, const std::string& key) const noexcept
+		STRCONSTEXPR bool _$maskIncludes(const std::string& header, const std::string& key) const noexcept
 		{
 			return mask.empty() || (mask.contains(header) && mask.at(header).contains(key));
 		}
@@ -551,7 +551,7 @@ namespace ini {
 			return (commentChars.find(c) != std::string::npos);
 		}
 		/// @returns	A string_view of the parameter 'line' that excludes any line comments, as determined by the commentStyle & some mild parsing.
-		WINCONSTEXPR std::string_view _$stripComments(std::string const& line) const noexcept
+		STRCONSTEXPR std::string_view _$stripComments(std::string const& line) const noexcept
 		{
 			bool escaped{ false }, single_quoted{ false }, double_quoted{ false };
 			for (size_t i{ 0 }, end{ line.size() }; i < end; ++i) {
@@ -572,7 +572,7 @@ namespace ini {
 			return std::string_view{ line };
 		}
 		/// @returns	A pair of iterators pointing to enclosing *(must be matching & both unescaped)* quotation marks in the given string. If no valid enclosing quotes are found, returns { value.end(), value.end() } instead.
-		WINCONSTEXPR std::pair<typename std::string::const_iterator, typename std::string::const_iterator> _$findEnclosingQuotes(std::string const& value) const noexcept
+		STRCONSTEXPR std::pair<typename std::string::const_iterator, typename std::string::const_iterator> _$findEnclosingQuotes(std::string const& value) const noexcept
 		{
 			size_t i;
 			char delim;
@@ -1223,6 +1223,12 @@ namespace ini {
 		{
 			const auto& v{ this->get($fwd(header), $fwd(key)) };
 			return (v.has_value() ? (v.value() == $fwd(expected_value)) : false);
+		}
+		template<typename T>
+		CONSTEXPR bool checkv(std::string&& header, std::string&& key, const T& expected_value) const
+		{
+			const auto& v{ this->get($fwd(header), $fwd(key)) };
+			return (v.has_value() ? (v.value() == expected_value) : false);
 		}
 	#pragma endregion check
 
