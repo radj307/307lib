@@ -1,6 +1,9 @@
 var namespaceterm =
 [
     [ "_internal", null, [
+      [ "initTermiosForInstantInput", "term_8hpp.html#ad685dc9d33e60754fd598454260e3626", null ],
+      [ "resetTermios", "term_8hpp.html#a0e3d98590b244f57605175466893d6f3", null ],
+      [ "current", "term_8hpp.html#a18e69eb166901c59d2e3f2b1e7eee31f", null ],
       [ "CURSOR_MIN_AXIS", "_cursor_origin_8h.html#afce05dc82de9f9c074c9ca8cb10a7736", null ]
     ] ],
     [ "query", null, [
@@ -43,16 +46,14 @@ var namespaceterm =
     [ "get_placeholder", "namespaceterm.html#aa147eecf2af344887cd05b132d218370", null ],
     [ "get_warn", "namespaceterm.html#a36e7c3a58b36c51250650b9ad62db34e", null ],
     [ "getch", "namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c", null ],
-    [ "getCursorPosition", "namespaceterm.html#a55343558a46cefcc203c3a5cc5ccaf8f", null ],
+    [ "getCursorPosition", "namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e", null ],
     [ "getDeviceAttributes", "namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50", null ],
     [ "getScreenBufferSize", "namespaceterm.html#a16752c0ed2d0565599638c183df30b54", null ],
-    [ "initTermios", "namespaceterm.html#a32f1e4cb3749c3beb7973446913d836c", null ],
     [ "InsertChar", "namespaceterm.html#a461afc8e8008fb3e74193222564d34d8", null ],
     [ "InsertLine", "namespaceterm.html#a1c98c936d6fc6705ebd2cb0edec446a3", null ],
     [ "kbhit", "namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e", null ],
     [ "NextTabStop", "namespaceterm.html#adc674b3a14adc96ecdcd59284c28d1c1", null ],
     [ "PrevTabStop", "namespaceterm.html#a28fe2784936fc2c9c73fe969e9956a5f", null ],
-    [ "resetTermios", "namespaceterm.html#a9f367432e1a4639e992982723f11ecd5", null ],
     [ "Scroll", "namespaceterm.html#af1fe827e183258f852cea3c5a8efaf07", null ],
     [ "ScrollDown", "namespaceterm.html#a6b0645424ddfec5793e3c175922a858d", null ],
     [ "ScrollUp", "namespaceterm.html#a185fbb6b77e3409d8b30173eec7d6837", null ],
@@ -66,7 +67,6 @@ var namespaceterm =
     [ "clear", "namespaceterm.html#a7afee5eaae96821aae2cb1b078173d31", null ],
     [ "ClearTabStops", "namespaceterm.html#abb815b03add62989d3637c12c0e2281f", null ],
     [ "crit", "namespaceterm.html#a24352a83692c1267264ab0a0d84794c9", null ],
-    [ "current", "namespaceterm.html#a6a4ec9c66d67e0a10ea69e87f07608d7", null ],
     [ "debug", "namespaceterm.html#a6ca5e4aabb74acddcf8e4462a99b6fff", null ],
     [ "DisableAltScreenBuffer", "namespaceterm.html#a285a0cd1f310c8df7a16b08a2d59e524", null ],
     [ "DisableCursor", "namespaceterm.html#a6894fec1f764bcd4ef01bf3977b24054", null ],

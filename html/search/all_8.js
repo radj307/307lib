@@ -36,7 +36,7 @@ var searchData=
   ['getch_343',['getch',['../classtoken_1_1base_1_1_tokenizer_base.html#a3ffabbda5d36adaf9bd37e6aed64a830',1,'token::base::TokenizerBase::getch()'],['../namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c',1,'term::getch()']]],
   ['getcolumn_344',['getColumn',['../structmatrix_1_1basic__matrix.html#ac7985f31b64e86aef90a3b8ce5098526',1,'matrix::basic_matrix::getColumn()'],['../structmatrix_1_1nmatrix.html#a6cf759659115cbc09a9be8cc0e07b627',1,'matrix::nmatrix::getColumn()']]],
   ['getcurrentpos_345',['getCurrentPos',['../classtoken_1_1base_1_1_tokenizer_base.html#a726cf1b9cd00a7d62bb2d85cb7878b14',1,'token::base::TokenizerBase']]],
-  ['getcursorposition_346',['getCursorPosition',['../namespaceterm.html#a55343558a46cefcc203c3a5cc5ccaf8f',1,'term']]],
+  ['getcursorposition_346',['getCursorPosition',['../namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e',1,'term']]],
   ['getdefaultresetsequence_347',['getDefaultResetSequence',['../classcolor_1_1palette.html#a2d882110aa5ac69dec0856654886a0f2',1,'color::palette::getDefaultResetSequence()'],['../classcolor_1_1basic__sync.html#ade3b1e844af0e88018fbe702e139fd04',1,'color::basic_sync::getDefaultResetSequence()']]],
   ['getdelimitersasstring_348',['getDelimitersAsString',['../structopt3_1_1_arg_parsing_rules.html#a91ca7e5fc5a85d68f63a1030c04e5c9a',1,'opt3::ArgParsingRules']]],
   ['getdeviceattributes_349',['getDeviceAttributes',['../namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50',1,'term']]],
