@@ -66,7 +66,7 @@ namespace str {
 		else if (ch >= 'a' && ch <= 'z')
 			ch = toupper(ch);
 		for (uint8_t i{ 0 }; i < base; ++i)
-			if (ch == ALL_NUMERIC_CHARS[base])
+			if (ch == ALL_NUMERIC_CHARS[i])
 				return true;
 		return false;
 	}

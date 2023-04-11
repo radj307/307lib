@@ -222,21 +222,44 @@ namespace opt3 {
 		 */
 		std::string capture() const noexcept(false);
 
+		/**
+		 * @brief		Check if this variantarg instance's type is the same as a given type.
+		 * @tparam T	A valid_arg type to compare to.
+		 * @returns		true when this variantarg's type is the same as type T; otherwise false.
+		 */
 		template<valid_arg T> CONSTEXPR bool is_type() const noexcept { return std::holds_alternative<T>(*this); }
+		/**
+		 * @brief		Check if this variantarg instance's type is the same as any of the given types.
+		 * @tparam Ts	Any number of valid_arg types to compare to.
+		 * @returns		true when this variantarg's type is the same as any of the given types; otherwise false.
+		 */
 		template<valid_arg... Ts> CONSTEXPR bool is_any_type() const noexcept { return var::variadic_or(std::holds_alternative<Ts>(*this)...); }
+
+		/**
+		 * @brief		Comparison Operator
+		 * @param l		A variantarg instance to compare
+		 * @param r		Another variantarg instance to compare to
+		 * @returns		true when both l and r have the same name and capture value; otherwise false.
+		 */
+		friend bool operator==(const variantarg& l, const variantarg& r)
+		{
+			return l.compare_name(r.name())
+				&& l.has_capture() == r.has_capture()
+				&& (l.has_capture() ? l.capture() == r.capture() : true);
+		}
 	};
 	std::string variantarg::name() const noexcept
 	{
 		return this->visit([](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, Parameter>)
-				return value.name();
-			else if constexpr (std::same_as<T, Flag>)
-				return value.name();
-			else if constexpr (std::same_as<T, Option>)
-				return value.name();
-			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+		if constexpr (std::same_as<T, Parameter>)
+			return value.name();
+		else if constexpr (std::same_as<T, Flag>)
+			return value.name();
+		else if constexpr (std::same_as<T, Option>)
+			return value.name();
+		//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
 	std::optional<std::string> variantarg::getValue() const noexcept
@@ -244,13 +267,13 @@ namespace opt3 {
 		return this->visit([](auto&& value) -> std::optional<std::string> {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, Parameter>)
-				return std::nullopt;
-			else if constexpr (std::same_as<T, Flag>)
-				return value.getValue();
-			else if constexpr (std::same_as<T, Option>)
-				return value.getValue();
-			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+		if constexpr (std::same_as<T, Parameter>)
+			return std::nullopt;
+		else if constexpr (std::same_as<T, Flag>)
+			return value.getValue();
+		else if constexpr (std::same_as<T, Option>)
+			return value.getValue();
+		//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
 	bool variantarg::has_capture() const noexcept
@@ -258,13 +281,13 @@ namespace opt3 {
 		return this->visit([](auto&& value) -> bool {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, Parameter>)
-				return value.has_capture();
-			else if constexpr (std::same_as<T, Flag>)
-				return value.has_capture();
-			else if constexpr (std::same_as<T, Option>)
-				return value.has_capture();
-			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+		if constexpr (std::same_as<T, Parameter>)
+			return value.has_capture();
+		else if constexpr (std::same_as<T, Flag>)
+			return value.has_capture();
+		else if constexpr (std::same_as<T, Option>)
+			return value.has_capture();
+		//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
 	std::string variantarg::capture_or(std::string const& defaultValue) const noexcept
@@ -272,13 +295,13 @@ namespace opt3 {
 		return this->visit([&defaultValue](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, Parameter>)
-				return defaultValue;
-			else if constexpr (std::same_as<T, Flag>)
-				return value.capture_or(defaultValue);
-			else if constexpr (std::same_as<T, Option>)
-				return value.capture_or(defaultValue);
-			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+		if constexpr (std::same_as<T, Parameter>)
+			return defaultValue;
+		else if constexpr (std::same_as<T, Flag>)
+			return value.capture_or(defaultValue);
+		else if constexpr (std::same_as<T, Option>)
+			return value.capture_or(defaultValue);
+		//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
 	std::string variantarg::capture() const noexcept(false)
@@ -286,13 +309,13 @@ namespace opt3 {
 		return this->visit([](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, Parameter>)
-				throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
-			else if constexpr (std::same_as<T, Flag>)
-				return value.capture();
-			else if constexpr (std::same_as<T, Option>)
-				return value.capture();
-			//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
+		if constexpr (std::same_as<T, Parameter>)
+			throw make_exception("opt3::variantarg:  Cannot retrieve capture value from an argument of type parameter!");
+		else if constexpr (std::same_as<T, Flag>)
+			return value.capture();
+		else if constexpr (std::same_as<T, Option>)
+			return value.capture();
+		//else static_assert(false, "opt3::variantarg:  Visitor doesn't handle all possible types!");
 						   });
 	}
 
@@ -722,7 +745,7 @@ namespace opt3 {
 			constexpr size_t block_size{ sizeof...(Ts) };
 			vec.reserve(block_size);
 			for (auto it{ this->begin() }, end{ this->end() }; it != end; ++it) {
-				if (!it->has_capture()) continue;
+				if (!it->has_capture() && !it->is_type<Parameter>()) continue;
 				if ((match_any_type || it->is_any_type<TFilterTypes...>()) && ((match_any_name || var::variadic_or(it->compare_name(std::forward<Ts>(names))...)))) {
 					if (it->is_type<Parameter>())
 						vec.emplace_back(it->name());
@@ -1171,7 +1194,7 @@ namespace opt3 {
 #pragma region Enums
 	/**
 	 * @enum	CaptureStyle
-	 * @brief	Defines various capture styles
+	 * @brief	Defines various argument capturing styles
 	 */
 	$make_typed_bitfield(CaptureStyle, uchar,
 						 /// @brief	No captures are allowed under any circumstances. If a capture is appended using an equals ('=') sign, the capture string is inserted into the argument list as a parameter as if the equals sign was replaced with a space on the commandline.
@@ -1186,7 +1209,7 @@ namespace opt3 {
 
 	/**
 	 * @enum	ConflictStyle
-	 * @brief	Defines the circumstances in which two argument groups conflict with each other.
+	 * @brief	Determines the circumstances in which two arguments from the same template group will conflict with each other.
 	 */
 	enum class ConflictStyle : uchar {
 		/// @brief	Arguments do not conflict.
@@ -1198,6 +1221,10 @@ namespace opt3 {
 	};
 #pragma endregion Enums
 
+	/**
+	 * @brief
+	 * @tparam T
+	 */
 	template<var::any_same<_internal::flag_t, _internal::option_t> T>
 	struct basic_arg_template : public base_arg {
 		vstring name;
@@ -1247,10 +1274,10 @@ namespace opt3 {
 		return this->visit([](auto&& value) -> std::optional<CaptureStyle> {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, TemplateFlag>)
-				return value.captureStyle;
-			else if constexpr (std::same_as<T, TemplateOption>)
-				return value.captureStyle;
+		if constexpr (std::same_as<T, TemplateFlag>)
+			return value.captureStyle;
+		else if constexpr (std::same_as<T, TemplateOption>)
+			return value.captureStyle;
 						   });
 	}
 	inline WINCONSTEXPR vstring variant_template::name() const
@@ -1258,11 +1285,11 @@ namespace opt3 {
 		return this->visit([](auto&& value) -> std::string {
 			using T = std::decay_t<decltype(value)>;
 
-			if constexpr (std::same_as<T, TemplateFlag>)
-				return value.name;
-			else if constexpr (std::same_as<T, TemplateOption>)
-				return value.name;
-			return std::string{};
+		if constexpr (std::same_as<T, TemplateFlag>)
+			return value.name;
+		else if constexpr (std::same_as<T, TemplateOption>)
+			return value.name;
+		return std::string{};
 						   });
 	}
 	inline std::ostream& operator<<(std::ostream& os, const variant_template& vt)
@@ -1374,7 +1401,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ defaultCaptureStyle },
 			_defaultConflictStyle{ defaultConflictStyle },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
@@ -1387,7 +1415,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ defaultCaptureStyle },
 			_defaultConflictStyle{ ConflictStyle::Conflict },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
@@ -1400,7 +1429,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ CaptureStyle::Optional },
 			_defaultConflictStyle{ defaultConflictStyle },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with the specified ID.
 		 * @param id				An explicit ID number to use for the template. Note that the default constructor automatically increments an internal unsigned integer starting at 0 for implicit IDs, and that these shouldn't overlap.
@@ -1412,7 +1442,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ CaptureStyle::Optional },
 			_defaultConflictStyle{ ConflictStyle::Conflict },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
@@ -1426,7 +1457,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ defaultCaptureStyle },
 			_defaultConflictStyle{ defaultConflictStyle },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param defaultCaptureStyle		Determines how arguments from this template group can capture input.
@@ -1438,7 +1470,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ defaultCaptureStyle },
 			_defaultConflictStyle{ ConflictStyle::Conflict },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param defaultConflictStyle		Determines how multiple arguments with the same ID are handled.
@@ -1450,7 +1483,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ CaptureStyle::Optional },
 			_defaultConflictStyle{ defaultConflictStyle },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 		/**
 		 * @brief					Creates a new variant_template_group instance with an automatically-assigned ID.
 		 * @param templates			Any number of `variant_template`s to include in the group
@@ -1461,7 +1495,8 @@ namespace opt3 {
 			_defaultCaptureStyle{ CaptureStyle::Optional },
 			_defaultConflictStyle{ ConflictStyle::Conflict },
 			_max{ max },
-			_min{ min } {}
+			_min{ min }
+		{}
 
 
 		WINCONSTEXPR CaptureStyle get_capture_style_of(vstring const& name) const noexcept
@@ -1546,6 +1581,7 @@ namespace opt3 {
 		}
 	};
 
+#pragma region make_template
 	/**
 	 * @brief					Creates a new variant_template_group instance.
 	 * @param captureStyle		Determines how arguments from this template group can capture input.
@@ -1624,6 +1660,7 @@ namespace opt3 {
 	 * @returns					g
 	 */
 	inline WINCONSTEXPR variant_template_group make_template(variant_template_group const& g) { return g; }
+#pragma endregion make_template
 
 	/**
 	 * @concept		valid_capture
@@ -1640,6 +1677,7 @@ namespace opt3 {
 		using base_t = std::vector<variant_template_group>;
 		using iterator_t = std::vector<variant_template_group>::iterator;
 		using const_iterator_t = std::vector<variant_template_group>::const_iterator;
+
 	private:
 		template<size_t IDX, valid_capture... Ts>
 		static base_t& build(base_t& vec, std::tuple<Ts...>&& tpl)
@@ -1658,19 +1696,35 @@ namespace opt3 {
 			vec = build<0ull>(vec, std::forward<std::tuple<Ts...>>(tpl));
 			return vec;
 		}
+
 	public:
+		/**
+		 * @brief		Creates a new capture_list instance with no entries.
+		 */
+		STRCONSTEXPR capture_list() : base_t() {}
+		/**
+		 * @brief			Creates a new capture_list instance with the given entries.
+		 * @param captures	Any number of valid argument names as strings or chars.
+		 */
 		template<valid_capture... Ts> requires var::more_than<0, Ts...>
 		STRCONSTEXPR capture_list(Ts&&... captures) : base_t(build(std::make_tuple(std::forward<Ts>(captures)...))) {}
 
-		STRCONSTEXPR capture_list() : base_t() {}
-
+		/**
+		 * @brief		Gets an iterator pointing to the capture group that contains an argument with the given name.
+		 * @param name	Input argument name.
+		 * @returns		An iterator pointing to the first capture group that contains the given argument name if one was found; otherwise an iterator pointing to the end position of the capture list.
+		 */
 		iterator_t get_group_of(vstring const& name)
 		{
 			if (const auto& it{ std::find_if(this->begin(), this->end(), [&name](auto&& v) { return std::any_of(v.templates.begin(), v.templates.end(), [&name](auto&& vtemplate) { return vtemplate.name() == name; }); }) }; it != this->end())
 				return it;
 			return this->end();
 		}
-
+		/**
+		 * @brief		Gets an iterator pointing to the capture group that contains an argument with the given name.
+		 * @param name	Input argument name.
+		 * @returns		An iterator pointing to the first capture group that contains the given argument name if one was found; otherwise an iterator pointing to the end position of the capture list.
+		 */
 		const_iterator_t get_group_of(vstring const& name) const
 		{
 			if (const auto& it{ std::find_if(this->begin(), this->end(), [&name](auto&& v) { return std::any_of(v.templates.begin(), v.templates.end(), [&name](auto&& vtemplate) { return vtemplate.name() == name; }); }) }; it != this->end())
@@ -1678,13 +1732,22 @@ namespace opt3 {
 			return this->end();
 		}
 
+		/**
+		 * @brief		Gets an iterator pointing to the capture group with the given id.
+		 * @param id	Input capture group ID.
+		 * @returns		An iterator pointing to the capture group with the given id if one was found; otherwise an iterator pointing to the end position of the capture list.
+		 */
 		iterator_t get_group_of(size_t const& id)
 		{
 			if (const auto& it{ std::find_if(this->begin(), this->end(), [&id](auto&& v) { return v._id == id; }) }; it != this->end())
 				return it;
 			return this->end();
 		}
-
+		/**
+		 * @brief		Gets an iterator pointing to the capture group with the given id.
+		 * @param id	Input capture group ID.
+		 * @returns		An iterator pointing to the capture group with the given id if one was found; otherwise an iterator pointing to the end position of the capture list.
+		 */
 		const_iterator_t get_group_of(size_t const& id) const
 		{
 			if (const auto& it{ std::find_if(this->begin(), this->end(), [&id](auto&& v) { return v._id == id; }) }; it != this->end())
@@ -1692,133 +1755,171 @@ namespace opt3 {
 			return this->end();
 		}
 
+		/**
+		 * @brief		Gets the CaptureStyle associated with a given argument.
+		 * @param name	Input argument name.
+		 * @returns		The CaptureStyle associated with the given argument name.
+		 */
 		CaptureStyle get_capture_style_of(vstring const& name) const
 		{
 			if (const auto& group{ get_group_of(name) }; group != this->end())
 				return group->get_capture_style_of(name);
 			return CaptureStyle::Disabled;
 		}
+
+		/**
+		 * @brief		Checks if the given Option/Flag name was specified in the capture list.
+		 * @param name	The name of an Option/Flag to search for.
+		 * @returns		true when the given name is present somewhere in the capture list.
+		 */
+		bool is_present(vstring const& name) const
+		{
+			return std::any_of(this->begin(), this->end(), [&name](variant_template_group const& vtGroup) {
+				return std::any_of(vtGroup.templates.begin(), vtGroup.templates.end(), [&name](variant_template const& vt) {
+								   return vt.name() == name;
+							   });
+							   });
+		}
 	};
 
 	/**
-	 * @struct	ArgumentParsingRules
+	 * @struct	ArgParsingRules
 	 * @brief	Allows configuration of the rules used when parsing arguments.
+	 *\n		It is highly recommended that you do not call this object's methods as they are intended for use by only the opt3 argument parser.
 	 */
-	struct ArgumentParsingRules {
+	struct ArgParsingRules {
 		/**
-		 * @brief	This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
-		 *\n		When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
+		 * @brief	When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
 		 *			 are assumed to be negative numbers; when false, numbers with a single dash prefix
 		 *			 are always considered flags instead of numbers.
+		 *\n		__This is ignored when '-' is not in the delimiters list.__
 		 *\n		Default: true
 		 */
-		bool assumeNumericDashPrefixIsNegative{ true };
+		bool assumeValidNumberWithDashPrefixIsNegative{ true };
+		/**
+		 * @brief	Determines whether digits can be valid flags. When this is false and a flag chain contains at least one digit, the argument is treated like a Parameter.
+		 *\n		__This is ignored when '-' is not in the delimiters list.__
+		 *\n		Default: false
+		 */
+		bool allowNumericFlags{ false };
 		/**
 		 * @brief	List of characters that are considered valid argument prefixes.
-		 *\n		This defaults to just '-'; other commonly-used prefixes include '/' & '+',
-		 *			 but these must be added manually.
+		 *\n		Default: { '-' }
 		 */
 		std::vector<char> delimiters{ '-' };
-
 		/**
 		 * @brief	Determines the default capture style used for arguments present in the capture list that do not specify a capture style themselves.
+		 *\n		Default: CaptureStyle::Optional
 		 */
 		CaptureStyle defaultCaptureStyle{ CaptureStyle::Optional };
+		/**
+		 * @brief	Determines whether options/flags that aren't present in the capture_list are allowed or not. When true, unexpected arguments are allowed; otherwise the action taken depends on the value of convertUnexpectedArgsToParameters.
+		 *\n		Default: true
+		 */
+		bool allowUnexpectedArgs{ true };
+		/**
+		 * @brief	Determines whether unexpected arguments are converted to Parameters or cause an exception to be thrown. When true, unexpected arguments are converted to parameters; otherwise, unexpected arguments trigger an exception.
+		 *\n		__This is ignored when allowUnexpectedArgs is true.__
+		 *\n		Default: false
+		 */
+		bool convertUnexpectedArgsToParameters{ false };
 
 		/**
 		 * @brief	Default Constructor.
 		 */
-		WINCONSTEXPR ArgumentParsingRules() {}
-		/**
-		 * @brief										Constructor.
-		 * @param defaultCaptureStyle					Determines the default capture style used for arguments present in the capture list that do not specify a capture style themselves.
-		 * @param delimiters							List of characters that are considered valid argument prefixes.
-		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
-		 *\n											When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
-		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
-		 *												 are always considered flags instead of numbers.
-		 */
-		WINCONSTEXPR ArgumentParsingRules(CaptureStyle const& defaultCaptureStyle, std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) :
-			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative },
-			delimiters{ std::forward<std::vector<char>>(delimiters) },
-			defaultCaptureStyle{ defaultCaptureStyle } {}
-		/**
-		 * @brief										Constructor.
-		 * @param delimiters							List of characters that are considered valid argument prefixes.
-		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
-		 *\n											When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
-		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
-		 *												 are always considered flags instead of numbers.
-		 */
-		WINCONSTEXPR ArgumentParsingRules(std::vector<char>&& delimiters, bool const& assumeNumericDashPrefixIsNegative = true) :
-			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative },
-			delimiters{ std::forward<std::vector<char>>(delimiters) } {}
-		/**
-		 * @brief										Constructor.
-		 * @param assumeNumericDashPrefixIsNegative		This argument is ignored when '-' does not appear in this instance's 'delimiters' vector.
-		 *\n											When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
-		 *												 are assumed to be negative numbers; when false, numbers with a single dash prefix
-		 *												 are always considered flags instead of numbers.
-		 */
-		WINCONSTEXPR ArgumentParsingRules(bool const& assumeNumericDashPrefixIsNegative) :
-			assumeNumericDashPrefixIsNegative{ assumeNumericDashPrefixIsNegative } {}
+		WINCONSTEXPR ArgParsingRules() {}
 
 	#pragma region Methods
+		/**
+		 * @brief		Gets all of the characters from the delimiters vector as a string.
+		 * @returns		String containing each character in the delimiters vector.
+		 */
 		[[nodiscard]] WINCONSTEXPR std::string getDelimitersAsString() const
 		{
 			std::string s;
 			s.reserve(delimiters.size());
 			for (const auto& c : delimiters)
 				s += c;
-			s.shrink_to_fit();
 			return s;
 		}
 		/**
-		 * @brief		Check if the given character is a valid delimiter, according to the static Settings_ArgParser object.
+		 * @brief		Check if the given character is a valid delimiter.
 		 * @param c		Input Character
-		 * @returns		bool
+		 * @returns		true when the given character is a valid delimiter; otherwise false.
 		 */
 		[[nodiscard]] WINCONSTEXPR bool isDelimiter(const char& c) const
 		{
 			return std::any_of(delimiters.begin(), delimiters.end(), [&c](auto&& delim) { return delim == c; });
 		}
+		/**
+		 * @brief				Counts the number of valid prefix delimiters at the beginning of the given string.
+		 * @param str			Input string.
+		 * @param max_delims	Maximum number of prefix characters to count before returning early.
+		 * @returns				The number of prefix delimiters found at the beginning of str, up to the maximum set by max_delims.
+		 */
 		[[nodiscard]] WINCONSTEXPR size_t countPrefix(const std::string& str, const size_t& max_delims) const
 		{
+			if (str.empty()) return 0ull;
+
 			size_t count{ 0ull };
 			for (size_t i{ 0ull }; i < str.size() && i < max_delims; ++i) {
 				if (isDelimiter(str.at(i)))
 					++count;
 				else break;
 			}
+
 			return count;
 		}
+		/**
+		 * @brief				Removes and counts argument prefix characters.
+		 * @param str			Input String.
+		 * @param max_delims	Maximum number of delimiters to remove/count before returning early.
+		 * @returns				A std::pair where the first item is the given string with prefix chars removed, and the second item is the number of prefix chars that were removed.
+		 */
 		[[nodiscard]] WINCONSTEXPR std::pair<std::string, size_t> stripPrefix(const std::string& str, const size_t& max_delims = 2ull) const
 		{
 			const auto count{ countPrefix(str, max_delims) };
 			return{ str.substr(count), count };
 		}
 		/**
-		 * @brief		Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" (or "-0x") to be detected properly.
+		 * @brief		Used by the argument parser. Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" to be detected properly.
 		 * @param str	Input String
 		 * @returns		bool
 		 */
 		[[nodiscard]] WINCONSTEXPR bool isNumber(std::string str) const
 		{
-			str.erase(std::remove(str.begin(), str.end(), ','), str.end());
+			//str.erase(std::remove(str.begin(), str.end(), ','), str.end());
 			str = trim(str);
 			if (str.empty())
 				return false;
 
-			if (str.starts_with("0x")) {
+			if (str.starts_with("0x")) { // hexadecimal number:
 				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), [](auto&& ch) { return shared::isdigit(ch) || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f'); });
 			}
-			else {
-				const bool is_negative{ str.starts_with('-') };
-				if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : shared::isdigit(c)); })) {
-					return assumeNumericDashPrefixIsNegative; //< when str is a valid number, return true when assuming it is a number and not a flag
-				} // else, return false
+
+			const bool is_negative{ str.starts_with('-') };
+			if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : shared::isdigit(c)); })) {
+				return assumeValidNumberWithDashPrefixIsNegative; //< when str is a valid number, return true when assuming it is a number and not a flag
 			}
+
 			return false;
+		}
+		/**
+		 * @brief		Used by the argument parser.
+		 *\n			Checks if the given string represents a valid flag. This is used for determining whether an ambiguous argument is a flag or a negative number (parameter).
+		 *\n			Does NOT check if prefix characters are valid!
+		 * @param str	Input String. *This should contain prefix chars!*
+		 * @returns		true when str represents a valid flag; otherwise false.
+		 */
+		WINCONSTEXPR bool isValidFlag(std::string const& str) const
+		{
+			if (isDelimiter('-')) {
+				const auto eqPos{ str.find('=') };
+				if (!allowNumericFlags && std::any_of(str.begin(), eqPos == std::string::npos ? str.end() : (str.begin() + eqPos), [](auto&& ch) { return shared::isdigit(ch); }))
+					return false; //< allowNumericFlags is false and any character is a number
+				return !isNumber(str);
+			}
+			else return true;
 		}
 		/**
 		 * @brief		Check if the given iterator CAN capture the next argument by checking
@@ -1860,6 +1961,12 @@ namespace opt3 {
 		}
 	}
 
+	$DefineExcept(invalid_argument_exception,
+				  /// @brief	The name of the invalid argument that caused the exception.
+				  std::string argument_name;
+	invalid_argument_exception(std::string const& argument_name, std::string const& argument_typename) : ex::except(str::stringify("Argument '", argument_name, "' is not a recognized ", argument_typename, '.')), argument_name{ argument_name } {}
+	);
+
 	/**
 	 * @brief				Parse commandline arguments into an ArgContainer instance.
 	 * @details				### Argument Types
@@ -1873,10 +1980,10 @@ namespace opt3 {
 	 *						- Any captured arguments do not appear in the argument list by themselves, and must be accessed through the argument that captured them.
 	 * @param args			Commandline arguments as a vector of strings, in order and including argv[0].
 	 * @param captures		A `capture_list` instance specifying which arguments are allowed to capture other arguments as their parameters
-	 * @param parsingRules	An `ArgumentParsingRules` instance that provides the parser with a configuration
+	 * @param parsingRules	An `ArgParsingRules` instance that provides the parser with a configuration
 	 * @returns				ArgContainer
 	 */
-	inline arg_container parse(std::vector<std::string>&& args, capture_list captures, const ArgumentParsingRules& parsingRules)
+	inline arg_container parse(std::vector<std::string>&& args, capture_list captures, const ArgParsingRules& parsingRules)
 	{
 		using namespace _internal;
 
@@ -1891,33 +1998,46 @@ namespace opt3 {
 
 			switch (d_count) {
 			case 2ull: // Option
-				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign
+				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign, split string
 					auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
 
-					if (const auto& captureStyle{ captures.get_capture_style_of(opt) }; !CaptureIsDisabled(captureStyle))
-						cont.emplace_back(Option(std::make_pair(std::move(opt), std::move(cap))));
+					if (!parsingRules.allowUnexpectedArgs && !captures.is_present(opt)) {
+						if (parsingRules.convertUnexpectedArgsToParameters)
+							cont.emplace_back(Parameter{ *it });
+						else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
+					}
+					else if (const auto& captureStyle{ captures.get_capture_style_of(opt) }; !CaptureIsDisabled(captureStyle))
+						cont.emplace_back(Option{ std::make_pair(std::move(opt), std::move(cap)) });
 					else {
 						if (CaptureIsRequired(captureStyle))
 							throw make_exception("Expected a capture argument for option '", opt, "'!");
-						cont.emplace_back(Option(std::make_pair(std::move(opt), std::nullopt)));
+						cont.emplace_back(Option{ std::make_pair(std::move(opt), std::nullopt) });
 						if (!cap.empty()) {
 							arg = cap;
 							goto JUMP_TO_PARAMETER; // skip flag case, add invalid capture as a parameter
 						}
 					}
 				}
-				else if (const auto& captureStyle{ captures.get_capture_style_of(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
-					cont.emplace_back(Option(std::make_pair(arg, *++it)));
 				else {
-					if (CaptureIsRequired(captureStyle))
-						throw make_exception("Expected a capture argument for option '", arg, "'!");
-					cont.emplace_back(Option(std::make_pair(arg, std::nullopt)));
+					if (!parsingRules.allowUnexpectedArgs && !captures.is_present(arg)) {
+						if (parsingRules.convertUnexpectedArgsToParameters)
+							cont.emplace_back(Parameter{ *it });
+						else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
+					}
+					else if (const auto& captureStyle{ captures.get_capture_style_of(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
+						cont.emplace_back(Option{ std::make_pair(arg, *++it) });
+					else {
+						if (CaptureIsRequired(captureStyle))
+							throw make_exception("Expected a capture argument for option '", arg, "'!");
+						cont.emplace_back(Option{ std::make_pair(arg, std::nullopt) });
+					}
 				}
 				break;
 			case 1ull: // Flag
-				if (!parsingRules.isNumber(arg)) { // single-dash prefix is not a number
+				if (parsingRules.isValidFlag(arg)) { // single-dash prefix is not a number
 					std::optional<Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
 					std::string invCap{}; //< for invalid captures that should be treated as parameters
+
 					if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
 						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
 						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; !CaptureIsDisabled(captures.get_capture_style_of(flag))) {
@@ -1928,16 +2048,35 @@ namespace opt3 {
 						else
 							arg = arg.substr(0ull, eqPos); // remove everything from eqPos to arg.end()
 					}
+					
 					// iterate through characters in arg
+					bool convertToParameter{ false };
+					std::vector<Flag> flagsBuffer;
+					flagsBuffer.reserve(arg.size());
 					for (auto fl{ arg.begin() }; fl != arg.end(); ++fl) {
+						if (!parsingRules.allowUnexpectedArgs && !captures.is_present(*fl)) {
+							if (parsingRules.convertUnexpectedArgsToParameters) {
+								convertToParameter = true;
+								break;
+							}
+							else throw make_custom_exception_explicit<invalid_argument_exception>(std::string{ 1ull, *fl }, "flag");
+						}
+
 						const auto& captureStyle{ captures.get_capture_style_of(std::string(1ull, *fl)) };
 						// If this is the last char, and it can capture
 						if (fl == arg.end() - 1ll && !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end()))
-							cont.emplace_back(Flag(std::make_pair(*fl, *++it)));
+							flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, *++it) });
 						else {// not last char, or can't capture
 							if (CaptureIsRequired(captureStyle))
 								throw make_exception("Expected a capture argument for flag '", *fl, "'!");
-							cont.emplace_back(Flag(std::make_pair(*fl, std::nullopt)));
+							flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, std::nullopt) });
+						}
+					}
+					if (convertToParameter)
+						cont.emplace_back(Parameter{ *it });
+					else {
+						for (auto&& flag : flagsBuffer) {
+							cont.emplace_back(std::move(flag));
 						}
 					}
 					if (capt.has_value()) // flag captures are always at the end, but parsing them first puts them out of chronological order.
@@ -2048,7 +2187,7 @@ namespace opt3 {
 		 */
 		template<valid_capture... TCaptures>
 		WINCONSTEXPR arg_manager(const int argc, char** argv, TCaptures&&... captureArguments) :
-			base(parse(vectorize(argc, argv, 1), capture_list{ make_template(std::forward<TCaptures>(captureArguments))... }, ArgumentParsingRules{}))
+			base(parse(vectorize(argc, argv, 1), capture_list{ make_template(std::forward<TCaptures>(captureArguments))... }, ArgParsingRules{}))
 		{}
 
 		/**
@@ -2059,7 +2198,7 @@ namespace opt3 {
 		 * @param captureArguments	Argument names that should be able to capture. Do not include delimiter prefixes, they will be stripped.\n Argument types must meet the `valid_capture` requirement.
 		 */
 		template<valid_capture... TCaptures>
-		WINCONSTEXPR arg_manager(const int argc, char** argv, ArgumentParsingRules const& ruleset, TCaptures&&... captureArguments) :
+		WINCONSTEXPR arg_manager(const int argc, char** argv, ArgParsingRules const& ruleset, TCaptures&&... captureArguments) :
 			base(parse(vectorize(argc, argv, 1), capture_list{ make_template(std::forward<TCaptures>(captureArguments))... }, ruleset))
 		{}
 
@@ -2075,7 +2214,7 @@ namespace opt3 {
 		 * @param captureList	The CaptureList instance that defines which arguments may capture & the ruleset to use when parsing.
 		 * @returns				An arg_manager instance containing the parsed arguments.
 		 */
-		static arg_manager parse(std::vector<std::string>&& arguments, capture_list&& captureList, ArgumentParsingRules const& ruleset = {})
+		static arg_manager parse(std::vector<std::string>&& arguments, capture_list&& captureList, ArgParsingRules const& ruleset = {})
 		{
 			return arg_manager{ ::opt3::parse(std::forward<std::vector<std::string>>(arguments), std::forward<capture_list>(captureList), ruleset) };
 		}

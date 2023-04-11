@@ -46,7 +46,7 @@ namespace str {
 		 * @returns				std::optional<T>
 		 */
 		template<std::integral T>
-		inline std::optional<T> sto(const std::function<T(const char*, char**, int)>& converter, const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<T> sto(const std::function<T(const char*, char**, int)>& converter, const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			int& errnoRef{ errno };
 			const char* ptr{ s.c_str() };
@@ -70,7 +70,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<signed int>
 		 */
-		inline std::optional<signed int> stoi(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<signed int> stoi(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<signed int>(::strtol, s, nextAfter, base);
 		}
@@ -82,7 +82,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<unsigned int>
 		 */
-		inline std::optional<unsigned int> stoui(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<unsigned int> stoui(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<unsigned int>(::strtoul, s, nextAfter, base);
 		}
@@ -94,7 +94,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<long>
 		 */
-		inline std::optional<long> stol(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<long> stol(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<long>(::strtol, s, nextAfter, base);
 		}
@@ -106,7 +106,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<unsigned long>
 		 */
-		inline std::optional<unsigned long> stoul(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<unsigned long> stoul(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<unsigned long>(::strtoul, s, nextAfter, base);
 		}
@@ -118,7 +118,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<long long>
 		 */
-		inline std::optional<long long> stoll(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<long long> stoll(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<long long>(::strtoll, s, nextAfter, base);
 		}
@@ -130,7 +130,7 @@ namespace str {
 		 *\n					Defaults to base-10 (decimal).
 		 * @returns				std::optional<unsigned long long>
 		 */
-		inline std::optional<unsigned long long> stoull(const std::string& s, size_t* nextAfter = nullptr, const size_t& base = 10ull) noexcept
+		inline std::optional<unsigned long long> stoull(const std::string& s, size_t* nextAfter = nullptr, const int& base = 10ull) noexcept
 		{
 			return sto<unsigned long long>(::strtoull, s, nextAfter, base);
 		}

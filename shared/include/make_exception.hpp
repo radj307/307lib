@@ -22,6 +22,7 @@ namespace ex {
 	 * @class	except
 	 * @brief	General-purpose std::exception wrapper object that adds useful features like constructors and mutable error messages.
 	 *\n		This exception type can be caught by any `catch` statement for std::exception.
+	 *\n		You can quickly define new except-derived exception types by using the $DefineExcept() macro when MAKE_EXCEPTION_SIMPLE is undefined.
 	 */
 	class except : public std::exception {
 		/**
@@ -173,7 +174,7 @@ using ex::make_exception;
 
  /**
   * @def		$DefineExcept
-  * @brief		Creates a struct definition with the given typename and optionally, contents.
+  * @brief		Creates a struct definition with the given typename and optionally, contents. You can use variadic arguments to include additional members or functions within your exception struct.
   * @param name	The name to give to the exception instance.
   * @param ...	Any number of lines of code to insert into the new exception instance.
   *				You can use this to define constructors, methods, members, etc. Note that the following code is always implicitly included:

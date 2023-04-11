@@ -114,28 +114,4 @@ namespace xlog {
 		level::NoErrorsOrWarnings{ LOG | INFO | MESSAGE },
 		level::NoErrorsDebug{ DEBUG | NoErrors },
 		level::NoErrorsOrWarningsDebug{ DEBUG | NoErrorsOrWarnings };
-
-	/**
-	 * @brief		Convert a Message instance to its equivalent xlog level. This is hardcoded.
-	 * @param msg	Input Message Type.
-	 * @returns		level::LogLevel
-	 */
-	inline level::LogLevel message_to_level(const char* msg)
-	{
-		if (msg == debug)
-			return level::DEBUG;
-		if (msg == info)
-			return level::INFO;
-		if (msg == log)
-			return level::LOG;
-		if (msg == msg)
-			return level::MESSAGE;
-		if (msg == warn)
-			return level::WARNING;
-		if (msg == error)
-			return level::ERROR;
-		if (msg == crit)
-			return level::CRITICAL;
-		return level::NONE;
-	}
 }

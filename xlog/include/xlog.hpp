@@ -88,6 +88,7 @@ namespace xlog {
 		OutputTarget<StreamType> _target;
 		std::unique_ptr<level::LogLevel> _level;
 		bool _add_prefix, _log_self{ false }, _allow_color{ false };
+		size_t _indent_size{ 10 };
 
 		/**
 		 * @brief			Format a given message using the current settings.
@@ -126,15 +127,18 @@ namespace xlog {
 				break;
 			}
 			if (message_type != nullptr) {
+				std::string message_type_str{ message_type };
+				message_type_str += shared::indent(_indent_size, message_type_str.size()).toString();
+
 				if constexpr (std::derived_from<StreamType, std::ofstream>)
 					return { [](const std::string_view& message_prefix) -> std::string {
-						const auto open{ message_prefix.find('[', 3ull) }, close{ message_prefix.find(']') };
-						if (const auto& sz{message_prefix.size()};  open < sz && close < sz)
-							return { message_prefix.substr(open, close - open + 1ull).data() };
-						return{};
-					}(message_type)+message };
+					const auto open{ message_prefix.find('[', 3ull) }, close{ message_prefix.find(']') };
+					if (const auto& sz{ message_prefix.size() };  open < sz && close < sz)
+						return { message_prefix.substr(open, close - open + 1ull).data() };
+					return{};
+				}(message_type_str) + message };
 				else
-					return { message_type + message };
+					return { message_type_str + message };
 			}
 			return { "\t"s + message };
 		}
@@ -263,9 +267,9 @@ namespace xlog {
 		 */
 		xLogs(const OutputTarget<StreamType>& out, const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(out, log_level, add_prefix) {}
 		xLogs(const level::LogLevel& log_level = level::Default, const bool& add_prefix = true) : xLog<StreamType>(log_level, add_prefix) {}
-		
+
 		std::streambuf* rdbuf() const { return _buffer.rdbuf(); }
-		std::streambuf* rdbuf(std::streambuf* rdbuf) 
+		std::streambuf* rdbuf(std::streambuf* rdbuf)
 		{
 			const auto* const copy{ _buffer.rdbuf() };
 			_buffer.set_rdbuf(rdbuf);

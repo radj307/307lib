@@ -400,8 +400,8 @@ namespace ini {
 				return $c(T, std::stold(_value));
 			return std::nullopt;
 		}
-		template<var::convertible_from<std::string> T>
-		CONSTEXPR std::optional<T> as() const noexcept { return T{ _value }; }
+		template<var::convertible_from<std::string> T> requires (!std::same_as<std::string, T>)
+			CONSTEXPR std::optional<T> as() const noexcept { return T{ _value }; }
 		template<typename T, var::function<T, std::string> TConverter>
 		CONSTEXPR std::optional<T> as(const TConverter& converter_function) const noexcept { return converter_function(_value); }
 	#pragma endregion as
@@ -504,7 +504,7 @@ namespace ini {
 		/// @brief	Defines all of the characters that *(individually)* act as escape characters.
 		std::string escapeChars{ 1ull, '\\' };
 		/// @brief	Defines all of the characters that *(individually)* indicate a line comment.
-		std::string commentChars{ std::string{ 1ull, $c(char, '#') } + std::string{ 1ull, $c(char, ';') } };
+		std::string commentChars{ "#;" };
 
 	#pragma region Setters
 		/// @brief	Pipeline operator that sets the value of the `mask` property.
@@ -578,7 +578,7 @@ namespace ini {
 			char delim;
 			const auto& findDelim{ [&value, &i, &delim, this](auto&& ch) {
 				const auto& idx{ i++ };
-				return ($fwd(ch) == delim && (idx == 0 || (idx > 0 && !_$isEscapeChar(value.at(idx)))));
+				return ($fwd(ch) == delim && (idx == 0 || (idx > 0 && !_$isEscapeChar(value.at(idx - 1)))));
 			} };
 
 			// find double quotes
@@ -711,7 +711,7 @@ namespace ini {
 					if (const std::string key{ str::trim(l.substr(0ull, equals)) }; !key.empty()) {
 						auto& section{ ini[header] };
 
-						std::string value{ l.substr(equals + 1).data() };
+						std::string value{ l.substr(equals + 1) };
 
 						if (config.stripWhitespaceFromValue)
 							value = str::trim(value); //< remove unenclosed preceding/trailing whitespace
@@ -854,30 +854,6 @@ namespace ini {
 		using ParserConfig = ini_parser_config<TKeyComparator>;
 		using Printer = ini_printer<TKeyComparator>;
 
-	#pragma region events
-		/// @brief	Event arguments for the onRead event.
-		struct onReadArgs : shared::basic_event_args {
-			const std::filesystem::path path;
-			onReadArgs(std::filesystem::path const& path) : path{ path } {}
-		};
-		/// @brief	Event callback triggered when the INI is read from disk using read().
-		shared::eventdef<onReadArgs> onRead;
-		/// @brief	Event arguments for the onWrite event.
-		struct onWriteArgs : shared::basic_event_args {
-			const std::filesystem::path path;
-			const bool success;
-			onWriteArgs(std::filesystem::path const& path, const bool success) : path{ path }, success{ success } {}
-		};
-		/// @brief	Event callback triggered when the INI is written to disk using write().
-		shared::eventdef<onWriteArgs> onWrite;
-
-		/// @brief	Event callback triggered when another INI container or mask is merged into this instance using deep_merge().
-		shared::eventdef<shared::basic_event_args> onMerge;
-
-		/// @brief	Event callback triggered when this instance's destructor is called.
-		shared::eventdef<shared::basic_event_args> onDestruct;
-	#pragma endregion events
-
 	#pragma region constructors
 		/// @brief	Default ctor
 		basic_ini() {}
@@ -909,27 +885,26 @@ namespace ini {
 			: map([](auto&& path, auto&& config, auto&& throwIfFileNotFound) { if (file::exists(path)) return parse<TKeyComparator>(file::read(path, std::ios_base::binary), config); else if (throwIfFileNotFound) throw make_custom_exception<ini_file_not_found_exception>("File Not Found:  ", path); else return container_t{}; }(path, config, throwIfFileNotFound))
 		{}
 
-		template<var::same_or_convertible<std::pair<std::string, section_t>>... Ts>
-		basic_ini(Ts&&... sections) : map{ std::forward<Ts>(sections)... } {}
-	#pragma endregion constructors
-
-	#pragma region destructor
-		/// @brief	Default Destructor. Triggers the `onDestruct` event.
-		~basic_ini() noexcept
+		basic_ini(std::initializer_list<std::pair<std::string, section_t>> sections)
 		{
-			try {
-				onDestruct.notify(this);
-			} catch (...) {}
+			for (const auto& it : sections) {
+				map.insert_or_assign(it.first, it.second);
+			}
 		}
-	#pragma endregion destructor
+	#pragma endregion constructors
 
 	#pragma region deep_merge
 		/// @brief	See ::ini::deep_merge
-		this_t& deep_merge(container_t const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& deep_merge(container_t const& other, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = false)
 		{
 			for (const auto& [header, section] : other) {
 				if (const auto& existing{ this->map.find(header) }; existing != this->map.end()) {
 					auto& [existingHeader, existingSection] { *existing };
+					if (maskRemovesExisting) {
+						std::erase_if(existingSection, [&section](auto&& item) {
+							return !section.contains(item.first);
+						});
+					}
 					for (const auto& [key, value] : section) {
 						if (existingSection.contains(key)) {
 							switch (overrideStyle) {
@@ -951,34 +926,57 @@ namespace ini {
 				}
 				else this->map.insert(std::make_pair(header, section));
 			}
-			onMerge.notify(this);
 			return *this;
 		}
 	#pragma endregion deep_merge
 
 	#pragma region mask
 		/**
-		 * @brief					Applies the given mask to this instance.
-		 * @param mask				An ini_mask container.
-		 * @param overrideStyle		The override style to use when merging the mask into this instance's map.
-		 * @returns					The reference of this instance.
+		 * @brief						Applies the given mask to this instance, removing or adding sections/keys.
+		 * @param mask					An ini_mask container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
 		 */
-		this_t& mask(mask_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& mask(mask_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
 		{
-			return deep_merge(std::move(mask), overrideStyle);
+			return deep_merge($fwd(mask), overrideStyle, maskRemovesExisting);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
-		 * @param mask				An ini_mask container.
-		 * @param overrideStyle		The override style to use when merging the mask into this instance's map.
-		 * @returns					The reference of this instance.
+		 * @brief						Applies the given mask to this instance, removing or adding sections/keys.
+		 * @param mask					An ini_mask container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
 		 */
-		this_t& mask(const mask_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override)
+		this_t& mask(const mask_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
 		{
-			return deep_merge(mask, overrideStyle);
+			return deep_merge(mask, overrideStyle, maskRemovesExisting);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
+		 * @brief						Applies the given INI as a mask to this instance, removing or adding sections/keys.
+		 * @param mask					Another basic_ini container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
+		 */
+		this_t& mask(this_t&& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
+		{
+			return deep_merge($fwd(mask).map, overrideStyle, maskRemovesExisting);
+		}
+		/**
+		 * @brief						Applies the given INI as a mask to this instance, removing or adding sections/keys.
+		 * @param mask					Another basic_ini container.
+		 * @param overrideStyle			The override style to use when merging the mask into this instance's map.
+		 * @param maskRemovesExisting	When true, existing keys that aren't present in the mask are removed. When false, keys are never removed when masking.
+		 * @returns						The reference of this instance.
+		 */
+		this_t& mask(const this_t& mask, OverrideStyle const& overrideStyle = OverrideStyle::Override, bool maskRemovesExisting = true)
+		{
+			return deep_merge(mask.map, overrideStyle, maskRemovesExisting);
+		}
+		/**
+		 * @brief					Applies the given mask to this instance, removing or adding sections/keys.
 		 * @param cfg				An ini_parser_config instance.
 		 * @returns					The reference of this instance.
 		 */
@@ -987,7 +985,7 @@ namespace ini {
 			return this->mask($fwd(cfg).mask, $fwd(cfg).overrideStyle);
 		}
 		/**
-		 * @brief					Applies the given mask to this instance.
+		 * @brief					Applies the given mask to this instance, removing or adding sections/keys.
 		 * @param cfg				An ini_parser_config instance.
 		 * @returns					The reference of this instance.
 		 */
@@ -1007,7 +1005,6 @@ namespace ini {
 		void read(std::filesystem::path const& path, ParserConfig const& config, OverrideStyle const& overrideStyle = OverrideStyle::Override) noexcept(false)
 		{
 			this->deep_merge(parse<TKeyComparator>(file::read(path), config), overrideStyle);
-			onRead.notify(this, path);
 		}
 		/**
 		 * @brief					Reads the specified INI config file and merges its contents into this instance according to the given OverrideStyle.
@@ -1017,7 +1014,6 @@ namespace ini {
 		void read(std::filesystem::path const& path, OverrideStyle const& overrideStyle = OverrideStyle::Override) noexcept(false)
 		{
 			this->deep_merge(parse<TKeyComparator>(file::read(path)), overrideStyle);
-			onRead.notify(this, path);
 		}
 	#pragma endregion read
 
@@ -1030,7 +1026,6 @@ namespace ini {
 		bool write(std::filesystem::path const& path) const noexcept(false)
 		{
 			const auto& result{ file::write(path, Printer((container_t*)&map)) };
-			onWrite.notify(this, path, result);
 			return result;
 		}
 	#pragma endregion write
@@ -1066,6 +1061,10 @@ namespace ini {
 			if (const auto& it{ map.find($fwd(header)) }; it != map.end())
 				return it->contains($fwd(key));
 			return false;
+		}
+		auto insert_or_assign(auto&& header, auto&& key, auto&& value)
+		{
+			map[$fwd(header)][$fwd(key)] = $fwd(value);
 		}
 	#pragma endregion map_methods
 
@@ -1138,6 +1137,40 @@ namespace ini {
 		 * @param key		The name of the target key.
 		 * @returns			The value of the specified key, or std::nullopt if the specified header or key doesn't exist.
 		 */
+		std::optional<ini_value> get(std::string const& header, std::string&& key) const noexcept
+		{
+			// find the target header-section pair:
+			if (const auto& headerSectionPr{ map.find(header) }; headerSectionPr != map.end()) {
+				// find the target key:
+				if (const auto& k{ headerSectionPr->second.find($fwd(key)) }; k != headerSectionPr->second.end()) {
+					return k->second;
+				}
+			}
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Gets the value of the specified key.
+		 * @param header	The name of the target header. (Leave blank for global)
+		 * @param key		The name of the target key.
+		 * @returns			The value of the specified key, or std::nullopt if the specified header or key doesn't exist.
+		 */
+		std::optional<ini_value> get(std::string&& header, std::string const& key) const noexcept
+		{
+			// find the target header-section pair:
+			if (const auto& headerSectionPr{ map.find($fwd(header)) }; headerSectionPr != map.end()) {
+				// find the target key:
+				if (const auto& k{ headerSectionPr->second.find(key) }; k != headerSectionPr->second.end()) {
+					return k->second;
+				}
+			}
+			return std::nullopt;
+		}
+		/**
+		 * @brief			Gets the value of the specified key.
+		 * @param header	The name of the target header. (Leave blank for global)
+		 * @param key		The name of the target key.
+		 * @returns			The value of the specified key, or std::nullopt if the specified header or key doesn't exist.
+		 */
 		std::optional<ini_value> get(std::string&& header, std::string&& key) const noexcept
 		{
 			// find the target header-section pair:
@@ -1150,6 +1183,53 @@ namespace ini {
 			return std::nullopt;
 		}
 	#pragma endregion get
+
+	#pragma region get_or
+		/**
+		 * @brief					Gets the value of the specified key, or a default value if it doesn't exist.
+		 * @param header			The name of the target header. (Leave blank for global)
+		 * @param key				The name of the target key.
+		 * @param defaultValue		A default value or string that will be returned if the specified key doesn't exist.
+		 * @returns					The value of the specified key, or defaultValue if the specified header or key doesn't exist.
+		*/
+		ini_value get_or(std::string const& header, std::string const& key, ini_value const& defaultValue) const noexcept
+		{
+			return get(header, key).value_or(defaultValue);
+		}
+		/**
+		 * @brief					Gets the value of the specified key, or a default value if it doesn't exist.
+		 * @param header			The name of the target header. (Leave blank for global)
+		 * @param key				The name of the target key.
+		 * @param defaultValue		A default value or string that will be returned if the specified key doesn't exist.
+		 * @returns					The value of the specified key, or defaultValue if the specified header or key doesn't exist.
+		*/
+		ini_value get_or(std::string const& header, std::string&& key, ini_value const& defaultValue) const noexcept
+		{
+			return get(header, $fwd(key)).value_or(defaultValue);
+		}
+		/**
+		 * @brief					Gets the value of the specified key, or a default value if it doesn't exist.
+		 * @param header			The name of the target header. (Leave blank for global)
+		 * @param key				The name of the target key.
+		 * @param defaultValue		A default value or string that will be returned if the specified key doesn't exist.
+		 * @returns					The value of the specified key, or defaultValue if the specified header or key doesn't exist.
+		*/
+		ini_value get_or(std::string&& header, std::string const& key, ini_value const& defaultValue) const noexcept
+		{
+			return get($fwd(header), key).value_or(defaultValue);
+		}
+		/**
+		 * @brief					Gets the value of the specified key, or a default value if it doesn't exist.
+		 * @param header			The name of the target header. (Leave blank for global)
+		 * @param key				The name of the target key.
+		 * @param defaultValue		A default value or string that will be returned if the specified key doesn't exist.
+		 * @returns					The value of the specified key, or defaultValue if the specified header or key doesn't exist.
+		*/
+		ini_value get_or(std::string&& header, std::string&& key, ini_value const& defaultValue) const noexcept
+		{
+			return get($fwd(header), $fwd(key)).value_or(defaultValue);
+		}
+	#pragma endregion get_or
 
 	#pragma region set
 		/**

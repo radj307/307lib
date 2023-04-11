@@ -68,8 +68,8 @@ namespace str {
 			throw make_exception("str::toAlphaNumeric() failed:  \'", n, "\' cannot be converted to an alphanumeric value because it isn't within the range ( 0 - 36(Z) )");
 
 		if (n < 10)
-			return '0' + n;
-		else return (upper ? 'A' : 'a') + (n - 10);
+			return static_cast<char>('0' + n);
+		else return static_cast<char>((upper ? 'A' : 'a') + (n - 10));
 	}
 
 	/**

@@ -103,7 +103,7 @@ namespace opt {
 			if (!name.empty()) {
 				const auto& pos{ find<CompoundFlag>(name, off, end) };
 				const auto& size{ name.size() };
-				if (std::distance(pos, _args.end()) >= size) {
+				if (std::distance(pos, _args.end()) >= static_cast<ptrdiff_t>(size)) {
 					std::vector<char> cmpd;
 					size_t i{ 0ull };
 					for (auto it{ pos }; it != _args.end(); ++it, ++i) {
