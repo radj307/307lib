@@ -853,6 +853,7 @@ namespace ini {
 	public:
 		using ParserConfig = ini_parser_config<TKeyComparator>;
 		using Printer = ini_printer<TKeyComparator>;
+		using Section = section_t;
 
 	#pragma region constructors
 		/// @brief	Default ctor
