@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"event__example_8cpp_source.html":[11,0,2,0,0],
 "event_example_8cpp-example.html":[12,0],
 "examples.html":[12],
 "filei_8hpp.html":[11,0,0,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "namespacemembers_vars.html":[9,1,2],
 "namespacemembers_w.html":[9,1,0,23],
 "namespaceop.html":[9,0,13],
-"namespaceopt3.html":[9,0,15],
-"namespaceopt3.html#a0bd6ab9614bbb9790b25fc0f85bca7d9":[9,0,15,27]
+"namespaceopt3.html":[9,0,15]
 };

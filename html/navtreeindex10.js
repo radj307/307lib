@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"struct_meaningless_indirection.html#ab7cef500787dd70fb3e6cf0ecc2fc5c0":[10,0,19,1],
 "struct_meaningless_indirection.html#ac763258c798bbc41dcaaefbbe00efd3c":[10,0,19,4],
 "struct_meaningless_indirection.html#ad03b4fc0107e0c7ac1b47c6a23cb4dd7":[10,0,19,0],
 "structarg__manager2.html":[10,0,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "structmatrix_1_1basic__matrix.html#a10dacb107f319a1ce9ab2d2db82061b5":[10,0,6,0,0],
 "structmatrix_1_1basic__matrix.html#a11203b512e732b1fd1de995c03977d95":[10,0,6,0,8],
 "structmatrix_1_1basic__matrix.html#a1b8361ac3be71f818b5953c9527cd53f":[10,0,6,0,28],
-"structmatrix_1_1basic__matrix.html#a286b9449720e357cdd156826e18651b9":[10,0,6,0,11],
-"structmatrix_1_1basic__matrix.html#a3399f391062a49a7f55b5675ff2e962f":[10,0,6,0,2]
+"structmatrix_1_1basic__matrix.html#a286b9449720e357cdd156826e18651b9":[10,0,6,0,11]
 };

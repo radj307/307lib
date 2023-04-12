@@ -6,6 +6,7 @@ var classini_1_1basic__ini =
     [ "mask_t", "classini_1_1basic__ini.html#ac70161bb672c9040f4b58a62e6ef141c", null ],
     [ "ParserConfig", "classini_1_1basic__ini.html#ab17ff63a60c6673a10261c4dc5fce898", null ],
     [ "Printer", "classini_1_1basic__ini.html#ac0a15555df5669d7f92e86e8a4030513", null ],
+    [ "Section", "classini_1_1basic__ini.html#adb129e7ff65b90685cd0cf2429fa047f", null ],
     [ "section_t", "classini_1_1basic__ini.html#ab8976264f4ad27c78c1b83947466bee1", null ],
     [ "this_t", "classini_1_1basic__ini.html#a0cfc1501fd91293b5dce7c3c4a3a648d", null ],
     [ "basic_ini", "classini_1_1basic__ini.html#a3bc89f94881406b1fc9c311448e0e8f9", null ],
