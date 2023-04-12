@@ -1066,6 +1066,37 @@ namespace ini {
 		{
 			map[$fwd(header)][$fwd(key)] = $fwd(value);
 		}
+		/**
+		 * @brief			Removes the specified section from the INI container.
+		 * @param header	The name of the target header. (Leave blank for global)
+		 * @returns			The index of the removed section.
+		 */
+		auto erase(auto&& header)
+		{
+			return map.erase($fwd(header));
+		}
+		/**
+		 * @brief			Removes the specified key from the specified section in the INI container.
+		 * @param header	The name of the target header. (Leave blank for global)
+		 * @param key		The name of the target key.
+		 * @returns			The index of the removed key, relative to the specified section.
+		 */
+		auto erase(auto&& header, auto&& key)
+		{
+			return map.at($fwd(header)).erase($fwd(key));
+		}
+		auto erase(container_t::iterator pos)
+		{
+			return map.erase($fwd(pos));
+		}
+		auto erase(container_t::const_iterator pos)
+		{
+			return map.erase($fwd(pos));
+		}
+		auto erase(container_t::const_iterator first, container_t::const_iterator last)
+		{
+			return map.erase($fwd(first), $fwd(last));
+		}
 	#pragma endregion map_methods
 
 	#pragma region at
