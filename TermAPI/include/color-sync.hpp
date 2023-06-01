@@ -3,6 +3,7 @@
  * @file	color-sync.hpp
  * @author	radj307
  * @brief	Provides lightweight ANSI color sequence synchronization objects that are a keyless alternative to color::palette from palette.hpp
+ *\n		Very useful for controlling whether color sequences are emitted throughout a program, and also provides easy-to-use syntax for using ANSI sequences.
  */
 #include <setcolor.hpp>
 #include <Message.hpp>
@@ -10,6 +11,7 @@
 #include <var.hpp>
 
 #include <concepts>
+#include <optional>
 
 namespace color {
 	/**
