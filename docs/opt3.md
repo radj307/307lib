@@ -11,7 +11,7 @@ It is not the most efficient library out there by any means, but it makes up for
 
 ## Getting Started
 
-The opt3 library revolves around the `ArgManager` *(`arg_manager`)* class, which provides a comprehensive set of functions specifically designed to handle command-line arguments effectively.  
+The opt3 library revolves around the `ArgManager` *(`arg_manager`)* class, which provides a comprehensive set of functions specifically designed to handle command-line arguments effectively. Documentation on these functions can be found [here](https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html).  
 Creating a new `ArgManager` instance is simple, and only *requires* the argument count `argc` and argument array `argv` from your `main()` function.  
 ```cpp
 #include <opt3.hpp>
@@ -150,5 +150,3 @@ The following settings are exposed via `ArgParsingRules`:
     For example, in a project that expects `-h` but does **not** expect `-F`, the argument `-hF` would be interpreted as a Parameter with the value `-hF`.
   - This is ignored when `allowUnexpectedArgs` is `true`.
   - Default: `false`
-
-# *WIP*
