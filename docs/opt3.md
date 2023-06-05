@@ -6,32 +6,52 @@ The `opt3` namespace provides everything you need to manage and utilize GNU-styl
 It is intended to replace the deprecated `optlib` library, and consists of a single header file (`opt3.hpp`).
 Migrating an existing project from the now-deprecated optlib will likely require some code changes.
 
+The opt3 library makes extensive use of modern C++ features like [concepts](https://en.cppreference.com/w/cpp/language/constraints), [variadic functions & templates](https://en.cppreference.com/w/cpp/utility/variadic), and [variants](https://en.cppreference.com/w/cpp/utility/variant).  
+It is not the most efficient library out there by any means, but it makes up for its relative bulk by being easy to set up & use.
+
+## Getting Started
+
+The opt3 library revolves around the `ArgManager` *(`arg_manager`)* class, which provides a comprehensive set of functions specifically designed to handle command-line arguments effectively.  
+Creating a new `ArgManager` instance is simple, and only *requires* the argument count `argc` and argument array `argv` from your `main()` function.  
+```cpp
+#include <opt3.hpp>
+
+int main(const int argc, char** argv)
+{
+  opt3::ArgManager args{ argc, argv };
+}
+```
+
 ## Basic Concepts
+
+See [here](https://www.learncpp.com/cpp-tutorial/command-line-arguments/) for an introduction to commandline arguments in C++.  
+
+The ArgManager class constructor parses the `argc` and `argv` parameters from your `main()` function into a vector of `std::variant` type, preserving argument precedence. Each `std::variant` can represent an `opt3::Option`, `opt3::Flag`, or `opt3::Parameter` (refer to [Argument Types](#argument-types)). The entire parsing process happens during the instantiation of `ArgManager`.
+
+Options and Flags can capture additional input, which is stored as an optional member within the corresponding `opt3::Option` or `opt3::Flag` object. Captured input is denoted by appending an equals sign (`=`) to the option/flag name. For example, `--opt=someCapturedString` is an `opt3::Option` named `opt` that captures the string `someCapturedString`. This style of capturing is called *explicit* capturing.  
+Alternatively, Options/Flags can be configured to capture Parameters that immediately follow them by providing the option/flag name to the constructor of `ArgManager`. This style of capturing is called *implicit* capturing. If a parameter is captured by an option/flag, it is removed from the direct argument list. Therefore, in the example `--opt someCapturedParam`, the `opt3::Option` named `opt` captures an `opt3::Parameter` named `someCapturedParam`, which is no longer present directly in the argument list. Instead, it can be accessed through the `opt` option. See [Defining Capturing Arguments](#defining-capturing-arguments) for more information.
 
 ### Argument Types
 
 One of three *argument types* is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted.  
 
 - Option  
-  - Always preceded by two delimiters `--`.
-  - Can be of any length.
+  - Name is preceded by two delimiters `--`.
+  - Names can be any length greater than 0.
   - Is able to capture parameters.
 - Flag  
-  - Always preceded by one delimiter `-`.
-  - Always a single character in length.
-  - Multiple flags can be chained together.  
+  - Name is preceded by one delimiter `-`.
+  - Names are always exactly 1 character in length.
+  - Is able to capture parameters.
+  - Multiple flags can be chained together. Only the last flag in the chain can capture parameters.  
     *Ex: `-qv`* is equivalent to *`-q -v`*
-  - Is able to capture parameters as long as it is not part of a chain, or is the last element in the chain.
 - Parameter  
   - Any argument that is not an option or a flag.
-  - Note that negative numbers *(ex: `-20`)* may result in unexpected behaviour because they may be interpreted as Flags.
-
-### Capturing Arguments
-
-Option and Flag arguments can be made to *capture* Parameters. Captured parameters are not included directly in the list of arguments; instead they are stored within the argument that captured them.
-Capturing arguments must be specified in the constructor of `opt3::ArgManager`, but they can be specified in a number of ways.
+  - Is able to be captured by Options/Flags. When a Parameter is captured, it is removed from the argument list.
+  - Note that negative numbers *(ex: `-20`)* may result in unexpected behaviour because they may be interpreted as Flags when the `assumeValidNumberWithDashPrefixIsNegative` parsing rule is set to `false` (see [Argument Parsing Rules](#argument-parsing-rules)).
 
 #### Defining Capturing Arguments
+
 All capturing arguments must be specified in the constructor of `opt3::ArgManager`.  
 If a Flag/Option is *not* specified, it will never be able to capture under any circumstances.
 
@@ -73,6 +93,7 @@ A capture argument can be specified explicitly or implicitly. An explicit captur
 - Implicit: `--arg "Hello World!"`  
 
 #### Capture Style
+
 The `CaptureStyle` bitfield enum defines capturing rules for a specific argument or templated argument.
 
 - Disabled  
