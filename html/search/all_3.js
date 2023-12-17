@@ -36,10 +36,11 @@ var searchData=
   ['binarytodecimal_89',['binaryToDecimal',['../namespacestr.html#a1f82a58e884afa2d7f6dcbe3ad884bab',1,'str']]],
   ['black_90',['black',['../color-values_8h.html#a95da3b84ca9ce74003a135dde7942463',1,'color']]],
   ['blue_91',['blue',['../color-values_8h.html#abcf50ccb468d6565488cfda5b60cdd86',1,'color']]],
-  ['boolean_92',['Boolean',['../structjson_1_1_node_type.html#a879dad930d205ea2f51d702c679e6ad7',1,'json::NodeType::Boolean()'],['../_i_n_i_redux_8hpp.html#a42c2b4ad6a7698c012a5c55ee35f4f8c',1,'file::ini::Boolean()']]],
+  ['boolean_92',['Boolean',['../structjson_1_1_node_type.html#a879dad930d205ea2f51d702c679e6ad7',1,'json::NodeType']]],
   ['boolean_93',['BOOLEAN',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799ac48d5da12d702e73d6966069f2687376',1,'token::DefaultDefs']]],
-  ['boolean_5ft_94',['boolean_t',['../namespacejson.html#a86d7fd741e0a15fa0d5caff4c9990f14',1,'json']]],
-  ['bracket_5fclose_95',['BRACKET_CLOSE',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a24f34bfbbd1bf4bcf427fd459df7b776',1,'token::DefaultDefs']]],
-  ['bracket_5fopen_96',['BRACKET_OPEN',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a37c51803bdf9763d9b1ca1d364bdf9f6',1,'token::DefaultDefs']]],
-  ['buffermanager_97',['BufferManager',['../classxlog_1_1_buffer_manager.html',1,'xlog']]]
+  ['boolean_94',['Boolean',['../_i_n_i_redux_8hpp.html#a42c2b4ad6a7698c012a5c55ee35f4f8c',1,'file::ini']]],
+  ['boolean_5ft_95',['boolean_t',['../namespacejson.html#a86d7fd741e0a15fa0d5caff4c9990f14',1,'json']]],
+  ['bracket_5fclose_96',['BRACKET_CLOSE',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a24f34bfbbd1bf4bcf427fd459df7b776',1,'token::DefaultDefs']]],
+  ['bracket_5fopen_97',['BRACKET_OPEN',['../_token_redux_default_defs_8hpp.html#a57c7401279cdddb2e9deb3ef6b8244d6a37c51803bdf9763d9b1ca1d364bdf9f6',1,'token::DefaultDefs']]],
+  ['buffermanager_98',['BufferManager',['../classxlog_1_1_buffer_manager.html',1,'xlog']]]
 ];

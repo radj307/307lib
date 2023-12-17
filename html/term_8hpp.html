@@ -100,7 +100,6 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_segments_8h_source.html">Segments.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code><br />
-<code>#include &lt;CursorOrigin.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="indentor_8hpp_source.html">indentor.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_message_8hpp_source.html">Message.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
@@ -114,7 +113,8 @@ $(document).ready(function(){initNavTree('term_8hpp.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for term.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -174,7 +174,7 @@ Functions</h2></td></tr>
 <tr class="separator:aa15c6de01c4731901a53a91fba367192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memTemplItemLeft" align="right" valign="top">sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">term::CursorVerticalAbs</a> (const T &amp;row)</td></tr>
-<tr class="memdesc:ae5891f52e9dc19e8f0d90f50305895b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific row/line.  <a href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">More...</a><br /></td></tr>
+<tr class="memdesc:ae5891f52e9dc19e8f0d90f50305895b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific 0-indexed row/line.  <a href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">More...</a><br /></td></tr>
 <tr class="separator:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a162a5fb0fd4bee164862e13f0680c9a3"><td class="memItemLeft" align="right" valign="top">sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a162a5fb0fd4bee164862e13f0680c9a3">term::CursorVisible</a> (const bool &amp;visible)</td></tr>
 <tr class="memdesc:a162a5fb0fd4bee164862e13f0680c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is visible or not.  <a href="namespaceterm.html#a162a5fb0fd4bee164862e13f0680c9a3">More...</a><br /></td></tr>
@@ -204,12 +204,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a325c5ca2bbec14e848abb2f95021371e"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; RT, RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e">term::getCursorPosition</a> () noexcept(false)</td></tr>
 <tr class="memdesc:a325c5ca2bbec14e848abb2f95021371e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current position of the cursor, measured in characters of the screen buffer.  <a href="namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e">More...</a><br /></td></tr>
 <tr class="separator:a325c5ca2bbec14e848abb2f95021371e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">term::getDeviceAttributes</a> () noexcept</td></tr>
-<tr class="memdesc:ae3c7abf7e060ae620d231d2f8682fe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN.  <a href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">More...</a><br /></td></tr>
-<tr class="separator:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad99af1bd0d76beed39ad95da2d893710"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="term_8hpp.html#ad99af1bd0d76beed39ad95da2d893710">term::query::getResponse</a> () noexcept</td></tr>
-<tr class="memdesc:ad99af1bd0d76beed39ad95da2d893710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a query response from STDIN, and return it as a string.  <a href="term_8hpp.html#ad99af1bd0d76beed39ad95da2d893710">More...</a><br /></td></tr>
-<tr class="separator:ad99af1bd0d76beed39ad95da2d893710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75eac4a9faf820e806d48925fd1e1906"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a75eac4a9faf820e806d48925fd1e1906">term::getDeviceAttributes</a> (bool flushSTDOUT=false) noexcept</td></tr>
+<tr class="memdesc:a75eac4a9faf820e806d48925fd1e1906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN.  <a href="namespaceterm.html#a75eac4a9faf820e806d48925fd1e1906">More...</a><br /></td></tr>
+<tr class="separator:a75eac4a9faf820e806d48925fd1e1906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae059bfd84131f966d9829dff9f035b5f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="term_8hpp.html#ae059bfd84131f966d9829dff9f035b5f">term::query::getResponse</a> (const char seqEnd, const size_t bufSize=8) noexcept</td></tr>
+<tr class="memdesc:ae059bfd84131f966d9829dff9f035b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a query response from STDIN, and return it as a string. Any prior data waiting in STDIN is discarded.  <a href="term_8hpp.html#ae059bfd84131f966d9829dff9f035b5f">More...</a><br /></td></tr>
+<tr class="separator:ae059bfd84131f966d9829dff9f035b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16752c0ed2d0565599638c183df30b54"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">term::getScreenBufferSize</a> ()</td></tr>
 <tr class="memdesc:a16752c0ed2d0565599638c183df30b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the screen buffer, in characters.  <a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">More...</a><br /></td></tr>
 <tr class="separator:a16752c0ed2d0565599638c183df30b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,7 +342,7 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <tr class="separator:a76704fbf20bed965523b3d3df239293e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac763ccf04e02bc17a680611541b8dca2"><td class="memItemLeft" align="right" valign="top"><a id="ac763ccf04e02bc17a680611541b8dca2"></a>
 static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac763ccf04e02bc17a680611541b8dca2">term::ReportCursorPosition</a> { make_sequence(CSI, &quot;6n&quot;) }</td></tr>
-<tr class="memdesc:ac763ccf04e02bc17a680611541b8dca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the escape sequence for DECXCPR(Report Cursor Position). <br /></td></tr>
+<tr class="memdesc:ac763ccf04e02bc17a680611541b8dca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the escape sequence for DECXCPR(Report Cursor Position). Flush the output buffer immediately after sending. <br /></td></tr>
 <tr class="separator:ac763ccf04e02bc17a680611541b8dca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3af84c6a853c31fdaffbf50ec24e3f"><td class="memItemLeft" align="right" valign="top"><a id="aec3af84c6a853c31fdaffbf50ec24e3f"></a>
 static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aec3af84c6a853c31fdaffbf50ec24e3f">term::ReportDeviceAttributes</a> { make_sequence(CSI, &quot;0c&quot;) }</td></tr>
@@ -390,8 +390,8 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p class="definition">Definition in file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ad99af1bd0d76beed39ad95da2d893710"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad99af1bd0d76beed39ad95da2d893710">&#9670;&nbsp;</a></span>getResponse()</h2>
+<a id="ae059bfd84131f966d9829dff9f035b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae059bfd84131f966d9829dff9f035b5f">&#9670;&nbsp;</a></span>getResponse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,8 +402,19 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
         <tr>
           <td class="memname">std::string term::query::getResponse </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>seqEnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>bufSize</em> = <code>8</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -413,14 +424,22 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </table>
 </div><div class="memdoc">
 
-<p>Receive a query response from STDIN, and return it as a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+<p>Receive a query response from STDIN, and return it as a string. Any prior data waiting in STDIN is discarded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seqEnd</td><td>- The final character in the expected ANSI sequence. </td></tr>
+    <tr><td class="paramname">bufSize</td><td>- The minimum number of bytes to reserve in the buffer. If this is insufficient, the buffer will be expanded with a potential reallocation penalty. The default is 8. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The query response as a std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00049">49</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00050">50</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp_ad99af1bd0d76beed39ad95da2d893710_icgraph.svg" width="439" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp_ae059bfd84131f966d9829dff9f035b5f_icgraph.svg" width="439" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

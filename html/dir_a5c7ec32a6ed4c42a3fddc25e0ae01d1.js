@@ -5,7 +5,6 @@ var dir_a5c7ec32a6ed4c42a3fddc25e0ae01d1 =
     [ "color-sync.hpp", "color-sync_8hpp.html", "color-sync_8hpp" ],
     [ "color-transform.hpp", "color-transform_8hpp.html", "color-transform_8hpp" ],
     [ "color-values.h", "color-values_8h.html", "color-values_8h" ],
-    [ "CursorOrigin.h", "_cursor_origin_8h_source.html", null ],
     [ "EnableANSI.hpp", "_enable_a_n_s_i_8hpp.html", "_enable_a_n_s_i_8hpp" ],
     [ "LineCharacter.hpp", "_line_character_8hpp.html", [
       [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ]

@@ -92,40 +92,59 @@ $(document).ready(function(){initNavTree('opt3.html',''); initResizable(); });
 <div class="textblock"><h1><a class="anchor" id="autotoc_md10"></a>
 opt3</h1>
 <p>The <code><a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a></code> namespace provides everything you need to manage and utilize GNU-style commandline arguments independently of platform or compiler. <br  />
- It is intended to replace the deprecated <code>optlib</code> library, and consists of a single header file (<code><a class="el" href="opt3_8hpp.html" title="Contains the opt3 namespace &amp; its contents; a fully-featured commandline argument parser,...">opt3.hpp</a></code>). Migrating an existing project from the now-deprecated optlib will likely require some code changes.</p>
+</p>
+<p><a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> makes extensive use of modern C++ features like <a href="https://en.cppreference.com/w/cpp/language/constraints">concepts</a>, <a href="https://en.cppreference.com/w/cpp/utility/variadic">variadic functions &amp; templates</a>, <a href="https://en.cppreference.com/w/cpp/utility/variant">variants</a>, and <a href="https://en.cppreference.com/w/cpp/utility/optional">optionals</a>. <br  />
+ It is not the most efficient library out there by any means, but it makes up for it by being easy to set up &amp; use in a wide variety of applications.</p>
 <h2><a class="anchor" id="autotoc_md11"></a>
+Getting Started</h2>
+<p>The <a class="el" href="namespaceopt3.html" title="Contains a commandline argument parser &amp; container object.">opt3</a> library revolves around the <code>ArgManager</code> *(<code>arg_manager</code>)* class. <code>ArgManager</code> inherits from the <code>arg_container</code> class, which provides a comprehensive set of functions specifically designed to handle command-line arguments effectively. Documentation on these functions can be found <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html">here</a>. <br  />
+ Creating a new <code>ArgManager</code> instance is simple, and only <em>requires</em> the argument count (<code>argc</code>) and argument array (<code>argv</code>) from your program's <code>main()</code> function. <br  />
+ </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="opt3_8hpp.html">opt3.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line">{</div>
+<div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv }; <span class="comment">//&lt; ready to use!</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aopt3_8hpp_html"><div class="ttname"><a href="opt3_8hpp.html">opt3.hpp</a></div><div class="ttdoc">Contains the opt3 namespace &amp; its contents; a fully-featured commandline argument parser,...</div></div>
+<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02179">opt3.hpp:2179</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 Basic Concepts</h2>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<p>See <a href="https://www.learncpp.com/cpp-tutorial/command-line-arguments/">here</a> for an introduction to commandline arguments in C++. <br  />
+</p>
+<p>The ArgManager class constructor parses the <code>argc</code> and <code>argv</code> parameters from your <code>main()</code> function into a vector of <code>std::variant</code> type, preserving argument precedence. Each <code>std::variant</code> can represent an <code><a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502" title="Option argument type; these are multi-character arguments that can capture values when enabled.">opt3::Option</a></code>, <code><a class="el" href="namespaceopt3.html#a77b420740d1a99b7542ae9ebb37c34e7" title="Flag argument type; these are single-character arguments that can be chained together and can capture...">opt3::Flag</a></code>, or <code><a class="el" href="namespaceopt3.html#ae5d306b4c192f9b35513b2874c39c5f6" title="Parameter argument type; these are any arguments without special meaning.">opt3::Parameter</a></code> (refer to <a href="#argument-types">Argument Types</a>). The entire parsing process happens during the instantiation of <code>ArgManager</code>.</p>
+<p>Options and Flags can capture additional input, which is stored as an optional member within the corresponding <code><a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502" title="Option argument type; these are multi-character arguments that can capture values when enabled.">opt3::Option</a></code> or <code><a class="el" href="namespaceopt3.html#a77b420740d1a99b7542ae9ebb37c34e7" title="Flag argument type; these are single-character arguments that can be chained together and can capture...">opt3::Flag</a></code> object. Captured input is denoted by appending an equals sign (<code>=</code>) to the option/flag name. For example, <code>--opt=someCapturedString</code> is an <code><a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502" title="Option argument type; these are multi-character arguments that can capture values when enabled.">opt3::Option</a></code> named <code>opt</code> that captures the string <code>someCapturedString</code>. This style of capturing is called <em>explicit</em> capturing. <br  />
+ Alternatively, Options/Flags can be configured to capture Parameters that immediately follow them by providing the option/flag name to the constructor of <code>ArgManager</code>. This style of capturing is called <em>implicit</em> capturing. If a parameter is captured by an option/flag, it is removed from the direct argument list. Therefore, in the example <code>--opt someCapturedParam</code>, the <code><a class="el" href="namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502" title="Option argument type; these are multi-character arguments that can capture values when enabled.">opt3::Option</a></code> named <code>opt</code> captures an <code><a class="el" href="namespaceopt3.html#ae5d306b4c192f9b35513b2874c39c5f6" title="Parameter argument type; these are any arguments without special meaning.">opt3::Parameter</a></code> named <code>someCapturedParam</code>, which is no longer present directly in the argument list. Instead, it can be accessed through the <code>opt</code> option. See <a href="#defining-capturing-arguments">Defining Capturing Arguments</a> for more information.</p>
+<p>When referencing an argument in your code, only the argument's <em>name</em> is used. An argument's name does not include prefix characters like dashes (<code>-</code>). For instance, to refer to the flag "-h" you would use the char 'h' or string "h", <b>not</b> "-h". This allows your code to work independently of whatever prefix delimiters are being used.</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Argument Types</h3>
 <p>One of three <em>argument types</em> is assigned to each parsed argument, which corresponds to its semantics and how it is interpreted. <br  />
 </p>
 <ul>
 <li>Option <br  />
 <ul>
-<li>Always preceded by two delimiters <code>--</code>.</li>
-<li>Can be of any length.</li>
+<li>Name is preceded by two delimiters <code>--</code>.</li>
+<li>Names can be any length greater than 0.</li>
 <li>Is able to capture parameters.</li>
 </ul>
 </li>
 <li>Flag <br  />
 <ul>
-<li>Always preceded by one delimiter <code>-</code>.</li>
-<li>Always a single character in length.</li>
-<li>Multiple flags can be chained together. <br  />
+<li>Name is preceded by one delimiter <code>-</code>.</li>
+<li>Names are always exactly 1 character in length.</li>
+<li>Is able to capture parameters.</li>
+<li>Multiple flags can be chained together. Only the last flag in the chain can capture parameters. <br  />
  <em>Ex: <code>-qv</code></em> is equivalent to *<code>-q -v</code>*</li>
-<li>Is able to capture parameters as long as it is not part of a chain, or is the last element in the chain.</li>
 </ul>
 </li>
 <li>Parameter <br  />
 <ul>
 <li>Any argument that is not an option or a flag.</li>
-<li>Note that negative numbers *(ex: <code>-20</code>)* may result in unexpected behaviour because they may be interpreted as Flags.</li>
+<li>Is able to be captured by Options/Flags. When a Parameter is captured, it is removed from the argument list.</li>
+<li>Note that negative numbers *(ex: <code>-20</code>)* may result in unexpected behaviour because they may be interpreted as Flags when the <code>assumeValidNumberWithDashPrefixIsNegative</code> parsing rule is set to <code>false</code> (see <a href="#argument-parsing-rules">Argument Parsing Rules</a>).</li>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md13"></a>
-Capturing Arguments</h3>
-<p>Option and Flag arguments can be made to <em>capture</em> Parameters. Captured parameters are not included directly in the list of arguments; instead they are stored within the argument that captured them. Capturing arguments must be specified in the constructor of <code>opt3::ArgManager</code>, but they can be specified in a number of ways.</p>
+<p>In the code, these arguments are templated instances of <a href="https://radj307.github.io/307lib/html/structopt3_1_1basic__arg__t.html"><code>basic_arg_t</code></a></p>
 <h4><a class="anchor" id="autotoc_md14"></a>
 Defining Capturing Arguments</h4>
 <p>All capturing arguments must be specified in the constructor of <code>opt3::ArgManager</code>. <br  />
@@ -135,7 +154,6 @@ Defining Capturing Arguments</h4>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv, <span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span> };</div>
 <div class="line">}</div>
-<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02179">opt3.hpp:2179</a></div></div>
 </div><!-- fragment --><p> You can force a specific Flag or Option to <em>require</em> capture input by using custom string literals: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">using namespace </span>opt3_literals;</div>
@@ -233,9 +251,42 @@ Argument Parsing Rules</h3>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md18"></a>
-&lt;em&gt;WIP&lt;/em&gt;</h1>
-</div></div><!-- contents -->
+<h2><a class="anchor" id="autotoc_md18"></a>
+Examples</h2>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Check if an argument was specified</h3>
+<p>You can check if an argument was specified on the commandline by using the <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#a686d6571318aae77d59524aef42e218e"><code>check</code></a>, <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#ac7060604d1a29465ce34723f5dcf4216"><code>check_any</code></a>, &amp; <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#a52716edbccb679dca5149f60930e9b51"><code>check_all</code></a> methods. </p><div class="fragment"><div class="line"><a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (args.check(<span class="charliteral">&#39;v&#39;</span>)) {</div>
+<div class="line">  <span class="comment">// parameter &quot;v&quot; or flag &quot;-v&quot; was specified</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (args.check&lt;<a class="code" href="structopt3_1_1basic__arg__t.html">opt3::Option</a>&gt;(<span class="stringliteral">&quot;help&quot;</span>)) {</div>
+<div class="line">  <span class="comment">// option &quot;--help&quot; was specified</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (args.check_any&lt;<a class="code" href="structopt3_1_1basic__arg__t.html">opt3::Flag</a>, <a class="code" href="structopt3_1_1basic__arg__t.html">opt3::Option</a>&gt;(<span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>)) {</div>
+<div class="line">  <span class="comment">// flag &quot;-h&quot; or option &quot;--help&quot; was specified</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (args.check_all&lt;<a class="code" href="structopt3_1_1basic__arg__t.html">opt3::Flag</a>, <a class="code" href="structopt3_1_1basic__arg__t.html">opt3::Option</a>&gt;(<span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>)) {</div>
+<div class="line">  <span class="comment">// flag &quot;-h&quot; and option &quot;--help&quot; were specified</span></div>
+<div class="line">}</div>
+<div class="ttc" id="astructopt3_1_1basic__arg__t_html"><div class="ttname"><a href="structopt3_1_1basic__arg__t.html">opt3::basic_arg_t</a></div><div class="ttdoc">Basic argument wrapper object that contains a templated variable type with some useful methods.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l00105">opt3.hpp:105</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md20"></a>
+Check if an argument has a capture</h3>
+<p>You can check if an argument has captured input by using the <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#a48eadc0234a6c37abe5156b42632f100"><code>checkv</code></a>, <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#a8e018c8dabeef85544cdacb688ed9d94"><code>checkv_any</code></a>, &amp; <a href="https://radj307.github.io/307lib/html/structopt3_1_1arg__container.html#ad4ae2185b17551ab032074953786bb0c"><code>checkv_all</code></a> methods. </p><div class="fragment"><div class="line"><a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv,</div>
+<div class="line">  <span class="charliteral">&#39;f&#39;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;opt&quot;</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (args.checkv(<span class="charliteral">&#39;f&#39;</span>)) {</div>
+<div class="line">  <span class="comment">// flag &quot;-f&quot; has a capture argument</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (args.checkv_any(<span class="charliteral">&#39;f&#39;</span>, <span class="stringliteral">&quot;opt&quot;</span>)) {</div>
+<div class="line">  <span class="comment">// flag &quot;-f&quot; or option &quot;--opt&quot; has a capture argument</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (args.checkv_all(<span class="charliteral">&#39;f&#39;</span>, <span class="stringliteral">&quot;opt&quot;</span>)) {</div>
+<div class="line">  <span class="comment">// flag &quot;-f&quot; and option &quot;--opt&quot; have a capture argument</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

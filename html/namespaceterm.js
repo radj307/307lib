@@ -3,11 +3,10 @@ var namespaceterm =
     [ "_internal", null, [
       [ "initTermiosForInstantInput", "term_8hpp.html#ad685dc9d33e60754fd598454260e3626", null ],
       [ "resetTermios", "term_8hpp.html#a0e3d98590b244f57605175466893d6f3", null ],
-      [ "current", "term_8hpp.html#a18e69eb166901c59d2e3f2b1e7eee31f", null ],
-      [ "CURSOR_MIN_AXIS", "_cursor_origin_8h.html#afce05dc82de9f9c074c9ca8cb10a7736", null ]
+      [ "current", "term_8hpp.html#a18e69eb166901c59d2e3f2b1e7eee31f", null ]
     ] ],
     [ "query", null, [
-      [ "getResponse", "term_8hpp.html#ad99af1bd0d76beed39ad95da2d893710", null ]
+      [ "getResponse", "term_8hpp.html#ae059bfd84131f966d9829dff9f035b5f", null ]
     ] ],
     [ "basic_colorpalette", "classterm_1_1basic__colorpalette.html", "classterm_1_1basic__colorpalette" ],
     [ "basic_colors", "classterm_1_1basic__colors.html", "classterm_1_1basic__colors" ],
@@ -47,7 +46,7 @@ var namespaceterm =
     [ "get_warn", "namespaceterm.html#a36e7c3a58b36c51250650b9ad62db34e", null ],
     [ "getch", "namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c", null ],
     [ "getCursorPosition", "namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e", null ],
-    [ "getDeviceAttributes", "namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50", null ],
+    [ "getDeviceAttributes", "namespaceterm.html#a75eac4a9faf820e806d48925fd1e1906", null ],
     [ "getScreenBufferSize", "namespaceterm.html#a16752c0ed2d0565599638c183df30b54", null ],
     [ "InsertChar", "namespaceterm.html#a461afc8e8008fb3e74193222564d34d8", null ],
     [ "InsertLine", "namespaceterm.html#a1c98c936d6fc6705ebd2cb0edec446a3", null ],
@@ -60,7 +59,6 @@ var namespaceterm =
     [ "SelectGraphicsRendition", "namespaceterm.html#ab76bdc9ff790f0d73d345967253b0653", null ],
     [ "setCursorPosition", "namespaceterm.html#a60142cc1e234128d0f2030966aedf363", null ],
     [ "setCursorPosition", "namespaceterm.html#abddd8198c4829b6f4bda21fb52936936", null ],
-    [ "setOriginPos", "namespaceterm.html#ac4c421f241bde884ca3cdf0748d11439", null ],
     [ "setScreenBufferSize", "namespaceterm.html#a8e442c14372ea984cee723baaaf247eb", null ],
     [ "setScreenBufferSize", "namespaceterm.html#a283c231b03067979f678dbd23104c0eb", null ],
     [ "SGR", "namespaceterm.html#a1eb3b7f7464f5ecd7a251cd1becd28d7", null ],

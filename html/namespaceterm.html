@@ -172,7 +172,7 @@ Functions</h2></td></tr>
 <tr class="separator:aa15c6de01c4731901a53a91fba367192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memTemplItemLeft" align="right" valign="top">sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">CursorVerticalAbs</a> (const T &amp;row)</td></tr>
-<tr class="memdesc:ae5891f52e9dc19e8f0d90f50305895b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific row/line.  <a href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">More...</a><br /></td></tr>
+<tr class="memdesc:ae5891f52e9dc19e8f0d90f50305895b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's vertical position to a specific 0-indexed row/line.  <a href="namespaceterm.html#ae5891f52e9dc19e8f0d90f50305895b2">More...</a><br /></td></tr>
 <tr class="separator:ae5891f52e9dc19e8f0d90f50305895b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a162a5fb0fd4bee164862e13f0680c9a3"><td class="memItemLeft" align="right" valign="top">sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a162a5fb0fd4bee164862e13f0680c9a3">CursorVisible</a> (const bool &amp;visible)</td></tr>
 <tr class="memdesc:a162a5fb0fd4bee164862e13f0680c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the cursor is visible or not.  <a href="namespaceterm.html#a162a5fb0fd4bee164862e13f0680c9a3">More...</a><br /></td></tr>
@@ -244,9 +244,9 @@ CONSTEXPR const <a class="el" href="structterm_1_1_message.html">Message</a>&#16
 <tr class="memitem:a325c5ca2bbec14e848abb2f95021371e"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; RT, RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e">getCursorPosition</a> () noexcept(false)</td></tr>
 <tr class="memdesc:a325c5ca2bbec14e848abb2f95021371e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current position of the cursor, measured in characters of the screen buffer.  <a href="namespaceterm.html#a325c5ca2bbec14e848abb2f95021371e">More...</a><br /></td></tr>
 <tr class="separator:a325c5ca2bbec14e848abb2f95021371e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">getDeviceAttributes</a> () noexcept</td></tr>
-<tr class="memdesc:ae3c7abf7e060ae620d231d2f8682fe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN.  <a href="namespaceterm.html#ae3c7abf7e060ae620d231d2f8682fe50">More...</a><br /></td></tr>
-<tr class="separator:ae3c7abf7e060ae620d231d2f8682fe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75eac4a9faf820e806d48925fd1e1906"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a75eac4a9faf820e806d48925fd1e1906">getDeviceAttributes</a> (bool flushSTDOUT=false) noexcept</td></tr>
+<tr class="memdesc:a75eac4a9faf820e806d48925fd1e1906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN.  <a href="namespaceterm.html#a75eac4a9faf820e806d48925fd1e1906">More...</a><br /></td></tr>
+<tr class="separator:a75eac4a9faf820e806d48925fd1e1906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16752c0ed2d0565599638c183df30b54"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">getScreenBufferSize</a> ()</td></tr>
 <tr class="memdesc:a16752c0ed2d0565599638c183df30b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the screen buffer, in characters.  <a href="namespaceterm.html#a16752c0ed2d0565599638c183df30b54">More...</a><br /></td></tr>
 <tr class="separator:a16752c0ed2d0565599638c183df30b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,9 +293,6 @@ template&lt;var::streamable... Ts&gt; </td></tr>
 <tr class="memitem:abddd8198c4829b6f4bda21fb52936936"><td class="memTemplItemLeft" align="right" valign="top">sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#abddd8198c4829b6f4bda21fb52936936">setCursorPosition</a> (const Tx &amp;x_column, const Ty &amp;y_row)</td></tr>
 <tr class="memdesc:abddd8198c4829b6f4bda21fb52936936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cursor's position to a given column and row.  <a href="namespaceterm.html#abddd8198c4829b6f4bda21fb52936936">More...</a><br /></td></tr>
 <tr class="separator:abddd8198c4829b6f4bda21fb52936936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4c421f241bde884ca3cdf0748d11439"><td class="memItemLeft" align="right" valign="top"><a id="ac4c421f241bde884ca3cdf0748d11439"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>setOriginPos</b> (const bool &amp;min_axis=1)</td></tr>
-<tr class="separator:ac4c421f241bde884ca3cdf0748d11439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e442c14372ea984cee723baaaf247eb"><td class="memTemplParams" colspan="2">template&lt;std::integral T&gt; </td></tr>
 <tr class="memitem:a8e442c14372ea984cee723baaaf247eb"><td class="memTemplItemLeft" align="right" valign="top">requires static var::streamable&lt; T, std::stringstream &gt; sequence&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a8e442c14372ea984cee723baaaf247eb">setScreenBufferSize</a> (const std::pair&lt; T, T &gt; colRowPair)</td></tr>
 <tr class="memdesc:a8e442c14372ea984cee723baaaf247eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an escape sequence that resizes the console screen buffer and/or window.  <a href="namespaceterm.html#a8e442c14372ea984cee723baaaf247eb">More...</a><br /></td></tr>
@@ -400,7 +397,7 @@ CONSTEXPR const <a class="el" href="structterm_1_1_message.html">Message</a>&#16
 <tr class="separator:a22debae07477700028cf3acb727bd589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac763ccf04e02bc17a680611541b8dca2"><td class="memItemLeft" align="right" valign="top"><a id="ac763ccf04e02bc17a680611541b8dca2"></a>
 static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ac763ccf04e02bc17a680611541b8dca2">ReportCursorPosition</a> { make_sequence(CSI, &quot;6n&quot;) }</td></tr>
-<tr class="memdesc:ac763ccf04e02bc17a680611541b8dca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the escape sequence for DECXCPR(Report Cursor Position). <br /></td></tr>
+<tr class="memdesc:ac763ccf04e02bc17a680611541b8dca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the escape sequence for DECXCPR(Report Cursor Position). Flush the output buffer immediately after sending. <br /></td></tr>
 <tr class="separator:ac763ccf04e02bc17a680611541b8dca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3af84c6a853c31fdaffbf50ec24e3f"><td class="memItemLeft" align="right" valign="top"><a id="aec3af84c6a853c31fdaffbf50ec24e3f"></a>
 static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aec3af84c6a853c31fdaffbf50ec24e3f">ReportDeviceAttributes</a> { make_sequence(CSI, &quot;0c&quot;) }</td></tr>
@@ -479,7 +476,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00233">233</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00269">269</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +513,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00329">329</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00367">367</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -555,7 +552,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00213">213</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00249">249</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -594,7 +591,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00223">223</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00259">259</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -633,7 +630,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00263">263</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00299">299</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -672,7 +669,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00243">243</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00279">279</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -711,7 +708,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00253">253</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00289">289</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -750,7 +747,7 @@ template&lt;std::integral T = unsigned&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00203">203</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00239">239</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -780,7 +777,7 @@ template&lt;std::integral T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the cursor's vertical position to a specific row/line. </p>
+<p>Set the cursor's vertical position to a specific 0-indexed row/line. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>The line number to move the cursor to. The cursor will stay in the current column. </td></tr>
@@ -789,7 +786,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00273">273</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00309">309</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +823,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00314">314</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00352">352</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -863,7 +860,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00385">385</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00423">423</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -900,7 +897,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00412">412</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00450">450</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1057,7 +1054,7 @@ template&lt;var::valid_char TChar, std::derived_from&lt; std::char_traits&lt; TC
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00394">394</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00432">432</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1108,7 +1105,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00433">433</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00471">471</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1159,7 +1156,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00452">452</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00490">490</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1188,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>int: The key code of the pressed key. <br  />
  Note that function &amp; arrow keys will insert 2 characters into the STDIN buffer, and will require calling <a class="el" href="namespaceterm.html#a705b8e2f941f96208d459673c5a11b4c" title="Get a single keypress from STDIN, without blocking.   On windows, this uses _getch(),...">getch()</a> twice to retrieve both characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00108">108</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00135">135</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1230,19 +1227,19 @@ template&lt;std::integral RT&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pair of type RT that represent the X and Y coordinates of the cursor, respectively.</dd>
 <dd>
 A pair of integrals that represent the X and Y coordinates of the cursor, respectively. </dd></dl>
-<p>&lt;when true, appends digits to column; else, appends to row.</p>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00134">134</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00161">161</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a325c5ca2bbec14e848abb2f95021371e_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a325c5ca2bbec14e848abb2f95021371e_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ae3c7abf7e060ae620d231d2f8682fe50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3c7abf7e060ae620d231d2f8682fe50">&#9670;&nbsp;</a></span>getDeviceAttributes()</h2>
+<a id="a75eac4a9faf820e806d48925fd1e1906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75eac4a9faf820e806d48925fd1e1906">&#9670;&nbsp;</a></span>getDeviceAttributes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1253,7 +1250,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">std::string term::getDeviceAttributes </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flushSTDOUT</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1265,13 +1263,20 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get device attributes by calling ReportDeviceAttributes &amp; retrieving the response from STDIN. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flushSTDOUT</td><td>- When true, flushes STDOUT immediately after emitting the query escape sequence; otherwise when false, STDOUT is not flushed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The full response escape sequence as a std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00191">191</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00222">222</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ae3c7abf7e060ae620d231d2f8682fe50_cgraph.svg" width="439" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_a75eac4a9faf820e806d48925fd1e1906_cgraph.svg" width="439" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1335,7 +1340,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00376">376</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00414">414</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1372,7 +1377,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00403">403</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00441">441</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1403,11 +1408,12 @@ Here is the call graph for this function:</div>
  On windows, this uses <code>_kbhit</code>, while on linux, it uses <code>hasPendingDataSTDIN</code> (which uses <code>select()</code>). </p>
 <dl class="section return"><dt>Returns</dt><dd>bool: True when a key was pressed and there is data waiting in STDIN. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00089">89</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00116">116</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ac221cc6f681f3214dc3be6ab2f9f079e_cgraph.svg" width="322" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceterm_ac221cc6f681f3214dc3be6ab2f9f079e_cgraph.svg" width="322" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -1447,7 +1453,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00492">492</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00530">530</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1492,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00504">504</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00542">542</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1542,7 +1548,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00362">362</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00400">400</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1581,7 +1587,7 @@ template&lt;std::integral Tx, std::integral Ty&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00294">294</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00332">332</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1631,7 +1637,7 @@ template&lt;std::integral Tx, std::integral Ty&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00284">284</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00320">320</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1671,7 +1677,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00543">543</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00581">581</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1721,7 +1727,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sequence </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00531">531</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00569">569</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>
@@ -1768,7 +1774,7 @@ template&lt;std::integral T&gt; </div>
 <td class="markdownTableBodyNone">Saved <a class="el" href="structterm_1_1_cursor.html" title="Enables the cursor blink effect.">Cursor</a> Pos   </td><td class="markdownTableBodyNone">Origin Position   </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00583">583</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00621">621</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 
 </div>
 </div>

@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('has_pending_data_s_t_d_i_n_8h.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the <a class="el" href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2" title="Checks if there is a pending read operation on the STDIN stream.   This function works on both POSIX ...">hasPendingDataSTDIN()</a> function, a cross-platform function <br  />
+<p>Contains the <a class="el" href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2" title="Checks if STDIN has any data waiting to be read. NOTE: DO NOT USE THIS FOR DETECTING KEYBOARD INPUT O...">hasPendingDataSTDIN()</a> function, a cross-platform function <br  />
  that checks if STDIN has pending data, allowing piped input on Linux and Windows.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
@@ -112,12 +112,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac291b7b25dff593436ad9c07d0a1d3e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2">hasPendingDataSTDIN</a> ()</td></tr>
-<tr class="memdesc:ac291b7b25dff593436ad9c07d0a1d3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a pending read operation on the STDIN stream. <br  />
- This function works on both POSIX &amp; Windows.  <a href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2">More...</a><br /></td></tr>
+<tr class="memdesc:ac291b7b25dff593436ad9c07d0a1d3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if STDIN has any data waiting to be read. NOTE: DO NOT USE THIS FOR DETECTING KEYBOARD INPUT ON WINDOWS.  <a href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2">More...</a><br /></td></tr>
 <tr class="separator:ac291b7b25dff593436ad9c07d0a1d3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the <a class="el" href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2" title="Checks if there is a pending read operation on the STDIN stream.   This function works on both POSIX ...">hasPendingDataSTDIN()</a> function, a cross-platform function <br  />
+<div class="textblock"><p>Contains the <a class="el" href="has_pending_data_s_t_d_i_n_8h.html#ac291b7b25dff593436ad9c07d0a1d3e2" title="Checks if STDIN has any data waiting to be read. NOTE: DO NOT USE THIS FOR DETECTING KEYBOARD INPUT O...">hasPendingDataSTDIN()</a> function, a cross-platform function <br  />
  that checks if STDIN has pending data, allowing piped input on Linux and Windows. </p>
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
@@ -138,18 +137,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if there is a pending read operation on the STDIN stream. <br  />
- This function works on both POSIX &amp; Windows. </p>
+<p>Checks if STDIN has any data waiting to be read. NOTE: DO NOT USE THIS FOR DETECTING KEYBOARD INPUT ON WINDOWS. </p>
 <dl class="section attention"><dt>Attention</dt><dd>Do not use this function for checking if the user has pressed a key on ___windows only___! </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>bool <br  />
- - true There is pending data in the STDIN stream. <br  />
- - false The STDIN stream is empty. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when STDIN has pending data; otherwise, false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="has_pending_data_s_t_d_i_n_8h_source.html#l00026">26</a> of file <a class="el" href="has_pending_data_s_t_d_i_n_8h_source.html">hasPendingDataSTDIN.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="has_pending_data_s_t_d_i_n_8h_source.html#l00024">24</a> of file <a class="el" href="has_pending_data_s_t_d_i_n_8h_source.html">hasPendingDataSTDIN.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="has_pending_data_s_t_d_i_n_8h_ac291b7b25dff593436ad9c07d0a1d3e2_icgraph.svg" width="322" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="has_pending_data_s_t_d_i_n_8h_ac291b7b25dff593436ad9c07d0a1d3e2_icgraph.svg" width="322" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

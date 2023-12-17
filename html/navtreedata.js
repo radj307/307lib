@@ -44,23 +44,26 @@ var NAVTREE =
     [ "README", "md__home_runner_work_307lib_307lib_307modules__r_e_a_d_m_e.html", null ],
     [ "Commandline Argument Manager", "opt3.html", [
       [ "opt3", "opt3.html#autotoc_md10", [
-        [ "Basic Concepts", "opt3.html#autotoc_md11", [
-          [ "Argument Types", "opt3.html#autotoc_md12", null ],
-          [ "Capturing Arguments", "opt3.html#autotoc_md13", [
+        [ "Getting Started", "opt3.html#autotoc_md11", null ],
+        [ "Basic Concepts", "opt3.html#autotoc_md12", [
+          [ "Argument Types", "opt3.html#autotoc_md13", [
             [ "Defining Capturing Arguments", "opt3.html#autotoc_md14", null ],
             [ "<em>Explicit</em> vs. <em>Implicit</em> Capture", "opt3.html#autotoc_md15", null ],
             [ "Capture Style", "opt3.html#autotoc_md16", null ]
           ] ],
           [ "Argument Parsing Rules", "opt3.html#autotoc_md17", null ]
+        ] ],
+        [ "Examples", "opt3.html#autotoc_md18", [
+          [ "Check if an argument was specified", "opt3.html#autotoc_md19", null ],
+          [ "Check if an argument has a capture", "opt3.html#autotoc_md20", null ]
         ] ]
-      ] ],
-      [ "<em>WIP</em>", "opt3.html#autotoc_md18", null ]
+      ] ]
     ] ],
     [ "Argument Parser", "_commandline.html", [
-      [ "Basic Concepts", "_commandline.html#autotoc_md19", [
-        [ "Argument Types", "_commandline.html#autotoc_md20", null ],
-        [ "Argument Capturing", "_commandline.html#autotoc_md21", null ],
-        [ "Argument Order", "_commandline.html#autotoc_md23", null ]
+      [ "Basic Concepts", "_commandline.html#autotoc_md21", [
+        [ "Argument Types", "_commandline.html#autotoc_md22", null ],
+        [ "Argument Capturing", "_commandline.html#autotoc_md23", null ],
+        [ "Argument Order", "_commandline.html#autotoc_md25", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
@@ -100,21 +103,21 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"_segments_8h.html#ad527dafbd86a4c61633be26dba7ed45d",
-"classcolor_1_1basic__sync.html#a1e69bc48531c3cdebcbaabf28da8c0ed",
-"classini_1_1basic__ini.html#aaad6f341fd557b0466ef54a294e7ac9c",
-"classopt_1_1_params_a_p_i3.html#aa2cf3e70eb32a220ef6fbec43047f8b4",
-"classxlog_1_1x_log.html#a4ad4a4fc88f2a646e434dc44e5b3eb04",
-"event__example_8cpp_source.html",
-"namespaceopt3.html#a0bd6ab9614bbb9790b25fc0f85bca7d9",
-"namespaceterm.html#a5acf72d9a6c38f8ed4aca6f06f985010",
-"process_8hpp.html#afce8f816e85cde77fbc85e256743df08",
-"struct_meaningless_indirection.html#ab7cef500787dd70fb3e6cf0ecc2fc5c0",
-"structmatrix_1_1basic__matrix.html#a3399f391062a49a7f55b5675ff2e962f",
-"structopt_1_1_arg_container.html",
-"structshared_1_1casting__optional.html",
-"term_8hpp.html#a28fe2784936fc2c9c73fe969e9956a5f"
+"307modules.html",
+"_token_redux_8hpp.html#ab7884a0bef16c49be96123b019b2ab5c",
+"classcolor_1_1palette.html#a192f1d42a778cac51fd1e37bb5caed45",
+"classini_1_1ini__value.html#a073209974dea5142a54f06ef09ed7525",
+"classrng_1_1_engine_wrapper.html#ac1c9ca6def7aaea827826807645cff61",
+"classxml_1_1parser_1_1_x_m_l_tokenizer.html",
+"fileutil_8hpp_source.html",
+"namespaceopt__literals.html#a3f5199961e111bc473174a2ac34deb72",
+"namespaceterm.html#aabcdffc86eb9aabfa5dc77cbc1991bfd",
+"setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a800618943025315f869e4e1f09471012",
+"structcolor_1_1basic__color.html#a10440914b3506614efcceae418f7df83",
+"structmatrix_1_1nmatrix.html#a05e36be29227140d5dc73315630c2aed",
+"structopt_1_1_arg_container.html#a9ee7050cd86944539fe72a819d2dedcb",
+"structstr_1_1_printable.html#aae7c738de43acc54b691ec8ad1a7a45c",
+"term_8hpp.html#ab76bdc9ff790f0d73d345967253b0653"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
