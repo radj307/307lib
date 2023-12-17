@@ -11,7 +11,6 @@
 #include <sysarch.h>
 #include <Segments.h>
 #include <Sequence.hpp>
-#include <CursorOrigin.h>
 #include <indentor.hpp>
 #include <Message.hpp>
 #include <make_exception.hpp>
@@ -43,17 +42,45 @@ namespace term {
 	 */
 	namespace query {
 		/**
-		 * @brief			Receive a query response from STDIN, and return it as a string.
-		 * @returns			std::string
+		 * @brief			Receive a query response from STDIN, and return it as a string. Any prior data waiting in STDIN is discarded.
+		 * @param seqEnd  - The final character in the expected ANSI sequence.
+		 * @param bufSize -	The minimum number of bytes to reserve in the buffer. If this is insufficient, the buffer will be expanded with a potential reallocation penalty. The default is 8.
+		 * @returns			The query response as a std::string
 		 */
-		inline std::string getResponse() noexcept
+		inline std::string getResponse(const char seqEnd, const size_t bufSize = 8) noexcept
 		{
-			std::string s;
-			if (hasPendingDataSTDIN())
-				while (std::cin)
-					s += static_cast<char>(std::cin.get());
+			// create the buffer
+			std::string buf;
+
+			// reserve space in the buffer
+			buf.reserve(bufSize);
+
+			// retrieve input from STDIN
+			unsigned char c;
+			bool hasSequenceStarted{ false };
+			while (kbhit()) {
+				c = static_cast<unsigned char>(getch());
+				switch (c) {
+				case '\x1b': //< ESC
+					hasSequenceStarted = true;
+					[[fallthrough]];
+				default:
+					if (hasSequenceStarted) {
+						buf += static_cast<unsigned char>(c); //< no data lost because fgetc returns 1-byte
+
+						// break if this is the sequence end char
+						if (c == seqEnd) break;
+					}
+				}
+				if (c == seqEnd || c == EOF) break;
+			}
+
+			// clear EOF bit
 			std::cin.clear();
-			return s;
+
+			// remove unused buffer space & return
+			buf.shrink_to_fit();
+			return buf;
 		}
 	}
 
@@ -122,7 +149,7 @@ namespace term {
 	#endif
 	}
 
-	/// @brief	Gets the escape sequence for DECXCPR(Report Cursor Position).
+	/// @brief	Gets the escape sequence for DECXCPR(Report Cursor Position). Flush the output buffer immediately after sending.
 	inline static const sequence ReportCursorPosition{ make_sequence(CSI, "6n") };
 
 	/**
@@ -133,11 +160,14 @@ namespace term {
 	template<std::integral RT>
 	std::pair<RT, RT> getCursorPosition() noexcept(false)
 	{
-		const auto stoull{ [](auto&& str) { try { return std::stoull(std::forward<decltype(str)>(str)); } catch (...) { return 0ull; } } };
-		std::cout << ReportCursorPosition;
+		std::cout << ReportCursorPosition << std::flush;
+		bool select_col{ false }; //< when true, appends digits to column; else, appends to row.
+
+		const auto& response{ query::getResponse('R', 12) };
+		if (response.empty()) throw make_exception("getCursorPosition()\tDid not receive ANSI escape sequence query response from STDIN!");
+
 		std::string row, col;
-		bool select_col{ false }; ///< @brief when true, appends digits to column; else, appends to row.
-		for (auto& c : query::getResponse()) {
+		for (auto& c : response) {
 			using namespace ANSI;
 			switch (c) {
 			case '0': [[fallthrough]];
@@ -163,14 +193,14 @@ namespace term {
 				break;
 			case 'R': // sequence end
 				if (!row.empty() && !col.empty()) // divider delim has been reached
-					return{ static_cast<RT>(!!_internal::CURSOR_MIN_AXIS + stoull(row)), static_cast<RT>(!!_internal::CURSOR_MIN_AXIS + stoull(col)) };
+					return{ static_cast<RT>(std::stoull(col)), static_cast<RT>(std::stoull(row)) };
 				// else:
 				[[fallthrough]];
 			default:
-				throw make_exception("getCursorPosition()\tReceived unexpected character: \'", c, "\'!");
+				throw make_exception("getCursorPosition()  Received unexpected character: \'", c, "\'!");
 			}
 		}
-		throw make_exception("getCursorPosition()\tDidn't receive expected escape sequence! No ending character found!");
+		throw make_exception("getCursorPosition()  Didn't receive expected escape sequence! No ending character found!");
 	}
 	/**
 	 * @brief		Retrieve the current position of the cursor, measured in characters of the screen buffer.
@@ -185,13 +215,19 @@ namespace term {
 	inline static const sequence ReportDeviceAttributes{ make_sequence(CSI, "0c") };
 
 	/**
-	 * @brief	Get device attributes by calling ReportDeviceAttributes & retrieving the response from STDIN.
-	 * @returns	std::string
+	 * @brief				Get device attributes by calling ReportDeviceAttributes & retrieving the response from STDIN.
+	 * @param flushSTDOUT - When true, flushes STDOUT immediately after emitting the query escape sequence; otherwise when false, STDOUT is not flushed.
+	 * @returns				The full response escape sequence as a std::string
 	*/
-	inline std::string getDeviceAttributes() noexcept
+	inline std::string getDeviceAttributes(bool flushSTDOUT = false) noexcept
 	{
 		std::cout << ReportDeviceAttributes;
-		return query::getResponse();
+		if (flushSTDOUT) std::cout << std::flush;
+	#ifdef OS_WIN
+		return query::getResponse('c', 7); //< DA (device attributes) response is always 7 bytes on windows
+	#else
+		return query::getResponse('c', 10);
+	#endif
 	}
 
 	/**
@@ -262,17 +298,17 @@ namespace term {
 	template<std::integral T>
 	[[nodiscard]] inline sequence CursorHorizontalAbs(const T& column)
 	{
-		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + column, 'G');
+		return make_sequence(CSI, column, 'G');
 	}
 	/**
-	 * @brief			Set the cursor's vertical position to a specific row/line.
+	 * @brief			Set the cursor's vertical position to a specific 0-indexed row/line.
 	 * @param row		The line number to move the cursor to. The cursor will stay in the current column.
 	 * @returns			sequence
 	 */
 	template<std::integral T>
 	[[nodiscard]] inline sequence CursorVerticalAbs(const T& row)
 	{
-		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + row, 'd');
+		return make_sequence(CSI, row, 'd');
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -283,7 +319,9 @@ namespace term {
 	template<std::integral Tx, std::integral Ty>
 	[[nodiscard]] inline sequence setCursorPosition(const Tx& x_column, const Ty& y_row)
 	{
-		return make_sequence(CSI, !!_internal::CURSOR_MIN_AXIS + y_row, ';', !!_internal::CURSOR_MIN_AXIS + x_column, 'H');
+		if (x_column <= 0 || y_row <= 0)
+			throw make_exception("setCursorPosition() The specified cursor position (", x_column, ", ", y_row, ") is invalid; VT console coordinates are 1-indexed and use (1,1) as the origin point.");
+		return make_sequence(CSI, y_row, ';', x_column, 'H');
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -457,12 +495,12 @@ namespace term {
 	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SGR(const Ts&... modes)
 	{
-	#		ifdef OS_WIN
+	#ifdef OS_WIN
 		return make_sequence((CSI, modes, 'm')...); // don't allow chaining
-	#		else
+	#else
 		return make_sequence(CSI, (modes, ';')..., 'm'); // allow chaining
-	#		endif
-}
+	#endif
+	}
 
 	template<var::streamable... Ts>
 	[[nodiscard]] inline static sequence SelectGraphicsRendition(const Ts&... modes)

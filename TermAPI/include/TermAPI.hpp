@@ -12,6 +12,5 @@
 #include <palette.hpp>
 
 // Include term library resources
-#include <CursorOrigin.h>
 #include <term.hpp>
 #include <EnableANSI.hpp>
