@@ -1789,20 +1789,6 @@ namespace opt3 {
 	 */
 	struct ArgParsingRules {
 		/**
-		 * @brief	When true, valid numbers that are prefixed with a single dash character (Ex: "-3.14")
-		 *			 are assumed to be negative numbers; when false, numbers with a single dash prefix
-		 *			 are always considered flags instead of numbers.
-		 *\n		__This is ignored when '-' is not in the delimiters list.__
-		 *\n		Default: true
-		 */
-		bool assumeValidNumberWithDashPrefixIsNegative{ true };
-		/**
-		 * @brief	Determines whether digits can be valid flags. When this is false and a flag chain contains at least one digit, the argument is treated like a Parameter.
-		 *\n		__This is ignored when '-' is not in the delimiters list.__
-		 *\n		Default: false
-		 */
-		bool allowNumericFlags{ false };
-		/**
 		 * @brief	List of characters that are considered valid argument prefixes.
 		 *\n		Default: { '-' }
 		 */
@@ -1813,16 +1799,20 @@ namespace opt3 {
 		 */
 		CaptureStyle defaultCaptureStyle{ CaptureStyle::Optional };
 		/**
-		 * @brief	Determines whether options/flags that aren't present in the capture_list are allowed or not. When true, unexpected arguments are allowed; otherwise the action taken depends on the value of convertUnexpectedArgsToParameters.
+		 * @brief	Determines whether options/flags that aren't present in the capture_list are allowed or not. When true, unexpected arguments are allowed; otherwise the action taken depends on the value of convertUnexpectedCaptureArgsToParameters.
 		 *\n		Default: true
 		 */
-		bool allowUnexpectedArgs{ true };
+		bool allowUnexpectedCaptureArgs{ true };
 		/**
 		 * @brief	Determines whether unexpected arguments are converted to Parameters or cause an exception to be thrown. When true, unexpected arguments are converted to parameters; otherwise, unexpected arguments trigger an exception.
-		 *\n		__This is ignored when allowUnexpectedArgs is true.__
+		 *\n		__This is ignored when allowUnexpectedCaptureArgs is true.__
 		 *\n		Default: false
 		 */
-		bool convertUnexpectedArgsToParameters{ false };
+		bool convertUnexpectedCaptureArgsToParameters{ false };
+		/**
+		 * @brief	Whether to include the end of args specifier (2x delimiter chars ONLY; ex: '--') as an option in the arguments list.
+		 */
+		bool includeEndOfArgsSpecifierInOutput{ false };
 
 		/**
 		 * @brief	Default Constructor.
@@ -1852,76 +1842,6 @@ namespace opt3 {
 			return std::any_of(delimiters.begin(), delimiters.end(), [&c](auto&& delim) { return delim == c; });
 		}
 		/**
-		 * @brief				Counts the number of valid prefix delimiters at the beginning of the given string.
-		 * @param str			Input string.
-		 * @param max_delims	Maximum number of prefix characters to count before returning early.
-		 * @returns				The number of prefix delimiters found at the beginning of str, up to the maximum set by max_delims.
-		 */
-		[[nodiscard]] WINCONSTEXPR size_t countPrefix(const std::string& str, const size_t& max_delims) const
-		{
-			if (str.empty()) return 0ull;
-
-			size_t count{ 0ull };
-			for (size_t i{ 0ull }; i < str.size() && i < max_delims; ++i) {
-				if (isDelimiter(str.at(i)))
-					++count;
-				else break;
-			}
-
-			return count;
-		}
-		/**
-		 * @brief				Removes and counts argument prefix characters.
-		 * @param str			Input String.
-		 * @param max_delims	Maximum number of delimiters to remove/count before returning early.
-		 * @returns				A std::pair where the first item is the given string with prefix chars removed, and the second item is the number of prefix chars that were removed.
-		 */
-		[[nodiscard]] WINCONSTEXPR std::pair<std::string, size_t> stripPrefix(const std::string& str, const size_t& max_delims = 2ull) const
-		{
-			const auto count{ countPrefix(str, max_delims) };
-			return{ str.substr(count), count };
-		}
-		/**
-		 * @brief		Used by the argument parser. Checks if the given string is a valid integer, floating-point, or hexadecimal number. Hexadecimal numbers must be prefixed with "0x" to be detected properly.
-		 * @param str	Input String
-		 * @returns		bool
-		 */
-		[[nodiscard]] WINCONSTEXPR bool isNumber(std::string str) const
-		{
-			//str.erase(std::remove(str.begin(), str.end(), ','), str.end());
-			str = trim(str);
-			if (str.empty())
-				return false;
-
-			if (str.starts_with("0x")) { // hexadecimal number:
-				return str.size() > 2ull && std::all_of(str.begin() + 2ull, str.end(), [](auto&& ch) { return shared::isdigit(ch) || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f'); });
-			}
-
-			const bool is_negative{ str.starts_with('-') };
-			if (int decimalCount{ 0 }; std::all_of(str.begin() + static_cast<size_t>(is_negative), str.end(), [&decimalCount](auto&& c) { return (c == '.' ? ++decimalCount < 2 : shared::isdigit(c)); })) {
-				return assumeValidNumberWithDashPrefixIsNegative; //< when str is a valid number, return true when assuming it is a number and not a flag
-			}
-
-			return false;
-		}
-		/**
-		 * @brief		Used by the argument parser.
-		 *\n			Checks if the given string represents a valid flag. This is used for determining whether an ambiguous argument is a flag or a negative number (parameter).
-		 *\n			Does NOT check if prefix characters are valid!
-		 * @param str	Input String. *This should contain prefix chars!*
-		 * @returns		true when str represents a valid flag; otherwise false.
-		 */
-		WINCONSTEXPR bool isValidFlag(std::string const& str) const
-		{
-			if (isDelimiter('-')) {
-				const auto eqPos{ str.find('=') };
-				if (!allowNumericFlags && std::any_of(str.begin(), eqPos == std::string::npos ? str.end() : (str.begin() + eqPos), [](auto&& ch) { return shared::isdigit(ch); }))
-					return false; //< allowNumericFlags is false and any character is a number
-				return !isNumber(str);
-			}
-			else return true;
-		}
-		/**
 		 * @brief		Check if the given iterator CAN capture the next argument by checking
 		 *\n			if the next argument is not prefixed with a '-' or is prefixed with '-' but is also a number.
 		 *\n			Does NOT check if the given iterator is present on the capturelist!
@@ -1932,8 +1852,7 @@ namespace opt3 {
 		[[nodiscard]] CONSTEXPR bool canCaptureNext(std::vector<std::string>::const_iterator& here, const std::vector<std::string>::const_iterator& end) const
 		{
 			return (here != end - 1ll) // incrementing iterator won't go out-of-bounds
-				&& ((here + 1ll)->front() != '-' // AND next argument doesn't start with a dash
-					|| isNumber(*(here + 1ll))); // OR next argument is a number
+				&& !isDelimiter((here + 1ll)->front()); // AND next argument doesn't start with a delimiter
 		}
 	#pragma endregion Methods
 	};
@@ -1993,107 +1912,125 @@ namespace opt3 {
 		arg_container cont{};
 		cont.reserve(args.size());
 
+		bool endOfArgsReached{ false };
+
 		for (std::vector<std::string>::const_iterator it{ args.begin() }; it != args.end(); ++it) {
-			auto [arg, d_count] { parsingRules.stripPrefix(*it, 2ull) };
+			std::string arg{ *it };
+			if (!endOfArgsReached) {
+				// check for capture args
+				if (arg.size() > 1 && parsingRules.isDelimiter(arg.at(0))) {
+					// is flag or option
+					arg = arg.substr(1);
 
-			switch (d_count) {
-			case 2ull: // Option
-				if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign, split string
-					auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
+					if (parsingRules.isDelimiter(arg.at(0))) {
+						// is option
+						arg = arg.substr(1);
 
-					if (!parsingRules.allowUnexpectedArgs && !captures.is_present(opt)) {
-						if (parsingRules.convertUnexpectedArgsToParameters)
-							cont.emplace_back(Parameter{ *it });
-						else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
-					}
-					else if (const auto& captureStyle{ captures.get_capture_style_of(opt) }; !CaptureIsDisabled(captureStyle))
-						cont.emplace_back(Option{ std::make_pair(std::move(opt), std::move(cap)) });
-					else {
-						if (CaptureIsRequired(captureStyle))
-							throw make_exception("Expected a capture argument for option '", opt, "'!");
-						cont.emplace_back(Option{ std::make_pair(std::move(opt), std::nullopt) });
-						if (!cap.empty()) {
-							arg = cap;
-							goto JUMP_TO_PARAMETER; // skip flag case, add invalid capture as a parameter
-						}
-					}
-				}
-				else {
-					if (!parsingRules.allowUnexpectedArgs && !captures.is_present(arg)) {
-						if (parsingRules.convertUnexpectedArgsToParameters)
-							cont.emplace_back(Parameter{ *it });
-						else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
-					}
-					else if (const auto& captureStyle{ captures.get_capture_style_of(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
-						cont.emplace_back(Option{ std::make_pair(arg, *++it) });
-					else {
-						if (CaptureIsRequired(captureStyle))
-							throw make_exception("Expected a capture argument for option '", arg, "'!");
-						cont.emplace_back(Option{ std::make_pair(arg, std::nullopt) });
-					}
-				}
-				break;
-			case 1ull: // Flag
-				if (parsingRules.isValidFlag(arg)) { // single-dash prefix is not a number
-					std::optional<Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
-					std::string invCap{}; //< for invalid captures that should be treated as parameters
-
-					if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
-						invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
-						if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; !CaptureIsDisabled(captures.get_capture_style_of(flag))) {
-							capt = Flag{ std::make_pair(flag.front(), invCap) }; // push the capturing flag to capt, insert into vector once all other flags in this chain are parsed
-							arg = arg.substr(0ull, eqPos - 1ull); // remove last flag, '=', and captured string from arg
-							invCap.clear(); // flag can capture, clear invCap
-						}
-						else
-							arg = arg.substr(0ull, eqPos); // remove everything from eqPos to arg.end()
-					}
-					
-					// iterate through characters in arg
-					bool convertToParameter{ false };
-					std::vector<Flag> flagsBuffer;
-					flagsBuffer.reserve(arg.size());
-					for (auto fl{ arg.begin() }; fl != arg.end(); ++fl) {
-						if (!parsingRules.allowUnexpectedArgs && !captures.is_present(*fl)) {
-							if (parsingRules.convertUnexpectedArgsToParameters) {
-								convertToParameter = true;
-								break;
+						if (arg.empty()) {
+							// is end of args specifier ("--" by default)
+							endOfArgsReached = true;
+							if (parsingRules.includeEndOfArgsSpecifierInOutput) {
+								arg = *it;
+								goto JUMP_TO_PARAMETER;
 							}
-							else throw make_custom_exception_explicit<invalid_argument_exception>(std::string{ 1ull, *fl }, "flag");
+							else continue; //< don't add this to the args list
 						}
 
-						const auto& captureStyle{ captures.get_capture_style_of(std::string(1ull, *fl)) };
-						// If this is the last char, and it can capture
-						if (fl == arg.end() - 1ll && !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end()))
-							flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, *++it) });
-						else {// not last char, or can't capture
-							if (CaptureIsRequired(captureStyle))
-								throw make_exception("Expected a capture argument for flag '", *fl, "'!");
-							flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, std::nullopt) });
+						if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {// argument contains an equals sign, split string
+							auto opt{ arg.substr(0ull, eqPos) }, cap{ arg.substr(eqPos + 1ull) };
+
+							if (!parsingRules.allowUnexpectedCaptureArgs && !captures.is_present(opt)) {
+								if (parsingRules.convertUnexpectedCaptureArgsToParameters)
+									cont.emplace_back(Parameter{ *it });
+								else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
+							}
+							else if (const auto& captureStyle{ captures.get_capture_style_of(opt) }; !CaptureIsDisabled(captureStyle))
+								cont.emplace_back(Option{ std::make_pair(std::move(opt), std::move(cap)) });
+							else {
+								if (CaptureIsRequired(captureStyle))
+									throw make_exception("Expected a capture argument for option '", opt, "'!");
+								cont.emplace_back(Option{ std::make_pair(std::move(opt), std::nullopt) });
+								if (!cap.empty()) {
+									arg = cap;
+									goto JUMP_TO_PARAMETER; // skip flag case, add invalid capture as a parameter
+								}
+							}
+						}
+						else {
+							if (!parsingRules.allowUnexpectedCaptureArgs && !captures.is_present(arg)) {
+								if (parsingRules.convertUnexpectedCaptureArgsToParameters)
+									cont.emplace_back(Parameter{ *it });
+								else throw make_custom_exception_explicit<invalid_argument_exception>(*it, "option");
+							}
+							else if (const auto& captureStyle{ captures.get_capture_style_of(arg) }; !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end())) // argument can capture next arg
+								cont.emplace_back(Option{ std::make_pair(arg, *++it) });
+							else {
+								if (CaptureIsRequired(captureStyle))
+									throw make_exception("Expected a capture argument for option '", arg, "'!");
+								cont.emplace_back(Option{ std::make_pair(arg, std::nullopt) });
+							}
 						}
 					}
-					if (convertToParameter)
-						cont.emplace_back(Parameter{ *it });
 					else {
-						for (auto&& flag : flagsBuffer) {
-							cont.emplace_back(std::move(flag));
+						// is flag
+						std::optional<Flag> capt{ std::nullopt }; // this can contain a flag if there is a capturing flag at the end of a chain
+						std::string invCap{}; //< for invalid captures that should be treated as parameters
+
+						if (const auto eqPos{ arg.find('=') }; eqPos != std::string::npos) {
+							invCap = arg.substr(eqPos + 1ull); // get string following '=', use invCap in case flag can't capture
+							if (const auto flag{ arg.substr(eqPos - 1ull, 1ull) }; !CaptureIsDisabled(captures.get_capture_style_of(flag))) {
+								capt = Flag{ std::make_pair(flag.front(), invCap) }; // push the capturing flag to capt, insert into vector once all other flags in this chain are parsed
+								arg = arg.substr(0ull, eqPos - 1ull); // remove last flag, '=', and captured string from arg
+								invCap.clear(); // flag can capture, clear invCap
+							}
+							else
+								arg = arg.substr(0ull, eqPos); // remove everything from eqPos to arg.end()
 						}
+
+						// iterate through characters in arg
+						bool convertToParameter{ false };
+						std::vector<Flag> flagsBuffer;
+						flagsBuffer.reserve(arg.size());
+						for (auto fl{ arg.begin() }; fl != arg.end(); ++fl) {
+							if (!parsingRules.allowUnexpectedCaptureArgs && !captures.is_present(*fl)) {
+								if (parsingRules.convertUnexpectedCaptureArgsToParameters) {
+									convertToParameter = true;
+									continue;
+								}
+								else throw make_custom_exception_explicit<invalid_argument_exception>(std::string{ 1ull, *fl }, "flag");
+							}
+
+							const auto& captureStyle{ captures.get_capture_style_of(std::string(1ull, *fl)) };
+							// If this is the last char, and it can capture
+							if (fl == arg.end() - 1ll && !CaptureIsDisabledOrEqualsOnly(captureStyle) && parsingRules.canCaptureNext(it, args.end()))
+								flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, *++it) });
+							else {// not last char, or can't capture
+								if (CaptureIsRequired(captureStyle))
+									throw make_exception("Expected a capture argument for flag '", *fl, "'!");
+								flagsBuffer.emplace_back(Flag{ std::make_pair(*fl, std::nullopt) });
+							}
+						}
+						if (convertToParameter)
+							cont.emplace_back(Parameter{ *it });
+						else {
+							for (auto&& flag : flagsBuffer) {
+								cont.emplace_back(std::move(flag));
+							}
+						}
+						if (capt.has_value()) // flag captures are always at the end, but parsing them first puts them out of chronological order.
+							cont.emplace_back(std::move(capt.value()));
+						if (invCap.empty())
+							continue;
+						else arg = invCap; // set argument to invalid capture and fallthrough to add it as a parameter
+						goto JUMP_TO_PARAMETER;
 					}
-					if (capt.has_value()) // flag captures are always at the end, but parsing them first puts them out of chronological order.
-						cont.emplace_back(std::move(capt.value()));
-					if (invCap.empty())
-						break;
-					else arg = invCap; // set argument to invalid capture and fallthrough to add it as a parameter
 				}
-				else // this is a negative number, re-add '-' prefix and fallthrough
-					arg = *it;
-				[[fallthrough]];
-			case 0ull:
+				// else is parameter
+				else goto JUMP_TO_PARAMETER;
+			}
+			else {
 			JUMP_TO_PARAMETER:
-				[[fallthrough]]; // Parameter
-			default:
-				cont.emplace_back(Parameter(arg));
-				break;
+				cont.emplace_back(arg);
 			}
 		}
 		cont.shrink_to_fit();
