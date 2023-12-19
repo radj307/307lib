@@ -1810,7 +1810,7 @@ namespace opt3 {
 		 */
 		bool convertUnexpectedCaptureArgsToParameters{ false };
 		/**
-		 * @brief	Whether to include the end of args specifier (2x delimiter chars ONLY; ex: '--') as an option in the arguments list.
+		 * @brief	Whether to include the end of args specifier (2x delimiter chars ONLY; ex: '--') as a parameter in the arguments list.
 		 */
 		bool includeEndOfArgsSpecifierInOutput{ false };
 
