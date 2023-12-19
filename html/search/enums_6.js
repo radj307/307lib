@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['syntaxerrorstyle_1914',['SyntaxErrorStyle',['../namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a',1,'ini']]]
+  ['syntaxerrorstyle_1906',['SyntaxErrorStyle',['../namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a',1,'ini']]]
 ];
