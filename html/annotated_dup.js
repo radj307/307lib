@@ -140,6 +140,8 @@ var annotated_dup =
       ] ]
     ] ],
     [ "var", "namespacevar.html", [
+      [ "is_derived_from_templated", "structvar_1_1is__derived__from__templated.html", null ],
+      [ "is_derived_from_templated< TBase, TBase< Ts... > >", "structvar_1_1is__derived__from__templated_3_01_t_base_00_01_t_base_3_01_ts_8_8_8_01_4_01_4.html", null ],
       [ "is_less_than", "structvar_1_1is__less__than.html", "structvar_1_1is__less__than" ],
       [ "is_more_than", "structvar_1_1is__more__than.html", "structvar_1_1is__more__than" ],
       [ "is_same_as", "structvar_1_1is__same__as.html", "structvar_1_1is__same__as" ]

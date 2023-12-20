@@ -184,6 +184,7 @@ var namespacestr =
     [ "trim_trailing", "namespacestr.html#aac4273bb692df476dc585a89a67f3729", null ],
     [ "trim_trailing", "namespacestr.html#acbeabeae95260fb81a833b977510d899", null ],
     [ "trim_trailing", "namespacestr.html#a9afd3d15679280008373868b588955f5", null ],
+    [ "utfchar_to_string", "namespacestr.html#ae96ac3e57b59049a3916d727adec3a95", null ],
     [ "ALL_NUMERIC_CHARS", "namespacestr.html#a6feb73230680b818750f188cb73fa38a", null ],
     [ "BASE32", "namespacestr.html#a63d0332169b2bfb9288fee4a8aca516a", null ],
     [ "BINARY", "namespacestr.html#a28dd790f79a34c4844d2001ded780261", null ],

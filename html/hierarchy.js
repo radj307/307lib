@@ -61,6 +61,9 @@ var hierarchy =
         [ "my_advanced_custom_except", "structmy__advanced__custom__except.html", null ]
       ] ]
     ] ],
+    [ "std::false_type", null, [
+      [ "var::is_derived_from_templated< TBase, Ts >", "structvar_1_1is__derived__from__templated.html", null ]
+    ] ],
     [ "opt::Index", "structopt_1_1_index.html", null ],
     [ "ini::ini_parser_config< TKeyComparator >", "structini_1_1ini__parser__config.html", null ],
     [ "ini::ini_printer< TKeyComparator >", "structini_1_1ini__printer.html", null ],
@@ -171,6 +174,9 @@ var hierarchy =
     [ "token::base::gen1::TokenParserBase< ArgContainerType, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< INIContainer::Map, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
     [ "token::base::gen1::TokenParserBase< outer_container, Token >", "classtoken_1_1base_1_1gen1_1_1_token_parser_base.html", null ],
+    [ "std::true_type", null, [
+      [ "var::is_derived_from_templated< TBase, TBase< Ts... > >", "structvar_1_1is__derived__from__templated_3_01_t_base_00_01_t_base_3_01_ts_8_8_8_01_4_01_4.html", null ]
+    ] ],
     [ "std::tuple", null, [
       [ "color::basic_color< ColorT, ColorT, ColorT >", "structcolor_1_1basic__color.html", [
         [ "color::RGB< T >", "structcolor_1_1_r_g_b.html", null ]
