@@ -86,6 +86,13 @@ namespace var {
 	};
 	/// @brief	is_less_than::type macro.
 	template<auto compsize, typename... Ts> using is_less_than_t = typename is_less_than<compsize, Ts...>::type;
+
+	// these are used by the derived_from_templated concept
+
+	/// @brief	Checks if the specified type is the same as, or derived from, any possible overload of the specified templated base type.
+	template<template<typename...> class TBase, typename... Ts> struct is_derived_from_templated : std::false_type {};
+	/// @brief	Checks if the specified type is the same as, or derived from, any possible overload of the specified templated base type.
+	template<template<typename...> class TBase, typename... Ts> struct is_derived_from_templated<TBase, TBase<Ts...>> : std::true_type {};
 	////////////////////////////////// END / Constexpr Tests /////////////////////////////////////////////
 #	pragma endregion ConstexprTests
 
@@ -268,6 +275,14 @@ namespace var {
 	 * @tparam Ts...	Potential base type(s).
 	 */
 	template<typename Type, typename... Ts> concept derived_from_all = ((std::derived_from<Type, Ts>) && ...);
+	/**
+	 * @concept				derived_from_templated
+	 * @brief				Checks if the specified type is the same as, or derived from, any possible overload of the specified templated base type.
+	 *                      This lets you accept all possible derived types for a templated base type.
+	 * @tparam Type		  - The type to test.
+	 * @tparam TBase	  - The base type that type T must be derived from.
+	 */
+	template<typename Type, template<typename...> class TBase> concept derived_from_templated = is_derived_from_templated<TBase, Type>::value;
 	/**
 	 * @concept			not_same
 	 * @brief			Concept that checks if none of the given variadic types match a given type.

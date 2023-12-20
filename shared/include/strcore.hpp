@@ -420,6 +420,7 @@ namespace str {
 #pragma endregion ChangeCase_UpperWide
 #pragma endregion toupper
 
+#pragma region to/from bool
 	/**
 	 * @brief		Converts a string to bool.
 	 * @param s		Case-insensitive input string.
@@ -445,4 +446,23 @@ namespace str {
 	{
 		if (b) return "true"; else return "false";
 	}
+#pragma endregion to/from bool
+
+#pragma region encoding
+	template<var::any_same<char8_t, char16_t, char32_t> T>
+	constexpr static std::string utfchar_to_string(T const& character)
+	{
+		if constexpr (sizeof(T) == 1)
+			return{ 1, character };
+		else {
+			unsigned char* p{ &character };
+
+			char arr[sizeof(T)]{};
+			for (unsigned i{ 0 }, i_max{ sizeof(T) }; i < i_max; ++i) {
+				arr[i] = *(p++);
+			}
+			return{ arr };
+		}
+	}
+#pragma endregion encoding
 }
