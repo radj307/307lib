@@ -1,5 +1,6 @@
 #pragma once
 #include <sysarch.h>
+#include <var.hpp>
 
 #include <concepts>
 #include <string>
@@ -12,7 +13,7 @@ namespace str {
 	 * @brief			Converts a string to an integral number.
 	 *\n				This method uses std::from_chars, so it is as fast as possible for converting strings to numbers.
 	 * @param s			Input string.
-	 * @param base		The number base to interpret the input string in.
+	 * @param base		The number base to interpret the input string in. The minimum is 2 and the maximum is 36.
 	 * @returns			The number represented by the string s if successful; otherwise std::nullopt.
 	 */
 	template<std::integral T>
@@ -39,6 +40,25 @@ namespace str {
 		return{};
 	}
 #pragma endregion tonumber
+
+#pragma region fromnumber
+	template<size_t BUFFER_SIZE = 32ull, std::integral T>
+	std::string fromnumber(const T n, const int base = 10) noexcept
+	{
+		std::string buf;
+		buf.reserve(BUFFER_SIZE);
+		const auto& [c_str, ec] { std::to_chars(buf.data(), buf.data() + buf.capacity(), n, base) };
+		return{ c_str };
+	}
+	template<size_t BUFFER_SIZE = 32ull, std::floating_point T>
+	std::string fromnumber(const T n, const std::chars_format fmt = std::chars_format::general) noexcept
+	{
+		std::string buf;
+		buf.reserve(BUFFER_SIZE);
+		const auto& [c_str, ec] { std::to_chars(buf.data(), buf.data() + buf.capacity(), n, fmt) };
+		return{ c_str };
+	}
+#pragma endregion fromnumber
 
 #pragma region stringify
 	/**
