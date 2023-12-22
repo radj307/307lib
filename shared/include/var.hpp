@@ -197,7 +197,7 @@ namespace var {
 	 * @tparam TArgs	The argument types that must be accepted by the function as parameters, in order.
 	 */
 	template<class TFunc, typename TReturn, typename... TArgs>
-	concept function = requires(const TFunc& f)
+	concept function = requires(const TFunc & f)
 	{
 		{ f(std::declval<TArgs>()...) } -> same_or_convertible<TReturn>;
 	};
@@ -221,11 +221,44 @@ namespace var {
 	 */
 	template<typename TComparator, typename TCompare>
 	concept same_type_comparator = comparator<TComparator, TCompare, TCompare>;
-
-	template<class T, typename TIterator> concept iterable = requires(T && inst)
+	/**
+	 * @concept		enumerable
+	 * @brief		Checks if the specified type can be enumerated with iterators.
+	 *				For a type to be enumerable, it must implement begin() and end()
+	 *				 functions that return the same type of input or output iterator.
+	 *				To check the element type being enumerated, see enumerable_of.
+	 * @tparam T	The enumerable type.
+	 */
+	template<typename T>
+	concept enumerable = requires(T v)
 	{
-		{ inst.begin() } -> std::same_as<TIterator>;
-		{ inst.end() } -> std::same_as<TIterator>;
+		// require a "begin()" method that returns an iterator:
+		{ v.begin() } -> std::input_or_output_iterator;
+		// require an "end()" method that returns an iterator:
+		{ v.end() } -> std::input_or_output_iterator;
+		// require iterators to be of the same type:
+		std::same_as<decltype(v.begin()), decltype(v.end())>;
+	};
+	/**
+	 * @concept			enumerable_of
+	 * @brief			Requires type T to be enumerable and that the type
+	 *					 being enumerated is of type TElem.
+	 * @tparam T		The enumerable type.
+	 * @tparam TElem	The element type.
+	 */
+	template<typename T, typename TElem> //vvvvvv prevent const-ness from mattering for T
+	concept enumerable_of = requires(std::decay_t<T> v)
+	{
+		// require a "begin()" method that returns an iterator:
+		{ v.begin() } -> std::input_or_output_iterator;
+		// require an "end()" method that returns an iterator:
+		{ v.end() } -> std::input_or_output_iterator;
+		// requires "begin()" iterator to return TElem& when dereferenced:
+		{ *v.begin() } -> std::same_as<std::decay_t<TElem>&>;
+		//                                  ^^^^^^^ prevent const-ness from mattering for TElem
+		// requires "begin()" iterator to return TElem& when dereferenced:
+		{ *v.end() } -> std::same_as<std::decay_t<TElem>&>;
+		//                                ^^^^^^^ prevent const-ness from mattering for TElem
 	};
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
