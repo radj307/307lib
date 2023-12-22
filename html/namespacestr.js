@@ -76,6 +76,8 @@ var namespacestr =
     [ "fromBase10", "namespacestr.html#ab9517188a12786f4566f6e1b5b93308d", null ],
     [ "fromBase10", "namespacestr.html#ae05a80330a3733df4935b72eeb047284", null ],
     [ "frombool", "namespacestr.html#a678c130f6e170b05d57e1499138db3de", null ],
+    [ "fromnumber", "namespacestr.html#aabade988934ba455a9eb304d85edc659", null ],
+    [ "fromnumber", "namespacestr.html#af036eb1f01ea8fcc3220d6b8fb225a38", null ],
     [ "get_longest_string", "namespacestr.html#ac833e4f5138a5dd64fb8985361215835", null ],
     [ "getLength", "namespacestr.html#a51a5ecaec1b7efa91322b8b79949f551", null ],
     [ "getline", "namespacestr.html#af632b5ef496a88eb6c6a50ee18385c62", null ],
