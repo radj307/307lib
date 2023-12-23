@@ -36,54 +36,6 @@ namespace term {
 	using namespace std::chrono_literals;
 	using namespace ::ANSI;
 
-	/**
-	 * @namespace	Query
-	 * @brief		Contains query functions used internally by some term functions.
-	 */
-	namespace query {
-		/**
-		 * @brief			Receive a query response from STDIN, and return it as a string. Any prior data waiting in STDIN is discarded.
-		 * @param seqEnd  - The final character in the expected ANSI sequence.
-		 * @param bufSize -	The minimum number of bytes to reserve in the buffer. If this is insufficient, the buffer will be expanded with a potential reallocation penalty. The default is 8.
-		 * @returns			The query response as a std::string
-		 */
-		inline std::string getResponse(const char seqEnd, const size_t bufSize = 8) noexcept
-		{
-			// create the buffer
-			std::string buf;
-
-			// reserve space in the buffer
-			buf.reserve(bufSize);
-
-			// retrieve input from STDIN
-			unsigned char c;
-			bool hasSequenceStarted{ false };
-			while (kbhit()) {
-				c = static_cast<unsigned char>(getch());
-				switch (c) {
-				case '\x1b': //< ESC
-					hasSequenceStarted = true;
-					[[fallthrough]];
-				default:
-					if (hasSequenceStarted) {
-						buf += static_cast<unsigned char>(c); //< no data lost because fgetc returns 1-byte
-
-						// break if this is the sequence end char
-						if (c == seqEnd) break;
-					}
-				}
-				if (c == seqEnd || c == EOF) break;
-			}
-
-			// clear EOF bit
-			std::cin.clear();
-
-			// remove unused buffer space & return
-			buf.shrink_to_fit();
-			return buf;
-		}
-	}
-
 #ifndef OS_WIN
 	namespace _internal {
 		static struct termios old, current;
@@ -147,6 +99,54 @@ namespace term {
 		_internal::resetTermios();
 		return c;
 	#endif
+	}
+
+	/**
+	 * @namespace	Query
+	 * @brief		Contains query functions used internally by some term functions.
+	 */
+	namespace query {
+		/**
+		 * @brief			Receive a query response from STDIN, and return it as a string. Any prior data waiting in STDIN is discarded.
+		 * @param seqEnd  - The final character in the expected ANSI sequence.
+		 * @param bufSize -	The minimum number of bytes to reserve in the buffer. If this is insufficient, the buffer will be expanded with a potential reallocation penalty. The default is 8.
+		 * @returns			The query response as a std::string
+		 */
+		inline std::string getResponse(const char seqEnd, const size_t bufSize = 8) noexcept
+		{
+			// create the buffer
+			std::string buf;
+
+			// reserve space in the buffer
+			buf.reserve(bufSize);
+
+			// retrieve input from STDIN
+			unsigned char c;
+			bool hasSequenceStarted{ false };
+			while (kbhit()) {
+				c = static_cast<unsigned char>(getch());
+				switch (c) {
+				case '\x1b': //< ESC
+					hasSequenceStarted = true;
+					[[fallthrough]];
+				default:
+					if (hasSequenceStarted) {
+						buf += static_cast<unsigned char>(c); //< no data lost because fgetc returns 1-byte
+
+						// break if this is the sequence end char
+						if (c == seqEnd) break;
+					}
+				}
+				if (c == seqEnd || c == EOF) break;
+			}
+
+			// clear EOF bit
+			std::cin.clear();
+
+			// remove unused buffer space & return
+			buf.shrink_to_fit();
+			return buf;
+		}
 	}
 
 	/// @brief	Gets the escape sequence for DECXCPR(Report Cursor Position). Flush the output buffer immediately after sending.
@@ -554,10 +554,10 @@ namespace term {
 	inline static const sequence ResetTabStops{ make_sequence(CSI, "?5W") };
 
 	/// @brief	Enable DEC Line Drawing mode.
-	inline static const sequence EnableLineDrawing{ make_sequence(OSC, '0') };
+	inline static const sequence EnableLineDrawing{ make_sequence(ESC, '(', '0')};
 
 	/// @brief	Disable DEC Line Drawing mode.
-	inline static const sequence DisableLineDrawing{ make_sequence(OSC, 'B') };
+	inline static const sequence DisableLineDrawing{ make_sequence(ESC, '(', 'B')};
 
 	/**
 	 * @brief				Generate an escape sequence that resizes the console screen buffer and/or window.
