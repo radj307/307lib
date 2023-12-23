@@ -131,28 +131,28 @@ namespace var {
 	 */
 	template<class T1, class T2> concept same_or_biconvertible = std::same_as<T1, T2> || (std::convertible_to<T1, T2> && std::convertible_to<T2, T1>);
 	/**
-	 * @concept		enumerator
-	 * @brief		Checks if the given type is an enum.
-	 * @tparam T	Input Type
+	 * @concept		enumeration
+	 * @brief		Requires type T to be an enum type.
+	 * @tparam T  -	The type to test.
 	 */
-	template<typename T> concept enumerator = std::is_enum_v<T>;
+	template<typename T> concept enumeration = std::is_enum_v<T>;
 	/**
 	 * @concept		arithmetic
-	 * @brief		Checks if the given type can be used in arithmetic operations.
-	 * @tparam T	Input Type
+	 * @brief		Requires type T to be an integral or floating-point type.
+	 * @tparam T  -	The type to test.
 	 */
 	template<typename T> concept arithmetic = std::is_arithmetic_v<T>;
 	/**
 	 *
 	 * @concept		numeric
-	 * @brief		Checks if the given type can be used in arithmetic operations.
-	 * @tparam T	Input Type
+	 * @brief		Requires type T to be an integral or floating-point type.
+	 * @tparam T  -	The type to test.
 	 */
 	template<typename T> concept numeric = arithmetic<T>;
 	/**
 	 * @concept		fundamental
-	 * @brief		Checks if the given type is a fundamental type.
-	 * @tparam T	Input Type
+	 * @brief		Requires type T to be a fundamental type.
+	 * @tparam T  -	The type to test.
 	 */
 	template<typename T> concept fundamental = std::is_fundamental_v<T>;
 	////////////////////////////////// END / "Type Concepts" /////////////////////////////////////////////
@@ -160,67 +160,89 @@ namespace var {
 #	pragma region DeclvalTest_Concepts
 	////////////////////////////////// BEGIN / std::declval Test Concepts /////////////////////////////////////////////
 	/**
-	 * @concept		streamable
-	 * @brief		Check if the given type can be inserted into an output stream.
-	 * @tparam T	A type to test for a valid operator<< overload.
+	 * @concept				streamable
+	 * @brief				Requires type T to define an `operator<<` that inserts into the specified stream type.
+	 * @tparam T		  -	A type to test for a valid operator<< overload.
+	 * @tparam TStream	  - The type of input stream to test with. Defaults to std::ostream.
 	 */
-	template<typename T, class StreamType = std::stringstream>
-	concept streamable = requires(T inst)
+	template<typename T, class TStream = std::ostream> concept streamable = requires (T inst)
 	{
-		{ std::declval<StreamType&>() << inst };
+		// For a type to actually be streamable, operator<< must accept and return a
+		//  reference to type TStream. However, checking the returned type from this
+		//  compound requirement is inconsistent when the type doesn't *directly* define
+		//  an `operator<<`, like is the case with most enums.
+		// What we're really looking for is that the operator can be chained, so instead
+		//  we can just chain multiple "<< inst" to achieve the same result.
+		{ std::declval<std::remove_cvref_t<TStream>&>() << inst << inst };
 	};
 	/**
-	 * @concept		istreamable
-	 * @brief		Check if the given type can extract from an input stream.
-	 * @tparam T	A type to test for a valid operator>> overload.
+	 * @concept				istreamable
+	 * @brief				Requires type T to define an `operator>>` that extracts from the specified stream type.
+	 * @tparam T		  -	The type to check for a stream extraction operator.
+	 * @tparam TStream	  -	The type of input stream to test with. Defaults to std::istream.
 	 */
-	template<typename T, class StreamType = std::stringstream>
-	concept istreamable = requires(T inst)
+	template<typename T, class TStream = std::istream> concept istreamable = requires(T inst)
 	{
-		{ std::declval<StreamType&>() >> inst };
+		// For a type to actually be streamable, operator>> must accept and return a
+		//  reference to type TStream. However, checking the returned type from this
+		//  compound requirement is inconsistent when the type doesn't *directly* define
+		//  an `operator>>`, like is the case with most enums.
+		// What we're really looking for is that the operator can be chained, so instead
+		//  we can just chain multiple ">> inst" to achieve the same result.
+		{ std::declval<std::remove_cvref_t<TStream>&>() >> inst >> inst };
 	};
 	/**
-	 * @concept			callable
-	 * @brief			Uses the `std::invocable` concept to test if type `T` is a callable.
-	 *\n				If you also want to check the return type, use var::function instead.
-	 * @tparam T		Input Type.
-	 * @tparam Args...	Optional argument types required by the callable.
+	 * @concept				callable
+	 * @brief				Requires type T to be a function (or define an `operator()`) with the specified
+	 *						 argument type(s). No restrictions are imposed on the return type; to do that,
+	 *						 use var::function instead. This is equivalent to calling std::invocable.
+	 * @tparam T		  -	The type to test.
+	 * @tparam Args...	  -	The required parameter type(s).
 	 */
-	template<class T, typename... Args>
-	concept callable = std::invocable<T, Args...>;
+	template<class T, typename... Args> concept callable = std::invocable<T, Args...>;
 	/**
-	 * @concept			function
-	 * @brief			Tests if the given type is a function with the specified signature.
-	 *\n				For functions with `void` return types, use var::callable instead.
-	 * @tparam TFunc	A function type to test.
-	 * @tparam TReturn	The type that the function must return for the concept to pass. Any types that are implicitly convertible to this type are also allowed by this concept.
-	 * @tparam TArgs	The argument types that must be accepted by the function as parameters, in order.
+	 * @concept				function
+	 * @brief				Requires type T to be a function (or define an `operator()`) with the specified
+	 *						 argument type(s), and the specified return type.
+	 * @tparam T		  -	The type to test.
+	 * @tparam Returns	  -	The required return type, or a type that it can be implicitly converted to.
+	 * @tparam TArgs	  -	The required parameter type(s).
 	 */
-	template<class TFunc, typename TReturn, typename... TArgs>
-	concept function = requires(const TFunc & f)
+	template<class T, typename Returns, typename... Args> concept function = requires(const T& func)
 	{
-		{ f(std::declval<TArgs>()...) } -> same_or_convertible<TReturn>;
+		callable<T, Args...>;
+		{ func(std::declval<Args>()...) } -> same_or_convertible<Returns>;
 	};
 	/**
-	 * @concept					comparator
-	 * @brief					Uses the `std::predicate` concept to test if type `TComparator` is a predicate method that accepts two parameters of *(possibly different)* types `TCompareLeft` & `TCompareRight`, and returns a boolean.
-	 * @tparam TCompareLeft		The left-side comparison type.
-	 * @tparam TCompareRight	The right-side comparison type.
-	 * @tparam TComparator		The comparator type to test.
+	 * @concept				comparator
+	 * @brief				Requires type T to be a comparison function that accepts the specified
+	 *						 LeftArg and RightArg, and has a return type that is implicitly convertible
+	 *						 to bool.
+	 * @tparam T		  -	The type to test.
+	 * @tparam LeftArg	  -	The left-side parameter type.
+	 * @tparam RightArg	  -	The right-side parameter type. Defaults to LeftArg.
 	 */
-	template<typename TComparator, typename TCompareLeft, typename TCompareRight>
-	concept comparator = requires (TComparator comp, TCompareLeft l, TCompareRight r)
+	template<class T, typename LeftArg, typename RightArg = LeftArg> concept comparator
+		= requires (const T& comp, LeftArg l, RightArg r)
 	{
 		{ comp(l, r) } -> std::convertible_to<bool>;
 	};
 	/**
-	 * @concept					same_type_comparator
-	 * @brief					Uses the `var::comparator` concept to test if type `TComparator` is a predicate method that accepts two paramters of type `TCompare`, and returns a boolean.
-	 * @tparam TCompare			The type that is being compared.
-	 * @tparam TComparator		The comparator type to test.
+	 * @concept		enumerable
+	 * @brief		Requires type T to define `begin()` and `end()` methods that return the
+	 *				 same input iterator type.
+	 *				To check the element type being enumerated, see enumerable_of.
+	 * @tparam T  -	The enumerable type.
 	 */
-	template<typename TComparator, typename TCompare>
-	concept same_type_comparator = comparator<TComparator, TCompare, TCompare>;
+	template<class T> concept enumerable = requires(T v)
+	{
+		// require a "begin()" method that returns an iterator:
+		{ v.begin() } -> std::input_iterator;
+		// require an "end()" method that returns an iterator:
+		{ v.end() } -> std::input_iterator;
+		// require iterators to be of the same type:
+		std::same_as<decltype(v.begin()), decltype(v.end())>;
+	};
 	/**
 	 * @concept		enumerable
 	 * @brief		Checks if the specified type can be enumerated with iterators.
@@ -229,13 +251,12 @@ namespace var {
 	 *				To check the element type being enumerated, see enumerable_of.
 	 * @tparam T	The enumerable type.
 	 */
-	template<typename T>
-	concept enumerable = requires(T v)
+	template<class T> concept reverse_enumerable = requires(T v)
 	{
-		// require a "begin()" method that returns an iterator:
-		{ v.begin() } -> std::input_or_output_iterator;
-		// require an "end()" method that returns an iterator:
-		{ v.end() } -> std::input_or_output_iterator;
+		// require a "rbegin()" method that returns an iterator:
+		{ v.rbegin() } -> std::input_or_output_iterator;
+		// require an "rend()" method that returns an iterator:
+		{ v.rend() } -> std::input_or_output_iterator;
 		// require iterators to be of the same type:
 		std::same_as<decltype(v.begin()), decltype(v.end())>;
 	};
@@ -245,9 +266,8 @@ namespace var {
 	 *					 being enumerated is of type TElem.
 	 * @tparam T		The enumerable type.
 	 * @tparam TElem	The element type.
-	 */
-	template<typename T, typename TElem> //vvvvvv prevent const-ness from mattering for T
-	concept enumerable_of = requires(std::decay_t<T> v)
+	 */                          // prevent const-ness from mattering for T vvvvvv
+	template<class T, typename TElem> concept enumerable_of = requires(std::decay_t<T> v)
 	{
 		// require a "begin()" method that returns an iterator:
 		{ v.begin() } -> std::input_or_output_iterator;
@@ -265,29 +285,29 @@ namespace var {
 #	pragma region Variadic_Count_Concepts
 	////////////////////////////////// BEGIN / Variadic Count Concepts /////////////////////////////////////////////
 	/**
-	 * @concept			more_than
-	 * @brief			Check if the number of variadic arguments received is greater than a given threshold.
-	 * @tparam compsize	Pass test when there are more than this number of variadic arguments.
-	 * @tparam Ts...	Any number of variadic template arguments.
+	 * @concept				more_than
+	 * @brief				Requires the number of Ts... types to be more than the specified THRESHOLD value.
+	 * @tparam THRESHOLD  -	One less than the minimum number of types.
+	 * @tparam ...Ts	  -	The argument pack to test.
 	 */
-	template<size_t THRESHOLD, typename... Ts> concept more_than = (sizeof...(Ts) > THRESHOLD);
+	template<size_t THRESHOLD, class... Ts> concept more_than = (sizeof...(Ts) > THRESHOLD);
 	/**
-	 * @concept			at_least_one
-	 * @brief			Check if a variadic templated type has at least one included argument.
-	 * @tparam ...Ts	Input Variadic Templated Type
+	 * @concept				at_least_one
+	 * @brief				Requires the number of Ts... arguments to be greater or equal to 1.
+	 * @tparam ...Ts	  -	The argument pack to test.
 	 */
 	template<class... Ts> concept at_least_one = more_than<0ull, Ts...>;
 	/**
-	 * @concept			less_than
-	 * @brief			Check if the number of variadic arguments received is less than a given threshold.
-	 * @tparam compsize	Pass test when there are less than this number of variadic arguments.
-	 * @tparam Ts...	Any number of variadic template arguments.
+	 * @concept				less_than
+	 * @brief				Requires the number of Ts... types to be less than the specified THRESHOLD value.
+	 * @tparam THRESHOLD  -	One more than the maximum number of types.
+	 * @tparam ...Ts	  -	The argument pack to test.
 	 */
-	template<size_t THRESHOLD, typename... Ts> concept less_than = (sizeof...(Ts) < THRESHOLD);
+	template<size_t THRESHOLD, class... Ts> concept less_than = (sizeof...(Ts) < THRESHOLD);
 	/**
-	 * @concept			none
-	 * @brief			Check if the number of included variadic arguments is 0.
-	 * @tparam Ts...	Variadic Templated Types
+	 * @concept				none
+	 * @brief				Requires the number of Ts... types to be 0.
+	 * @tparam ...Ts	  -	The argument pack to test.
 	 */
 	template<class... Ts> concept none = (sizeof...(Ts) == 0ull);
 	////////////////////////////////// END / Variadic Count Concepts /////////////////////////////////////////////
