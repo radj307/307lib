@@ -118,7 +118,8 @@ Include dependency graph for term.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="551" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="term_8hpp__dep__incl.svg" width="100%" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="term_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -308,7 +309,7 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <tr class="memdesc:a334e1f5c4846415b7fcb091ca3d50957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables Application Mode for the number pad keys. <br /></td></tr>
 <tr class="separator:a334e1f5c4846415b7fcb091ca3d50957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf380052e7bc91d31a67335c3a3ff4"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf380052e7bc91d31a67335c3a3ff4"></a>
-static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0ddf380052e7bc91d31a67335c3a3ff4">term::DisableLineDrawing</a> { make_sequence(OSC, 'B') }</td></tr>
+static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a0ddf380052e7bc91d31a67335c3a3ff4">term::DisableLineDrawing</a> { make_sequence(ESC, '(', 'B')}</td></tr>
 <tr class="memdesc:a0ddf380052e7bc91d31a67335c3a3ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable DEC Line Drawing mode. <br /></td></tr>
 <tr class="separator:a0ddf380052e7bc91d31a67335c3a3ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0040a7eb27e1cd8a909181b3b6496dce"><td class="memItemLeft" align="right" valign="top"><a id="a0040a7eb27e1cd8a909181b3b6496dce"></a>
@@ -332,7 +333,7 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <tr class="memdesc:ad2515b6ed8ce2feee33fa2ccf492ecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables Application Mode for the number pad keys. <br /></td></tr>
 <tr class="separator:ad2515b6ed8ce2feee33fa2ccf492ecda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b5aa8acae2f1c7dc85d2e97e0344b7"><td class="memItemLeft" align="right" valign="top"><a id="aa0b5aa8acae2f1c7dc85d2e97e0344b7"></a>
-static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa0b5aa8acae2f1c7dc85d2e97e0344b7">term::EnableLineDrawing</a> { make_sequence(OSC, '0') }</td></tr>
+static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#aa0b5aa8acae2f1c7dc85d2e97e0344b7">term::EnableLineDrawing</a> { make_sequence(ESC, '(', '0')}</td></tr>
 <tr class="memdesc:aa0b5aa8acae2f1c7dc85d2e97e0344b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable DEC Line Drawing mode. <br /></td></tr>
 <tr class="separator:aa0b5aa8acae2f1c7dc85d2e97e0344b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76704fbf20bed965523b3d3df239293e"><td class="memItemLeft" align="right" valign="top"><a id="a76704fbf20bed965523b3d3df239293e"></a>
@@ -433,7 +434,7 @@ static const sequence&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The query response as a std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00050">50</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="term_8hpp_source.html#l00115">115</a> of file <a class="el" href="term_8hpp_source.html">term.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
