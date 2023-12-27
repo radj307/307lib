@@ -461,8 +461,20 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="separator:a18758598172725d265bdab25d48f5836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
 <tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">stringify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.  <a href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">More...</a><br /></td></tr>
+<tr class="memdesc:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the specified arguments by inserting them into a temporary std::stringstream and returning the result.  <a href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">More...</a><br /></td></tr>
 <tr class="separator:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, class ConditionFunc , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7c911601d97b1d48b6acdd5b21d0c744">stringify_if</a> (ConditionFunc const &amp;condition, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a7c911601d97b1d48b6acdd5b21d0c744"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the specified condition resolves to true, the specified arguments are serialized by inserting them into a temporary std::stringstream.  <a href="namespacestr.html#a7c911601d97b1d48b6acdd5b21d0c744">More...</a><br /></td></tr>
+<tr class="separator:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5333cda402426166be52fad2acc0f9dc"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a5333cda402426166be52fad2acc0f9dc"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5333cda402426166be52fad2acc0f9dc">stringify_join</a> (Iter const &amp;begin, Iter const &amp;end, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
+<tr class="memdesc:a5333cda402426166be52fad2acc0f9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#a5333cda402426166be52fad2acc0f9dc">More...</a><br /></td></tr>
+<tr class="separator:a5333cda402426166be52fad2acc0f9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, class Selector , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aed3c95b6f33ddab4cac202a03a3d16df">stringify_sjoin</a> (Iter const &amp;begin, Iter const &amp;end, Selector const &amp;selector, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
+<tr class="memdesc:aed3c95b6f33ddab4cac202a03a3d16df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the selected elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#aed3c95b6f33ddab4cac202a03a3d16df">More...</a><br /></td></tr>
+<tr class="separator:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplParams" colspan="2">template&lt;var::streamable T&gt; </td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">stringify_split</a> (const char &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
 <tr class="memdesc:ac564c68f61fc9cb1018753365dfd9e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">More...</a><br /></td></tr>
@@ -2122,7 +2134,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The string representation of the given boolean; "true" or "false". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00465">465</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00575">575</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -4845,22 +4857,222 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 </table>
 </div><div class="memdoc">
 
-<p>Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function. </p>
+<p>Serializes the specified arguments by inserting them into a temporary std::stringstream and returning the result. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">...Ts</td><td>- Variadic Templated Arguments. </td></tr>
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">...args</td><td>- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator&lt;&lt; stream insertion operator. </td></tr>
+    <tr><td class="paramname">...args</td><td>- Any number of elements that can be inserted into a std::ostream using operator&lt;&lt;. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00071">71</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00074">74</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c911601d97b1d48b6acdd5b21d0c744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c911601d97b1d48b6acdd5b21d0c744">&#9670;&nbsp;</a></span>stringify_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, class ConditionFunc , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_if </td>
+          <td>(</td>
+          <td class="paramtype">ConditionFunc const &amp;&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When the specified condition resolves to true, the specified arguments are serialized by inserting them into a temporary std::stringstream. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>- A condition function. </td></tr>
+    <tr><td class="paramname">...args</td><td>- Any number of elements that can be inserted into a std::ostream using operator&lt;&lt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00096">96</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5333cda402426166be52fad2acc0f9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5333cda402426166be52fad2acc0f9dc">&#9670;&nbsp;</a></span>stringify_join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_join </td>
+          <td>(</td>
+          <td class="paramtype">Iter const &amp;&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>join</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Joins the elements in the specified iterator range by inserting each one into a temporary std::stringstream. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iter</td><td>- The iterator type. </td></tr>
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>- The begin iterator for the range of elements. </td></tr>
+    <tr><td class="paramname">end</td><td>- The (exclusive) end iterator for the range of elements. </td></tr>
+    <tr><td class="paramname">join...</td><td>- Any number of stream operators or objects that implement an operator&lt;&lt; for ostreams to insert between each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00123">123</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aed3c95b6f33ddab4cac202a03a3d16df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3c95b6f33ddab4cac202a03a3d16df">&#9670;&nbsp;</a></span>stringify_sjoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, class Selector , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_sjoin </td>
+          <td>(</td>
+          <td class="paramtype">Iter const &amp;&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Selector const &amp;&#160;</td>
+          <td class="paramname"><em>selector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>join</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Joins the selected elements in the specified iterator range by inserting each one into a temporary std::stringstream. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iter</td><td>- The iterator type. </td></tr>
+    <tr><td class="paramname">Selector</td><td>- Selector function type. </td></tr>
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>- The begin iterator for the range of elements. </td></tr>
+    <tr><td class="paramname">end</td><td>- The (exclusive) end iterator for the range of elements. </td></tr>
+    <tr><td class="paramname">selector</td><td>- A function that selects what to insert for each element. </td></tr>
+    <tr><td class="paramname">join...</td><td>- Any number of stream operators or objects that implement an operator&lt;&lt; for ostreams to insert between each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00165">165</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5510,7 +5722,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when s was one of the recognized values for true; false when s was one of the recognized values for false; otherwise std::nullopt if s was invalid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00451">451</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00561">561</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5547,7 +5759,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00244">244</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00354">354</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5584,7 +5796,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00231">231</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00341">341</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5621,7 +5833,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>wchar_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00291">291</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00401">401</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5671,7 +5883,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00276">276</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00386">386</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5721,7 +5933,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00323">323</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00433">433</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5927,7 +6139,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00354">354</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00464">464</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5964,7 +6176,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00341">341</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00451">451</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6001,7 +6213,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>wchar_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00401">401</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00511">511</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6051,7 +6263,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00386">386</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00496">496</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6101,7 +6313,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00433">433</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00543">543</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6197,7 +6409,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00184">184</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00294">294</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6247,7 +6459,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00196">196</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00306">306</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6295,7 +6507,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00207">207</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00317">317</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6345,7 +6557,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00219">219</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00329">329</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6387,7 +6599,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00101">101</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00211">211</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6435,7 +6647,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00088">88</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00198">198</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6477,7 +6689,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00125">125</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00235">235</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6525,7 +6737,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00112">112</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00222">222</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6567,7 +6779,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00149">149</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00259">259</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6615,7 +6827,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00136">136</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00246">246</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6657,7 +6869,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00173">173</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00283">283</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6705,7 +6917,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00160">160</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00270">270</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
