@@ -62,10 +62,13 @@ namespace str {
 
 #pragma region stringify
 	/**
-	 * @brief Creates a temporary stringstream, inserts all of the given arguments, then returns the result of the stringstream's str() function.
-	 * @tparam ...Ts	- Variadic Templated Arguments.
-	 * @param ...args	- Arguments to insert into the stream, in order. Nearly anything can be included here, so long as it has an operator<< stream insertion operator.
-	 * @returns std::string
+	 * @brief					Serializes the specified arguments by inserting them into a
+	 *							 temporary std::stringstream and returning the result.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @param ...args		  -	Any number of elements that can be inserted into a std::ostream using operator<<.
+	 * @returns					The resulting string.
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
 	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
@@ -77,6 +80,113 @@ namespace str {
 		return std::move(buffer.str());		// return as string
 	}
 #pragma endregion stringify
+
+#pragma region stringify_if
+	/**
+	 * @brief					When the specified condition resolves to true, the specified arguments
+	 *							 are serialized by inserting them into a temporary std::stringstream.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @param condition		  -	A condition function.
+	 * @param ...args		  -	Any number of elements that can be inserted into a std::ostream using operator<<.
+	 * @returns					The resulting string.
+	 */
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, class ConditionFunc, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_if(ConditionFunc const& condition, Ts&&... args)
+	{
+		if constexpr (var::none<Ts...>)
+			return{};
+		if (!condition())
+			return{};
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;	// init stringstream
+		(buffer << ... << std::forward<Ts>(args));	// insert variadic arguments in order
+		return std::move(buffer.str());		// return as string
+	}
+#pragma endregion stringify_if
+
+#pragma region stringify_join
+	/**
+	 * @brief					Joins the elements in the specified iterator range by
+	 *							 inserting each one into a temporary std::stringstream.
+	 * @tparam Iter			  -	The iterator type.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @param begin			  -	The begin iterator for the range of elements.
+	 * @param end			  -	The (exclusive) end iterator for the range of elements.
+	 * @param join...		  -	Any number of stream operators or objects that implement an
+	 *							 operator<< for ostreams to insert between each element.
+	 * @returns					The resulting string.
+	 */
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, std::forward_iterator Iter, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_join(Iter const& begin, Iter const& end, Ts&&... join)
+	{
+		// short-circuit if the container is empty
+		if (std::distance(begin, end) == 0)
+			return{};
+
+		// initialize the buffer
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
+
+		// insert the selected items
+		buffer << *begin;
+		if constexpr (var::none<Ts...>) {
+			// insert the selected items
+			for (auto it{ begin + 1 }; it != end; ++it) {
+				buffer << *it;
+			}
+		}
+		else {
+			// insert the selected items (with join inputs)
+			for (auto it{ begin + 1 }; it != end; ++it) {
+				(buffer << ... << std::forward<Ts>(join)) << *it;
+			}
+		}
+
+		return std::move(buffer.str());
+	}
+	/**
+	 * @brief					Joins the selected elements in the specified iterator range by
+	 *							 inserting each one into a temporary std::stringstream.
+	 * @tparam Iter			  -	The iterator type.
+	 * @tparam Selector		  -	Selector function type.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @param begin			  -	The begin iterator for the range of elements.
+	 * @param end			  -	The (exclusive) end iterator for the range of elements.
+	 * @param selector		  -	A function that selects what to insert for each element.
+	 * @param join...		  -	Any number of stream operators or objects that implement an
+	 *							 operator<< for ostreams to insert between each element.
+	 * @returns					The resulting string.
+	 */
+	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, std::forward_iterator Iter, class Selector, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
+	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_sjoin(Iter const& begin, Iter const& end, Selector const& selector, Ts&&... join)
+	{
+		// short-circuit if the container is empty
+		if (std::distance(begin, end) == 0)
+			return{};
+
+		// initialize the buffer
+		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
+
+		if constexpr (var::none<Ts...>) {
+			// insert the selected items
+			for (auto it{ begin }; it != end; ++it) {
+				buffer << selector(*it);
+			}
+		}
+		else {
+			// insert the selected items (with join inputs)
+			for (auto it{ begin }; it != end; ++it) {
+				(buffer << ... << std::forward<Ts>(join)) << selector(*it);
+			}
+		}
+
+		return std::move(buffer.str());
+	}
+#pragma endregion stringify_join
 
 #pragma region trim
 	/**
