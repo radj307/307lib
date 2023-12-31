@@ -555,6 +555,9 @@ namespace str {
 			else if (lastNonZeroPos > decimalPos) {
 				s.erase(s.begin() + (lastNonZeroPos + 1ull), s.end());
 			}
+			else if (lastNonZeroPos == decimalPos && !force_decimal) {
+				s.erase(s.begin() + lastNonZeroPos, s.end());
+			}
 			else {
 				s.erase(s.begin() + (decimalPos + 2ull), s.end());
 			}
