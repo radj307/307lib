@@ -6,8 +6,11 @@
  *\n			Multiple 'generations' of these functions are available, but all have a common theme:
  *				- Remove the possibility of exceptions being thrown during conversion operations.
  *				- Optimized for being passed as (pseudo)-lambdas to other functions, especially in an environment where exceptions are unwanted or unnecessary.
- * @attention	Make sure you carefully evaluate whether or not to use these functions outside of strlib, as in many cases the exception-avoidance measures taken by all of these functions may not be desirable.
- *\n			This header is specifically designed to handle many potential errors behind-the-scenes without any indications, and may react unexpectedly when used as a drop-in replacement for standard library functions, despite their ability to do that.
+ * @attention	Make sure you know what you're doing when using these functions, as many discard
+ *				 all exceptions, so you won't know if something goes wrong or why. Discarding all
+ *				 string-related exceptions is bad behavior and should be avoided unless you're
+ *				 *absolutely* sure you know what you're doing.
+ * @deprecated	Use the newer C++ string functions & strcore.hpp instead for most cases.
  */
 #pragma once
 #include <sysarch.h>

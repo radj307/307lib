@@ -165,15 +165,16 @@ namespace var {
 	 * @tparam T		  -	A type to test for a valid operator<< overload.
 	 * @tparam TStream	  - The type of input stream to test with. Defaults to std::ostream.
 	 */
-	template<typename T, class TStream = std::ostream> concept streamable = requires (T inst)
+	template<typename T, class OutputStream = std::ostream> concept streamable = requires (T inst)
 	{
 		// For a type to actually be streamable, operator<< must accept and return a
-		//  reference to type TStream. However, checking the returned type from this
+		//  reference to type OutputStream. However, checking the returned type from this
 		//  compound requirement is inconsistent when the type doesn't *directly* define
-		//  an `operator<<`, like is the case with most enums.
+		//  an `operator<<`, like is the case with most enums. (The operator implemented
+		//  by the compiler doesn't always return the expected type.)
 		// What we're really looking for is that the operator can be chained, so instead
 		//  we can just chain multiple "<< inst" to achieve the same result.
-		{ std::declval<std::remove_cvref_t<TStream>&>() << inst << inst };
+		{ std::declval<std::remove_cvref_t<OutputStream>&>() << inst << inst };
 	};
 	/**
 	 * @concept				istreamable
@@ -181,104 +182,147 @@ namespace var {
 	 * @tparam T		  -	The type to check for a stream extraction operator.
 	 * @tparam TStream	  -	The type of input stream to test with. Defaults to std::istream.
 	 */
-	template<typename T, class TStream = std::istream> concept istreamable = requires(T inst)
+	template<typename T, class InputStream = std::istream> concept istreamable = requires(T inst)
 	{
 		// For a type to actually be streamable, operator>> must accept and return a
-		//  reference to type TStream. However, checking the returned type from this
+		//  reference to type InputStream. However, checking the returned type from this
 		//  compound requirement is inconsistent when the type doesn't *directly* define
-		//  an `operator>>`, like is the case with most enums.
+		//  an `operator>>`, like is the case with most enums. (The operator implemented
+		//  by the compiler doesn't always return the expected type.)
 		// What we're really looking for is that the operator can be chained, so instead
 		//  we can just chain multiple ">> inst" to achieve the same result.
-		{ std::declval<std::remove_cvref_t<TStream>&>() >> inst >> inst };
+		{ std::declval<std::remove_cvref_t<InputStream>&>() >> inst >> inst };
 	};
 	/**
 	 * @concept				callable
-	 * @brief				Requires type T to be a function (or define an `operator()`) with the specified
-	 *						 argument type(s). No restrictions are imposed on the return type; to do that,
-	 *						 use var::function instead. This is equivalent to calling std::invocable.
-	 * @tparam T		  -	The type to test.
-	 * @tparam Args...	  -	The required parameter type(s).
+	 * @brief				Requires type Fn to be a function (or define a suitable `operator()`) that takes
+	 *						 the type(s) specified by Args... as parameters.
+	 *\n					To check the function's return type, see var::function.
+	 * @details				This is equivalent to std::invocable as of C++20.
+	 * @tparam Fn		  -	The type that must be a function with the specified signature.
+	 * @tparam Args...	  -	The required parameter type(s) of function type Fn.
 	 */
-	template<class T, typename... Args> concept callable = std::invocable<T, Args...>;
+	template<class Fn, typename... Args> concept callable = std::invocable<Fn, Args...>;
+	// no ignoring ^^ cvr qualifiers since they affect whether the function can be called in certain contexts
 	/**
 	 * @concept				function
-	 * @brief				Requires type T to be a function (or define an `operator()`) with the specified
-	 *						 argument type(s), and the specified return type.
-	 * @tparam T		  -	The type to test.
-	 * @tparam Returns	  -	The required return type, or a type that it can be implicitly converted to.
-	 * @tparam TArgs	  -	The required parameter type(s).
+	 * @brief				Requires type Fn to be a function (or define a suitable `operator()`) that takes
+	 *						 the types specified by Args... as parameters, and returns a type that is the
+	 *						 same as (or is implicitly convertible to) the type specified by Returns.
+	 * @tparam Fn		  -	The type that must be a function with the specified signature.
+	 * @tparam Returns	  -	The required return type of function type Fn.
+	 * @tparam Args...	  -	The required parameter type(s) of function type Fn.
 	 */
-	template<class T, typename Returns, typename... Args> concept function = requires(const T& func)
+	template<class Fn, typename Returns, typename... Args> concept function
+		= requires(Fn && func, Args&&... args)
+		// no ignoring ^^ cvr qualifiers since they affect whether the function can be called in certain contexts
 	{
-		callable<T, Args...>;
-		{ func(std::declval<Args>()...) } -> same_or_convertible<Returns>;
+		callable<Fn, Args...>;
+		// require the return value to have the expected Returns type (or be implicitly convertible to it):
+		// this uses the same implementation as std::invocable
+		{ std::invoke(static_cast<Fn&&>(func), static_cast<Args&&>(args)...) } -> ::var::same_or_convertible<Returns>;
 	};
 	/**
-	 * @concept				comparator
-	 * @brief				Requires type T to be a comparison function that accepts the specified
-	 *						 LeftArg and RightArg, and has a return type that is implicitly convertible
-	 *						 to bool.
-	 * @tparam T		  -	The type to test.
+	 * @concept				predicate
+	 * @brief				Requires type Fn to be a predicate function (or define a suitable `operator()`)
+	 *						 that takes the type(s) specified by Args... as parameters, and returns a bool
+	 *						 (or a type that is implicitly convertible to bool).
+	 * @tparam Fn		  -	The type that must be a predicate function with the specified signature.
+	 * @tparam Args...	  -	The required parameter type(s) of function type Fn.
+	 */
+	template<class Fn, typename... Args> concept predicate = function<Fn, bool, Args...>;
+	/**
+	 * @concept				equality_comparator
+	 * @brief				Requires type Fn to be an equality comparison function that accepts
+	 *						 the specified LeftArg and RightArg types, returns a bool (or a type
+	 *						 that is implicitly convertible to bool).
+	 * @tparam Fn		  -	The type that must be a function with the specified signature.
 	 * @tparam LeftArg	  -	The left-side parameter type.
 	 * @tparam RightArg	  -	The right-side parameter type. Defaults to LeftArg.
 	 */
-	template<class T, typename LeftArg, typename RightArg = LeftArg> concept comparator
-		= requires (const T& comp, LeftArg l, RightArg r)
-	{
-		{ comp(l, r) } -> std::convertible_to<bool>;
-	};
+	template<class Fn, typename LeftArg, typename RightArg = LeftArg> concept equality_comparator = ::var::function<Fn, bool, LeftArg, RightArg>;
 	/**
 	 * @concept		enumerable
-	 * @brief		Requires type T to define `begin()` and `end()` methods that return the
-	 *				 same input iterator type.
-	 *				To check the element type being enumerated, see enumerable_of.
-	 * @tparam T  -	The enumerable type.
+	 * @brief		Requires type T to define `begin()` and `end()` methods that return
+	 *				 the same type of input_or_output_iterator.
+	 *\n			To check the element type being enumerated, see enumerable_of.
+	 *\n			To check for backwards enumerable support, see reverse_enumerable.
+	 * @tparam T  -	The type that must be an enumerable.
 	 */
 	template<class T> concept enumerable = requires(T v)
 	{
-		// require a "begin()" method that returns an iterator:
-		{ v.begin() } -> std::input_iterator;
-		// require an "end()" method that returns an iterator:
-		{ v.end() } -> std::input_iterator;
-		// require iterators to be of the same type:
+		// require a "begin()" method that returns an input_or_output_iterator:
+		{ v.begin() } -> ::std::input_or_output_iterator;
+		// require an "end()" method that returns an input_or_output_iterator:
+		{ v.end() } -> ::std::input_or_output_iterator;
+		// require the returned iterators to be of the same type:
 		std::same_as<decltype(v.begin()), decltype(v.end())>;
 	};
 	/**
-	 * @concept		enumerable
-	 * @brief		Checks if the specified type can be enumerated with iterators.
-	 *				For a type to be enumerable, it must implement begin() and end()
-	 *				 functions that return the same type of input or output iterator.
-	 *				To check the element type being enumerated, see enumerable_of.
-	 * @tparam T	The enumerable type.
+	 * @concept		reverse_enumerable
+	 * @brief		Requires type T to define `rbegin()` and `rend()` methods that return
+	 *				 the same type of input_or_output_iterator.
+	 *\n			To check the element type being enumerated, see enumerable_of.
+	 *\n			To check for forwards enumerable support, see enumerable.
+	 * @tparam T  -	The type that must be an enumerable.
 	 */
 	template<class T> concept reverse_enumerable = requires(T v)
 	{
-		// require a "rbegin()" method that returns an iterator:
-		{ v.rbegin() } -> std::input_or_output_iterator;
-		// require an "rend()" method that returns an iterator:
-		{ v.rend() } -> std::input_or_output_iterator;
-		// require iterators to be of the same type:
-		std::same_as<decltype(v.begin()), decltype(v.end())>;
+		// require a "rbegin()" method that returns an input_or_output_iterator:
+		{ v.rbegin() } -> ::std::input_or_output_iterator;
+		// require a "rend()" method that returns an input_or_output_iterator:
+		{ v.rend() } -> ::std::input_or_output_iterator;
+		// require the returned iterators to be of the same type:
+		std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
 	};
 	/**
-	 * @concept			enumerable_of
-	 * @brief			Requires type T to be enumerable and that the type
-	 *					 being enumerated is of type TElem.
-	 * @tparam T		The enumerable type.
-	 * @tparam TElem	The element type.
-	 */                          // prevent const-ness from mattering for T vvvvvv
-	template<class T, typename TElem> concept enumerable_of = requires(std::decay_t<T> v)
+	 * @concept				enumerable_of
+	 * @brief				Requires type T to define `begin()` and `end()` methods that
+	 *						 return the same type of input_or_output_iterator that, when
+	 *						 dereferenced, produce values of type Element.
+	 *\n					To not check the element being enumerated, see enumerable.
+	 * @tparam T		  -	The type that must be an enumerable.
+	 * @tparam Element	  -	The element type.
+	 */                            // prevent const-ness from mattering for T vvvvvv
+	template<class T, typename Element> concept enumerable_of = requires(std::decay_t<T> v)
 	{
 		// require a "begin()" method that returns an iterator:
 		{ v.begin() } -> std::input_or_output_iterator;
 		// require an "end()" method that returns an iterator:
 		{ v.end() } -> std::input_or_output_iterator;
+		// require the returned iterators to be of the same type:
+		std::same_as<decltype(v.begin()), decltype(v.end())>;
 		// requires "begin()" iterator to return TElem& when dereferenced:
-		{ *v.begin() } -> std::same_as<std::decay_t<TElem>&>;
-		//                                  ^^^^^^^ prevent const-ness from mattering for TElem
-		// requires "begin()" iterator to return TElem& when dereferenced:
-		{ *v.end() } -> std::same_as<std::decay_t<TElem>&>;
-		//                                ^^^^^^^ prevent const-ness from mattering for TElem
+		{ *v.begin() } -> std::same_as<std::decay_t<Element>&>;
+		//          prevent constness from- ^^^^^^^ -mattering for type Element
+		// requires "end()" iterator to return TElem& when dereferenced:
+		{ *v.end() } -> std::same_as<std::decay_t<Element>&>;
+		//        prevent constness from- ^^^^^^^ -mattering for type Element
+	};
+	/**
+	 * @concept				reverse_enumerable_of
+	 * @brief				Requires type T to define `rbegin()` and `rend()` methods that
+	 *						 return the same type of input_or_output_iterator that, when
+	 *						 dereferenced, produce values of type Element.
+	 *\n					To not check the element being enumerated, see enumerable.
+	 * @tparam T		  -	The type that must be an enumerable.
+	 * @tparam Element	  -	The element type.
+	 */                                    // prevent const-ness from mattering for T vvvvvv
+	template<class T, typename Element> concept reverse_enumerable_of
+		= requires(std::decay_t<T> v)
+	{
+		// require a "rbegin()" method that returns an iterator:
+		{ v.rbegin() } -> std::input_or_output_iterator;
+		// require an "rend()" method that returns an iterator:
+		{ v.rend() } -> std::input_or_output_iterator;
+		// require the returned iterators to be of the same type:
+		std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
+		// requires "rbegin()" iterator to return TElem& when dereferenced:
+		{ *v.rbegin() } -> std::same_as<std::decay_t<Element>&>;
+		//          prevent constness from- ^^^^^^^ -mattering for type Element
+		// requires "rend()" iterator to return TElem& when dereferenced:
+		{ *v.rend() } -> std::same_as<std::decay_t<Element>&>;
+		//        prevent constness from- ^^^^^^^ -mattering for type Element
 	};
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
