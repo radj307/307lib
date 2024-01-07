@@ -1,8 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"strmath_8hpp.html#afc4713722f92ec455251092937a2540b":[11,0,3,0,7,2],
-"strmath_8hpp_source.html":[11,0,3,0,7],
-"struct_meaningless_indirection.html":[10,0,19],
 "struct_meaningless_indirection.html#a3113fa2ad76b47e53e15c07ba424ce36":[10,0,19,2],
 "struct_meaningless_indirection.html#a97c5c251f04ae3d9be5eb6b5d11ee50c":[10,0,19,5],
 "struct_meaningless_indirection.html#aa958801b8112c054fdd375b8497e3d59":[10,0,19,3],
@@ -249,5 +246,8 @@ var NAVTREEINDEX10 =
 "structjson_1_1_object_node.html#ae62859b11fb29e5a7ef16fe60a499ac8":[10,0,5,5,2],
 "structjson_1_1parser_1_1_lexeme_dictionary.html":[10,0,5,0,0],
 "structjson_1_1parser_1_1_lexeme_dictionary.html#a465d7b7935eca4253b684170eebb5c54":[10,0,5,0,0,0],
-"structmatrix_1_1basic__matrix.html":[10,0,6,0]
+"structmatrix_1_1basic__matrix.html":[10,0,6,0],
+"structmatrix_1_1basic__matrix.html#a016397c1b823e59ba56ad188bf947acc":[10,0,6,0,15],
+"structmatrix_1_1basic__matrix.html#a059f35fc8712c35a21bf674b282480f4":[10,0,6,0,24],
+"structmatrix_1_1basic__matrix.html#a10dacb107f319a1ce9ab2d2db82061b5":[10,0,6,0,0]
 };

@@ -36,6 +36,10 @@ var hierarchy =
       ] ]
     ] ],
     [ "color::basic_sync< TChar, TCharTraits, TAlloc >", "classcolor_1_1basic__sync.html", null ],
+    [ "term::basic_tree_printer< T >", "classterm_1_1basic__tree__printer.html", null ],
+    [ "term::basic_tree_printer< Node >", "classterm_1_1basic__tree__printer.html", [
+      [ "term::tree_printer< Node, ChildSelector, ValueSelector >", "classterm_1_1tree__printer.html", null ]
+    ] ],
     [ "token::base::gen2::BasicCoreParserBase< TokenType, Token >", "classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html", [
       [ "token::base::gen2::IteratingCoreParserBase< TokenType, TokenBase< TokenType > >", "classtoken_1_1base_1_1gen2_1_1_iterating_core_parser_base.html", [
         [ "token::base::gen2::ParserBase< Output, TokenType, Token, ParserBaseT >", "classtoken_1_1base_1_1gen2_1_1_parser_base.html", null ]
@@ -93,13 +97,13 @@ var hierarchy =
     ] ],
     [ "xlog::level", "structxlog_1_1level.html", null ],
     [ "token::base::LexemeDictBase< LexemeType >", "structtoken_1_1base_1_1_lexeme_dict_base.html", null ],
-    [ "token::base::LexemeDictBase< Lexeme >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
-      [ "xml::parser::LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", null ]
-    ] ],
     [ "token::base::LexemeDictBase< LEXEME >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
       [ "json::parser::LexemeDictionary", "structjson_1_1parser_1_1_lexeme_dictionary.html", null ],
       [ "opt::token::LexemeDictionary", "structopt_1_1token_1_1_lexeme_dictionary.html", null ],
       [ "token::DefaultDefs::LexemeDict", "structtoken_1_1_default_defs_1_1_lexeme_dict.html", null ]
+    ] ],
+    [ "token::base::LexemeDictBase< Lexeme >", "structtoken_1_1base_1_1_lexeme_dict_base.html", [
+      [ "xml::parser::LexemeDict", "structxml_1_1parser_1_1_lexeme_dict.html", null ]
     ] ],
     [ "term::LineCharacter", "structterm_1_1_line_character.html", null ],
     [ "xlog::level::LogLevel", "structxlog_1_1level_1_1_log_level.html", null ],
@@ -137,6 +141,7 @@ var hierarchy =
     ] ],
     [ "color::palette< TKey, TChar, TCharTraits, TAlloc >", "classcolor_1_1palette.html", null ],
     [ "env::PATH", "classenv_1_1_p_a_t_h.html", null ],
+    [ "term::legacy::print_tree< T, INDENT_LENGTH >", "classterm_1_1legacy_1_1print__tree.html", null ],
     [ "str::Printable< VT >", "structstr_1_1_printable.html", null ],
     [ "process::Proc< BUFFER_SIZE >", "structprocess_1_1_proc.html", null ],
     [ "xml::ProcessingInstructions", "structxml_1_1_processing_instructions.html", null ],

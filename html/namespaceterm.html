@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -98,6 +99,12 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 <p>Contains pre-made ANSI sequences &amp; helper functions for making sequences.  
 <a href="namespaceterm.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceterm_1_1legacy"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm_1_1legacy.html">legacy</a></td></tr>
+<tr class="memdesc:namespaceterm_1_1legacy"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated tree printing functors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1basic__colorpalette.html">basic_colorpalette</a></td></tr>
@@ -108,6 +115,9 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple color palette object that allows some useful features like a global color toggle, without the extra bulk of a key:color map. <br  />
  Custom functionality can be added by deriving from this object as most methods are marked virtual.  <a href="classterm_1_1basic__colors.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1basic__tree__printer.html">basic_tree_printer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor that pretty-prints a tree data structure using line drawing characters to an output stream.  <a href="classterm_1_1basic__tree__printer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_cursor.html">Cursor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the cursor blink effect.  <a href="structterm_1_1_cursor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +126,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_message.html">Message</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a convenience wrapper used to print log message headers.  <a href="structterm_1_1_message.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1tree__printer.html">tree_printer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a nicely-formatted tree.  <a href="classterm_1_1tree__printer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -270,6 +283,18 @@ CONSTEXPR const <a class="el" href="structterm_1_1_message.html">Message</a>&#16
  If there are no more tab stops, moves the cursor to the first column. <br  />
  If the cursor is in the first column, doesn�t move the cursor.  <a href="namespaceterm.html#a28fe2784936fc2c9c73fe969e9956a5f">More...</a><br /></td></tr>
 <tr class="separator:a28fe2784936fc2c9c73fe969e9956a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad316d117b9b6fa07d6f991ae0ad0b038"><td class="memTemplParams" colspan="2"><a id="ad316d117b9b6fa07d6f991ae0ad0b038"></a>
+template&lt;typename T , class ChildSelector &gt; </td></tr>
+<tr class="memitem:ad316d117b9b6fa07d6f991ae0ad0b038"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>print_tree</b> (T const &amp;rootNode, ChildSelector const &amp;childSelector, std::uint16_t const indentationLength=2)</td></tr>
+<tr class="separator:ad316d117b9b6fa07d6f991ae0ad0b038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff84803e3dcee6a92bf5296e41d6328"><td class="memTemplParams" colspan="2"><a id="acff84803e3dcee6a92bf5296e41d6328"></a>
+template&lt;typename T , class ChildSelector , class ValueSelector &gt; </td></tr>
+<tr class="memitem:acff84803e3dcee6a92bf5296e41d6328"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>print_tree</b> (T const &amp;rootNode, ChildSelector const &amp;childSelector, ValueSelector const &amp;valueSelector, std::uint16_t const indentationLength=2)</td></tr>
+<tr class="separator:acff84803e3dcee6a92bf5296e41d6328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b16a09decf08b58a31305fba45e23a"><td class="memTemplParams" colspan="2"><a id="a40b16a09decf08b58a31305fba45e23a"></a>
+template&lt;var::streamable T&gt; </td></tr>
+<tr class="memitem:a40b16a09decf08b58a31305fba45e23a"><td class="memTemplItemLeft" align="right" valign="top">requires var::enumerable_of&lt; decltype(std::declval&lt; T &gt;).children), T &gt; auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>print_tree</b> (T const &amp;rootNode, std::uint16_t const indentationLength=2)</td></tr>
+<tr class="separator:a40b16a09decf08b58a31305fba45e23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1fe827e183258f852cea3c5a8efaf07"><td class="memItemLeft" align="right" valign="top">sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#af1fe827e183258f852cea3c5a8efaf07">Scroll</a> (const bool &amp;dir, const unsigned &amp;n)</td></tr>
 <tr class="memdesc:af1fe827e183258f852cea3c5a8efaf07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the viewport up or down by a given number of lines.  <a href="namespaceterm.html#af1fe827e183258f852cea3c5a8efaf07">More...</a><br /></td></tr>
 <tr class="separator:af1fe827e183258f852cea3c5a8efaf07"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -115,11 +115,16 @@ var annotated_dup =
       [ "SetLocaleFacet", "structstr_1_1_set_locale_facet.html", "structstr_1_1_set_locale_facet" ]
     ] ],
     [ "term", "namespaceterm.html", [
+      [ "legacy", "namespaceterm_1_1legacy.html", [
+        [ "print_tree", "classterm_1_1legacy_1_1print__tree.html", "classterm_1_1legacy_1_1print__tree" ]
+      ] ],
       [ "basic_colorpalette", "classterm_1_1basic__colorpalette.html", "classterm_1_1basic__colorpalette" ],
       [ "basic_colors", "classterm_1_1basic__colors.html", "classterm_1_1basic__colors" ],
+      [ "basic_tree_printer", "classterm_1_1basic__tree__printer.html", "classterm_1_1basic__tree__printer" ],
       [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
       [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
-      [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ]
+      [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
+      [ "tree_printer", "classterm_1_1tree__printer.html", "classterm_1_1tree__printer" ]
     ] ],
     [ "token", null, [
       [ "base", null, [

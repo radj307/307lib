@@ -5,14 +5,17 @@ var namespaceterm =
       [ "resetTermios", "term_8hpp.html#a0e3d98590b244f57605175466893d6f3", null ],
       [ "current", "term_8hpp.html#a18e69eb166901c59d2e3f2b1e7eee31f", null ]
     ] ],
+    [ "legacy", "namespaceterm_1_1legacy.html", "namespaceterm_1_1legacy" ],
     [ "query", null, [
       [ "getResponse", "term_8hpp.html#ae059bfd84131f966d9829dff9f035b5f", null ]
     ] ],
     [ "basic_colorpalette", "classterm_1_1basic__colorpalette.html", "classterm_1_1basic__colorpalette" ],
     [ "basic_colors", "classterm_1_1basic__colors.html", "classterm_1_1basic__colors" ],
+    [ "basic_tree_printer", "classterm_1_1basic__tree__printer.html", "classterm_1_1basic__tree__printer" ],
     [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
     [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
     [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
+    [ "tree_printer", "classterm_1_1tree__printer.html", "classterm_1_1tree__printer" ],
     [ "colorpalette", "namespaceterm.html#adb32a8d8dab0bfaf1c487ffa077e1ca9", null ],
     [ "colors", "namespaceterm.html#aa5052eeffef9f98a67a93a61861c2e83", null ],
     [ "wcolorpalette", "namespaceterm.html#a04a163d0ae8116cb0b3e9ef990bf46a8", null ],
@@ -53,6 +56,9 @@ var namespaceterm =
     [ "kbhit", "namespaceterm.html#ac221cc6f681f3214dc3be6ab2f9f079e", null ],
     [ "NextTabStop", "namespaceterm.html#adc674b3a14adc96ecdcd59284c28d1c1", null ],
     [ "PrevTabStop", "namespaceterm.html#a28fe2784936fc2c9c73fe969e9956a5f", null ],
+    [ "print_tree", "namespaceterm.html#ad316d117b9b6fa07d6f991ae0ad0b038", null ],
+    [ "print_tree", "namespaceterm.html#acff84803e3dcee6a92bf5296e41d6328", null ],
+    [ "print_tree", "namespaceterm.html#a40b16a09decf08b58a31305fba45e23a", null ],
     [ "Scroll", "namespaceterm.html#af1fe827e183258f852cea3c5a8efaf07", null ],
     [ "ScrollDown", "namespaceterm.html#a6b0645424ddfec5793e3c175922a858d", null ],
     [ "ScrollUp", "namespaceterm.html#a185fbb6b77e3409d8b30173eec7d6837", null ],

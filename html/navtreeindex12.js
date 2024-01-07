@@ -1,8 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"structopt3_1_1variantarg.html#aea1fe511d91ba90d8e3ee715ca8a8f4a":[10,0,8,11,10],
-"structopt_1_1_arg_container.html":[10,0,7,2],
-"structopt_1_1_arg_container.html#a018f761129dc0b81b13a2c0fa1d2f3dd":[10,0,7,2,35],
 "structopt_1_1_arg_container.html#a02361fcbabb45bc169dd0d2d0718a32e":[10,0,7,2,17],
 "structopt_1_1_arg_container.html#a0a47586e49a4a5b3e1227967117cdbfb":[10,0,7,2,48],
 "structopt_1_1_arg_container.html#a1cfd2024f892375f7d3b5935ec1f5982":[10,0,7,2,31],
@@ -33,8 +30,8 @@ var NAVTREEINDEX12 =
 "structopt_1_1_arg_container.html#a9ee7050cd86944539fe72a819d2dedcb":[10,0,7,2,24],
 "structopt_1_1_arg_container.html#a9f8fe60a688566a493f339fd9be018a1":[10,0,7,2,41],
 "structopt_1_1_arg_container.html#aa02766b26b188225b27502e2b939ce60":[10,0,7,2,32],
-"structopt_1_1_arg_container.html#aa5864fd5cc1643a0459dc41c317646c5":[10,0,7,2,15],
 "structopt_1_1_arg_container.html#aa5864fd5cc1643a0459dc41c317646c5":[10,0,7,2,16],
+"structopt_1_1_arg_container.html#aa5864fd5cc1643a0459dc41c317646c5":[10,0,7,2,15],
 "structopt_1_1_arg_container.html#aa961249c36f0aa25a6903980ad83cbf5":[10,0,7,2,33],
 "structopt_1_1_arg_container.html#aadd081fe09b3146de132f4e912993825":[10,0,7,2,18],
 "structopt_1_1_arg_container.html#ab052984919694272e59066049a3f2b59":[10,0,7,2,26],
@@ -249,5 +246,8 @@ var NAVTREEINDEX12 =
 "structshared_1_1callback__event__handler.html#a05812abab7753a83a1b297c4d9ac6b47":[10,0,11,3,4],
 "structshared_1_1callback__event__handler.html#a09a9f2afc1ec3f7656fd5851abad2cc5":[10,0,11,3,3],
 "structshared_1_1callback__event__handler.html#a3060b31c8b2b7f65e207cc1b1115aa61":[10,0,11,3,1],
-"structshared_1_1callback__event__handler.html#a4352eba3103b1a749927fe55736576a6":[10,0,11,3,0]
+"structshared_1_1callback__event__handler.html#a4352eba3103b1a749927fe55736576a6":[10,0,11,3,0],
+"structshared_1_1callback__event__handler.html#aa6926092ebee3e289c050f8a5ad19985":[10,0,11,3,2],
+"structshared_1_1casting__optional.html":[10,0,11,4],
+"structshared_1_1casting__optional.html#a2f2c715e01d636244a6551ea2f84df64":[10,0,11,4,2]
 };
