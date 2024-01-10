@@ -99,88 +99,100 @@ $(document).ready(function(){initNavTree('indentor_8hpp_source.html',''); initRe
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sysarch</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">ostream</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">concepts</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">iomanip</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceshared.html">shared</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> TChar, <span class="keyword">typename</span> TCharTraits = std::char_traits&lt;TChar&gt;, <span class="keyword">typename</span> TAlloc = std::allocator&lt;TChar&gt;&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html">   16</a></span>&#160;    <span class="keyword">struct</span> <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">using</span> string_t = std::basic_string&lt;TChar, TCharTraits, TAlloc&gt;;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        size_t _size;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        TChar _fill_char;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         * @brief       Constructor</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * @param size  The maximum size of the indent, in characters. If this is smaller than the value of &quot;used&quot;, size will not go below 0.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * @param used  The number of characters that are already printed and should be accounted for before printing the indentation.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a630ef6f7b92d4ad955288815060f0693">   29</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a630ef6f7b92d4ad955288815060f0693">basic_indentor</a>(<span class="keyword">const</span> size_t size, <span class="keyword">const</span> size_t used = 0ull) : _size{ (size &lt;= used) ? 0ull : (size - used) }, _fill_char{ <span class="stringliteral">&#39; &#39;</span> } {}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         * @brief       Constructor</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         * @param size  The maximum size of the indent, in characters. If this is smaller than the value of &quot;used&quot;, size will not go below 0.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">         * @param used  The number of characters that are already printed and should be accounted for before printing the indentation.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">         * @param fill  The character to use for indentation. (Default: &#39; &#39;)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#ab2e1e05fb8e8257f0aed0e71a8092d37">   36</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#ab2e1e05fb8e8257f0aed0e71a8092d37">basic_indentor</a>(<span class="keyword">const</span> size_t size, <span class="keyword">const</span> size_t used, <span class="keyword">const</span> <span class="keywordtype">char</span> fill) : _size{ (size &lt;= used) ? 0ull : (size - used) }, _fill_char{ fill } {}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">         * @brief       Retrieve the size in characters of the indentation.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">         * @returns     The size of the indentation space.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a57c8d3300b9efbc42d511722a1579e19">   42</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> size_t <a class="code" href="structshared_1_1basic__indentor.html#a57c8d3300b9efbc42d511722a1579e19">size</a>() <span class="keyword">const</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>-&gt;_size;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * @brief       Retrieve the indentation as a string of given characters, or spaces by default.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         * @returns     string_t</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a0d9ccd47f3946ba53d98a7e58285611e">   51</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> string_t <a class="code" href="structshared_1_1basic__indentor.html#a0d9ccd47f3946ba53d98a7e58285611e">toString</a>() <span class="keyword">const</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> string_t(<span class="keyword">this</span>-&gt;_size, <span class="keyword">this</span>-&gt;_fill_char);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         * @brief       Retrieve the indentation as a string.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         * @returns     string_t</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a050f5412f7e9578c9ddee8f1898c18f8">   60</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a050f5412f7e9578c9ddee8f1898c18f8">operator</a> string_t() <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code" href="structshared_1_1basic__indentor.html#a0d9ccd47f3946ba53d98a7e58285611e">toString</a><a class="code" href="structshared_1_1basic__indentor.html#a0d9ccd47f3946ba53d98a7e58285611e">(</a><a class="code" href="structshared_1_1basic__indentor.html#a0d9ccd47f3946ba53d98a7e58285611e">)</a>; }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         * @brief       Retrieve the size of the indentation in characters.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         * @returns     size_t</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a7a9af45bcfbb1e0bf685459c71a9205c">   65</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a7a9af45bcfbb1e0bf685459c71a9205c">operator</a> size_t() <span class="keyword">const</span> { <span class="keywordflow">return</span> _size; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">/**</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">         * @brief       Output stream insertion operator.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">         *\n            This function should not be directly called, instead use the syntax:</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         *\n                &lt;&lt; indentor_object;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * @param os    Output stream instance.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * @param ind   Indentor instance.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * @returns     std::ostream&amp;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a522dbd657757ba7b081968e4c40167fb">   75</a></span>&#160;        <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; ind)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (ind._size == 0ull)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">return</span> os;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> os &lt;&lt; std::setfill(ind._fill_char) &lt;&lt; std::setw(<span class="keyword">static_cast</span>&lt;std::streamsize&gt;(ind._size)) &lt;&lt; ind._fill_char;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">using</span> indentor = <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;<span class="keywordtype">char</span>, std::char_traits&lt;<span class="keywordtype">char</span>&gt;, std::allocator&lt;<span class="keywordtype">char</span>&gt;&gt;;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">using</span> windentor = <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;<span class="keywordtype">wchar_t</span>, std::char_traits&lt;<span class="keywordtype">wchar_t</span>&gt;, std::allocator&lt;<span class="keywordtype">wchar_t</span>&gt;&gt;;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">/// @brief  Variable on-demand indentation for output streams. </span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespaceshared.html#ac905d158a13f589e6a51f9254b65b99e">   85</a></span>&#160;    <span class="keyword">using</span> indent = indentor;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">INDENTOR_HPP_NOGLOBAL</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceshared.html">shared</a>::indentor;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceshared.html">shared</a>::windentor;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceshared.html">shared</a>::indent;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">iomanip</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceshared.html">shared</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> TChar, <span class="keyword">typename</span> TCharTraits = std::char_traits&lt;TChar&gt;, <span class="keyword">typename</span> TAlloc = std::allocator&lt;TChar&gt;&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html">   15</a></span>&#160;    <span class="keyword">struct</span> <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">using</span> string_t = std::basic_string&lt;TChar, TCharTraits, TAlloc&gt;;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        size_t width;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        TChar fill_char;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">         * @brief       Constructor</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         * @param size  The maximum size of the indent, in characters. If this is smaller than the value of &quot;used&quot;, size will not go below 0.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a137226f34b15fb4c27e10f8249af2599">   27</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a137226f34b15fb4c27e10f8249af2599">basic_indentor</a>(<span class="keyword">const</span> size_t size) : width{ size }, fill_char{ <span class="keyword">static_cast</span>&lt;TChar&gt;(<span class="stringliteral">&#39; &#39;</span>) } {}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * @brief       Constructor</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         * @param size  The maximum size of the indent, in characters. If this is smaller than the value of &quot;used&quot;, size will not go below 0.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         * @param used  The number of characters that are already printed and should be accounted for before printing the indentation.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#abcb4acda30e71809b90257fbfe15ddc8">   33</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#abcb4acda30e71809b90257fbfe15ddc8">basic_indentor</a>(<span class="keyword">const</span> size_t size, <span class="keyword">const</span> size_t used) : width{ (size &lt;= used) ? 0ull : (size - used) }, fill_char{ <span class="keyword">static_cast</span>&lt;TChar&gt;(<span class="stringliteral">&#39; &#39;</span>) } {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">         * @brief       Constructor</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">         * @param size  The maximum size of the indent, in characters. If this is smaller than the value of &quot;used&quot;, size will not go below 0.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">         * @param used  The number of characters that are already printed and should be accounted for before printing the indentation.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">         * @param fill  The character to use for indentation. (Default: &#39; &#39;)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a0eeb621eb7843affd9729bf205c77cfc">   40</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a0eeb621eb7843affd9729bf205c77cfc">basic_indentor</a>(<span class="keyword">const</span> size_t size, <span class="keyword">const</span> size_t used, <span class="keyword">const</span> TChar fill) : width{ (size &lt;= used) ? 0ull : (size - used) }, fill_char{ fill } {}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">         * @brief       Retrieve the size in characters of the indentation.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">         * @returns     The size of the indentation space.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#adeec671eeaa3c36b3bd66b3986232d38">   46</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> size_t <a class="code" href="structshared_1_1basic__indentor.html#adeec671eeaa3c36b3bd66b3986232d38">size</a>() <span class="keyword">const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>-&gt;width;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         * @brief       Retrieve the indentation as a string of given characters, or spaces by default.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         * @returns     string_t</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a2ae63506fd87efce9b88c82022508bdd">   55</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> string_t <a class="code" href="structshared_1_1basic__indentor.html#a2ae63506fd87efce9b88c82022508bdd">toString</a>() <span class="keyword">const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> string_t(<span class="keyword">this</span>-&gt;width, <span class="keyword">this</span>-&gt;fill_char);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         * @brief       Retrieve the indentation as a string.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         * @returns     string_t</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a050f5412f7e9578c9ddee8f1898c18f8">   64</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a050f5412f7e9578c9ddee8f1898c18f8">operator</a> string_t() <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code" href="structshared_1_1basic__indentor.html#a2ae63506fd87efce9b88c82022508bdd">toString</a><a class="code" href="structshared_1_1basic__indentor.html#a2ae63506fd87efce9b88c82022508bdd">(</a><a class="code" href="structshared_1_1basic__indentor.html#a2ae63506fd87efce9b88c82022508bdd">)</a>; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">         * @brief       Retrieve the size of the indentation in characters.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">         * @returns     size_t</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a7a9af45bcfbb1e0bf685459c71a9205c">   69</a></span>&#160;        <a class="code" href="sysarch_8h.html#acaa06fbc27c59926a41e7575667e5280">CONSTEXPR</a> <a class="code" href="structshared_1_1basic__indentor.html#a7a9af45bcfbb1e0bf685459c71a9205c">operator</a> size_t() <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code" href="structshared_1_1basic__indentor.html#adeec671eeaa3c36b3bd66b3986232d38">size</a>; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">/**</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * @brief       Output stream insertion operator.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * @param os    Output stream instance.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         * @param ind   Indentor instance.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">         * @returns     The output stream instance.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structshared_1_1basic__indentor.html#a3cccc12a2ea2e0fee804f0b0f17b7e09">   77</a></span>&#160;        <span class="keyword">friend</span> std::basic_ostream&lt;TChar, TCharTraits&gt;&amp; <a class="code" href="structshared_1_1basic__indentor.html#a3cccc12a2ea2e0fee804f0b0f17b7e09">operator</a>&lt;&lt;(std::basic_ostream&lt;TChar, TCharTraits&gt;&amp; os, <span class="keyword">const</span> <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;TChar, TCharTraits, TAlloc&gt;&amp; ind)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (ind.width == 0ull)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// set fill char</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> prevFill{ os.fill() };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> nonDefaultFill{ ind.fill_char != prevFill };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (nonDefaultFill) os &lt;&lt; std::setfill(ind.fill_char);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">// setw, then print a single additional fill char so that setw is actually triggered</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            os &lt;&lt; std::setw(<span class="keyword">static_cast</span>&lt;std::streamsize&gt;(ind.width)) &lt;&lt; ind.fill_char;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">// reset fill char</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> (nonDefaultFill) os &lt;&lt; std::setfill(prevFill);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">using</span> indentor = <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;<span class="keywordtype">char</span>, std::char_traits&lt;<span class="keywordtype">char</span>&gt;, std::allocator&lt;<span class="keywordtype">char</span>&gt;&gt;;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">using</span> windentor = <a class="code" href="structshared_1_1basic__indentor.html">basic_indentor</a>&lt;<span class="keywordtype">wchar_t</span>, std::char_traits&lt;<span class="keywordtype">wchar_t</span>&gt;, std::allocator&lt;<span class="keywordtype">wchar_t</span>&gt;&gt;;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">/// @brief  Variable on-demand indentation for output streams using std::setw.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="namespaceshared.html#ac905d158a13f589e6a51f9254b65b99e">   99</a></span>&#160;    <span class="keyword">using</span> indent = indentor;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">INDENTOR_NOGLOBAL</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceshared.html">shared</a>::indent;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

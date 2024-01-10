@@ -1,5 +1,6 @@
 var dir_f017f8d1aea2530cee9690020bbdf1df =
 [
+    [ "debug.hpp", "debug_8hpp_source.html", null ],
     [ "env.hpp", "env_8hpp.html", "env_8hpp" ],
     [ "event.hpp", "event_8hpp.html", "event_8hpp" ],
     [ "hasPendingDataSTDIN.h", "has_pending_data_s_t_d_i_n_8h.html", "has_pending_data_s_t_d_i_n_8h" ],

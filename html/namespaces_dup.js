@@ -153,6 +153,12 @@ var namespaces_dup =
       [ "wunderline", "color-format_8hpp.html#a9469b7280aae5381c82b290d60604ae4", null ],
       [ "yellow", "color-values_8h.html#a32611a40f96545beb9cbebdf974b8fec", null ]
     ] ],
+    [ "debug", null, [
+      [ "clock", "debug_8hpp.html#ada5a78985cb74e8d52c1627501cd1009", null ],
+      [ "average", "debug_8hpp.html#ac26fe0edfae92715f4548f0b7c87ac5b", null ],
+      [ "profile_avg", "debug_8hpp.html#a77cdef36fe68fde63b875c5187b44374", null ],
+      [ "profile_once", "debug_8hpp.html#a9f8cd7ebaeafd00cd1fa9b1e61bf4341", null ]
+    ] ],
     [ "env", null, [
       [ "PATH", "classenv_1_1_p_a_t_h.html", "classenv_1_1_p_a_t_h" ],
       [ "get_home", "env_8hpp.html#a6c6e6c724ee083eebf1299ed85134221", null ],
