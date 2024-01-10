@@ -8,7 +8,6 @@
 #include <sysarch.h>
 
 #include <ostream>
-#include <concepts>
 #include <iomanip>
 
 namespace shared {
@@ -17,40 +16,45 @@ namespace shared {
 		using string_t = std::basic_string<TChar, TCharTraits, TAlloc>;
 
 	protected:
-		size_t _size;
-		TChar _fill_char;
+		size_t width;
+		TChar fill_char;
 
 	public:
 		/**
 		 * @brief		Constructor
 		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
+		 */
+		CONSTEXPR basic_indentor(const size_t size) : width{ size }, fill_char{ static_cast<TChar>(' ') } {}
+		/**
+		 * @brief		Constructor
+		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
 		 * @param used	The number of characters that are already printed and should be accounted for before printing the indentation.
 		 */
-		CONSTEXPR basic_indentor(const size_t size, const size_t used = 0ull) : _size{ (size <= used) ? 0ull : (size - used) }, _fill_char{ ' ' } {}
+		CONSTEXPR basic_indentor(const size_t size, const size_t used) : width{ (size <= used) ? 0ull : (size - used) }, fill_char{ static_cast<TChar>(' ') } {}
 		/**
 		 * @brief		Constructor
 		 * @param size	The maximum size of the indent, in characters. If this is smaller than the value of "used", size will not go below 0.
 		 * @param used	The number of characters that are already printed and should be accounted for before printing the indentation.
 		 * @param fill	The character to use for indentation. (Default: ' ')
 		 */
-		CONSTEXPR basic_indentor(const size_t size, const size_t used, const char fill) : _size{ (size <= used) ? 0ull : (size - used) }, _fill_char{ fill } {}
+		CONSTEXPR basic_indentor(const size_t size, const size_t used, const TChar fill) : width{ (size <= used) ? 0ull : (size - used) }, fill_char{ fill } {}
 
 		/**
 		 * @brief		Retrieve the size in characters of the indentation.
 		 * @returns		The size of the indentation space.
 		 */
-		CONSTEXPR size_t size() const
+		virtual CONSTEXPR size_t size() const
 		{
-			return this->_size;
+			return this->width;
 		}
 
 		/**
 		 * @brief		Retrieve the indentation as a string of given characters, or spaces by default.
 		 * @returns		string_t
 		 */
-		CONSTEXPR string_t toString() const
+		virtual CONSTEXPR string_t toString() const
 		{
-			return string_t(this->_size, this->_fill_char);
+			return string_t(this->width, this->fill_char);
 		}
 
 		/**
@@ -62,31 +66,39 @@ namespace shared {
 		 * @brief		Retrieve the size of the indentation in characters.
 		 * @returns		size_t
 		 */
-		CONSTEXPR operator size_t() const { return _size; }
+		CONSTEXPR operator size_t() const { return size; }
 
 		/**
 		 * @brief		Output stream insertion operator.
-		 *\n			This function should not be directly called, instead use the syntax:
-		 *\n				<< indentor_object;
 		 * @param os	Output stream instance.
 		 * @param ind	Indentor instance.
-		 * @returns		std::ostream&
+		 * @returns		The output stream instance.
 		 */
-		friend std::ostream& operator<<(std::ostream& os, const basic_indentor<TChar, TCharTraits, TAlloc>& ind)
+		friend std::basic_ostream<TChar, TCharTraits>& operator<<(std::basic_ostream<TChar, TCharTraits>& os, const basic_indentor<TChar, TCharTraits, TAlloc>& ind)
 		{
-			if (ind._size == 0ull)
+			if (ind.width == 0ull)
 				return os;
-			return os << std::setfill(ind._fill_char) << std::setw(static_cast<std::streamsize>(ind._size)) << ind._fill_char;
+
+			// set fill char
+			const auto prevFill{ os.fill() };
+			const bool nonDefaultFill{ ind.fill_char != prevFill };
+			if (nonDefaultFill) os << std::setfill(ind.fill_char);
+
+			// setw, then print a single additional fill char so that setw is actually triggered
+			os << std::setw(static_cast<std::streamsize>(ind.width)) << ind.fill_char;
+
+			// reset fill char
+			if (nonDefaultFill) os << std::setfill(prevFill);
+			return os;
 		}
 	};
+
 	using indentor = basic_indentor<char, std::char_traits<char>, std::allocator<char>>;
 	using windentor = basic_indentor<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>;
-	/// @brief	Variable on-demand indentation for output streams. 
+	/// @brief	Variable on-demand indentation for output streams using std::setw.
 	using indent = indentor;
 }
 
-#ifndef INDENTOR_HPP_NOGLOBAL
-using shared::indentor;
-using shared::windentor;
+#ifndef INDENTOR_NOGLOBAL
 using shared::indent;
 #endif
