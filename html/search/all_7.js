@@ -21,7 +21,7 @@ var searchData=
   ['float_298',['Float',['../_i_n_i_redux_8hpp.html#a2fca167a45a2d1354dc11f032e985b31',1,'file::ini']]],
   ['fore_299',['Fore',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a1de3ed66ddce05aabfce7311f6f7b2ba',1,'color']]],
   ['foreground_300',['Foreground',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a45bd1d5b32931106efbf1a82fe6a732f',1,'color']]],
-  ['format_301',['format',['../structmy__advanced__custom__except.html#a3b2508422fd34aefd5f25bc8e53433de',1,'my_advanced_custom_except::format()'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()'],['../classex_1_1except.html#af89540e6163c1969d96dcc15728dd738',1,'ex::except::format()']]],
+  ['format_301',['format',['../classex_1_1except.html#af89540e6163c1969d96dcc15728dd738',1,'ex::except::format()'],['../classxlog_1_1x_log.html#a4057bcab03a14b1f300f90762d106125',1,'xlog::xLog::format()'],['../structmy__advanced__custom__except.html#a3b2508422fd34aefd5f25bc8e53433de',1,'my_advanced_custom_except::format()']]],
   ['from1d_302',['from1D',['../structmatrix_1_1nmatrix.html#a5d090edd8ee5c2829f0b08f0b89d1a61',1,'matrix::nmatrix::from1D()'],['../structmatrix_1_1basic__matrix.html#a8aa29a86207f0ffbff216f87a7577706',1,'matrix::basic_matrix::from1D()']]],
   ['from_5fauto_303',['from_auto',['../namespacestr.html#ab959e734dfcacf721b9e5d9e8398d6ac',1,'str']]],
   ['from_5findex_304',['from_index',['../structjson_1_1_node_type.html#a71151ab34b76fad51f7d3cbd3c502243',1,'json::NodeType']]],
@@ -29,6 +29,7 @@ var searchData=
   ['fromalphanumeric_306',['fromAlphaNumeric',['../namespacestr.html#ab6fe51c1830b934a4ee82e7a6f6e9571',1,'str']]],
   ['frombase10_307',['fromBase10',['../namespacestr.html#ab9517188a12786f4566f6e1b5b93308d',1,'str::fromBase10(const decimal &amp;number, const int &amp;toBase) noexcept(false)'],['../namespacestr.html#ae05a80330a3733df4935b72eeb047284',1,'str::fromBase10(const std::string &amp;number, const int &amp;toBase) noexcept(false)']]],
   ['frombool_308',['frombool',['../namespacestr.html#a678c130f6e170b05d57e1499138db3de',1,'str']]],
-  ['front_309',['front',['../structopt_1_1_arg_container.html#a516f2248bfafb022ca4524b7d3f22ffa',1,'opt::ArgContainer']]],
-  ['fwd_310',['fwd',['../sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8',1,'sysarch.h']]]
+  ['fromnumber_309',['fromnumber',['../namespacestr.html#a39aeaccdf044a62bda98497e917affa1',1,'str::fromnumber(T const n, unsigned base=10) noexcept(false)'],['../namespacestr.html#a869e3fbf877a99f89e785407b8ec733e',1,'str::fromnumber(T const n, std::chars_format const fmt=std::chars_format::general, unsigned const precision=8) noexcept(false)']]],
+  ['front_310',['front',['../structopt_1_1_arg_container.html#a516f2248bfafb022ca4524b7d3f22ffa',1,'opt::ArgContainer']]],
+  ['fwd_311',['fwd',['../sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8',1,'sysarch.h']]]
 ];

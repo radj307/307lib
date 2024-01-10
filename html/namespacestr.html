@@ -220,14 +220,14 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:a678c130f6e170b05d57e1499138db3de"><td class="memItemLeft" align="right" valign="top">STRCONSTEXPR std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">frombool</a> (const bool b) noexcept</td></tr>
 <tr class="memdesc:a678c130f6e170b05d57e1499138db3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a bool to string.  <a href="namespacestr.html#a678c130f6e170b05d57e1499138db3de">More...</a><br /></td></tr>
 <tr class="separator:a678c130f6e170b05d57e1499138db3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabade988934ba455a9eb304d85edc659"><td class="memTemplParams" colspan="2"><a id="aabade988934ba455a9eb304d85edc659"></a>
-template&lt;size_t BUFFER_SIZE = 32ull, std::integral T&gt; </td></tr>
-<tr class="memitem:aabade988934ba455a9eb304d85edc659"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fromnumber</b> (const T n, const int base=10) noexcept</td></tr>
-<tr class="separator:aabade988934ba455a9eb304d85edc659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af036eb1f01ea8fcc3220d6b8fb225a38"><td class="memTemplParams" colspan="2"><a id="af036eb1f01ea8fcc3220d6b8fb225a38"></a>
-template&lt;size_t BUFFER_SIZE = 32ull, std::floating_point T&gt; </td></tr>
-<tr class="memitem:af036eb1f01ea8fcc3220d6b8fb225a38"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fromnumber</b> (const T n, const std::chars_format fmt=std::chars_format::general) noexcept</td></tr>
-<tr class="separator:af036eb1f01ea8fcc3220d6b8fb225a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869e3fbf877a99f89e785407b8ec733e"><td class="memTemplParams" colspan="2">template&lt;size_t BUFFER_SIZE = 64, std::floating_point T, typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a869e3fbf877a99f89e785407b8ec733e"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a869e3fbf877a99f89e785407b8ec733e">fromnumber</a> (T const n, std::chars_format const fmt=std::chars_format::general, unsigned const precision=8) noexcept(false)</td></tr>
+<tr class="memdesc:a869e3fbf877a99f89e785407b8ec733e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified floating-point value to a string.  <a href="namespacestr.html#a869e3fbf877a99f89e785407b8ec733e">More...</a><br /></td></tr>
+<tr class="separator:a869e3fbf877a99f89e785407b8ec733e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39aeaccdf044a62bda98497e917affa1"><td class="memTemplParams" colspan="2">template&lt;size_t BUFFER_SIZE = 64, std::integral T, typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </td></tr>
+<tr class="memitem:a39aeaccdf044a62bda98497e917affa1"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a39aeaccdf044a62bda98497e917affa1">fromnumber</a> (T const n, unsigned base=10) noexcept(false)</td></tr>
+<tr class="memdesc:a39aeaccdf044a62bda98497e917affa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified integral value to a string.  <a href="namespacestr.html#a39aeaccdf044a62bda98497e917affa1">More...</a><br /></td></tr>
+<tr class="separator:a39aeaccdf044a62bda98497e917affa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac833e4f5138a5dd64fb8985361215835"><td class="memTemplParams" colspan="2">template&lt;std::integral RT, template&lt; class, class &gt; class Cont&gt; </td></tr>
 <tr class="memitem:ac833e4f5138a5dd64fb8985361215835"><td class="memTemplItemLeft" align="right" valign="top">RT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">get_longest_string</a> (const Cont&lt; std::string, std::allocator&lt; std::string &gt;&gt; &amp;cont, RT offset=static_cast&lt; RT &gt;(0))</td></tr>
 <tr class="memdesc:ac833e4f5138a5dd64fb8985361215835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the length of the longest string in a given STL container.  <a href="namespacestr.html#ac833e4f5138a5dd64fb8985361215835">More...</a><br /></td></tr>
@@ -2134,7 +2134,134 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The string representation of the given boolean; "true" or "false". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00575">575</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00610">610</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a869e3fbf877a99f89e785407b8ec733e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869e3fbf877a99f89e785407b8ec733e">&#9670;&nbsp;</a></span>fromnumber() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t BUFFER_SIZE = 64, std::floating_point T, typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::fromnumber </td>
+          <td>(</td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chars_format const&#160;</td>
+          <td class="paramname"><em>fmt</em> = <code>std::chars_format::general</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned const&#160;</td>
+          <td class="paramname"><em>precision</em> = <code>8</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the specified floating-point value to a string. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">BUFFER_SIZE</td><td>- The size of the buffer to use for holding the result. Defaults to 64. </td></tr>
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
+    <tr><td class="paramname">T</td><td>- The type of floating-point to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- The floating-point value to convert. </td></tr>
+    <tr><td class="paramname">fmt</td><td>- The format to use when representing the value. </td></tr>
+    <tr><td class="paramname">precision</td><td>- The precision to use when representing the value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the specified number. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00085">85</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a39aeaccdf044a62bda98497e917affa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39aeaccdf044a62bda98497e917affa1">&#9670;&nbsp;</a></span>fromnumber() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t BUFFER_SIZE = 64, std::integral T, typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::fromnumber </td>
+          <td>(</td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>base</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the specified integral value to a string. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">BUFFER_SIZE</td><td>- The size of the buffer to use for holding the result. Defaults to 64. </td></tr>
+    <tr><td class="paramname">TChar</td><td>- basic_string char type. </td></tr>
+    <tr><td class="paramname">TCharTraits</td><td>- basic_string char_traits type. </td></tr>
+    <tr><td class="paramname">TAlloc</td><td>- basic_string allocator type. </td></tr>
+    <tr><td class="paramname">T</td><td>- The type of integral value to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- The integral value to convert. </td></tr>
+    <tr><td class="paramname">base</td><td>- The number base to convert to. Defaults to 10 (decimal). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the specified number. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00058">58</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -2825,6 +2952,11 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>true when the given string represents a valid number; otherwise false. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00191">191</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae3704d7fb30ac8239cf1eca646096a32_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -2884,6 +3016,11 @@ template&lt;std::integral T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true when str specifies a valid floating-point number. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00227">227</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a264ae9a138c64900012cd97711e1e872_cgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -4874,7 +5011,7 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00074">74</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00109">109</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -4932,7 +5069,7 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00096">96</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00131">131</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -4998,7 +5135,7 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00123">123</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00158">158</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5072,7 +5209,7 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00165">165</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00200">200</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5722,7 +5859,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when s was one of the recognized values for true; false when s was one of the recognized values for false; otherwise std::nullopt if s was invalid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00561">561</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00596">596</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5759,7 +5896,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00354">354</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00389">389</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5796,7 +5933,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00341">341</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00376">376</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5833,7 +5970,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>wchar_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00401">401</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00436">436</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5883,7 +6020,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00386">386</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00421">421</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -5933,7 +6070,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00433">433</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00468">468</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6051,7 +6188,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number represented by the string s if successful; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00020">20</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00021">21</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6102,7 +6239,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number represented by the string s if successful; otherwise std::nullopt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00035">35</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00036">36</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6139,7 +6276,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00464">464</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00499">499</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6176,7 +6313,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00451">451</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00486">486</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6213,7 +6350,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>wchar_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00511">511</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00546">546</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6263,7 +6400,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00496">496</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00531">531</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6313,7 +6450,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00543">543</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00578">578</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6409,7 +6546,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00294">294</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00329">329</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6459,7 +6596,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00306">306</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00341">341</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6507,7 +6644,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00317">317</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00352">352</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6557,7 +6694,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00329">329</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00364">364</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6599,7 +6736,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00211">211</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00246">246</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6647,7 +6784,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00198">198</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00233">233</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6689,7 +6826,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00235">235</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00270">270</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6737,7 +6874,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00222">222</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00257">257</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6779,7 +6916,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00259">259</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00294">294</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6827,7 +6964,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00246">246</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00281">281</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6869,7 +7006,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00283">283</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00318">318</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
@@ -6917,7 +7054,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String without preceding or trailing whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00270">270</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strcore_8hpp_source.html#l00305">305</a> of file <a class="el" href="strcore_8hpp_source.html">strcore.hpp</a>.</p>
 
 </div>
 </div>
