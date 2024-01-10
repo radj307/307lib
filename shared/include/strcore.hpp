@@ -1,6 +1,7 @@
 #pragma once
 #include <sysarch.h>
 #include <var.hpp>
+#include <make_exception.hpp>
 
 #include <concepts>
 #include <string>
@@ -42,21 +43,55 @@ namespace str {
 #pragma endregion tonumber
 
 #pragma region fromnumber
-	template<size_t BUFFER_SIZE = 32ull, std::integral T>
-	std::string fromnumber(const T n, const int base = 10) noexcept
+	/**
+	 * @brief					Converts the specified integral value to a string.
+	 * @tparam BUFFER_SIZE	  -	The size of the buffer to use for holding the result. Defaults to 64.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @tparam T			  -	The type of integral value to convert.
+	 * @param n				  -	The integral value to convert.
+	 * @param base			  -	The number base to convert to. Defaults to 10 (decimal).
+	 * @returns					A string representing the specified number.
+	 */
+	template<size_t BUFFER_SIZE = 64, std::integral T, typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> fromnumber(T const n, unsigned base = 10) noexcept(false)
 	{
-		std::string buf;
-		buf.reserve(BUFFER_SIZE);
-		const auto& [c_str, ec] { std::to_chars(buf.data(), buf.data() + buf.capacity(), n, base) };
-		return{ c_str };
+		if (base < 2 || base > 36)
+			throw make_exception("Base ", base, " is out of range [2, 36]!");
+
+		TChar buf[BUFFER_SIZE]{};
+		TChar* p{ buf };
+
+		std::to_chars_result r{ std::to_chars(p, p + sizeof(buf), n, base) };
+		if (r.ec != std::errc())
+			throw make_exception("Failed to convert integral ", n, " to string in base ", base, " (errc: ", static_cast<int>(r.ec), ")!");
+
+		return std::basic_string<TChar, TCharTraits, TAlloc>(buf);
 	}
-	template<size_t BUFFER_SIZE = 32ull, std::floating_point T>
-	std::string fromnumber(const T n, const std::chars_format fmt = std::chars_format::general) noexcept
+	/**
+	 * @brief					Converts the specified floating-point value to a string.
+	 * @tparam BUFFER_SIZE	  -	The size of the buffer to use for holding the result. Defaults to 64.
+	 * @tparam TChar		  -	basic_string char type.
+	 * @tparam TCharTraits	  -	basic_string char_traits type.
+	 * @tparam TAlloc		  -	basic_string allocator type.
+	 * @tparam T			  -	The type of floating-point to convert.
+	 * @param n				  -	The floating-point value to convert.
+	 * @param fmt			  -	The format to use when representing the value.
+	 * @param precision		  -	The precision to use when representing the value.
+	 * @returns					A string representing the specified number.
+	 */
+	template<size_t BUFFER_SIZE = 64, std::floating_point T, typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> fromnumber(T const n, std::chars_format const fmt = std::chars_format::general, unsigned const precision = 8) noexcept(false)
 	{
-		std::string buf;
-		buf.reserve(BUFFER_SIZE);
-		const auto& [c_str, ec] { std::to_chars(buf.data(), buf.data() + buf.capacity(), n, fmt) };
-		return{ c_str };
+		TChar buf[BUFFER_SIZE]{};
+		TChar* p{ buf };
+
+		std::to_chars_result r{ std::to_chars(p, p + sizeof(buf), n, fmt, precision) };
+		if (r.ec != std::errc())
+			throw make_exception("Failed to convert floating-point ", n, " to string with fmt ", static_cast<int>(fmt), " and precision ", precision, " (errc: ", static_cast<int>(r.ec), ")!");
+
+		return std::basic_string<TChar, TCharTraits, TAlloc>(buf);
 	}
 #pragma endregion fromnumber
 
