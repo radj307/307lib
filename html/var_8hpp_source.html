@@ -308,7 +308,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        = requires(Fn &amp;&amp; func, Args&amp;&amp;... args)</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">// no ignoring ^^ cvr qualifiers since they affect whether the function can be called in certain contexts</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        callable&lt;Fn, Args...&gt;;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        requires callable&lt;Fn, Args...&gt;;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="comment">// require the return value to have the expected Returns type (or be implicitly convertible to it):</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// this uses the same implementation as std::invocable</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        { std::invoke(<span class="keyword">static_cast</span>&lt;Fn&amp;&amp;&gt;(func), <span class="keyword">static_cast</span>&lt;Args&amp;&amp;&gt;(args)...) } -&gt; ::var::same_or_convertible&lt;Returns&gt;;</div>
@@ -347,7 +347,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="comment">// require an &quot;end()&quot; method that returns an input_or_output_iterator:</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        { v.end() } -&gt; ::std::input_or_output_iterator;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">// require the returned iterators to be of the same type:</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        std::same_as&lt;<span class="keyword">decltype</span>(v.begin()), <span class="keyword">decltype</span>(v.end())&gt;;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        requires std::same_as&lt;<span class="keyword">decltype</span>(v.begin()), <span class="keyword">decltype</span>(v.end())&gt;;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    };</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">     * @concept     reverse_enumerable</span></div>
@@ -364,7 +364,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="comment">// require a &quot;rend()&quot; method that returns an input_or_output_iterator:</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        { v.rend() } -&gt; ::std::input_or_output_iterator;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// require the returned iterators to be of the same type:</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        std::same_as&lt;<span class="keyword">decltype</span>(v.rbegin()), <span class="keyword">decltype</span>(v.rend())&gt;;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        requires std::same_as&lt;<span class="keyword">decltype</span>(v.rbegin()), <span class="keyword">decltype</span>(v.rend())&gt;;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    };</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">     * @concept             enumerable_of</span></div>
@@ -382,7 +382,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">// require an &quot;end()&quot; method that returns an iterator:</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        { v.end() } -&gt; std::input_or_output_iterator;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="comment">// require the returned iterators to be of the same type:</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        std::same_as&lt;<span class="keyword">decltype</span>(v.begin()), <span class="keyword">decltype</span>(v.end())&gt;;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        requires std::same_as&lt;<span class="keyword">decltype</span>(v.begin()), <span class="keyword">decltype</span>(v.end())&gt;;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// requires &quot;begin()&quot; iterator to return TElem&amp; when dereferenced:</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        { *v.begin() } -&gt; std::same_as&lt;std::decay_t&lt;Element&gt;&amp;&gt;;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="comment">//          prevent constness from- ^^^^^^^ -mattering for type Element</span></div>
@@ -407,7 +407,7 @@ $(document).ready(function(){initNavTree('var_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="comment">// require an &quot;rend()&quot; method that returns an iterator:</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        { v.rend() } -&gt; std::input_or_output_iterator;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">// require the returned iterators to be of the same type:</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        std::same_as&lt;<span class="keyword">decltype</span>(v.rbegin()), <span class="keyword">decltype</span>(v.rend())&gt;;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        requires std::same_as&lt;<span class="keyword">decltype</span>(v.rbegin()), <span class="keyword">decltype</span>(v.rend())&gt;;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// requires &quot;rbegin()&quot; iterator to return TElem&amp; when dereferenced:</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        { *v.rbegin() } -&gt; std::same_as&lt;std::decay_t&lt;Element&gt;&amp;&gt;;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">//          prevent constness from- ^^^^^^^ -mattering for type Element</span></div>
