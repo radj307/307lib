@@ -35,10 +35,32 @@ namespace str {
 	template<std::floating_point T>
 	T tonumber(const std::string s, const std::chars_format fmt = std::chars_format::general) noexcept
 	{
+	#if defined(__GNUC__) && __GNUC__ < 11
+		// prior to gcc 11, std::from_chars does not support floating-point types
+		std::stringstream ss;
+		switch (fmt) {
+		case std::chars_format::fixed:
+			ss << std::fixed;
+			break;
+		case std::chars_format::scientific:
+			ss << std::scientific;
+			break;
+		case std::chars_format::hex:
+			ss << std::hex;
+			break;
+		default:
+			break;
+		}
+		ss << s;
+		T n{};
+		ss >> n;
+		return n;
+	#else
 		T v{};
 		if ($c(int, std::from_chars(s.data(), s.data() + s.size(), v, fmt).ec) == 0)
 			return v;
 		return{};
+	#endif
 	}
 #pragma endregion tonumber
 
@@ -84,6 +106,25 @@ namespace str {
 	template<size_t BUFFER_SIZE = 64, std::floating_point T, typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
 	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> fromnumber(T const n, std::chars_format const fmt = std::chars_format::general, unsigned const precision = 8) noexcept(false)
 	{
+	#if defined(__GNUC__) && __GNUC__ < 11
+		// prior to gcc 11, std::to_chars does not support floating-point types
+		std::stringstream ss;
+		switch (fmt) {
+		case std::chars_format::fixed:
+			ss << std::fixed;
+			break;
+		case std::chars_format::scientific:
+			ss << std::scientific;
+			break;
+		case std::chars_format::hex:
+			ss << std::hex;
+			break;
+		default:
+			break;
+		}
+		ss << n;
+		return ss.str();
+	#else
 		TChar buf[BUFFER_SIZE]{};
 		TChar* p{ buf };
 
@@ -92,6 +133,7 @@ namespace str {
 			throw make_exception("Failed to convert floating-point ", n, " to string with fmt ", static_cast<int>(fmt), " and precision ", precision, " (errc: ", static_cast<int>(r.ec), ")!");
 
 		return std::basic_string<TChar, TCharTraits, TAlloc>(buf);
+	#endif
 	}
 #pragma endregion fromnumber
 

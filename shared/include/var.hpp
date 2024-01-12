@@ -217,7 +217,7 @@ namespace var {
 		= requires(Fn && func, Args&&... args)
 		// no ignoring ^^ cvr qualifiers since they affect whether the function can be called in certain contexts
 	{
-		callable<Fn, Args...>;
+		requires callable<Fn, Args...>;
 		// require the return value to have the expected Returns type (or be implicitly convertible to it):
 		// this uses the same implementation as std::invocable
 		{ std::invoke(static_cast<Fn&&>(func), static_cast<Args&&>(args)...) } -> ::var::same_or_convertible<Returns>;
@@ -256,7 +256,7 @@ namespace var {
 		// require an "end()" method that returns an input_or_output_iterator:
 		{ v.end() } -> ::std::input_or_output_iterator;
 		// require the returned iterators to be of the same type:
-		std::same_as<decltype(v.begin()), decltype(v.end())>;
+		requires std::same_as<decltype(v.begin()), decltype(v.end())>;
 	};
 	/**
 	 * @concept		reverse_enumerable
@@ -273,7 +273,7 @@ namespace var {
 		// require a "rend()" method that returns an input_or_output_iterator:
 		{ v.rend() } -> ::std::input_or_output_iterator;
 		// require the returned iterators to be of the same type:
-		std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
+		requires std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
 	};
 	/**
 	 * @concept				enumerable_of
@@ -291,7 +291,7 @@ namespace var {
 		// require an "end()" method that returns an iterator:
 		{ v.end() } -> std::input_or_output_iterator;
 		// require the returned iterators to be of the same type:
-		std::same_as<decltype(v.begin()), decltype(v.end())>;
+		requires std::same_as<decltype(v.begin()), decltype(v.end())>;
 		// requires "begin()" iterator to return TElem& when dereferenced:
 		{ *v.begin() } -> std::same_as<std::decay_t<Element>&>;
 		//          prevent constness from- ^^^^^^^ -mattering for type Element
@@ -316,7 +316,7 @@ namespace var {
 		// require an "rend()" method that returns an iterator:
 		{ v.rend() } -> std::input_or_output_iterator;
 		// require the returned iterators to be of the same type:
-		std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
+		requires std::same_as<decltype(v.rbegin()), decltype(v.rend())>;
 		// requires "rbegin()" iterator to return TElem& when dereferenced:
 		{ *v.rbegin() } -> std::same_as<std::decay_t<Element>&>;
 		//          prevent constness from- ^^^^^^^ -mattering for type Element
