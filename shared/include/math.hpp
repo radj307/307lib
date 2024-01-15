@@ -124,13 +124,137 @@ namespace math {
 		return normalize(value, old_range, new_range);
 	}
 
-	template<typename T>
-	[[nodiscard]] CONSTEXPR T max_value()
+#pragma region max
+	/**
+	 * @brief			Finds the largest element in the specified range.
+	 * @tparam Iter	  -	Type of input_iterator for the range.
+	 * @param begin   -	The iterator for the beginning of the range.
+	 * @param end	  -	The (exclusive) iterator for the end of the range.
+	 * @returns			Iterator for the largest element when successful;
+	 *					 otherwise, the specified end iterator.
+	 */
+	template<std::input_iterator Iter>
+	[[nodiscard]] CONSTEXPR Iter max(Iter const& begin, Iter const& end)
 	{
-		if CONSTEXPR(std::unsigned_integral<T>)
-			return{ 255 * sizeof(T) };
-		else return { 128 * sizeof(T) };
+		Iter largest{ end };
+
+		for (auto it{ begin }; it != end; ++it) {
+			if (largest == end || *it > *largest) {
+				largest = it;
+			}
+		}
+
+		return largest;
 	}
+
+	/**
+	 * @brief			Returns the largest of the specified values as
+	 *					 determined by the default operator> for type T.
+	 * @tparam T	  -	Any default-constructible type with an operator>.
+	 * @param values  -	Any number of input values.
+	 * @returns			The largest of the specified values; or default
+	 *					 T when no values were specified.
+	 */
+	template<std::constructible_from<> T> requires requires (const T n) { { n < n } -> std::same_as<bool>; }
+	[[nodiscard]] CONSTEXPR T max(std::initializer_list<T> values)
+	{
+		if (values.size() == 0)
+			return T{};
+		return *max(values.begin(), values.end());
+	}
+	/**
+	 * @brief			Returns the largest of the specified values as
+	 *					 determined by the default operator> for type T.
+	 * @tparam T	  -	Any type that has an operator>.
+	 * @param values  -	Any number of input values.
+	 * @returns			The largest of the specified values.
+	 * @exception		ex::except when no values were specified.
+	 */
+	template<typename T> requires requires (const T n) { { n < n } -> std::same_as<bool>; requires !std::constructible_from<T>; }
+	[[nodiscard]] CONSTEXPR T max(std::initializer_list<T> values)
+	{
+		if (values.size() == 0)
+			throw make_exception("math::min() called with 0 values and type T is not default constructible!");
+		return *max(values.begin(), values.end());
+	}
+	/**
+	 * @brief			Returns the largest of the specified values as
+	 *					 determined by the default operator> for type T.
+	 * @tparam T	  -	Any type that has an operator>.
+	 * @returns			The largest of the specified values.
+	 */
+	template<typename T, var::same_or_convertible<T>... Ts>
+	[[nodiscard]] CONSTEXPR T max(T&& first, Ts&&... rest)
+	{
+		return max({ std::forward<T>(first), std::forward<Ts>(rest)... });
+	}
+#pragma endregion max
+
+#pragma region min
+	/**
+	 * @brief			Finds the smallest element in the specified range.
+	 * @tparam Iter	  -	Type of input_iterator for the range.
+	 * @param begin   -	The iterator for the beginning of the range.
+	 * @param end	  -	The (exclusive) iterator for the end of the range.
+	 * @returns			Iterator for the smallest element when successful;
+	 *					 otherwise, the specified end iterator.
+	 */
+	template<std::input_iterator Iter>
+	[[nodiscard]] CONSTEXPR Iter min(Iter const& begin, Iter const& end)
+	{
+		Iter smallest{ end };
+
+		for (auto it{ begin }; it != end; ++it) {
+			if (smallest == end || *it < *smallest) {
+				smallest = it;
+			}
+		}
+
+		return smallest;
+	}
+
+	/**
+	 * @brief			Returns the smallest of the specified values as
+	 *					 determined by the default operator< for type T.
+	 * @tparam T	  -	Any default-constructible type with an operator<.
+	 * @param values  -	Any number of input values.
+	 * @returns			The smallest of the specified values; or default
+	 *					 T when no values were specified.
+	 */
+	template<std::constructible_from<> T> requires requires (const T n) { { n < n } -> std::same_as<bool>; }
+	[[nodiscard]] CONSTEXPR T min(std::initializer_list<T> values)
+	{
+		if (values.size() == 0)
+			return T{};
+		return *min(values.begin(), values.end());
+	}
+	/**
+	 * @brief			Returns the smallest of the specified values as
+	 *					 determined by the default operator< for type T.
+	 * @tparam T	  -	Any type that has an operator<.
+	 * @param values  -	Any number of input values.
+	 * @returns			The smallest of the specified values.
+	 * @exception		ex::except when no values were specified.
+	 */
+	template<typename T> requires requires (const T n) { { n < n } -> std::same_as<bool>; requires !std::constructible_from<T>; }
+	[[nodiscard]] CONSTEXPR T min(std::initializer_list<T> values)
+	{
+		if (values.size() == 0)
+			throw make_exception("math::min() called with 0 values and type T is not default constructible!");
+		return *min(values.begin(), values.end());
+	}
+	/**
+	 * @brief			Returns the smallest of the specified values as
+	 *					 determined by the default operator> for type T.
+	 * @tparam T	  -	Any type that has an operator>.
+	 * @returns			The smallest of the specified values.
+	 */
+	template<typename T, var::same_or_convertible<T>... Ts>
+	[[nodiscard]] CONSTEXPR T min(T&& first, Ts&&... rest)
+	{
+		return min({ std::forward<T>(first), std::forward<Ts>(rest)... });
+	}
+#pragma endregion min
 
 	/**
 	 * @brief		Constant-time math abs function. (Removes negative sign from numbers)
