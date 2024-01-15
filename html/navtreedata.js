@@ -106,18 +106,18 @@ var NAVTREEINDEX =
 "307modules.html",
 "_token_redux_8hpp.html#ab7884a0bef16c49be96123b019b2ab5c",
 "classcolor_1_1palette.html#a192f1d42a778cac51fd1e37bb5caed45",
-"classini_1_1ini__value.html#a073209974dea5142a54f06ef09ed7525",
-"classrng_1_1_engine_wrapper.html#ac1c9ca6def7aaea827826807645cff61",
-"classxlog_1_1x_log.html#a951c90a9e341206a7b83806ac0b19c40",
-"filei_8hpp.html#a207e782a2e615d164b4ee4d53e93d99d",
-"namespaceop.html",
-"namespaceterm.html#a39a205b7961841c4ec9855f1c6097f6e",
-"predicate_8hpp.html",
-"strmath_8hpp.html#a1f82a58e884afa2d7f6dcbe3ad884bab",
-"structjson_1_1_object_node.html#a3d80ae4a396fcfea9a71876113e23ee1",
-"structopt3_1_1variant__template__group.html#ae84343c62236fa74dea8b7b1143a02f9",
-"structshared_1_1basic__indentor.html#a137226f34b15fb4c27e10f8249af2599",
-"sysarch_8h.html#a4cf387d01b7d8bfc4d501de9c37cdc93"
+"classini_1_1ini__value.html#a0dec340e120db2578eaf84ae578b8bc4",
+"classtoken_1_1base_1_1_tokenizer_base.html#a726cf1b9cd00a7d62bb2d85cb7878b14",
+"color-values_8h.html#afb7e03226bd0a7057932833ea7229706",
+"namespaceshared.html#adda326ab8dc4d9f40f5c18be1d8e2091",
+"shared_2src_2env_8cpp_source.html",
+"structjson_1_1_node.html#ac72f881e47e21811301364da42bdff10",
+"structopt_1_1_arg_container.html#aa02766b26b188225b27502e2b939ce60",
+"structshared_1_1unsafe__optional.html#a10cdb1c73999f617355733dd26e977be",
+"color-transform_8hpp.html#a2080307c19e6b6341f40839d02615373",
+"predicate_8hpp_source.html",
+"structrng_1_1x_rand.html#ac3d8d13b26a0186e513f7b8c17b54d00",
+"structopt3_1_1variantarg.html#ac2ac998053c7b351cc505b97e6f32a4b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

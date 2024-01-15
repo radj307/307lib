@@ -15,6 +15,7 @@ var namespaceterm =
     [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
     [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
     [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
+    [ "print_at", "structterm_1_1print__at.html", "structterm_1_1print__at" ],
     [ "print_table", "structterm_1_1print__table.html", "structterm_1_1print__table" ],
     [ "tree_printer", "classterm_1_1tree__printer.html", "classterm_1_1tree__printer" ],
     [ "colorpalette", "namespaceterm.html#adb32a8d8dab0bfaf1c487ffa077e1ca9", null ],
