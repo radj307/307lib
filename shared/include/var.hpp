@@ -324,6 +324,15 @@ namespace var {
 		{ *v.rend() } -> std::same_as<std::decay_t<Element>&>;
 		//        prevent constness from- ^^^^^^^ -mattering for type Element
 	};
+	/**
+	 * @concept				iterator_of
+	 * @brief				Requires type T to be an input_or_output_iterator that
+	 *						 returns 
+	 * @tparam T		  -	The type that must be an iterator of type Element.
+	 * @tparam Element	  -	The type of element being iterated over.
+	 */
+	template<class T, typename Element> concept iterator_of 
+		= std::input_or_output_iterator<T> && std::same_as<std::remove_cvref_t<decltype(*std::declval<T>())>&, std::remove_cvref_t<Element>&>;
 	////////////////////////////////// END / std::declval Test Concepts /////////////////////////////////////////////
 #	pragma endregion DeclvalTest_Concepts
 #	pragma region Variadic_Count_Concepts
