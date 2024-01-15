@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('namespaceterm.html',''); initResizable
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -127,6 +128,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1_message.html">Message</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a convenience wrapper used to print log message headers.  <a href="structterm_1_1_message.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structterm_1_1print__table.html">print_table</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty-prints a range of items as a table using line drawing characters.  <a href="structterm_1_1print__table.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classterm_1_1tree__printer.html">tree_printer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a nicely-formatted tree.  <a href="classterm_1_1tree__printer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +153,14 @@ template&lt;std::integral KeyType&gt; </td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#a96886af7c95b9f2baf792221496b889c">wcolors</a> = <a class="el" href="classterm_1_1basic__colors.html">basic_colors</a>&lt; ANSI::wSequence &gt;</td></tr>
 <tr class="memdesc:a96886af7c95b9f2baf792221496b889c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color sequences using wchar_t. <br /></td></tr>
 <tr class="separator:a96886af7c95b9f2baf792221496b889c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ab4559203cb018ffc278cd2062066280c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceterm.html#ab4559203cb018ffc278cd2062066280c">HorizontalAlignment</a> : std::uint8_t { <a class="el" href="namespaceterm.html#ab4559203cb018ffc278cd2062066280ca945d5e233cf7d6240f6b783b36a374ff">Left</a>
+, <a class="el" href="namespaceterm.html#ab4559203cb018ffc278cd2062066280ca4f1f6016fc9f3f2353c0cc7c67b292bd">Center</a>
+, <a class="el" href="namespaceterm.html#ab4559203cb018ffc278cd2062066280ca92b09c7c48c520c3c55e497875da437c">Right</a>
+ }</td></tr>
+<tr class="separator:ab4559203cb018ffc278cd2062066280c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -465,7 +477,40 @@ CONSTEXPR const <a class="el" href="structterm_1_1_message.html">Message</a>&#16
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains pre-made ANSI sequences &amp; helper functions for making sequences. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ab4559203cb018ffc278cd2062066280c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4559203cb018ffc278cd2062066280c">&#9670;&nbsp;</a></span>HorizontalAlignment</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceterm.html#ab4559203cb018ffc278cd2062066280c">term::HorizontalAlignment</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab4559203cb018ffc278cd2062066280ca945d5e233cf7d6240f6b783b36a374ff"></a>Left&#160;</td><td class="fielddoc"><p>Aligns to the left of the space. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab4559203cb018ffc278cd2062066280ca4f1f6016fc9f3f2353c0cc7c67b292bd"></a>Center&#160;</td><td class="fielddoc"><p>Aligns to the center of the space. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab4559203cb018ffc278cd2062066280ca92b09c7c48c520c3c55e497875da437c"></a>Right&#160;</td><td class="fielddoc"><p>Aligns to the right of the space. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="print__table_8hpp_source.html#l00020">20</a> of file <a class="el" href="print__table_8hpp_source.html">print_table.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="aabcdffc86eb9aabfa5dc77cbc1991bfd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabcdffc86eb9aabfa5dc77cbc1991bfd">&#9670;&nbsp;</a></span>CursorBackward()</h2>
 

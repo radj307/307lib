@@ -124,6 +124,7 @@ var annotated_dup =
       [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
       [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
       [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
+      [ "print_table", "structterm_1_1print__table.html", "structterm_1_1print__table" ],
       [ "tree_printer", "classterm_1_1tree__printer.html", "classterm_1_1tree__printer" ]
     ] ],
     [ "token", null, [

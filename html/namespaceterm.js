@@ -15,11 +15,17 @@ var namespaceterm =
     [ "Cursor", "structterm_1_1_cursor.html", "structterm_1_1_cursor" ],
     [ "LineCharacter", "structterm_1_1_line_character.html", "structterm_1_1_line_character" ],
     [ "Message", "structterm_1_1_message.html", "structterm_1_1_message" ],
+    [ "print_table", "structterm_1_1print__table.html", "structterm_1_1print__table" ],
     [ "tree_printer", "classterm_1_1tree__printer.html", "classterm_1_1tree__printer" ],
     [ "colorpalette", "namespaceterm.html#adb32a8d8dab0bfaf1c487ffa077e1ca9", null ],
     [ "colors", "namespaceterm.html#aa5052eeffef9f98a67a93a61861c2e83", null ],
     [ "wcolorpalette", "namespaceterm.html#a04a163d0ae8116cb0b3e9ef990bf46a8", null ],
     [ "wcolors", "namespaceterm.html#a96886af7c95b9f2baf792221496b889c", null ],
+    [ "HorizontalAlignment", "namespaceterm.html#ab4559203cb018ffc278cd2062066280c", [
+      [ "Left", "namespaceterm.html#ab4559203cb018ffc278cd2062066280ca945d5e233cf7d6240f6b783b36a374ff", null ],
+      [ "Center", "namespaceterm.html#ab4559203cb018ffc278cd2062066280ca4f1f6016fc9f3f2353c0cc7c67b292bd", null ],
+      [ "Right", "namespaceterm.html#ab4559203cb018ffc278cd2062066280ca92b09c7c48c520c3c55e497875da437c", null ]
+    ] ],
     [ "CursorBackward", "namespaceterm.html#aabcdffc86eb9aabfa5dc77cbc1991bfd", null ],
     [ "CursorBlink", "namespaceterm.html#ac7909773ad45c3988ab6170f9222ce30", null ],
     [ "CursorDown", "namespaceterm.html#a53d5573052a9020861700d421b00e3a0", null ],
