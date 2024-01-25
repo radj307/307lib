@@ -1912,6 +1912,7 @@ namespace opt3 {
 		arg_container cont{};
 		cont.reserve(args.size());
 
+		// true when double-delimiter reached ("--")
 		bool endOfArgsReached{ false };
 
 		for (std::vector<std::string>::const_iterator it{ args.begin() }; it != args.end(); ++it) {

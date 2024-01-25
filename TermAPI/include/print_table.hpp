@@ -18,11 +18,11 @@
 namespace term {
 
 	enum class HorizontalAlignment : std::uint8_t {
-		/// @brief	Aligns to the left of the space.
+		/// @brief	Aligns to the left of the available space.
 		Left,
-		/// @brief	Aligns to the center of the space.
+		/// @brief	Aligns to the center of the available space.
 		Center,
-		/// @brief	Aligns to the right of the space.
+		/// @brief	Aligns to the right of the available space.
 		Right,
 	};
 
