@@ -17,6 +17,6 @@ var classenv_1_1_p_a_t_h =
     [ "rend", "classenv_1_1_p_a_t_h.html#a3cd6ab49167610c4aa90b2fdedf52e2f", null ],
     [ "resolve", "classenv_1_1_p_a_t_h.html#a143d27116e8d2f0b7c00d5220f3f5b49", null ],
     [ "resolve_split", "classenv_1_1_p_a_t_h.html#a98a64a97f0d1721db3c49e42900cfab2", null ],
-    [ "size", "classenv_1_1_p_a_t_h.html#aae5068cad65fa66d922b1990c0e15b52", null ],
+    [ "size", "classenv_1_1_p_a_t_h.html#a9229dc233b7bd027a50427e0fa28361e", null ],
     [ "paths", "classenv_1_1_p_a_t_h.html#ab5e6dda38b344b2392aaf0236275752b", null ]
 ];
