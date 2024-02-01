@@ -75,222 +75,222 @@ namespace ini {
 
 	#pragma region constructors
 		/// @brief	default ctor
-		CONSTEXPR ini_value() {}
+		WINCONSTEXPR ini_value() {}
 		/// @brief	string (move) ctor
-		CONSTEXPR ini_value(std::string&& s) : _value{ std::move(s) } {}
+		WINCONSTEXPR ini_value(std::string&& s) : _value{ std::move(s) } {}
 		/// @brief	string (copy) ctor
-		CONSTEXPR ini_value(std::string const& s) : _value{ s } {}
+		WINCONSTEXPR ini_value(std::string const& s) : _value{ s } {}
 		/// @brief	cstring ctor
-		CONSTEXPR ini_value(const char* s) : _value{ s } {}
+		WINCONSTEXPR ini_value(const char* s) : _value{ s } {}
 		/// @brief	Ctor that accepts a boolean to convert to a string representation.
-		CONSTEXPR ini_value(const bool& state) : _value{ str::frombool(state) } {}
+		WINCONSTEXPR ini_value(const bool& state) : _value{ str::frombool(state) } {}
 		/// @brief	convertible (move) ctor
 		template<std::convertible_to<std::string> T> requires (!std::same_as<T, std::string>)
-			CONSTEXPR ini_value(T&& v) : _value{ std::string{ std::forward<T>(v) } } {}
+			WINCONSTEXPR ini_value(T&& v) : _value{ std::string{ std::forward<T>(v) } } {}
 		/// @brief	convertible (copy) ctor
 		template<std::convertible_to<std::string> T> requires (!std::same_as<T, std::string>)
-			CONSTEXPR ini_value(const T& v) : _value{ std::string{ v } } {}
+			WINCONSTEXPR ini_value(const T& v) : _value{ std::string{ v } } {}
 		/**
 		 * @brief						Ctor that accepts types that aren't implicitly convertible to std::string.
 		 * @param v						A value that cannot be implicitly converted to std::string
 		 * @param converter_function	A function that converts from T to std::string
 		 */
 		template<typename T, var::function<std::string, T> TConverter> requires (!std::convertible_to<T, std::string>)
-			CONSTEXPR ini_value(T&& v, const TConverter& converter_function) : _value{ converter_function(std::forward<T>(v)) } {}
+			WINCONSTEXPR ini_value(T&& v, const TConverter& converter_function) : _value{ converter_function(std::forward<T>(v)) } {}
 		/**
 		 * @brief						Ctor that accepts types that aren't implicitly convertible to std::string.
 		 * @param v						A value that cannot be implicitly converted to std::string
 		 * @param converter_function	A function that converts from T to std::string
 		 */
 		template<typename T, var::function<std::string, T> TConverter> requires (!std::convertible_to<T, std::string>)
-			CONSTEXPR ini_value(const T& v, const TConverter& converter_function) : _value{ converter_function(v) } {}
+			WINCONSTEXPR ini_value(const T& v, const TConverter& converter_function) : _value{ converter_function(v) } {}
 	#pragma endregion constructors
 
 	#pragma region string_methods
 		// Manually forwarded from: https://en.cppreference.com/w/cpp/string/basic_string
 
-		CONSTEXPR this_t& assign(size_type count, value_type ch) { _value.assign(count, ch); return *this; }
-		CONSTEXPR this_t& assign(const this_t& str) { _value.assign(str._value); return *this; }
-		CONSTEXPR this_t& assign(const std::string& str) { _value.assign(str); return *this; }
-		CONSTEXPR this_t& assign(const this_t& str, size_type pos, size_type count = std::string::npos) { _value.assign(str._value, pos, count); return *this; }
-		CONSTEXPR this_t& assign(const std::string& str, size_type pos, size_type count = std::string::npos) { _value.assign(str, pos, count); return *this; }
-		CONSTEXPR this_t& assign(this_t&& str) noexcept { _value.assign(std::move(str)._value); return *this; }
-		CONSTEXPR this_t& assign(std::string&& str) noexcept { _value.assign(std::move(str)); return *this; }
-		template<class StringViewLike> CONSTEXPR this_t& assign(const StringViewLike& t, size_type pos, size_type count = std::string::npos) { _value.assign(t, pos, count); return *this; }
+		WINCONSTEXPR this_t& assign(size_type count, value_type ch) { _value.assign(count, ch); return *this; }
+		WINCONSTEXPR this_t& assign(const this_t& str) { _value.assign(str._value); return *this; }
+		WINCONSTEXPR this_t& assign(const std::string& str) { _value.assign(str); return *this; }
+		WINCONSTEXPR this_t& assign(const this_t& str, size_type pos, size_type count = std::string::npos) { _value.assign(str._value, pos, count); return *this; }
+		WINCONSTEXPR this_t& assign(const std::string& str, size_type pos, size_type count = std::string::npos) { _value.assign(str, pos, count); return *this; }
+		WINCONSTEXPR this_t& assign(this_t&& str) noexcept { _value.assign(std::move(str)._value); return *this; }
+		WINCONSTEXPR this_t& assign(std::string&& str) noexcept { _value.assign(std::move(str)); return *this; }
+		template<class StringViewLike> WINCONSTEXPR this_t& assign(const StringViewLike& t, size_type pos, size_type count = std::string::npos) { _value.assign(t, pos, count); return *this; }
 
-		CONSTEXPR allocator_type get_allocator() const noexcept { return _value.get_allocator(); }
+		WINCONSTEXPR allocator_type get_allocator() const noexcept { return _value.get_allocator(); }
 
-		CONSTEXPR reference at(const size_type& pos) { return _value.at(pos); }
-		CONSTEXPR const_reference at(const size_type& pos) const { return _value.at(pos); }
+		WINCONSTEXPR reference at(const size_type& pos) { return _value.at(pos); }
+		WINCONSTEXPR const_reference at(const size_type& pos) const { return _value.at(pos); }
 
-		CONSTEXPR reference operator[](const size_t& idx) noexcept { return _value[idx]; }
-		CONSTEXPR const_reference operator[](const size_t& idx) const noexcept { return _value[idx]; }
+		WINCONSTEXPR reference operator[](const size_t& idx) noexcept { return _value[idx]; }
+		WINCONSTEXPR const_reference operator[](const size_t& idx) const noexcept { return _value[idx]; }
 
-		CONSTEXPR reference front() { return _value.front(); }
-		CONSTEXPR const_reference front() const { return _value.front(); }
+		WINCONSTEXPR reference front() { return _value.front(); }
+		WINCONSTEXPR const_reference front() const { return _value.front(); }
 
-		CONSTEXPR reference back() { return _value.back(); }
-		CONSTEXPR const_reference back() const { return _value.back(); }
+		WINCONSTEXPR reference back() { return _value.back(); }
+		WINCONSTEXPR const_reference back() const { return _value.back(); }
 
-		CONSTEXPR pointer data() noexcept { return _value.data(); }
-		CONSTEXPR const_pointer data() const noexcept { return _value.data(); }
+		WINCONSTEXPR pointer data() noexcept { return _value.data(); }
+		WINCONSTEXPR const_pointer data() const noexcept { return _value.data(); }
 
-		CONSTEXPR const_pointer c_str() const noexcept { return _value.c_str(); }
+		WINCONSTEXPR const_pointer c_str() const noexcept { return _value.c_str(); }
 
-		CONSTEXPR operator std::string_view() const noexcept { return _value.operator std::basic_string_view<char, std::char_traits<char>>(); }
+		WINCONSTEXPR operator std::string_view() const noexcept { return _value.operator std::basic_string_view<char, std::char_traits<char>>(); }
 
-		CONSTEXPR iterator begin() noexcept { return _value.begin(); }
-		CONSTEXPR const_iterator begin() const noexcept { return _value.begin(); }
-		CONSTEXPR const_iterator cbegin() const noexcept { return _value.cbegin(); }
+		WINCONSTEXPR iterator begin() noexcept { return _value.begin(); }
+		WINCONSTEXPR const_iterator begin() const noexcept { return _value.begin(); }
+		WINCONSTEXPR const_iterator cbegin() const noexcept { return _value.cbegin(); }
 
-		CONSTEXPR iterator end() noexcept { return _value.end(); }
-		CONSTEXPR const_iterator end() const noexcept { return _value.end(); }
-		CONSTEXPR const_iterator cend() const noexcept { return _value.cend(); }
+		WINCONSTEXPR iterator end() noexcept { return _value.end(); }
+		WINCONSTEXPR const_iterator end() const noexcept { return _value.end(); }
+		WINCONSTEXPR const_iterator cend() const noexcept { return _value.cend(); }
 
-		CONSTEXPR reverse_iterator rbegin() noexcept { return _value.rbegin(); }
-		CONSTEXPR const_reverse_iterator rbegin() const noexcept { return _value.rbegin(); }
-		CONSTEXPR const_reverse_iterator crbegin() const noexcept { return _value.crbegin(); }
+		WINCONSTEXPR reverse_iterator rbegin() noexcept { return _value.rbegin(); }
+		WINCONSTEXPR const_reverse_iterator rbegin() const noexcept { return _value.rbegin(); }
+		WINCONSTEXPR const_reverse_iterator crbegin() const noexcept { return _value.crbegin(); }
 
-		CONSTEXPR reverse_iterator rend() noexcept { return _value.rend(); }
-		CONSTEXPR const_reverse_iterator rend() const noexcept { return _value.rend(); }
-		CONSTEXPR const_reverse_iterator crend() const noexcept { return _value.crend(); }
+		WINCONSTEXPR reverse_iterator rend() noexcept { return _value.rend(); }
+		WINCONSTEXPR const_reverse_iterator rend() const noexcept { return _value.rend(); }
+		WINCONSTEXPR const_reverse_iterator crend() const noexcept { return _value.crend(); }
 
-		[[nodiscard]] CONSTEXPR bool empty() const noexcept { return _value.empty(); }
+		[[nodiscard]] WINCONSTEXPR bool empty() const noexcept { return _value.empty(); }
 
-		CONSTEXPR size_type size() const noexcept { return _value.size(); }
-		CONSTEXPR size_type length() const noexcept { return _value.length(); }
+		WINCONSTEXPR size_type size() const noexcept { return _value.size(); }
+		WINCONSTEXPR size_type length() const noexcept { return _value.length(); }
 
-		CONSTEXPR size_type max_size() const noexcept { return _value.max_size(); }
+		WINCONSTEXPR size_type max_size() const noexcept { return _value.max_size(); }
 
-		CONSTEXPR void reserve(const size_type& newCapacity) { _value.reserve(newCapacity); }
+		WINCONSTEXPR void reserve(const size_type& newCapacity) { _value.reserve(newCapacity); }
 
-		CONSTEXPR size_type capacity() const noexcept { return _value.capacity(); }
+		WINCONSTEXPR size_type capacity() const noexcept { return _value.capacity(); }
 
-		CONSTEXPR void shrink_to_fit() { _value.shrink_to_fit(); }
+		WINCONSTEXPR void shrink_to_fit() { _value.shrink_to_fit(); }
 
-		CONSTEXPR void clear() noexcept { _value.clear(); }
+		WINCONSTEXPR void clear() noexcept { _value.clear(); }
 
-		CONSTEXPR this_t& insert(const size_type& index, const size_type& count, const value_type& c) { _value.insert(index, count, c); return *this; }
-		CONSTEXPR this_t& insert(const size_type& index, const value_type* s) { _value.insert(index, s); return *this; }
-		CONSTEXPR this_t& insert(const size_type& index, const value_type* s, const size_type& count) { _value.insert(index, s, count); return *this; }
-		CONSTEXPR this_t& insert(const size_type& index, const std::string& str) { _value.insert(index, str); return *this; }
-		CONSTEXPR this_t& insert(const size_type& index, const std::string& str, const size_type& index_str, const size_type& count = std::string::npos) { _value.insert(index, str, index_str, count); return *this; }
-		CONSTEXPR iterator insert(const_iterator pos, const value_type& ch) { return _value.insert(pos, ch); }
-		CONSTEXPR iterator insert(const_iterator pos, const size_type& count, const value_type& ch) { return _value.insert(pos, count, ch); }
-		template<class InputIt> CONSTEXPR iterator insert(const_iterator pos, InputIt first, InputIt last) { return _value.insert(pos, first, last); }
-		CONSTEXPR iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) { return _value.insert(pos, ilist); }
-		template<class StringViewLike> CONSTEXPR this_t& insert(const size_type& pos, const StringViewLike& t) { _value.insert(pos, t); return *this; }
-		template<class StringViewLike> CONSTEXPR this_t& insert(const size_type& index, const StringViewLike& t, const size_type& index_str, const size_type& count = std::string::npos) { _value.insert(index, t, index_str, count); return *this; }
+		WINCONSTEXPR this_t& insert(const size_type& index, const size_type& count, const value_type& c) { _value.insert(index, count, c); return *this; }
+		WINCONSTEXPR this_t& insert(const size_type& index, const value_type* s) { _value.insert(index, s); return *this; }
+		WINCONSTEXPR this_t& insert(const size_type& index, const value_type* s, const size_type& count) { _value.insert(index, s, count); return *this; }
+		WINCONSTEXPR this_t& insert(const size_type& index, const std::string& str) { _value.insert(index, str); return *this; }
+		WINCONSTEXPR this_t& insert(const size_type& index, const std::string& str, const size_type& index_str, const size_type& count = std::string::npos) { _value.insert(index, str, index_str, count); return *this; }
+		WINCONSTEXPR iterator insert(const_iterator pos, const value_type& ch) { return _value.insert(pos, ch); }
+		WINCONSTEXPR iterator insert(const_iterator pos, const size_type& count, const value_type& ch) { return _value.insert(pos, count, ch); }
+		template<class InputIt> WINCONSTEXPR iterator insert(const_iterator pos, InputIt first, InputIt last) { return _value.insert(pos, first, last); }
+		WINCONSTEXPR iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) { return _value.insert(pos, ilist); }
+		template<class StringViewLike> WINCONSTEXPR this_t& insert(const size_type& pos, const StringViewLike& t) { _value.insert(pos, t); return *this; }
+		template<class StringViewLike> WINCONSTEXPR this_t& insert(const size_type& index, const StringViewLike& t, const size_type& index_str, const size_type& count = std::string::npos) { _value.insert(index, t, index_str, count); return *this; }
 
-		CONSTEXPR this_t& erase(const size_type& index = 0, const size_type& count = std::string::npos) { _value.erase(index, count); return *this; }
-		CONSTEXPR iterator erase(const_iterator position) { return _value.erase(position); }
-		CONSTEXPR iterator erase(const_iterator first, const_iterator last) { return _value.erase(first, last); }
+		WINCONSTEXPR this_t& erase(const size_type& index = 0, const size_type& count = std::string::npos) { _value.erase(index, count); return *this; }
+		WINCONSTEXPR iterator erase(const_iterator position) { return _value.erase(position); }
+		WINCONSTEXPR iterator erase(const_iterator first, const_iterator last) { return _value.erase(first, last); }
 
-		CONSTEXPR void push_back(const value_type& ch) { _value.push_back(ch); }
-		CONSTEXPR void pop_back() { _value.pop_back(); }
+		WINCONSTEXPR void push_back(const value_type& ch) { _value.push_back(ch); }
+		WINCONSTEXPR void pop_back() { _value.pop_back(); }
 
-		CONSTEXPR this_t& append(size_type count, value_type ch) { _value.append(count, ch); return *this; }
-		CONSTEXPR this_t& append(const this_t& str) { _value.append(str); return *this; }
-		CONSTEXPR this_t& append(const this_t& str, size_type pos, size_type count = std::string::npos) { _value.append(str, pos, count); return *this; }
-		CONSTEXPR this_t& append(const value_type* s, size_type count) { _value.append(s, count); return *this; }
-		CONSTEXPR this_t& append(const value_type* s) { _value.append(s); return *this; }
-		template<class InputIt> CONSTEXPR this_t& append(InputIt first, InputIt last) { _value.append(first, last); return *this; }
-		CONSTEXPR this_t& append(std::initializer_list<value_type> ilist) { _value.append(ilist); return *this; }
-		template<class StringViewLike> CONSTEXPR this_t& append(const StringViewLike& t) { _value.append(t); return *this; }
-		template<class StringViewLike> CONSTEXPR this_t& append(const StringViewLike& t, size_type pos, size_type count = std::string::npos) { _value.append(t, pos, count); return *this; }
+		WINCONSTEXPR this_t& append(size_type count, value_type ch) { _value.append(count, ch); return *this; }
+		WINCONSTEXPR this_t& append(const this_t& str) { _value.append(str); return *this; }
+		WINCONSTEXPR this_t& append(const this_t& str, size_type pos, size_type count = std::string::npos) { _value.append(str, pos, count); return *this; }
+		WINCONSTEXPR this_t& append(const value_type* s, size_type count) { _value.append(s, count); return *this; }
+		WINCONSTEXPR this_t& append(const value_type* s) { _value.append(s); return *this; }
+		template<class InputIt> WINCONSTEXPR this_t& append(InputIt first, InputIt last) { _value.append(first, last); return *this; }
+		WINCONSTEXPR this_t& append(std::initializer_list<value_type> ilist) { _value.append(ilist); return *this; }
+		template<class StringViewLike> WINCONSTEXPR this_t& append(const StringViewLike& t) { _value.append(t); return *this; }
+		template<class StringViewLike> WINCONSTEXPR this_t& append(const StringViewLike& t, size_type pos, size_type count = std::string::npos) { _value.append(t, pos, count); return *this; }
 
-		CONSTEXPR this_t& operator+=(const std::string& str) { _value += str; return *this; }
-		CONSTEXPR this_t& operator+=(value_type ch) { _value += ch; return *this; }
-		CONSTEXPR this_t& operator+=(const value_type* s) { _value += s; return *this; }
-		CONSTEXPR this_t& operator+=(std::initializer_list<value_type> ilist) { _value += ilist; return *this; }
-		template<class StringViewLike> CONSTEXPR this_t& operator+=(const StringViewLike& t) { _value += t; return *this; }
+		WINCONSTEXPR this_t& operator+=(const std::string& str) { _value += str; return *this; }
+		WINCONSTEXPR this_t& operator+=(value_type ch) { _value += ch; return *this; }
+		WINCONSTEXPR this_t& operator+=(const value_type* s) { _value += s; return *this; }
+		WINCONSTEXPR this_t& operator+=(std::initializer_list<value_type> ilist) { _value += ilist; return *this; }
+		template<class StringViewLike> WINCONSTEXPR this_t& operator+=(const StringViewLike& t) { _value += t; return *this; }
 
-		CONSTEXPR int compare(const this_t& str) const noexcept { return _value.compare(str._value); }
-		CONSTEXPR int compare(const std::string& str) const noexcept { return _value.compare(str); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const this_t& str) const { return _value.compare(pos1, count1, str._value); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const std::string& str) const { return _value.compare(pos1, count1, str); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const this_t& str, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, str._value, pos2, count2); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const std::string& str, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, str, pos2, count2); }
-		CONSTEXPR int compare(const value_type* s) const { return _value.compare(s); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const value_type* s) const { return _value.compare(pos1, count1, s); }
-		CONSTEXPR int compare(size_type pos1, size_type count1, const value_type* s, size_type count2) const { return _value.compare(pos1, count1, s, count2); }
-		template<class StringViewLike> CONSTEXPR int compare(const StringViewLike& t) const noexcept { return _value.compare(t); }
-		template<class StringViewLike> CONSTEXPR int compare(size_type pos1, size_type count1, const StringViewLike& t) const { return _value.compare(pos1, count1, t); }
-		template<class StringViewLike> CONSTEXPR int compare(size_type pos1, size_type count1, const StringViewLike& t, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, t, pos2, count2); }
+		WINCONSTEXPR int compare(const this_t& str) const noexcept { return _value.compare(str._value); }
+		WINCONSTEXPR int compare(const std::string& str) const noexcept { return _value.compare(str); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const this_t& str) const { return _value.compare(pos1, count1, str._value); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const std::string& str) const { return _value.compare(pos1, count1, str); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const this_t& str, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, str._value, pos2, count2); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const std::string& str, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, str, pos2, count2); }
+		WINCONSTEXPR int compare(const value_type* s) const { return _value.compare(s); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const value_type* s) const { return _value.compare(pos1, count1, s); }
+		WINCONSTEXPR int compare(size_type pos1, size_type count1, const value_type* s, size_type count2) const { return _value.compare(pos1, count1, s, count2); }
+		template<class StringViewLike> WINCONSTEXPR int compare(const StringViewLike& t) const noexcept { return _value.compare(t); }
+		template<class StringViewLike> WINCONSTEXPR int compare(size_type pos1, size_type count1, const StringViewLike& t) const { return _value.compare(pos1, count1, t); }
+		template<class StringViewLike> WINCONSTEXPR int compare(size_type pos1, size_type count1, const StringViewLike& t, size_type pos2, size_type count2 = std::string::npos) const { return _value.compare(pos1, count1, t, pos2, count2); }
 
-		CONSTEXPR bool starts_with(std::string_view sv) const noexcept { return _value.starts_with(sv); }
-		CONSTEXPR bool starts_with(value_type c) const noexcept { return _value.starts_with(c); }
-		CONSTEXPR bool starts_with(const value_type* s) const { return _value.starts_with(s); }
+		WINCONSTEXPR bool starts_with(std::string_view sv) const noexcept { return _value.starts_with(sv); }
+		WINCONSTEXPR bool starts_with(value_type c) const noexcept { return _value.starts_with(c); }
+		WINCONSTEXPR bool starts_with(const value_type* s) const { return _value.starts_with(s); }
 
-		CONSTEXPR bool ends_with(std::string_view sv) const noexcept { return _value.ends_with(sv); }
-		CONSTEXPR bool ends_with(value_type c) const noexcept { return _value.ends_with(c); }
-		CONSTEXPR bool ends_with(const value_type* s) const { return _value.ends_with(s); }
+		WINCONSTEXPR bool ends_with(std::string_view sv) const noexcept { return _value.ends_with(sv); }
+		WINCONSTEXPR bool ends_with(value_type c) const noexcept { return _value.ends_with(c); }
+		WINCONSTEXPR bool ends_with(const value_type* s) const { return _value.ends_with(s); }
 
 	#if LANG_CPP >= 23
-		CONSTEXPR bool contains(std::string_view sv) const noexcept { return _value.contains(sv); }
-		CONSTEXPR bool contains(value_type c) const noexcept { return _value.contains(c); }
-		CONSTEXPR bool contains(const value_type* s) const { return _value.contains(s); }
+		WINCONSTEXPR bool contains(std::string_view sv) const noexcept { return _value.contains(sv); }
+		WINCONSTEXPR bool contains(value_type c) const noexcept { return _value.contains(c); }
+		WINCONSTEXPR bool contains(const value_type* s) const { return _value.contains(s); }
 	#endif
 
 		//< TODO: std::string::replace
 
-		CONSTEXPR this_t substr(size_type pos = 0, size_type count = std::string::npos) const { return{ _value.substr(pos, count) }; }
+		WINCONSTEXPR this_t substr(size_type pos = 0, size_type count = std::string::npos) const { return{ _value.substr(pos, count) }; }
 
-		CONSTEXPR size_type copy(value_type* dest, size_type count, size_type pos = 0) const { return _value.copy(dest, count, pos); }
+		WINCONSTEXPR size_type copy(value_type* dest, size_type count, size_type pos = 0) const { return _value.copy(dest, count, pos); }
 
-		CONSTEXPR void resize(const size_type& count) { _value.resize(count); }
-		CONSTEXPR void resize(const size_type& count, value_type ch) { _value.resize(count, ch); }
+		WINCONSTEXPR void resize(const size_type& count) { _value.resize(count); }
+		WINCONSTEXPR void resize(const size_type& count, value_type ch) { _value.resize(count, ch); }
 
 	#if LANG_CPP >= 23
-		template<class Operation> CONSTEXPR void resize_and_overwrite(size_type count, Operation op) { _value.resize_and_overwrite(count, op); }
+		template<class Operation> WINCONSTEXPR void resize_and_overwrite(size_type count, Operation op) { _value.resize_and_overwrite(count, op); }
 	#endif
 
-		CONSTEXPR void swap(std::string& other) noexcept { _value.swap(other); }
+		WINCONSTEXPR void swap(std::string& other) noexcept { _value.swap(other); }
 
-		CONSTEXPR size_type find(const std::string str, const size_type pos = 0) const noexcept { return _value.find(str, pos); }
-		CONSTEXPR size_type find(const value_type* s, const size_type pos, const size_type count) const { return _value.find(s, pos, count); }
-		CONSTEXPR size_type find(const value_type* s, const size_type pos = 0) const { return _value.find(s, pos); }
-		CONSTEXPR size_type find(const value_type ch, const size_type pos = 0) const noexcept { return _value.find(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type find(const StringViewLike& t, size_type pos = 0) const noexcept { return _value.find(t, pos); }
+		WINCONSTEXPR size_type find(const std::string str, const size_type pos = 0) const noexcept { return _value.find(str, pos); }
+		WINCONSTEXPR size_type find(const value_type* s, const size_type pos, const size_type count) const { return _value.find(s, pos, count); }
+		WINCONSTEXPR size_type find(const value_type* s, const size_type pos = 0) const { return _value.find(s, pos); }
+		WINCONSTEXPR size_type find(const value_type ch, const size_type pos = 0) const noexcept { return _value.find(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type find(const StringViewLike& t, size_type pos = 0) const noexcept { return _value.find(t, pos); }
 
-		CONSTEXPR size_type rfind(const std::string str, const size_type pos = 0) const noexcept { return _value.rfind(str, pos); }
-		CONSTEXPR size_type rfind(const value_type* s, const size_type pos, const size_type count) const { return _value.rfind(s, pos, count); }
-		CONSTEXPR size_type rfind(const value_type* s, const size_type pos = 0) const { return _value.rfind(s, pos); }
-		CONSTEXPR size_type rfind(const value_type ch, const size_type pos = 0) const noexcept { return _value.rfind(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type rfind(const StringViewLike& t, size_type pos = 0) const noexcept { return _value.rfind(t, pos); }
+		WINCONSTEXPR size_type rfind(const std::string str, const size_type pos = 0) const noexcept { return _value.rfind(str, pos); }
+		WINCONSTEXPR size_type rfind(const value_type* s, const size_type pos, const size_type count) const { return _value.rfind(s, pos, count); }
+		WINCONSTEXPR size_type rfind(const value_type* s, const size_type pos = 0) const { return _value.rfind(s, pos); }
+		WINCONSTEXPR size_type rfind(const value_type ch, const size_type pos = 0) const noexcept { return _value.rfind(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type rfind(const StringViewLike& t, size_type pos = 0) const noexcept { return _value.rfind(t, pos); }
 
-		CONSTEXPR size_type find_first_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_first_of(str, pos); }
-		CONSTEXPR size_type find_first_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_first_of(s, pos, count); }
-		CONSTEXPR size_type find_first_of(const value_type* s, const size_type pos = 0) const { return _value.find_first_of(s, pos); }
-		CONSTEXPR size_type find_first_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_first_of(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type find_first_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_of(t, pos); }
+		WINCONSTEXPR size_type find_first_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_first_of(str, pos); }
+		WINCONSTEXPR size_type find_first_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_first_of(s, pos, count); }
+		WINCONSTEXPR size_type find_first_of(const value_type* s, const size_type pos = 0) const { return _value.find_first_of(s, pos); }
+		WINCONSTEXPR size_type find_first_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_first_of(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type find_first_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_of(t, pos); }
 
-		CONSTEXPR size_type find_first_not_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_first_not_of(str, pos); }
-		CONSTEXPR size_type find_first_not_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_first_not_of(s, pos, count); }
-		CONSTEXPR size_type find_first_not_of(const value_type* s, const size_type pos = 0) const { return _value.find_first_not_of(s, pos); }
-		CONSTEXPR size_type find_first_not_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_first_not_of(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type find_first_not_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_not_of(t, pos); }
+		WINCONSTEXPR size_type find_first_not_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_first_not_of(str, pos); }
+		WINCONSTEXPR size_type find_first_not_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_first_not_of(s, pos, count); }
+		WINCONSTEXPR size_type find_first_not_of(const value_type* s, const size_type pos = 0) const { return _value.find_first_not_of(s, pos); }
+		WINCONSTEXPR size_type find_first_not_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_first_not_of(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type find_first_not_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_not_of(t, pos); }
 
-		CONSTEXPR size_type find_last_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_last_of(str, pos); }
-		CONSTEXPR size_type find_last_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_last_of(s, pos, count); }
-		CONSTEXPR size_type find_last_of(const value_type* s, const size_type pos = 0) const { return _value.find_last_of(s, pos); }
-		CONSTEXPR size_type find_last_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_last_of(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type find_last_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_of(t, pos); }
+		WINCONSTEXPR size_type find_last_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_last_of(str, pos); }
+		WINCONSTEXPR size_type find_last_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_last_of(s, pos, count); }
+		WINCONSTEXPR size_type find_last_of(const value_type* s, const size_type pos = 0) const { return _value.find_last_of(s, pos); }
+		WINCONSTEXPR size_type find_last_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_last_of(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type find_last_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_first_of(t, pos); }
 
-		CONSTEXPR size_type find_last_not_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_last_not_of(str, pos); }
-		CONSTEXPR size_type find_last_not_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_last_not_of(s, pos, count); }
-		CONSTEXPR size_type find_last_not_of(const value_type* s, const size_type pos = 0) const { return _value.find_last_not_of(s, pos); }
-		CONSTEXPR size_type find_last_not_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_last_not_of(ch, pos); }
-		template<class StringViewLike> CONSTEXPR size_type find_last_not_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_last_not_of(t, pos); }
+		WINCONSTEXPR size_type find_last_not_of(const std::string& str, const size_type pos = 0) const noexcept { return _value.find_last_not_of(str, pos); }
+		WINCONSTEXPR size_type find_last_not_of(const value_type* s, const size_type pos, const size_type count) const { return _value.find_last_not_of(s, pos, count); }
+		WINCONSTEXPR size_type find_last_not_of(const value_type* s, const size_type pos = 0) const { return _value.find_last_not_of(s, pos); }
+		WINCONSTEXPR size_type find_last_not_of(const value_type ch, const size_type pos = 0) const noexcept { return _value.find_last_not_of(ch, pos); }
+		template<class StringViewLike> WINCONSTEXPR size_type find_last_not_of(const StringViewLike& t, const size_type pos = 0) const noexcept { return _value.find_last_not_of(t, pos); }
 	#pragma endregion string_methods
 
 	#pragma region cast_operators
-		CONSTEXPR operator std::string& () noexcept { return _value; }
-		CONSTEXPR operator std::string() const noexcept { return _value; }
+		WINCONSTEXPR operator std::string& () noexcept { return _value; }
+		WINCONSTEXPR operator std::string() const noexcept { return _value; }
 		/// @brief	Bool casting operator.
-		CONSTEXPR explicit operator bool() const noexcept { return str::tobool(_value).value_or(false); }
+		WINCONSTEXPR explicit operator bool() const noexcept { return str::tobool(_value).value_or(false); }
 		/// @brief	Numeric casting operator.
-		template<var::numeric T> CONSTEXPR explicit operator T() const noexcept { return str::tonumber<T>(_value); }
+		template<var::numeric T> WINCONSTEXPR explicit operator T() const noexcept { return str::tonumber<T>(_value); }
 	#pragma endregion cast_operators
 
 	#pragma region set
@@ -350,31 +350,31 @@ namespace ini {
 	#pragma endregion operator=
 
 	#pragma region operator<=>
-		CONSTEXPR auto operator<=>(const ini_value& o) const = default;
-		CONSTEXPR auto operator<=>(const std::string& s) const { return _value <=> s; }
+		WINCONSTEXPR auto operator<=>(const ini_value& o) const = default;
+		WINCONSTEXPR auto operator<=>(const std::string& s) const { return _value <=> s; }
 	#pragma endregion operator<=>
 
 	#pragma region cast
 		template<std::same_as<std::string> T>
-		CONSTEXPR T cast() const noexcept { return _value; }
+		WINCONSTEXPR T cast() const noexcept { return _value; }
 		template<std::integral T> requires std::convertible_to<long long, T> || std::convertible_to<unsigned long long, T>
-		CONSTEXPR T cast(const uint8_t base = 10) const noexcept(false)
+		WINCONSTEXPR T cast(const uint8_t base = 10) const noexcept(false)
 		{
 			if (const auto& n{ str::tonumber<T>(_value, base) }; n.has_value())
 				return n.value();
 			else throw ex::make_custom_exception<ini_cast_exception>("Value string '", _value, "' does not specify a valid integral number!");
 		}
 		template<std::floating_point T> requires std::convertible_to<long double, T>
-		CONSTEXPR T cast(const std::chars_format fmt = std::chars_format::general) const noexcept(false)
+		WINCONSTEXPR T cast(const std::chars_format fmt = std::chars_format::general) const noexcept(false)
 		{
 			if (const auto& n{ str::tonumber<T>(_value, fmt) }; n.has_value())
 				return n.value();
 			else throw ex::make_custom_exception<ini_cast_exception>("Value string '", _value, "' does not specify a valid floating-point number!");
 		}
 		template<var::convertible_from<std::string> T>
-		CONSTEXPR T cast() const noexcept { return T{ _value }; }
+		WINCONSTEXPR T cast() const noexcept { return T{ _value }; }
 		template<typename T, var::function<T, std::string> TConverter>
-		CONSTEXPR T cast(const TConverter& converter_function) const noexcept(false)
+		WINCONSTEXPR T cast(const TConverter& converter_function) const noexcept(false)
 		{
 			return converter_function(_value);
 		}
@@ -382,9 +382,9 @@ namespace ini {
 
 	#pragma region as
 		template<std::same_as<std::string> T>
-		CONSTEXPR std::optional<T> as() const noexcept { return _value; }
+		WINCONSTEXPR std::optional<T> as() const noexcept { return _value; }
 		template<std::integral T>
-		CONSTEXPR std::optional<T> as(const uint8_t base = 10) const noexcept
+		WINCONSTEXPR std::optional<T> as(const uint8_t base = 10) const noexcept
 		{
 			if ((base < 2 || base > 32) && str::isnumber<T>(_value, base)) {
 				if constexpr (std::unsigned_integral<T>)
@@ -394,16 +394,16 @@ namespace ini {
 			return std::nullopt;
 		}
 		template<std::floating_point T>
-		CONSTEXPR std::optional<T> as(const uint8_t base = 10) const noexcept
+		WINCONSTEXPR std::optional<T> as(const uint8_t base = 10) const noexcept
 		{
 			if ((base < 2 || base > 32) && str::isnumber<T>(_value, base))
 				return $c(T, std::stold(_value));
 			return std::nullopt;
 		}
 		template<var::convertible_from<std::string> T> requires (!std::same_as<std::string, T>)
-			CONSTEXPR std::optional<T> as() const noexcept { return T{ _value }; }
+			WINCONSTEXPR std::optional<T> as() const noexcept { return T{ _value }; }
 		template<typename T, var::function<T, std::string> TConverter>
-		CONSTEXPR std::optional<T> as(const TConverter& converter_function) const noexcept { return converter_function(_value); }
+		WINCONSTEXPR std::optional<T> as(const TConverter& converter_function) const noexcept { return converter_function(_value); }
 	#pragma endregion as
 
 	#pragma region operators<<&>>

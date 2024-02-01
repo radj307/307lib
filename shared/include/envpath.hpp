@@ -5,6 +5,7 @@
  */
 #pragma once
 // 307lib::shared
+#include <sysarch.h>
 #include <env.hpp>		//< for env::getvar
 
 // STL
@@ -85,7 +86,7 @@ namespace env {
 		reverse_iterator crbegin() const noexcept { return paths.crbegin(); }
 		reverse_iterator crend() const noexcept { return paths.crend(); }
 
-		constexpr size_t size() const noexcept { return paths.size(); }
+		WINCONSTEXPR size_t size() const noexcept { return paths.size(); }
 		std::filesystem::path at(size_t const index) const noexcept { return paths.at(index); }
 
 	#pragma endregion std::vector Methods
