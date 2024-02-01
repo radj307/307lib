@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: env::PATH Struct Reference</title>
+<title>307Lib: env::PATH Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,147 +86,100 @@ $(document).ready(function(){initNavTree('classenv_1_1_p_a_t_h.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classenv_1_1_p_a_t_h-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">env::PATH Struct Reference</div>  </div>
+<div class="title">env::PATH Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Object used to interact with the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. <br  />
- Also contains useful filesystem path resolution methods using various methods.  
+<p>Helper class for interacting with the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Helper class for interacting with the PATH environment variable.">PATH</a> environment variable.  
  <a href="classenv_1_1_p_a_t_h.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for env::PATH:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classenv_1_1_p_a_t_h__coll__graph.svg" width="214" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classenv_1_1_p_a_t_h__coll__graph.svg" width="214" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aba1f1940b0edb33dc865b57c0af418f7"><td class="memItemLeft" align="right" valign="top"><a id="aba1f1940b0edb33dc865b57c0af418f7"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> = typename std::vector&lt; std::filesystem::path &gt;::const_iterator</td></tr>
+<tr class="separator:aba1f1940b0edb33dc865b57c0af418f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5243efd40559d8acc9ccc8c89b1ba2af"><td class="memItemLeft" align="right" valign="top"><a id="a5243efd40559d8acc9ccc8c89b1ba2af"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>reverse_iterator</b> = typename std::reverse_iterator&lt; const_iterator &gt;</td></tr>
+<tr class="separator:a5243efd40559d8acc9ccc8c89b1ba2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acae6facf56f901d1834514c8091364ca"><td class="memItemLeft" align="right" valign="top"><a id="acae6facf56f901d1834514c8091364ca"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#acae6facf56f901d1834514c8091364ca">PATH</a> () noexcept(false)</td></tr>
-<tr class="memdesc:acae6facf56f901d1834514c8091364ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
-<tr class="separator:acae6facf56f901d1834514c8091364ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a838c6027ca5fdcd4ab47ec74d87e3c15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a838c6027ca5fdcd4ab47ec74d87e3c15">PATH</a> (std::filesystem::path arg0) noexcept(false)</td></tr>
-<tr class="memdesc:a838c6027ca5fdcd4ab47ec74d87e3c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that accepts argv[0] to use in filepath resolution operations.  <a href="classenv_1_1_p_a_t_h.html#a838c6027ca5fdcd4ab47ec74d87e3c15">More...</a><br /></td></tr>
-<tr class="separator:a838c6027ca5fdcd4ab47ec74d87e3c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af15da7ddc8328ef1e3835f23cb900f52"><td class="memItemLeft" align="right" valign="top"><a id="af15da7ddc8328ef1e3835f23cb900f52"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>at</b> (auto &amp;&amp;pos) const</td></tr>
-<tr class="separator:af15da7ddc8328ef1e3835f23cb900f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affd14389ce2e70d769d45a8aa830a391"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#affd14389ce2e70d769d45a8aa830a391">begin</a> () const</td></tr>
-<tr class="separator:affd14389ce2e70d769d45a8aa830a391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d95681bf8544a780c3e211ac13191ac"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a4d95681bf8544a780c3e211ac13191ac">contains</a> (const std::filesystem::path &amp;path) const</td></tr>
-<tr class="memdesc:a4d95681bf8544a780c3e211ac13191ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> variable contains a given filepath.  <a href="classenv_1_1_p_a_t_h.html#a4d95681bf8544a780c3e211ac13191ac">More...</a><br /></td></tr>
-<tr class="separator:a4d95681bf8544a780c3e211ac13191ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ef9c0004be5030e5bcd5bf60067322"><td class="memItemLeft" align="right" valign="top"><a id="a88ef9c0004be5030e5bcd5bf60067322"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const</td></tr>
-<tr class="separator:a88ef9c0004be5030e5bcd5bf60067322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda69709f47773593aa96f2a8964a7e3"><td class="memItemLeft" align="right" valign="top"><a id="abda69709f47773593aa96f2a8964a7e3"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
-<tr class="separator:abda69709f47773593aa96f2a8964a7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c7a654d3355f808683c3b2f21553f4c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a3c7a654d3355f808683c3b2f21553f4c">exists</a> (auto &amp;&amp;path) const</td></tr>
-<tr class="memdesc:a3c7a654d3355f808683c3b2f21553f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> variable contains a given filepath. This function uses perfect-forwarding &amp; is the equivalent of calling <a class="el" href="classenv_1_1_p_a_t_h.html#a4d95681bf8544a780c3e211ac13191ac" title="Check if the PATH variable contains a given filepath.">contains()</a>.  <a href="classenv_1_1_p_a_t_h.html#a3c7a654d3355f808683c3b2f21553f4c">More...</a><br /></td></tr>
-<tr class="separator:a3c7a654d3355f808683c3b2f21553f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acebcb576ff203225f0f6d08a6785e4f8"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#acebcb576ff203225f0f6d08a6785e4f8">get_program_dir</a> (const std::optional&lt; std::filesystem::path &gt; &amp;arg0=std::nullopt) const noexcept(false)</td></tr>
-<tr class="memdesc:acebcb576ff203225f0f6d08a6785e4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the path to the currently running program's directory.  <a href="classenv_1_1_p_a_t_h.html#acebcb576ff203225f0f6d08a6785e4f8">More...</a><br /></td></tr>
-<tr class="separator:acebcb576ff203225f0f6d08a6785e4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac554e9ffbfd45c2806ff6973c99d6dd3"><td class="memItemLeft" align="right" valign="top"><a id="ac554e9ffbfd45c2806ff6973c99d6dd3"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>rbegin</b> () const</td></tr>
-<tr class="separator:ac554e9ffbfd45c2806ff6973c99d6dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29799c8605a97271a342e006f12f1d14"><td class="memItemLeft" align="right" valign="top"><a id="a29799c8605a97271a342e006f12f1d14"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>rend</b> () const</td></tr>
-<tr class="separator:a29799c8605a97271a342e006f12f1d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cf5814ffd1d5efedb6e4e3443918e72"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72">resolve</a> (std::filesystem::path path, const std::vector&lt; std::string &gt; &amp;extensions={}, const bool &amp;checkProgramPath=true) const</td></tr>
-<tr class="memdesc:a3cf5814ffd1d5efedb6e4e3443918e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a given filesystem path by checking, in order; <br  />
- 1. the current working directory, <br  />
- 2. the program location (if given in the constructor), <br  />
- 3. the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable.  <a href="classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72">More...</a><br /></td></tr>
-<tr class="separator:a3cf5814ffd1d5efedb6e4e3443918e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0b444116365a6cd6a203bb32db3de6"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::filesystem::path, std::filesystem::path &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a9c0b444116365a6cd6a203bb32db3de6">resolve_split</a> (std::filesystem::path path, const std::vector&lt; std::string &gt; &amp;extensions={}, const bool &amp;checkProgramPath=true) const</td></tr>
-<tr class="memdesc:a9c0b444116365a6cd6a203bb32db3de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a given filesystem path by checking, in order; <br  />
- 1. the current working directory, <br  />
- 2. the program location (if given in the constructor), <br  />
- 3. the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. <br  />
- Calling this function is the equivalent of splitting the result of <a class="el" href="classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72" title="Resolve a given filesystem path by checking, in order;   1. the current working directory,...">resolve()</a> by its filename. <br  />
- If no filename is included as part of the target path, the second return value is empty.  <a href="classenv_1_1_p_a_t_h.html#a9c0b444116365a6cd6a203bb32db3de6">More...</a><br /></td></tr>
-<tr class="separator:a9c0b444116365a6cd6a203bb32db3de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5103d6e106434efc0fffb1e94e9816ae"><td class="memItemLeft" align="right" valign="top"><a id="a5103d6e106434efc0fffb1e94e9816ae"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
-<tr class="separator:a5103d6e106434efc0fffb1e94e9816ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a00dad07a6095f4d212dbe773e25e13d1"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a00dad07a6095f4d212dbe773e25e13d1">findInPath</a> (const std::filesystem::path &amp;filename, const std::vector&lt; std::string &gt; &amp;extensions) const</td></tr>
-<tr class="memdesc:a00dad07a6095f4d212dbe773e25e13d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches each location in the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable for the given target filename/path.  <a href="classenv_1_1_p_a_t_h.html#a00dad07a6095f4d212dbe773e25e13d1">More...</a><br /></td></tr>
-<tr class="separator:a00dad07a6095f4d212dbe773e25e13d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2e02777bf5672a0adde91c8eb5927bd"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#af2e02777bf5672a0adde91c8eb5927bd">findWithExtension</a> (std::filesystem::path path, const std::vector&lt; std::string &gt; &amp;extensions) const</td></tr>
-<tr class="memdesc:af2e02777bf5672a0adde91c8eb5927bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given path exists with one of the given filename extensions. <br  />
- If the target path exists with one of the given extensions, that path is returned. <br  />
- If the given target path exists without an extension, or if the target path <br  />
- wasn't found with any extension, it will be returned unmodified.  <a href="classenv_1_1_p_a_t_h.html#af2e02777bf5672a0adde91c8eb5927bd">More...</a><br /></td></tr>
-<tr class="separator:af2e02777bf5672a0adde91c8eb5927bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782268083b5f42a0202e78ebf9a69476"><td class="memItemLeft" align="right" valign="top"><a id="a782268083b5f42a0202e78ebf9a69476"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a782268083b5f42a0202e78ebf9a69476">PATH</a> ()</td></tr>
+<tr class="memdesc:a782268083b5f42a0202e78ebf9a69476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance containing paths retrieved from the system environment's <a class="el" href="classenv_1_1_p_a_t_h.html" title="Helper class for interacting with the PATH environment variable.">PATH</a> variable. <br /></td></tr>
+<tr class="separator:a782268083b5f42a0202e78ebf9a69476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d042f783885617812a92538f200d74"><td class="memItemLeft" align="right" valign="top"><a id="a42d042f783885617812a92538f200d74"></a>
+std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>at</b> (size_t const index) const noexcept</td></tr>
+<tr class="separator:a42d042f783885617812a92538f200d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadac30655d49bc16823d4a435259dc32"><td class="memItemLeft" align="right" valign="top"><a id="aadac30655d49bc16823d4a435259dc32"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const noexcept</td></tr>
+<tr class="separator:aadac30655d49bc16823d4a435259dc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d11aea41a240627b07cf0cfe09620d"><td class="memItemLeft" align="right" valign="top"><a id="a03d11aea41a240627b07cf0cfe09620d"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const noexcept</td></tr>
+<tr class="separator:a03d11aea41a240627b07cf0cfe09620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c098ac1fe30e9a2299437ed5111dabe"><td class="memItemLeft" align="right" valign="top"><a id="a1c098ac1fe30e9a2299437ed5111dabe"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const noexcept</td></tr>
+<tr class="separator:a1c098ac1fe30e9a2299437ed5111dabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc4cb23547409b80bf8aeea124d1a44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a2fc4cb23547409b80bf8aeea124d1a44">contains</a> (std::filesystem::path const &amp;path) const</td></tr>
+<tr class="memdesc:a2fc4cb23547409b80bf8aeea124d1a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the specified path exists in the list of paths.  <a href="classenv_1_1_p_a_t_h.html#a2fc4cb23547409b80bf8aeea124d1a44">More...</a><br /></td></tr>
+<tr class="separator:a2fc4cb23547409b80bf8aeea124d1a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c053a6437325c9eab5403d5daea70f1"><td class="memItemLeft" align="right" valign="top"><a id="a6c053a6437325c9eab5403d5daea70f1"></a>
+reverse_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>crbegin</b> () const noexcept</td></tr>
+<tr class="separator:a6c053a6437325c9eab5403d5daea70f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0c41b323cacfc652f8c12880e34da1"><td class="memItemLeft" align="right" valign="top"><a id="aae0c41b323cacfc652f8c12880e34da1"></a>
+reverse_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>crend</b> () const noexcept</td></tr>
+<tr class="separator:aae0c41b323cacfc652f8c12880e34da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9baf1925d4cbdbc2a32a19a34195b8"><td class="memItemLeft" align="right" valign="top"><a id="a2d9baf1925d4cbdbc2a32a19a34195b8"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const noexcept</td></tr>
+<tr class="separator:a2d9baf1925d4cbdbc2a32a19a34195b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafde7c6772a35d929c03540f205cc2ab"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#aafde7c6772a35d929c03540f205cc2ab">find</a> (std::filesystem::path const &amp;filename, std::vector&lt; std::string &gt; const &amp;fileExtensions) const</td></tr>
+<tr class="memdesc:aafde7c6772a35d929c03540f205cc2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first path containing a file with any of the specified extensions.  <a href="classenv_1_1_p_a_t_h.html#aafde7c6772a35d929c03540f205cc2ab">More...</a><br /></td></tr>
+<tr class="separator:aafde7c6772a35d929c03540f205cc2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68737a0e772c860732cccabbded30fce"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a68737a0e772c860732cccabbded30fce">find</a> (std::filesystem::path const &amp;relativePath) const</td></tr>
+<tr class="memdesc:a68737a0e772c860732cccabbded30fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first path in the list with the specified subpath.  <a href="classenv_1_1_p_a_t_h.html#a68737a0e772c860732cccabbded30fce">More...</a><br /></td></tr>
+<tr class="separator:a68737a0e772c860732cccabbded30fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54cbfa5ec22ff41f8b92f169966ef9ed"><td class="memItemLeft" align="right" valign="top"><a id="a54cbfa5ec22ff41f8b92f169966ef9ed"></a>
+reverse_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>rbegin</b> () const noexcept</td></tr>
+<tr class="separator:a54cbfa5ec22ff41f8b92f169966ef9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd6ab49167610c4aa90b2fdedf52e2f"><td class="memItemLeft" align="right" valign="top"><a id="a3cd6ab49167610c4aa90b2fdedf52e2f"></a>
+reverse_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>rend</b> () const noexcept</td></tr>
+<tr class="separator:a3cd6ab49167610c4aa90b2fdedf52e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143d27116e8d2f0b7c00d5220f3f5b49"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a143d27116e8d2f0b7c00d5220f3f5b49">resolve</a> (std::filesystem::path const &amp;relativePath) const</td></tr>
+<tr class="memdesc:a143d27116e8d2f0b7c00d5220f3f5b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to resolve the specified relative path to an existing absolute path.  <a href="classenv_1_1_p_a_t_h.html#a143d27116e8d2f0b7c00d5220f3f5b49">More...</a><br /></td></tr>
+<tr class="separator:a143d27116e8d2f0b7c00d5220f3f5b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a64a97f0d1721db3c49e42900cfab2"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::filesystem::path, std::filesystem::path &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a98a64a97f0d1721db3c49e42900cfab2">resolve_split</a> (std::filesystem::path const &amp;relativePath) const</td></tr>
+<tr class="memdesc:a98a64a97f0d1721db3c49e42900cfab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to resolve the specified relative path to an existing absolute path, and splits it by its parent_path and filename components.  <a href="classenv_1_1_p_a_t_h.html#a98a64a97f0d1721db3c49e42900cfab2">More...</a><br /></td></tr>
+<tr class="separator:a98a64a97f0d1721db3c49e42900cfab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5068cad65fa66d922b1990c0e15b52"><td class="memItemLeft" align="right" valign="top"><a id="aae5068cad65fa66d922b1990c0e15b52"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const noexcept</td></tr>
+<tr class="separator:aae5068cad65fa66d922b1990c0e15b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a1153822aa22114138b1ca58be69b61c7"><td class="memItemLeft" align="right" valign="top"><a id="a1153822aa22114138b1ca58be69b61c7"></a>
-std::vector&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a1153822aa22114138b1ca58be69b61c7">path_var</a></td></tr>
-<tr class="memdesc:a1153822aa22114138b1ca58be69b61c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all of the filepaths stored in the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. <br /></td></tr>
-<tr class="separator:a1153822aa22114138b1ca58be69b61c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a0f68409ac9b713d091fcd14c47f8c"><td class="memItemLeft" align="right" valign="top"><a id="a52a0f68409ac9b713d091fcd14c47f8c"></a>
-std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classenv_1_1_p_a_t_h.html#a52a0f68409ac9b713d091fcd14c47f8c">program_path</a></td></tr>
-<tr class="memdesc:a52a0f68409ac9b713d091fcd14c47f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the path to the current program, if argv[0] was passed to the constructor. <br /></td></tr>
-<tr class="separator:a52a0f68409ac9b713d091fcd14c47f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e6dda38b344b2392aaf0236275752b"><td class="memItemLeft" align="right" valign="top"><a id="ab5e6dda38b344b2392aaf0236275752b"></a>
+std::vector&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>paths</b></td></tr>
+<tr class="separator:ab5e6dda38b344b2392aaf0236275752b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Object used to interact with the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. <br  />
- Also contains useful filesystem path resolution methods using various methods. </p>
+<div class="textblock"><p>Helper class for interacting with the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Helper class for interacting with the PATH environment variable.">PATH</a> environment variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00088">88</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a838c6027ca5fdcd4ab47ec74d87e3c15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a838c6027ca5fdcd4ab47ec74d87e3c15">&#9670;&nbsp;</a></span>PATH()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">env::PATH::PATH </td>
-          <td>(</td>
-          <td class="paramtype">std::filesystem::path&#160;</td>
-          <td class="paramname"><em>arg0</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructor that accepts argv[0] to use in filepath resolution operations. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">arg0</td><td>The value of argv[0]. (char* &amp; std::string are implicitly convertible to std::filesystem::path) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00133">133</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="affd14389ce2e70d769d45a8aa830a391"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affd14389ce2e70d769d45a8aa830a391">&#9670;&nbsp;</a></span>begin()</h2>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00065">65</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2fc4cb23547409b80bf8aeea124d1a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc4cb23547409b80bf8aeea124d1a44">&#9670;&nbsp;</a></span>contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,39 +188,9 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto env::PATH::begin </td>
+          <td class="memname">bool env::PATH::contains </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<ul>
-<li>OPERATORS &amp; FORWARDED FUNCTIONS *&zwj;/// </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00140">140</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4d95681bf8544a780c3e211ac13191ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d95681bf8544a780c3e211ac13191ac">&#9670;&nbsp;</a></span>contains()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto env::PATH::contains </td>
-          <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -279,61 +202,21 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </table>
 </div><div class="memdoc">
 
-<p>Check if the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> variable contains a given filepath. </p>
-<ul>
-<li>FUNCTIONS *&zwj;/// <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path to check for. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-</li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00154">154</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a3c7a654d3355f808683c3b2f21553f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c7a654d3355f808683c3b2f21553f4c">&#9670;&nbsp;</a></span>exists()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto env::PATH::exists </td>
-          <td>(</td>
-          <td class="paramtype">auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> variable contains a given filepath. This function uses perfect-forwarding &amp; is the equivalent of calling <a class="el" href="classenv_1_1_p_a_t_h.html#a4d95681bf8544a780c3e211ac13191ac" title="Check if the PATH variable contains a given filepath.">contains()</a>. </p>
+<p>Checks if the specified path exists in the list of paths. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>The path to check for. </td></tr>
+    <tr><td class="paramname">path</td><td>- A filesystem path to compare against each path. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the path was found; otherwise, false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00160">160</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00098">98</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a00dad07a6095f4d212dbe773e25e13d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00dad07a6095f4d212dbe773e25e13d1">&#9670;&nbsp;</a></span>findInPath()</h2>
+<a id="aafde7c6772a35d929c03540f205cc2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafde7c6772a35d929c03540f205cc2ab">&#9670;&nbsp;</a></span>find() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,16 +225,16 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path env::PATH::findInPath </td>
+          <td class="memname">const_iterator env::PATH::find </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>extensions</em>&#160;</td>
+          <td class="paramtype">std::vector&lt; std::string &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fileExtensions</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -361,27 +244,27 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Searches each location in the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable for the given target filename/path. </p>
+<p>Finds the first path containing a file with any of the specified extensions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>Target filename/path to find. </td></tr>
-    <tr><td class="paramname">extensions</td><td>Optional list of filename extensions, if extensions are given, each path location is checked for the existence of the target path with any of the extensions appended to it. </td></tr>
+    <tr><td class="paramname">filename</td><td>- A filename, or relative path that contains a filename, to search for. </td></tr>
+    <tr><td class="paramname">fileExtensions</td><td>- Any number of file extensions to search for, in priority order. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Iterator pointing to the first path in the list where the specified filename exists with any one of the specified fileExtensions when successful; otherwise, the end iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00120">120</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00133">133</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>
-<a id="af2e02777bf5672a0adde91c8eb5927bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2e02777bf5672a0adde91c8eb5927bd">&#9670;&nbsp;</a></span>findWithExtension()</h2>
+<a id="a68737a0e772c860732cccabbded30fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68737a0e772c860732cccabbded30fce">&#9670;&nbsp;</a></span>find() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,92 +273,35 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path env::PATH::findWithExtension </td>
+          <td class="memname">const_iterator env::PATH::find </td>
           <td>(</td>
-          <td class="paramtype">std::filesystem::path&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>extensions</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the given path exists with one of the given filename extensions. <br  />
- If the target path exists with one of the given extensions, that path is returned. <br  />
- If the given target path exists without an extension, or if the target path <br  />
- wasn't found with any extension, it will be returned unmodified. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Target absolute filepath. If a relative filepath is given, it is returned unmodified. </td></tr>
-    <tr><td class="paramname">extensions</td><td>List of filename extensions, if extensions are given, each path location is checked for the existence of the target path with any of the extensions appended to it. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00104">104</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
-
-</div>
-</div>
-<a id="acebcb576ff203225f0f6d08a6785e4f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acebcb576ff203225f0f6d08a6785e4f8">&#9670;&nbsp;</a></span>get_program_dir()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::filesystem::path env::PATH::get_program_dir </td>
-          <td>(</td>
-          <td class="paramtype">const std::optional&lt; std::filesystem::path &gt; &amp;&#160;</td>
-          <td class="paramname"><em>arg0</em> = <code>std::nullopt</code></td><td>)</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the path to the currently running program's directory. </p>
+<p>Finds the first path in the list with the specified subpath. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg0</td><td>Command used to call this program. If this is left blank and no arg0 was passed in the constructor, an exception is thrown. </td></tr>
+    <tr><td class="paramname">relativePath</td><td>- A filename or relative filesystem path. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::exception</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Iterator pointing to the first path in the list where the specified relativePath exists when successful; otherwise, the end iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00218">218</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00109">109</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3cf5814ffd1d5efedb6e4e3443918e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cf5814ffd1d5efedb6e4e3443918e72">&#9670;&nbsp;</a></span>resolve()</h2>
+<a id="a143d27116e8d2f0b7c00d5220f3f5b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143d27116e8d2f0b7c00d5220f3f5b49">&#9670;&nbsp;</a></span>resolve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -486,25 +312,9 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
         <tr>
           <td class="memname">std::filesystem::path env::PATH::resolve </td>
           <td>(</td>
-          <td class="paramtype">std::filesystem::path&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>extensions</em> = <code>{}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>checkProgramPath</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -514,25 +324,21 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </table>
 </div><div class="memdoc">
 
-<p>Resolve a given filesystem path by checking, in order; <br  />
- 1. the current working directory, <br  />
- 2. the program location (if given in the constructor), <br  />
- 3. the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. </p>
+<p>Attempts to resolve the specified relative path to an existing absolute path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>The target filename/path to resolve. If the path can't be found, this is returned unmodified. </td></tr>
-    <tr><td class="paramname">extensions</td><td>Optional list of filename extensions, if extensions are given, resolution will check if the given path exists with any of the given extensions. </td></tr>
+    <tr><td class="paramname">relativePath</td><td>- A relative path to resolve. If it is already absolute, it is returned. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The resolved path when successful; otherwise, the unmodified relativePath. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00172">172</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00157">157</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9c0b444116365a6cd6a203bb32db3de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c0b444116365a6cd6a203bb32db3de6">&#9670;&nbsp;</a></span>resolve_split()</h2>
+<a id="a98a64a97f0d1721db3c49e42900cfab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a64a97f0d1721db3c49e42900cfab2">&#9670;&nbsp;</a></span>resolve_split()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -543,25 +349,9 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
         <tr>
           <td class="memname">std::pair&lt;std::filesystem::path, std::filesystem::path&gt; env::PATH::resolve_split </td>
           <td>(</td>
-          <td class="paramtype">std::filesystem::path&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>extensions</em> = <code>{}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>checkProgramPath</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -571,27 +361,21 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </table>
 </div><div class="memdoc">
 
-<p>Resolve a given filesystem path by checking, in order; <br  />
- 1. the current working directory, <br  />
- 2. the program location (if given in the constructor), <br  />
- 3. the <a class="el" href="classenv_1_1_p_a_t_h.html" title="Object used to interact with the PATH environment variable.   Also contains useful filesystem path re...">PATH</a> environment variable. <br  />
- Calling this function is the equivalent of splitting the result of <a class="el" href="classenv_1_1_p_a_t_h.html#a3cf5814ffd1d5efedb6e4e3443918e72" title="Resolve a given filesystem path by checking, in order;   1. the current working directory,...">resolve()</a> by its filename. <br  />
- If no filename is included as part of the target path, the second return value is empty. </p>
+<p>Attempts to resolve the specified relative path to an existing absolute path, and splits it by its parent_path and filename components. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>The target path to resolve. If the path can't be found, this is returned unmodified. </td></tr>
-    <tr><td class="paramname">extensions</td><td>Optional list of filename extensions, if extensions are given, resolution will check if the given path exists with any of the given extensions. </td></tr>
+    <tr><td class="paramname">relativePath</td><td>- A relative path to resolve and split. If it is already absolute, it is split and returned without attempting to resolve it further. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;std::filesystem::path, std::filesystem::path&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair containing the parent directory path and filename, respectively. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00202">202</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="envpath_8hpp_source.html#l00183">183</a> of file <a class="el" href="envpath_8hpp_source.html">envpath.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/runner/work/307lib/307lib/filelib/include/<a class="el" href="envpath_8hpp_source.html">envpath.hpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/home/runner/work/307lib/307lib/shared/include/<a class="el" href="envpath_8hpp_source.html">envpath.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

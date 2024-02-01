@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"classxlog_1_1basic__clogger.html#a3e1185ae987f36f864a727e2ed38cf29":[10,0,16,0,7],
 "classxlog_1_1basic__clogger.html#a77b82aec5a10cc643806d4f5ae1adf86":[10,0,16,0,0],
 "classxlog_1_1basic__clogger.html#aa1a53d725f1ffd69ed3b3cb9f6e0042c":[10,0,16,0,6],
 "classxlog_1_1basic__clogger.html#aa5835456b808d4944ce7ddd4d9e232f4":[10,0,16,0,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "dir_ae2a863af6f137601258ef68646aedc8.html":[11,0,6],
 "dir_bfe02534a5d168c211fa9b209519c81e.html":[11,0,0,0,1],
 "dir_cc6b37d6ce8e94a3e330bbf0fa29671b.html":[11,0,6,1],
-"dir_e5c7707bd3ecf7743dd1c172610d219b.html":[11,0,4],
-"dir_e82b99b5f3162810ce789f55dd77a7a4.html":[11,0,0,1,0]
+"dir_e5c7707bd3ecf7743dd1c172610d219b.html":[11,0,4]
 };

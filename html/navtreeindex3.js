@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classini_1_1basic__ini.html#aaad6f341fd557b0466ef54a294e7ac9c":[10,0,4,0,63],
 "classini_1_1basic__ini.html#aab808163ccd91ecdf52809158307219a":[10,0,4,0,59],
 "classini_1_1basic__ini.html#aae7718f28e806449885179614729bb91":[10,0,4,0,25],
 "classini_1_1basic__ini.html#aaebaa8279b39b2d88c6feed0ae79b273":[10,0,4,0,30],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classopt_1_1_params_a_p_i3.html#a483b26409ad5fb911e3420c24ebaa74d":[10,0,7,11,6],
 "classopt_1_1_params_a_p_i3.html#a7bd146399db6b6e4fc6d5d21cd762827":[10,0,7,11,5],
 "classopt_1_1_params_a_p_i3.html#a8a7f7588bc0e4f7b89f072b97bce2bfb":[10,0,7,11,8],
-"classopt_1_1_params_a_p_i3.html#aa146cfd63ba5224c3987fddaf1bf61b6":[10,0,7,11,17],
-"classopt_1_1_params_a_p_i3.html#aa2cf3e70eb32a220ef6fbec43047f8b4":[10,0,7,11,16]
+"classopt_1_1_params_a_p_i3.html#aa146cfd63ba5224c3987fddaf1bf61b6":[10,0,7,11,17]
 };
