@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('strconv_8hpp_source.html',''); initRes
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        [[nodiscard]] <span class="keyword">inline</span> <a class="code" href="sysarch_8h.html#a71b0638953e091366d2d4f09080dae78">STRCONSTEXPR</a> <span class="keywordtype">bool</span> <a class="code" href="strconv_8hpp.html#ae4586985e468461709dc187788868135">stob</a>(std::string str) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> str::tolower(str) == <span class="stringliteral">&quot;true&quot;</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>::tolower(str) == <span class="stringliteral">&quot;true&quot;</span>;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="comment">/**</span></div>

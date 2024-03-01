@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('strmanip_8hpp_source.html',''); initRe
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> dPos{ <span class="keyword">static_cast</span>&lt;<span class="keywordtype">signed</span>&gt;(str.find_first_of(comment_chars)) }; !str.empty() &amp;&amp; <a class="code" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">pos_valid</a><a class="code" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">(</a>dPos<a class="code" href="namespacestr.html#a26bf9f8189aea4146e003477d8b7a62d">)</a>) <span class="comment">// remove comments first</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            str.erase(str.begin() + dPos, str.end());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> trim(str);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html#ae08aac1680da8afe0bb6a06c2b129487">trim</a><a class="code" href="namespacestr.html#ae08aac1680da8afe0bb6a06c2b129487">(</a>str<a class="code" href="namespacestr.html#ae08aac1680da8afe0bb6a06c2b129487">)</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     * @function strip_line(std::string, const Param&amp;)</span></div>
@@ -691,7 +691,7 @@ $(document).ready(function(){initNavTree('strmanip_8hpp_source.html',''); initRe
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        std::vector&lt;std::string&gt; vec;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        size_t iPrev{ 0ull };</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">for</span> (size_t i{ str.find_first_of(delims) }; i != std::string::npos; iPrev = i + 1ull, i = str.find_first_of(delims, i + 1ull)) {</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="keywordflow">if</span> (delims.find(tolower(str.at(i))) != std::string::npos) {</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="keywordflow">if</span> (delims.find(<a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a><a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">(</a>str.at(i)<a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">)</a>) != std::string::npos) {</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                vec.emplace_back(str.substr(iPrev, i - iPrev));</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            }</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        }</div>
@@ -711,11 +711,11 @@ $(document).ready(function(){initNavTree('strmanip_8hpp_source.html',''); initRe
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="keywordflow">if</span> (str.empty())</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            <span class="keywordflow">return</span>{};</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="keywordflow">if</span> (ignoreCase)</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            delim = tolower(delim);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            delim = <a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a><a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">(</a>delim<a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">)</a>;</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        std::vector&lt;std::string&gt; vec;</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        size_t iPrev{ 0ull };</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keywordflow">for</span> (size_t i{ str.find(delim) }; i != std::string::npos; iPrev = i + 1ull, i = str.find(delim, i + 1ull)) {</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keywordflow">if</span> (delim == tolower(str.at(i))) {</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keywordflow">if</span> (delim == <a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">tolower</a><a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">(</a>str.at(i)<a class="code" href="namespacestr.html#ae2bfcfb51a1c131387fd6d08629aba53">)</a>) {</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                vec.emplace_back(str.substr(iPrev, i - iPrev));</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            }</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        }</div>
