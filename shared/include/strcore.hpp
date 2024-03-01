@@ -272,11 +272,18 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	inline std::string trim_preceding(std::string str, const std::string& chars)
+	inline std::string trim_preceding(std::string const& str, std::string const& chars)
 	{
-		if (const auto& beg{ str.find_first_not_of(chars) }; beg != std::string::npos)
-			return str.substr(beg);
-		return str;
+		size_t i{ 0 };
+
+		for (auto it{ str.begin() }, it_end{ str.end() }; it != it_end; ++it, ++i) {
+			if (chars.find(*it) == std::string::npos)
+				break;
+		}
+
+		return i != 0
+			? str.substr(i)
+			: str;
 	}
 	/**
 	 * @brief			Remove preceding characters from a given string.
@@ -284,7 +291,7 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	template<var::same_or_convertible<char>... Ts>
+	template<var::same_or_convertible<char>... Ts> requires var::at_least_one<Ts...>
 	std::string trim_preceding(std::string const& str, Ts&&... chars)
 	{
 		return trim_preceding(str, std::string{ std::forward<Ts>(chars)... });
@@ -296,11 +303,18 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	inline std::string_view trim_preceding(std::string_view str, const std::string& chars)
+	inline std::string_view trim_preceding(std::string_view const& str, std::string const& chars)
 	{
-		if (const auto& beg{ str.find_first_not_of(chars) }; beg != std::string::npos)
-			return str.substr(beg);
-		return str;
+		size_t i{ 0 };
+
+		for (auto it{ str.begin() }, it_end{ str.end() }; it != it_end; ++it, ++i) {
+			if (chars.find(*it) == std::string::npos)
+				break;
+		}
+
+		return i != 0
+			? str.substr(i)
+			: str;
 	}
 	/**
 	 * @brief			Remove preceding characters from a given string_view.
@@ -308,7 +322,7 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	template<var::same_or_convertible<char>... Ts>
+	template<var::same_or_convertible<char>... Ts> requires var::at_least_one<Ts...>
 	std::string_view trim_preceding(std::string_view const& str, Ts&&... chars)
 	{
 		return trim_preceding(str, std::string{ std::forward<Ts>(chars)... });
@@ -320,11 +334,18 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	inline std::string trim_trailing(std::string str, const std::string& chars)
+	inline std::string trim_trailing(std::string const& str, std::string const& chars)
 	{
-		if (const auto& end{ str.find_last_not_of(chars) }; end != std::string::npos)
-			return str.substr(0ull, end + 1ull);
-		return str;
+		size_t i{ 0 };
+
+		for (auto it{ str.rbegin() }, it_end{ str.rend() }; it != it_end; ++it, ++i) {
+			if (chars.find(*it) == std::string::npos)
+				break;
+		}
+
+		return i != 0
+			? str.substr(0, str.size() - i)
+			: str;
 	}
 	/**
 	 * @brief			Remove trailing characters from a given string.
@@ -332,7 +353,7 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	template<var::same_or_convertible<char>... Ts>
+	template<var::same_or_convertible<char>... Ts> requires var::at_least_one<Ts...>
 	std::string trim_trailing(std::string const& str, Ts&&... chars)
 	{
 		return trim_trailing(str, std::string{ std::forward<Ts>(chars)... });
@@ -344,11 +365,18 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	inline std::string_view trim_trailing(std::string_view str, const std::string& chars)
+	inline std::string_view trim_trailing(std::string_view const& str, std::string const& chars)
 	{
-		if (const auto& end{ str.find_last_not_of(chars) }; end != std::string::npos)
-			return str.substr(0ull, end + 1ull);
-		return str;
+		size_t i{ 0 };
+
+		for (auto it{ str.rbegin() }, it_end{ str.rend() }; it != it_end; ++it, ++i) {
+			if (chars.find(*it) == std::string::npos)
+				break;
+		}
+
+		return i != 0
+			? str.substr(0, str.size() - i)
+			: str;
 	}
 	/**
 	 * @brief			Remove trailing characters from a given string.
@@ -356,7 +384,7 @@ namespace str {
 	 * @param chars		Any number of characters to remove.
 	 * @returns			String without preceding or trailing whitespace.
 	 */
-	template<var::same_or_convertible<char>... Ts>
+	template<var::same_or_convertible<char>... Ts> requires var::at_least_one<Ts...>
 	std::string_view trim_trailing(std::string_view const& str, Ts&&... chars)
 	{
 		return trim_trailing(str, std::string{ std::forward<Ts>(chars)... });
