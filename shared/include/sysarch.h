@@ -131,7 +131,7 @@
 	// Current Operating System & Architecture.
 #	define OS_WIN ARCH
 #endif
-#if defined(_MAC)
+#if defined(__APPLE__) || defined(_MAC)
 	// Current Operating System & Architecture.
 #	define OS_MAC ARCH
 #endif
