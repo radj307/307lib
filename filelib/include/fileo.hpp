@@ -26,8 +26,10 @@ namespace file {
 	template<typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
 	bool write_to(const std::filesystem::path& path, std::basic_stringstream<TChar, TCharTraits, TAlloc>&& buffer, openmode const& mode = openmode::out | openmode::trunc)
 	{
-		if (std::basic_ofstream<TChar, TCharTraits> ofs(path, static_cast<std::ios_base::openmode>(mode)); ofs.is_open())
-			return static_cast<bool>(ofs << std::move(buffer.rdbuf()));
+		if (std::basic_ofstream<TChar, TCharTraits> ofs(path, static_cast<std::ios_base::openmode>(mode)); ofs.is_open()) {
+			ofs << std::move(buffer.rdbuf());
+			return true;
+		}
 		return false;
 	}
 	/**
@@ -42,8 +44,10 @@ namespace file {
 	template<typename TChar, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>>
 	bool write_to(const std::filesystem::path& path, std::basic_stringstream<TChar, TCharTraits, TAlloc>&& buffer, const bool& append)
 	{
-		if (std::basic_ofstream<TChar, TCharTraits> ofs(path, static_cast<std::ios_base::openmode>(append ? openmode::app : openmode::trunc)); ofs.is_open())
-			return static_cast<bool>(ofs << std::move(buffer.rdbuf()));
+		if (std::basic_ofstream<TChar, TCharTraits> ofs(path, static_cast<std::ios_base::openmode>(append ? openmode::app : openmode::trunc)); ofs.is_open()) {
+			ofs << std::move(buffer.rdbuf());
+			return true;
+		}
 		return false;
 	}
 	/**
@@ -80,10 +84,10 @@ namespace file {
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_ofstream<TChar, TCharTraits>>... Ts>
 	inline bool append(const std::filesystem::path& path, Ts&&... data)
 	{
-		#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
+	#pragma warning (disable:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 		std::basic_stringstream<TChar, TCharTraits, TAlloc> buffer;
 		(buffer << ... << std::move(data));
 		return write_to(path, std::move(buffer), openmode::out | openmode::app);
-		#pragma warning (default:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
+	#pragma warning (default:26800)// "Use of a moved-from object: "buffer" (lifetime.1)."
 	}
 }
