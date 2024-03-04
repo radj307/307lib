@@ -42,7 +42,8 @@ target_include_directories(shared PUBLIC
 # Allow "AppleClang" for CMAKE_CXX_COMPILER_ID (https://cmake.org/cmake/help/latest/policy/CMP0025.html)
 cmake_policy(SET CMP0025 NEW)
 
-message("CMAKE_CXX_COMPILER_ID: ${CMAKE_CXX_COMPILER_ID}")
+message("CMAKE_CXX_COMPILER_ID:      ${CMAKE_CXX_COMPILER_ID}")
+message("CMAKE_CXX_COMPILER_VERSION: ${CMAKE_CXX_COMPILER_VERSION}")
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 	target_compile_definitions(shared PUBLIC COMPILER_CLANG)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
