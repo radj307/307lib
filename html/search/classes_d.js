@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['unsafe_5foptional_1128',['unsafe_optional',['../structshared_1_1unsafe__optional.html',1,'shared']]]
+  ['variant_5ftemplate_733',['variant_template',['../classopt3_1_1variant__template.html',1,'opt3']]],
+  ['variant_5ftemplate_5fgroup_734',['variant_template_group',['../structopt3_1_1variant__template__group.html',1,'opt3']]],
+  ['variantarg_735',['variantarg',['../structopt3_1_1variantarg.html',1,'opt3']]]
 ];

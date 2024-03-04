@@ -136,7 +136,7 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:ab58e4fd600a73d4ffbdea3d65c5bdabd"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare</b> (const Pred &amp;predicate, const T &amp;fst, const Ts &amp;... strings)</td></tr>
 <tr class="separator:ab58e4fd600a73d4ffbdea3d65c5bdabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4ee543bc885f863faf20217f7142fe"><td class="memTemplParams" colspan="2">template&lt;class T1 , class T2 &gt; </td></tr>
-<tr class="memitem:acd4ee543bc885f863faf20217f7142fe"><td class="memTemplItemLeft" align="right" valign="top">requires std::convertible_to&lt; T1, std::string &gt; &amp;&amp;static std::convertible_to&lt; T2, std::string &gt; bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acd4ee543bc885f863faf20217f7142fe">compare</a> (T1 left, T2 right, const bool case_sensitive=true)</td></tr>
+<tr class="memitem:acd4ee543bc885f863faf20217f7142fe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> std::convertible_to&lt; T1, std::string &gt; &amp;&amp;static std::convertible_to&lt; T2, std::string &gt; bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#acd4ee543bc885f863faf20217f7142fe">compare</a> (T1 left, T2 right, const bool case_sensitive=true)</td></tr>
 <tr class="memdesc:acd4ee543bc885f863faf20217f7142fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare 2 strings.  <a href="namespacestr.html#acd4ee543bc885f863faf20217f7142fe">More...</a><br /></td></tr>
 <tr class="separator:acd4ee543bc885f863faf20217f7142fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d0037316e84612973026c052ec0616"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
@@ -291,7 +291,7 @@ template&lt;var::valid_string_or_convertible T, class Pred , var::valid_string_o
 <tr class="memitem:af94f5b4afa1ebb5d7d21a97ec0965d95"><td class="memItemLeft" align="right" valign="top">WINCONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#af94f5b4afa1ebb5d7d21a97ec0965d95">isternarydigit</a> (const char &amp;ch) noexcept</td></tr>
 <tr class="separator:af94f5b4afa1ebb5d7d21a97ec0965d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a969c7cce8d3290223f2764ea2d70a917"><td class="memTemplParams" colspan="2">template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::streamable... VT&gt; </td></tr>
-<tr class="memitem:a969c7cce8d3290223f2764ea2d70a917"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr static std::convertible_to&lt; ElemT, std::string &gt; const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a> (const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;container, VT... separators)</td></tr>
+<tr class="memitem:a969c7cce8d3290223f2764ea2d70a917"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> constexpr static std::convertible_to&lt; ElemT, std::string &gt; const std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a> (const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;container, VT... separators)</td></tr>
 <tr class="separator:a969c7cce8d3290223f2764ea2d70a917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ac6f2d084b34914281f50722fe85ff"><td class="memTemplParams" colspan="2"><a id="a90ac6f2d084b34914281f50722fe85ff"></a>
 template&lt;var::valid_char TChar = char, std::derived_from&lt; std::char_traits&lt; TChar &gt;&gt; TCharTraits = std::char_traits&lt;TChar&gt;, std::derived_from&lt; std::allocator&lt; TChar &gt;&gt; TAlloc = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
@@ -324,10 +324,10 @@ template&lt;template&lt; class, class &gt; class cont_type&gt; </td></tr>
 <tr class="memitem:aff70a0416ef1eed4ca4968378d46f9a9"><td class="memItemLeft" align="right" valign="top">std::string::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9">longestLength</a> (const std::vector&lt; std::string &gt; &amp;vec) noexcept</td></tr>
 <tr class="memdesc:aff70a0416ef1eed4ca4968378d46f9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the longest string in a vector.  <a href="namespacestr.html#aff70a0416ef1eed4ca4968378d46f9a9">More...</a><br /></td></tr>
 <tr class="separator:aff70a0416ef1eed4ca4968378d46f9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad04c604c3f6a3c605970ff878a021246"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ad04c604c3f6a3c605970ff878a021246"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ad04c604c3f6a3c605970ff878a021246">matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
-<tr class="memdesc:ad04c604c3f6a3c605970ff878a021246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#ad04c604c3f6a3c605970ff878a021246">More...</a><br /></td></tr>
-<tr class="separator:ad04c604c3f6a3c605970ff878a021246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95cc873e5e7bdb7656dec4f843bbb1c4"><td class="memTemplParams" colspan="2">template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_convertible&lt; StrT &gt;... Ts&gt; </td></tr>
+<tr class="memitem:a95cc873e5e7bdb7656dec4f843bbb1c4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; STRCONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a95cc873e5e7bdb7656dec4f843bbb1c4">matches_any</a> (const StrT &amp;str, const Ts &amp;... matches)</td></tr>
+<tr class="memdesc:a95cc873e5e7bdb7656dec4f843bbb1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given string matches any of a list of strings.  <a href="namespacestr.html#a95cc873e5e7bdb7656dec4f843bbb1c4">More...</a><br /></td></tr>
+<tr class="separator:a95cc873e5e7bdb7656dec4f843bbb1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5247d873952449905ce03aca93e5661d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5247d873952449905ce03aca93e5661d">NumberGrouping</a> (std::ostream &amp;os)</td></tr>
 <tr class="memdesc:a5247d873952449905ce03aca93e5661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically insert commas between thousands when printing numbers. <br  />
  Example: "1000000" =&gt; "1,000,000".  <a href="namespacestr.html#a5247d873952449905ce03aca93e5661d">More...</a><br /></td></tr>
@@ -459,22 +459,22 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memitem:a18758598172725d265bdab25d48f5836"><td class="memTemplItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a18758598172725d265bdab25d48f5836">streamify</a> (Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a18758598172725d265bdab25d48f5836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stringstream, inserts all of the given arguments, then move-returns the resulting stringstream.  <a href="namespacestr.html#a18758598172725d265bdab25d48f5836">More...</a><br /></td></tr>
 <tr class="separator:a18758598172725d265bdab25d48f5836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">stringify</a> (Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the specified arguments by inserting them into a temporary std::stringstream and returning the result.  <a href="namespacestr.html#a31ed6d7d8f4a9a12aaf145f3f4520440">More...</a><br /></td></tr>
-<tr class="separator:a31ed6d7d8f4a9a12aaf145f3f4520440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, class ConditionFunc , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7c911601d97b1d48b6acdd5b21d0c744">stringify_if</a> (ConditionFunc const &amp;condition, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a7c911601d97b1d48b6acdd5b21d0c744"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the specified condition resolves to true, the specified arguments are serialized by inserting them into a temporary std::stringstream.  <a href="namespacestr.html#a7c911601d97b1d48b6acdd5b21d0c744">More...</a><br /></td></tr>
-<tr class="separator:a7c911601d97b1d48b6acdd5b21d0c744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5333cda402426166be52fad2acc0f9dc"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:a5333cda402426166be52fad2acc0f9dc"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a5333cda402426166be52fad2acc0f9dc">stringify_join</a> (Iter const &amp;begin, Iter const &amp;end, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
-<tr class="memdesc:a5333cda402426166be52fad2acc0f9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#a5333cda402426166be52fad2acc0f9dc">More...</a><br /></td></tr>
-<tr class="separator:a5333cda402426166be52fad2acc0f9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, class Selector , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
-<tr class="memitem:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memTemplItemLeft" align="right" valign="top">constexpr static std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#aed3c95b6f33ddab4cac202a03a3d16df">stringify_sjoin</a> (Iter const &amp;begin, Iter const &amp;end, Selector const &amp;selector, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
-<tr class="memdesc:aed3c95b6f33ddab4cac202a03a3d16df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the selected elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#aed3c95b6f33ddab4cac202a03a3d16df">More...</a><br /></td></tr>
-<tr class="separator:aed3c95b6f33ddab4cac202a03a3d16df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea8ebecf1d07d5c15d6d2d395c6d857"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:a3ea8ebecf1d07d5c15d6d2d395c6d857"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3ea8ebecf1d07d5c15d6d2d395c6d857">stringify</a> (Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a3ea8ebecf1d07d5c15d6d2d395c6d857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the specified arguments by inserting them into a temporary std::stringstream and returning the result.  <a href="namespacestr.html#a3ea8ebecf1d07d5c15d6d2d395c6d857">More...</a><br /></td></tr>
+<tr class="separator:a3ea8ebecf1d07d5c15d6d2d395c6d857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12253bd0ab3b89a512619f9fe90f1e9"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, class ConditionFunc , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:af12253bd0ab3b89a512619f9fe90f1e9"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#af12253bd0ab3b89a512619f9fe90f1e9">stringify_if</a> (ConditionFunc const &amp;condition, Ts &amp;&amp;... args)</td></tr>
+<tr class="memdesc:af12253bd0ab3b89a512619f9fe90f1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the specified condition resolves to true, the specified arguments are serialized by inserting them into a temporary std::stringstream.  <a href="namespacestr.html#af12253bd0ab3b89a512619f9fe90f1e9">More...</a><br /></td></tr>
+<tr class="separator:af12253bd0ab3b89a512619f9fe90f1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66c42aeac85a7881377b47af44ff352"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:ac66c42aeac85a7881377b47af44ff352"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac66c42aeac85a7881377b47af44ff352">stringify_join</a> (Iter const &amp;begin, Iter const &amp;end, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
+<tr class="memdesc:ac66c42aeac85a7881377b47af44ff352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#ac66c42aeac85a7881377b47af44ff352">More...</a><br /></td></tr>
+<tr class="separator:ac66c42aeac85a7881377b47af44ff352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66be4c6a9e672c86049c3daef720ba9"><td class="memTemplParams" colspan="2">template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, class Selector , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </td></tr>
+<tr class="memitem:ac66be4c6a9e672c86049c3daef720ba9"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; TChar, TCharTraits, TAlloc &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac66be4c6a9e672c86049c3daef720ba9">stringify_sjoin</a> (Iter const &amp;begin, Iter const &amp;end, Selector const &amp;selector, Ts &amp;&amp;... <a class="el" href="namespacestr.html#a969c7cce8d3290223f2764ea2d70a917">join</a>)</td></tr>
+<tr class="memdesc:ac66be4c6a9e672c86049c3daef720ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the selected elements in the specified iterator range by inserting each one into a temporary std::stringstream.  <a href="namespacestr.html#ac66be4c6a9e672c86049c3daef720ba9">More...</a><br /></td></tr>
+<tr class="separator:ac66be4c6a9e672c86049c3daef720ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplParams" colspan="2">template&lt;var::streamable T&gt; </td></tr>
 <tr class="memitem:ac564c68f61fc9cb1018753365dfd9e7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr static const std::vector&lt; std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">stringify_split</a> (const char &amp;delimiter, const std::vector&lt; T &gt; &amp;args)</td></tr>
 <tr class="memdesc:ac564c68f61fc9cb1018753365dfd9e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a temporary stringstream and inserts all of the given arguments in sequential order, then uses the given delimiter to split the resulting string into a vector of strings.  <a href="namespacestr.html#ac564c68f61fc9cb1018753365dfd9e7b">More...</a><br /></td></tr>
@@ -584,28 +584,28 @@ template&lt;var::valid_string_or_convertible T, var::valid_string_or_convertible
 <tr class="memdesc:ae714ac6ba66f46d110a9ac24e7cb0ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceding characters from a given string.  <a href="namespacestr.html#ae714ac6ba66f46d110a9ac24e7cb0ced">More...</a><br /></td></tr>
 <tr class="separator:ae714ac6ba66f46d110a9ac24e7cb0ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23257451d2da4aa387a873fec64c71d3"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a23257451d2da4aa387a873fec64c71d3"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a23257451d2da4aa387a873fec64c71d3">trim_preceding</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memitem:a23257451d2da4aa387a873fec64c71d3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a23257451d2da4aa387a873fec64c71d3">trim_preceding</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:a23257451d2da4aa387a873fec64c71d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceding characters from a given string.  <a href="namespacestr.html#a23257451d2da4aa387a873fec64c71d3">More...</a><br /></td></tr>
 <tr class="separator:a23257451d2da4aa387a873fec64c71d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9993caf89ee9ff2002d0a95305d8c7d1"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a9993caf89ee9ff2002d0a95305d8c7d1">trim_preceding</a> (std::string_view const &amp;str, std::string const &amp;chars)</td></tr>
 <tr class="memdesc:a9993caf89ee9ff2002d0a95305d8c7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceding characters from a given string_view.  <a href="namespacestr.html#a9993caf89ee9ff2002d0a95305d8c7d1">More...</a><br /></td></tr>
 <tr class="separator:a9993caf89ee9ff2002d0a95305d8c7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2345c22b5a794b7e896af80395c9cc45"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a2345c22b5a794b7e896af80395c9cc45"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2345c22b5a794b7e896af80395c9cc45">trim_preceding</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memitem:a2345c22b5a794b7e896af80395c9cc45"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a2345c22b5a794b7e896af80395c9cc45">trim_preceding</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:a2345c22b5a794b7e896af80395c9cc45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove preceding characters from a given string_view.  <a href="namespacestr.html#a2345c22b5a794b7e896af80395c9cc45">More...</a><br /></td></tr>
 <tr class="separator:a2345c22b5a794b7e896af80395c9cc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb5c8b0f1fe86b8032857fca9bb4823"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a7fb5c8b0f1fe86b8032857fca9bb4823">trim_trailing</a> (std::string const &amp;str, std::string const &amp;chars)</td></tr>
 <tr class="memdesc:a7fb5c8b0f1fe86b8032857fca9bb4823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#a7fb5c8b0f1fe86b8032857fca9bb4823">More...</a><br /></td></tr>
 <tr class="separator:a7fb5c8b0f1fe86b8032857fca9bb4823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30c5e609d8bfe9178333be571d23c9be"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:a30c5e609d8bfe9178333be571d23c9be"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30c5e609d8bfe9178333be571d23c9be">trim_trailing</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memitem:a30c5e609d8bfe9178333be571d23c9be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#a30c5e609d8bfe9178333be571d23c9be">trim_trailing</a> (std::string const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:a30c5e609d8bfe9178333be571d23c9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#a30c5e609d8bfe9178333be571d23c9be">More...</a><br /></td></tr>
 <tr class="separator:a30c5e609d8bfe9178333be571d23c9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3690faca8dcf287fc93ce3de0d0d3c19"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a3690faca8dcf287fc93ce3de0d0d3c19">trim_trailing</a> (std::string_view const &amp;str, std::string const &amp;chars)</td></tr>
 <tr class="memdesc:a3690faca8dcf287fc93ce3de0d0d3c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#a3690faca8dcf287fc93ce3de0d0d3c19">More...</a><br /></td></tr>
 <tr class="separator:a3690faca8dcf287fc93ce3de0d0d3c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab782fd64a97e0e191254a04a70a323a8"><td class="memTemplParams" colspan="2">template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </td></tr>
-<tr class="memitem:ab782fd64a97e0e191254a04a70a323a8"><td class="memTemplItemLeft" align="right" valign="top">requires var::at_least_one&lt; Ts... &gt; std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab782fd64a97e0e191254a04a70a323a8">trim_trailing</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
+<tr class="memitem:ab782fd64a97e0e191254a04a70a323a8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; std::string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr.html#ab782fd64a97e0e191254a04a70a323a8">trim_trailing</a> (std::string_view const &amp;str, Ts &amp;&amp;... chars)</td></tr>
 <tr class="memdesc:ab782fd64a97e0e191254a04a70a323a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove trailing characters from a given string.  <a href="namespacestr.html#ab782fd64a97e0e191254a04a70a323a8">More...</a><br /></td></tr>
 <tr class="separator:ab782fd64a97e0e191254a04a70a323a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae96ac3e57b59049a3916d727adec3a95"><td class="memTemplParams" colspan="2"><a id="ae96ac3e57b59049a3916d727adec3a95"></a>
@@ -615,9 +615,9 @@ template&lt;var::any_same&lt; char8_t, char16_t, char32_t &gt; T&gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6feb73230680b818750f188cb73fa38a"><td class="memItemLeft" align="right" valign="top">constexpr const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a6feb73230680b818750f188cb73fa38a">ALL_NUMERIC_CHARS</a> [<a class="el" href="namespacestr.html#a2d93ffb26cb63a9b0920534e2606c466">MAX_BASE</a>] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V' }</td></tr>
-<tr class="memdesc:a6feb73230680b818750f188cb73fa38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">All chars used to represent the MAX_BASE (base32).  <a href="namespacestr.html#a6feb73230680b818750f188cb73fa38a">More...</a><br /></td></tr>
-<tr class="separator:a6feb73230680b818750f188cb73fa38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4533bc85398b48872a3cd2a54c5a2c8d"><td class="memItemLeft" align="right" valign="top">constexpr const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a4533bc85398b48872a3cd2a54c5a2c8d">ALL_NUMERIC_CHARS</a> [<a class="el" href="namespacestr.html#a2d93ffb26cb63a9b0920534e2606c466">MAX_BASE</a>] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V' }</td></tr>
+<tr class="memdesc:a4533bc85398b48872a3cd2a54c5a2c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">All chars used to represent the MAX_BASE (base32).  <a href="namespacestr.html#a4533bc85398b48872a3cd2a54c5a2c8d">More...</a><br /></td></tr>
+<tr class="separator:a4533bc85398b48872a3cd2a54c5a2c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d0332169b2bfb9288fee4a8aca516a"><td class="memItemLeft" align="right" valign="top"><a id="a63d0332169b2bfb9288fee4a8aca516a"></a>
 constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr.html#a63d0332169b2bfb9288fee4a8aca516a">BASE32</a> { 32 }</td></tr>
 <tr class="memdesc:a63d0332169b2bfb9288fee4a8aca516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">[Base32] Base32 system. <br /></td></tr>
@@ -858,7 +858,7 @@ template&lt;std::predicate&lt; char &gt; Pred&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00178">178</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="strlib_2include_2strcompare_8hpp_source.html#l00178">178</a> of file <a class="el" href="strlib_2include_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -874,7 +874,7 @@ template&lt;class T1 , class T2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires std::convertible_to&lt;T1, std::string&gt;&amp;&amp; static std::convertible_to&lt;T2, std::string&gt; bool str::compare </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> std::convertible_to&lt;T1, std::string&gt;&amp;&amp; static std::convertible_to&lt;T2, std::string&gt; bool str::compare </td>
           <td>(</td>
           <td class="paramtype">T1&#160;</td>
           <td class="paramname"><em>left</em>, </td>
@@ -1123,7 +1123,7 @@ template&lt;bool MatchCase = true&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00154">154</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00154">154</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1366,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00064">64</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00064">64</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -1416,7 +1416,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00092">92</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00092">92</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1466,7 @@ template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::string 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00104">104</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00104">104</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1516,7 @@ template&lt;bool MatchCase = true, var::all_same_or_convertible&lt; std::wstring
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00119">119</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00119">119</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2040,11 +2040,6 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strmath_8hpp_source.html#l00117">117</a> of file <a class="el" href="strmath_8hpp_source.html">strmath.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab9517188a12786f4566f6e1b5b93308d_icgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -2093,11 +2088,6 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strmath_8hpp_source.html#l00151">151</a> of file <a class="el" href="strmath_8hpp_source.html">strmath.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae05a80330a3733df4935b72eeb047284_cgraph.svg" width="486" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -2643,7 +2633,8 @@ template&lt;std::integral T&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7afb39cb933e8727cfe4a84dbdad41c2_cgraph.svg" width="342" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7afb39cb933e8727cfe4a84dbdad41c2_cgraph.svg" width="342" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2690,7 +2681,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a42c6b6a3bd47743a574df997a0bb8c65_cgraph.svg" width="528" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a42c6b6a3bd47743a574df997a0bb8c65_cgraph.svg" width="528" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -2720,7 +2712,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid base32 digit [0123456789ABCDEFGHIJKLMNOPQRSTUV]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00118">118</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00118">118</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2749,7 +2741,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid binary (base2) digit [01]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00083">83</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00083">83</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2778,7 +2770,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid decimal (base10) digit [0123456789]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00103">103</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00103">103</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2826,7 +2818,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid digit in the specified base; otherwise false. If the specified base is out-of-bounds, immediately returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00062">62</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00062">62</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2855,7 +2847,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid duodecimal (base12) digit [0123456789AB]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00108">108</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00108">108</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2884,12 +2876,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid hexadecimal (base16) digit [0123456789ABCDEF]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00113">113</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a6fdcf5f87c4a4dcf2dbf00a2980f0097_icgraph.svg" width="615" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00113">113</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -2951,12 +2938,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the given string represents a valid number; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00191">191</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae3704d7fb30ac8239cf1eca646096a32_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00176">176</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3015,12 +2997,7 @@ template&lt;std::integral T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when str specifies a valid floating-point number. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00227">227</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a264ae9a138c64900012cd97711e1e872_cgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00212">212</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3049,7 +3026,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid octal (base8) digit [01234567]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00098">98</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00098">98</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3078,7 +3055,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid quaternary (base4) digit [0123]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00093">93</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00093">93</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3115,7 +3092,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00018">18</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00018">18</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3144,7 +3121,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid ternary (base3) digit [012]; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00088">88</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00088">88</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3160,7 +3137,7 @@ template&lt;template&lt; class, class &gt; class ContainerT, class ElemT , var::
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires constexpr static std::convertible_to&lt;ElemT, std::string&gt; const std::string str::join </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> constexpr static std::convertible_to&lt;ElemT, std::string&gt; const std::string str::join </td>
           <td>(</td>
           <td class="paramtype">const ContainerT&lt; ElemT, std::allocator&lt; ElemT &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>container</em>, </td>
@@ -3288,8 +3265,8 @@ template&lt;size_t index, var::valid_string... Ts, template&lt; class... &gt; cl
 
 </div>
 </div>
-<a id="ad04c604c3f6a3c605970ff878a021246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad04c604c3f6a3c605970ff878a021246">&#9670;&nbsp;</a></span>matches_any()</h2>
+<a id="a95cc873e5e7bdb7656dec4f843bbb1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95cc873e5e7bdb7656dec4f843bbb1c4">&#9670;&nbsp;</a></span>matches_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3300,7 +3277,7 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; STRCONSTEXPR bool str::matches_any </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt; Ts... &gt; STRCONSTEXPR bool str::matches_any </td>
           <td>(</td>
           <td class="paramtype">const StrT &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -3342,7 +3319,7 @@ template&lt;bool MatchCase = true, var::valid_string StrT, var::same_or_converti
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00138">138</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00138">138</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -3713,7 +3690,8 @@ template&lt;typename F &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abbf5db5a8d6d063ecd6fb4c9e6a826ff_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abbf5db5a8d6d063ecd6fb4c9e6a826ff_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -3764,7 +3742,7 @@ template&lt;uint8_t BASE&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when ch is a valid digit in the specified base. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00079">79</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00079">79</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -4259,11 +4237,6 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab4df9ac78fcb744989206607da5a793e_cgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ab4df9ac78fcb744989206607da5a793e_icgraph.svg" width="410" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -4304,7 +4277,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa4bf5f1b14b776ed8c1225f5c2870a92_cgraph.svg" width="356" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aa4bf5f1b14b776ed8c1225f5c2870a92_cgraph.svg" width="356" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4401,7 +4375,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00023">23</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00023">23</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -4451,7 +4425,7 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strcompare_8hpp_source.html#l00051">51</a> of file <a class="el" href="strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html#l00051">51</a> of file <a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">strcompare.hpp</a>.</p>
 
 </div>
 </div>
@@ -4489,11 +4463,12 @@ template&lt;var::streamable&lt; std::ostream &gt;... Ts&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00523">523</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00522">522</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a1c5f7adb1945d04eb55b0910ca01d09f_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a1c5f7adb1945d04eb55b0910ca01d09f_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4532,11 +4507,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00513">513</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00512">512</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae47e8a6851499957d48fdef435cd982a_cgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae47e8a6851499957d48fdef435cd982a_cgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4575,11 +4551,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00433">433</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00432">432</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad15a09e1f1896bc59792a58fe8e1fbe9_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad15a09e1f1896bc59792a58fe8e1fbe9_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4618,11 +4595,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00463">463</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00462">462</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abf4cc36f0f7fbc735d3a7a282b8d9684_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_abf4cc36f0f7fbc735d3a7a282b8d9684_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4661,11 +4639,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00533">533</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00532">532</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_af3ddec4fea92d79d63cd6caa33d084e5_cgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_af3ddec4fea92d79d63cd6caa33d084e5_cgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4704,16 +4683,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00473">473</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00472">472</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a2eb07fec74c9d4fc331166f5c7320aa0_icgraph.svg" width="260" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -4752,11 +4727,12 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>short </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00443">443</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00442">442</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8faa23ca70522123e1c17746265b4c40_cgraph.svg" width="255" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a8faa23ca70522123e1c17746265b4c40_cgraph.svg" width="255" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4795,11 +4771,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00453">453</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00452">452</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aff81b4fb51f25b185a6e0f219023631b_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_aff81b4fb51f25b185a6e0f219023631b_cgraph.svg" width="259" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4838,11 +4815,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00483">483</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00482">482</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad150ce9485904ee33e3593e783324b09_cgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ad150ce9485904ee33e3593e783324b09_cgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4881,11 +4859,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00493">493</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00492">492</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a424d7e0db015c773dd069f863c2742e0_cgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a424d7e0db015c773dd069f863c2742e0_cgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4924,11 +4903,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00503">503</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00502">502</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9abdc3487fffb1c2b871bf5b609081c8_cgraph.svg" width="263" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a9abdc3487fffb1c2b871bf5b609081c8_cgraph.svg" width="263" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -4978,30 +4958,22 @@ template&lt;var::streamable... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a31ed6d7d8f4a9a12aaf145f3f4520440"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31ed6d7d8f4a9a12aaf145f3f4520440">&#9670;&nbsp;</a></span>stringify()</h2>
+<a id="a3ea8ebecf1d07d5c15d6d2d395c6d857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea8ebecf1d07d5c15d6d2d395c6d857">&#9670;&nbsp;</a></span>stringify()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify </td>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Serializes the specified arguments by inserting them into a temporary std::stringstream and returning the result. </p>
@@ -5025,19 +4997,16 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 
 </div>
 </div>
-<a id="a7c911601d97b1d48b6acdd5b21d0c744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c911601d97b1d48b6acdd5b21d0c744">&#9670;&nbsp;</a></span>stringify_if()</h2>
+<a id="af12253bd0ab3b89a512619f9fe90f1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12253bd0ab3b89a512619f9fe90f1e9">&#9670;&nbsp;</a></span>stringify_if()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, class ConditionFunc , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_if </td>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_if </td>
           <td>(</td>
           <td class="paramtype">ConditionFunc const &amp;&#160;</td>
           <td class="paramname"><em>condition</em>, </td>
@@ -5054,11 +5023,6 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>When the specified condition resolves to true, the specified arguments are serialized by inserting them into a temporary std::stringstream. </p>
@@ -5083,19 +5047,16 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 
 </div>
 </div>
-<a id="a5333cda402426166be52fad2acc0f9dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5333cda402426166be52fad2acc0f9dc">&#9670;&nbsp;</a></span>stringify_join()</h2>
+<a id="ac66c42aeac85a7881377b47af44ff352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66c42aeac85a7881377b47af44ff352">&#9670;&nbsp;</a></span>stringify_join()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_join </td>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_join </td>
           <td>(</td>
           <td class="paramtype">Iter const &amp;&#160;</td>
           <td class="paramname"><em>begin</em>, </td>
@@ -5118,11 +5079,6 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Joins the elements in the specified iterator range by inserting each one into a temporary std::stringstream. </p>
@@ -5149,19 +5105,16 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
 
 </div>
 </div>
-<a id="aed3c95b6f33ddab4cac202a03a3d16df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed3c95b6f33ddab4cac202a03a3d16df">&#9670;&nbsp;</a></span>stringify_sjoin()</h2>
+<a id="ac66be4c6a9e672c86049c3daef720ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66be4c6a9e672c86049c3daef720ba9">&#9670;&nbsp;</a></span>stringify_sjoin()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;TChar&gt;, typename TAlloc  = std::allocator&lt;TChar&gt;, std::forward_iterator Iter, class Selector , var::streamable&lt; std::basic_stringstream&lt; TChar, TCharTraits, TAlloc &gt;&gt;... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_sjoin </td>
+          <td class="memname">std::basic_string&lt;TChar, TCharTraits, TAlloc&gt; str::stringify_sjoin </td>
           <td>(</td>
           <td class="paramtype">Iter const &amp;&#160;</td>
           <td class="paramname"><em>begin</em>, </td>
@@ -5190,11 +5143,6 @@ template&lt;typename TChar  = char, typename TCharTraits  = std::char_traits&lt;
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Joins the selected elements in the specified iterator range by inserting each one into a temporary std::stringstream. </p>
@@ -5492,11 +5440,6 @@ template&lt;std::same_as&lt; char &gt;... DelimT&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="strmanip_8hpp_source.html#l00091">91</a> of file <a class="el" href="strmanip_8hpp_source.html">strmanip.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7346dfeb6d8d2d04a563649f4bf3cbca_icgraph.svg" width="335" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -5721,7 +5664,7 @@ template&lt;std::floating_point T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="strconv_8hpp_source.html#l00547">547</a> of file <a class="el" href="strconv_8hpp_source.html">strconv.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html#l00546">546</a> of file <a class="el" href="shared_2include_2str_2strconv_8hpp_source.html">strconv.hpp</a>.</p>
 
 </div>
 </div>
@@ -5831,7 +5774,8 @@ template&lt;std::integral TReturn = decimal&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a17db9c2d136d73291ac9ae5c505efd38_cgraph.svg" width="511" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a17db9c2d136d73291ac9ae5c505efd38_cgraph.svg" width="338" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -5910,7 +5854,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae2bfcfb51a1c131387fd6d08629aba53_icgraph.svg" width="554" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae2bfcfb51a1c131387fd6d08629aba53_icgraph.svg" width="254" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6151,7 +6096,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a88947ca78984e05f41dd36fb221d32d6_cgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a88947ca78984e05f41dd36fb221d32d6_cgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6567,11 +6513,6 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae08aac1680da8afe0bb6a06c2b129487_cgraph.svg" width="279" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae08aac1680da8afe0bb6a06c2b129487_icgraph.svg" width="300" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -6771,7 +6712,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae714ac6ba66f46d110a9ac24e7cb0ced_icgraph.svg" width="494" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_ae714ac6ba66f46d110a9ac24e7cb0ced_icgraph.svg" width="279" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6785,7 +6727,7 @@ Here is the caller graph for this function:</div>
 template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; std::string str::trim_preceding </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt;Ts...&gt; std::string str::trim_preceding </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -6875,7 +6817,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; std::string_view str::trim_preceding </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt;Ts...&gt; std::string_view str::trim_preceding </td>
           <td>(</td>
           <td class="paramtype">std::string_view const &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -6956,7 +6898,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7fb5c8b0f1fe86b8032857fca9bb4823_icgraph.svg" width="475" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestr_a7fb5c8b0f1fe86b8032857fca9bb4823_icgraph.svg" width="260" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -6970,7 +6913,7 @@ Here is the caller graph for this function:</div>
 template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; std::string str::trim_trailing </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt;Ts...&gt; std::string str::trim_trailing </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -7060,7 +7003,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">requires var::at_least_one&lt;Ts...&gt; std::string_view str::trim_trailing </td>
+          <td class="memname"><a class="el" href="namespacestr.html#afc23eec5ee5f5f502c11cd79e1f01dd8">requires</a> var::at_least_one&lt;Ts...&gt; std::string_view str::trim_trailing </td>
           <td>(</td>
           <td class="paramtype">std::string_view const &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -7094,8 +7037,8 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a6feb73230680b818750f188cb73fa38a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6feb73230680b818750f188cb73fa38a">&#9670;&nbsp;</a></span>ALL_NUMERIC_CHARS</h2>
+<a id="a4533bc85398b48872a3cd2a54c5a2c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4533bc85398b48872a3cd2a54c5a2c8d">&#9670;&nbsp;</a></span>ALL_NUMERIC_CHARS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7104,7 +7047,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const char str::ALL_NUMERIC_CHARS[<a class="el" href="namespacestr.html#a2d93ffb26cb63a9b0920534e2606c466">MAX_BASE</a>] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V' }</td>
+          <td class="memname">constexpr const char str::ALL_NUMERIC_CHARS { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V' }</td>
         </tr>
       </table>
   </td>
@@ -7117,7 +7060,7 @@ template&lt;var::same_or_convertible&lt; char &gt;... Ts&gt; </div>
 <p>All chars used to represent the MAX_BASE (base32). </p>
 <p>This is used by the isdigit_base function. </p>
 
-<p class="definition">Definition at line <a class="el" href="charcompare_8hpp_source.html#l00054">54</a> of file <a class="el" href="charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html#l00054">54</a> of file <a class="el" href="shared_2include_2str_2charcompare_8hpp_source.html">charcompare.hpp</a>.</p>
 
 </div>
 </div>

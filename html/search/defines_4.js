@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fwd_2038',['fwd',['../sysarch_8h.html#a712e0b2ac2c1a949029e7ca0e3bdc5e8',1,'sysarch.h']]]
+  ['inline_1358',['INLINE',['../sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116',1,'sysarch.h']]]
 ];

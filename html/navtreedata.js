@@ -34,7 +34,6 @@ var NAVTREE =
       [ "Pre-Requisites", "index.html#autotoc_md8", null ],
       [ "Process", "index.html#autotoc_md9", null ]
     ] ],
-    [ "TokenRedux", "_token_redux.html", null ],
     [ "307modules", "307modules.html", [
       [ "307modules", "307modules.html#autotoc_md0", [
         [ "Usage", "307modules.html#autotoc_md1", null ],
@@ -71,7 +70,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -103,21 +102,17 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"307modules.html",
-"_token_redux_8hpp.html#ab7884a0bef16c49be96123b019b2ab5c",
-"classcolor_1_1palette.html#a192f1d42a778cac51fd1e37bb5caed45",
-"classini_1_1ini__value.html#a090a87f44e0bddc6457921a50b5f5872",
-"classrng_1_1_engine_wrapper.html#aba396690a905dce91f495c05f032ed2b",
-"classxlog_1_1x_log.html#a92e818044e57cfa60c7e0eb462c40fce",
-"filei_8hpp.html#a207e782a2e615d164b4ee4d53e93d99d",
-"namespaceop.html",
-"namespaceterm.html#a39a205b7961841c4ec9855f1c6097f6e",
-"predicate_8hpp.html",
-"strmath_8hpp.html#a17db9c2d136d73291ac9ae5c505efd38",
-"structjson_1_1_object_node.html#a07ddd1f69bb32afb74b2646cf30df9bb",
-"structopt3_1_1variant__template__group.html#acd1c3b2eefcd0c3569453c250b5ca9da",
-"structshared_1_1basic__indentor.html#a0eeb621eb7843affd9729bf205c77cfc",
-"strutility_8hpp.html#ac833e4f5138a5dd64fb8985361215835"
+"",
+"classini_1_1basic__ini.html#a0cfc1501fd91293b5dce7c3c4a3a648d",
+"classrng_1_1_engine_wrapper.html#a9936b799a28323d2e1feb34ca5ab7d3b",
+"dir_476c0d125d2cc69b80dfe09393503260.html",
+"namespacestr.html#a0b9acc1aa0ba62ee0e9bc69426b6e101",
+"namespacevar.html#a2e1700eec9b45d7b80e05d8f6b3fbf74",
+"shared_2include_2str_2strcompare_8hpp.html#a5b67b511a73cc1600877405b6827de48",
+"strmanip_8hpp.html#a2a819f92b6d13b47ca916b2d9761358e",
+"structmatrix_1_1nmatrix.html#ab128b25f867678f6abbd332914798c57",
+"structshared_1_1casting__optional.html#aa8bb523e0a21923399db56644a04d747",
+"x_rand_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

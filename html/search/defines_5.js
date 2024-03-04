@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['inline_2039',['INLINE',['../sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116',1,'sysarch.h']]]
+  ['lang_5fc_1359',['LANG_C',['../sysarch_8h.html#a69f1d54d0578e6b3400b774500973439',1,'sysarch.h']]],
+  ['lang_5fcpp_1360',['LANG_CPP',['../sysarch_8h.html#a9f485ecfa4e44c1d740061050827e1bb',1,'sysarch.h']]],
+  ['lang_5fcppcli_1361',['LANG_CPPCLI',['../sysarch_8h.html#a234ea0547bdb520101dd92b72e394e49',1,'sysarch.h']]]
 ];

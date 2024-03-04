@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['headerkeypair_1901',['HeaderKeyPair',['../classfile_1_1ini_1_1_i_n_i_container.html#abe729a667c4b1da6ce21f1481412831a',1,'file::ini::INIContainer']]]
+  ['parameter_1298',['Parameter',['../namespaceopt3.html#ae5d306b4c192f9b35513b2874c39c5f6',1,'opt3']]],
+  ['parameter_5ft_1299',['parameter_t',['../opt3_8hpp.html#afe9454a8d26d64d526dc3bd470359e9f',1,'opt3::_internal']]]
 ];

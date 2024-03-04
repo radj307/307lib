@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['option_1915',['Option',['../namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502',1,'opt3']]],
-  ['option_5ft_1916',['option_t',['../opt3_8hpp.html#a311d34c6adc54432307c64109838e383',1,'opt3::_internal']]],
-  ['optional_1917',['optional',['../namespaceshared.html#acedb664bd278ffcda4e8f4603ad06179',1,'shared']]]
+  ['wcolors_1314',['wcolors',['../namespaceterm.html#a96886af7c95b9f2baf792221496b889c',1,'term']]],
+  ['wsetcolor_1315',['wsetcolor',['../setcolor_8hpp.html#ae8106132e5b035c4478412f62d9ab19d',1,'color']]],
+  ['wsync_1316',['wsync',['../color-sync_8hpp.html#abcdff50c2ea952d040d53048a0cadb9d',1,'color']]]
 ];

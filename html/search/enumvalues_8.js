@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ignore_1988',['Ignore',['../namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9',1,'ini']]]
+  ['prerelease_1340',['PreRelease',['../namespaceshared.html#a8b92563f254758484d45f9257995945daf603295e85b51a3b40a0e3d690446fc4',1,'shared']]]
 ];

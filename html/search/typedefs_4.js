@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['false_5ft_1897',['false_t',['../namespacevar.html#a41080bdb7186fa7a77b12bfcdf06ff9f',1,'var']]],
-  ['flag_1898',['Flag',['../namespaceopt3.html#a77b420740d1a99b7542ae9ebb37c34e7',1,'opt3']]],
-  ['flag_5ft_1899',['flag_t',['../opt3_8hpp.html#a8d4383d6072cc2c62c901b0412300939',1,'opt3::_internal']]],
-  ['float_1900',['Float',['../_i_n_i_redux_8hpp.html#a2fca167a45a2d1354dc11f032e985b31',1,'file::ini']]]
+  ['option_1295',['Option',['../namespaceopt3.html#ae84949361063f8e17bd768ef3bc0a502',1,'opt3']]],
+  ['option_5ft_1296',['option_t',['../opt3_8hpp.html#a311d34c6adc54432307c64109838e383',1,'opt3::_internal']]],
+  ['optional_1297',['optional',['../namespaceshared.html#acedb664bd278ffcda4e8f4603ad06179',1,'shared']]]
 ];

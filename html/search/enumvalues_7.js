@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['header_1987',['HEADER',['../_token_redux_default_defs_8hpp.html#a46232a64a80980d8da8b2742397f8799a7ad4905b4543ab4a1637dd23c50e36ce',1,'token::DefaultDefs']]]
+  ['onlyblank_1338',['OnlyBlank',['../simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda77b5ce8bdd4431c91682aff9f3e0b4f1',1,'ini']]],
+  ['override_1339',['Override',['../simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849',1,'ini']]]
 ];

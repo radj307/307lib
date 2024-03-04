@@ -1,9 +1,9 @@
 var dir_f017f8d1aea2530cee9690020bbdf1df =
 [
+    [ "str", "dir_abdbecdb381f0b4c1ca095507412c866.html", "dir_abdbecdb381f0b4c1ca095507412c866" ],
     [ "debug.hpp", "debug_8hpp_source.html", null ],
     [ "env.hpp", "env_8hpp.html", "env_8hpp" ],
     [ "envpath.hpp", "envpath_8hpp.html", "envpath_8hpp" ],
-    [ "event.hpp", "event_8hpp.html", "event_8hpp" ],
     [ "hasPendingDataSTDIN.h", "has_pending_data_s_t_d_i_n_8h.html", "has_pending_data_s_t_d_i_n_8h" ],
     [ "indentor.hpp", "indentor_8hpp.html", "indentor_8hpp" ],
     [ "make_exception.hpp", "make__exception_8hpp.html", "make__exception_8hpp" ],

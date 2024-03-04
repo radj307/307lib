@@ -1,9 +1,9 @@
 var dir_2c61375df6b494d1d8513826dcf76964 =
 [
-    [ "charcompare.hpp", "charcompare_8hpp.html", "charcompare_8hpp" ],
+    [ "charcompare.hpp", "strlib_2include_2charcompare_8hpp.html", "strlib_2include_2charcompare_8hpp" ],
     [ "str.hpp", "str_8hpp.html", "str_8hpp" ],
-    [ "strcompare.hpp", "strcompare_8hpp.html", "strcompare_8hpp" ],
-    [ "strconv.hpp", "strconv_8hpp.html", "strconv_8hpp" ],
+    [ "strcompare.hpp", "strlib_2include_2strcompare_8hpp.html", "strlib_2include_2strcompare_8hpp" ],
+    [ "strconv.hpp", "strlib_2include_2strconv_8hpp.html", "strlib_2include_2strconv_8hpp" ],
     [ "stringify.hpp", "stringify_8hpp.html", "stringify_8hpp" ],
     [ "strlocale.hpp", "strlocale_8hpp.html", "strlocale_8hpp" ],
     [ "strmanip.hpp", "strmanip_8hpp.html", "strmanip_8hpp" ],

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['xlog_1703',['xLog',['../classxlog_1_1x_log.html#ae4c57de6caea92ac4080fafe17de92f6',1,'xlog::xLog']]],
-  ['xlogs_1704',['xLogs',['../classxlog_1_1x_logs.html#ac0c85b02d6dcab5ffb788d531c6e4219',1,'xlog::xLogs']]],
-  ['xmlelement_1705',['XMLElement',['../structxml_1_1_x_m_l_element.html#ab04952c871ca50fd980517a9bf701d93',1,'xml::XMLElement']]]
+  ['_7ebasic_5fcolors_1153',['~basic_colors',['../classterm_1_1basic__colors.html#a9f7dcaea24dc03ab60f3bcadc5cc8adb',1,'term::basic_colors']]],
+  ['_7eproc_1154',['~Proc',['../structprocess_1_1_proc.html#ace52f3e99403d0e2888352cd61f130dc',1,'process::Proc']]]
 ];

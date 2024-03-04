@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['charcompare_2ehpp_1166',['charcompare.hpp',['../charcompare_8hpp.html',1,'']]],
-  ['clogger_2ehpp_1167',['clogger.hpp',['../clogger_8hpp.html',1,'']]],
-  ['color_2dsync_2ehpp_1168',['color-sync.hpp',['../color-sync_8hpp.html',1,'']]],
-  ['color_2dtransform_2ehpp_1169',['color-transform.hpp',['../color-transform_8hpp.html',1,'']]],
-  ['color_2dvalues_2eh_1170',['color-values.h',['../color-values_8h.html',1,'']]]
+  ['enableansi_2ehpp_757',['EnableANSI.hpp',['../_enable_a_n_s_i_8hpp.html',1,'']]],
+  ['env_2ehpp_758',['env.hpp',['../env_8hpp.html',1,'']]],
+  ['envpath_2ehpp_759',['envpath.hpp',['../envpath_8hpp.html',1,'']]]
 ];

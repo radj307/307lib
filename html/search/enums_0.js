@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aligntype_1947',['AlignType',['../_i_n_i_redux_8hpp.html#aa86b3efdca35b91db3538f0f9cebaafe',1,'file::ini']]]
+  ['conflictstyle_1317',['ConflictStyle',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142',1,'opt3']]]
 ];

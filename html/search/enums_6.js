@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['postversion_1955',['PostVersion',['../namespaceshared.html#a8b92563f254758484d45f9257995945d',1,'shared']]]
+  ['syntaxerrorstyle_1324',['SyntaxErrorStyle',['../simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0a',1,'ini']]]
 ];

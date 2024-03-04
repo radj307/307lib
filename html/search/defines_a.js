@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setcolor_5fno_5frgb_2050',['SETCOLOR_NO_RGB',['../setcolor_8hpp.html#a9c022d13fef1bdce1abbfb1545e28e3f',1,'setcolor.hpp']]],
-  ['strict_5fpointer_5fsafety_2051',['STRICT_POINTER_SAFETY',['../sysarch_8h.html#a925368a5ba4c2c1079b14bee846409ff',1,'sysarch.h']]]
+  ['va_5fopt_5fsupported_1371',['VA_OPT_SUPPORTED',['../sysarch_8h.html#a7e1c18ab802b34dd1aeacc0d68e689a0',1,'sysarch.h']]],
+  ['va_5fopt_5fsupported_5fi_1372',['VA_OPT_SUPPORTED_I',['../sysarch_8h.html#ad73bed0b01fe1c94e4bebb0609b9cf98',1,'sysarch.h']]]
 ];

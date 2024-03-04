@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['f_1984',['F',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a800618943025315f869e4e1f09471012',1,'color']]],
-  ['fore_1985',['Fore',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a1de3ed66ddce05aabfce7311f6f7b2ba',1,'color']]],
-  ['foreground_1986',['Foreground',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832a45bd1d5b32931106efbf1a82fe6a732f',1,'color']]]
+  ['none_1337',['None',['../namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142a6adf97f83acf6453d4a6a4b1070f3754',1,'opt3::None()'],['../namespaceshared.html#a8b92563f254758484d45f9257995945da6adf97f83acf6453d4a6a4b1070f3754',1,'shared::None()']]]
 ];

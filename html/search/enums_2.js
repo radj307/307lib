@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['horizontalalignment_1949',['HorizontalAlignment',['../namespaceterm.html#ab4559203cb018ffc278cd2062066280c',1,'term']]]
+  ['layer_1319',['Layer',['../setcolor_8hpp.html#a9282a806b4d9fef9144432322d12e832',1,'color']]]
 ];

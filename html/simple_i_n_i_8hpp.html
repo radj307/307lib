@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('simple_i_n_i_8hpp.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -102,10 +101,10 @@ $(document).ready(function(){initNavTree('simple_i_n_i_8hpp.html',''); initResiz
 <div class="textblock"><code>#include &lt;<a class="el" href="sysarch_8h_source.html">sysarch.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="make__exception_8hpp_source.html">make_exception.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="var_8hpp_source.html">var.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="str_8hpp_source.html">str.hpp</a>&gt;</code><br />
+<code>#include &lt;strcore.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="shared_2include_2str_2strcompare_8hpp_source.html">str/strcompare.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="fileio_8hpp_source.html">fileio.hpp</a>&gt;</code><br />
 <code>#include &lt;fileutil.hpp&gt;</code><br />
-<code>#include &lt;<a class="el" href="event_8hpp_source.html">event.hpp</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;compare&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
@@ -118,7 +117,8 @@ $(document).ready(function(){initNavTree('simple_i_n_i_8hpp.html',''); initResiz
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for simpleINI.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="simple_i_n_i_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="simple_i_n_i_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="simple_i_n_i_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -144,19 +144,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps the std::string class, and adds additional functionality such as automatic type-casting.  <a href="classini_1_1ini__value.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceini"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html">ini</a></td></tr>
-<tr class="memdesc:namespaceini"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains everything used for tokenizing, parsing, storing, and interacting with INI configuration files. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:af2f833d849d9459dc5341de666c2448a"><td class="memItemLeft" align="right" valign="top"><a id="af2f833d849d9459dc5341de666c2448a"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ini::cContainer</b> = ini_container&lt; CaseSensitiveCompare &gt;</td></tr>
 <tr class="separator:af2f833d849d9459dc5341de666c2448a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3b5f62616f09fa2567d61baf7cc702"><td class="memItemLeft" align="right" valign="top"><a id="afe3b5f62616f09fa2567d61baf7cc702"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#afe3b5f62616f09fa2567d61baf7cc702">ini::cINI</a> = basic_ini&lt; CaseSensitiveCompare &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#afe3b5f62616f09fa2567d61baf7cc702">ini::cINI</a> = basic_ini&lt; CaseSensitiveCompare &gt;</td></tr>
 <tr class="memdesc:afe3b5f62616f09fa2567d61baf7cc702"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI class that uses <em>case-sensitive</em> key comparisons, and narrow-width chars. <br /></td></tr>
 <tr class="separator:afe3b5f62616f09fa2567d61baf7cc702"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f2d125ee9aea8f6dcc0c8c3e63b9499"><td class="memItemLeft" align="right" valign="top"><a id="a4f2d125ee9aea8f6dcc0c8c3e63b9499"></a>
@@ -172,12 +166,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ini::cPrinter</b> = 
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ini::cSection</b> = ini_section&lt; CaseSensitiveCompare &gt;</td></tr>
 <tr class="separator:ab4605988d1647d7546e82abb85857245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad64b0667b80cb2905a85b23bbac8cc4c"><td class="memItemLeft" align="right" valign="top"><a id="ad64b0667b80cb2905a85b23bbac8cc4c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#ad64b0667b80cb2905a85b23bbac8cc4c">ini::INI</a> = basic_ini&lt; CaseInsensitiveCompare &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#ad64b0667b80cb2905a85b23bbac8cc4c">ini::INI</a> = basic_ini&lt; CaseInsensitiveCompare &gt;</td></tr>
 <tr class="memdesc:ad64b0667b80cb2905a85b23bbac8cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI class that uses <em>case-insensitive</em> key comparisons, and narrow-width chars. <br /></td></tr>
 <tr class="separator:ad64b0667b80cb2905a85b23bbac8cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d9ca0aab6f42d36e8cb69224c94fad"><td class="memTemplParams" colspan="2"><a id="ae2d9ca0aab6f42d36e8cb69224c94fad"></a>
 template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </td></tr>
-<tr class="memitem:ae2d9ca0aab6f42d36e8cb69224c94fad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini::ini_container</a> = typename std::unordered_map&lt; std::string, ini_section&lt; TKeyComparator &gt;, std::hash&lt; std::string &gt;, TKeyComparator &gt;</td></tr>
+<tr class="memitem:ae2d9ca0aab6f42d36e8cb69224c94fad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini::ini_container</a> = typename std::unordered_map&lt; std::string, ini_section&lt; TKeyComparator &gt;, std::hash&lt; std::string &gt;, TKeyComparator &gt;</td></tr>
 <tr class="memdesc:ae2d9ca0aab6f42d36e8cb69224c94fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outer container of an INI storage object. Throughout the documentation, this type is known as a 'map' or 'container' and its keys are known as 'Headers', while its values are known as 'Sections'. <br /></td></tr>
 <tr class="separator:ae2d9ca0aab6f42d36e8cb69224c94fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae005120ef31af25db6b0de4cec2ea10d"><td class="memTemplParams" colspan="2"><a id="ae005120ef31af25db6b0de4cec2ea10d"></a>
@@ -186,7 +180,7 @@ template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </td></tr>
 <tr class="separator:ae005120ef31af25db6b0de4cec2ea10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19d8cece53690166e28f28a35bd3d1a"><td class="memTemplParams" colspan="2"><a id="ab19d8cece53690166e28f28a35bd3d1a"></a>
 template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </td></tr>
-<tr class="memitem:ab19d8cece53690166e28f28a35bd3d1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#ab19d8cece53690166e28f28a35bd3d1a">ini::ini_section</a> = typename std::unordered_map&lt; std::string, ini_value, std::hash&lt; std::string &gt;, TKeyComparator &gt;</td></tr>
+<tr class="memitem:ab19d8cece53690166e28f28a35bd3d1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#ab19d8cece53690166e28f28a35bd3d1a">ini::ini_section</a> = typename std::unordered_map&lt; std::string, ini_value, std::hash&lt; std::string &gt;, TKeyComparator &gt;</td></tr>
 <tr class="memdesc:ab19d8cece53690166e28f28a35bd3d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">An inner section of an INI storage object. Throughout the documentation, this type is known as a 'section' and its keys are known as 'Keys', while its values are known as 'Values'. <br /></td></tr>
 <tr class="separator:ab19d8cece53690166e28f28a35bd3d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d171f4709e47e3d783841f2bd6e7fc5"><td class="memItemLeft" align="right" valign="top"><a id="a7d171f4709e47e3d783841f2bd6e7fc5"></a>
@@ -204,23 +198,23 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ini::Value</b> = ini
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a4e990eb151a601604b1d4f7b0ea20f41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41">ini::MaskStyle</a> : unsigned char { <a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41abcfaccebf745acfd5e75351095a5394a">ini::Disable</a>
-, <a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41a72ef2b9b6965d078e3c7f95487a82d1c">ini::Skip</a>
-, <a class="el" href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41a8ce61dd2505effd96f937fa743b6491f">ini::Throw</a>
+<tr class="memitem:a4e990eb151a601604b1d4f7b0ea20f41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41">ini::MaskStyle</a> : unsigned char { <a class="el" href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41abcfaccebf745acfd5e75351095a5394a">Disable</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41a72ef2b9b6965d078e3c7f95487a82d1c">Skip</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41a8ce61dd2505effd96f937fa743b6491f">Throw</a>
  }</td></tr>
-<tr class="memdesc:a4e990eb151a601604b1d4f7b0ea20f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how INI masks are handled.  <a href="namespaceini.html#a4e990eb151a601604b1d4f7b0ea20f41">More...</a><br /></td></tr>
+<tr class="memdesc:a4e990eb151a601604b1d4f7b0ea20f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how INI masks are handled.  <a href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41">More...</a><br /></td></tr>
 <tr class="separator:a4e990eb151a601604b1d4f7b0ea20f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae6ae776ec6a5c0dd062337491be7cd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">ini::OverrideStyle</a> : unsigned char { <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f">ini::Throw</a>
-, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">ini::Override</a>
-, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda72ef2b9b6965d078e3c7f95487a82d1c">ini::Skip</a>
-, <a class="el" href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cda77b5ce8bdd4431c91682aff9f3e0b4f1">ini::OnlyBlank</a>
+<tr class="memitem:afae6ae776ec6a5c0dd062337491be7cd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cd">ini::OverrideStyle</a> : unsigned char { <a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f">Throw</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">Override</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda72ef2b9b6965d078e3c7f95487a82d1c">Skip</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda77b5ce8bdd4431c91682aff9f3e0b4f1">OnlyBlank</a>
  }</td></tr>
-<tr class="memdesc:afae6ae776ec6a5c0dd062337491be7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle duplicate keys.  <a href="namespaceini.html#afae6ae776ec6a5c0dd062337491be7cd">More...</a><br /></td></tr>
+<tr class="memdesc:afae6ae776ec6a5c0dd062337491be7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle duplicate keys.  <a href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cd">More...</a><br /></td></tr>
 <tr class="separator:afae6ae776ec6a5c0dd062337491be7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfb8db26b125d33be901f8a3c29b1a0a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">ini::SyntaxErrorStyle</a> : unsigned char { <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f">ini::Throw</a>
-, <a class="el" href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9">ini::Ignore</a>
+<tr class="memitem:abfb8db26b125d33be901f8a3c29b1a0a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0a">ini::SyntaxErrorStyle</a> : unsigned char { <a class="el" href="simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f">Throw</a>
+, <a class="el" href="simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9">Ignore</a>
  }</td></tr>
-<tr class="memdesc:abfb8db26b125d33be901f8a3c29b1a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle syntax errors on a line.  <a href="namespaceini.html#abfb8db26b125d33be901f8a3c29b1a0a">More...</a><br /></td></tr>
+<tr class="memdesc:abfb8db26b125d33be901f8a3c29b1a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how to handle syntax errors on a line.  <a href="simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0a">More...</a><br /></td></tr>
 <tr class="separator:abfb8db26b125d33be901f8a3c29b1a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -229,38 +223,38 @@ Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ini::$DefineExcept</b> (ini_cast_exception)</td></tr>
 <tr class="separator:a7ee28e47dcedc475ce1d6631832976d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c5625f3347e407e39599efc3bde3d54"><td class="memItemLeft" align="right" valign="top"><a id="a4c5625f3347e407e39599efc3bde3d54"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#a4c5625f3347e407e39599efc3bde3d54">ini::$DefineExcept</a> (ini_file_not_found_exception)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#a4c5625f3347e407e39599efc3bde3d54">ini::$DefineExcept</a> (ini_file_not_found_exception)</td></tr>
 <tr class="memdesc:a4c5625f3347e407e39599efc3bde3d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI file wasn't found at the specified path. <br /></td></tr>
 <tr class="separator:a4c5625f3347e407e39599efc3bde3d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacf494ae894985a62c1ad1358dee0dd"><td class="memItemLeft" align="right" valign="top"><a id="adacf494ae894985a62c1ad1358dee0dd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#adacf494ae894985a62c1ad1358dee0dd">ini::$DefineExcept</a> (ini_key_exception)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#adacf494ae894985a62c1ad1358dee0dd">ini::$DefineExcept</a> (ini_key_exception)</td></tr>
 <tr class="memdesc:adacf494ae894985a62c1ad1358dee0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate INI key exception. <br /></td></tr>
 <tr class="separator:adacf494ae894985a62c1ad1358dee0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad95014d5f60c8d8158676f73926b2ce8"><td class="memItemLeft" align="right" valign="top"><a id="ad95014d5f60c8d8158676f73926b2ce8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#ad95014d5f60c8d8158676f73926b2ce8">ini::$DefineExcept</a> (ini_mask_exception)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#ad95014d5f60c8d8158676f73926b2ce8">ini::$DefineExcept</a> (ini_mask_exception)</td></tr>
 <tr class="memdesc:ad95014d5f60c8d8158676f73926b2ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unexpected header or key exception. <br /></td></tr>
 <tr class="separator:ad95014d5f60c8d8158676f73926b2ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0779dcd93a14d160c0ff6347cb52112"><td class="memItemLeft" align="right" valign="top"><a id="aa0779dcd93a14d160c0ff6347cb52112"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#aa0779dcd93a14d160c0ff6347cb52112">ini::$DefineExcept</a> (ini_syntax_exception)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#aa0779dcd93a14d160c0ff6347cb52112">ini::$DefineExcept</a> (ini_syntax_exception)</td></tr>
 <tr class="memdesc:aa0779dcd93a14d160c0ff6347cb52112"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI syntax error exception. <br /></td></tr>
 <tr class="separator:aa0779dcd93a14d160c0ff6347cb52112"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18bb172511c546450834b0cd93b9151c"><td class="memTemplParams" colspan="2">template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </td></tr>
-<tr class="memitem:a18bb172511c546450834b0cd93b9151c"><td class="memTemplItemLeft" align="right" valign="top">ini_container&lt; TKeyComparator &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a18bb172511c546450834b0cd93b9151c">ini::deep_merge</a> (ini_container&lt; TKeyComparator &gt; &amp;container, ini_container&lt; TKeyComparator &gt; const &amp;other, OverrideStyle const &amp;overrideStyle=OverrideStyle::Override)</td></tr>
-<tr class="memdesc:a18bb172511c546450834b0cd93b9151c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a recursive merge of two given INI containers.  <a href="namespaceini.html#a18bb172511c546450834b0cd93b9151c">More...</a><br /></td></tr>
+<tr class="memitem:a18bb172511c546450834b0cd93b9151c"><td class="memTemplItemLeft" align="right" valign="top">ini_container&lt; TKeyComparator &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#a18bb172511c546450834b0cd93b9151c">ini::deep_merge</a> (ini_container&lt; TKeyComparator &gt; &amp;container, ini_container&lt; TKeyComparator &gt; const &amp;other, OverrideStyle const &amp;overrideStyle=OverrideStyle::Override)</td></tr>
+<tr class="memdesc:a18bb172511c546450834b0cd93b9151c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a recursive merge of two given INI containers.  <a href="simple_i_n_i_8hpp.html#a18bb172511c546450834b0cd93b9151c">More...</a><br /></td></tr>
 <tr class="separator:a18bb172511c546450834b0cd93b9151c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e2f490bdf186b24838321d568ac24be"><td class="memTemplParams" colspan="2">template&lt;class TKeyComparator &gt; </td></tr>
-<tr class="memitem:a0e2f490bdf186b24838321d568ac24be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt; TKeyComparator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a0e2f490bdf186b24838321d568ac24be">ini::parse</a> (std::istream &amp;&amp;is, ini_parser_config&lt; TKeyComparator &gt; const &amp;config={}) noexcept(false)</td></tr>
-<tr class="memdesc:a0e2f490bdf186b24838321d568ac24be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream rvalue into an INI container object.  <a href="namespaceini.html#a0e2f490bdf186b24838321d568ac24be">More...</a><br /></td></tr>
+<tr class="memitem:a0e2f490bdf186b24838321d568ac24be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt; TKeyComparator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#a0e2f490bdf186b24838321d568ac24be">ini::parse</a> (std::istream &amp;&amp;is, ini_parser_config&lt; TKeyComparator &gt; const &amp;config={}) noexcept(false)</td></tr>
+<tr class="memdesc:a0e2f490bdf186b24838321d568ac24be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream rvalue into an INI container object.  <a href="simple_i_n_i_8hpp.html#a0e2f490bdf186b24838321d568ac24be">More...</a><br /></td></tr>
 <tr class="separator:a0e2f490bdf186b24838321d568ac24be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a58d38eb514904292097e0ded4cfe0"><td class="memTemplParams" colspan="2">template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </td></tr>
-<tr class="memitem:a14a58d38eb514904292097e0ded4cfe0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt; TKeyComparator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceini.html#a14a58d38eb514904292097e0ded4cfe0">ini::parse</a> (std::istream &amp;is, ini_parser_config&lt; TKeyComparator &gt; const &amp;config={}) noexcept(false)</td></tr>
-<tr class="memdesc:a14a58d38eb514904292097e0ded4cfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream into an INI container object.  <a href="namespaceini.html#a14a58d38eb514904292097e0ded4cfe0">More...</a><br /></td></tr>
+<tr class="memitem:a14a58d38eb514904292097e0ded4cfe0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt; TKeyComparator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#a14a58d38eb514904292097e0ded4cfe0">ini::parse</a> (std::istream &amp;is, ini_parser_config&lt; TKeyComparator &gt; const &amp;config={}) noexcept(false)</td></tr>
+<tr class="memdesc:a14a58d38eb514904292097e0ded4cfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given input stream into an INI container object.  <a href="simple_i_n_i_8hpp.html#a14a58d38eb514904292097e0ded4cfe0">More...</a><br /></td></tr>
 <tr class="separator:a14a58d38eb514904292097e0ded4cfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:adbfd425409c2bbeddf8da4e5eddc2f10"><td class="memItemLeft" align="right" valign="top"><a id="adbfd425409c2bbeddf8da4e5eddc2f10"></a>
-constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceini.html#adbfd425409c2bbeddf8da4e5eddc2f10">ini::GLOBAL</a> { &quot;&quot; }</td></tr>
+constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simple_i_n_i_8hpp.html#adbfd425409c2bbeddf8da4e5eddc2f10">ini::GLOBAL</a> { &quot;&quot; }</td></tr>
 <tr class="memdesc:adbfd425409c2bbeddf8da4e5eddc2f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global header. <br /></td></tr>
 <tr class="separator:adbfd425409c2bbeddf8da4e5eddc2f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -269,7 +263,274 @@ constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class
 <dl class="section author"><dt>Author</dt><dd>radj307 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4e990eb151a601604b1d4f7b0ea20f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e990eb151a601604b1d4f7b0ea20f41">&#9670;&nbsp;</a></span>MaskStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="simple_i_n_i_8hpp.html#a4e990eb151a601604b1d4f7b0ea20f41">ini::MaskStyle</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines how INI masks are handled. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4e990eb151a601604b1d4f7b0ea20f41abcfaccebf745acfd5e75351095a5394a"></a>Disable&#160;</td><td class="fielddoc"><p>Masking is disabled. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e990eb151a601604b1d4f7b0ea20f41a72ef2b9b6965d078e3c7f95487a82d1c"></a>Skip&#160;</td><td class="fielddoc"><p>When a header or key that is not specified in the mask is encountered, ignore it. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e990eb151a601604b1d4f7b0ea20f41a8ce61dd2505effd96f937fa743b6491f"></a>Throw&#160;</td><td class="fielddoc"><p>When a header or key that is not specified in the mask is encountered, throw an <code>ini_mask_exception</code> </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00466">466</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afae6ae776ec6a5c0dd062337491be7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae6ae776ec6a5c0dd062337491be7cd">&#9670;&nbsp;</a></span>OverrideStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cd">ini::OverrideStyle</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines how to handle duplicate keys. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda8ce61dd2505effd96f937fa743b6491f"></a>Throw&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, throw an <code>ini_key_exception</code>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849"></a>Override&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, override the existing key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda72ef2b9b6965d078e3c7f95487a82d1c"></a>Skip&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, skip it. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afae6ae776ec6a5c0dd062337491be7cda77b5ce8bdd4431c91682aff9f3e0b4f1"></a>OnlyBlank&#160;</td><td class="fielddoc"><p>When a duplicate key is encountered, skip it; unless the <em>current</em> value is blank, in which case override it. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00442">442</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abfb8db26b125d33be901f8a3c29b1a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb8db26b125d33be901f8a3c29b1a0a">&#9670;&nbsp;</a></span>SyntaxErrorStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="simple_i_n_i_8hpp.html#abfb8db26b125d33be901f8a3c29b1a0a">ini::SyntaxErrorStyle</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines how to handle syntax errors on a line. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abfb8db26b125d33be901f8a3c29b1a0aa8ce61dd2505effd96f937fa743b6491f"></a>Throw&#160;</td><td class="fielddoc"><p>When the syntax on a line is invalid, throw an <code>ini_syntax_exception</code>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abfb8db26b125d33be901f8a3c29b1a0aafd038fc7f319e48f3115d92bf5bdbef9"></a>Ignore&#160;</td><td class="fielddoc"><p>When the syntax on a line is invalid, ignore it and continue. Header lines may have preceding or trailing non-whitespace/comment characters, but they are not parsed! </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00456">456</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a18bb172511c546450834b0cd93b9151c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18bb172511c546450834b0cd93b9151c">&#9670;&nbsp;</a></span>deep_merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ini_container&lt;TKeyComparator&gt;&amp; ini::deep_merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simple_i_n_i_8hpp.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini_container</a>&lt; TKeyComparator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simple_i_n_i_8hpp.html#ae2d9ca0aab6f42d36e8cb69224c94fad">ini_container</a>&lt; TKeyComparator &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cd">OverrideStyle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>overrideStyle</em> = <code><a class="el" href="simple_i_n_i_8hpp.html#afae6ae776ec6a5c0dd062337491be7cda6da8e67225fdcfa78c3ea5dc3154b849">OverrideStyle::Override</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a recursive merge of two given INI containers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>Input container reference. </td></tr>
+    <tr><td class="paramname">other</td><td>Other container constant reference. </td></tr>
+    <tr><td class="paramname">overrideStyle</td><td>The header/key override style to use for duplicate headers/keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference of the container parameter, with all of the sections from other merged into it. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00622">622</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0e2f490bdf186b24838321d568ac24be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2f490bdf186b24838321d568ac24be">&#9670;&nbsp;</a></span>parse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt;TKeyComparator&gt; ini::parse </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TKeyComparator &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>config</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the given input stream rvalue into an INI container object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>The rvalue reference of an input stream to parse data from. </td></tr>
+    <tr><td class="paramname">config</td><td>Optional configuration object that changes the behaviour of the parser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An ini_container type that contains all headers, keys, and values from the input stream. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ini_syntax_exception</td><td>Input stream contains invalid syntax, and the syntaxErrorStyle specified by the config was SyntaxErrorStyle::Throw </td></tr>
+    <tr><td class="paramname">ini_key_exception</td><td>Input stream contains duplicate keys, and the overrideStyle specified by the config was OverrideStyle::Throw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00782">782</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a14a58d38eb514904292097e0ded4cfe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a58d38eb514904292097e0ded4cfe0">&#9670;&nbsp;</a></span>parse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TKeyComparator  = CaseInsensitiveCompare&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sysarch_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> ini_container&lt;TKeyComparator&gt; ini::parse </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structini_1_1ini__parser__config.html">ini_parser_config</a>&lt; TKeyComparator &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>config</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the given input stream into an INI container object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>An input stream to parse data from. </td></tr>
+    <tr><td class="paramname">config</td><td>Optional configuration object that changes the behaviour of the parser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An ini_container type that contains all headers, keys, and values from the input stream. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ini_syntax_exception</td><td>Input stream contains invalid syntax, and the syntaxErrorStyle specified by the config was SyntaxErrorStyle::Throw </td></tr>
+    <tr><td class="paramname">ini_key_exception</td><td>Input stream contains duplicate keys, and the overrideStyle specified by the config was OverrideStyle::Throw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="simple_i_n_i_8hpp_source.html#l00662">662</a> of file <a class="el" href="simple_i_n_i_8hpp_source.html">simpleINI.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

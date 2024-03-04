@@ -106,7 +106,7 @@ Getting Started</h2>
 <div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv }; <span class="comment">//&lt; ready to use!</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aopt3_8hpp_html"><div class="ttname"><a href="opt3_8hpp.html">opt3.hpp</a></div><div class="ttdoc">Contains the opt3 namespace &amp; its contents; a fully-featured commandline argument parser,...</div></div>
-<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02117">opt3.hpp:2117</a></div></div>
+<div class="ttc" id="astructopt3_1_1arg__manager_html"><div class="ttname"><a href="structopt3_1_1arg__manager.html">opt3::arg_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l02116">opt3.hpp:2116</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 Basic Concepts</h2>
 <p>See <a href="https://www.learncpp.com/cpp-tutorial/command-line-arguments/">here</a> for an introduction to commandline arguments in C++. <br  />
@@ -168,11 +168,11 @@ Defining Capturing Arguments</h4>
 <p>Alternatively, you can use <em>template arguments</em> to define a set of arguments that have similar rules. </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="structopt3_1_1arg__manager.html">opt3::ArgManager</a> args{ argc, argv,</div>
-<div class="line">    <a class="code" href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">opt3::make_template</a>(opt3::CaptureStyle::Optional, <a class="code" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a>::, <span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>)</div>
+<div class="line">    <a class="code" href="namespaceopt3.html#a9e2f1da5d1f17cf85dbefe0b325c4006">opt3::make_template</a>(opt3::CaptureStyle::Optional, <a class="code" href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a>::, <span class="charliteral">&#39;h&#39;</span>, <span class="stringliteral">&quot;help&quot;</span>)</div>
 <div class="line">  };</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceopt3_html_ab35e9f86022da18932b030f40186ce2c"><div class="ttname"><a href="namespaceopt3.html#ab35e9f86022da18932b030f40186ce2c">opt3::make_template</a></div><div class="ttdeci">constexpr variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts &amp;&amp;... args)</div><div class="ttdoc">Creates a new variant_template_group instance.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01593">opt3.hpp:1593</a></div></div>
-<div class="ttc" id="anamespaceopt3_html_aed884f239ca32c2fe3dc2b12c399f142"><div class="ttname"><a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a></div><div class="ttdeci">ConflictStyle</div><div class="ttdoc">Determines the circumstances in which two arguments from the same template group will conflict with e...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01214">opt3.hpp:1214</a></div></div>
+<div class="ttc" id="anamespaceopt3_html_a9e2f1da5d1f17cf85dbefe0b325c4006"><div class="ttname"><a href="namespaceopt3.html#a9e2f1da5d1f17cf85dbefe0b325c4006">opt3::make_template</a></div><div class="ttdeci">CONSTEXPR variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts &amp;&amp;... args)</div><div class="ttdoc">Creates a new variant_template_group instance.</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01592">opt3.hpp:1592</a></div></div>
+<div class="ttc" id="anamespaceopt3_html_aed884f239ca32c2fe3dc2b12c399f142"><div class="ttname"><a href="namespaceopt3.html#aed884f239ca32c2fe3dc2b12c399f142">opt3::ConflictStyle</a></div><div class="ttdeci">ConflictStyle</div><div class="ttdoc">Determines the circumstances in which two arguments from the same template group will conflict with e...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01213">opt3.hpp:1213</a></div></div>
 </div><!-- fragment --><h4><a class="anchor" id="autotoc_md15"></a>
 &lt;em&gt;Explicit&lt;/em&gt; vs. &lt;em&gt;Implicit&lt;/em&gt; Capture</h4>
 <p>A capture argument can be specified explicitly or implicitly. An explicit capture involves appending an equals sign <code>=</code> followed by a string. On the other hand, an implicit capture captures a Parameter that is separated by at least one space character. <br  />
@@ -217,7 +217,7 @@ Argument Parsing Rules</h3>
 <div class="line">    <span class="stringliteral">&quot;help&quot;</span>,</div>
 <div class="line">  };</div>
 <div class="line">}</div>
-<div class="ttc" id="astructopt3_1_1_arg_parsing_rules_html"><div class="ttname"><a href="structopt3_1_1_arg_parsing_rules.html">opt3::ArgParsingRules</a></div><div class="ttdoc">Allows configuration of the rules used when parsing arguments.   It is highly recommended that you do...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01790">opt3.hpp:1790</a></div></div>
+<div class="ttc" id="astructopt3_1_1_arg_parsing_rules_html"><div class="ttname"><a href="structopt3_1_1_arg_parsing_rules.html">opt3::ArgParsingRules</a></div><div class="ttdoc">Allows configuration of the rules used when parsing arguments.   It is highly recommended that you do...</div><div class="ttdef"><b>Definition:</b> <a href="opt3_8hpp_source.html#l01789">opt3.hpp:1789</a></div></div>
 </div><!-- fragment --><p>The following settings are exposed via <code>ArgParsingRules</code>:</p>
 <ul>
 <li><code>delimiters</code><ul>

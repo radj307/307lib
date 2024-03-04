@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>307Lib: X:/_Workspace/_repo/cpp-307lib/filelib/src/env.cpp Source File</title>
+<title>307Lib: /home/runner/work/307lib/307lib/shared/src/env.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,13 +89,54 @@ $(document).ready(function(){initNavTree('env_8cpp_source.html',''); initResizab
 <div class="title">env.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="env_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="env_8hpp.html" title="Contains the env namespace &amp; all of its functions.   Features   - env::getvar(&lt;var_name&gt;)   Wrapper f...">&quot;env.hpp&quot;</a></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../include/env.hpp&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">OS_WIN</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">Windows</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">std</a>::<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">optional</a>&lt;<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">std</a>::<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">string</a>&gt; env::<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">getvar</a>(<span class="keyword">const</span> <a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">std</a>::<a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">string_view</a>&amp; <a class="code" href="env_8hpp.html#aca391e0c45e1744d4af7f22e1f6df221">name</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">OS_WIN</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">char</span>* buff{ <span class="keywordtype">nullptr</span> };</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">char</span>* tmp;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (DWORD rc{ 1ul }, buffsz; ; ) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        tmp = (<span class="keywordtype">char</span>*)realloc(buff, rc);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">if</span> (!tmp) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            free(buff);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        buff = tmp;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        buffsz = rc;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        rc = GetEnvironmentVariable(name.data(), buff, buffsz);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (rc == 0 || rc == buffsz || rc &gt; 32767) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            free(buff);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (rc &lt; buffsz)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> buff;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">warning</span> <span class="preprocessor">(</span><span class="preprocessor">disable</span><span class="preprocessor">:</span> 4996<span class="preprocessor">)</span> <span class="comment">// disable deprecation warning</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> var{ std::getenv(name.data()) };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span>(var != <span class="keywordtype">nullptr</span> ? std::string{ var } : <span class="keyword">static_cast</span>&lt;std::optional&lt;std::string&gt;&gt;(std::nullopt));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">warning</span> <span class="preprocessor">(</span><span class="preprocessor">default</span><span class="preprocessor">:</span> 4996<span class="preprocessor">)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0f370597da718f425d39865e9f37f757.html">filelib</a></li><li class="navelem"><a class="el" href="dir_a64820988fb1ed2e091bd6a42328f8fb.html">src</a></li><li class="navelem"><a class="el" href="env_8cpp.html">env.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="dir_4f7b36fb0bfdfe16f35b59bd562960a4.html">src</a></li><li class="navelem"><b>env.cpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['indent_1902',['indent',['../namespaceshared.html#ac905d158a13f589e6a51f9254b65b99e',1,'shared']]],
-  ['ini_1903',['INI',['../_i_n_i_redux_8hpp.html#aa70bfd04a696dbb114f1207712ac36a6',1,'file::INI()'],['../namespaceini.html#ad64b0667b80cb2905a85b23bbac8cc4c',1,'ini::INI()']]],
-  ['ini_5fcontainer_1904',['ini_container',['../namespaceini.html#ae2d9ca0aab6f42d36e8cb69224c94fad',1,'ini']]],
-  ['ini_5fsection_1905',['ini_section',['../namespaceini.html#ab19d8cece53690166e28f28a35bd3d1a',1,'ini']]],
-  ['integer_1906',['Integer',['../_i_n_i_redux_8hpp.html#aa2c727dd6fa8a4f8c20497e80e4c7657',1,'file::ini']]],
-  ['integral_5ft_1907',['integral_t',['../namespacejson.html#a9db9eee53a74db270a675f1b2fecc8d9',1,'json']]],
-  ['is_5fless_5fthan_5ft_1908',['is_less_than_t',['../namespacevar.html#ac540080378334b9cceaf2152d86b8304',1,'var']]],
-  ['is_5fmore_5fthan_5ft_1909',['is_more_than_t',['../namespacevar.html#a2e1700eec9b45d7b80e05d8f6b3fbf74',1,'var']]],
-  ['is_5fsame_5fas_5ft_1910',['is_same_as_t',['../namespacevar.html#a764f6c01a73aafbd8355e3e092b2fc60',1,'var']]],
-  ['iterator_1911',['iterator',['../classtoken_1_1base_1_1gen2_1_1_basic_core_parser_base.html#ae2abd5c8e2756b6ebc2633e0f9affdb3',1,'token::base::gen2::BasicCoreParserBase::iterator()'],['../classtoken_1_1base_1_1gen2_1_1_parser_base.html#ac43775aa6f52e60ff8620993b1102d35',1,'token::base::gen2::ParserBase::iterator()']]]
+  ['selector_5ft_1300',['selector_t',['../structterm_1_1print__table_1_1table__column.html#a116c61166eb5cc96963d272ff9db68e8',1,'term::print_table::table_column']]],
+  ['seq_1301',['seq',['../classterm_1_1basic__colors.html#ae99861d261245b853c9246c97b9dc1f2',1,'term::basic_colors']]],
+  ['setcolor_1302',['setcolor',['../classterm_1_1basic__colors.html#af87a3de77038b9026abeb76e5231f8ab',1,'term::basic_colors::setcolor()'],['../setcolor_8hpp.html#a111f5f1b19f6bbe6806bc049153b5375',1,'color::setcolor()']]],
+  ['sync_1303',['sync',['../color-sync_8hpp.html#a82e305500f2ba4cc19eaf8f29b77247f',1,'color']]],
+  ['sync16_5ft_1304',['sync16_t',['../color-sync_8hpp.html#a965f7dfef3a77ee1d84a9e14bd7cd4d2',1,'color']]],
+  ['sync32_5ft_1305',['sync32_t',['../color-sync_8hpp.html#a9a9f4788b3c5019db3360778e9ede0e1',1,'color']]],
+  ['sync8_5ft_1306',['sync8_t',['../color-sync_8hpp.html#a55673b88d4fa1e28603b7373540f366c',1,'color']]]
 ];
