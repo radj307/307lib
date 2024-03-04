@@ -57,17 +57,7 @@ endif()
 
 option(307lib_build_strlib "Build the (307lib::strlib) target." TRUE)
 if (${307lib_build_strlib})
-	add_subdirectory("strlib")
-endif()
-
-option(307lib_build_tokenlib "Build the (307lib::tokenlib) target." TRUE)
-if (${307lib_build_tokenlib})
-	add_subdirectory("tokenlib")
-endif()
-
-option(307lib_build_xlog "Build the (307lib::xlog) target." TRUE)
-if (${307lib_build_xlog})
-	add_subdirectory("xlog")
+	#add_subdirectory("strlib")
 endif()
 
 option(307lib_build_filelib "Build the (307lib::filelib) target." TRUE)
@@ -75,16 +65,15 @@ if (${307lib_build_filelib})
 	add_subdirectory("filelib")
 endif()
 
-option(307lib_build_optlib "Build the (307lib::optlib) target." TRUE)
-if (${307lib_build_optlib})
-	add_subdirectory("optlib")
-endif()
 
 # Create an interface library
 add_library(307lib INTERFACE)
-# Set interface properties
-set_property(TARGET 307lib PROPERTY CXX_STANDARD 20)
-set_property(TARGET 307lib PROPERTY POSITION_INDEPENDENT_CODE ON)
+
+target_link_libraries(307lib INTERFACE
+	307lib::shared
+	307lib::TermAPI
+	307lib::filelib
+)
 
 # Enables the testing library.
 option(307lib_build_testing "Enable the unstable development executable project in 307lib. This is not recommended." OFF)

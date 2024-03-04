@@ -21,6 +21,7 @@
 #endif
 
 #include <functional>
+#include <concepts>
 
  /**
   * @namespace var

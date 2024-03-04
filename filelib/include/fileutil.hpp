@@ -1,6 +1,6 @@
 #pragma once
 #include <sysarch.h>
-#include <str.hpp>
+#include <strcore.hpp>
 #include <var.hpp>
 
 #if LANG_CPP >= 17

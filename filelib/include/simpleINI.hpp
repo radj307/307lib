@@ -7,10 +7,10 @@
 #include <sysarch.h>
 #include <make_exception.hpp>
 #include <var.hpp>
-#include <str.hpp>
+#include <strcore.hpp>
+#include <str/strcompare.hpp>
 #include <fileio.hpp>
 #include <fileutil.hpp>
-#include <event.hpp>
 
 #include <algorithm>
 #include <compare>
@@ -334,7 +334,7 @@ namespace ini {
 		}
 		this_t& operator=(const bool& boolean)
 		{
-			_value = str::bool_to_string(boolean);
+			_value = str::stringify(std::boolalpha, boolean);
 			return *this;
 		}
 		this_t& operator=(const std::string& s)
@@ -736,7 +736,7 @@ namespace ini {
 							case MaskStyle::Skip:
 								continue; //< skip key
 							case MaskStyle::Throw:
-								throw ex::make_custom_exception<ini_mask_exception>("Line ", ln, " contains unexpected key '", key, "'", (header.empty() ? std::string{ " within section '"s + header + "'!" } : "!"s));
+								throw ex::make_custom_exception<ini_mask_exception>("Line ", ln, " contains unexpected key '", key, "'", (header.empty() ? std::string{ " within section '" + header + "'!" } : "!"));
 							case MaskStyle::Disable: [[fallthrough]];
 							default: break;
 							}
@@ -1368,28 +1368,28 @@ namespace ini {
 		 * @param key		The name of the target key.
 		 * @returns			A reference to the value of the target key.
 		 */
-		CONSTEXPR ini_value& operator()(const std::string& header, const std::string& key) noexcept { return map.operator[](header)[key]; }
+		WINCONSTEXPR ini_value& operator()(const std::string& header, const std::string& key) noexcept { return map.operator[](header)[key]; }
 		/**
 		 * @brief			Gets the value of the specified key, or creates it if it doesn't exist.
 		 * @param header	The name of the target header. (Leave blank for global)
 		 * @param key		The name of the target key.
 		 * @returns			A reference to the value of the target key.
 		 */
-		CONSTEXPR ini_value& operator()(std::string&& header, std::string&& key) noexcept { return map.operator[]($fwd(header))[$fwd(key)]; }
+		WINCONSTEXPR ini_value& operator()(std::string&& header, std::string&& key) noexcept { return map.operator[]($fwd(header))[$fwd(key)]; }
 		/**
 		 * @brief			Gets the value of the specified key, or throws an exception if it doesn't exist.
 		 * @param header	The name of the target header. (Leave blank for global)
 		 * @param key		The name of the target key.
 		 * @returns			A reference to the value of the target key.
 		 */
-		CONSTEXPR ini_value operator()(const std::string& header, const std::string& key) const noexcept(false) { return map.at(header).at(key); }
+		WINCONSTEXPR ini_value operator()(const std::string& header, const std::string& key) const noexcept(false) { return map.at(header).at(key); }
 		/**
 		 * @brief			Gets the value of the specified key, or throws an exception if it doesn't exist.
 		 * @param header	The name of the target header. (Leave blank for global)
 		 * @param key		The name of the target key.
 		 * @returns			A reference to the value of the target key.
 		 */
-		CONSTEXPR ini_value operator()(std::string&& header, std::string&& key) const noexcept(false) { return map.at($fwd(header)).at($fwd(key)); }
+		WINCONSTEXPR ini_value operator()(std::string&& header, std::string&& key) const noexcept(false) { return map.at($fwd(header)).at($fwd(key)); }
 		/**
 		 * @brief					Compares the current value of the specified key to the given expected_value.
 		 * @param header			The name of the target header. (Leave blank for global)
@@ -1397,7 +1397,7 @@ namespace ini {
 		 * @param expected_value	An ini_value to compare to the current value of the specified key.
 		 * @returns					true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false.
 		 */
-		CONSTEXPR bool operator()(std::string const& header, std::string const& key, ini_value const& expected_value) const noexcept { return checkv(header, key, expected_value); }
+		WINCONSTEXPR bool operator()(std::string const& header, std::string const& key, ini_value const& expected_value) const noexcept { return checkv(header, key, expected_value); }
 		/**
 		 * @brief					Compares the current value of the specified key to the given expected_value.
 		 * @param header			The name of the target header. (Leave blank for global)
@@ -1405,7 +1405,7 @@ namespace ini {
 		 * @param expected_value	An ini_value to compare to the current value of the specified key.
 		 * @returns					true when the value of the specified key matches the expected_value; otherwise false. If the specified key doesn't exist, returns false.
 		 */
-		CONSTEXPR bool operator()(std::string&& header, std::string&& key, ini_value&& expected_value) const noexcept { return checkv($fwd(header), $fwd(key), $fwd(expected_value)); }
+		WINCONSTEXPR bool operator()(std::string&& header, std::string&& key, ini_value&& expected_value) const noexcept { return checkv($fwd(header), $fwd(key), $fwd(expected_value)); }
 
 	#pragma endregion operator()
 

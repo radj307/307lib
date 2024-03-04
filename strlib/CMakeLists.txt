@@ -1,5 +1,4 @@
 ﻿# 307lib/strlib
-cmake_minimum_required (VERSION 3.13)
 
 file(GLOB HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -7,16 +6,11 @@ file(GLOB HEADERS
 	"include/*.h*"
 )
 
-file(GLOB SRCS
-	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
-	CONFIGURE_DEPENDS
-	"src/*.c*"
-)
-
-add_library(strlib ${307lib_lib_type} "${SRCS}")
+add_library(strlib INTERFACE)
+add_library(307lib::strlib ALIAS strlib)
 
 set_property(TARGET strlib PROPERTY CXX_STANDARD 20)
-set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED OFF)
+set_property(TARGET strlib PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET strlib PROPERTY POSITION_INDEPENDENT_CODE ON)
 set_property(TARGET strlib PROPERTY WINDOWS_EXPORT_ALL_SYMBOLS ON)
 

@@ -1,8 +1,7 @@
 # 307lib/shared
-cmake_minimum_required(VERSION 3.15)
 
 # Get headers & sources
-file(GLOB HEADERS
+file(GLOB_RECURSE HEADERS
 	RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
 	CONFIGURE_DEPENDS
 	"include/*.h*"
@@ -15,6 +14,7 @@ file(GLOB SRCS
 
 # Create static library
 add_library(shared ${307lib_lib_type} "${SRCS}" "cpp.hint")
+add_library(307lib::shared ALIAS shared)
 
 # Set library properties
 set_property(TARGET shared PROPERTY CXX_STANDARD 20)
@@ -36,6 +36,25 @@ target_include_directories(shared PUBLIC
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>"
 	"$<INSTALL_INTERFACE:include;src>"
 )
+
+# Use CMake for preprocessor compiler detection
+
+# Allow "AppleClang" for CMAKE_CXX_COMPILER_ID (https://cmake.org/cmake/help/latest/policy/CMP0025.html)
+cmake_policy(SET CMP0025 NEW)
+
+message("CMAKE_CXX_COMPILER_ID: ${CMAKE_CXX_COMPILER_ID}")
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+	target_compile_definitions(shared PUBLIC COMPILER_CLANG)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+	target_compile_definitions(shared PUBLIC COMPILER_APPLECLANG)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	target_compile_definitions(shared PUBLIC COMPILER_GCC)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+	target_compile_definitions(shared PUBLIC COMPILER_INTEL)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+	target_compile_definitions(shared PUBLIC COMPILER_MSVC)
+endif()
+target_compile_definitions(shared PUBLIC "COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
 
 # Packaging
 if (307lib_ENABLE_PACKAGING) # Include packaging

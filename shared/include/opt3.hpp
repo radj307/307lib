@@ -1170,14 +1170,13 @@ namespace opt3 {
 	#pragma endregion checkv
 
 	#pragma region get_duplicates
-		/**
-		 * @brief
-		 * @tparam TExecutionPolicy
-		 * @param equality_comparer
-		 * @returns						A subcontainer that contains all of the duplicate entries as determined by the given predicate.
-		 */
-		template<std::predicate<variantarg, variantarg> TCompare, typename TExecutionPolicy = std::execution::parallel_unsequenced_policy, std::derived_from<std::allocator<variantarg>> TAlloc = std::allocator<variantarg>>
-		CONSTEXPR arg_container get_duplicates(const TCompare& equality_comparer) const
+
+		template<std::predicate<variantarg, variantarg> TCompare, typename TExecutionPolicy
+		#ifndef COMPILER_CLANG
+			= std::execution::parallel_unsequenced_policy
+		#endif
+			, std::derived_from<std::allocator<variantarg>> TAlloc = std::allocator<variantarg>>
+		arg_container get_duplicates(const TCompare& equality_comparer) const
 		{
 			const std::set<variantarg> distinct{ this->begin(), this->end() };
 			std::vector<variantarg> duplicates{};
@@ -1590,7 +1589,7 @@ namespace opt3 {
 	 * @returns					A new variant_template_group instance with the specified parameters.
 	 */
 	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
-	inline constexpr variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts&&... args)
+	inline CONSTEXPR variant_template_group make_template(const CaptureStyle captureStyle, const ConflictStyle conflictStyle, Ts&&... args)
 	{
 		return variant_template_group{
 			captureStyle,
@@ -1606,7 +1605,7 @@ namespace opt3 {
 	 * @returns					A new variant_template_group instance with the specified parameters.
 	 */
 	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
-	inline constexpr variant_template_group make_template(const ConflictStyle conflictStyle, const CaptureStyle captureStyle, Ts&&... args)
+	inline CONSTEXPR variant_template_group make_template(const ConflictStyle conflictStyle, const CaptureStyle captureStyle, Ts&&... args)
 	{
 		return variant_template_group{
 			captureStyle,
@@ -1621,7 +1620,7 @@ namespace opt3 {
 	 * @returns					A new variant_template_group instance with the specified parameters.
 	 */
 	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
-	inline constexpr variant_template_group make_template(const CaptureStyle captureStyle, Ts&&... args)
+	inline CONSTEXPR variant_template_group make_template(const CaptureStyle captureStyle, Ts&&... args)
 	{
 		return variant_template_group{
 			captureStyle,
@@ -1635,7 +1634,7 @@ namespace opt3 {
 	 * @returns					A new variant_template_group instance with the specified parameters.
 	 */
 	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
-	inline constexpr variant_template_group make_template(const ConflictStyle conflictStyle, Ts&&... args)
+	inline CONSTEXPR variant_template_group make_template(const ConflictStyle conflictStyle, Ts&&... args)
 	{
 		return variant_template_group{
 			conflictStyle,
@@ -1648,7 +1647,7 @@ namespace opt3 {
 	 * @returns					A new variant_template_group instance with the specified parameters.
 	 */
 	template<var::any_same_or_convertible<variant_template, vstring>... Ts>
-	inline constexpr variant_template_group make_template(Ts&&... args)
+	inline CONSTEXPR variant_template_group make_template(Ts&&... args)
 	{
 		return variant_template_group{
 			std::vector<variant_template>{ _internal::resolve_template(std::forward<Ts>(args))... }

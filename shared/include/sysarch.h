@@ -215,20 +215,6 @@
 #endif // LANG_C // LANG_C_COMFORMANCE
 #pragma endregion LANG_C
 
-#pragma region Compiler
-#if defined(_MSC_VER)
-#	define COMPILER_MSVC 		///< @brief Microsoft Visual C/C++ Compiler
-#elif defined(__GNUC__)
-#	define COMPILER_GCC 		///< @brief gcc/g++ Compiler
-#elif defined(__clang__)
-#	define COMPILER_CLANG 		///< @brief Clang Compiler
-#elif defined(__EMSCRIPTEN__)
-#	define COMPILER_WEB		///< @brief Web Compiler
-#elif defined(__MINGW32__) || defined(__MINGW64__)
-#	define COMPILER_MINGW		///< @brief MinGW/MinGW-w64
-#endif
-#pragma endregion Compiler
-
 
 /// Feature Macros ///
 
@@ -241,7 +227,7 @@
 #endif
 
 #ifndef CONSTEXPR
-#	if LANG_CXX >= 17
+#	if LANG_CXX >= 17 && !defined(COMPILER_CLANG) && !defined(COMPILER_APPLECLANG)
 #		define CONSTEXPR constexpr
 #	else
 #		define CONSTEXPR

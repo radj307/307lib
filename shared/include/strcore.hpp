@@ -148,7 +148,7 @@ namespace str {
 	 * @returns					The resulting string.
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> stringify(Ts&&... args)
 	{
 		if constexpr (var::none<Ts...>)
 			return{};
@@ -170,7 +170,7 @@ namespace str {
 	 * @returns					The resulting string.
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, class ConditionFunc, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_if(ConditionFunc const& condition, Ts&&... args)
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> stringify_if(ConditionFunc const& condition, Ts&&... args)
 	{
 		if constexpr (var::none<Ts...>)
 			return{};
@@ -197,7 +197,7 @@ namespace str {
 	 * @returns					The resulting string.
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, std::forward_iterator Iter, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_join(Iter const& begin, Iter const& end, Ts&&... join)
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> stringify_join(Iter const& begin, Iter const& end, Ts&&... join)
 	{
 		// short-circuit if the container is empty
 		if (std::distance(begin, end) == 0)
@@ -239,7 +239,7 @@ namespace str {
 	 * @returns					The resulting string.
 	 */
 	template<typename TChar = char, typename TCharTraits = std::char_traits<TChar>, typename TAlloc = std::allocator<TChar>, std::forward_iterator Iter, class Selector, var::streamable<std::basic_stringstream<TChar, TCharTraits, TAlloc>>... Ts>
-	[[nodiscard]] constexpr static std::basic_string<TChar, TCharTraits, TAlloc> stringify_sjoin(Iter const& begin, Iter const& end, Selector const& selector, Ts&&... join)
+	[[nodiscard]] std::basic_string<TChar, TCharTraits, TAlloc> stringify_sjoin(Iter const& begin, Iter const& end, Selector const& selector, Ts&&... join)
 	{
 		// short-circuit if the container is empty
 		if (std::distance(begin, end) == 0)

@@ -137,7 +137,7 @@ namespace term {
 						if (c == seqEnd) break;
 					}
 				}
-				if (c == seqEnd || c == EOF) break;
+				if (c == seqEnd) break;
 			}
 
 			// clear EOF bit

@@ -4,8 +4,6 @@
  * @brief	Includes both filei.hpp and fileo.hpp, and undefines the read & write preprocessor definitions.
  */
 #pragma once
-#include <sysarch.h>
-
 #ifdef read
 #undef read
 #endif
@@ -13,5 +11,5 @@
 #undef write
 #endif
 
-#include <filei.hpp>
-#include <fileo.hpp>
+#include "filei.hpp"
+#include "fileo.hpp"

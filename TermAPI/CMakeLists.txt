@@ -15,6 +15,7 @@ file(GLOB SRCS
 
 # Create static library
 add_library(TermAPI STATIC "${SRCS}")
+add_library(307lib::TermAPI ALIAS TermAPI)
 
 # Set library properties
 set_property(TARGET TermAPI PROPERTY CXX_STANDARD 20)
